@@ -3,7 +3,6 @@ syntax="proto3";
 package time;
 import "google/protobuf/timestamp.proto";
 
-
 message Timestamp {
     int64 start = 1;
     int64 end = 2;

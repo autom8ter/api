@@ -2,26 +2,55 @@ syntax ="proto3";
 
 package config;
 
-message Firebase {
-    string project_id=1;
-    string service_account_id=2;
-    string database_url =3;
-    string storage_bucket=4;
-    string json_file=5;
+message GetString {
+    string key =1;
 }
 
-message Twilio {
-    string account =1;
-    string token =2;
-    string api_key=3;
-    string api_secret=4;
-    string json_file=5;
+message String {
+    string this =1;
 }
 
-message Stripe {
-    string account =1;
-    string token =2;
-    string api_key=3;
-    string api_secret=4;
-    string json_file=5;
+
+message GetBool {
+    string key =1;
 }
+
+message Bool {
+    bool this =1;
+}
+
+message GetStrings {
+    string key =1;
+}
+
+message Strings {
+   repeated string this =1;
+}
+
+
+message GetStringMap {
+    string key =1;
+}
+
+message StringMap {
+    map<string, string> this =1;
+}
+
+message GetBoolMap {
+    string key =1;
+}
+
+message BoolMap {
+    map<string, bool> this =1;
+}
+
+message GetInt64 {
+    string key =1;
+}
+
+message Int64 {
+    int64 this =1;
+}
+
+
+

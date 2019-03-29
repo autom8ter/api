@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "saas/saas.proto",
+    "title": "api/api.proto",
     "version": "version not set"
   },
   "schemes": [
@@ -163,6 +163,51 @@
         },
         "page_info": {
           "$ref": "#/definitions/authPageInfo"
+        }
+      }
+    },
+    "blobObject": {
+      "type": "object",
+      "properties": {
+        "bucket": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "content_type": {
+          "type": "string"
+        },
+        "content_language": {
+          "type": "string"
+        },
+        "cache_control": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string",
+          "format": "int64"
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "created": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updated": {
+          "type": "string",
+          "format": "int64"
+        },
+        "deleted": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -392,51 +437,6 @@
         },
         "exception": {
           "$ref": "#/definitions/errorsError"
-        }
-      }
-    },
-    "storageObject": {
-      "type": "object",
-      "properties": {
-        "bucket": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "content_type": {
-          "type": "string"
-        },
-        "content_language": {
-          "type": "string"
-        },
-        "cache_control": {
-          "type": "string"
-        },
-        "owner": {
-          "type": "string"
-        },
-        "size": {
-          "type": "string",
-          "format": "int64"
-        },
-        "meta": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "created": {
-          "type": "string",
-          "format": "int64"
-        },
-        "updated": {
-          "type": "string",
-          "format": "int64"
-        },
-        "deleted": {
-          "type": "string",
-          "format": "int64"
         }
       }
     },

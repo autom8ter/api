@@ -2,6 +2,13 @@ syntax = "proto3";
 
 package auth;
 
+enum Role {
+    GUEST = 0;
+    MEMBER = 1;
+    ADMIN = 2;
+    USER =3;
+}
+
 message User {
     string uid =1;
     string email =2;

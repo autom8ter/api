@@ -2,6 +2,10 @@ syntax = "proto3";
 
 package strings;
 
+message String {
+    string val =1;
+}
+
 message Text {
     Format format=1;
     string content =2;

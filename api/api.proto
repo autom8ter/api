@@ -1,16 +1,15 @@
 syntax="proto3";
 
-package saas;
+package api;
 import "google/api/annotations.proto";
 import "auth/auth.proto";
-import "storage/storage.proto";
+import "blob/storage.proto";
 import "images/images.proto";
 import "sms/sms.proto";
 import "voice/voice.proto";
 import "documents/documents.proto";
 import "strings/strings.proto";
 import "streaming/streaming.proto";
-
 
 service AuthService {
     rpc CreateUser(auth.User) returns (auth.UserRecord){};
@@ -26,7 +25,7 @@ service AuthService {
 
 
 service StorageService {
-    rpc CreateObject(storage.CreateObjectRequest) returns (storage.Object) {};
+    rpc CreateObject(blob.CreateObjectRequest) returns (blob.Object) {};
 }
 
 service ImageService {

@@ -1,7 +1,6 @@
 syntax="proto3";
 package geo;
 
-
 enum CountryAlpha2Code {
     COUNTRY_ALPHA_2_CODE_NONE = 0;
     COUNTRY_ALPHA_2_CODE_AD = 1;

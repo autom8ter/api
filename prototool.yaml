@@ -24,7 +24,12 @@ generate:
       flags: plugins=grpc
       output: sdk/go
 
+    - flags: binary,import_style=commonjs
+      name: js
+      output: sdk/js
+
     - name: swagger
       type: go
-      output: sdk/go
+      output: sdk/swagger
       flags: logtostderr=true
+
