@@ -1,0 +1,39 @@
+syntax = "proto3";
+package streaming;
+
+// Request object for ByteStream.Read.
+message ReadRequest {
+    // The name of the resource to read.
+    string resource_name = 1;
+
+    int64 read_offset = 2;
+    int64 read_limit = 3;
+}
+
+// Response object for ByteStream.Read.
+message ReadResponse {
+    bytes data = 10;
+}
+
+// Request object for ByteStream.Write.
+message WriteRequest {
+    string resource_name = 1;
+    int64 write_offset = 2;
+
+    // If `true`, this indicates that the write is complete. Sending any
+    // `WriteRequest`s subsequent to one in which `finish_write` is `true` will
+    // cause an error.
+    bool finish_write = 3;
+
+    // A portion of the data for the resource. The client **may** leave `data`
+    // empty for any given `WriteRequest`. This enables the client to inform the
+    // service that the request is still live while it is running an operation to
+    // generate more data.
+    bytes data = 10;
+}
+
+// Response object for ByteStream.Write.
+message WriteResponse {
+    // The number of bytes that have been processed for the given resource.
+    int64 committed_size = 1;
+}

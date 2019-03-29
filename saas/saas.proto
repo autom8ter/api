@@ -1,0 +1,83 @@
+syntax="proto3";
+
+package saas;
+import "google/api/annotations.proto";
+import "auth/auth.proto";
+import "storage/storage.proto";
+import "images/images.proto";
+import "sms/sms.proto";
+import "voice/voice.proto";
+import "documents/documents.proto";
+import "strings/strings.proto";
+import "streaming/streaming.proto";
+
+
+service AuthService {
+    rpc CreateUser(auth.User) returns (auth.UserRecord){};
+    rpc Update(auth.User) returns (auth.UserRecord){};
+    rpc DeleteUser(auth.DeleteUserRequest) returns (strings.Empty){};
+    rpc GetUser(auth.GetUserByID) returns (auth.UserRecord){};
+    rpc SetUserClaims(auth.SetUserClaimsRequest) returns (strings.Empty){};
+    rpc CustomToken(auth.CustomTokenRequest) returns (auth.CustomTokenResponse){};
+    rpc RevokeToken(auth.RevokeTokenRequest) returns (auth.UserRecord){};
+    rpc VerifyToken(auth.VerifyTokenRequest) returns (auth.Token){};
+    rpc GetUsers(auth.UsersRequest) returns (auth.UsersIterator){};
+}
+
+
+service StorageService {
+    rpc CreateObject(storage.CreateObjectRequest) returns (storage.Object) {};
+}
+
+service ImageService {
+    rpc Store(images.ImageStoreRequest) returns (stream images.Image) {};
+    rpc StoreSync(images.ImageStoreRequest) returns (images.ImageSyncResponse) {};
+    rpc Delete(images.DeleteRequest) returns (images.DeleteResponse) {};
+}
+
+
+
+service VoiceService {
+    rpc GetCallService(voice.GetCallRequest) returns (voice.VoiceResponse) {};
+    rpc CallWithCallbackService(voice.CallWithCallbackRequest) returns (voice.VoiceResponse) {};
+    rpc CallWithApplicationService(voice.CallWithApplication) returns (voice.VoiceResponse) {};
+
+}
+
+service SMSService {
+    rpc SendSmsService(sms.SendSMSRequest) returns (sms.SMSResponse) {};
+    rpc SendMmsService(sms.SendMMSRequest) returns (sms.SMSResponse) {};
+    rpc SendSmsWithCopilotService(sms.SendSMSWithCopilotRequest) returns (sms.SMSResponse) {};
+    rpc GetSmsRequestService(sms.GetSMSRequest) returns (sms.SMSResponse) {};
+
+}
+
+service DocumentService {
+    rpc CreateDoc (documents.CreateDocRequest) returns (documents.Document) {};
+    rpc GetDoc (documents.GetDocRequest) returns (documents.GetDocResponse) {};
+    rpc GetAllDoc (documents.GetAllDocRequest) returns (documents.GetAllDocResponse) {};
+    rpc DeleteDoc (documents.DeleteDocRequest) returns (documents.DeleteDocResponse) {};
+    rpc UpdateDoc (documents.UpdateDocRequest) returns (documents.UpdateDocResponse) {};
+
+    rpc CreateCollection (documents.CreateCollectionRequest) returns (documents.CreateCollectionResponse) {};
+    rpc GetCollection (documents.GetCollectionRequest) returns (documents.GetCollectionResponse) {};
+    rpc GetAllCollection (documents.GetAllCollectionRequest) returns (documents.GetAllCollectionResponse) {};
+    rpc DeleteCollection (documents.DeleteCollectionRequest) returns (documents.DeleteCollectionResponse) {};
+    rpc UpdateCollection (documents.UpdateCollectionRequest) returns (documents.UpdateCollectionResponse) {};
+
+}
+
+
+service RenderService {
+    rpc Render(strings.RenderRequest) returns(strings.RenderResponse){};
+}
+
+service ByteStream {
+    rpc Read(streaming.ReadRequest) returns (stream streaming.ReadResponse){};
+    rpc Write(stream streaming.WriteRequest) returns (streaming.WriteResponse){};
+}
+
+service ScannerService {
+    rpc Replace(strings.ReplaceRequest) returns(strings.ReplaceResponse){};
+    rpc Extract(strings.ExtractRequest) returns(strings.ExtractResponse){};
+}

@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+package auth;
+
+message User {
+    string uid =1;
+    string email =2;
+    string password =3;
+    string phone_number=4;
+    string display_name =5;
+    string photo_url =6;
+    bool email_verified=7;
+    bool disabled =8;
+}
+
+message UserInfo {
+    string display_name =1;
+    string email =2;
+    string phone_numner=3;
+    string photo_url =4;
+    string provider_id=5;
+    string uid=6;
+}
+
+message UserMetadata {
+    int64 creation_timestamp  =1;
+    int64 last_login_timestamp=2;
+}
+
+message UserRecord {
+    UserInfo user_info=1;
+    map<string, string> custom_claims=2;
+    bool disabled=3;
+    bool email_verified=4;
+    repeated UserInfo provider_user_info=5;
+    int64 Tokens_Valid_After_Millis =6;
+    UserMetadata user_metadata=7;
+
+}
+
+message CustomTokenRequest {
+    string uid =1;
+}
+
+message CustomTokenResponse {
+    string token =1;
+}
+
+message DeleteUserRequest {
+    string uid=1;
+}
+
+message GetUserByID {
+    string uid=1;
+    string email=2;
+    string phone_number=3;
+}
+
+message RevokeTokenRequest {
+    string uid=1;
+}
+message SetUserClaimsRequest {
+    string uid=1;
+    map<string,string> claims=2;
+}
+
+message Token {
+    string issuer =1;
+    string audience=2;
+    int64 expires =3;
+    int64 issued_at=4;
+    string subject =5;
+    string uid =6;
+    map<string,string> claims=7;
+}
+
+message VerifyTokenRequest {
+    string id_token =1;
+}
+
+message UsersIterator {
+    repeated ExportedUserRecord users=1;
+    PageInfo page_info=2;
+}
+
+message ExportedUserRecord {
+    UserRecord user_record=1;
+    string password_hash=2;
+    string password_salt=3;
+}
+
+message PageInfo {
+    string token=1;
+    int64 max_size=2;
+}
+
+message UsersRequest {
+    string next_page_token=1;
+}
+
+message CORS {
+    int64 max_age=1;
+    repeated string methods=2;
+    repeated string origins=3;
+    repeated string response_headers=4;
+}
+
+message ACLRule {
+    string entity=1;
+    string entity_id=2;
+    string role =3;
+    string domain=4;
+    string email=5;
+    string project = 6;
+    string team=7;
+}

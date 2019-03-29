@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package time;
+import "google/protobuf/timestamp.proto";
+
+
+message Timestamp {
+    int64 start = 1;
+    int64 end = 2;
+    int64 duration = 3;
+}
+
+message Tracker {
+    int64 created = 1;
+    int64 updated = 2;
+    int64 deleted = 3;
+}

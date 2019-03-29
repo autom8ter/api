@@ -1,0 +1,10 @@
+syntax="proto3";
+
+package errors;
+
+message Error {
+    int64 status =1;
+    string message =2;
+    int64 code =3;
+    string more_info=4;
+}

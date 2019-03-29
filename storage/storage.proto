@@ -1,0 +1,38 @@
+syntax = "proto3";
+package storage;
+import "os/os.proto";
+import "auth/auth.proto";
+
+message CreateObjectRequest {
+    string bucket=1;
+    os.File file=2;
+}
+
+
+message Object {
+    string bucket=1;
+    string name=2;
+    string content_type=3;
+    string content_language=4;
+    string cache_control=5;
+    string owner =6;
+    int64 size =7;
+    map<string, string> meta=8;
+    int64 created =9;
+    int64 updated =10;
+    int64 deleted =11;
+}
+
+message Bucket {
+    string name=1;
+    string location=2;
+    string encryption_key =3;
+    bool versioning=4;
+    string class =5;
+    auth.CORS cors=6;
+    repeated auth.ACLRule rules=7;
+    map<string, string> meta=8;
+    int64 created =9;
+    int64 updated =10;
+    int64 deleted =11;
+}

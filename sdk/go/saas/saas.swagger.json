@@ -1,0 +1,625 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "saas/saas.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "authCustomTokenResponse": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "authExportedUserRecord": {
+      "type": "object",
+      "properties": {
+        "user_record": {
+          "$ref": "#/definitions/authUserRecord"
+        },
+        "password_hash": {
+          "type": "string"
+        },
+        "password_salt": {
+          "type": "string"
+        }
+      }
+    },
+    "authPageInfo": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "max_size": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "authToken": {
+      "type": "object",
+      "properties": {
+        "issuer": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "string"
+        },
+        "expires": {
+          "type": "string",
+          "format": "int64"
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "int64"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        },
+        "claims": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "authUserInfo": {
+      "type": "object",
+      "properties": {
+        "display_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone_numner": {
+          "type": "string"
+        },
+        "photo_url": {
+          "type": "string"
+        },
+        "provider_id": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        }
+      }
+    },
+    "authUserMetadata": {
+      "type": "object",
+      "properties": {
+        "creation_timestamp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "last_login_timestamp": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "authUserRecord": {
+      "type": "object",
+      "properties": {
+        "user_info": {
+          "$ref": "#/definitions/authUserInfo"
+        },
+        "custom_claims": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "disabled": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "email_verified": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "provider_user_info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/authUserInfo"
+          }
+        },
+        "Tokens_Valid_After_Millis": {
+          "type": "string",
+          "format": "int64"
+        },
+        "user_metadata": {
+          "$ref": "#/definitions/authUserMetadata"
+        }
+      }
+    },
+    "authUsersIterator": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/authExportedUserRecord"
+          }
+        },
+        "page_info": {
+          "$ref": "#/definitions/authPageInfo"
+        }
+      }
+    },
+    "documentsCollection": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/definitions/documentsDocument"
+        }
+      }
+    },
+    "documentsCreateCollectionResponse": {
+      "type": "object"
+    },
+    "documentsDeleteCollectionResponse": {
+      "type": "object"
+    },
+    "documentsDeleteDocResponse": {
+      "type": "object"
+    },
+    "documentsDocument": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/definitions/documentsCollection"
+        }
+      }
+    },
+    "documentsGetAllCollectionResponse": {
+      "type": "object"
+    },
+    "documentsGetAllDocResponse": {
+      "type": "object"
+    },
+    "documentsGetCollectionResponse": {
+      "type": "object"
+    },
+    "documentsGetDocResponse": {
+      "type": "object"
+    },
+    "documentsUpdateCollectionResponse": {
+      "type": "object"
+    },
+    "documentsUpdateDocResponse": {
+      "type": "object"
+    },
+    "errorsError": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "format": "int64"
+        },
+        "message": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string",
+          "format": "int64"
+        },
+        "more_info": {
+          "type": "string"
+        }
+      }
+    },
+    "imagesDeleteResponse": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string"
+        }
+      }
+    },
+    "imagesFormat": {
+      "type": "string",
+      "enum": [
+        "JPEG",
+        "WEBP",
+        "PNG"
+      ],
+      "default": "JPEG"
+    },
+    "imagesImage": {
+      "type": "object",
+      "properties": {
+        "version_name": {
+          "type": "string"
+        },
+        "filename": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "imagesImageOperation": {
+      "type": "object",
+      "properties": {
+        "version_name": {
+          "type": "string"
+        },
+        "height": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "width": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "quality": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "compression": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "crop": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "enlarge": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "flip": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "interlace": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "format": {
+          "$ref": "#/definitions/imagesFormat"
+        }
+      }
+    },
+    "imagesImageSyncResponse": {
+      "type": "object",
+      "properties": {
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/imagesImage"
+          }
+        }
+      }
+    },
+    "osFile": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte",
+          "title": "The raw data of the object to be stored"
+        },
+        "permissions": {
+          "type": "string",
+          "format": "int64"
+        },
+        "tracker": {
+          "$ref": "#/definitions/timeTracker"
+        }
+      }
+    },
+    "smsSMSResponse": {
+      "type": "object",
+      "properties": {
+        "sid": {
+          "type": "string"
+        },
+        "date_created": {
+          "type": "string"
+        },
+        "date_updated": {
+          "type": "string"
+        },
+        "date_sent": {
+          "type": "string"
+        },
+        "accound_sid": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "media_url": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "api_version": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "exception": {
+          "$ref": "#/definitions/errorsError"
+        }
+      }
+    },
+    "storageObject": {
+      "type": "object",
+      "properties": {
+        "bucket": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "content_type": {
+          "type": "string"
+        },
+        "content_language": {
+          "type": "string"
+        },
+        "cache_control": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string",
+          "format": "int64"
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "created": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updated": {
+          "type": "string",
+          "format": "int64"
+        },
+        "deleted": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "streamingReadResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string",
+          "format": "byte"
+        }
+      },
+      "description": "Response object for ByteStream.Read."
+    },
+    "streamingWriteResponse": {
+      "type": "object",
+      "properties": {
+        "committed_size": {
+          "type": "string",
+          "format": "int64",
+          "description": "The number of bytes that have been processed for the given resource."
+        }
+      },
+      "description": "Response object for ByteStream.Write."
+    },
+    "stringsEmpty": {
+      "type": "object"
+    },
+    "stringsExtractResponse": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/stringsText"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stringsFormat": {
+      "type": "string",
+      "enum": [
+        "TEXT",
+        "HTML",
+        "BYTES",
+        "JSON",
+        "YAML",
+        "XML",
+        "HCL"
+      ],
+      "default": "TEXT"
+    },
+    "stringsRenderResponse": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "text": {
+          "$ref": "#/definitions/stringsText"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "stringsReplaceResponse": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "$ref": "#/definitions/stringsText"
+        },
+        "replacements": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stringsText": {
+      "type": "object",
+      "properties": {
+        "format": {
+          "$ref": "#/definitions/stringsFormat"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "timeTracker": {
+      "type": "object",
+      "properties": {
+        "created": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updated": {
+          "type": "string",
+          "format": "int64"
+        },
+        "deleted": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "voiceVoiceResponse": {
+      "type": "object",
+      "properties": {
+        "sid": {
+          "type": "string"
+        },
+        "date_created": {
+          "type": "string"
+        },
+        "date_updated": {
+          "type": "string"
+        },
+        "parent_call_sid": {
+          "type": "string"
+        },
+        "accound_sid": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "to_formatted": {
+          "type": "string"
+        },
+        "phone_number_sid": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "start_time": {
+          "type": "string"
+        },
+        "end_time": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "string",
+          "format": "int64"
+        },
+        "price": {
+          "type": "number",
+          "format": "float"
+        },
+        "direction": {
+          "type": "string"
+        },
+        "answered_by": {
+          "type": "string"
+        },
+        "api_version": {
+          "type": "string"
+        },
+        "annotation": {
+          "type": "string"
+        },
+        "forwarded_from": {
+          "type": "string"
+        },
+        "group_sid": {
+          "type": "string"
+        },
+        "caller_name": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        },
+        "exception": {
+          "$ref": "#/definitions/errorsError"
+        }
+      }
+    }
+  }
+}

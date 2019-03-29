@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package strings;
+
+message Text {
+    Format format=1;
+    string content =2;
+}
+
+message Empty {
+}
+
+message InputString {
+    string text =1;
+}
+
+enum Format {
+    TEXT=0;
+    HTML=1;
+    BYTES=2;
+    JSON =3;
+    YAML=4;
+    XML=5;
+    HCL=6;
+}
+
+
+message RenderResponse {
+    string name =1;
+    Text text=2;
+    bytes data =3;
+}
+
+message RenderRequest {
+    string name =1;
+    Text text=2;
+    bytes data =3;
+}
+
+message ReplaceRequest {
+    Text text =1;
+    map<string, string> replacements =2;
+}
+
+message ReplaceResponse {
+    Text text =1;
+    map<string, string> replacements =2;
+}
+
+message ExtractRequest {
+    Text text =1;
+    repeated string keywords=2;
+}
+
+message ExtractResponse {
+    Text text =1;
+    repeated string keywords=2;
+}

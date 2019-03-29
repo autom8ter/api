@@ -1,0 +1,48 @@
+syntax="proto3";
+
+package os;
+import "time/time.proto";
+
+enum OSType {
+    LINUX =0;
+    DARWIN=1;
+    WINDOWS=2;
+}
+
+message File {
+    string filename = 1;
+    // The raw data of the object to be stored
+    bytes data = 2;
+    int64 permissions=3;
+    time.Tracker tracker=4;
+}
+
+message Files {
+    repeated File files=1;
+}
+
+message FileSystem {
+    string name=1;
+    OSType os_type=2;
+}
+
+message Cmd {
+    string path=1;
+    repeated string args=2;
+    string dir =3;
+    repeated string env=4;
+}
+
+message OSUser {
+    string uid=1;
+    string gid=2;
+    string username=3;
+    string name=4;
+    string home_dir=5;
+    time.Tracker tracker=6;
+}
+
+message OSGroup {
+    string gid=1;
+    string name =2;
+}

@@ -1,0 +1,78 @@
+syntax ="proto3";
+
+package documents;
+import "google/protobuf/timestamp.proto";
+
+message CreateDocRequest {
+    string path=1;
+}
+
+message Document {
+    string path=1;
+    string id=2;
+    Collection parent=3;
+}
+
+message Collection {
+    string path=1;
+    string id=2;
+    Document parent=3;
+}
+
+message GetDocRequest {
+
+}
+message GetDocResponse {
+
+}
+message GetAllDocRequest {
+
+}
+message GetAllDocResponse{
+
+}
+
+message UpdateDocRequest {
+
+}
+message UpdateDocResponse {
+
+}
+message DeleteDocRequest {
+
+}
+message DeleteDocResponse {
+
+}
+
+message CreateCollectionRequest {
+
+}
+message CreateCollectionResponse {
+
+}
+message GetCollectionRequest {
+
+}
+message GetCollectionResponse {
+
+}
+message GetAllCollectionRequest {
+
+}
+message GetAllCollectionResponse{
+
+}
+
+message UpdateCollectionRequest {
+
+}
+message UpdateCollectionResponse {
+
+}
+message DeleteCollectionRequest {
+
+}
+message DeleteCollectionResponse {
+
+}

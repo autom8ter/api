@@ -1,0 +1,50 @@
+syntax="proto3";
+import "errors/errors.proto";
+
+package sms;
+
+message SendSMSRequest {
+    string to =2;
+    string from =3;
+    string body =4;
+    string status_callback=5;
+    string application_sid=6;
+}
+
+message SendMMSRequest {
+    string to = 2;
+    string from = 3;
+    string body = 4;
+    string media_url = 5;
+    string status_callback = 6;
+    string application_sid = 7;
+}
+message SendSMSWithCopilotRequest {
+    string messaging_service_sid = 1;
+    string to=2;
+    string body = 3;
+    string status_callback = 4;
+    string application_sid = 5;
+}
+
+message GetSMSRequest {
+    string sid =1;
+}
+
+message SMSResponse {
+    string sid =1;
+    string date_created=2;
+    string date_updated=3;
+    string date_sent=4;
+    string accound_sid=5;
+    string to=6;
+    string from=7;
+    string media_url =8;
+    string body=10;
+    string status=11;
+    string direction=12;
+    string api_version=13;
+    string price=17;
+    string uri=20;
+    errors.Error exception =21;
+}
