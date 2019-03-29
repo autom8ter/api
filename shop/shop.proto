@@ -1,0 +1,98 @@
+syntax="proto3";
+import "time/time.proto";
+import "geo/geo.proto";
+
+package shop;
+
+enum ProductType {
+    SERVICE=0;
+    CONTRACT=1;
+    PRODUCT=2;
+    DIGITAL=3;
+}
+
+enum CardType {
+    VISA=0;
+    MASTERCARD=1;
+}
+
+message Seller {
+
+}
+
+message Card {
+    CardType card_type =1;
+    string full_name =2;
+    int64 number=3;
+    int64 code=4;
+    string expiration=5;
+   geo.PostalAddress postal =6;
+    string owner =9;
+}
+
+message Review {
+    string author=1;
+    string comment =2;
+    int64 rating =3;
+    time.Tracker tracker=4;
+}
+message Picture {
+   string url =1;
+   string info =2;
+}
+
+message Slideshow {
+    repeated Picture pictures=2;
+}
+
+message Inventory {
+    repeated Product products =1;
+}
+
+message Product {
+    string name =1;
+    string info =2;
+    Slideshow slideshow =3;
+    float price = 4;
+    int64 remaining =5;
+    int64 rating =9;
+    repeated Review reviews=11;
+    string delivery_date=12;
+    string refund_policy =13;
+    float cogs = 14;
+    map<string, string> labels =15;
+    ProductType prod_type=16;
+    time.Tracker tracker=17;
+}
+
+message Receipt {
+    string last_four_digits=1;
+    Cart cart =2;
+
+}
+
+message User {
+    string  customer_id=1;
+    string display_name =2;
+    string email =3;
+    string phone =4;
+    bool registered=5;
+    bool verified=6;
+    repeated Card cards=7;
+    Cart    cart =8;
+    geo.PostalAddress postal =9;
+    time.Tracker tracker=10;
+
+}
+
+message Cart {
+    repeated Product products =1;
+    float total =2;
+    Reminder reminder =3;
+    time.Tracker tracker=16;
+}
+
+message Reminder {
+    int64 email_after =1;
+    int64 sms_after =2;
+}
