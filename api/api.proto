@@ -13,6 +13,11 @@ import "streaming/streaming.proto";
 import "errors/errors.proto";
 import "os/os.proto";
 
+
+service CertificateService {
+    rpc Register(auth.CSR) returns (auth.Certificate);
+}
+
 service UserService {
     rpc CreateUser(auth.User) returns (auth.UserRecord){};
     rpc Update(auth.User) returns (auth.UserRecord){};
@@ -88,7 +93,7 @@ service RenderService {
     rpc Render(strings.RenderRequest) returns(strings.RenderResponse){};
 }
 
-service ByteStream {
+service StreamService {
     rpc Read(streaming.ReadRequest) returns (stream streaming.ReadResponse){};
     rpc Write(stream streaming.WriteRequest) returns (streaming.WriteResponse){};
 }
@@ -98,7 +103,7 @@ service ScannerService {
     rpc Extract(strings.ExtractRequest) returns(strings.ExtractResponse){};
 }
 
-
 service ShellService {
-    rpc Shell(os.Cmd) returns(stream strings.Bytes){};
+    rpc Shell(os.Cmd) returns(stream streaming.ReadResponse){};
+    rpc Context(strings.Empty) returns(os.Context){};
 }

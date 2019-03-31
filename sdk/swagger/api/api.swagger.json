@@ -69,6 +69,18 @@
         }
       }
     },
+    "authCertificate": {
+      "type": "object",
+      "properties": {
+        "PEM": {
+          "type": "string",
+          "format": "byte"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    },
     "authCustomTokenResponse": {
       "type": "object",
       "properties": {
@@ -518,6 +530,81 @@
         }
       }
     },
+    "osContext": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/osOSUser"
+          }
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/osOSGroup"
+          }
+        },
+        "env": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "os_type": {
+          "$ref": "#/definitions/osOSType"
+        },
+        "cache": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "osOSGroup": {
+      "type": "object",
+      "properties": {
+        "gid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "osOSType": {
+      "type": "string",
+      "enum": [
+        "LINUX",
+        "DARWIN",
+        "WINDOWS"
+      ],
+      "default": "LINUX"
+    },
+    "osOSUser": {
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "gid": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "home_dir": {
+          "type": "string"
+        },
+        "tracker": {
+          "$ref": "#/definitions/timeTracker"
+        }
+      }
+    },
     "smsSMSResponse": {
       "type": "object",
       "properties": {
@@ -588,15 +675,6 @@
         }
       },
       "description": "Response object for ByteStream.Write."
-    },
-    "stringsBytes": {
-      "type": "object",
-      "properties": {
-        "bits": {
-          "type": "string",
-          "format": "byte"
-        }
-      }
     },
     "stringsExtractResponse": {
       "type": "object",

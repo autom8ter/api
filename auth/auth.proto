@@ -122,3 +122,20 @@ message ACLRule {
     string project = 6;
     string team=7;
 }
+
+message CSR {
+    string type = 1;
+    bytes DER = 2;
+    string idGroup = 3;
+}
+
+message Certificate {
+    bytes PEM = 1;
+    string type = 2;
+}
+
+enum State {
+    APPROVED = 0;
+    RETIRED = 1;
+    REVOKED = 2;
+}
