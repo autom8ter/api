@@ -414,7 +414,7 @@ proto.auth.UserInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     displayName: jspb.Message.getFieldWithDefault(msg, 1, ""),
     email: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    phoneNumner: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    phoneNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
     photoUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
     providerId: jspb.Message.getFieldWithDefault(msg, 5, ""),
     uid: jspb.Message.getFieldWithDefault(msg, 6, "")
@@ -464,7 +464,7 @@ proto.auth.UserInfo.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPhoneNumner(value);
+      msg.setPhoneNumber(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -521,7 +521,7 @@ proto.auth.UserInfo.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPhoneNumner();
+  f = message.getPhoneNumber();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -583,16 +583,16 @@ proto.auth.UserInfo.prototype.setEmail = function(value) {
 
 
 /**
- * optional string phone_numner = 3;
+ * optional string phone_number = 3;
  * @return {string}
  */
-proto.auth.UserInfo.prototype.getPhoneNumner = function() {
+proto.auth.UserInfo.prototype.getPhoneNumber = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.auth.UserInfo.prototype.setPhoneNumner = function(value) {
+proto.auth.UserInfo.prototype.setPhoneNumber = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -690,7 +690,8 @@ proto.auth.UserMetadata.prototype.toObject = function(opt_includeInstance) {
 proto.auth.UserMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
     creationTimestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    lastLoginTimestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    lastLoginTimestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -735,6 +736,12 @@ proto.auth.UserMetadata.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLastLoginTimestamp(value);
       break;
+    case 3:
+      var value = msg.getMetaMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -778,6 +785,10 @@ proto.auth.UserMetadata.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getMetaMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
 };
 
 
@@ -808,6 +819,24 @@ proto.auth.UserMetadata.prototype.getLastLoginTimestamp = function() {
 /** @param {number} value */
 proto.auth.UserMetadata.prototype.setLastLoginTimestamp = function(value) {
   jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * map<string, string> meta = 3;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.auth.UserMetadata.prototype.getMetaMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      null));
+};
+
+
+proto.auth.UserMetadata.prototype.clearMetaMap = function() {
+  this.getMetaMap().clear();
 };
 
 

@@ -23,7 +23,7 @@ message User {
 message UserInfo {
     string display_name =1;
     string email =2;
-    string phone_numner=3;
+    string phone_number=3;
     string photo_url =4;
     string provider_id=5;
     string uid=6;
@@ -32,6 +32,7 @@ message UserInfo {
 message UserMetadata {
     int64 creation_timestamp  =1;
     int64 last_login_timestamp=2;
+    map<string, string> meta=3;
 }
 
 message UserRecord {

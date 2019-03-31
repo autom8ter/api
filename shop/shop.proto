@@ -11,13 +11,25 @@ enum ProductType {
     DIGITAL=3;
 }
 
+enum Rating {
+    EXCELLENT =0;
+    GOOD=1;
+    AVERAGE=2;
+    POOR=3;
+    BAD=4;
+}
+
 enum CardType {
     VISA=0;
     MASTERCARD=1;
 }
 
 message Seller {
-
+    string id=1;
+    User user=2;
+    Rating rating =3;
+    Inventory inventory=4;
+    repeated Receipt receipts=5;
 }
 
 message Card {
@@ -27,7 +39,7 @@ message Card {
     int64 code=4;
     string expiration=5;
    geo.PostalAddress postal =6;
-    string owner =9;
+    string owner =7;
 }
 
 message Review {
@@ -55,14 +67,14 @@ message Product {
     Slideshow slideshow =3;
     float price = 4;
     int64 remaining =5;
-    int64 rating =9;
-    repeated Review reviews=11;
-    string delivery_date=12;
-    string refund_policy =13;
-    float cogs = 14;
-    map<string, string> labels =15;
-    ProductType prod_type=16;
-    time.Tracker tracker=17;
+    int64 rating =6;
+    repeated Review reviews=7;
+    string delivery_date=8;
+    string refund_policy =9;
+    float cogs = 10;
+    map<string, string> labels =11;
+    ProductType prod_type=12;
+    time.Tracker tracker=13;
 }
 
 message Receipt {
@@ -89,7 +101,7 @@ message Cart {
     repeated Product products =1;
     float total =2;
     Reminder reminder =3;
-    time.Tracker tracker=16;
+    time.Tracker tracker=4;
 }
 
 message Reminder {

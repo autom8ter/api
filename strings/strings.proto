@@ -6,6 +6,10 @@ message String {
     string val =1;
 }
 
+message Bytes {
+    bytes bits =1;
+}
+
 message Text {
     Format format=1;
     string content =2;
@@ -60,3 +64,51 @@ message ExtractResponse {
     Text text =1;
     repeated string keywords=2;
 }
+
+message GetString {
+    string key =1;
+}
+
+message GetBool {
+    string key =1;
+}
+
+message Bool {
+    bool this =1;
+}
+
+message GetStrings {
+    string key =1;
+}
+
+message Strings {
+    repeated string this =1;
+}
+
+
+message GetStringMap {
+    string key =1;
+}
+
+message StringMap {
+    map<string, string> this =1;
+}
+
+message GetBoolMap {
+    string key =1;
+}
+
+message BoolMap {
+    map<string, bool> this =1;
+}
+
+message GetInt64 {
+    string key =1;
+}
+
+message Int64 {
+    int64 this =1;
+}
+
+
+

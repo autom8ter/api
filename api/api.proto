@@ -10,22 +10,39 @@ import "voice/voice.proto";
 import "documents/documents.proto";
 import "strings/strings.proto";
 import "streaming/streaming.proto";
+import "errors/errors.proto";
+import "os/os.proto";
 
-service AuthService {
+service UserService {
     rpc CreateUser(auth.User) returns (auth.UserRecord){};
     rpc Update(auth.User) returns (auth.UserRecord){};
-    rpc DeleteUser(auth.DeleteUserRequest) returns (strings.Empty){};
+    rpc DeleteUser(auth.DeleteUserRequest) returns (errors.Error){};
     rpc GetUser(auth.GetUserByID) returns (auth.UserRecord){};
-    rpc SetUserClaims(auth.SetUserClaimsRequest) returns (strings.Empty){};
+    rpc GetUsers(auth.UsersRequest) returns (auth.UsersIterator){};
+    rpc SetUserClaims(auth.SetUserClaimsRequest) returns (errors.Error){};
+}
+
+service TokenService {
     rpc CustomToken(auth.CustomTokenRequest) returns (auth.CustomTokenResponse){};
     rpc RevokeToken(auth.RevokeTokenRequest) returns (auth.UserRecord){};
     rpc VerifyToken(auth.VerifyTokenRequest) returns (auth.Token){};
-    rpc GetUsers(auth.UsersRequest) returns (auth.UsersIterator){};
 }
 
+service ObjectService {
+    rpc CreateObject(blob.CreateObjectRequest) returns (blob.ObjectResponse) {};
+    rpc GetObject(blob.GetObjectRequest) returns (blob.ObjectResponse) {};
+    rpc GetObjects(blob.GetObjectsRequest) returns (blob.ObjectsResponse) {};
+    rpc UpdateObject(blob.UpdateObjectRequest) returns (blob.ObjectResponse) {};
+    rpc DeleteObject(blob.DeleteObjectRequest) returns (errors.Error) {};
 
-service StorageService {
-    rpc CreateObject(blob.CreateObjectRequest) returns (blob.Object) {};
+}
+
+service BucketService {
+    rpc CreateBucket(blob.CreateBucketRequest) returns (blob.BucketResponse) {};
+    rpc GetBucket(blob.GetBucketRequest) returns (blob.BucketResponse) {};
+    rpc GetBuckets(blob.GetBucketsRequest) returns (blob.BucketsResponse) {};
+    rpc UpdateBucket(blob.UpdateBucketRequest) returns (blob.BucketResponse) {};
+    rpc DeleteBucket(blob.DeleteBucketRequest) returns (errors.Error) {};
 }
 
 service ImageService {
@@ -57,15 +74,15 @@ service DocumentService {
     rpc GetAllDoc (documents.GetAllDocRequest) returns (documents.GetAllDocResponse) {};
     rpc DeleteDoc (documents.DeleteDocRequest) returns (documents.DeleteDocResponse) {};
     rpc UpdateDoc (documents.UpdateDocRequest) returns (documents.UpdateDocResponse) {};
+}
 
+service CollectionService {
     rpc CreateCollection (documents.CreateCollectionRequest) returns (documents.CreateCollectionResponse) {};
     rpc GetCollection (documents.GetCollectionRequest) returns (documents.GetCollectionResponse) {};
     rpc GetAllCollection (documents.GetAllCollectionRequest) returns (documents.GetAllCollectionResponse) {};
     rpc DeleteCollection (documents.DeleteCollectionRequest) returns (documents.DeleteCollectionResponse) {};
     rpc UpdateCollection (documents.UpdateCollectionRequest) returns (documents.UpdateCollectionResponse) {};
-
 }
-
 
 service RenderService {
     rpc Render(strings.RenderRequest) returns(strings.RenderResponse){};
@@ -79,4 +96,9 @@ service ByteStream {
 service ScannerService {
     rpc Replace(strings.ReplaceRequest) returns(strings.ReplaceResponse){};
     rpc Extract(strings.ExtractRequest) returns(strings.ExtractResponse){};
+}
+
+
+service ShellService {
+    rpc Shell(os.Cmd) returns(stream strings.Bytes){};
 }

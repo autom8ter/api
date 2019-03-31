@@ -20,6 +20,7 @@ goog.exportSymbol('proto.shop.Inventory', null, global);
 goog.exportSymbol('proto.shop.Picture', null, global);
 goog.exportSymbol('proto.shop.Product', null, global);
 goog.exportSymbol('proto.shop.ProductType', null, global);
+goog.exportSymbol('proto.shop.Rating', null, global);
 goog.exportSymbol('proto.shop.Receipt', null, global);
 goog.exportSymbol('proto.shop.Reminder', null, global);
 goog.exportSymbol('proto.shop.Review', null, global);
@@ -38,12 +39,19 @@ goog.exportSymbol('proto.shop.User', null, global);
  * @constructor
  */
 proto.shop.Seller = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.shop.Seller.repeatedFields_, null);
 };
 goog.inherits(proto.shop.Seller, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.shop.Seller.displayName = 'proto.shop.Seller';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.shop.Seller.repeatedFields_ = [5];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -73,7 +81,12 @@ proto.shop.Seller.prototype.toObject = function(opt_includeInstance) {
  */
 proto.shop.Seller.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    user: (f = msg.getUser()) && proto.shop.User.toObject(includeInstance, f),
+    rating: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    inventory: (f = msg.getInventory()) && proto.shop.Inventory.toObject(includeInstance, f),
+    receiptsList: jspb.Message.toObjectList(msg.getReceiptsList(),
+    proto.shop.Receipt.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -110,6 +123,29 @@ proto.shop.Seller.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = new proto.shop.User;
+      reader.readMessage(value,proto.shop.User.deserializeBinaryFromReader);
+      msg.setUser(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.shop.Rating} */ (reader.readEnum());
+      msg.setRating(value);
+      break;
+    case 4:
+      var value = new proto.shop.Inventory;
+      reader.readMessage(value,proto.shop.Inventory.deserializeBinaryFromReader);
+      msg.setInventory(value);
+      break;
+    case 5:
+      var value = new proto.shop.Receipt;
+      reader.readMessage(value,proto.shop.Receipt.deserializeBinaryFromReader);
+      msg.addReceipts(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -139,6 +175,165 @@ proto.shop.Seller.prototype.serializeBinary = function() {
  */
 proto.shop.Seller.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getUser();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.shop.User.serializeBinaryToWriter
+    );
+  }
+  f = message.getRating();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
+  f = message.getInventory();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.shop.Inventory.serializeBinaryToWriter
+    );
+  }
+  f = message.getReceiptsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.shop.Receipt.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string id = 1;
+ * @return {string}
+ */
+proto.shop.Seller.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.shop.Seller.prototype.setId = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional User user = 2;
+ * @return {?proto.shop.User}
+ */
+proto.shop.Seller.prototype.getUser = function() {
+  return /** @type{?proto.shop.User} */ (
+    jspb.Message.getWrapperField(this, proto.shop.User, 2));
+};
+
+
+/** @param {?proto.shop.User|undefined} value */
+proto.shop.Seller.prototype.setUser = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.shop.Seller.prototype.clearUser = function() {
+  this.setUser(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.shop.Seller.prototype.hasUser = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Rating rating = 3;
+ * @return {!proto.shop.Rating}
+ */
+proto.shop.Seller.prototype.getRating = function() {
+  return /** @type {!proto.shop.Rating} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/** @param {!proto.shop.Rating} value */
+proto.shop.Seller.prototype.setRating = function(value) {
+  jspb.Message.setProto3EnumField(this, 3, value);
+};
+
+
+/**
+ * optional Inventory inventory = 4;
+ * @return {?proto.shop.Inventory}
+ */
+proto.shop.Seller.prototype.getInventory = function() {
+  return /** @type{?proto.shop.Inventory} */ (
+    jspb.Message.getWrapperField(this, proto.shop.Inventory, 4));
+};
+
+
+/** @param {?proto.shop.Inventory|undefined} value */
+proto.shop.Seller.prototype.setInventory = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.shop.Seller.prototype.clearInventory = function() {
+  this.setInventory(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.shop.Seller.prototype.hasInventory = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated Receipt receipts = 5;
+ * @return {!Array<!proto.shop.Receipt>}
+ */
+proto.shop.Seller.prototype.getReceiptsList = function() {
+  return /** @type{!Array<!proto.shop.Receipt>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.shop.Receipt, 5));
+};
+
+
+/** @param {!Array<!proto.shop.Receipt>} value */
+proto.shop.Seller.prototype.setReceiptsList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.shop.Receipt=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.shop.Receipt}
+ */
+proto.shop.Seller.prototype.addReceipts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.shop.Receipt, opt_index);
+};
+
+
+proto.shop.Seller.prototype.clearReceiptsList = function() {
+  this.setReceiptsList([]);
 };
 
 
@@ -195,7 +390,7 @@ proto.shop.Card.toObject = function(includeInstance, msg) {
     code: jspb.Message.getFieldWithDefault(msg, 4, 0),
     expiration: jspb.Message.getFieldWithDefault(msg, 5, ""),
     postal: (f = msg.getPostal()) && geo_geo_pb.PostalAddress.toObject(includeInstance, f),
-    owner: jspb.Message.getFieldWithDefault(msg, 9, "")
+    owner: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -257,7 +452,7 @@ proto.shop.Card.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,geo_geo_pb.PostalAddress.deserializeBinaryFromReader);
       msg.setPostal(value);
       break;
-    case 9:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -336,7 +531,7 @@ proto.shop.Card.serializeBinaryToWriter = function(message, writer) {
   f = message.getOwner();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      7,
       f
     );
   }
@@ -449,17 +644,17 @@ proto.shop.Card.prototype.hasPostal = function() {
 
 
 /**
- * optional string owner = 9;
+ * optional string owner = 7;
  * @return {string}
  */
 proto.shop.Card.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
 proto.shop.Card.prototype.setOwner = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1231,7 +1426,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.shop.Product.repeatedFields_ = [11];
+proto.shop.Product.repeatedFields_ = [7];
 
 
 
@@ -1267,14 +1462,14 @@ proto.shop.Product.toObject = function(includeInstance, msg) {
     slideshow: (f = msg.getSlideshow()) && proto.shop.Slideshow.toObject(includeInstance, f),
     price: +jspb.Message.getFieldWithDefault(msg, 4, 0.0),
     remaining: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    rating: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    rating: jspb.Message.getFieldWithDefault(msg, 6, 0),
     reviewsList: jspb.Message.toObjectList(msg.getReviewsList(),
     proto.shop.Review.toObject, includeInstance),
-    deliveryDate: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    refundPolicy: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    cogs: +jspb.Message.getFieldWithDefault(msg, 14, 0.0),
+    deliveryDate: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    refundPolicy: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    cogs: +jspb.Message.getFieldWithDefault(msg, 10, 0.0),
     labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
-    prodType: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    prodType: jspb.Message.getFieldWithDefault(msg, 12, 0),
     tracker: (f = msg.getTracker()) && time_time_pb.Tracker.toObject(includeInstance, f)
   };
 
@@ -1333,38 +1528,38 @@ proto.shop.Product.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setRemaining(value);
       break;
-    case 9:
+    case 6:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setRating(value);
       break;
-    case 11:
+    case 7:
       var value = new proto.shop.Review;
       reader.readMessage(value,proto.shop.Review.deserializeBinaryFromReader);
       msg.addReviews(value);
       break;
-    case 12:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setDeliveryDate(value);
       break;
-    case 13:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setRefundPolicy(value);
       break;
-    case 14:
+    case 10:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setCogs(value);
       break;
-    case 15:
+    case 11:
       var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
-    case 16:
+    case 12:
       var value = /** @type {!proto.shop.ProductType} */ (reader.readEnum());
       msg.setProdType(value);
       break;
-    case 17:
+    case 13:
       var value = new time_time_pb.Tracker;
       reader.readMessage(value,time_time_pb.Tracker.deserializeBinaryFromReader);
       msg.setTracker(value);
@@ -1437,14 +1632,14 @@ proto.shop.Product.serializeBinaryToWriter = function(message, writer) {
   f = message.getRating();
   if (f !== 0) {
     writer.writeInt64(
-      9,
+      6,
       f
     );
   }
   f = message.getReviewsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      11,
+      7,
       f,
       proto.shop.Review.serializeBinaryToWriter
     );
@@ -1452,39 +1647,39 @@ proto.shop.Product.serializeBinaryToWriter = function(message, writer) {
   f = message.getDeliveryDate();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      8,
       f
     );
   }
   f = message.getRefundPolicy();
   if (f.length > 0) {
     writer.writeString(
-      13,
+      9,
       f
     );
   }
   f = message.getCogs();
   if (f !== 0.0) {
     writer.writeFloat(
-      14,
+      10,
       f
     );
   }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(11, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getProdType();
   if (f !== 0.0) {
     writer.writeEnum(
-      16,
+      12,
       f
     );
   }
   f = message.getTracker();
   if (f != null) {
     writer.writeMessage(
-      17,
+      13,
       f,
       time_time_pb.Tracker.serializeBinaryToWriter
     );
@@ -1583,33 +1778,33 @@ proto.shop.Product.prototype.setRemaining = function(value) {
 
 
 /**
- * optional int64 rating = 9;
+ * optional int64 rating = 6;
  * @return {number}
  */
 proto.shop.Product.prototype.getRating = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /** @param {number} value */
 proto.shop.Product.prototype.setRating = function(value) {
-  jspb.Message.setProto3IntField(this, 9, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * repeated Review reviews = 11;
+ * repeated Review reviews = 7;
  * @return {!Array<!proto.shop.Review>}
  */
 proto.shop.Product.prototype.getReviewsList = function() {
   return /** @type{!Array<!proto.shop.Review>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.shop.Review, 11));
+    jspb.Message.getRepeatedWrapperField(this, proto.shop.Review, 7));
 };
 
 
 /** @param {!Array<!proto.shop.Review>} value */
 proto.shop.Product.prototype.setReviewsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 11, value);
+  jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -1619,7 +1814,7 @@ proto.shop.Product.prototype.setReviewsList = function(value) {
  * @return {!proto.shop.Review}
  */
 proto.shop.Product.prototype.addReviews = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.shop.Review, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.shop.Review, opt_index);
 };
 
 
@@ -1629,59 +1824,59 @@ proto.shop.Product.prototype.clearReviewsList = function() {
 
 
 /**
- * optional string delivery_date = 12;
+ * optional string delivery_date = 8;
  * @return {string}
  */
 proto.shop.Product.prototype.getDeliveryDate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /** @param {string} value */
 proto.shop.Product.prototype.setDeliveryDate = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string refund_policy = 13;
+ * optional string refund_policy = 9;
  * @return {string}
  */
 proto.shop.Product.prototype.getRefundPolicy = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
 proto.shop.Product.prototype.setRefundPolicy = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
+  jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional float cogs = 14;
+ * optional float cogs = 10;
  * @return {number}
  */
 proto.shop.Product.prototype.getCogs = function() {
-  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 14, 0.0));
+  return /** @type {number} */ (+jspb.Message.getFieldWithDefault(this, 10, 0.0));
 };
 
 
 /** @param {number} value */
 proto.shop.Product.prototype.setCogs = function(value) {
-  jspb.Message.setProto3FloatField(this, 14, value);
+  jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
 /**
- * map<string, string> labels = 15;
+ * map<string, string> labels = 11;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.shop.Product.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 11, opt_noLazyCreate,
       null));
 };
 
@@ -1692,33 +1887,33 @@ proto.shop.Product.prototype.clearLabelsMap = function() {
 
 
 /**
- * optional ProductType prod_type = 16;
+ * optional ProductType prod_type = 12;
  * @return {!proto.shop.ProductType}
  */
 proto.shop.Product.prototype.getProdType = function() {
-  return /** @type {!proto.shop.ProductType} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+  return /** @type {!proto.shop.ProductType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /** @param {!proto.shop.ProductType} value */
 proto.shop.Product.prototype.setProdType = function(value) {
-  jspb.Message.setProto3EnumField(this, 16, value);
+  jspb.Message.setProto3EnumField(this, 12, value);
 };
 
 
 /**
- * optional time.Tracker tracker = 17;
+ * optional time.Tracker tracker = 13;
  * @return {?proto.time.Tracker}
  */
 proto.shop.Product.prototype.getTracker = function() {
   return /** @type{?proto.time.Tracker} */ (
-    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 17));
+    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 13));
 };
 
 
 /** @param {?proto.time.Tracker|undefined} value */
 proto.shop.Product.prototype.setTracker = function(value) {
-  jspb.Message.setWrapperField(this, 17, value);
+  jspb.Message.setWrapperField(this, 13, value);
 };
 
 
@@ -1732,7 +1927,7 @@ proto.shop.Product.prototype.clearTracker = function() {
  * @return {!boolean}
  */
 proto.shop.Product.prototype.hasTracker = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
@@ -2497,7 +2692,7 @@ proto.shop.Cart.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.shop.Reminder.deserializeBinaryFromReader);
       msg.setReminder(value);
       break;
-    case 16:
+    case 4:
       var value = new time_time_pb.Tracker;
       reader.readMessage(value,time_time_pb.Tracker.deserializeBinaryFromReader);
       msg.setTracker(value);
@@ -2557,7 +2752,7 @@ proto.shop.Cart.serializeBinaryToWriter = function(message, writer) {
   f = message.getTracker();
   if (f != null) {
     writer.writeMessage(
-      16,
+      4,
       f,
       time_time_pb.Tracker.serializeBinaryToWriter
     );
@@ -2642,18 +2837,18 @@ proto.shop.Cart.prototype.hasReminder = function() {
 
 
 /**
- * optional time.Tracker tracker = 16;
+ * optional time.Tracker tracker = 4;
  * @return {?proto.time.Tracker}
  */
 proto.shop.Cart.prototype.getTracker = function() {
   return /** @type{?proto.time.Tracker} */ (
-    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 16));
+    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 4));
 };
 
 
 /** @param {?proto.time.Tracker|undefined} value */
 proto.shop.Cart.prototype.setTracker = function(value) {
-  jspb.Message.setWrapperField(this, 16, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -2667,7 +2862,7 @@ proto.shop.Cart.prototype.clearTracker = function() {
  * @return {!boolean}
  */
 proto.shop.Cart.prototype.hasTracker = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -2848,6 +3043,17 @@ proto.shop.ProductType = {
   CONTRACT: 1,
   PRODUCT: 2,
   DIGITAL: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.shop.Rating = {
+  EXCELLENT: 0,
+  GOOD: 1,
+  AVERAGE: 2,
+  POOR: 3,
+  BAD: 4
 };
 
 /**

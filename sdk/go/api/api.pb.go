@@ -9,7 +9,9 @@ import (
 	auth "github.com/autom8ter/api/sdk/go/auth"
 	blob "github.com/autom8ter/api/sdk/go/blob"
 	documents "github.com/autom8ter/api/sdk/go/documents"
+	errors "github.com/autom8ter/api/sdk/go/errors"
 	images "github.com/autom8ter/api/sdk/go/images"
+	os "github.com/autom8ter/api/sdk/go/os"
 	sms "github.com/autom8ter/api/sdk/go/sms"
 	streaming "github.com/autom8ter/api/sdk/go/streaming"
 	strings "github.com/autom8ter/api/sdk/go/strings"
@@ -34,64 +36,74 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 func init() { proto.RegisterFile("api/api.proto", fileDescriptor_1b40cafcd4234784) }
 
 var fileDescriptor_1b40cafcd4234784 = []byte{
-	// 912 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x96, 0x4d, 0x8f, 0xdb, 0x44,
-	0x18, 0xc7, 0x13, 0x68, 0xb3, 0xec, 0x93, 0x4d, 0xda, 0xce, 0x76, 0xbb, 0x9b, 0x50, 0x01, 0x0a,
-	0x97, 0x1e, 0x90, 0xbd, 0x0a, 0x2a, 0xa8, 0x5a, 0xb1, 0xd5, 0x36, 0xa9, 0xc2, 0x0a, 0x56, 0x85,
-	0xb8, 0x2f, 0x27, 0x0e, 0x13, 0xe7, 0x21, 0x6b, 0xd6, 0xf6, 0x18, 0xcf, 0x64, 0x45, 0x8e, 0x1c,
-	0xb9, 0x21, 0xf1, 0x91, 0x10, 0xdf, 0x88, 0x0f, 0x50, 0x79, 0x5e, 0xec, 0xf1, 0x4b, 0xd2, 0x4b,
-	0x62, 0xff, 0xff, 0xcf, 0xff, 0xe7, 0x99, 0xc9, 0x33, 0x13, 0x43, 0x8f, 0x26, 0x81, 0x4b, 0x93,
-	0xc0, 0x49, 0x52, 0x26, 0x18, 0xf9, 0x98, 0x26, 0xc1, 0xf0, 0xf1, 0x8a, 0xb1, 0x55, 0x88, 0xae,
-	0xb4, 0xe2, 0x98, 0x09, 0x2a, 0x02, 0x16, 0x73, 0x55, 0x32, 0xbc, 0x47, 0xd7, 0xe2, 0xda, 0xcd,
-	0x3e, 0xb4, 0x40, 0x16, 0x21, 0x5b, 0xb8, 0x5c, 0xb0, 0x94, 0xae, 0x50, 0x6b, 0x87, 0x41, 0x44,
-	0x57, 0xc8, 0x5d, 0xf5, 0xa5, 0xc5, 0x1e, 0x8f, 0xb8, 0xcb, 0x23, 0x73, 0xfb, 0xe0, 0x96, 0x05,
-	0x3e, 0xba, 0xf2, 0x53, 0x4b, 0x83, 0x25, 0xf3, 0xd7, 0x11, 0xc6, 0x82, 0xbb, 0xf9, 0x95, 0xb6,
-	0x8e, 0xb8, 0x48, 0x83, 0x78, 0xc5, 0x5d, 0xfd, 0x6d, 0x12, 0x5c, 0xa4, 0x48, 0xa3, 0x20, 0x5e,
-	0xb9, 0xf9, 0x95, 0xb2, 0xc6, 0x7f, 0xde, 0x81, 0xee, 0xc5, 0x5a, 0x5c, 0x7b, 0x98, 0xde, 0x06,
-	0x3e, 0x92, 0xaf, 0x00, 0x26, 0x29, 0x52, 0x81, 0x6f, 0x38, 0xa6, 0x04, 0x1c, 0x39, 0x85, 0xec,
-	0x7a, 0x78, 0xbf, 0xb8, 0x9e, 0xa3, 0xcf, 0xd2, 0xe5, 0xa8, 0x45, 0x9e, 0x40, 0xe7, 0x4d, 0xb2,
-	0xa4, 0x02, 0x3f, 0x58, 0xf9, 0x2d, 0xc0, 0x14, 0x43, 0xd4, 0xdc, 0x63, 0x55, 0x51, 0x28, 0x73,
-	0xfc, 0x7d, 0x8d, 0x5c, 0x0c, 0xfb, 0x8e, 0x19, 0xf9, 0xcb, 0x28, 0x11, 0x9b, 0x51, 0x8b, 0x9c,
-	0xc2, 0xde, 0x0c, 0x85, 0x4c, 0x3d, 0x50, 0x29, 0x7d, 0xfb, 0x62, 0x73, 0x39, 0x6d, 0x7c, 0xd4,
-	0x77, 0xd0, 0xf3, 0x54, 0xc9, 0x24, 0xa4, 0x41, 0xc4, 0xc9, 0x50, 0x15, 0x95, 0xc4, 0xed, 0x0f,
-	0x9c, 0x42, 0x77, 0xb2, 0xe6, 0x82, 0x45, 0xaf, 0xd9, 0x0d, 0xc6, 0xe4, 0x44, 0x85, 0x2d, 0xc9,
-	0x44, 0x07, 0x0d, 0x0e, 0x4f, 0x58, 0xcc, 0x71, 0xd4, 0x22, 0x67, 0xd0, 0x9d, 0xe3, 0x2d, 0xbb,
-	0xc1, 0x12, 0xc5, 0x92, 0x0c, 0xa5, 0x69, 0x06, 0xdf, 0x40, 0xf7, 0x2d, 0xa6, 0xc1, 0xaf, 0x9b,
-	0x52, 0xd8, 0x92, 0x4c, 0xb8, 0xab, 0x1c, 0xa9, 0x8d, 0x5a, 0xe4, 0x29, 0x7c, 0xa2, 0x17, 0x87,
-	0x13, 0x52, 0x70, 0xf3, 0xc9, 0x1e, 0x5a, 0xda, 0xa5, 0xc0, 0x94, 0x0a, 0x96, 0x8e, 0x5a, 0xe3,
-	0x1f, 0xa0, 0xef, 0xa9, 0xc6, 0x34, 0x5d, 0xf0, 0x0c, 0x0e, 0x54, 0x17, 0xbc, 0x5a, 0xfc, 0x86,
-	0xbe, 0x20, 0x03, 0x27, 0x6b, 0x5f, 0xc7, 0xd6, 0x0c, 0xf3, 0x40, 0x59, 0x4a, 0x1c, 0xb5, 0xc6,
-	0xff, 0xb5, 0xe1, 0xe0, 0x32, 0xb2, 0x58, 0x4f, 0xe1, 0x6e, 0x46, 0x47, 0x32, 0x70, 0x74, 0xa3,
-	0x2b, 0x3b, 0xd3, 0x0c, 0xa4, 0x57, 0xb2, 0x46, 0xad, 0xd3, 0x36, 0x99, 0xc0, 0xbe, 0x2c, 0xf1,
-	0x36, 0xb1, 0xbf, 0x2b, 0x5a, 0xb1, 0x36, 0xb1, 0x6f, 0xfd, 0x0a, 0xcf, 0xa0, 0xa3, 0x7a, 0x8c,
-	0x1c, 0x99, 0x32, 0x75, 0x6f, 0xd2, 0x8f, 0xaa, 0xb2, 0x89, 0x8e, 0xff, 0x6f, 0xc3, 0xc1, 0xdb,
-	0x6c, 0xd7, 0x99, 0x79, 0x3c, 0x87, 0xfe, 0x0c, 0xc5, 0x84, 0x86, 0xa1, 0x51, 0x8e, 0x1c, 0xb5,
-	0x2d, 0xb5, 0x6c, 0x98, 0x0f, 0xb5, 0x2c, 0xd3, 0xd6, 0x60, 0x7e, 0x86, 0xe3, 0xac, 0xec, 0x5d,
-	0x20, 0xae, 0xb3, 0xef, 0x05, 0xf5, 0x6f, 0x0c, 0xe9, 0x33, 0x1d, 0xa9, 0xfa, 0x1f, 0x42, 0xfe,
-	0x04, 0x43, 0x13, 0xb9, 0x48, 0x92, 0x30, 0xf0, 0xe5, 0x21, 0x64, 0xa8, 0xc3, 0x0a, 0xd5, 0x2a,
-	0xd9, 0x46, 0x1c, 0xff, 0xf3, 0x11, 0x80, 0x77, 0xe5, 0x15, 0x8d, 0xd0, 0xf7, 0x30, 0x5e, 0x7a,
-	0x11, 0x37, 0xca, 0xa1, 0x93, 0x1d, 0x4e, 0x52, 0xbc, 0xf2, 0x8a, 0x26, 0x96, 0x62, 0x26, 0x58,
-	0x6b, 0x2f, 0xa3, 0x57, 0x4d, 0xd1, 0xab, 0xdd, 0xd1, 0x57, 0x30, 0xd0, 0x4f, 0x95, 0x8b, 0xc1,
-	0x92, 0x20, 0x64, 0xa2, 0x58, 0x2b, 0x6b, 0x00, 0x96, 0xbf, 0x0b, 0x78, 0x0e, 0x0f, 0x67, 0x28,
-	0xbc, 0x7c, 0xdb, 0x1b, 0x16, 0x91, 0xb5, 0x99, 0xb5, 0x73, 0x40, 0xe3, 0x7f, 0x3b, 0x70, 0x6f,
-	0xaa, 0xcf, 0xda, 0xa2, 0x1f, 0xf6, 0xd5, 0x7e, 0x98, 0x32, 0x9f, 0x7c, 0xea, 0x14, 0x47, 0x71,
-	0xae, 0x16, 0xdb, 0xae, 0x30, 0x0d, 0x65, 0xd4, 0x22, 0xcf, 0xa1, 0x33, 0x43, 0x91, 0xa5, 0x4f,
-	0xac, 0x02, 0x25, 0x15, 0xdd, 0x5d, 0x77, 0xf2, 0x59, 0x7d, 0x0f, 0xfb, 0x33, 0x14, 0x17, 0x61,
-	0x58, 0x1d, 0x41, 0xae, 0x1a, 0xcc, 0xe3, 0x66, 0xd3, 0x26, 0xa9, 0x0d, 0x50, 0x25, 0xe5, 0x6a,
-	0x13, 0xc9, 0x32, 0x6d, 0x92, 0xfa, 0x47, 0xa8, 0x92, 0x72, 0xb5, 0x89, 0x64, 0x99, 0x39, 0xe9,
-	0x17, 0xb8, 0xaf, 0x56, 0x72, 0xc2, 0xc2, 0x10, 0xfd, 0xac, 0x6b, 0xc9, 0xa8, 0xb6, 0xcc, 0x85,
-	0x69, 0xb8, 0x5f, 0xee, 0xac, 0xc9, 0xf1, 0xaf, 0xa1, 0x97, 0xed, 0xdb, 0x82, 0xfd, 0x79, 0x79,
-	0x8d, 0xea, 0xe0, 0x2f, 0xb6, 0x17, 0xd8, 0x83, 0x56, 0xeb, 0xbb, 0x65, 0xd0, 0x55, 0xb3, 0x69,
-	0xd0, 0xf5, 0x1a, 0x1b, 0xaf, 0x16, 0x7d, 0x0b, 0xbe, 0x6a, 0x36, 0xe1, 0xeb, 0x35, 0x36, 0x5e,
-	0xfd, 0x12, 0x5b, 0xf0, 0x55, 0xb3, 0x09, 0x5f, 0xaf, 0xc9, 0x77, 0xd1, 0x8f, 0xd0, 0x9b, 0x63,
-	0xbc, 0xc4, 0xd4, 0x6c, 0xa1, 0x33, 0xe8, 0x28, 0x81, 0x3c, 0xca, 0xff, 0x86, 0x95, 0x60, 0xc8,
-	0xc7, 0x35, 0x3d, 0xa7, 0xfd, 0xd5, 0x06, 0x78, 0xb1, 0x11, 0xe8, 0xc9, 0x37, 0x1a, 0x72, 0x06,
-	0x77, 0xe6, 0x48, 0x97, 0x8a, 0xa4, 0x5f, 0x71, 0x32, 0xa1, 0x44, 0x2a, 0xe9, 0x86, 0x74, 0xda,
-	0x26, 0xe7, 0x70, 0xf7, 0x5d, 0x1a, 0x08, 0x24, 0x76, 0x95, 0x54, 0x4c, 0xfc, 0xa4, 0x6e, 0x98,
-	0xfc, 0x93, 0xf6, 0xf8, 0xef, 0x36, 0xf4, 0x3d, 0x9f, 0xc6, 0x71, 0x31, 0xb7, 0x73, 0xd8, 0x9b,
-	0x63, 0x12, 0x52, 0x5f, 0x43, 0xf5, 0x24, 0xa4, 0x52, 0x82, 0x96, 0x0d, 0xeb, 0xc8, 0xda, 0x7b,
-	0xf9, 0x87, 0x48, 0xa9, 0x2f, 0xac, 0xbc, 0x56, 0xea, 0xf9, 0xdc, 0x30, 0xf9, 0x45, 0x47, 0xbe,
-	0xdf, 0x7d, 0xfd, 0x3e, 0x00, 0x00, 0xff, 0xff, 0x77, 0xb0, 0xb2, 0xe5, 0xbc, 0x0a, 0x00, 0x00,
+	// 1068 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x57, 0xdd, 0x6e, 0xe3, 0x44,
+	0x18, 0x4d, 0xba, 0xb4, 0xa5, 0x5f, 0x92, 0x6e, 0x3b, 0xdd, 0xfe, 0x85, 0x15, 0xa0, 0xc0, 0xc5,
+	0x5e, 0x20, 0xbb, 0x0a, 0x2c, 0xd2, 0x52, 0xd4, 0x55, 0x9b, 0xae, 0x4a, 0x25, 0xaa, 0x85, 0x78,
+	0x7f, 0xae, 0xf6, 0xc2, 0x71, 0x3e, 0x52, 0x53, 0xc7, 0x63, 0x3c, 0x93, 0x8a, 0x3c, 0x02, 0x77,
+	0x48, 0xbc, 0x12, 0x5c, 0x70, 0xc3, 0x5b, 0xf0, 0x00, 0x48, 0x3c, 0x00, 0xf2, 0xfc, 0x79, 0xfc,
+	0x93, 0x84, 0x9b, 0xda, 0x3e, 0xe7, 0x3b, 0xc7, 0xdf, 0x1c, 0x4f, 0x66, 0xa6, 0xd0, 0xf1, 0x93,
+	0xd0, 0xf5, 0x93, 0xd0, 0x49, 0x52, 0xca, 0x29, 0x79, 0xe0, 0x27, 0x61, 0xf7, 0xf1, 0x84, 0xd2,
+	0x49, 0x84, 0xae, 0xa0, 0xe2, 0x98, 0x72, 0x9f, 0x87, 0x34, 0x66, 0xb2, 0xa4, 0xfb, 0xd0, 0x9f,
+	0xf1, 0x5b, 0x37, 0xfb, 0xa3, 0x00, 0x32, 0x8a, 0xe8, 0xc8, 0x65, 0x9c, 0xa6, 0xfe, 0x04, 0x15,
+	0xb6, 0x17, 0x4e, 0xfd, 0x09, 0x32, 0x57, 0x5e, 0x14, 0xd8, 0x61, 0x53, 0xe6, 0xb2, 0xa9, 0x7e,
+	0xdc, 0xbd, 0xa7, 0x61, 0x80, 0xae, 0xf8, 0xab, 0xa0, 0xe3, 0x31, 0x0d, 0x66, 0x53, 0x8c, 0x39,
+	0x73, 0xcd, 0x9d, 0xa2, 0xf6, 0x19, 0x4f, 0xc3, 0x78, 0xc2, 0x5c, 0x75, 0xd5, 0x0a, 0xc6, 0x53,
+	0xf4, 0xa7, 0x61, 0x3c, 0x71, 0xcd, 0x9d, 0xee, 0x01, 0xd3, 0x94, 0xa6, 0xcc, 0x95, 0x17, 0x05,
+	0xb6, 0x28, 0x73, 0xa9, 0x7a, 0xe8, 0xff, 0xbe, 0x06, 0xad, 0xd7, 0x0c, 0x53, 0x0f, 0xd3, 0xfb,
+	0x30, 0x40, 0xf2, 0x19, 0xc0, 0x20, 0x45, 0x9f, 0x63, 0x06, 0x12, 0x70, 0xc4, 0x20, 0xb3, 0xfb,
+	0xee, 0x4e, 0x7e, 0x3f, 0xc4, 0x80, 0xa6, 0xe3, 0x5e, 0x83, 0x3c, 0x81, 0x8d, 0xd7, 0xc9, 0xd8,
+	0xe7, 0xb8, 0xb2, 0xf2, 0x4b, 0x80, 0x4b, 0x8c, 0x50, 0xf9, 0x1e, 0xca, 0x8a, 0x1c, 0x19, 0xe2,
+	0x4f, 0x33, 0x64, 0xbc, 0xdb, 0x71, 0x54, 0xab, 0x2f, 0xb2, 0x4b, 0xaf, 0x41, 0x4e, 0x60, 0xf3,
+	0x0a, 0xb9, 0x10, 0xed, 0x4a, 0x91, 0x7a, 0xbc, 0x98, 0x5f, 0x5f, 0xd6, 0xbe, 0xe9, 0x29, 0xbc,
+	0xaf, 0x4a, 0x18, 0x21, 0x39, 0xcf, 0xf4, 0x2b, 0xf6, 0x2c, 0xec, 0x9a, 0x63, 0xea, 0x73, 0xf1,
+	0xa2, 0xaf, 0xa1, 0xe3, 0x49, 0xd9, 0x20, 0xf2, 0xc3, 0x29, 0x23, 0x5d, 0x59, 0x57, 0x00, 0x17,
+	0xb5, 0xd9, 0xff, 0xb3, 0x09, 0xed, 0x57, 0xf4, 0x0e, 0x63, 0x9d, 0xe3, 0x25, 0xb4, 0x06, 0x33,
+	0xc6, 0xe9, 0x54, 0xa0, 0xe4, 0x48, 0x9a, 0x59, 0x90, 0xb6, 0x3a, 0xae, 0x61, 0x58, 0x42, 0x63,
+	0x86, 0xbd, 0x06, 0x39, 0x85, 0xd6, 0x10, 0xef, 0xe9, 0x1d, 0x16, 0x5c, 0x2c, 0x48, 0xbb, 0xd4,
+	0x47, 0xde, 0x7a, 0x83, 0x69, 0xf8, 0xc3, 0xbc, 0x20, 0xb6, 0x20, 0x2d, 0x6e, 0x49, 0x46, 0x60,
+	0xbd, 0x46, 0xff, 0xaf, 0x35, 0xe8, 0xbc, 0x1c, 0xfd, 0x88, 0x01, 0xd7, 0x83, 0x39, 0x87, 0xb6,
+	0x9c, 0x14, 0x12, 0x26, 0xc7, 0x4e, 0x36, 0xdf, 0x1d, 0x1b, 0xd3, 0x5e, 0x8f, 0x24, 0xa5, 0x41,
+	0x6b, 0x24, 0x5b, 0x57, 0xc8, 0x95, 0xfe, 0x40, 0x16, 0x19, 0x60, 0x95, 0xf8, 0x0c, 0xc0, 0xd4,
+	0x32, 0x72, 0x58, 0x52, 0x9b, 0xaf, 0xb2, 0x6f, 0xcb, 0x99, 0xa5, 0x3f, 0x87, 0xb6, 0x9c, 0xa6,
+	0xc5, 0xfe, 0x6d, 0x6c, 0x55, 0x0b, 0x5f, 0x41, 0x5b, 0xce, 0xd6, 0xa2, 0x85, 0x8d, 0x2d, 0x9c,
+	0x1c, 0x59, 0xa0, 0x17, 0xb3, 0xe0, 0x0e, 0xab, 0x81, 0x4a, 0xb8, 0x18, 0xa8, 0xc4, 0x4a, 0x0d,
+	0x69, 0xb0, 0x14, 0xa8, 0xd2, 0xe7, 0x81, 0xfe, 0x3f, 0xb1, 0x0c, 0x54, 0xc2, 0x76, 0xa0, 0x0a,
+	0x29, 0x05, 0x6a, 0xd0, 0x6a, 0xa0, 0xc5, 0xfe, 0x6d, 0x6c, 0x55, 0x0b, 0x26, 0xd0, 0xa2, 0x85,
+	0x8d, 0x2d, 0x0c, 0xf4, 0x8f, 0x26, 0xb4, 0xaf, 0xb3, 0x65, 0x55, 0xe7, 0xf9, 0x14, 0xd6, 0x3d,
+	0x4e, 0x53, 0x24, 0xc7, 0x8e, 0x5a, 0x6e, 0x25, 0x9d, 0x61, 0xb9, 0x8b, 0x4d, 0xf5, 0x1a, 0x27,
+	0x4d, 0x32, 0x80, 0x2d, 0x51, 0xe2, 0xcd, 0xe3, 0x60, 0x99, 0xb4, 0x44, 0xcd, 0xe3, 0xc0, 0x1a,
+	0xc8, 0x33, 0xd8, 0x90, 0x4d, 0x93, 0x7d, 0x5d, 0x26, 0x9f, 0xb5, 0xfa, 0xa0, 0x0c, 0x6b, 0x69,
+	0xff, 0xdf, 0x26, 0xb4, 0xdf, 0x64, 0x6b, 0xbf, 0x1e, 0xc7, 0x73, 0xd8, 0xbe, 0x42, 0x3e, 0xf0,
+	0xa3, 0x48, 0x23, 0xfb, 0x8e, 0xdc, 0x1c, 0x14, 0x9c, 0xa7, 0x2a, 0x61, 0xa1, 0xb6, 0x9a, 0xf9,
+	0x1e, 0x0e, 0xb3, 0xb2, 0xb7, 0x21, 0xbf, 0xcd, 0xae, 0x23, 0x3f, 0xb8, 0xd3, 0x4e, 0x1f, 0x2a,
+	0x49, 0x99, 0x5f, 0x65, 0xf9, 0x1d, 0x74, 0xb5, 0xe4, 0x3c, 0x49, 0xa2, 0x30, 0x10, 0x5b, 0xa1,
+	0x76, 0xed, 0x96, 0x5c, 0xad, 0x92, 0x45, 0x8e, 0xfd, 0xdf, 0xd6, 0x00, 0xbc, 0x1b, 0x4f, 0x5b,
+	0x3c, 0x83, 0x6d, 0x0f, 0xe3, 0xb1, 0x37, 0x65, 0x1a, 0xd9, 0x73, 0xb2, 0x2d, 0x52, 0x80, 0x37,
+	0x5e, 0xbe, 0xc4, 0x09, 0x30, 0x03, 0xac, 0xec, 0x85, 0xf4, 0xa6, 0x4e, 0x7a, 0xb3, 0x5c, 0xfa,
+	0x12, 0x8e, 0xd5, 0x5b, 0x45, 0x18, 0x34, 0x09, 0x23, 0xca, 0xf3, 0xac, 0xac, 0x06, 0x2c, 0x7e,
+	0x99, 0xe1, 0x19, 0x3c, 0xba, 0x42, 0xee, 0x99, 0x4d, 0x42, 0x7b, 0x11, 0x51, 0x9b, 0x51, 0x4b,
+	0x1b, 0xea, 0xff, 0xb3, 0x06, 0x0f, 0x2f, 0xd5, 0x8e, 0x9f, 0xcf, 0x87, 0x2d, 0xb9, 0x26, 0x5c,
+	0xd2, 0x80, 0x7c, 0xe0, 0xe4, 0x07, 0x02, 0x83, 0xe6, 0xbb, 0x5a, 0x4e, 0x6a, 0x97, 0x5e, 0x83,
+	0x3c, 0x87, 0x8d, 0x2b, 0xe4, 0x99, 0xfa, 0xc8, 0x2a, 0x90, 0x50, 0x3e, 0xbb, 0xab, 0x8c, 0x19,
+	0xd5, 0x37, 0x62, 0x99, 0x39, 0x8f, 0xa2, 0x72, 0x07, 0x06, 0xd5, 0x36, 0x8f, 0xeb, 0x49, 0xdb,
+	0x49, 0xfe, 0x00, 0xca, 0x4e, 0x06, 0xad, 0x73, 0xb2, 0x48, 0xdb, 0x49, 0xae, 0x34, 0x65, 0x27,
+	0x83, 0xd6, 0x39, 0x59, 0xa4, 0xc9, 0xfc, 0xef, 0x07, 0xb0, 0x3b, 0xa0, 0x51, 0x84, 0x81, 0x3d,
+	0xa7, 0xdf, 0xc1, 0x8e, 0xcc, 0x37, 0xa7, 0x48, 0xaf, 0x12, 0x7e, 0x4e, 0xea, 0xb7, 0x7d, 0xb2,
+	0xb4, 0xc6, 0xb4, 0xff, 0x0a, 0x3a, 0xd9, 0xaf, 0x39, 0xf7, 0xfe, 0xa8, 0x98, 0x5c, 0xd5, 0xf8,
+	0xe3, 0xc5, 0x05, 0xc6, 0xf5, 0x1d, 0xec, 0xc8, 0xd4, 0x17, 0x34, 0x5d, 0x26, 0xeb, 0x9a, 0xae,
+	0xd6, 0xd8, 0xf6, 0xf2, 0x53, 0x2c, 0xb0, 0x2f, 0x93, 0x75, 0xf6, 0xd5, 0x1a, 0xdb, 0x5e, 0x7e,
+	0x9f, 0x05, 0xf6, 0x65, 0xb2, 0xce, 0xbe, 0x5a, 0x63, 0xbe, 0xf3, 0xb7, 0xd0, 0x19, 0x62, 0x3c,
+	0xce, 0x8f, 0xb9, 0xa7, 0xb0, 0x21, 0x01, 0x72, 0xe0, 0xe8, 0xd3, 0xb4, 0x04, 0xb4, 0xf3, 0x61,
+	0x05, 0x37, 0x6e, 0xbf, 0x34, 0x01, 0x2e, 0xe6, 0x1c, 0x3d, 0x71, 0xda, 0x26, 0xa7, 0xf0, 0xde,
+	0x10, 0xfd, 0xb1, 0x74, 0x52, 0xc7, 0xef, 0x0c, 0x28, 0x38, 0x15, 0x70, 0xed, 0x74, 0xd2, 0x24,
+	0x67, 0xb0, 0xfe, 0x36, 0x0d, 0x39, 0x12, 0xbb, 0x4a, 0x20, 0x5a, 0x7e, 0x54, 0x25, 0xb4, 0xfe,
+	0x49, 0xb3, 0xff, 0x6b, 0x13, 0xb6, 0xbd, 0xc0, 0x8f, 0xe3, 0x7c, 0x6c, 0x67, 0xb0, 0x39, 0xc4,
+	0x24, 0xf2, 0x03, 0x65, 0xaa, 0x06, 0x21, 0x90, 0x82, 0x69, 0x91, 0xb0, 0x16, 0xb2, 0xcd, 0x17,
+	0x3f, 0xf3, 0xd4, 0x0f, 0xb8, 0xa5, 0x57, 0x48, 0x55, 0x6f, 0x08, 0x13, 0xcf, 0x17, 0xd0, 0xf6,
+	0x6e, 0x31, 0xdf, 0xc2, 0x3e, 0x85, 0x75, 0xf1, 0x4c, 0x36, 0x1d, 0xca, 0x9c, 0xc1, 0x74, 0xdc,
+	0xdd, 0x36, 0xea, 0x2c, 0x46, 0x96, 0x05, 0x31, 0xda, 0x10, 0xff, 0x8f, 0x7c, 0xfe, 0x5f, 0x00,
+	0x00, 0x00, 0xff, 0xff, 0xb9, 0x99, 0x13, 0x46, 0x8e, 0x0d, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -102,392 +114,751 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// AuthServiceClient is the client API for AuthService service.
+// UserServiceClient is the client API for UserService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AuthServiceClient interface {
+type UserServiceClient interface {
 	CreateUser(ctx context.Context, in *auth.User, opts ...grpc.CallOption) (*auth.UserRecord, error)
 	Update(ctx context.Context, in *auth.User, opts ...grpc.CallOption) (*auth.UserRecord, error)
-	DeleteUser(ctx context.Context, in *auth.DeleteUserRequest, opts ...grpc.CallOption) (*strings.Empty, error)
+	DeleteUser(ctx context.Context, in *auth.DeleteUserRequest, opts ...grpc.CallOption) (*errors.Error, error)
 	GetUser(ctx context.Context, in *auth.GetUserByID, opts ...grpc.CallOption) (*auth.UserRecord, error)
-	SetUserClaims(ctx context.Context, in *auth.SetUserClaimsRequest, opts ...grpc.CallOption) (*strings.Empty, error)
-	CustomToken(ctx context.Context, in *auth.CustomTokenRequest, opts ...grpc.CallOption) (*auth.CustomTokenResponse, error)
-	RevokeToken(ctx context.Context, in *auth.RevokeTokenRequest, opts ...grpc.CallOption) (*auth.UserRecord, error)
-	VerifyToken(ctx context.Context, in *auth.VerifyTokenRequest, opts ...grpc.CallOption) (*auth.Token, error)
 	GetUsers(ctx context.Context, in *auth.UsersRequest, opts ...grpc.CallOption) (*auth.UsersIterator, error)
+	SetUserClaims(ctx context.Context, in *auth.SetUserClaimsRequest, opts ...grpc.CallOption) (*errors.Error, error)
 }
 
-type authServiceClient struct {
+type userServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewAuthServiceClient(cc *grpc.ClientConn) AuthServiceClient {
-	return &authServiceClient{cc}
+func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient {
+	return &userServiceClient{cc}
 }
 
-func (c *authServiceClient) CreateUser(ctx context.Context, in *auth.User, opts ...grpc.CallOption) (*auth.UserRecord, error) {
+func (c *userServiceClient) CreateUser(ctx context.Context, in *auth.User, opts ...grpc.CallOption) (*auth.UserRecord, error) {
 	out := new(auth.UserRecord)
-	err := c.cc.Invoke(ctx, "/api.AuthService/CreateUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UserService/CreateUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServiceClient) Update(ctx context.Context, in *auth.User, opts ...grpc.CallOption) (*auth.UserRecord, error) {
+func (c *userServiceClient) Update(ctx context.Context, in *auth.User, opts ...grpc.CallOption) (*auth.UserRecord, error) {
 	out := new(auth.UserRecord)
-	err := c.cc.Invoke(ctx, "/api.AuthService/Update", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UserService/Update", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServiceClient) DeleteUser(ctx context.Context, in *auth.DeleteUserRequest, opts ...grpc.CallOption) (*strings.Empty, error) {
-	out := new(strings.Empty)
-	err := c.cc.Invoke(ctx, "/api.AuthService/DeleteUser", in, out, opts...)
+func (c *userServiceClient) DeleteUser(ctx context.Context, in *auth.DeleteUserRequest, opts ...grpc.CallOption) (*errors.Error, error) {
+	out := new(errors.Error)
+	err := c.cc.Invoke(ctx, "/api.UserService/DeleteUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServiceClient) GetUser(ctx context.Context, in *auth.GetUserByID, opts ...grpc.CallOption) (*auth.UserRecord, error) {
+func (c *userServiceClient) GetUser(ctx context.Context, in *auth.GetUserByID, opts ...grpc.CallOption) (*auth.UserRecord, error) {
 	out := new(auth.UserRecord)
-	err := c.cc.Invoke(ctx, "/api.AuthService/GetUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UserService/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *authServiceClient) SetUserClaims(ctx context.Context, in *auth.SetUserClaimsRequest, opts ...grpc.CallOption) (*strings.Empty, error) {
-	out := new(strings.Empty)
-	err := c.cc.Invoke(ctx, "/api.AuthService/SetUserClaims", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *authServiceClient) CustomToken(ctx context.Context, in *auth.CustomTokenRequest, opts ...grpc.CallOption) (*auth.CustomTokenResponse, error) {
-	out := new(auth.CustomTokenResponse)
-	err := c.cc.Invoke(ctx, "/api.AuthService/CustomToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *authServiceClient) RevokeToken(ctx context.Context, in *auth.RevokeTokenRequest, opts ...grpc.CallOption) (*auth.UserRecord, error) {
-	out := new(auth.UserRecord)
-	err := c.cc.Invoke(ctx, "/api.AuthService/RevokeToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *authServiceClient) VerifyToken(ctx context.Context, in *auth.VerifyTokenRequest, opts ...grpc.CallOption) (*auth.Token, error) {
-	out := new(auth.Token)
-	err := c.cc.Invoke(ctx, "/api.AuthService/VerifyToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *authServiceClient) GetUsers(ctx context.Context, in *auth.UsersRequest, opts ...grpc.CallOption) (*auth.UsersIterator, error) {
+func (c *userServiceClient) GetUsers(ctx context.Context, in *auth.UsersRequest, opts ...grpc.CallOption) (*auth.UsersIterator, error) {
 	out := new(auth.UsersIterator)
-	err := c.cc.Invoke(ctx, "/api.AuthService/GetUsers", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UserService/GetUsers", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AuthServiceServer is the server API for AuthService service.
-type AuthServiceServer interface {
+func (c *userServiceClient) SetUserClaims(ctx context.Context, in *auth.SetUserClaimsRequest, opts ...grpc.CallOption) (*errors.Error, error) {
+	out := new(errors.Error)
+	err := c.cc.Invoke(ctx, "/api.UserService/SetUserClaims", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// UserServiceServer is the server API for UserService service.
+type UserServiceServer interface {
 	CreateUser(context.Context, *auth.User) (*auth.UserRecord, error)
 	Update(context.Context, *auth.User) (*auth.UserRecord, error)
-	DeleteUser(context.Context, *auth.DeleteUserRequest) (*strings.Empty, error)
+	DeleteUser(context.Context, *auth.DeleteUserRequest) (*errors.Error, error)
 	GetUser(context.Context, *auth.GetUserByID) (*auth.UserRecord, error)
-	SetUserClaims(context.Context, *auth.SetUserClaimsRequest) (*strings.Empty, error)
-	CustomToken(context.Context, *auth.CustomTokenRequest) (*auth.CustomTokenResponse, error)
-	RevokeToken(context.Context, *auth.RevokeTokenRequest) (*auth.UserRecord, error)
-	VerifyToken(context.Context, *auth.VerifyTokenRequest) (*auth.Token, error)
 	GetUsers(context.Context, *auth.UsersRequest) (*auth.UsersIterator, error)
+	SetUserClaims(context.Context, *auth.SetUserClaimsRequest) (*errors.Error, error)
 }
 
-func RegisterAuthServiceServer(s *grpc.Server, srv AuthServiceServer) {
-	s.RegisterService(&_AuthService_serviceDesc, srv)
+func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer) {
+	s.RegisterService(&_UserService_serviceDesc, srv)
 }
 
-func _AuthService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(auth.User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).CreateUser(ctx, in)
+		return srv.(UserServiceServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AuthService/CreateUser",
+		FullMethod: "/api.UserService/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).CreateUser(ctx, req.(*auth.User))
+		return srv.(UserServiceServer).CreateUser(ctx, req.(*auth.User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(auth.User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).Update(ctx, in)
+		return srv.(UserServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AuthService/Update",
+		FullMethod: "/api.UserService/Update",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).Update(ctx, req.(*auth.User))
+		return srv.(UserServiceServer).Update(ctx, req.(*auth.User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(auth.DeleteUserRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).DeleteUser(ctx, in)
+		return srv.(UserServiceServer).DeleteUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AuthService/DeleteUser",
+		FullMethod: "/api.UserService/DeleteUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).DeleteUser(ctx, req.(*auth.DeleteUserRequest))
+		return srv.(UserServiceServer).DeleteUser(ctx, req.(*auth.DeleteUserRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(auth.GetUserByID)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).GetUser(ctx, in)
+		return srv.(UserServiceServer).GetUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AuthService/GetUser",
+		FullMethod: "/api.UserService/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).GetUser(ctx, req.(*auth.GetUserByID))
+		return srv.(UserServiceServer).GetUser(ctx, req.(*auth.GetUserByID))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AuthService_SetUserClaims_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(auth.SetUserClaimsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AuthServiceServer).SetUserClaims(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.AuthService/SetUserClaims",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).SetUserClaims(ctx, req.(*auth.SetUserClaimsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AuthService_CustomToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(auth.CustomTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AuthServiceServer).CustomToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.AuthService/CustomToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).CustomToken(ctx, req.(*auth.CustomTokenRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AuthService_RevokeToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(auth.RevokeTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AuthServiceServer).RevokeToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.AuthService/RevokeToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).RevokeToken(ctx, req.(*auth.RevokeTokenRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AuthService_VerifyToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(auth.VerifyTokenRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AuthServiceServer).VerifyToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.AuthService/VerifyToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).VerifyToken(ctx, req.(*auth.VerifyTokenRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _AuthService_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UserService_GetUsers_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(auth.UsersRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AuthServiceServer).GetUsers(ctx, in)
+		return srv.(UserServiceServer).GetUsers(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.AuthService/GetUsers",
+		FullMethod: "/api.UserService/GetUsers",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthServiceServer).GetUsers(ctx, req.(*auth.UsersRequest))
+		return srv.(UserServiceServer).GetUsers(ctx, req.(*auth.UsersRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _AuthService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.AuthService",
-	HandlerType: (*AuthServiceServer)(nil),
+func _UserService_SetUserClaims_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(auth.SetUserClaimsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).SetUserClaims(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.UserService/SetUserClaims",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).SetUserClaims(ctx, req.(*auth.SetUserClaimsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _UserService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.UserService",
+	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateUser",
-			Handler:    _AuthService_CreateUser_Handler,
+			Handler:    _UserService_CreateUser_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _AuthService_Update_Handler,
+			Handler:    _UserService_Update_Handler,
 		},
 		{
 			MethodName: "DeleteUser",
-			Handler:    _AuthService_DeleteUser_Handler,
+			Handler:    _UserService_DeleteUser_Handler,
 		},
 		{
 			MethodName: "GetUser",
-			Handler:    _AuthService_GetUser_Handler,
-		},
-		{
-			MethodName: "SetUserClaims",
-			Handler:    _AuthService_SetUserClaims_Handler,
-		},
-		{
-			MethodName: "CustomToken",
-			Handler:    _AuthService_CustomToken_Handler,
-		},
-		{
-			MethodName: "RevokeToken",
-			Handler:    _AuthService_RevokeToken_Handler,
-		},
-		{
-			MethodName: "VerifyToken",
-			Handler:    _AuthService_VerifyToken_Handler,
+			Handler:    _UserService_GetUser_Handler,
 		},
 		{
 			MethodName: "GetUsers",
-			Handler:    _AuthService_GetUsers_Handler,
+			Handler:    _UserService_GetUsers_Handler,
+		},
+		{
+			MethodName: "SetUserClaims",
+			Handler:    _UserService_SetUserClaims_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "api/api.proto",
 }
 
-// StorageServiceClient is the client API for StorageService service.
+// TokenServiceClient is the client API for TokenService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type StorageServiceClient interface {
-	CreateObject(ctx context.Context, in *blob.CreateObjectRequest, opts ...grpc.CallOption) (*blob.Object, error)
+type TokenServiceClient interface {
+	CustomToken(ctx context.Context, in *auth.CustomTokenRequest, opts ...grpc.CallOption) (*auth.CustomTokenResponse, error)
+	RevokeToken(ctx context.Context, in *auth.RevokeTokenRequest, opts ...grpc.CallOption) (*auth.UserRecord, error)
+	VerifyToken(ctx context.Context, in *auth.VerifyTokenRequest, opts ...grpc.CallOption) (*auth.Token, error)
 }
 
-type storageServiceClient struct {
+type tokenServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewStorageServiceClient(cc *grpc.ClientConn) StorageServiceClient {
-	return &storageServiceClient{cc}
+func NewTokenServiceClient(cc *grpc.ClientConn) TokenServiceClient {
+	return &tokenServiceClient{cc}
 }
 
-func (c *storageServiceClient) CreateObject(ctx context.Context, in *blob.CreateObjectRequest, opts ...grpc.CallOption) (*blob.Object, error) {
-	out := new(blob.Object)
-	err := c.cc.Invoke(ctx, "/api.StorageService/CreateObject", in, out, opts...)
+func (c *tokenServiceClient) CustomToken(ctx context.Context, in *auth.CustomTokenRequest, opts ...grpc.CallOption) (*auth.CustomTokenResponse, error) {
+	out := new(auth.CustomTokenResponse)
+	err := c.cc.Invoke(ctx, "/api.TokenService/CustomToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// StorageServiceServer is the server API for StorageService service.
-type StorageServiceServer interface {
-	CreateObject(context.Context, *blob.CreateObjectRequest) (*blob.Object, error)
+func (c *tokenServiceClient) RevokeToken(ctx context.Context, in *auth.RevokeTokenRequest, opts ...grpc.CallOption) (*auth.UserRecord, error) {
+	out := new(auth.UserRecord)
+	err := c.cc.Invoke(ctx, "/api.TokenService/RevokeToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
-func RegisterStorageServiceServer(s *grpc.Server, srv StorageServiceServer) {
-	s.RegisterService(&_StorageService_serviceDesc, srv)
+func (c *tokenServiceClient) VerifyToken(ctx context.Context, in *auth.VerifyTokenRequest, opts ...grpc.CallOption) (*auth.Token, error) {
+	out := new(auth.Token)
+	err := c.cc.Invoke(ctx, "/api.TokenService/VerifyToken", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
-func _StorageService_CreateObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+// TokenServiceServer is the server API for TokenService service.
+type TokenServiceServer interface {
+	CustomToken(context.Context, *auth.CustomTokenRequest) (*auth.CustomTokenResponse, error)
+	RevokeToken(context.Context, *auth.RevokeTokenRequest) (*auth.UserRecord, error)
+	VerifyToken(context.Context, *auth.VerifyTokenRequest) (*auth.Token, error)
+}
+
+func RegisterTokenServiceServer(s *grpc.Server, srv TokenServiceServer) {
+	s.RegisterService(&_TokenService_serviceDesc, srv)
+}
+
+func _TokenService_CustomToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(auth.CustomTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TokenServiceServer).CustomToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.TokenService/CustomToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TokenServiceServer).CustomToken(ctx, req.(*auth.CustomTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TokenService_RevokeToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(auth.RevokeTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TokenServiceServer).RevokeToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.TokenService/RevokeToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TokenServiceServer).RevokeToken(ctx, req.(*auth.RevokeTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TokenService_VerifyToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(auth.VerifyTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TokenServiceServer).VerifyToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.TokenService/VerifyToken",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TokenServiceServer).VerifyToken(ctx, req.(*auth.VerifyTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _TokenService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.TokenService",
+	HandlerType: (*TokenServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CustomToken",
+			Handler:    _TokenService_CustomToken_Handler,
+		},
+		{
+			MethodName: "RevokeToken",
+			Handler:    _TokenService_RevokeToken_Handler,
+		},
+		{
+			MethodName: "VerifyToken",
+			Handler:    _TokenService_VerifyToken_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "api/api.proto",
+}
+
+// ObjectServiceClient is the client API for ObjectService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type ObjectServiceClient interface {
+	CreateObject(ctx context.Context, in *blob.CreateObjectRequest, opts ...grpc.CallOption) (*blob.ObjectResponse, error)
+	GetObject(ctx context.Context, in *blob.GetObjectRequest, opts ...grpc.CallOption) (*blob.ObjectResponse, error)
+	GetObjects(ctx context.Context, in *blob.GetObjectsRequest, opts ...grpc.CallOption) (*blob.ObjectsResponse, error)
+	UpdateObject(ctx context.Context, in *blob.UpdateObjectRequest, opts ...grpc.CallOption) (*blob.ObjectResponse, error)
+	DeleteObject(ctx context.Context, in *blob.DeleteObjectRequest, opts ...grpc.CallOption) (*errors.Error, error)
+}
+
+type objectServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewObjectServiceClient(cc *grpc.ClientConn) ObjectServiceClient {
+	return &objectServiceClient{cc}
+}
+
+func (c *objectServiceClient) CreateObject(ctx context.Context, in *blob.CreateObjectRequest, opts ...grpc.CallOption) (*blob.ObjectResponse, error) {
+	out := new(blob.ObjectResponse)
+	err := c.cc.Invoke(ctx, "/api.ObjectService/CreateObject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *objectServiceClient) GetObject(ctx context.Context, in *blob.GetObjectRequest, opts ...grpc.CallOption) (*blob.ObjectResponse, error) {
+	out := new(blob.ObjectResponse)
+	err := c.cc.Invoke(ctx, "/api.ObjectService/GetObject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *objectServiceClient) GetObjects(ctx context.Context, in *blob.GetObjectsRequest, opts ...grpc.CallOption) (*blob.ObjectsResponse, error) {
+	out := new(blob.ObjectsResponse)
+	err := c.cc.Invoke(ctx, "/api.ObjectService/GetObjects", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *objectServiceClient) UpdateObject(ctx context.Context, in *blob.UpdateObjectRequest, opts ...grpc.CallOption) (*blob.ObjectResponse, error) {
+	out := new(blob.ObjectResponse)
+	err := c.cc.Invoke(ctx, "/api.ObjectService/UpdateObject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *objectServiceClient) DeleteObject(ctx context.Context, in *blob.DeleteObjectRequest, opts ...grpc.CallOption) (*errors.Error, error) {
+	out := new(errors.Error)
+	err := c.cc.Invoke(ctx, "/api.ObjectService/DeleteObject", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// ObjectServiceServer is the server API for ObjectService service.
+type ObjectServiceServer interface {
+	CreateObject(context.Context, *blob.CreateObjectRequest) (*blob.ObjectResponse, error)
+	GetObject(context.Context, *blob.GetObjectRequest) (*blob.ObjectResponse, error)
+	GetObjects(context.Context, *blob.GetObjectsRequest) (*blob.ObjectsResponse, error)
+	UpdateObject(context.Context, *blob.UpdateObjectRequest) (*blob.ObjectResponse, error)
+	DeleteObject(context.Context, *blob.DeleteObjectRequest) (*errors.Error, error)
+}
+
+func RegisterObjectServiceServer(s *grpc.Server, srv ObjectServiceServer) {
+	s.RegisterService(&_ObjectService_serviceDesc, srv)
+}
+
+func _ObjectService_CreateObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(blob.CreateObjectRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(StorageServiceServer).CreateObject(ctx, in)
+		return srv.(ObjectServiceServer).CreateObject(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.StorageService/CreateObject",
+		FullMethod: "/api.ObjectService/CreateObject",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StorageServiceServer).CreateObject(ctx, req.(*blob.CreateObjectRequest))
+		return srv.(ObjectServiceServer).CreateObject(ctx, req.(*blob.CreateObjectRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _StorageService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.StorageService",
-	HandlerType: (*StorageServiceServer)(nil),
+func _ObjectService_GetObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.GetObjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObjectServiceServer).GetObject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.ObjectService/GetObject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObjectServiceServer).GetObject(ctx, req.(*blob.GetObjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ObjectService_GetObjects_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.GetObjectsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObjectServiceServer).GetObjects(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.ObjectService/GetObjects",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObjectServiceServer).GetObjects(ctx, req.(*blob.GetObjectsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ObjectService_UpdateObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.UpdateObjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObjectServiceServer).UpdateObject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.ObjectService/UpdateObject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObjectServiceServer).UpdateObject(ctx, req.(*blob.UpdateObjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ObjectService_DeleteObject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.DeleteObjectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ObjectServiceServer).DeleteObject(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.ObjectService/DeleteObject",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ObjectServiceServer).DeleteObject(ctx, req.(*blob.DeleteObjectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _ObjectService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.ObjectService",
+	HandlerType: (*ObjectServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateObject",
-			Handler:    _StorageService_CreateObject_Handler,
+			Handler:    _ObjectService_CreateObject_Handler,
+		},
+		{
+			MethodName: "GetObject",
+			Handler:    _ObjectService_GetObject_Handler,
+		},
+		{
+			MethodName: "GetObjects",
+			Handler:    _ObjectService_GetObjects_Handler,
+		},
+		{
+			MethodName: "UpdateObject",
+			Handler:    _ObjectService_UpdateObject_Handler,
+		},
+		{
+			MethodName: "DeleteObject",
+			Handler:    _ObjectService_DeleteObject_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "api/api.proto",
+}
+
+// BucketServiceClient is the client API for BucketService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type BucketServiceClient interface {
+	CreateBucket(ctx context.Context, in *blob.CreateBucketRequest, opts ...grpc.CallOption) (*blob.BucketResponse, error)
+	GetBucket(ctx context.Context, in *blob.GetBucketRequest, opts ...grpc.CallOption) (*blob.BucketResponse, error)
+	GetBuckets(ctx context.Context, in *blob.GetBucketsRequest, opts ...grpc.CallOption) (*blob.BucketsResponse, error)
+	UpdateBucket(ctx context.Context, in *blob.UpdateBucketRequest, opts ...grpc.CallOption) (*blob.BucketResponse, error)
+	DeleteBucket(ctx context.Context, in *blob.DeleteBucketRequest, opts ...grpc.CallOption) (*errors.Error, error)
+}
+
+type bucketServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewBucketServiceClient(cc *grpc.ClientConn) BucketServiceClient {
+	return &bucketServiceClient{cc}
+}
+
+func (c *bucketServiceClient) CreateBucket(ctx context.Context, in *blob.CreateBucketRequest, opts ...grpc.CallOption) (*blob.BucketResponse, error) {
+	out := new(blob.BucketResponse)
+	err := c.cc.Invoke(ctx, "/api.BucketService/CreateBucket", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bucketServiceClient) GetBucket(ctx context.Context, in *blob.GetBucketRequest, opts ...grpc.CallOption) (*blob.BucketResponse, error) {
+	out := new(blob.BucketResponse)
+	err := c.cc.Invoke(ctx, "/api.BucketService/GetBucket", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bucketServiceClient) GetBuckets(ctx context.Context, in *blob.GetBucketsRequest, opts ...grpc.CallOption) (*blob.BucketsResponse, error) {
+	out := new(blob.BucketsResponse)
+	err := c.cc.Invoke(ctx, "/api.BucketService/GetBuckets", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bucketServiceClient) UpdateBucket(ctx context.Context, in *blob.UpdateBucketRequest, opts ...grpc.CallOption) (*blob.BucketResponse, error) {
+	out := new(blob.BucketResponse)
+	err := c.cc.Invoke(ctx, "/api.BucketService/UpdateBucket", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *bucketServiceClient) DeleteBucket(ctx context.Context, in *blob.DeleteBucketRequest, opts ...grpc.CallOption) (*errors.Error, error) {
+	out := new(errors.Error)
+	err := c.cc.Invoke(ctx, "/api.BucketService/DeleteBucket", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// BucketServiceServer is the server API for BucketService service.
+type BucketServiceServer interface {
+	CreateBucket(context.Context, *blob.CreateBucketRequest) (*blob.BucketResponse, error)
+	GetBucket(context.Context, *blob.GetBucketRequest) (*blob.BucketResponse, error)
+	GetBuckets(context.Context, *blob.GetBucketsRequest) (*blob.BucketsResponse, error)
+	UpdateBucket(context.Context, *blob.UpdateBucketRequest) (*blob.BucketResponse, error)
+	DeleteBucket(context.Context, *blob.DeleteBucketRequest) (*errors.Error, error)
+}
+
+func RegisterBucketServiceServer(s *grpc.Server, srv BucketServiceServer) {
+	s.RegisterService(&_BucketService_serviceDesc, srv)
+}
+
+func _BucketService_CreateBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.CreateBucketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BucketServiceServer).CreateBucket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.BucketService/CreateBucket",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BucketServiceServer).CreateBucket(ctx, req.(*blob.CreateBucketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BucketService_GetBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.GetBucketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BucketServiceServer).GetBucket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.BucketService/GetBucket",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BucketServiceServer).GetBucket(ctx, req.(*blob.GetBucketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BucketService_GetBuckets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.GetBucketsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BucketServiceServer).GetBuckets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.BucketService/GetBuckets",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BucketServiceServer).GetBuckets(ctx, req.(*blob.GetBucketsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BucketService_UpdateBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.UpdateBucketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BucketServiceServer).UpdateBucket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.BucketService/UpdateBucket",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BucketServiceServer).UpdateBucket(ctx, req.(*blob.UpdateBucketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _BucketService_DeleteBucket_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(blob.DeleteBucketRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(BucketServiceServer).DeleteBucket(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.BucketService/DeleteBucket",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(BucketServiceServer).DeleteBucket(ctx, req.(*blob.DeleteBucketRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _BucketService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.BucketService",
+	HandlerType: (*BucketServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateBucket",
+			Handler:    _BucketService_CreateBucket_Handler,
+		},
+		{
+			MethodName: "GetBucket",
+			Handler:    _BucketService_GetBucket_Handler,
+		},
+		{
+			MethodName: "GetBuckets",
+			Handler:    _BucketService_GetBuckets_Handler,
+		},
+		{
+			MethodName: "UpdateBucket",
+			Handler:    _BucketService_UpdateBucket_Handler,
+		},
+		{
+			MethodName: "DeleteBucket",
+			Handler:    _BucketService_DeleteBucket_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -954,11 +1325,6 @@ type DocumentServiceClient interface {
 	GetAllDoc(ctx context.Context, in *documents.GetAllDocRequest, opts ...grpc.CallOption) (*documents.GetAllDocResponse, error)
 	DeleteDoc(ctx context.Context, in *documents.DeleteDocRequest, opts ...grpc.CallOption) (*documents.DeleteDocResponse, error)
 	UpdateDoc(ctx context.Context, in *documents.UpdateDocRequest, opts ...grpc.CallOption) (*documents.UpdateDocResponse, error)
-	CreateCollection(ctx context.Context, in *documents.CreateCollectionRequest, opts ...grpc.CallOption) (*documents.CreateCollectionResponse, error)
-	GetCollection(ctx context.Context, in *documents.GetCollectionRequest, opts ...grpc.CallOption) (*documents.GetCollectionResponse, error)
-	GetAllCollection(ctx context.Context, in *documents.GetAllCollectionRequest, opts ...grpc.CallOption) (*documents.GetAllCollectionResponse, error)
-	DeleteCollection(ctx context.Context, in *documents.DeleteCollectionRequest, opts ...grpc.CallOption) (*documents.DeleteCollectionResponse, error)
-	UpdateCollection(ctx context.Context, in *documents.UpdateCollectionRequest, opts ...grpc.CallOption) (*documents.UpdateCollectionResponse, error)
 }
 
 type documentServiceClient struct {
@@ -1014,51 +1380,6 @@ func (c *documentServiceClient) UpdateDoc(ctx context.Context, in *documents.Upd
 	return out, nil
 }
 
-func (c *documentServiceClient) CreateCollection(ctx context.Context, in *documents.CreateCollectionRequest, opts ...grpc.CallOption) (*documents.CreateCollectionResponse, error) {
-	out := new(documents.CreateCollectionResponse)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/CreateCollection", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) GetCollection(ctx context.Context, in *documents.GetCollectionRequest, opts ...grpc.CallOption) (*documents.GetCollectionResponse, error) {
-	out := new(documents.GetCollectionResponse)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/GetCollection", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) GetAllCollection(ctx context.Context, in *documents.GetAllCollectionRequest, opts ...grpc.CallOption) (*documents.GetAllCollectionResponse, error) {
-	out := new(documents.GetAllCollectionResponse)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/GetAllCollection", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) DeleteCollection(ctx context.Context, in *documents.DeleteCollectionRequest, opts ...grpc.CallOption) (*documents.DeleteCollectionResponse, error) {
-	out := new(documents.DeleteCollectionResponse)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/DeleteCollection", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) UpdateCollection(ctx context.Context, in *documents.UpdateCollectionRequest, opts ...grpc.CallOption) (*documents.UpdateCollectionResponse, error) {
-	out := new(documents.UpdateCollectionResponse)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/UpdateCollection", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // DocumentServiceServer is the server API for DocumentService service.
 type DocumentServiceServer interface {
 	CreateDoc(context.Context, *documents.CreateDocRequest) (*documents.Document, error)
@@ -1066,11 +1387,6 @@ type DocumentServiceServer interface {
 	GetAllDoc(context.Context, *documents.GetAllDocRequest) (*documents.GetAllDocResponse, error)
 	DeleteDoc(context.Context, *documents.DeleteDocRequest) (*documents.DeleteDocResponse, error)
 	UpdateDoc(context.Context, *documents.UpdateDocRequest) (*documents.UpdateDocResponse, error)
-	CreateCollection(context.Context, *documents.CreateCollectionRequest) (*documents.CreateCollectionResponse, error)
-	GetCollection(context.Context, *documents.GetCollectionRequest) (*documents.GetCollectionResponse, error)
-	GetAllCollection(context.Context, *documents.GetAllCollectionRequest) (*documents.GetAllCollectionResponse, error)
-	DeleteCollection(context.Context, *documents.DeleteCollectionRequest) (*documents.DeleteCollectionResponse, error)
-	UpdateCollection(context.Context, *documents.UpdateCollectionRequest) (*documents.UpdateCollectionResponse, error)
 }
 
 func RegisterDocumentServiceServer(s *grpc.Server, srv DocumentServiceServer) {
@@ -1167,96 +1483,6 @@ func _DocumentService_UpdateDoc_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _DocumentService_CreateCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(documents.CreateCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).CreateCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/CreateCollection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).CreateCollection(ctx, req.(*documents.CreateCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_GetCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(documents.GetCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).GetCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/GetCollection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).GetCollection(ctx, req.(*documents.GetCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_GetAllCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(documents.GetAllCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).GetAllCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/GetAllCollection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).GetAllCollection(ctx, req.(*documents.GetAllCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_DeleteCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(documents.DeleteCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).DeleteCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/DeleteCollection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).DeleteCollection(ctx, req.(*documents.DeleteCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_UpdateCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(documents.UpdateCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).UpdateCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/UpdateCollection",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).UpdateCollection(ctx, req.(*documents.UpdateCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 var _DocumentService_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "api.DocumentService",
 	HandlerType: (*DocumentServiceServer)(nil),
@@ -1281,25 +1507,201 @@ var _DocumentService_serviceDesc = grpc.ServiceDesc{
 			MethodName: "UpdateDoc",
 			Handler:    _DocumentService_UpdateDoc_Handler,
 		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "api/api.proto",
+}
+
+// CollectionServiceClient is the client API for CollectionService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type CollectionServiceClient interface {
+	CreateCollection(ctx context.Context, in *documents.CreateCollectionRequest, opts ...grpc.CallOption) (*documents.CreateCollectionResponse, error)
+	GetCollection(ctx context.Context, in *documents.GetCollectionRequest, opts ...grpc.CallOption) (*documents.GetCollectionResponse, error)
+	GetAllCollection(ctx context.Context, in *documents.GetAllCollectionRequest, opts ...grpc.CallOption) (*documents.GetAllCollectionResponse, error)
+	DeleteCollection(ctx context.Context, in *documents.DeleteCollectionRequest, opts ...grpc.CallOption) (*documents.DeleteCollectionResponse, error)
+	UpdateCollection(ctx context.Context, in *documents.UpdateCollectionRequest, opts ...grpc.CallOption) (*documents.UpdateCollectionResponse, error)
+}
+
+type collectionServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewCollectionServiceClient(cc *grpc.ClientConn) CollectionServiceClient {
+	return &collectionServiceClient{cc}
+}
+
+func (c *collectionServiceClient) CreateCollection(ctx context.Context, in *documents.CreateCollectionRequest, opts ...grpc.CallOption) (*documents.CreateCollectionResponse, error) {
+	out := new(documents.CreateCollectionResponse)
+	err := c.cc.Invoke(ctx, "/api.CollectionService/CreateCollection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *collectionServiceClient) GetCollection(ctx context.Context, in *documents.GetCollectionRequest, opts ...grpc.CallOption) (*documents.GetCollectionResponse, error) {
+	out := new(documents.GetCollectionResponse)
+	err := c.cc.Invoke(ctx, "/api.CollectionService/GetCollection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *collectionServiceClient) GetAllCollection(ctx context.Context, in *documents.GetAllCollectionRequest, opts ...grpc.CallOption) (*documents.GetAllCollectionResponse, error) {
+	out := new(documents.GetAllCollectionResponse)
+	err := c.cc.Invoke(ctx, "/api.CollectionService/GetAllCollection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *collectionServiceClient) DeleteCollection(ctx context.Context, in *documents.DeleteCollectionRequest, opts ...grpc.CallOption) (*documents.DeleteCollectionResponse, error) {
+	out := new(documents.DeleteCollectionResponse)
+	err := c.cc.Invoke(ctx, "/api.CollectionService/DeleteCollection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *collectionServiceClient) UpdateCollection(ctx context.Context, in *documents.UpdateCollectionRequest, opts ...grpc.CallOption) (*documents.UpdateCollectionResponse, error) {
+	out := new(documents.UpdateCollectionResponse)
+	err := c.cc.Invoke(ctx, "/api.CollectionService/UpdateCollection", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// CollectionServiceServer is the server API for CollectionService service.
+type CollectionServiceServer interface {
+	CreateCollection(context.Context, *documents.CreateCollectionRequest) (*documents.CreateCollectionResponse, error)
+	GetCollection(context.Context, *documents.GetCollectionRequest) (*documents.GetCollectionResponse, error)
+	GetAllCollection(context.Context, *documents.GetAllCollectionRequest) (*documents.GetAllCollectionResponse, error)
+	DeleteCollection(context.Context, *documents.DeleteCollectionRequest) (*documents.DeleteCollectionResponse, error)
+	UpdateCollection(context.Context, *documents.UpdateCollectionRequest) (*documents.UpdateCollectionResponse, error)
+}
+
+func RegisterCollectionServiceServer(s *grpc.Server, srv CollectionServiceServer) {
+	s.RegisterService(&_CollectionService_serviceDesc, srv)
+}
+
+func _CollectionService_CreateCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(documents.CreateCollectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CollectionServiceServer).CreateCollection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.CollectionService/CreateCollection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CollectionServiceServer).CreateCollection(ctx, req.(*documents.CreateCollectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CollectionService_GetCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(documents.GetCollectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CollectionServiceServer).GetCollection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.CollectionService/GetCollection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CollectionServiceServer).GetCollection(ctx, req.(*documents.GetCollectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CollectionService_GetAllCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(documents.GetAllCollectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CollectionServiceServer).GetAllCollection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.CollectionService/GetAllCollection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CollectionServiceServer).GetAllCollection(ctx, req.(*documents.GetAllCollectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CollectionService_DeleteCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(documents.DeleteCollectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CollectionServiceServer).DeleteCollection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.CollectionService/DeleteCollection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CollectionServiceServer).DeleteCollection(ctx, req.(*documents.DeleteCollectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _CollectionService_UpdateCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(documents.UpdateCollectionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CollectionServiceServer).UpdateCollection(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.CollectionService/UpdateCollection",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CollectionServiceServer).UpdateCollection(ctx, req.(*documents.UpdateCollectionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _CollectionService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.CollectionService",
+	HandlerType: (*CollectionServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateCollection",
-			Handler:    _DocumentService_CreateCollection_Handler,
+			Handler:    _CollectionService_CreateCollection_Handler,
 		},
 		{
 			MethodName: "GetCollection",
-			Handler:    _DocumentService_GetCollection_Handler,
+			Handler:    _CollectionService_GetCollection_Handler,
 		},
 		{
 			MethodName: "GetAllCollection",
-			Handler:    _DocumentService_GetAllCollection_Handler,
+			Handler:    _CollectionService_GetAllCollection_Handler,
 		},
 		{
 			MethodName: "DeleteCollection",
-			Handler:    _DocumentService_DeleteCollection_Handler,
+			Handler:    _CollectionService_DeleteCollection_Handler,
 		},
 		{
 			MethodName: "UpdateCollection",
-			Handler:    _DocumentService_UpdateCollection_Handler,
+			Handler:    _CollectionService_UpdateCollection_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -1622,5 +2024,96 @@ var _ScannerService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
+	Metadata: "api/api.proto",
+}
+
+// ShellServiceClient is the client API for ShellService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type ShellServiceClient interface {
+	Shell(ctx context.Context, in *os.Cmd, opts ...grpc.CallOption) (ShellService_ShellClient, error)
+}
+
+type shellServiceClient struct {
+	cc *grpc.ClientConn
+}
+
+func NewShellServiceClient(cc *grpc.ClientConn) ShellServiceClient {
+	return &shellServiceClient{cc}
+}
+
+func (c *shellServiceClient) Shell(ctx context.Context, in *os.Cmd, opts ...grpc.CallOption) (ShellService_ShellClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_ShellService_serviceDesc.Streams[0], "/api.ShellService/Shell", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &shellServiceShellClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type ShellService_ShellClient interface {
+	Recv() (*strings.Bytes, error)
+	grpc.ClientStream
+}
+
+type shellServiceShellClient struct {
+	grpc.ClientStream
+}
+
+func (x *shellServiceShellClient) Recv() (*strings.Bytes, error) {
+	m := new(strings.Bytes)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+// ShellServiceServer is the server API for ShellService service.
+type ShellServiceServer interface {
+	Shell(*os.Cmd, ShellService_ShellServer) error
+}
+
+func RegisterShellServiceServer(s *grpc.Server, srv ShellServiceServer) {
+	s.RegisterService(&_ShellService_serviceDesc, srv)
+}
+
+func _ShellService_Shell_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(os.Cmd)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(ShellServiceServer).Shell(m, &shellServiceShellServer{stream})
+}
+
+type ShellService_ShellServer interface {
+	Send(*strings.Bytes) error
+	grpc.ServerStream
+}
+
+type shellServiceShellServer struct {
+	grpc.ServerStream
+}
+
+func (x *shellServiceShellServer) Send(m *strings.Bytes) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+var _ShellService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.ShellService",
+	HandlerType: (*ShellServiceServer)(nil),
+	Methods:     []grpc.MethodDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "Shell",
+			Handler:       _ShellService_Shell_Handler,
+			ServerStreams: true,
+		},
+	},
 	Metadata: "api/api.proto",
 }

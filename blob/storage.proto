@@ -2,12 +2,8 @@ syntax = "proto3";
 package blob;
 import "os/os.proto";
 import "auth/auth.proto";
-
-message CreateObjectRequest {
-    string bucket=1;
-    os.File file=2;
-}
-
+import "errors/errors.proto";
+import "time/time.proto";
 
 message Object {
     string bucket=1;
@@ -18,9 +14,31 @@ message Object {
     string owner =6;
     int64 size =7;
     map<string, string> meta=8;
-    int64 created =9;
-    int64 updated =10;
-    int64 deleted =11;
+    string content =9;
+    time.Tracker tracker =10;
+}
+
+message CreateObjectRequest {
+    Object object =1;
+}
+
+message GetObjectRequest {
+    string bucket=1;
+    string object=2;
+}
+
+message GetObjectsRequest {
+    string bucket=1;
+}
+
+
+message UpdateObjectRequest {
+    Object object =1;
+}
+
+message DeleteObjectRequest {
+    string bucket=1;
+    string object=2;
 }
 
 message Bucket {
@@ -32,7 +50,49 @@ message Bucket {
     auth.CORS cors=6;
     repeated auth.ACLRule rules=7;
     map<string, string> meta=8;
-    int64 created =9;
-    int64 updated =10;
-    int64 deleted =11;
+    repeated Object objects=9;
+    time.Tracker tracker =10;
+}
+
+message CreateBucketRequest {
+    Bucket bucket =1;
+}
+
+message GetBucketRequest {
+    string bucket = 1;
+}
+
+message GetBucketsRequest {
+    string bucket=1;
+}
+
+message UpdateBucketRequest {
+    Bucket bucket =1;
+}
+
+message DeleteBucketRequest {
+    string bucket=1;
+}
+
+
+
+
+message BucketResponse {
+    Bucket bucket =1;
+    errors.Error err =2;
+}
+
+message BucketsResponse {
+    repeated Bucket buckets =1;
+    errors.Error err =2;
+}
+
+message ObjectsResponse {
+    repeated Object objects =1;
+    errors.Error err =2;
+}
+
+message ObjectResponse {
+    Object object =1;
+    errors.Error err =2;
 }

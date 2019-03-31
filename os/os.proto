@@ -2,6 +2,7 @@ syntax="proto3";
 
 package os;
 import "time/time.proto";
+import "strings/strings.proto";
 
 enum OSType {
     LINUX =0;
@@ -21,16 +22,16 @@ message Files {
     repeated File files=1;
 }
 
-message FileSystem {
-    string name=1;
-    OSType os_type=2;
-}
-
 message Cmd {
     string path=1;
     repeated string args=2;
     string dir =3;
     repeated string env=4;
+}
+
+message Output {
+    Cmd cmd =1;
+    strings.Bytes output=2;
 }
 
 message OSUser {
