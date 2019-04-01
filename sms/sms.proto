@@ -1,5 +1,4 @@
 syntax="proto3";
-import "errors/errors.proto";
 
 package sms;
 
@@ -46,5 +45,4 @@ message SMSResponse {
     string api_version=13;
     string price=17;
     string uri=20;
-    errors.Error exception =21;
 }

@@ -1,7 +1,6 @@
 syntax="proto3";
 
 package voice;
-import "errors/errors.proto";
 
 message StyleSheet {
     string on_success =1;
@@ -64,7 +63,6 @@ message VoiceResponse {
     string group_sid=21;
     string caller_name=22;
     string uri=23;
-    errors.Error exception =24;
 }
 
 message GetCallRequest {

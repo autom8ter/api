@@ -2,7 +2,6 @@ syntax = "proto3";
 package blob;
 import "os/os.proto";
 import "auth/auth.proto";
-import "errors/errors.proto";
 import "time/time.proto";
 
 message Object {
@@ -79,20 +78,16 @@ message DeleteBucketRequest {
 
 message BucketResponse {
     Bucket bucket =1;
-    errors.Error err =2;
 }
 
 message BucketsResponse {
     repeated Bucket buckets =1;
-    errors.Error err =2;
 }
 
 message ObjectsResponse {
     repeated Object objects =1;
-    errors.Error err =2;
 }
 
 message ObjectResponse {
     Object object =1;
-    errors.Error err =2;
 }

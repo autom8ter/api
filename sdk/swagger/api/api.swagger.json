@@ -287,9 +287,6 @@
       "properties": {
         "bucket": {
           "$ref": "#/definitions/blobBucket"
-        },
-        "err": {
-          "$ref": "#/definitions/errorsError"
         }
       }
     },
@@ -301,9 +298,6 @@
           "items": {
             "$ref": "#/definitions/blobBucket"
           }
-        },
-        "err": {
-          "$ref": "#/definitions/errorsError"
         }
       }
     },
@@ -351,9 +345,6 @@
       "properties": {
         "object": {
           "$ref": "#/definitions/blobObject"
-        },
-        "err": {
-          "$ref": "#/definitions/errorsError"
         }
       }
     },
@@ -365,9 +356,6 @@
           "items": {
             "$ref": "#/definitions/blobObject"
           }
-        },
-        "err": {
-          "$ref": "#/definitions/errorsError"
         }
       }
     },
@@ -385,14 +373,16 @@
         }
       }
     },
-    "documentsCreateCollectionResponse": {
-      "type": "object"
-    },
-    "documentsDeleteCollectionResponse": {
-      "type": "object"
-    },
-    "documentsDeleteDocResponse": {
-      "type": "object"
+    "documentsCollections": {
+      "type": "object",
+      "properties": {
+        "collections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/documentsCollection"
+          }
+        }
+      }
     },
     "documentsDocument": {
       "type": "object",
@@ -405,42 +395,43 @@
         },
         "parent": {
           "$ref": "#/definitions/documentsCollection"
+        },
+        "data": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "format": "byte"
+          }
+        },
+        "meta": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "tracker": {
+          "$ref": "#/definitions/timeTracker"
         }
       }
     },
-    "documentsGetAllCollectionResponse": {
-      "type": "object"
-    },
-    "documentsGetAllDocResponse": {
-      "type": "object"
-    },
-    "documentsGetCollectionResponse": {
-      "type": "object"
-    },
-    "documentsGetDocResponse": {
-      "type": "object"
-    },
-    "documentsUpdateCollectionResponse": {
-      "type": "object"
-    },
-    "documentsUpdateDocResponse": {
-      "type": "object"
-    },
-    "errorsError": {
+    "documentsDocuments": {
       "type": "object",
       "properties": {
-        "status": {
-          "type": "string",
-          "format": "int64"
-        },
-        "message": {
+        "documents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/documentsDocument"
+          }
+        }
+      }
+    },
+    "documentsRequest": {
+      "type": "object",
+      "properties": {
+        "path": {
           "type": "string"
         },
-        "code": {
-          "type": "string",
-          "format": "int64"
-        },
-        "more_info": {
+        "id": {
           "type": "string"
         }
       }
@@ -947,9 +938,6 @@
         },
         "uri": {
           "type": "string"
-        },
-        "exception": {
-          "$ref": "#/definitions/errorsError"
         }
       }
     },
@@ -973,6 +961,9 @@
         }
       },
       "description": "Response object for ByteStream.Write."
+    },
+    "stringsEmpty": {
+      "type": "object"
     },
     "stringsExtractResponse": {
       "type": "object",
@@ -1125,9 +1116,6 @@
         },
         "uri": {
           "type": "string"
-        },
-        "exception": {
-          "$ref": "#/definitions/errorsError"
         }
       }
     }

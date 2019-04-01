@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 package assistant;
-import "errors/errors.proto";
 import "voice/voice.proto";
 
 message Links {
@@ -144,7 +143,6 @@ message ActionResp {
     string assistant_sid =11;
     string account_sid =12;
     Links links =8;
-    errors.Error exception =10;
 }
 
 message CreateAssistantReq {
@@ -186,7 +184,6 @@ message AssistantDefaultsResp {
     string fallback =3;
     string url =4;
     string account_sid =5;
-    errors.Error exception =6;
 }
 
 message AssistantResp {
@@ -200,7 +197,6 @@ message AssistantResp {
     string account_sid =10;
     string assistant_sid=11;
     Links links =8;
-    errors.Error exception =9;
 
 }
 

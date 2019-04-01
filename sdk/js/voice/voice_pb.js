@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var errors_errors_pb = require('../errors/errors_pb.js');
 goog.exportSymbol('proto.voice.CallWithApplication', null, global);
 goog.exportSymbol('proto.voice.CallWithCallbackRequest', null, global);
 goog.exportSymbol('proto.voice.Callback', null, global);
@@ -1409,8 +1408,7 @@ proto.voice.VoiceResponse.toObject = function(includeInstance, msg) {
     forwardedFrom: jspb.Message.getFieldWithDefault(msg, 20, ""),
     groupSid: jspb.Message.getFieldWithDefault(msg, 21, ""),
     callerName: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    uri: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    exception: (f = msg.getException()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    uri: jspb.Message.getFieldWithDefault(msg, 23, "")
   };
 
   if (includeInstance) {
@@ -1530,11 +1528,6 @@ proto.voice.VoiceResponse.deserializeBinaryFromReader = function(msg, reader) {
     case 23:
       var value = /** @type {string} */ (reader.readString());
       msg.setUri(value);
-      break;
-    case 24:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setException(value);
       break;
     default:
       reader.skipField();
@@ -1710,14 +1703,6 @@ proto.voice.VoiceResponse.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       23,
       f
-    );
-  }
-  f = message.getException();
-  if (f != null) {
-    writer.writeMessage(
-      24,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
     );
   }
 };
@@ -2035,36 +2020,6 @@ proto.voice.VoiceResponse.prototype.getUri = function() {
 /** @param {string} value */
 proto.voice.VoiceResponse.prototype.setUri = function(value) {
   jspb.Message.setProto3StringField(this, 23, value);
-};
-
-
-/**
- * optional errors.Error exception = 24;
- * @return {?proto.errors.Error}
- */
-proto.voice.VoiceResponse.prototype.getException = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 24));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.voice.VoiceResponse.prototype.setException = function(value) {
-  jspb.Message.setWrapperField(this, 24, value);
-};
-
-
-proto.voice.VoiceResponse.prototype.clearException = function() {
-  this.setException(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.voice.VoiceResponse.prototype.hasException = function() {
-  return jspb.Message.getField(this, 24) != null;
 };
 
 

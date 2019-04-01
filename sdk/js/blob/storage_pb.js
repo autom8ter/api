@@ -13,7 +13,6 @@ var global = Function('return this')();
 
 var os_os_pb = require('../os/os_pb.js');
 var auth_auth_pb = require('../auth/auth_pb.js');
-var errors_errors_pb = require('../errors/errors_pb.js');
 var time_time_pb = require('../time/time_pb.js');
 goog.exportSymbol('proto.blob.Bucket', null, global);
 goog.exportSymbol('proto.blob.BucketResponse', null, global);
@@ -2492,8 +2491,7 @@ proto.blob.BucketResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.blob.BucketResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    bucket: (f = msg.getBucket()) && proto.blob.Bucket.toObject(includeInstance, f),
-    err: (f = msg.getErr()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    bucket: (f = msg.getBucket()) && proto.blob.Bucket.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2535,11 +2533,6 @@ proto.blob.BucketResponse.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.blob.Bucket.deserializeBinaryFromReader);
       msg.setBucket(value);
       break;
-    case 2:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setErr(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2577,14 +2570,6 @@ proto.blob.BucketResponse.serializeBinaryToWriter = function(message, writer) {
       proto.blob.Bucket.serializeBinaryToWriter
     );
   }
-  f = message.getErr();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -2615,36 +2600,6 @@ proto.blob.BucketResponse.prototype.clearBucket = function() {
  */
 proto.blob.BucketResponse.prototype.hasBucket = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional errors.Error err = 2;
- * @return {?proto.errors.Error}
- */
-proto.blob.BucketResponse.prototype.getErr = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 2));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.blob.BucketResponse.prototype.setErr = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.blob.BucketResponse.prototype.clearErr = function() {
-  this.setErr(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.blob.BucketResponse.prototype.hasErr = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2703,8 +2658,7 @@ proto.blob.BucketsResponse.prototype.toObject = function(opt_includeInstance) {
 proto.blob.BucketsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     bucketsList: jspb.Message.toObjectList(msg.getBucketsList(),
-    proto.blob.Bucket.toObject, includeInstance),
-    err: (f = msg.getErr()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    proto.blob.Bucket.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2746,11 +2700,6 @@ proto.blob.BucketsResponse.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.blob.Bucket.deserializeBinaryFromReader);
       msg.addBuckets(value);
       break;
-    case 2:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setErr(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2788,14 +2737,6 @@ proto.blob.BucketsResponse.serializeBinaryToWriter = function(message, writer) {
       proto.blob.Bucket.serializeBinaryToWriter
     );
   }
-  f = message.getErr();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -2827,36 +2768,6 @@ proto.blob.BucketsResponse.prototype.addBuckets = function(opt_value, opt_index)
 
 proto.blob.BucketsResponse.prototype.clearBucketsList = function() {
   this.setBucketsList([]);
-};
-
-
-/**
- * optional errors.Error err = 2;
- * @return {?proto.errors.Error}
- */
-proto.blob.BucketsResponse.prototype.getErr = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 2));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.blob.BucketsResponse.prototype.setErr = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.blob.BucketsResponse.prototype.clearErr = function() {
-  this.setErr(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.blob.BucketsResponse.prototype.hasErr = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2915,8 +2826,7 @@ proto.blob.ObjectsResponse.prototype.toObject = function(opt_includeInstance) {
 proto.blob.ObjectsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     objectsList: jspb.Message.toObjectList(msg.getObjectsList(),
-    proto.blob.Object.toObject, includeInstance),
-    err: (f = msg.getErr()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    proto.blob.Object.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -2958,11 +2868,6 @@ proto.blob.ObjectsResponse.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.blob.Object.deserializeBinaryFromReader);
       msg.addObjects(value);
       break;
-    case 2:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setErr(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3000,14 +2905,6 @@ proto.blob.ObjectsResponse.serializeBinaryToWriter = function(message, writer) {
       proto.blob.Object.serializeBinaryToWriter
     );
   }
-  f = message.getErr();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -3039,36 +2936,6 @@ proto.blob.ObjectsResponse.prototype.addObjects = function(opt_value, opt_index)
 
 proto.blob.ObjectsResponse.prototype.clearObjectsList = function() {
   this.setObjectsList([]);
-};
-
-
-/**
- * optional errors.Error err = 2;
- * @return {?proto.errors.Error}
- */
-proto.blob.ObjectsResponse.prototype.getErr = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 2));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.blob.ObjectsResponse.prototype.setErr = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.blob.ObjectsResponse.prototype.clearErr = function() {
-  this.setErr(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.blob.ObjectsResponse.prototype.hasErr = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3119,8 +2986,7 @@ proto.blob.ObjectResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.blob.ObjectResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    object: (f = msg.getObject()) && proto.blob.Object.toObject(includeInstance, f),
-    err: (f = msg.getErr()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    object: (f = msg.getObject()) && proto.blob.Object.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3162,11 +3028,6 @@ proto.blob.ObjectResponse.deserializeBinaryFromReader = function(msg, reader) {
       reader.readMessage(value,proto.blob.Object.deserializeBinaryFromReader);
       msg.setObject(value);
       break;
-    case 2:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setErr(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3204,14 +3065,6 @@ proto.blob.ObjectResponse.serializeBinaryToWriter = function(message, writer) {
       proto.blob.Object.serializeBinaryToWriter
     );
   }
-  f = message.getErr();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
-    );
-  }
 };
 
 
@@ -3242,36 +3095,6 @@ proto.blob.ObjectResponse.prototype.clearObject = function() {
  */
 proto.blob.ObjectResponse.prototype.hasObject = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional errors.Error err = 2;
- * @return {?proto.errors.Error}
- */
-proto.blob.ObjectResponse.prototype.getErr = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 2));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.blob.ObjectResponse.prototype.setErr = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.blob.ObjectResponse.prototype.clearErr = function() {
-  this.setErr(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.blob.ObjectResponse.prototype.hasErr = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 

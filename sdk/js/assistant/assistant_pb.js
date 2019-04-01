@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var errors_errors_pb = require('../errors/errors_pb.js');
 var voice_voice_pb = require('../voice/voice_pb.js');
 goog.exportSymbol('proto.assistant.Action', null, global);
 goog.exportSymbol('proto.assistant.ActionResp', null, global);
@@ -5178,8 +5177,7 @@ proto.assistant.ActionResp.toObject = function(includeInstance, msg) {
     actionsUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
     assistantSid: jspb.Message.getFieldWithDefault(msg, 11, ""),
     accountSid: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    links: (f = msg.getLinks()) && proto.assistant.Links.toObject(includeInstance, f),
-    exception: (f = msg.getException()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    links: (f = msg.getLinks()) && proto.assistant.Links.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5256,11 +5254,6 @@ proto.assistant.ActionResp.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.assistant.Links;
       reader.readMessage(value,proto.assistant.Links.deserializeBinaryFromReader);
       msg.setLinks(value);
-      break;
-    case 10:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setException(value);
       break;
     default:
       reader.skipField();
@@ -5360,14 +5353,6 @@ proto.assistant.ActionResp.serializeBinaryToWriter = function(message, writer) {
       8,
       f,
       proto.assistant.Links.serializeBinaryToWriter
-    );
-  }
-  f = message.getException();
-  if (f != null) {
-    writer.writeMessage(
-      10,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
     );
   }
 };
@@ -5535,36 +5520,6 @@ proto.assistant.ActionResp.prototype.clearLinks = function() {
  */
 proto.assistant.ActionResp.prototype.hasLinks = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional errors.Error exception = 10;
- * @return {?proto.errors.Error}
- */
-proto.assistant.ActionResp.prototype.getException = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 10));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.assistant.ActionResp.prototype.setException = function(value) {
-  jspb.Message.setWrapperField(this, 10, value);
-};
-
-
-proto.assistant.ActionResp.prototype.clearException = function() {
-  this.setException(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.assistant.ActionResp.prototype.hasException = function() {
-  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -6723,8 +6678,7 @@ proto.assistant.AssistantDefaultsResp.toObject = function(includeInstance, msg) 
     assistantInitiation: jspb.Message.getFieldWithDefault(msg, 2, ""),
     fallback: jspb.Message.getFieldWithDefault(msg, 3, ""),
     url: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    accountSid: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    exception: (f = msg.getException()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    accountSid: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -6780,11 +6734,6 @@ proto.assistant.AssistantDefaultsResp.deserializeBinaryFromReader = function(msg
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAccountSid(value);
-      break;
-    case 6:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setException(value);
       break;
     default:
       reader.skipField();
@@ -6848,14 +6797,6 @@ proto.assistant.AssistantDefaultsResp.serializeBinaryToWriter = function(message
     writer.writeString(
       5,
       f
-    );
-  }
-  f = message.getException();
-  if (f != null) {
-    writer.writeMessage(
-      6,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
     );
   }
 };
@@ -6936,36 +6877,6 @@ proto.assistant.AssistantDefaultsResp.prototype.setAccountSid = function(value) 
 };
 
 
-/**
- * optional errors.Error exception = 6;
- * @return {?proto.errors.Error}
- */
-proto.assistant.AssistantDefaultsResp.prototype.getException = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 6));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.assistant.AssistantDefaultsResp.prototype.setException = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-proto.assistant.AssistantDefaultsResp.prototype.clearException = function() {
-  this.setException(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.assistant.AssistantDefaultsResp.prototype.hasException = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -7022,8 +6933,7 @@ proto.assistant.AssistantResp.toObject = function(includeInstance, msg) {
     callbackEvents: jspb.Message.getFieldWithDefault(msg, 7, ""),
     accountSid: jspb.Message.getFieldWithDefault(msg, 10, ""),
     assistantSid: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    links: (f = msg.getLinks()) && proto.assistant.Links.toObject(includeInstance, f),
-    exception: (f = msg.getException()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    links: (f = msg.getLinks()) && proto.assistant.Links.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7100,11 +7010,6 @@ proto.assistant.AssistantResp.deserializeBinaryFromReader = function(msg, reader
       var value = new proto.assistant.Links;
       reader.readMessage(value,proto.assistant.Links.deserializeBinaryFromReader);
       msg.setLinks(value);
-      break;
-    case 9:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setException(value);
       break;
     default:
       reader.skipField();
@@ -7204,14 +7109,6 @@ proto.assistant.AssistantResp.serializeBinaryToWriter = function(message, writer
       8,
       f,
       proto.assistant.Links.serializeBinaryToWriter
-    );
-  }
-  f = message.getException();
-  if (f != null) {
-    writer.writeMessage(
-      9,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
     );
   }
 };
@@ -7379,36 +7276,6 @@ proto.assistant.AssistantResp.prototype.clearLinks = function() {
  */
 proto.assistant.AssistantResp.prototype.hasLinks = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional errors.Error exception = 9;
- * @return {?proto.errors.Error}
- */
-proto.assistant.AssistantResp.prototype.getException = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 9));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.assistant.AssistantResp.prototype.setException = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
-};
-
-
-proto.assistant.AssistantResp.prototype.clearException = function() {
-  this.setException(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.assistant.AssistantResp.prototype.hasException = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 

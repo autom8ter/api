@@ -11,7 +11,6 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
-var errors_errors_pb = require('../errors/errors_pb.js');
 goog.exportSymbol('proto.sms.GetSMSRequest', null, global);
 goog.exportSymbol('proto.sms.SMSResponse', null, global);
 goog.exportSymbol('proto.sms.SendMMSRequest', null, global);
@@ -996,8 +995,7 @@ proto.sms.SMSResponse.toObject = function(includeInstance, msg) {
     direction: jspb.Message.getFieldWithDefault(msg, 12, ""),
     apiVersion: jspb.Message.getFieldWithDefault(msg, 13, ""),
     price: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    uri: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    exception: (f = msg.getException()) && errors_errors_pb.Error.toObject(includeInstance, f)
+    uri: jspb.Message.getFieldWithDefault(msg, 20, "")
   };
 
   if (includeInstance) {
@@ -1089,11 +1087,6 @@ proto.sms.SMSResponse.deserializeBinaryFromReader = function(msg, reader) {
     case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.setUri(value);
-      break;
-    case 21:
-      var value = new errors_errors_pb.Error;
-      reader.readMessage(value,errors_errors_pb.Error.deserializeBinaryFromReader);
-      msg.setException(value);
       break;
     default:
       reader.skipField();
@@ -1220,14 +1213,6 @@ proto.sms.SMSResponse.serializeBinaryToWriter = function(message, writer) {
     writer.writeString(
       20,
       f
-    );
-  }
-  f = message.getException();
-  if (f != null) {
-    writer.writeMessage(
-      21,
-      f,
-      errors_errors_pb.Error.serializeBinaryToWriter
     );
   }
 };
@@ -1440,36 +1425,6 @@ proto.sms.SMSResponse.prototype.getUri = function() {
 /** @param {string} value */
 proto.sms.SMSResponse.prototype.setUri = function(value) {
   jspb.Message.setProto3StringField(this, 20, value);
-};
-
-
-/**
- * optional errors.Error exception = 21;
- * @return {?proto.errors.Error}
- */
-proto.sms.SMSResponse.prototype.getException = function() {
-  return /** @type{?proto.errors.Error} */ (
-    jspb.Message.getWrapperField(this, errors_errors_pb.Error, 21));
-};
-
-
-/** @param {?proto.errors.Error|undefined} value */
-proto.sms.SMSResponse.prototype.setException = function(value) {
-  jspb.Message.setWrapperField(this, 21, value);
-};
-
-
-proto.sms.SMSResponse.prototype.clearException = function() {
-  this.setException(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.sms.SMSResponse.prototype.hasException = function() {
-  return jspb.Message.getField(this, 21) != null;
 };
 
 

@@ -1,16 +1,26 @@
 syntax ="proto3";
 
 package documents;
-import "google/protobuf/timestamp.proto";
+import "time/time.proto";
 
-message CreateDocRequest {
-    string path=1;
+message CreateDoc {
+    Document document=1;
 }
 
 message Document {
     string path=1;
     string id=2;
     Collection parent=3;
+    map<string, bytes> data=4;
+    map<string, string> meta=5;
+    time.Tracker tracker=6;
+}
+message Documents {
+    repeated Document documents=1;
+}
+
+message Collections {
+    repeated Collection collections=1;
 }
 
 message Collection {
@@ -19,60 +29,12 @@ message Collection {
     Document parent=3;
 }
 
-message GetDocRequest {
-
-}
-message GetDocResponse {
-
-}
-message GetAllDocRequest {
-
-}
-message GetAllDocResponse{
-
+message Request {
+    string path=1;
+    string id=2;
 }
 
-message UpdateDocRequest {
 
-}
-message UpdateDocResponse {
-
-}
-message DeleteDocRequest {
-
-}
-message DeleteDocResponse {
-
-}
-
-message CreateCollectionRequest {
-
-}
-message CreateCollectionResponse {
-
-}
-message GetCollectionRequest {
-
-}
-message GetCollectionResponse {
-
-}
-message GetAllCollectionRequest {
-
-}
-message GetAllCollectionResponse{
-
-}
-
-message UpdateCollectionRequest {
-
-}
-message UpdateCollectionResponse {
-
-}
-message DeleteCollectionRequest {
-
-}
-message DeleteCollectionResponse {
-
+message Requests {
+    repeated Request requests=1;
 }
