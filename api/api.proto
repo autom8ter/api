@@ -19,8 +19,8 @@ service CertificateService {
 }
 
 service UserService {
-    rpc CreateUser(auth.User) returns (auth.UserRecord){};
-    rpc Update(auth.User) returns (auth.UserRecord){};
+    rpc CreateUser(auth.UserRecord) returns (auth.UserRecord){};
+    rpc Update(auth.UserRecord) returns (auth.UserRecord){};
     rpc DeleteUser(auth.DeleteUserRequest) returns (strings.Empty){};
     rpc GetUser(auth.GetUserByID) returns (auth.UserRecord){};
     rpc GetUsers(auth.UsersRequest) returns (auth.UsersIterator){};

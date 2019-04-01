@@ -115,6 +115,16 @@
         }
       }
     },
+    "authRole": {
+      "type": "string",
+      "enum": [
+        "GUEST",
+        "MEMBER",
+        "ADMIN",
+        "USER"
+      ],
+      "default": "GUEST"
+    },
     "authToken": {
       "type": "object",
       "properties": {
@@ -220,6 +230,47 @@
         },
         "user_metadata": {
           "$ref": "#/definitions/authUserMetadata"
+        },
+        "plan": {
+          "type": "string"
+        },
+        "account_balance": {
+          "type": "string",
+          "format": "int64"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "password": {
+          "type": "string"
+        },
+        "recovery_question": {
+          "type": "string"
+        },
+        "recovery_answer": {
+          "type": "string"
+        },
+        "trial_end": {
+          "type": "string",
+          "format": "int64"
+        },
+        "coupon": {
+          "type": "string"
+        },
+        "role": {
+          "$ref": "#/definitions/authRole"
+        },
+        "postal": {
+          "$ref": "#/definitions/geoPostalAddress"
+        },
+        "tracker": {
+          "$ref": "#/definitions/timeTracker"
         }
       }
     },
@@ -435,6 +486,307 @@
           "type": "string"
         }
       }
+    },
+    "geoCountryAlpha2Code": {
+      "type": "string",
+      "enum": [
+        "COUNTRY_ALPHA_2_CODE_NONE",
+        "COUNTRY_ALPHA_2_CODE_AD",
+        "COUNTRY_ALPHA_2_CODE_AE",
+        "COUNTRY_ALPHA_2_CODE_AF",
+        "COUNTRY_ALPHA_2_CODE_AG",
+        "COUNTRY_ALPHA_2_CODE_AI",
+        "COUNTRY_ALPHA_2_CODE_AL",
+        "COUNTRY_ALPHA_2_CODE_AM",
+        "COUNTRY_ALPHA_2_CODE_AO",
+        "COUNTRY_ALPHA_2_CODE_AR",
+        "COUNTRY_ALPHA_2_CODE_AS",
+        "COUNTRY_ALPHA_2_CODE_AT",
+        "COUNTRY_ALPHA_2_CODE_AU",
+        "COUNTRY_ALPHA_2_CODE_AW",
+        "COUNTRY_ALPHA_2_CODE_AX",
+        "COUNTRY_ALPHA_2_CODE_AZ",
+        "COUNTRY_ALPHA_2_CODE_BA",
+        "COUNTRY_ALPHA_2_CODE_BB",
+        "COUNTRY_ALPHA_2_CODE_BD",
+        "COUNTRY_ALPHA_2_CODE_BE",
+        "COUNTRY_ALPHA_2_CODE_BF",
+        "COUNTRY_ALPHA_2_CODE_BG",
+        "COUNTRY_ALPHA_2_CODE_BH",
+        "COUNTRY_ALPHA_2_CODE_BI",
+        "COUNTRY_ALPHA_2_CODE_BJ",
+        "COUNTRY_ALPHA_2_CODE_BL",
+        "COUNTRY_ALPHA_2_CODE_BM",
+        "COUNTRY_ALPHA_2_CODE_BN",
+        "COUNTRY_ALPHA_2_CODE_BO",
+        "COUNTRY_ALPHA_2_CODE_BQ",
+        "COUNTRY_ALPHA_2_CODE_BR",
+        "COUNTRY_ALPHA_2_CODE_BS",
+        "COUNTRY_ALPHA_2_CODE_BV",
+        "COUNTRY_ALPHA_2_CODE_BW",
+        "COUNTRY_ALPHA_2_CODE_BY",
+        "COUNTRY_ALPHA_2_CODE_BZ",
+        "COUNTRY_ALPHA_2_CODE_CA",
+        "COUNTRY_ALPHA_2_CODE_CC",
+        "COUNTRY_ALPHA_2_CODE_CD",
+        "COUNTRY_ALPHA_2_CODE_CF",
+        "COUNTRY_ALPHA_2_CODE_CG",
+        "COUNTRY_ALPHA_2_CODE_CH",
+        "COUNTRY_ALPHA_2_CODE_CI",
+        "COUNTRY_ALPHA_2_CODE_CK",
+        "COUNTRY_ALPHA_2_CODE_CL",
+        "COUNTRY_ALPHA_2_CODE_CM",
+        "COUNTRY_ALPHA_2_CODE_CN",
+        "COUNTRY_ALPHA_2_CODE_CO",
+        "COUNTRY_ALPHA_2_CODE_CR",
+        "COUNTRY_ALPHA_2_CODE_CV",
+        "COUNTRY_ALPHA_2_CODE_CW",
+        "COUNTRY_ALPHA_2_CODE_CX",
+        "COUNTRY_ALPHA_2_CODE_CY",
+        "COUNTRY_ALPHA_2_CODE_CZ",
+        "COUNTRY_ALPHA_2_CODE_DE",
+        "COUNTRY_ALPHA_2_CODE_DJ",
+        "COUNTRY_ALPHA_2_CODE_DK",
+        "COUNTRY_ALPHA_2_CODE_DM",
+        "COUNTRY_ALPHA_2_CODE_DO",
+        "COUNTRY_ALPHA_2_CODE_DZ",
+        "COUNTRY_ALPHA_2_CODE_EC",
+        "COUNTRY_ALPHA_2_CODE_EE",
+        "COUNTRY_ALPHA_2_CODE_EG",
+        "COUNTRY_ALPHA_2_CODE_EH",
+        "COUNTRY_ALPHA_2_CODE_ER",
+        "COUNTRY_ALPHA_2_CODE_ES",
+        "COUNTRY_ALPHA_2_CODE_ET",
+        "COUNTRY_ALPHA_2_CODE_FI",
+        "COUNTRY_ALPHA_2_CODE_FJ",
+        "COUNTRY_ALPHA_2_CODE_FM",
+        "COUNTRY_ALPHA_2_CODE_FO",
+        "COUNTRY_ALPHA_2_CODE_FR",
+        "COUNTRY_ALPHA_2_CODE_GA",
+        "COUNTRY_ALPHA_2_CODE_GB",
+        "COUNTRY_ALPHA_2_CODE_GD",
+        "COUNTRY_ALPHA_2_CODE_GE",
+        "COUNTRY_ALPHA_2_CODE_GF",
+        "COUNTRY_ALPHA_2_CODE_GG",
+        "COUNTRY_ALPHA_2_CODE_GH",
+        "COUNTRY_ALPHA_2_CODE_GI",
+        "COUNTRY_ALPHA_2_CODE_GL",
+        "COUNTRY_ALPHA_2_CODE_GM",
+        "COUNTRY_ALPHA_2_CODE_GN",
+        "COUNTRY_ALPHA_2_CODE_GP",
+        "COUNTRY_ALPHA_2_CODE_GQ",
+        "COUNTRY_ALPHA_2_CODE_GR",
+        "COUNTRY_ALPHA_2_CODE_GT",
+        "COUNTRY_ALPHA_2_CODE_GU",
+        "COUNTRY_ALPHA_2_CODE_GW",
+        "COUNTRY_ALPHA_2_CODE_GY",
+        "COUNTRY_ALPHA_2_CODE_HK",
+        "COUNTRY_ALPHA_2_CODE_HM",
+        "COUNTRY_ALPHA_2_CODE_HN",
+        "COUNTRY_ALPHA_2_CODE_HR",
+        "COUNTRY_ALPHA_2_CODE_HU",
+        "COUNTRY_ALPHA_2_CODE_ID",
+        "COUNTRY_ALPHA_2_CODE_IE",
+        "COUNTRY_ALPHA_2_CODE_IL",
+        "COUNTRY_ALPHA_2_CODE_IM",
+        "COUNTRY_ALPHA_2_CODE_IN",
+        "COUNTRY_ALPHA_2_CODE_IO",
+        "COUNTRY_ALPHA_2_CODE_IQ",
+        "COUNTRY_ALPHA_2_CODE_IR",
+        "COUNTRY_ALPHA_2_CODE_IS",
+        "COUNTRY_ALPHA_2_CODE_IT",
+        "COUNTRY_ALPHA_2_CODE_JE",
+        "COUNTRY_ALPHA_2_CODE_JM",
+        "COUNTRY_ALPHA_2_CODE_JO",
+        "COUNTRY_ALPHA_2_CODE_JP",
+        "COUNTRY_ALPHA_2_CODE_KE",
+        "COUNTRY_ALPHA_2_CODE_KG",
+        "COUNTRY_ALPHA_2_CODE_KH",
+        "COUNTRY_ALPHA_2_CODE_KI",
+        "COUNTRY_ALPHA_2_CODE_KM",
+        "COUNTRY_ALPHA_2_CODE_KN",
+        "COUNTRY_ALPHA_2_CODE_KP",
+        "COUNTRY_ALPHA_2_CODE_KR",
+        "COUNTRY_ALPHA_2_CODE_KW",
+        "COUNTRY_ALPHA_2_CODE_KY",
+        "COUNTRY_ALPHA_2_CODE_KZ",
+        "COUNTRY_ALPHA_2_CODE_LA",
+        "COUNTRY_ALPHA_2_CODE_LB",
+        "COUNTRY_ALPHA_2_CODE_LC",
+        "COUNTRY_ALPHA_2_CODE_LI",
+        "COUNTRY_ALPHA_2_CODE_LK",
+        "COUNTRY_ALPHA_2_CODE_LR",
+        "COUNTRY_ALPHA_2_CODE_LT",
+        "COUNTRY_ALPHA_2_CODE_LU",
+        "COUNTRY_ALPHA_2_CODE_LV",
+        "COUNTRY_ALPHA_2_CODE_LY",
+        "COUNTRY_ALPHA_2_CODE_MA",
+        "COUNTRY_ALPHA_2_CODE_MC",
+        "COUNTRY_ALPHA_2_CODE_MD",
+        "COUNTRY_ALPHA_2_CODE_ME",
+        "COUNTRY_ALPHA_2_CODE_MF",
+        "COUNTRY_ALPHA_2_CODE_MG",
+        "COUNTRY_ALPHA_2_CODE_MH",
+        "COUNTRY_ALPHA_2_CODE_MK",
+        "COUNTRY_ALPHA_2_CODE_ML",
+        "COUNTRY_ALPHA_2_CODE_MM",
+        "COUNTRY_ALPHA_2_CODE_MN",
+        "COUNTRY_ALPHA_2_CODE_MO",
+        "COUNTRY_ALPHA_2_CODE_MP",
+        "COUNTRY_ALPHA_2_CODE_MQ",
+        "COUNTRY_ALPHA_2_CODE_MR",
+        "COUNTRY_ALPHA_2_CODE_MS",
+        "COUNTRY_ALPHA_2_CODE_MT",
+        "COUNTRY_ALPHA_2_CODE_MU",
+        "COUNTRY_ALPHA_2_CODE_MV",
+        "COUNTRY_ALPHA_2_CODE_MW",
+        "COUNTRY_ALPHA_2_CODE_MX",
+        "COUNTRY_ALPHA_2_CODE_MY",
+        "COUNTRY_ALPHA_2_CODE_MZ",
+        "COUNTRY_ALPHA_2_CODE_NC",
+        "COUNTRY_ALPHA_2_CODE_NE",
+        "COUNTRY_ALPHA_2_CODE_NF",
+        "COUNTRY_ALPHA_2_CODE_NG",
+        "COUNTRY_ALPHA_2_CODE_NI",
+        "COUNTRY_ALPHA_2_CODE_NL",
+        "COUNTRY_ALPHA_2_CODE_NO",
+        "COUNTRY_ALPHA_2_CODE_NP",
+        "COUNTRY_ALPHA_2_CODE_NR",
+        "COUNTRY_ALPHA_2_CODE_NU",
+        "COUNTRY_ALPHA_2_CODE_NZ",
+        "COUNTRY_ALPHA_2_CODE_OM",
+        "COUNTRY_ALPHA_2_CODE_PE",
+        "COUNTRY_ALPHA_2_CODE_PF",
+        "COUNTRY_ALPHA_2_CODE_PG",
+        "COUNTRY_ALPHA_2_CODE_PH",
+        "COUNTRY_ALPHA_2_CODE_PK",
+        "COUNTRY_ALPHA_2_CODE_PL",
+        "COUNTRY_ALPHA_2_CODE_PM",
+        "COUNTRY_ALPHA_2_CODE_PN",
+        "COUNTRY_ALPHA_2_CODE_PR",
+        "COUNTRY_ALPHA_2_CODE_PT",
+        "COUNTRY_ALPHA_2_CODE_PW",
+        "COUNTRY_ALPHA_2_CODE_PY",
+        "COUNTRY_ALPHA_2_CODE_QA",
+        "COUNTRY_ALPHA_2_CODE_RE",
+        "COUNTRY_ALPHA_2_CODE_RO",
+        "COUNTRY_ALPHA_2_CODE_RS",
+        "COUNTRY_ALPHA_2_CODE_RU",
+        "COUNTRY_ALPHA_2_CODE_RW",
+        "COUNTRY_ALPHA_2_CODE_SA",
+        "COUNTRY_ALPHA_2_CODE_SB",
+        "COUNTRY_ALPHA_2_CODE_SC",
+        "COUNTRY_ALPHA_2_CODE_SD",
+        "COUNTRY_ALPHA_2_CODE_SE",
+        "COUNTRY_ALPHA_2_CODE_SG",
+        "COUNTRY_ALPHA_2_CODE_SH",
+        "COUNTRY_ALPHA_2_CODE_SI",
+        "COUNTRY_ALPHA_2_CODE_SJ",
+        "COUNTRY_ALPHA_2_CODE_SK",
+        "COUNTRY_ALPHA_2_CODE_SL",
+        "COUNTRY_ALPHA_2_CODE_SM",
+        "COUNTRY_ALPHA_2_CODE_SN",
+        "COUNTRY_ALPHA_2_CODE_SO",
+        "COUNTRY_ALPHA_2_CODE_SR",
+        "COUNTRY_ALPHA_2_CODE_SS",
+        "COUNTRY_ALPHA_2_CODE_ST",
+        "COUNTRY_ALPHA_2_CODE_SX",
+        "COUNTRY_ALPHA_2_CODE_SY",
+        "COUNTRY_ALPHA_2_CODE_SZ",
+        "COUNTRY_ALPHA_2_CODE_TC",
+        "COUNTRY_ALPHA_2_CODE_TD",
+        "COUNTRY_ALPHA_2_CODE_TF",
+        "COUNTRY_ALPHA_2_CODE_TG",
+        "COUNTRY_ALPHA_2_CODE_TH",
+        "COUNTRY_ALPHA_2_CODE_TJ",
+        "COUNTRY_ALPHA_2_CODE_TK",
+        "COUNTRY_ALPHA_2_CODE_TL",
+        "COUNTRY_ALPHA_2_CODE_TM",
+        "COUNTRY_ALPHA_2_CODE_TN",
+        "COUNTRY_ALPHA_2_CODE_TO",
+        "COUNTRY_ALPHA_2_CODE_TR",
+        "COUNTRY_ALPHA_2_CODE_TT",
+        "COUNTRY_ALPHA_2_CODE_TV",
+        "COUNTRY_ALPHA_2_CODE_TZ",
+        "COUNTRY_ALPHA_2_CODE_UA",
+        "COUNTRY_ALPHA_2_CODE_UG",
+        "COUNTRY_ALPHA_2_CODE_UM",
+        "COUNTRY_ALPHA_2_CODE_US",
+        "COUNTRY_ALPHA_2_CODE_UY",
+        "COUNTRY_ALPHA_2_CODE_UZ",
+        "COUNTRY_ALPHA_2_CODE_VA",
+        "COUNTRY_ALPHA_2_CODE_VC",
+        "COUNTRY_ALPHA_2_CODE_VE",
+        "COUNTRY_ALPHA_2_CODE_VG",
+        "COUNTRY_ALPHA_2_CODE_VI",
+        "COUNTRY_ALPHA_2_CODE_VN",
+        "COUNTRY_ALPHA_2_CODE_VU",
+        "COUNTRY_ALPHA_2_CODE_WF",
+        "COUNTRY_ALPHA_2_CODE_WS",
+        "COUNTRY_ALPHA_2_CODE_YE",
+        "COUNTRY_ALPHA_2_CODE_YT",
+        "COUNTRY_ALPHA_2_CODE_ZA",
+        "COUNTRY_ALPHA_2_CODE_ZM",
+        "COUNTRY_ALPHA_2_CODE_ZW"
+      ],
+      "default": "COUNTRY_ALPHA_2_CODE_NONE"
+    },
+    "geoPostalAddress": {
+      "type": "object",
+      "properties": {
+        "street_number": {
+          "type": "string",
+          "format": "uint64"
+        },
+        "street_number_postfix": {
+          "type": "string"
+        },
+        "street_name": {
+          "type": "string"
+        },
+        "pre_street_direction": {
+          "$ref": "#/definitions/geoStreetDirection"
+        },
+        "post_street_direction": {
+          "$ref": "#/definitions/geoStreetDirection"
+        },
+        "street_type_abbreviation": {
+          "type": "string"
+        },
+        "secondary_address_type_abbreviation": {
+          "type": "string"
+        },
+        "secondary_address_value": {
+          "type": "string"
+        },
+        "locality_name": {
+          "type": "string"
+        },
+        "region_code": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country_alpha_2_code": {
+          "$ref": "#/definitions/geoCountryAlpha2Code"
+        }
+      }
+    },
+    "geoStreetDirection": {
+      "type": "string",
+      "enum": [
+        "STREET_DIRECTION_NONE",
+        "STREET_DIRECTION_N",
+        "STREET_DIRECTION_S",
+        "STREET_DIRECTION_E",
+        "STREET_DIRECTION_W",
+        "STREET_DIRECTION_NE",
+        "STREET_DIRECTION_SE",
+        "STREET_DIRECTION_NW",
+        "STREET_DIRECTION_SW"
+      ],
+      "default": "STREET_DIRECTION_NONE"
     },
     "imagesDeleteResponse": {
       "type": "object",

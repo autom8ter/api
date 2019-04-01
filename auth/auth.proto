@@ -1,23 +1,14 @@
 syntax = "proto3";
 
 package auth;
+import "time/time.proto";
+import "geo/geo.proto";
 
 enum Role {
     GUEST = 0;
     MEMBER = 1;
     ADMIN = 2;
     USER =3;
-}
-
-message User {
-    string uid =1;
-    string email =2;
-    string password =3;
-    string phone_number=4;
-    string display_name =5;
-    string photo_url =6;
-    bool email_verified=7;
-    bool disabled =8;
 }
 
 message UserInfo {
@@ -27,12 +18,14 @@ message UserInfo {
     string photo_url =4;
     string provider_id=5;
     string uid=6;
+
 }
 
 message UserMetadata {
     int64 creation_timestamp  =1;
     int64 last_login_timestamp=2;
     map<string, string> meta=3;
+
 }
 
 message UserRecord {
@@ -43,6 +36,18 @@ message UserRecord {
     repeated UserInfo provider_user_info=5;
     int64 Tokens_Valid_After_Millis =6;
     UserMetadata user_metadata=7;
+    string plan=8;
+    int64 account_balance=9;
+    string description=10;
+    repeated string tokens =11;
+    string password=12;
+    string recovery_question=13;
+    string recovery_answer=14;
+    int64 trial_end=15;
+    string coupon =16;
+     Role role =18;
+    geo.PostalAddress postal =19;
+    time.Tracker tracker=20;
 
 }
 
