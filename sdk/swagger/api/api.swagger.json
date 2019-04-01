@@ -103,6 +103,20 @@
         }
       }
     },
+    "authInvoiceSettings": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "footer": {
+          "type": "string"
+        }
+      }
+    },
     "authPageInfo": {
       "type": "object",
       "properties": {
@@ -265,6 +279,9 @@
         },
         "postal": {
           "$ref": "#/definitions/geoSimplePostalAddress"
+        },
+        "invoice_settings": {
+          "$ref": "#/definitions/authInvoiceSettings"
         },
         "tracker": {
           "$ref": "#/definitions/timeTracker"

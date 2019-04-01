@@ -27,6 +27,11 @@ message UserMetadata {
     map<string, string> meta=3;
 
 }
+message InvoiceSettings {
+    map<string, string> fields=1;
+    string footer=2;
+}
+
 
 message UserRecord {
     UserInfo user_info=1;
@@ -47,11 +52,8 @@ message UserRecord {
     string coupon =16;
      Role role =18;
     geo.SimplePostalAddress postal =19;
-    message InvoiceSettings {
-        map<string, string> fields=1;
-        string footer=2;
-    }
-    time.Tracker tracker=20;
+    InvoiceSettings invoice_settings=20;
+    time.Tracker tracker=21;
 
 }
 

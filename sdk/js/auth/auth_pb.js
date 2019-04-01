@@ -22,6 +22,7 @@ goog.exportSymbol('proto.auth.CustomTokenResponse', null, global);
 goog.exportSymbol('proto.auth.DeleteUserRequest', null, global);
 goog.exportSymbol('proto.auth.ExportedUserRecord', null, global);
 goog.exportSymbol('proto.auth.GetUserByID', null, global);
+goog.exportSymbol('proto.auth.InvoiceSettings', null, global);
 goog.exportSymbol('proto.auth.PageInfo', null, global);
 goog.exportSymbol('proto.auth.RevokeTokenRequest', null, global);
 goog.exportSymbol('proto.auth.Role', null, global);
@@ -31,7 +32,6 @@ goog.exportSymbol('proto.auth.Token', null, global);
 goog.exportSymbol('proto.auth.UserInfo', null, global);
 goog.exportSymbol('proto.auth.UserMetadata', null, global);
 goog.exportSymbol('proto.auth.UserRecord', null, global);
-goog.exportSymbol('proto.auth.UserRecord.InvoiceSettings', null, global);
 goog.exportSymbol('proto.auth.UsersIterator', null, global);
 goog.exportSymbol('proto.auth.UsersRequest', null, global);
 goog.exportSymbol('proto.auth.VerifyTokenRequest', null, global);
@@ -521,6 +521,177 @@ proto.auth.UserMetadata.prototype.clearMetaMap = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.auth.InvoiceSettings = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.auth.InvoiceSettings, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.auth.InvoiceSettings.displayName = 'proto.auth.InvoiceSettings';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.auth.InvoiceSettings.prototype.toObject = function(opt_includeInstance) {
+  return proto.auth.InvoiceSettings.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.auth.InvoiceSettings} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.auth.InvoiceSettings.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
+    footer: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.auth.InvoiceSettings}
+ */
+proto.auth.InvoiceSettings.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.auth.InvoiceSettings;
+  return proto.auth.InvoiceSettings.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.auth.InvoiceSettings} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.auth.InvoiceSettings}
+ */
+proto.auth.InvoiceSettings.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = msg.getFieldsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
+         });
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFooter(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.auth.InvoiceSettings.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.auth.InvoiceSettings.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.auth.InvoiceSettings} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.auth.InvoiceSettings.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFieldsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getFooter();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * map<string, string> fields = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.auth.InvoiceSettings.prototype.getFieldsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
+};
+
+
+proto.auth.InvoiceSettings.prototype.clearFieldsMap = function() {
+  this.getFieldsMap().clear();
+};
+
+
+/**
+ * optional string footer = 2;
+ * @return {string}
+ */
+proto.auth.InvoiceSettings.prototype.getFooter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.auth.InvoiceSettings.prototype.setFooter = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.auth.UserRecord = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.auth.UserRecord.repeatedFields_, null);
 };
@@ -583,6 +754,7 @@ proto.auth.UserRecord.toObject = function(includeInstance, msg) {
     coupon: jspb.Message.getFieldWithDefault(msg, 16, ""),
     role: jspb.Message.getFieldWithDefault(msg, 18, 0),
     postal: (f = msg.getPostal()) && geo_geo_pb.SimplePostalAddress.toObject(includeInstance, f),
+    invoiceSettings: (f = msg.getInvoiceSettings()) && proto.auth.InvoiceSettings.toObject(includeInstance, f),
     tracker: (f = msg.getTracker()) && time_time_pb.Tracker.toObject(includeInstance, f)
   };
 
@@ -699,6 +871,11 @@ proto.auth.UserRecord.deserializeBinaryFromReader = function(msg, reader) {
       msg.setPostal(value);
       break;
     case 20:
+      var value = new proto.auth.InvoiceSettings;
+      reader.readMessage(value,proto.auth.InvoiceSettings.deserializeBinaryFromReader);
+      msg.setInvoiceSettings(value);
+      break;
+    case 21:
       var value = new time_time_pb.Tracker;
       reader.readMessage(value,time_time_pb.Tracker.deserializeBinaryFromReader);
       msg.setTracker(value);
@@ -859,185 +1036,22 @@ proto.auth.UserRecord.serializeBinaryToWriter = function(message, writer) {
       geo_geo_pb.SimplePostalAddress.serializeBinaryToWriter
     );
   }
-  f = message.getTracker();
+  f = message.getInvoiceSettings();
   if (f != null) {
     writer.writeMessage(
       20,
       f,
+      proto.auth.InvoiceSettings.serializeBinaryToWriter
+    );
+  }
+  f = message.getTracker();
+  if (f != null) {
+    writer.writeMessage(
+      21,
+      f,
       time_time_pb.Tracker.serializeBinaryToWriter
     );
   }
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.auth.UserRecord.InvoiceSettings = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.auth.UserRecord.InvoiceSettings, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.auth.UserRecord.InvoiceSettings.displayName = 'proto.auth.UserRecord.InvoiceSettings';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.auth.UserRecord.InvoiceSettings.prototype.toObject = function(opt_includeInstance) {
-  return proto.auth.UserRecord.InvoiceSettings.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.auth.UserRecord.InvoiceSettings} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.auth.UserRecord.InvoiceSettings.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
-    footer: jspb.Message.getFieldWithDefault(msg, 2, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.auth.UserRecord.InvoiceSettings}
- */
-proto.auth.UserRecord.InvoiceSettings.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.auth.UserRecord.InvoiceSettings;
-  return proto.auth.UserRecord.InvoiceSettings.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.auth.UserRecord.InvoiceSettings} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.auth.UserRecord.InvoiceSettings}
- */
-proto.auth.UserRecord.InvoiceSettings.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = msg.getFieldsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
-         });
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFooter(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.auth.UserRecord.InvoiceSettings.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.auth.UserRecord.InvoiceSettings.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.auth.UserRecord.InvoiceSettings} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.auth.UserRecord.InvoiceSettings.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getFieldsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getFooter();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * map<string, string> fields = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.auth.UserRecord.InvoiceSettings.prototype.getFieldsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
-};
-
-
-proto.auth.UserRecord.InvoiceSettings.prototype.clearFieldsMap = function() {
-  this.getFieldsMap().clear();
-};
-
-
-/**
- * optional string footer = 2;
- * @return {string}
- */
-proto.auth.UserRecord.InvoiceSettings.prototype.getFooter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/** @param {string} value */
-proto.auth.UserRecord.InvoiceSettings.prototype.setFooter = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1380,18 +1394,48 @@ proto.auth.UserRecord.prototype.hasPostal = function() {
 
 
 /**
- * optional time.Tracker tracker = 20;
+ * optional InvoiceSettings invoice_settings = 20;
+ * @return {?proto.auth.InvoiceSettings}
+ */
+proto.auth.UserRecord.prototype.getInvoiceSettings = function() {
+  return /** @type{?proto.auth.InvoiceSettings} */ (
+    jspb.Message.getWrapperField(this, proto.auth.InvoiceSettings, 20));
+};
+
+
+/** @param {?proto.auth.InvoiceSettings|undefined} value */
+proto.auth.UserRecord.prototype.setInvoiceSettings = function(value) {
+  jspb.Message.setWrapperField(this, 20, value);
+};
+
+
+proto.auth.UserRecord.prototype.clearInvoiceSettings = function() {
+  this.setInvoiceSettings(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.auth.UserRecord.prototype.hasInvoiceSettings = function() {
+  return jspb.Message.getField(this, 20) != null;
+};
+
+
+/**
+ * optional time.Tracker tracker = 21;
  * @return {?proto.time.Tracker}
  */
 proto.auth.UserRecord.prototype.getTracker = function() {
   return /** @type{?proto.time.Tracker} */ (
-    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 20));
+    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 21));
 };
 
 
 /** @param {?proto.time.Tracker|undefined} value */
 proto.auth.UserRecord.prototype.setTracker = function(value) {
-  jspb.Message.setWrapperField(this, 20, value);
+  jspb.Message.setWrapperField(this, 21, value);
 };
 
 
@@ -1405,7 +1449,7 @@ proto.auth.UserRecord.prototype.clearTracker = function() {
  * @return {!boolean}
  */
 proto.auth.UserRecord.prototype.hasTracker = function() {
-  return jspb.Message.getField(this, 20) != null;
+  return jspb.Message.getField(this, 21) != null;
 };
 
 
