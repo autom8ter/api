@@ -82,6 +82,7 @@ proto.user.User.toObject = function(includeInstance, msg) {
     recoveryQuestion: jspb.Message.getFieldWithDefault(msg, 12, ""),
     recoveryAnswer: jspb.Message.getFieldWithDefault(msg, 13, ""),
     trialEnd: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    coupon: jspb.Message.getFieldWithDefault(msg, 15, ""),
     metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, undefined) : [],
     postal: (f = msg.getPostal()) && geo_geo_pb.PostalAddress.toObject(includeInstance, f),
     tracker: (f = msg.getTracker()) && time_time_pb.Tracker.toObject(includeInstance, f)
@@ -178,17 +179,21 @@ proto.user.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTrialEnd(value);
       break;
     case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCoupon(value);
+      break;
+    case 16:
       var value = msg.getMetaMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "");
          });
       break;
-    case 16:
+    case 17:
       var value = new geo_geo_pb.PostalAddress;
       reader.readMessage(value,geo_geo_pb.PostalAddress.deserializeBinaryFromReader);
       msg.setPostal(value);
       break;
-    case 17:
+    case 18:
       var value = new time_time_pb.Tracker;
       reader.readMessage(value,time_time_pb.Tracker.deserializeBinaryFromReader);
       msg.setTracker(value);
@@ -320,14 +325,21 @@ proto.user.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getCoupon();
+  if (f.length > 0) {
+    writer.writeString(
+      15,
+      f
+    );
+  }
   f = message.getMetaMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(16, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
   f = message.getPostal();
   if (f != null) {
     writer.writeMessage(
-      16,
+      17,
       f,
       geo_geo_pb.PostalAddress.serializeBinaryToWriter
     );
@@ -335,7 +347,7 @@ proto.user.User.serializeBinaryToWriter = function(message, writer) {
   f = message.getTracker();
   if (f != null) {
     writer.writeMessage(
-      17,
+      18,
       f,
       time_time_pb.Tracker.serializeBinaryToWriter
     );
@@ -572,14 +584,29 @@ proto.user.User.prototype.setTrialEnd = function(value) {
 
 
 /**
- * map<string, bytes> meta = 15;
+ * optional string coupon = 15;
+ * @return {string}
+ */
+proto.user.User.prototype.getCoupon = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+};
+
+
+/** @param {string} value */
+proto.user.User.prototype.setCoupon = function(value) {
+  jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * map<string, bytes> meta = 16;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.user.User.prototype.getMetaMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 16, opt_noLazyCreate,
       null));
 };
 
@@ -590,18 +617,18 @@ proto.user.User.prototype.clearMetaMap = function() {
 
 
 /**
- * optional geo.PostalAddress postal = 16;
+ * optional geo.PostalAddress postal = 17;
  * @return {?proto.geo.PostalAddress}
  */
 proto.user.User.prototype.getPostal = function() {
   return /** @type{?proto.geo.PostalAddress} */ (
-    jspb.Message.getWrapperField(this, geo_geo_pb.PostalAddress, 16));
+    jspb.Message.getWrapperField(this, geo_geo_pb.PostalAddress, 17));
 };
 
 
 /** @param {?proto.geo.PostalAddress|undefined} value */
 proto.user.User.prototype.setPostal = function(value) {
-  jspb.Message.setWrapperField(this, 16, value);
+  jspb.Message.setWrapperField(this, 17, value);
 };
 
 
@@ -615,23 +642,23 @@ proto.user.User.prototype.clearPostal = function() {
  * @return {!boolean}
  */
 proto.user.User.prototype.hasPostal = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional time.Tracker tracker = 17;
+ * optional time.Tracker tracker = 18;
  * @return {?proto.time.Tracker}
  */
 proto.user.User.prototype.getTracker = function() {
   return /** @type{?proto.time.Tracker} */ (
-    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 17));
+    jspb.Message.getWrapperField(this, time_time_pb.Tracker, 18));
 };
 
 
 /** @param {?proto.time.Tracker|undefined} value */
 proto.user.User.prototype.setTracker = function(value) {
-  jspb.Message.setWrapperField(this, 17, value);
+  jspb.Message.setWrapperField(this, 18, value);
 };
 
 
@@ -645,7 +672,7 @@ proto.user.User.prototype.clearTracker = function() {
  * @return {!boolean}
  */
 proto.user.User.prototype.hasTracker = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 

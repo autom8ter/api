@@ -19,7 +19,8 @@ message User {
     string recovery_question=12;
     string recovery_answer=13;
     int64 trial_end=14;
-    map<string, bytes>  meta=15;
-    geo.PostalAddress postal =16;
-    time.Tracker tracker=17;
+    string coupon =15;
+    map<string, bytes>  meta=16;
+    geo.PostalAddress postal =17;
+    time.Tracker tracker=18;
 }
