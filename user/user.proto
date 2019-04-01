@@ -1,0 +1,25 @@
+syntax="proto3";
+import "time/time.proto";
+import "geo/geo.proto";
+
+package user;
+
+message User {
+    string  id=1;
+    string display_name =2;
+    string photo =3;
+    string email =4;
+    string phone =5;
+    bool registered=6;
+    bool verified=7;
+    int64 account_balance=8;
+    string description=9;
+    repeated string tokens =10;
+    string password=11;
+    string recovery_question=12;
+    string recovery_answer=13;
+    int64 trial_end=14;
+    map<string, bytes>  meta=15;
+    geo.PostalAddress postal =16;
+    time.Tracker tracker=17;
+}

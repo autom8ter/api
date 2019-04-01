@@ -24,14 +24,6 @@ enum CardType {
     MASTERCARD=1;
 }
 
-message Seller {
-    string id=1;
-    User user=2;
-    Rating rating =3;
-    Inventory inventory=4;
-    repeated Receipt receipts=5;
-}
-
 message Card {
     CardType card_type =1;
     string full_name =2;
@@ -82,21 +74,6 @@ message Receipt {
     Cart cart =2;
 
 }
-
-message User {
-    string  customer_id=1;
-    string display_name =2;
-    string email =3;
-    string phone =4;
-    bool registered=5;
-    bool verified=6;
-    repeated Card cards=7;
-    Cart    cart =8;
-    geo.PostalAddress postal =9;
-    time.Tracker tracker=10;
-
-}
-
 message Cart {
     repeated Product products =1;
     float total =2;
