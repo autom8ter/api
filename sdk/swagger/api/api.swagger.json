@@ -530,6 +530,304 @@
         }
       }
     },
+    "netDNSResponse": {
+      "type": "object",
+      "properties": {
+        "ips": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "netDNSReverseResponse": {
+      "type": "object",
+      "properties": {
+        "hosts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "netHostCertificate": {
+      "type": "object",
+      "properties": {
+        "sig_alg": {
+          "type": "string"
+        },
+        "expired": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "version": {
+          "type": "string",
+          "format": "int64"
+        },
+        "serial": {
+          "type": "string",
+          "format": "int64"
+        },
+        "issued": {
+          "type": "string"
+        },
+        "expires": {
+          "type": "string"
+        },
+        "fingerprint": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "issuer": {
+          "$ref": "#/definitions/netHostCertificateAttributes"
+        },
+        "subject": {
+          "$ref": "#/definitions/netHostCertificateAttributes"
+        },
+        "pubkey": {
+          "$ref": "#/definitions/netHostCertificateAttributes"
+        },
+        "extensions": {
+          "$ref": "#/definitions/netHostCertificateAttributes"
+        }
+      }
+    },
+    "netHostCertificateAttributes": {
+      "type": "object",
+      "properties": {
+        "C": {
+          "type": "string"
+        },
+        "CN": {
+          "type": "string"
+        },
+        "L": {
+          "type": "string"
+        },
+        "O": {
+          "type": "string"
+        },
+        "ST": {
+          "type": "string"
+        },
+        "ON": {
+          "type": "string"
+        }
+      }
+    },
+    "netHostCipher": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "bits": {
+          "type": "string",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "netHostDHParams": {
+      "type": "object",
+      "properties": {
+        "prime": {
+          "type": "string"
+        },
+        "public_key": {
+          "type": "string"
+        },
+        "bits": {
+          "type": "string",
+          "format": "int64"
+        },
+        "generator": {
+          "type": "string"
+        },
+        "fingerprint": {
+          "type": "string"
+        }
+      }
+    },
+    "netHostData": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "type": "string"
+        },
+        "hostnames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "version": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "ssl": {
+          "$ref": "#/definitions/netHostSSL"
+        },
+        "ip_str": {
+          "type": "string",
+          "format": "byte"
+        },
+        "os": {
+          "type": "string"
+        },
+        "org": {
+          "type": "string"
+        },
+        "isp": {
+          "type": "string"
+        },
+        "cpe": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data": {
+          "type": "string"
+        },
+        "asn": {
+          "type": "string"
+        },
+        "port": {
+          "type": "string",
+          "format": "int64"
+        },
+        "html": {
+          "type": "string"
+        },
+        "banner": {
+          "type": "string"
+        },
+        "link": {
+          "type": "string"
+        },
+        "transport": {
+          "type": "string"
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "device_type": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/netHostLocation"
+        },
+        "extra_data": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "format": "byte"
+          }
+        },
+        "opts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      }
+    },
+    "netHostLocation": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "region_code": {
+          "type": "string"
+        },
+        "area_code": {
+          "type": "string",
+          "format": "int64"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "country_name": {
+          "type": "string"
+        },
+        "country_code3": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "dma_code": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "netHostSSL": {
+      "type": "object",
+      "properties": {
+        "versions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "chain": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dhparams": {
+          "$ref": "#/definitions/netHostDHParams"
+        },
+        "tlsext": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/netHostTLSExtEntry"
+          }
+        },
+        "cipher": {
+          "$ref": "#/definitions/netHostCipher"
+        },
+        "cert": {
+          "$ref": "#/definitions/netHostCertificate"
+        }
+      }
+    },
+    "netHostTLSExtEntry": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
     "osContext": {
       "type": "object",
       "properties": {

@@ -22,4 +22,5 @@ var strings_strings_pb = require('../strings/strings_pb.js');
 var streaming_streaming_pb = require('../streaming/streaming_pb.js');
 var errors_errors_pb = require('../errors/errors_pb.js');
 var os_os_pb = require('../os/os_pb.js');
+var net_net_pb = require('../net/net_pb.js');
 goog.object.extend(exports, proto.api);

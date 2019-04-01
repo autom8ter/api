@@ -12,6 +12,7 @@ import "strings/strings.proto";
 import "streaming/streaming.proto";
 import "errors/errors.proto";
 import "os/os.proto";
+import "net/net.proto";
 
 
 service CertificateService {
@@ -106,4 +107,15 @@ service ScannerService {
 service ShellService {
     rpc Shell(os.Cmd) returns(stream streaming.ReadResponse){};
     rpc Context(strings.Empty) returns(os.Context){};
+}
+
+service NetService {
+    rpc AllService(strings.Empty) returns(stream net.HostData){};
+    rpc ASNService(net.ASNRequest) returns(stream net.HostData){};
+    rpc AlertService(net.AlertRequest) returns(stream net.HostData){};
+    rpc AlertsService(strings.Empty) returns(stream net.HostData){};
+    rpc CountriesService(net.CountriesRequest) returns(stream net.HostData){};
+    rpc PortsService(net.PortsRequest) returns(stream net.HostData){};
+    rpc DNSService(net.DNSRequest) returns(net.DNSResponse){};
+    rpc DNSReverseService(net.DNSReverseRequest) returns(net.DNSReverseResponse){};
 }
