@@ -581,7 +581,7 @@ proto.auth.UserRecord.toObject = function(includeInstance, msg) {
     trialEnd: jspb.Message.getFieldWithDefault(msg, 15, 0),
     coupon: jspb.Message.getFieldWithDefault(msg, 16, ""),
     role: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    postal: (f = msg.getPostal()) && geo_geo_pb.PostalAddress.toObject(includeInstance, f),
+    postal: (f = msg.getPostal()) && geo_geo_pb.SimplePostalAddress.toObject(includeInstance, f),
     tracker: (f = msg.getTracker()) && time_time_pb.Tracker.toObject(includeInstance, f)
   };
 
@@ -693,8 +693,8 @@ proto.auth.UserRecord.deserializeBinaryFromReader = function(msg, reader) {
       msg.setRole(value);
       break;
     case 19:
-      var value = new geo_geo_pb.PostalAddress;
-      reader.readMessage(value,geo_geo_pb.PostalAddress.deserializeBinaryFromReader);
+      var value = new geo_geo_pb.SimplePostalAddress;
+      reader.readMessage(value,geo_geo_pb.SimplePostalAddress.deserializeBinaryFromReader);
       msg.setPostal(value);
       break;
     case 20:
@@ -855,7 +855,7 @@ proto.auth.UserRecord.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       19,
       f,
-      geo_geo_pb.PostalAddress.serializeBinaryToWriter
+      geo_geo_pb.SimplePostalAddress.serializeBinaryToWriter
     );
   }
   f = message.getTracker();
@@ -1178,16 +1178,16 @@ proto.auth.UserRecord.prototype.setRole = function(value) {
 
 
 /**
- * optional geo.PostalAddress postal = 19;
- * @return {?proto.geo.PostalAddress}
+ * optional geo.SimplePostalAddress postal = 19;
+ * @return {?proto.geo.SimplePostalAddress}
  */
 proto.auth.UserRecord.prototype.getPostal = function() {
-  return /** @type{?proto.geo.PostalAddress} */ (
-    jspb.Message.getWrapperField(this, geo_geo_pb.PostalAddress, 19));
+  return /** @type{?proto.geo.SimplePostalAddress} */ (
+    jspb.Message.getWrapperField(this, geo_geo_pb.SimplePostalAddress, 19));
 };
 
 
-/** @param {?proto.geo.PostalAddress|undefined} value */
+/** @param {?proto.geo.SimplePostalAddress|undefined} value */
 proto.auth.UserRecord.prototype.setPostal = function(value) {
   jspb.Message.setWrapperField(this, 19, value);
 };

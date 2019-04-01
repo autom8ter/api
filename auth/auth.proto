@@ -46,7 +46,7 @@ message UserRecord {
     int64 trial_end=15;
     string coupon =16;
      Role role =18;
-    geo.PostalAddress postal =19;
+    geo.SimplePostalAddress postal =19;
     time.Tracker tracker=20;
 
 }

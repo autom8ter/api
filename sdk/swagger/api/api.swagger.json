@@ -264,7 +264,7 @@
           "$ref": "#/definitions/authRole"
         },
         "postal": {
-          "$ref": "#/definitions/geoPostalAddress"
+          "$ref": "#/definitions/geoSimplePostalAddress"
         },
         "tracker": {
           "$ref": "#/definitions/timeTracker"
@@ -728,62 +728,37 @@
       ],
       "default": "COUNTRY_ALPHA_2_CODE_NONE"
     },
-    "geoPostalAddress": {
+    "geoSimplePostalAddress": {
       "type": "object",
       "properties": {
-        "street_number": {
-          "type": "string",
-          "format": "uint64"
-        },
-        "street_number_postfix": {
+        "city": {
           "type": "string"
         },
-        "street_name": {
+        "country": {
           "type": "string"
         },
-        "pre_street_direction": {
-          "$ref": "#/definitions/geoStreetDirection"
-        },
-        "post_street_direction": {
-          "$ref": "#/definitions/geoStreetDirection"
-        },
-        "street_type_abbreviation": {
+        "state": {
           "type": "string"
         },
-        "secondary_address_type_abbreviation": {
+        "address_1": {
           "type": "string"
         },
-        "secondary_address_value": {
+        "address_2": {
           "type": "string"
         },
-        "locality_name": {
+        "zip": {
           "type": "string"
         },
-        "region_code": {
+        "name": {
           "type": "string"
         },
-        "postal_code": {
+        "phone": {
           "type": "string"
         },
         "country_alpha_2_code": {
           "$ref": "#/definitions/geoCountryAlpha2Code"
         }
       }
-    },
-    "geoStreetDirection": {
-      "type": "string",
-      "enum": [
-        "STREET_DIRECTION_NONE",
-        "STREET_DIRECTION_N",
-        "STREET_DIRECTION_S",
-        "STREET_DIRECTION_E",
-        "STREET_DIRECTION_W",
-        "STREET_DIRECTION_NE",
-        "STREET_DIRECTION_SE",
-        "STREET_DIRECTION_NW",
-        "STREET_DIRECTION_SW"
-      ],
-      "default": "STREET_DIRECTION_NONE"
     },
     "imagesDeleteResponse": {
       "type": "object",

@@ -523,20 +523,14 @@ message PostalAddress {
 }
 
 message SimplePostalAddress {
-    string street_address = 1;
-    string street_address_2 = 2;
-    string locality_name = 3;
-    string region_code = 4;
-    string postal_code = 5;
-    CountryAlpha2Code country_alpha_2_code = 6;
+    string city = 1;
+    string country = 2;
+    string state = 3;
+    string address_1 = 4;
+    string address_2 = 5;
+    string zip = 6;
+    string name=7;
+    string phone=8;
+    CountryAlpha2Code country_alpha_2_code = 9;
 }
 
-
-message URL {
-    string scheme =1;
-    string username =2;
-    string password =3;
-    string host =4;
-    string path =5;
-    map<string,string> query =6;
-}

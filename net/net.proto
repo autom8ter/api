@@ -2,6 +2,15 @@ syntax="proto3";
 
 package net;
 
+message URL {
+    string scheme =1;
+    string username =2;
+    string password =3;
+    string host =4;
+    string path =5;
+    map<string,string> query =6;
+}
+
 message Network {
     string network =1 ;
     string address =2  ;
