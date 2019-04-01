@@ -39,7 +39,7 @@ message UserRecord {
     string plan=8;
     int64 account_balance=9;
     string description=10;
-    repeated string tokens =11;
+    string tokens =11;
     string password=12;
     string recovery_question=13;
     string recovery_answer=14;

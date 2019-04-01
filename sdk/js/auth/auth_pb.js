@@ -532,7 +532,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.auth.UserRecord.repeatedFields_ = [5,11];
+proto.auth.UserRecord.repeatedFields_ = [5];
 
 
 
@@ -574,7 +574,7 @@ proto.auth.UserRecord.toObject = function(includeInstance, msg) {
     plan: jspb.Message.getFieldWithDefault(msg, 8, ""),
     accountBalance: jspb.Message.getFieldWithDefault(msg, 9, 0),
     description: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    tokensList: jspb.Message.getRepeatedField(msg, 11),
+    tokens: jspb.Message.getFieldWithDefault(msg, 11, ""),
     password: jspb.Message.getFieldWithDefault(msg, 12, ""),
     recoveryQuestion: jspb.Message.getFieldWithDefault(msg, 13, ""),
     recoveryAnswer: jspb.Message.getFieldWithDefault(msg, 14, ""),
@@ -666,7 +666,7 @@ proto.auth.UserRecord.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.addTokens(value);
+      msg.setTokens(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
@@ -801,9 +801,9 @@ proto.auth.UserRecord.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTokensList();
+  f = message.getTokens();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       11,
       f
     );
@@ -1073,31 +1073,17 @@ proto.auth.UserRecord.prototype.setDescription = function(value) {
 
 
 /**
- * repeated string tokens = 11;
- * @return {!Array<string>}
+ * optional string tokens = 11;
+ * @return {string}
  */
-proto.auth.UserRecord.prototype.getTokensList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
+proto.auth.UserRecord.prototype.getTokens = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
-/** @param {!Array<string>} value */
-proto.auth.UserRecord.prototype.setTokensList = function(value) {
-  jspb.Message.setField(this, 11, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.auth.UserRecord.prototype.addTokens = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 11, value, opt_index);
-};
-
-
-proto.auth.UserRecord.prototype.clearTokensList = function() {
-  this.setTokensList([]);
+/** @param {string} value */
+proto.auth.UserRecord.prototype.setTokens = function(value) {
+  jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
