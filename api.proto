@@ -180,3 +180,28 @@ message EmailRequest {
     string plain_text=3;
     string html_alt=4;
 }
+
+message ChannelReminder {
+    string channel_id=1;
+    string text=2;
+    string time=3;
+}
+
+message UserReminder {
+    string user_id=1;
+    string text=2;
+    string time=3;
+    ItemRef item=4;
+}
+
+message ItemRef {
+    string channel=1;
+    string file=2;
+    string comment=3;
+}
+
+message Star {
+    string text=1;
+    ItemRef item=4;
+
+}

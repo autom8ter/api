@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class Address;
+@class ItemRef;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -348,6 +349,82 @@ typedef GPB_ENUM(EmailRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *plainText;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *htmlAlt;
+
+@end
+
+#pragma mark - ChannelReminder
+
+typedef GPB_ENUM(ChannelReminder_FieldNumber) {
+  ChannelReminder_FieldNumber_ChannelId = 1,
+  ChannelReminder_FieldNumber_Text = 2,
+  ChannelReminder_FieldNumber_Time = 3,
+};
+
+@interface ChannelReminder : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channelId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *time;
+
+@end
+
+#pragma mark - UserReminder
+
+typedef GPB_ENUM(UserReminder_FieldNumber) {
+  UserReminder_FieldNumber_UserId = 1,
+  UserReminder_FieldNumber_Text = 2,
+  UserReminder_FieldNumber_Time = 3,
+  UserReminder_FieldNumber_Item = 4,
+};
+
+@interface UserReminder : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *time;
+
+@property(nonatomic, readwrite, strong, null_resettable) ItemRef *item;
+/** Test to see if @c item has been set. */
+@property(nonatomic, readwrite) BOOL hasItem;
+
+@end
+
+#pragma mark - ItemRef
+
+typedef GPB_ENUM(ItemRef_FieldNumber) {
+  ItemRef_FieldNumber_Channel = 1,
+  ItemRef_FieldNumber_File = 2,
+  ItemRef_FieldNumber_Comment = 3,
+};
+
+@interface ItemRef : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channel;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *file;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *comment;
+
+@end
+
+#pragma mark - Star
+
+typedef GPB_ENUM(Star_FieldNumber) {
+  Star_FieldNumber_Text = 1,
+  Star_FieldNumber_Item = 4,
+};
+
+@interface Star : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, strong, null_resettable) ItemRef *item;
+/** Test to see if @c item has been set. */
+@property(nonatomic, readwrite) BOOL hasItem;
 
 @end
 

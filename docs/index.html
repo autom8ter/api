@@ -203,6 +203,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.ChannelReminder"><span class="badge">M</span>ChannelReminder</a>
+                </li>
+              
+                <li>
                   <a href="#api.CreatePlanRequest"><span class="badge">M</span>CreatePlanRequest</a>
                 </li>
               
@@ -219,11 +223,19 @@
                 </li>
               
                 <li>
+                  <a href="#api.ItemRef"><span class="badge">M</span>ItemRef</a>
+                </li>
+              
+                <li>
                   <a href="#api.MMSRequest"><span class="badge">M</span>MMSRequest</a>
                 </li>
               
                 <li>
                   <a href="#api.SMSRequest"><span class="badge">M</span>SMSRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Star"><span class="badge">M</span>Star</a>
                 </li>
               
                 <li>
@@ -248,6 +260,10 @@
               
                 <li>
                   <a href="#api.UserMap.UsersEntry"><span class="badge">M</span>UserMap.UsersEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.UserReminder"><span class="badge">M</span>UserReminder</a>
                 </li>
               
               
@@ -515,6 +531,43 @@
 
         
       
+        <h3 id="api.ChannelReminder">ChannelReminder</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>channel_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.CreatePlanRequest">CreatePlanRequest</h3>
         <p></p>
 
@@ -640,6 +693,43 @@
 
         
       
+        <h3 id="api.ItemRef">ItemRef</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>channel</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>file</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>comment</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.MMSRequest">MMSRequest</h3>
         <p></p>
 
@@ -697,6 +787,36 @@
                 <tr>
                   <td>body</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Star">Star</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>item</td>
+                  <td><a href="#api.ItemRef">ItemRef</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -947,6 +1067,50 @@
                 <tr>
                   <td>value</td>
                   <td><a href="#api.User">User</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.UserReminder">UserReminder</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>item</td>
+                  <td><a href="#api.ItemRef">ItemRef</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

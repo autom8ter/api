@@ -90,6 +90,26 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :plain_text, :string, 3
     optional :html_alt, :string, 4
   end
+  add_message "api.ChannelReminder" do
+    optional :channel_id, :string, 1
+    optional :text, :string, 2
+    optional :time, :string, 3
+  end
+  add_message "api.UserReminder" do
+    optional :user_id, :string, 1
+    optional :text, :string, 2
+    optional :time, :string, 3
+    optional :item, :message, 4, "api.ItemRef"
+  end
+  add_message "api.ItemRef" do
+    optional :channel, :string, 1
+    optional :file, :string, 2
+    optional :comment, :string, 3
+  end
+  add_message "api.Star" do
+    optional :text, :string, 1
+    optional :item, :message, 4, "api.ItemRef"
+  end
 end
 
 module Api
@@ -108,4 +128,8 @@ module Api
   CallRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallRequest").msgclass
   MMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MMSRequest").msgclass
   EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass
+  ChannelReminder = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChannelReminder").msgclass
+  UserReminder = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserReminder").msgclass
+  ItemRef = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ItemRef").msgclass
+  Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
 end

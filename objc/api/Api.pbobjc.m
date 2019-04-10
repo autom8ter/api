@@ -1112,6 +1112,266 @@ typedef struct EmailRequest__storage_ {
 
 @end
 
+#pragma mark - ChannelReminder
+
+@implementation ChannelReminder
+
+@dynamic channelId;
+@dynamic text;
+@dynamic time;
+
+typedef struct ChannelReminder__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *channelId;
+  NSString *text;
+  NSString *time;
+} ChannelReminder__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "channelId",
+        .dataTypeSpecific.className = NULL,
+        .number = ChannelReminder_FieldNumber_ChannelId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ChannelReminder__storage_, channelId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = ChannelReminder_FieldNumber_Text,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ChannelReminder__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "time",
+        .dataTypeSpecific.className = NULL,
+        .number = ChannelReminder_FieldNumber_Time,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ChannelReminder__storage_, time),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ChannelReminder class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ChannelReminder__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - UserReminder
+
+@implementation UserReminder
+
+@dynamic userId;
+@dynamic text;
+@dynamic time;
+@dynamic hasItem, item;
+
+typedef struct UserReminder__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *userId;
+  NSString *text;
+  NSString *time;
+  ItemRef *item;
+} UserReminder__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "userId",
+        .dataTypeSpecific.className = NULL,
+        .number = UserReminder_FieldNumber_UserId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(UserReminder__storage_, userId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = UserReminder_FieldNumber_Text,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(UserReminder__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "time",
+        .dataTypeSpecific.className = NULL,
+        .number = UserReminder_FieldNumber_Time,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(UserReminder__storage_, time),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "item",
+        .dataTypeSpecific.className = GPBStringifySymbol(ItemRef),
+        .number = UserReminder_FieldNumber_Item,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(UserReminder__storage_, item),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[UserReminder class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(UserReminder__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ItemRef
+
+@implementation ItemRef
+
+@dynamic channel;
+@dynamic file;
+@dynamic comment;
+
+typedef struct ItemRef__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *channel;
+  NSString *file;
+  NSString *comment;
+} ItemRef__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "channel",
+        .dataTypeSpecific.className = NULL,
+        .number = ItemRef_FieldNumber_Channel,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ItemRef__storage_, channel),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "file",
+        .dataTypeSpecific.className = NULL,
+        .number = ItemRef_FieldNumber_File,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ItemRef__storage_, file),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "comment",
+        .dataTypeSpecific.className = NULL,
+        .number = ItemRef_FieldNumber_Comment,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ItemRef__storage_, comment),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ItemRef class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ItemRef__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Star
+
+@implementation Star
+
+@dynamic text;
+@dynamic hasItem, item;
+
+typedef struct Star__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *text;
+  ItemRef *item;
+} Star__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = Star_FieldNumber_Text,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Star__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "item",
+        .dataTypeSpecific.className = GPBStringifySymbol(ItemRef),
+        .number = Star_FieldNumber_Item,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Star__storage_, item),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Star class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Star__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 
