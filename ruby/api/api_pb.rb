@@ -10,10 +10,7 @@ require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Empty" do
   end
-  add_message "api.UserMap" do
-    map :users, :string, :message, 1, "api.User"
-  end
-  add_message "api.User" do
+  add_message "api.Customer" do
     optional :user_id, :string, 1
     optional :plan, :string, 2
     optional :name, :string, 3
@@ -25,7 +22,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :deleted, :bool, 10
     optional :create_date, :int64, 20
   end
-  add_message "api.AddUserRequest" do
+  add_message "api.AddCustomerRequest" do
     optional :email, :string, 1
     optional :plan, :string, 2
     optional :phone, :string, 3
@@ -35,17 +32,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :description, :string, 7
     optional :address, :message, 8, "api.Address"
   end
-  add_message "api.SubscribeUserRequest" do
+  add_message "api.SubscribeCustomerRequest" do
     optional :email, :string, 1
     optional :plan, :string, 2
     optional :card_number, :string, 3
     optional :exp_month, :string, 4
     optional :exp_year, :string, 5
     optional :cvc, :string, 6
-  end
-  add_message "api.AddUserMetadataRequest" do
-    optional :user_id, :string, 1
-    map :metadata, :string, :string, 2
   end
   add_message "api.Address" do
     optional :city, :string, 1
@@ -55,7 +48,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :postal_code, :string, 5
     optional :state, :string, 6
   end
-  add_message "api.SubscribeUserResponse" do
+  add_message "api.SubscribeCustomerResponse" do
     optional :subscription_id, :string, 1
   end
   add_message "api.CreatePlanResponse" do
@@ -229,13 +222,11 @@ end
 
 module Api
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
-  UserMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMap").msgclass
-  User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
-  AddUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddUserRequest").msgclass
-  SubscribeUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeUserRequest").msgclass
-  AddUserMetadataRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddUserMetadataRequest").msgclass
+  Customer = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Customer").msgclass
+  AddCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddCustomerRequest").msgclass
+  SubscribeCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerRequest").msgclass
   Address = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Address").msgclass
-  SubscribeUserResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeUserResponse").msgclass
+  SubscribeCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerResponse").msgclass
   CreatePlanResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanResponse").msgclass
   CancelSubscriptionRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CancelSubscriptionRequest").msgclass
   CreatePlanRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanRequest").msgclass

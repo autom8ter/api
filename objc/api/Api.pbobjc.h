@@ -36,7 +36,6 @@ CF_EXTERN_C_BEGIN
 @class ItemRef;
 @class LogConfig;
 @class RecipientEmail;
-@class User;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -83,42 +82,25 @@ BOOL CustomerIndex_IsValidValue(int32_t value);
 
 @end
 
-#pragma mark - UserMap
+#pragma mark - Customer
 
-typedef GPB_ENUM(UserMap_FieldNumber) {
-  UserMap_FieldNumber_Users = 1,
-};
-
-/**
- * UserMap is a map of users with a key of either user id, email, or phone number
- **/
-@interface UserMap : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, User*> *users;
-/** The number of items in @c users without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger users_Count;
-
-@end
-
-#pragma mark - User
-
-typedef GPB_ENUM(User_FieldNumber) {
-  User_FieldNumber_UserId = 1,
-  User_FieldNumber_Plan = 2,
-  User_FieldNumber_Name = 3,
-  User_FieldNumber_Email = 4,
-  User_FieldNumber_Description_p = 5,
-  User_FieldNumber_Phone = 6,
-  User_FieldNumber_Address = 8,
-  User_FieldNumber_Metadata = 9,
-  User_FieldNumber_Deleted = 10,
-  User_FieldNumber_CreateDate = 20,
+typedef GPB_ENUM(Customer_FieldNumber) {
+  Customer_FieldNumber_UserId = 1,
+  Customer_FieldNumber_Plan = 2,
+  Customer_FieldNumber_Name = 3,
+  Customer_FieldNumber_Email = 4,
+  Customer_FieldNumber_Description_p = 5,
+  Customer_FieldNumber_Phone = 6,
+  Customer_FieldNumber_Address = 8,
+  Customer_FieldNumber_Metadata = 9,
+  Customer_FieldNumber_Deleted = 10,
+  Customer_FieldNumber_CreateDate = 20,
 };
 
 /**
  * User is a user of the application
  **/
-@interface User : GPBMessage
+@interface Customer : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
@@ -146,20 +128,20 @@ typedef GPB_ENUM(User_FieldNumber) {
 
 @end
 
-#pragma mark - AddUserRequest
+#pragma mark - AddCustomerRequest
 
-typedef GPB_ENUM(AddUserRequest_FieldNumber) {
-  AddUserRequest_FieldNumber_Email = 1,
-  AddUserRequest_FieldNumber_Plan = 2,
-  AddUserRequest_FieldNumber_Phone = 3,
-  AddUserRequest_FieldNumber_Name = 4,
-  AddUserRequest_FieldNumber_Password = 5,
-  AddUserRequest_FieldNumber_TrialEnd = 6,
-  AddUserRequest_FieldNumber_Description_p = 7,
-  AddUserRequest_FieldNumber_Address = 8,
+typedef GPB_ENUM(AddCustomerRequest_FieldNumber) {
+  AddCustomerRequest_FieldNumber_Email = 1,
+  AddCustomerRequest_FieldNumber_Plan = 2,
+  AddCustomerRequest_FieldNumber_Phone = 3,
+  AddCustomerRequest_FieldNumber_Name = 4,
+  AddCustomerRequest_FieldNumber_Password = 5,
+  AddCustomerRequest_FieldNumber_TrialEnd = 6,
+  AddCustomerRequest_FieldNumber_Description_p = 7,
+  AddCustomerRequest_FieldNumber_Address = 8,
 };
 
-@interface AddUserRequest : GPBMessage
+@interface AddCustomerRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
@@ -181,18 +163,18 @@ typedef GPB_ENUM(AddUserRequest_FieldNumber) {
 
 @end
 
-#pragma mark - SubscribeUserRequest
+#pragma mark - SubscribeCustomerRequest
 
-typedef GPB_ENUM(SubscribeUserRequest_FieldNumber) {
-  SubscribeUserRequest_FieldNumber_Email = 1,
-  SubscribeUserRequest_FieldNumber_Plan = 2,
-  SubscribeUserRequest_FieldNumber_CardNumber = 3,
-  SubscribeUserRequest_FieldNumber_ExpMonth = 4,
-  SubscribeUserRequest_FieldNumber_ExpYear = 5,
-  SubscribeUserRequest_FieldNumber_Cvc = 6,
+typedef GPB_ENUM(SubscribeCustomerRequest_FieldNumber) {
+  SubscribeCustomerRequest_FieldNumber_Email = 1,
+  SubscribeCustomerRequest_FieldNumber_Plan = 2,
+  SubscribeCustomerRequest_FieldNumber_CardNumber = 3,
+  SubscribeCustomerRequest_FieldNumber_ExpMonth = 4,
+  SubscribeCustomerRequest_FieldNumber_ExpYear = 5,
+  SubscribeCustomerRequest_FieldNumber_Cvc = 6,
 };
 
-@interface SubscribeUserRequest : GPBMessage
+@interface SubscribeCustomerRequest : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
@@ -205,23 +187,6 @@ typedef GPB_ENUM(SubscribeUserRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
-
-@end
-
-#pragma mark - AddUserMetadataRequest
-
-typedef GPB_ENUM(AddUserMetadataRequest_FieldNumber) {
-  AddUserMetadataRequest_FieldNumber_UserId = 1,
-  AddUserMetadataRequest_FieldNumber_Metadata = 2,
-};
-
-@interface AddUserMetadataRequest : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *metadata;
-/** The number of items in @c metadata without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger metadata_Count;
 
 @end
 
@@ -252,13 +217,13 @@ typedef GPB_ENUM(Address_FieldNumber) {
 
 @end
 
-#pragma mark - SubscribeUserResponse
+#pragma mark - SubscribeCustomerResponse
 
-typedef GPB_ENUM(SubscribeUserResponse_FieldNumber) {
-  SubscribeUserResponse_FieldNumber_SubscriptionId = 1,
+typedef GPB_ENUM(SubscribeCustomerResponse_FieldNumber) {
+  SubscribeCustomerResponse_FieldNumber_SubscriptionId = 1,
 };
 
-@interface SubscribeUserResponse : GPBMessage
+@interface SubscribeCustomerResponse : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *subscriptionId;
 

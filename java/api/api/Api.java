@@ -533,738 +533,8 @@ public final class Api {
 
   }
 
-  public interface UserMapOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.UserMap)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-    int getUsersCount();
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-    boolean containsUsers(
-        java.lang.String key);
-    /**
-     * Use {@link #getUsersMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, api.Api.User>
-    getUsers();
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-    java.util.Map<java.lang.String, api.Api.User>
-    getUsersMap();
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-
-    api.Api.User getUsersOrDefault(
-        java.lang.String key,
-        api.Api.User defaultValue);
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-
-    api.Api.User getUsersOrThrow(
-        java.lang.String key);
-  }
-  /**
-   * <pre>
-   * UserMap is a map of users with a key of either user id, email, or phone number
-   * </pre>
-   *
-   * Protobuf type {@code api.UserMap}
-   */
-  public  static final class UserMap extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.UserMap)
-      UserMapOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use UserMap.newBuilder() to construct.
-    private UserMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private UserMap() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private UserMap(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                users_ = com.google.protobuf.MapField.newMapField(
-                    UsersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, api.Api.User>
-              users__ = input.readMessage(
-                  UsersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              users_.getMutableMap().put(
-                  users__.getKey(), users__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return api.Api.internal_static_api_UserMap_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetUsers();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_UserMap_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              api.Api.UserMap.class, api.Api.UserMap.Builder.class);
-    }
-
-    public static final int USERS_FIELD_NUMBER = 1;
-    private static final class UsersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, api.Api.User> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, api.Api.User>newDefaultInstance(
-                  api.Api.internal_static_api_UserMap_UsersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  api.Api.User.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, api.Api.User> users_;
-    private com.google.protobuf.MapField<java.lang.String, api.Api.User>
-    internalGetUsers() {
-      if (users_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            UsersDefaultEntryHolder.defaultEntry);
-      }
-      return users_;
-    }
-
-    public int getUsersCount() {
-      return internalGetUsers().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-
-    public boolean containsUsers(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetUsers().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getUsersMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, api.Api.User> getUsers() {
-      return getUsersMap();
-    }
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-
-    public java.util.Map<java.lang.String, api.Api.User> getUsersMap() {
-      return internalGetUsers().getMap();
-    }
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-
-    public api.Api.User getUsersOrDefault(
-        java.lang.String key,
-        api.Api.User defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, api.Api.User> map =
-          internalGetUsers().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .api.User&gt; users = 1;</code>
-     */
-
-    public api.Api.User getUsersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, api.Api.User> map =
-          internalGetUsers().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetUsers(),
-          UsersDefaultEntryHolder.defaultEntry,
-          1);
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (java.util.Map.Entry<java.lang.String, api.Api.User> entry
-           : internalGetUsers().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, api.Api.User>
-        users__ = UsersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, users__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof api.Api.UserMap)) {
-        return super.equals(obj);
-      }
-      api.Api.UserMap other = (api.Api.UserMap) obj;
-
-      boolean result = true;
-      result = result && internalGetUsers().equals(
-          other.internalGetUsers());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetUsers().getMap().isEmpty()) {
-        hash = (37 * hash) + USERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetUsers().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static api.Api.UserMap parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.UserMap parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.UserMap parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.UserMap parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.UserMap parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.UserMap parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.UserMap parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.UserMap parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.UserMap parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static api.Api.UserMap parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.UserMap parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.UserMap parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(api.Api.UserMap prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * UserMap is a map of users with a key of either user id, email, or phone number
-     * </pre>
-     *
-     * Protobuf type {@code api.UserMap}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.UserMap)
-        api.Api.UserMapOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return api.Api.internal_static_api_UserMap_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetUsers();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableUsers();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_UserMap_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                api.Api.UserMap.class, api.Api.UserMap.Builder.class);
-      }
-
-      // Construct using api.Api.UserMap.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        internalGetMutableUsers().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return api.Api.internal_static_api_UserMap_descriptor;
-      }
-
-      @java.lang.Override
-      public api.Api.UserMap getDefaultInstanceForType() {
-        return api.Api.UserMap.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public api.Api.UserMap build() {
-        api.Api.UserMap result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public api.Api.UserMap buildPartial() {
-        api.Api.UserMap result = new api.Api.UserMap(this);
-        int from_bitField0_ = bitField0_;
-        result.users_ = internalGetUsers();
-        result.users_.makeImmutable();
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.UserMap) {
-          return mergeFrom((api.Api.UserMap)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(api.Api.UserMap other) {
-        if (other == api.Api.UserMap.getDefaultInstance()) return this;
-        internalGetMutableUsers().mergeFrom(
-            other.internalGetUsers());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        api.Api.UserMap parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.UserMap) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.MapField<
-          java.lang.String, api.Api.User> users_;
-      private com.google.protobuf.MapField<java.lang.String, api.Api.User>
-      internalGetUsers() {
-        if (users_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              UsersDefaultEntryHolder.defaultEntry);
-        }
-        return users_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, api.Api.User>
-      internalGetMutableUsers() {
-        onChanged();;
-        if (users_ == null) {
-          users_ = com.google.protobuf.MapField.newMapField(
-              UsersDefaultEntryHolder.defaultEntry);
-        }
-        if (!users_.isMutable()) {
-          users_ = users_.copy();
-        }
-        return users_;
-      }
-
-      public int getUsersCount() {
-        return internalGetUsers().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-
-      public boolean containsUsers(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetUsers().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getUsersMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, api.Api.User> getUsers() {
-        return getUsersMap();
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-
-      public java.util.Map<java.lang.String, api.Api.User> getUsersMap() {
-        return internalGetUsers().getMap();
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-
-      public api.Api.User getUsersOrDefault(
-          java.lang.String key,
-          api.Api.User defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, api.Api.User> map =
-            internalGetUsers().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-
-      public api.Api.User getUsersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, api.Api.User> map =
-            internalGetUsers().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearUsers() {
-        internalGetMutableUsers().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-
-      public Builder removeUsers(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableUsers().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, api.Api.User>
-      getMutableUsers() {
-        return internalGetMutableUsers().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-      public Builder putUsers(
-          java.lang.String key,
-          api.Api.User value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableUsers().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .api.User&gt; users = 1;</code>
-       */
-
-      public Builder putAllUsers(
-          java.util.Map<java.lang.String, api.Api.User> values) {
-        internalGetMutableUsers().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:api.UserMap)
-    }
-
-    // @@protoc_insertion_point(class_scope:api.UserMap)
-    private static final api.Api.UserMap DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new api.Api.UserMap();
-    }
-
-    public static api.Api.UserMap getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<UserMap>
-        PARSER = new com.google.protobuf.AbstractParser<UserMap>() {
-      @java.lang.Override
-      public UserMap parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UserMap(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<UserMap> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<UserMap> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public api.Api.UserMap getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface UserOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.User)
+  public interface CustomerOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Customer)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1389,18 +659,18 @@ public final class Api {
    * User is a user of the application
    * </pre>
    *
-   * Protobuf type {@code api.User}
+   * Protobuf type {@code api.Customer}
    */
-  public  static final class User extends
+  public  static final class Customer extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.User)
-      UserOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.Customer)
+      CustomerOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use User.newBuilder() to construct.
-    private User(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Customer.newBuilder() to construct.
+    private Customer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private User() {
+    private Customer() {
       userId_ = "";
       plan_ = "";
       name_ = "";
@@ -1416,7 +686,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private User(
+    private Customer(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1528,7 +798,7 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_User_descriptor;
+      return api.Api.internal_static_api_Customer_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -1546,9 +816,9 @@ public final class Api {
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_User_fieldAccessorTable
+      return api.Api.internal_static_api_Customer_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.User.class, api.Api.User.Builder.class);
+              api.Api.Customer.class, api.Api.Customer.Builder.class);
     }
 
     private int bitField0_;
@@ -1783,7 +1053,7 @@ public final class Api {
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  api.Api.internal_static_api_User_MetadataEntry_descriptor, 
+                  api.Api.internal_static_api_Customer_MetadataEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -1977,10 +1247,10 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.User)) {
+      if (!(obj instanceof api.Api.Customer)) {
         return super.equals(obj);
       }
-      api.Api.User other = (api.Api.User) obj;
+      api.Api.Customer other = (api.Api.Customer) obj;
 
       boolean result = true;
       result = result && getUserId()
@@ -2048,69 +1318,69 @@ public final class Api {
       return hash;
     }
 
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.User parseFrom(byte[] data)
+    public static api.Api.Customer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.User parseFrom(java.io.InputStream input)
+    public static api.Api.Customer parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.User parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.Customer parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.User parseDelimitedFrom(
+    public static api.Api.Customer parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.User parseFrom(
+    public static api.Api.Customer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2123,7 +1393,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.User prototype) {
+    public static Builder newBuilder(api.Api.Customer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2143,15 +1413,15 @@ public final class Api {
      * User is a user of the application
      * </pre>
      *
-     * Protobuf type {@code api.User}
+     * Protobuf type {@code api.Customer}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.User)
-        api.Api.UserOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.Customer)
+        api.Api.CustomerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_User_descriptor;
+        return api.Api.internal_static_api_Customer_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -2179,12 +1449,12 @@ public final class Api {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_User_fieldAccessorTable
+        return api.Api.internal_static_api_Customer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.User.class, api.Api.User.Builder.class);
+                api.Api.Customer.class, api.Api.Customer.Builder.class);
       }
 
-      // Construct using api.Api.User.newBuilder()
+      // Construct using api.Api.Customer.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2231,17 +1501,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_User_descriptor;
+        return api.Api.internal_static_api_Customer_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.User getDefaultInstanceForType() {
-        return api.Api.User.getDefaultInstance();
+      public api.Api.Customer getDefaultInstanceForType() {
+        return api.Api.Customer.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.User build() {
-        api.Api.User result = buildPartial();
+      public api.Api.Customer build() {
+        api.Api.Customer result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2249,8 +1519,8 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.User buildPartial() {
-        api.Api.User result = new api.Api.User(this);
+      public api.Api.Customer buildPartial() {
+        api.Api.Customer result = new api.Api.Customer(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.userId_ = userId_;
@@ -2307,16 +1577,16 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.User) {
-          return mergeFrom((api.Api.User)other);
+        if (other instanceof api.Api.Customer) {
+          return mergeFrom((api.Api.Customer)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.User other) {
-        if (other == api.Api.User.getDefaultInstance()) return this;
+      public Builder mergeFrom(api.Api.Customer other) {
+        if (other == api.Api.Customer.getDefaultInstance()) return this;
         if (!other.getUserId().isEmpty()) {
           userId_ = other.userId_;
           onChanged();
@@ -2367,11 +1637,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.User parsedMessage = null;
+        api.Api.Customer parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.User) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.Customer) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3100,48 +2370,48 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.User)
+      // @@protoc_insertion_point(builder_scope:api.Customer)
     }
 
-    // @@protoc_insertion_point(class_scope:api.User)
-    private static final api.Api.User DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.Customer)
+    private static final api.Api.Customer DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.User();
+      DEFAULT_INSTANCE = new api.Api.Customer();
     }
 
-    public static api.Api.User getDefaultInstance() {
+    public static api.Api.Customer getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<User>
-        PARSER = new com.google.protobuf.AbstractParser<User>() {
+    private static final com.google.protobuf.Parser<Customer>
+        PARSER = new com.google.protobuf.AbstractParser<Customer>() {
       @java.lang.Override
-      public User parsePartialFrom(
+      public Customer parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new User(input, extensionRegistry);
+        return new Customer(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<User> parser() {
+    public static com.google.protobuf.Parser<Customer> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<User> getParserForType() {
+    public com.google.protobuf.Parser<Customer> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.User getDefaultInstanceForType() {
+    public api.Api.Customer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface AddUserRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.AddUserRequest)
+  public interface AddCustomerRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.AddCustomerRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3223,18 +2493,18 @@ public final class Api {
     api.Api.AddressOrBuilder getAddressOrBuilder();
   }
   /**
-   * Protobuf type {@code api.AddUserRequest}
+   * Protobuf type {@code api.AddCustomerRequest}
    */
-  public  static final class AddUserRequest extends
+  public  static final class AddCustomerRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.AddUserRequest)
-      AddUserRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.AddCustomerRequest)
+      AddCustomerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use AddUserRequest.newBuilder() to construct.
-    private AddUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AddCustomerRequest.newBuilder() to construct.
+    private AddCustomerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AddUserRequest() {
+    private AddCustomerRequest() {
       email_ = "";
       plan_ = "";
       phone_ = "";
@@ -3249,7 +2519,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AddUserRequest(
+    private AddCustomerRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3343,15 +2613,15 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_AddUserRequest_descriptor;
+      return api.Api.internal_static_api_AddCustomerRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_AddUserRequest_fieldAccessorTable
+      return api.Api.internal_static_api_AddCustomerRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.AddUserRequest.class, api.Api.AddUserRequest.Builder.class);
+              api.Api.AddCustomerRequest.class, api.Api.AddCustomerRequest.Builder.class);
     }
 
     public static final int EMAIL_FIELD_NUMBER = 1;
@@ -3671,10 +2941,10 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.AddUserRequest)) {
+      if (!(obj instanceof api.Api.AddCustomerRequest)) {
         return super.equals(obj);
       }
-      api.Api.AddUserRequest other = (api.Api.AddUserRequest) obj;
+      api.Api.AddCustomerRequest other = (api.Api.AddCustomerRequest) obj;
 
       boolean result = true;
       result = result && getEmail()
@@ -3731,69 +3001,69 @@ public final class Api {
       return hash;
     }
 
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.AddUserRequest parseFrom(byte[] data)
+    public static api.Api.AddCustomerRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.AddUserRequest parseFrom(java.io.InputStream input)
+    public static api.Api.AddCustomerRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.AddUserRequest parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.AddCustomerRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.AddUserRequest parseDelimitedFrom(
+    public static api.Api.AddCustomerRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.AddUserRequest parseFrom(
+    public static api.Api.AddCustomerRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3806,7 +3076,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.AddUserRequest prototype) {
+    public static Builder newBuilder(api.Api.AddCustomerRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3822,26 +3092,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.AddUserRequest}
+     * Protobuf type {@code api.AddCustomerRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.AddUserRequest)
-        api.Api.AddUserRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.AddCustomerRequest)
+        api.Api.AddCustomerRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_AddUserRequest_descriptor;
+        return api.Api.internal_static_api_AddCustomerRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_AddUserRequest_fieldAccessorTable
+        return api.Api.internal_static_api_AddCustomerRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.AddUserRequest.class, api.Api.AddUserRequest.Builder.class);
+                api.Api.AddCustomerRequest.class, api.Api.AddCustomerRequest.Builder.class);
       }
 
-      // Construct using api.Api.AddUserRequest.newBuilder()
+      // Construct using api.Api.AddCustomerRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3885,17 +3155,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_AddUserRequest_descriptor;
+        return api.Api.internal_static_api_AddCustomerRequest_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.AddUserRequest getDefaultInstanceForType() {
-        return api.Api.AddUserRequest.getDefaultInstance();
+      public api.Api.AddCustomerRequest getDefaultInstanceForType() {
+        return api.Api.AddCustomerRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.AddUserRequest build() {
-        api.Api.AddUserRequest result = buildPartial();
+      public api.Api.AddCustomerRequest build() {
+        api.Api.AddCustomerRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3903,8 +3173,8 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.AddUserRequest buildPartial() {
-        api.Api.AddUserRequest result = new api.Api.AddUserRequest(this);
+      public api.Api.AddCustomerRequest buildPartial() {
+        api.Api.AddCustomerRequest result = new api.Api.AddCustomerRequest(this);
         result.email_ = email_;
         result.plan_ = plan_;
         result.phone_ = phone_;
@@ -3955,16 +3225,16 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.AddUserRequest) {
-          return mergeFrom((api.Api.AddUserRequest)other);
+        if (other instanceof api.Api.AddCustomerRequest) {
+          return mergeFrom((api.Api.AddCustomerRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.AddUserRequest other) {
-        if (other == api.Api.AddUserRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(api.Api.AddCustomerRequest other) {
+        if (other == api.Api.AddCustomerRequest.getDefaultInstance()) return this;
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
           onChanged();
@@ -4010,11 +3280,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.AddUserRequest parsedMessage = null;
+        api.Api.AddCustomerRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.AddUserRequest) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.AddCustomerRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4593,48 +3863,48 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.AddUserRequest)
+      // @@protoc_insertion_point(builder_scope:api.AddCustomerRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:api.AddUserRequest)
-    private static final api.Api.AddUserRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.AddCustomerRequest)
+    private static final api.Api.AddCustomerRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.AddUserRequest();
+      DEFAULT_INSTANCE = new api.Api.AddCustomerRequest();
     }
 
-    public static api.Api.AddUserRequest getDefaultInstance() {
+    public static api.Api.AddCustomerRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AddUserRequest>
-        PARSER = new com.google.protobuf.AbstractParser<AddUserRequest>() {
+    private static final com.google.protobuf.Parser<AddCustomerRequest>
+        PARSER = new com.google.protobuf.AbstractParser<AddCustomerRequest>() {
       @java.lang.Override
-      public AddUserRequest parsePartialFrom(
+      public AddCustomerRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddUserRequest(input, extensionRegistry);
+        return new AddCustomerRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AddUserRequest> parser() {
+    public static com.google.protobuf.Parser<AddCustomerRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AddUserRequest> getParserForType() {
+    public com.google.protobuf.Parser<AddCustomerRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.AddUserRequest getDefaultInstanceForType() {
+    public api.Api.AddCustomerRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SubscribeUserRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.SubscribeUserRequest)
+  public interface SubscribeCustomerRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.SubscribeCustomerRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4698,18 +3968,18 @@ public final class Api {
         getCvcBytes();
   }
   /**
-   * Protobuf type {@code api.SubscribeUserRequest}
+   * Protobuf type {@code api.SubscribeCustomerRequest}
    */
-  public  static final class SubscribeUserRequest extends
+  public  static final class SubscribeCustomerRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.SubscribeUserRequest)
-      SubscribeUserRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.SubscribeCustomerRequest)
+      SubscribeCustomerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SubscribeUserRequest.newBuilder() to construct.
-    private SubscribeUserRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SubscribeCustomerRequest.newBuilder() to construct.
+    private SubscribeCustomerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SubscribeUserRequest() {
+    private SubscribeCustomerRequest() {
       email_ = "";
       plan_ = "";
       cardNumber_ = "";
@@ -4723,7 +3993,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SubscribeUserRequest(
+    private SubscribeCustomerRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4799,15 +4069,15 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_SubscribeUserRequest_descriptor;
+      return api.Api.internal_static_api_SubscribeCustomerRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_SubscribeUserRequest_fieldAccessorTable
+      return api.Api.internal_static_api_SubscribeCustomerRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.SubscribeUserRequest.class, api.Api.SubscribeUserRequest.Builder.class);
+              api.Api.SubscribeCustomerRequest.class, api.Api.SubscribeCustomerRequest.Builder.class);
     }
 
     public static final int EMAIL_FIELD_NUMBER = 1;
@@ -5083,10 +4353,10 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.SubscribeUserRequest)) {
+      if (!(obj instanceof api.Api.SubscribeCustomerRequest)) {
         return super.equals(obj);
       }
-      api.Api.SubscribeUserRequest other = (api.Api.SubscribeUserRequest) obj;
+      api.Api.SubscribeCustomerRequest other = (api.Api.SubscribeCustomerRequest) obj;
 
       boolean result = true;
       result = result && getEmail()
@@ -5129,69 +4399,69 @@ public final class Api {
       return hash;
     }
 
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(byte[] data)
+    public static api.Api.SubscribeCustomerRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(java.io.InputStream input)
+    public static api.Api.SubscribeCustomerRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.SubscribeUserRequest parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.SubscribeCustomerRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.SubscribeUserRequest parseDelimitedFrom(
+    public static api.Api.SubscribeCustomerRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.SubscribeUserRequest parseFrom(
+    public static api.Api.SubscribeCustomerRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5204,7 +4474,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.SubscribeUserRequest prototype) {
+    public static Builder newBuilder(api.Api.SubscribeCustomerRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -5220,26 +4490,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.SubscribeUserRequest}
+     * Protobuf type {@code api.SubscribeCustomerRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.SubscribeUserRequest)
-        api.Api.SubscribeUserRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.SubscribeCustomerRequest)
+        api.Api.SubscribeCustomerRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_SubscribeUserRequest_descriptor;
+        return api.Api.internal_static_api_SubscribeCustomerRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_SubscribeUserRequest_fieldAccessorTable
+        return api.Api.internal_static_api_SubscribeCustomerRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.SubscribeUserRequest.class, api.Api.SubscribeUserRequest.Builder.class);
+                api.Api.SubscribeCustomerRequest.class, api.Api.SubscribeCustomerRequest.Builder.class);
       }
 
-      // Construct using api.Api.SubscribeUserRequest.newBuilder()
+      // Construct using api.Api.SubscribeCustomerRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5275,17 +4545,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_SubscribeUserRequest_descriptor;
+        return api.Api.internal_static_api_SubscribeCustomerRequest_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.SubscribeUserRequest getDefaultInstanceForType() {
-        return api.Api.SubscribeUserRequest.getDefaultInstance();
+      public api.Api.SubscribeCustomerRequest getDefaultInstanceForType() {
+        return api.Api.SubscribeCustomerRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.SubscribeUserRequest build() {
-        api.Api.SubscribeUserRequest result = buildPartial();
+      public api.Api.SubscribeCustomerRequest build() {
+        api.Api.SubscribeCustomerRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -5293,8 +4563,8 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.SubscribeUserRequest buildPartial() {
-        api.Api.SubscribeUserRequest result = new api.Api.SubscribeUserRequest(this);
+      public api.Api.SubscribeCustomerRequest buildPartial() {
+        api.Api.SubscribeCustomerRequest result = new api.Api.SubscribeCustomerRequest(this);
         result.email_ = email_;
         result.plan_ = plan_;
         result.cardNumber_ = cardNumber_;
@@ -5339,16 +4609,16 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.SubscribeUserRequest) {
-          return mergeFrom((api.Api.SubscribeUserRequest)other);
+        if (other instanceof api.Api.SubscribeCustomerRequest) {
+          return mergeFrom((api.Api.SubscribeCustomerRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.SubscribeUserRequest other) {
-        if (other == api.Api.SubscribeUserRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(api.Api.SubscribeCustomerRequest other) {
+        if (other == api.Api.SubscribeCustomerRequest.getDefaultInstance()) return this;
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
           onChanged();
@@ -5388,11 +4658,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.SubscribeUserRequest parsedMessage = null;
+        api.Api.SubscribeCustomerRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.SubscribeUserRequest) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.SubscribeCustomerRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5828,903 +5098,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.SubscribeUserRequest)
+      // @@protoc_insertion_point(builder_scope:api.SubscribeCustomerRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:api.SubscribeUserRequest)
-    private static final api.Api.SubscribeUserRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.SubscribeCustomerRequest)
+    private static final api.Api.SubscribeCustomerRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.SubscribeUserRequest();
+      DEFAULT_INSTANCE = new api.Api.SubscribeCustomerRequest();
     }
 
-    public static api.Api.SubscribeUserRequest getDefaultInstance() {
+    public static api.Api.SubscribeCustomerRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SubscribeUserRequest>
-        PARSER = new com.google.protobuf.AbstractParser<SubscribeUserRequest>() {
+    private static final com.google.protobuf.Parser<SubscribeCustomerRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SubscribeCustomerRequest>() {
       @java.lang.Override
-      public SubscribeUserRequest parsePartialFrom(
+      public SubscribeCustomerRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SubscribeUserRequest(input, extensionRegistry);
+        return new SubscribeCustomerRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SubscribeUserRequest> parser() {
+    public static com.google.protobuf.Parser<SubscribeCustomerRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SubscribeUserRequest> getParserForType() {
+    public com.google.protobuf.Parser<SubscribeCustomerRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.SubscribeUserRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface AddUserMetadataRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.AddUserMetadataRequest)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string user_id = 1;</code>
-     */
-    java.lang.String getUserId();
-    /**
-     * <code>string user_id = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getUserIdBytes();
-
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-    int getMetadataCount();
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-    boolean containsMetadata(
-        java.lang.String key);
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getMetadata();
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getMetadataMap();
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-
-    java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-
-    java.lang.String getMetadataOrThrow(
-        java.lang.String key);
-  }
-  /**
-   * Protobuf type {@code api.AddUserMetadataRequest}
-   */
-  public  static final class AddUserMetadataRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.AddUserMetadataRequest)
-      AddUserMetadataRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use AddUserMetadataRequest.newBuilder() to construct.
-    private AddUserMetadataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private AddUserMetadataRequest() {
-      userId_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private AddUserMetadataRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              userId_ = s;
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                metadata_ = com.google.protobuf.MapField.newMapField(
-                    MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata__ = input.readMessage(
-                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(
-                  metadata__.getKey(), metadata__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return api.Api.internal_static_api_AddUserMetadataRequest_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 2:
-          return internalGetMetadata();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_AddUserMetadataRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              api.Api.AddUserMetadataRequest.class, api.Api.AddUserMetadataRequest.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int USER_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object userId_;
-    /**
-     * <code>string user_id = 1;</code>
-     */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string user_id = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int METADATA_FIELD_NUMBER = 2;
-    private static final class MetadataDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  api.Api.internal_static_api_AddUserMetadataRequest_MetadataEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> metadata_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMetadata() {
-      if (metadata_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
-      }
-      return metadata_;
-    }
-
-    public int getMetadataCount() {
-      return internalGetMetadata().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-
-    public boolean containsMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetMetadata().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
-      return getMetadataMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
-      return internalGetMetadata().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 2;</code>
-     */
-
-    public java.lang.String getMetadataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getUserIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetMetadata(),
-          MetadataDefaultEntryHolder.defaultEntry,
-          2);
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getUserIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, metadata__);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof api.Api.AddUserMetadataRequest)) {
-        return super.equals(obj);
-      }
-      api.Api.AddUserMetadataRequest other = (api.Api.AddUserMetadataRequest) obj;
-
-      boolean result = true;
-      result = result && getUserId()
-          .equals(other.getUserId());
-      result = result && internalGetMetadata().equals(
-          other.internalGetMetadata());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getUserId().hashCode();
-      if (!internalGetMetadata().getMap().isEmpty()) {
-        hash = (37 * hash) + METADATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetMetadata().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.AddUserMetadataRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static api.Api.AddUserMetadataRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.AddUserMetadataRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(api.Api.AddUserMetadataRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code api.AddUserMetadataRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.AddUserMetadataRequest)
-        api.Api.AddUserMetadataRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return api.Api.internal_static_api_AddUserMetadataRequest_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMetadata();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMutableMetadata();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_AddUserMetadataRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                api.Api.AddUserMetadataRequest.class, api.Api.AddUserMetadataRequest.Builder.class);
-      }
-
-      // Construct using api.Api.AddUserMetadataRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        userId_ = "";
-
-        internalGetMutableMetadata().clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return api.Api.internal_static_api_AddUserMetadataRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public api.Api.AddUserMetadataRequest getDefaultInstanceForType() {
-        return api.Api.AddUserMetadataRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public api.Api.AddUserMetadataRequest build() {
-        api.Api.AddUserMetadataRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public api.Api.AddUserMetadataRequest buildPartial() {
-        api.Api.AddUserMetadataRequest result = new api.Api.AddUserMetadataRequest(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.userId_ = userId_;
-        result.metadata_ = internalGetMetadata();
-        result.metadata_.makeImmutable();
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.AddUserMetadataRequest) {
-          return mergeFrom((api.Api.AddUserMetadataRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(api.Api.AddUserMetadataRequest other) {
-        if (other == api.Api.AddUserMetadataRequest.getDefaultInstance()) return this;
-        if (!other.getUserId().isEmpty()) {
-          userId_ = other.userId_;
-          onChanged();
-        }
-        internalGetMutableMetadata().mergeFrom(
-            other.internalGetMetadata());
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        api.Api.AddUserMetadataRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.AddUserMetadataRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object userId_ = "";
-      /**
-       * <code>string user_id = 1;</code>
-       */
-      public java.lang.String getUserId() {
-        java.lang.Object ref = userId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          userId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUserIdBytes() {
-        java.lang.Object ref = userId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          userId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       */
-      public Builder setUserId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       */
-      public Builder clearUserId() {
-        
-        userId_ = getDefaultInstance().getUserId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user_id = 1;</code>
-       */
-      public Builder setUserIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        userId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> metadata_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMetadata() {
-        if (metadata_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              MetadataDefaultEntryHolder.defaultEntry);
-        }
-        return metadata_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableMetadata() {
-        onChanged();;
-        if (metadata_ == null) {
-          metadata_ = com.google.protobuf.MapField.newMapField(
-              MetadataDefaultEntryHolder.defaultEntry);
-        }
-        if (!metadata_.isMutable()) {
-          metadata_ = metadata_.copy();
-        }
-        return metadata_;
-      }
-
-      public int getMetadataCount() {
-        return internalGetMetadata().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-
-      public boolean containsMetadata(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetMetadata().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getMetadataMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
-        return getMetadataMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
-        return internalGetMetadata().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-
-      public java.lang.String getMetadataOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMetadata().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-
-      public java.lang.String getMetadataOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMetadata().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearMetadata() {
-        internalGetMutableMetadata().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-
-      public Builder removeMetadata(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableMetadata().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableMetadata() {
-        return internalGetMutableMetadata().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-      public Builder putMetadata(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableMetadata().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 2;</code>
-       */
-
-      public Builder putAllMetadata(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableMetadata().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:api.AddUserMetadataRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:api.AddUserMetadataRequest)
-    private static final api.Api.AddUserMetadataRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new api.Api.AddUserMetadataRequest();
-    }
-
-    public static api.Api.AddUserMetadataRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<AddUserMetadataRequest>
-        PARSER = new com.google.protobuf.AbstractParser<AddUserMetadataRequest>() {
-      @java.lang.Override
-      public AddUserMetadataRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddUserMetadataRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<AddUserMetadataRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AddUserMetadataRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public api.Api.AddUserMetadataRequest getDefaultInstanceForType() {
+    public api.Api.SubscribeCustomerRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7965,8 +6373,8 @@ public final class Api {
 
   }
 
-  public interface SubscribeUserResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.SubscribeUserResponse)
+  public interface SubscribeCustomerResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.SubscribeCustomerResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -7980,18 +6388,18 @@ public final class Api {
         getSubscriptionIdBytes();
   }
   /**
-   * Protobuf type {@code api.SubscribeUserResponse}
+   * Protobuf type {@code api.SubscribeCustomerResponse}
    */
-  public  static final class SubscribeUserResponse extends
+  public  static final class SubscribeCustomerResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.SubscribeUserResponse)
-      SubscribeUserResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.SubscribeCustomerResponse)
+      SubscribeCustomerResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use SubscribeUserResponse.newBuilder() to construct.
-    private SubscribeUserResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use SubscribeCustomerResponse.newBuilder() to construct.
+    private SubscribeCustomerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SubscribeUserResponse() {
+    private SubscribeCustomerResponse() {
       subscriptionId_ = "";
     }
 
@@ -8000,7 +6408,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SubscribeUserResponse(
+    private SubscribeCustomerResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8046,15 +6454,15 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_SubscribeUserResponse_descriptor;
+      return api.Api.internal_static_api_SubscribeCustomerResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_SubscribeUserResponse_fieldAccessorTable
+      return api.Api.internal_static_api_SubscribeCustomerResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.SubscribeUserResponse.class, api.Api.SubscribeUserResponse.Builder.class);
+              api.Api.SubscribeCustomerResponse.class, api.Api.SubscribeCustomerResponse.Builder.class);
     }
 
     public static final int SUBSCRIPTION_ID_FIELD_NUMBER = 1;
@@ -8130,10 +6538,10 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.SubscribeUserResponse)) {
+      if (!(obj instanceof api.Api.SubscribeCustomerResponse)) {
         return super.equals(obj);
       }
-      api.Api.SubscribeUserResponse other = (api.Api.SubscribeUserResponse) obj;
+      api.Api.SubscribeCustomerResponse other = (api.Api.SubscribeCustomerResponse) obj;
 
       boolean result = true;
       result = result && getSubscriptionId()
@@ -8156,69 +6564,69 @@ public final class Api {
       return hash;
     }
 
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(byte[] data)
+    public static api.Api.SubscribeCustomerResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(java.io.InputStream input)
+    public static api.Api.SubscribeCustomerResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.SubscribeUserResponse parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.SubscribeCustomerResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.SubscribeUserResponse parseDelimitedFrom(
+    public static api.Api.SubscribeCustomerResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.SubscribeUserResponse parseFrom(
+    public static api.Api.SubscribeCustomerResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8231,7 +6639,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.SubscribeUserResponse prototype) {
+    public static Builder newBuilder(api.Api.SubscribeCustomerResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -8247,26 +6655,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.SubscribeUserResponse}
+     * Protobuf type {@code api.SubscribeCustomerResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.SubscribeUserResponse)
-        api.Api.SubscribeUserResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.SubscribeCustomerResponse)
+        api.Api.SubscribeCustomerResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_SubscribeUserResponse_descriptor;
+        return api.Api.internal_static_api_SubscribeCustomerResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_SubscribeUserResponse_fieldAccessorTable
+        return api.Api.internal_static_api_SubscribeCustomerResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.SubscribeUserResponse.class, api.Api.SubscribeUserResponse.Builder.class);
+                api.Api.SubscribeCustomerResponse.class, api.Api.SubscribeCustomerResponse.Builder.class);
       }
 
-      // Construct using api.Api.SubscribeUserResponse.newBuilder()
+      // Construct using api.Api.SubscribeCustomerResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8292,17 +6700,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_SubscribeUserResponse_descriptor;
+        return api.Api.internal_static_api_SubscribeCustomerResponse_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.SubscribeUserResponse getDefaultInstanceForType() {
-        return api.Api.SubscribeUserResponse.getDefaultInstance();
+      public api.Api.SubscribeCustomerResponse getDefaultInstanceForType() {
+        return api.Api.SubscribeCustomerResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.SubscribeUserResponse build() {
-        api.Api.SubscribeUserResponse result = buildPartial();
+      public api.Api.SubscribeCustomerResponse build() {
+        api.Api.SubscribeCustomerResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -8310,8 +6718,8 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.SubscribeUserResponse buildPartial() {
-        api.Api.SubscribeUserResponse result = new api.Api.SubscribeUserResponse(this);
+      public api.Api.SubscribeCustomerResponse buildPartial() {
+        api.Api.SubscribeCustomerResponse result = new api.Api.SubscribeCustomerResponse(this);
         result.subscriptionId_ = subscriptionId_;
         onBuilt();
         return result;
@@ -8351,16 +6759,16 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.SubscribeUserResponse) {
-          return mergeFrom((api.Api.SubscribeUserResponse)other);
+        if (other instanceof api.Api.SubscribeCustomerResponse) {
+          return mergeFrom((api.Api.SubscribeCustomerResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.SubscribeUserResponse other) {
-        if (other == api.Api.SubscribeUserResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(api.Api.SubscribeCustomerResponse other) {
+        if (other == api.Api.SubscribeCustomerResponse.getDefaultInstance()) return this;
         if (!other.getSubscriptionId().isEmpty()) {
           subscriptionId_ = other.subscriptionId_;
           onChanged();
@@ -8380,11 +6788,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.SubscribeUserResponse parsedMessage = null;
+        api.Api.SubscribeCustomerResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.SubscribeUserResponse) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.SubscribeCustomerResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8475,41 +6883,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.SubscribeUserResponse)
+      // @@protoc_insertion_point(builder_scope:api.SubscribeCustomerResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:api.SubscribeUserResponse)
-    private static final api.Api.SubscribeUserResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.SubscribeCustomerResponse)
+    private static final api.Api.SubscribeCustomerResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.SubscribeUserResponse();
+      DEFAULT_INSTANCE = new api.Api.SubscribeCustomerResponse();
     }
 
-    public static api.Api.SubscribeUserResponse getDefaultInstance() {
+    public static api.Api.SubscribeCustomerResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SubscribeUserResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SubscribeUserResponse>() {
+    private static final com.google.protobuf.Parser<SubscribeCustomerResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SubscribeCustomerResponse>() {
       @java.lang.Override
-      public SubscribeUserResponse parsePartialFrom(
+      public SubscribeCustomerResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SubscribeUserResponse(input, extensionRegistry);
+        return new SubscribeCustomerResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SubscribeUserResponse> parser() {
+    public static com.google.protobuf.Parser<SubscribeCustomerResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SubscribeUserResponse> getParserForType() {
+    public com.google.protobuf.Parser<SubscribeCustomerResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.SubscribeUserResponse getDefaultInstanceForType() {
+    public api.Api.SubscribeCustomerResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -35665,55 +34073,35 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Empty_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_UserMap_descriptor;
+    internal_static_api_Customer_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_UserMap_fieldAccessorTable;
+      internal_static_api_Customer_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_UserMap_UsersEntry_descriptor;
+    internal_static_api_Customer_MetadataEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_UserMap_UsersEntry_fieldAccessorTable;
+      internal_static_api_Customer_MetadataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_User_descriptor;
+    internal_static_api_AddCustomerRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_User_fieldAccessorTable;
+      internal_static_api_AddCustomerRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_User_MetadataEntry_descriptor;
+    internal_static_api_SubscribeCustomerRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_User_MetadataEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_AddUserRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_AddUserRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_SubscribeUserRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_SubscribeUserRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_AddUserMetadataRequest_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_AddUserMetadataRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_AddUserMetadataRequest_MetadataEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_AddUserMetadataRequest_MetadataEntry_fieldAccessorTable;
+      internal_static_api_SubscribeCustomerRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_Address_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Address_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_SubscribeUserResponse_descriptor;
+    internal_static_api_SubscribeCustomerResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_SubscribeUserResponse_fieldAccessorTable;
+      internal_static_api_SubscribeCustomerResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_CreatePlanResponse_descriptor;
   private static final 
@@ -35861,122 +34249,119 @@ public final class Api {
       "\n\tapi.proto\022\003api\032\033google/protobuf/empty." +
       "proto\032\036google/protobuf/duration.proto\032 g" +
       "oogle/protobuf/field_mask.proto\032\034google/" +
-      "api/annotations.proto\"\007\n\005Empty\"j\n\007UserMa" +
-      "p\022&\n\005users\030\001 \003(\0132\027.api.UserMap.UsersEntr" +
-      "y\0327\n\nUsersEntry\022\013\n\003key\030\001 \001(\t\022\030\n\005value\030\002 " +
-      "\001(\0132\t.api.User:\0028\001\"\207\002\n\004User\022\017\n\007user_id\030\001" +
-      " \001(\t\022\014\n\004plan\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005emai" +
-      "l\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\r\n\005phone\030\006 " +
-      "\001(\t\022\035\n\007address\030\010 \001(\0132\014.api.Address\022)\n\010me" +
-      "tadata\030\t \003(\0132\027.api.User.MetadataEntry\022\017\n" +
-      "\007deleted\030\n \001(\010\022\023\n\013create_date\030\024 \001(\003\032/\n\rM" +
-      "etadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001\"\243\001\n\016AddUserRequest\022\r\n\005email\030\001 \001(\t\022\014" +
-      "\n\004plan\030\002 \001(\t\022\r\n\005phone\030\003 \001(\t\022\014\n\004name\030\004 \001(" +
-      "\t\022\020\n\010password\030\005 \001(\t\022\021\n\ttrial_end\030\006 \001(\003\022\023" +
-      "\n\013description\030\007 \001(\t\022\035\n\007address\030\010 \001(\0132\014.a" +
-      "pi.Address\"z\n\024SubscribeUserRequest\022\r\n\005em" +
-      "ail\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\023\n\013card_number\030\003" +
-      " \001(\t\022\021\n\texp_month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(" +
-      "\t\022\013\n\003cvc\030\006 \001(\t\"\227\001\n\026AddUserMetadataReques" +
-      "t\022\017\n\007user_id\030\001 \001(\t\022;\n\010metadata\030\002 \003(\0132).a" +
-      "pi.AddUserMetadataRequest.MetadataEntry\032" +
-      "/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
-      " \001(\t:\0028\001\"j\n\007Address\022\014\n\004city\030\001 \001(\t\022\017\n\007cou" +
-      "ntry\030\002 \001(\t\022\r\n\005line1\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t" +
-      "\022\023\n\013postal_code\030\005 \001(\t\022\r\n\005state\030\006 \001(\t\"0\n\025" +
-      "SubscribeUserResponse\022\027\n\017subscription_id" +
-      "\030\001 \001(\t\"%\n\022CreatePlanResponse\022\017\n\007plan_id\030" +
-      "\001 \001(\t\"*\n\031CancelSubscriptionRequest\022\r\n\005em" +
-      "ail\030\001 \001(\t\"u\n\021CreatePlanRequest\022\017\n\007plan_i" +
-      "d\030\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\022\n\nservice_id\030\003 " +
-      "\001(\t\022\024\n\014service_name\030\004 \001(\t\022\025\n\rfriendly_na" +
-      "me\030\005 \001(\t\"+\n\nSMSRequest\022\017\n\007user_id\030\001 \001(\t\022" +
-      "\014\n\004body\030\002 \001(\t\"4\n\013CallRequest\022\017\n\007user_id\030" +
-      "\001 \001(\t\022\024\n\014callback_url\030\002 \001(\t\">\n\nMMSReques" +
-      "t\022\017\n\007user_id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\022\021\n\tmedi" +
-      "a_url\030\003 \001(\t\"V\n\014EmailRequest\022\017\n\007user_id\030\001" +
-      " \001(\t\022\017\n\007subject\030\002 \001(\t\022\022\n\nplain_text\030\003 \001(" +
-      "\t\022\020\n\010html_alt\030\004 \001(\t\"A\n\017ChannelReminder\022\022" +
-      "\n\nchannel_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time" +
-      "\030\003 \001(\t\"W\n\014UserReminder\022\017\n\007user_id\030\001 \001(\t\022" +
-      "\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032\n\004item\030\004 \001(" +
-      "\0132\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001 " +
-      "\001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004St" +
-      "ar\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.Ite" +
-      "mRef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132" +
-      "\014.api.ItemRef\"\372\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022" +
-      "\026\n\016twilio_account\030\002 \001(\t\022\022\n\ntwilio_key\030\003 " +
-      "\001(\t\022\024\n\014sendgrid_key\030\004 \001(\t\022\022\n\nstripe_key\030" +
-      "\005 \001(\t\022\021\n\tslack_key\030\006 \001(\t\022*\n\016customer_ind" +
-      "ex\030\007 \001(\0162\022.api.CustomerIndex\022(\n\remail_ad" +
-      "dress\030\010 \001(\0132\021.api.EmailAddress\022\"\n\nlog_co" +
-      "nfig\030\t \001(\0132\016.api.LogConfig\".\n\tLogConfig\022" +
-      "\020\n\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014Em" +
-      "ailAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(" +
-      "\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddr" +
-      "ess\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientEm" +
-      "ail\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api." +
-      "EmailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_t" +
-      "ext\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001" +
-      "(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_" +
-      "url\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t" +
-      "\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010ca" +
-      "llback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030" +
-      "\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(" +
-      "\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010" +
-      "\"6\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(" +
-      "\t\022\r\n\005title\030\003 \001(\t\"\265\002\n\017SlackAttachment\022\r\n\005" +
-      "color\030\001 \001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callbac" +
-      "k_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(" +
-      "\t\022\023\n\013author_name\030\006 \001(\t\022\023\n\013author_link\030\007 " +
-      "\001(\t\022\023\n\013author_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022" +
-      "\024\n\014title_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014" +
-      "\n\004text\030\014 \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb" +
-      "_url\030\016 \001(\t\022$\n\006fields\030\017 \003(\0132\024.api.Attachm" +
-      "entField\"\335\002\n\020AttachmentAction\022\014\n\004name\030\001 " +
-      "\001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type" +
-      "\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001" +
-      "(\t\022\030\n\020min_query_length\030\007 \001(\003\022,\n\007options\030" +
-      "\010 \003(\0132\033.api.AttachmentActionOption\0225\n\020se" +
-      "lected_options\030\t \003(\0132\033.api.AttachmentAct" +
-      "ionOption\0227\n\roption_groups\030\n \003(\0132 .api.A" +
-      "ttachmentActionOptionGroup\022\'\n\007confirm\030\013 " +
-      "\001(\0132\026.api.ConfirmationField\022\013\n\003url\030\014 \001(\t" +
-      "\"W\n\021ConfirmationField\022\r\n\005title\030\001 \001(\t\022\014\n\004" +
-      "text\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n\014dismiss_t" +
-      "ext\030\004 \001(\t\"Y\n\033AttachmentActionOptionGroup" +
-      "\022\014\n\004text\030\001 \001(\t\022,\n\007options\030\002 \003(\0132\033.api.At" +
-      "tachmentActionOption\"K\n\026AttachmentAction" +
-      "Option\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013" +
-      "description\030\003 \001(\t\">\n\017AttachmentField\022\r\n\005" +
-      "title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005short\030\003 \001(" +
-      "\010*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n" +
-      "\005PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserEmail" +
-      "Map\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/" +
-      "api/users:\001*\022?\n\014GetUserIDMap\022\n.api.Empty" +
-      "\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n" +
-      "\017GetUserPhoneMap\022\n.api.Empty\032\014.api.UserM" +
-      "ap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.a" +
-      "pi.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/a" +
-      "pi/users:\001*\022Z\n\017AddUserMetadata\022\033.api.Add" +
-      "UserMetadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024" +
-      "/api/users/{user_id}:\001*\022e\n\rSubscribeUser" +
-      "\022\031.api.SubscribeUserRequest\032\032.api.Subscr" +
-      "ibeUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/{ema" +
-      "il}:\001*\022\\\n\017UnSubscribeUser\022\036.api.CancelSu" +
-      "bscriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/" +
-      "api/users/{email}:\001*\022j\n\026CreateSubscripti" +
-      "onPlan\022\026.api.CreatePlanRequest\032\027.api.Cre" +
-      "atePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{pla" +
-      "n_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.a" +
-      "pi.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001" +
-      "*\022I\n\010CallUser\022\020.api.CallRequest\032\n.api.Em" +
-      "pty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007" +
-      "MMSUser\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323" +
-      "\344\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEmailUs" +
-      "er\022\021.api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002" +
-      "\031\"\024/api/plans/{user_id}:\001*b\006proto3"
+      "api/annotations.proto\"\007\n\005Empty\"\217\002\n\010Custo" +
+      "mer\022\017\n\007user_id\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\014\n\004na" +
+      "me\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\023\n\013description\030\005" +
+      " \001(\t\022\r\n\005phone\030\006 \001(\t\022\035\n\007address\030\010 \001(\0132\014.a" +
+      "pi.Address\022-\n\010metadata\030\t \003(\0132\033.api.Custo" +
+      "mer.MetadataEntry\022\017\n\007deleted\030\n \001(\010\022\023\n\013cr" +
+      "eate_date\030\024 \001(\003\032/\n\rMetadataEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\247\001\n\022AddCustomer" +
+      "Request\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\r\n\005" +
+      "phone\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\020\n\010password\030\005 " +
+      "\001(\t\022\021\n\ttrial_end\030\006 \001(\003\022\023\n\013description\030\007 " +
+      "\001(\t\022\035\n\007address\030\010 \001(\0132\014.api.Address\"~\n\030Su" +
+      "bscribeCustomerRequest\022\r\n\005email\030\001 \001(\t\022\014\n" +
+      "\004plan\030\002 \001(\t\022\023\n\013card_number\030\003 \001(\t\022\021\n\texp_" +
+      "month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001" +
+      "(\t\"j\n\007Address\022\014\n\004city\030\001 \001(\t\022\017\n\007country\030\002" +
+      " \001(\t\022\r\n\005line1\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022\023\n\013po" +
+      "stal_code\030\005 \001(\t\022\r\n\005state\030\006 \001(\t\"4\n\031Subscr" +
+      "ibeCustomerResponse\022\027\n\017subscription_id\030\001" +
+      " \001(\t\"%\n\022CreatePlanResponse\022\017\n\007plan_id\030\001 " +
+      "\001(\t\"*\n\031CancelSubscriptionRequest\022\r\n\005emai" +
+      "l\030\001 \001(\t\"u\n\021CreatePlanRequest\022\017\n\007plan_id\030" +
+      "\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\022\n\nservice_id\030\003 \001(" +
+      "\t\022\024\n\014service_name\030\004 \001(\t\022\025\n\rfriendly_name" +
+      "\030\005 \001(\t\"+\n\nSMSRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n" +
+      "\004body\030\002 \001(\t\"4\n\013CallRequest\022\017\n\007user_id\030\001 " +
+      "\001(\t\022\024\n\014callback_url\030\002 \001(\t\">\n\nMMSRequest\022" +
+      "\017\n\007user_id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\022\021\n\tmedia_" +
+      "url\030\003 \001(\t\"V\n\014EmailRequest\022\017\n\007user_id\030\001 \001" +
+      "(\t\022\017\n\007subject\030\002 \001(\t\022\022\n\nplain_text\030\003 \001(\t\022" +
+      "\020\n\010html_alt\030\004 \001(\t\"A\n\017ChannelReminder\022\022\n\n" +
+      "channel_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003" +
+      " \001(\t\"W\n\014UserReminder\022\017\n\007user_id\030\001 \001(\t\022\014\n" +
+      "\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032\n\004item\030\004 \001(\0132" +
+      "\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001 \001(" +
+      "\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004Star" +
+      "\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemR" +
+      "ef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014." +
+      "api.ItemRef\"\372\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n" +
+      "\016twilio_account\030\002 \001(\t\022\022\n\ntwilio_key\030\003 \001(" +
+      "\t\022\024\n\014sendgrid_key\030\004 \001(\t\022\022\n\nstripe_key\030\005 " +
+      "\001(\t\022\021\n\tslack_key\030\006 \001(\t\022*\n\016customer_index" +
+      "\030\007 \001(\0162\022.api.CustomerIndex\022(\n\remail_addr" +
+      "ess\030\010 \001(\0132\021.api.EmailAddress\022\"\n\nlog_conf" +
+      "ig\030\t \001(\0132\016.api.LogConfig\".\n\tLogConfig\022\020\n" +
+      "\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014Emai" +
+      "lAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"" +
+      "P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddres" +
+      "s\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientEmai" +
+      "l\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api.Em" +
+      "ailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_tex" +
+      "t\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t" +
+      "\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_ur" +
+      "l\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2" +
+      "\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010call" +
+      "back\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 " +
+      "\001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022" +
+      "\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010\"6" +
+      "\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022" +
+      "\r\n\005title\030\003 \001(\t\"\265\002\n\017SlackAttachment\022\r\n\005co" +
+      "lor\030\001 \001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callback_" +
+      "id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t\022" +
+      "\023\n\013author_name\030\006 \001(\t\022\023\n\013author_link\030\007 \001(" +
+      "\t\022\023\n\013author_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024\n" +
+      "\014title_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n\004" +
+      "text\030\014 \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb_u" +
+      "rl\030\016 \001(\t\022$\n\006fields\030\017 \003(\0132\024.api.Attachmen" +
+      "tField\"\335\002\n\020AttachmentAction\022\014\n\004name\030\001 \001(" +
+      "\t\022\014\n\004text\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030\004" +
+      " \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001(\t" +
+      "\022\030\n\020min_query_length\030\007 \001(\003\022,\n\007options\030\010 " +
+      "\003(\0132\033.api.AttachmentActionOption\0225\n\020sele" +
+      "cted_options\030\t \003(\0132\033.api.AttachmentActio" +
+      "nOption\0227\n\roption_groups\030\n \003(\0132 .api.Att" +
+      "achmentActionOptionGroup\022\'\n\007confirm\030\013 \001(" +
+      "\0132\026.api.ConfirmationField\022\013\n\003url\030\014 \001(\t\"W" +
+      "\n\021ConfirmationField\022\r\n\005title\030\001 \001(\t\022\014\n\004te" +
+      "xt\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n\014dismiss_tex" +
+      "t\030\004 \001(\t\"Y\n\033AttachmentActionOptionGroup\022\014" +
+      "\n\004text\030\001 \001(\t\022,\n\007options\030\002 \003(\0132\033.api.Atta" +
+      "chmentActionOption\"K\n\026AttachmentActionOp" +
+      "tion\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013de" +
+      "scription\030\003 \001(\t\">\n\017AttachmentField\022\r\n\005ti" +
+      "tle\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005short\030\003 \001(\010*" +
+      "-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005P" +
+      "HONE\020\0022\271\010\n\013UserService\022O\n\016CreateCustomer" +
+      "\022\027.api.AddCustomerRequest\032\r.api.Customer" +
+      "\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022q\n\021SubscribeCust" +
+      "omer\022\035.api.SubscribeCustomerRequest\032\036.ap" +
+      "i.SubscribeCustomerResponse\"\035\202\323\344\223\002\027\"\022/ap" +
+      "i/users/{email}:\001*\022`\n\023UnSubscribeCustome" +
+      "r\022\036.api.CancelSubscriptionRequest\032\n.api." +
+      "Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026" +
+      "CreateSubscriptionPlan\022\026.api.CreatePlanR" +
+      "equest\032\027.api.CreatePlanResponse\"\037\202\323\344\223\002\031\"" +
+      "\024/api/plans/{plan_id}:\001*\022S\n\013SMSCustomer\022" +
+      "\017.api.SMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/a" +
+      "pi/customers/sms/{user_id}:\001*\022V\n\014CallCus" +
+      "tomer\022\020.api.CallRequest\032\n.api.Empty\"(\202\323\344" +
+      "\223\002\"\"\035/api/customers/call/{user_id}:\001*\022S\n" +
+      "\013MMSCustomer\022\017.api.MMSRequest\032\n.api.Empt" +
+      "y\"\'\202\323\344\223\002!\"\034/api/customers/mms/{user_id}:" +
+      "\001*\022Y\n\rEmailCustomer\022\021.api.EmailRequest\032\n" +
+      ".api.Empty\")\202\323\344\223\002#\"\036/api/customers/email" +
+      "/{user_id}:\001*\022K\n\007SMSUser\022\017.api.SMSReques" +
+      "t\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/sms/{u" +
+      "ser_id}:\001*\022N\n\010CallUser\022\020.api.CallRequest" +
+      "\032\n.api.Empty\"$\202\323\344\223\002\036\"\031/api/users/call/{u" +
+      "ser_id}:\001*\022K\n\007MMSUser\022\017.api.MMSRequest\032\n" +
+      ".api.Empty\"#\202\323\344\223\002\035\"\030/api/users/mms/{user" +
+      "_id}:\001*\022Q\n\tEmailUser\022\021.api.EmailRequest\032" +
+      "\n.api.Empty\"%\202\323\344\223\002\037\"\032/api/users/email/{u" +
+      "ser_id}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -36000,224 +34385,200 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Empty_descriptor,
         new java.lang.String[] { });
-    internal_static_api_UserMap_descriptor =
+    internal_static_api_Customer_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_api_UserMap_fieldAccessorTable = new
+    internal_static_api_Customer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_UserMap_descriptor,
-        new java.lang.String[] { "Users", });
-    internal_static_api_UserMap_UsersEntry_descriptor =
-      internal_static_api_UserMap_descriptor.getNestedTypes().get(0);
-    internal_static_api_UserMap_UsersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_UserMap_UsersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_api_User_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_api_User_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_User_descriptor,
+        internal_static_api_Customer_descriptor,
         new java.lang.String[] { "UserId", "Plan", "Name", "Email", "Description", "Phone", "Address", "Metadata", "Deleted", "CreateDate", });
-    internal_static_api_User_MetadataEntry_descriptor =
-      internal_static_api_User_descriptor.getNestedTypes().get(0);
-    internal_static_api_User_MetadataEntry_fieldAccessorTable = new
+    internal_static_api_Customer_MetadataEntry_descriptor =
+      internal_static_api_Customer_descriptor.getNestedTypes().get(0);
+    internal_static_api_Customer_MetadataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_User_MetadataEntry_descriptor,
+        internal_static_api_Customer_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_api_AddUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_api_AddUserRequest_fieldAccessorTable = new
+    internal_static_api_AddCustomerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_api_AddCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_AddUserRequest_descriptor,
+        internal_static_api_AddCustomerRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", "Phone", "Name", "Password", "TrialEnd", "Description", "Address", });
-    internal_static_api_SubscribeUserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_api_SubscribeUserRequest_fieldAccessorTable = new
+    internal_static_api_SubscribeCustomerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_api_SubscribeCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_SubscribeUserRequest_descriptor,
+        internal_static_api_SubscribeCustomerRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", "CardNumber", "ExpMonth", "ExpYear", "Cvc", });
-    internal_static_api_AddUserMetadataRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_api_AddUserMetadataRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_AddUserMetadataRequest_descriptor,
-        new java.lang.String[] { "UserId", "Metadata", });
-    internal_static_api_AddUserMetadataRequest_MetadataEntry_descriptor =
-      internal_static_api_AddUserMetadataRequest_descriptor.getNestedTypes().get(0);
-    internal_static_api_AddUserMetadataRequest_MetadataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_AddUserMetadataRequest_MetadataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_api_Address_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Address_descriptor,
         new java.lang.String[] { "City", "Country", "Line1", "Line2", "PostalCode", "State", });
-    internal_static_api_SubscribeUserResponse_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_api_SubscribeUserResponse_fieldAccessorTable = new
+    internal_static_api_SubscribeCustomerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_api_SubscribeCustomerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_SubscribeUserResponse_descriptor,
+        internal_static_api_SubscribeCustomerResponse_descriptor,
         new java.lang.String[] { "SubscriptionId", });
     internal_static_api_CreatePlanResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_CreatePlanResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CreatePlanResponse_descriptor,
         new java.lang.String[] { "PlanId", });
     internal_static_api_CancelSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_CancelSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CancelSubscriptionRequest_descriptor,
         new java.lang.String[] { "Email", });
     internal_static_api_CreatePlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_CreatePlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CreatePlanRequest_descriptor,
         new java.lang.String[] { "PlanId", "Amount", "ServiceId", "ServiceName", "FriendlyName", });
     internal_static_api_SMSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_SMSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMSRequest_descriptor,
         new java.lang.String[] { "UserId", "Body", });
     internal_static_api_CallRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_CallRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CallRequest_descriptor,
         new java.lang.String[] { "UserId", "CallbackUrl", });
     internal_static_api_MMSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_MMSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_MMSRequest_descriptor,
         new java.lang.String[] { "UserId", "Body", "MediaUrl", });
     internal_static_api_EmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailRequest_descriptor,
         new java.lang.String[] { "UserId", "Subject", "PlainText", "HtmlAlt", });
     internal_static_api_ChannelReminder_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_ChannelReminder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ChannelReminder_descriptor,
         new java.lang.String[] { "ChannelId", "Text", "Time", });
     internal_static_api_UserReminder_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_UserReminder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserReminder_descriptor,
         new java.lang.String[] { "UserId", "Text", "Time", "Item", });
     internal_static_api_ItemRef_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_ItemRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ItemRef_descriptor,
         new java.lang.String[] { "Channel", "File", "Comment", });
     internal_static_api_Star_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_Star_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Star_descriptor,
         new java.lang.String[] { "Text", "Item", });
     internal_static_api_Pin_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_Pin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Pin_descriptor,
         new java.lang.String[] { "Text", "Item", });
     internal_static_api_Config_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Config_descriptor,
         new java.lang.String[] { "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress", "LogConfig", });
     internal_static_api_LogConfig_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_LogConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_LogConfig_descriptor,
         new java.lang.String[] { "Username", "Channel", });
     internal_static_api_EmailAddress_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_EmailAddress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailAddress_descriptor,
         new java.lang.String[] { "Name", "Address", });
     internal_static_api_Email_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
         new java.lang.String[] { "From", "Recipient", });
     internal_static_api_RecipientEmail_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_RecipientEmail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_RecipientEmail_descriptor,
         new java.lang.String[] { "To", "Subject", "PlainText", "Html", });
     internal_static_api_SMS_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_SMS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMS_descriptor,
         new java.lang.String[] { "To", "From", "Body", "MediaUrl", "Callback", "App", });
     internal_static_api_Call_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_Call_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Call_descriptor,
         new java.lang.String[] { "To", "From", "Callback", });
     internal_static_api_Fax_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_Fax_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Fax_descriptor,
         new java.lang.String[] { "To", "From", "MediaUrl", "Quality", "Callback", "StoreMedia", });
     internal_static_api_LogHook_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_LogHook_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_LogHook_descriptor,
         new java.lang.String[] { "Author", "Icon", "Title", });
     internal_static_api_SlackAttachment_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_SlackAttachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SlackAttachment_descriptor,
         new java.lang.String[] { "Color", "Fallback", "CallbackId", "Id", "AuthorId", "AuthorName", "AuthorLink", "AuthorIcon", "Title", "TitlePrefix", "Pretext", "Text", "ImageUrl", "ThumbUrl", "Fields", });
     internal_static_api_AttachmentAction_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_api_AttachmentAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentAction_descriptor,
         new java.lang.String[] { "Name", "Text", "Style", "Type", "Value", "DataSource", "MinQueryLength", "Options", "SelectedOptions", "OptionGroups", "Confirm", "Url", });
     internal_static_api_ConfirmationField_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_api_ConfirmationField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ConfirmationField_descriptor,
         new java.lang.String[] { "Title", "Text", "OkText", "DismissText", });
     internal_static_api_AttachmentActionOptionGroup_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_api_AttachmentActionOptionGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentActionOptionGroup_descriptor,
         new java.lang.String[] { "Text", "Options", });
     internal_static_api_AttachmentActionOption_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_api_AttachmentActionOption_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentActionOption_descriptor,
         new java.lang.String[] { "Title", "Value", "Description", });
     internal_static_api_AttachmentField_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_api_AttachmentField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentField_descriptor,

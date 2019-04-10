@@ -15,6 +15,134 @@
     "application/json"
   ],
   "paths": {
+    "/api/customers/call/{user_id}": {
+      "post": {
+        "operationId": "CallCustomer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCallRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/customers/email/{user_id}": {
+      "post": {
+        "operationId": "EmailCustomer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/customers/mms/{user_id}": {
+      "post": {
+        "operationId": "MMSCustomer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiMMSRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/customers/sms/{user_id}": {
+      "post": {
+        "operationId": "SMSCustomer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSMSRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
     "/api/plans/{plan_id}": {
       "post": {
         "operationId": "CreateSubscriptionPlan",
@@ -47,7 +175,65 @@
         ]
       }
     },
-    "/api/plans/{user_id}": {
+    "/api/users": {
+      "post": {
+        "operationId": "CreateCustomer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiCustomer"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiAddCustomerRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/users/call/{user_id}": {
+      "post": {
+        "operationId": "CallUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCallRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/users/email/{user_id}": {
       "post": {
         "operationId": "EmailUser",
         "responses": {
@@ -79,24 +265,62 @@
         ]
       }
     },
-    "/api/users": {
+    "/api/users/mms/{user_id}": {
       "post": {
-        "operationId": "AddUser",
+        "operationId": "MMSUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/apiEmpty"
             }
           }
         },
         "parameters": [
           {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiAddUserRequest"
+              "$ref": "#/definitions/apiMMSRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/api/users/sms/{user_id}": {
+      "post": {
+        "operationId": "SMSUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSMSRequest"
             }
           }
         ],
@@ -107,7 +331,7 @@
     },
     "/api/users/{email}": {
       "post": {
-        "operationId": "UnSubscribeUser",
+        "operationId": "UnSubscribeCustomer",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -136,56 +360,10 @@
           "UserService"
         ]
       }
-    },
-    "/api/users/{user_id}": {
-      "post": {
-        "operationId": "AddUserMetadata",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiAddUserMetadataRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
     }
   },
   "definitions": {
-    "apiAddUserMetadataRequest": {
-      "type": "object",
-      "properties": {
-        "user_id": {
-          "type": "string"
-        },
-        "metadata": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "apiAddUserRequest": {
+    "apiAddCustomerRequest": {
       "type": "object",
       "properties": {
         "email": {
@@ -286,6 +464,47 @@
         }
       }
     },
+    "apiCustomer": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "plan": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/apiAddress"
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "deleted": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "create_date": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "User is a user of the application"
+    },
     "apiEmailRequest": {
       "type": "object",
       "properties": {
@@ -331,7 +550,7 @@
         }
       }
     },
-    "apiSubscribeUserRequest": {
+    "apiSubscribeCustomerRequest": {
       "type": "object",
       "properties": {
         "email": {
@@ -354,66 +573,13 @@
         }
       }
     },
-    "apiSubscribeUserResponse": {
+    "apiSubscribeCustomerResponse": {
       "type": "object",
       "properties": {
         "subscription_id": {
           "type": "string"
         }
       }
-    },
-    "apiUser": {
-      "type": "object",
-      "properties": {
-        "user_id": {
-          "type": "string"
-        },
-        "plan": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "address": {
-          "$ref": "#/definitions/apiAddress"
-        },
-        "metadata": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "deleted": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "create_date": {
-          "type": "string",
-          "format": "int64"
-        }
-      },
-      "title": "User is a user of the application"
-    },
-    "apiUserMap": {
-      "type": "object",
-      "properties": {
-        "users": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/apiUser"
-          }
-        }
-      },
-      "title": "UserMap is a map of users with a key of either user id, email, or phone number"
     }
   }
 }

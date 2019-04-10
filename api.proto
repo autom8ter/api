@@ -8,43 +8,19 @@ import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 
 service UserService {
-    rpc GetUserEmailMap(Empty) returns (UserMap) {
+    rpc CreateCustomer(AddCustomerRequest) returns (Customer) {
         option (google.api.http) = {
             post: "/api/users"
             body: "*"
         };
     }
-    rpc GetUserIDMap(Empty) returns (UserMap) {
-        option (google.api.http) = {
-            post: "/api/users"
-            body: "*"
-        };
-    }
-    rpc GetUserPhoneMap(Empty) returns (UserMap) {
-        option (google.api.http) = {
-            post: "/api/users"
-            body: "*"
-        };
-    }
-    rpc AddUser(AddUserRequest) returns (User) {
-        option (google.api.http) = {
-            post: "/api/users"
-            body: "*"
-        };
-    }
-    rpc AddUserMetadata(AddUserMetadataRequest) returns (User) {
-        option (google.api.http) = {
-            post: "/api/users/{user_id}"
-            body: "*"
-        };
-    }
-    rpc SubscribeUser(SubscribeUserRequest) returns (SubscribeUserResponse) {
+    rpc SubscribeCustomer(SubscribeCustomerRequest) returns (SubscribeCustomerResponse) {
         option (google.api.http) = {
             post: "/api/users/{email}"
             body: "*"
         };
     }
-    rpc UnSubscribeUser(CancelSubscriptionRequest) returns (Empty) {
+    rpc UnSubscribeCustomer(CancelSubscriptionRequest) returns (Empty) {
         option (google.api.http) = {
             post: "/api/users/{email}"
             body: "*"
@@ -56,27 +32,51 @@ service UserService {
             body: "*"
         };
     }
+    rpc SMSCustomer(SMSRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/customers/sms/{user_id}"
+            body: "*"
+        };
+    }
+    rpc CallCustomer(CallRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/customers/call/{user_id}"
+            body: "*"
+        };
+    }
+    rpc MMSCustomer(MMSRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/customers/mms/{user_id}"
+            body: "*"
+        };
+    }
+    rpc EmailCustomer(EmailRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/customers/email/{user_id}"
+            body: "*"
+        };
+    }
     rpc SMSUser(SMSRequest) returns (Empty) {
         option (google.api.http) = {
-            post: "/api/plans/{user_id}"
+            post: "/api/users/sms/{user_id}"
             body: "*"
         };
     }
     rpc CallUser(CallRequest) returns (Empty) {
         option (google.api.http) = {
-            post: "/api/plans/{user_id}"
+            post: "/api/users/call/{user_id}"
             body: "*"
         };
     }
     rpc MMSUser(MMSRequest) returns (Empty) {
         option (google.api.http) = {
-            post: "/api/plans/{user_id}"
+            post: "/api/users/mms/{user_id}"
             body: "*"
         };
     }
     rpc EmailUser(EmailRequest) returns (Empty) {
         option (google.api.http) = {
-            post: "/api/plans/{user_id}"
+            post: "/api/users/email/{user_id}"
             body: "*"
         };
     }
@@ -85,13 +85,8 @@ service UserService {
 message Empty {}
 
 
-// UserMap is a map of users with a key of either user id, email, or phone number
-message UserMap {
-    map<string, User> users=1;
-}
-
 // User is a user of the application
-message User {
+message Customer {
     string user_id = 1;
     string plan = 2;
     string name =3;
@@ -104,7 +99,7 @@ message User {
     int64 create_date = 20;
 }
 
-message AddUserRequest {
+message AddCustomerRequest {
     string email =1;
     string plan=2;
     string phone=3;
@@ -115,18 +110,13 @@ message AddUserRequest {
     Address address=8;
 }
 
-message SubscribeUserRequest {
+message SubscribeCustomerRequest {
     string email =1;
     string plan=2;
     string card_number=3;
     string exp_month=4;
     string exp_year=5;
     string cvc=6;
-}
-
-message AddUserMetadataRequest {
-    string user_id =1;
-    map<string,string> metadata=2;
 }
 
 message Address {
@@ -138,7 +128,7 @@ message Address {
     string state=6;
 }
 
-message SubscribeUserResponse {
+message SubscribeCustomerResponse {
     string subscription_id=1;
 }
 

@@ -179,15 +179,7 @@
             <ul>
               
                 <li>
-                  <a href="#api.AddUserMetadataRequest"><span class="badge">M</span>AddUserMetadataRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#api.AddUserMetadataRequest.MetadataEntry"><span class="badge">M</span>AddUserMetadataRequest.MetadataEntry</a>
-                </li>
-              
-                <li>
-                  <a href="#api.AddUserRequest"><span class="badge">M</span>AddUserRequest</a>
+                  <a href="#api.AddCustomerRequest"><span class="badge">M</span>AddCustomerRequest</a>
                 </li>
               
                 <li>
@@ -240,6 +232,14 @@
               
                 <li>
                   <a href="#api.CreatePlanResponse"><span class="badge">M</span>CreatePlanResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Customer"><span class="badge">M</span>Customer</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Customer.MetadataEntry"><span class="badge">M</span>Customer.MetadataEntry</a>
                 </li>
               
                 <li>
@@ -303,27 +303,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.SubscribeUserRequest"><span class="badge">M</span>SubscribeUserRequest</a>
+                  <a href="#api.SubscribeCustomerRequest"><span class="badge">M</span>SubscribeCustomerRequest</a>
                 </li>
               
                 <li>
-                  <a href="#api.SubscribeUserResponse"><span class="badge">M</span>SubscribeUserResponse</a>
-                </li>
-              
-                <li>
-                  <a href="#api.User"><span class="badge">M</span>User</a>
-                </li>
-              
-                <li>
-                  <a href="#api.User.MetadataEntry"><span class="badge">M</span>User.MetadataEntry</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UserMap"><span class="badge">M</span>UserMap</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UserMap.UsersEntry"><span class="badge">M</span>UserMap.UsersEntry</a>
+                  <a href="#api.SubscribeCustomerResponse"><span class="badge">M</span>SubscribeCustomerResponse</a>
                 </li>
               
                 <li>
@@ -356,67 +340,7 @@
       <p></p>
 
       
-        <h3 id="api.AddUserMetadataRequest">AddUserMetadataRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>metadata</td>
-                  <td><a href="#api.AddUserMetadataRequest.MetadataEntry">AddUserMetadataRequest.MetadataEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.AddUserMetadataRequest.MetadataEntry">AddUserMetadataRequest.MetadataEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.AddUserRequest">AddUserRequest</h3>
+        <h3 id="api.AddCustomerRequest">AddCustomerRequest</h3>
         <p></p>
 
         
@@ -1074,6 +998,122 @@
 
         
       
+        <h3 id="api.Customer">Customer</h3>
+        <p>User is a user of the application</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plan</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#api.Address">Address</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>metadata</td>
+                  <td><a href="#api.Customer.MetadataEntry">Customer.MetadataEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>deleted</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>create_date</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Customer.MetadataEntry">Customer.MetadataEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Email">Email</h3>
         <p></p>
 
@@ -1697,7 +1737,7 @@
 
         
       
-        <h3 id="api.SubscribeUserRequest">SubscribeUserRequest</h3>
+        <h3 id="api.SubscribeCustomerRequest">SubscribeCustomerRequest</h3>
         <p></p>
 
         
@@ -1755,7 +1795,7 @@
 
         
       
-        <h3 id="api.SubscribeUserResponse">SubscribeUserResponse</h3>
+        <h3 id="api.SubscribeCustomerResponse">SubscribeCustomerResponse</h3>
         <p></p>
 
         
@@ -1768,175 +1808,6 @@
                 <tr>
                   <td>subscription_id</td>
                   <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.User">User</h3>
-        <p>User is a user of the application</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>plan</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>description</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>phone</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>address</td>
-                  <td><a href="#api.Address">Address</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>metadata</td>
-                  <td><a href="#api.User.MetadataEntry">User.MetadataEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>deleted</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>create_date</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.User.MetadataEntry">User.MetadataEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UserMap">UserMap</h3>
-        <p>UserMap is a map of users with a key of either user id, email, or phone number</p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>users</td>
-                  <td><a href="#api.UserMap.UsersEntry">UserMap.UsersEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UserMap.UsersEntry">UserMap.UsersEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#api.User">User</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2035,49 +1906,21 @@
           <tbody>
             
               <tr>
-                <td>GetUserEmailMap</td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><a href="#api.UserMap">UserMap</a></td>
+                <td>CreateCustomer</td>
+                <td><a href="#api.AddCustomerRequest">AddCustomerRequest</a></td>
+                <td><a href="#api.Customer">Customer</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>GetUserIDMap</td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><a href="#api.UserMap">UserMap</a></td>
+                <td>SubscribeCustomer</td>
+                <td><a href="#api.SubscribeCustomerRequest">SubscribeCustomerRequest</a></td>
+                <td><a href="#api.SubscribeCustomerResponse">SubscribeCustomerResponse</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>GetUserPhoneMap</td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><a href="#api.UserMap">UserMap</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AddUser</td>
-                <td><a href="#api.AddUserRequest">AddUserRequest</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AddUserMetadata</td>
-                <td><a href="#api.AddUserMetadataRequest">AddUserMetadataRequest</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SubscribeUser</td>
-                <td><a href="#api.SubscribeUserRequest">SubscribeUserRequest</a></td>
-                <td><a href="#api.SubscribeUserResponse">SubscribeUserResponse</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UnSubscribeUser</td>
+                <td>UnSubscribeCustomer</td>
                 <td><a href="#api.CancelSubscriptionRequest">CancelSubscriptionRequest</a></td>
                 <td><a href="#api.Empty">Empty</a></td>
                 <td><p></p></td>
@@ -2087,6 +1930,34 @@
                 <td>CreateSubscriptionPlan</td>
                 <td><a href="#api.CreatePlanRequest">CreatePlanRequest</a></td>
                 <td><a href="#api.CreatePlanResponse">CreatePlanResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SMSCustomer</td>
+                <td><a href="#api.SMSRequest">SMSRequest</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CallCustomer</td>
+                <td><a href="#api.CallRequest">CallRequest</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>MMSCustomer</td>
+                <td><a href="#api.MMSRequest">MMSRequest</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>EmailCustomer</td>
+                <td><a href="#api.EmailRequest">EmailRequest</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
                 <td><p></p></td>
               </tr>
             
