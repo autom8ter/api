@@ -73,33 +73,34 @@ namespace Api {
             "Cg1lbWFpbF9hZGRyZXNzGAggASgLMhEuYXBpLkVtYWlsQWRkcmVzcxIiCgps",
             "b2dfY29uZmlnGAkgASgLMg4uYXBpLkxvZ0NvbmZpZyIuCglMb2dDb25maWcS",
             "EAoIdXNlcm5hbWUYASABKAkSDwoHY2hhbm5lbBgCIAEoCSItCgxFbWFpbEFk",
-            "ZHJlc3MSDAoEbmFtZRgBIAEoCRIPCgdhZGRyZXNzGAIgASgJInoKBUVtYWls",
-            "Eh8KBGZyb20YASABKAsyES5hcGkuRW1haWxBZGRyZXNzEh0KAnRvGAIgASgL",
-            "MhEuYXBpLkVtYWlsQWRkcmVzcxIPCgdzdWJqZWN0GAMgASgJEhIKCnBsYWlu",
-            "X3RleHQYBCABKAkSDAoEaHRtbBgFIAEoCSotCg1DdXN0b21lckluZGV4EgYK",
-            "AklEEAASCQoFRU1BSUwQARIJCgVQSE9ORRACMs8HCgtVc2VyU2VydmljZRJC",
-            "Cg9HZXRVc2VyRW1haWxNYXASCi5hcGkuRW1wdHkaDC5hcGkuVXNlck1hcCIV",
-            "gtPkkwIPIgovYXBpL3VzZXJzOgEqEj8KDEdldFVzZXJJRE1hcBIKLmFwaS5F",
-            "bXB0eRoMLmFwaS5Vc2VyTWFwIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSQgoP",
-            "R2V0VXNlclBob25lTWFwEgouYXBpLkVtcHR5GgwuYXBpLlVzZXJNYXAiFYLT",
-            "5JMCDyIKL2FwaS91c2VyczoBKhJACgdBZGRVc2VyEhMuYXBpLkFkZFVzZXJS",
-            "ZXF1ZXN0GgkuYXBpLlVzZXIiFYLT5JMCDyIKL2FwaS91c2VyczoBKhJaCg9B",
-            "ZGRVc2VyTWV0YWRhdGESGy5hcGkuQWRkVXNlck1ldGFkYXRhUmVxdWVzdBoJ",
-            "LmFwaS5Vc2VyIh+C0+STAhkiFC9hcGkvdXNlcnMve3VzZXJfaWR9OgEqEmUK",
-            "DVN1YnNjcmliZVVzZXISGS5hcGkuU3Vic2NyaWJlVXNlclJlcXVlc3QaGi5h",
-            "cGkuU3Vic2NyaWJlVXNlclJlc3BvbnNlIh2C0+STAhciEi9hcGkvdXNlcnMv",
-            "e2VtYWlsfToBKhJcCg9VblN1YnNjcmliZVVzZXISHi5hcGkuQ2FuY2VsU3Vi",
-            "c2NyaXB0aW9uUmVxdWVzdBoKLmFwaS5FbXB0eSIdgtPkkwIXIhIvYXBpL3Vz",
-            "ZXJzL3tlbWFpbH06ASoSagoWQ3JlYXRlU3Vic2NyaXB0aW9uUGxhbhIWLmFw",
-            "aS5DcmVhdGVQbGFuUmVxdWVzdBoXLmFwaS5DcmVhdGVQbGFuUmVzcG9uc2Ui",
-            "H4LT5JMCGSIUL2FwaS9wbGFucy97cGxhbl9pZH06ASoSRwoHU01TVXNlchIP",
-            "LmFwaS5TTVNSZXF1ZXN0GgouYXBpLkVtcHR5Ih+C0+STAhkiFC9hcGkvcGxh",
-            "bnMve3VzZXJfaWR9OgEqEkkKCENhbGxVc2VyEhAuYXBpLkNhbGxSZXF1ZXN0",
-            "GgouYXBpLkVtcHR5Ih+C0+STAhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEq",
-            "EkcKB01NU1VzZXISDy5hcGkuTU1TUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPk",
-            "kwIZIhQvYXBpL3BsYW5zL3t1c2VyX2lkfToBKhJLCglFbWFpbFVzZXISES5h",
-            "cGkuRW1haWxSZXF1ZXN0GgouYXBpLkVtcHR5Ih+C0+STAhkiFC9hcGkvcGxh",
-            "bnMve3VzZXJfaWR9OgEqYgZwcm90bzM="));
+            "ZHJlc3MSDAoEbmFtZRgBIAEoCRIPCgdhZGRyZXNzGAIgASgJIlAKBUVtYWls",
+            "Eh8KBGZyb20YASABKAsyES5hcGkuRW1haWxBZGRyZXNzEiYKCXJlY2lwaWVu",
+            "dBgCIAEoCzITLmFwaS5SZWNpcGllbnRFbWFpbCJiCg5SZWNpcGllbnRFbWFp",
+            "bBIdCgJ0bxgCIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MSDwoHc3ViamVjdBgD",
+            "IAEoCRISCgpwbGFpbl90ZXh0GAQgASgJEgwKBGh0bWwYBSABKAkqLQoNQ3Vz",
+            "dG9tZXJJbmRleBIGCgJJRBAAEgkKBUVNQUlMEAESCQoFUEhPTkUQAjLPBwoL",
+            "VXNlclNlcnZpY2USQgoPR2V0VXNlckVtYWlsTWFwEgouYXBpLkVtcHR5Ggwu",
+            "YXBpLlVzZXJNYXAiFYLT5JMCDyIKL2FwaS91c2VyczoBKhI/CgxHZXRVc2Vy",
+            "SURNYXASCi5hcGkuRW1wdHkaDC5hcGkuVXNlck1hcCIVgtPkkwIPIgovYXBp",
+            "L3VzZXJzOgEqEkIKD0dldFVzZXJQaG9uZU1hcBIKLmFwaS5FbXB0eRoMLmFw",
+            "aS5Vc2VyTWFwIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSQAoHQWRkVXNlchIT",
+            "LmFwaS5BZGRVc2VyUmVxdWVzdBoJLmFwaS5Vc2VyIhWC0+STAg8iCi9hcGkv",
+            "dXNlcnM6ASoSWgoPQWRkVXNlck1ldGFkYXRhEhsuYXBpLkFkZFVzZXJNZXRh",
+            "ZGF0YVJlcXVlc3QaCS5hcGkuVXNlciIfgtPkkwIZIhQvYXBpL3VzZXJzL3t1",
+            "c2VyX2lkfToBKhJlCg1TdWJzY3JpYmVVc2VyEhkuYXBpLlN1YnNjcmliZVVz",
+            "ZXJSZXF1ZXN0GhouYXBpLlN1YnNjcmliZVVzZXJSZXNwb25zZSIdgtPkkwIX",
+            "IhIvYXBpL3VzZXJzL3tlbWFpbH06ASoSXAoPVW5TdWJzY3JpYmVVc2VyEh4u",
+            "YXBpLkNhbmNlbFN1YnNjcmlwdGlvblJlcXVlc3QaCi5hcGkuRW1wdHkiHYLT",
+            "5JMCFyISL2FwaS91c2Vycy97ZW1haWx9OgEqEmoKFkNyZWF0ZVN1YnNjcmlw",
+            "dGlvblBsYW4SFi5hcGkuQ3JlYXRlUGxhblJlcXVlc3QaFy5hcGkuQ3JlYXRl",
+            "UGxhblJlc3BvbnNlIh+C0+STAhkiFC9hcGkvcGxhbnMve3BsYW5faWR9OgEq",
+            "EkcKB1NNU1VzZXISDy5hcGkuU01TUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPk",
+            "kwIZIhQvYXBpL3BsYW5zL3t1c2VyX2lkfToBKhJJCghDYWxsVXNlchIQLmFw",
+            "aS5DYWxsUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPkkwIZIhQvYXBpL3BsYW5z",
+            "L3t1c2VyX2lkfToBKhJHCgdNTVNVc2VyEg8uYXBpLk1NU1JlcXVlc3QaCi5h",
+            "cGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9pZH06ASoSSwoJ",
+            "RW1haWxVc2VyEhEuYXBpLkVtYWlsUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPk",
+            "kwIZIhQvYXBpL3BsYW5zL3t1c2VyX2lkfToBKmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), }, new pbr::GeneratedClrTypeInfo[] {
@@ -126,7 +127,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Config), global::Api.Config.Parser, new[]{ "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress", "LogConfig" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.LogConfig), global::Api.LogConfig.Parser, new[]{ "Username", "Channel" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.EmailAddress), global::Api.EmailAddress.Parser, new[]{ "Name", "Address" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "From", "To", "Subject", "PlainText", "Html" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "From", "Recipient" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.RecipientEmail), global::Api.RecipientEmail.Parser, new[]{ "To", "Subject", "PlainText", "Html" }, null, null, null)
           }));
     }
     #endregion
@@ -4727,10 +4729,7 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Email(Email other) : this() {
       from_ = other.from_ != null ? other.from_.Clone() : null;
-      to_ = other.to_ != null ? other.to_.Clone() : null;
-      subject_ = other.subject_;
-      plainText_ = other.plainText_;
-      html_ = other.html_;
+      recipient_ = other.recipient_ != null ? other.recipient_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4748,6 +4747,166 @@ namespace Api {
       set {
         from_ = value;
       }
+    }
+
+    /// <summary>Field number for the "recipient" field.</summary>
+    public const int RecipientFieldNumber = 2;
+    private global::Api.RecipientEmail recipient_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.RecipientEmail Recipient {
+      get { return recipient_; }
+      set {
+        recipient_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Email);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Email other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(From, other.From)) return false;
+      if (!object.Equals(Recipient, other.Recipient)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (from_ != null) hash ^= From.GetHashCode();
+      if (recipient_ != null) hash ^= Recipient.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (from_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(From);
+      }
+      if (recipient_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Recipient);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (from_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(From);
+      }
+      if (recipient_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Recipient);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Email other) {
+      if (other == null) {
+        return;
+      }
+      if (other.from_ != null) {
+        if (from_ == null) {
+          from_ = new global::Api.EmailAddress();
+        }
+        From.MergeFrom(other.From);
+      }
+      if (other.recipient_ != null) {
+        if (recipient_ == null) {
+          recipient_ = new global::Api.RecipientEmail();
+        }
+        Recipient.MergeFrom(other.Recipient);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (from_ == null) {
+              from_ = new global::Api.EmailAddress();
+            }
+            input.ReadMessage(from_);
+            break;
+          }
+          case 18: {
+            if (recipient_ == null) {
+              recipient_ = new global::Api.RecipientEmail();
+            }
+            input.ReadMessage(recipient_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class RecipientEmail : pb::IMessage<RecipientEmail> {
+    private static readonly pb::MessageParser<RecipientEmail> _parser = new pb::MessageParser<RecipientEmail>(() => new RecipientEmail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RecipientEmail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[24]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RecipientEmail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RecipientEmail(RecipientEmail other) : this() {
+      to_ = other.to_ != null ? other.to_.Clone() : null;
+      subject_ = other.subject_;
+      plainText_ = other.plainText_;
+      html_ = other.html_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RecipientEmail Clone() {
+      return new RecipientEmail(this);
     }
 
     /// <summary>Field number for the "to" field.</summary>
@@ -4796,18 +4955,17 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Email);
+      return Equals(other as RecipientEmail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Email other) {
+    public bool Equals(RecipientEmail other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(From, other.From)) return false;
       if (!object.Equals(To, other.To)) return false;
       if (Subject != other.Subject) return false;
       if (PlainText != other.PlainText) return false;
@@ -4818,7 +4976,6 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (from_ != null) hash ^= From.GetHashCode();
       if (to_ != null) hash ^= To.GetHashCode();
       if (Subject.Length != 0) hash ^= Subject.GetHashCode();
       if (PlainText.Length != 0) hash ^= PlainText.GetHashCode();
@@ -4836,10 +4993,6 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (from_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(From);
-      }
       if (to_ != null) {
         output.WriteRawTag(18);
         output.WriteMessage(To);
@@ -4864,9 +5017,6 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (from_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(From);
-      }
       if (to_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(To);
       }
@@ -4886,15 +5036,9 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Email other) {
+    public void MergeFrom(RecipientEmail other) {
       if (other == null) {
         return;
-      }
-      if (other.from_ != null) {
-        if (from_ == null) {
-          from_ = new global::Api.EmailAddress();
-        }
-        From.MergeFrom(other.From);
       }
       if (other.to_ != null) {
         if (to_ == null) {
@@ -4922,13 +5066,6 @@ namespace Api {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (from_ == null) {
-              from_ = new global::Api.EmailAddress();
-            }
-            input.ReadMessage(from_);
-            break;
-          }
           case 18: {
             if (to_ == null) {
               to_ = new global::Api.EmailAddress();

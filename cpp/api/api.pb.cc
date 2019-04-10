@@ -26,6 +26,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ItemRef;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LogConfig;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_User_MetadataEntry_DoNotUse;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_RecipientEmail;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_UserMap_UsersEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_User;
 }  // namespace protobuf_api_2eproto
@@ -165,6 +166,11 @@ class EmailDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Email>
       _instance;
 } _Email_default_instance_;
+class RecipientEmailDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<RecipientEmail>
+      _instance;
+} _RecipientEmail_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsEmpty() {
@@ -550,8 +556,24 @@ static void InitDefaultsEmail() {
   ::api::Email::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Email =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEmail}, {
+::google::protobuf::internal::SCCInfo<2> scc_info_Email =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsEmail}, {
+      &protobuf_api_2eproto::scc_info_EmailAddress.base,
+      &protobuf_api_2eproto::scc_info_RecipientEmail.base,}};
+
+static void InitDefaultsRecipientEmail() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_RecipientEmail_default_instance_;
+    new (ptr) ::api::RecipientEmail();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::RecipientEmail::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_RecipientEmail =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsRecipientEmail}, {
       &protobuf_api_2eproto::scc_info_EmailAddress.base,}};
 
 void InitDefaults() {
@@ -582,9 +604,10 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_LogConfig.base);
   ::google::protobuf::internal::InitSCC(&scc_info_EmailAddress.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Email.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_RecipientEmail.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[27];
+::google::protobuf::Metadata file_level_metadata[28];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -815,10 +838,16 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, from_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, to_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, subject_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, plain_text_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, html_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, recipient_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RecipientEmail, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RecipientEmail, to_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RecipientEmail, subject_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RecipientEmail, plain_text_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RecipientEmail, html_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::Empty)},
@@ -848,6 +877,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 207, -1, sizeof(::api::LogConfig)},
   { 214, -1, sizeof(::api::EmailAddress)},
   { 221, -1, sizeof(::api::Email)},
+  { 228, -1, sizeof(::api::RecipientEmail)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -878,6 +908,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_LogConfig_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_EmailAddress_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Email_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_RecipientEmail_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -895,7 +926,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 27);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 28);
 }
 
 void AddDescriptorsImpl() {
@@ -957,38 +988,40 @@ void AddDescriptorsImpl() {
       "nfig\030\t \001(\0132\016.api.LogConfig\".\n\tLogConfig\022"
       "\020\n\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014Em"
       "ailAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001("
-      "\t\"z\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddr"
-      "ess\022\035\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007su"
-      "bject\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030"
-      "\005 \001(\t*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020"
-      "\001\022\t\n\005PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserE"
-      "mailMap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002"
-      "\017\"\n/api/users:\001*\022\?\n\014GetUserIDMap\022\n.api.E"
-      "mpty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001"
-      "*\022B\n\017GetUserPhoneMap\022\n.api.Empty\032\014.api.U"
-      "serMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser"
-      "\022\023.api.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017"
-      "\"\n/api/users:\001*\022Z\n\017AddUserMetadata\022\033.api"
-      ".AddUserMetadataRequest\032\t.api.User\"\037\202\323\344\223"
-      "\002\031\"\024/api/users/{user_id}:\001*\022e\n\rSubscribe"
-      "User\022\031.api.SubscribeUserRequest\032\032.api.Su"
-      "bscribeUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/"
-      "{email}:\001*\022\\\n\017UnSubscribeUser\022\036.api.Canc"
-      "elSubscriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002"
-      "\027\"\022/api/users/{email}:\001*\022j\n\026CreateSubscr"
-      "iptionPlan\022\026.api.CreatePlanRequest\032\027.api"
-      ".CreatePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/"
-      "{plan_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest"
-      "\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_i"
-      "d}:\001*\022I\n\010CallUser\022\020.api.CallRequest\032\n.ap"
-      "i.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*"
-      "\022G\n\007MMSUser\022\017.api.MMSRequest\032\n.api.Empty"
-      "\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEma"
-      "ilUser\022\021.api.EmailRequest\032\n.api.Empty\"\037\202"
-      "\323\344\223\002\031\"\024/api/plans/{user_id}:\001*b\006proto3"
+      "\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddr"
+      "ess\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientEm"
+      "ail\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api."
+      "EmailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_t"
+      "ext\030\004 \001(\t\022\014\n\004html\030\005 \001(\t*-\n\rCustomerIndex"
+      "\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\0022\317\007\n\013UserS"
+      "ervice\022B\n\017GetUserEmailMap\022\n.api.Empty\032\014."
+      "api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022\?\n\014Ge"
+      "tUserIDMap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323"
+      "\344\223\002\017\"\n/api/users:\001*\022B\n\017GetUserPhoneMap\022\n"
+      ".api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/u"
+      "sers:\001*\022@\n\007AddUser\022\023.api.AddUserRequest\032"
+      "\t.api.User\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022Z\n\017Add"
+      "UserMetadata\022\033.api.AddUserMetadataReques"
+      "t\032\t.api.User\"\037\202\323\344\223\002\031\"\024/api/users/{user_i"
+      "d}:\001*\022e\n\rSubscribeUser\022\031.api.SubscribeUs"
+      "erRequest\032\032.api.SubscribeUserResponse\"\035\202"
+      "\323\344\223\002\027\"\022/api/users/{email}:\001*\022\\\n\017UnSubscr"
+      "ibeUser\022\036.api.CancelSubscriptionRequest\032"
+      "\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:"
+      "\001*\022j\n\026CreateSubscriptionPlan\022\026.api.Creat"
+      "ePlanRequest\032\027.api.CreatePlanResponse\"\037\202"
+      "\323\344\223\002\031\"\024/api/plans/{plan_id}:\001*\022G\n\007SMSUse"
+      "r\022\017.api.SMSRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024"
+      "/api/plans/{user_id}:\001*\022I\n\010CallUser\022\020.ap"
+      "i.CallRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/"
+      "plans/{user_id}:\001*\022G\n\007MMSUser\022\017.api.MMSR"
+      "equest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{"
+      "user_id}:\001*\022K\n\tEmailUser\022\021.api.EmailRequ"
+      "est\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{use"
+      "r_id}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3398);
+      descriptor, 3456);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -10004,15 +10037,12 @@ void EmailAddress::InternalSwap(EmailAddress* other) {
 void Email::InitAsDefaultInstance() {
   ::api::_Email_default_instance_._instance.get_mutable()->from_ = const_cast< ::api::EmailAddress*>(
       ::api::EmailAddress::internal_default_instance());
-  ::api::_Email_default_instance_._instance.get_mutable()->to_ = const_cast< ::api::EmailAddress*>(
-      ::api::EmailAddress::internal_default_instance());
+  ::api::_Email_default_instance_._instance.get_mutable()->recipient_ = const_cast< ::api::RecipientEmail*>(
+      ::api::RecipientEmail::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Email::kFromFieldNumber;
-const int Email::kToFieldNumber;
-const int Email::kSubjectFieldNumber;
-const int Email::kPlainTextFieldNumber;
-const int Email::kHtmlFieldNumber;
+const int Email::kRecipientFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Email::Email()
@@ -10026,38 +10056,23 @@ Email::Email(const Email& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  subject_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.subject().size() > 0) {
-    subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
-  }
-  plain_text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.plain_text().size() > 0) {
-    plain_text_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_text_);
-  }
-  html_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.html().size() > 0) {
-    html_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.html_);
-  }
   if (from.has_from()) {
     from_ = new ::api::EmailAddress(*from.from_);
   } else {
     from_ = NULL;
   }
-  if (from.has_to()) {
-    to_ = new ::api::EmailAddress(*from.to_);
+  if (from.has_recipient()) {
+    recipient_ = new ::api::RecipientEmail(*from.recipient_);
   } else {
-    to_ = NULL;
+    recipient_ = NULL;
   }
   // @@protoc_insertion_point(copy_constructor:api.Email)
 }
 
 void Email::SharedCtor() {
-  subject_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plain_text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  html_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&from_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&to_) -
-      reinterpret_cast<char*>(&from_)) + sizeof(to_));
+      reinterpret_cast<char*>(&recipient_) -
+      reinterpret_cast<char*>(&from_)) + sizeof(recipient_));
 }
 
 Email::~Email() {
@@ -10066,11 +10081,8 @@ Email::~Email() {
 }
 
 void Email::SharedDtor() {
-  subject_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plain_text_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  html_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete from_;
-  if (this != internal_default_instance()) delete to_;
+  if (this != internal_default_instance()) delete recipient_;
 }
 
 void Email::SetCachedSize(int size) const {
@@ -10093,17 +10105,14 @@ void Email::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plain_text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  html_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == NULL && from_ != NULL) {
     delete from_;
   }
   from_ = NULL;
-  if (GetArenaNoVirtual() == NULL && to_ != NULL) {
-    delete to_;
+  if (GetArenaNoVirtual() == NULL && recipient_ != NULL) {
+    delete recipient_;
   }
-  to_ = NULL;
+  recipient_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -10129,60 +10138,12 @@ bool Email::MergePartialFromCodedStream(
         break;
       }
 
-      // .api.EmailAddress to = 2;
+      // .api.RecipientEmail recipient = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_to()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string subject = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_subject()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->subject().data(), static_cast<int>(this->subject().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Email.subject"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string plain_text = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_plain_text()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->plain_text().data(), static_cast<int>(this->plain_text().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Email.plain_text"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string html = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_html()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->html().data(), static_cast<int>(this->html().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Email.html"));
+               input, mutable_recipient()));
         } else {
           goto handle_unusual;
         }
@@ -10221,40 +10182,10 @@ void Email::SerializeWithCachedSizes(
       1, this->_internal_from(), output);
   }
 
-  // .api.EmailAddress to = 2;
-  if (this->has_to()) {
+  // .api.RecipientEmail recipient = 2;
+  if (this->has_recipient()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_to(), output);
-  }
-
-  // string subject = 3;
-  if (this->subject().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->subject().data(), static_cast<int>(this->subject().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Email.subject");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->subject(), output);
-  }
-
-  // string plain_text = 4;
-  if (this->plain_text().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plain_text().data(), static_cast<int>(this->plain_text().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Email.plain_text");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->plain_text(), output);
-  }
-
-  // string html = 5;
-  if (this->html().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->html().data(), static_cast<int>(this->html().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Email.html");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->html(), output);
+      2, this->_internal_recipient(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -10278,44 +10209,11 @@ void Email::SerializeWithCachedSizes(
         1, this->_internal_from(), deterministic, target);
   }
 
-  // .api.EmailAddress to = 2;
-  if (this->has_to()) {
+  // .api.RecipientEmail recipient = 2;
+  if (this->has_recipient()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        2, this->_internal_to(), deterministic, target);
-  }
-
-  // string subject = 3;
-  if (this->subject().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->subject().data(), static_cast<int>(this->subject().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Email.subject");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->subject(), target);
-  }
-
-  // string plain_text = 4;
-  if (this->plain_text().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plain_text().data(), static_cast<int>(this->plain_text().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Email.plain_text");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->plain_text(), target);
-  }
-
-  // string html = 5;
-  if (this->html().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->html().data(), static_cast<int>(this->html().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Email.html");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->html(), target);
+        2, this->_internal_recipient(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -10335,27 +10233,6 @@ size_t Email::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string subject = 3;
-  if (this->subject().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->subject());
-  }
-
-  // string plain_text = 4;
-  if (this->plain_text().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->plain_text());
-  }
-
-  // string html = 5;
-  if (this->html().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->html());
-  }
-
   // .api.EmailAddress from = 1;
   if (this->has_from()) {
     total_size += 1 +
@@ -10363,11 +10240,11 @@ size_t Email::ByteSizeLong() const {
         *from_);
   }
 
-  // .api.EmailAddress to = 2;
-  if (this->has_to()) {
+  // .api.RecipientEmail recipient = 2;
+  if (this->has_recipient()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *to_);
+        *recipient_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -10397,23 +10274,11 @@ void Email::MergeFrom(const Email& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.subject().size() > 0) {
-
-    subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
-  }
-  if (from.plain_text().size() > 0) {
-
-    plain_text_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_text_);
-  }
-  if (from.html().size() > 0) {
-
-    html_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.html_);
-  }
   if (from.has_from()) {
     mutable_from()->::api::EmailAddress::MergeFrom(from.from());
   }
-  if (from.has_to()) {
-    mutable_to()->::api::EmailAddress::MergeFrom(from.to());
+  if (from.has_recipient()) {
+    mutable_recipient()->::api::RecipientEmail::MergeFrom(from.recipient());
   }
 }
 
@@ -10441,18 +10306,420 @@ void Email::Swap(Email* other) {
 }
 void Email::InternalSwap(Email* other) {
   using std::swap;
+  swap(from_, other->from_);
+  swap(recipient_, other->recipient_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Email::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void RecipientEmail::InitAsDefaultInstance() {
+  ::api::_RecipientEmail_default_instance_._instance.get_mutable()->to_ = const_cast< ::api::EmailAddress*>(
+      ::api::EmailAddress::internal_default_instance());
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int RecipientEmail::kToFieldNumber;
+const int RecipientEmail::kSubjectFieldNumber;
+const int RecipientEmail::kPlainTextFieldNumber;
+const int RecipientEmail::kHtmlFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+RecipientEmail::RecipientEmail()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_RecipientEmail.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.RecipientEmail)
+}
+RecipientEmail::RecipientEmail(const RecipientEmail& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  subject_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.subject().size() > 0) {
+    subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
+  }
+  plain_text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.plain_text().size() > 0) {
+    plain_text_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_text_);
+  }
+  html_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.html().size() > 0) {
+    html_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.html_);
+  }
+  if (from.has_to()) {
+    to_ = new ::api::EmailAddress(*from.to_);
+  } else {
+    to_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.RecipientEmail)
+}
+
+void RecipientEmail::SharedCtor() {
+  subject_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  plain_text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  html_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  to_ = NULL;
+}
+
+RecipientEmail::~RecipientEmail() {
+  // @@protoc_insertion_point(destructor:api.RecipientEmail)
+  SharedDtor();
+}
+
+void RecipientEmail::SharedDtor() {
+  subject_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  plain_text_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  html_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete to_;
+}
+
+void RecipientEmail::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* RecipientEmail::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const RecipientEmail& RecipientEmail::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_RecipientEmail.base);
+  return *internal_default_instance();
+}
+
+
+void RecipientEmail::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.RecipientEmail)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  plain_text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  html_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && to_ != NULL) {
+    delete to_;
+  }
+  to_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool RecipientEmail::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.RecipientEmail)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .api.EmailAddress to = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_to()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string subject = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_subject()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->subject().data(), static_cast<int>(this->subject().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.RecipientEmail.subject"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string plain_text = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_plain_text()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->plain_text().data(), static_cast<int>(this->plain_text().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.RecipientEmail.plain_text"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string html = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_html()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->html().data(), static_cast<int>(this->html().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.RecipientEmail.html"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.RecipientEmail)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.RecipientEmail)
+  return false;
+#undef DO_
+}
+
+void RecipientEmail::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.RecipientEmail)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .api.EmailAddress to = 2;
+  if (this->has_to()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->_internal_to(), output);
+  }
+
+  // string subject = 3;
+  if (this->subject().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->subject().data(), static_cast<int>(this->subject().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RecipientEmail.subject");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->subject(), output);
+  }
+
+  // string plain_text = 4;
+  if (this->plain_text().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plain_text().data(), static_cast<int>(this->plain_text().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RecipientEmail.plain_text");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->plain_text(), output);
+  }
+
+  // string html = 5;
+  if (this->html().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->html().data(), static_cast<int>(this->html().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RecipientEmail.html");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->html(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.RecipientEmail)
+}
+
+::google::protobuf::uint8* RecipientEmail::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.RecipientEmail)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .api.EmailAddress to = 2;
+  if (this->has_to()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->_internal_to(), deterministic, target);
+  }
+
+  // string subject = 3;
+  if (this->subject().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->subject().data(), static_cast<int>(this->subject().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RecipientEmail.subject");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->subject(), target);
+  }
+
+  // string plain_text = 4;
+  if (this->plain_text().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plain_text().data(), static_cast<int>(this->plain_text().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RecipientEmail.plain_text");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->plain_text(), target);
+  }
+
+  // string html = 5;
+  if (this->html().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->html().data(), static_cast<int>(this->html().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RecipientEmail.html");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->html(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.RecipientEmail)
+  return target;
+}
+
+size_t RecipientEmail::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.RecipientEmail)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string subject = 3;
+  if (this->subject().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->subject());
+  }
+
+  // string plain_text = 4;
+  if (this->plain_text().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->plain_text());
+  }
+
+  // string html = 5;
+  if (this->html().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->html());
+  }
+
+  // .api.EmailAddress to = 2;
+  if (this->has_to()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *to_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RecipientEmail::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.RecipientEmail)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RecipientEmail* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const RecipientEmail>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.RecipientEmail)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.RecipientEmail)
+    MergeFrom(*source);
+  }
+}
+
+void RecipientEmail::MergeFrom(const RecipientEmail& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.RecipientEmail)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.subject().size() > 0) {
+
+    subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
+  }
+  if (from.plain_text().size() > 0) {
+
+    plain_text_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_text_);
+  }
+  if (from.html().size() > 0) {
+
+    html_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.html_);
+  }
+  if (from.has_to()) {
+    mutable_to()->::api::EmailAddress::MergeFrom(from.to());
+  }
+}
+
+void RecipientEmail::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.RecipientEmail)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RecipientEmail::CopyFrom(const RecipientEmail& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.RecipientEmail)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RecipientEmail::IsInitialized() const {
+  return true;
+}
+
+void RecipientEmail::Swap(RecipientEmail* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void RecipientEmail::InternalSwap(RecipientEmail* other) {
+  using std::swap;
   subject_.Swap(&other->subject_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   plain_text_.Swap(&other->plain_text_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   html_.Swap(&other->html_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(from_, other->from_);
   swap(to_, other->to_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Email::GetMetadata() const {
+::google::protobuf::Metadata RecipientEmail::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -10542,6 +10809,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::EmailAddress* Arena::Create
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Email* Arena::CreateMaybeMessage< ::api::Email >(Arena* arena) {
   return Arena::CreateInternal< ::api::Email >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::RecipientEmail* Arena::CreateMaybeMessage< ::api::RecipientEmail >(Arena* arena) {
+  return Arena::CreateInternal< ::api::RecipientEmail >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

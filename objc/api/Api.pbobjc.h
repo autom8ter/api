@@ -31,6 +31,7 @@ CF_EXTERN_C_BEGIN
 @class EmailAddress;
 @class ItemRef;
 @class LogConfig;
+@class RecipientEmail;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -555,10 +556,7 @@ typedef GPB_ENUM(EmailAddress_FieldNumber) {
 
 typedef GPB_ENUM(Email_FieldNumber) {
   Email_FieldNumber_From = 1,
-  Email_FieldNumber_To = 2,
-  Email_FieldNumber_Subject = 3,
-  Email_FieldNumber_PlainText = 4,
-  Email_FieldNumber_Html = 5,
+  Email_FieldNumber_Recipient = 2,
 };
 
 @interface Email : GPBMessage
@@ -566,6 +564,23 @@ typedef GPB_ENUM(Email_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) EmailAddress *from;
 /** Test to see if @c from has been set. */
 @property(nonatomic, readwrite) BOOL hasFrom;
+
+@property(nonatomic, readwrite, strong, null_resettable) RecipientEmail *recipient;
+/** Test to see if @c recipient has been set. */
+@property(nonatomic, readwrite) BOOL hasRecipient;
+
+@end
+
+#pragma mark - RecipientEmail
+
+typedef GPB_ENUM(RecipientEmail_FieldNumber) {
+  RecipientEmail_FieldNumber_To = 2,
+  RecipientEmail_FieldNumber_Subject = 3,
+  RecipientEmail_FieldNumber_PlainText = 4,
+  RecipientEmail_FieldNumber_Html = 5,
+};
+
+@interface RecipientEmail : GPBMessage
 
 @property(nonatomic, readwrite, strong, null_resettable) EmailAddress *to;
 /** Test to see if @c to has been set. */

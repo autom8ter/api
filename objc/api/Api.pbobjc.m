@@ -1720,18 +1720,12 @@ typedef struct EmailAddress__storage_ {
 @implementation Email
 
 @dynamic hasFrom, from;
-@dynamic hasTo, to;
-@dynamic subject;
-@dynamic plainText;
-@dynamic html;
+@dynamic hasRecipient, recipient;
 
 typedef struct Email__storage_ {
   uint32_t _has_storage_[1];
   EmailAddress *from;
-  EmailAddress *to;
-  NSString *subject;
-  NSString *plainText;
-  NSString *html;
+  RecipientEmail *recipient;
 } Email__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1750,40 +1744,13 @@ typedef struct Email__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "to",
-        .dataTypeSpecific.className = GPBStringifySymbol(EmailAddress),
-        .number = Email_FieldNumber_To,
+        .name = "recipient",
+        .dataTypeSpecific.className = GPBStringifySymbol(RecipientEmail),
+        .number = Email_FieldNumber_Recipient,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Email__storage_, to),
+        .offset = (uint32_t)offsetof(Email__storage_, recipient),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "subject",
-        .dataTypeSpecific.className = NULL,
-        .number = Email_FieldNumber_Subject,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Email__storage_, subject),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "plainText",
-        .dataTypeSpecific.className = NULL,
-        .number = Email_FieldNumber_PlainText,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Email__storage_, plainText),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "html",
-        .dataTypeSpecific.className = NULL,
-        .number = Email_FieldNumber_Html,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Email__storage_, html),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1793,6 +1760,82 @@ typedef struct Email__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Email__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - RecipientEmail
+
+@implementation RecipientEmail
+
+@dynamic hasTo, to;
+@dynamic subject;
+@dynamic plainText;
+@dynamic html;
+
+typedef struct RecipientEmail__storage_ {
+  uint32_t _has_storage_[1];
+  EmailAddress *to;
+  NSString *subject;
+  NSString *plainText;
+  NSString *html;
+} RecipientEmail__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = GPBStringifySymbol(EmailAddress),
+        .number = RecipientEmail_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(RecipientEmail__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "subject",
+        .dataTypeSpecific.className = NULL,
+        .number = RecipientEmail_FieldNumber_Subject,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(RecipientEmail__storage_, subject),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "plainText",
+        .dataTypeSpecific.className = NULL,
+        .number = RecipientEmail_FieldNumber_PlainText,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(RecipientEmail__storage_, plainText),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "html",
+        .dataTypeSpecific.className = NULL,
+        .number = RecipientEmail_FieldNumber_Html,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(RecipientEmail__storage_, html),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[RecipientEmail class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(RecipientEmail__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

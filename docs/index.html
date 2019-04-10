@@ -251,6 +251,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.RecipientEmail"><span class="badge">M</span>RecipientEmail</a>
+                </li>
+              
+                <li>
                   <a href="#api.SMSRequest"><span class="badge">M</span>SMSRequest</a>
                 </li>
               
@@ -763,29 +767,8 @@
                 </tr>
               
                 <tr>
-                  <td>to</td>
-                  <td><a href="#api.EmailAddress">EmailAddress</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>subject</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>plain_text</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>html</td>
-                  <td><a href="#string">string</a></td>
+                  <td>recipient</td>
+                  <td><a href="#api.RecipientEmail">RecipientEmail</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1001,6 +984,50 @@
                 <tr>
                   <td>item</td>
                   <td><a href="#api.ItemRef">ItemRef</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.RecipientEmail">RecipientEmail</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>to</td>
+                  <td><a href="#api.EmailAddress">EmailAddress</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plain_text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>html</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

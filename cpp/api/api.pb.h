@@ -46,7 +46,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[27];
+  static const ::google::protobuf::internal::ParseTable schema[28];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -108,6 +108,9 @@ extern MMSRequestDefaultTypeInternal _MMSRequest_default_instance_;
 class Pin;
 class PinDefaultTypeInternal;
 extern PinDefaultTypeInternal _Pin_default_instance_;
+class RecipientEmail;
+class RecipientEmailDefaultTypeInternal;
+extern RecipientEmailDefaultTypeInternal _RecipientEmail_default_instance_;
 class SMSRequest;
 class SMSRequestDefaultTypeInternal;
 extern SMSRequestDefaultTypeInternal _SMSRequest_default_instance_;
@@ -156,6 +159,7 @@ template<> ::api::ItemRef* Arena::CreateMaybeMessage<::api::ItemRef>(Arena*);
 template<> ::api::LogConfig* Arena::CreateMaybeMessage<::api::LogConfig>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
 template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
+template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmail>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeUserRequest* Arena::CreateMaybeMessage<::api::SubscribeUserRequest>(Arena*);
@@ -3677,6 +3681,128 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
+  // .api.EmailAddress from = 1;
+  bool has_from() const;
+  void clear_from();
+  static const int kFromFieldNumber = 1;
+  private:
+  const ::api::EmailAddress& _internal_from() const;
+  public:
+  const ::api::EmailAddress& from() const;
+  ::api::EmailAddress* release_from();
+  ::api::EmailAddress* mutable_from();
+  void set_allocated_from(::api::EmailAddress* from);
+
+  // .api.RecipientEmail recipient = 2;
+  bool has_recipient() const;
+  void clear_recipient();
+  static const int kRecipientFieldNumber = 2;
+  private:
+  const ::api::RecipientEmail& _internal_recipient() const;
+  public:
+  const ::api::RecipientEmail& recipient() const;
+  ::api::RecipientEmail* release_recipient();
+  ::api::RecipientEmail* mutable_recipient();
+  void set_allocated_recipient(::api::RecipientEmail* recipient);
+
+  // @@protoc_insertion_point(class_scope:api.Email)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::EmailAddress* from_;
+  ::api::RecipientEmail* recipient_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class RecipientEmail : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.RecipientEmail) */ {
+ public:
+  RecipientEmail();
+  virtual ~RecipientEmail();
+
+  RecipientEmail(const RecipientEmail& from);
+
+  inline RecipientEmail& operator=(const RecipientEmail& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RecipientEmail(RecipientEmail&& from) noexcept
+    : RecipientEmail() {
+    *this = ::std::move(from);
+  }
+
+  inline RecipientEmail& operator=(RecipientEmail&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RecipientEmail& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RecipientEmail* internal_default_instance() {
+    return reinterpret_cast<const RecipientEmail*>(
+               &_RecipientEmail_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  void Swap(RecipientEmail* other);
+  friend void swap(RecipientEmail& a, RecipientEmail& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RecipientEmail* New() const final {
+    return CreateMaybeMessage<RecipientEmail>(NULL);
+  }
+
+  RecipientEmail* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RecipientEmail>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RecipientEmail& from);
+  void MergeFrom(const RecipientEmail& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RecipientEmail* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
   // string subject = 3;
   void clear_subject();
   static const int kSubjectFieldNumber = 3;
@@ -3719,18 +3845,6 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::std::string* release_html();
   void set_allocated_html(::std::string* html);
 
-  // .api.EmailAddress from = 1;
-  bool has_from() const;
-  void clear_from();
-  static const int kFromFieldNumber = 1;
-  private:
-  const ::api::EmailAddress& _internal_from() const;
-  public:
-  const ::api::EmailAddress& from() const;
-  ::api::EmailAddress* release_from();
-  ::api::EmailAddress* mutable_from();
-  void set_allocated_from(::api::EmailAddress* from);
-
   // .api.EmailAddress to = 2;
   bool has_to() const;
   void clear_to();
@@ -3743,14 +3857,13 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::api::EmailAddress* mutable_to();
   void set_allocated_to(::api::EmailAddress* to);
 
-  // @@protoc_insertion_point(class_scope:api.Email)
+  // @@protoc_insertion_point(class_scope:api.RecipientEmail)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr subject_;
   ::google::protobuf::internal::ArenaStringPtr plain_text_;
   ::google::protobuf::internal::ArenaStringPtr html_;
-  ::api::EmailAddress* from_;
   ::api::EmailAddress* to_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
@@ -7773,42 +7886,100 @@ inline void Email::set_allocated_from(::api::EmailAddress* from) {
   // @@protoc_insertion_point(field_set_allocated:api.Email.from)
 }
 
+// .api.RecipientEmail recipient = 2;
+inline bool Email::has_recipient() const {
+  return this != internal_default_instance() && recipient_ != NULL;
+}
+inline void Email::clear_recipient() {
+  if (GetArenaNoVirtual() == NULL && recipient_ != NULL) {
+    delete recipient_;
+  }
+  recipient_ = NULL;
+}
+inline const ::api::RecipientEmail& Email::_internal_recipient() const {
+  return *recipient_;
+}
+inline const ::api::RecipientEmail& Email::recipient() const {
+  const ::api::RecipientEmail* p = recipient_;
+  // @@protoc_insertion_point(field_get:api.Email.recipient)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::RecipientEmail*>(
+      &::api::_RecipientEmail_default_instance_);
+}
+inline ::api::RecipientEmail* Email::release_recipient() {
+  // @@protoc_insertion_point(field_release:api.Email.recipient)
+  
+  ::api::RecipientEmail* temp = recipient_;
+  recipient_ = NULL;
+  return temp;
+}
+inline ::api::RecipientEmail* Email::mutable_recipient() {
+  
+  if (recipient_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::RecipientEmail>(GetArenaNoVirtual());
+    recipient_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Email.recipient)
+  return recipient_;
+}
+inline void Email::set_allocated_recipient(::api::RecipientEmail* recipient) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete recipient_;
+  }
+  if (recipient) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      recipient = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, recipient, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  recipient_ = recipient;
+  // @@protoc_insertion_point(field_set_allocated:api.Email.recipient)
+}
+
+// -------------------------------------------------------------------
+
+// RecipientEmail
+
 // .api.EmailAddress to = 2;
-inline bool Email::has_to() const {
+inline bool RecipientEmail::has_to() const {
   return this != internal_default_instance() && to_ != NULL;
 }
-inline void Email::clear_to() {
+inline void RecipientEmail::clear_to() {
   if (GetArenaNoVirtual() == NULL && to_ != NULL) {
     delete to_;
   }
   to_ = NULL;
 }
-inline const ::api::EmailAddress& Email::_internal_to() const {
+inline const ::api::EmailAddress& RecipientEmail::_internal_to() const {
   return *to_;
 }
-inline const ::api::EmailAddress& Email::to() const {
+inline const ::api::EmailAddress& RecipientEmail::to() const {
   const ::api::EmailAddress* p = to_;
-  // @@protoc_insertion_point(field_get:api.Email.to)
+  // @@protoc_insertion_point(field_get:api.RecipientEmail.to)
   return p != NULL ? *p : *reinterpret_cast<const ::api::EmailAddress*>(
       &::api::_EmailAddress_default_instance_);
 }
-inline ::api::EmailAddress* Email::release_to() {
-  // @@protoc_insertion_point(field_release:api.Email.to)
+inline ::api::EmailAddress* RecipientEmail::release_to() {
+  // @@protoc_insertion_point(field_release:api.RecipientEmail.to)
   
   ::api::EmailAddress* temp = to_;
   to_ = NULL;
   return temp;
 }
-inline ::api::EmailAddress* Email::mutable_to() {
+inline ::api::EmailAddress* RecipientEmail::mutable_to() {
   
   if (to_ == NULL) {
     auto* p = CreateMaybeMessage<::api::EmailAddress>(GetArenaNoVirtual());
     to_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Email.to)
+  // @@protoc_insertion_point(field_mutable:api.RecipientEmail.to)
   return to_;
 }
-inline void Email::set_allocated_to(::api::EmailAddress* to) {
+inline void RecipientEmail::set_allocated_to(::api::EmailAddress* to) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete to_;
@@ -7824,171 +7995,173 @@ inline void Email::set_allocated_to(::api::EmailAddress* to) {
     
   }
   to_ = to;
-  // @@protoc_insertion_point(field_set_allocated:api.Email.to)
+  // @@protoc_insertion_point(field_set_allocated:api.RecipientEmail.to)
 }
 
 // string subject = 3;
-inline void Email::clear_subject() {
+inline void RecipientEmail::clear_subject() {
   subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Email::subject() const {
-  // @@protoc_insertion_point(field_get:api.Email.subject)
+inline const ::std::string& RecipientEmail::subject() const {
+  // @@protoc_insertion_point(field_get:api.RecipientEmail.subject)
   return subject_.GetNoArena();
 }
-inline void Email::set_subject(const ::std::string& value) {
+inline void RecipientEmail::set_subject(const ::std::string& value) {
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Email.subject)
+  // @@protoc_insertion_point(field_set:api.RecipientEmail.subject)
 }
 #if LANG_CXX11
-inline void Email::set_subject(::std::string&& value) {
+inline void RecipientEmail::set_subject(::std::string&& value) {
   
   subject_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Email.subject)
+  // @@protoc_insertion_point(field_set_rvalue:api.RecipientEmail.subject)
 }
 #endif
-inline void Email::set_subject(const char* value) {
+inline void RecipientEmail::set_subject(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Email.subject)
+  // @@protoc_insertion_point(field_set_char:api.RecipientEmail.subject)
 }
-inline void Email::set_subject(const char* value, size_t size) {
+inline void RecipientEmail::set_subject(const char* value, size_t size) {
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Email.subject)
+  // @@protoc_insertion_point(field_set_pointer:api.RecipientEmail.subject)
 }
-inline ::std::string* Email::mutable_subject() {
+inline ::std::string* RecipientEmail::mutable_subject() {
   
-  // @@protoc_insertion_point(field_mutable:api.Email.subject)
+  // @@protoc_insertion_point(field_mutable:api.RecipientEmail.subject)
   return subject_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Email::release_subject() {
-  // @@protoc_insertion_point(field_release:api.Email.subject)
+inline ::std::string* RecipientEmail::release_subject() {
+  // @@protoc_insertion_point(field_release:api.RecipientEmail.subject)
   
   return subject_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Email::set_allocated_subject(::std::string* subject) {
+inline void RecipientEmail::set_allocated_subject(::std::string* subject) {
   if (subject != NULL) {
     
   } else {
     
   }
   subject_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subject);
-  // @@protoc_insertion_point(field_set_allocated:api.Email.subject)
+  // @@protoc_insertion_point(field_set_allocated:api.RecipientEmail.subject)
 }
 
 // string plain_text = 4;
-inline void Email::clear_plain_text() {
+inline void RecipientEmail::clear_plain_text() {
   plain_text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Email::plain_text() const {
-  // @@protoc_insertion_point(field_get:api.Email.plain_text)
+inline const ::std::string& RecipientEmail::plain_text() const {
+  // @@protoc_insertion_point(field_get:api.RecipientEmail.plain_text)
   return plain_text_.GetNoArena();
 }
-inline void Email::set_plain_text(const ::std::string& value) {
+inline void RecipientEmail::set_plain_text(const ::std::string& value) {
   
   plain_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Email.plain_text)
+  // @@protoc_insertion_point(field_set:api.RecipientEmail.plain_text)
 }
 #if LANG_CXX11
-inline void Email::set_plain_text(::std::string&& value) {
+inline void RecipientEmail::set_plain_text(::std::string&& value) {
   
   plain_text_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Email.plain_text)
+  // @@protoc_insertion_point(field_set_rvalue:api.RecipientEmail.plain_text)
 }
 #endif
-inline void Email::set_plain_text(const char* value) {
+inline void RecipientEmail::set_plain_text(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   plain_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Email.plain_text)
+  // @@protoc_insertion_point(field_set_char:api.RecipientEmail.plain_text)
 }
-inline void Email::set_plain_text(const char* value, size_t size) {
+inline void RecipientEmail::set_plain_text(const char* value, size_t size) {
   
   plain_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Email.plain_text)
+  // @@protoc_insertion_point(field_set_pointer:api.RecipientEmail.plain_text)
 }
-inline ::std::string* Email::mutable_plain_text() {
+inline ::std::string* RecipientEmail::mutable_plain_text() {
   
-  // @@protoc_insertion_point(field_mutable:api.Email.plain_text)
+  // @@protoc_insertion_point(field_mutable:api.RecipientEmail.plain_text)
   return plain_text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Email::release_plain_text() {
-  // @@protoc_insertion_point(field_release:api.Email.plain_text)
+inline ::std::string* RecipientEmail::release_plain_text() {
+  // @@protoc_insertion_point(field_release:api.RecipientEmail.plain_text)
   
   return plain_text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Email::set_allocated_plain_text(::std::string* plain_text) {
+inline void RecipientEmail::set_allocated_plain_text(::std::string* plain_text) {
   if (plain_text != NULL) {
     
   } else {
     
   }
   plain_text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plain_text);
-  // @@protoc_insertion_point(field_set_allocated:api.Email.plain_text)
+  // @@protoc_insertion_point(field_set_allocated:api.RecipientEmail.plain_text)
 }
 
 // string html = 5;
-inline void Email::clear_html() {
+inline void RecipientEmail::clear_html() {
   html_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Email::html() const {
-  // @@protoc_insertion_point(field_get:api.Email.html)
+inline const ::std::string& RecipientEmail::html() const {
+  // @@protoc_insertion_point(field_get:api.RecipientEmail.html)
   return html_.GetNoArena();
 }
-inline void Email::set_html(const ::std::string& value) {
+inline void RecipientEmail::set_html(const ::std::string& value) {
   
   html_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Email.html)
+  // @@protoc_insertion_point(field_set:api.RecipientEmail.html)
 }
 #if LANG_CXX11
-inline void Email::set_html(::std::string&& value) {
+inline void RecipientEmail::set_html(::std::string&& value) {
   
   html_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Email.html)
+  // @@protoc_insertion_point(field_set_rvalue:api.RecipientEmail.html)
 }
 #endif
-inline void Email::set_html(const char* value) {
+inline void RecipientEmail::set_html(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   html_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Email.html)
+  // @@protoc_insertion_point(field_set_char:api.RecipientEmail.html)
 }
-inline void Email::set_html(const char* value, size_t size) {
+inline void RecipientEmail::set_html(const char* value, size_t size) {
   
   html_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Email.html)
+  // @@protoc_insertion_point(field_set_pointer:api.RecipientEmail.html)
 }
-inline ::std::string* Email::mutable_html() {
+inline ::std::string* RecipientEmail::mutable_html() {
   
-  // @@protoc_insertion_point(field_mutable:api.Email.html)
+  // @@protoc_insertion_point(field_mutable:api.RecipientEmail.html)
   return html_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Email::release_html() {
-  // @@protoc_insertion_point(field_release:api.Email.html)
+inline ::std::string* RecipientEmail::release_html() {
+  // @@protoc_insertion_point(field_release:api.RecipientEmail.html)
   
   return html_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Email::set_allocated_html(::std::string* html) {
+inline void RecipientEmail::set_allocated_html(::std::string* html) {
   if (html != NULL) {
     
   } else {
     
   }
   html_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), html);
-  // @@protoc_insertion_point(field_set_allocated:api.Email.html)
+  // @@protoc_insertion_point(field_set_allocated:api.RecipientEmail.html)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

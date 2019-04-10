@@ -135,6 +135,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Email" do
     optional :from, :message, 1, "api.EmailAddress"
+    optional :recipient, :message, 2, "api.RecipientEmail"
+  end
+  add_message "api.RecipientEmail" do
     optional :to, :message, 2, "api.EmailAddress"
     optional :subject, :string, 3
     optional :plain_text, :string, 4
@@ -172,5 +175,6 @@ module Api
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
+  RecipientEmail = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RecipientEmail").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

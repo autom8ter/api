@@ -20989,47 +20989,17 @@ public final class Api {
     api.Api.EmailAddressOrBuilder getFromOrBuilder();
 
     /**
-     * <code>.api.EmailAddress to = 2;</code>
+     * <code>.api.RecipientEmail recipient = 2;</code>
      */
-    boolean hasTo();
+    boolean hasRecipient();
     /**
-     * <code>.api.EmailAddress to = 2;</code>
+     * <code>.api.RecipientEmail recipient = 2;</code>
      */
-    api.Api.EmailAddress getTo();
+    api.Api.RecipientEmail getRecipient();
     /**
-     * <code>.api.EmailAddress to = 2;</code>
+     * <code>.api.RecipientEmail recipient = 2;</code>
      */
-    api.Api.EmailAddressOrBuilder getToOrBuilder();
-
-    /**
-     * <code>string subject = 3;</code>
-     */
-    java.lang.String getSubject();
-    /**
-     * <code>string subject = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getSubjectBytes();
-
-    /**
-     * <code>string plain_text = 4;</code>
-     */
-    java.lang.String getPlainText();
-    /**
-     * <code>string plain_text = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getPlainTextBytes();
-
-    /**
-     * <code>string html = 5;</code>
-     */
-    java.lang.String getHtml();
-    /**
-     * <code>string html = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getHtmlBytes();
+    api.Api.RecipientEmailOrBuilder getRecipientOrBuilder();
   }
   /**
    * Protobuf type {@code api.Email}
@@ -21044,9 +21014,6 @@ public final class Api {
       super(builder);
     }
     private Email() {
-      subject_ = "";
-      plainText_ = "";
-      html_ = "";
     }
 
     @java.lang.Override
@@ -21087,34 +21054,16 @@ public final class Api {
               break;
             }
             case 18: {
-              api.Api.EmailAddress.Builder subBuilder = null;
-              if (to_ != null) {
-                subBuilder = to_.toBuilder();
+              api.Api.RecipientEmail.Builder subBuilder = null;
+              if (recipient_ != null) {
+                subBuilder = recipient_.toBuilder();
               }
-              to_ = input.readMessage(api.Api.EmailAddress.parser(), extensionRegistry);
+              recipient_ = input.readMessage(api.Api.RecipientEmail.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(to_);
-                to_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(recipient_);
+                recipient_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subject_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              plainText_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              html_ = s;
               break;
             }
             default: {
@@ -21170,127 +21119,25 @@ public final class Api {
       return getFrom();
     }
 
-    public static final int TO_FIELD_NUMBER = 2;
-    private api.Api.EmailAddress to_;
+    public static final int RECIPIENT_FIELD_NUMBER = 2;
+    private api.Api.RecipientEmail recipient_;
     /**
-     * <code>.api.EmailAddress to = 2;</code>
+     * <code>.api.RecipientEmail recipient = 2;</code>
      */
-    public boolean hasTo() {
-      return to_ != null;
+    public boolean hasRecipient() {
+      return recipient_ != null;
     }
     /**
-     * <code>.api.EmailAddress to = 2;</code>
+     * <code>.api.RecipientEmail recipient = 2;</code>
      */
-    public api.Api.EmailAddress getTo() {
-      return to_ == null ? api.Api.EmailAddress.getDefaultInstance() : to_;
+    public api.Api.RecipientEmail getRecipient() {
+      return recipient_ == null ? api.Api.RecipientEmail.getDefaultInstance() : recipient_;
     }
     /**
-     * <code>.api.EmailAddress to = 2;</code>
+     * <code>.api.RecipientEmail recipient = 2;</code>
      */
-    public api.Api.EmailAddressOrBuilder getToOrBuilder() {
-      return getTo();
-    }
-
-    public static final int SUBJECT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object subject_;
-    /**
-     * <code>string subject = 3;</code>
-     */
-    public java.lang.String getSubject() {
-      java.lang.Object ref = subject_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        subject_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string subject = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSubjectBytes() {
-      java.lang.Object ref = subject_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        subject_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PLAIN_TEXT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object plainText_;
-    /**
-     * <code>string plain_text = 4;</code>
-     */
-    public java.lang.String getPlainText() {
-      java.lang.Object ref = plainText_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        plainText_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string plain_text = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPlainTextBytes() {
-      java.lang.Object ref = plainText_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        plainText_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HTML_FIELD_NUMBER = 5;
-    private volatile java.lang.Object html_;
-    /**
-     * <code>string html = 5;</code>
-     */
-    public java.lang.String getHtml() {
-      java.lang.Object ref = html_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        html_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string html = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getHtmlBytes() {
-      java.lang.Object ref = html_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        html_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public api.Api.RecipientEmailOrBuilder getRecipientOrBuilder() {
+      return getRecipient();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -21310,17 +21157,8 @@ public final class Api {
       if (from_ != null) {
         output.writeMessage(1, getFrom());
       }
-      if (to_ != null) {
-        output.writeMessage(2, getTo());
-      }
-      if (!getSubjectBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subject_);
-      }
-      if (!getPlainTextBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, plainText_);
-      }
-      if (!getHtmlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, html_);
+      if (recipient_ != null) {
+        output.writeMessage(2, getRecipient());
       }
       unknownFields.writeTo(output);
     }
@@ -21335,18 +21173,9 @@ public final class Api {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getFrom());
       }
-      if (to_ != null) {
+      if (recipient_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTo());
-      }
-      if (!getSubjectBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subject_);
-      }
-      if (!getPlainTextBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, plainText_);
-      }
-      if (!getHtmlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, html_);
+          .computeMessageSize(2, getRecipient());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -21369,17 +21198,11 @@ public final class Api {
         result = result && getFrom()
             .equals(other.getFrom());
       }
-      result = result && (hasTo() == other.hasTo());
-      if (hasTo()) {
-        result = result && getTo()
-            .equals(other.getTo());
+      result = result && (hasRecipient() == other.hasRecipient());
+      if (hasRecipient()) {
+        result = result && getRecipient()
+            .equals(other.getRecipient());
       }
-      result = result && getSubject()
-          .equals(other.getSubject());
-      result = result && getPlainText()
-          .equals(other.getPlainText());
-      result = result && getHtml()
-          .equals(other.getHtml());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -21395,16 +21218,10 @@ public final class Api {
         hash = (37 * hash) + FROM_FIELD_NUMBER;
         hash = (53 * hash) + getFrom().hashCode();
       }
-      if (hasTo()) {
-        hash = (37 * hash) + TO_FIELD_NUMBER;
-        hash = (53 * hash) + getTo().hashCode();
+      if (hasRecipient()) {
+        hash = (37 * hash) + RECIPIENT_FIELD_NUMBER;
+        hash = (53 * hash) + getRecipient().hashCode();
       }
-      hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
-      hash = (53 * hash) + getSubject().hashCode();
-      hash = (37 * hash) + PLAIN_TEXT_FIELD_NUMBER;
-      hash = (53 * hash) + getPlainText().hashCode();
-      hash = (37 * hash) + HTML_FIELD_NUMBER;
-      hash = (53 * hash) + getHtml().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -21544,18 +21361,12 @@ public final class Api {
           from_ = null;
           fromBuilder_ = null;
         }
-        if (toBuilder_ == null) {
-          to_ = null;
+        if (recipientBuilder_ == null) {
+          recipient_ = null;
         } else {
-          to_ = null;
-          toBuilder_ = null;
+          recipient_ = null;
+          recipientBuilder_ = null;
         }
-        subject_ = "";
-
-        plainText_ = "";
-
-        html_ = "";
-
         return this;
       }
 
@@ -21587,14 +21398,11 @@ public final class Api {
         } else {
           result.from_ = fromBuilder_.build();
         }
-        if (toBuilder_ == null) {
-          result.to_ = to_;
+        if (recipientBuilder_ == null) {
+          result.recipient_ = recipient_;
         } else {
-          result.to_ = toBuilder_.build();
+          result.recipient_ = recipientBuilder_.build();
         }
-        result.subject_ = subject_;
-        result.plainText_ = plainText_;
-        result.html_ = html_;
         onBuilt();
         return result;
       }
@@ -21646,20 +21454,8 @@ public final class Api {
         if (other.hasFrom()) {
           mergeFrom(other.getFrom());
         }
-        if (other.hasTo()) {
-          mergeTo(other.getTo());
-        }
-        if (!other.getSubject().isEmpty()) {
-          subject_ = other.subject_;
-          onChanged();
-        }
-        if (!other.getPlainText().isEmpty()) {
-          plainText_ = other.plainText_;
-          onChanged();
-        }
-        if (!other.getHtml().isEmpty()) {
-          html_ = other.html_;
-          onChanged();
+        if (other.hasRecipient()) {
+          mergeRecipient(other.getRecipient());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -21805,6 +21601,817 @@ public final class Api {
           from_ = null;
         }
         return fromBuilder_;
+      }
+
+      private api.Api.RecipientEmail recipient_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.RecipientEmail, api.Api.RecipientEmail.Builder, api.Api.RecipientEmailOrBuilder> recipientBuilder_;
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public boolean hasRecipient() {
+        return recipientBuilder_ != null || recipient_ != null;
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public api.Api.RecipientEmail getRecipient() {
+        if (recipientBuilder_ == null) {
+          return recipient_ == null ? api.Api.RecipientEmail.getDefaultInstance() : recipient_;
+        } else {
+          return recipientBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public Builder setRecipient(api.Api.RecipientEmail value) {
+        if (recipientBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          recipient_ = value;
+          onChanged();
+        } else {
+          recipientBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public Builder setRecipient(
+          api.Api.RecipientEmail.Builder builderForValue) {
+        if (recipientBuilder_ == null) {
+          recipient_ = builderForValue.build();
+          onChanged();
+        } else {
+          recipientBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public Builder mergeRecipient(api.Api.RecipientEmail value) {
+        if (recipientBuilder_ == null) {
+          if (recipient_ != null) {
+            recipient_ =
+              api.Api.RecipientEmail.newBuilder(recipient_).mergeFrom(value).buildPartial();
+          } else {
+            recipient_ = value;
+          }
+          onChanged();
+        } else {
+          recipientBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public Builder clearRecipient() {
+        if (recipientBuilder_ == null) {
+          recipient_ = null;
+          onChanged();
+        } else {
+          recipient_ = null;
+          recipientBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public api.Api.RecipientEmail.Builder getRecipientBuilder() {
+        
+        onChanged();
+        return getRecipientFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      public api.Api.RecipientEmailOrBuilder getRecipientOrBuilder() {
+        if (recipientBuilder_ != null) {
+          return recipientBuilder_.getMessageOrBuilder();
+        } else {
+          return recipient_ == null ?
+              api.Api.RecipientEmail.getDefaultInstance() : recipient_;
+        }
+      }
+      /**
+       * <code>.api.RecipientEmail recipient = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.RecipientEmail, api.Api.RecipientEmail.Builder, api.Api.RecipientEmailOrBuilder> 
+          getRecipientFieldBuilder() {
+        if (recipientBuilder_ == null) {
+          recipientBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.RecipientEmail, api.Api.RecipientEmail.Builder, api.Api.RecipientEmailOrBuilder>(
+                  getRecipient(),
+                  getParentForChildren(),
+                  isClean());
+          recipient_ = null;
+        }
+        return recipientBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Email)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Email)
+    private static final api.Api.Email DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Email();
+    }
+
+    public static api.Api.Email getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Email>
+        PARSER = new com.google.protobuf.AbstractParser<Email>() {
+      @java.lang.Override
+      public Email parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Email(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Email> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Email> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Email getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RecipientEmailOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.RecipientEmail)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.EmailAddress to = 2;</code>
+     */
+    boolean hasTo();
+    /**
+     * <code>.api.EmailAddress to = 2;</code>
+     */
+    api.Api.EmailAddress getTo();
+    /**
+     * <code>.api.EmailAddress to = 2;</code>
+     */
+    api.Api.EmailAddressOrBuilder getToOrBuilder();
+
+    /**
+     * <code>string subject = 3;</code>
+     */
+    java.lang.String getSubject();
+    /**
+     * <code>string subject = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSubjectBytes();
+
+    /**
+     * <code>string plain_text = 4;</code>
+     */
+    java.lang.String getPlainText();
+    /**
+     * <code>string plain_text = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlainTextBytes();
+
+    /**
+     * <code>string html = 5;</code>
+     */
+    java.lang.String getHtml();
+    /**
+     * <code>string html = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getHtmlBytes();
+  }
+  /**
+   * Protobuf type {@code api.RecipientEmail}
+   */
+  public  static final class RecipientEmail extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.RecipientEmail)
+      RecipientEmailOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RecipientEmail.newBuilder() to construct.
+    private RecipientEmail(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RecipientEmail() {
+      subject_ = "";
+      plainText_ = "";
+      html_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RecipientEmail(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 18: {
+              api.Api.EmailAddress.Builder subBuilder = null;
+              if (to_ != null) {
+                subBuilder = to_.toBuilder();
+              }
+              to_ = input.readMessage(api.Api.EmailAddress.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(to_);
+                to_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subject_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              plainText_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              html_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_RecipientEmail_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_RecipientEmail_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.RecipientEmail.class, api.Api.RecipientEmail.Builder.class);
+    }
+
+    public static final int TO_FIELD_NUMBER = 2;
+    private api.Api.EmailAddress to_;
+    /**
+     * <code>.api.EmailAddress to = 2;</code>
+     */
+    public boolean hasTo() {
+      return to_ != null;
+    }
+    /**
+     * <code>.api.EmailAddress to = 2;</code>
+     */
+    public api.Api.EmailAddress getTo() {
+      return to_ == null ? api.Api.EmailAddress.getDefaultInstance() : to_;
+    }
+    /**
+     * <code>.api.EmailAddress to = 2;</code>
+     */
+    public api.Api.EmailAddressOrBuilder getToOrBuilder() {
+      return getTo();
+    }
+
+    public static final int SUBJECT_FIELD_NUMBER = 3;
+    private volatile java.lang.Object subject_;
+    /**
+     * <code>string subject = 3;</code>
+     */
+    public java.lang.String getSubject() {
+      java.lang.Object ref = subject_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subject_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subject = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubjectBytes() {
+      java.lang.Object ref = subject_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLAIN_TEXT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object plainText_;
+    /**
+     * <code>string plain_text = 4;</code>
+     */
+    public java.lang.String getPlainText() {
+      java.lang.Object ref = plainText_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plainText_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string plain_text = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlainTextBytes() {
+      java.lang.Object ref = plainText_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plainText_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HTML_FIELD_NUMBER = 5;
+    private volatile java.lang.Object html_;
+    /**
+     * <code>string html = 5;</code>
+     */
+    public java.lang.String getHtml() {
+      java.lang.Object ref = html_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        html_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string html = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHtmlBytes() {
+      java.lang.Object ref = html_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        html_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (to_ != null) {
+        output.writeMessage(2, getTo());
+      }
+      if (!getSubjectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subject_);
+      }
+      if (!getPlainTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, plainText_);
+      }
+      if (!getHtmlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, html_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (to_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getTo());
+      }
+      if (!getSubjectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subject_);
+      }
+      if (!getPlainTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, plainText_);
+      }
+      if (!getHtmlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, html_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.RecipientEmail)) {
+        return super.equals(obj);
+      }
+      api.Api.RecipientEmail other = (api.Api.RecipientEmail) obj;
+
+      boolean result = true;
+      result = result && (hasTo() == other.hasTo());
+      if (hasTo()) {
+        result = result && getTo()
+            .equals(other.getTo());
+      }
+      result = result && getSubject()
+          .equals(other.getSubject());
+      result = result && getPlainText()
+          .equals(other.getPlainText());
+      result = result && getHtml()
+          .equals(other.getHtml());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTo()) {
+        hash = (37 * hash) + TO_FIELD_NUMBER;
+        hash = (53 * hash) + getTo().hashCode();
+      }
+      hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
+      hash = (53 * hash) + getSubject().hashCode();
+      hash = (37 * hash) + PLAIN_TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getPlainText().hashCode();
+      hash = (37 * hash) + HTML_FIELD_NUMBER;
+      hash = (53 * hash) + getHtml().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.RecipientEmail parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.RecipientEmail parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.RecipientEmail parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.RecipientEmail parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.RecipientEmail parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.RecipientEmail parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.RecipientEmail prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.RecipientEmail}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.RecipientEmail)
+        api.Api.RecipientEmailOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_RecipientEmail_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_RecipientEmail_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.RecipientEmail.class, api.Api.RecipientEmail.Builder.class);
+      }
+
+      // Construct using api.Api.RecipientEmail.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (toBuilder_ == null) {
+          to_ = null;
+        } else {
+          to_ = null;
+          toBuilder_ = null;
+        }
+        subject_ = "";
+
+        plainText_ = "";
+
+        html_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_RecipientEmail_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.RecipientEmail getDefaultInstanceForType() {
+        return api.Api.RecipientEmail.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.RecipientEmail build() {
+        api.Api.RecipientEmail result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.RecipientEmail buildPartial() {
+        api.Api.RecipientEmail result = new api.Api.RecipientEmail(this);
+        if (toBuilder_ == null) {
+          result.to_ = to_;
+        } else {
+          result.to_ = toBuilder_.build();
+        }
+        result.subject_ = subject_;
+        result.plainText_ = plainText_;
+        result.html_ = html_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.RecipientEmail) {
+          return mergeFrom((api.Api.RecipientEmail)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.RecipientEmail other) {
+        if (other == api.Api.RecipientEmail.getDefaultInstance()) return this;
+        if (other.hasTo()) {
+          mergeTo(other.getTo());
+        }
+        if (!other.getSubject().isEmpty()) {
+          subject_ = other.subject_;
+          onChanged();
+        }
+        if (!other.getPlainText().isEmpty()) {
+          plainText_ = other.plainText_;
+          onChanged();
+        }
+        if (!other.getHtml().isEmpty()) {
+          html_ = other.html_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.RecipientEmail parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.RecipientEmail) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
       }
 
       private api.Api.EmailAddress to_ = null;
@@ -22143,41 +22750,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.Email)
+      // @@protoc_insertion_point(builder_scope:api.RecipientEmail)
     }
 
-    // @@protoc_insertion_point(class_scope:api.Email)
-    private static final api.Api.Email DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.RecipientEmail)
+    private static final api.Api.RecipientEmail DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.Email();
+      DEFAULT_INSTANCE = new api.Api.RecipientEmail();
     }
 
-    public static api.Api.Email getDefaultInstance() {
+    public static api.Api.RecipientEmail getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Email>
-        PARSER = new com.google.protobuf.AbstractParser<Email>() {
+    private static final com.google.protobuf.Parser<RecipientEmail>
+        PARSER = new com.google.protobuf.AbstractParser<RecipientEmail>() {
       @java.lang.Override
-      public Email parsePartialFrom(
+      public RecipientEmail parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Email(input, extensionRegistry);
+        return new RecipientEmail(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Email> parser() {
+    public static com.google.protobuf.Parser<RecipientEmail> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Email> getParserForType() {
+    public com.google.protobuf.Parser<RecipientEmail> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.Email getDefaultInstanceForType() {
+    public api.Api.RecipientEmail getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -22318,6 +22925,11 @@ public final class Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Email_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_RecipientEmail_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_RecipientEmail_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -22383,35 +22995,37 @@ public final class Api {
       "nfig\030\t \001(\0132\016.api.LogConfig\".\n\tLogConfig\022" +
       "\020\n\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014Em" +
       "ailAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(" +
-      "\t\"z\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddr" +
-      "ess\022\035\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007su" +
-      "bject\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030" +
-      "\005 \001(\t*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020" +
-      "\001\022\t\n\005PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserE" +
-      "mailMap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002" +
-      "\017\"\n/api/users:\001*\022?\n\014GetUserIDMap\022\n.api.E" +
-      "mpty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001" +
-      "*\022B\n\017GetUserPhoneMap\022\n.api.Empty\032\014.api.U" +
-      "serMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser" +
-      "\022\023.api.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017" +
-      "\"\n/api/users:\001*\022Z\n\017AddUserMetadata\022\033.api" +
-      ".AddUserMetadataRequest\032\t.api.User\"\037\202\323\344\223" +
-      "\002\031\"\024/api/users/{user_id}:\001*\022e\n\rSubscribe" +
-      "User\022\031.api.SubscribeUserRequest\032\032.api.Su" +
-      "bscribeUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/" +
-      "{email}:\001*\022\\\n\017UnSubscribeUser\022\036.api.Canc" +
-      "elSubscriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002" +
-      "\027\"\022/api/users/{email}:\001*\022j\n\026CreateSubscr" +
-      "iptionPlan\022\026.api.CreatePlanRequest\032\027.api" +
-      ".CreatePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/" +
-      "{plan_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest" +
-      "\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_i" +
-      "d}:\001*\022I\n\010CallUser\022\020.api.CallRequest\032\n.ap" +
-      "i.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*" +
-      "\022G\n\007MMSUser\022\017.api.MMSRequest\032\n.api.Empty" +
-      "\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEma" +
-      "ilUser\022\021.api.EmailRequest\032\n.api.Empty\"\037\202" +
-      "\323\344\223\002\031\"\024/api/plans/{user_id}:\001*b\006proto3"
+      "\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddr" +
+      "ess\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientEm" +
+      "ail\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api." +
+      "EmailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_t" +
+      "ext\030\004 \001(\t\022\014\n\004html\030\005 \001(\t*-\n\rCustomerIndex" +
+      "\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\0022\317\007\n\013UserS" +
+      "ervice\022B\n\017GetUserEmailMap\022\n.api.Empty\032\014." +
+      "api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022?\n\014Ge" +
+      "tUserIDMap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323" +
+      "\344\223\002\017\"\n/api/users:\001*\022B\n\017GetUserPhoneMap\022\n" +
+      ".api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/u" +
+      "sers:\001*\022@\n\007AddUser\022\023.api.AddUserRequest\032" +
+      "\t.api.User\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022Z\n\017Add" +
+      "UserMetadata\022\033.api.AddUserMetadataReques" +
+      "t\032\t.api.User\"\037\202\323\344\223\002\031\"\024/api/users/{user_i" +
+      "d}:\001*\022e\n\rSubscribeUser\022\031.api.SubscribeUs" +
+      "erRequest\032\032.api.SubscribeUserResponse\"\035\202" +
+      "\323\344\223\002\027\"\022/api/users/{email}:\001*\022\\\n\017UnSubscr" +
+      "ibeUser\022\036.api.CancelSubscriptionRequest\032" +
+      "\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:" +
+      "\001*\022j\n\026CreateSubscriptionPlan\022\026.api.Creat" +
+      "ePlanRequest\032\027.api.CreatePlanResponse\"\037\202" +
+      "\323\344\223\002\031\"\024/api/plans/{plan_id}:\001*\022G\n\007SMSUse" +
+      "r\022\017.api.SMSRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024" +
+      "/api/plans/{user_id}:\001*\022I\n\010CallUser\022\020.ap" +
+      "i.CallRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/" +
+      "plans/{user_id}:\001*\022G\n\007MMSUser\022\017.api.MMSR" +
+      "equest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{" +
+      "user_id}:\001*\022K\n\tEmailUser\022\021.api.EmailRequ" +
+      "est\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{use" +
+      "r_id}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -22590,7 +23204,13 @@ public final class Api {
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
-        new java.lang.String[] { "From", "To", "Subject", "PlainText", "Html", });
+        new java.lang.String[] { "From", "Recipient", });
+    internal_static_api_RecipientEmail_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_api_RecipientEmail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_RecipientEmail_descriptor,
+        new java.lang.String[] { "To", "Subject", "PlainText", "Html", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);
