@@ -105,7 +105,6 @@ message AddCustomerRequest {
     string phone=3;
     string name=4;
     string password=5;
-    int64 trial_end=6;
     string description=7;
     Address address=8;
 }

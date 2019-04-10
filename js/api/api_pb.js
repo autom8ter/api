@@ -623,7 +623,6 @@ proto.api.AddCustomerRequest.toObject = function(includeInstance, msg) {
     phone: jspb.Message.getFieldWithDefault(msg, 3, ""),
     name: jspb.Message.getFieldWithDefault(msg, 4, ""),
     password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    trialEnd: jspb.Message.getFieldWithDefault(msg, 6, 0),
     description: jspb.Message.getFieldWithDefault(msg, 7, ""),
     address: (f = msg.getAddress()) && proto.api.Address.toObject(includeInstance, f)
   };
@@ -681,10 +680,6 @@ proto.api.AddCustomerRequest.deserializeBinaryFromReader = function(msg, reader)
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setPassword(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTrialEnd(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -756,13 +751,6 @@ proto.api.AddCustomerRequest.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       5,
-      f
-    );
-  }
-  f = message.getTrialEnd();
-  if (f !== 0) {
-    writer.writeInt64(
-      6,
       f
     );
   }
@@ -856,21 +844,6 @@ proto.api.AddCustomerRequest.prototype.getPassword = function() {
 /** @param {string} value */
 proto.api.AddCustomerRequest.prototype.setPassword = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional int64 trial_end = 6;
- * @return {number}
- */
-proto.api.AddCustomerRequest.prototype.getTrialEnd = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
-};
-
-
-/** @param {number} value */
-proto.api.AddCustomerRequest.prototype.setTrialEnd = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 

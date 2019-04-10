@@ -136,7 +136,6 @@ typedef GPB_ENUM(AddCustomerRequest_FieldNumber) {
   AddCustomerRequest_FieldNumber_Phone = 3,
   AddCustomerRequest_FieldNumber_Name = 4,
   AddCustomerRequest_FieldNumber_Password = 5,
-  AddCustomerRequest_FieldNumber_TrialEnd = 6,
   AddCustomerRequest_FieldNumber_Description_p = 7,
   AddCustomerRequest_FieldNumber_Address = 8,
 };
@@ -152,8 +151,6 @@ typedef GPB_ENUM(AddCustomerRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *password;
-
-@property(nonatomic, readwrite) int64_t trialEnd;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
 

@@ -750,12 +750,6 @@ class AddCustomerRequest : public ::google::protobuf::Message /* @@protoc_insert
   ::api::Address* mutable_address();
   void set_allocated_address(::api::Address* address);
 
-  // int64 trial_end = 6;
-  void clear_trial_end();
-  static const int kTrialEndFieldNumber = 6;
-  ::google::protobuf::int64 trial_end() const;
-  void set_trial_end(::google::protobuf::int64 value);
-
   // @@protoc_insertion_point(class_scope:api.AddCustomerRequest)
  private:
 
@@ -767,7 +761,6 @@ class AddCustomerRequest : public ::google::protobuf::Message /* @@protoc_insert
   ::google::protobuf::internal::ArenaStringPtr password_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::api::Address* address_;
-  ::google::protobuf::int64 trial_end_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -6084,20 +6077,6 @@ inline void AddCustomerRequest::set_allocated_password(::std::string* password) 
   }
   password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
   // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.password)
-}
-
-// int64 trial_end = 6;
-inline void AddCustomerRequest::clear_trial_end() {
-  trial_end_ = GOOGLE_LONGLONG(0);
-}
-inline ::google::protobuf::int64 AddCustomerRequest::trial_end() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.trial_end)
-  return trial_end_;
-}
-inline void AddCustomerRequest::set_trial_end(::google::protobuf::int64 value) {
-  
-  trial_end_ = value;
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.trial_end)
 }
 
 // string description = 7;

@@ -28,7 +28,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :phone, :string, 3
     optional :name, :string, 4
     optional :password, :string, 5
-    optional :trial_end, :int64, 6
     optional :description, :string, 7
     optional :address, :message, 8, "api.Address"
   end

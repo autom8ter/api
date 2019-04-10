@@ -272,7 +272,6 @@ typedef struct Customer__storage_ {
 @dynamic phone;
 @dynamic name;
 @dynamic password;
-@dynamic trialEnd;
 @dynamic description_p;
 @dynamic hasAddress, address;
 
@@ -285,7 +284,6 @@ typedef struct AddCustomerRequest__storage_ {
   NSString *password;
   NSString *description_p;
   Address *address;
-  int64_t trialEnd;
 } AddCustomerRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -340,19 +338,10 @@ typedef struct AddCustomerRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "trialEnd",
-        .dataTypeSpecific.className = NULL,
-        .number = AddCustomerRequest_FieldNumber_TrialEnd,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(AddCustomerRequest__storage_, trialEnd),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt64,
-      },
-      {
         .name = "description_p",
         .dataTypeSpecific.className = NULL,
         .number = AddCustomerRequest_FieldNumber_Description_p,
-        .hasIndex = 6,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(AddCustomerRequest__storage_, description_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -361,7 +350,7 @@ typedef struct AddCustomerRequest__storage_ {
         .name = "address",
         .dataTypeSpecific.className = GPBStringifySymbol(Address),
         .number = AddCustomerRequest_FieldNumber_Address,
-        .hasIndex = 7,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(AddCustomerRequest__storage_, address),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,

@@ -2465,11 +2465,6 @@ public final class Api {
         getPasswordBytes();
 
     /**
-     * <code>int64 trial_end = 6;</code>
-     */
-    long getTrialEnd();
-
-    /**
      * <code>string description = 7;</code>
      */
     java.lang.String getDescription();
@@ -2510,7 +2505,6 @@ public final class Api {
       phone_ = "";
       name_ = "";
       password_ = "";
-      trialEnd_ = 0L;
       description_ = "";
     }
 
@@ -2566,11 +2560,6 @@ public final class Api {
               java.lang.String s = input.readStringRequireUtf8();
 
               password_ = s;
-              break;
-            }
-            case 48: {
-
-              trialEnd_ = input.readInt64();
               break;
             }
             case 58: {
@@ -2794,15 +2783,6 @@ public final class Api {
       }
     }
 
-    public static final int TRIAL_END_FIELD_NUMBER = 6;
-    private long trialEnd_;
-    /**
-     * <code>int64 trial_end = 6;</code>
-     */
-    public long getTrialEnd() {
-      return trialEnd_;
-    }
-
     public static final int DESCRIPTION_FIELD_NUMBER = 7;
     private volatile java.lang.Object description_;
     /**
@@ -2887,9 +2867,6 @@ public final class Api {
       if (!getPasswordBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
       }
-      if (trialEnd_ != 0L) {
-        output.writeInt64(6, trialEnd_);
-      }
       if (!getDescriptionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
       }
@@ -2919,10 +2896,6 @@ public final class Api {
       }
       if (!getPasswordBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
-      }
-      if (trialEnd_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, trialEnd_);
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
@@ -2957,8 +2930,6 @@ public final class Api {
           .equals(other.getName());
       result = result && getPassword()
           .equals(other.getPassword());
-      result = result && (getTrialEnd()
-          == other.getTrialEnd());
       result = result && getDescription()
           .equals(other.getDescription());
       result = result && (hasAddress() == other.hasAddress());
@@ -2987,9 +2958,6 @@ public final class Api {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
-      hash = (37 * hash) + TRIAL_END_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getTrialEnd());
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       if (hasAddress()) {
@@ -3139,8 +3107,6 @@ public final class Api {
 
         password_ = "";
 
-        trialEnd_ = 0L;
-
         description_ = "";
 
         if (addressBuilder_ == null) {
@@ -3180,7 +3146,6 @@ public final class Api {
         result.phone_ = phone_;
         result.name_ = name_;
         result.password_ = password_;
-        result.trialEnd_ = trialEnd_;
         result.description_ = description_;
         if (addressBuilder_ == null) {
           result.address_ = address_;
@@ -3254,9 +3219,6 @@ public final class Api {
         if (!other.getPassword().isEmpty()) {
           password_ = other.password_;
           onChanged();
-        }
-        if (other.getTrialEnd() != 0L) {
-          setTrialEnd(other.getTrialEnd());
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
@@ -3635,32 +3597,6 @@ public final class Api {
   checkByteStringIsUtf8(value);
         
         password_ = value;
-        onChanged();
-        return this;
-      }
-
-      private long trialEnd_ ;
-      /**
-       * <code>int64 trial_end = 6;</code>
-       */
-      public long getTrialEnd() {
-        return trialEnd_;
-      }
-      /**
-       * <code>int64 trial_end = 6;</code>
-       */
-      public Builder setTrialEnd(long value) {
-        
-        trialEnd_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 trial_end = 6;</code>
-       */
-      public Builder clearTrialEnd() {
-        
-        trialEnd_ = 0L;
         onChanged();
         return this;
       }
@@ -34256,112 +34192,111 @@ public final class Api {
       "pi.Address\022-\n\010metadata\030\t \003(\0132\033.api.Custo" +
       "mer.MetadataEntry\022\017\n\007deleted\030\n \001(\010\022\023\n\013cr" +
       "eate_date\030\024 \001(\003\032/\n\rMetadataEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\247\001\n\022AddCustomer" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\224\001\n\022AddCustomer" +
       "Request\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\r\n\005" +
       "phone\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\020\n\010password\030\005 " +
-      "\001(\t\022\021\n\ttrial_end\030\006 \001(\003\022\023\n\013description\030\007 " +
-      "\001(\t\022\035\n\007address\030\010 \001(\0132\014.api.Address\"~\n\030Su" +
-      "bscribeCustomerRequest\022\r\n\005email\030\001 \001(\t\022\014\n" +
-      "\004plan\030\002 \001(\t\022\023\n\013card_number\030\003 \001(\t\022\021\n\texp_" +
-      "month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001" +
-      "(\t\"j\n\007Address\022\014\n\004city\030\001 \001(\t\022\017\n\007country\030\002" +
-      " \001(\t\022\r\n\005line1\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022\023\n\013po" +
-      "stal_code\030\005 \001(\t\022\r\n\005state\030\006 \001(\t\"4\n\031Subscr" +
-      "ibeCustomerResponse\022\027\n\017subscription_id\030\001" +
-      " \001(\t\"%\n\022CreatePlanResponse\022\017\n\007plan_id\030\001 " +
-      "\001(\t\"*\n\031CancelSubscriptionRequest\022\r\n\005emai" +
-      "l\030\001 \001(\t\"u\n\021CreatePlanRequest\022\017\n\007plan_id\030" +
-      "\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\022\n\nservice_id\030\003 \001(" +
-      "\t\022\024\n\014service_name\030\004 \001(\t\022\025\n\rfriendly_name" +
-      "\030\005 \001(\t\"+\n\nSMSRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n" +
-      "\004body\030\002 \001(\t\"4\n\013CallRequest\022\017\n\007user_id\030\001 " +
-      "\001(\t\022\024\n\014callback_url\030\002 \001(\t\">\n\nMMSRequest\022" +
-      "\017\n\007user_id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\022\021\n\tmedia_" +
-      "url\030\003 \001(\t\"V\n\014EmailRequest\022\017\n\007user_id\030\001 \001" +
-      "(\t\022\017\n\007subject\030\002 \001(\t\022\022\n\nplain_text\030\003 \001(\t\022" +
-      "\020\n\010html_alt\030\004 \001(\t\"A\n\017ChannelReminder\022\022\n\n" +
-      "channel_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003" +
-      " \001(\t\"W\n\014UserReminder\022\017\n\007user_id\030\001 \001(\t\022\014\n" +
-      "\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032\n\004item\030\004 \001(\0132" +
-      "\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001 \001(" +
-      "\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004Star" +
-      "\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemR" +
-      "ef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014." +
-      "api.ItemRef\"\372\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n" +
-      "\016twilio_account\030\002 \001(\t\022\022\n\ntwilio_key\030\003 \001(" +
-      "\t\022\024\n\014sendgrid_key\030\004 \001(\t\022\022\n\nstripe_key\030\005 " +
-      "\001(\t\022\021\n\tslack_key\030\006 \001(\t\022*\n\016customer_index" +
-      "\030\007 \001(\0162\022.api.CustomerIndex\022(\n\remail_addr" +
-      "ess\030\010 \001(\0132\021.api.EmailAddress\022\"\n\nlog_conf" +
-      "ig\030\t \001(\0132\016.api.LogConfig\".\n\tLogConfig\022\020\n" +
-      "\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014Emai" +
-      "lAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"" +
-      "P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddres" +
-      "s\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientEmai" +
-      "l\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api.Em" +
-      "ailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_tex" +
-      "t\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t" +
-      "\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_ur" +
-      "l\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2" +
-      "\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010call" +
-      "back\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 " +
-      "\001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022" +
-      "\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010\"6" +
-      "\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022" +
-      "\r\n\005title\030\003 \001(\t\"\265\002\n\017SlackAttachment\022\r\n\005co" +
-      "lor\030\001 \001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callback_" +
-      "id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t\022" +
-      "\023\n\013author_name\030\006 \001(\t\022\023\n\013author_link\030\007 \001(" +
-      "\t\022\023\n\013author_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024\n" +
-      "\014title_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n\004" +
-      "text\030\014 \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb_u" +
-      "rl\030\016 \001(\t\022$\n\006fields\030\017 \003(\0132\024.api.Attachmen" +
-      "tField\"\335\002\n\020AttachmentAction\022\014\n\004name\030\001 \001(" +
-      "\t\022\014\n\004text\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030\004" +
-      " \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001(\t" +
-      "\022\030\n\020min_query_length\030\007 \001(\003\022,\n\007options\030\010 " +
-      "\003(\0132\033.api.AttachmentActionOption\0225\n\020sele" +
-      "cted_options\030\t \003(\0132\033.api.AttachmentActio" +
-      "nOption\0227\n\roption_groups\030\n \003(\0132 .api.Att" +
-      "achmentActionOptionGroup\022\'\n\007confirm\030\013 \001(" +
-      "\0132\026.api.ConfirmationField\022\013\n\003url\030\014 \001(\t\"W" +
-      "\n\021ConfirmationField\022\r\n\005title\030\001 \001(\t\022\014\n\004te" +
-      "xt\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n\014dismiss_tex" +
-      "t\030\004 \001(\t\"Y\n\033AttachmentActionOptionGroup\022\014" +
-      "\n\004text\030\001 \001(\t\022,\n\007options\030\002 \003(\0132\033.api.Atta" +
-      "chmentActionOption\"K\n\026AttachmentActionOp" +
-      "tion\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013de" +
-      "scription\030\003 \001(\t\">\n\017AttachmentField\022\r\n\005ti" +
-      "tle\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005short\030\003 \001(\010*" +
-      "-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005P" +
-      "HONE\020\0022\271\010\n\013UserService\022O\n\016CreateCustomer" +
-      "\022\027.api.AddCustomerRequest\032\r.api.Customer" +
-      "\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022q\n\021SubscribeCust" +
-      "omer\022\035.api.SubscribeCustomerRequest\032\036.ap" +
-      "i.SubscribeCustomerResponse\"\035\202\323\344\223\002\027\"\022/ap" +
-      "i/users/{email}:\001*\022`\n\023UnSubscribeCustome" +
-      "r\022\036.api.CancelSubscriptionRequest\032\n.api." +
-      "Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026" +
-      "CreateSubscriptionPlan\022\026.api.CreatePlanR" +
-      "equest\032\027.api.CreatePlanResponse\"\037\202\323\344\223\002\031\"" +
-      "\024/api/plans/{plan_id}:\001*\022S\n\013SMSCustomer\022" +
-      "\017.api.SMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/a" +
-      "pi/customers/sms/{user_id}:\001*\022V\n\014CallCus" +
-      "tomer\022\020.api.CallRequest\032\n.api.Empty\"(\202\323\344" +
-      "\223\002\"\"\035/api/customers/call/{user_id}:\001*\022S\n" +
-      "\013MMSCustomer\022\017.api.MMSRequest\032\n.api.Empt" +
-      "y\"\'\202\323\344\223\002!\"\034/api/customers/mms/{user_id}:" +
-      "\001*\022Y\n\rEmailCustomer\022\021.api.EmailRequest\032\n" +
-      ".api.Empty\")\202\323\344\223\002#\"\036/api/customers/email" +
-      "/{user_id}:\001*\022K\n\007SMSUser\022\017.api.SMSReques" +
-      "t\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/sms/{u" +
-      "ser_id}:\001*\022N\n\010CallUser\022\020.api.CallRequest" +
-      "\032\n.api.Empty\"$\202\323\344\223\002\036\"\031/api/users/call/{u" +
-      "ser_id}:\001*\022K\n\007MMSUser\022\017.api.MMSRequest\032\n" +
-      ".api.Empty\"#\202\323\344\223\002\035\"\030/api/users/mms/{user" +
-      "_id}:\001*\022Q\n\tEmailUser\022\021.api.EmailRequest\032" +
-      "\n.api.Empty\"%\202\323\344\223\002\037\"\032/api/users/email/{u" +
-      "ser_id}:\001*b\006proto3"
+      "\001(\t\022\023\n\013description\030\007 \001(\t\022\035\n\007address\030\010 \001(" +
+      "\0132\014.api.Address\"~\n\030SubscribeCustomerRequ" +
+      "est\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\023\n\013card" +
+      "_number\030\003 \001(\t\022\021\n\texp_month\030\004 \001(\t\022\020\n\010exp_" +
+      "year\030\005 \001(\t\022\013\n\003cvc\030\006 \001(\t\"j\n\007Address\022\014\n\004ci" +
+      "ty\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\r\n\005line1\030\003 \001(\t" +
+      "\022\r\n\005line2\030\004 \001(\t\022\023\n\013postal_code\030\005 \001(\t\022\r\n\005" +
+      "state\030\006 \001(\t\"4\n\031SubscribeCustomerResponse" +
+      "\022\027\n\017subscription_id\030\001 \001(\t\"%\n\022CreatePlanR" +
+      "esponse\022\017\n\007plan_id\030\001 \001(\t\"*\n\031CancelSubscr" +
+      "iptionRequest\022\r\n\005email\030\001 \001(\t\"u\n\021CreatePl" +
+      "anRequest\022\017\n\007plan_id\030\001 \001(\t\022\016\n\006amount\030\002 \001" +
+      "(\003\022\022\n\nservice_id\030\003 \001(\t\022\024\n\014service_name\030\004" +
+      " \001(\t\022\025\n\rfriendly_name\030\005 \001(\t\"+\n\nSMSReques" +
+      "t\022\017\n\007user_id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\"4\n\013Call" +
+      "Request\022\017\n\007user_id\030\001 \001(\t\022\024\n\014callback_url" +
+      "\030\002 \001(\t\">\n\nMMSRequest\022\017\n\007user_id\030\001 \001(\t\022\014\n" +
+      "\004body\030\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\"V\n\014EmailR" +
+      "equest\022\017\n\007user_id\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t" +
+      "\022\022\n\nplain_text\030\003 \001(\t\022\020\n\010html_alt\030\004 \001(\t\"A" +
+      "\n\017ChannelReminder\022\022\n\nchannel_id\030\001 \001(\t\022\014\n" +
+      "\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\"W\n\014UserReminde" +
+      "r\022\017\n\007user_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time" +
+      "\030\003 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"9\n\007It" +
+      "emRef\022\017\n\007channel\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007" +
+      "comment\030\003 \001(\t\"0\n\004Star\022\014\n\004text\030\001 \001(\t\022\032\n\004i" +
+      "tem\030\004 \001(\0132\014.api.ItemRef\"/\n\003Pin\022\014\n\004text\030\001" +
+      " \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"\372\001\n\006Con" +
+      "fig\022\r\n\005debug\030\001 \001(\010\022\026\n\016twilio_account\030\002 \001" +
+      "(\t\022\022\n\ntwilio_key\030\003 \001(\t\022\024\n\014sendgrid_key\030\004" +
+      " \001(\t\022\022\n\nstripe_key\030\005 \001(\t\022\021\n\tslack_key\030\006 " +
+      "\001(\t\022*\n\016customer_index\030\007 \001(\0162\022.api.Custom" +
+      "erIndex\022(\n\remail_address\030\010 \001(\0132\021.api.Ema" +
+      "ilAddress\022\"\n\nlog_config\030\t \001(\0132\016.api.LogC" +
+      "onfig\".\n\tLogConfig\022\020\n\010username\030\001 \001(\t\022\017\n\007" +
+      "channel\030\002 \001(\t\"-\n\014EmailAddress\022\014\n\004name\030\001 " +
+      "\001(\t\022\017\n\007address\030\002 \001(\t\"P\n\005Email\022\037\n\004from\030\001 " +
+      "\001(\0132\021.api.EmailAddress\022&\n\trecipient\030\002 \001(" +
+      "\0132\023.api.RecipientEmail\"b\n\016RecipientEmail" +
+      "\022\035\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subje" +
+      "ct\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001" +
+      "(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004b" +
+      "ody\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\020\n\010callback" +
+      "\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022" +
+      "\014\n\004from\030\002 \001(\t\022\020\n\010callback\030\005 \001(\t\"j\n\003Fax\022\n" +
+      "\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\021\n\tmedia_url\030\003 " +
+      "\001(\t\022\017\n\007quality\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\023" +
+      "\n\013store_media\030\006 \001(\010\"6\n\007LogHook\022\016\n\006author" +
+      "\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\265\002\n\017" +
+      "SlackAttachment\022\r\n\005color\030\001 \001(\t\022\020\n\010fallba" +
+      "ck\030\002 \001(\t\022\023\n\013callback_id\030\003 \001(\t\022\n\n\002id\030\004 \001(" +
+      "\003\022\021\n\tauthor_id\030\005 \001(\t\022\023\n\013author_name\030\006 \001(" +
+      "\t\022\023\n\013author_link\030\007 \001(\t\022\023\n\013author_icon\030\010 " +
+      "\001(\t\022\r\n\005title\030\t \001(\t\022\024\n\014title_prefix\030\n \001(\t" +
+      "\022\017\n\007pretext\030\013 \001(\t\022\014\n\004text\030\014 \001(\t\022\021\n\timage" +
+      "_url\030\r \001(\t\022\021\n\tthumb_url\030\016 \001(\t\022$\n\006fields\030" +
+      "\017 \003(\0132\024.api.AttachmentField\"\335\002\n\020Attachme" +
+      "ntAction\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005" +
+      "style\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n\005value\030\005 \001(\t" +
+      "\022\023\n\013data_source\030\006 \001(\t\022\030\n\020min_query_lengt" +
+      "h\030\007 \001(\003\022,\n\007options\030\010 \003(\0132\033.api.Attachmen" +
+      "tActionOption\0225\n\020selected_options\030\t \003(\0132" +
+      "\033.api.AttachmentActionOption\0227\n\roption_g" +
+      "roups\030\n \003(\0132 .api.AttachmentActionOption" +
+      "Group\022\'\n\007confirm\030\013 \001(\0132\026.api.Confirmatio" +
+      "nField\022\013\n\003url\030\014 \001(\t\"W\n\021ConfirmationField" +
+      "\022\r\n\005title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_text" +
+      "\030\003 \001(\t\022\024\n\014dismiss_text\030\004 \001(\t\"Y\n\033Attachme" +
+      "ntActionOptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007opt" +
+      "ions\030\002 \003(\0132\033.api.AttachmentActionOption\"" +
+      "K\n\026AttachmentActionOption\022\r\n\005title\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n\017" +
+      "AttachmentField\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t\022\r\n\005short\030\003 \001(\010*-\n\rCustomerIndex\022\006\n" +
+      "\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\0022\271\010\n\013UserServ" +
+      "ice\022O\n\016CreateCustomer\022\027.api.AddCustomerR" +
+      "equest\032\r.api.Customer\"\025\202\323\344\223\002\017\"\n/api/user" +
+      "s:\001*\022q\n\021SubscribeCustomer\022\035.api.Subscrib" +
+      "eCustomerRequest\032\036.api.SubscribeCustomer" +
+      "Response\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022" +
+      "`\n\023UnSubscribeCustomer\022\036.api.CancelSubsc" +
+      "riptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api" +
+      "/users/{email}:\001*\022j\n\026CreateSubscriptionP" +
+      "lan\022\026.api.CreatePlanRequest\032\027.api.Create" +
+      "PlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan_i" +
+      "d}:\001*\022S\n\013SMSCustomer\022\017.api.SMSRequest\032\n." +
+      "api.Empty\"\'\202\323\344\223\002!\"\034/api/customers/sms/{u" +
+      "ser_id}:\001*\022V\n\014CallCustomer\022\020.api.CallReq" +
+      "uest\032\n.api.Empty\"(\202\323\344\223\002\"\"\035/api/customers" +
+      "/call/{user_id}:\001*\022S\n\013MMSCustomer\022\017.api." +
+      "MMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/api/cus" +
+      "tomers/mms/{user_id}:\001*\022Y\n\rEmailCustomer" +
+      "\022\021.api.EmailRequest\032\n.api.Empty\")\202\323\344\223\002#\"" +
+      "\036/api/customers/email/{user_id}:\001*\022K\n\007SM" +
+      "SUser\022\017.api.SMSRequest\032\n.api.Empty\"#\202\323\344\223" +
+      "\002\035\"\030/api/users/sms/{user_id}:\001*\022N\n\010CallU" +
+      "ser\022\020.api.CallRequest\032\n.api.Empty\"$\202\323\344\223\002" +
+      "\036\"\031/api/users/call/{user_id}:\001*\022K\n\007MMSUs" +
+      "er\022\017.api.MMSRequest\032\n.api.Empty\"#\202\323\344\223\002\035\"" +
+      "\030/api/users/mms/{user_id}:\001*\022Q\n\tEmailUse" +
+      "r\022\021.api.EmailRequest\032\n.api.Empty\"%\202\323\344\223\002\037" +
+      "\"\032/api/users/email/{user_id}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -34402,7 +34337,7 @@ public final class Api {
     internal_static_api_AddCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AddCustomerRequest_descriptor,
-        new java.lang.String[] { "Email", "Plan", "Phone", "Name", "Password", "TrialEnd", "Description", "Address", });
+        new java.lang.String[] { "Email", "Plan", "Phone", "Name", "Password", "Description", "Address", });
     internal_static_api_SubscribeCustomerRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_api_SubscribeCustomerRequest_fieldAccessorTable = new
