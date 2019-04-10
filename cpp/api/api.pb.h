@@ -710,20 +710,6 @@ class AddCustomerRequest : public ::google::protobuf::Message /* @@protoc_insert
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // string password = 5;
-  void clear_password();
-  static const int kPasswordFieldNumber = 5;
-  const ::std::string& password() const;
-  void set_password(const ::std::string& value);
-  #if LANG_CXX11
-  void set_password(::std::string&& value);
-  #endif
-  void set_password(const char* value);
-  void set_password(const char* value, size_t size);
-  ::std::string* mutable_password();
-  ::std::string* release_password();
-  void set_allocated_password(::std::string* password);
-
   // string description = 7;
   void clear_description();
   static const int kDescriptionFieldNumber = 7;
@@ -758,7 +744,6 @@ class AddCustomerRequest : public ::google::protobuf::Message /* @@protoc_insert
   ::google::protobuf::internal::ArenaStringPtr plan_;
   ::google::protobuf::internal::ArenaStringPtr phone_;
   ::google::protobuf::internal::ArenaStringPtr name_;
-  ::google::protobuf::internal::ArenaStringPtr password_;
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::api::Address* address_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -6024,59 +6009,6 @@ inline void AddCustomerRequest::set_allocated_name(::std::string* name) {
   }
   name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
   // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.name)
-}
-
-// string password = 5;
-inline void AddCustomerRequest::clear_password() {
-  password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AddCustomerRequest::password() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.password)
-  return password_.GetNoArena();
-}
-inline void AddCustomerRequest::set_password(const ::std::string& value) {
-  
-  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.password)
-}
-#if LANG_CXX11
-inline void AddCustomerRequest::set_password(::std::string&& value) {
-  
-  password_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AddCustomerRequest.password)
-}
-#endif
-inline void AddCustomerRequest::set_password(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AddCustomerRequest.password)
-}
-inline void AddCustomerRequest::set_password(const char* value, size_t size) {
-  
-  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AddCustomerRequest.password)
-}
-inline ::std::string* AddCustomerRequest::mutable_password() {
-  
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.password)
-  return password_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AddCustomerRequest::release_password() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.password)
-  
-  return password_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AddCustomerRequest::set_allocated_password(::std::string* password) {
-  if (password != NULL) {
-    
-  } else {
-    
-  }
-  password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.password)
 }
 
 // string description = 7;

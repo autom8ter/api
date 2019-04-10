@@ -271,7 +271,6 @@ typedef struct Customer__storage_ {
 @dynamic plan;
 @dynamic phone;
 @dynamic name;
-@dynamic password;
 @dynamic description_p;
 @dynamic hasAddress, address;
 
@@ -281,7 +280,6 @@ typedef struct AddCustomerRequest__storage_ {
   NSString *plan;
   NSString *phone;
   NSString *name;
-  NSString *password;
   NSString *description_p;
   Address *address;
 } AddCustomerRequest__storage_;
@@ -329,19 +327,10 @@ typedef struct AddCustomerRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "password",
-        .dataTypeSpecific.className = NULL,
-        .number = AddCustomerRequest_FieldNumber_Password,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(AddCustomerRequest__storage_, password),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "description_p",
         .dataTypeSpecific.className = NULL,
         .number = AddCustomerRequest_FieldNumber_Description_p,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(AddCustomerRequest__storage_, description_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -350,7 +339,7 @@ typedef struct AddCustomerRequest__storage_ {
         .name = "address",
         .dataTypeSpecific.className = GPBStringifySymbol(Address),
         .number = AddCustomerRequest_FieldNumber_Address,
-        .hasIndex = 6,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(AddCustomerRequest__storage_, address),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,

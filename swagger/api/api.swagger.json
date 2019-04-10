@@ -378,9 +378,6 @@
         "name": {
           "type": "string"
         },
-        "password": {
-          "type": "string"
-        },
         "description": {
           "type": "string"
         },

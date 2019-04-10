@@ -104,7 +104,6 @@ message AddCustomerRequest {
     string plan=2;
     string phone=3;
     string name=4;
-    string password=5;
     string description=7;
     Address address=8;
 }
