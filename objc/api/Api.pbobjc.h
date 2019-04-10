@@ -33,6 +33,7 @@ CF_EXTERN_C_BEGIN
 @class AttachmentField;
 @class ConfirmationField;
 @class EmailAddress;
+@class GAPIAuthentication;
 @class ItemRef;
 @class LogConfig;
 @class RecipientEmail;
@@ -827,6 +828,20 @@ typedef GPB_ENUM(AttachmentField_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *value;
 
 @property(nonatomic, readwrite) BOOL short_p;
+
+@end
+
+#pragma mark - Auth
+
+typedef GPB_ENUM(Auth_FieldNumber) {
+  Auth_FieldNumber_Auth = 1,
+};
+
+@interface Auth : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) GAPIAuthentication *auth;
+/** Test to see if @c auth has been set. */
+@property(nonatomic, readwrite) BOOL hasAuth;
 
 @end
 

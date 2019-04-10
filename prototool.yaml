@@ -1,5 +1,6 @@
 excludes:
   - vendor
+  - gogo.proto
 protoc:
   version: 3.6.1
   allow_unused_imports: true

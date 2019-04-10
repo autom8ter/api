@@ -17,6 +17,7 @@
 
 #import "Api.pbobjc.h"
 #import "google/api/Annotations.pbobjc.h"
+#import "google/api/Auth.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -2682,6 +2683,49 @@ typedef struct AttachmentField__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(AttachmentField__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Auth
+
+@implementation Auth
+
+@dynamic hasAuth, auth;
+
+typedef struct Auth__storage_ {
+  uint32_t _has_storage_[1];
+  GAPIAuthentication *auth;
+} Auth__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "auth",
+        .dataTypeSpecific.className = GPBStringifySymbol(GAPIAuthentication),
+        .number = Auth_FieldNumber_Auth,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Auth__storage_, auth),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Auth class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Auth__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

@@ -7,6 +7,7 @@ require 'google/protobuf/empty_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/api/annotations_pb'
+require 'google/api/auth_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Empty" do
   end
@@ -211,6 +212,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :value, :string, 2
     optional :short, :bool, 3
   end
+  add_message "api.Auth" do
+    optional :auth, :message, 1, "google.api.Authentication"
+  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -252,5 +256,6 @@ module Api
   AttachmentActionOptionGroup = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOptionGroup").msgclass
   AttachmentActionOption = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOption").msgclass
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
+  Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

@@ -31,6 +31,9 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AttachmentActionOptionGroup;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_RecipientEmail;
 }  // namespace protobuf_api_2eproto
+namespace protobuf_google_2fapi_2fauth_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_google_2fapi_2fauth_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Authentication;
+}  // namespace protobuf_google_2fapi_2fauth_2eproto
 namespace api {
 class EmptyDefaultTypeInternal {
  public:
@@ -202,6 +205,11 @@ class AttachmentFieldDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<AttachmentField>
       _instance;
 } _AttachmentField_default_instance_;
+class AuthDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Auth>
+      _instance;
+} _Auth_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsEmpty() {
@@ -695,6 +703,21 @@ static void InitDefaultsAttachmentField() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_AttachmentField =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAttachmentField}, {}};
 
+static void InitDefaultsAuth() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_Auth_default_instance_;
+    new (ptr) ::api::Auth();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::Auth::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_Auth =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAuth}, {
+      &protobuf_google_2fapi_2fauth_2eproto::scc_info_Authentication.base,}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Empty.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Customer_MetadataEntry_DoNotUse.base);
@@ -730,9 +753,10 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentActionOptionGroup.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentActionOption.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentField.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Auth.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[34];
+::google::protobuf::Metadata file_level_metadata[35];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -1047,6 +1071,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentField, title_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentField, value_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentField, short__),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Auth, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Auth, auth_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::Empty)},
@@ -1083,6 +1113,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 288, -1, sizeof(::api::AttachmentActionOptionGroup)},
   { 295, -1, sizeof(::api::AttachmentActionOption)},
   { 303, -1, sizeof(::api::AttachmentField)},
+  { 311, -1, sizeof(::api::Auth)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1120,6 +1151,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentActionOptionGroup_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentActionOption_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentField_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Auth_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -1137,7 +1169,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 34);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 35);
 }
 
 void AddDescriptorsImpl() {
@@ -1146,127 +1178,130 @@ void AddDescriptorsImpl() {
       "\n\tapi.proto\022\003api\032\033google/protobuf/empty."
       "proto\032\036google/protobuf/duration.proto\032 g"
       "oogle/protobuf/field_mask.proto\032\034google/"
-      "api/annotations.proto\"\007\n\005Empty\"\217\002\n\010Custo"
-      "mer\022\017\n\007user_id\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\014\n\004na"
-      "me\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\023\n\013description\030\005"
-      " \001(\t\022\r\n\005phone\030\006 \001(\t\022\035\n\007address\030\010 \001(\0132\014.a"
-      "pi.Address\022-\n\010metadata\030\t \003(\0132\033.api.Custo"
-      "mer.MetadataEntry\022\017\n\007deleted\030\n \001(\010\022\023\n\013cr"
-      "eate_date\030\024 \001(\003\032/\n\rMetadataEntry\022\013\n\003key\030"
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\202\001\n\022AddCustomer"
-      "Request\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\r\n\005"
-      "phone\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n\013description"
-      "\030\007 \001(\t\022\035\n\007address\030\010 \001(\0132\014.api.Address\"~\n"
-      "\030SubscribeCustomerRequest\022\r\n\005email\030\001 \001(\t"
-      "\022\014\n\004plan\030\002 \001(\t\022\023\n\013card_number\030\003 \001(\t\022\021\n\te"
-      "xp_month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030"
-      "\006 \001(\t\"j\n\007Address\022\014\n\004city\030\001 \001(\t\022\017\n\007countr"
-      "y\030\002 \001(\t\022\r\n\005line1\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022\023\n"
-      "\013postal_code\030\005 \001(\t\022\r\n\005state\030\006 \001(\t\"4\n\031Sub"
-      "scribeCustomerResponse\022\027\n\017subscription_i"
-      "d\030\001 \001(\t\"%\n\022CreatePlanResponse\022\017\n\007plan_id"
-      "\030\001 \001(\t\"*\n\031CancelSubscriptionRequest\022\r\n\005e"
-      "mail\030\001 \001(\t\"u\n\021CreatePlanRequest\022\017\n\007plan_"
-      "id\030\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\022\n\nservice_id\030\003"
-      " \001(\t\022\024\n\014service_name\030\004 \001(\t\022\025\n\rfriendly_n"
-      "ame\030\005 \001(\t\"+\n\nSMSRequest\022\017\n\007user_id\030\001 \001(\t"
-      "\022\014\n\004body\030\002 \001(\t\"4\n\013CallRequest\022\017\n\007user_id"
-      "\030\001 \001(\t\022\024\n\014callback_url\030\002 \001(\t\">\n\nMMSReque"
-      "st\022\017\n\007user_id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\022\021\n\tmed"
-      "ia_url\030\003 \001(\t\"V\n\014EmailRequest\022\017\n\007user_id\030"
-      "\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\022\n\nplain_text\030\003 \001"
-      "(\t\022\020\n\010html_alt\030\004 \001(\t\"A\n\017ChannelReminder\022"
-      "\022\n\nchannel_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004tim"
-      "e\030\003 \001(\t\"W\n\014UserReminder\022\017\n\007user_id\030\001 \001(\t"
-      "\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032\n\004item\030\004 \001"
-      "(\0132\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001"
-      " \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004S"
-      "tar\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.It"
-      "emRef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\013"
-      "2\014.api.ItemRef\"\372\001\n\006Config\022\r\n\005debug\030\001 \001(\010"
-      "\022\026\n\016twilio_account\030\002 \001(\t\022\022\n\ntwilio_key\030\003"
-      " \001(\t\022\024\n\014sendgrid_key\030\004 \001(\t\022\022\n\nstripe_key"
-      "\030\005 \001(\t\022\021\n\tslack_key\030\006 \001(\t\022*\n\016customer_in"
-      "dex\030\007 \001(\0162\022.api.CustomerIndex\022(\n\remail_a"
-      "ddress\030\010 \001(\0132\021.api.EmailAddress\022\"\n\nlog_c"
-      "onfig\030\t \001(\0132\016.api.LogConfig\".\n\tLogConfig"
-      "\022\020\n\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014E"
-      "mailAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001"
-      "(\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAdd"
-      "ress\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientE"
-      "mail\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api"
-      ".EmailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_"
-      "text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 "
-      "\001(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia"
-      "_url\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001("
-      "\t\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010c"
-      "allback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from"
-      "\030\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001"
-      "(\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001("
-      "\010\"6\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001"
-      "(\t\022\r\n\005title\030\003 \001(\t\"\265\002\n\017SlackAttachment\022\r\n"
-      "\005color\030\001 \001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callba"
-      "ck_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001"
-      "(\t\022\023\n\013author_name\030\006 \001(\t\022\023\n\013author_link\030\007"
-      " \001(\t\022\023\n\013author_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t"
-      "\022\024\n\014title_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022"
-      "\014\n\004text\030\014 \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthum"
-      "b_url\030\016 \001(\t\022$\n\006fields\030\017 \003(\0132\024.api.Attach"
-      "mentField\"\335\002\n\020AttachmentAction\022\014\n\004name\030\001"
-      " \001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004typ"
-      "e\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 "
-      "\001(\t\022\030\n\020min_query_length\030\007 \001(\003\022,\n\007options"
-      "\030\010 \003(\0132\033.api.AttachmentActionOption\0225\n\020s"
-      "elected_options\030\t \003(\0132\033.api.AttachmentAc"
-      "tionOption\0227\n\roption_groups\030\n \003(\0132 .api."
-      "AttachmentActionOptionGroup\022\'\n\007confirm\030\013"
-      " \001(\0132\026.api.ConfirmationField\022\013\n\003url\030\014 \001("
-      "\t\"W\n\021ConfirmationField\022\r\n\005title\030\001 \001(\t\022\014\n"
-      "\004text\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n\014dismiss_"
-      "text\030\004 \001(\t\"Y\n\033AttachmentActionOptionGrou"
-      "p\022\014\n\004text\030\001 \001(\t\022,\n\007options\030\002 \003(\0132\033.api.A"
-      "ttachmentActionOption\"K\n\026AttachmentActio"
-      "nOption\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n"
-      "\013description\030\003 \001(\t\">\n\017AttachmentField\022\r\n"
-      "\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005short\030\003 \001"
-      "(\010*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t"
-      "\n\005PHONE\020\0022\271\010\n\013UserService\022O\n\016CreateCusto"
-      "mer\022\027.api.AddCustomerRequest\032\r.api.Custo"
-      "mer\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022q\n\021SubscribeC"
-      "ustomer\022\035.api.SubscribeCustomerRequest\032\036"
-      ".api.SubscribeCustomerResponse\"\035\202\323\344\223\002\027\"\022"
-      "/api/users/{email}:\001*\022`\n\023UnSubscribeCust"
-      "omer\022\036.api.CancelSubscriptionRequest\032\n.a"
-      "pi.Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022"
-      "j\n\026CreateSubscriptionPlan\022\026.api.CreatePl"
-      "anRequest\032\027.api.CreatePlanResponse\"\037\202\323\344\223"
-      "\002\031\"\024/api/plans/{plan_id}:\001*\022S\n\013SMSCustom"
-      "er\022\017.api.SMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\""
-      "\034/api/customers/sms/{user_id}:\001*\022V\n\014Call"
-      "Customer\022\020.api.CallRequest\032\n.api.Empty\"("
-      "\202\323\344\223\002\"\"\035/api/customers/call/{user_id}:\001*"
-      "\022S\n\013MMSCustomer\022\017.api.MMSRequest\032\n.api.E"
-      "mpty\"\'\202\323\344\223\002!\"\034/api/customers/mms/{user_i"
-      "d}:\001*\022Y\n\rEmailCustomer\022\021.api.EmailReques"
-      "t\032\n.api.Empty\")\202\323\344\223\002#\"\036/api/customers/em"
-      "ail/{user_id}:\001*\022K\n\007SMSUser\022\017.api.SMSReq"
-      "uest\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/sms"
-      "/{user_id}:\001*\022N\n\010CallUser\022\020.api.CallRequ"
-      "est\032\n.api.Empty\"$\202\323\344\223\002\036\"\031/api/users/call"
-      "/{user_id}:\001*\022K\n\007MMSUser\022\017.api.MMSReques"
-      "t\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/mms/{u"
-      "ser_id}:\001*\022Q\n\tEmailUser\022\021.api.EmailReque"
-      "st\032\n.api.Empty\"%\202\323\344\223\002\037\"\032/api/users/email"
-      "/{user_id}:\001*b\006proto3"
+      "api/annotations.proto\032\025google/api/auth.p"
+      "roto\"\007\n\005Empty\"\217\002\n\010Customer\022\017\n\007user_id\030\001 "
+      "\001(\t\022\014\n\004plan\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005email"
+      "\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\r\n\005phone\030\006 \001"
+      "(\t\022\035\n\007address\030\010 \001(\0132\014.api.Address\022-\n\010met"
+      "adata\030\t \003(\0132\033.api.Customer.MetadataEntry"
+      "\022\017\n\007deleted\030\n \001(\010\022\023\n\013create_date\030\024 \001(\003\032/"
+      "\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+      "\001(\t:\0028\001\"\202\001\n\022AddCustomerRequest\022\r\n\005email\030"
+      "\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\r\n\005phone\030\003 \001(\t\022\014\n\004na"
+      "me\030\004 \001(\t\022\023\n\013description\030\007 \001(\t\022\035\n\007address"
+      "\030\010 \001(\0132\014.api.Address\"~\n\030SubscribeCustome"
+      "rRequest\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\023\n"
+      "\013card_number\030\003 \001(\t\022\021\n\texp_month\030\004 \001(\t\022\020\n"
+      "\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001(\t\"j\n\007Address\022"
+      "\014\n\004city\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\r\n\005line1\030"
+      "\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022\023\n\013postal_code\030\005 \001("
+      "\t\022\r\n\005state\030\006 \001(\t\"4\n\031SubscribeCustomerRes"
+      "ponse\022\027\n\017subscription_id\030\001 \001(\t\"%\n\022Create"
+      "PlanResponse\022\017\n\007plan_id\030\001 \001(\t\"*\n\031CancelS"
+      "ubscriptionRequest\022\r\n\005email\030\001 \001(\t\"u\n\021Cre"
+      "atePlanRequest\022\017\n\007plan_id\030\001 \001(\t\022\016\n\006amoun"
+      "t\030\002 \001(\003\022\022\n\nservice_id\030\003 \001(\t\022\024\n\014service_n"
+      "ame\030\004 \001(\t\022\025\n\rfriendly_name\030\005 \001(\t\"+\n\nSMSR"
+      "equest\022\017\n\007user_id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\"4\n"
+      "\013CallRequest\022\017\n\007user_id\030\001 \001(\t\022\024\n\014callbac"
+      "k_url\030\002 \001(\t\">\n\nMMSRequest\022\017\n\007user_id\030\001 \001"
+      "(\t\022\014\n\004body\030\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\"V\n\014E"
+      "mailRequest\022\017\n\007user_id\030\001 \001(\t\022\017\n\007subject\030"
+      "\002 \001(\t\022\022\n\nplain_text\030\003 \001(\t\022\020\n\010html_alt\030\004 "
+      "\001(\t\"A\n\017ChannelReminder\022\022\n\nchannel_id\030\001 \001"
+      "(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\"W\n\014UserRe"
+      "minder\022\017\n\007user_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n"
+      "\004time\030\003 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\""
+      "9\n\007ItemRef\022\017\n\007channel\030\001 \001(\t\022\014\n\004file\030\002 \001("
+      "\t\022\017\n\007comment\030\003 \001(\t\"0\n\004Star\022\014\n\004text\030\001 \001(\t"
+      "\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"/\n\003Pin\022\014\n\004t"
+      "ext\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"\372\001"
+      "\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n\016twilio_accoun"
+      "t\030\002 \001(\t\022\022\n\ntwilio_key\030\003 \001(\t\022\024\n\014sendgrid_"
+      "key\030\004 \001(\t\022\022\n\nstripe_key\030\005 \001(\t\022\021\n\tslack_k"
+      "ey\030\006 \001(\t\022*\n\016customer_index\030\007 \001(\0162\022.api.C"
+      "ustomerIndex\022(\n\remail_address\030\010 \001(\0132\021.ap"
+      "i.EmailAddress\022\"\n\nlog_config\030\t \001(\0132\016.api"
+      ".LogConfig\".\n\tLogConfig\022\020\n\010username\030\001 \001("
+      "\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailAddress\022\014\n\004na"
+      "me\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"P\n\005Email\022\037\n\004fr"
+      "om\030\001 \001(\0132\021.api.EmailAddress\022&\n\trecipient"
+      "\030\002 \001(\0132\023.api.RecipientEmail\"b\n\016Recipient"
+      "Email\022\035\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007"
+      "subject\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004htm"
+      "l\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t"
+      "\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\020\n\010cal"
+      "lback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001"
+      " \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010callback\030\005 \001(\t\"j\n\003"
+      "Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\021\n\tmedia_u"
+      "rl\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\020\n\010callback\030\005 "
+      "\001(\t\022\023\n\013store_media\030\006 \001(\010\"6\n\007LogHook\022\016\n\006a"
+      "uthor\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005title\030\003 \001(\t"
+      "\"\265\002\n\017SlackAttachment\022\r\n\005color\030\001 \001(\t\022\020\n\010f"
+      "allback\030\002 \001(\t\022\023\n\013callback_id\030\003 \001(\t\022\n\n\002id"
+      "\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t\022\023\n\013author_name"
+      "\030\006 \001(\t\022\023\n\013author_link\030\007 \001(\t\022\023\n\013author_ic"
+      "on\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024\n\014title_prefix\030"
+      "\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n\004text\030\014 \001(\t\022\021\n\t"
+      "image_url\030\r \001(\t\022\021\n\tthumb_url\030\016 \001(\t\022$\n\006fi"
+      "elds\030\017 \003(\0132\024.api.AttachmentField\"\335\002\n\020Att"
+      "achmentAction\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001("
+      "\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n\005value\030"
+      "\005 \001(\t\022\023\n\013data_source\030\006 \001(\t\022\030\n\020min_query_"
+      "length\030\007 \001(\003\022,\n\007options\030\010 \003(\0132\033.api.Atta"
+      "chmentActionOption\0225\n\020selected_options\030\t"
+      " \003(\0132\033.api.AttachmentActionOption\0227\n\ropt"
+      "ion_groups\030\n \003(\0132 .api.AttachmentActionO"
+      "ptionGroup\022\'\n\007confirm\030\013 \001(\0132\026.api.Confir"
+      "mationField\022\013\n\003url\030\014 \001(\t\"W\n\021Confirmation"
+      "Field\022\r\n\005title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok"
+      "_text\030\003 \001(\t\022\024\n\014dismiss_text\030\004 \001(\t\"Y\n\033Att"
+      "achmentActionOptionGroup\022\014\n\004text\030\001 \001(\t\022,"
+      "\n\007options\030\002 \003(\0132\033.api.AttachmentActionOp"
+      "tion\"K\n\026AttachmentActionOption\022\r\n\005title\030"
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013description\030\003 \001("
+      "\t\">\n\017AttachmentField\022\r\n\005title\030\001 \001(\t\022\r\n\005v"
+      "alue\030\002 \001(\t\022\r\n\005short\030\003 \001(\010\"0\n\004Auth\022(\n\004aut"
+      "h\030\001 \001(\0132\032.google.api.Authentication*-\n\rC"
+      "ustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE"
+      "\020\0022\271\010\n\013UserService\022O\n\016CreateCustomer\022\027.a"
+      "pi.AddCustomerRequest\032\r.api.Customer\"\025\202\323"
+      "\344\223\002\017\"\n/api/users:\001*\022q\n\021SubscribeCustomer"
+      "\022\035.api.SubscribeCustomerRequest\032\036.api.Su"
+      "bscribeCustomerResponse\"\035\202\323\344\223\002\027\"\022/api/us"
+      "ers/{email}:\001*\022`\n\023UnSubscribeCustomer\022\036."
+      "api.CancelSubscriptionRequest\032\n.api.Empt"
+      "y\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026Crea"
+      "teSubscriptionPlan\022\026.api.CreatePlanReque"
+      "st\032\027.api.CreatePlanResponse\"\037\202\323\344\223\002\031\"\024/ap"
+      "i/plans/{plan_id}:\001*\022S\n\013SMSCustomer\022\017.ap"
+      "i.SMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/api/c"
+      "ustomers/sms/{user_id}:\001*\022V\n\014CallCustome"
+      "r\022\020.api.CallRequest\032\n.api.Empty\"(\202\323\344\223\002\"\""
+      "\035/api/customers/call/{user_id}:\001*\022S\n\013MMS"
+      "Customer\022\017.api.MMSRequest\032\n.api.Empty\"\'\202"
+      "\323\344\223\002!\"\034/api/customers/mms/{user_id}:\001*\022Y"
+      "\n\rEmailCustomer\022\021.api.EmailRequest\032\n.api"
+      ".Empty\")\202\323\344\223\002#\"\036/api/customers/email/{us"
+      "er_id}:\001*\022K\n\007SMSUser\022\017.api.SMSRequest\032\n."
+      "api.Empty\"#\202\323\344\223\002\035\"\030/api/users/sms/{user_"
+      "id}:\001*\022N\n\010CallUser\022\020.api.CallRequest\032\n.a"
+      "pi.Empty\"$\202\323\344\223\002\036\"\031/api/users/call/{user_"
+      "id}:\001*\022K\n\007MMSUser\022\017.api.MMSRequest\032\n.api"
+      ".Empty\"#\202\323\344\223\002\035\"\030/api/users/mms/{user_id}"
+      ":\001*\022Q\n\tEmailUser\022\021.api.EmailRequest\032\n.ap"
+      "i.Empty\"%\202\323\344\223\002\037\"\032/api/users/email/{user_"
+      "id}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 4581);
+      descriptor, 4654);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
   ::protobuf_google_2fprotobuf_2fduration_2eproto::AddDescriptors();
   ::protobuf_google_2fprotobuf_2ffield_5fmask_2eproto::AddDescriptors();
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
+  ::protobuf_google_2fapi_2fauth_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -15100,6 +15135,246 @@ void AttachmentField::InternalSwap(AttachmentField* other) {
 }
 
 
+// ===================================================================
+
+void Auth::InitAsDefaultInstance() {
+  ::api::_Auth_default_instance_._instance.get_mutable()->auth_ = const_cast< ::google::api::Authentication*>(
+      ::google::api::Authentication::internal_default_instance());
+}
+void Auth::clear_auth() {
+  if (GetArenaNoVirtual() == NULL && auth_ != NULL) {
+    delete auth_;
+  }
+  auth_ = NULL;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Auth::kAuthFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Auth::Auth()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_Auth.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.Auth)
+}
+Auth::Auth(const Auth& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_auth()) {
+    auth_ = new ::google::api::Authentication(*from.auth_);
+  } else {
+    auth_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.Auth)
+}
+
+void Auth::SharedCtor() {
+  auth_ = NULL;
+}
+
+Auth::~Auth() {
+  // @@protoc_insertion_point(destructor:api.Auth)
+  SharedDtor();
+}
+
+void Auth::SharedDtor() {
+  if (this != internal_default_instance()) delete auth_;
+}
+
+void Auth::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Auth::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Auth& Auth::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Auth.base);
+  return *internal_default_instance();
+}
+
+
+void Auth::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Auth)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == NULL && auth_ != NULL) {
+    delete auth_;
+  }
+  auth_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool Auth::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.Auth)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .google.api.Authentication auth = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_auth()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.Auth)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.Auth)
+  return false;
+#undef DO_
+}
+
+void Auth::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.Auth)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .google.api.Authentication auth = 1;
+  if (this->has_auth()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_auth(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.Auth)
+}
+
+::google::protobuf::uint8* Auth::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.Auth)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .google.api.Authentication auth = 1;
+  if (this->has_auth()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_auth(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.Auth)
+  return target;
+}
+
+size_t Auth::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Auth)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // .google.api.Authentication auth = 1;
+  if (this->has_auth()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *auth_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Auth::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Auth)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Auth* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Auth>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Auth)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Auth)
+    MergeFrom(*source);
+  }
+}
+
+void Auth::MergeFrom(const Auth& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Auth)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_auth()) {
+    mutable_auth()->::google::api::Authentication::MergeFrom(from.auth());
+  }
+}
+
+void Auth::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Auth)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Auth::CopyFrom(const Auth& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Auth)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Auth::IsInitialized() const {
+  return true;
+}
+
+void Auth::Swap(Auth* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Auth::InternalSwap(Auth* other) {
+  using std::swap;
+  swap(auth_, other->auth_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Auth::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -15205,6 +15480,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AttachmentActionOption* Are
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AttachmentField* Arena::CreateMaybeMessage< ::api::AttachmentField >(Arena* arena) {
   return Arena::CreateInternal< ::api::AttachmentField >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Auth* Arena::CreateMaybeMessage< ::api::Auth >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Auth >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
