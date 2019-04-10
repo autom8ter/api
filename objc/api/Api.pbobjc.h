@@ -639,6 +639,33 @@ typedef GPB_ENUM(Call_FieldNumber) {
 
 @end
 
+#pragma mark - Fax
+
+typedef GPB_ENUM(Fax_FieldNumber) {
+  Fax_FieldNumber_To = 1,
+  Fax_FieldNumber_From = 2,
+  Fax_FieldNumber_MediaURL = 3,
+  Fax_FieldNumber_Quality = 4,
+  Fax_FieldNumber_Callback = 5,
+  Fax_FieldNumber_StoreMedia = 6,
+};
+
+@interface Fax : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *quality;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
+@property(nonatomic, readwrite) BOOL storeMedia;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

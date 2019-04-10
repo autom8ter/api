@@ -2013,6 +2013,108 @@ typedef struct Call__storage_ {
 
 @end
 
+#pragma mark - Fax
+
+@implementation Fax
+
+@dynamic to;
+@dynamic from;
+@dynamic mediaURL;
+@dynamic quality;
+@dynamic callback;
+@dynamic storeMedia;
+
+typedef struct Fax__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *to;
+  NSString *from;
+  NSString *mediaURL;
+  NSString *quality;
+  NSString *callback;
+} Fax__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = NULL,
+        .number = Fax_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Fax__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "from",
+        .dataTypeSpecific.className = NULL,
+        .number = Fax_FieldNumber_From,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Fax__storage_, from),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "mediaURL",
+        .dataTypeSpecific.className = NULL,
+        .number = Fax_FieldNumber_MediaURL,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Fax__storage_, mediaURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "quality",
+        .dataTypeSpecific.className = NULL,
+        .number = Fax_FieldNumber_Quality,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Fax__storage_, quality),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = NULL,
+        .number = Fax_FieldNumber_Callback,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Fax__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "storeMedia",
+        .dataTypeSpecific.className = NULL,
+        .number = Fax_FieldNumber_StoreMedia,
+        .hasIndex = 5,
+        .offset = 6,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Fax class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Fax__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\003\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

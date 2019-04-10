@@ -181,6 +181,11 @@ class CallDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Call>
       _instance;
 } _Call_default_instance_;
+class FaxDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Fax>
+      _instance;
+} _Fax_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsEmpty() {
@@ -614,6 +619,20 @@ static void InitDefaultsCall() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_Call =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCall}, {}};
 
+static void InitDefaultsFax() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_Fax_default_instance_;
+    new (ptr) ::api::Fax();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::Fax::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Fax =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFax}, {}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Empty.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserMap_UsersEntry_DoNotUse.base);
@@ -645,9 +664,10 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_RecipientEmail.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SMS.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Call.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Fax.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[30];
+::google::protobuf::Metadata file_level_metadata[31];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -907,6 +927,17 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Call, to_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Call, from_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Call, callback_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, to_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, from_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, media_url_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, quality_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, callback_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Fax, store_media_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::Empty)},
@@ -939,6 +970,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 228, -1, sizeof(::api::RecipientEmail)},
   { 237, -1, sizeof(::api::SMS)},
   { 248, -1, sizeof(::api::Call)},
+  { 256, -1, sizeof(::api::Fax)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -972,6 +1004,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_RecipientEmail_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SMS_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Call_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Fax_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -989,7 +1022,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 30);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 31);
 }
 
 void AddDescriptorsImpl() {
@@ -1059,36 +1092,38 @@ void AddDescriptorsImpl() {
       "(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_"
       "url\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t"
       "\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010ca"
-      "llback\030\005 \001(\t*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n"
-      "\005EMAIL\020\001\022\t\n\005PHONE\020\0022\317\007\n\013UserService\022B\n\017G"
-      "etUserEmailMap\022\n.api.Empty\032\014.api.UserMap"
-      "\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022\?\n\014GetUserIDMap\022"
-      "\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/"
-      "users:\001*\022B\n\017GetUserPhoneMap\022\n.api.Empty\032"
-      "\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007"
-      "AddUser\022\023.api.AddUserRequest\032\t.api.User\""
-      "\025\202\323\344\223\002\017\"\n/api/users:\001*\022Z\n\017AddUserMetadat"
-      "a\022\033.api.AddUserMetadataRequest\032\t.api.Use"
-      "r\"\037\202\323\344\223\002\031\"\024/api/users/{user_id}:\001*\022e\n\rSu"
-      "bscribeUser\022\031.api.SubscribeUserRequest\032\032"
-      ".api.SubscribeUserResponse\"\035\202\323\344\223\002\027\"\022/api"
-      "/users/{email}:\001*\022\\\n\017UnSubscribeUser\022\036.a"
-      "pi.CancelSubscriptionRequest\032\n.api.Empty"
-      "\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026Creat"
-      "eSubscriptionPlan\022\026.api.CreatePlanReques"
-      "t\032\027.api.CreatePlanResponse\"\037\202\323\344\223\002\031\"\024/api"
-      "/plans/{plan_id}:\001*\022G\n\007SMSUser\022\017.api.SMS"
-      "Request\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/"
-      "{user_id}:\001*\022I\n\010CallUser\022\020.api.CallReque"
-      "st\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user"
-      "_id}:\001*\022G\n\007MMSUser\022\017.api.MMSRequest\032\n.ap"
+      "llback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030"
+      "\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001("
+      "\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010"
+      "*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005"
+      "PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserEmailM"
+      "ap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/a"
+      "pi/users:\001*\022\?\n\014GetUserIDMap\022\n.api.Empty\032"
+      "\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\017"
+      "GetUserPhoneMap\022\n.api.Empty\032\014.api.UserMa"
+      "p\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.ap"
+      "i.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/ap"
+      "i/users:\001*\022Z\n\017AddUserMetadata\022\033.api.AddU"
+      "serMetadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024/"
+      "api/users/{user_id}:\001*\022e\n\rSubscribeUser\022"
+      "\031.api.SubscribeUserRequest\032\032.api.Subscri"
+      "beUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/{emai"
+      "l}:\001*\022\\\n\017UnSubscribeUser\022\036.api.CancelSub"
+      "scriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/a"
+      "pi/users/{email}:\001*\022j\n\026CreateSubscriptio"
+      "nPlan\022\026.api.CreatePlanRequest\032\027.api.Crea"
+      "tePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan"
+      "_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.ap"
       "i.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*"
-      "\022K\n\tEmailUser\022\021.api.EmailRequest\032\n.api.E"
-      "mpty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*b\006p"
-      "roto3"
+      "\022I\n\010CallUser\022\020.api.CallRequest\032\n.api.Emp"
+      "ty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007M"
+      "MSUser\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323\344"
+      "\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEmailUse"
+      "r\022\021.api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002\031"
+      "\"\024/api/plans/{user_id}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3605);
+      descriptor, 3713);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -11682,6 +11717,517 @@ void Call::InternalSwap(Call* other) {
 }
 
 
+// ===================================================================
+
+void Fax::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Fax::kToFieldNumber;
+const int Fax::kFromFieldNumber;
+const int Fax::kMediaUrlFieldNumber;
+const int Fax::kQualityFieldNumber;
+const int Fax::kCallbackFieldNumber;
+const int Fax::kStoreMediaFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Fax::Fax()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_Fax.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.Fax)
+}
+Fax::Fax(const Fax& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  to_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.to().size() > 0) {
+    to_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.to_);
+  }
+  from_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.from().size() > 0) {
+    from_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.from_);
+  }
+  media_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.media_url().size() > 0) {
+    media_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.media_url_);
+  }
+  quality_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.quality().size() > 0) {
+    quality_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.quality_);
+  }
+  callback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.callback().size() > 0) {
+    callback_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.callback_);
+  }
+  store_media_ = from.store_media_;
+  // @@protoc_insertion_point(copy_constructor:api.Fax)
+}
+
+void Fax::SharedCtor() {
+  to_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  from_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  media_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  quality_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  callback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  store_media_ = false;
+}
+
+Fax::~Fax() {
+  // @@protoc_insertion_point(destructor:api.Fax)
+  SharedDtor();
+}
+
+void Fax::SharedDtor() {
+  to_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  from_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  media_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  quality_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  callback_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Fax::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Fax::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Fax& Fax::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Fax.base);
+  return *internal_default_instance();
+}
+
+
+void Fax::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Fax)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  media_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  quality_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  callback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  store_media_ = false;
+  _internal_metadata_.Clear();
+}
+
+bool Fax::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.Fax)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string to = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_to()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->to().data(), static_cast<int>(this->to().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Fax.to"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string from = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_from()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->from().data(), static_cast<int>(this->from().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Fax.from"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string media_url = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_media_url()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->media_url().data(), static_cast<int>(this->media_url().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Fax.media_url"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string quality = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_quality()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->quality().data(), static_cast<int>(this->quality().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Fax.quality"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string callback = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_callback()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->callback().data(), static_cast<int>(this->callback().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Fax.callback"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool store_media = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &store_media_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.Fax)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.Fax)
+  return false;
+#undef DO_
+}
+
+void Fax::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.Fax)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string to = 1;
+  if (this->to().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->to().data(), static_cast<int>(this->to().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.to");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->to(), output);
+  }
+
+  // string from = 2;
+  if (this->from().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->from().data(), static_cast<int>(this->from().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.from");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->from(), output);
+  }
+
+  // string media_url = 3;
+  if (this->media_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->media_url().data(), static_cast<int>(this->media_url().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.media_url");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->media_url(), output);
+  }
+
+  // string quality = 4;
+  if (this->quality().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->quality().data(), static_cast<int>(this->quality().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.quality");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->quality(), output);
+  }
+
+  // string callback = 5;
+  if (this->callback().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->callback().data(), static_cast<int>(this->callback().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.callback");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->callback(), output);
+  }
+
+  // bool store_media = 6;
+  if (this->store_media() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->store_media(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.Fax)
+}
+
+::google::protobuf::uint8* Fax::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.Fax)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string to = 1;
+  if (this->to().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->to().data(), static_cast<int>(this->to().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.to");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->to(), target);
+  }
+
+  // string from = 2;
+  if (this->from().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->from().data(), static_cast<int>(this->from().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.from");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->from(), target);
+  }
+
+  // string media_url = 3;
+  if (this->media_url().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->media_url().data(), static_cast<int>(this->media_url().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.media_url");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->media_url(), target);
+  }
+
+  // string quality = 4;
+  if (this->quality().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->quality().data(), static_cast<int>(this->quality().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.quality");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->quality(), target);
+  }
+
+  // string callback = 5;
+  if (this->callback().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->callback().data(), static_cast<int>(this->callback().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Fax.callback");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->callback(), target);
+  }
+
+  // bool store_media = 6;
+  if (this->store_media() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->store_media(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.Fax)
+  return target;
+}
+
+size_t Fax::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Fax)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string to = 1;
+  if (this->to().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->to());
+  }
+
+  // string from = 2;
+  if (this->from().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->from());
+  }
+
+  // string media_url = 3;
+  if (this->media_url().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->media_url());
+  }
+
+  // string quality = 4;
+  if (this->quality().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->quality());
+  }
+
+  // string callback = 5;
+  if (this->callback().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->callback());
+  }
+
+  // bool store_media = 6;
+  if (this->store_media() != 0) {
+    total_size += 1 + 1;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Fax::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Fax)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Fax* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Fax>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Fax)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Fax)
+    MergeFrom(*source);
+  }
+}
+
+void Fax::MergeFrom(const Fax& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Fax)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.to().size() > 0) {
+
+    to_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.to_);
+  }
+  if (from.from().size() > 0) {
+
+    from_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.from_);
+  }
+  if (from.media_url().size() > 0) {
+
+    media_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.media_url_);
+  }
+  if (from.quality().size() > 0) {
+
+    quality_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.quality_);
+  }
+  if (from.callback().size() > 0) {
+
+    callback_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.callback_);
+  }
+  if (from.store_media() != 0) {
+    set_store_media(from.store_media());
+  }
+}
+
+void Fax::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Fax)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Fax::CopyFrom(const Fax& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Fax)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Fax::IsInitialized() const {
+  return true;
+}
+
+void Fax::Swap(Fax* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Fax::InternalSwap(Fax* other) {
+  using std::swap;
+  to_.Swap(&other->to_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  from_.Swap(&other->from_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  media_url_.Swap(&other->media_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  quality_.Swap(&other->quality_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  callback_.Swap(&other->callback_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(store_media_, other->store_media_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Fax::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -11775,6 +12321,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::SMS* Arena::CreateMaybeMess
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Call* Arena::CreateMaybeMessage< ::api::Call >(Arena* arena) {
   return Arena::CreateInternal< ::api::Call >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Fax* Arena::CreateMaybeMessage< ::api::Fax >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Fax >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

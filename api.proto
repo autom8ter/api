@@ -264,3 +264,12 @@ message Call {
     string from=2;
     string callback=5;
 }
+
+message Fax {
+    string to=1;
+    string from=2;
+    string media_url=3;
+    string quality=4;
+    string callback=5;
+    bool store_media=6;
+}

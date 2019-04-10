@@ -156,6 +156,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :from, :string, 2
     optional :callback, :string, 5
   end
+  add_message "api.Fax" do
+    optional :to, :string, 1
+    optional :from, :string, 2
+    optional :media_url, :string, 3
+    optional :quality, :string, 4
+    optional :callback, :string, 5
+    optional :store_media, :bool, 6
+  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -191,5 +199,6 @@ module Api
   RecipientEmail = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RecipientEmail").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
+  Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

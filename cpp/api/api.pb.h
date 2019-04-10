@@ -46,7 +46,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[30];
+  static const ::google::protobuf::internal::ParseTable schema[31];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -99,6 +99,9 @@ extern EmailRequestDefaultTypeInternal _EmailRequest_default_instance_;
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
+class Fax;
+class FaxDefaultTypeInternal;
+extern FaxDefaultTypeInternal _Fax_default_instance_;
 class ItemRef;
 class ItemRefDefaultTypeInternal;
 extern ItemRefDefaultTypeInternal _ItemRef_default_instance_;
@@ -162,6 +165,7 @@ template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailAddress* Arena::CreateMaybeMessage<::api::EmailAddress>(Arena*);
 template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(Arena*);
 template<> ::api::Empty* Arena::CreateMaybeMessage<::api::Empty>(Arena*);
+template<> ::api::Fax* Arena::CreateMaybeMessage<::api::Fax>(Arena*);
 template<> ::api::ItemRef* Arena::CreateMaybeMessage<::api::ItemRef>(Arena*);
 template<> ::api::LogConfig* Arena::CreateMaybeMessage<::api::LogConfig>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
@@ -4200,6 +4204,184 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::internal::ArenaStringPtr to_;
   ::google::protobuf::internal::ArenaStringPtr from_;
   ::google::protobuf::internal::ArenaStringPtr callback_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Fax) */ {
+ public:
+  Fax();
+  virtual ~Fax();
+
+  Fax(const Fax& from);
+
+  inline Fax& operator=(const Fax& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Fax(Fax&& from) noexcept
+    : Fax() {
+    *this = ::std::move(from);
+  }
+
+  inline Fax& operator=(Fax&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Fax& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Fax* internal_default_instance() {
+    return reinterpret_cast<const Fax*>(
+               &_Fax_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  void Swap(Fax* other);
+  friend void swap(Fax& a, Fax& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Fax* New() const final {
+    return CreateMaybeMessage<Fax>(NULL);
+  }
+
+  Fax* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Fax>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Fax& from);
+  void MergeFrom(const Fax& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Fax* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string to = 1;
+  void clear_to();
+  static const int kToFieldNumber = 1;
+  const ::std::string& to() const;
+  void set_to(const ::std::string& value);
+  #if LANG_CXX11
+  void set_to(::std::string&& value);
+  #endif
+  void set_to(const char* value);
+  void set_to(const char* value, size_t size);
+  ::std::string* mutable_to();
+  ::std::string* release_to();
+  void set_allocated_to(::std::string* to);
+
+  // string from = 2;
+  void clear_from();
+  static const int kFromFieldNumber = 2;
+  const ::std::string& from() const;
+  void set_from(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from(::std::string&& value);
+  #endif
+  void set_from(const char* value);
+  void set_from(const char* value, size_t size);
+  ::std::string* mutable_from();
+  ::std::string* release_from();
+  void set_allocated_from(::std::string* from);
+
+  // string media_url = 3;
+  void clear_media_url();
+  static const int kMediaUrlFieldNumber = 3;
+  const ::std::string& media_url() const;
+  void set_media_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_media_url(::std::string&& value);
+  #endif
+  void set_media_url(const char* value);
+  void set_media_url(const char* value, size_t size);
+  ::std::string* mutable_media_url();
+  ::std::string* release_media_url();
+  void set_allocated_media_url(::std::string* media_url);
+
+  // string quality = 4;
+  void clear_quality();
+  static const int kQualityFieldNumber = 4;
+  const ::std::string& quality() const;
+  void set_quality(const ::std::string& value);
+  #if LANG_CXX11
+  void set_quality(::std::string&& value);
+  #endif
+  void set_quality(const char* value);
+  void set_quality(const char* value, size_t size);
+  ::std::string* mutable_quality();
+  ::std::string* release_quality();
+  void set_allocated_quality(::std::string* quality);
+
+  // string callback = 5;
+  void clear_callback();
+  static const int kCallbackFieldNumber = 5;
+  const ::std::string& callback() const;
+  void set_callback(const ::std::string& value);
+  #if LANG_CXX11
+  void set_callback(::std::string&& value);
+  #endif
+  void set_callback(const char* value);
+  void set_callback(const char* value, size_t size);
+  ::std::string* mutable_callback();
+  ::std::string* release_callback();
+  void set_allocated_callback(::std::string* callback);
+
+  // bool store_media = 6;
+  void clear_store_media();
+  static const int kStoreMediaFieldNumber = 6;
+  bool store_media() const;
+  void set_store_media(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.Fax)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr to_;
+  ::google::protobuf::internal::ArenaStringPtr from_;
+  ::google::protobuf::internal::ArenaStringPtr media_url_;
+  ::google::protobuf::internal::ArenaStringPtr quality_;
+  ::google::protobuf::internal::ArenaStringPtr callback_;
+  bool store_media_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -8977,9 +9159,294 @@ inline void Call::set_allocated_callback(::std::string* callback) {
   // @@protoc_insertion_point(field_set_allocated:api.Call.callback)
 }
 
+// -------------------------------------------------------------------
+
+// Fax
+
+// string to = 1;
+inline void Fax::clear_to() {
+  to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Fax::to() const {
+  // @@protoc_insertion_point(field_get:api.Fax.to)
+  return to_.GetNoArena();
+}
+inline void Fax::set_to(const ::std::string& value) {
+  
+  to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Fax.to)
+}
+#if LANG_CXX11
+inline void Fax::set_to(::std::string&& value) {
+  
+  to_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Fax.to)
+}
+#endif
+inline void Fax::set_to(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Fax.to)
+}
+inline void Fax::set_to(const char* value, size_t size) {
+  
+  to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Fax.to)
+}
+inline ::std::string* Fax::mutable_to() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Fax.to)
+  return to_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Fax::release_to() {
+  // @@protoc_insertion_point(field_release:api.Fax.to)
+  
+  return to_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Fax::set_allocated_to(::std::string* to) {
+  if (to != NULL) {
+    
+  } else {
+    
+  }
+  to_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), to);
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.to)
+}
+
+// string from = 2;
+inline void Fax::clear_from() {
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Fax::from() const {
+  // @@protoc_insertion_point(field_get:api.Fax.from)
+  return from_.GetNoArena();
+}
+inline void Fax::set_from(const ::std::string& value) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Fax.from)
+}
+#if LANG_CXX11
+inline void Fax::set_from(::std::string&& value) {
+  
+  from_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Fax.from)
+}
+#endif
+inline void Fax::set_from(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Fax.from)
+}
+inline void Fax::set_from(const char* value, size_t size) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Fax.from)
+}
+inline ::std::string* Fax::mutable_from() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Fax.from)
+  return from_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Fax::release_from() {
+  // @@protoc_insertion_point(field_release:api.Fax.from)
+  
+  return from_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Fax::set_allocated_from(::std::string* from) {
+  if (from != NULL) {
+    
+  } else {
+    
+  }
+  from_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from);
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.from)
+}
+
+// string media_url = 3;
+inline void Fax::clear_media_url() {
+  media_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Fax::media_url() const {
+  // @@protoc_insertion_point(field_get:api.Fax.media_url)
+  return media_url_.GetNoArena();
+}
+inline void Fax::set_media_url(const ::std::string& value) {
+  
+  media_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Fax.media_url)
+}
+#if LANG_CXX11
+inline void Fax::set_media_url(::std::string&& value) {
+  
+  media_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Fax.media_url)
+}
+#endif
+inline void Fax::set_media_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  media_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Fax.media_url)
+}
+inline void Fax::set_media_url(const char* value, size_t size) {
+  
+  media_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Fax.media_url)
+}
+inline ::std::string* Fax::mutable_media_url() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Fax.media_url)
+  return media_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Fax::release_media_url() {
+  // @@protoc_insertion_point(field_release:api.Fax.media_url)
+  
+  return media_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Fax::set_allocated_media_url(::std::string* media_url) {
+  if (media_url != NULL) {
+    
+  } else {
+    
+  }
+  media_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), media_url);
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.media_url)
+}
+
+// string quality = 4;
+inline void Fax::clear_quality() {
+  quality_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Fax::quality() const {
+  // @@protoc_insertion_point(field_get:api.Fax.quality)
+  return quality_.GetNoArena();
+}
+inline void Fax::set_quality(const ::std::string& value) {
+  
+  quality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Fax.quality)
+}
+#if LANG_CXX11
+inline void Fax::set_quality(::std::string&& value) {
+  
+  quality_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Fax.quality)
+}
+#endif
+inline void Fax::set_quality(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  quality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Fax.quality)
+}
+inline void Fax::set_quality(const char* value, size_t size) {
+  
+  quality_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Fax.quality)
+}
+inline ::std::string* Fax::mutable_quality() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Fax.quality)
+  return quality_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Fax::release_quality() {
+  // @@protoc_insertion_point(field_release:api.Fax.quality)
+  
+  return quality_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Fax::set_allocated_quality(::std::string* quality) {
+  if (quality != NULL) {
+    
+  } else {
+    
+  }
+  quality_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), quality);
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.quality)
+}
+
+// string callback = 5;
+inline void Fax::clear_callback() {
+  callback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Fax::callback() const {
+  // @@protoc_insertion_point(field_get:api.Fax.callback)
+  return callback_.GetNoArena();
+}
+inline void Fax::set_callback(const ::std::string& value) {
+  
+  callback_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Fax.callback)
+}
+#if LANG_CXX11
+inline void Fax::set_callback(::std::string&& value) {
+  
+  callback_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Fax.callback)
+}
+#endif
+inline void Fax::set_callback(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  callback_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Fax.callback)
+}
+inline void Fax::set_callback(const char* value, size_t size) {
+  
+  callback_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Fax.callback)
+}
+inline ::std::string* Fax::mutable_callback() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Fax.callback)
+  return callback_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Fax::release_callback() {
+  // @@protoc_insertion_point(field_release:api.Fax.callback)
+  
+  return callback_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Fax::set_allocated_callback(::std::string* callback) {
+  if (callback != NULL) {
+    
+  } else {
+    
+  }
+  callback_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), callback);
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.callback)
+}
+
+// bool store_media = 6;
+inline void Fax::clear_store_media() {
+  store_media_ = false;
+}
+inline bool Fax::store_media() const {
+  // @@protoc_insertion_point(field_get:api.Fax.store_media)
+  return store_media_;
+}
+inline void Fax::set_store_media(bool value) {
+  
+  store_media_ = value;
+  // @@protoc_insertion_point(field_set:api.Fax.store_media)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
