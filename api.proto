@@ -1,0 +1,182 @@
+syntax="proto3";
+
+package api;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/duration.proto";
+import "google/protobuf/field_mask.proto";
+import "google/api/annotations.proto";
+
+service UserService {
+    rpc GetUserEmailMap(Empty) returns (UserMap) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc GetUserIDMap(Empty) returns (UserMap) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc GetUserPhoneMap(Empty) returns (UserMap) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc AddUser(AddUserRequest) returns (User) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc AddUserMetadata(AddUserMetadataRequest) returns (User) {
+        option (google.api.http) = {
+            post: "/api/users/{user_id}"
+            body: "*"
+        };
+    }
+    rpc SubscribeUser(SubscribeUserRequest) returns (SubscribeUserResponse) {
+        option (google.api.http) = {
+            post: "/api/users/{email}"
+            body: "*"
+        };
+    }
+    rpc UnSubscribeUser(CancelSubscriptionRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/users/{email}"
+            body: "*"
+        };
+    }
+    rpc CreateSubscriptionPlan(CreatePlanRequest) returns (CreatePlanResponse) {
+        option (google.api.http) = {
+            post: "/api/plans/{plan_id}"
+            body: "*"
+        };
+    }
+    rpc SMSUser(SMSRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/plans/{user_id}"
+            body: "*"
+        };
+    }
+    rpc CallUser(CallRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/plans/{user_id}"
+            body: "*"
+        };
+    }
+    rpc MMSUser(MMSRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/plans/{user_id}"
+            body: "*"
+        };
+    }
+    rpc EmailUser(EmailRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/plans/{user_id}"
+            body: "*"
+        };
+    }
+}
+
+message Empty {}
+
+
+// UserMap is a map of users with a key of either user id, email, or phone number
+message UserMap {
+    map<string, User> users=1;
+}
+
+// User is a user of the application
+message User {
+    string user_id = 1;
+    string plan = 2;
+    string name =3;
+    string email=4;
+    string description=5;
+    string phone=6;
+    Address address=8;
+    map<string, string> metadata = 9;
+    bool deleted=10;
+    int64 create_date = 20;
+}
+
+message AddUserRequest {
+    string email =1;
+    string plan=2;
+    string phone=3;
+    string name=4;
+    string password=5;
+    int64 trial_end=6;
+    string description=7;
+    Address address=8;
+}
+
+message SubscribeUserRequest {
+    string email =1;
+    string plan=2;
+    string card_number=3;
+    string exp_month=4;
+    string exp_year=5;
+    string cvc=6;
+}
+
+message AddUserMetadataRequest {
+    string user_id =1;
+    map<string,string> metadata=2;
+}
+
+message Address {
+    string city=1;
+    string country=2;
+    string line1=3;
+    string line2=4;
+    string postal_code=5;
+    string state=6;
+}
+
+message SubscribeUserResponse {
+    string subscription_id=1;
+}
+
+message CreatePlanResponse {
+    string plan_id=1;
+}
+
+message CancelSubscriptionRequest {
+    string email=1;
+}
+
+message CreatePlanRequest {
+    string plan_id=1;
+    int64 amount =2;
+    string service_id=3;
+    string service_name=4;
+    string friendly_name=5;
+}
+
+message SMSRequest {
+    string user_id =1;
+    string body=2;
+}
+
+message CallRequest {
+    string user_id =1;
+    string callback_url=2;
+}
+
+message MMSRequest {
+    string user_id=1;
+    string body=2;
+    string media_url=3;
+}
+
+message EmailRequest {
+    string user_id =1;
+    string subject=2;
+    string plain_text=3;
+    string html_alt=4;
+}

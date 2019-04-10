@@ -22,14 +22,38 @@ generate:
     - name: go
       type: go
       flags: plugins=grpc
-      output: sdk/go
+      output: go/api
+
+    - name: grpc-gateway
+      type: go
+      output: go/api
 
     - flags: binary,import_style=commonjs
       name: js
-      output: sdk/js
+      output: js/api
 
     - name: swagger
       type: go
-      output: sdk/swagger
+      output: swagger/api
       flags: logtostderr=true
 
+    - name: python
+      output: python/api
+
+    - name: objc
+      output: objc/api
+
+    - name: ruby
+      output: ruby/api
+
+    - name: cpp
+      output: cpp/api
+
+    - name: java
+      output: java/api
+
+    - name: csharp
+      output: csharp/api
+
+    - name: doc
+      output: docs
