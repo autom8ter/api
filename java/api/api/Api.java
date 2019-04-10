@@ -26011,6 +26011,830 @@ public final class Api {
 
   }
 
+  public interface LogHookOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.LogHook)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string author = 1;</code>
+     */
+    java.lang.String getAuthor();
+    /**
+     * <code>string author = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAuthorBytes();
+
+    /**
+     * <code>string icon = 2;</code>
+     */
+    java.lang.String getIcon();
+    /**
+     * <code>string icon = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getIconBytes();
+
+    /**
+     * <code>string title = 3;</code>
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>string title = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+  }
+  /**
+   * Protobuf type {@code api.LogHook}
+   */
+  public  static final class LogHook extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.LogHook)
+      LogHookOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogHook.newBuilder() to construct.
+    private LogHook(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogHook() {
+      author_ = "";
+      icon_ = "";
+      title_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogHook(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              author_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              icon_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              title_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_LogHook_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_LogHook_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.LogHook.class, api.Api.LogHook.Builder.class);
+    }
+
+    public static final int AUTHOR_FIELD_NUMBER = 1;
+    private volatile java.lang.Object author_;
+    /**
+     * <code>string author = 1;</code>
+     */
+    public java.lang.String getAuthor() {
+      java.lang.Object ref = author_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        author_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string author = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAuthorBytes() {
+      java.lang.Object ref = author_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        author_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ICON_FIELD_NUMBER = 2;
+    private volatile java.lang.Object icon_;
+    /**
+     * <code>string icon = 2;</code>
+     */
+    public java.lang.String getIcon() {
+      java.lang.Object ref = icon_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        icon_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string icon = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIconBytes() {
+      java.lang.Object ref = icon_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        icon_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object title_;
+    /**
+     * <code>string title = 3;</code>
+     */
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string title = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAuthorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, author_);
+      }
+      if (!getIconBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, icon_);
+      }
+      if (!getTitleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAuthorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, author_);
+      }
+      if (!getIconBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, icon_);
+      }
+      if (!getTitleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.LogHook)) {
+        return super.equals(obj);
+      }
+      api.Api.LogHook other = (api.Api.LogHook) obj;
+
+      boolean result = true;
+      result = result && getAuthor()
+          .equals(other.getAuthor());
+      result = result && getIcon()
+          .equals(other.getIcon());
+      result = result && getTitle()
+          .equals(other.getTitle());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHOR_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthor().hashCode();
+      hash = (37 * hash) + ICON_FIELD_NUMBER;
+      hash = (53 * hash) + getIcon().hashCode();
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.LogHook parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.LogHook parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.LogHook parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.LogHook parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.LogHook parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.LogHook parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.LogHook parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.LogHook parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.LogHook parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.LogHook parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.LogHook parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.LogHook parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.LogHook prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.LogHook}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.LogHook)
+        api.Api.LogHookOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_LogHook_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_LogHook_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.LogHook.class, api.Api.LogHook.Builder.class);
+      }
+
+      // Construct using api.Api.LogHook.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        author_ = "";
+
+        icon_ = "";
+
+        title_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_LogHook_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.LogHook getDefaultInstanceForType() {
+        return api.Api.LogHook.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.LogHook build() {
+        api.Api.LogHook result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.LogHook buildPartial() {
+        api.Api.LogHook result = new api.Api.LogHook(this);
+        result.author_ = author_;
+        result.icon_ = icon_;
+        result.title_ = title_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.LogHook) {
+          return mergeFrom((api.Api.LogHook)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.LogHook other) {
+        if (other == api.Api.LogHook.getDefaultInstance()) return this;
+        if (!other.getAuthor().isEmpty()) {
+          author_ = other.author_;
+          onChanged();
+        }
+        if (!other.getIcon().isEmpty()) {
+          icon_ = other.icon_;
+          onChanged();
+        }
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.LogHook parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.LogHook) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object author_ = "";
+      /**
+       * <code>string author = 1;</code>
+       */
+      public java.lang.String getAuthor() {
+        java.lang.Object ref = author_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          author_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string author = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAuthorBytes() {
+        java.lang.Object ref = author_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          author_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string author = 1;</code>
+       */
+      public Builder setAuthor(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        author_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string author = 1;</code>
+       */
+      public Builder clearAuthor() {
+        
+        author_ = getDefaultInstance().getAuthor();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string author = 1;</code>
+       */
+      public Builder setAuthorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        author_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object icon_ = "";
+      /**
+       * <code>string icon = 2;</code>
+       */
+      public java.lang.String getIcon() {
+        java.lang.Object ref = icon_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          icon_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string icon = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIconBytes() {
+        java.lang.Object ref = icon_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          icon_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string icon = 2;</code>
+       */
+      public Builder setIcon(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        icon_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string icon = 2;</code>
+       */
+      public Builder clearIcon() {
+        
+        icon_ = getDefaultInstance().getIcon();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string icon = 2;</code>
+       */
+      public Builder setIconBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        icon_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object title_ = "";
+      /**
+       * <code>string title = 3;</code>
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string title = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        title_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder clearTitle() {
+        
+        title_ = getDefaultInstance().getTitle();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 3;</code>
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        title_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.LogHook)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.LogHook)
+    private static final api.Api.LogHook DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.LogHook();
+    }
+
+    public static api.Api.LogHook getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogHook>
+        PARSER = new com.google.protobuf.AbstractParser<LogHook>() {
+      @java.lang.Override
+      public LogHook parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogHook(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogHook> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogHook> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.LogHook getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_Empty_descriptor;
   private static final 
@@ -26166,6 +26990,11 @@ public final class Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Fax_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_LogHook_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_LogHook_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -26242,32 +27071,34 @@ public final class Api {
       "llback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030" +
       "\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(" +
       "\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010" +
-      "*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005" +
-      "PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserEmailM" +
-      "ap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/a" +
-      "pi/users:\001*\022?\n\014GetUserIDMap\022\n.api.Empty\032" +
-      "\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\017" +
-      "GetUserPhoneMap\022\n.api.Empty\032\014.api.UserMa" +
-      "p\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.ap" +
-      "i.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/ap" +
-      "i/users:\001*\022Z\n\017AddUserMetadata\022\033.api.AddU" +
-      "serMetadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024/" +
-      "api/users/{user_id}:\001*\022e\n\rSubscribeUser\022" +
-      "\031.api.SubscribeUserRequest\032\032.api.Subscri" +
-      "beUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/{emai" +
-      "l}:\001*\022\\\n\017UnSubscribeUser\022\036.api.CancelSub" +
-      "scriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/a" +
-      "pi/users/{email}:\001*\022j\n\026CreateSubscriptio" +
-      "nPlan\022\026.api.CreatePlanRequest\032\027.api.Crea" +
-      "tePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan" +
-      "_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.ap" +
-      "i.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*" +
-      "\022I\n\010CallUser\022\020.api.CallRequest\032\n.api.Emp" +
-      "ty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007M" +
-      "MSUser\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323\344" +
-      "\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEmailUse" +
-      "r\022\021.api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002\031" +
-      "\"\024/api/plans/{user_id}:\001*b\006proto3"
+      "\"6\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(" +
+      "\t\022\r\n\005title\030\003 \001(\t*-\n\rCustomerIndex\022\006\n\002ID\020" +
+      "\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\0022\317\007\n\013UserService\022" +
+      "B\n\017GetUserEmailMap\022\n.api.Empty\032\014.api.Use" +
+      "rMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022?\n\014GetUserID" +
+      "Map\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/" +
+      "api/users:\001*\022B\n\017GetUserPhoneMap\022\n.api.Em" +
+      "pty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*" +
+      "\022@\n\007AddUser\022\023.api.AddUserRequest\032\t.api.U" +
+      "ser\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022Z\n\017AddUserMet" +
+      "adata\022\033.api.AddUserMetadataRequest\032\t.api" +
+      ".User\"\037\202\323\344\223\002\031\"\024/api/users/{user_id}:\001*\022e" +
+      "\n\rSubscribeUser\022\031.api.SubscribeUserReque" +
+      "st\032\032.api.SubscribeUserResponse\"\035\202\323\344\223\002\027\"\022" +
+      "/api/users/{email}:\001*\022\\\n\017UnSubscribeUser" +
+      "\022\036.api.CancelSubscriptionRequest\032\n.api.E" +
+      "mpty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026C" +
+      "reateSubscriptionPlan\022\026.api.CreatePlanRe" +
+      "quest\032\027.api.CreatePlanResponse\"\037\202\323\344\223\002\031\"\024" +
+      "/api/plans/{plan_id}:\001*\022G\n\007SMSUser\022\017.api" +
+      ".SMSRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/pl" +
+      "ans/{user_id}:\001*\022I\n\010CallUser\022\020.api.CallR" +
+      "equest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{" +
+      "user_id}:\001*\022G\n\007MMSUser\022\017.api.MMSRequest\032" +
+      "\n.api.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id" +
+      "}:\001*\022K\n\tEmailUser\022\021.api.EmailRequest\032\n.a" +
+      "pi.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001" +
+      "*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -26471,6 +27302,12 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Fax_descriptor,
         new java.lang.String[] { "To", "From", "MediaUrl", "Quality", "Callback", "StoreMedia", });
+    internal_static_api_LogHook_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_api_LogHook_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_LogHook_descriptor,
+        new java.lang.String[] { "Author", "Icon", "Title", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

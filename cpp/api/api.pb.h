@@ -46,7 +46,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[31];
+  static const ::google::protobuf::internal::ParseTable schema[32];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -108,6 +108,9 @@ extern ItemRefDefaultTypeInternal _ItemRef_default_instance_;
 class LogConfig;
 class LogConfigDefaultTypeInternal;
 extern LogConfigDefaultTypeInternal _LogConfig_default_instance_;
+class LogHook;
+class LogHookDefaultTypeInternal;
+extern LogHookDefaultTypeInternal _LogHook_default_instance_;
 class MMSRequest;
 class MMSRequestDefaultTypeInternal;
 extern MMSRequestDefaultTypeInternal _MMSRequest_default_instance_;
@@ -168,6 +171,7 @@ template<> ::api::Empty* Arena::CreateMaybeMessage<::api::Empty>(Arena*);
 template<> ::api::Fax* Arena::CreateMaybeMessage<::api::Fax>(Arena*);
 template<> ::api::ItemRef* Arena::CreateMaybeMessage<::api::ItemRef>(Arena*);
 template<> ::api::LogConfig* Arena::CreateMaybeMessage<::api::LogConfig>(Arena*);
+template<> ::api::LogHook* Arena::CreateMaybeMessage<::api::LogHook>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
 template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
 template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmail>(Arena*);
@@ -4382,6 +4386,147 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
   ::google::protobuf::internal::ArenaStringPtr quality_;
   ::google::protobuf::internal::ArenaStringPtr callback_;
   bool store_media_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.LogHook) */ {
+ public:
+  LogHook();
+  virtual ~LogHook();
+
+  LogHook(const LogHook& from);
+
+  inline LogHook& operator=(const LogHook& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  LogHook(LogHook&& from) noexcept
+    : LogHook() {
+    *this = ::std::move(from);
+  }
+
+  inline LogHook& operator=(LogHook&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const LogHook& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LogHook* internal_default_instance() {
+    return reinterpret_cast<const LogHook*>(
+               &_LogHook_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    31;
+
+  void Swap(LogHook* other);
+  friend void swap(LogHook& a, LogHook& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LogHook* New() const final {
+    return CreateMaybeMessage<LogHook>(NULL);
+  }
+
+  LogHook* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<LogHook>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const LogHook& from);
+  void MergeFrom(const LogHook& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LogHook* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string author = 1;
+  void clear_author();
+  static const int kAuthorFieldNumber = 1;
+  const ::std::string& author() const;
+  void set_author(const ::std::string& value);
+  #if LANG_CXX11
+  void set_author(::std::string&& value);
+  #endif
+  void set_author(const char* value);
+  void set_author(const char* value, size_t size);
+  ::std::string* mutable_author();
+  ::std::string* release_author();
+  void set_allocated_author(::std::string* author);
+
+  // string icon = 2;
+  void clear_icon();
+  static const int kIconFieldNumber = 2;
+  const ::std::string& icon() const;
+  void set_icon(const ::std::string& value);
+  #if LANG_CXX11
+  void set_icon(::std::string&& value);
+  #endif
+  void set_icon(const char* value);
+  void set_icon(const char* value, size_t size);
+  ::std::string* mutable_icon();
+  ::std::string* release_icon();
+  void set_allocated_icon(::std::string* icon);
+
+  // string title = 3;
+  void clear_title();
+  static const int kTitleFieldNumber = 3;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // @@protoc_insertion_point(class_scope:api.LogHook)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr author_;
+  ::google::protobuf::internal::ArenaStringPtr icon_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -9442,9 +9587,174 @@ inline void Fax::set_store_media(bool value) {
   // @@protoc_insertion_point(field_set:api.Fax.store_media)
 }
 
+// -------------------------------------------------------------------
+
+// LogHook
+
+// string author = 1;
+inline void LogHook::clear_author() {
+  author_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& LogHook::author() const {
+  // @@protoc_insertion_point(field_get:api.LogHook.author)
+  return author_.GetNoArena();
+}
+inline void LogHook::set_author(const ::std::string& value) {
+  
+  author_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.LogHook.author)
+}
+#if LANG_CXX11
+inline void LogHook::set_author(::std::string&& value) {
+  
+  author_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.LogHook.author)
+}
+#endif
+inline void LogHook::set_author(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  author_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.LogHook.author)
+}
+inline void LogHook::set_author(const char* value, size_t size) {
+  
+  author_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.LogHook.author)
+}
+inline ::std::string* LogHook::mutable_author() {
+  
+  // @@protoc_insertion_point(field_mutable:api.LogHook.author)
+  return author_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* LogHook::release_author() {
+  // @@protoc_insertion_point(field_release:api.LogHook.author)
+  
+  return author_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void LogHook::set_allocated_author(::std::string* author) {
+  if (author != NULL) {
+    
+  } else {
+    
+  }
+  author_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), author);
+  // @@protoc_insertion_point(field_set_allocated:api.LogHook.author)
+}
+
+// string icon = 2;
+inline void LogHook::clear_icon() {
+  icon_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& LogHook::icon() const {
+  // @@protoc_insertion_point(field_get:api.LogHook.icon)
+  return icon_.GetNoArena();
+}
+inline void LogHook::set_icon(const ::std::string& value) {
+  
+  icon_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.LogHook.icon)
+}
+#if LANG_CXX11
+inline void LogHook::set_icon(::std::string&& value) {
+  
+  icon_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.LogHook.icon)
+}
+#endif
+inline void LogHook::set_icon(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  icon_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.LogHook.icon)
+}
+inline void LogHook::set_icon(const char* value, size_t size) {
+  
+  icon_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.LogHook.icon)
+}
+inline ::std::string* LogHook::mutable_icon() {
+  
+  // @@protoc_insertion_point(field_mutable:api.LogHook.icon)
+  return icon_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* LogHook::release_icon() {
+  // @@protoc_insertion_point(field_release:api.LogHook.icon)
+  
+  return icon_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void LogHook::set_allocated_icon(::std::string* icon) {
+  if (icon != NULL) {
+    
+  } else {
+    
+  }
+  icon_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), icon);
+  // @@protoc_insertion_point(field_set_allocated:api.LogHook.icon)
+}
+
+// string title = 3;
+inline void LogHook::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& LogHook::title() const {
+  // @@protoc_insertion_point(field_get:api.LogHook.title)
+  return title_.GetNoArena();
+}
+inline void LogHook::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.LogHook.title)
+}
+#if LANG_CXX11
+inline void LogHook::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.LogHook.title)
+}
+#endif
+inline void LogHook::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.LogHook.title)
+}
+inline void LogHook::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.LogHook.title)
+}
+inline ::std::string* LogHook::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:api.LogHook.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* LogHook::release_title() {
+  // @@protoc_insertion_point(field_release:api.LogHook.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void LogHook::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:api.LogHook.title)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

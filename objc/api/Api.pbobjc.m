@@ -2115,6 +2115,71 @@ typedef struct Fax__storage_ {
 
 @end
 
+#pragma mark - LogHook
+
+@implementation LogHook
+
+@dynamic author;
+@dynamic icon;
+@dynamic title;
+
+typedef struct LogHook__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *author;
+  NSString *icon;
+  NSString *title;
+} LogHook__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "author",
+        .dataTypeSpecific.className = NULL,
+        .number = LogHook_FieldNumber_Author,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(LogHook__storage_, author),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "icon",
+        .dataTypeSpecific.className = NULL,
+        .number = LogHook_FieldNumber_Icon,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(LogHook__storage_, icon),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "title",
+        .dataTypeSpecific.className = NULL,
+        .number = LogHook_FieldNumber_Title,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(LogHook__storage_, title),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[LogHook class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(LogHook__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

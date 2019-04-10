@@ -666,6 +666,24 @@ typedef GPB_ENUM(Fax_FieldNumber) {
 
 @end
 
+#pragma mark - LogHook
+
+typedef GPB_ENUM(LogHook_FieldNumber) {
+  LogHook_FieldNumber_Author = 1,
+  LogHook_FieldNumber_Icon = 2,
+  LogHook_FieldNumber_Title = 3,
+};
+
+@interface LogHook : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *author;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *icon;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

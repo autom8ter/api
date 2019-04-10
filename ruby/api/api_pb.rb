@@ -164,6 +164,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :callback, :string, 5
     optional :store_media, :bool, 6
   end
+  add_message "api.LogHook" do
+    optional :author, :string, 1
+    optional :icon, :string, 2
+    optional :title, :string, 3
+  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -200,5 +205,6 @@ module Api
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
+  LogHook = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogHook").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

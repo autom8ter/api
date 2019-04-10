@@ -273,3 +273,9 @@ message Fax {
     string callback=5;
     bool store_media=6;
 }
+
+message LogHook {
+    string author=1;
+    string icon=2;
+    string title=3;
+}
