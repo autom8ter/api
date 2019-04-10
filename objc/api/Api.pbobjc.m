@@ -2180,6 +2180,636 @@ typedef struct LogHook__storage_ {
 
 @end
 
+#pragma mark - SlackAttachment
+
+@implementation SlackAttachment
+
+@dynamic color;
+@dynamic fallback;
+@dynamic callbackId;
+@dynamic id_p;
+@dynamic authorId;
+@dynamic authorName;
+@dynamic authorLink;
+@dynamic authorIcon;
+@dynamic title;
+@dynamic titlePrefix;
+@dynamic pretext;
+@dynamic text;
+@dynamic imageURL;
+@dynamic thumbURL;
+@dynamic fieldsArray, fieldsArray_Count;
+
+typedef struct SlackAttachment__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *color;
+  NSString *fallback;
+  NSString *callbackId;
+  NSString *authorId;
+  NSString *authorName;
+  NSString *authorLink;
+  NSString *authorIcon;
+  NSString *title;
+  NSString *titlePrefix;
+  NSString *pretext;
+  NSString *text;
+  NSString *imageURL;
+  NSString *thumbURL;
+  NSMutableArray *fieldsArray;
+  int64_t id_p;
+} SlackAttachment__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "color",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_Color,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, color),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "fallback",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_Fallback,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, fallback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "callbackId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_CallbackId,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, callbackId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_Id_p,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "authorId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_AuthorId,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "authorName",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_AuthorName,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorName),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "authorLink",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_AuthorLink,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorLink),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "authorIcon",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_AuthorIcon,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorIcon),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "title",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_Title,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, title),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "titlePrefix",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_TitlePrefix,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, titlePrefix),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "pretext",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_Pretext,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, pretext),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_Text,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "imageURL",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_ImageURL,
+        .hasIndex = 12,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, imageURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "thumbURL",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackAttachment_FieldNumber_ThumbURL,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, thumbURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "fieldsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentField),
+        .number = SlackAttachment_FieldNumber_FieldsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(SlackAttachment__storage_, fieldsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SlackAttachment class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SlackAttachment__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\r\005\241!!\000\016\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - AttachmentAction
+
+@implementation AttachmentAction
+
+@dynamic name;
+@dynamic text;
+@dynamic style;
+@dynamic type;
+@dynamic value;
+@dynamic dataSource;
+@dynamic minQueryLength;
+@dynamic optionsArray, optionsArray_Count;
+@dynamic selectedOptionsArray, selectedOptionsArray_Count;
+@dynamic optionGroupsArray, optionGroupsArray_Count;
+@dynamic hasConfirm, confirm;
+@dynamic URL;
+
+typedef struct AttachmentAction__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *name;
+  NSString *text;
+  NSString *style;
+  NSString *type;
+  NSString *value;
+  NSString *dataSource;
+  NSMutableArray *optionsArray;
+  NSMutableArray *selectedOptionsArray;
+  NSMutableArray *optionGroupsArray;
+  ConfirmationField *confirm;
+  NSString *URL;
+  int64_t minQueryLength;
+} AttachmentAction__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "name",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_Name,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_Text,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "style",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_Style,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, style),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_Type,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, type),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "value",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_Value,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, value),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "dataSource",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_DataSource,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, dataSource),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "minQueryLength",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_MinQueryLength,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, minQueryLength),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "optionsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentActionOption),
+        .number = AttachmentAction_FieldNumber_OptionsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, optionsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "selectedOptionsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentActionOption),
+        .number = AttachmentAction_FieldNumber_SelectedOptionsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, selectedOptionsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "optionGroupsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentActionOptionGroup),
+        .number = AttachmentAction_FieldNumber_OptionGroupsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, optionGroupsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "confirm",
+        .dataTypeSpecific.className = GPBStringifySymbol(ConfirmationField),
+        .number = AttachmentAction_FieldNumber_Confirm,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, confirm),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "URL",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentAction_FieldNumber_URL,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(AttachmentAction__storage_, URL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[AttachmentAction class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(AttachmentAction__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\014!!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ConfirmationField
+
+@implementation ConfirmationField
+
+@dynamic title;
+@dynamic text;
+@dynamic okText;
+@dynamic dismissText;
+
+typedef struct ConfirmationField__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *title;
+  NSString *text;
+  NSString *okText;
+  NSString *dismissText;
+} ConfirmationField__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "title",
+        .dataTypeSpecific.className = NULL,
+        .number = ConfirmationField_FieldNumber_Title,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ConfirmationField__storage_, title),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = ConfirmationField_FieldNumber_Text,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ConfirmationField__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "okText",
+        .dataTypeSpecific.className = NULL,
+        .number = ConfirmationField_FieldNumber_OkText,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ConfirmationField__storage_, okText),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "dismissText",
+        .dataTypeSpecific.className = NULL,
+        .number = ConfirmationField_FieldNumber_DismissText,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ConfirmationField__storage_, dismissText),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ConfirmationField class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ConfirmationField__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - AttachmentActionOptionGroup
+
+@implementation AttachmentActionOptionGroup
+
+@dynamic text;
+@dynamic optionsArray, optionsArray_Count;
+
+typedef struct AttachmentActionOptionGroup__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *text;
+  NSMutableArray *optionsArray;
+} AttachmentActionOptionGroup__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentActionOptionGroup_FieldNumber_Text,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(AttachmentActionOptionGroup__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "optionsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentActionOption),
+        .number = AttachmentActionOptionGroup_FieldNumber_OptionsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(AttachmentActionOptionGroup__storage_, optionsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[AttachmentActionOptionGroup class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(AttachmentActionOptionGroup__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - AttachmentActionOption
+
+@implementation AttachmentActionOption
+
+@dynamic title;
+@dynamic value;
+@dynamic description_p;
+
+typedef struct AttachmentActionOption__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *title;
+  NSString *value;
+  NSString *description_p;
+} AttachmentActionOption__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "title",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentActionOption_FieldNumber_Title,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(AttachmentActionOption__storage_, title),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "value",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentActionOption_FieldNumber_Value,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(AttachmentActionOption__storage_, value),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "description_p",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentActionOption_FieldNumber_Description_p,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(AttachmentActionOption__storage_, description_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[AttachmentActionOption class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(AttachmentActionOption__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - AttachmentField
+
+@implementation AttachmentField
+
+@dynamic title;
+@dynamic value;
+@dynamic short_p;
+
+typedef struct AttachmentField__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *title;
+  NSString *value;
+} AttachmentField__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "title",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentField_FieldNumber_Title,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(AttachmentField__storage_, title),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "value",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentField_FieldNumber_Value,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(AttachmentField__storage_, value),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "short_p",
+        .dataTypeSpecific.className = NULL,
+        .number = AttachmentField_FieldNumber_Short_p,
+        .hasIndex = 2,
+        .offset = 3,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[AttachmentField class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(AttachmentField__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

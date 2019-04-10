@@ -28,6 +28,10 @@
 CF_EXTERN_C_BEGIN
 
 @class Address;
+@class AttachmentActionOption;
+@class AttachmentActionOptionGroup;
+@class AttachmentField;
+@class ConfirmationField;
 @class EmailAddress;
 @class ItemRef;
 @class LogConfig;
@@ -681,6 +685,189 @@ typedef GPB_ENUM(LogHook_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *icon;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@end
+
+#pragma mark - SlackAttachment
+
+typedef GPB_ENUM(SlackAttachment_FieldNumber) {
+  SlackAttachment_FieldNumber_Color = 1,
+  SlackAttachment_FieldNumber_Fallback = 2,
+  SlackAttachment_FieldNumber_CallbackId = 3,
+  SlackAttachment_FieldNumber_Id_p = 4,
+  SlackAttachment_FieldNumber_AuthorId = 5,
+  SlackAttachment_FieldNumber_AuthorName = 6,
+  SlackAttachment_FieldNumber_AuthorLink = 7,
+  SlackAttachment_FieldNumber_AuthorIcon = 8,
+  SlackAttachment_FieldNumber_Title = 9,
+  SlackAttachment_FieldNumber_TitlePrefix = 10,
+  SlackAttachment_FieldNumber_Pretext = 11,
+  SlackAttachment_FieldNumber_Text = 12,
+  SlackAttachment_FieldNumber_ImageURL = 13,
+  SlackAttachment_FieldNumber_ThumbURL = 14,
+  SlackAttachment_FieldNumber_FieldsArray = 15,
+};
+
+@interface SlackAttachment : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *color;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *fallback;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callbackId;
+
+@property(nonatomic, readwrite) int64_t id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *authorId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *authorName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *authorLink;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *authorIcon;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *titlePrefix;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *pretext;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *imageURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *thumbURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<AttachmentField*> *fieldsArray;
+/** The number of items in @c fieldsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger fieldsArray_Count;
+
+@end
+
+#pragma mark - AttachmentAction
+
+typedef GPB_ENUM(AttachmentAction_FieldNumber) {
+  AttachmentAction_FieldNumber_Name = 1,
+  AttachmentAction_FieldNumber_Text = 2,
+  AttachmentAction_FieldNumber_Style = 3,
+  AttachmentAction_FieldNumber_Type = 4,
+  AttachmentAction_FieldNumber_Value = 5,
+  AttachmentAction_FieldNumber_DataSource = 6,
+  AttachmentAction_FieldNumber_MinQueryLength = 7,
+  AttachmentAction_FieldNumber_OptionsArray = 8,
+  AttachmentAction_FieldNumber_SelectedOptionsArray = 9,
+  AttachmentAction_FieldNumber_OptionGroupsArray = 10,
+  AttachmentAction_FieldNumber_Confirm = 11,
+  AttachmentAction_FieldNumber_URL = 12,
+};
+
+@interface AttachmentAction : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *style;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *value;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *dataSource;
+
+@property(nonatomic, readwrite) int64_t minQueryLength;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<AttachmentActionOption*> *optionsArray;
+/** The number of items in @c optionsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger optionsArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<AttachmentActionOption*> *selectedOptionsArray;
+/** The number of items in @c selectedOptionsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger selectedOptionsArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<AttachmentActionOptionGroup*> *optionGroupsArray;
+/** The number of items in @c optionGroupsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger optionGroupsArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) ConfirmationField *confirm;
+/** Test to see if @c confirm has been set. */
+@property(nonatomic, readwrite) BOOL hasConfirm;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
+
+@end
+
+#pragma mark - ConfirmationField
+
+typedef GPB_ENUM(ConfirmationField_FieldNumber) {
+  ConfirmationField_FieldNumber_Title = 1,
+  ConfirmationField_FieldNumber_Text = 2,
+  ConfirmationField_FieldNumber_OkText = 3,
+  ConfirmationField_FieldNumber_DismissText = 4,
+};
+
+@interface ConfirmationField : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *okText;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *dismissText;
+
+@end
+
+#pragma mark - AttachmentActionOptionGroup
+
+typedef GPB_ENUM(AttachmentActionOptionGroup_FieldNumber) {
+  AttachmentActionOptionGroup_FieldNumber_Text = 1,
+  AttachmentActionOptionGroup_FieldNumber_OptionsArray = 2,
+};
+
+@interface AttachmentActionOptionGroup : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<AttachmentActionOption*> *optionsArray;
+/** The number of items in @c optionsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger optionsArray_Count;
+
+@end
+
+#pragma mark - AttachmentActionOption
+
+typedef GPB_ENUM(AttachmentActionOption_FieldNumber) {
+  AttachmentActionOption_FieldNumber_Title = 1,
+  AttachmentActionOption_FieldNumber_Value = 2,
+  AttachmentActionOption_FieldNumber_Description_p = 3,
+};
+
+@interface AttachmentActionOption : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *value;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@end
+
+#pragma mark - AttachmentField
+
+typedef GPB_ENUM(AttachmentField_FieldNumber) {
+  AttachmentField_FieldNumber_Title = 1,
+  AttachmentField_FieldNumber_Value = 2,
+  AttachmentField_FieldNumber_Short_p = 3,
+};
+
+@interface AttachmentField : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *title;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *value;
+
+@property(nonatomic, readwrite) BOOL short_p;
 
 @end
 

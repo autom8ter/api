@@ -46,7 +46,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[32];
+  static const ::google::protobuf::internal::ParseTable schema[38];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -66,6 +66,18 @@ extern AddUserRequestDefaultTypeInternal _AddUserRequest_default_instance_;
 class Address;
 class AddressDefaultTypeInternal;
 extern AddressDefaultTypeInternal _Address_default_instance_;
+class AttachmentAction;
+class AttachmentActionDefaultTypeInternal;
+extern AttachmentActionDefaultTypeInternal _AttachmentAction_default_instance_;
+class AttachmentActionOption;
+class AttachmentActionOptionDefaultTypeInternal;
+extern AttachmentActionOptionDefaultTypeInternal _AttachmentActionOption_default_instance_;
+class AttachmentActionOptionGroup;
+class AttachmentActionOptionGroupDefaultTypeInternal;
+extern AttachmentActionOptionGroupDefaultTypeInternal _AttachmentActionOptionGroup_default_instance_;
+class AttachmentField;
+class AttachmentFieldDefaultTypeInternal;
+extern AttachmentFieldDefaultTypeInternal _AttachmentField_default_instance_;
 class Call;
 class CallDefaultTypeInternal;
 extern CallDefaultTypeInternal _Call_default_instance_;
@@ -81,6 +93,9 @@ extern ChannelReminderDefaultTypeInternal _ChannelReminder_default_instance_;
 class Config;
 class ConfigDefaultTypeInternal;
 extern ConfigDefaultTypeInternal _Config_default_instance_;
+class ConfirmationField;
+class ConfirmationFieldDefaultTypeInternal;
+extern ConfirmationFieldDefaultTypeInternal _ConfirmationField_default_instance_;
 class CreatePlanRequest;
 class CreatePlanRequestDefaultTypeInternal;
 extern CreatePlanRequestDefaultTypeInternal _CreatePlanRequest_default_instance_;
@@ -126,6 +141,9 @@ extern SMSDefaultTypeInternal _SMS_default_instance_;
 class SMSRequest;
 class SMSRequestDefaultTypeInternal;
 extern SMSRequestDefaultTypeInternal _SMSRequest_default_instance_;
+class SlackAttachment;
+class SlackAttachmentDefaultTypeInternal;
+extern SlackAttachmentDefaultTypeInternal _SlackAttachment_default_instance_;
 class Star;
 class StarDefaultTypeInternal;
 extern StarDefaultTypeInternal _Star_default_instance_;
@@ -157,11 +175,16 @@ template<> ::api::AddUserMetadataRequest* Arena::CreateMaybeMessage<::api::AddUs
 template<> ::api::AddUserMetadataRequest_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::api::AddUserMetadataRequest_MetadataEntry_DoNotUse>(Arena*);
 template<> ::api::AddUserRequest* Arena::CreateMaybeMessage<::api::AddUserRequest>(Arena*);
 template<> ::api::Address* Arena::CreateMaybeMessage<::api::Address>(Arena*);
+template<> ::api::AttachmentAction* Arena::CreateMaybeMessage<::api::AttachmentAction>(Arena*);
+template<> ::api::AttachmentActionOption* Arena::CreateMaybeMessage<::api::AttachmentActionOption>(Arena*);
+template<> ::api::AttachmentActionOptionGroup* Arena::CreateMaybeMessage<::api::AttachmentActionOptionGroup>(Arena*);
+template<> ::api::AttachmentField* Arena::CreateMaybeMessage<::api::AttachmentField>(Arena*);
 template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
 template<> ::api::CallRequest* Arena::CreateMaybeMessage<::api::CallRequest>(Arena*);
 template<> ::api::CancelSubscriptionRequest* Arena::CreateMaybeMessage<::api::CancelSubscriptionRequest>(Arena*);
 template<> ::api::ChannelReminder* Arena::CreateMaybeMessage<::api::ChannelReminder>(Arena*);
 template<> ::api::Config* Arena::CreateMaybeMessage<::api::Config>(Arena*);
+template<> ::api::ConfirmationField* Arena::CreateMaybeMessage<::api::ConfirmationField>(Arena*);
 template<> ::api::CreatePlanRequest* Arena::CreateMaybeMessage<::api::CreatePlanRequest>(Arena*);
 template<> ::api::CreatePlanResponse* Arena::CreateMaybeMessage<::api::CreatePlanResponse>(Arena*);
 template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
@@ -177,6 +200,7 @@ template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
 template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmail>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
+template<> ::api::SlackAttachment* Arena::CreateMaybeMessage<::api::SlackAttachment>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeUserRequest* Arena::CreateMaybeMessage<::api::SubscribeUserRequest>(Arena*);
 template<> ::api::SubscribeUserResponse* Arena::CreateMaybeMessage<::api::SubscribeUserResponse>(Arena*);
@@ -4527,6 +4551,1131 @@ class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr author_;
   ::google::protobuf::internal::ArenaStringPtr icon_;
   ::google::protobuf::internal::ArenaStringPtr title_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SlackAttachment : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SlackAttachment) */ {
+ public:
+  SlackAttachment();
+  virtual ~SlackAttachment();
+
+  SlackAttachment(const SlackAttachment& from);
+
+  inline SlackAttachment& operator=(const SlackAttachment& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SlackAttachment(SlackAttachment&& from) noexcept
+    : SlackAttachment() {
+    *this = ::std::move(from);
+  }
+
+  inline SlackAttachment& operator=(SlackAttachment&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SlackAttachment& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SlackAttachment* internal_default_instance() {
+    return reinterpret_cast<const SlackAttachment*>(
+               &_SlackAttachment_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    32;
+
+  void Swap(SlackAttachment* other);
+  friend void swap(SlackAttachment& a, SlackAttachment& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SlackAttachment* New() const final {
+    return CreateMaybeMessage<SlackAttachment>(NULL);
+  }
+
+  SlackAttachment* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SlackAttachment>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SlackAttachment& from);
+  void MergeFrom(const SlackAttachment& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SlackAttachment* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .api.AttachmentField fields = 15;
+  int fields_size() const;
+  void clear_fields();
+  static const int kFieldsFieldNumber = 15;
+  ::api::AttachmentField* mutable_fields(int index);
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentField >*
+      mutable_fields();
+  const ::api::AttachmentField& fields(int index) const;
+  ::api::AttachmentField* add_fields();
+  const ::google::protobuf::RepeatedPtrField< ::api::AttachmentField >&
+      fields() const;
+
+  // string color = 1;
+  void clear_color();
+  static const int kColorFieldNumber = 1;
+  const ::std::string& color() const;
+  void set_color(const ::std::string& value);
+  #if LANG_CXX11
+  void set_color(::std::string&& value);
+  #endif
+  void set_color(const char* value);
+  void set_color(const char* value, size_t size);
+  ::std::string* mutable_color();
+  ::std::string* release_color();
+  void set_allocated_color(::std::string* color);
+
+  // string fallback = 2;
+  void clear_fallback();
+  static const int kFallbackFieldNumber = 2;
+  const ::std::string& fallback() const;
+  void set_fallback(const ::std::string& value);
+  #if LANG_CXX11
+  void set_fallback(::std::string&& value);
+  #endif
+  void set_fallback(const char* value);
+  void set_fallback(const char* value, size_t size);
+  ::std::string* mutable_fallback();
+  ::std::string* release_fallback();
+  void set_allocated_fallback(::std::string* fallback);
+
+  // string callback_id = 3;
+  void clear_callback_id();
+  static const int kCallbackIdFieldNumber = 3;
+  const ::std::string& callback_id() const;
+  void set_callback_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_callback_id(::std::string&& value);
+  #endif
+  void set_callback_id(const char* value);
+  void set_callback_id(const char* value, size_t size);
+  ::std::string* mutable_callback_id();
+  ::std::string* release_callback_id();
+  void set_allocated_callback_id(::std::string* callback_id);
+
+  // string author_id = 5;
+  void clear_author_id();
+  static const int kAuthorIdFieldNumber = 5;
+  const ::std::string& author_id() const;
+  void set_author_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_author_id(::std::string&& value);
+  #endif
+  void set_author_id(const char* value);
+  void set_author_id(const char* value, size_t size);
+  ::std::string* mutable_author_id();
+  ::std::string* release_author_id();
+  void set_allocated_author_id(::std::string* author_id);
+
+  // string author_name = 6;
+  void clear_author_name();
+  static const int kAuthorNameFieldNumber = 6;
+  const ::std::string& author_name() const;
+  void set_author_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_author_name(::std::string&& value);
+  #endif
+  void set_author_name(const char* value);
+  void set_author_name(const char* value, size_t size);
+  ::std::string* mutable_author_name();
+  ::std::string* release_author_name();
+  void set_allocated_author_name(::std::string* author_name);
+
+  // string author_link = 7;
+  void clear_author_link();
+  static const int kAuthorLinkFieldNumber = 7;
+  const ::std::string& author_link() const;
+  void set_author_link(const ::std::string& value);
+  #if LANG_CXX11
+  void set_author_link(::std::string&& value);
+  #endif
+  void set_author_link(const char* value);
+  void set_author_link(const char* value, size_t size);
+  ::std::string* mutable_author_link();
+  ::std::string* release_author_link();
+  void set_allocated_author_link(::std::string* author_link);
+
+  // string author_icon = 8;
+  void clear_author_icon();
+  static const int kAuthorIconFieldNumber = 8;
+  const ::std::string& author_icon() const;
+  void set_author_icon(const ::std::string& value);
+  #if LANG_CXX11
+  void set_author_icon(::std::string&& value);
+  #endif
+  void set_author_icon(const char* value);
+  void set_author_icon(const char* value, size_t size);
+  ::std::string* mutable_author_icon();
+  ::std::string* release_author_icon();
+  void set_allocated_author_icon(::std::string* author_icon);
+
+  // string title = 9;
+  void clear_title();
+  static const int kTitleFieldNumber = 9;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // string title_prefix = 10;
+  void clear_title_prefix();
+  static const int kTitlePrefixFieldNumber = 10;
+  const ::std::string& title_prefix() const;
+  void set_title_prefix(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title_prefix(::std::string&& value);
+  #endif
+  void set_title_prefix(const char* value);
+  void set_title_prefix(const char* value, size_t size);
+  ::std::string* mutable_title_prefix();
+  ::std::string* release_title_prefix();
+  void set_allocated_title_prefix(::std::string* title_prefix);
+
+  // string pretext = 11;
+  void clear_pretext();
+  static const int kPretextFieldNumber = 11;
+  const ::std::string& pretext() const;
+  void set_pretext(const ::std::string& value);
+  #if LANG_CXX11
+  void set_pretext(::std::string&& value);
+  #endif
+  void set_pretext(const char* value);
+  void set_pretext(const char* value, size_t size);
+  ::std::string* mutable_pretext();
+  ::std::string* release_pretext();
+  void set_allocated_pretext(::std::string* pretext);
+
+  // string text = 12;
+  void clear_text();
+  static const int kTextFieldNumber = 12;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text(::std::string&& value);
+  #endif
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
+
+  // string image_url = 13;
+  void clear_image_url();
+  static const int kImageUrlFieldNumber = 13;
+  const ::std::string& image_url() const;
+  void set_image_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_image_url(::std::string&& value);
+  #endif
+  void set_image_url(const char* value);
+  void set_image_url(const char* value, size_t size);
+  ::std::string* mutable_image_url();
+  ::std::string* release_image_url();
+  void set_allocated_image_url(::std::string* image_url);
+
+  // string thumb_url = 14;
+  void clear_thumb_url();
+  static const int kThumbUrlFieldNumber = 14;
+  const ::std::string& thumb_url() const;
+  void set_thumb_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_thumb_url(::std::string&& value);
+  #endif
+  void set_thumb_url(const char* value);
+  void set_thumb_url(const char* value, size_t size);
+  ::std::string* mutable_thumb_url();
+  ::std::string* release_thumb_url();
+  void set_allocated_thumb_url(::std::string* thumb_url);
+
+  // int64 id = 4;
+  void clear_id();
+  static const int kIdFieldNumber = 4;
+  ::google::protobuf::int64 id() const;
+  void set_id(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.SlackAttachment)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentField > fields_;
+  ::google::protobuf::internal::ArenaStringPtr color_;
+  ::google::protobuf::internal::ArenaStringPtr fallback_;
+  ::google::protobuf::internal::ArenaStringPtr callback_id_;
+  ::google::protobuf::internal::ArenaStringPtr author_id_;
+  ::google::protobuf::internal::ArenaStringPtr author_name_;
+  ::google::protobuf::internal::ArenaStringPtr author_link_;
+  ::google::protobuf::internal::ArenaStringPtr author_icon_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
+  ::google::protobuf::internal::ArenaStringPtr title_prefix_;
+  ::google::protobuf::internal::ArenaStringPtr pretext_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  ::google::protobuf::internal::ArenaStringPtr image_url_;
+  ::google::protobuf::internal::ArenaStringPtr thumb_url_;
+  ::google::protobuf::int64 id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class AttachmentAction : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AttachmentAction) */ {
+ public:
+  AttachmentAction();
+  virtual ~AttachmentAction();
+
+  AttachmentAction(const AttachmentAction& from);
+
+  inline AttachmentAction& operator=(const AttachmentAction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AttachmentAction(AttachmentAction&& from) noexcept
+    : AttachmentAction() {
+    *this = ::std::move(from);
+  }
+
+  inline AttachmentAction& operator=(AttachmentAction&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AttachmentAction& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AttachmentAction* internal_default_instance() {
+    return reinterpret_cast<const AttachmentAction*>(
+               &_AttachmentAction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    33;
+
+  void Swap(AttachmentAction* other);
+  friend void swap(AttachmentAction& a, AttachmentAction& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AttachmentAction* New() const final {
+    return CreateMaybeMessage<AttachmentAction>(NULL);
+  }
+
+  AttachmentAction* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AttachmentAction>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AttachmentAction& from);
+  void MergeFrom(const AttachmentAction& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AttachmentAction* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .api.AttachmentActionOption options = 8;
+  int options_size() const;
+  void clear_options();
+  static const int kOptionsFieldNumber = 8;
+  ::api::AttachmentActionOption* mutable_options(int index);
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >*
+      mutable_options();
+  const ::api::AttachmentActionOption& options(int index) const;
+  ::api::AttachmentActionOption* add_options();
+  const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >&
+      options() const;
+
+  // repeated .api.AttachmentActionOption selected_options = 9;
+  int selected_options_size() const;
+  void clear_selected_options();
+  static const int kSelectedOptionsFieldNumber = 9;
+  ::api::AttachmentActionOption* mutable_selected_options(int index);
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >*
+      mutable_selected_options();
+  const ::api::AttachmentActionOption& selected_options(int index) const;
+  ::api::AttachmentActionOption* add_selected_options();
+  const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >&
+      selected_options() const;
+
+  // repeated .api.AttachmentActionOptionGroup option_groups = 10;
+  int option_groups_size() const;
+  void clear_option_groups();
+  static const int kOptionGroupsFieldNumber = 10;
+  ::api::AttachmentActionOptionGroup* mutable_option_groups(int index);
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOptionGroup >*
+      mutable_option_groups();
+  const ::api::AttachmentActionOptionGroup& option_groups(int index) const;
+  ::api::AttachmentActionOptionGroup* add_option_groups();
+  const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOptionGroup >&
+      option_groups() const;
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // string text = 2;
+  void clear_text();
+  static const int kTextFieldNumber = 2;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text(::std::string&& value);
+  #endif
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
+
+  // string style = 3;
+  void clear_style();
+  static const int kStyleFieldNumber = 3;
+  const ::std::string& style() const;
+  void set_style(const ::std::string& value);
+  #if LANG_CXX11
+  void set_style(::std::string&& value);
+  #endif
+  void set_style(const char* value);
+  void set_style(const char* value, size_t size);
+  ::std::string* mutable_style();
+  ::std::string* release_style();
+  void set_allocated_style(::std::string* style);
+
+  // string type = 4;
+  void clear_type();
+  static const int kTypeFieldNumber = 4;
+  const ::std::string& type() const;
+  void set_type(const ::std::string& value);
+  #if LANG_CXX11
+  void set_type(::std::string&& value);
+  #endif
+  void set_type(const char* value);
+  void set_type(const char* value, size_t size);
+  ::std::string* mutable_type();
+  ::std::string* release_type();
+  void set_allocated_type(::std::string* type);
+
+  // string value = 5;
+  void clear_value();
+  static const int kValueFieldNumber = 5;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
+
+  // string data_source = 6;
+  void clear_data_source();
+  static const int kDataSourceFieldNumber = 6;
+  const ::std::string& data_source() const;
+  void set_data_source(const ::std::string& value);
+  #if LANG_CXX11
+  void set_data_source(::std::string&& value);
+  #endif
+  void set_data_source(const char* value);
+  void set_data_source(const char* value, size_t size);
+  ::std::string* mutable_data_source();
+  ::std::string* release_data_source();
+  void set_allocated_data_source(::std::string* data_source);
+
+  // string url = 12;
+  void clear_url();
+  static const int kUrlFieldNumber = 12;
+  const ::std::string& url() const;
+  void set_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_url(::std::string&& value);
+  #endif
+  void set_url(const char* value);
+  void set_url(const char* value, size_t size);
+  ::std::string* mutable_url();
+  ::std::string* release_url();
+  void set_allocated_url(::std::string* url);
+
+  // .api.ConfirmationField confirm = 11;
+  bool has_confirm() const;
+  void clear_confirm();
+  static const int kConfirmFieldNumber = 11;
+  private:
+  const ::api::ConfirmationField& _internal_confirm() const;
+  public:
+  const ::api::ConfirmationField& confirm() const;
+  ::api::ConfirmationField* release_confirm();
+  ::api::ConfirmationField* mutable_confirm();
+  void set_allocated_confirm(::api::ConfirmationField* confirm);
+
+  // int64 min_query_length = 7;
+  void clear_min_query_length();
+  static const int kMinQueryLengthFieldNumber = 7;
+  ::google::protobuf::int64 min_query_length() const;
+  void set_min_query_length(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.AttachmentAction)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption > options_;
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption > selected_options_;
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOptionGroup > option_groups_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  ::google::protobuf::internal::ArenaStringPtr style_;
+  ::google::protobuf::internal::ArenaStringPtr type_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
+  ::google::protobuf::internal::ArenaStringPtr data_source_;
+  ::google::protobuf::internal::ArenaStringPtr url_;
+  ::api::ConfirmationField* confirm_;
+  ::google::protobuf::int64 min_query_length_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ConfirmationField : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ConfirmationField) */ {
+ public:
+  ConfirmationField();
+  virtual ~ConfirmationField();
+
+  ConfirmationField(const ConfirmationField& from);
+
+  inline ConfirmationField& operator=(const ConfirmationField& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ConfirmationField(ConfirmationField&& from) noexcept
+    : ConfirmationField() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfirmationField& operator=(ConfirmationField&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ConfirmationField& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ConfirmationField* internal_default_instance() {
+    return reinterpret_cast<const ConfirmationField*>(
+               &_ConfirmationField_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    34;
+
+  void Swap(ConfirmationField* other);
+  friend void swap(ConfirmationField& a, ConfirmationField& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ConfirmationField* New() const final {
+    return CreateMaybeMessage<ConfirmationField>(NULL);
+  }
+
+  ConfirmationField* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ConfirmationField>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ConfirmationField& from);
+  void MergeFrom(const ConfirmationField& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfirmationField* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string title = 1;
+  void clear_title();
+  static const int kTitleFieldNumber = 1;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // string text = 2;
+  void clear_text();
+  static const int kTextFieldNumber = 2;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text(::std::string&& value);
+  #endif
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
+
+  // string ok_text = 3;
+  void clear_ok_text();
+  static const int kOkTextFieldNumber = 3;
+  const ::std::string& ok_text() const;
+  void set_ok_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ok_text(::std::string&& value);
+  #endif
+  void set_ok_text(const char* value);
+  void set_ok_text(const char* value, size_t size);
+  ::std::string* mutable_ok_text();
+  ::std::string* release_ok_text();
+  void set_allocated_ok_text(::std::string* ok_text);
+
+  // string dismiss_text = 4;
+  void clear_dismiss_text();
+  static const int kDismissTextFieldNumber = 4;
+  const ::std::string& dismiss_text() const;
+  void set_dismiss_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_dismiss_text(::std::string&& value);
+  #endif
+  void set_dismiss_text(const char* value);
+  void set_dismiss_text(const char* value, size_t size);
+  ::std::string* mutable_dismiss_text();
+  ::std::string* release_dismiss_text();
+  void set_allocated_dismiss_text(::std::string* dismiss_text);
+
+  // @@protoc_insertion_point(class_scope:api.ConfirmationField)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  ::google::protobuf::internal::ArenaStringPtr ok_text_;
+  ::google::protobuf::internal::ArenaStringPtr dismiss_text_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class AttachmentActionOptionGroup : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AttachmentActionOptionGroup) */ {
+ public:
+  AttachmentActionOptionGroup();
+  virtual ~AttachmentActionOptionGroup();
+
+  AttachmentActionOptionGroup(const AttachmentActionOptionGroup& from);
+
+  inline AttachmentActionOptionGroup& operator=(const AttachmentActionOptionGroup& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AttachmentActionOptionGroup(AttachmentActionOptionGroup&& from) noexcept
+    : AttachmentActionOptionGroup() {
+    *this = ::std::move(from);
+  }
+
+  inline AttachmentActionOptionGroup& operator=(AttachmentActionOptionGroup&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AttachmentActionOptionGroup& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AttachmentActionOptionGroup* internal_default_instance() {
+    return reinterpret_cast<const AttachmentActionOptionGroup*>(
+               &_AttachmentActionOptionGroup_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    35;
+
+  void Swap(AttachmentActionOptionGroup* other);
+  friend void swap(AttachmentActionOptionGroup& a, AttachmentActionOptionGroup& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AttachmentActionOptionGroup* New() const final {
+    return CreateMaybeMessage<AttachmentActionOptionGroup>(NULL);
+  }
+
+  AttachmentActionOptionGroup* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AttachmentActionOptionGroup>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AttachmentActionOptionGroup& from);
+  void MergeFrom(const AttachmentActionOptionGroup& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AttachmentActionOptionGroup* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .api.AttachmentActionOption options = 2;
+  int options_size() const;
+  void clear_options();
+  static const int kOptionsFieldNumber = 2;
+  ::api::AttachmentActionOption* mutable_options(int index);
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >*
+      mutable_options();
+  const ::api::AttachmentActionOption& options(int index) const;
+  ::api::AttachmentActionOption* add_options();
+  const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >&
+      options() const;
+
+  // string text = 1;
+  void clear_text();
+  static const int kTextFieldNumber = 1;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text(::std::string&& value);
+  #endif
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
+
+  // @@protoc_insertion_point(class_scope:api.AttachmentActionOptionGroup)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption > options_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class AttachmentActionOption : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AttachmentActionOption) */ {
+ public:
+  AttachmentActionOption();
+  virtual ~AttachmentActionOption();
+
+  AttachmentActionOption(const AttachmentActionOption& from);
+
+  inline AttachmentActionOption& operator=(const AttachmentActionOption& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AttachmentActionOption(AttachmentActionOption&& from) noexcept
+    : AttachmentActionOption() {
+    *this = ::std::move(from);
+  }
+
+  inline AttachmentActionOption& operator=(AttachmentActionOption&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AttachmentActionOption& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AttachmentActionOption* internal_default_instance() {
+    return reinterpret_cast<const AttachmentActionOption*>(
+               &_AttachmentActionOption_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    36;
+
+  void Swap(AttachmentActionOption* other);
+  friend void swap(AttachmentActionOption& a, AttachmentActionOption& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AttachmentActionOption* New() const final {
+    return CreateMaybeMessage<AttachmentActionOption>(NULL);
+  }
+
+  AttachmentActionOption* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AttachmentActionOption>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AttachmentActionOption& from);
+  void MergeFrom(const AttachmentActionOption& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AttachmentActionOption* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string title = 1;
+  void clear_title();
+  static const int kTitleFieldNumber = 1;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // string value = 2;
+  void clear_value();
+  static const int kValueFieldNumber = 2;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
+
+  // string description = 3;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 3;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
+  // @@protoc_insertion_point(class_scope:api.AttachmentActionOption)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AttachmentField) */ {
+ public:
+  AttachmentField();
+  virtual ~AttachmentField();
+
+  AttachmentField(const AttachmentField& from);
+
+  inline AttachmentField& operator=(const AttachmentField& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AttachmentField(AttachmentField&& from) noexcept
+    : AttachmentField() {
+    *this = ::std::move(from);
+  }
+
+  inline AttachmentField& operator=(AttachmentField&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AttachmentField& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AttachmentField* internal_default_instance() {
+    return reinterpret_cast<const AttachmentField*>(
+               &_AttachmentField_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  void Swap(AttachmentField* other);
+  friend void swap(AttachmentField& a, AttachmentField& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AttachmentField* New() const final {
+    return CreateMaybeMessage<AttachmentField>(NULL);
+  }
+
+  AttachmentField* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AttachmentField>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AttachmentField& from);
+  void MergeFrom(const AttachmentField& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AttachmentField* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string title = 1;
+  void clear_title();
+  static const int kTitleFieldNumber = 1;
+  const ::std::string& title() const;
+  void set_title(const ::std::string& value);
+  #if LANG_CXX11
+  void set_title(::std::string&& value);
+  #endif
+  void set_title(const char* value);
+  void set_title(const char* value, size_t size);
+  ::std::string* mutable_title();
+  ::std::string* release_title();
+  void set_allocated_title(::std::string* title);
+
+  // string value = 2;
+  void clear_value();
+  static const int kValueFieldNumber = 2;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
+
+  // bool short = 3;
+  void clear_short_();
+  static const int kShortFieldNumber = 3;
+  bool short_() const;
+  void set_short_(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.AttachmentField)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr title_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
+  bool short__;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -9750,9 +10899,1881 @@ inline void LogHook::set_allocated_title(::std::string* title) {
   // @@protoc_insertion_point(field_set_allocated:api.LogHook.title)
 }
 
+// -------------------------------------------------------------------
+
+// SlackAttachment
+
+// string color = 1;
+inline void SlackAttachment::clear_color() {
+  color_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::color() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.color)
+  return color_.GetNoArena();
+}
+inline void SlackAttachment::set_color(const ::std::string& value) {
+  
+  color_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.color)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_color(::std::string&& value) {
+  
+  color_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.color)
+}
+#endif
+inline void SlackAttachment::set_color(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  color_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.color)
+}
+inline void SlackAttachment::set_color(const char* value, size_t size) {
+  
+  color_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.color)
+}
+inline ::std::string* SlackAttachment::mutable_color() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.color)
+  return color_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_color() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.color)
+  
+  return color_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_color(::std::string* color) {
+  if (color != NULL) {
+    
+  } else {
+    
+  }
+  color_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), color);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.color)
+}
+
+// string fallback = 2;
+inline void SlackAttachment::clear_fallback() {
+  fallback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::fallback() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.fallback)
+  return fallback_.GetNoArena();
+}
+inline void SlackAttachment::set_fallback(const ::std::string& value) {
+  
+  fallback_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.fallback)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_fallback(::std::string&& value) {
+  
+  fallback_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.fallback)
+}
+#endif
+inline void SlackAttachment::set_fallback(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  fallback_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.fallback)
+}
+inline void SlackAttachment::set_fallback(const char* value, size_t size) {
+  
+  fallback_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.fallback)
+}
+inline ::std::string* SlackAttachment::mutable_fallback() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.fallback)
+  return fallback_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_fallback() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.fallback)
+  
+  return fallback_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_fallback(::std::string* fallback) {
+  if (fallback != NULL) {
+    
+  } else {
+    
+  }
+  fallback_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), fallback);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.fallback)
+}
+
+// string callback_id = 3;
+inline void SlackAttachment::clear_callback_id() {
+  callback_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::callback_id() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.callback_id)
+  return callback_id_.GetNoArena();
+}
+inline void SlackAttachment::set_callback_id(const ::std::string& value) {
+  
+  callback_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.callback_id)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_callback_id(::std::string&& value) {
+  
+  callback_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.callback_id)
+}
+#endif
+inline void SlackAttachment::set_callback_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  callback_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.callback_id)
+}
+inline void SlackAttachment::set_callback_id(const char* value, size_t size) {
+  
+  callback_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.callback_id)
+}
+inline ::std::string* SlackAttachment::mutable_callback_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.callback_id)
+  return callback_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_callback_id() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.callback_id)
+  
+  return callback_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_callback_id(::std::string* callback_id) {
+  if (callback_id != NULL) {
+    
+  } else {
+    
+  }
+  callback_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), callback_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.callback_id)
+}
+
+// int64 id = 4;
+inline void SlackAttachment::clear_id() {
+  id_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SlackAttachment::id() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.id)
+  return id_;
+}
+inline void SlackAttachment::set_id(::google::protobuf::int64 value) {
+  
+  id_ = value;
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.id)
+}
+
+// string author_id = 5;
+inline void SlackAttachment::clear_author_id() {
+  author_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::author_id() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.author_id)
+  return author_id_.GetNoArena();
+}
+inline void SlackAttachment::set_author_id(const ::std::string& value) {
+  
+  author_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.author_id)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_author_id(::std::string&& value) {
+  
+  author_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.author_id)
+}
+#endif
+inline void SlackAttachment::set_author_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  author_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.author_id)
+}
+inline void SlackAttachment::set_author_id(const char* value, size_t size) {
+  
+  author_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.author_id)
+}
+inline ::std::string* SlackAttachment::mutable_author_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.author_id)
+  return author_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_author_id() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.author_id)
+  
+  return author_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_author_id(::std::string* author_id) {
+  if (author_id != NULL) {
+    
+  } else {
+    
+  }
+  author_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), author_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.author_id)
+}
+
+// string author_name = 6;
+inline void SlackAttachment::clear_author_name() {
+  author_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::author_name() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.author_name)
+  return author_name_.GetNoArena();
+}
+inline void SlackAttachment::set_author_name(const ::std::string& value) {
+  
+  author_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.author_name)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_author_name(::std::string&& value) {
+  
+  author_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.author_name)
+}
+#endif
+inline void SlackAttachment::set_author_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  author_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.author_name)
+}
+inline void SlackAttachment::set_author_name(const char* value, size_t size) {
+  
+  author_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.author_name)
+}
+inline ::std::string* SlackAttachment::mutable_author_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.author_name)
+  return author_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_author_name() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.author_name)
+  
+  return author_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_author_name(::std::string* author_name) {
+  if (author_name != NULL) {
+    
+  } else {
+    
+  }
+  author_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), author_name);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.author_name)
+}
+
+// string author_link = 7;
+inline void SlackAttachment::clear_author_link() {
+  author_link_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::author_link() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.author_link)
+  return author_link_.GetNoArena();
+}
+inline void SlackAttachment::set_author_link(const ::std::string& value) {
+  
+  author_link_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.author_link)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_author_link(::std::string&& value) {
+  
+  author_link_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.author_link)
+}
+#endif
+inline void SlackAttachment::set_author_link(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  author_link_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.author_link)
+}
+inline void SlackAttachment::set_author_link(const char* value, size_t size) {
+  
+  author_link_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.author_link)
+}
+inline ::std::string* SlackAttachment::mutable_author_link() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.author_link)
+  return author_link_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_author_link() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.author_link)
+  
+  return author_link_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_author_link(::std::string* author_link) {
+  if (author_link != NULL) {
+    
+  } else {
+    
+  }
+  author_link_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), author_link);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.author_link)
+}
+
+// string author_icon = 8;
+inline void SlackAttachment::clear_author_icon() {
+  author_icon_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::author_icon() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.author_icon)
+  return author_icon_.GetNoArena();
+}
+inline void SlackAttachment::set_author_icon(const ::std::string& value) {
+  
+  author_icon_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.author_icon)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_author_icon(::std::string&& value) {
+  
+  author_icon_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.author_icon)
+}
+#endif
+inline void SlackAttachment::set_author_icon(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  author_icon_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.author_icon)
+}
+inline void SlackAttachment::set_author_icon(const char* value, size_t size) {
+  
+  author_icon_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.author_icon)
+}
+inline ::std::string* SlackAttachment::mutable_author_icon() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.author_icon)
+  return author_icon_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_author_icon() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.author_icon)
+  
+  return author_icon_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_author_icon(::std::string* author_icon) {
+  if (author_icon != NULL) {
+    
+  } else {
+    
+  }
+  author_icon_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), author_icon);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.author_icon)
+}
+
+// string title = 9;
+inline void SlackAttachment::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::title() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.title)
+  return title_.GetNoArena();
+}
+inline void SlackAttachment::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.title)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.title)
+}
+#endif
+inline void SlackAttachment::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.title)
+}
+inline void SlackAttachment::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.title)
+}
+inline ::std::string* SlackAttachment::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_title() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.title)
+}
+
+// string title_prefix = 10;
+inline void SlackAttachment::clear_title_prefix() {
+  title_prefix_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::title_prefix() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.title_prefix)
+  return title_prefix_.GetNoArena();
+}
+inline void SlackAttachment::set_title_prefix(const ::std::string& value) {
+  
+  title_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.title_prefix)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_title_prefix(::std::string&& value) {
+  
+  title_prefix_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.title_prefix)
+}
+#endif
+inline void SlackAttachment::set_title_prefix(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.title_prefix)
+}
+inline void SlackAttachment::set_title_prefix(const char* value, size_t size) {
+  
+  title_prefix_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.title_prefix)
+}
+inline ::std::string* SlackAttachment::mutable_title_prefix() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.title_prefix)
+  return title_prefix_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_title_prefix() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.title_prefix)
+  
+  return title_prefix_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_title_prefix(::std::string* title_prefix) {
+  if (title_prefix != NULL) {
+    
+  } else {
+    
+  }
+  title_prefix_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title_prefix);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.title_prefix)
+}
+
+// string pretext = 11;
+inline void SlackAttachment::clear_pretext() {
+  pretext_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::pretext() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.pretext)
+  return pretext_.GetNoArena();
+}
+inline void SlackAttachment::set_pretext(const ::std::string& value) {
+  
+  pretext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.pretext)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_pretext(::std::string&& value) {
+  
+  pretext_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.pretext)
+}
+#endif
+inline void SlackAttachment::set_pretext(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  pretext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.pretext)
+}
+inline void SlackAttachment::set_pretext(const char* value, size_t size) {
+  
+  pretext_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.pretext)
+}
+inline ::std::string* SlackAttachment::mutable_pretext() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.pretext)
+  return pretext_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_pretext() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.pretext)
+  
+  return pretext_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_pretext(::std::string* pretext) {
+  if (pretext != NULL) {
+    
+  } else {
+    
+  }
+  pretext_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), pretext);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.pretext)
+}
+
+// string text = 12;
+inline void SlackAttachment::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::text() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.text)
+  return text_.GetNoArena();
+}
+inline void SlackAttachment::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.text)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_text(::std::string&& value) {
+  
+  text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.text)
+}
+#endif
+inline void SlackAttachment::set_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.text)
+}
+inline void SlackAttachment::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.text)
+}
+inline ::std::string* SlackAttachment::mutable_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_text() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.text)
+  
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.text)
+}
+
+// string image_url = 13;
+inline void SlackAttachment::clear_image_url() {
+  image_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::image_url() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.image_url)
+  return image_url_.GetNoArena();
+}
+inline void SlackAttachment::set_image_url(const ::std::string& value) {
+  
+  image_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.image_url)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_image_url(::std::string&& value) {
+  
+  image_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.image_url)
+}
+#endif
+inline void SlackAttachment::set_image_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  image_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.image_url)
+}
+inline void SlackAttachment::set_image_url(const char* value, size_t size) {
+  
+  image_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.image_url)
+}
+inline ::std::string* SlackAttachment::mutable_image_url() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.image_url)
+  return image_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_image_url() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.image_url)
+  
+  return image_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_image_url(::std::string* image_url) {
+  if (image_url != NULL) {
+    
+  } else {
+    
+  }
+  image_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), image_url);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.image_url)
+}
+
+// string thumb_url = 14;
+inline void SlackAttachment::clear_thumb_url() {
+  thumb_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackAttachment::thumb_url() const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.thumb_url)
+  return thumb_url_.GetNoArena();
+}
+inline void SlackAttachment::set_thumb_url(const ::std::string& value) {
+  
+  thumb_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackAttachment.thumb_url)
+}
+#if LANG_CXX11
+inline void SlackAttachment::set_thumb_url(::std::string&& value) {
+  
+  thumb_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackAttachment.thumb_url)
+}
+#endif
+inline void SlackAttachment::set_thumb_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  thumb_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackAttachment.thumb_url)
+}
+inline void SlackAttachment::set_thumb_url(const char* value, size_t size) {
+  
+  thumb_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackAttachment.thumb_url)
+}
+inline ::std::string* SlackAttachment::mutable_thumb_url() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.thumb_url)
+  return thumb_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackAttachment::release_thumb_url() {
+  // @@protoc_insertion_point(field_release:api.SlackAttachment.thumb_url)
+  
+  return thumb_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackAttachment::set_allocated_thumb_url(::std::string* thumb_url) {
+  if (thumb_url != NULL) {
+    
+  } else {
+    
+  }
+  thumb_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), thumb_url);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackAttachment.thumb_url)
+}
+
+// repeated .api.AttachmentField fields = 15;
+inline int SlackAttachment::fields_size() const {
+  return fields_.size();
+}
+inline void SlackAttachment::clear_fields() {
+  fields_.Clear();
+}
+inline ::api::AttachmentField* SlackAttachment::mutable_fields(int index) {
+  // @@protoc_insertion_point(field_mutable:api.SlackAttachment.fields)
+  return fields_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::api::AttachmentField >*
+SlackAttachment::mutable_fields() {
+  // @@protoc_insertion_point(field_mutable_list:api.SlackAttachment.fields)
+  return &fields_;
+}
+inline const ::api::AttachmentField& SlackAttachment::fields(int index) const {
+  // @@protoc_insertion_point(field_get:api.SlackAttachment.fields)
+  return fields_.Get(index);
+}
+inline ::api::AttachmentField* SlackAttachment::add_fields() {
+  // @@protoc_insertion_point(field_add:api.SlackAttachment.fields)
+  return fields_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::api::AttachmentField >&
+SlackAttachment::fields() const {
+  // @@protoc_insertion_point(field_list:api.SlackAttachment.fields)
+  return fields_;
+}
+
+// -------------------------------------------------------------------
+
+// AttachmentAction
+
+// string name = 1;
+inline void AttachmentAction::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::name() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.name)
+  return name_.GetNoArena();
+}
+inline void AttachmentAction::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.name)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.name)
+}
+#endif
+inline void AttachmentAction::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.name)
+}
+inline void AttachmentAction::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.name)
+}
+inline ::std::string* AttachmentAction::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_name() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.name)
+}
+
+// string text = 2;
+inline void AttachmentAction::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::text() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.text)
+  return text_.GetNoArena();
+}
+inline void AttachmentAction::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.text)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_text(::std::string&& value) {
+  
+  text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.text)
+}
+#endif
+inline void AttachmentAction::set_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.text)
+}
+inline void AttachmentAction::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.text)
+}
+inline ::std::string* AttachmentAction::mutable_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_text() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.text)
+  
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.text)
+}
+
+// string style = 3;
+inline void AttachmentAction::clear_style() {
+  style_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::style() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.style)
+  return style_.GetNoArena();
+}
+inline void AttachmentAction::set_style(const ::std::string& value) {
+  
+  style_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.style)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_style(::std::string&& value) {
+  
+  style_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.style)
+}
+#endif
+inline void AttachmentAction::set_style(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  style_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.style)
+}
+inline void AttachmentAction::set_style(const char* value, size_t size) {
+  
+  style_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.style)
+}
+inline ::std::string* AttachmentAction::mutable_style() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.style)
+  return style_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_style() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.style)
+  
+  return style_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_style(::std::string* style) {
+  if (style != NULL) {
+    
+  } else {
+    
+  }
+  style_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), style);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.style)
+}
+
+// string type = 4;
+inline void AttachmentAction::clear_type() {
+  type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::type() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.type)
+  return type_.GetNoArena();
+}
+inline void AttachmentAction::set_type(const ::std::string& value) {
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.type)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_type(::std::string&& value) {
+  
+  type_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.type)
+}
+#endif
+inline void AttachmentAction::set_type(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.type)
+}
+inline void AttachmentAction::set_type(const char* value, size_t size) {
+  
+  type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.type)
+}
+inline ::std::string* AttachmentAction::mutable_type() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.type)
+  return type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_type() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.type)
+  
+  return type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_type(::std::string* type) {
+  if (type != NULL) {
+    
+  } else {
+    
+  }
+  type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), type);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.type)
+}
+
+// string value = 5;
+inline void AttachmentAction::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::value() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.value)
+  return value_.GetNoArena();
+}
+inline void AttachmentAction::set_value(const ::std::string& value) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.value)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_value(::std::string&& value) {
+  
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.value)
+}
+#endif
+inline void AttachmentAction::set_value(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.value)
+}
+inline void AttachmentAction::set_value(const char* value, size_t size) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.value)
+}
+inline ::std::string* AttachmentAction::mutable_value() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_value() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.value)
+  
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_value(::std::string* value) {
+  if (value != NULL) {
+    
+  } else {
+    
+  }
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.value)
+}
+
+// string data_source = 6;
+inline void AttachmentAction::clear_data_source() {
+  data_source_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::data_source() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.data_source)
+  return data_source_.GetNoArena();
+}
+inline void AttachmentAction::set_data_source(const ::std::string& value) {
+  
+  data_source_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.data_source)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_data_source(::std::string&& value) {
+  
+  data_source_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.data_source)
+}
+#endif
+inline void AttachmentAction::set_data_source(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  data_source_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.data_source)
+}
+inline void AttachmentAction::set_data_source(const char* value, size_t size) {
+  
+  data_source_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.data_source)
+}
+inline ::std::string* AttachmentAction::mutable_data_source() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.data_source)
+  return data_source_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_data_source() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.data_source)
+  
+  return data_source_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_data_source(::std::string* data_source) {
+  if (data_source != NULL) {
+    
+  } else {
+    
+  }
+  data_source_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), data_source);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.data_source)
+}
+
+// int64 min_query_length = 7;
+inline void AttachmentAction::clear_min_query_length() {
+  min_query_length_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 AttachmentAction::min_query_length() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.min_query_length)
+  return min_query_length_;
+}
+inline void AttachmentAction::set_min_query_length(::google::protobuf::int64 value) {
+  
+  min_query_length_ = value;
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.min_query_length)
+}
+
+// repeated .api.AttachmentActionOption options = 8;
+inline int AttachmentAction::options_size() const {
+  return options_.size();
+}
+inline void AttachmentAction::clear_options() {
+  options_.Clear();
+}
+inline ::api::AttachmentActionOption* AttachmentAction::mutable_options(int index) {
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.options)
+  return options_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >*
+AttachmentAction::mutable_options() {
+  // @@protoc_insertion_point(field_mutable_list:api.AttachmentAction.options)
+  return &options_;
+}
+inline const ::api::AttachmentActionOption& AttachmentAction::options(int index) const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.options)
+  return options_.Get(index);
+}
+inline ::api::AttachmentActionOption* AttachmentAction::add_options() {
+  // @@protoc_insertion_point(field_add:api.AttachmentAction.options)
+  return options_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >&
+AttachmentAction::options() const {
+  // @@protoc_insertion_point(field_list:api.AttachmentAction.options)
+  return options_;
+}
+
+// repeated .api.AttachmentActionOption selected_options = 9;
+inline int AttachmentAction::selected_options_size() const {
+  return selected_options_.size();
+}
+inline void AttachmentAction::clear_selected_options() {
+  selected_options_.Clear();
+}
+inline ::api::AttachmentActionOption* AttachmentAction::mutable_selected_options(int index) {
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.selected_options)
+  return selected_options_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >*
+AttachmentAction::mutable_selected_options() {
+  // @@protoc_insertion_point(field_mutable_list:api.AttachmentAction.selected_options)
+  return &selected_options_;
+}
+inline const ::api::AttachmentActionOption& AttachmentAction::selected_options(int index) const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.selected_options)
+  return selected_options_.Get(index);
+}
+inline ::api::AttachmentActionOption* AttachmentAction::add_selected_options() {
+  // @@protoc_insertion_point(field_add:api.AttachmentAction.selected_options)
+  return selected_options_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >&
+AttachmentAction::selected_options() const {
+  // @@protoc_insertion_point(field_list:api.AttachmentAction.selected_options)
+  return selected_options_;
+}
+
+// repeated .api.AttachmentActionOptionGroup option_groups = 10;
+inline int AttachmentAction::option_groups_size() const {
+  return option_groups_.size();
+}
+inline void AttachmentAction::clear_option_groups() {
+  option_groups_.Clear();
+}
+inline ::api::AttachmentActionOptionGroup* AttachmentAction::mutable_option_groups(int index) {
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.option_groups)
+  return option_groups_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOptionGroup >*
+AttachmentAction::mutable_option_groups() {
+  // @@protoc_insertion_point(field_mutable_list:api.AttachmentAction.option_groups)
+  return &option_groups_;
+}
+inline const ::api::AttachmentActionOptionGroup& AttachmentAction::option_groups(int index) const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.option_groups)
+  return option_groups_.Get(index);
+}
+inline ::api::AttachmentActionOptionGroup* AttachmentAction::add_option_groups() {
+  // @@protoc_insertion_point(field_add:api.AttachmentAction.option_groups)
+  return option_groups_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOptionGroup >&
+AttachmentAction::option_groups() const {
+  // @@protoc_insertion_point(field_list:api.AttachmentAction.option_groups)
+  return option_groups_;
+}
+
+// .api.ConfirmationField confirm = 11;
+inline bool AttachmentAction::has_confirm() const {
+  return this != internal_default_instance() && confirm_ != NULL;
+}
+inline void AttachmentAction::clear_confirm() {
+  if (GetArenaNoVirtual() == NULL && confirm_ != NULL) {
+    delete confirm_;
+  }
+  confirm_ = NULL;
+}
+inline const ::api::ConfirmationField& AttachmentAction::_internal_confirm() const {
+  return *confirm_;
+}
+inline const ::api::ConfirmationField& AttachmentAction::confirm() const {
+  const ::api::ConfirmationField* p = confirm_;
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.confirm)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::ConfirmationField*>(
+      &::api::_ConfirmationField_default_instance_);
+}
+inline ::api::ConfirmationField* AttachmentAction::release_confirm() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.confirm)
+  
+  ::api::ConfirmationField* temp = confirm_;
+  confirm_ = NULL;
+  return temp;
+}
+inline ::api::ConfirmationField* AttachmentAction::mutable_confirm() {
+  
+  if (confirm_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::ConfirmationField>(GetArenaNoVirtual());
+    confirm_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.confirm)
+  return confirm_;
+}
+inline void AttachmentAction::set_allocated_confirm(::api::ConfirmationField* confirm) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete confirm_;
+  }
+  if (confirm) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      confirm = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, confirm, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  confirm_ = confirm;
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.confirm)
+}
+
+// string url = 12;
+inline void AttachmentAction::clear_url() {
+  url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentAction::url() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentAction.url)
+  return url_.GetNoArena();
+}
+inline void AttachmentAction::set_url(const ::std::string& value) {
+  
+  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentAction.url)
+}
+#if LANG_CXX11
+inline void AttachmentAction::set_url(::std::string&& value) {
+  
+  url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentAction.url)
+}
+#endif
+inline void AttachmentAction::set_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentAction.url)
+}
+inline void AttachmentAction::set_url(const char* value, size_t size) {
+  
+  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentAction.url)
+}
+inline ::std::string* AttachmentAction::mutable_url() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentAction.url)
+  return url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentAction::release_url() {
+  // @@protoc_insertion_point(field_release:api.AttachmentAction.url)
+  
+  return url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentAction::set_allocated_url(::std::string* url) {
+  if (url != NULL) {
+    
+  } else {
+    
+  }
+  url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), url);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentAction.url)
+}
+
+// -------------------------------------------------------------------
+
+// ConfirmationField
+
+// string title = 1;
+inline void ConfirmationField::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ConfirmationField::title() const {
+  // @@protoc_insertion_point(field_get:api.ConfirmationField.title)
+  return title_.GetNoArena();
+}
+inline void ConfirmationField::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ConfirmationField.title)
+}
+#if LANG_CXX11
+inline void ConfirmationField::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ConfirmationField.title)
+}
+#endif
+inline void ConfirmationField::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ConfirmationField.title)
+}
+inline void ConfirmationField::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ConfirmationField.title)
+}
+inline ::std::string* ConfirmationField::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:api.ConfirmationField.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ConfirmationField::release_title() {
+  // @@protoc_insertion_point(field_release:api.ConfirmationField.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ConfirmationField::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:api.ConfirmationField.title)
+}
+
+// string text = 2;
+inline void ConfirmationField::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ConfirmationField::text() const {
+  // @@protoc_insertion_point(field_get:api.ConfirmationField.text)
+  return text_.GetNoArena();
+}
+inline void ConfirmationField::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ConfirmationField.text)
+}
+#if LANG_CXX11
+inline void ConfirmationField::set_text(::std::string&& value) {
+  
+  text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ConfirmationField.text)
+}
+#endif
+inline void ConfirmationField::set_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ConfirmationField.text)
+}
+inline void ConfirmationField::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ConfirmationField.text)
+}
+inline ::std::string* ConfirmationField::mutable_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.ConfirmationField.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ConfirmationField::release_text() {
+  // @@protoc_insertion_point(field_release:api.ConfirmationField.text)
+  
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ConfirmationField::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.ConfirmationField.text)
+}
+
+// string ok_text = 3;
+inline void ConfirmationField::clear_ok_text() {
+  ok_text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ConfirmationField::ok_text() const {
+  // @@protoc_insertion_point(field_get:api.ConfirmationField.ok_text)
+  return ok_text_.GetNoArena();
+}
+inline void ConfirmationField::set_ok_text(const ::std::string& value) {
+  
+  ok_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ConfirmationField.ok_text)
+}
+#if LANG_CXX11
+inline void ConfirmationField::set_ok_text(::std::string&& value) {
+  
+  ok_text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ConfirmationField.ok_text)
+}
+#endif
+inline void ConfirmationField::set_ok_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  ok_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ConfirmationField.ok_text)
+}
+inline void ConfirmationField::set_ok_text(const char* value, size_t size) {
+  
+  ok_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ConfirmationField.ok_text)
+}
+inline ::std::string* ConfirmationField::mutable_ok_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.ConfirmationField.ok_text)
+  return ok_text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ConfirmationField::release_ok_text() {
+  // @@protoc_insertion_point(field_release:api.ConfirmationField.ok_text)
+  
+  return ok_text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ConfirmationField::set_allocated_ok_text(::std::string* ok_text) {
+  if (ok_text != NULL) {
+    
+  } else {
+    
+  }
+  ok_text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ok_text);
+  // @@protoc_insertion_point(field_set_allocated:api.ConfirmationField.ok_text)
+}
+
+// string dismiss_text = 4;
+inline void ConfirmationField::clear_dismiss_text() {
+  dismiss_text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ConfirmationField::dismiss_text() const {
+  // @@protoc_insertion_point(field_get:api.ConfirmationField.dismiss_text)
+  return dismiss_text_.GetNoArena();
+}
+inline void ConfirmationField::set_dismiss_text(const ::std::string& value) {
+  
+  dismiss_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ConfirmationField.dismiss_text)
+}
+#if LANG_CXX11
+inline void ConfirmationField::set_dismiss_text(::std::string&& value) {
+  
+  dismiss_text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ConfirmationField.dismiss_text)
+}
+#endif
+inline void ConfirmationField::set_dismiss_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  dismiss_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ConfirmationField.dismiss_text)
+}
+inline void ConfirmationField::set_dismiss_text(const char* value, size_t size) {
+  
+  dismiss_text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ConfirmationField.dismiss_text)
+}
+inline ::std::string* ConfirmationField::mutable_dismiss_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.ConfirmationField.dismiss_text)
+  return dismiss_text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ConfirmationField::release_dismiss_text() {
+  // @@protoc_insertion_point(field_release:api.ConfirmationField.dismiss_text)
+  
+  return dismiss_text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ConfirmationField::set_allocated_dismiss_text(::std::string* dismiss_text) {
+  if (dismiss_text != NULL) {
+    
+  } else {
+    
+  }
+  dismiss_text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), dismiss_text);
+  // @@protoc_insertion_point(field_set_allocated:api.ConfirmationField.dismiss_text)
+}
+
+// -------------------------------------------------------------------
+
+// AttachmentActionOptionGroup
+
+// string text = 1;
+inline void AttachmentActionOptionGroup::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentActionOptionGroup::text() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentActionOptionGroup.text)
+  return text_.GetNoArena();
+}
+inline void AttachmentActionOptionGroup::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentActionOptionGroup.text)
+}
+#if LANG_CXX11
+inline void AttachmentActionOptionGroup::set_text(::std::string&& value) {
+  
+  text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentActionOptionGroup.text)
+}
+#endif
+inline void AttachmentActionOptionGroup::set_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentActionOptionGroup.text)
+}
+inline void AttachmentActionOptionGroup::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentActionOptionGroup.text)
+}
+inline ::std::string* AttachmentActionOptionGroup::mutable_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentActionOptionGroup.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentActionOptionGroup::release_text() {
+  // @@protoc_insertion_point(field_release:api.AttachmentActionOptionGroup.text)
+  
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentActionOptionGroup::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentActionOptionGroup.text)
+}
+
+// repeated .api.AttachmentActionOption options = 2;
+inline int AttachmentActionOptionGroup::options_size() const {
+  return options_.size();
+}
+inline void AttachmentActionOptionGroup::clear_options() {
+  options_.Clear();
+}
+inline ::api::AttachmentActionOption* AttachmentActionOptionGroup::mutable_options(int index) {
+  // @@protoc_insertion_point(field_mutable:api.AttachmentActionOptionGroup.options)
+  return options_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >*
+AttachmentActionOptionGroup::mutable_options() {
+  // @@protoc_insertion_point(field_mutable_list:api.AttachmentActionOptionGroup.options)
+  return &options_;
+}
+inline const ::api::AttachmentActionOption& AttachmentActionOptionGroup::options(int index) const {
+  // @@protoc_insertion_point(field_get:api.AttachmentActionOptionGroup.options)
+  return options_.Get(index);
+}
+inline ::api::AttachmentActionOption* AttachmentActionOptionGroup::add_options() {
+  // @@protoc_insertion_point(field_add:api.AttachmentActionOptionGroup.options)
+  return options_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::api::AttachmentActionOption >&
+AttachmentActionOptionGroup::options() const {
+  // @@protoc_insertion_point(field_list:api.AttachmentActionOptionGroup.options)
+  return options_;
+}
+
+// -------------------------------------------------------------------
+
+// AttachmentActionOption
+
+// string title = 1;
+inline void AttachmentActionOption::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentActionOption::title() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentActionOption.title)
+  return title_.GetNoArena();
+}
+inline void AttachmentActionOption::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentActionOption.title)
+}
+#if LANG_CXX11
+inline void AttachmentActionOption::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentActionOption.title)
+}
+#endif
+inline void AttachmentActionOption::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentActionOption.title)
+}
+inline void AttachmentActionOption::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentActionOption.title)
+}
+inline ::std::string* AttachmentActionOption::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentActionOption.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentActionOption::release_title() {
+  // @@protoc_insertion_point(field_release:api.AttachmentActionOption.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentActionOption::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentActionOption.title)
+}
+
+// string value = 2;
+inline void AttachmentActionOption::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentActionOption::value() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentActionOption.value)
+  return value_.GetNoArena();
+}
+inline void AttachmentActionOption::set_value(const ::std::string& value) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentActionOption.value)
+}
+#if LANG_CXX11
+inline void AttachmentActionOption::set_value(::std::string&& value) {
+  
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentActionOption.value)
+}
+#endif
+inline void AttachmentActionOption::set_value(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentActionOption.value)
+}
+inline void AttachmentActionOption::set_value(const char* value, size_t size) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentActionOption.value)
+}
+inline ::std::string* AttachmentActionOption::mutable_value() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentActionOption.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentActionOption::release_value() {
+  // @@protoc_insertion_point(field_release:api.AttachmentActionOption.value)
+  
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentActionOption::set_allocated_value(::std::string* value) {
+  if (value != NULL) {
+    
+  } else {
+    
+  }
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentActionOption.value)
+}
+
+// string description = 3;
+inline void AttachmentActionOption::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentActionOption::description() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentActionOption.description)
+  return description_.GetNoArena();
+}
+inline void AttachmentActionOption::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentActionOption.description)
+}
+#if LANG_CXX11
+inline void AttachmentActionOption::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentActionOption.description)
+}
+#endif
+inline void AttachmentActionOption::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentActionOption.description)
+}
+inline void AttachmentActionOption::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentActionOption.description)
+}
+inline ::std::string* AttachmentActionOption::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentActionOption.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentActionOption::release_description() {
+  // @@protoc_insertion_point(field_release:api.AttachmentActionOption.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentActionOption::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentActionOption.description)
+}
+
+// -------------------------------------------------------------------
+
+// AttachmentField
+
+// string title = 1;
+inline void AttachmentField::clear_title() {
+  title_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentField::title() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentField.title)
+  return title_.GetNoArena();
+}
+inline void AttachmentField::set_title(const ::std::string& value) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentField.title)
+}
+#if LANG_CXX11
+inline void AttachmentField::set_title(::std::string&& value) {
+  
+  title_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentField.title)
+}
+#endif
+inline void AttachmentField::set_title(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentField.title)
+}
+inline void AttachmentField::set_title(const char* value, size_t size) {
+  
+  title_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentField.title)
+}
+inline ::std::string* AttachmentField::mutable_title() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentField.title)
+  return title_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentField::release_title() {
+  // @@protoc_insertion_point(field_release:api.AttachmentField.title)
+  
+  return title_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentField::set_allocated_title(::std::string* title) {
+  if (title != NULL) {
+    
+  } else {
+    
+  }
+  title_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), title);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentField.title)
+}
+
+// string value = 2;
+inline void AttachmentField::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& AttachmentField::value() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentField.value)
+  return value_.GetNoArena();
+}
+inline void AttachmentField::set_value(const ::std::string& value) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.AttachmentField.value)
+}
+#if LANG_CXX11
+inline void AttachmentField::set_value(::std::string&& value) {
+  
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.AttachmentField.value)
+}
+#endif
+inline void AttachmentField::set_value(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.AttachmentField.value)
+}
+inline void AttachmentField::set_value(const char* value, size_t size) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.AttachmentField.value)
+}
+inline ::std::string* AttachmentField::mutable_value() {
+  
+  // @@protoc_insertion_point(field_mutable:api.AttachmentField.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* AttachmentField::release_value() {
+  // @@protoc_insertion_point(field_release:api.AttachmentField.value)
+  
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void AttachmentField::set_allocated_value(::std::string* value) {
+  if (value != NULL) {
+    
+  } else {
+    
+  }
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:api.AttachmentField.value)
+}
+
+// bool short = 3;
+inline void AttachmentField::clear_short_() {
+  short__ = false;
+}
+inline bool AttachmentField::short_() const {
+  // @@protoc_insertion_point(field_get:api.AttachmentField.short)
+  return short__;
+}
+inline void AttachmentField::set_short_(bool value) {
+  
+  short__ = value;
+  // @@protoc_insertion_point(field_set:api.AttachmentField.short)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

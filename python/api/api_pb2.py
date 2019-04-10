@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\"\x07\n\x05\x45mpty\"j\n\x07UserMap\x12&\n\x05users\x18\x01 \x03(\x0b\x32\x17.api.UserMap.UsersEntry\x1a\x37\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.api.User:\x02\x38\x01\"\x87\x02\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x08 \x01(\x0b\x32\x0c.api.Address\x12)\n\x08metadata\x18\t \x03(\x0b\x32\x17.api.User.MetadataEntry\x12\x0f\n\x07\x64\x65leted\x18\n \x01(\x08\x12\x13\n\x0b\x63reate_date\x18\x14 \x01(\x03\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa3\x01\n\x0e\x41\x64\x64UserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\r\n\x05phone\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x11\n\ttrial_end\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x08 \x01(\x0b\x32\x0c.api.Address\"z\n\x14SubscribeUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61rd_number\x18\x03 \x01(\t\x12\x11\n\texp_month\x18\x04 \x01(\t\x12\x10\n\x08\x65xp_year\x18\x05 \x01(\t\x12\x0b\n\x03\x63vc\x18\x06 \x01(\t\"\x97\x01\n\x16\x41\x64\x64UserMetadataRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12;\n\x08metadata\x18\x02 \x03(\x0b\x32).api.AddUserMetadataRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"j\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t\x12\r\n\x05line1\x18\x03 \x01(\t\x12\r\n\x05line2\x18\x04 \x01(\t\x12\x13\n\x0bpostal_code\x18\x05 \x01(\t\x12\r\n\x05state\x18\x06 \x01(\t\"0\n\x15SubscribeUserResponse\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\"%\n\x12\x43reatePlanResponse\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\"*\n\x19\x43\x61ncelSubscriptionRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"u\n\x11\x43reatePlanRequest\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x03\x12\x12\n\nservice_id\x18\x03 \x01(\t\x12\x14\n\x0cservice_name\x18\x04 \x01(\t\x12\x15\n\rfriendly_name\x18\x05 \x01(\t\"+\n\nSMSRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\"4\n\x0b\x43\x61llRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63\x61llback_url\x18\x02 \x01(\t\">\n\nMMSRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x11\n\tmedia_url\x18\x03 \x01(\t\"V\n\x0c\x45mailRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\nplain_text\x18\x03 \x01(\t\x12\x10\n\x08html_alt\x18\x04 \x01(\t\"A\n\x0f\x43hannelReminder\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04time\x18\x03 \x01(\t\"W\n\x0cUserReminder\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04time\x18\x03 \x01(\t\x12\x1a\n\x04item\x18\x04 \x01(\x0b\x32\x0c.api.ItemRef\"9\n\x07ItemRef\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\t\x12\x0c\n\x04\x66ile\x18\x02 \x01(\t\x12\x0f\n\x07\x63omment\x18\x03 \x01(\t\"0\n\x04Star\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1a\n\x04item\x18\x04 \x01(\x0b\x32\x0c.api.ItemRef\"/\n\x03Pin\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1a\n\x04item\x18\x04 \x01(\x0b\x32\x0c.api.ItemRef\"\xfa\x01\n\x06\x43onfig\x12\r\n\x05\x64\x65\x62ug\x18\x01 \x01(\x08\x12\x16\n\x0etwilio_account\x18\x02 \x01(\t\x12\x12\n\ntwilio_key\x18\x03 \x01(\t\x12\x14\n\x0csendgrid_key\x18\x04 \x01(\t\x12\x12\n\nstripe_key\x18\x05 \x01(\t\x12\x11\n\tslack_key\x18\x06 \x01(\t\x12*\n\x0e\x63ustomer_index\x18\x07 \x01(\x0e\x32\x12.api.CustomerIndex\x12(\n\remail_address\x18\x08 \x01(\x0b\x32\x11.api.EmailAddress\x12\"\n\nlog_config\x18\t \x01(\x0b\x32\x0e.api.LogConfig\".\n\tLogConfig\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\t\"-\n\x0c\x45mailAddress\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"P\n\x05\x45mail\x12\x1f\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x11.api.EmailAddress\x12&\n\trecipient\x18\x02 \x01(\x0b\x32\x13.api.RecipientEmail\"b\n\x0eRecipientEmail\x12\x1d\n\x02to\x18\x02 \x01(\x0b\x32\x11.api.EmailAddress\x12\x0f\n\x07subject\x18\x03 \x01(\t\x12\x12\n\nplain_text\x18\x04 \x01(\t\x12\x0c\n\x04html\x18\x05 \x01(\t\"_\n\x03SMS\x12\n\n\x02to\x18\x01 \x01(\t\x12\x0c\n\x04\x66rom\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x11\n\tmedia_url\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\x0b\n\x03\x61pp\x18\x06 \x01(\t\"2\n\x04\x43\x61ll\x12\n\n\x02to\x18\x01 \x01(\t\x12\x0c\n\x04\x66rom\x18\x02 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\"j\n\x03\x46\x61x\x12\n\n\x02to\x18\x01 \x01(\t\x12\x0c\n\x04\x66rom\x18\x02 \x01(\t\x12\x11\n\tmedia_url\x18\x03 \x01(\t\x12\x0f\n\x07quality\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\x13\n\x0bstore_media\x18\x06 \x01(\x08\"6\n\x07LogHook\x12\x0e\n\x06\x61uthor\x18\x01 \x01(\t\x12\x0c\n\x04icon\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t*-\n\rCustomerIndex\x12\x06\n\x02ID\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\t\n\x05PHONE\x10\x02\x32\xcf\x07\n\x0bUserService\x12\x42\n\x0fGetUserEmailMap\x12\n.api.Empty\x1a\x0c.api.UserMap\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12?\n\x0cGetUserIDMap\x12\n.api.Empty\x1a\x0c.api.UserMap\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12\x42\n\x0fGetUserPhoneMap\x12\n.api.Empty\x1a\x0c.api.UserMap\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12@\n\x07\x41\x64\x64User\x12\x13.api.AddUserRequest\x1a\t.api.User\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12Z\n\x0f\x41\x64\x64UserMetadata\x12\x1b.api.AddUserMetadataRequest\x1a\t.api.User\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/users/{user_id}:\x01*\x12\x65\n\rSubscribeUser\x12\x19.api.SubscribeUserRequest\x1a\x1a.api.SubscribeUserResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/users/{email}:\x01*\x12\\\n\x0fUnSubscribeUser\x12\x1e.api.CancelSubscriptionRequest\x1a\n.api.Empty\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/users/{email}:\x01*\x12j\n\x16\x43reateSubscriptionPlan\x12\x16.api.CreatePlanRequest\x1a\x17.api.CreatePlanResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{plan_id}:\x01*\x12G\n\x07SMSUser\x12\x0f.api.SMSRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*\x12I\n\x08\x43\x61llUser\x12\x10.api.CallRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*\x12G\n\x07MMSUser\x12\x0f.api.MMSRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*\x12K\n\tEmailUser\x12\x11.api.EmailRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\"\x07\n\x05\x45mpty\"j\n\x07UserMap\x12&\n\x05users\x18\x01 \x03(\x0b\x32\x17.api.UserMap.UsersEntry\x1a\x37\n\nUsersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x18\n\x05value\x18\x02 \x01(\x0b\x32\t.api.User:\x02\x38\x01\"\x87\x02\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\r\n\x05phone\x18\x06 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x08 \x01(\x0b\x32\x0c.api.Address\x12)\n\x08metadata\x18\t \x03(\x0b\x32\x17.api.User.MetadataEntry\x12\x0f\n\x07\x64\x65leted\x18\n \x01(\x08\x12\x13\n\x0b\x63reate_date\x18\x14 \x01(\x03\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa3\x01\n\x0e\x41\x64\x64UserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\r\n\x05phone\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x11\n\ttrial_end\x18\x06 \x01(\x03\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x1d\n\x07\x61\x64\x64ress\x18\x08 \x01(\x0b\x32\x0c.api.Address\"z\n\x14SubscribeUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61rd_number\x18\x03 \x01(\t\x12\x11\n\texp_month\x18\x04 \x01(\t\x12\x10\n\x08\x65xp_year\x18\x05 \x01(\t\x12\x0b\n\x03\x63vc\x18\x06 \x01(\t\"\x97\x01\n\x16\x41\x64\x64UserMetadataRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12;\n\x08metadata\x18\x02 \x03(\x0b\x32).api.AddUserMetadataRequest.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"j\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\x0f\n\x07\x63ountry\x18\x02 \x01(\t\x12\r\n\x05line1\x18\x03 \x01(\t\x12\r\n\x05line2\x18\x04 \x01(\t\x12\x13\n\x0bpostal_code\x18\x05 \x01(\t\x12\r\n\x05state\x18\x06 \x01(\t\"0\n\x15SubscribeUserResponse\x12\x17\n\x0fsubscription_id\x18\x01 \x01(\t\"%\n\x12\x43reatePlanResponse\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\"*\n\x19\x43\x61ncelSubscriptionRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"u\n\x11\x43reatePlanRequest\x12\x0f\n\x07plan_id\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x03\x12\x12\n\nservice_id\x18\x03 \x01(\t\x12\x14\n\x0cservice_name\x18\x04 \x01(\t\x12\x15\n\rfriendly_name\x18\x05 \x01(\t\"+\n\nSMSRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\"4\n\x0b\x43\x61llRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x14\n\x0c\x63\x61llback_url\x18\x02 \x01(\t\">\n\nMMSRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x11\n\tmedia_url\x18\x03 \x01(\t\"V\n\x0c\x45mailRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0f\n\x07subject\x18\x02 \x01(\t\x12\x12\n\nplain_text\x18\x03 \x01(\t\x12\x10\n\x08html_alt\x18\x04 \x01(\t\"A\n\x0f\x43hannelReminder\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04time\x18\x03 \x01(\t\"W\n\x0cUserReminder\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0c\n\x04time\x18\x03 \x01(\t\x12\x1a\n\x04item\x18\x04 \x01(\x0b\x32\x0c.api.ItemRef\"9\n\x07ItemRef\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\t\x12\x0c\n\x04\x66ile\x18\x02 \x01(\t\x12\x0f\n\x07\x63omment\x18\x03 \x01(\t\"0\n\x04Star\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1a\n\x04item\x18\x04 \x01(\x0b\x32\x0c.api.ItemRef\"/\n\x03Pin\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1a\n\x04item\x18\x04 \x01(\x0b\x32\x0c.api.ItemRef\"\xfa\x01\n\x06\x43onfig\x12\r\n\x05\x64\x65\x62ug\x18\x01 \x01(\x08\x12\x16\n\x0etwilio_account\x18\x02 \x01(\t\x12\x12\n\ntwilio_key\x18\x03 \x01(\t\x12\x14\n\x0csendgrid_key\x18\x04 \x01(\t\x12\x12\n\nstripe_key\x18\x05 \x01(\t\x12\x11\n\tslack_key\x18\x06 \x01(\t\x12*\n\x0e\x63ustomer_index\x18\x07 \x01(\x0e\x32\x12.api.CustomerIndex\x12(\n\remail_address\x18\x08 \x01(\x0b\x32\x11.api.EmailAddress\x12\"\n\nlog_config\x18\t \x01(\x0b\x32\x0e.api.LogConfig\".\n\tLogConfig\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\t\"-\n\x0c\x45mailAddress\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"P\n\x05\x45mail\x12\x1f\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x11.api.EmailAddress\x12&\n\trecipient\x18\x02 \x01(\x0b\x32\x13.api.RecipientEmail\"b\n\x0eRecipientEmail\x12\x1d\n\x02to\x18\x02 \x01(\x0b\x32\x11.api.EmailAddress\x12\x0f\n\x07subject\x18\x03 \x01(\t\x12\x12\n\nplain_text\x18\x04 \x01(\t\x12\x0c\n\x04html\x18\x05 \x01(\t\"_\n\x03SMS\x12\n\n\x02to\x18\x01 \x01(\t\x12\x0c\n\x04\x66rom\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x11\n\tmedia_url\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\x0b\n\x03\x61pp\x18\x06 \x01(\t\"2\n\x04\x43\x61ll\x12\n\n\x02to\x18\x01 \x01(\t\x12\x0c\n\x04\x66rom\x18\x02 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\"j\n\x03\x46\x61x\x12\n\n\x02to\x18\x01 \x01(\t\x12\x0c\n\x04\x66rom\x18\x02 \x01(\t\x12\x11\n\tmedia_url\x18\x03 \x01(\t\x12\x0f\n\x07quality\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\x13\n\x0bstore_media\x18\x06 \x01(\x08\"6\n\x07LogHook\x12\x0e\n\x06\x61uthor\x18\x01 \x01(\t\x12\x0c\n\x04icon\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\"\xb5\x02\n\x0fSlackAttachment\x12\r\n\x05\x63olor\x18\x01 \x01(\t\x12\x10\n\x08\x66\x61llback\x18\x02 \x01(\t\x12\x13\n\x0b\x63\x61llback_id\x18\x03 \x01(\t\x12\n\n\x02id\x18\x04 \x01(\x03\x12\x11\n\tauthor_id\x18\x05 \x01(\t\x12\x13\n\x0b\x61uthor_name\x18\x06 \x01(\t\x12\x13\n\x0b\x61uthor_link\x18\x07 \x01(\t\x12\x13\n\x0b\x61uthor_icon\x18\x08 \x01(\t\x12\r\n\x05title\x18\t \x01(\t\x12\x14\n\x0ctitle_prefix\x18\n \x01(\t\x12\x0f\n\x07pretext\x18\x0b \x01(\t\x12\x0c\n\x04text\x18\x0c \x01(\t\x12\x11\n\timage_url\x18\r \x01(\t\x12\x11\n\tthumb_url\x18\x0e \x01(\t\x12$\n\x06\x66ields\x18\x0f \x03(\x0b\x32\x14.api.AttachmentField\"\xdd\x02\n\x10\x41ttachmentAction\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\r\n\x05style\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x61ta_source\x18\x06 \x01(\t\x12\x18\n\x10min_query_length\x18\x07 \x01(\x03\x12,\n\x07options\x18\x08 \x03(\x0b\x32\x1b.api.AttachmentActionOption\x12\x35\n\x10selected_options\x18\t \x03(\x0b\x32\x1b.api.AttachmentActionOption\x12\x37\n\roption_groups\x18\n \x03(\x0b\x32 .api.AttachmentActionOptionGroup\x12\'\n\x07\x63onfirm\x18\x0b \x01(\x0b\x32\x16.api.ConfirmationField\x12\x0b\n\x03url\x18\x0c \x01(\t\"W\n\x11\x43onfirmationField\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0f\n\x07ok_text\x18\x03 \x01(\t\x12\x14\n\x0c\x64ismiss_text\x18\x04 \x01(\t\"Y\n\x1b\x41ttachmentActionOptionGroup\x12\x0c\n\x04text\x18\x01 \x01(\t\x12,\n\x07options\x18\x02 \x03(\x0b\x32\x1b.api.AttachmentActionOption\"K\n\x16\x41ttachmentActionOption\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\">\n\x0f\x41ttachmentField\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\r\n\x05short\x18\x03 \x01(\x08*-\n\rCustomerIndex\x12\x06\n\x02ID\x10\x00\x12\t\n\x05\x45MAIL\x10\x01\x12\t\n\x05PHONE\x10\x02\x32\xcf\x07\n\x0bUserService\x12\x42\n\x0fGetUserEmailMap\x12\n.api.Empty\x1a\x0c.api.UserMap\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12?\n\x0cGetUserIDMap\x12\n.api.Empty\x1a\x0c.api.UserMap\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12\x42\n\x0fGetUserPhoneMap\x12\n.api.Empty\x1a\x0c.api.UserMap\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12@\n\x07\x41\x64\x64User\x12\x13.api.AddUserRequest\x1a\t.api.User\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/api/users:\x01*\x12Z\n\x0f\x41\x64\x64UserMetadata\x12\x1b.api.AddUserMetadataRequest\x1a\t.api.User\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/users/{user_id}:\x01*\x12\x65\n\rSubscribeUser\x12\x19.api.SubscribeUserRequest\x1a\x1a.api.SubscribeUserResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/users/{email}:\x01*\x12\\\n\x0fUnSubscribeUser\x12\x1e.api.CancelSubscriptionRequest\x1a\n.api.Empty\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/api/users/{email}:\x01*\x12j\n\x16\x43reateSubscriptionPlan\x12\x16.api.CreatePlanRequest\x1a\x17.api.CreatePlanResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{plan_id}:\x01*\x12G\n\x07SMSUser\x12\x0f.api.SMSRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*\x12I\n\x08\x43\x61llUser\x12\x10.api.CallRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*\x12G\n\x07MMSUser\x12\x0f.api.MMSRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*\x12K\n\tEmailUser\x12\x11.api.EmailRequest\x1a\n.api.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/plans/{user_id}:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -49,8 +49,8 @@ _CUSTOMERINDEX = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2738,
-  serialized_end=2783,
+  serialized_start=3723,
+  serialized_end=3768,
 )
 _sym_db.RegisterEnumDescriptor(_CUSTOMERINDEX)
 
@@ -1588,6 +1588,423 @@ _LOGHOOK = _descriptor.Descriptor(
   serialized_end=2736,
 )
 
+
+_SLACKATTACHMENT = _descriptor.Descriptor(
+  name='SlackAttachment',
+  full_name='api.SlackAttachment',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='color', full_name='api.SlackAttachment.color', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fallback', full_name='api.SlackAttachment.fallback', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='callback_id', full_name='api.SlackAttachment.callback_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='api.SlackAttachment.id', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='author_id', full_name='api.SlackAttachment.author_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='author_name', full_name='api.SlackAttachment.author_name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='author_link', full_name='api.SlackAttachment.author_link', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='author_icon', full_name='api.SlackAttachment.author_icon', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='title', full_name='api.SlackAttachment.title', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='title_prefix', full_name='api.SlackAttachment.title_prefix', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='pretext', full_name='api.SlackAttachment.pretext', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='api.SlackAttachment.text', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='image_url', full_name='api.SlackAttachment.image_url', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='thumb_url', full_name='api.SlackAttachment.thumb_url', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fields', full_name='api.SlackAttachment.fields', index=14,
+      number=15, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2739,
+  serialized_end=3048,
+)
+
+
+_ATTACHMENTACTION = _descriptor.Descriptor(
+  name='AttachmentAction',
+  full_name='api.AttachmentAction',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='api.AttachmentAction.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='api.AttachmentAction.text', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='style', full_name='api.AttachmentAction.style', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='api.AttachmentAction.type', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.AttachmentAction.value', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='data_source', full_name='api.AttachmentAction.data_source', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='min_query_length', full_name='api.AttachmentAction.min_query_length', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='api.AttachmentAction.options', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='selected_options', full_name='api.AttachmentAction.selected_options', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='option_groups', full_name='api.AttachmentAction.option_groups', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='confirm', full_name='api.AttachmentAction.confirm', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='url', full_name='api.AttachmentAction.url', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3051,
+  serialized_end=3400,
+)
+
+
+_CONFIRMATIONFIELD = _descriptor.Descriptor(
+  name='ConfirmationField',
+  full_name='api.ConfirmationField',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='title', full_name='api.ConfirmationField.title', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='api.ConfirmationField.text', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ok_text', full_name='api.ConfirmationField.ok_text', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dismiss_text', full_name='api.ConfirmationField.dismiss_text', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3402,
+  serialized_end=3489,
+)
+
+
+_ATTACHMENTACTIONOPTIONGROUP = _descriptor.Descriptor(
+  name='AttachmentActionOptionGroup',
+  full_name='api.AttachmentActionOptionGroup',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='text', full_name='api.AttachmentActionOptionGroup.text', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='api.AttachmentActionOptionGroup.options', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3491,
+  serialized_end=3580,
+)
+
+
+_ATTACHMENTACTIONOPTION = _descriptor.Descriptor(
+  name='AttachmentActionOption',
+  full_name='api.AttachmentActionOption',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='title', full_name='api.AttachmentActionOption.title', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.AttachmentActionOption.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='api.AttachmentActionOption.description', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3582,
+  serialized_end=3657,
+)
+
+
+_ATTACHMENTFIELD = _descriptor.Descriptor(
+  name='AttachmentField',
+  full_name='api.AttachmentField',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='title', full_name='api.AttachmentField.title', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.AttachmentField.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='short', full_name='api.AttachmentField.short', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3659,
+  serialized_end=3721,
+)
+
 _USERMAP_USERSENTRY.fields_by_name['value'].message_type = _USER
 _USERMAP_USERSENTRY.containing_type = _USERMAP
 _USERMAP.fields_by_name['users'].message_type = _USERMAP_USERSENTRY
@@ -1606,6 +2023,12 @@ _CONFIG.fields_by_name['log_config'].message_type = _LOGCONFIG
 _EMAIL.fields_by_name['from'].message_type = _EMAILADDRESS
 _EMAIL.fields_by_name['recipient'].message_type = _RECIPIENTEMAIL
 _RECIPIENTEMAIL.fields_by_name['to'].message_type = _EMAILADDRESS
+_SLACKATTACHMENT.fields_by_name['fields'].message_type = _ATTACHMENTFIELD
+_ATTACHMENTACTION.fields_by_name['options'].message_type = _ATTACHMENTACTIONOPTION
+_ATTACHMENTACTION.fields_by_name['selected_options'].message_type = _ATTACHMENTACTIONOPTION
+_ATTACHMENTACTION.fields_by_name['option_groups'].message_type = _ATTACHMENTACTIONOPTIONGROUP
+_ATTACHMENTACTION.fields_by_name['confirm'].message_type = _CONFIRMATIONFIELD
+_ATTACHMENTACTIONOPTIONGROUP.fields_by_name['options'].message_type = _ATTACHMENTACTIONOPTION
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['UserMap'] = _USERMAP
 DESCRIPTOR.message_types_by_name['User'] = _USER
@@ -1635,6 +2058,12 @@ DESCRIPTOR.message_types_by_name['SMS'] = _SMS
 DESCRIPTOR.message_types_by_name['Call'] = _CALL
 DESCRIPTOR.message_types_by_name['Fax'] = _FAX
 DESCRIPTOR.message_types_by_name['LogHook'] = _LOGHOOK
+DESCRIPTOR.message_types_by_name['SlackAttachment'] = _SLACKATTACHMENT
+DESCRIPTOR.message_types_by_name['AttachmentAction'] = _ATTACHMENTACTION
+DESCRIPTOR.message_types_by_name['ConfirmationField'] = _CONFIRMATIONFIELD
+DESCRIPTOR.message_types_by_name['AttachmentActionOptionGroup'] = _ATTACHMENTACTIONOPTIONGROUP
+DESCRIPTOR.message_types_by_name['AttachmentActionOption'] = _ATTACHMENTACTIONOPTION
+DESCRIPTOR.message_types_by_name['AttachmentField'] = _ATTACHMENTFIELD
 DESCRIPTOR.enum_types_by_name['CustomerIndex'] = _CUSTOMERINDEX
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1865,6 +2294,48 @@ LogHook = _reflection.GeneratedProtocolMessageType('LogHook', (_message.Message,
   ))
 _sym_db.RegisterMessage(LogHook)
 
+SlackAttachment = _reflection.GeneratedProtocolMessageType('SlackAttachment', (_message.Message,), dict(
+  DESCRIPTOR = _SLACKATTACHMENT,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.SlackAttachment)
+  ))
+_sym_db.RegisterMessage(SlackAttachment)
+
+AttachmentAction = _reflection.GeneratedProtocolMessageType('AttachmentAction', (_message.Message,), dict(
+  DESCRIPTOR = _ATTACHMENTACTION,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.AttachmentAction)
+  ))
+_sym_db.RegisterMessage(AttachmentAction)
+
+ConfirmationField = _reflection.GeneratedProtocolMessageType('ConfirmationField', (_message.Message,), dict(
+  DESCRIPTOR = _CONFIRMATIONFIELD,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.ConfirmationField)
+  ))
+_sym_db.RegisterMessage(ConfirmationField)
+
+AttachmentActionOptionGroup = _reflection.GeneratedProtocolMessageType('AttachmentActionOptionGroup', (_message.Message,), dict(
+  DESCRIPTOR = _ATTACHMENTACTIONOPTIONGROUP,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.AttachmentActionOptionGroup)
+  ))
+_sym_db.RegisterMessage(AttachmentActionOptionGroup)
+
+AttachmentActionOption = _reflection.GeneratedProtocolMessageType('AttachmentActionOption', (_message.Message,), dict(
+  DESCRIPTOR = _ATTACHMENTACTIONOPTION,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.AttachmentActionOption)
+  ))
+_sym_db.RegisterMessage(AttachmentActionOption)
+
+AttachmentField = _reflection.GeneratedProtocolMessageType('AttachmentField', (_message.Message,), dict(
+  DESCRIPTOR = _ATTACHMENTFIELD,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.AttachmentField)
+  ))
+_sym_db.RegisterMessage(AttachmentField)
+
 
 _USERMAP_USERSENTRY._options = None
 _USER_METADATAENTRY._options = None
@@ -1876,8 +2347,8 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2786,
-  serialized_end=3761,
+  serialized_start=3771,
+  serialized_end=4746,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetUserEmailMap',

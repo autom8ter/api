@@ -279,3 +279,60 @@ message LogHook {
     string icon=2;
     string title=3;
 }
+
+message SlackAttachment {
+    string color=1;
+    string fallback=2;
+    string callback_id=3;
+    int64 id=4;
+    string author_id=5;
+    string author_name=6;
+    string author_link=7;
+    string author_icon=8;
+    string title=9;
+    string title_prefix=10;
+    string pretext=11;
+    string text=12;
+    string image_url=13;
+    string thumb_url=14;
+   repeated  AttachmentField fields =15;
+
+}
+message AttachmentAction {
+    string name=1;
+    string text=2;
+    string style=3;
+    string type=4;
+    string value=5;
+    string data_source=6;
+    int64 min_query_length=7;
+    repeated AttachmentActionOption options=8;
+    repeated AttachmentActionOption selected_options=9;
+    repeated AttachmentActionOptionGroup option_groups=10;
+    ConfirmationField confirm=11;
+    string url=12;
+}
+
+message ConfirmationField {
+    string title=1;
+    string text=2;
+    string ok_text=3;
+    string dismiss_text=4;
+}
+
+message AttachmentActionOptionGroup {
+    string text =1;
+    repeated AttachmentActionOption options=2;
+}
+
+message AttachmentActionOption {
+    string title=1;
+    string value=2;
+    string description =3;
+}
+
+message AttachmentField {
+    string title=1;
+    string value=2;
+    bool short =3;
+}

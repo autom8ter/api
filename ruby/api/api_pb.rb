@@ -169,6 +169,57 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :icon, :string, 2
     optional :title, :string, 3
   end
+  add_message "api.SlackAttachment" do
+    optional :color, :string, 1
+    optional :fallback, :string, 2
+    optional :callback_id, :string, 3
+    optional :id, :int64, 4
+    optional :author_id, :string, 5
+    optional :author_name, :string, 6
+    optional :author_link, :string, 7
+    optional :author_icon, :string, 8
+    optional :title, :string, 9
+    optional :title_prefix, :string, 10
+    optional :pretext, :string, 11
+    optional :text, :string, 12
+    optional :image_url, :string, 13
+    optional :thumb_url, :string, 14
+    repeated :fields, :message, 15, "api.AttachmentField"
+  end
+  add_message "api.AttachmentAction" do
+    optional :name, :string, 1
+    optional :text, :string, 2
+    optional :style, :string, 3
+    optional :type, :string, 4
+    optional :value, :string, 5
+    optional :data_source, :string, 6
+    optional :min_query_length, :int64, 7
+    repeated :options, :message, 8, "api.AttachmentActionOption"
+    repeated :selected_options, :message, 9, "api.AttachmentActionOption"
+    repeated :option_groups, :message, 10, "api.AttachmentActionOptionGroup"
+    optional :confirm, :message, 11, "api.ConfirmationField"
+    optional :url, :string, 12
+  end
+  add_message "api.ConfirmationField" do
+    optional :title, :string, 1
+    optional :text, :string, 2
+    optional :ok_text, :string, 3
+    optional :dismiss_text, :string, 4
+  end
+  add_message "api.AttachmentActionOptionGroup" do
+    optional :text, :string, 1
+    repeated :options, :message, 2, "api.AttachmentActionOption"
+  end
+  add_message "api.AttachmentActionOption" do
+    optional :title, :string, 1
+    optional :value, :string, 2
+    optional :description, :string, 3
+  end
+  add_message "api.AttachmentField" do
+    optional :title, :string, 1
+    optional :value, :string, 2
+    optional :short, :bool, 3
+  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -206,5 +257,11 @@ module Api
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
   LogHook = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogHook").msgclass
+  SlackAttachment = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SlackAttachment").msgclass
+  AttachmentAction = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentAction").msgclass
+  ConfirmationField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ConfirmationField").msgclass
+  AttachmentActionOptionGroup = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOptionGroup").msgclass
+  AttachmentActionOption = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOption").msgclass
+  AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end
