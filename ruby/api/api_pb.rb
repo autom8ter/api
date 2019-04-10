@@ -119,6 +119,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :slack_key, :string, 6
     optional :customer_index, :enum, 7, "api.CustomerIndex"
     optional :email_address, :message, 8, "api.EmailAddress"
+    optional :log_config, :message, 9, "api.LogConfig"
   end
   add_message "api.LogConfig" do
     optional :username, :string, 1

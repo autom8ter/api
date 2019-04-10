@@ -30,6 +30,7 @@ CF_EXTERN_C_BEGIN
 @class Address;
 @class EmailAddress;
 @class ItemRef;
+@class LogConfig;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -462,6 +463,7 @@ typedef GPB_ENUM(Config_FieldNumber) {
   Config_FieldNumber_SlackKey = 6,
   Config_FieldNumber_CustomerIndex = 7,
   Config_FieldNumber_EmailAddress = 8,
+  Config_FieldNumber_LogConfig = 9,
 };
 
 @interface Config : GPBMessage
@@ -483,6 +485,10 @@ typedef GPB_ENUM(Config_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) EmailAddress *emailAddress;
 /** Test to see if @c emailAddress has been set. */
 @property(nonatomic, readwrite) BOOL hasEmailAddress;
+
+@property(nonatomic, readwrite, strong, null_resettable) LogConfig *logConfig;
+/** Test to see if @c logConfig has been set. */
+@property(nonatomic, readwrite) BOOL hasLogConfig;
 
 @end
 

@@ -24,6 +24,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Address;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EmailAddress;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ItemRef;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LogConfig;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_User_MetadataEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_UserMap_UsersEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_User;
@@ -485,9 +486,10 @@ static void InitDefaultsConfig() {
   ::api::Config::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Config =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsConfig}, {
-      &protobuf_api_2eproto::scc_info_EmailAddress.base,}};
+::google::protobuf::internal::SCCInfo<2> scc_info_Config =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsConfig}, {
+      &protobuf_api_2eproto::scc_info_EmailAddress.base,
+      &protobuf_api_2eproto::scc_info_LogConfig.base,}};
 
 static void InitDefaultsLogConfig() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -764,6 +766,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, slack_key_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, customer_index_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, email_address_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, log_config_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::LogConfig, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -813,9 +816,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 171, -1, sizeof(::api::ItemRef)},
   { 179, -1, sizeof(::api::Star)},
   { 186, -1, sizeof(::api::Config)},
-  { 199, -1, sizeof(::api::LogConfig)},
-  { 206, -1, sizeof(::api::EmailAddress)},
-  { 213, -1, sizeof(::api::Email)},
+  { 200, -1, sizeof(::api::LogConfig)},
+  { 207, -1, sizeof(::api::EmailAddress)},
+  { 214, -1, sizeof(::api::Email)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -914,46 +917,47 @@ void AddDescriptorsImpl() {
       "\0132\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001 "
       "\001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004St"
       "ar\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.Ite"
-      "mRef\"\326\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n\016twilio"
+      "mRef\"\372\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n\016twilio"
       "_account\030\002 \001(\t\022\022\n\ntwilio_key\030\003 \001(\t\022\024\n\014se"
       "ndgrid_key\030\004 \001(\t\022\022\n\nstripe_key\030\005 \001(\t\022\021\n\t"
       "slack_key\030\006 \001(\t\022*\n\016customer_index\030\007 \001(\0162"
       "\022.api.CustomerIndex\022(\n\remail_address\030\010 \001"
-      "(\0132\021.api.EmailAddress\".\n\tLogConfig\022\020\n\010us"
-      "ername\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailAd"
-      "dress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"z\n\005"
-      "Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress\022\035"
-      "\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subject"
-      "\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t"
-      "*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005"
-      "PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserEmailM"
-      "ap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/a"
-      "pi/users:\001*\022\?\n\014GetUserIDMap\022\n.api.Empty\032"
-      "\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\017"
-      "GetUserPhoneMap\022\n.api.Empty\032\014.api.UserMa"
-      "p\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.ap"
-      "i.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/ap"
-      "i/users:\001*\022Z\n\017AddUserMetadata\022\033.api.AddU"
-      "serMetadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024/"
-      "api/users/{user_id}:\001*\022e\n\rSubscribeUser\022"
-      "\031.api.SubscribeUserRequest\032\032.api.Subscri"
-      "beUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/{emai"
-      "l}:\001*\022\\\n\017UnSubscribeUser\022\036.api.CancelSub"
-      "scriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/a"
-      "pi/users/{email}:\001*\022j\n\026CreateSubscriptio"
-      "nPlan\022\026.api.CreatePlanRequest\032\027.api.Crea"
-      "tePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan"
-      "_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.ap"
-      "i.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*"
-      "\022I\n\010CallUser\022\020.api.CallRequest\032\n.api.Emp"
-      "ty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007M"
-      "MSUser\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323\344"
-      "\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEmailUse"
-      "r\022\021.api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002\031"
-      "\"\024/api/plans/{user_id}:\001*b\006proto3"
+      "(\0132\021.api.EmailAddress\022\"\n\nlog_config\030\t \001("
+      "\0132\016.api.LogConfig\".\n\tLogConfig\022\020\n\010userna"
+      "me\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailAddres"
+      "s\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"z\n\005Emai"
+      "l\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress\022\035\n\002to"
+      "\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subject\030\003 \001"
+      "(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t*-\n\r"
+      "CustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHON"
+      "E\020\0022\317\007\n\013UserService\022B\n\017GetUserEmailMap\022\n"
+      ".api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/u"
+      "sers:\001*\022\?\n\014GetUserIDMap\022\n.api.Empty\032\014.ap"
+      "i.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\017GetU"
+      "serPhoneMap\022\n.api.Empty\032\014.api.UserMap\"\025\202"
+      "\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.api.Ad"
+      "dUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/api/us"
+      "ers:\001*\022Z\n\017AddUserMetadata\022\033.api.AddUserM"
+      "etadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024/api/"
+      "users/{user_id}:\001*\022e\n\rSubscribeUser\022\031.ap"
+      "i.SubscribeUserRequest\032\032.api.SubscribeUs"
+      "erResponse\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001"
+      "*\022\\\n\017UnSubscribeUser\022\036.api.CancelSubscri"
+      "ptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/u"
+      "sers/{email}:\001*\022j\n\026CreateSubscriptionPla"
+      "n\022\026.api.CreatePlanRequest\032\027.api.CreatePl"
+      "anResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan_id}"
+      ":\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.api.Em"
+      "pty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022I\n\010"
+      "CallUser\022\020.api.CallRequest\032\n.api.Empty\"\037"
+      "\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007MMSUs"
+      "er\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\""
+      "\024/api/plans/{user_id}:\001*\022K\n\tEmailUser\022\021."
+      "api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/a"
+      "pi/plans/{user_id}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3313);
+      descriptor, 3349);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -8424,6 +8428,8 @@ void Star::InternalSwap(Star* other) {
 void Config::InitAsDefaultInstance() {
   ::api::_Config_default_instance_._instance.get_mutable()->email_address_ = const_cast< ::api::EmailAddress*>(
       ::api::EmailAddress::internal_default_instance());
+  ::api::_Config_default_instance_._instance.get_mutable()->log_config_ = const_cast< ::api::LogConfig*>(
+      ::api::LogConfig::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Config::kDebugFieldNumber;
@@ -8434,6 +8440,7 @@ const int Config::kStripeKeyFieldNumber;
 const int Config::kSlackKeyFieldNumber;
 const int Config::kCustomerIndexFieldNumber;
 const int Config::kEmailAddressFieldNumber;
+const int Config::kLogConfigFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Config::Config()
@@ -8472,6 +8479,11 @@ Config::Config(const Config& from)
   } else {
     email_address_ = NULL;
   }
+  if (from.has_log_config()) {
+    log_config_ = new ::api::LogConfig(*from.log_config_);
+  } else {
+    log_config_ = NULL;
+  }
   ::memcpy(&debug_, &from.debug_,
     static_cast<size_t>(reinterpret_cast<char*>(&customer_index_) -
     reinterpret_cast<char*>(&debug_)) + sizeof(customer_index_));
@@ -8501,6 +8513,7 @@ void Config::SharedDtor() {
   stripe_key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   slack_key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete email_address_;
+  if (this != internal_default_instance()) delete log_config_;
 }
 
 void Config::SetCachedSize(int size) const {
@@ -8532,6 +8545,10 @@ void Config::Clear() {
     delete email_address_;
   }
   email_address_ = NULL;
+  if (GetArenaNoVirtual() == NULL && log_config_ != NULL) {
+    delete log_config_;
+  }
+  log_config_ = NULL;
   ::memset(&debug_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&customer_index_) -
       reinterpret_cast<char*>(&debug_)) + sizeof(customer_index_));
@@ -8669,6 +8686,18 @@ bool Config::MergePartialFromCodedStream(
         break;
       }
 
+      // .api.LogConfig log_config = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_log_config()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -8762,6 +8791,12 @@ void Config::SerializeWithCachedSizes(
       8, this->_internal_email_address(), output);
   }
 
+  // .api.LogConfig log_config = 9;
+  if (this->has_log_config()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, this->_internal_log_config(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -8849,6 +8884,13 @@ void Config::SerializeWithCachedSizes(
         8, this->_internal_email_address(), deterministic, target);
   }
 
+  // .api.LogConfig log_config = 9;
+  if (this->has_log_config()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        9, this->_internal_log_config(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -8906,6 +8948,13 @@ size_t Config::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *email_address_);
+  }
+
+  // .api.LogConfig log_config = 9;
+  if (this->has_log_config()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *log_config_);
   }
 
   // bool debug = 1;
@@ -8969,6 +9018,9 @@ void Config::MergeFrom(const Config& from) {
   if (from.has_email_address()) {
     mutable_email_address()->::api::EmailAddress::MergeFrom(from.email_address());
   }
+  if (from.has_log_config()) {
+    mutable_log_config()->::api::LogConfig::MergeFrom(from.log_config());
+  }
   if (from.debug() != 0) {
     set_debug(from.debug());
   }
@@ -9012,6 +9064,7 @@ void Config::InternalSwap(Config* other) {
   slack_key_.Swap(&other->slack_key_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(email_address_, other->email_address_);
+  swap(log_config_, other->log_config_);
   swap(debug_, other->debug_);
   swap(customer_index_, other->customer_index_);
   _internal_metadata_.Swap(&other->_internal_metadata_);

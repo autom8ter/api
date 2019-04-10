@@ -17289,6 +17289,19 @@ public final class Api {
      * <code>.api.EmailAddress email_address = 8;</code>
      */
     api.Api.EmailAddressOrBuilder getEmailAddressOrBuilder();
+
+    /**
+     * <code>.api.LogConfig log_config = 9;</code>
+     */
+    boolean hasLogConfig();
+    /**
+     * <code>.api.LogConfig log_config = 9;</code>
+     */
+    api.Api.LogConfig getLogConfig();
+    /**
+     * <code>.api.LogConfig log_config = 9;</code>
+     */
+    api.Api.LogConfigOrBuilder getLogConfigOrBuilder();
   }
   /**
    * Protobuf type {@code api.Config}
@@ -17386,6 +17399,19 @@ public final class Api {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(emailAddress_);
                 emailAddress_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              api.Api.LogConfig.Builder subBuilder = null;
+              if (logConfig_ != null) {
+                subBuilder = logConfig_.toBuilder();
+              }
+              logConfig_ = input.readMessage(api.Api.LogConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logConfig_);
+                logConfig_ = subBuilder.buildPartial();
               }
 
               break;
@@ -17639,6 +17665,27 @@ public final class Api {
       return getEmailAddress();
     }
 
+    public static final int LOG_CONFIG_FIELD_NUMBER = 9;
+    private api.Api.LogConfig logConfig_;
+    /**
+     * <code>.api.LogConfig log_config = 9;</code>
+     */
+    public boolean hasLogConfig() {
+      return logConfig_ != null;
+    }
+    /**
+     * <code>.api.LogConfig log_config = 9;</code>
+     */
+    public api.Api.LogConfig getLogConfig() {
+      return logConfig_ == null ? api.Api.LogConfig.getDefaultInstance() : logConfig_;
+    }
+    /**
+     * <code>.api.LogConfig log_config = 9;</code>
+     */
+    public api.Api.LogConfigOrBuilder getLogConfigOrBuilder() {
+      return getLogConfig();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17677,6 +17724,9 @@ public final class Api {
       if (emailAddress_ != null) {
         output.writeMessage(8, getEmailAddress());
       }
+      if (logConfig_ != null) {
+        output.writeMessage(9, getLogConfig());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17713,6 +17763,10 @@ public final class Api {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getEmailAddress());
       }
+      if (logConfig_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getLogConfig());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17747,6 +17801,11 @@ public final class Api {
         result = result && getEmailAddress()
             .equals(other.getEmailAddress());
       }
+      result = result && (hasLogConfig() == other.hasLogConfig());
+      if (hasLogConfig()) {
+        result = result && getLogConfig()
+            .equals(other.getLogConfig());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -17776,6 +17835,10 @@ public final class Api {
       if (hasEmailAddress()) {
         hash = (37 * hash) + EMAIL_ADDRESS_FIELD_NUMBER;
         hash = (53 * hash) + getEmailAddress().hashCode();
+      }
+      if (hasLogConfig()) {
+        hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getLogConfig().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -17930,6 +17993,12 @@ public final class Api {
           emailAddress_ = null;
           emailAddressBuilder_ = null;
         }
+        if (logConfigBuilder_ == null) {
+          logConfig_ = null;
+        } else {
+          logConfig_ = null;
+          logConfigBuilder_ = null;
+        }
         return this;
       }
 
@@ -17967,6 +18036,11 @@ public final class Api {
           result.emailAddress_ = emailAddress_;
         } else {
           result.emailAddress_ = emailAddressBuilder_.build();
+        }
+        if (logConfigBuilder_ == null) {
+          result.logConfig_ = logConfig_;
+        } else {
+          result.logConfig_ = logConfigBuilder_.build();
         }
         onBuilt();
         return result;
@@ -18044,6 +18118,9 @@ public final class Api {
         }
         if (other.hasEmailAddress()) {
           mergeEmailAddress(other.getEmailAddress());
+        }
+        if (other.hasLogConfig()) {
+          mergeLogConfig(other.getLogConfig());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18605,6 +18682,123 @@ public final class Api {
           emailAddress_ = null;
         }
         return emailAddressBuilder_;
+      }
+
+      private api.Api.LogConfig logConfig_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.LogConfig, api.Api.LogConfig.Builder, api.Api.LogConfigOrBuilder> logConfigBuilder_;
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public boolean hasLogConfig() {
+        return logConfigBuilder_ != null || logConfig_ != null;
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public api.Api.LogConfig getLogConfig() {
+        if (logConfigBuilder_ == null) {
+          return logConfig_ == null ? api.Api.LogConfig.getDefaultInstance() : logConfig_;
+        } else {
+          return logConfigBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public Builder setLogConfig(api.Api.LogConfig value) {
+        if (logConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          logConfig_ = value;
+          onChanged();
+        } else {
+          logConfigBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public Builder setLogConfig(
+          api.Api.LogConfig.Builder builderForValue) {
+        if (logConfigBuilder_ == null) {
+          logConfig_ = builderForValue.build();
+          onChanged();
+        } else {
+          logConfigBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public Builder mergeLogConfig(api.Api.LogConfig value) {
+        if (logConfigBuilder_ == null) {
+          if (logConfig_ != null) {
+            logConfig_ =
+              api.Api.LogConfig.newBuilder(logConfig_).mergeFrom(value).buildPartial();
+          } else {
+            logConfig_ = value;
+          }
+          onChanged();
+        } else {
+          logConfigBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public Builder clearLogConfig() {
+        if (logConfigBuilder_ == null) {
+          logConfig_ = null;
+          onChanged();
+        } else {
+          logConfig_ = null;
+          logConfigBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public api.Api.LogConfig.Builder getLogConfigBuilder() {
+        
+        onChanged();
+        return getLogConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      public api.Api.LogConfigOrBuilder getLogConfigOrBuilder() {
+        if (logConfigBuilder_ != null) {
+          return logConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return logConfig_ == null ?
+              api.Api.LogConfig.getDefaultInstance() : logConfig_;
+        }
+      }
+      /**
+       * <code>.api.LogConfig log_config = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.LogConfig, api.Api.LogConfig.Builder, api.Api.LogConfigOrBuilder> 
+          getLogConfigFieldBuilder() {
+        if (logConfigBuilder_ == null) {
+          logConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.LogConfig, api.Api.LogConfig.Builder, api.Api.LogConfigOrBuilder>(
+                  getLogConfig(),
+                  getParentForChildren(),
+                  isClean());
+          logConfig_ = null;
+        }
+        return logConfigBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -21430,43 +21624,44 @@ public final class Api {
       "\0132\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001 " +
       "\001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004St" +
       "ar\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.Ite" +
-      "mRef\"\326\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n\016twilio" +
+      "mRef\"\372\001\n\006Config\022\r\n\005debug\030\001 \001(\010\022\026\n\016twilio" +
       "_account\030\002 \001(\t\022\022\n\ntwilio_key\030\003 \001(\t\022\024\n\014se" +
       "ndgrid_key\030\004 \001(\t\022\022\n\nstripe_key\030\005 \001(\t\022\021\n\t" +
       "slack_key\030\006 \001(\t\022*\n\016customer_index\030\007 \001(\0162" +
       "\022.api.CustomerIndex\022(\n\remail_address\030\010 \001" +
-      "(\0132\021.api.EmailAddress\".\n\tLogConfig\022\020\n\010us" +
-      "ername\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailAd" +
-      "dress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"z\n\005" +
-      "Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress\022\035" +
-      "\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subject" +
-      "\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t" +
-      "*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005" +
-      "PHONE\020\0022\317\007\n\013UserService\022B\n\017GetUserEmailM" +
-      "ap\022\n.api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/a" +
-      "pi/users:\001*\022?\n\014GetUserIDMap\022\n.api.Empty\032" +
-      "\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\017" +
-      "GetUserPhoneMap\022\n.api.Empty\032\014.api.UserMa" +
-      "p\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.ap" +
-      "i.AddUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/ap" +
-      "i/users:\001*\022Z\n\017AddUserMetadata\022\033.api.AddU" +
-      "serMetadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024/" +
-      "api/users/{user_id}:\001*\022e\n\rSubscribeUser\022" +
-      "\031.api.SubscribeUserRequest\032\032.api.Subscri" +
-      "beUserResponse\"\035\202\323\344\223\002\027\"\022/api/users/{emai" +
-      "l}:\001*\022\\\n\017UnSubscribeUser\022\036.api.CancelSub" +
-      "scriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/a" +
-      "pi/users/{email}:\001*\022j\n\026CreateSubscriptio" +
-      "nPlan\022\026.api.CreatePlanRequest\032\027.api.Crea" +
-      "tePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan" +
-      "_id}:\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.ap" +
-      "i.Empty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*" +
-      "\022I\n\010CallUser\022\020.api.CallRequest\032\n.api.Emp" +
-      "ty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007M" +
-      "MSUser\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323\344" +
-      "\223\002\031\"\024/api/plans/{user_id}:\001*\022K\n\tEmailUse" +
-      "r\022\021.api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002\031" +
-      "\"\024/api/plans/{user_id}:\001*b\006proto3"
+      "(\0132\021.api.EmailAddress\022\"\n\nlog_config\030\t \001(" +
+      "\0132\016.api.LogConfig\".\n\tLogConfig\022\020\n\010userna" +
+      "me\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailAddres" +
+      "s\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"z\n\005Emai" +
+      "l\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress\022\035\n\002to" +
+      "\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subject\030\003 \001" +
+      "(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t*-\n\r" +
+      "CustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHON" +
+      "E\020\0022\317\007\n\013UserService\022B\n\017GetUserEmailMap\022\n" +
+      ".api.Empty\032\014.api.UserMap\"\025\202\323\344\223\002\017\"\n/api/u" +
+      "sers:\001*\022?\n\014GetUserIDMap\022\n.api.Empty\032\014.ap" +
+      "i.UserMap\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\017GetU" +
+      "serPhoneMap\022\n.api.Empty\032\014.api.UserMap\"\025\202" +
+      "\323\344\223\002\017\"\n/api/users:\001*\022@\n\007AddUser\022\023.api.Ad" +
+      "dUserRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n/api/us" +
+      "ers:\001*\022Z\n\017AddUserMetadata\022\033.api.AddUserM" +
+      "etadataRequest\032\t.api.User\"\037\202\323\344\223\002\031\"\024/api/" +
+      "users/{user_id}:\001*\022e\n\rSubscribeUser\022\031.ap" +
+      "i.SubscribeUserRequest\032\032.api.SubscribeUs" +
+      "erResponse\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001" +
+      "*\022\\\n\017UnSubscribeUser\022\036.api.CancelSubscri" +
+      "ptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/u" +
+      "sers/{email}:\001*\022j\n\026CreateSubscriptionPla" +
+      "n\022\026.api.CreatePlanRequest\032\027.api.CreatePl" +
+      "anResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan_id}" +
+      ":\001*\022G\n\007SMSUser\022\017.api.SMSRequest\032\n.api.Em" +
+      "pty\"\037\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022I\n\010" +
+      "CallUser\022\020.api.CallRequest\032\n.api.Empty\"\037" +
+      "\202\323\344\223\002\031\"\024/api/plans/{user_id}:\001*\022G\n\007MMSUs" +
+      "er\022\017.api.MMSRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"" +
+      "\024/api/plans/{user_id}:\001*\022K\n\tEmailUser\022\021." +
+      "api.EmailRequest\032\n.api.Empty\"\037\202\323\344\223\002\031\"\024/a" +
+      "pi/plans/{user_id}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21621,7 +21816,7 @@ public final class Api {
     internal_static_api_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Config_descriptor,
-        new java.lang.String[] { "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress", });
+        new java.lang.String[] { "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress", "LogConfig", });
     internal_static_api_LogConfig_descriptor =
       getDescriptor().getMessageTypes().get(20);
     internal_static_api_LogConfig_fieldAccessorTable = new

@@ -65,39 +65,40 @@ namespace Api {
             "BGl0ZW0YBCABKAsyDC5hcGkuSXRlbVJlZiI5CgdJdGVtUmVmEg8KB2NoYW5u",
             "ZWwYASABKAkSDAoEZmlsZRgCIAEoCRIPCgdjb21tZW50GAMgASgJIjAKBFN0",
             "YXISDAoEdGV4dBgBIAEoCRIaCgRpdGVtGAQgASgLMgwuYXBpLkl0ZW1SZWYi",
-            "1gEKBkNvbmZpZxINCgVkZWJ1ZxgBIAEoCBIWCg50d2lsaW9fYWNjb3VudBgC",
+            "+gEKBkNvbmZpZxINCgVkZWJ1ZxgBIAEoCBIWCg50d2lsaW9fYWNjb3VudBgC",
             "IAEoCRISCgp0d2lsaW9fa2V5GAMgASgJEhQKDHNlbmRncmlkX2tleRgEIAEo",
             "CRISCgpzdHJpcGVfa2V5GAUgASgJEhEKCXNsYWNrX2tleRgGIAEoCRIqCg5j",
             "dXN0b21lcl9pbmRleBgHIAEoDjISLmFwaS5DdXN0b21lckluZGV4EigKDWVt",
-            "YWlsX2FkZHJlc3MYCCABKAsyES5hcGkuRW1haWxBZGRyZXNzIi4KCUxvZ0Nv",
-            "bmZpZxIQCgh1c2VybmFtZRgBIAEoCRIPCgdjaGFubmVsGAIgASgJIi0KDEVt",
-            "YWlsQWRkcmVzcxIMCgRuYW1lGAEgASgJEg8KB2FkZHJlc3MYAiABKAkiegoF",
-            "RW1haWwSHwoEZnJvbRgBIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MSHQoCdG8Y",
-            "AiABKAsyES5hcGkuRW1haWxBZGRyZXNzEg8KB3N1YmplY3QYAyABKAkSEgoK",
-            "cGxhaW5fdGV4dBgEIAEoCRIMCgRodG1sGAUgASgJKi0KDUN1c3RvbWVySW5k",
-            "ZXgSBgoCSUQQABIJCgVFTUFJTBABEgkKBVBIT05FEAIyzwcKC1VzZXJTZXJ2",
-            "aWNlEkIKD0dldFVzZXJFbWFpbE1hcBIKLmFwaS5FbXB0eRoMLmFwaS5Vc2Vy",
-            "TWFwIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSPwoMR2V0VXNlcklETWFwEgou",
-            "YXBpLkVtcHR5GgwuYXBpLlVzZXJNYXAiFYLT5JMCDyIKL2FwaS91c2VyczoB",
-            "KhJCCg9HZXRVc2VyUGhvbmVNYXASCi5hcGkuRW1wdHkaDC5hcGkuVXNlck1h",
-            "cCIVgtPkkwIPIgovYXBpL3VzZXJzOgEqEkAKB0FkZFVzZXISEy5hcGkuQWRk",
-            "VXNlclJlcXVlc3QaCS5hcGkuVXNlciIVgtPkkwIPIgovYXBpL3VzZXJzOgEq",
-            "EloKD0FkZFVzZXJNZXRhZGF0YRIbLmFwaS5BZGRVc2VyTWV0YWRhdGFSZXF1",
-            "ZXN0GgkuYXBpLlVzZXIiH4LT5JMCGSIUL2FwaS91c2Vycy97dXNlcl9pZH06",
-            "ASoSZQoNU3Vic2NyaWJlVXNlchIZLmFwaS5TdWJzY3JpYmVVc2VyUmVxdWVz",
-            "dBoaLmFwaS5TdWJzY3JpYmVVc2VyUmVzcG9uc2UiHYLT5JMCFyISL2FwaS91",
-            "c2Vycy97ZW1haWx9OgEqElwKD1VuU3Vic2NyaWJlVXNlchIeLmFwaS5DYW5j",
-            "ZWxTdWJzY3JpcHRpb25SZXF1ZXN0GgouYXBpLkVtcHR5Ih2C0+STAhciEi9h",
-            "cGkvdXNlcnMve2VtYWlsfToBKhJqChZDcmVhdGVTdWJzY3JpcHRpb25QbGFu",
-            "EhYuYXBpLkNyZWF0ZVBsYW5SZXF1ZXN0GhcuYXBpLkNyZWF0ZVBsYW5SZXNw",
-            "b25zZSIfgtPkkwIZIhQvYXBpL3BsYW5zL3twbGFuX2lkfToBKhJHCgdTTVNV",
-            "c2VyEg8uYXBpLlNNU1JlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2Fw",
-            "aS9wbGFucy97dXNlcl9pZH06ASoSSQoIQ2FsbFVzZXISEC5hcGkuQ2FsbFJl",
-            "cXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9p",
-            "ZH06ASoSRwoHTU1TVXNlchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5",
-            "Ih+C0+STAhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEqEksKCUVtYWlsVXNl",
-            "chIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2Fw",
-            "aS9wbGFucy97dXNlcl9pZH06ASpiBnByb3RvMw=="));
+            "YWlsX2FkZHJlc3MYCCABKAsyES5hcGkuRW1haWxBZGRyZXNzEiIKCmxvZ19j",
+            "b25maWcYCSABKAsyDi5hcGkuTG9nQ29uZmlnIi4KCUxvZ0NvbmZpZxIQCgh1",
+            "c2VybmFtZRgBIAEoCRIPCgdjaGFubmVsGAIgASgJIi0KDEVtYWlsQWRkcmVz",
+            "cxIMCgRuYW1lGAEgASgJEg8KB2FkZHJlc3MYAiABKAkiegoFRW1haWwSHwoE",
+            "ZnJvbRgBIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MSHQoCdG8YAiABKAsyES5h",
+            "cGkuRW1haWxBZGRyZXNzEg8KB3N1YmplY3QYAyABKAkSEgoKcGxhaW5fdGV4",
+            "dBgEIAEoCRIMCgRodG1sGAUgASgJKi0KDUN1c3RvbWVySW5kZXgSBgoCSUQQ",
+            "ABIJCgVFTUFJTBABEgkKBVBIT05FEAIyzwcKC1VzZXJTZXJ2aWNlEkIKD0dl",
+            "dFVzZXJFbWFpbE1hcBIKLmFwaS5FbXB0eRoMLmFwaS5Vc2VyTWFwIhWC0+ST",
+            "Ag8iCi9hcGkvdXNlcnM6ASoSPwoMR2V0VXNlcklETWFwEgouYXBpLkVtcHR5",
+            "GgwuYXBpLlVzZXJNYXAiFYLT5JMCDyIKL2FwaS91c2VyczoBKhJCCg9HZXRV",
+            "c2VyUGhvbmVNYXASCi5hcGkuRW1wdHkaDC5hcGkuVXNlck1hcCIVgtPkkwIP",
+            "IgovYXBpL3VzZXJzOgEqEkAKB0FkZFVzZXISEy5hcGkuQWRkVXNlclJlcXVl",
+            "c3QaCS5hcGkuVXNlciIVgtPkkwIPIgovYXBpL3VzZXJzOgEqEloKD0FkZFVz",
+            "ZXJNZXRhZGF0YRIbLmFwaS5BZGRVc2VyTWV0YWRhdGFSZXF1ZXN0GgkuYXBp",
+            "LlVzZXIiH4LT5JMCGSIUL2FwaS91c2Vycy97dXNlcl9pZH06ASoSZQoNU3Vi",
+            "c2NyaWJlVXNlchIZLmFwaS5TdWJzY3JpYmVVc2VyUmVxdWVzdBoaLmFwaS5T",
+            "dWJzY3JpYmVVc2VyUmVzcG9uc2UiHYLT5JMCFyISL2FwaS91c2Vycy97ZW1h",
+            "aWx9OgEqElwKD1VuU3Vic2NyaWJlVXNlchIeLmFwaS5DYW5jZWxTdWJzY3Jp",
+            "cHRpb25SZXF1ZXN0GgouYXBpLkVtcHR5Ih2C0+STAhciEi9hcGkvdXNlcnMv",
+            "e2VtYWlsfToBKhJqChZDcmVhdGVTdWJzY3JpcHRpb25QbGFuEhYuYXBpLkNy",
+            "ZWF0ZVBsYW5SZXF1ZXN0GhcuYXBpLkNyZWF0ZVBsYW5SZXNwb25zZSIfgtPk",
+            "kwIZIhQvYXBpL3BsYW5zL3twbGFuX2lkfToBKhJHCgdTTVNVc2VyEg8uYXBp",
+            "LlNNU1JlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97",
+            "dXNlcl9pZH06ASoSSQoIQ2FsbFVzZXISEC5hcGkuQ2FsbFJlcXVlc3QaCi5h",
+            "cGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9pZH06ASoSRwoH",
+            "TU1TVXNlchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5Ih+C0+STAhki",
+            "FC9hcGkvcGxhbnMve3VzZXJfaWR9OgEqEksKCUVtYWlsVXNlchIRLmFwaS5F",
+            "bWFpbFJlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97",
+            "dXNlcl9pZH06ASpiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), }, new pbr::GeneratedClrTypeInfo[] {
@@ -120,7 +121,7 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserReminder), global::Api.UserReminder.Parser, new[]{ "UserId", "Text", "Time", "Item" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.ItemRef), global::Api.ItemRef.Parser, new[]{ "Channel", "File", "Comment" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Star), global::Api.Star.Parser, new[]{ "Text", "Item" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Config), global::Api.Config.Parser, new[]{ "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Config), global::Api.Config.Parser, new[]{ "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress", "LogConfig" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.LogConfig), global::Api.LogConfig.Parser, new[]{ "Username", "Channel" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.EmailAddress), global::Api.EmailAddress.Parser, new[]{ "Name", "Address" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "From", "To", "Subject", "PlainText", "Html" }, null, null, null)
@@ -3889,6 +3890,7 @@ namespace Api {
       slackKey_ = other.slackKey_;
       customerIndex_ = other.customerIndex_;
       emailAddress_ = other.emailAddress_ != null ? other.emailAddress_.Clone() : null;
+      logConfig_ = other.logConfig_ != null ? other.logConfig_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3985,6 +3987,17 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "log_config" field.</summary>
+    public const int LogConfigFieldNumber = 9;
+    private global::Api.LogConfig logConfig_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.LogConfig LogConfig {
+      get { return logConfig_; }
+      set {
+        logConfig_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Config);
@@ -4006,6 +4019,7 @@ namespace Api {
       if (SlackKey != other.SlackKey) return false;
       if (CustomerIndex != other.CustomerIndex) return false;
       if (!object.Equals(EmailAddress, other.EmailAddress)) return false;
+      if (!object.Equals(LogConfig, other.LogConfig)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4020,6 +4034,7 @@ namespace Api {
       if (SlackKey.Length != 0) hash ^= SlackKey.GetHashCode();
       if (CustomerIndex != 0) hash ^= CustomerIndex.GetHashCode();
       if (emailAddress_ != null) hash ^= EmailAddress.GetHashCode();
+      if (logConfig_ != null) hash ^= LogConfig.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4065,6 +4080,10 @@ namespace Api {
         output.WriteRawTag(66);
         output.WriteMessage(EmailAddress);
       }
+      if (logConfig_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(LogConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4096,6 +4115,9 @@ namespace Api {
       }
       if (emailAddress_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(EmailAddress);
+      }
+      if (logConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LogConfig);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4134,6 +4156,12 @@ namespace Api {
           emailAddress_ = new global::Api.EmailAddress();
         }
         EmailAddress.MergeFrom(other.EmailAddress);
+      }
+      if (other.logConfig_ != null) {
+        if (logConfig_ == null) {
+          logConfig_ = new global::Api.LogConfig();
+        }
+        LogConfig.MergeFrom(other.LogConfig);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4179,6 +4207,13 @@ namespace Api {
               emailAddress_ = new global::Api.EmailAddress();
             }
             input.ReadMessage(emailAddress_);
+            break;
+          }
+          case 74: {
+            if (logConfig_ == null) {
+              logConfig_ = new global::Api.LogConfig();
+            }
+            input.ReadMessage(logConfig_);
             break;
           }
         }

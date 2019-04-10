@@ -219,7 +219,7 @@ message Config {
     string slack_key=6;
     CustomerIndex customer_index=7;
     EmailAddress email_address=8;
-
+    LogConfig log_config=9;
 }
 
 message LogConfig {

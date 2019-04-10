@@ -4083,7 +4083,8 @@ proto.api.Config.toObject = function(includeInstance, msg) {
     stripeKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
     slackKey: jspb.Message.getFieldWithDefault(msg, 6, ""),
     customerIndex: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    emailAddress: (f = msg.getEmailAddress()) && proto.api.EmailAddress.toObject(includeInstance, f)
+    emailAddress: (f = msg.getEmailAddress()) && proto.api.EmailAddress.toObject(includeInstance, f),
+    logConfig: (f = msg.getLogConfig()) && proto.api.LogConfig.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4152,6 +4153,11 @@ proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
       var value = new proto.api.EmailAddress;
       reader.readMessage(value,proto.api.EmailAddress.deserializeBinaryFromReader);
       msg.setEmailAddress(value);
+      break;
+    case 9:
+      var value = new proto.api.LogConfig;
+      reader.readMessage(value,proto.api.LogConfig.deserializeBinaryFromReader);
+      msg.setLogConfig(value);
       break;
     default:
       reader.skipField();
@@ -4237,6 +4243,14 @@ proto.api.Config.serializeBinaryToWriter = function(message, writer) {
       8,
       f,
       proto.api.EmailAddress.serializeBinaryToWriter
+    );
+  }
+  f = message.getLogConfig();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.api.LogConfig.serializeBinaryToWriter
     );
   }
 };
@@ -4376,6 +4390,36 @@ proto.api.Config.prototype.clearEmailAddress = function() {
  */
 proto.api.Config.prototype.hasEmailAddress = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional LogConfig log_config = 9;
+ * @return {?proto.api.LogConfig}
+ */
+proto.api.Config.prototype.getLogConfig = function() {
+  return /** @type{?proto.api.LogConfig} */ (
+    jspb.Message.getWrapperField(this, proto.api.LogConfig, 9));
+};
+
+
+/** @param {?proto.api.LogConfig|undefined} value */
+proto.api.Config.prototype.setLogConfig = function(value) {
+  jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+proto.api.Config.prototype.clearLogConfig = function() {
+  this.setLogConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.Config.prototype.hasLogConfig = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

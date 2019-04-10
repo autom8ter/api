@@ -3168,6 +3168,18 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::api::EmailAddress* mutable_email_address();
   void set_allocated_email_address(::api::EmailAddress* email_address);
 
+  // .api.LogConfig log_config = 9;
+  bool has_log_config() const;
+  void clear_log_config();
+  static const int kLogConfigFieldNumber = 9;
+  private:
+  const ::api::LogConfig& _internal_log_config() const;
+  public:
+  const ::api::LogConfig& log_config() const;
+  ::api::LogConfig* release_log_config();
+  ::api::LogConfig* mutable_log_config();
+  void set_allocated_log_config(::api::LogConfig* log_config);
+
   // bool debug = 1;
   void clear_debug();
   static const int kDebugFieldNumber = 1;
@@ -3190,6 +3202,7 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::internal::ArenaStringPtr stripe_key_;
   ::google::protobuf::internal::ArenaStringPtr slack_key_;
   ::api::EmailAddress* email_address_;
+  ::api::LogConfig* log_config_;
   bool debug_;
   int customer_index_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -7187,6 +7200,60 @@ inline void Config::set_allocated_email_address(::api::EmailAddress* email_addre
   }
   email_address_ = email_address;
   // @@protoc_insertion_point(field_set_allocated:api.Config.email_address)
+}
+
+// .api.LogConfig log_config = 9;
+inline bool Config::has_log_config() const {
+  return this != internal_default_instance() && log_config_ != NULL;
+}
+inline void Config::clear_log_config() {
+  if (GetArenaNoVirtual() == NULL && log_config_ != NULL) {
+    delete log_config_;
+  }
+  log_config_ = NULL;
+}
+inline const ::api::LogConfig& Config::_internal_log_config() const {
+  return *log_config_;
+}
+inline const ::api::LogConfig& Config::log_config() const {
+  const ::api::LogConfig* p = log_config_;
+  // @@protoc_insertion_point(field_get:api.Config.log_config)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::LogConfig*>(
+      &::api::_LogConfig_default_instance_);
+}
+inline ::api::LogConfig* Config::release_log_config() {
+  // @@protoc_insertion_point(field_release:api.Config.log_config)
+  
+  ::api::LogConfig* temp = log_config_;
+  log_config_ = NULL;
+  return temp;
+}
+inline ::api::LogConfig* Config::mutable_log_config() {
+  
+  if (log_config_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::LogConfig>(GetArenaNoVirtual());
+    log_config_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Config.log_config)
+  return log_config_;
+}
+inline void Config::set_allocated_log_config(::api::LogConfig* log_config) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete log_config_;
+  }
+  if (log_config) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      log_config = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, log_config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  log_config_ = log_config;
+  // @@protoc_insertion_point(field_set_allocated:api.Config.log_config)
 }
 
 // -------------------------------------------------------------------

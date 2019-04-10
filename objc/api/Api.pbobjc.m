@@ -1423,6 +1423,7 @@ typedef struct Star__storage_ {
 @dynamic slackKey;
 @dynamic customerIndex;
 @dynamic hasEmailAddress, emailAddress;
+@dynamic hasLogConfig, logConfig;
 
 typedef struct Config__storage_ {
   uint32_t _has_storage_[1];
@@ -1433,6 +1434,7 @@ typedef struct Config__storage_ {
   NSString *stripeKey;
   NSString *slackKey;
   EmailAddress *emailAddress;
+  LogConfig *logConfig;
 } Config__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1510,6 +1512,15 @@ typedef struct Config__storage_ {
         .number = Config_FieldNumber_EmailAddress,
         .hasIndex = 8,
         .offset = (uint32_t)offsetof(Config__storage_, emailAddress),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "logConfig",
+        .dataTypeSpecific.className = GPBStringifySymbol(LogConfig),
+        .number = Config_FieldNumber_LogConfig,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(Config__storage_, logConfig),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
