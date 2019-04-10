@@ -28,10 +28,33 @@
 CF_EXTERN_C_BEGIN
 
 @class Address;
+@class EmailAddress;
 @class ItemRef;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Enum CustomerIndex
+
+typedef GPB_ENUM(CustomerIndex) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  CustomerIndex_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  CustomerIndex_Id = 0,
+  CustomerIndex_Email = 1,
+  CustomerIndex_Phone = 2,
+};
+
+GPBEnumDescriptor *CustomerIndex_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL CustomerIndex_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -425,6 +448,111 @@ typedef GPB_ENUM(Star_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) ItemRef *item;
 /** Test to see if @c item has been set. */
 @property(nonatomic, readwrite) BOOL hasItem;
+
+@end
+
+#pragma mark - Config
+
+typedef GPB_ENUM(Config_FieldNumber) {
+  Config_FieldNumber_Debug = 1,
+  Config_FieldNumber_TwilioAccount = 2,
+  Config_FieldNumber_TwilioKey = 3,
+  Config_FieldNumber_SendgridKey = 4,
+  Config_FieldNumber_StripeKey = 5,
+  Config_FieldNumber_SlackKey = 6,
+  Config_FieldNumber_CustomerIndex = 7,
+  Config_FieldNumber_EmailAddress = 8,
+};
+
+@interface Config : GPBMessage
+
+@property(nonatomic, readwrite) BOOL debug;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *twilioAccount;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *twilioKey;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sendgridKey;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *stripeKey;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *slackKey;
+
+@property(nonatomic, readwrite) CustomerIndex customerIndex;
+
+@property(nonatomic, readwrite, strong, null_resettable) EmailAddress *emailAddress;
+/** Test to see if @c emailAddress has been set. */
+@property(nonatomic, readwrite) BOOL hasEmailAddress;
+
+@end
+
+/**
+ * Fetches the raw value of a @c Config's @c customerIndex property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t Config_CustomerIndex_RawValue(Config *message);
+/**
+ * Sets the raw value of an @c Config's @c customerIndex property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetConfig_CustomerIndex_RawValue(Config *message, int32_t value);
+
+#pragma mark - LogConfig
+
+typedef GPB_ENUM(LogConfig_FieldNumber) {
+  LogConfig_FieldNumber_Username = 1,
+  LogConfig_FieldNumber_Channel = 2,
+};
+
+@interface LogConfig : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *username;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channel;
+
+@end
+
+#pragma mark - EmailAddress
+
+typedef GPB_ENUM(EmailAddress_FieldNumber) {
+  EmailAddress_FieldNumber_Name = 1,
+  EmailAddress_FieldNumber_Address = 2,
+};
+
+@interface EmailAddress : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *address;
+
+@end
+
+#pragma mark - Email
+
+typedef GPB_ENUM(Email_FieldNumber) {
+  Email_FieldNumber_From = 1,
+  Email_FieldNumber_To = 2,
+  Email_FieldNumber_Subject = 3,
+  Email_FieldNumber_PlainText = 4,
+  Email_FieldNumber_Html = 5,
+};
+
+@interface Email : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) EmailAddress *from;
+/** Test to see if @c from has been set. */
+@property(nonatomic, readwrite) BOOL hasFrom;
+
+@property(nonatomic, readwrite, strong, null_resettable) EmailAddress *to;
+/** Test to see if @c to has been set. */
+@property(nonatomic, readwrite) BOOL hasTo;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plainText;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *html;
 
 @end
 

@@ -203,5 +203,39 @@ message ItemRef {
 message Star {
     string text=1;
     ItemRef item=4;
+}
+enum CustomerIndex {
+    ID =0;
+    EMAIL=1;
+    PHONE=2;
+}
 
+message Config {
+    bool debug=1;
+    string twilio_account=2;
+    string twilio_key=3;
+    string sendgrid_key=4;
+    string stripe_key=5;
+    string slack_key=6;
+    CustomerIndex customer_index=7;
+    EmailAddress email_address=8;
+
+}
+
+message LogConfig {
+    string username=1;
+    string channel=2;
+}
+
+message EmailAddress {
+    string name =1;
+    string address =2;
+}
+
+message Email {
+    EmailAddress from=1;
+    EmailAddress to=2;
+    string subject =3;
+    string plain_text=4;
+    string html=5;
 }

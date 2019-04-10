@@ -64,32 +64,43 @@ namespace Api {
             "B3VzZXJfaWQYASABKAkSDAoEdGV4dBgCIAEoCRIMCgR0aW1lGAMgASgJEhoK",
             "BGl0ZW0YBCABKAsyDC5hcGkuSXRlbVJlZiI5CgdJdGVtUmVmEg8KB2NoYW5u",
             "ZWwYASABKAkSDAoEZmlsZRgCIAEoCRIPCgdjb21tZW50GAMgASgJIjAKBFN0",
-            "YXISDAoEdGV4dBgBIAEoCRIaCgRpdGVtGAQgASgLMgwuYXBpLkl0ZW1SZWYy",
-            "zwcKC1VzZXJTZXJ2aWNlEkIKD0dldFVzZXJFbWFpbE1hcBIKLmFwaS5FbXB0",
-            "eRoMLmFwaS5Vc2VyTWFwIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSPwoMR2V0",
-            "VXNlcklETWFwEgouYXBpLkVtcHR5GgwuYXBpLlVzZXJNYXAiFYLT5JMCDyIK",
-            "L2FwaS91c2VyczoBKhJCCg9HZXRVc2VyUGhvbmVNYXASCi5hcGkuRW1wdHka",
-            "DC5hcGkuVXNlck1hcCIVgtPkkwIPIgovYXBpL3VzZXJzOgEqEkAKB0FkZFVz",
-            "ZXISEy5hcGkuQWRkVXNlclJlcXVlc3QaCS5hcGkuVXNlciIVgtPkkwIPIgov",
-            "YXBpL3VzZXJzOgEqEloKD0FkZFVzZXJNZXRhZGF0YRIbLmFwaS5BZGRVc2Vy",
-            "TWV0YWRhdGFSZXF1ZXN0GgkuYXBpLlVzZXIiH4LT5JMCGSIUL2FwaS91c2Vy",
-            "cy97dXNlcl9pZH06ASoSZQoNU3Vic2NyaWJlVXNlchIZLmFwaS5TdWJzY3Jp",
-            "YmVVc2VyUmVxdWVzdBoaLmFwaS5TdWJzY3JpYmVVc2VyUmVzcG9uc2UiHYLT",
-            "5JMCFyISL2FwaS91c2Vycy97ZW1haWx9OgEqElwKD1VuU3Vic2NyaWJlVXNl",
-            "chIeLmFwaS5DYW5jZWxTdWJzY3JpcHRpb25SZXF1ZXN0GgouYXBpLkVtcHR5",
-            "Ih2C0+STAhciEi9hcGkvdXNlcnMve2VtYWlsfToBKhJqChZDcmVhdGVTdWJz",
-            "Y3JpcHRpb25QbGFuEhYuYXBpLkNyZWF0ZVBsYW5SZXF1ZXN0GhcuYXBpLkNy",
-            "ZWF0ZVBsYW5SZXNwb25zZSIfgtPkkwIZIhQvYXBpL3BsYW5zL3twbGFuX2lk",
-            "fToBKhJHCgdTTVNVc2VyEg8uYXBpLlNNU1JlcXVlc3QaCi5hcGkuRW1wdHki",
-            "H4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9pZH06ASoSSQoIQ2FsbFVzZXIS",
-            "EC5hcGkuQ2FsbFJlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9w",
-            "bGFucy97dXNlcl9pZH06ASoSRwoHTU1TVXNlchIPLmFwaS5NTVNSZXF1ZXN0",
-            "GgouYXBpLkVtcHR5Ih+C0+STAhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEq",
-            "EksKCUVtYWlsVXNlchIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHki",
-            "H4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9pZH06ASpiBnByb3RvMw=="));
+            "YXISDAoEdGV4dBgBIAEoCRIaCgRpdGVtGAQgASgLMgwuYXBpLkl0ZW1SZWYi",
+            "1gEKBkNvbmZpZxINCgVkZWJ1ZxgBIAEoCBIWCg50d2lsaW9fYWNjb3VudBgC",
+            "IAEoCRISCgp0d2lsaW9fa2V5GAMgASgJEhQKDHNlbmRncmlkX2tleRgEIAEo",
+            "CRISCgpzdHJpcGVfa2V5GAUgASgJEhEKCXNsYWNrX2tleRgGIAEoCRIqCg5j",
+            "dXN0b21lcl9pbmRleBgHIAEoDjISLmFwaS5DdXN0b21lckluZGV4EigKDWVt",
+            "YWlsX2FkZHJlc3MYCCABKAsyES5hcGkuRW1haWxBZGRyZXNzIi4KCUxvZ0Nv",
+            "bmZpZxIQCgh1c2VybmFtZRgBIAEoCRIPCgdjaGFubmVsGAIgASgJIi0KDEVt",
+            "YWlsQWRkcmVzcxIMCgRuYW1lGAEgASgJEg8KB2FkZHJlc3MYAiABKAkiegoF",
+            "RW1haWwSHwoEZnJvbRgBIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MSHQoCdG8Y",
+            "AiABKAsyES5hcGkuRW1haWxBZGRyZXNzEg8KB3N1YmplY3QYAyABKAkSEgoK",
+            "cGxhaW5fdGV4dBgEIAEoCRIMCgRodG1sGAUgASgJKi0KDUN1c3RvbWVySW5k",
+            "ZXgSBgoCSUQQABIJCgVFTUFJTBABEgkKBVBIT05FEAIyzwcKC1VzZXJTZXJ2",
+            "aWNlEkIKD0dldFVzZXJFbWFpbE1hcBIKLmFwaS5FbXB0eRoMLmFwaS5Vc2Vy",
+            "TWFwIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSPwoMR2V0VXNlcklETWFwEgou",
+            "YXBpLkVtcHR5GgwuYXBpLlVzZXJNYXAiFYLT5JMCDyIKL2FwaS91c2VyczoB",
+            "KhJCCg9HZXRVc2VyUGhvbmVNYXASCi5hcGkuRW1wdHkaDC5hcGkuVXNlck1h",
+            "cCIVgtPkkwIPIgovYXBpL3VzZXJzOgEqEkAKB0FkZFVzZXISEy5hcGkuQWRk",
+            "VXNlclJlcXVlc3QaCS5hcGkuVXNlciIVgtPkkwIPIgovYXBpL3VzZXJzOgEq",
+            "EloKD0FkZFVzZXJNZXRhZGF0YRIbLmFwaS5BZGRVc2VyTWV0YWRhdGFSZXF1",
+            "ZXN0GgkuYXBpLlVzZXIiH4LT5JMCGSIUL2FwaS91c2Vycy97dXNlcl9pZH06",
+            "ASoSZQoNU3Vic2NyaWJlVXNlchIZLmFwaS5TdWJzY3JpYmVVc2VyUmVxdWVz",
+            "dBoaLmFwaS5TdWJzY3JpYmVVc2VyUmVzcG9uc2UiHYLT5JMCFyISL2FwaS91",
+            "c2Vycy97ZW1haWx9OgEqElwKD1VuU3Vic2NyaWJlVXNlchIeLmFwaS5DYW5j",
+            "ZWxTdWJzY3JpcHRpb25SZXF1ZXN0GgouYXBpLkVtcHR5Ih2C0+STAhciEi9h",
+            "cGkvdXNlcnMve2VtYWlsfToBKhJqChZDcmVhdGVTdWJzY3JpcHRpb25QbGFu",
+            "EhYuYXBpLkNyZWF0ZVBsYW5SZXF1ZXN0GhcuYXBpLkNyZWF0ZVBsYW5SZXNw",
+            "b25zZSIfgtPkkwIZIhQvYXBpL3BsYW5zL3twbGFuX2lkfToBKhJHCgdTTVNV",
+            "c2VyEg8uYXBpLlNNU1JlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2Fw",
+            "aS9wbGFucy97dXNlcl9pZH06ASoSSQoIQ2FsbFVzZXISEC5hcGkuQ2FsbFJl",
+            "cXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9p",
+            "ZH06ASoSRwoHTU1TVXNlchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5",
+            "Ih+C0+STAhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEqEksKCUVtYWlsVXNl",
+            "chIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHkiH4LT5JMCGSIUL2Fw",
+            "aS9wbGFucy97dXNlcl9pZH06ASpiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Empty), global::Api.Empty.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMap), global::Api.UserMap.Parser, new[]{ "Users" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.User), global::Api.User.Parser, new[]{ "UserId", "Plan", "Name", "Email", "Description", "Phone", "Address", "Metadata", "Deleted", "CreateDate" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -108,12 +119,25 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.ChannelReminder), global::Api.ChannelReminder.Parser, new[]{ "ChannelId", "Text", "Time" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserReminder), global::Api.UserReminder.Parser, new[]{ "UserId", "Text", "Time", "Item" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.ItemRef), global::Api.ItemRef.Parser, new[]{ "Channel", "File", "Comment" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Star), global::Api.Star.Parser, new[]{ "Text", "Item" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Star), global::Api.Star.Parser, new[]{ "Text", "Item" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Config), global::Api.Config.Parser, new[]{ "Debug", "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "CustomerIndex", "EmailAddress" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.LogConfig), global::Api.LogConfig.Parser, new[]{ "Username", "Channel" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.EmailAddress), global::Api.EmailAddress.Parser, new[]{ "Name", "Address" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "From", "To", "Subject", "PlainText", "Html" }, null, null, null)
           }));
     }
     #endregion
 
   }
+  #region Enums
+  public enum CustomerIndex {
+    [pbr::OriginalName("ID")] Id = 0,
+    [pbr::OriginalName("EMAIL")] Email = 1,
+    [pbr::OriginalName("PHONE")] Phone = 2,
+  }
+
+  #endregion
+
   #region Messages
   public sealed partial class Empty : pb::IMessage<Empty> {
     private static readonly pb::MessageParser<Empty> _parser = new pb::MessageParser<Empty>(() => new Empty());
@@ -3824,6 +3848,904 @@ namespace Api {
               item_ = new global::Api.ItemRef();
             }
             input.ReadMessage(item_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Config : pb::IMessage<Config> {
+    private static readonly pb::MessageParser<Config> _parser = new pb::MessageParser<Config>(() => new Config());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Config> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Config() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Config(Config other) : this() {
+      debug_ = other.debug_;
+      twilioAccount_ = other.twilioAccount_;
+      twilioKey_ = other.twilioKey_;
+      sendgridKey_ = other.sendgridKey_;
+      stripeKey_ = other.stripeKey_;
+      slackKey_ = other.slackKey_;
+      customerIndex_ = other.customerIndex_;
+      emailAddress_ = other.emailAddress_ != null ? other.emailAddress_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Config Clone() {
+      return new Config(this);
+    }
+
+    /// <summary>Field number for the "debug" field.</summary>
+    public const int DebugFieldNumber = 1;
+    private bool debug_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Debug {
+      get { return debug_; }
+      set {
+        debug_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "twilio_account" field.</summary>
+    public const int TwilioAccountFieldNumber = 2;
+    private string twilioAccount_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TwilioAccount {
+      get { return twilioAccount_; }
+      set {
+        twilioAccount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "twilio_key" field.</summary>
+    public const int TwilioKeyFieldNumber = 3;
+    private string twilioKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string TwilioKey {
+      get { return twilioKey_; }
+      set {
+        twilioKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sendgrid_key" field.</summary>
+    public const int SendgridKeyFieldNumber = 4;
+    private string sendgridKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SendgridKey {
+      get { return sendgridKey_; }
+      set {
+        sendgridKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "stripe_key" field.</summary>
+    public const int StripeKeyFieldNumber = 5;
+    private string stripeKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StripeKey {
+      get { return stripeKey_; }
+      set {
+        stripeKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "slack_key" field.</summary>
+    public const int SlackKeyFieldNumber = 6;
+    private string slackKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SlackKey {
+      get { return slackKey_; }
+      set {
+        slackKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "customer_index" field.</summary>
+    public const int CustomerIndexFieldNumber = 7;
+    private global::Api.CustomerIndex customerIndex_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.CustomerIndex CustomerIndex {
+      get { return customerIndex_; }
+      set {
+        customerIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "email_address" field.</summary>
+    public const int EmailAddressFieldNumber = 8;
+    private global::Api.EmailAddress emailAddress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.EmailAddress EmailAddress {
+      get { return emailAddress_; }
+      set {
+        emailAddress_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Config);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Config other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Debug != other.Debug) return false;
+      if (TwilioAccount != other.TwilioAccount) return false;
+      if (TwilioKey != other.TwilioKey) return false;
+      if (SendgridKey != other.SendgridKey) return false;
+      if (StripeKey != other.StripeKey) return false;
+      if (SlackKey != other.SlackKey) return false;
+      if (CustomerIndex != other.CustomerIndex) return false;
+      if (!object.Equals(EmailAddress, other.EmailAddress)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Debug != false) hash ^= Debug.GetHashCode();
+      if (TwilioAccount.Length != 0) hash ^= TwilioAccount.GetHashCode();
+      if (TwilioKey.Length != 0) hash ^= TwilioKey.GetHashCode();
+      if (SendgridKey.Length != 0) hash ^= SendgridKey.GetHashCode();
+      if (StripeKey.Length != 0) hash ^= StripeKey.GetHashCode();
+      if (SlackKey.Length != 0) hash ^= SlackKey.GetHashCode();
+      if (CustomerIndex != 0) hash ^= CustomerIndex.GetHashCode();
+      if (emailAddress_ != null) hash ^= EmailAddress.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Debug != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Debug);
+      }
+      if (TwilioAccount.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(TwilioAccount);
+      }
+      if (TwilioKey.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(TwilioKey);
+      }
+      if (SendgridKey.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(SendgridKey);
+      }
+      if (StripeKey.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(StripeKey);
+      }
+      if (SlackKey.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(SlackKey);
+      }
+      if (CustomerIndex != 0) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) CustomerIndex);
+      }
+      if (emailAddress_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(EmailAddress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Debug != false) {
+        size += 1 + 1;
+      }
+      if (TwilioAccount.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TwilioAccount);
+      }
+      if (TwilioKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TwilioKey);
+      }
+      if (SendgridKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SendgridKey);
+      }
+      if (StripeKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StripeKey);
+      }
+      if (SlackKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SlackKey);
+      }
+      if (CustomerIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CustomerIndex);
+      }
+      if (emailAddress_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EmailAddress);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Config other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Debug != false) {
+        Debug = other.Debug;
+      }
+      if (other.TwilioAccount.Length != 0) {
+        TwilioAccount = other.TwilioAccount;
+      }
+      if (other.TwilioKey.Length != 0) {
+        TwilioKey = other.TwilioKey;
+      }
+      if (other.SendgridKey.Length != 0) {
+        SendgridKey = other.SendgridKey;
+      }
+      if (other.StripeKey.Length != 0) {
+        StripeKey = other.StripeKey;
+      }
+      if (other.SlackKey.Length != 0) {
+        SlackKey = other.SlackKey;
+      }
+      if (other.CustomerIndex != 0) {
+        CustomerIndex = other.CustomerIndex;
+      }
+      if (other.emailAddress_ != null) {
+        if (emailAddress_ == null) {
+          emailAddress_ = new global::Api.EmailAddress();
+        }
+        EmailAddress.MergeFrom(other.EmailAddress);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Debug = input.ReadBool();
+            break;
+          }
+          case 18: {
+            TwilioAccount = input.ReadString();
+            break;
+          }
+          case 26: {
+            TwilioKey = input.ReadString();
+            break;
+          }
+          case 34: {
+            SendgridKey = input.ReadString();
+            break;
+          }
+          case 42: {
+            StripeKey = input.ReadString();
+            break;
+          }
+          case 50: {
+            SlackKey = input.ReadString();
+            break;
+          }
+          case 56: {
+            customerIndex_ = (global::Api.CustomerIndex) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            if (emailAddress_ == null) {
+              emailAddress_ = new global::Api.EmailAddress();
+            }
+            input.ReadMessage(emailAddress_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class LogConfig : pb::IMessage<LogConfig> {
+    private static readonly pb::MessageParser<LogConfig> _parser = new pb::MessageParser<LogConfig>(() => new LogConfig());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LogConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[20]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LogConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LogConfig(LogConfig other) : this() {
+      username_ = other.username_;
+      channel_ = other.channel_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LogConfig Clone() {
+      return new LogConfig(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "channel" field.</summary>
+    public const int ChannelFieldNumber = 2;
+    private string channel_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Channel {
+      get { return channel_; }
+      set {
+        channel_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LogConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LogConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Channel != other.Channel) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Channel.Length != 0) hash ^= Channel.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Channel.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Channel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Channel.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Channel);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LogConfig other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Channel.Length != 0) {
+        Channel = other.Channel;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Channel = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class EmailAddress : pb::IMessage<EmailAddress> {
+    private static readonly pb::MessageParser<EmailAddress> _parser = new pb::MessageParser<EmailAddress>(() => new EmailAddress());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EmailAddress> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[21]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EmailAddress() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EmailAddress(EmailAddress other) : this() {
+      name_ = other.name_;
+      address_ = other.address_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public EmailAddress Clone() {
+      return new EmailAddress(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 2;
+    private string address_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Address {
+      get { return address_; }
+      set {
+        address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as EmailAddress);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(EmailAddress other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (Address != other.Address) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Address.Length != 0) hash ^= Address.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Address);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Address.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(EmailAddress other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Address.Length != 0) {
+        Address = other.Address;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            Address = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Email : pb::IMessage<Email> {
+    private static readonly pb::MessageParser<Email> _parser = new pb::MessageParser<Email>(() => new Email());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Email> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[22]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Email() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Email(Email other) : this() {
+      from_ = other.from_ != null ? other.from_.Clone() : null;
+      to_ = other.to_ != null ? other.to_.Clone() : null;
+      subject_ = other.subject_;
+      plainText_ = other.plainText_;
+      html_ = other.html_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Email Clone() {
+      return new Email(this);
+    }
+
+    /// <summary>Field number for the "from" field.</summary>
+    public const int FromFieldNumber = 1;
+    private global::Api.EmailAddress from_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.EmailAddress From {
+      get { return from_; }
+      set {
+        from_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "to" field.</summary>
+    public const int ToFieldNumber = 2;
+    private global::Api.EmailAddress to_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.EmailAddress To {
+      get { return to_; }
+      set {
+        to_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "subject" field.</summary>
+    public const int SubjectFieldNumber = 3;
+    private string subject_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Subject {
+      get { return subject_; }
+      set {
+        subject_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "plain_text" field.</summary>
+    public const int PlainTextFieldNumber = 4;
+    private string plainText_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PlainText {
+      get { return plainText_; }
+      set {
+        plainText_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "html" field.</summary>
+    public const int HtmlFieldNumber = 5;
+    private string html_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Html {
+      get { return html_; }
+      set {
+        html_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Email);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Email other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(From, other.From)) return false;
+      if (!object.Equals(To, other.To)) return false;
+      if (Subject != other.Subject) return false;
+      if (PlainText != other.PlainText) return false;
+      if (Html != other.Html) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (from_ != null) hash ^= From.GetHashCode();
+      if (to_ != null) hash ^= To.GetHashCode();
+      if (Subject.Length != 0) hash ^= Subject.GetHashCode();
+      if (PlainText.Length != 0) hash ^= PlainText.GetHashCode();
+      if (Html.Length != 0) hash ^= Html.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (from_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(From);
+      }
+      if (to_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(To);
+      }
+      if (Subject.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Subject);
+      }
+      if (PlainText.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(PlainText);
+      }
+      if (Html.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Html);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (from_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(From);
+      }
+      if (to_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(To);
+      }
+      if (Subject.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subject);
+      }
+      if (PlainText.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlainText);
+      }
+      if (Html.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Html);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Email other) {
+      if (other == null) {
+        return;
+      }
+      if (other.from_ != null) {
+        if (from_ == null) {
+          from_ = new global::Api.EmailAddress();
+        }
+        From.MergeFrom(other.From);
+      }
+      if (other.to_ != null) {
+        if (to_ == null) {
+          to_ = new global::Api.EmailAddress();
+        }
+        To.MergeFrom(other.To);
+      }
+      if (other.Subject.Length != 0) {
+        Subject = other.Subject;
+      }
+      if (other.PlainText.Length != 0) {
+        PlainText = other.PlainText;
+      }
+      if (other.Html.Length != 0) {
+        Html = other.Html;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (from_ == null) {
+              from_ = new global::Api.EmailAddress();
+            }
+            input.ReadMessage(from_);
+            break;
+          }
+          case 18: {
+            if (to_ == null) {
+              to_ = new global::Api.EmailAddress();
+            }
+            input.ReadMessage(to_);
+            break;
+          }
+          case 26: {
+            Subject = input.ReadString();
+            break;
+          }
+          case 34: {
+            PlainText = input.ReadString();
+            break;
+          }
+          case 42: {
+            Html = input.ReadString();
             break;
           }
         }

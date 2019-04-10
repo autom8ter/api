@@ -110,6 +110,36 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :text, :string, 1
     optional :item, :message, 4, "api.ItemRef"
   end
+  add_message "api.Config" do
+    optional :debug, :bool, 1
+    optional :twilio_account, :string, 2
+    optional :twilio_key, :string, 3
+    optional :sendgrid_key, :string, 4
+    optional :stripe_key, :string, 5
+    optional :slack_key, :string, 6
+    optional :customer_index, :enum, 7, "api.CustomerIndex"
+    optional :email_address, :message, 8, "api.EmailAddress"
+  end
+  add_message "api.LogConfig" do
+    optional :username, :string, 1
+    optional :channel, :string, 2
+  end
+  add_message "api.EmailAddress" do
+    optional :name, :string, 1
+    optional :address, :string, 2
+  end
+  add_message "api.Email" do
+    optional :from, :message, 1, "api.EmailAddress"
+    optional :to, :message, 2, "api.EmailAddress"
+    optional :subject, :string, 3
+    optional :plain_text, :string, 4
+    optional :html, :string, 5
+  end
+  add_enum "api.CustomerIndex" do
+    value :ID, 0
+    value :EMAIL, 1
+    value :PHONE, 2
+  end
 end
 
 module Api
@@ -132,4 +162,9 @@ module Api
   UserReminder = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserReminder").msgclass
   ItemRef = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ItemRef").msgclass
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
+  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
+  LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
+  EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
+  Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
+  CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end
