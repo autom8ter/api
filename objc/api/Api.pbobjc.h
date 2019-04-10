@@ -594,6 +594,51 @@ typedef GPB_ENUM(RecipientEmail_FieldNumber) {
 
 @end
 
+#pragma mark - SMS
+
+typedef GPB_ENUM(SMS_FieldNumber) {
+  SMS_FieldNumber_To = 1,
+  SMS_FieldNumber_From = 2,
+  SMS_FieldNumber_Body = 3,
+  SMS_FieldNumber_MediaURL = 4,
+  SMS_FieldNumber_Callback = 5,
+  SMS_FieldNumber_App = 6,
+};
+
+@interface SMS : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *body;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *app;
+
+@end
+
+#pragma mark - Call
+
+typedef GPB_ENUM(Call_FieldNumber) {
+  Call_FieldNumber_To = 1,
+  Call_FieldNumber_From = 2,
+  Call_FieldNumber_Callback = 5,
+};
+
+@interface Call : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

@@ -143,6 +143,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :plain_text, :string, 4
     optional :html, :string, 5
   end
+  add_message "api.SMS" do
+    optional :to, :string, 1
+    optional :from, :string, 2
+    optional :body, :string, 3
+    optional :media_url, :string, 4
+    optional :callback, :string, 5
+    optional :app, :string, 6
+  end
+  add_message "api.Call" do
+    optional :to, :string, 1
+    optional :from, :string, 2
+    optional :callback, :string, 5
+  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -176,5 +189,7 @@ module Api
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
   RecipientEmail = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RecipientEmail").msgclass
+  SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
+  Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

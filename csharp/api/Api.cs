@@ -77,30 +77,34 @@ namespace Api {
             "Eh8KBGZyb20YASABKAsyES5hcGkuRW1haWxBZGRyZXNzEiYKCXJlY2lwaWVu",
             "dBgCIAEoCzITLmFwaS5SZWNpcGllbnRFbWFpbCJiCg5SZWNpcGllbnRFbWFp",
             "bBIdCgJ0bxgCIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MSDwoHc3ViamVjdBgD",
-            "IAEoCRISCgpwbGFpbl90ZXh0GAQgASgJEgwKBGh0bWwYBSABKAkqLQoNQ3Vz",
-            "dG9tZXJJbmRleBIGCgJJRBAAEgkKBUVNQUlMEAESCQoFUEhPTkUQAjLPBwoL",
-            "VXNlclNlcnZpY2USQgoPR2V0VXNlckVtYWlsTWFwEgouYXBpLkVtcHR5Ggwu",
-            "YXBpLlVzZXJNYXAiFYLT5JMCDyIKL2FwaS91c2VyczoBKhI/CgxHZXRVc2Vy",
-            "SURNYXASCi5hcGkuRW1wdHkaDC5hcGkuVXNlck1hcCIVgtPkkwIPIgovYXBp",
-            "L3VzZXJzOgEqEkIKD0dldFVzZXJQaG9uZU1hcBIKLmFwaS5FbXB0eRoMLmFw",
-            "aS5Vc2VyTWFwIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSQAoHQWRkVXNlchIT",
-            "LmFwaS5BZGRVc2VyUmVxdWVzdBoJLmFwaS5Vc2VyIhWC0+STAg8iCi9hcGkv",
-            "dXNlcnM6ASoSWgoPQWRkVXNlck1ldGFkYXRhEhsuYXBpLkFkZFVzZXJNZXRh",
-            "ZGF0YVJlcXVlc3QaCS5hcGkuVXNlciIfgtPkkwIZIhQvYXBpL3VzZXJzL3t1",
-            "c2VyX2lkfToBKhJlCg1TdWJzY3JpYmVVc2VyEhkuYXBpLlN1YnNjcmliZVVz",
-            "ZXJSZXF1ZXN0GhouYXBpLlN1YnNjcmliZVVzZXJSZXNwb25zZSIdgtPkkwIX",
-            "IhIvYXBpL3VzZXJzL3tlbWFpbH06ASoSXAoPVW5TdWJzY3JpYmVVc2VyEh4u",
-            "YXBpLkNhbmNlbFN1YnNjcmlwdGlvblJlcXVlc3QaCi5hcGkuRW1wdHkiHYLT",
-            "5JMCFyISL2FwaS91c2Vycy97ZW1haWx9OgEqEmoKFkNyZWF0ZVN1YnNjcmlw",
-            "dGlvblBsYW4SFi5hcGkuQ3JlYXRlUGxhblJlcXVlc3QaFy5hcGkuQ3JlYXRl",
-            "UGxhblJlc3BvbnNlIh+C0+STAhkiFC9hcGkvcGxhbnMve3BsYW5faWR9OgEq",
-            "EkcKB1NNU1VzZXISDy5hcGkuU01TUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPk",
-            "kwIZIhQvYXBpL3BsYW5zL3t1c2VyX2lkfToBKhJJCghDYWxsVXNlchIQLmFw",
-            "aS5DYWxsUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPkkwIZIhQvYXBpL3BsYW5z",
-            "L3t1c2VyX2lkfToBKhJHCgdNTVNVc2VyEg8uYXBpLk1NU1JlcXVlc3QaCi5h",
-            "cGkuRW1wdHkiH4LT5JMCGSIUL2FwaS9wbGFucy97dXNlcl9pZH06ASoSSwoJ",
-            "RW1haWxVc2VyEhEuYXBpLkVtYWlsUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPk",
-            "kwIZIhQvYXBpL3BsYW5zL3t1c2VyX2lkfToBKmIGcHJvdG8z"));
+            "IAEoCRISCgpwbGFpbl90ZXh0GAQgASgJEgwKBGh0bWwYBSABKAkiXwoDU01T",
+            "EgoKAnRvGAEgASgJEgwKBGZyb20YAiABKAkSDAoEYm9keRgDIAEoCRIRCglt",
+            "ZWRpYV91cmwYBCABKAkSEAoIY2FsbGJhY2sYBSABKAkSCwoDYXBwGAYgASgJ",
+            "IjIKBENhbGwSCgoCdG8YASABKAkSDAoEZnJvbRgCIAEoCRIQCghjYWxsYmFj",
+            "axgFIAEoCSotCg1DdXN0b21lckluZGV4EgYKAklEEAASCQoFRU1BSUwQARIJ",
+            "CgVQSE9ORRACMs8HCgtVc2VyU2VydmljZRJCCg9HZXRVc2VyRW1haWxNYXAS",
+            "Ci5hcGkuRW1wdHkaDC5hcGkuVXNlck1hcCIVgtPkkwIPIgovYXBpL3VzZXJz",
+            "OgEqEj8KDEdldFVzZXJJRE1hcBIKLmFwaS5FbXB0eRoMLmFwaS5Vc2VyTWFw",
+            "IhWC0+STAg8iCi9hcGkvdXNlcnM6ASoSQgoPR2V0VXNlclBob25lTWFwEgou",
+            "YXBpLkVtcHR5GgwuYXBpLlVzZXJNYXAiFYLT5JMCDyIKL2FwaS91c2VyczoB",
+            "KhJACgdBZGRVc2VyEhMuYXBpLkFkZFVzZXJSZXF1ZXN0GgkuYXBpLlVzZXIi",
+            "FYLT5JMCDyIKL2FwaS91c2VyczoBKhJaCg9BZGRVc2VyTWV0YWRhdGESGy5h",
+            "cGkuQWRkVXNlck1ldGFkYXRhUmVxdWVzdBoJLmFwaS5Vc2VyIh+C0+STAhki",
+            "FC9hcGkvdXNlcnMve3VzZXJfaWR9OgEqEmUKDVN1YnNjcmliZVVzZXISGS5h",
+            "cGkuU3Vic2NyaWJlVXNlclJlcXVlc3QaGi5hcGkuU3Vic2NyaWJlVXNlclJl",
+            "c3BvbnNlIh2C0+STAhciEi9hcGkvdXNlcnMve2VtYWlsfToBKhJcCg9VblN1",
+            "YnNjcmliZVVzZXISHi5hcGkuQ2FuY2VsU3Vic2NyaXB0aW9uUmVxdWVzdBoK",
+            "LmFwaS5FbXB0eSIdgtPkkwIXIhIvYXBpL3VzZXJzL3tlbWFpbH06ASoSagoW",
+            "Q3JlYXRlU3Vic2NyaXB0aW9uUGxhbhIWLmFwaS5DcmVhdGVQbGFuUmVxdWVz",
+            "dBoXLmFwaS5DcmVhdGVQbGFuUmVzcG9uc2UiH4LT5JMCGSIUL2FwaS9wbGFu",
+            "cy97cGxhbl9pZH06ASoSRwoHU01TVXNlchIPLmFwaS5TTVNSZXF1ZXN0Ggou",
+            "YXBpLkVtcHR5Ih+C0+STAhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEqEkkK",
+            "CENhbGxVc2VyEhAuYXBpLkNhbGxSZXF1ZXN0GgouYXBpLkVtcHR5Ih+C0+ST",
+            "AhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEqEkcKB01NU1VzZXISDy5hcGku",
+            "TU1TUmVxdWVzdBoKLmFwaS5FbXB0eSIfgtPkkwIZIhQvYXBpL3BsYW5zL3t1",
+            "c2VyX2lkfToBKhJLCglFbWFpbFVzZXISES5hcGkuRW1haWxSZXF1ZXN0Ggou",
+            "YXBpLkVtcHR5Ih+C0+STAhkiFC9hcGkvcGxhbnMve3VzZXJfaWR9OgEqYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), }, new pbr::GeneratedClrTypeInfo[] {
@@ -128,7 +132,9 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.LogConfig), global::Api.LogConfig.Parser, new[]{ "Username", "Channel" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.EmailAddress), global::Api.EmailAddress.Parser, new[]{ "Name", "Address" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "From", "Recipient" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.RecipientEmail), global::Api.RecipientEmail.Parser, new[]{ "To", "Subject", "PlainText", "Html" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.RecipientEmail), global::Api.RecipientEmail.Parser, new[]{ "To", "Subject", "PlainText", "Html" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.SMS), global::Api.SMS.Parser, new[]{ "To", "From", "Body", "MediaUrl", "Callback", "App" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Call), global::Api.Call.Parser, new[]{ "To", "From", "Callback" }, null, null, null)
           }));
     }
     #endregion
@@ -5083,6 +5089,460 @@ namespace Api {
           }
           case 42: {
             Html = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SMS : pb::IMessage<SMS> {
+    private static readonly pb::MessageParser<SMS> _parser = new pb::MessageParser<SMS>(() => new SMS());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SMS> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SMS() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SMS(SMS other) : this() {
+      to_ = other.to_;
+      from_ = other.from_;
+      body_ = other.body_;
+      mediaUrl_ = other.mediaUrl_;
+      callback_ = other.callback_;
+      app_ = other.app_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SMS Clone() {
+      return new SMS(this);
+    }
+
+    /// <summary>Field number for the "to" field.</summary>
+    public const int ToFieldNumber = 1;
+    private string to_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string To {
+      get { return to_; }
+      set {
+        to_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "from" field.</summary>
+    public const int FromFieldNumber = 2;
+    private string from_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string From {
+      get { return from_; }
+      set {
+        from_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "body" field.</summary>
+    public const int BodyFieldNumber = 3;
+    private string body_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Body {
+      get { return body_; }
+      set {
+        body_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "media_url" field.</summary>
+    public const int MediaUrlFieldNumber = 4;
+    private string mediaUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MediaUrl {
+      get { return mediaUrl_; }
+      set {
+        mediaUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "callback" field.</summary>
+    public const int CallbackFieldNumber = 5;
+    private string callback_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Callback {
+      get { return callback_; }
+      set {
+        callback_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "app" field.</summary>
+    public const int AppFieldNumber = 6;
+    private string app_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string App {
+      get { return app_; }
+      set {
+        app_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SMS);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SMS other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (To != other.To) return false;
+      if (From != other.From) return false;
+      if (Body != other.Body) return false;
+      if (MediaUrl != other.MediaUrl) return false;
+      if (Callback != other.Callback) return false;
+      if (App != other.App) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (To.Length != 0) hash ^= To.GetHashCode();
+      if (From.Length != 0) hash ^= From.GetHashCode();
+      if (Body.Length != 0) hash ^= Body.GetHashCode();
+      if (MediaUrl.Length != 0) hash ^= MediaUrl.GetHashCode();
+      if (Callback.Length != 0) hash ^= Callback.GetHashCode();
+      if (App.Length != 0) hash ^= App.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (To.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(To);
+      }
+      if (From.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(From);
+      }
+      if (Body.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Body);
+      }
+      if (MediaUrl.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(MediaUrl);
+      }
+      if (Callback.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Callback);
+      }
+      if (App.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(App);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (To.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(To);
+      }
+      if (From.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(From);
+      }
+      if (Body.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Body);
+      }
+      if (MediaUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MediaUrl);
+      }
+      if (Callback.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Callback);
+      }
+      if (App.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(App);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SMS other) {
+      if (other == null) {
+        return;
+      }
+      if (other.To.Length != 0) {
+        To = other.To;
+      }
+      if (other.From.Length != 0) {
+        From = other.From;
+      }
+      if (other.Body.Length != 0) {
+        Body = other.Body;
+      }
+      if (other.MediaUrl.Length != 0) {
+        MediaUrl = other.MediaUrl;
+      }
+      if (other.Callback.Length != 0) {
+        Callback = other.Callback;
+      }
+      if (other.App.Length != 0) {
+        App = other.App;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            To = input.ReadString();
+            break;
+          }
+          case 18: {
+            From = input.ReadString();
+            break;
+          }
+          case 26: {
+            Body = input.ReadString();
+            break;
+          }
+          case 34: {
+            MediaUrl = input.ReadString();
+            break;
+          }
+          case 42: {
+            Callback = input.ReadString();
+            break;
+          }
+          case 50: {
+            App = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Call : pb::IMessage<Call> {
+    private static readonly pb::MessageParser<Call> _parser = new pb::MessageParser<Call>(() => new Call());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Call> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Call() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Call(Call other) : this() {
+      to_ = other.to_;
+      from_ = other.from_;
+      callback_ = other.callback_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Call Clone() {
+      return new Call(this);
+    }
+
+    /// <summary>Field number for the "to" field.</summary>
+    public const int ToFieldNumber = 1;
+    private string to_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string To {
+      get { return to_; }
+      set {
+        to_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "from" field.</summary>
+    public const int FromFieldNumber = 2;
+    private string from_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string From {
+      get { return from_; }
+      set {
+        from_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "callback" field.</summary>
+    public const int CallbackFieldNumber = 5;
+    private string callback_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Callback {
+      get { return callback_; }
+      set {
+        callback_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Call);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Call other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (To != other.To) return false;
+      if (From != other.From) return false;
+      if (Callback != other.Callback) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (To.Length != 0) hash ^= To.GetHashCode();
+      if (From.Length != 0) hash ^= From.GetHashCode();
+      if (Callback.Length != 0) hash ^= Callback.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (To.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(To);
+      }
+      if (From.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(From);
+      }
+      if (Callback.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Callback);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (To.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(To);
+      }
+      if (From.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(From);
+      }
+      if (Callback.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Callback);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Call other) {
+      if (other == null) {
+        return;
+      }
+      if (other.To.Length != 0) {
+        To = other.To;
+      }
+      if (other.From.Length != 0) {
+        From = other.From;
+      }
+      if (other.Callback.Length != 0) {
+        Callback = other.Callback;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            To = input.ReadString();
+            break;
+          }
+          case 18: {
+            From = input.ReadString();
+            break;
+          }
+          case 42: {
+            Callback = input.ReadString();
             break;
           }
         }

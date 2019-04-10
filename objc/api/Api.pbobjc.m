@@ -1845,6 +1845,174 @@ typedef struct RecipientEmail__storage_ {
 
 @end
 
+#pragma mark - SMS
+
+@implementation SMS
+
+@dynamic to;
+@dynamic from;
+@dynamic body;
+@dynamic mediaURL;
+@dynamic callback;
+@dynamic app;
+
+typedef struct SMS__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *to;
+  NSString *from;
+  NSString *body;
+  NSString *mediaURL;
+  NSString *callback;
+  NSString *app;
+} SMS__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SMS__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "from",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_From,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SMS__storage_, from),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "body",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_Body,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SMS__storage_, body),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "mediaURL",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_MediaURL,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(SMS__storage_, mediaURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_Callback,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(SMS__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "app",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_App,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(SMS__storage_, app),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SMS class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SMS__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\004\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Call
+
+@implementation Call
+
+@dynamic to;
+@dynamic from;
+@dynamic callback;
+
+typedef struct Call__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *to;
+  NSString *from;
+  NSString *callback;
+} Call__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = NULL,
+        .number = Call_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Call__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "from",
+        .dataTypeSpecific.className = NULL,
+        .number = Call_FieldNumber_From,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Call__storage_, from),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = NULL,
+        .number = Call_FieldNumber_Callback,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Call__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Call class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Call__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 
