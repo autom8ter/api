@@ -452,6 +452,23 @@ typedef GPB_ENUM(Star_FieldNumber) {
 
 @end
 
+#pragma mark - Pin
+
+typedef GPB_ENUM(Pin_FieldNumber) {
+  Pin_FieldNumber_Text = 1,
+  Pin_FieldNumber_Item = 4,
+};
+
+@interface Pin : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, strong, null_resettable) ItemRef *item;
+/** Test to see if @c item has been set. */
+@property(nonatomic, readwrite) BOOL hasItem;
+
+@end
+
 #pragma mark - Config
 
 typedef GPB_ENUM(Config_FieldNumber) {

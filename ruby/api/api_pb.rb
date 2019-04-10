@@ -110,6 +110,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :text, :string, 1
     optional :item, :message, 4, "api.ItemRef"
   end
+  add_message "api.Pin" do
+    optional :text, :string, 1
+    optional :item, :message, 4, "api.ItemRef"
+  end
   add_message "api.Config" do
     optional :debug, :bool, 1
     optional :twilio_account, :string, 2
@@ -163,6 +167,7 @@ module Api
   UserReminder = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserReminder").msgclass
   ItemRef = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ItemRef").msgclass
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
+  Pin = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Pin").msgclass
   Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass

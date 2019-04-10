@@ -204,6 +204,12 @@ message Star {
     string text=1;
     ItemRef item=4;
 }
+
+message Pin {
+    string text=1;
+    ItemRef item=4;
+}
+
 enum CustomerIndex {
     ID =0;
     EMAIL=1;

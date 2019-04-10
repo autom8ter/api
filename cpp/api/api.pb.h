@@ -46,7 +46,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[26];
+  static const ::google::protobuf::internal::ParseTable schema[27];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -105,6 +105,9 @@ extern LogConfigDefaultTypeInternal _LogConfig_default_instance_;
 class MMSRequest;
 class MMSRequestDefaultTypeInternal;
 extern MMSRequestDefaultTypeInternal _MMSRequest_default_instance_;
+class Pin;
+class PinDefaultTypeInternal;
+extern PinDefaultTypeInternal _Pin_default_instance_;
 class SMSRequest;
 class SMSRequestDefaultTypeInternal;
 extern SMSRequestDefaultTypeInternal _SMSRequest_default_instance_;
@@ -152,6 +155,7 @@ template<> ::api::Empty* Arena::CreateMaybeMessage<::api::Empty>(Arena*);
 template<> ::api::ItemRef* Arena::CreateMaybeMessage<::api::ItemRef>(Arena*);
 template<> ::api::LogConfig* Arena::CreateMaybeMessage<::api::LogConfig>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
+template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeUserRequest* Arena::CreateMaybeMessage<::api::SubscribeUserRequest>(Arena*);
@@ -2999,6 +3003,130 @@ class Star : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 };
 // -------------------------------------------------------------------
 
+class Pin : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Pin) */ {
+ public:
+  Pin();
+  virtual ~Pin();
+
+  Pin(const Pin& from);
+
+  inline Pin& operator=(const Pin& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Pin(Pin&& from) noexcept
+    : Pin() {
+    *this = ::std::move(from);
+  }
+
+  inline Pin& operator=(Pin&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Pin& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Pin* internal_default_instance() {
+    return reinterpret_cast<const Pin*>(
+               &_Pin_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  void Swap(Pin* other);
+  friend void swap(Pin& a, Pin& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Pin* New() const final {
+    return CreateMaybeMessage<Pin>(NULL);
+  }
+
+  Pin* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Pin>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Pin& from);
+  void MergeFrom(const Pin& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Pin* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string text = 1;
+  void clear_text();
+  static const int kTextFieldNumber = 1;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text(::std::string&& value);
+  #endif
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
+
+  // .api.ItemRef item = 4;
+  bool has_item() const;
+  void clear_item();
+  static const int kItemFieldNumber = 4;
+  private:
+  const ::api::ItemRef& _internal_item() const;
+  public:
+  const ::api::ItemRef& item() const;
+  ::api::ItemRef* release_item();
+  ::api::ItemRef* mutable_item();
+  void set_allocated_item(::api::ItemRef* item);
+
+  // @@protoc_insertion_point(class_scope:api.Pin)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  ::api::ItemRef* item_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Config) */ {
  public:
   Config();
@@ -3034,7 +3162,7 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_Config_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(Config* other);
   friend void swap(Config& a, Config& b) {
@@ -3245,7 +3373,7 @@ class LogConfig : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LogConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(LogConfig* other);
   friend void swap(LogConfig& a, LogConfig& b) {
@@ -3371,7 +3499,7 @@ class EmailAddress : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailAddress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(EmailAddress* other);
   friend void swap(EmailAddress& a, EmailAddress& b) {
@@ -3497,7 +3625,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -6853,6 +6981,117 @@ inline void Star::set_allocated_item(::api::ItemRef* item) {
 
 // -------------------------------------------------------------------
 
+// Pin
+
+// string text = 1;
+inline void Pin::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Pin::text() const {
+  // @@protoc_insertion_point(field_get:api.Pin.text)
+  return text_.GetNoArena();
+}
+inline void Pin::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Pin.text)
+}
+#if LANG_CXX11
+inline void Pin::set_text(::std::string&& value) {
+  
+  text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Pin.text)
+}
+#endif
+inline void Pin::set_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Pin.text)
+}
+inline void Pin::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Pin.text)
+}
+inline ::std::string* Pin::mutable_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Pin.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Pin::release_text() {
+  // @@protoc_insertion_point(field_release:api.Pin.text)
+  
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Pin::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.Pin.text)
+}
+
+// .api.ItemRef item = 4;
+inline bool Pin::has_item() const {
+  return this != internal_default_instance() && item_ != NULL;
+}
+inline void Pin::clear_item() {
+  if (GetArenaNoVirtual() == NULL && item_ != NULL) {
+    delete item_;
+  }
+  item_ = NULL;
+}
+inline const ::api::ItemRef& Pin::_internal_item() const {
+  return *item_;
+}
+inline const ::api::ItemRef& Pin::item() const {
+  const ::api::ItemRef* p = item_;
+  // @@protoc_insertion_point(field_get:api.Pin.item)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::ItemRef*>(
+      &::api::_ItemRef_default_instance_);
+}
+inline ::api::ItemRef* Pin::release_item() {
+  // @@protoc_insertion_point(field_release:api.Pin.item)
+  
+  ::api::ItemRef* temp = item_;
+  item_ = NULL;
+  return temp;
+}
+inline ::api::ItemRef* Pin::mutable_item() {
+  
+  if (item_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::ItemRef>(GetArenaNoVirtual());
+    item_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Pin.item)
+  return item_;
+}
+inline void Pin::set_allocated_item(::api::ItemRef* item) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete item_;
+  }
+  if (item) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      item = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, item, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  item_ = item;
+  // @@protoc_insertion_point(field_set_allocated:api.Pin.item)
+}
+
+// -------------------------------------------------------------------
+
 // Config
 
 // bool debug = 1;
@@ -7750,6 +7989,8 @@ inline void Email::set_allocated_html(::std::string* html) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
