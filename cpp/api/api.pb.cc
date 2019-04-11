@@ -29,7 +29,6 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EmailAddress;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ItemRef;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JSON;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JWTToken_HeaderEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Token_HeaderEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AttachmentActionOptionGroup;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_JSONMap_JsonMapEntry_DoNotUse;
@@ -145,16 +144,6 @@ class PinDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Pin>
       _instance;
 } _Pin_default_instance_;
-class JWTToken_HeaderEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<JWTToken_HeaderEntry_DoNotUse>
-      _instance;
-} _JWTToken_HeaderEntry_DoNotUse_default_instance_;
-class JWTTokenDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<JWTToken>
-      _instance;
-} _JWTToken_default_instance_;
 class SignedKeyDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SignedKey>
@@ -576,34 +565,6 @@ static void InitDefaultsPin() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPin}, {
       &protobuf_api_2eproto::scc_info_ItemRef.base,}};
 
-static void InitDefaultsJWTToken_HeaderEntry_DoNotUse() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::api::_JWTToken_HeaderEntry_DoNotUse_default_instance_;
-    new (ptr) ::api::JWTToken_HeaderEntry_DoNotUse();
-  }
-  ::api::JWTToken_HeaderEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_JWTToken_HeaderEntry_DoNotUse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJWTToken_HeaderEntry_DoNotUse}, {}};
-
-static void InitDefaultsJWTToken() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::api::_JWTToken_default_instance_;
-    new (ptr) ::api::JWTToken();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::api::JWTToken::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_JWTToken =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsJWTToken}, {
-      &protobuf_api_2eproto::scc_info_JWTToken_HeaderEntry_DoNotUse.base,}};
-
 static void InitDefaultsSignedKey() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -974,8 +935,6 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ItemRef.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Star.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Pin.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_JWTToken_HeaderEntry_DoNotUse.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_JWTToken.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SignedKey.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Access.base);
   ::google::protobuf::internal::InitSCC(&scc_info_StandardClaims.base);
@@ -1002,7 +961,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_PubSubTopic.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[47];
+::google::protobuf::Metadata file_level_metadata[45];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[4];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -1184,26 +1143,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Pin, text_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Pin, item_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken_HeaderEntry_DoNotUse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken_HeaderEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken_HeaderEntry_DoNotUse, key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken_HeaderEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, raw_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, method_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, header_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, claims_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, signature_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWTToken, value_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SignedKey, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1239,7 +1178,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::StandardClaims, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::StandardClaims, issued_at_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::StandardClaims, not_before_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::StandardClaims, grants_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Token_HeaderEntry_DoNotUse, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Token_HeaderEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1453,32 +1391,30 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 156, -1, sizeof(::api::ItemRef)},
   { 164, -1, sizeof(::api::Star)},
   { 171, -1, sizeof(::api::Pin)},
-  { 178, 185, sizeof(::api::JWTToken_HeaderEntry_DoNotUse)},
-  { 187, -1, sizeof(::api::JWTToken)},
-  { 198, -1, sizeof(::api::SignedKey)},
-  { 204, -1, sizeof(::api::Access)},
-  { 221, -1, sizeof(::api::StandardClaims)},
-  { 234, 241, sizeof(::api::Token_HeaderEntry_DoNotUse)},
-  { 243, -1, sizeof(::api::Token)},
-  { 253, -1, sizeof(::api::LogConfig)},
-  { 260, -1, sizeof(::api::EmailAddress)},
-  { 267, -1, sizeof(::api::Email)},
-  { 274, -1, sizeof(::api::RecipientEmail)},
-  { 283, -1, sizeof(::api::SMS)},
-  { 294, -1, sizeof(::api::Call)},
-  { 302, -1, sizeof(::api::Fax)},
-  { 313, -1, sizeof(::api::LogHook)},
-  { 321, -1, sizeof(::api::Attachment)},
-  { 341, -1, sizeof(::api::AttachmentAction)},
-  { 358, -1, sizeof(::api::AttachmentConfirmationField)},
-  { 367, -1, sizeof(::api::AttachmentActionOptionGroup)},
-  { 374, -1, sizeof(::api::AttachmentActionOption)},
-  { 382, -1, sizeof(::api::AttachmentField)},
-  { 390, 397, sizeof(::api::JSONMap_JsonMapEntry_DoNotUse)},
-  { 399, -1, sizeof(::api::JSONMap)},
-  { 405, -1, sizeof(::api::JSON)},
-  { 412, -1, sizeof(::api::PubSubMessage)},
-  { 418, -1, sizeof(::api::PubSubTopic)},
+  { 178, -1, sizeof(::api::SignedKey)},
+  { 184, -1, sizeof(::api::Access)},
+  { 201, -1, sizeof(::api::StandardClaims)},
+  { 213, 220, sizeof(::api::Token_HeaderEntry_DoNotUse)},
+  { 222, -1, sizeof(::api::Token)},
+  { 232, -1, sizeof(::api::LogConfig)},
+  { 239, -1, sizeof(::api::EmailAddress)},
+  { 246, -1, sizeof(::api::Email)},
+  { 253, -1, sizeof(::api::RecipientEmail)},
+  { 262, -1, sizeof(::api::SMS)},
+  { 273, -1, sizeof(::api::Call)},
+  { 281, -1, sizeof(::api::Fax)},
+  { 292, -1, sizeof(::api::LogHook)},
+  { 300, -1, sizeof(::api::Attachment)},
+  { 320, -1, sizeof(::api::AttachmentAction)},
+  { 337, -1, sizeof(::api::AttachmentConfirmationField)},
+  { 346, -1, sizeof(::api::AttachmentActionOptionGroup)},
+  { 353, -1, sizeof(::api::AttachmentActionOption)},
+  { 361, -1, sizeof(::api::AttachmentField)},
+  { 369, 376, sizeof(::api::JSONMap_JsonMapEntry_DoNotUse)},
+  { 378, -1, sizeof(::api::JSONMap)},
+  { 384, -1, sizeof(::api::JSON)},
+  { 391, -1, sizeof(::api::PubSubMessage)},
+  { 397, -1, sizeof(::api::PubSubTopic)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1503,8 +1439,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_ItemRef_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Star_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Pin_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JWTToken_HeaderEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JWTToken_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SignedKey_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Access_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_StandardClaims_default_instance_),
@@ -1546,7 +1480,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 47);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 45);
 }
 
 void AddDescriptorsImpl() {
@@ -1598,112 +1532,106 @@ void AddDescriptorsImpl() {
       "nel\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t"
       "\"0\n\004Star\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.a"
       "pi.ItemRef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030"
-      "\004 \001(\0132\014.api.ItemRef\"\307\001\n\010JWTToken\022\013\n\003raw\030"
-      "\001 \001(\t\022\"\n\006method\030\002 \001(\0162\022.api.SigningMetho"
-      "d\022)\n\006header\030\003 \003(\0132\031.api.JWTToken.HeaderE"
-      "ntry\022\016\n\006claims\030\004 \001(\t\022\021\n\tsignature\030\005 \001(\t\022"
-      "\r\n\005value\030\006 \001(\010\032-\n\013HeaderEntry\022\013\n\003key\030\001 \001"
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\037\n\tSignedKey\022\022\n\nsi"
-      "gned_key\030\001 \001(\t\"\222\002\n\006Access\022\031\n\021autom8ter_a"
-      "ccount\030\001 \001(\t\022\025\n\rautom8ter_key\030\002 \001(\t\022\026\n\016t"
-      "wilio_account\030\003 \001(\t\022\022\n\ntwilio_key\030\004 \001(\t\022"
-      "\030\n\020sendgrid_account\030\005 \001(\t\022\024\n\014sendgrid_ke"
-      "y\030\006 \001(\t\022\026\n\016stripe_account\030\007 \001(\t\022\022\n\nstrip"
-      "e_key\030\010 \001(\t\022\025\n\rslack_account\030\t \001(\t\022\021\n\tsl"
-      "ack_key\030\n \001(\t\022\023\n\013gcp_project\030\013 \001(\t\022\017\n\007gc"
-      "p_key\030\014 \001(\t\"\263\001\n\016StandardClaims\022\033\n\006access"
-      "\030\001 \001(\0132\013.api.Access\022\020\n\010audience\030\002 \001(\t\022\017\n"
-      "\007subject\030\003 \001(\t\022\022\n\nexpires_at\030\004 \001(\003\022\n\n\002id"
-      "\030\005 \001(\t\022\021\n\tissued_at\030\006 \001(\003\022\022\n\nnot_before\030"
-      "\007 \001(\003\022\032\n\006grants\030\010 \003(\0162\n.api.Grant\"\271\001\n\005To"
-      "ken\022\013\n\003raw\030\001 \001(\t\022*\n\016signing_method\030\002 \001(\016"
-      "2\022.api.SigningMethod\022\r\n\005valid\030\003 \001(\010\022\021\n\ts"
-      "ignature\030\004 \001(\t\022&\n\006header\030\005 \003(\0132\026.api.Tok"
-      "en.HeaderEntry\032-\n\013HeaderEntry\022\013\n\003key\030\001 \001"
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\".\n\tLogConfig\022\020\n\010us"
-      "ername\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailAd"
-      "dress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"P\n\005"
-      "Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress\022&"
-      "\n\trecipient\030\002 \001(\0132\023.api.RecipientEmail\"b"
-      "\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api.Email"
-      "Address\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_text\030\004"
-      " \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n"
-      "\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_url\030\004"
-      " \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n\004C"
-      "all\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010callbac"
-      "k\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t"
-      "\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\020\n\010"
-      "callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010\"6\n\007L"
-      "ogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005"
-      "title\030\003 \001(\t\"\260\002\n\nAttachment\022\r\n\005color\030\001 \001("
-      "\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callback_id\030\003 \001(\t"
-      "\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t\022\023\n\013autho"
-      "r_name\030\006 \001(\t\022\023\n\013author_link\030\007 \001(\t\022\023\n\013aut"
-      "hor_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024\n\014title_p"
-      "refix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n\004text\030\014 \001"
-      "(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb_url\030\016 \001(\t"
-      "\022$\n\006fields\030\017 \003(\0132\024.api.AttachmentField\"\347"
-      "\002\n\020AttachmentAction\022\014\n\004name\030\001 \001(\t\022\014\n\004tex"
-      "t\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n\005"
-      "value\030\005 \001(\t\022\023\n\013data_source\030\006 \001(\t\022\030\n\020min_"
-      "query_length\030\007 \001(\003\022,\n\007options\030\010 \003(\0132\033.ap"
-      "i.AttachmentActionOption\0225\n\020selected_opt"
-      "ions\030\t \003(\0132\033.api.AttachmentActionOption\022"
-      "7\n\roption_groups\030\n \003(\0132 .api.AttachmentA"
-      "ctionOptionGroup\0221\n\007confirm\030\013 \001(\0132 .api."
-      "AttachmentConfirmationField\022\013\n\003url\030\014 \001(\t"
-      "\"a\n\033AttachmentConfirmationField\022\r\n\005title"
-      "\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n"
-      "\014dismiss_text\030\004 \001(\t\"Y\n\033AttachmentActionO"
-      "ptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007options\030\002 \003("
-      "\0132\033.api.AttachmentActionOption\"K\n\026Attach"
-      "mentActionOption\022\r\n\005title\030\001 \001(\t\022\r\n\005value"
-      "\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n\017Attachmen"
-      "tField\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005"
-      "short\030\003 \001(\010\"q\n\007JSONMap\022+\n\010json_map\030\001 \003(\013"
-      "2\031.api.JSONMap.JsonMapEntry\0329\n\014JsonMapEn"
-      "try\022\013\n\003key\030\001 \001(\t\022\030\n\005value\030\002 \001(\0132\t.api.JS"
-      "ON:\0028\001\"\"\n\004JSON\022\014\n\004data\030\001 \001(\014\022\014\n\004size\030\002 \001"
-      "(\003\"A\n\rPubSubMessage\0220\n\007message\030\001 \001(\0132\037.g"
-      "oogle.pubsub.v1.PubsubMessage\"5\n\013PubSubT"
-      "opic\022&\n\005topic\030\001 \001(\0132\027.google.pubsub.v1.T"
-      "opic*<\n\010CardType\022\010\n\004VISA\020\000\022\016\n\nMASTERCARD"
-      "\020\001\022\014\n\010DISCOVER\020\002\022\010\n\004AMEX\020\003*-\n\rCustomerIn"
-      "dex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\002*P\n\005Gra"
-      "nt\022\n\n\006TWILIO\020\000\022\014\n\010SENDGRID\020\001\022\n\n\006STRIPE\020\002"
-      "\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\004\022\r\n\tAUTOM8TER\020\005*9\n\rS"
-      "igningMethod\022\010\n\004HMAC\020\000\022\t\n\005ECDSA\020\001\022\007\n\003RSA"
-      "\020\002\022\n\n\006RSAPPS\020\0032\271\010\n\013UserService\022O\n\016Create"
-      "Customer\022\027.api.AddCustomerRequest\032\r.api."
-      "Customer\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022q\n\021Subsc"
-      "ribeCustomer\022\035.api.SubscribeCustomerRequ"
-      "est\032\036.api.SubscribeCustomerResponse\"\035\202\323\344"
-      "\223\002\027\"\022/api/users/{email}:\001*\022`\n\023UnSubscrib"
-      "eCustomer\022\036.api.CancelSubscriptionReques"
-      "t\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email"
-      "}:\001*\022j\n\026CreateSubscriptionPlan\022\026.api.Cre"
-      "atePlanRequest\032\027.api.CreatePlanResponse\""
-      "\037\202\323\344\223\002\031\"\024/api/plans/{plan_id}:\001*\022S\n\013SMSC"
-      "ustomer\022\017.api.SMSRequest\032\n.api.Empty\"\'\202\323"
-      "\344\223\002!\"\034/api/customers/sms/{user_id}:\001*\022V\n"
-      "\014CallCustomer\022\020.api.CallRequest\032\n.api.Em"
-      "pty\"(\202\323\344\223\002\"\"\035/api/customers/call/{user_i"
-      "d}:\001*\022S\n\013MMSCustomer\022\017.api.MMSRequest\032\n."
-      "api.Empty\"\'\202\323\344\223\002!\"\034/api/customers/mms/{u"
-      "ser_id}:\001*\022Y\n\rEmailCustomer\022\021.api.EmailR"
-      "equest\032\n.api.Empty\")\202\323\344\223\002#\"\036/api/custome"
-      "rs/email/{user_id}:\001*\022K\n\007SMSUser\022\017.api.S"
-      "MSRequest\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/user"
-      "s/sms/{user_id}:\001*\022N\n\010CallUser\022\020.api.Cal"
-      "lRequest\032\n.api.Empty\"$\202\323\344\223\002\036\"\031/api/users"
-      "/call/{user_id}:\001*\022K\n\007MMSUser\022\017.api.MMSR"
-      "equest\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/m"
-      "ms/{user_id}:\001*\022Q\n\tEmailUser\022\021.api.Email"
-      "Request\032\n.api.Empty\"%\202\323\344\223\002\037\"\032/api/users/"
-      "email/{user_id}:\001*b\006proto3"
+      "\004 \001(\0132\014.api.ItemRef\"\037\n\tSignedKey\022\022\n\nsign"
+      "ed_key\030\001 \001(\t\"\222\002\n\006Access\022\031\n\021autom8ter_acc"
+      "ount\030\001 \001(\t\022\025\n\rautom8ter_key\030\002 \001(\t\022\026\n\016twi"
+      "lio_account\030\003 \001(\t\022\022\n\ntwilio_key\030\004 \001(\t\022\030\n"
+      "\020sendgrid_account\030\005 \001(\t\022\024\n\014sendgrid_key\030"
+      "\006 \001(\t\022\026\n\016stripe_account\030\007 \001(\t\022\022\n\nstripe_"
+      "key\030\010 \001(\t\022\025\n\rslack_account\030\t \001(\t\022\021\n\tslac"
+      "k_key\030\n \001(\t\022\023\n\013gcp_project\030\013 \001(\t\022\017\n\007gcp_"
+      "key\030\014 \001(\t\"\227\001\n\016StandardClaims\022\033\n\006access\030\001"
+      " \001(\0132\013.api.Access\022\020\n\010audience\030\002 \001(\t\022\017\n\007s"
+      "ubject\030\003 \001(\t\022\022\n\nexpires_at\030\004 \001(\003\022\n\n\002id\030\005"
+      " \001(\t\022\021\n\tissued_at\030\006 \001(\003\022\022\n\nnot_before\030\007 "
+      "\001(\003\"\271\001\n\005Token\022\013\n\003raw\030\001 \001(\t\022*\n\016signing_me"
+      "thod\030\002 \001(\0162\022.api.SigningMethod\022\r\n\005valid\030"
+      "\003 \001(\010\022\021\n\tsignature\030\004 \001(\t\022&\n\006header\030\005 \003(\013"
+      "2\026.api.Token.HeaderEntry\032-\n\013HeaderEntry\022"
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\".\n\tLogCo"
+      "nfig\022\020\n\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\""
+      "-\n\014EmailAddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address"
+      "\030\002 \001(\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.Emai"
+      "lAddress\022&\n\trecipient\030\002 \001(\0132\023.api.Recipi"
+      "entEmail\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021"
+      ".api.EmailAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\npl"
+      "ain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002t"
+      "o\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tm"
+      "edia_url\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030"
+      "\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022"
+      "\020\n\010callback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004"
+      "from\030\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality"
+      "\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013store_media\030"
+      "\006 \001(\010\"6\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon"
+      "\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\260\002\n\nAttachment\022\r\n\005"
+      "color\030\001 \001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callbac"
+      "k_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001("
+      "\t\022\023\n\013author_name\030\006 \001(\t\022\023\n\013author_link\030\007 "
+      "\001(\t\022\023\n\013author_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022"
+      "\024\n\014title_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014"
+      "\n\004text\030\014 \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb"
+      "_url\030\016 \001(\t\022$\n\006fields\030\017 \003(\0132\024.api.Attachm"
+      "entField\"\347\002\n\020AttachmentAction\022\014\n\004name\030\001 "
+      "\001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type"
+      "\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001"
+      "(\t\022\030\n\020min_query_length\030\007 \001(\003\022,\n\007options\030"
+      "\010 \003(\0132\033.api.AttachmentActionOption\0225\n\020se"
+      "lected_options\030\t \003(\0132\033.api.AttachmentAct"
+      "ionOption\0227\n\roption_groups\030\n \003(\0132 .api.A"
+      "ttachmentActionOptionGroup\0221\n\007confirm\030\013 "
+      "\001(\0132 .api.AttachmentConfirmationField\022\013\n"
+      "\003url\030\014 \001(\t\"a\n\033AttachmentConfirmationFiel"
+      "d\022\r\n\005title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_tex"
+      "t\030\003 \001(\t\022\024\n\014dismiss_text\030\004 \001(\t\"Y\n\033Attachm"
+      "entActionOptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007op"
+      "tions\030\002 \003(\0132\033.api.AttachmentActionOption"
+      "\"K\n\026AttachmentActionOption\022\r\n\005title\030\001 \001("
+      "\t\022\r\n\005value\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n"
+      "\017AttachmentField\022\r\n\005title\030\001 \001(\t\022\r\n\005value"
+      "\030\002 \001(\t\022\r\n\005short\030\003 \001(\010\"q\n\007JSONMap\022+\n\010json"
+      "_map\030\001 \003(\0132\031.api.JSONMap.JsonMapEntry\0329\n"
+      "\014JsonMapEntry\022\013\n\003key\030\001 \001(\t\022\030\n\005value\030\002 \001("
+      "\0132\t.api.JSON:\0028\001\"\"\n\004JSON\022\014\n\004data\030\001 \001(\014\022\014"
+      "\n\004size\030\002 \001(\003\"A\n\rPubSubMessage\0220\n\007message"
+      "\030\001 \001(\0132\037.google.pubsub.v1.PubsubMessage\""
+      "5\n\013PubSubTopic\022&\n\005topic\030\001 \001(\0132\027.google.p"
+      "ubsub.v1.Topic*-\n\rCustomerIndex\022\006\n\002ID\020\000\022"
+      "\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\002*P\n\005Claim\022\n\n\006TWILIO"
+      "\020\000\022\014\n\010SENDGRID\020\001\022\n\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022"
+      "\007\n\003GCP\020\004\022\r\n\tAUTOM8TER\020\005*9\n\rSigningMethod"
+      "\022\010\n\004HMAC\020\000\022\t\n\005ECDSA\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS"
+      "\020\003*<\n\010CardType\022\010\n\004VISA\020\000\022\016\n\nMASTERCARD\020\001"
+      "\022\014\n\010DISCOVER\020\002\022\010\n\004AMEX\020\0032\271\010\n\013UserService"
+      "\022O\n\016CreateCustomer\022\027.api.AddCustomerRequ"
+      "est\032\r.api.Customer\"\025\202\323\344\223\002\017\"\n/api/users:\001"
+      "*\022q\n\021SubscribeCustomer\022\035.api.SubscribeCu"
+      "stomerRequest\032\036.api.SubscribeCustomerRes"
+      "ponse\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022`\n\023"
+      "UnSubscribeCustomer\022\036.api.CancelSubscrip"
+      "tionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/us"
+      "ers/{email}:\001*\022j\n\026CreateSubscriptionPlan"
+      "\022\026.api.CreatePlanRequest\032\027.api.CreatePla"
+      "nResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{plan_id}:"
+      "\001*\022S\n\013SMSCustomer\022\017.api.SMSRequest\032\n.api"
+      ".Empty\"\'\202\323\344\223\002!\"\034/api/customers/sms/{user"
+      "_id}:\001*\022V\n\014CallCustomer\022\020.api.CallReques"
+      "t\032\n.api.Empty\"(\202\323\344\223\002\"\"\035/api/customers/ca"
+      "ll/{user_id}:\001*\022S\n\013MMSCustomer\022\017.api.MMS"
+      "Request\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/api/custom"
+      "ers/mms/{user_id}:\001*\022Y\n\rEmailCustomer\022\021."
+      "api.EmailRequest\032\n.api.Empty\")\202\323\344\223\002#\"\036/a"
+      "pi/customers/email/{user_id}:\001*\022K\n\007SMSUs"
+      "er\022\017.api.SMSRequest\032\n.api.Empty\"#\202\323\344\223\002\035\""
+      "\030/api/users/sms/{user_id}:\001*\022N\n\010CallUser"
+      "\022\020.api.CallRequest\032\n.api.Empty\"$\202\323\344\223\002\036\"\031"
+      "/api/users/call/{user_id}:\001*\022K\n\007MMSUser\022"
+      "\017.api.MMSRequest\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/a"
+      "pi/users/mms/{user_id}:\001*\022Q\n\tEmailUser\022\021"
+      ".api.EmailRequest\032\n.api.Empty\"%\202\323\344\223\002\037\"\032/"
+      "api/users/email/{user_id}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 5946);
+      descriptor, 5716);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -1726,25 +1654,9 @@ struct StaticDescriptorInitializer {
 } static_descriptor_initializer;
 }  // namespace protobuf_api_2eproto
 namespace api {
-const ::google::protobuf::EnumDescriptor* CardType_descriptor() {
-  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2eproto::file_level_enum_descriptors[0];
-}
-bool CardType_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-      return true;
-    default:
-      return false;
-  }
-}
-
 const ::google::protobuf::EnumDescriptor* CustomerIndex_descriptor() {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2eproto::file_level_enum_descriptors[1];
+  return protobuf_api_2eproto::file_level_enum_descriptors[0];
 }
 bool CustomerIndex_IsValid(int value) {
   switch (value) {
@@ -1757,11 +1669,11 @@ bool CustomerIndex_IsValid(int value) {
   }
 }
 
-const ::google::protobuf::EnumDescriptor* Grant_descriptor() {
+const ::google::protobuf::EnumDescriptor* Claim_descriptor() {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2eproto::file_level_enum_descriptors[2];
+  return protobuf_api_2eproto::file_level_enum_descriptors[1];
 }
-bool Grant_IsValid(int value) {
+bool Claim_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -1777,9 +1689,25 @@ bool Grant_IsValid(int value) {
 
 const ::google::protobuf::EnumDescriptor* SigningMethod_descriptor() {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_api_2eproto::file_level_enum_descriptors[3];
+  return protobuf_api_2eproto::file_level_enum_descriptors[2];
 }
 bool SigningMethod_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* CardType_descriptor() {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2eproto::file_level_enum_descriptors[3];
+}
+bool CardType_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -9454,618 +9382,6 @@ void Pin::InternalSwap(Pin* other) {
 
 // ===================================================================
 
-JWTToken_HeaderEntry_DoNotUse::JWTToken_HeaderEntry_DoNotUse() {}
-JWTToken_HeaderEntry_DoNotUse::JWTToken_HeaderEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
-void JWTToken_HeaderEntry_DoNotUse::MergeFrom(const JWTToken_HeaderEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata JWTToken_HeaderEntry_DoNotUse::GetMetadata() const {
-  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[21];
-}
-void JWTToken_HeaderEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-
-// ===================================================================
-
-void JWTToken::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int JWTToken::kRawFieldNumber;
-const int JWTToken::kMethodFieldNumber;
-const int JWTToken::kHeaderFieldNumber;
-const int JWTToken::kClaimsFieldNumber;
-const int JWTToken::kSignatureFieldNumber;
-const int JWTToken::kValueFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-JWTToken::JWTToken()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_JWTToken.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:api.JWTToken)
-}
-JWTToken::JWTToken(const JWTToken& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  header_.MergeFrom(from.header_);
-  raw_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.raw().size() > 0) {
-    raw_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.raw_);
-  }
-  claims_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.claims().size() > 0) {
-    claims_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.claims_);
-  }
-  signature_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.signature().size() > 0) {
-    signature_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signature_);
-  }
-  ::memcpy(&method_, &from.method_,
-    static_cast<size_t>(reinterpret_cast<char*>(&value_) -
-    reinterpret_cast<char*>(&method_)) + sizeof(value_));
-  // @@protoc_insertion_point(copy_constructor:api.JWTToken)
-}
-
-void JWTToken::SharedCtor() {
-  raw_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  claims_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  signature_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&method_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&value_) -
-      reinterpret_cast<char*>(&method_)) + sizeof(value_));
-}
-
-JWTToken::~JWTToken() {
-  // @@protoc_insertion_point(destructor:api.JWTToken)
-  SharedDtor();
-}
-
-void JWTToken::SharedDtor() {
-  raw_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  claims_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  signature_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void JWTToken::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* JWTToken::descriptor() {
-  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const JWTToken& JWTToken::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_JWTToken.base);
-  return *internal_default_instance();
-}
-
-
-void JWTToken::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.JWTToken)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  header_.Clear();
-  raw_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  claims_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  signature_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&method_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&value_) -
-      reinterpret_cast<char*>(&method_)) + sizeof(value_));
-  _internal_metadata_.Clear();
-}
-
-bool JWTToken::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.JWTToken)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string raw = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_raw()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->raw().data(), static_cast<int>(this->raw().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.JWTToken.raw"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .api.SigningMethod method = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_method(static_cast< ::api::SigningMethod >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // map<string, string> header = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          JWTToken_HeaderEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              JWTToken_HeaderEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&header_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.JWTToken.HeaderEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.JWTToken.HeaderEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string claims = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_claims()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->claims().data(), static_cast<int>(this->claims().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.JWTToken.claims"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string signature = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_signature()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->signature().data(), static_cast<int>(this->signature().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.JWTToken.signature"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // bool value = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &value_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:api.JWTToken)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:api.JWTToken)
-  return false;
-#undef DO_
-}
-
-void JWTToken::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.JWTToken)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string raw = 1;
-  if (this->raw().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->raw().data(), static_cast<int>(this->raw().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.JWTToken.raw");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->raw(), output);
-  }
-
-  // .api.SigningMethod method = 2;
-  if (this->method() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->method(), output);
-  }
-
-  // map<string, string> header = 3;
-  if (!this->header().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.JWTToken.HeaderEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.JWTToken.HeaderEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->header().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->header().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->header().begin();
-          it != this->header().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<JWTToken_HeaderEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(header_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            3, *entry, output);
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
-      }
-    } else {
-      ::std::unique_ptr<JWTToken_HeaderEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->header().begin();
-          it != this->header().end(); ++it) {
-        entry.reset(header_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            3, *entry, output);
-        Utf8Check::Check(&*it);
-      }
-    }
-  }
-
-  // string claims = 4;
-  if (this->claims().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->claims().data(), static_cast<int>(this->claims().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.JWTToken.claims");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->claims(), output);
-  }
-
-  // string signature = 5;
-  if (this->signature().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->signature().data(), static_cast<int>(this->signature().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.JWTToken.signature");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->signature(), output);
-  }
-
-  // bool value = 6;
-  if (this->value() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->value(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:api.JWTToken)
-}
-
-::google::protobuf::uint8* JWTToken::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.JWTToken)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string raw = 1;
-  if (this->raw().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->raw().data(), static_cast<int>(this->raw().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.JWTToken.raw");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->raw(), target);
-  }
-
-  // .api.SigningMethod method = 2;
-  if (this->method() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->method(), target);
-  }
-
-  // map<string, string> header = 3;
-  if (!this->header().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.JWTToken.HeaderEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.JWTToken.HeaderEntry.value");
-      }
-    };
-
-    if (deterministic &&
-        this->header().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->header().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->header().begin();
-          it != this->header().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<JWTToken_HeaderEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(header_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       3, *entry, deterministic, target);
-;
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
-      }
-    } else {
-      ::std::unique_ptr<JWTToken_HeaderEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->header().begin();
-          it != this->header().end(); ++it) {
-        entry.reset(header_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       3, *entry, deterministic, target);
-;
-        Utf8Check::Check(&*it);
-      }
-    }
-  }
-
-  // string claims = 4;
-  if (this->claims().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->claims().data(), static_cast<int>(this->claims().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.JWTToken.claims");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->claims(), target);
-  }
-
-  // string signature = 5;
-  if (this->signature().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->signature().data(), static_cast<int>(this->signature().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.JWTToken.signature");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->signature(), target);
-  }
-
-  // bool value = 6;
-  if (this->value() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->value(), target);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:api.JWTToken)
-  return target;
-}
-
-size_t JWTToken::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.JWTToken)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // map<string, string> header = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->header_size());
-  {
-    ::std::unique_ptr<JWTToken_HeaderEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->header().begin();
-        it != this->header().end(); ++it) {
-      entry.reset(header_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // string raw = 1;
-  if (this->raw().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->raw());
-  }
-
-  // string claims = 4;
-  if (this->claims().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->claims());
-  }
-
-  // string signature = 5;
-  if (this->signature().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->signature());
-  }
-
-  // .api.SigningMethod method = 2;
-  if (this->method() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->method());
-  }
-
-  // bool value = 6;
-  if (this->value() != 0) {
-    total_size += 1 + 1;
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void JWTToken::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.JWTToken)
-  GOOGLE_DCHECK_NE(&from, this);
-  const JWTToken* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const JWTToken>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.JWTToken)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.JWTToken)
-    MergeFrom(*source);
-  }
-}
-
-void JWTToken::MergeFrom(const JWTToken& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.JWTToken)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  header_.MergeFrom(from.header_);
-  if (from.raw().size() > 0) {
-
-    raw_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.raw_);
-  }
-  if (from.claims().size() > 0) {
-
-    claims_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.claims_);
-  }
-  if (from.signature().size() > 0) {
-
-    signature_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.signature_);
-  }
-  if (from.method() != 0) {
-    set_method(from.method());
-  }
-  if (from.value() != 0) {
-    set_value(from.value());
-  }
-}
-
-void JWTToken::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.JWTToken)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void JWTToken::CopyFrom(const JWTToken& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.JWTToken)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool JWTToken::IsInitialized() const {
-  return true;
-}
-
-void JWTToken::Swap(JWTToken* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void JWTToken::InternalSwap(JWTToken* other) {
-  using std::swap;
-  header_.Swap(&other->header_);
-  raw_.Swap(&other->raw_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  claims_.Swap(&other->claims_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  signature_.Swap(&other->signature_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(method_, other->method_);
-  swap(value_, other->value_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata JWTToken::GetMetadata() const {
-  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void SignedKey::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -11200,7 +10516,6 @@ const int StandardClaims::kExpiresAtFieldNumber;
 const int StandardClaims::kIdFieldNumber;
 const int StandardClaims::kIssuedAtFieldNumber;
 const int StandardClaims::kNotBeforeFieldNumber;
-const int StandardClaims::kGrantsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 StandardClaims::StandardClaims()
@@ -11212,8 +10527,7 @@ StandardClaims::StandardClaims()
 }
 StandardClaims::StandardClaims(const StandardClaims& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      grants_(from.grants_) {
+      _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   audience_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.audience().size() > 0) {
@@ -11279,7 +10593,6 @@ void StandardClaims::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  grants_.Clear();
   audience_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -11405,35 +10718,6 @@ bool StandardClaims::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .api.Grant grants = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
-          ::google::protobuf::uint32 length;
-          DO_(input->ReadVarint32(&length));
-          ::google::protobuf::io::CodedInputStream::Limit limit = input->PushLimit(static_cast<int>(length));
-          while (input->BytesUntilLimit() > 0) {
-            int value;
-            DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-            add_grants(static_cast< ::api::Grant >(value));
-          }
-          input->PopLimit(limit);
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          add_grants(static_cast< ::api::Grant >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -11511,20 +10795,6 @@ void StandardClaims::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt64(7, this->not_before(), output);
   }
 
-  // repeated .api.Grant grants = 8;
-  if (this->grants_size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteTag(
-      8,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      output);
-    output->WriteVarint32(
-        static_cast< ::google::protobuf::uint32>(_grants_cached_byte_size_));
-  }
-  for (int i = 0, n = this->grants_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnumNoTag(
-      this->grants(i), output);
-  }
-
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -11594,18 +10864,6 @@ void StandardClaims::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(7, this->not_before(), target);
   }
 
-  // repeated .api.Grant grants = 8;
-  if (this->grants_size() > 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteTagToArray(
-      8,
-      ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(      static_cast< ::google::protobuf::uint32>(
-            _grants_cached_byte_size_), target);
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumNoTagToArray(
-      this->grants_, target);
-  }
-
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -11623,25 +10881,6 @@ size_t StandardClaims::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // repeated .api.Grant grants = 8;
-  {
-    size_t data_size = 0;
-    unsigned int count = static_cast<unsigned int>(this->grants_size());for (unsigned int i = 0; i < count; i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::EnumSize(
-        this->grants(static_cast<int>(i)));
-    }
-    if (data_size > 0) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-            static_cast< ::google::protobuf::int32>(data_size));
-    }
-    int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _grants_cached_byte_size_ = cached_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
-    total_size += data_size;
-  }
-
   // string audience = 2;
   if (this->audience().size() > 0) {
     total_size += 1 +
@@ -11718,7 +10957,6 @@ void StandardClaims::MergeFrom(const StandardClaims& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  grants_.MergeFrom(from.grants_);
   if (from.audience().size() > 0) {
 
     audience_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.audience_);
@@ -11769,7 +11007,6 @@ void StandardClaims::Swap(StandardClaims* other) {
 }
 void StandardClaims::InternalSwap(StandardClaims* other) {
   using std::swap;
-  grants_.InternalSwap(&other->grants_);
   audience_.Swap(&other->audience_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   subject_.Swap(&other->subject_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -11798,7 +11035,7 @@ void Token_HeaderEntry_DoNotUse::MergeFrom(const Token_HeaderEntry_DoNotUse& oth
 }
 ::google::protobuf::Metadata Token_HeaderEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[26];
+  return ::protobuf_api_2eproto::file_level_metadata[24];
 }
 void Token_HeaderEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -18639,7 +17876,7 @@ void JSONMap_JsonMapEntry_DoNotUse::MergeFrom(const JSONMap_JsonMapEntry_DoNotUs
 }
 ::google::protobuf::Metadata JSONMap_JsonMapEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[42];
+  return ::protobuf_api_2eproto::file_level_metadata[40];
 }
 void JSONMap_JsonMapEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -19790,12 +19027,6 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Star* Arena::CreateMaybeMes
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Pin* Arena::CreateMaybeMessage< ::api::Pin >(Arena* arena) {
   return Arena::CreateInternal< ::api::Pin >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JWTToken_HeaderEntry_DoNotUse* Arena::CreateMaybeMessage< ::api::JWTToken_HeaderEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::api::JWTToken_HeaderEntry_DoNotUse >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JWTToken* Arena::CreateMaybeMessage< ::api::JWTToken >(Arena* arena) {
-  return Arena::CreateInternal< ::api::JWTToken >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::SignedKey* Arena::CreateMaybeMessage< ::api::SignedKey >(Arena* arena) {
   return Arena::CreateInternal< ::api::SignedKey >(arena);

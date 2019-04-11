@@ -291,14 +291,6 @@
                 </li>
               
                 <li>
-                  <a href="#api.JWTToken"><span class="badge">M</span>JWTToken</a>
-                </li>
-              
-                <li>
-                  <a href="#api.JWTToken.HeaderEntry"><span class="badge">M</span>JWTToken.HeaderEntry</a>
-                </li>
-              
-                <li>
                   <a href="#api.LogConfig"><span class="badge">M</span>LogConfig</a>
                 </li>
               
@@ -372,11 +364,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.CustomerIndex"><span class="badge">E</span>CustomerIndex</a>
+                  <a href="#api.Claim"><span class="badge">E</span>Claim</a>
                 </li>
               
                 <li>
-                  <a href="#api.Grant"><span class="badge">E</span>Grant</a>
+                  <a href="#api.CustomerIndex"><span class="badge">E</span>CustomerIndex</a>
                 </li>
               
                 <li>
@@ -1683,94 +1675,6 @@
 
         
       
-        <h3 id="api.JWTToken">JWTToken</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>raw</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>method</td>
-                  <td><a href="#api.SigningMethod">SigningMethod</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>header</td>
-                  <td><a href="#api.JWTToken.HeaderEntry">JWTToken.HeaderEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>claims</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>signature</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#bool">bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.JWTToken.HeaderEntry">JWTToken.HeaderEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="api.LogConfig">LogConfig</h3>
         <p></p>
 
@@ -2165,13 +2069,6 @@
                   <td><p> </p></td>
                 </tr>
               
-                <tr>
-                  <td>grants</td>
-                  <td><a href="#api.Grant">Grant</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
             </tbody>
           </table>
         
@@ -2451,36 +2348,7 @@
           </tbody>
         </table>
       
-        <h3 id="api.CustomerIndex">CustomerIndex</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>ID</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>EMAIL</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>PHONE</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.Grant">Grant</h3>
+        <h3 id="api.Claim">Claim</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -2521,6 +2389,35 @@
               <tr>
                 <td>AUTOM8TER</td>
                 <td>5</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.CustomerIndex">CustomerIndex</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ID</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>EMAIL</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PHONE</td>
+                <td>2</td>
                 <td><p></p></td>
               </tr>
             

@@ -33,6 +33,7 @@ goog.exportSymbol('proto.api.CancelSubscriptionRequest', null, global);
 goog.exportSymbol('proto.api.Card', null, global);
 goog.exportSymbol('proto.api.CardType', null, global);
 goog.exportSymbol('proto.api.ChannelReminder', null, global);
+goog.exportSymbol('proto.api.Claim', null, global);
 goog.exportSymbol('proto.api.CreatePlanRequest', null, global);
 goog.exportSymbol('proto.api.CreatePlanResponse', null, global);
 goog.exportSymbol('proto.api.Customer', null, global);
@@ -42,11 +43,9 @@ goog.exportSymbol('proto.api.EmailAddress', null, global);
 goog.exportSymbol('proto.api.EmailRequest', null, global);
 goog.exportSymbol('proto.api.Empty', null, global);
 goog.exportSymbol('proto.api.Fax', null, global);
-goog.exportSymbol('proto.api.Grant', null, global);
 goog.exportSymbol('proto.api.ItemRef', null, global);
 goog.exportSymbol('proto.api.JSON', null, global);
 goog.exportSymbol('proto.api.JSONMap', null, global);
-goog.exportSymbol('proto.api.JWTToken', null, global);
 goog.exportSymbol('proto.api.LogConfig', null, global);
 goog.exportSymbol('proto.api.LogHook', null, global);
 goog.exportSymbol('proto.api.MMSRequest', null, global);
@@ -4330,287 +4329,6 @@ proto.api.Pin.prototype.hasItem = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.JWTToken = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.api.JWTToken, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.api.JWTToken.displayName = 'proto.api.JWTToken';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.JWTToken.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.JWTToken.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.JWTToken} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.JWTToken.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    raw: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    method: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    headerMap: (f = msg.getHeaderMap()) ? f.toObject(includeInstance, undefined) : [],
-    claims: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    signature: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    value: jspb.Message.getFieldWithDefault(msg, 6, false)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.JWTToken}
- */
-proto.api.JWTToken.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.JWTToken;
-  return proto.api.JWTToken.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.JWTToken} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.JWTToken}
- */
-proto.api.JWTToken.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRaw(value);
-      break;
-    case 2:
-      var value = /** @type {!proto.api.SigningMethod} */ (reader.readEnum());
-      msg.setMethod(value);
-      break;
-    case 3:
-      var value = msg.getHeaderMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
-         });
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setClaims(value);
-      break;
-    case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSignature(value);
-      break;
-    case 6:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setValue(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.JWTToken.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.JWTToken.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.JWTToken} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.JWTToken.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getRaw();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getMethod();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      2,
-      f
-    );
-  }
-  f = message.getHeaderMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = message.getClaims();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getSignature();
-  if (f.length > 0) {
-    writer.writeString(
-      5,
-      f
-    );
-  }
-  f = message.getValue();
-  if (f) {
-    writer.writeBool(
-      6,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string raw = 1;
- * @return {string}
- */
-proto.api.JWTToken.prototype.getRaw = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.api.JWTToken.prototype.setRaw = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional SigningMethod method = 2;
- * @return {!proto.api.SigningMethod}
- */
-proto.api.JWTToken.prototype.getMethod = function() {
-  return /** @type {!proto.api.SigningMethod} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/** @param {!proto.api.SigningMethod} value */
-proto.api.JWTToken.prototype.setMethod = function(value) {
-  jspb.Message.setProto3EnumField(this, 2, value);
-};
-
-
-/**
- * map<string, string> header = 3;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.api.JWTToken.prototype.getHeaderMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
-      null));
-};
-
-
-proto.api.JWTToken.prototype.clearHeaderMap = function() {
-  this.getHeaderMap().clear();
-};
-
-
-/**
- * optional string claims = 4;
- * @return {string}
- */
-proto.api.JWTToken.prototype.getClaims = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
-proto.api.JWTToken.prototype.setClaims = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional string signature = 5;
- * @return {string}
- */
-proto.api.JWTToken.prototype.getSignature = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/** @param {string} value */
-proto.api.JWTToken.prototype.setSignature = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional bool value = 6;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.api.JWTToken.prototype.getValue = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
-};
-
-
-/** @param {boolean} value */
-proto.api.JWTToken.prototype.setValue = function(value) {
-  jspb.Message.setProto3BooleanField(this, 6, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.api.SignedKey = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -5193,19 +4911,12 @@ proto.api.Access.prototype.setGcpKey = function(value) {
  * @constructor
  */
 proto.api.StandardClaims = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.StandardClaims.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.StandardClaims, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.api.StandardClaims.displayName = 'proto.api.StandardClaims';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.StandardClaims.repeatedFields_ = [8];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -5241,8 +4952,7 @@ proto.api.StandardClaims.toObject = function(includeInstance, msg) {
     expiresAt: jspb.Message.getFieldWithDefault(msg, 4, 0),
     id: jspb.Message.getFieldWithDefault(msg, 5, ""),
     issuedAt: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    notBefore: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    grantsList: jspb.Message.getRepeatedField(msg, 8)
+    notBefore: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -5307,10 +5017,6 @@ proto.api.StandardClaims.deserializeBinaryFromReader = function(msg, reader) {
     case 7:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setNotBefore(value);
-      break;
-    case 8:
-      var value = /** @type {!Array<!proto.api.Grant>} */ (reader.readPackedEnum());
-      msg.setGrantsList(value);
       break;
     default:
       reader.skipField();
@@ -5388,13 +5094,6 @@ proto.api.StandardClaims.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       7,
-      f
-    );
-  }
-  f = message.getGrantsList();
-  if (f.length > 0) {
-    writer.writePackedEnum(
-      8,
       f
     );
   }
@@ -5518,35 +5217,6 @@ proto.api.StandardClaims.prototype.getNotBefore = function() {
 /** @param {number} value */
 proto.api.StandardClaims.prototype.setNotBefore = function(value) {
   jspb.Message.setProto3IntField(this, 7, value);
-};
-
-
-/**
- * repeated Grant grants = 8;
- * @return {!Array<!proto.api.Grant>}
- */
-proto.api.StandardClaims.prototype.getGrantsList = function() {
-  return /** @type {!Array<!proto.api.Grant>} */ (jspb.Message.getRepeatedField(this, 8));
-};
-
-
-/** @param {!Array<!proto.api.Grant>} value */
-proto.api.StandardClaims.prototype.setGrantsList = function(value) {
-  jspb.Message.setField(this, 8, value || []);
-};
-
-
-/**
- * @param {!proto.api.Grant} value
- * @param {number=} opt_index
- */
-proto.api.StandardClaims.prototype.addGrants = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 8, value, opt_index);
-};
-
-
-proto.api.StandardClaims.prototype.clearGrantsList = function() {
-  this.setGrantsList([]);
 };
 
 
@@ -10069,16 +9739,6 @@ proto.api.PubSubTopic.prototype.hasTopic = function() {
 /**
  * @enum {number}
  */
-proto.api.CardType = {
-  VISA: 0,
-  MASTERCARD: 1,
-  DISCOVER: 2,
-  AMEX: 3
-};
-
-/**
- * @enum {number}
- */
 proto.api.CustomerIndex = {
   ID: 0,
   EMAIL: 1,
@@ -10088,7 +9748,7 @@ proto.api.CustomerIndex = {
 /**
  * @enum {number}
  */
-proto.api.Grant = {
+proto.api.Claim = {
   TWILIO: 0,
   SENDGRID: 1,
   STRIPE: 2,
@@ -10105,6 +9765,16 @@ proto.api.SigningMethod = {
   ECDSA: 1,
   RSA: 2,
   RSAPPS: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.CardType = {
+  VISA: 0,
+  MASTERCARD: 1,
+  DISCOVER: 2,
+  AMEX: 3
 };
 
 goog.object.extend(exports, proto.api);

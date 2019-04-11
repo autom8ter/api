@@ -42,29 +42,6 @@ CF_EXTERN_C_BEGIN
 
 NS_ASSUME_NONNULL_BEGIN
 
-#pragma mark - Enum CardType
-
-typedef GPB_ENUM(CardType) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  CardType_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  CardType_Visa = 0,
-  CardType_Mastercard = 1,
-  CardType_Discover = 2,
-  CardType_Amex = 3,
-};
-
-GPBEnumDescriptor *CardType_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL CardType_IsValidValue(int32_t value);
-
 #pragma mark - Enum CustomerIndex
 
 typedef GPB_ENUM(CustomerIndex) {
@@ -87,30 +64,30 @@ GPBEnumDescriptor *CustomerIndex_EnumDescriptor(void);
  **/
 BOOL CustomerIndex_IsValidValue(int32_t value);
 
-#pragma mark - Enum Grant
+#pragma mark - Enum Claim
 
-typedef GPB_ENUM(Grant) {
+typedef GPB_ENUM(Claim) {
   /**
    * Value used if any message's field encounters a value that is not defined
    * by this enum. The message will also have C functions to get/set the rawValue
    * of the field.
    **/
-  Grant_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  Grant_Twilio = 0,
-  Grant_Sendgrid = 1,
-  Grant_Stripe = 2,
-  Grant_Slack = 3,
-  Grant_Gcp = 4,
-  Grant_Autom8Ter = 5,
+  Claim_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Claim_Twilio = 0,
+  Claim_Sendgrid = 1,
+  Claim_Stripe = 2,
+  Claim_Slack = 3,
+  Claim_Gcp = 4,
+  Claim_Autom8Ter = 5,
 };
 
-GPBEnumDescriptor *Grant_EnumDescriptor(void);
+GPBEnumDescriptor *Claim_EnumDescriptor(void);
 
 /**
  * Checks to see if the given value is defined by the enum or was not known at
  * the time this source was generated.
  **/
-BOOL Grant_IsValidValue(int32_t value);
+BOOL Claim_IsValidValue(int32_t value);
 
 #pragma mark - Enum SigningMethod
 
@@ -134,6 +111,29 @@ GPBEnumDescriptor *SigningMethod_EnumDescriptor(void);
  * the time this source was generated.
  **/
 BOOL SigningMethod_IsValidValue(int32_t value);
+
+#pragma mark - Enum CardType
+
+typedef GPB_ENUM(CardType) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  CardType_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  CardType_Visa = 0,
+  CardType_Mastercard = 1,
+  CardType_Discover = 2,
+  CardType_Amex = 3,
+};
+
+GPBEnumDescriptor *CardType_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL CardType_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -561,47 +561,6 @@ typedef GPB_ENUM(Pin_FieldNumber) {
 
 @end
 
-#pragma mark - JWTToken
-
-typedef GPB_ENUM(JWTToken_FieldNumber) {
-  JWTToken_FieldNumber_Raw = 1,
-  JWTToken_FieldNumber_Method = 2,
-  JWTToken_FieldNumber_Header = 3,
-  JWTToken_FieldNumber_Claims = 4,
-  JWTToken_FieldNumber_Signature = 5,
-  JWTToken_FieldNumber_Value = 6,
-};
-
-@interface JWTToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *raw;
-
-@property(nonatomic, readwrite) SigningMethod method;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *header;
-/** The number of items in @c header without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger header_Count;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *claims;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *signature;
-
-@property(nonatomic, readwrite) BOOL value;
-
-@end
-
-/**
- * Fetches the raw value of a @c JWTToken's @c method property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t JWTToken_Method_RawValue(JWTToken *message);
-/**
- * Sets the raw value of an @c JWTToken's @c method property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value);
-
 #pragma mark - SignedKey
 
 typedef GPB_ENUM(SignedKey_FieldNumber) {
@@ -669,7 +628,6 @@ typedef GPB_ENUM(StandardClaims_FieldNumber) {
   StandardClaims_FieldNumber_Id_p = 5,
   StandardClaims_FieldNumber_IssuedAt = 6,
   StandardClaims_FieldNumber_NotBefore = 7,
-  StandardClaims_FieldNumber_GrantsArray = 8,
 };
 
 @interface StandardClaims : GPBMessage
@@ -689,11 +647,6 @@ typedef GPB_ENUM(StandardClaims_FieldNumber) {
 @property(nonatomic, readwrite) int64_t issuedAt;
 
 @property(nonatomic, readwrite) int64_t notBefore;
-
-// |grantsArray| contains |Grant|
-@property(nonatomic, readwrite, strong, null_resettable) GPBEnumArray *grantsArray;
-/** The number of items in @c grantsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger grantsArray_Count;
 
 @end
 

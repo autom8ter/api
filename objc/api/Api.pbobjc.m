@@ -57,45 +57,6 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
-#pragma mark - Enum CardType
-
-GPBEnumDescriptor *CardType_EnumDescriptor(void) {
-  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
-  if (!descriptor) {
-    static const char *valueNames =
-        "Visa\000Mastercard\000Discover\000Amex\000";
-    static const int32_t values[] = {
-        CardType_Visa,
-        CardType_Mastercard,
-        CardType_Discover,
-        CardType_Amex,
-    };
-    GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(CardType)
-                                       valueNames:valueNames
-                                           values:values
-                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:CardType_IsValidValue];
-    GPBEnumDescriptor *expected = nil;
-    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
-    }
-  }
-  return descriptor;
-}
-
-BOOL CardType_IsValidValue(int32_t value__) {
-  switch (value__) {
-    case CardType_Visa:
-    case CardType_Mastercard:
-    case CardType_Discover:
-    case CardType_Amex:
-      return YES;
-    default:
-      return NO;
-  }
-}
-
 #pragma mark - Enum CustomerIndex
 
 GPBEnumDescriptor *CustomerIndex_EnumDescriptor(void) {
@@ -133,29 +94,29 @@ BOOL CustomerIndex_IsValidValue(int32_t value__) {
   }
 }
 
-#pragma mark - Enum Grant
+#pragma mark - Enum Claim
 
-GPBEnumDescriptor *Grant_EnumDescriptor(void) {
+GPBEnumDescriptor *Claim_EnumDescriptor(void) {
   static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
         "Twilio\000Sendgrid\000Stripe\000Slack\000Gcp\000Autom8T"
         "er\000";
     static const int32_t values[] = {
-        Grant_Twilio,
-        Grant_Sendgrid,
-        Grant_Stripe,
-        Grant_Slack,
-        Grant_Gcp,
-        Grant_Autom8Ter,
+        Claim_Twilio,
+        Claim_Sendgrid,
+        Claim_Stripe,
+        Claim_Slack,
+        Claim_Gcp,
+        Claim_Autom8Ter,
     };
     static const char *extraTextFormatInfo = "\001\005e\002b\000";
     GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Grant)
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Claim)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:Grant_IsValidValue
+                                     enumVerifier:Claim_IsValidValue
                               extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
@@ -165,14 +126,14 @@ GPBEnumDescriptor *Grant_EnumDescriptor(void) {
   return descriptor;
 }
 
-BOOL Grant_IsValidValue(int32_t value__) {
+BOOL Claim_IsValidValue(int32_t value__) {
   switch (value__) {
-    case Grant_Twilio:
-    case Grant_Sendgrid:
-    case Grant_Stripe:
-    case Grant_Slack:
-    case Grant_Gcp:
-    case Grant_Autom8Ter:
+    case Claim_Twilio:
+    case Claim_Sendgrid:
+    case Claim_Stripe:
+    case Claim_Slack:
+    case Claim_Gcp:
+    case Claim_Autom8Ter:
       return YES;
     default:
       return NO;
@@ -212,6 +173,45 @@ BOOL SigningMethod_IsValidValue(int32_t value__) {
     case SigningMethod_Ecdsa:
     case SigningMethod_Rsa:
     case SigningMethod_Rsapps:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
+#pragma mark - Enum CardType
+
+GPBEnumDescriptor *CardType_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Visa\000Mastercard\000Discover\000Amex\000";
+    static const int32_t values[] = {
+        CardType_Visa,
+        CardType_Mastercard,
+        CardType_Discover,
+        CardType_Amex,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(CardType)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:CardType_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL CardType_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case CardType_Visa:
+    case CardType_Mastercard:
+    case CardType_Discover:
+    case CardType_Amex:
       return YES;
     default:
       return NO;
@@ -1635,115 +1635,6 @@ typedef struct Pin__storage_ {
 
 @end
 
-#pragma mark - JWTToken
-
-@implementation JWTToken
-
-@dynamic raw;
-@dynamic method;
-@dynamic header, header_Count;
-@dynamic claims;
-@dynamic signature;
-@dynamic value;
-
-typedef struct JWTToken__storage_ {
-  uint32_t _has_storage_[1];
-  SigningMethod method;
-  NSString *raw;
-  NSMutableDictionary *header;
-  NSString *claims;
-  NSString *signature;
-} JWTToken__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "raw",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Raw,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, raw),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "method",
-        .dataTypeSpecific.enumDescFunc = SigningMethod_EnumDescriptor,
-        .number = JWTToken_FieldNumber_Method,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, method),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
-      },
-      {
-        .name = "header",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Header,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, header),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "claims",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Claims,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, claims),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "signature",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Signature,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, signature),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "value",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Value,
-        .hasIndex = 4,
-        .offset = 5,  // Stored in _has_storage_ to save space.
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[JWTToken class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(JWTToken__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-int32_t JWTToken_Method_RawValue(JWTToken *message) {
-  GPBDescriptor *descriptor = [JWTToken descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
-  return GPBGetMessageInt32Field(message, field);
-}
-
-void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value) {
-  GPBDescriptor *descriptor = [JWTToken descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
-  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
-}
-
 #pragma mark - SignedKey
 
 @implementation SignedKey
@@ -1967,7 +1858,6 @@ typedef struct Access__storage_ {
 @dynamic id_p;
 @dynamic issuedAt;
 @dynamic notBefore;
-@dynamic grantsArray, grantsArray_Count;
 
 typedef struct StandardClaims__storage_ {
   uint32_t _has_storage_[1];
@@ -1975,7 +1865,6 @@ typedef struct StandardClaims__storage_ {
   NSString *audience;
   NSString *subject;
   NSString *id_p;
-  GPBEnumArray *grantsArray;
   int64_t expiresAt;
   int64_t issuedAt;
   int64_t notBefore;
@@ -2049,15 +1938,6 @@ typedef struct StandardClaims__storage_ {
         .offset = (uint32_t)offsetof(StandardClaims__storage_, notBefore),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
-      },
-      {
-        .name = "grantsArray",
-        .dataTypeSpecific.enumDescFunc = Grant_EnumDescriptor,
-        .number = StandardClaims_FieldNumber_GrantsArray,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(StandardClaims__storage_, grantsArray),
-        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldPacked | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
       },
     };
     GPBDescriptor *localDescriptor =

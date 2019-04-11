@@ -231,12 +231,15 @@ type Claims struct {
 	standardClaims map[string]jwt.StandardClaims
 }
 
-func (c *Claims) SignedTwilioToken(secret string) (*SignedKey, error) {
+func (c *Claims) SignedTwilioToken(secret string, t Token) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["twilio"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "twilio-fpa;v=1",
+	}
+	for k, v := range t.Header {
+		token.Header[k] = v
 	}
 	tok, err := token.SignedString([]byte(secret))
 	return &SignedKey{SignedKey: tok}, err
@@ -290,10 +293,6 @@ func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error) {
 	return &SignedKey{
 		SignedKey: signed,
 	}, nil
-}
-
-func (t *StandardClaims) AddGrants(grants ...Grant) {
-	t.Grants = append(t.Grants, grants...)
 }
 
 func (t *StandardClaims) Claims() *Claims {
