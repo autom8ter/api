@@ -16,8 +16,6 @@ import (
 	"os"
 )
 
-var SIGNING_KEY = os.Getenv("SIGNING_KEY")
-
 var Util = objectify.Default()
 
 func Cmd(name, description string, fn func() error) *cobra.Command {
