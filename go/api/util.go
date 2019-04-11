@@ -231,61 +231,66 @@ type Claims struct {
 	standardClaims map[string]jwt.StandardClaims
 }
 
-func (c *Claims) SignedTwilioToken(secret string, t Token) (*SignedKey, error) {
+func (c *Claims) SignedTwilioToken(secret string, headers map[string]string) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["twilio"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "twilio-fpa;v=1",
 	}
-	for k, v := range t.Header {
-		token.Header[k] = v
+	for k, v := range headers {
+		token.Header[k]=v
 	}
 	tok, err := token.SignedString([]byte(secret))
 	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedSendGridToken(secret string) (*SignedKey, error) {
+func (c *Claims) SignedSendGridToken(secret string, headers map[string]string) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["sendgrid"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "sendgrid",
 	}
-
+	for k, v := range headers {
+		token.Header[k]=v
+	}
 	tok, err := token.SignedString([]byte(secret))
 	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedSlackToken(secret string) (*SignedKey, error) {
+func (c *Claims) SignedSlackToken(secret string, headers map[string]string) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["slack"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "slack",
 	}
+	for k, v := range headers {
+		token.Header[k]=v
+	}
 	tok, err := token.SignedString([]byte(secret))
 	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedStripeToken(secret string) (*SignedKey, error) {
+func (c *Claims) SignedStripeToken(secret string, headers map[string]string) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["stripe"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "stripe",
 	}
+	for k, v := range headers {
+		token.Header[k]=v
+	}
 	tok, err := token.SignedString([]byte(secret))
 	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error) {
+
+func (c *Claims) SignedGCPToken(secret string, headers map[string]string) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["gcp"])
-	token.Header = map[string]interface{}{
-		"typ": "JWT",
-		"alg": "HS256",
-		"cty": "gcp",
-	}
+	token.Header = map[string]interface{}{}
 	signed, err := token.SignedString([]byte(secret))
 	if err != nil {
 		return nil, err

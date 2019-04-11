@@ -145,13 +145,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :issued_at, :int64, 6
     optional :not_before, :int64, 7
   end
-  add_message "api.Token" do
-    optional :raw, :string, 1
-    optional :signing_method, :enum, 2, "api.SigningMethod"
-    optional :valid, :bool, 3
-    optional :signature, :string, 4
-    map :header, :string, :string, 5
-  end
   add_message "api.LogConfig" do
     optional :username, :string, 1
     optional :channel, :string, 2
@@ -311,7 +304,6 @@ module Api
   SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
   Access = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Access").msgclass
   StandardClaims = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StandardClaims").msgclass
-  Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Token").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass

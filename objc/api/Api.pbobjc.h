@@ -650,44 +650,6 @@ typedef GPB_ENUM(StandardClaims_FieldNumber) {
 
 @end
 
-#pragma mark - Token
-
-typedef GPB_ENUM(Token_FieldNumber) {
-  Token_FieldNumber_Raw = 1,
-  Token_FieldNumber_SigningMethod = 2,
-  Token_FieldNumber_Valid = 3,
-  Token_FieldNumber_Signature = 4,
-  Token_FieldNumber_Header = 5,
-};
-
-@interface Token : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *raw;
-
-@property(nonatomic, readwrite) SigningMethod signingMethod;
-
-@property(nonatomic, readwrite) BOOL valid;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *signature;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *header;
-/** The number of items in @c header without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger header_Count;
-
-@end
-
-/**
- * Fetches the raw value of a @c Token's @c signingMethod property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t Token_SigningMethod_RawValue(Token *message);
-/**
- * Sets the raw value of an @c Token's @c signingMethod property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetToken_SigningMethod_RawValue(Token *message, int32_t value);
-
 #pragma mark - LogConfig
 
 typedef GPB_ENUM(LogConfig_FieldNumber) {

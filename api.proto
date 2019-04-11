@@ -272,14 +272,6 @@ message StandardClaims {
     int64 not_before=7;
 }
 
-message Token {
-    string raw=1;
-    SigningMethod signing_method=2;
-    bool valid =3;
-    string signature=4;
-    map<string, string> header=5;
-}
-
 message LogConfig {
     string username=1;
     string channel=2;
