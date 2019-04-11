@@ -36865,6 +36865,556 @@ public final class Api {
 
   }
 
+  public interface SignedKeyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.SignedKey)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string signed_key = 1;</code>
+     */
+    java.lang.String getSignedKey();
+    /**
+     * <code>string signed_key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSignedKeyBytes();
+  }
+  /**
+   * Protobuf type {@code api.SignedKey}
+   */
+  public  static final class SignedKey extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.SignedKey)
+      SignedKeyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SignedKey.newBuilder() to construct.
+    private SignedKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SignedKey() {
+      signedKey_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SignedKey(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signedKey_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_SignedKey_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_SignedKey_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.SignedKey.class, api.Api.SignedKey.Builder.class);
+    }
+
+    public static final int SIGNED_KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object signedKey_;
+    /**
+     * <code>string signed_key = 1;</code>
+     */
+    public java.lang.String getSignedKey() {
+      java.lang.Object ref = signedKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        signedKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string signed_key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSignedKeyBytes() {
+      java.lang.Object ref = signedKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        signedKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getSignedKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, signedKey_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getSignedKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, signedKey_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.SignedKey)) {
+        return super.equals(obj);
+      }
+      api.Api.SignedKey other = (api.Api.SignedKey) obj;
+
+      boolean result = true;
+      result = result && getSignedKey()
+          .equals(other.getSignedKey());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SIGNED_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getSignedKey().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.SignedKey parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SignedKey parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SignedKey parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SignedKey parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SignedKey parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SignedKey parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SignedKey parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SignedKey parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SignedKey parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.SignedKey parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SignedKey parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SignedKey parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.SignedKey prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.SignedKey}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.SignedKey)
+        api.Api.SignedKeyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_SignedKey_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_SignedKey_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.SignedKey.class, api.Api.SignedKey.Builder.class);
+      }
+
+      // Construct using api.Api.SignedKey.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        signedKey_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_SignedKey_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.SignedKey getDefaultInstanceForType() {
+        return api.Api.SignedKey.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.SignedKey build() {
+        api.Api.SignedKey result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.SignedKey buildPartial() {
+        api.Api.SignedKey result = new api.Api.SignedKey(this);
+        result.signedKey_ = signedKey_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.SignedKey) {
+          return mergeFrom((api.Api.SignedKey)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.SignedKey other) {
+        if (other == api.Api.SignedKey.getDefaultInstance()) return this;
+        if (!other.getSignedKey().isEmpty()) {
+          signedKey_ = other.signedKey_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.SignedKey parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.SignedKey) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object signedKey_ = "";
+      /**
+       * <code>string signed_key = 1;</code>
+       */
+      public java.lang.String getSignedKey() {
+        java.lang.Object ref = signedKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          signedKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string signed_key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSignedKeyBytes() {
+        java.lang.Object ref = signedKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          signedKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string signed_key = 1;</code>
+       */
+      public Builder setSignedKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        signedKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string signed_key = 1;</code>
+       */
+      public Builder clearSignedKey() {
+        
+        signedKey_ = getDefaultInstance().getSignedKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string signed_key = 1;</code>
+       */
+      public Builder setSignedKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        signedKey_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.SignedKey)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.SignedKey)
+    private static final api.Api.SignedKey DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.SignedKey();
+    }
+
+    public static api.Api.SignedKey getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SignedKey>
+        PARSER = new com.google.protobuf.AbstractParser<SignedKey>() {
+      @java.lang.Override
+      public SignedKey parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SignedKey(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SignedKey> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SignedKey> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.SignedKey getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface PubSubMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.PubSubMessage)
       com.google.protobuf.MessageOrBuilder {
@@ -38270,6 +38820,11 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_JSON_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_SignedKey_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_SignedKey_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_PubSubMessage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -38383,40 +38938,41 @@ public final class Api {
       "p\030\001 \003(\0132\031.api.JSONMap.JsonMapEntry\0329\n\014Js" +
       "onMapEntry\022\013\n\003key\030\001 \001(\t\022\030\n\005value\030\002 \001(\0132\t" +
       ".api.JSON:\0028\001\"\"\n\004JSON\022\014\n\004data\030\001 \001(\014\022\014\n\004s" +
-      "ize\030\002 \001(\003\"A\n\rPubSubMessage\0220\n\007message\030\001 " +
-      "\001(\0132\037.google.pubsub.v1.PubsubMessage\"5\n\013" +
-      "PubSubTopic\022&\n\005topic\030\001 \001(\0132\027.google.pubs" +
-      "ub.v1.Topic*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005" +
-      "EMAIL\020\001\022\t\n\005PHONE\020\002*A\n\005Grant\022\n\n\006TWILIO\020\000\022" +
-      "\014\n\010SENDGRID\020\001\022\n\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007\n\003" +
-      "GCP\020\0042\271\010\n\013UserService\022O\n\016CreateCustomer\022" +
-      "\027.api.AddCustomerRequest\032\r.api.Customer\"" +
-      "\025\202\323\344\223\002\017\"\n/api/users:\001*\022q\n\021SubscribeCusto" +
-      "mer\022\035.api.SubscribeCustomerRequest\032\036.api" +
-      ".SubscribeCustomerResponse\"\035\202\323\344\223\002\027\"\022/api" +
-      "/users/{email}:\001*\022`\n\023UnSubscribeCustomer" +
-      "\022\036.api.CancelSubscriptionRequest\032\n.api.E" +
-      "mpty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026C" +
-      "reateSubscriptionPlan\022\026.api.CreatePlanRe" +
-      "quest\032\027.api.CreatePlanResponse\"\037\202\323\344\223\002\031\"\024" +
-      "/api/plans/{plan_id}:\001*\022S\n\013SMSCustomer\022\017" +
-      ".api.SMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/ap" +
-      "i/customers/sms/{user_id}:\001*\022V\n\014CallCust" +
-      "omer\022\020.api.CallRequest\032\n.api.Empty\"(\202\323\344\223" +
-      "\002\"\"\035/api/customers/call/{user_id}:\001*\022S\n\013" +
-      "MMSCustomer\022\017.api.MMSRequest\032\n.api.Empty" +
-      "\"\'\202\323\344\223\002!\"\034/api/customers/mms/{user_id}:\001" +
-      "*\022Y\n\rEmailCustomer\022\021.api.EmailRequest\032\n." +
-      "api.Empty\")\202\323\344\223\002#\"\036/api/customers/email/" +
-      "{user_id}:\001*\022K\n\007SMSUser\022\017.api.SMSRequest" +
-      "\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/sms/{us" +
-      "er_id}:\001*\022N\n\010CallUser\022\020.api.CallRequest\032" +
-      "\n.api.Empty\"$\202\323\344\223\002\036\"\031/api/users/call/{us" +
-      "er_id}:\001*\022K\n\007MMSUser\022\017.api.MMSRequest\032\n." +
-      "api.Empty\"#\202\323\344\223\002\035\"\030/api/users/mms/{user_" +
-      "id}:\001*\022Q\n\tEmailUser\022\021.api.EmailRequest\032\n" +
-      ".api.Empty\"%\202\323\344\223\002\037\"\032/api/users/email/{us" +
-      "er_id}:\001*b\006proto3"
+      "ize\030\002 \001(\003\"\037\n\tSignedKey\022\022\n\nsigned_key\030\001 \001" +
+      "(\t\"A\n\rPubSubMessage\0220\n\007message\030\001 \001(\0132\037.g" +
+      "oogle.pubsub.v1.PubsubMessage\"5\n\013PubSubT" +
+      "opic\022&\n\005topic\030\001 \001(\0132\027.google.pubsub.v1.T" +
+      "opic*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001" +
+      "\022\t\n\005PHONE\020\002*A\n\005Grant\022\n\n\006TWILIO\020\000\022\014\n\010SEND" +
+      "GRID\020\001\022\n\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\0042\271" +
+      "\010\n\013UserService\022O\n\016CreateCustomer\022\027.api.A" +
+      "ddCustomerRequest\032\r.api.Customer\"\025\202\323\344\223\002\017" +
+      "\"\n/api/users:\001*\022q\n\021SubscribeCustomer\022\035.a" +
+      "pi.SubscribeCustomerRequest\032\036.api.Subscr" +
+      "ibeCustomerResponse\"\035\202\323\344\223\002\027\"\022/api/users/" +
+      "{email}:\001*\022`\n\023UnSubscribeCustomer\022\036.api." +
+      "CancelSubscriptionRequest\032\n.api.Empty\"\035\202" +
+      "\323\344\223\002\027\"\022/api/users/{email}:\001*\022j\n\026CreateSu" +
+      "bscriptionPlan\022\026.api.CreatePlanRequest\032\027" +
+      ".api.CreatePlanResponse\"\037\202\323\344\223\002\031\"\024/api/pl" +
+      "ans/{plan_id}:\001*\022S\n\013SMSCustomer\022\017.api.SM" +
+      "SRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/api/custo" +
+      "mers/sms/{user_id}:\001*\022V\n\014CallCustomer\022\020." +
+      "api.CallRequest\032\n.api.Empty\"(\202\323\344\223\002\"\"\035/ap" +
+      "i/customers/call/{user_id}:\001*\022S\n\013MMSCust" +
+      "omer\022\017.api.MMSRequest\032\n.api.Empty\"\'\202\323\344\223\002" +
+      "!\"\034/api/customers/mms/{user_id}:\001*\022Y\n\rEm" +
+      "ailCustomer\022\021.api.EmailRequest\032\n.api.Emp" +
+      "ty\")\202\323\344\223\002#\"\036/api/customers/email/{user_i" +
+      "d}:\001*\022K\n\007SMSUser\022\017.api.SMSRequest\032\n.api." +
+      "Empty\"#\202\323\344\223\002\035\"\030/api/users/sms/{user_id}:" +
+      "\001*\022N\n\010CallUser\022\020.api.CallRequest\032\n.api.E" +
+      "mpty\"$\202\323\344\223\002\036\"\031/api/users/call/{user_id}:" +
+      "\001*\022K\n\007MMSUser\022\017.api.MMSRequest\032\n.api.Emp" +
+      "ty\"#\202\323\344\223\002\035\"\030/api/users/mms/{user_id}:\001*\022" +
+      "Q\n\tEmailUser\022\021.api.EmailRequest\032\n.api.Em" +
+      "pty\"%\202\323\344\223\002\037\"\032/api/users/email/{user_id}:" +
+      "\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -38664,14 +39220,20 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JSON_descriptor,
         new java.lang.String[] { "Data", "Size", });
-    internal_static_api_PubSubMessage_descriptor =
+    internal_static_api_SignedKey_descriptor =
       getDescriptor().getMessageTypes().get(36);
+    internal_static_api_SignedKey_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_SignedKey_descriptor,
+        new java.lang.String[] { "SignedKey", });
+    internal_static_api_PubSubMessage_descriptor =
+      getDescriptor().getMessageTypes().get(37);
     internal_static_api_PubSubMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PubSubMessage_descriptor,
         new java.lang.String[] { "Message", });
     internal_static_api_PubSubTopic_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_api_PubSubTopic_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PubSubTopic_descriptor,

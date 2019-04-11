@@ -3,6 +3,7 @@ package api
 import (
 	"context"
 	"encoding/json"
+	"github.com/auth0/go-jwt-middleware"
 	"github.com/autom8ter/engine"
 	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
@@ -10,9 +11,13 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
+	"net/http"
+
 	"io"
 	"os"
 )
+
+var SIGNING_KEY = os.Getenv("SIGNING_KEY")
 
 var Util = objectify.Default()
 
@@ -274,14 +279,20 @@ func (c *Claims) SignedStripeToken(secret string) (string, error) {
 	return token.SignedString([]byte(secret))
 }
 
-func (c *Claims) SignedGCPToken(secret string) (string, error) {
+func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.GCPClaims())
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "gcp",
 	}
-	return token.SignedString([]byte(secret))
+	signed, err := token.SignedString([]byte(secret))
+	if err != nil {
+		return nil, err
+	}
+	return &SignedKey{
+		SignedKey: signed,
+	}, nil
 }
 
 func (c *Claims) TwilioClaims() jwt.StandardClaims {
@@ -362,5 +373,24 @@ func (t *Token) New() *Claims {
 	return &Claims{
 		standardClaims: claims,
 		token:          t,
+	}
+}
+
+type JWTMiddleware struct {
+	middleware *jwtmiddleware.JWTMiddleware
+}
+
+func NewJWTMiddleware(key SignedKey) *JWTMiddleware {
+	return &JWTMiddleware{jwtmiddleware.New(jwtmiddleware.Options{
+		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
+			return []byte(key.SignedKey), nil
+		},
+		SigningMethod: jwt.SigningMethodHS256,
+	})}
+}
+
+func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		j.middleware.HandlerWithNext(w, r, next)
 	}
 }

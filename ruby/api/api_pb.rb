@@ -231,6 +231,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :data, :bytes, 1
     optional :size, :int64, 2
   end
+  add_message "api.SignedKey" do
+    optional :signed_key, :string, 1
+  end
   add_message "api.PubSubMessage" do
     optional :message, :message, 1, "google.pubsub.v1.PubsubMessage"
   end
@@ -288,6 +291,7 @@ module Api
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
   JSONMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONMap").msgclass
   JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
+  SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
   PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
   PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule

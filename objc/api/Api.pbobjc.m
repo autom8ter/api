@@ -2951,6 +2951,49 @@ typedef struct JSON__storage_ {
 
 @end
 
+#pragma mark - SignedKey
+
+@implementation SignedKey
+
+@dynamic signedKey;
+
+typedef struct SignedKey__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *signedKey;
+} SignedKey__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "signedKey",
+        .dataTypeSpecific.className = NULL,
+        .number = SignedKey_FieldNumber_SignedKey,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SignedKey__storage_, signedKey),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SignedKey class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SignedKey__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - PubSubMessage
 
 @implementation PubSubMessage

@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[40];
+  static const ::google::protobuf::internal::ParseTable schema[41];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -161,6 +161,9 @@ extern SMSDefaultTypeInternal _SMS_default_instance_;
 class SMSRequest;
 class SMSRequestDefaultTypeInternal;
 extern SMSRequestDefaultTypeInternal _SMSRequest_default_instance_;
+class SignedKey;
+class SignedKeyDefaultTypeInternal;
+extern SignedKeyDefaultTypeInternal _SignedKey_default_instance_;
 class Star;
 class StarDefaultTypeInternal;
 extern StarDefaultTypeInternal _Star_default_instance_;
@@ -214,6 +217,7 @@ template<> ::api::PubSubTopic* Arena::CreateMaybeMessage<::api::PubSubTopic>(Are
 template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmail>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
+template<> ::api::SignedKey* Arena::CreateMaybeMessage<::api::SignedKey>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeCustomerRequest* Arena::CreateMaybeMessage<::api::SubscribeCustomerRequest>(Arena*);
 template<> ::api::SubscribeCustomerResponse* Arena::CreateMaybeMessage<::api::SubscribeCustomerResponse>(Arena*);
@@ -5885,6 +5889,117 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 };
 // -------------------------------------------------------------------
 
+class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SignedKey) */ {
+ public:
+  SignedKey();
+  virtual ~SignedKey();
+
+  SignedKey(const SignedKey& from);
+
+  inline SignedKey& operator=(const SignedKey& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SignedKey(SignedKey&& from) noexcept
+    : SignedKey() {
+    *this = ::std::move(from);
+  }
+
+  inline SignedKey& operator=(SignedKey&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SignedKey& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SignedKey* internal_default_instance() {
+    return reinterpret_cast<const SignedKey*>(
+               &_SignedKey_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  void Swap(SignedKey* other);
+  friend void swap(SignedKey& a, SignedKey& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SignedKey* New() const final {
+    return CreateMaybeMessage<SignedKey>(NULL);
+  }
+
+  SignedKey* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SignedKey>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SignedKey& from);
+  void MergeFrom(const SignedKey& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SignedKey* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string signed_key = 1;
+  void clear_signed_key();
+  static const int kSignedKeyFieldNumber = 1;
+  const ::std::string& signed_key() const;
+  void set_signed_key(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signed_key(::std::string&& value);
+  #endif
+  void set_signed_key(const char* value);
+  void set_signed_key(const char* value, size_t size);
+  ::std::string* mutable_signed_key();
+  ::std::string* release_signed_key();
+  void set_allocated_signed_key(::std::string* signed_key);
+
+  // @@protoc_insertion_point(class_scope:api.SignedKey)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr signed_key_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class PubSubMessage : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PubSubMessage) */ {
  public:
   PubSubMessage();
@@ -5920,7 +6035,7 @@ class PubSubMessage : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_PubSubMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   void Swap(PubSubMessage* other);
   friend void swap(PubSubMessage& a, PubSubMessage& b) {
@@ -6029,7 +6144,7 @@ class PubSubTopic : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_PubSubTopic_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   void Swap(PubSubTopic* other);
   friend void swap(PubSubTopic& a, PubSubTopic& b) {
@@ -13528,6 +13643,63 @@ inline void JSON::set_size(::google::protobuf::int64 value) {
 
 // -------------------------------------------------------------------
 
+// SignedKey
+
+// string signed_key = 1;
+inline void SignedKey::clear_signed_key() {
+  signed_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignedKey::signed_key() const {
+  // @@protoc_insertion_point(field_get:api.SignedKey.signed_key)
+  return signed_key_.GetNoArena();
+}
+inline void SignedKey::set_signed_key(const ::std::string& value) {
+  
+  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SignedKey.signed_key)
+}
+#if LANG_CXX11
+inline void SignedKey::set_signed_key(::std::string&& value) {
+  
+  signed_key_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SignedKey.signed_key)
+}
+#endif
+inline void SignedKey::set_signed_key(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SignedKey.signed_key)
+}
+inline void SignedKey::set_signed_key(const char* value, size_t size) {
+  
+  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SignedKey.signed_key)
+}
+inline ::std::string* SignedKey::mutable_signed_key() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SignedKey.signed_key)
+  return signed_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignedKey::release_signed_key() {
+  // @@protoc_insertion_point(field_release:api.SignedKey.signed_key)
+  
+  return signed_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignedKey::set_allocated_signed_key(::std::string* signed_key) {
+  if (signed_key != NULL) {
+    
+  } else {
+    
+  }
+  signed_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_key);
+  // @@protoc_insertion_point(field_set_allocated:api.SignedKey.signed_key)
+}
+
+// -------------------------------------------------------------------
+
 // PubSubMessage
 
 // .google.pubsub.v1.PubsubMessage message = 1;
@@ -13635,6 +13807,8 @@ inline void PubSubTopic::set_allocated_topic(::google::pubsub::v1::Topic* topic)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

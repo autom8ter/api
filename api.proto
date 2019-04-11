@@ -356,6 +356,10 @@ message JSON {
     int64 size=2;
 }
 
+message SignedKey {
+    string signed_key=1;
+}
+
 message PubSubMessage {
     google.pubsub.v1.PubsubMessage message=1;
 }

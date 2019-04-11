@@ -911,6 +911,18 @@ typedef GPB_ENUM(JSON_FieldNumber) {
 
 @end
 
+#pragma mark - SignedKey
+
+typedef GPB_ENUM(SignedKey_FieldNumber) {
+  SignedKey_FieldNumber_SignedKey = 1,
+};
+
+@interface SignedKey : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *signedKey;
+
+@end
+
 #pragma mark - PubSubMessage
 
 typedef GPB_ENUM(PubSubMessage_FieldNumber) {
