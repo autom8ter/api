@@ -45,6 +45,10 @@ var Grant_value = map[string]int32{
 ```
 
 ```go
+var SIGNING_KEY = os.Getenv("SIGNING_KEY")
+```
+
+```go
 var Util = objectify.Default()
 ```
 
@@ -1519,7 +1523,7 @@ func (c *Claims) SendGridClaims() jwt.StandardClaims
 #### func (*Claims) SignedGCPToken
 
 ```go
-func (c *Claims) SignedGCPToken(secret string) (string, error)
+func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedSendGridToken
@@ -2676,6 +2680,26 @@ func (m *JSONMap) XXX_Size() int
 func (m *JSONMap) XXX_Unmarshal(b []byte) error
 ```
 
+#### type JWTMiddleware
+
+```go
+type JWTMiddleware struct {
+}
+```
+
+
+#### func  NewJWTMiddleware
+
+```go
+func NewJWTMiddleware(key SignedKey) *JWTMiddleware
+```
+
+#### func (*JWTMiddleware) Wrap
+
+```go
+func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc
+```
+
 #### type LogConfig
 
 ```go
@@ -3520,6 +3544,78 @@ func NewServer(addr string, server UserServiceServer) *Server
 func (s *Server) Serve(debug bool) error
 ```
 
+#### type SignedKey
+
+```go
+type SignedKey struct {
+	SignedKey            string   `protobuf:"bytes,1,opt,name=signed_key,json=signedKey,proto3" json:"signed_key,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*SignedKey) Descriptor
+
+```go
+func (*SignedKey) Descriptor() ([]byte, []int)
+```
+
+#### func (*SignedKey) GetSignedKey
+
+```go
+func (m *SignedKey) GetSignedKey() string
+```
+
+#### func (*SignedKey) ProtoMessage
+
+```go
+func (*SignedKey) ProtoMessage()
+```
+
+#### func (*SignedKey) Reset
+
+```go
+func (m *SignedKey) Reset()
+```
+
+#### func (*SignedKey) String
+
+```go
+func (m *SignedKey) String() string
+```
+
+#### func (*SignedKey) XXX_DiscardUnknown
+
+```go
+func (m *SignedKey) XXX_DiscardUnknown()
+```
+
+#### func (*SignedKey) XXX_Marshal
+
+```go
+func (m *SignedKey) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*SignedKey) XXX_Merge
+
+```go
+func (m *SignedKey) XXX_Merge(src proto.Message)
+```
+
+#### func (*SignedKey) XXX_Size
+
+```go
+func (m *SignedKey) XXX_Size() int
+```
+
+#### func (*SignedKey) XXX_Unmarshal
+
+```go
+func (m *SignedKey) XXX_Unmarshal(b []byte) error
+```
+
 #### type Star
 
 ```go
@@ -3803,6 +3899,12 @@ type Token struct {
 func (t *Token) AddGrants(grants ...Grant)
 ```
 
+#### func (*Token) Claims
+
+```go
+func (t *Token) Claims() *Claims
+```
+
 #### func (*Token) Descriptor
 
 ```go
@@ -3855,12 +3957,6 @@ func (m *Token) GetNotBefore() int64
 
 ```go
 func (m *Token) GetSubject() string
-```
-
-#### func (*Token) New
-
-```go
-func (t *Token) New() *Claims
 ```
 
 #### func (*Token) ProtoMessage
