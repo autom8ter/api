@@ -12,7 +12,6 @@ import (
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
 	"net/http"
-
 	"io"
 	"os"
 )
@@ -393,4 +392,8 @@ func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		j.middleware.HandlerWithNext(w, r, next)
 	}
+}
+
+func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error {
+	return j.middleware.CheckJWT(w, r)
 }
