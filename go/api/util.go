@@ -1,14 +1,54 @@
 package api
 
 import (
+	"context"
 	"encoding/json"
+	"github.com/autom8ter/engine"
+	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
+	"google.golang.org/grpc"
+
 	"io"
 	"os"
 )
 
 var Util = objectify.Default()
+
+type ClientSet struct {
+	UserSet UserServiceClient
+}
+
+type Server struct {
+	Addr string
+	UserServiceServer
+	driver.PluginFunc
+}
+
+func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*ClientSet, error) {
+	conn, err := grpc.DialContext(ctx, addr, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &ClientSet{
+		UserSet: NewUserServiceClient(conn),
+	}, nil
+}
+
+func NewServer(addr string, server UserServiceServer) *Server {
+	s := &Server{
+		UserServiceServer: server,
+		Addr:              addr,
+	}
+	s.PluginFunc = func(server *grpc.Server) {
+		RegisterUserServiceServer(server, s)
+	}
+	return s
+}
+
+func (s *Server) Serve(debug bool) error {
+	return engine.Serve(s.Addr, debug, s)
+}
 
 //////////////////////////////////////////////////////
 
@@ -58,8 +98,8 @@ func NewAttachmentAction(opts ...AttachmentActionFunc) *AttachmentAction {
 	return a
 }
 
-func (j *Attachment) MarshalJSON() []byte {
-	return Util.MarshalJSON(j)
+func (j *Attachment) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
 }
 
 func (j *Attachment) UnMarshalJSON(obj interface{}) error {
@@ -129,8 +169,8 @@ func (j *PubSubMessage) AsMap() map[string]interface{} {
 }
 
 //////////////////////////////////////////////////////
-func (j *JSON) MarshalJSON() []byte {
-	return Util.MarshalJSON(j)
+func (j *JSON) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
 }
 
 func (j *JSON) UnMarshalJSON(obj interface{}) error {
@@ -151,8 +191,8 @@ func (j *JSON) AsMap() map[string]interface{} {
 
 ///////////////////////////////////////////////////////////////
 
-func (j *Customer) MarshalJSON() []byte {
-	return Util.MarshalJSON(j)
+func (j *Customer) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
 }
 
 func (j *Customer) UnMarshalJSON(obj interface{}) error {
