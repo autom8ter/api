@@ -39,6 +39,7 @@
 #include <google/protobuf/field_mask.pb.h>
 #include "google/api/annotations.pb.h"
 #include "google/api/auth.pb.h"
+#include "google/pubsub/v1/pubsub.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto 
 
@@ -47,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[35];
+  static const ::google::protobuf::internal::ParseTable schema[40];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -73,9 +74,12 @@ extern AttachmentActionOptionGroupDefaultTypeInternal _AttachmentActionOptionGro
 class AttachmentField;
 class AttachmentFieldDefaultTypeInternal;
 extern AttachmentFieldDefaultTypeInternal _AttachmentField_default_instance_;
-class Auth;
-class AuthDefaultTypeInternal;
-extern AuthDefaultTypeInternal _Auth_default_instance_;
+class Authentication;
+class AuthenticationDefaultTypeInternal;
+extern AuthenticationDefaultTypeInternal _Authentication_default_instance_;
+class Authentication_AnnotationsEntry_DoNotUse;
+class Authentication_AnnotationsEntry_DoNotUseDefaultTypeInternal;
+extern Authentication_AnnotationsEntry_DoNotUseDefaultTypeInternal _Authentication_AnnotationsEntry_DoNotUse_default_instance_;
 class Call;
 class CallDefaultTypeInternal;
 extern CallDefaultTypeInternal _Call_default_instance_;
@@ -124,6 +128,12 @@ extern FaxDefaultTypeInternal _Fax_default_instance_;
 class ItemRef;
 class ItemRefDefaultTypeInternal;
 extern ItemRefDefaultTypeInternal _ItemRef_default_instance_;
+class JSONMap;
+class JSONMapDefaultTypeInternal;
+extern JSONMapDefaultTypeInternal _JSONMap_default_instance_;
+class JSONMap_JsonMapEntry_DoNotUse;
+class JSONMap_JsonMapEntry_DoNotUseDefaultTypeInternal;
+extern JSONMap_JsonMapEntry_DoNotUseDefaultTypeInternal _JSONMap_JsonMapEntry_DoNotUse_default_instance_;
 class LogConfig;
 class LogConfigDefaultTypeInternal;
 extern LogConfigDefaultTypeInternal _LogConfig_default_instance_;
@@ -136,6 +146,12 @@ extern MMSRequestDefaultTypeInternal _MMSRequest_default_instance_;
 class Pin;
 class PinDefaultTypeInternal;
 extern PinDefaultTypeInternal _Pin_default_instance_;
+class PubSubMessage;
+class PubSubMessageDefaultTypeInternal;
+extern PubSubMessageDefaultTypeInternal _PubSubMessage_default_instance_;
+class PubSubTopic;
+class PubSubTopicDefaultTypeInternal;
+extern PubSubTopicDefaultTypeInternal _PubSubTopic_default_instance_;
 class RecipientEmail;
 class RecipientEmailDefaultTypeInternal;
 extern RecipientEmailDefaultTypeInternal _RecipientEmail_default_instance_;
@@ -169,7 +185,8 @@ template<> ::api::AttachmentAction* Arena::CreateMaybeMessage<::api::AttachmentA
 template<> ::api::AttachmentActionOption* Arena::CreateMaybeMessage<::api::AttachmentActionOption>(Arena*);
 template<> ::api::AttachmentActionOptionGroup* Arena::CreateMaybeMessage<::api::AttachmentActionOptionGroup>(Arena*);
 template<> ::api::AttachmentField* Arena::CreateMaybeMessage<::api::AttachmentField>(Arena*);
-template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
+template<> ::api::Authentication* Arena::CreateMaybeMessage<::api::Authentication>(Arena*);
+template<> ::api::Authentication_AnnotationsEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Authentication_AnnotationsEntry_DoNotUse>(Arena*);
 template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
 template<> ::api::CallRequest* Arena::CreateMaybeMessage<::api::CallRequest>(Arena*);
 template<> ::api::CancelSubscriptionRequest* Arena::CreateMaybeMessage<::api::CancelSubscriptionRequest>(Arena*);
@@ -186,10 +203,14 @@ template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(A
 template<> ::api::Empty* Arena::CreateMaybeMessage<::api::Empty>(Arena*);
 template<> ::api::Fax* Arena::CreateMaybeMessage<::api::Fax>(Arena*);
 template<> ::api::ItemRef* Arena::CreateMaybeMessage<::api::ItemRef>(Arena*);
+template<> ::api::JSONMap* Arena::CreateMaybeMessage<::api::JSONMap>(Arena*);
+template<> ::api::JSONMap_JsonMapEntry_DoNotUse* Arena::CreateMaybeMessage<::api::JSONMap_JsonMapEntry_DoNotUse>(Arena*);
 template<> ::api::LogConfig* Arena::CreateMaybeMessage<::api::LogConfig>(Arena*);
 template<> ::api::LogHook* Arena::CreateMaybeMessage<::api::LogHook>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
 template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
+template<> ::api::PubSubMessage* Arena::CreateMaybeMessage<::api::PubSubMessage>(Arena*);
+template<> ::api::PubSubTopic* Arena::CreateMaybeMessage<::api::PubSubTopic>(Arena*);
 template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmail>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
@@ -5367,24 +5388,45 @@ class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion
 };
 // -------------------------------------------------------------------
 
-class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Auth) */ {
+class JSONMap_JsonMapEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<JSONMap_JsonMapEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_BYTES,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<JSONMap_JsonMapEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_BYTES,
+    0 > SuperType;
+  JSONMap_JsonMapEntry_DoNotUse();
+  JSONMap_JsonMapEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const JSONMap_JsonMapEntry_DoNotUse& other);
+  static const JSONMap_JsonMapEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const JSONMap_JsonMapEntry_DoNotUse*>(&_JSONMap_JsonMapEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class JSONMap : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.JSONMap) */ {
  public:
-  Auth();
-  virtual ~Auth();
+  JSONMap();
+  virtual ~JSONMap();
 
-  Auth(const Auth& from);
+  JSONMap(const JSONMap& from);
 
-  inline Auth& operator=(const Auth& from) {
+  inline JSONMap& operator=(const JSONMap& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Auth(Auth&& from) noexcept
-    : Auth() {
+  JSONMap(JSONMap&& from) noexcept
+    : JSONMap() {
     *this = ::std::move(from);
   }
 
-  inline Auth& operator=(Auth&& from) noexcept {
+  inline JSONMap& operator=(JSONMap&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -5394,34 +5436,34 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Auth& default_instance();
+  static const JSONMap& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Auth* internal_default_instance() {
-    return reinterpret_cast<const Auth*>(
-               &_Auth_default_instance_);
+  static inline const JSONMap* internal_default_instance() {
+    return reinterpret_cast<const JSONMap*>(
+               &_JSONMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
-  void Swap(Auth* other);
-  friend void swap(Auth& a, Auth& b) {
+  void Swap(JSONMap* other);
+  friend void swap(JSONMap& a, JSONMap& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Auth* New() const final {
-    return CreateMaybeMessage<Auth>(NULL);
+  inline JSONMap* New() const final {
+    return CreateMaybeMessage<JSONMap>(NULL);
   }
 
-  Auth* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Auth>(arena);
+  JSONMap* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JSONMap>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Auth& from);
-  void MergeFrom(const Auth& from);
+  void CopyFrom(const JSONMap& from);
+  void MergeFrom(const JSONMap& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -5438,7 +5480,119 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Auth* other);
+  void InternalSwap(JSONMap* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, bytes> json_map = 1;
+  int json_map_size() const;
+  void clear_json_map();
+  static const int kJsonMapFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      json_map() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_json_map();
+
+  // @@protoc_insertion_point(class_scope:api.JSONMap)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      JSONMap_JsonMapEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_BYTES,
+      0 > json_map_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class PubSubMessage : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PubSubMessage) */ {
+ public:
+  PubSubMessage();
+  virtual ~PubSubMessage();
+
+  PubSubMessage(const PubSubMessage& from);
+
+  inline PubSubMessage& operator=(const PubSubMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PubSubMessage(PubSubMessage&& from) noexcept
+    : PubSubMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline PubSubMessage& operator=(PubSubMessage&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PubSubMessage& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PubSubMessage* internal_default_instance() {
+    return reinterpret_cast<const PubSubMessage*>(
+               &_PubSubMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    36;
+
+  void Swap(PubSubMessage* other);
+  friend void swap(PubSubMessage& a, PubSubMessage& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PubSubMessage* New() const final {
+    return CreateMaybeMessage<PubSubMessage>(NULL);
+  }
+
+  PubSubMessage* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PubSubMessage>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PubSubMessage& from);
+  void MergeFrom(const PubSubMessage& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PubSubMessage* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -5454,23 +5608,278 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // accessors -------------------------------------------------------
 
-  // .google.api.Authentication auth = 1;
-  bool has_auth() const;
-  void clear_auth();
-  static const int kAuthFieldNumber = 1;
+  // .google.pubsub.v1.PubsubMessage message = 1;
+  bool has_message() const;
+  void clear_message();
+  static const int kMessageFieldNumber = 1;
   private:
-  const ::google::api::Authentication& _internal_auth() const;
+  const ::google::pubsub::v1::PubsubMessage& _internal_message() const;
   public:
-  const ::google::api::Authentication& auth() const;
-  ::google::api::Authentication* release_auth();
-  ::google::api::Authentication* mutable_auth();
-  void set_allocated_auth(::google::api::Authentication* auth);
+  const ::google::pubsub::v1::PubsubMessage& message() const;
+  ::google::pubsub::v1::PubsubMessage* release_message();
+  ::google::pubsub::v1::PubsubMessage* mutable_message();
+  void set_allocated_message(::google::pubsub::v1::PubsubMessage* message);
 
-  // @@protoc_insertion_point(class_scope:api.Auth)
+  // @@protoc_insertion_point(class_scope:api.PubSubMessage)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::api::Authentication* auth_;
+  ::google::pubsub::v1::PubsubMessage* message_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class PubSubTopic : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PubSubTopic) */ {
+ public:
+  PubSubTopic();
+  virtual ~PubSubTopic();
+
+  PubSubTopic(const PubSubTopic& from);
+
+  inline PubSubTopic& operator=(const PubSubTopic& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PubSubTopic(PubSubTopic&& from) noexcept
+    : PubSubTopic() {
+    *this = ::std::move(from);
+  }
+
+  inline PubSubTopic& operator=(PubSubTopic&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PubSubTopic& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PubSubTopic* internal_default_instance() {
+    return reinterpret_cast<const PubSubTopic*>(
+               &_PubSubTopic_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  void Swap(PubSubTopic* other);
+  friend void swap(PubSubTopic& a, PubSubTopic& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PubSubTopic* New() const final {
+    return CreateMaybeMessage<PubSubTopic>(NULL);
+  }
+
+  PubSubTopic* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PubSubTopic>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PubSubTopic& from);
+  void MergeFrom(const PubSubTopic& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PubSubTopic* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .google.pubsub.v1.Topic topic = 1;
+  bool has_topic() const;
+  void clear_topic();
+  static const int kTopicFieldNumber = 1;
+  private:
+  const ::google::pubsub::v1::Topic& _internal_topic() const;
+  public:
+  const ::google::pubsub::v1::Topic& topic() const;
+  ::google::pubsub::v1::Topic* release_topic();
+  ::google::pubsub::v1::Topic* mutable_topic();
+  void set_allocated_topic(::google::pubsub::v1::Topic* topic);
+
+  // @@protoc_insertion_point(class_scope:api.PubSubTopic)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::pubsub::v1::Topic* topic_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Authentication_AnnotationsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Authentication_AnnotationsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<Authentication_AnnotationsEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  Authentication_AnnotationsEntry_DoNotUse();
+  Authentication_AnnotationsEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Authentication_AnnotationsEntry_DoNotUse& other);
+  static const Authentication_AnnotationsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Authentication_AnnotationsEntry_DoNotUse*>(&_Authentication_AnnotationsEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class Authentication : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Authentication) */ {
+ public:
+  Authentication();
+  virtual ~Authentication();
+
+  Authentication(const Authentication& from);
+
+  inline Authentication& operator=(const Authentication& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Authentication(Authentication&& from) noexcept
+    : Authentication() {
+    *this = ::std::move(from);
+  }
+
+  inline Authentication& operator=(Authentication&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Authentication& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Authentication* internal_default_instance() {
+    return reinterpret_cast<const Authentication*>(
+               &_Authentication_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    39;
+
+  void Swap(Authentication* other);
+  friend void swap(Authentication& a, Authentication& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Authentication* New() const final {
+    return CreateMaybeMessage<Authentication>(NULL);
+  }
+
+  Authentication* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Authentication>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Authentication& from);
+  void MergeFrom(const Authentication& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Authentication* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> annotations = 2;
+  int annotations_size() const;
+  void clear_annotations();
+  static const int kAnnotationsFieldNumber = 2;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      annotations() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_annotations();
+
+  // .google.api.Authentication authentication = 1;
+  bool has_authentication() const;
+  void clear_authentication();
+  static const int kAuthenticationFieldNumber = 1;
+  private:
+  const ::google::api::Authentication& _internal_authentication() const;
+  public:
+  const ::google::api::Authentication& authentication() const;
+  ::google::api::Authentication* release_authentication();
+  ::google::api::Authentication* mutable_authentication();
+  void set_allocated_authentication(::google::api::Authentication* authentication);
+
+  // @@protoc_insertion_point(class_scope:api.Authentication)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      Authentication_AnnotationsEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > annotations_;
+  ::google::api::Authentication* authentication_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -12388,59 +12797,219 @@ inline void AttachmentField::set_short_(bool value) {
 
 // -------------------------------------------------------------------
 
-// Auth
+// -------------------------------------------------------------------
 
-// .google.api.Authentication auth = 1;
-inline bool Auth::has_auth() const {
-  return this != internal_default_instance() && auth_ != NULL;
+// JSONMap
+
+// map<string, bytes> json_map = 1;
+inline int JSONMap::json_map_size() const {
+  return json_map_.size();
 }
-inline const ::google::api::Authentication& Auth::_internal_auth() const {
-  return *auth_;
+inline void JSONMap::clear_json_map() {
+  json_map_.Clear();
 }
-inline const ::google::api::Authentication& Auth::auth() const {
-  const ::google::api::Authentication* p = auth_;
-  // @@protoc_insertion_point(field_get:api.Auth.auth)
-  return p != NULL ? *p : *reinterpret_cast<const ::google::api::Authentication*>(
-      &::google::api::_Authentication_default_instance_);
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+JSONMap::json_map() const {
+  // @@protoc_insertion_point(field_map:api.JSONMap.json_map)
+  return json_map_.GetMap();
 }
-inline ::google::api::Authentication* Auth::release_auth() {
-  // @@protoc_insertion_point(field_release:api.Auth.auth)
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+JSONMap::mutable_json_map() {
+  // @@protoc_insertion_point(field_mutable_map:api.JSONMap.json_map)
+  return json_map_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
+// PubSubMessage
+
+// .google.pubsub.v1.PubsubMessage message = 1;
+inline bool PubSubMessage::has_message() const {
+  return this != internal_default_instance() && message_ != NULL;
+}
+inline const ::google::pubsub::v1::PubsubMessage& PubSubMessage::_internal_message() const {
+  return *message_;
+}
+inline const ::google::pubsub::v1::PubsubMessage& PubSubMessage::message() const {
+  const ::google::pubsub::v1::PubsubMessage* p = message_;
+  // @@protoc_insertion_point(field_get:api.PubSubMessage.message)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::pubsub::v1::PubsubMessage*>(
+      &::google::pubsub::v1::_PubsubMessage_default_instance_);
+}
+inline ::google::pubsub::v1::PubsubMessage* PubSubMessage::release_message() {
+  // @@protoc_insertion_point(field_release:api.PubSubMessage.message)
   
-  ::google::api::Authentication* temp = auth_;
-  auth_ = NULL;
+  ::google::pubsub::v1::PubsubMessage* temp = message_;
+  message_ = NULL;
   return temp;
 }
-inline ::google::api::Authentication* Auth::mutable_auth() {
+inline ::google::pubsub::v1::PubsubMessage* PubSubMessage::mutable_message() {
   
-  if (auth_ == NULL) {
-    auto* p = CreateMaybeMessage<::google::api::Authentication>(GetArenaNoVirtual());
-    auth_ = p;
+  if (message_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::pubsub::v1::PubsubMessage>(GetArenaNoVirtual());
+    message_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Auth.auth)
-  return auth_;
+  // @@protoc_insertion_point(field_mutable:api.PubSubMessage.message)
+  return message_;
 }
-inline void Auth::set_allocated_auth(::google::api::Authentication* auth) {
+inline void PubSubMessage::set_allocated_message(::google::pubsub::v1::PubsubMessage* message) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(auth_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(message_);
   }
-  if (auth) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+  if (message) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(message)->GetArena();
     if (message_arena != submessage_arena) {
-      auth = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, auth, submessage_arena);
+      message = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, message, submessage_arena);
     }
     
   } else {
     
   }
-  auth_ = auth;
-  // @@protoc_insertion_point(field_set_allocated:api.Auth.auth)
+  message_ = message;
+  // @@protoc_insertion_point(field_set_allocated:api.PubSubMessage.message)
+}
+
+// -------------------------------------------------------------------
+
+// PubSubTopic
+
+// .google.pubsub.v1.Topic topic = 1;
+inline bool PubSubTopic::has_topic() const {
+  return this != internal_default_instance() && topic_ != NULL;
+}
+inline const ::google::pubsub::v1::Topic& PubSubTopic::_internal_topic() const {
+  return *topic_;
+}
+inline const ::google::pubsub::v1::Topic& PubSubTopic::topic() const {
+  const ::google::pubsub::v1::Topic* p = topic_;
+  // @@protoc_insertion_point(field_get:api.PubSubTopic.topic)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::pubsub::v1::Topic*>(
+      &::google::pubsub::v1::_Topic_default_instance_);
+}
+inline ::google::pubsub::v1::Topic* PubSubTopic::release_topic() {
+  // @@protoc_insertion_point(field_release:api.PubSubTopic.topic)
+  
+  ::google::pubsub::v1::Topic* temp = topic_;
+  topic_ = NULL;
+  return temp;
+}
+inline ::google::pubsub::v1::Topic* PubSubTopic::mutable_topic() {
+  
+  if (topic_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::pubsub::v1::Topic>(GetArenaNoVirtual());
+    topic_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.PubSubTopic.topic)
+  return topic_;
+}
+inline void PubSubTopic::set_allocated_topic(::google::pubsub::v1::Topic* topic) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(topic_);
+  }
+  if (topic) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(topic)->GetArena();
+    if (message_arena != submessage_arena) {
+      topic = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, topic, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  topic_ = topic;
+  // @@protoc_insertion_point(field_set_allocated:api.PubSubTopic.topic)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// Authentication
+
+// .google.api.Authentication authentication = 1;
+inline bool Authentication::has_authentication() const {
+  return this != internal_default_instance() && authentication_ != NULL;
+}
+inline const ::google::api::Authentication& Authentication::_internal_authentication() const {
+  return *authentication_;
+}
+inline const ::google::api::Authentication& Authentication::authentication() const {
+  const ::google::api::Authentication* p = authentication_;
+  // @@protoc_insertion_point(field_get:api.Authentication.authentication)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::api::Authentication*>(
+      &::google::api::_Authentication_default_instance_);
+}
+inline ::google::api::Authentication* Authentication::release_authentication() {
+  // @@protoc_insertion_point(field_release:api.Authentication.authentication)
+  
+  ::google::api::Authentication* temp = authentication_;
+  authentication_ = NULL;
+  return temp;
+}
+inline ::google::api::Authentication* Authentication::mutable_authentication() {
+  
+  if (authentication_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::api::Authentication>(GetArenaNoVirtual());
+    authentication_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Authentication.authentication)
+  return authentication_;
+}
+inline void Authentication::set_allocated_authentication(::google::api::Authentication* authentication) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(authentication_);
+  }
+  if (authentication) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      authentication = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, authentication, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  authentication_ = authentication;
+  // @@protoc_insertion_point(field_set_allocated:api.Authentication.authentication)
+}
+
+// map<string, string> annotations = 2;
+inline int Authentication::annotations_size() const {
+  return annotations_.size();
+}
+inline void Authentication::clear_annotations() {
+  annotations_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+Authentication::annotations() const {
+  // @@protoc_insertion_point(field_map:api.Authentication.annotations)
+  return annotations_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+Authentication::mutable_annotations() {
+  // @@protoc_insertion_point(field_mutable_map:api.Authentication.annotations)
+  return annotations_.MutableMap();
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

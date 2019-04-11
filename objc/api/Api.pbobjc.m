@@ -18,6 +18,7 @@
 #import "Api.pbobjc.h"
 #import "google/api/Annotations.pbobjc.h"
 #import "google/api/Auth.pbobjc.h"
+#import "google/pubsub/v1/Pubsub.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -2692,16 +2693,16 @@ typedef struct AttachmentField__storage_ {
 
 @end
 
-#pragma mark - Auth
+#pragma mark - JSONMap
 
-@implementation Auth
+@implementation JSONMap
 
-@dynamic hasAuth, auth;
+@dynamic jsonMap, jsonMap_Count;
 
-typedef struct Auth__storage_ {
+typedef struct JSONMap__storage_ {
   uint32_t _has_storage_[1];
-  GAPIAuthentication *auth;
-} Auth__storage_;
+  NSMutableDictionary *jsonMap;
+} JSONMap__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -2710,22 +2711,162 @@ typedef struct Auth__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "auth",
-        .dataTypeSpecific.className = GPBStringifySymbol(GAPIAuthentication),
-        .number = Auth_FieldNumber_Auth,
+        .name = "jsonMap",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONMap_FieldNumber_JsonMap,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(JSONMap__storage_, jsonMap),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[JSONMap class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(JSONMap__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - PubSubMessage
+
+@implementation PubSubMessage
+
+@dynamic hasMessage, message;
+
+typedef struct PubSubMessage__storage_ {
+  uint32_t _has_storage_[1];
+  PubsubMessage *message;
+} PubSubMessage__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "message",
+        .dataTypeSpecific.className = GPBStringifySymbol(PubsubMessage),
+        .number = PubSubMessage_FieldNumber_Message,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Auth__storage_, auth),
+        .offset = (uint32_t)offsetof(PubSubMessage__storage_, message),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Auth class]
+        [GPBDescriptor allocDescriptorForClass:[PubSubMessage class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Auth__storage_)
+                                   storageSize:sizeof(PubSubMessage__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - PubSubTopic
+
+@implementation PubSubTopic
+
+@dynamic hasTopic, topic;
+
+typedef struct PubSubTopic__storage_ {
+  uint32_t _has_storage_[1];
+  Topic *topic;
+} PubSubTopic__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "topic",
+        .dataTypeSpecific.className = GPBStringifySymbol(Topic),
+        .number = PubSubTopic_FieldNumber_Topic,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(PubSubTopic__storage_, topic),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[PubSubTopic class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(PubSubTopic__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Authentication
+
+@implementation Authentication
+
+@dynamic hasAuthentication, authentication;
+@dynamic annotations, annotations_Count;
+
+typedef struct Authentication__storage_ {
+  uint32_t _has_storage_[1];
+  GAPIAuthentication *authentication;
+  NSMutableDictionary *annotations;
+} Authentication__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "authentication",
+        .dataTypeSpecific.className = GPBStringifySymbol(GAPIAuthentication),
+        .number = Authentication_FieldNumber_Authentication,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Authentication__storage_, authentication),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "annotations",
+        .dataTypeSpecific.className = NULL,
+        .number = Authentication_FieldNumber_Annotations,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Authentication__storage_, annotations),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Authentication class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Authentication__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

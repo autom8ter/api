@@ -1,6 +1,6 @@
 excludes:
   - vendor
-  - gogo.proto
+  - pkg
 protoc:
   version: 3.6.1
   allow_unused_imports: true
@@ -35,7 +35,7 @@ generate:
 
     - name: swagger
       type: go
-      output: swagger/api
+      output: .
       flags: logtostderr=true
 
     - name: python

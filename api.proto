@@ -7,6 +7,7 @@ import "google/protobuf/duration.proto";
 import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "google/api/auth.proto";
+import "google/pubsub/v1/pubsub.proto";
 
 service UserService {
     rpc CreateCustomer(AddCustomerRequest) returns (Customer) {
@@ -326,6 +327,19 @@ message AttachmentField {
     bool short =3;
 }
 
-message Auth {
-    google.api.Authentication auth=1;
+message JSONMap {
+    map<string, bytes> json_map=1;
+}
+
+message PubSubMessage {
+    google.pubsub.v1.PubsubMessage message=1;
+}
+
+message PubSubTopic {
+    google.pubsub.v1.Topic topic=1;
+}
+
+message Authentication {
+    google.api.Authentication authentication=1;
+    map<string,string> annotations=2;
 }

@@ -8,6 +8,7 @@ require 'google/protobuf/duration_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/api/annotations_pb'
 require 'google/api/auth_pb'
+require 'google/pubsub/v1/pubsub_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Empty" do
   end
@@ -212,8 +213,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :value, :string, 2
     optional :short, :bool, 3
   end
-  add_message "api.Auth" do
-    optional :auth, :message, 1, "google.api.Authentication"
+  add_message "api.JSONMap" do
+    map :json_map, :string, :bytes, 1
+  end
+  add_message "api.PubSubMessage" do
+    optional :message, :message, 1, "google.pubsub.v1.PubsubMessage"
+  end
+  add_message "api.PubSubTopic" do
+    optional :topic, :message, 1, "google.pubsub.v1.Topic"
+  end
+  add_message "api.Authentication" do
+    optional :authentication, :message, 1, "google.api.Authentication"
+    map :annotations, :string, :string, 2
   end
   add_enum "api.CustomerIndex" do
     value :ID, 0
@@ -256,6 +267,9 @@ module Api
   AttachmentActionOptionGroup = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOptionGroup").msgclass
   AttachmentActionOption = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOption").msgclass
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
-  Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
+  JSONMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONMap").msgclass
+  PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
+  PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
+  Authentication = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Authentication").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

@@ -36,7 +36,9 @@ CF_EXTERN_C_BEGIN
 @class GAPIAuthentication;
 @class ItemRef;
 @class LogConfig;
+@class PubsubMessage;
 @class RecipientEmail;
+@class Topic;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -831,17 +833,64 @@ typedef GPB_ENUM(AttachmentField_FieldNumber) {
 
 @end
 
-#pragma mark - Auth
+#pragma mark - JSONMap
 
-typedef GPB_ENUM(Auth_FieldNumber) {
-  Auth_FieldNumber_Auth = 1,
+typedef GPB_ENUM(JSONMap_FieldNumber) {
+  JSONMap_FieldNumber_JsonMap = 1,
 };
 
-@interface Auth : GPBMessage
+@interface JSONMap : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) GAPIAuthentication *auth;
-/** Test to see if @c auth has been set. */
-@property(nonatomic, readwrite) BOOL hasAuth;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSData*> *jsonMap;
+/** The number of items in @c jsonMap without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger jsonMap_Count;
+
+@end
+
+#pragma mark - PubSubMessage
+
+typedef GPB_ENUM(PubSubMessage_FieldNumber) {
+  PubSubMessage_FieldNumber_Message = 1,
+};
+
+@interface PubSubMessage : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) PubsubMessage *message;
+/** Test to see if @c message has been set. */
+@property(nonatomic, readwrite) BOOL hasMessage;
+
+@end
+
+#pragma mark - PubSubTopic
+
+typedef GPB_ENUM(PubSubTopic_FieldNumber) {
+  PubSubTopic_FieldNumber_Topic = 1,
+};
+
+@interface PubSubTopic : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Topic *topic;
+/** Test to see if @c topic has been set. */
+@property(nonatomic, readwrite) BOOL hasTopic;
+
+@end
+
+#pragma mark - Authentication
+
+typedef GPB_ENUM(Authentication_FieldNumber) {
+  Authentication_FieldNumber_Authentication = 1,
+  Authentication_FieldNumber_Annotations = 2,
+};
+
+@interface Authentication : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) GAPIAuthentication *authentication;
+/** Test to see if @c authentication has been set. */
+@property(nonatomic, readwrite) BOOL hasAuthentication;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *annotations;
+/** The number of items in @c annotations without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger annotations_Count;
 
 @end
 

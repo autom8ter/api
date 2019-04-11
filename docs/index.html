@@ -203,7 +203,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.Auth"><span class="badge">M</span>Auth</a>
+                  <a href="#api.Authentication"><span class="badge">M</span>Authentication</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Authentication.AnnotationsEntry"><span class="badge">M</span>Authentication.AnnotationsEntry</a>
                 </li>
               
                 <li>
@@ -271,6 +275,14 @@
                 </li>
               
                 <li>
+                  <a href="#api.JSONMap"><span class="badge">M</span>JSONMap</a>
+                </li>
+              
+                <li>
+                  <a href="#api.JSONMap.JsonMapEntry"><span class="badge">M</span>JSONMap.JsonMapEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.LogConfig"><span class="badge">M</span>LogConfig</a>
                 </li>
               
@@ -284,6 +296,14 @@
               
                 <li>
                   <a href="#api.Pin"><span class="badge">M</span>Pin</a>
+                </li>
+              
+                <li>
+                  <a href="#api.PubSubMessage"><span class="badge">M</span>PubSubMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#api.PubSubTopic"><span class="badge">M</span>PubSubTopic</a>
                 </li>
               
                 <li>
@@ -664,7 +684,7 @@
 
         
       
-        <h3 id="api.Auth">Auth</h3>
+        <h3 id="api.Authentication">Authentication</h3>
         <p></p>
 
         
@@ -675,8 +695,45 @@
             <tbody>
               
                 <tr>
-                  <td>auth</td>
+                  <td>authentication</td>
                   <td><a href="#google.api.Authentication">google.api.Authentication</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>annotations</td>
+                  <td><a href="#api.Authentication.AnnotationsEntry">Authentication.AnnotationsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Authentication.AnnotationsEntry">Authentication.AnnotationsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1333,6 +1390,59 @@
 
         
       
+        <h3 id="api.JSONMap">JSONMap</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>json_map</td>
+                  <td><a href="#api.JSONMap.JsonMapEntry">JSONMap.JsonMapEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.JSONMap.JsonMapEntry">JSONMap.JsonMapEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.LogConfig">LogConfig</h3>
         <p></p>
 
@@ -1457,6 +1567,52 @@
                 <tr>
                   <td>item</td>
                   <td><a href="#api.ItemRef">ItemRef</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.PubSubMessage">PubSubMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#google.pubsub.v1.PubsubMessage">google.pubsub.v1.PubsubMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.PubSubTopic">PubSubTopic</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>topic</td>
+                  <td><a href="#google.pubsub.v1.Topic">google.pubsub.v1.Topic</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
