@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[45];
+  static const ::google::protobuf::internal::ParseTable schema[47];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -176,6 +176,9 @@ extern SMSRequestDefaultTypeInternal _SMSRequest_default_instance_;
 class SignedKey;
 class SignedKeyDefaultTypeInternal;
 extern SignedKeyDefaultTypeInternal _SignedKey_default_instance_;
+class StandardClaims;
+class StandardClaimsDefaultTypeInternal;
+extern StandardClaimsDefaultTypeInternal _StandardClaims_default_instance_;
 class Star;
 class StarDefaultTypeInternal;
 extern StarDefaultTypeInternal _Star_default_instance_;
@@ -188,6 +191,9 @@ extern SubscribeCustomerResponseDefaultTypeInternal _SubscribeCustomerResponse_d
 class Token;
 class TokenDefaultTypeInternal;
 extern TokenDefaultTypeInternal _Token_default_instance_;
+class Token_HeaderEntry_DoNotUse;
+class Token_HeaderEntry_DoNotUseDefaultTypeInternal;
+extern Token_HeaderEntry_DoNotUseDefaultTypeInternal _Token_HeaderEntry_DoNotUse_default_instance_;
 class UserReminder;
 class UserReminderDefaultTypeInternal;
 extern UserReminderDefaultTypeInternal _UserReminder_default_instance_;
@@ -234,10 +240,12 @@ template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmai
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
 template<> ::api::SignedKey* Arena::CreateMaybeMessage<::api::SignedKey>(Arena*);
+template<> ::api::StandardClaims* Arena::CreateMaybeMessage<::api::StandardClaims>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeCustomerRequest* Arena::CreateMaybeMessage<::api::SubscribeCustomerRequest>(Arena*);
 template<> ::api::SubscribeCustomerResponse* Arena::CreateMaybeMessage<::api::SubscribeCustomerResponse>(Arena*);
 template<> ::api::Token* Arena::CreateMaybeMessage<::api::Token>(Arena*);
+template<> ::api::Token_HeaderEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Token_HeaderEntry_DoNotUse>(Arena*);
 template<> ::api::UserReminder* Arena::CreateMaybeMessage<::api::UserReminder>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -3265,6 +3273,309 @@ class Pin : public ::google::protobuf::Message /* @@protoc_insertion_point(class
 };
 // -------------------------------------------------------------------
 
+class JWTToken_HeaderEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<JWTToken_HeaderEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<JWTToken_HeaderEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  JWTToken_HeaderEntry_DoNotUse();
+  JWTToken_HeaderEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const JWTToken_HeaderEntry_DoNotUse& other);
+  static const JWTToken_HeaderEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const JWTToken_HeaderEntry_DoNotUse*>(&_JWTToken_HeaderEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class JWTToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.JWTToken) */ {
+ public:
+  JWTToken();
+  virtual ~JWTToken();
+
+  JWTToken(const JWTToken& from);
+
+  inline JWTToken& operator=(const JWTToken& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  JWTToken(JWTToken&& from) noexcept
+    : JWTToken() {
+    *this = ::std::move(from);
+  }
+
+  inline JWTToken& operator=(JWTToken&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const JWTToken& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const JWTToken* internal_default_instance() {
+    return reinterpret_cast<const JWTToken*>(
+               &_JWTToken_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  void Swap(JWTToken* other);
+  friend void swap(JWTToken& a, JWTToken& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline JWTToken* New() const final {
+    return CreateMaybeMessage<JWTToken>(NULL);
+  }
+
+  JWTToken* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JWTToken>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const JWTToken& from);
+  void MergeFrom(const JWTToken& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(JWTToken* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> header = 3;
+  int header_size() const;
+  void clear_header();
+  static const int kHeaderFieldNumber = 3;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      header() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_header();
+
+  // string raw = 1;
+  void clear_raw();
+  static const int kRawFieldNumber = 1;
+  const ::std::string& raw() const;
+  void set_raw(const ::std::string& value);
+  #if LANG_CXX11
+  void set_raw(::std::string&& value);
+  #endif
+  void set_raw(const char* value);
+  void set_raw(const char* value, size_t size);
+  ::std::string* mutable_raw();
+  ::std::string* release_raw();
+  void set_allocated_raw(::std::string* raw);
+
+  // string claims = 4;
+  void clear_claims();
+  static const int kClaimsFieldNumber = 4;
+  const ::std::string& claims() const;
+  void set_claims(const ::std::string& value);
+  #if LANG_CXX11
+  void set_claims(::std::string&& value);
+  #endif
+  void set_claims(const char* value);
+  void set_claims(const char* value, size_t size);
+  ::std::string* mutable_claims();
+  ::std::string* release_claims();
+  void set_allocated_claims(::std::string* claims);
+
+  // string signature = 5;
+  void clear_signature();
+  static const int kSignatureFieldNumber = 5;
+  const ::std::string& signature() const;
+  void set_signature(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signature(::std::string&& value);
+  #endif
+  void set_signature(const char* value);
+  void set_signature(const char* value, size_t size);
+  ::std::string* mutable_signature();
+  ::std::string* release_signature();
+  void set_allocated_signature(::std::string* signature);
+
+  // .api.SigningMethod method = 2;
+  void clear_method();
+  static const int kMethodFieldNumber = 2;
+  ::api::SigningMethod method() const;
+  void set_method(::api::SigningMethod value);
+
+  // bool value = 6;
+  void clear_value();
+  static const int kValueFieldNumber = 6;
+  bool value() const;
+  void set_value(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.JWTToken)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      JWTToken_HeaderEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > header_;
+  ::google::protobuf::internal::ArenaStringPtr raw_;
+  ::google::protobuf::internal::ArenaStringPtr claims_;
+  ::google::protobuf::internal::ArenaStringPtr signature_;
+  int method_;
+  bool value_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SignedKey) */ {
+ public:
+  SignedKey();
+  virtual ~SignedKey();
+
+  SignedKey(const SignedKey& from);
+
+  inline SignedKey& operator=(const SignedKey& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SignedKey(SignedKey&& from) noexcept
+    : SignedKey() {
+    *this = ::std::move(from);
+  }
+
+  inline SignedKey& operator=(SignedKey&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SignedKey& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SignedKey* internal_default_instance() {
+    return reinterpret_cast<const SignedKey*>(
+               &_SignedKey_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  void Swap(SignedKey* other);
+  friend void swap(SignedKey& a, SignedKey& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SignedKey* New() const final {
+    return CreateMaybeMessage<SignedKey>(NULL);
+  }
+
+  SignedKey* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SignedKey>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SignedKey& from);
+  void MergeFrom(const SignedKey& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SignedKey* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string signed_key = 1;
+  void clear_signed_key();
+  static const int kSignedKeyFieldNumber = 1;
+  const ::std::string& signed_key() const;
+  void set_signed_key(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signed_key(::std::string&& value);
+  #endif
+  void set_signed_key(const char* value);
+  void set_signed_key(const char* value, size_t size);
+  ::std::string* mutable_signed_key();
+  ::std::string* release_signed_key();
+  void set_allocated_signed_key(::std::string* signed_key);
+
+  // @@protoc_insertion_point(class_scope:api.SignedKey)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr signed_key_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Access) */ {
  public:
   Access();
@@ -3300,7 +3611,7 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_Access_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    24;
 
   void Swap(Access* other);
   friend void swap(Access& a, Access& b) {
@@ -3541,24 +3852,24 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 };
 // -------------------------------------------------------------------
 
-class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Token) */ {
+class StandardClaims : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.StandardClaims) */ {
  public:
-  Token();
-  virtual ~Token();
+  StandardClaims();
+  virtual ~StandardClaims();
 
-  Token(const Token& from);
+  StandardClaims(const StandardClaims& from);
 
-  inline Token& operator=(const Token& from) {
+  inline StandardClaims& operator=(const StandardClaims& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Token(Token&& from) noexcept
-    : Token() {
+  StandardClaims(StandardClaims&& from) noexcept
+    : StandardClaims() {
     *this = ::std::move(from);
   }
 
-  inline Token& operator=(Token&& from) noexcept {
+  inline StandardClaims& operator=(StandardClaims&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -3568,34 +3879,34 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Token& default_instance();
+  static const StandardClaims& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Token* internal_default_instance() {
-    return reinterpret_cast<const Token*>(
-               &_Token_default_instance_);
+  static inline const StandardClaims* internal_default_instance() {
+    return reinterpret_cast<const StandardClaims*>(
+               &_StandardClaims_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    25;
 
-  void Swap(Token* other);
-  friend void swap(Token& a, Token& b) {
+  void Swap(StandardClaims* other);
+  friend void swap(StandardClaims& a, StandardClaims& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Token* New() const final {
-    return CreateMaybeMessage<Token>(NULL);
+  inline StandardClaims* New() const final {
+    return CreateMaybeMessage<StandardClaims>(NULL);
   }
 
-  Token* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Token>(arena);
+  StandardClaims* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StandardClaims>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Token& from);
-  void MergeFrom(const Token& from);
+  void CopyFrom(const StandardClaims& from);
+  void MergeFrom(const StandardClaims& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -3612,7 +3923,7 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Token* other);
+  void InternalSwap(StandardClaims* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -3710,7 +4021,7 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::int64 not_before() const;
   void set_not_before(::google::protobuf::int64 value);
 
-  // @@protoc_insertion_point(class_scope:api.Token)
+  // @@protoc_insertion_point(class_scope:api.StandardClaims)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -3723,6 +4034,183 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::int64 expires_at_;
   ::google::protobuf::int64 issued_at_;
   ::google::protobuf::int64 not_before_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Token_HeaderEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Token_HeaderEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<Token_HeaderEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  Token_HeaderEntry_DoNotUse();
+  Token_HeaderEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Token_HeaderEntry_DoNotUse& other);
+  static const Token_HeaderEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Token_HeaderEntry_DoNotUse*>(&_Token_HeaderEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Token) */ {
+ public:
+  Token();
+  virtual ~Token();
+
+  Token(const Token& from);
+
+  inline Token& operator=(const Token& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Token(Token&& from) noexcept
+    : Token() {
+    *this = ::std::move(from);
+  }
+
+  inline Token& operator=(Token&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Token& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Token* internal_default_instance() {
+    return reinterpret_cast<const Token*>(
+               &_Token_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  void Swap(Token* other);
+  friend void swap(Token& a, Token& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Token* New() const final {
+    return CreateMaybeMessage<Token>(NULL);
+  }
+
+  Token* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Token>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Token& from);
+  void MergeFrom(const Token& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Token* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> header = 5;
+  int header_size() const;
+  void clear_header();
+  static const int kHeaderFieldNumber = 5;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      header() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_header();
+
+  // string raw = 1;
+  void clear_raw();
+  static const int kRawFieldNumber = 1;
+  const ::std::string& raw() const;
+  void set_raw(const ::std::string& value);
+  #if LANG_CXX11
+  void set_raw(::std::string&& value);
+  #endif
+  void set_raw(const char* value);
+  void set_raw(const char* value, size_t size);
+  ::std::string* mutable_raw();
+  ::std::string* release_raw();
+  void set_allocated_raw(::std::string* raw);
+
+  // string signature = 4;
+  void clear_signature();
+  static const int kSignatureFieldNumber = 4;
+  const ::std::string& signature() const;
+  void set_signature(const ::std::string& value);
+  #if LANG_CXX11
+  void set_signature(::std::string&& value);
+  #endif
+  void set_signature(const char* value);
+  void set_signature(const char* value, size_t size);
+  ::std::string* mutable_signature();
+  ::std::string* release_signature();
+  void set_allocated_signature(::std::string* signature);
+
+  // .api.SigningMethod signing_method = 2;
+  void clear_signing_method();
+  static const int kSigningMethodFieldNumber = 2;
+  ::api::SigningMethod signing_method() const;
+  void set_signing_method(::api::SigningMethod value);
+
+  // bool valid = 3;
+  void clear_valid();
+  static const int kValidFieldNumber = 3;
+  bool valid() const;
+  void set_valid(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.Token)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      Token_HeaderEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > header_;
+  ::google::protobuf::internal::ArenaStringPtr raw_;
+  ::google::protobuf::internal::ArenaStringPtr signature_;
+  int signing_method_;
+  bool valid_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -3763,7 +4251,7 @@ class LogConfig : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LogConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    28;
 
   void Swap(LogConfig* other);
   friend void swap(LogConfig& a, LogConfig& b) {
@@ -3889,7 +4377,7 @@ class EmailAddress : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailAddress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    29;
 
   void Swap(EmailAddress* other);
   friend void swap(EmailAddress& a, EmailAddress& b) {
@@ -4015,7 +4503,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    30;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -4137,7 +4625,7 @@ class RecipientEmail : public ::google::protobuf::Message /* @@protoc_insertion_
                &_RecipientEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    31;
 
   void Swap(RecipientEmail* other);
   friend void swap(RecipientEmail& a, RecipientEmail& b) {
@@ -4291,7 +4779,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    32;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -4477,7 +4965,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    33;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -4618,7 +5106,7 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Fax_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    34;
 
   void Swap(Fax* other);
   friend void swap(Fax& a, Fax& b) {
@@ -4796,7 +5284,7 @@ class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_LogHook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    35;
 
   void Swap(LogHook* other);
   friend void swap(LogHook& a, LogHook& b) {
@@ -4937,7 +5425,7 @@ class Attachment : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Attachment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    36;
 
   void Swap(Attachment* other);
   friend void swap(Attachment& a, Attachment& b) {
@@ -5248,7 +5736,7 @@ class AttachmentAction : public ::google::protobuf::Message /* @@protoc_insertio
                &_AttachmentAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    37;
 
   void Swap(AttachmentAction* other);
   friend void swap(AttachmentAction& a, AttachmentAction& b) {
@@ -5508,7 +5996,7 @@ class AttachmentConfirmationField : public ::google::protobuf::Message /* @@prot
                &_AttachmentConfirmationField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    38;
 
   void Swap(AttachmentConfirmationField* other);
   friend void swap(AttachmentConfirmationField& a, AttachmentConfirmationField& b) {
@@ -5664,7 +6152,7 @@ class AttachmentActionOptionGroup : public ::google::protobuf::Message /* @@prot
                &_AttachmentActionOptionGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    39;
 
   void Swap(AttachmentActionOptionGroup* other);
   friend void swap(AttachmentActionOptionGroup& a, AttachmentActionOptionGroup& b) {
@@ -5788,7 +6276,7 @@ class AttachmentActionOption : public ::google::protobuf::Message /* @@protoc_in
                &_AttachmentActionOption_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    40;
 
   void Swap(AttachmentActionOption* other);
   friend void swap(AttachmentActionOption& a, AttachmentActionOption& b) {
@@ -5929,7 +6417,7 @@ class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion
                &_AttachmentField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    41;
 
   void Swap(AttachmentField* other);
   friend void swap(AttachmentField& a, AttachmentField& b) {
@@ -6083,7 +6571,7 @@ class JSONMap : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_JSONMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    43;
 
   void Swap(JSONMap* other);
   friend void swap(JSONMap& a, JSONMap& b) {
@@ -6195,7 +6683,7 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_JSON_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    44;
 
   void Swap(JSON* other);
   friend void swap(JSON& a, JSON& b) {
@@ -6278,309 +6766,6 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 };
 // -------------------------------------------------------------------
 
-class JWTToken_HeaderEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<JWTToken_HeaderEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-  typedef ::google::protobuf::internal::MapEntry<JWTToken_HeaderEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  JWTToken_HeaderEntry_DoNotUse();
-  JWTToken_HeaderEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const JWTToken_HeaderEntry_DoNotUse& other);
-  static const JWTToken_HeaderEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const JWTToken_HeaderEntry_DoNotUse*>(&_JWTToken_HeaderEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
-class JWTToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.JWTToken) */ {
- public:
-  JWTToken();
-  virtual ~JWTToken();
-
-  JWTToken(const JWTToken& from);
-
-  inline JWTToken& operator=(const JWTToken& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  JWTToken(JWTToken&& from) noexcept
-    : JWTToken() {
-    *this = ::std::move(from);
-  }
-
-  inline JWTToken& operator=(JWTToken&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const JWTToken& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const JWTToken* internal_default_instance() {
-    return reinterpret_cast<const JWTToken*>(
-               &_JWTToken_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    41;
-
-  void Swap(JWTToken* other);
-  friend void swap(JWTToken& a, JWTToken& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline JWTToken* New() const final {
-    return CreateMaybeMessage<JWTToken>(NULL);
-  }
-
-  JWTToken* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<JWTToken>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const JWTToken& from);
-  void MergeFrom(const JWTToken& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(JWTToken* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  // map<string, string> header = 3;
-  int header_size() const;
-  void clear_header();
-  static const int kHeaderFieldNumber = 3;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      header() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_header();
-
-  // string raw = 1;
-  void clear_raw();
-  static const int kRawFieldNumber = 1;
-  const ::std::string& raw() const;
-  void set_raw(const ::std::string& value);
-  #if LANG_CXX11
-  void set_raw(::std::string&& value);
-  #endif
-  void set_raw(const char* value);
-  void set_raw(const char* value, size_t size);
-  ::std::string* mutable_raw();
-  ::std::string* release_raw();
-  void set_allocated_raw(::std::string* raw);
-
-  // string claims = 4;
-  void clear_claims();
-  static const int kClaimsFieldNumber = 4;
-  const ::std::string& claims() const;
-  void set_claims(const ::std::string& value);
-  #if LANG_CXX11
-  void set_claims(::std::string&& value);
-  #endif
-  void set_claims(const char* value);
-  void set_claims(const char* value, size_t size);
-  ::std::string* mutable_claims();
-  ::std::string* release_claims();
-  void set_allocated_claims(::std::string* claims);
-
-  // string signature = 5;
-  void clear_signature();
-  static const int kSignatureFieldNumber = 5;
-  const ::std::string& signature() const;
-  void set_signature(const ::std::string& value);
-  #if LANG_CXX11
-  void set_signature(::std::string&& value);
-  #endif
-  void set_signature(const char* value);
-  void set_signature(const char* value, size_t size);
-  ::std::string* mutable_signature();
-  ::std::string* release_signature();
-  void set_allocated_signature(::std::string* signature);
-
-  // .api.SigningMethod method = 2;
-  void clear_method();
-  static const int kMethodFieldNumber = 2;
-  ::api::SigningMethod method() const;
-  void set_method(::api::SigningMethod value);
-
-  // bool value = 6;
-  void clear_value();
-  static const int kValueFieldNumber = 6;
-  bool value() const;
-  void set_value(bool value);
-
-  // @@protoc_insertion_point(class_scope:api.JWTToken)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      JWTToken_HeaderEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > header_;
-  ::google::protobuf::internal::ArenaStringPtr raw_;
-  ::google::protobuf::internal::ArenaStringPtr claims_;
-  ::google::protobuf::internal::ArenaStringPtr signature_;
-  int method_;
-  bool value_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SignedKey) */ {
- public:
-  SignedKey();
-  virtual ~SignedKey();
-
-  SignedKey(const SignedKey& from);
-
-  inline SignedKey& operator=(const SignedKey& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  SignedKey(SignedKey&& from) noexcept
-    : SignedKey() {
-    *this = ::std::move(from);
-  }
-
-  inline SignedKey& operator=(SignedKey&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const SignedKey& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SignedKey* internal_default_instance() {
-    return reinterpret_cast<const SignedKey*>(
-               &_SignedKey_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    42;
-
-  void Swap(SignedKey* other);
-  friend void swap(SignedKey& a, SignedKey& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline SignedKey* New() const final {
-    return CreateMaybeMessage<SignedKey>(NULL);
-  }
-
-  SignedKey* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SignedKey>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SignedKey& from);
-  void MergeFrom(const SignedKey& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(SignedKey* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string signed_key = 1;
-  void clear_signed_key();
-  static const int kSignedKeyFieldNumber = 1;
-  const ::std::string& signed_key() const;
-  void set_signed_key(const ::std::string& value);
-  #if LANG_CXX11
-  void set_signed_key(::std::string&& value);
-  #endif
-  void set_signed_key(const char* value);
-  void set_signed_key(const char* value, size_t size);
-  ::std::string* mutable_signed_key();
-  ::std::string* release_signed_key();
-  void set_allocated_signed_key(::std::string* signed_key);
-
-  // @@protoc_insertion_point(class_scope:api.SignedKey)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr signed_key_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class PubSubMessage : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PubSubMessage) */ {
  public:
   PubSubMessage();
@@ -6616,7 +6801,7 @@ class PubSubMessage : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_PubSubMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   void Swap(PubSubMessage* other);
   friend void swap(PubSubMessage& a, PubSubMessage& b) {
@@ -6725,7 +6910,7 @@ class PubSubTopic : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_PubSubTopic_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   void Swap(PubSubTopic* other);
   friend void swap(PubSubTopic& a, PubSubTopic& b) {
@@ -10320,6 +10505,274 @@ inline void Pin::set_allocated_item(::api::ItemRef* item) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// JWTToken
+
+// string raw = 1;
+inline void JWTToken::clear_raw() {
+  raw_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWTToken::raw() const {
+  // @@protoc_insertion_point(field_get:api.JWTToken.raw)
+  return raw_.GetNoArena();
+}
+inline void JWTToken::set_raw(const ::std::string& value) {
+  
+  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.JWTToken.raw)
+}
+#if LANG_CXX11
+inline void JWTToken::set_raw(::std::string&& value) {
+  
+  raw_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.JWTToken.raw)
+}
+#endif
+inline void JWTToken::set_raw(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.JWTToken.raw)
+}
+inline void JWTToken::set_raw(const char* value, size_t size) {
+  
+  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.JWTToken.raw)
+}
+inline ::std::string* JWTToken::mutable_raw() {
+  
+  // @@protoc_insertion_point(field_mutable:api.JWTToken.raw)
+  return raw_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWTToken::release_raw() {
+  // @@protoc_insertion_point(field_release:api.JWTToken.raw)
+  
+  return raw_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWTToken::set_allocated_raw(::std::string* raw) {
+  if (raw != NULL) {
+    
+  } else {
+    
+  }
+  raw_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), raw);
+  // @@protoc_insertion_point(field_set_allocated:api.JWTToken.raw)
+}
+
+// .api.SigningMethod method = 2;
+inline void JWTToken::clear_method() {
+  method_ = 0;
+}
+inline ::api::SigningMethod JWTToken::method() const {
+  // @@protoc_insertion_point(field_get:api.JWTToken.method)
+  return static_cast< ::api::SigningMethod >(method_);
+}
+inline void JWTToken::set_method(::api::SigningMethod value) {
+  
+  method_ = value;
+  // @@protoc_insertion_point(field_set:api.JWTToken.method)
+}
+
+// map<string, string> header = 3;
+inline int JWTToken::header_size() const {
+  return header_.size();
+}
+inline void JWTToken::clear_header() {
+  header_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+JWTToken::header() const {
+  // @@protoc_insertion_point(field_map:api.JWTToken.header)
+  return header_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+JWTToken::mutable_header() {
+  // @@protoc_insertion_point(field_mutable_map:api.JWTToken.header)
+  return header_.MutableMap();
+}
+
+// string claims = 4;
+inline void JWTToken::clear_claims() {
+  claims_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWTToken::claims() const {
+  // @@protoc_insertion_point(field_get:api.JWTToken.claims)
+  return claims_.GetNoArena();
+}
+inline void JWTToken::set_claims(const ::std::string& value) {
+  
+  claims_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.JWTToken.claims)
+}
+#if LANG_CXX11
+inline void JWTToken::set_claims(::std::string&& value) {
+  
+  claims_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.JWTToken.claims)
+}
+#endif
+inline void JWTToken::set_claims(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  claims_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.JWTToken.claims)
+}
+inline void JWTToken::set_claims(const char* value, size_t size) {
+  
+  claims_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.JWTToken.claims)
+}
+inline ::std::string* JWTToken::mutable_claims() {
+  
+  // @@protoc_insertion_point(field_mutable:api.JWTToken.claims)
+  return claims_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWTToken::release_claims() {
+  // @@protoc_insertion_point(field_release:api.JWTToken.claims)
+  
+  return claims_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWTToken::set_allocated_claims(::std::string* claims) {
+  if (claims != NULL) {
+    
+  } else {
+    
+  }
+  claims_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), claims);
+  // @@protoc_insertion_point(field_set_allocated:api.JWTToken.claims)
+}
+
+// string signature = 5;
+inline void JWTToken::clear_signature() {
+  signature_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWTToken::signature() const {
+  // @@protoc_insertion_point(field_get:api.JWTToken.signature)
+  return signature_.GetNoArena();
+}
+inline void JWTToken::set_signature(const ::std::string& value) {
+  
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.JWTToken.signature)
+}
+#if LANG_CXX11
+inline void JWTToken::set_signature(::std::string&& value) {
+  
+  signature_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.JWTToken.signature)
+}
+#endif
+inline void JWTToken::set_signature(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.JWTToken.signature)
+}
+inline void JWTToken::set_signature(const char* value, size_t size) {
+  
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.JWTToken.signature)
+}
+inline ::std::string* JWTToken::mutable_signature() {
+  
+  // @@protoc_insertion_point(field_mutable:api.JWTToken.signature)
+  return signature_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWTToken::release_signature() {
+  // @@protoc_insertion_point(field_release:api.JWTToken.signature)
+  
+  return signature_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWTToken::set_allocated_signature(::std::string* signature) {
+  if (signature != NULL) {
+    
+  } else {
+    
+  }
+  signature_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signature);
+  // @@protoc_insertion_point(field_set_allocated:api.JWTToken.signature)
+}
+
+// bool value = 6;
+inline void JWTToken::clear_value() {
+  value_ = false;
+}
+inline bool JWTToken::value() const {
+  // @@protoc_insertion_point(field_get:api.JWTToken.value)
+  return value_;
+}
+inline void JWTToken::set_value(bool value) {
+  
+  value_ = value;
+  // @@protoc_insertion_point(field_set:api.JWTToken.value)
+}
+
+// -------------------------------------------------------------------
+
+// SignedKey
+
+// string signed_key = 1;
+inline void SignedKey::clear_signed_key() {
+  signed_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SignedKey::signed_key() const {
+  // @@protoc_insertion_point(field_get:api.SignedKey.signed_key)
+  return signed_key_.GetNoArena();
+}
+inline void SignedKey::set_signed_key(const ::std::string& value) {
+  
+  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SignedKey.signed_key)
+}
+#if LANG_CXX11
+inline void SignedKey::set_signed_key(::std::string&& value) {
+  
+  signed_key_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SignedKey.signed_key)
+}
+#endif
+inline void SignedKey::set_signed_key(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SignedKey.signed_key)
+}
+inline void SignedKey::set_signed_key(const char* value, size_t size) {
+  
+  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SignedKey.signed_key)
+}
+inline ::std::string* SignedKey::mutable_signed_key() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SignedKey.signed_key)
+  return signed_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SignedKey::release_signed_key() {
+  // @@protoc_insertion_point(field_release:api.SignedKey.signed_key)
+  
+  return signed_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SignedKey::set_allocated_signed_key(::std::string* signed_key) {
+  if (signed_key != NULL) {
+    
+  } else {
+    
+  }
+  signed_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_key);
+  // @@protoc_insertion_point(field_set_allocated:api.SignedKey.signed_key)
+}
+
+// -------------------------------------------------------------------
+
 // Access
 
 // string autom8ter_account = 1;
@@ -10960,44 +11413,44 @@ inline void Access::set_allocated_gcp_key(::std::string* gcp_key) {
 
 // -------------------------------------------------------------------
 
-// Token
+// StandardClaims
 
 // .api.Access access = 1;
-inline bool Token::has_access() const {
+inline bool StandardClaims::has_access() const {
   return this != internal_default_instance() && access_ != NULL;
 }
-inline void Token::clear_access() {
+inline void StandardClaims::clear_access() {
   if (GetArenaNoVirtual() == NULL && access_ != NULL) {
     delete access_;
   }
   access_ = NULL;
 }
-inline const ::api::Access& Token::_internal_access() const {
+inline const ::api::Access& StandardClaims::_internal_access() const {
   return *access_;
 }
-inline const ::api::Access& Token::access() const {
+inline const ::api::Access& StandardClaims::access() const {
   const ::api::Access* p = access_;
-  // @@protoc_insertion_point(field_get:api.Token.access)
+  // @@protoc_insertion_point(field_get:api.StandardClaims.access)
   return p != NULL ? *p : *reinterpret_cast<const ::api::Access*>(
       &::api::_Access_default_instance_);
 }
-inline ::api::Access* Token::release_access() {
-  // @@protoc_insertion_point(field_release:api.Token.access)
+inline ::api::Access* StandardClaims::release_access() {
+  // @@protoc_insertion_point(field_release:api.StandardClaims.access)
   
   ::api::Access* temp = access_;
   access_ = NULL;
   return temp;
 }
-inline ::api::Access* Token::mutable_access() {
+inline ::api::Access* StandardClaims::mutable_access() {
   
   if (access_ == NULL) {
     auto* p = CreateMaybeMessage<::api::Access>(GetArenaNoVirtual());
     access_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Token.access)
+  // @@protoc_insertion_point(field_mutable:api.StandardClaims.access)
   return access_;
 }
-inline void Token::set_allocated_access(::api::Access* access) {
+inline void StandardClaims::set_allocated_access(::api::Access* access) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete access_;
@@ -11013,238 +11466,396 @@ inline void Token::set_allocated_access(::api::Access* access) {
     
   }
   access_ = access;
-  // @@protoc_insertion_point(field_set_allocated:api.Token.access)
+  // @@protoc_insertion_point(field_set_allocated:api.StandardClaims.access)
 }
 
 // string audience = 2;
-inline void Token::clear_audience() {
+inline void StandardClaims::clear_audience() {
   audience_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Token::audience() const {
-  // @@protoc_insertion_point(field_get:api.Token.audience)
+inline const ::std::string& StandardClaims::audience() const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.audience)
   return audience_.GetNoArena();
 }
-inline void Token::set_audience(const ::std::string& value) {
+inline void StandardClaims::set_audience(const ::std::string& value) {
   
   audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Token.audience)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.audience)
 }
 #if LANG_CXX11
-inline void Token::set_audience(::std::string&& value) {
+inline void StandardClaims::set_audience(::std::string&& value) {
   
   audience_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Token.audience)
+  // @@protoc_insertion_point(field_set_rvalue:api.StandardClaims.audience)
 }
 #endif
-inline void Token::set_audience(const char* value) {
+inline void StandardClaims::set_audience(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Token.audience)
+  // @@protoc_insertion_point(field_set_char:api.StandardClaims.audience)
 }
-inline void Token::set_audience(const char* value, size_t size) {
+inline void StandardClaims::set_audience(const char* value, size_t size) {
   
   audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Token.audience)
+  // @@protoc_insertion_point(field_set_pointer:api.StandardClaims.audience)
 }
-inline ::std::string* Token::mutable_audience() {
+inline ::std::string* StandardClaims::mutable_audience() {
   
-  // @@protoc_insertion_point(field_mutable:api.Token.audience)
+  // @@protoc_insertion_point(field_mutable:api.StandardClaims.audience)
   return audience_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Token::release_audience() {
-  // @@protoc_insertion_point(field_release:api.Token.audience)
+inline ::std::string* StandardClaims::release_audience() {
+  // @@protoc_insertion_point(field_release:api.StandardClaims.audience)
   
   return audience_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Token::set_allocated_audience(::std::string* audience) {
+inline void StandardClaims::set_allocated_audience(::std::string* audience) {
   if (audience != NULL) {
     
   } else {
     
   }
   audience_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), audience);
-  // @@protoc_insertion_point(field_set_allocated:api.Token.audience)
+  // @@protoc_insertion_point(field_set_allocated:api.StandardClaims.audience)
 }
 
 // string subject = 3;
-inline void Token::clear_subject() {
+inline void StandardClaims::clear_subject() {
   subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Token::subject() const {
-  // @@protoc_insertion_point(field_get:api.Token.subject)
+inline const ::std::string& StandardClaims::subject() const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.subject)
   return subject_.GetNoArena();
 }
-inline void Token::set_subject(const ::std::string& value) {
+inline void StandardClaims::set_subject(const ::std::string& value) {
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Token.subject)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.subject)
 }
 #if LANG_CXX11
-inline void Token::set_subject(::std::string&& value) {
+inline void StandardClaims::set_subject(::std::string&& value) {
   
   subject_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Token.subject)
+  // @@protoc_insertion_point(field_set_rvalue:api.StandardClaims.subject)
 }
 #endif
-inline void Token::set_subject(const char* value) {
+inline void StandardClaims::set_subject(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Token.subject)
+  // @@protoc_insertion_point(field_set_char:api.StandardClaims.subject)
 }
-inline void Token::set_subject(const char* value, size_t size) {
+inline void StandardClaims::set_subject(const char* value, size_t size) {
   
   subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Token.subject)
+  // @@protoc_insertion_point(field_set_pointer:api.StandardClaims.subject)
 }
-inline ::std::string* Token::mutable_subject() {
+inline ::std::string* StandardClaims::mutable_subject() {
   
-  // @@protoc_insertion_point(field_mutable:api.Token.subject)
+  // @@protoc_insertion_point(field_mutable:api.StandardClaims.subject)
   return subject_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Token::release_subject() {
-  // @@protoc_insertion_point(field_release:api.Token.subject)
+inline ::std::string* StandardClaims::release_subject() {
+  // @@protoc_insertion_point(field_release:api.StandardClaims.subject)
   
   return subject_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Token::set_allocated_subject(::std::string* subject) {
+inline void StandardClaims::set_allocated_subject(::std::string* subject) {
   if (subject != NULL) {
     
   } else {
     
   }
   subject_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subject);
-  // @@protoc_insertion_point(field_set_allocated:api.Token.subject)
+  // @@protoc_insertion_point(field_set_allocated:api.StandardClaims.subject)
 }
 
 // int64 expires_at = 4;
-inline void Token::clear_expires_at() {
+inline void StandardClaims::clear_expires_at() {
   expires_at_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int64 Token::expires_at() const {
-  // @@protoc_insertion_point(field_get:api.Token.expires_at)
+inline ::google::protobuf::int64 StandardClaims::expires_at() const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.expires_at)
   return expires_at_;
 }
-inline void Token::set_expires_at(::google::protobuf::int64 value) {
+inline void StandardClaims::set_expires_at(::google::protobuf::int64 value) {
   
   expires_at_ = value;
-  // @@protoc_insertion_point(field_set:api.Token.expires_at)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.expires_at)
 }
 
 // string id = 5;
-inline void Token::clear_id() {
+inline void StandardClaims::clear_id() {
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Token::id() const {
-  // @@protoc_insertion_point(field_get:api.Token.id)
+inline const ::std::string& StandardClaims::id() const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.id)
   return id_.GetNoArena();
 }
-inline void Token::set_id(const ::std::string& value) {
+inline void StandardClaims::set_id(const ::std::string& value) {
   
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Token.id)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.id)
 }
 #if LANG_CXX11
-inline void Token::set_id(::std::string&& value) {
+inline void StandardClaims::set_id(::std::string&& value) {
   
   id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Token.id)
+  // @@protoc_insertion_point(field_set_rvalue:api.StandardClaims.id)
 }
 #endif
-inline void Token::set_id(const char* value) {
+inline void StandardClaims::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Token.id)
+  // @@protoc_insertion_point(field_set_char:api.StandardClaims.id)
 }
-inline void Token::set_id(const char* value, size_t size) {
+inline void StandardClaims::set_id(const char* value, size_t size) {
   
   id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Token.id)
+  // @@protoc_insertion_point(field_set_pointer:api.StandardClaims.id)
 }
-inline ::std::string* Token::mutable_id() {
+inline ::std::string* StandardClaims::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.Token.id)
+  // @@protoc_insertion_point(field_mutable:api.StandardClaims.id)
   return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Token::release_id() {
-  // @@protoc_insertion_point(field_release:api.Token.id)
+inline ::std::string* StandardClaims::release_id() {
+  // @@protoc_insertion_point(field_release:api.StandardClaims.id)
   
   return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Token::set_allocated_id(::std::string* id) {
+inline void StandardClaims::set_allocated_id(::std::string* id) {
   if (id != NULL) {
     
   } else {
     
   }
   id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
-  // @@protoc_insertion_point(field_set_allocated:api.Token.id)
+  // @@protoc_insertion_point(field_set_allocated:api.StandardClaims.id)
 }
 
 // int64 issued_at = 6;
-inline void Token::clear_issued_at() {
+inline void StandardClaims::clear_issued_at() {
   issued_at_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int64 Token::issued_at() const {
-  // @@protoc_insertion_point(field_get:api.Token.issued_at)
+inline ::google::protobuf::int64 StandardClaims::issued_at() const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.issued_at)
   return issued_at_;
 }
-inline void Token::set_issued_at(::google::protobuf::int64 value) {
+inline void StandardClaims::set_issued_at(::google::protobuf::int64 value) {
   
   issued_at_ = value;
-  // @@protoc_insertion_point(field_set:api.Token.issued_at)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.issued_at)
 }
 
 // int64 not_before = 7;
-inline void Token::clear_not_before() {
+inline void StandardClaims::clear_not_before() {
   not_before_ = GOOGLE_LONGLONG(0);
 }
-inline ::google::protobuf::int64 Token::not_before() const {
-  // @@protoc_insertion_point(field_get:api.Token.not_before)
+inline ::google::protobuf::int64 StandardClaims::not_before() const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.not_before)
   return not_before_;
 }
-inline void Token::set_not_before(::google::protobuf::int64 value) {
+inline void StandardClaims::set_not_before(::google::protobuf::int64 value) {
   
   not_before_ = value;
-  // @@protoc_insertion_point(field_set:api.Token.not_before)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.not_before)
 }
 
 // repeated .api.Grant grants = 8;
-inline int Token::grants_size() const {
+inline int StandardClaims::grants_size() const {
   return grants_.size();
 }
-inline void Token::clear_grants() {
+inline void StandardClaims::clear_grants() {
   grants_.Clear();
 }
-inline ::api::Grant Token::grants(int index) const {
-  // @@protoc_insertion_point(field_get:api.Token.grants)
+inline ::api::Grant StandardClaims::grants(int index) const {
+  // @@protoc_insertion_point(field_get:api.StandardClaims.grants)
   return static_cast< ::api::Grant >(grants_.Get(index));
 }
-inline void Token::set_grants(int index, ::api::Grant value) {
+inline void StandardClaims::set_grants(int index, ::api::Grant value) {
   grants_.Set(index, value);
-  // @@protoc_insertion_point(field_set:api.Token.grants)
+  // @@protoc_insertion_point(field_set:api.StandardClaims.grants)
 }
-inline void Token::add_grants(::api::Grant value) {
+inline void StandardClaims::add_grants(::api::Grant value) {
   grants_.Add(value);
-  // @@protoc_insertion_point(field_add:api.Token.grants)
+  // @@protoc_insertion_point(field_add:api.StandardClaims.grants)
 }
 inline const ::google::protobuf::RepeatedField<int>&
-Token::grants() const {
-  // @@protoc_insertion_point(field_list:api.Token.grants)
+StandardClaims::grants() const {
+  // @@protoc_insertion_point(field_list:api.StandardClaims.grants)
   return grants_;
 }
 inline ::google::protobuf::RepeatedField<int>*
-Token::mutable_grants() {
-  // @@protoc_insertion_point(field_mutable_list:api.Token.grants)
+StandardClaims::mutable_grants() {
+  // @@protoc_insertion_point(field_mutable_list:api.StandardClaims.grants)
   return &grants_;
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// Token
+
+// string raw = 1;
+inline void Token::clear_raw() {
+  raw_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::raw() const {
+  // @@protoc_insertion_point(field_get:api.Token.raw)
+  return raw_.GetNoArena();
+}
+inline void Token::set_raw(const ::std::string& value) {
+  
+  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.raw)
+}
+#if LANG_CXX11
+inline void Token::set_raw(::std::string&& value) {
+  
+  raw_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.raw)
+}
+#endif
+inline void Token::set_raw(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.raw)
+}
+inline void Token::set_raw(const char* value, size_t size) {
+  
+  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.raw)
+}
+inline ::std::string* Token::mutable_raw() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.raw)
+  return raw_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_raw() {
+  // @@protoc_insertion_point(field_release:api.Token.raw)
+  
+  return raw_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_raw(::std::string* raw) {
+  if (raw != NULL) {
+    
+  } else {
+    
+  }
+  raw_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), raw);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.raw)
+}
+
+// .api.SigningMethod signing_method = 2;
+inline void Token::clear_signing_method() {
+  signing_method_ = 0;
+}
+inline ::api::SigningMethod Token::signing_method() const {
+  // @@protoc_insertion_point(field_get:api.Token.signing_method)
+  return static_cast< ::api::SigningMethod >(signing_method_);
+}
+inline void Token::set_signing_method(::api::SigningMethod value) {
+  
+  signing_method_ = value;
+  // @@protoc_insertion_point(field_set:api.Token.signing_method)
+}
+
+// bool valid = 3;
+inline void Token::clear_valid() {
+  valid_ = false;
+}
+inline bool Token::valid() const {
+  // @@protoc_insertion_point(field_get:api.Token.valid)
+  return valid_;
+}
+inline void Token::set_valid(bool value) {
+  
+  valid_ = value;
+  // @@protoc_insertion_point(field_set:api.Token.valid)
+}
+
+// string signature = 4;
+inline void Token::clear_signature() {
+  signature_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::signature() const {
+  // @@protoc_insertion_point(field_get:api.Token.signature)
+  return signature_.GetNoArena();
+}
+inline void Token::set_signature(const ::std::string& value) {
+  
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.signature)
+}
+#if LANG_CXX11
+inline void Token::set_signature(::std::string&& value) {
+  
+  signature_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.signature)
+}
+#endif
+inline void Token::set_signature(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.signature)
+}
+inline void Token::set_signature(const char* value, size_t size) {
+  
+  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.signature)
+}
+inline ::std::string* Token::mutable_signature() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.signature)
+  return signature_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_signature() {
+  // @@protoc_insertion_point(field_release:api.Token.signature)
+  
+  return signature_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_signature(::std::string* signature) {
+  if (signature != NULL) {
+    
+  } else {
+    
+  }
+  signature_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signature);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.signature)
+}
+
+// map<string, string> header = 5;
+inline int Token::header_size() const {
+  return header_.size();
+}
+inline void Token::clear_header() {
+  header_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+Token::header() const {
+  // @@protoc_insertion_point(field_map:api.Token.header)
+  return header_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+Token::mutable_header() {
+  // @@protoc_insertion_point(field_mutable_map:api.Token.header)
+  return header_.MutableMap();
 }
 
 // -------------------------------------------------------------------
@@ -14684,274 +15295,6 @@ inline void JSON::set_size(::google::protobuf::int64 value) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
-// JWTToken
-
-// string raw = 1;
-inline void JWTToken::clear_raw() {
-  raw_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& JWTToken::raw() const {
-  // @@protoc_insertion_point(field_get:api.JWTToken.raw)
-  return raw_.GetNoArena();
-}
-inline void JWTToken::set_raw(const ::std::string& value) {
-  
-  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.JWTToken.raw)
-}
-#if LANG_CXX11
-inline void JWTToken::set_raw(::std::string&& value) {
-  
-  raw_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.JWTToken.raw)
-}
-#endif
-inline void JWTToken::set_raw(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.JWTToken.raw)
-}
-inline void JWTToken::set_raw(const char* value, size_t size) {
-  
-  raw_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.JWTToken.raw)
-}
-inline ::std::string* JWTToken::mutable_raw() {
-  
-  // @@protoc_insertion_point(field_mutable:api.JWTToken.raw)
-  return raw_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* JWTToken::release_raw() {
-  // @@protoc_insertion_point(field_release:api.JWTToken.raw)
-  
-  return raw_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void JWTToken::set_allocated_raw(::std::string* raw) {
-  if (raw != NULL) {
-    
-  } else {
-    
-  }
-  raw_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), raw);
-  // @@protoc_insertion_point(field_set_allocated:api.JWTToken.raw)
-}
-
-// .api.SigningMethod method = 2;
-inline void JWTToken::clear_method() {
-  method_ = 0;
-}
-inline ::api::SigningMethod JWTToken::method() const {
-  // @@protoc_insertion_point(field_get:api.JWTToken.method)
-  return static_cast< ::api::SigningMethod >(method_);
-}
-inline void JWTToken::set_method(::api::SigningMethod value) {
-  
-  method_ = value;
-  // @@protoc_insertion_point(field_set:api.JWTToken.method)
-}
-
-// map<string, string> header = 3;
-inline int JWTToken::header_size() const {
-  return header_.size();
-}
-inline void JWTToken::clear_header() {
-  header_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-JWTToken::header() const {
-  // @@protoc_insertion_point(field_map:api.JWTToken.header)
-  return header_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-JWTToken::mutable_header() {
-  // @@protoc_insertion_point(field_mutable_map:api.JWTToken.header)
-  return header_.MutableMap();
-}
-
-// string claims = 4;
-inline void JWTToken::clear_claims() {
-  claims_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& JWTToken::claims() const {
-  // @@protoc_insertion_point(field_get:api.JWTToken.claims)
-  return claims_.GetNoArena();
-}
-inline void JWTToken::set_claims(const ::std::string& value) {
-  
-  claims_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.JWTToken.claims)
-}
-#if LANG_CXX11
-inline void JWTToken::set_claims(::std::string&& value) {
-  
-  claims_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.JWTToken.claims)
-}
-#endif
-inline void JWTToken::set_claims(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  claims_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.JWTToken.claims)
-}
-inline void JWTToken::set_claims(const char* value, size_t size) {
-  
-  claims_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.JWTToken.claims)
-}
-inline ::std::string* JWTToken::mutable_claims() {
-  
-  // @@protoc_insertion_point(field_mutable:api.JWTToken.claims)
-  return claims_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* JWTToken::release_claims() {
-  // @@protoc_insertion_point(field_release:api.JWTToken.claims)
-  
-  return claims_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void JWTToken::set_allocated_claims(::std::string* claims) {
-  if (claims != NULL) {
-    
-  } else {
-    
-  }
-  claims_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), claims);
-  // @@protoc_insertion_point(field_set_allocated:api.JWTToken.claims)
-}
-
-// string signature = 5;
-inline void JWTToken::clear_signature() {
-  signature_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& JWTToken::signature() const {
-  // @@protoc_insertion_point(field_get:api.JWTToken.signature)
-  return signature_.GetNoArena();
-}
-inline void JWTToken::set_signature(const ::std::string& value) {
-  
-  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.JWTToken.signature)
-}
-#if LANG_CXX11
-inline void JWTToken::set_signature(::std::string&& value) {
-  
-  signature_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.JWTToken.signature)
-}
-#endif
-inline void JWTToken::set_signature(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.JWTToken.signature)
-}
-inline void JWTToken::set_signature(const char* value, size_t size) {
-  
-  signature_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.JWTToken.signature)
-}
-inline ::std::string* JWTToken::mutable_signature() {
-  
-  // @@protoc_insertion_point(field_mutable:api.JWTToken.signature)
-  return signature_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* JWTToken::release_signature() {
-  // @@protoc_insertion_point(field_release:api.JWTToken.signature)
-  
-  return signature_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void JWTToken::set_allocated_signature(::std::string* signature) {
-  if (signature != NULL) {
-    
-  } else {
-    
-  }
-  signature_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signature);
-  // @@protoc_insertion_point(field_set_allocated:api.JWTToken.signature)
-}
-
-// bool value = 6;
-inline void JWTToken::clear_value() {
-  value_ = false;
-}
-inline bool JWTToken::value() const {
-  // @@protoc_insertion_point(field_get:api.JWTToken.value)
-  return value_;
-}
-inline void JWTToken::set_value(bool value) {
-  
-  value_ = value;
-  // @@protoc_insertion_point(field_set:api.JWTToken.value)
-}
-
-// -------------------------------------------------------------------
-
-// SignedKey
-
-// string signed_key = 1;
-inline void SignedKey::clear_signed_key() {
-  signed_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SignedKey::signed_key() const {
-  // @@protoc_insertion_point(field_get:api.SignedKey.signed_key)
-  return signed_key_.GetNoArena();
-}
-inline void SignedKey::set_signed_key(const ::std::string& value) {
-  
-  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SignedKey.signed_key)
-}
-#if LANG_CXX11
-inline void SignedKey::set_signed_key(::std::string&& value) {
-  
-  signed_key_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SignedKey.signed_key)
-}
-#endif
-inline void SignedKey::set_signed_key(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SignedKey.signed_key)
-}
-inline void SignedKey::set_signed_key(const char* value, size_t size) {
-  
-  signed_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SignedKey.signed_key)
-}
-inline ::std::string* SignedKey::mutable_signed_key() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SignedKey.signed_key)
-  return signed_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SignedKey::release_signed_key() {
-  // @@protoc_insertion_point(field_release:api.SignedKey.signed_key)
-  
-  return signed_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SignedKey::set_allocated_signed_key(::std::string* signed_key) {
-  if (signed_key != NULL) {
-    
-  } else {
-    
-  }
-  signed_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_key);
-  // @@protoc_insertion_point(field_set_allocated:api.SignedKey.signed_key)
-}
-
-// -------------------------------------------------------------------
-
 // PubSubMessage
 
 // .google.pubsub.v1.PubsubMessage message = 1;
@@ -15059,6 +15402,10 @@ inline void PubSubTopic::set_allocated_topic(::google::pubsub::v1::Topic* topic)
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

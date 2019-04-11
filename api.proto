@@ -235,6 +235,26 @@ enum Grant {
     AUTOM8TER=5;
 }
 
+enum SigningMethod {
+    HMAC=0;
+    ECDSA=1;
+    RSA=2;
+    RSAPPS=3;
+}
+
+message JWTToken {
+    string raw =1;
+    SigningMethod method=2;
+    map<string, string> header=3;
+    string claims =4;
+    string signature=5;
+    bool value =6;
+}
+
+message SignedKey {
+    string signed_key=1;
+}
+
 message Access {
     string autom8ter_account=1;
     string autom8ter_key=2;
@@ -250,7 +270,7 @@ message Access {
     string gcp_key=12;
 }
 
-message Token {
+message StandardClaims {
     Access access=1;
     string audience=2;
     string subject =3;
@@ -259,6 +279,15 @@ message Token {
     int64 issued_at=6;
     int64 not_before=7;
     repeated Grant grants=8;
+}
+
+message Token {
+    string raw=1;
+    SigningMethod signing_method=2;
+    bool valid =3;
+    string signature=4;
+    map<string, string> header=5;
+
 }
 
 message LogConfig {
@@ -378,26 +407,6 @@ message JSONMap {
 message JSON {
     bytes data=1;
     int64 size=2;
-}
-
-enum SigningMethod {
-    HMAC=0;
-    ECDSA=1;
-    RSA=2;
-    RSAPPS=3;
-}
-
-message JWTToken {
-    string raw =1;
-    SigningMethod method=2;
-    map<string, string> header=3;
-    string claims =4;
-    string signature=5;
-    bool value =6;
-}
-
-message SignedKey {
-    string signed_key=1;
 }
 
 message PubSubMessage {

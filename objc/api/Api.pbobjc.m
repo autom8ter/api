@@ -1635,6 +1635,158 @@ typedef struct Pin__storage_ {
 
 @end
 
+#pragma mark - JWTToken
+
+@implementation JWTToken
+
+@dynamic raw;
+@dynamic method;
+@dynamic header, header_Count;
+@dynamic claims;
+@dynamic signature;
+@dynamic value;
+
+typedef struct JWTToken__storage_ {
+  uint32_t _has_storage_[1];
+  SigningMethod method;
+  NSString *raw;
+  NSMutableDictionary *header;
+  NSString *claims;
+  NSString *signature;
+} JWTToken__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "raw",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Raw,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, raw),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "method",
+        .dataTypeSpecific.enumDescFunc = SigningMethod_EnumDescriptor,
+        .number = JWTToken_FieldNumber_Method,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, method),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "header",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Header,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, header),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "claims",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Claims,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, claims),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "signature",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Signature,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, signature),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "value",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Value,
+        .hasIndex = 4,
+        .offset = 5,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[JWTToken class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(JWTToken__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t JWTToken_Method_RawValue(JWTToken *message) {
+  GPBDescriptor *descriptor = [JWTToken descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value) {
+  GPBDescriptor *descriptor = [JWTToken descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
+
+#pragma mark - SignedKey
+
+@implementation SignedKey
+
+@dynamic signedKey;
+
+typedef struct SignedKey__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *signedKey;
+} SignedKey__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "signedKey",
+        .dataTypeSpecific.className = NULL,
+        .number = SignedKey_FieldNumber_SignedKey,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SignedKey__storage_, signedKey),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SignedKey class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SignedKey__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Access
 
 @implementation Access
@@ -1804,9 +1956,9 @@ typedef struct Access__storage_ {
 
 @end
 
-#pragma mark - Token
+#pragma mark - StandardClaims
 
-@implementation Token
+@implementation StandardClaims
 
 @dynamic hasAccess, access;
 @dynamic audience;
@@ -1817,7 +1969,7 @@ typedef struct Access__storage_ {
 @dynamic notBefore;
 @dynamic grantsArray, grantsArray_Count;
 
-typedef struct Token__storage_ {
+typedef struct StandardClaims__storage_ {
   uint32_t _has_storage_[1];
   Access *access;
   NSString *audience;
@@ -1827,7 +1979,7 @@ typedef struct Token__storage_ {
   int64_t expiresAt;
   int64_t issuedAt;
   int64_t notBefore;
-} Token__storage_;
+} StandardClaims__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -1838,74 +1990,160 @@ typedef struct Token__storage_ {
       {
         .name = "access",
         .dataTypeSpecific.className = GPBStringifySymbol(Access),
-        .number = Token_FieldNumber_Access,
+        .number = StandardClaims_FieldNumber_Access,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Token__storage_, access),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, access),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "audience",
         .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_Audience,
+        .number = StandardClaims_FieldNumber_Audience,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Token__storage_, audience),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, audience),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "subject",
         .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_Subject,
+        .number = StandardClaims_FieldNumber_Subject,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Token__storage_, subject),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, subject),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "expiresAt",
         .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_ExpiresAt,
+        .number = StandardClaims_FieldNumber_ExpiresAt,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Token__storage_, expiresAt),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, expiresAt),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "id_p",
         .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_Id_p,
+        .number = StandardClaims_FieldNumber_Id_p,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Token__storage_, id_p),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, id_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "issuedAt",
         .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_IssuedAt,
+        .number = StandardClaims_FieldNumber_IssuedAt,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(Token__storage_, issuedAt),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, issuedAt),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "notBefore",
         .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_NotBefore,
+        .number = StandardClaims_FieldNumber_NotBefore,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(Token__storage_, notBefore),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, notBefore),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "grantsArray",
         .dataTypeSpecific.enumDescFunc = Grant_EnumDescriptor,
-        .number = Token_FieldNumber_GrantsArray,
+        .number = StandardClaims_FieldNumber_GrantsArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(Token__storage_, grantsArray),
+        .offset = (uint32_t)offsetof(StandardClaims__storage_, grantsArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldPacked | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[StandardClaims class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(StandardClaims__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Token
+
+@implementation Token
+
+@dynamic raw;
+@dynamic signingMethod;
+@dynamic valid;
+@dynamic signature;
+@dynamic header, header_Count;
+
+typedef struct Token__storage_ {
+  uint32_t _has_storage_[1];
+  SigningMethod signingMethod;
+  NSString *raw;
+  NSString *signature;
+  NSMutableDictionary *header;
+} Token__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "raw",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_Raw,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Token__storage_, raw),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "signingMethod",
+        .dataTypeSpecific.enumDescFunc = SigningMethod_EnumDescriptor,
+        .number = Token_FieldNumber_SigningMethod,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Token__storage_, signingMethod),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "valid",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_Valid,
+        .hasIndex = 2,
+        .offset = 3,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "signature",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_Signature,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Token__storage_, signature),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "header",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_Header,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Token__storage_, header),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1923,6 +2161,18 @@ typedef struct Token__storage_ {
 }
 
 @end
+
+int32_t Token_SigningMethod_RawValue(Token *message) {
+  GPBDescriptor *descriptor = [Token descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Token_FieldNumber_SigningMethod];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetToken_SigningMethod_RawValue(Token *message, int32_t value) {
+  GPBDescriptor *descriptor = [Token descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Token_FieldNumber_SigningMethod];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
 
 #pragma mark - LogConfig
 
@@ -3215,158 +3465,6 @@ typedef struct JSON__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(JSON__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - JWTToken
-
-@implementation JWTToken
-
-@dynamic raw;
-@dynamic method;
-@dynamic header, header_Count;
-@dynamic claims;
-@dynamic signature;
-@dynamic value;
-
-typedef struct JWTToken__storage_ {
-  uint32_t _has_storage_[1];
-  SigningMethod method;
-  NSString *raw;
-  NSMutableDictionary *header;
-  NSString *claims;
-  NSString *signature;
-} JWTToken__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "raw",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Raw,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, raw),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "method",
-        .dataTypeSpecific.enumDescFunc = SigningMethod_EnumDescriptor,
-        .number = JWTToken_FieldNumber_Method,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, method),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
-      },
-      {
-        .name = "header",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Header,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, header),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "claims",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Claims,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, claims),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "signature",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Signature,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(JWTToken__storage_, signature),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "value",
-        .dataTypeSpecific.className = NULL,
-        .number = JWTToken_FieldNumber_Value,
-        .hasIndex = 4,
-        .offset = 5,  // Stored in _has_storage_ to save space.
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[JWTToken class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(JWTToken__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-int32_t JWTToken_Method_RawValue(JWTToken *message) {
-  GPBDescriptor *descriptor = [JWTToken descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
-  return GPBGetMessageInt32Field(message, field);
-}
-
-void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value) {
-  GPBDescriptor *descriptor = [JWTToken descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
-  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
-}
-
-#pragma mark - SignedKey
-
-@implementation SignedKey
-
-@dynamic signedKey;
-
-typedef struct SignedKey__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *signedKey;
-} SignedKey__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "signedKey",
-        .dataTypeSpecific.className = NULL,
-        .number = SignedKey_FieldNumber_SignedKey,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SignedKey__storage_, signedKey),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[SignedKey class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(SignedKey__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

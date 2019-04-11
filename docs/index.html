@@ -339,6 +339,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.StandardClaims"><span class="badge">M</span>StandardClaims</a>
+                </li>
+              
+                <li>
                   <a href="#api.Star"><span class="badge">M</span>Star</a>
                 </li>
               
@@ -352,6 +356,10 @@
               
                 <li>
                   <a href="#api.Token"><span class="badge">M</span>Token</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Token.HeaderEntry"><span class="badge">M</span>Token.HeaderEntry</a>
                 </li>
               
                 <li>
@@ -2098,6 +2106,78 @@
 
         
       
+        <h3 id="api.StandardClaims">StandardClaims</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>access</td>
+                  <td><a href="#api.Access">Access</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>audience</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>expires_at</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>issued_at</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>not_before</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>grants</td>
+                  <td><a href="#api.Grant">Grant</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Star">Star</h3>
         <p></p>
 
@@ -2220,58 +2300,67 @@
             <tbody>
               
                 <tr>
-                  <td>access</td>
-                  <td><a href="#api.Access">Access</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>audience</td>
+                  <td>raw</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>subject</td>
+                  <td>signing_method</td>
+                  <td><a href="#api.SigningMethod">SigningMethod</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>valid</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>signature</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>expires_at</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>issued_at</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>not_before</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>grants</td>
-                  <td><a href="#api.Grant">Grant</a></td>
+                  <td>header</td>
+                  <td><a href="#api.Token.HeaderEntry">Token.HeaderEntry</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Token.HeaderEntry">Token.HeaderEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               

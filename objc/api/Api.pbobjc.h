@@ -561,6 +561,59 @@ typedef GPB_ENUM(Pin_FieldNumber) {
 
 @end
 
+#pragma mark - JWTToken
+
+typedef GPB_ENUM(JWTToken_FieldNumber) {
+  JWTToken_FieldNumber_Raw = 1,
+  JWTToken_FieldNumber_Method = 2,
+  JWTToken_FieldNumber_Header = 3,
+  JWTToken_FieldNumber_Claims = 4,
+  JWTToken_FieldNumber_Signature = 5,
+  JWTToken_FieldNumber_Value = 6,
+};
+
+@interface JWTToken : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *raw;
+
+@property(nonatomic, readwrite) SigningMethod method;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *header;
+/** The number of items in @c header without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger header_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *claims;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *signature;
+
+@property(nonatomic, readwrite) BOOL value;
+
+@end
+
+/**
+ * Fetches the raw value of a @c JWTToken's @c method property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t JWTToken_Method_RawValue(JWTToken *message);
+/**
+ * Sets the raw value of an @c JWTToken's @c method property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value);
+
+#pragma mark - SignedKey
+
+typedef GPB_ENUM(SignedKey_FieldNumber) {
+  SignedKey_FieldNumber_SignedKey = 1,
+};
+
+@interface SignedKey : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *signedKey;
+
+@end
+
 #pragma mark - Access
 
 typedef GPB_ENUM(Access_FieldNumber) {
@@ -606,20 +659,20 @@ typedef GPB_ENUM(Access_FieldNumber) {
 
 @end
 
-#pragma mark - Token
+#pragma mark - StandardClaims
 
-typedef GPB_ENUM(Token_FieldNumber) {
-  Token_FieldNumber_Access = 1,
-  Token_FieldNumber_Audience = 2,
-  Token_FieldNumber_Subject = 3,
-  Token_FieldNumber_ExpiresAt = 4,
-  Token_FieldNumber_Id_p = 5,
-  Token_FieldNumber_IssuedAt = 6,
-  Token_FieldNumber_NotBefore = 7,
-  Token_FieldNumber_GrantsArray = 8,
+typedef GPB_ENUM(StandardClaims_FieldNumber) {
+  StandardClaims_FieldNumber_Access = 1,
+  StandardClaims_FieldNumber_Audience = 2,
+  StandardClaims_FieldNumber_Subject = 3,
+  StandardClaims_FieldNumber_ExpiresAt = 4,
+  StandardClaims_FieldNumber_Id_p = 5,
+  StandardClaims_FieldNumber_IssuedAt = 6,
+  StandardClaims_FieldNumber_NotBefore = 7,
+  StandardClaims_FieldNumber_GrantsArray = 8,
 };
 
-@interface Token : GPBMessage
+@interface StandardClaims : GPBMessage
 
 @property(nonatomic, readwrite, strong, null_resettable) Access *access;
 /** Test to see if @c access has been set. */
@@ -643,6 +696,44 @@ typedef GPB_ENUM(Token_FieldNumber) {
 @property(nonatomic, readonly) NSUInteger grantsArray_Count;
 
 @end
+
+#pragma mark - Token
+
+typedef GPB_ENUM(Token_FieldNumber) {
+  Token_FieldNumber_Raw = 1,
+  Token_FieldNumber_SigningMethod = 2,
+  Token_FieldNumber_Valid = 3,
+  Token_FieldNumber_Signature = 4,
+  Token_FieldNumber_Header = 5,
+};
+
+@interface Token : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *raw;
+
+@property(nonatomic, readwrite) SigningMethod signingMethod;
+
+@property(nonatomic, readwrite) BOOL valid;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *signature;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *header;
+/** The number of items in @c header without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger header_Count;
+
+@end
+
+/**
+ * Fetches the raw value of a @c Token's @c signingMethod property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t Token_SigningMethod_RawValue(Token *message);
+/**
+ * Sets the raw value of an @c Token's @c signingMethod property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetToken_SigningMethod_RawValue(Token *message, int32_t value);
 
 #pragma mark - LogConfig
 
@@ -1015,59 +1106,6 @@ typedef GPB_ENUM(JSON_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
 
 @property(nonatomic, readwrite) int64_t size;
-
-@end
-
-#pragma mark - JWTToken
-
-typedef GPB_ENUM(JWTToken_FieldNumber) {
-  JWTToken_FieldNumber_Raw = 1,
-  JWTToken_FieldNumber_Method = 2,
-  JWTToken_FieldNumber_Header = 3,
-  JWTToken_FieldNumber_Claims = 4,
-  JWTToken_FieldNumber_Signature = 5,
-  JWTToken_FieldNumber_Value = 6,
-};
-
-@interface JWTToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *raw;
-
-@property(nonatomic, readwrite) SigningMethod method;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *header;
-/** The number of items in @c header without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger header_Count;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *claims;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *signature;
-
-@property(nonatomic, readwrite) BOOL value;
-
-@end
-
-/**
- * Fetches the raw value of a @c JWTToken's @c method property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t JWTToken_Method_RawValue(JWTToken *message);
-/**
- * Sets the raw value of an @c JWTToken's @c method property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value);
-
-#pragma mark - SignedKey
-
-typedef GPB_ENUM(SignedKey_FieldNumber) {
-  SignedKey_FieldNumber_SignedKey = 1,
-};
-
-@interface SignedKey : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *signedKey;
 
 @end
 

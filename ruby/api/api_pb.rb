@@ -119,6 +119,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :text, :string, 1
     optional :item, :message, 4, "api.ItemRef"
   end
+  add_message "api.JWTToken" do
+    optional :raw, :string, 1
+    optional :method, :enum, 2, "api.SigningMethod"
+    map :header, :string, :string, 3
+    optional :claims, :string, 4
+    optional :signature, :string, 5
+    optional :value, :bool, 6
+  end
+  add_message "api.SignedKey" do
+    optional :signed_key, :string, 1
+  end
   add_message "api.Access" do
     optional :autom8ter_account, :string, 1
     optional :autom8ter_key, :string, 2
@@ -133,7 +144,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :gcp_project, :string, 11
     optional :gcp_key, :string, 12
   end
-  add_message "api.Token" do
+  add_message "api.StandardClaims" do
     optional :access, :message, 1, "api.Access"
     optional :audience, :string, 2
     optional :subject, :string, 3
@@ -142,6 +153,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :issued_at, :int64, 6
     optional :not_before, :int64, 7
     repeated :grants, :enum, 8, "api.Grant"
+  end
+  add_message "api.Token" do
+    optional :raw, :string, 1
+    optional :signing_method, :enum, 2, "api.SigningMethod"
+    optional :valid, :bool, 3
+    optional :signature, :string, 4
+    map :header, :string, :string, 5
   end
   add_message "api.LogConfig" do
     optional :username, :string, 1
@@ -245,17 +263,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :data, :bytes, 1
     optional :size, :int64, 2
   end
-  add_message "api.JWTToken" do
-    optional :raw, :string, 1
-    optional :method, :enum, 2, "api.SigningMethod"
-    map :header, :string, :string, 3
-    optional :claims, :string, 4
-    optional :signature, :string, 5
-    optional :value, :bool, 6
-  end
-  add_message "api.SignedKey" do
-    optional :signed_key, :string, 1
-  end
   add_message "api.PubSubMessage" do
     optional :message, :message, 1, "google.pubsub.v1.PubsubMessage"
   end
@@ -310,7 +317,10 @@ module Api
   ItemRef = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ItemRef").msgclass
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
   Pin = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Pin").msgclass
+  JWTToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWTToken").msgclass
+  SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
   Access = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Access").msgclass
+  StandardClaims = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StandardClaims").msgclass
   Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Token").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
@@ -328,8 +338,6 @@ module Api
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
   JSONMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONMap").msgclass
   JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
-  JWTToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWTToken").msgclass
-  SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
   PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
   PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
   CardType = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CardType").enummodule

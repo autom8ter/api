@@ -229,57 +229,55 @@ func (j *Customer) AsMap() map[string]interface{} {
 ///////////////////////////////////////////////////////////////
 type Claims struct {
 	standardClaims map[string]jwt.StandardClaims
-	token          *Token
 }
 
-func (c *Claims) StandardClaims() map[string]jwt.StandardClaims {
-	return c.standardClaims
-}
-
-func (c *Claims) SignedTwilioToken(secret string) (string, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.TwilioClaims())
+func (c *Claims) SignedTwilioToken(secret string) (*SignedKey, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["twilio"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "twilio-fpa;v=1",
 	}
-
-	return token.SignedString([]byte(secret))
+	tok, err := token.SignedString([]byte(secret))
+	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedSendGridToken(secret string) (string, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.TwilioClaims())
+func (c *Claims) SignedSendGridToken(secret string) (*SignedKey, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["sendgrid"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "sendgrid",
 	}
 
-	return token.SignedString([]byte(secret))
+	tok, err := token.SignedString([]byte(secret))
+	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedSlackToken(secret string) (string, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.SlackClaims())
+func (c *Claims) SignedSlackToken(secret string) (*SignedKey, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["slack"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "slack",
 	}
-	return token.SignedString([]byte(secret))
+	tok, err := token.SignedString([]byte(secret))
+	return &SignedKey{SignedKey: tok}, err
 }
 
-func (c *Claims) SignedStripeToken(secret string) (string, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.StripeClaims())
+func (c *Claims) SignedStripeToken(secret string) (*SignedKey, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["stripe"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
 		"cty": "stripe",
 	}
-	return token.SignedString([]byte(secret))
+	tok, err := token.SignedString([]byte(secret))
+	return &SignedKey{SignedKey: tok}, err
 }
 
 func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.GCPClaims())
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["gcp"])
 	token.Header = map[string]interface{}{
 		"typ": "JWT",
 		"alg": "HS256",
@@ -294,35 +292,11 @@ func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error) {
 	}, nil
 }
 
-func (c *Claims) TwilioClaims() jwt.StandardClaims {
-	return c.standardClaims["twilio"]
-}
-
-func (c *Claims) SendGridClaims() jwt.StandardClaims {
-	return c.standardClaims["sendgrid"]
-}
-
-func (c *Claims) GCPClaims() jwt.StandardClaims {
-	return c.standardClaims["gcp"]
-}
-
-func (c *Claims) StripeClaims() jwt.StandardClaims {
-	return c.standardClaims["stripe"]
-}
-
-func (c *Claims) SlackClaims() jwt.StandardClaims {
-	return c.standardClaims["slack"]
-}
-
-func (c *Claims) Token() *Token {
-	return c.token
-}
-
-func (t *Token) AddGrants(grants ...Grant) {
+func (t *StandardClaims) AddGrants(grants ...Grant) {
 	t.Grants = append(t.Grants, grants...)
 }
 
-func (t *Token) Claims() *Claims {
+func (t *StandardClaims) Claims() *Claims {
 	claims := make(map[string]jwt.StandardClaims)
 	claims["twilio"] = jwt.StandardClaims{
 		Audience:  t.Audience,
@@ -371,7 +345,6 @@ func (t *Token) Claims() *Claims {
 	}
 	return &Claims{
 		standardClaims: claims,
-		token:          t,
 	}
 }
 

@@ -1770,18 +1770,6 @@ type Claims struct {
 
 /////////////////////////////////////////////////////////////
 
-#### func (*Claims) GCPClaims
-
-```go
-func (c *Claims) GCPClaims() jwt.StandardClaims
-```
-
-#### func (*Claims) SendGridClaims
-
-```go
-func (c *Claims) SendGridClaims() jwt.StandardClaims
-```
-
 #### func (*Claims) SignedGCPToken
 
 ```go
@@ -1791,55 +1779,25 @@ func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error)
 #### func (*Claims) SignedSendGridToken
 
 ```go
-func (c *Claims) SignedSendGridToken(secret string) (string, error)
+func (c *Claims) SignedSendGridToken(secret string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedSlackToken
 
 ```go
-func (c *Claims) SignedSlackToken(secret string) (string, error)
+func (c *Claims) SignedSlackToken(secret string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedStripeToken
 
 ```go
-func (c *Claims) SignedStripeToken(secret string) (string, error)
+func (c *Claims) SignedStripeToken(secret string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedTwilioToken
 
 ```go
-func (c *Claims) SignedTwilioToken(secret string) (string, error)
-```
-
-#### func (*Claims) SlackClaims
-
-```go
-func (c *Claims) SlackClaims() jwt.StandardClaims
-```
-
-#### func (*Claims) StandardClaims
-
-```go
-func (c *Claims) StandardClaims() map[string]jwt.StandardClaims
-```
-
-#### func (*Claims) StripeClaims
-
-```go
-func (c *Claims) StripeClaims() jwt.StandardClaims
-```
-
-#### func (*Claims) Token
-
-```go
-func (c *Claims) Token() *Token
-```
-
-#### func (*Claims) TwilioClaims
-
-```go
-func (c *Claims) TwilioClaims() jwt.StandardClaims
+func (c *Claims) SignedTwilioToken(secret string) (*SignedKey, error)
 ```
 
 #### type ClientSet
@@ -4020,6 +3978,139 @@ func (SigningMethod) EnumDescriptor() ([]byte, []int)
 func (x SigningMethod) String() string
 ```
 
+#### type StandardClaims
+
+```go
+type StandardClaims struct {
+	Access               *Access  `protobuf:"bytes,1,opt,name=access,proto3" json:"access,omitempty"`
+	Audience             string   `protobuf:"bytes,2,opt,name=audience,proto3" json:"audience,omitempty"`
+	Subject              string   `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty"`
+	ExpiresAt            int64    `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
+	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
+	IssuedAt             int64    `protobuf:"varint,6,opt,name=issued_at,json=issuedAt,proto3" json:"issued_at,omitempty"`
+	NotBefore            int64    `protobuf:"varint,7,opt,name=not_before,json=notBefore,proto3" json:"not_before,omitempty"`
+	Grants               []Grant  `protobuf:"varint,8,rep,packed,name=grants,proto3,enum=api.Grant" json:"grants,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*StandardClaims) AddGrants
+
+```go
+func (t *StandardClaims) AddGrants(grants ...Grant)
+```
+
+#### func (*StandardClaims) Claims
+
+```go
+func (t *StandardClaims) Claims() *Claims
+```
+
+#### func (*StandardClaims) Descriptor
+
+```go
+func (*StandardClaims) Descriptor() ([]byte, []int)
+```
+
+#### func (*StandardClaims) GetAccess
+
+```go
+func (m *StandardClaims) GetAccess() *Access
+```
+
+#### func (*StandardClaims) GetAudience
+
+```go
+func (m *StandardClaims) GetAudience() string
+```
+
+#### func (*StandardClaims) GetExpiresAt
+
+```go
+func (m *StandardClaims) GetExpiresAt() int64
+```
+
+#### func (*StandardClaims) GetGrants
+
+```go
+func (m *StandardClaims) GetGrants() []Grant
+```
+
+#### func (*StandardClaims) GetId
+
+```go
+func (m *StandardClaims) GetId() string
+```
+
+#### func (*StandardClaims) GetIssuedAt
+
+```go
+func (m *StandardClaims) GetIssuedAt() int64
+```
+
+#### func (*StandardClaims) GetNotBefore
+
+```go
+func (m *StandardClaims) GetNotBefore() int64
+```
+
+#### func (*StandardClaims) GetSubject
+
+```go
+func (m *StandardClaims) GetSubject() string
+```
+
+#### func (*StandardClaims) ProtoMessage
+
+```go
+func (*StandardClaims) ProtoMessage()
+```
+
+#### func (*StandardClaims) Reset
+
+```go
+func (m *StandardClaims) Reset()
+```
+
+#### func (*StandardClaims) String
+
+```go
+func (m *StandardClaims) String() string
+```
+
+#### func (*StandardClaims) XXX_DiscardUnknown
+
+```go
+func (m *StandardClaims) XXX_DiscardUnknown()
+```
+
+#### func (*StandardClaims) XXX_Marshal
+
+```go
+func (m *StandardClaims) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*StandardClaims) XXX_Merge
+
+```go
+func (m *StandardClaims) XXX_Merge(src proto.Message)
+```
+
+#### func (*StandardClaims) XXX_Size
+
+```go
+func (m *StandardClaims) XXX_Size() int
+```
+
+#### func (*StandardClaims) XXX_Unmarshal
+
+```go
+func (m *StandardClaims) XXX_Unmarshal(b []byte) error
+```
+
 #### type Star
 
 ```go
@@ -4282,32 +4373,17 @@ func (m *SubscribeCustomerResponse) XXX_Unmarshal(b []byte) error
 
 ```go
 type Token struct {
-	Access               *Access  `protobuf:"bytes,1,opt,name=access,proto3" json:"access,omitempty"`
-	Audience             string   `protobuf:"bytes,2,opt,name=audience,proto3" json:"audience,omitempty"`
-	Subject              string   `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty"`
-	ExpiresAt            int64    `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
-	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
-	IssuedAt             int64    `protobuf:"varint,6,opt,name=issued_at,json=issuedAt,proto3" json:"issued_at,omitempty"`
-	NotBefore            int64    `protobuf:"varint,7,opt,name=not_before,json=notBefore,proto3" json:"not_before,omitempty"`
-	Grants               []Grant  `protobuf:"varint,8,rep,packed,name=grants,proto3,enum=api.Grant" json:"grants,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Raw                  string            `protobuf:"bytes,1,opt,name=raw,proto3" json:"raw,omitempty"`
+	SigningMethod        SigningMethod     `protobuf:"varint,2,opt,name=signing_method,json=signingMethod,proto3,enum=api.SigningMethod" json:"signing_method,omitempty"`
+	Valid                bool              `protobuf:"varint,3,opt,name=valid,proto3" json:"valid,omitempty"`
+	Signature            string            `protobuf:"bytes,4,opt,name=signature,proto3" json:"signature,omitempty"`
+	Header               map[string]string `protobuf:"bytes,5,rep,name=header,proto3" json:"header,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 ```
 
-
-#### func (*Token) AddGrants
-
-```go
-func (t *Token) AddGrants(grants ...Grant)
-```
-
-#### func (*Token) Claims
-
-```go
-func (t *Token) Claims() *Claims
-```
 
 #### func (*Token) Descriptor
 
@@ -4315,52 +4391,34 @@ func (t *Token) Claims() *Claims
 func (*Token) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Token) GetAccess
+#### func (*Token) GetHeader
 
 ```go
-func (m *Token) GetAccess() *Access
+func (m *Token) GetHeader() map[string]string
 ```
 
-#### func (*Token) GetAudience
+#### func (*Token) GetRaw
 
 ```go
-func (m *Token) GetAudience() string
+func (m *Token) GetRaw() string
 ```
 
-#### func (*Token) GetExpiresAt
+#### func (*Token) GetSignature
 
 ```go
-func (m *Token) GetExpiresAt() int64
+func (m *Token) GetSignature() string
 ```
 
-#### func (*Token) GetGrants
+#### func (*Token) GetSigningMethod
 
 ```go
-func (m *Token) GetGrants() []Grant
+func (m *Token) GetSigningMethod() SigningMethod
 ```
 
-#### func (*Token) GetId
+#### func (*Token) GetValid
 
 ```go
-func (m *Token) GetId() string
-```
-
-#### func (*Token) GetIssuedAt
-
-```go
-func (m *Token) GetIssuedAt() int64
-```
-
-#### func (*Token) GetNotBefore
-
-```go
-func (m *Token) GetNotBefore() int64
-```
-
-#### func (*Token) GetSubject
-
-```go
-func (m *Token) GetSubject() string
+func (m *Token) GetValid() bool
 ```
 
 #### func (*Token) ProtoMessage
