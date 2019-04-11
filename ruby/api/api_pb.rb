@@ -107,16 +107,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :text, :string, 1
     optional :item, :message, 4, "api.ItemRef"
   end
-  add_message "api.Config" do
-    optional :debug, :bool, 1
-    optional :twilio_account, :string, 2
-    optional :twilio_key, :string, 3
-    optional :sendgrid_key, :string, 4
-    optional :stripe_key, :string, 5
-    optional :slack_key, :string, 6
-    optional :customer_index, :enum, 7, "api.CustomerIndex"
-    optional :email_address, :message, 8, "api.EmailAddress"
-    optional :log_config, :message, 9, "api.LogConfig"
+  add_message "api.Access" do
+    optional :twilio_account, :string, 1
+    optional :twilio_key, :string, 2
+    optional :sendgrid_key, :string, 3
+    optional :stripe_key, :string, 4
+    optional :slack_key, :string, 5
+    optional :email_address, :message, 6, "api.EmailAddress"
+    optional :log_config, :message, 7, "api.LogConfig"
   end
   add_message "api.LogConfig" do
     optional :username, :string, 1
@@ -162,7 +160,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :icon, :string, 2
     optional :title, :string, 3
   end
-  add_message "api.SlackAttachment" do
+  add_message "api.Attachment" do
     optional :color, :string, 1
     optional :fallback, :string, 2
     optional :callback_id, :string, 3
@@ -190,10 +188,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     repeated :options, :message, 8, "api.AttachmentActionOption"
     repeated :selected_options, :message, 9, "api.AttachmentActionOption"
     repeated :option_groups, :message, 10, "api.AttachmentActionOptionGroup"
-    optional :confirm, :message, 11, "api.ConfirmationField"
+    optional :confirm, :message, 11, "api.AttachmentConfirmationField"
     optional :url, :string, 12
   end
-  add_message "api.ConfirmationField" do
+  add_message "api.AttachmentConfirmationField" do
     optional :title, :string, 1
     optional :text, :string, 2
     optional :ok_text, :string, 3
@@ -214,17 +212,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :short, :bool, 3
   end
   add_message "api.JSONMap" do
-    map :json_map, :string, :bytes, 1
+    map :json_map, :string, :message, 1, "api.JSON"
+  end
+  add_message "api.JSON" do
+    optional :data, :bytes, 1
+    optional :size, :int64, 2
   end
   add_message "api.PubSubMessage" do
     optional :message, :message, 1, "google.pubsub.v1.PubsubMessage"
   end
   add_message "api.PubSubTopic" do
     optional :topic, :message, 1, "google.pubsub.v1.Topic"
-  end
-  add_message "api.Authentication" do
-    optional :authentication, :message, 1, "google.api.Authentication"
-    map :annotations, :string, :string, 2
   end
   add_enum "api.CustomerIndex" do
     value :ID, 0
@@ -252,7 +250,7 @@ module Api
   ItemRef = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ItemRef").msgclass
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
   Pin = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Pin").msgclass
-  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
+  Access = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Access").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
@@ -261,15 +259,15 @@ module Api
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
   LogHook = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogHook").msgclass
-  SlackAttachment = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SlackAttachment").msgclass
+  Attachment = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Attachment").msgclass
   AttachmentAction = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentAction").msgclass
-  ConfirmationField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ConfirmationField").msgclass
+  AttachmentConfirmationField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentConfirmationField").msgclass
   AttachmentActionOptionGroup = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOptionGroup").msgclass
   AttachmentActionOption = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOption").msgclass
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
   JSONMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONMap").msgclass
+  JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
   PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
   PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
-  Authentication = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Authentication").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
 end

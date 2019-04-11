@@ -206,16 +206,14 @@ enum CustomerIndex {
     PHONE=2;
 }
 
-message Config {
-    bool debug=1;
-    string twilio_account=2;
-    string twilio_key=3;
-    string sendgrid_key=4;
-    string stripe_key=5;
-    string slack_key=6;
-    CustomerIndex customer_index=7;
-    EmailAddress email_address=8;
-    LogConfig log_config=9;
+message Access {
+    string twilio_account=1;
+    string twilio_key=2;
+    string sendgrid_key=3;
+    string stripe_key=4;
+    string slack_key=5;
+    EmailAddress email_address=6;
+    LogConfig log_config=7;
 }
 
 message LogConfig {
@@ -270,7 +268,7 @@ message LogHook {
     string title=3;
 }
 
-message SlackAttachment {
+message Attachment {
     string color=1;
     string fallback=2;
     string callback_id=3;
@@ -288,6 +286,7 @@ message SlackAttachment {
    repeated  AttachmentField fields =15;
 
 }
+
 message AttachmentAction {
     string name=1;
     string text=2;
@@ -299,11 +298,11 @@ message AttachmentAction {
     repeated AttachmentActionOption options=8;
     repeated AttachmentActionOption selected_options=9;
     repeated AttachmentActionOptionGroup option_groups=10;
-    ConfirmationField confirm=11;
+    AttachmentConfirmationField confirm=11;
     string url=12;
 }
 
-message ConfirmationField {
+message AttachmentConfirmationField {
     string title=1;
     string text=2;
     string ok_text=3;
@@ -328,7 +327,12 @@ message AttachmentField {
 }
 
 message JSONMap {
-    map<string, bytes> json_map=1;
+    map<string, JSON> json_map=1;
+}
+
+message JSON {
+    bytes data=1;
+    int64 size=2;
 }
 
 message PubSubMessage {
@@ -337,9 +341,4 @@ message PubSubMessage {
 
 message PubSubTopic {
     google.pubsub.v1.Topic topic=1;
-}
-
-message Authentication {
-    google.api.Authentication authentication=1;
-    map<string,string> annotations=2;
 }

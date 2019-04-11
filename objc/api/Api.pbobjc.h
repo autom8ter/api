@@ -30,11 +30,11 @@ CF_EXTERN_C_BEGIN
 @class Address;
 @class AttachmentActionOption;
 @class AttachmentActionOptionGroup;
+@class AttachmentConfirmationField;
 @class AttachmentField;
-@class ConfirmationField;
 @class EmailAddress;
-@class GAPIAuthentication;
 @class ItemRef;
+@class JSON;
 @class LogConfig;
 @class PubsubMessage;
 @class RecipientEmail;
@@ -436,23 +436,19 @@ typedef GPB_ENUM(Pin_FieldNumber) {
 
 @end
 
-#pragma mark - Config
+#pragma mark - Access
 
-typedef GPB_ENUM(Config_FieldNumber) {
-  Config_FieldNumber_Debug = 1,
-  Config_FieldNumber_TwilioAccount = 2,
-  Config_FieldNumber_TwilioKey = 3,
-  Config_FieldNumber_SendgridKey = 4,
-  Config_FieldNumber_StripeKey = 5,
-  Config_FieldNumber_SlackKey = 6,
-  Config_FieldNumber_CustomerIndex = 7,
-  Config_FieldNumber_EmailAddress = 8,
-  Config_FieldNumber_LogConfig = 9,
+typedef GPB_ENUM(Access_FieldNumber) {
+  Access_FieldNumber_TwilioAccount = 1,
+  Access_FieldNumber_TwilioKey = 2,
+  Access_FieldNumber_SendgridKey = 3,
+  Access_FieldNumber_StripeKey = 4,
+  Access_FieldNumber_SlackKey = 5,
+  Access_FieldNumber_EmailAddress = 6,
+  Access_FieldNumber_LogConfig = 7,
 };
 
-@interface Config : GPBMessage
-
-@property(nonatomic, readwrite) BOOL debug;
+@interface Access : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *twilioAccount;
 
@@ -464,8 +460,6 @@ typedef GPB_ENUM(Config_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *slackKey;
 
-@property(nonatomic, readwrite) CustomerIndex customerIndex;
-
 @property(nonatomic, readwrite, strong, null_resettable) EmailAddress *emailAddress;
 /** Test to see if @c emailAddress has been set. */
 @property(nonatomic, readwrite) BOOL hasEmailAddress;
@@ -475,18 +469,6 @@ typedef GPB_ENUM(Config_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasLogConfig;
 
 @end
-
-/**
- * Fetches the raw value of a @c Config's @c customerIndex property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t Config_CustomerIndex_RawValue(Config *message);
-/**
- * Sets the raw value of an @c Config's @c customerIndex property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetConfig_CustomerIndex_RawValue(Config *message, int32_t value);
 
 #pragma mark - LogConfig
 
@@ -650,27 +632,27 @@ typedef GPB_ENUM(LogHook_FieldNumber) {
 
 @end
 
-#pragma mark - SlackAttachment
+#pragma mark - Attachment
 
-typedef GPB_ENUM(SlackAttachment_FieldNumber) {
-  SlackAttachment_FieldNumber_Color = 1,
-  SlackAttachment_FieldNumber_Fallback = 2,
-  SlackAttachment_FieldNumber_CallbackId = 3,
-  SlackAttachment_FieldNumber_Id_p = 4,
-  SlackAttachment_FieldNumber_AuthorId = 5,
-  SlackAttachment_FieldNumber_AuthorName = 6,
-  SlackAttachment_FieldNumber_AuthorLink = 7,
-  SlackAttachment_FieldNumber_AuthorIcon = 8,
-  SlackAttachment_FieldNumber_Title = 9,
-  SlackAttachment_FieldNumber_TitlePrefix = 10,
-  SlackAttachment_FieldNumber_Pretext = 11,
-  SlackAttachment_FieldNumber_Text = 12,
-  SlackAttachment_FieldNumber_ImageURL = 13,
-  SlackAttachment_FieldNumber_ThumbURL = 14,
-  SlackAttachment_FieldNumber_FieldsArray = 15,
+typedef GPB_ENUM(Attachment_FieldNumber) {
+  Attachment_FieldNumber_Color = 1,
+  Attachment_FieldNumber_Fallback = 2,
+  Attachment_FieldNumber_CallbackId = 3,
+  Attachment_FieldNumber_Id_p = 4,
+  Attachment_FieldNumber_AuthorId = 5,
+  Attachment_FieldNumber_AuthorName = 6,
+  Attachment_FieldNumber_AuthorLink = 7,
+  Attachment_FieldNumber_AuthorIcon = 8,
+  Attachment_FieldNumber_Title = 9,
+  Attachment_FieldNumber_TitlePrefix = 10,
+  Attachment_FieldNumber_Pretext = 11,
+  Attachment_FieldNumber_Text = 12,
+  Attachment_FieldNumber_ImageURL = 13,
+  Attachment_FieldNumber_ThumbURL = 14,
+  Attachment_FieldNumber_FieldsArray = 15,
 };
 
-@interface SlackAttachment : GPBMessage
+@interface Attachment : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *color;
 
@@ -751,7 +733,7 @@ typedef GPB_ENUM(AttachmentAction_FieldNumber) {
 /** The number of items in @c optionGroupsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger optionGroupsArray_Count;
 
-@property(nonatomic, readwrite, strong, null_resettable) ConfirmationField *confirm;
+@property(nonatomic, readwrite, strong, null_resettable) AttachmentConfirmationField *confirm;
 /** Test to see if @c confirm has been set. */
 @property(nonatomic, readwrite) BOOL hasConfirm;
 
@@ -759,16 +741,16 @@ typedef GPB_ENUM(AttachmentAction_FieldNumber) {
 
 @end
 
-#pragma mark - ConfirmationField
+#pragma mark - AttachmentConfirmationField
 
-typedef GPB_ENUM(ConfirmationField_FieldNumber) {
-  ConfirmationField_FieldNumber_Title = 1,
-  ConfirmationField_FieldNumber_Text = 2,
-  ConfirmationField_FieldNumber_OkText = 3,
-  ConfirmationField_FieldNumber_DismissText = 4,
+typedef GPB_ENUM(AttachmentConfirmationField_FieldNumber) {
+  AttachmentConfirmationField_FieldNumber_Title = 1,
+  AttachmentConfirmationField_FieldNumber_Text = 2,
+  AttachmentConfirmationField_FieldNumber_OkText = 3,
+  AttachmentConfirmationField_FieldNumber_DismissText = 4,
 };
 
-@interface ConfirmationField : GPBMessage
+@interface AttachmentConfirmationField : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *title;
 
@@ -841,9 +823,24 @@ typedef GPB_ENUM(JSONMap_FieldNumber) {
 
 @interface JSONMap : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSData*> *jsonMap;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, JSON*> *jsonMap;
 /** The number of items in @c jsonMap without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger jsonMap_Count;
+
+@end
+
+#pragma mark - JSON
+
+typedef GPB_ENUM(JSON_FieldNumber) {
+  JSON_FieldNumber_Data_p = 1,
+  JSON_FieldNumber_Size = 2,
+};
+
+@interface JSON : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
+
+@property(nonatomic, readwrite) int64_t size;
 
 @end
 
@@ -872,25 +869,6 @@ typedef GPB_ENUM(PubSubTopic_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) Topic *topic;
 /** Test to see if @c topic has been set. */
 @property(nonatomic, readwrite) BOOL hasTopic;
-
-@end
-
-#pragma mark - Authentication
-
-typedef GPB_ENUM(Authentication_FieldNumber) {
-  Authentication_FieldNumber_Authentication = 1,
-  Authentication_FieldNumber_Annotations = 2,
-};
-
-@interface Authentication : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) GAPIAuthentication *authentication;
-/** Test to see if @c authentication has been set. */
-@property(nonatomic, readwrite) BOOL hasAuthentication;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *annotations;
-/** The number of items in @c annotations without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger annotations_Count;
 
 @end
 

@@ -22,20 +22,17 @@
 namespace protobuf_api_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Address;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AttachmentActionOption;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AttachmentConfirmationField;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AttachmentField;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Authentication_AnnotationsEntry_DoNotUse;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ConfirmationField;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Customer_MetadataEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EmailAddress;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ItemRef;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JSONMap_JsonMapEntry_DoNotUse;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JSON;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LogConfig;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AttachmentActionOptionGroup;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_JSONMap_JsonMapEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_RecipientEmail;
 }  // namespace protobuf_api_2eproto
-namespace protobuf_google_2fapi_2fauth_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_google_2fapi_2fauth_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Authentication;
-}  // namespace protobuf_google_2fapi_2fauth_2eproto
 namespace protobuf_google_2fpubsub_2fv1_2fpubsub_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_google_2fpubsub_2fv1_2fpubsub_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_PubsubMessage;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_google_2fpubsub_2fv1_2fpubsub_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_Topic;
@@ -136,11 +133,11 @@ class PinDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Pin>
       _instance;
 } _Pin_default_instance_;
-class ConfigDefaultTypeInternal {
+class AccessDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Config>
+  ::google::protobuf::internal::ExplicitlyConstructed<Access>
       _instance;
-} _Config_default_instance_;
+} _Access_default_instance_;
 class LogConfigDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<LogConfig>
@@ -181,21 +178,21 @@ class LogHookDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<LogHook>
       _instance;
 } _LogHook_default_instance_;
-class SlackAttachmentDefaultTypeInternal {
+class AttachmentDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SlackAttachment>
+  ::google::protobuf::internal::ExplicitlyConstructed<Attachment>
       _instance;
-} _SlackAttachment_default_instance_;
+} _Attachment_default_instance_;
 class AttachmentActionDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<AttachmentAction>
       _instance;
 } _AttachmentAction_default_instance_;
-class ConfirmationFieldDefaultTypeInternal {
+class AttachmentConfirmationFieldDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ConfirmationField>
+  ::google::protobuf::internal::ExplicitlyConstructed<AttachmentConfirmationField>
       _instance;
-} _ConfirmationField_default_instance_;
+} _AttachmentConfirmationField_default_instance_;
 class AttachmentActionOptionGroupDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<AttachmentActionOptionGroup>
@@ -221,6 +218,11 @@ class JSONMapDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<JSONMap>
       _instance;
 } _JSONMap_default_instance_;
+class JSONDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<JSON>
+      _instance;
+} _JSON_default_instance_;
 class PubSubMessageDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<PubSubMessage>
@@ -231,16 +233,6 @@ class PubSubTopicDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<PubSubTopic>
       _instance;
 } _PubSubTopic_default_instance_;
-class Authentication_AnnotationsEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Authentication_AnnotationsEntry_DoNotUse>
-      _instance;
-} _Authentication_AnnotationsEntry_DoNotUse_default_instance_;
-class AuthenticationDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Authentication>
-      _instance;
-} _Authentication_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsEmpty() {
@@ -514,19 +506,19 @@ static void InitDefaultsPin() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPin}, {
       &protobuf_api_2eproto::scc_info_ItemRef.base,}};
 
-static void InitDefaultsConfig() {
+static void InitDefaultsAccess() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_Config_default_instance_;
-    new (ptr) ::api::Config();
+    void* ptr = &::api::_Access_default_instance_;
+    new (ptr) ::api::Access();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::Config::InitAsDefaultInstance();
+  ::api::Access::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_Config =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsConfig}, {
+::google::protobuf::internal::SCCInfo<2> scc_info_Access =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsAccess}, {
       &protobuf_api_2eproto::scc_info_EmailAddress.base,
       &protobuf_api_2eproto::scc_info_LogConfig.base,}};
 
@@ -645,19 +637,19 @@ static void InitDefaultsLogHook() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_LogHook =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsLogHook}, {}};
 
-static void InitDefaultsSlackAttachment() {
+static void InitDefaultsAttachment() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_SlackAttachment_default_instance_;
-    new (ptr) ::api::SlackAttachment();
+    void* ptr = &::api::_Attachment_default_instance_;
+    new (ptr) ::api::Attachment();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::SlackAttachment::InitAsDefaultInstance();
+  ::api::Attachment::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SlackAttachment =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSlackAttachment}, {
+::google::protobuf::internal::SCCInfo<1> scc_info_Attachment =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAttachment}, {
       &protobuf_api_2eproto::scc_info_AttachmentField.base,}};
 
 static void InitDefaultsAttachmentAction() {
@@ -675,21 +667,21 @@ static void InitDefaultsAttachmentAction() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsAttachmentAction}, {
       &protobuf_api_2eproto::scc_info_AttachmentActionOption.base,
       &protobuf_api_2eproto::scc_info_AttachmentActionOptionGroup.base,
-      &protobuf_api_2eproto::scc_info_ConfirmationField.base,}};
+      &protobuf_api_2eproto::scc_info_AttachmentConfirmationField.base,}};
 
-static void InitDefaultsConfirmationField() {
+static void InitDefaultsAttachmentConfirmationField() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_ConfirmationField_default_instance_;
-    new (ptr) ::api::ConfirmationField();
+    void* ptr = &::api::_AttachmentConfirmationField_default_instance_;
+    new (ptr) ::api::AttachmentConfirmationField();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::ConfirmationField::InitAsDefaultInstance();
+  ::api::AttachmentConfirmationField::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_ConfirmationField =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsConfirmationField}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_AttachmentConfirmationField =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAttachmentConfirmationField}, {}};
 
 static void InitDefaultsAttachmentActionOptionGroup() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -744,8 +736,9 @@ static void InitDefaultsJSONMap_JsonMapEntry_DoNotUse() {
   ::api::JSONMap_JsonMapEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_JSONMap_JsonMapEntry_DoNotUse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJSONMap_JsonMapEntry_DoNotUse}, {}};
+::google::protobuf::internal::SCCInfo<1> scc_info_JSONMap_JsonMapEntry_DoNotUse =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsJSONMap_JsonMapEntry_DoNotUse}, {
+      &protobuf_api_2eproto::scc_info_JSON.base,}};
 
 static void InitDefaultsJSONMap() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -761,6 +754,20 @@ static void InitDefaultsJSONMap() {
 ::google::protobuf::internal::SCCInfo<1> scc_info_JSONMap =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsJSONMap}, {
       &protobuf_api_2eproto::scc_info_JSONMap_JsonMapEntry_DoNotUse.base,}};
+
+static void InitDefaultsJSON() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_JSON_default_instance_;
+    new (ptr) ::api::JSON();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::JSON::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_JSON =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJSON}, {}};
 
 static void InitDefaultsPubSubMessage() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -792,35 +799,6 @@ static void InitDefaultsPubSubTopic() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPubSubTopic}, {
       &protobuf_google_2fpubsub_2fv1_2fpubsub_2eproto::scc_info_Topic.base,}};
 
-static void InitDefaultsAuthentication_AnnotationsEntry_DoNotUse() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::api::_Authentication_AnnotationsEntry_DoNotUse_default_instance_;
-    new (ptr) ::api::Authentication_AnnotationsEntry_DoNotUse();
-  }
-  ::api::Authentication_AnnotationsEntry_DoNotUse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Authentication_AnnotationsEntry_DoNotUse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAuthentication_AnnotationsEntry_DoNotUse}, {}};
-
-static void InitDefaultsAuthentication() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::api::_Authentication_default_instance_;
-    new (ptr) ::api::Authentication();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::api::Authentication::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_Authentication =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsAuthentication}, {
-      &protobuf_google_2fapi_2fauth_2eproto::scc_info_Authentication.base,
-      &protobuf_api_2eproto::scc_info_Authentication_AnnotationsEntry_DoNotUse.base,}};
-
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Empty.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Customer_MetadataEntry_DoNotUse.base);
@@ -841,7 +819,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_ItemRef.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Star.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Pin.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Config.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Access.base);
   ::google::protobuf::internal::InitSCC(&scc_info_LogConfig.base);
   ::google::protobuf::internal::InitSCC(&scc_info_EmailAddress.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Email.base);
@@ -850,21 +828,20 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Call.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Fax.base);
   ::google::protobuf::internal::InitSCC(&scc_info_LogHook.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SlackAttachment.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Attachment.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentAction.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ConfirmationField.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_AttachmentConfirmationField.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentActionOptionGroup.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentActionOption.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AttachmentField.base);
   ::google::protobuf::internal::InitSCC(&scc_info_JSONMap_JsonMapEntry_DoNotUse.base);
   ::google::protobuf::internal::InitSCC(&scc_info_JSONMap.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_JSON.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PubSubMessage.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PubSubTopic.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Authentication_AnnotationsEntry_DoNotUse.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Authentication.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[40];
+::google::protobuf::Metadata file_level_metadata[39];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -1029,19 +1006,17 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Pin, text_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Pin, item_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, debug_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, twilio_account_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, twilio_key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, sendgrid_key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, stripe_key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, slack_key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, customer_index_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, email_address_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, log_config_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, twilio_account_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, twilio_key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, sendgrid_key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, stripe_key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, slack_key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, email_address_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Access, log_config_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::LogConfig, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1111,25 +1086,25 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::LogHook, icon_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::LogHook, title_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, color_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, fallback_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, callback_id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, author_id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, author_name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, author_link_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, author_icon_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, title_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, title_prefix_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, pretext_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, text_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, image_url_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, thumb_url_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SlackAttachment, fields_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, color_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, fallback_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, callback_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, author_id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, author_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, author_link_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, author_icon_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, title_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, title_prefix_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, pretext_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, text_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, image_url_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, thumb_url_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Attachment, fields_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentAction, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1148,14 +1123,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentAction, confirm_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentAction, url_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ConfirmationField, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentConfirmationField, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ConfirmationField, title_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ConfirmationField, text_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ConfirmationField, ok_text_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ConfirmationField, dismiss_text_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentConfirmationField, title_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentConfirmationField, text_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentConfirmationField, ok_text_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentConfirmationField, dismiss_text_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AttachmentActionOptionGroup, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1195,6 +1170,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONMap, json_map_),
   ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSON, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSON, data_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSON, size_),
+  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PubSubMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -1206,22 +1188,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PubSubTopic, topic_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication_AnnotationsEntry_DoNotUse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication_AnnotationsEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication_AnnotationsEntry_DoNotUse, key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication_AnnotationsEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication, authentication_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Authentication, annotations_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::Empty)},
@@ -1243,27 +1209,26 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 138, -1, sizeof(::api::ItemRef)},
   { 146, -1, sizeof(::api::Star)},
   { 153, -1, sizeof(::api::Pin)},
-  { 160, -1, sizeof(::api::Config)},
-  { 174, -1, sizeof(::api::LogConfig)},
-  { 181, -1, sizeof(::api::EmailAddress)},
-  { 188, -1, sizeof(::api::Email)},
-  { 195, -1, sizeof(::api::RecipientEmail)},
-  { 204, -1, sizeof(::api::SMS)},
-  { 215, -1, sizeof(::api::Call)},
-  { 223, -1, sizeof(::api::Fax)},
-  { 234, -1, sizeof(::api::LogHook)},
-  { 242, -1, sizeof(::api::SlackAttachment)},
-  { 262, -1, sizeof(::api::AttachmentAction)},
-  { 279, -1, sizeof(::api::ConfirmationField)},
-  { 288, -1, sizeof(::api::AttachmentActionOptionGroup)},
-  { 295, -1, sizeof(::api::AttachmentActionOption)},
-  { 303, -1, sizeof(::api::AttachmentField)},
-  { 311, 318, sizeof(::api::JSONMap_JsonMapEntry_DoNotUse)},
-  { 320, -1, sizeof(::api::JSONMap)},
-  { 326, -1, sizeof(::api::PubSubMessage)},
-  { 332, -1, sizeof(::api::PubSubTopic)},
-  { 338, 345, sizeof(::api::Authentication_AnnotationsEntry_DoNotUse)},
-  { 347, -1, sizeof(::api::Authentication)},
+  { 160, -1, sizeof(::api::Access)},
+  { 172, -1, sizeof(::api::LogConfig)},
+  { 179, -1, sizeof(::api::EmailAddress)},
+  { 186, -1, sizeof(::api::Email)},
+  { 193, -1, sizeof(::api::RecipientEmail)},
+  { 202, -1, sizeof(::api::SMS)},
+  { 213, -1, sizeof(::api::Call)},
+  { 221, -1, sizeof(::api::Fax)},
+  { 232, -1, sizeof(::api::LogHook)},
+  { 240, -1, sizeof(::api::Attachment)},
+  { 260, -1, sizeof(::api::AttachmentAction)},
+  { 277, -1, sizeof(::api::AttachmentConfirmationField)},
+  { 286, -1, sizeof(::api::AttachmentActionOptionGroup)},
+  { 293, -1, sizeof(::api::AttachmentActionOption)},
+  { 301, -1, sizeof(::api::AttachmentField)},
+  { 309, 316, sizeof(::api::JSONMap_JsonMapEntry_DoNotUse)},
+  { 318, -1, sizeof(::api::JSONMap)},
+  { 324, -1, sizeof(::api::JSON)},
+  { 331, -1, sizeof(::api::PubSubMessage)},
+  { 337, -1, sizeof(::api::PubSubTopic)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1286,7 +1251,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_ItemRef_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Star_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Pin_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Config_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Access_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_LogConfig_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_EmailAddress_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Email_default_instance_),
@@ -1295,18 +1260,17 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Call_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Fax_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_LogHook_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SlackAttachment_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Attachment_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentAction_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_ConfirmationField_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentConfirmationField_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentActionOptionGroup_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentActionOption_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AttachmentField_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JSONMap_JsonMapEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JSONMap_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JSON_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_PubSubMessage_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_PubSubTopic_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Authentication_AnnotationsEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Authentication_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -1324,7 +1288,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 40);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 39);
 }
 
 void AddDescriptorsImpl() {
@@ -1371,95 +1335,90 @@ void AddDescriptorsImpl() {
       "f\022\017\n\007channel\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comm"
       "ent\030\003 \001(\t\"0\n\004Star\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030"
       "\004 \001(\0132\014.api.ItemRef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t"
-      "\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"\372\001\n\006Config\022"
-      "\r\n\005debug\030\001 \001(\010\022\026\n\016twilio_account\030\002 \001(\t\022\022"
-      "\n\ntwilio_key\030\003 \001(\t\022\024\n\014sendgrid_key\030\004 \001(\t"
-      "\022\022\n\nstripe_key\030\005 \001(\t\022\021\n\tslack_key\030\006 \001(\t\022"
-      "*\n\016customer_index\030\007 \001(\0162\022.api.CustomerIn"
-      "dex\022(\n\remail_address\030\010 \001(\0132\021.api.EmailAd"
-      "dress\022\"\n\nlog_config\030\t \001(\0132\016.api.LogConfi"
-      "g\".\n\tLogConfig\022\020\n\010username\030\001 \001(\t\022\017\n\007chan"
-      "nel\030\002 \001(\t\"-\n\014EmailAddress\022\014\n\004name\030\001 \001(\t\022"
-      "\017\n\007address\030\002 \001(\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132"
-      "\021.api.EmailAddress\022&\n\trecipient\030\002 \001(\0132\023."
-      "api.RecipientEmail\"b\n\016RecipientEmail\022\035\n\002"
-      "to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subject\030\003"
-      " \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_"
-      "\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030"
-      "\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\020\n\010callback\030\005 \001"
-      "(\t\022\013\n\003app\030\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004f"
-      "rom\030\002 \001(\t\022\020\n\010callback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to"
-      "\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022"
-      "\017\n\007quality\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013st"
-      "ore_media\030\006 \001(\010\"6\n\007LogHook\022\016\n\006author\030\001 \001"
-      "(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\265\002\n\017Slac"
-      "kAttachment\022\r\n\005color\030\001 \001(\t\022\020\n\010fallback\030\002"
-      " \001(\t\022\023\n\013callback_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n"
-      "\tauthor_id\030\005 \001(\t\022\023\n\013author_name\030\006 \001(\t\022\023\n"
-      "\013author_link\030\007 \001(\t\022\023\n\013author_icon\030\010 \001(\t\022"
-      "\r\n\005title\030\t \001(\t\022\024\n\014title_prefix\030\n \001(\t\022\017\n\007"
-      "pretext\030\013 \001(\t\022\014\n\004text\030\014 \001(\t\022\021\n\timage_url"
-      "\030\r \001(\t\022\021\n\tthumb_url\030\016 \001(\t\022$\n\006fields\030\017 \003("
-      "\0132\024.api.AttachmentField\"\335\002\n\020AttachmentAc"
-      "tion\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005styl"
-      "e\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013"
-      "data_source\030\006 \001(\t\022\030\n\020min_query_length\030\007 "
-      "\001(\003\022,\n\007options\030\010 \003(\0132\033.api.AttachmentAct"
-      "ionOption\0225\n\020selected_options\030\t \003(\0132\033.ap"
-      "i.AttachmentActionOption\0227\n\roption_group"
-      "s\030\n \003(\0132 .api.AttachmentActionOptionGrou"
-      "p\022\'\n\007confirm\030\013 \001(\0132\026.api.ConfirmationFie"
-      "ld\022\013\n\003url\030\014 \001(\t\"W\n\021ConfirmationField\022\r\n\005"
-      "title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_text\030\003 \001"
-      "(\t\022\024\n\014dismiss_text\030\004 \001(\t\"Y\n\033AttachmentAc"
-      "tionOptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007options"
-      "\030\002 \003(\0132\033.api.AttachmentActionOption\"K\n\026A"
-      "ttachmentActionOption\022\r\n\005title\030\001 \001(\t\022\r\n\005"
-      "value\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n\017Atta"
-      "chmentField\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001("
-      "\t\022\r\n\005short\030\003 \001(\010\"f\n\007JSONMap\022+\n\010json_map\030"
-      "\001 \003(\0132\031.api.JSONMap.JsonMapEntry\032.\n\014Json"
-      "MapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001"
-      "\"A\n\rPubSubMessage\0220\n\007message\030\001 \001(\0132\037.goo"
-      "gle.pubsub.v1.PubsubMessage\"5\n\013PubSubTop"
-      "ic\022&\n\005topic\030\001 \001(\0132\027.google.pubsub.v1.Top"
-      "ic\"\263\001\n\016Authentication\0222\n\016authentication\030"
-      "\001 \001(\0132\032.google.api.Authentication\0229\n\013ann"
-      "otations\030\002 \003(\0132$.api.Authentication.Anno"
-      "tationsEntry\0322\n\020AnnotationsEntry\022\013\n\003key\030"
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*-\n\rCustomerInde"
-      "x\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\0022\271\010\n\013User"
-      "Service\022O\n\016CreateCustomer\022\027.api.AddCusto"
-      "merRequest\032\r.api.Customer\"\025\202\323\344\223\002\017\"\n/api/"
-      "users:\001*\022q\n\021SubscribeCustomer\022\035.api.Subs"
-      "cribeCustomerRequest\032\036.api.SubscribeCust"
-      "omerResponse\"\035\202\323\344\223\002\027\"\022/api/users/{email}"
-      ":\001*\022`\n\023UnSubscribeCustomer\022\036.api.CancelS"
-      "ubscriptionRequest\032\n.api.Empty\"\035\202\323\344\223\002\027\"\022"
-      "/api/users/{email}:\001*\022j\n\026CreateSubscript"
-      "ionPlan\022\026.api.CreatePlanRequest\032\027.api.Cr"
-      "eatePlanResponse\"\037\202\323\344\223\002\031\"\024/api/plans/{pl"
-      "an_id}:\001*\022S\n\013SMSCustomer\022\017.api.SMSReques"
-      "t\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/api/customers/sm"
-      "s/{user_id}:\001*\022V\n\014CallCustomer\022\020.api.Cal"
-      "lRequest\032\n.api.Empty\"(\202\323\344\223\002\"\"\035/api/custo"
-      "mers/call/{user_id}:\001*\022S\n\013MMSCustomer\022\017."
-      "api.MMSRequest\032\n.api.Empty\"\'\202\323\344\223\002!\"\034/api"
-      "/customers/mms/{user_id}:\001*\022Y\n\rEmailCust"
-      "omer\022\021.api.EmailRequest\032\n.api.Empty\")\202\323\344"
-      "\223\002#\"\036/api/customers/email/{user_id}:\001*\022K"
-      "\n\007SMSUser\022\017.api.SMSRequest\032\n.api.Empty\"#"
-      "\202\323\344\223\002\035\"\030/api/users/sms/{user_id}:\001*\022N\n\010C"
-      "allUser\022\020.api.CallRequest\032\n.api.Empty\"$\202"
-      "\323\344\223\002\036\"\031/api/users/call/{user_id}:\001*\022K\n\007M"
-      "MSUser\022\017.api.MMSRequest\032\n.api.Empty\"#\202\323\344"
-      "\223\002\035\"\030/api/users/mms/{user_id}:\001*\022Q\n\tEmai"
-      "lUser\022\021.api.EmailRequest\032\n.api.Empty\"%\202\323"
-      "\344\223\002\037\"\032/api/users/email/{user_id}:\001*b\006pro"
-      "to3"
+      "\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"\277\001\n\006Access\022"
+      "\026\n\016twilio_account\030\001 \001(\t\022\022\n\ntwilio_key\030\002 "
+      "\001(\t\022\024\n\014sendgrid_key\030\003 \001(\t\022\022\n\nstripe_key\030"
+      "\004 \001(\t\022\021\n\tslack_key\030\005 \001(\t\022(\n\remail_addres"
+      "s\030\006 \001(\0132\021.api.EmailAddress\022\"\n\nlog_config"
+      "\030\007 \001(\0132\016.api.LogConfig\".\n\tLogConfig\022\020\n\010u"
+      "sername\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014EmailA"
+      "ddress\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"P\n"
+      "\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress\022"
+      "&\n\trecipient\030\002 \001(\0132\023.api.RecipientEmail\""
+      "b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api.Emai"
+      "lAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_text\030"
+      "\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014"
+      "\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_url\030"
+      "\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n\004"
+      "Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010callba"
+      "ck\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001("
+      "\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\020\n"
+      "\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010\"6\n\007"
+      "LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n"
+      "\005title\030\003 \001(\t\"\260\002\n\nAttachment\022\r\n\005color\030\001 \001"
+      "(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callback_id\030\003 \001("
+      "\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t\022\023\n\013auth"
+      "or_name\030\006 \001(\t\022\023\n\013author_link\030\007 \001(\t\022\023\n\013au"
+      "thor_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024\n\014title_"
+      "prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n\004text\030\014 "
+      "\001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb_url\030\016 \001("
+      "\t\022$\n\006fields\030\017 \003(\0132\024.api.AttachmentField\""
+      "\347\002\n\020AttachmentAction\022\014\n\004name\030\001 \001(\t\022\014\n\004te"
+      "xt\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n"
+      "\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001(\t\022\030\n\020min"
+      "_query_length\030\007 \001(\003\022,\n\007options\030\010 \003(\0132\033.a"
+      "pi.AttachmentActionOption\0225\n\020selected_op"
+      "tions\030\t \003(\0132\033.api.AttachmentActionOption"
+      "\0227\n\roption_groups\030\n \003(\0132 .api.Attachment"
+      "ActionOptionGroup\0221\n\007confirm\030\013 \001(\0132 .api"
+      ".AttachmentConfirmationField\022\013\n\003url\030\014 \001("
+      "\t\"a\n\033AttachmentConfirmationField\022\r\n\005titl"
+      "e\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024"
+      "\n\014dismiss_text\030\004 \001(\t\"Y\n\033AttachmentAction"
+      "OptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007options\030\002 \003"
+      "(\0132\033.api.AttachmentActionOption\"K\n\026Attac"
+      "hmentActionOption\022\r\n\005title\030\001 \001(\t\022\r\n\005valu"
+      "e\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n\017Attachme"
+      "ntField\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n"
+      "\005short\030\003 \001(\010\"q\n\007JSONMap\022+\n\010json_map\030\001 \003("
+      "\0132\031.api.JSONMap.JsonMapEntry\0329\n\014JsonMapE"
+      "ntry\022\013\n\003key\030\001 \001(\t\022\030\n\005value\030\002 \001(\0132\t.api.J"
+      "SON:\0028\001\"\"\n\004JSON\022\014\n\004data\030\001 \001(\014\022\014\n\004size\030\002 "
+      "\001(\003\"A\n\rPubSubMessage\0220\n\007message\030\001 \001(\0132\037."
+      "google.pubsub.v1.PubsubMessage\"5\n\013PubSub"
+      "Topic\022&\n\005topic\030\001 \001(\0132\027.google.pubsub.v1."
+      "Topic*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020"
+      "\001\022\t\n\005PHONE\020\0022\271\010\n\013UserService\022O\n\016CreateCu"
+      "stomer\022\027.api.AddCustomerRequest\032\r.api.Cu"
+      "stomer\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022q\n\021Subscri"
+      "beCustomer\022\035.api.SubscribeCustomerReques"
+      "t\032\036.api.SubscribeCustomerResponse\"\035\202\323\344\223\002"
+      "\027\"\022/api/users/{email}:\001*\022`\n\023UnSubscribeC"
+      "ustomer\022\036.api.CancelSubscriptionRequest\032"
+      "\n.api.Empty\"\035\202\323\344\223\002\027\"\022/api/users/{email}:"
+      "\001*\022j\n\026CreateSubscriptionPlan\022\026.api.Creat"
+      "ePlanRequest\032\027.api.CreatePlanResponse\"\037\202"
+      "\323\344\223\002\031\"\024/api/plans/{plan_id}:\001*\022S\n\013SMSCus"
+      "tomer\022\017.api.SMSRequest\032\n.api.Empty\"\'\202\323\344\223"
+      "\002!\"\034/api/customers/sms/{user_id}:\001*\022V\n\014C"
+      "allCustomer\022\020.api.CallRequest\032\n.api.Empt"
+      "y\"(\202\323\344\223\002\"\"\035/api/customers/call/{user_id}"
+      ":\001*\022S\n\013MMSCustomer\022\017.api.MMSRequest\032\n.ap"
+      "i.Empty\"\'\202\323\344\223\002!\"\034/api/customers/mms/{use"
+      "r_id}:\001*\022Y\n\rEmailCustomer\022\021.api.EmailReq"
+      "uest\032\n.api.Empty\")\202\323\344\223\002#\"\036/api/customers"
+      "/email/{user_id}:\001*\022K\n\007SMSUser\022\017.api.SMS"
+      "Request\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/"
+      "sms/{user_id}:\001*\022N\n\010CallUser\022\020.api.CallR"
+      "equest\032\n.api.Empty\"$\202\323\344\223\002\036\"\031/api/users/c"
+      "all/{user_id}:\001*\022K\n\007MMSUser\022\017.api.MMSReq"
+      "uest\032\n.api.Empty\"#\202\323\344\223\002\035\"\030/api/users/mms"
+      "/{user_id}:\001*\022Q\n\tEmailUser\022\021.api.EmailRe"
+      "quest\032\n.api.Empty\"%\202\323\344\223\002\037\"\032/api/users/em"
+      "ail/{user_id}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 5043);
+      descriptor, 4864);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -8363,32 +8322,30 @@ void Pin::InternalSwap(Pin* other) {
 
 // ===================================================================
 
-void Config::InitAsDefaultInstance() {
-  ::api::_Config_default_instance_._instance.get_mutable()->email_address_ = const_cast< ::api::EmailAddress*>(
+void Access::InitAsDefaultInstance() {
+  ::api::_Access_default_instance_._instance.get_mutable()->email_address_ = const_cast< ::api::EmailAddress*>(
       ::api::EmailAddress::internal_default_instance());
-  ::api::_Config_default_instance_._instance.get_mutable()->log_config_ = const_cast< ::api::LogConfig*>(
+  ::api::_Access_default_instance_._instance.get_mutable()->log_config_ = const_cast< ::api::LogConfig*>(
       ::api::LogConfig::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Config::kDebugFieldNumber;
-const int Config::kTwilioAccountFieldNumber;
-const int Config::kTwilioKeyFieldNumber;
-const int Config::kSendgridKeyFieldNumber;
-const int Config::kStripeKeyFieldNumber;
-const int Config::kSlackKeyFieldNumber;
-const int Config::kCustomerIndexFieldNumber;
-const int Config::kEmailAddressFieldNumber;
-const int Config::kLogConfigFieldNumber;
+const int Access::kTwilioAccountFieldNumber;
+const int Access::kTwilioKeyFieldNumber;
+const int Access::kSendgridKeyFieldNumber;
+const int Access::kStripeKeyFieldNumber;
+const int Access::kSlackKeyFieldNumber;
+const int Access::kEmailAddressFieldNumber;
+const int Access::kLogConfigFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Config::Config()
+Access::Access()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_Config.base);
+      &protobuf_api_2eproto::scc_info_Access.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.Config)
+  // @@protoc_insertion_point(constructor:api.Access)
 }
-Config::Config(const Config& from)
+Access::Access(const Access& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -8422,29 +8379,26 @@ Config::Config(const Config& from)
   } else {
     log_config_ = NULL;
   }
-  ::memcpy(&debug_, &from.debug_,
-    static_cast<size_t>(reinterpret_cast<char*>(&customer_index_) -
-    reinterpret_cast<char*>(&debug_)) + sizeof(customer_index_));
-  // @@protoc_insertion_point(copy_constructor:api.Config)
+  // @@protoc_insertion_point(copy_constructor:api.Access)
 }
 
-void Config::SharedCtor() {
+void Access::SharedCtor() {
   twilio_account_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   twilio_key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   sendgrid_key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   stripe_key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   slack_key_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&email_address_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&customer_index_) -
-      reinterpret_cast<char*>(&email_address_)) + sizeof(customer_index_));
+      reinterpret_cast<char*>(&log_config_) -
+      reinterpret_cast<char*>(&email_address_)) + sizeof(log_config_));
 }
 
-Config::~Config() {
-  // @@protoc_insertion_point(destructor:api.Config)
+Access::~Access() {
+  // @@protoc_insertion_point(destructor:api.Access)
   SharedDtor();
 }
 
-void Config::SharedDtor() {
+void Access::SharedDtor() {
   twilio_account_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   twilio_key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   sendgrid_key_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -8454,22 +8408,22 @@ void Config::SharedDtor() {
   if (this != internal_default_instance()) delete log_config_;
 }
 
-void Config::SetCachedSize(int size) const {
+void Access::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Config::descriptor() {
+const ::google::protobuf::Descriptor* Access::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const Config& Config::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Config.base);
+const Access& Access::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Access.base);
   return *internal_default_instance();
 }
 
 
-void Config::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.Config)
+void Access::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Access)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -8487,135 +8441,103 @@ void Config::Clear() {
     delete log_config_;
   }
   log_config_ = NULL;
-  ::memset(&debug_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&customer_index_) -
-      reinterpret_cast<char*>(&debug_)) + sizeof(customer_index_));
   _internal_metadata_.Clear();
 }
 
-bool Config::MergePartialFromCodedStream(
+bool Access::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.Config)
+  // @@protoc_insertion_point(parse_start:api.Access)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // bool debug = 1;
+      // string twilio_account = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &debug_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string twilio_account = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_twilio_account()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->twilio_account().data(), static_cast<int>(this->twilio_account().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Config.twilio_account"));
+            "api.Access.twilio_account"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string twilio_key = 3;
-      case 3: {
+      // string twilio_key = 2;
+      case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_twilio_key()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->twilio_key().data(), static_cast<int>(this->twilio_key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Config.twilio_key"));
+            "api.Access.twilio_key"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string sendgrid_key = 4;
-      case 4: {
+      // string sendgrid_key = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_sendgrid_key()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->sendgrid_key().data(), static_cast<int>(this->sendgrid_key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Config.sendgrid_key"));
+            "api.Access.sendgrid_key"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string stripe_key = 5;
-      case 5: {
+      // string stripe_key = 4;
+      case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_stripe_key()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->stripe_key().data(), static_cast<int>(this->stripe_key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Config.stripe_key"));
+            "api.Access.stripe_key"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // string slack_key = 6;
-      case 6: {
+      // string slack_key = 5;
+      case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_slack_key()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->slack_key().data(), static_cast<int>(this->slack_key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Config.slack_key"));
+            "api.Access.slack_key"));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // .api.CustomerIndex customer_index = 7;
-      case 7: {
+      // .api.EmailAddress email_address = 6;
+      case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_customer_index(static_cast< ::api::CustomerIndex >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .api.EmailAddress email_address = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_email_address()));
         } else {
@@ -8624,10 +8546,10 @@ bool Config::MergePartialFromCodedStream(
         break;
       }
 
-      // .api.LogConfig log_config = 9;
-      case 9: {
+      // .api.LogConfig log_config = 7;
+      case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_log_config()));
         } else {
@@ -8648,197 +8570,175 @@ bool Config::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.Config)
+  // @@protoc_insertion_point(parse_success:api.Access)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.Config)
+  // @@protoc_insertion_point(parse_failure:api.Access)
   return false;
 #undef DO_
 }
 
-void Config::SerializeWithCachedSizes(
+void Access::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.Config)
+  // @@protoc_insertion_point(serialize_start:api.Access)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bool debug = 1;
-  if (this->debug() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->debug(), output);
-  }
-
-  // string twilio_account = 2;
+  // string twilio_account = 1;
   if (this->twilio_account().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->twilio_account().data(), static_cast<int>(this->twilio_account().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.twilio_account");
+      "api.Access.twilio_account");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->twilio_account(), output);
+      1, this->twilio_account(), output);
   }
 
-  // string twilio_key = 3;
+  // string twilio_key = 2;
   if (this->twilio_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->twilio_key().data(), static_cast<int>(this->twilio_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.twilio_key");
+      "api.Access.twilio_key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->twilio_key(), output);
+      2, this->twilio_key(), output);
   }
 
-  // string sendgrid_key = 4;
+  // string sendgrid_key = 3;
   if (this->sendgrid_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->sendgrid_key().data(), static_cast<int>(this->sendgrid_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.sendgrid_key");
+      "api.Access.sendgrid_key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->sendgrid_key(), output);
+      3, this->sendgrid_key(), output);
   }
 
-  // string stripe_key = 5;
+  // string stripe_key = 4;
   if (this->stripe_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->stripe_key().data(), static_cast<int>(this->stripe_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.stripe_key");
+      "api.Access.stripe_key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->stripe_key(), output);
+      4, this->stripe_key(), output);
   }
 
-  // string slack_key = 6;
+  // string slack_key = 5;
   if (this->slack_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->slack_key().data(), static_cast<int>(this->slack_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.slack_key");
+      "api.Access.slack_key");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      6, this->slack_key(), output);
+      5, this->slack_key(), output);
   }
 
-  // .api.CustomerIndex customer_index = 7;
-  if (this->customer_index() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      7, this->customer_index(), output);
-  }
-
-  // .api.EmailAddress email_address = 8;
+  // .api.EmailAddress email_address = 6;
   if (this->has_email_address()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->_internal_email_address(), output);
+      6, this->_internal_email_address(), output);
   }
 
-  // .api.LogConfig log_config = 9;
+  // .api.LogConfig log_config = 7;
   if (this->has_log_config()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      9, this->_internal_log_config(), output);
+      7, this->_internal_log_config(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.Config)
+  // @@protoc_insertion_point(serialize_end:api.Access)
 }
 
-::google::protobuf::uint8* Config::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Access::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.Config)
+  // @@protoc_insertion_point(serialize_to_array_start:api.Access)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bool debug = 1;
-  if (this->debug() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->debug(), target);
-  }
-
-  // string twilio_account = 2;
+  // string twilio_account = 1;
   if (this->twilio_account().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->twilio_account().data(), static_cast<int>(this->twilio_account().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.twilio_account");
+      "api.Access.twilio_account");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->twilio_account(), target);
+        1, this->twilio_account(), target);
   }
 
-  // string twilio_key = 3;
+  // string twilio_key = 2;
   if (this->twilio_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->twilio_key().data(), static_cast<int>(this->twilio_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.twilio_key");
+      "api.Access.twilio_key");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->twilio_key(), target);
+        2, this->twilio_key(), target);
   }
 
-  // string sendgrid_key = 4;
+  // string sendgrid_key = 3;
   if (this->sendgrid_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->sendgrid_key().data(), static_cast<int>(this->sendgrid_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.sendgrid_key");
+      "api.Access.sendgrid_key");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->sendgrid_key(), target);
+        3, this->sendgrid_key(), target);
   }
 
-  // string stripe_key = 5;
+  // string stripe_key = 4;
   if (this->stripe_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->stripe_key().data(), static_cast<int>(this->stripe_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.stripe_key");
+      "api.Access.stripe_key");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->stripe_key(), target);
+        4, this->stripe_key(), target);
   }
 
-  // string slack_key = 6;
+  // string slack_key = 5;
   if (this->slack_key().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->slack_key().data(), static_cast<int>(this->slack_key().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Config.slack_key");
+      "api.Access.slack_key");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        6, this->slack_key(), target);
+        5, this->slack_key(), target);
   }
 
-  // .api.CustomerIndex customer_index = 7;
-  if (this->customer_index() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      7, this->customer_index(), target);
-  }
-
-  // .api.EmailAddress email_address = 8;
+  // .api.EmailAddress email_address = 6;
   if (this->has_email_address()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        8, this->_internal_email_address(), deterministic, target);
+        6, this->_internal_email_address(), deterministic, target);
   }
 
-  // .api.LogConfig log_config = 9;
+  // .api.LogConfig log_config = 7;
   if (this->has_log_config()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        9, this->_internal_log_config(), deterministic, target);
+        7, this->_internal_log_config(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.Config)
+  // @@protoc_insertion_point(serialize_to_array_end:api.Access)
   return target;
 }
 
-size_t Config::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.Config)
+size_t Access::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Access)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -8846,64 +8746,53 @@ size_t Config::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string twilio_account = 2;
+  // string twilio_account = 1;
   if (this->twilio_account().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->twilio_account());
   }
 
-  // string twilio_key = 3;
+  // string twilio_key = 2;
   if (this->twilio_key().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->twilio_key());
   }
 
-  // string sendgrid_key = 4;
+  // string sendgrid_key = 3;
   if (this->sendgrid_key().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->sendgrid_key());
   }
 
-  // string stripe_key = 5;
+  // string stripe_key = 4;
   if (this->stripe_key().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->stripe_key());
   }
 
-  // string slack_key = 6;
+  // string slack_key = 5;
   if (this->slack_key().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->slack_key());
   }
 
-  // .api.EmailAddress email_address = 8;
+  // .api.EmailAddress email_address = 6;
   if (this->has_email_address()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *email_address_);
   }
 
-  // .api.LogConfig log_config = 9;
+  // .api.LogConfig log_config = 7;
   if (this->has_log_config()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *log_config_);
-  }
-
-  // bool debug = 1;
-  if (this->debug() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // .api.CustomerIndex customer_index = 7;
-  if (this->customer_index() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->customer_index());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -8911,23 +8800,23 @@ size_t Config::ByteSizeLong() const {
   return total_size;
 }
 
-void Config::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.Config)
+void Access::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Access)
   GOOGLE_DCHECK_NE(&from, this);
-  const Config* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Config>(
+  const Access* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Access>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Config)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Access)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Config)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Access)
     MergeFrom(*source);
   }
 }
 
-void Config::MergeFrom(const Config& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.Config)
+void Access::MergeFrom(const Access& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Access)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -8959,37 +8848,31 @@ void Config::MergeFrom(const Config& from) {
   if (from.has_log_config()) {
     mutable_log_config()->::api::LogConfig::MergeFrom(from.log_config());
   }
-  if (from.debug() != 0) {
-    set_debug(from.debug());
-  }
-  if (from.customer_index() != 0) {
-    set_customer_index(from.customer_index());
-  }
 }
 
-void Config::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.Config)
+void Access::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Access)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Config::CopyFrom(const Config& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.Config)
+void Access::CopyFrom(const Access& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Access)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Config::IsInitialized() const {
+bool Access::IsInitialized() const {
   return true;
 }
 
-void Config::Swap(Config* other) {
+void Access::Swap(Access* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Config::InternalSwap(Config* other) {
+void Access::InternalSwap(Access* other) {
   using std::swap;
   twilio_account_.Swap(&other->twilio_account_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -9003,12 +8886,10 @@ void Config::InternalSwap(Config* other) {
     GetArenaNoVirtual());
   swap(email_address_, other->email_address_);
   swap(log_config_, other->log_config_);
-  swap(debug_, other->debug_);
-  swap(customer_index_, other->customer_index_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Config::GetMetadata() const {
+::google::protobuf::Metadata Access::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -12068,34 +11949,34 @@ void LogHook::InternalSwap(LogHook* other) {
 
 // ===================================================================
 
-void SlackAttachment::InitAsDefaultInstance() {
+void Attachment::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SlackAttachment::kColorFieldNumber;
-const int SlackAttachment::kFallbackFieldNumber;
-const int SlackAttachment::kCallbackIdFieldNumber;
-const int SlackAttachment::kIdFieldNumber;
-const int SlackAttachment::kAuthorIdFieldNumber;
-const int SlackAttachment::kAuthorNameFieldNumber;
-const int SlackAttachment::kAuthorLinkFieldNumber;
-const int SlackAttachment::kAuthorIconFieldNumber;
-const int SlackAttachment::kTitleFieldNumber;
-const int SlackAttachment::kTitlePrefixFieldNumber;
-const int SlackAttachment::kPretextFieldNumber;
-const int SlackAttachment::kTextFieldNumber;
-const int SlackAttachment::kImageUrlFieldNumber;
-const int SlackAttachment::kThumbUrlFieldNumber;
-const int SlackAttachment::kFieldsFieldNumber;
+const int Attachment::kColorFieldNumber;
+const int Attachment::kFallbackFieldNumber;
+const int Attachment::kCallbackIdFieldNumber;
+const int Attachment::kIdFieldNumber;
+const int Attachment::kAuthorIdFieldNumber;
+const int Attachment::kAuthorNameFieldNumber;
+const int Attachment::kAuthorLinkFieldNumber;
+const int Attachment::kAuthorIconFieldNumber;
+const int Attachment::kTitleFieldNumber;
+const int Attachment::kTitlePrefixFieldNumber;
+const int Attachment::kPretextFieldNumber;
+const int Attachment::kTextFieldNumber;
+const int Attachment::kImageUrlFieldNumber;
+const int Attachment::kThumbUrlFieldNumber;
+const int Attachment::kFieldsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SlackAttachment::SlackAttachment()
+Attachment::Attachment()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_SlackAttachment.base);
+      &protobuf_api_2eproto::scc_info_Attachment.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.SlackAttachment)
+  // @@protoc_insertion_point(constructor:api.Attachment)
 }
-SlackAttachment::SlackAttachment(const SlackAttachment& from)
+Attachment::Attachment(const Attachment& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       fields_(from.fields_) {
@@ -12153,10 +12034,10 @@ SlackAttachment::SlackAttachment(const SlackAttachment& from)
     thumb_url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.thumb_url_);
   }
   id_ = from.id_;
-  // @@protoc_insertion_point(copy_constructor:api.SlackAttachment)
+  // @@protoc_insertion_point(copy_constructor:api.Attachment)
 }
 
-void SlackAttachment::SharedCtor() {
+void Attachment::SharedCtor() {
   color_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   fallback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -12173,12 +12054,12 @@ void SlackAttachment::SharedCtor() {
   id_ = GOOGLE_LONGLONG(0);
 }
 
-SlackAttachment::~SlackAttachment() {
-  // @@protoc_insertion_point(destructor:api.SlackAttachment)
+Attachment::~Attachment() {
+  // @@protoc_insertion_point(destructor:api.Attachment)
   SharedDtor();
 }
 
-void SlackAttachment::SharedDtor() {
+void Attachment::SharedDtor() {
   color_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   fallback_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -12194,22 +12075,22 @@ void SlackAttachment::SharedDtor() {
   thumb_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void SlackAttachment::SetCachedSize(int size) const {
+void Attachment::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SlackAttachment::descriptor() {
+const ::google::protobuf::Descriptor* Attachment::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const SlackAttachment& SlackAttachment::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_SlackAttachment.base);
+const Attachment& Attachment::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Attachment.base);
   return *internal_default_instance();
 }
 
 
-void SlackAttachment::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.SlackAttachment)
+void Attachment::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Attachment)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -12232,11 +12113,11 @@ void SlackAttachment::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool SlackAttachment::MergePartialFromCodedStream(
+bool Attachment::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.SlackAttachment)
+  // @@protoc_insertion_point(parse_start:api.Attachment)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -12251,7 +12132,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->color().data(), static_cast<int>(this->color().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.color"));
+            "api.Attachment.color"));
         } else {
           goto handle_unusual;
         }
@@ -12267,7 +12148,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->fallback().data(), static_cast<int>(this->fallback().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.fallback"));
+            "api.Attachment.fallback"));
         } else {
           goto handle_unusual;
         }
@@ -12283,7 +12164,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->callback_id().data(), static_cast<int>(this->callback_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.callback_id"));
+            "api.Attachment.callback_id"));
         } else {
           goto handle_unusual;
         }
@@ -12313,7 +12194,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->author_id().data(), static_cast<int>(this->author_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.author_id"));
+            "api.Attachment.author_id"));
         } else {
           goto handle_unusual;
         }
@@ -12329,7 +12210,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->author_name().data(), static_cast<int>(this->author_name().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.author_name"));
+            "api.Attachment.author_name"));
         } else {
           goto handle_unusual;
         }
@@ -12345,7 +12226,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->author_link().data(), static_cast<int>(this->author_link().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.author_link"));
+            "api.Attachment.author_link"));
         } else {
           goto handle_unusual;
         }
@@ -12361,7 +12242,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->author_icon().data(), static_cast<int>(this->author_icon().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.author_icon"));
+            "api.Attachment.author_icon"));
         } else {
           goto handle_unusual;
         }
@@ -12377,7 +12258,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->title().data(), static_cast<int>(this->title().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.title"));
+            "api.Attachment.title"));
         } else {
           goto handle_unusual;
         }
@@ -12393,7 +12274,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->title_prefix().data(), static_cast<int>(this->title_prefix().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.title_prefix"));
+            "api.Attachment.title_prefix"));
         } else {
           goto handle_unusual;
         }
@@ -12409,7 +12290,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->pretext().data(), static_cast<int>(this->pretext().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.pretext"));
+            "api.Attachment.pretext"));
         } else {
           goto handle_unusual;
         }
@@ -12425,7 +12306,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->text().data(), static_cast<int>(this->text().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.text"));
+            "api.Attachment.text"));
         } else {
           goto handle_unusual;
         }
@@ -12441,7 +12322,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->image_url().data(), static_cast<int>(this->image_url().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.image_url"));
+            "api.Attachment.image_url"));
         } else {
           goto handle_unusual;
         }
@@ -12457,7 +12338,7 @@ bool SlackAttachment::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->thumb_url().data(), static_cast<int>(this->thumb_url().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SlackAttachment.thumb_url"));
+            "api.Attachment.thumb_url"));
         } else {
           goto handle_unusual;
         }
@@ -12488,17 +12369,17 @@ bool SlackAttachment::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.SlackAttachment)
+  // @@protoc_insertion_point(parse_success:api.Attachment)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.SlackAttachment)
+  // @@protoc_insertion_point(parse_failure:api.Attachment)
   return false;
 #undef DO_
 }
 
-void SlackAttachment::SerializeWithCachedSizes(
+void Attachment::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.SlackAttachment)
+  // @@protoc_insertion_point(serialize_start:api.Attachment)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -12507,7 +12388,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->color().data(), static_cast<int>(this->color().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.color");
+      "api.Attachment.color");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->color(), output);
   }
@@ -12517,7 +12398,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->fallback().data(), static_cast<int>(this->fallback().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.fallback");
+      "api.Attachment.fallback");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->fallback(), output);
   }
@@ -12527,7 +12408,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->callback_id().data(), static_cast<int>(this->callback_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.callback_id");
+      "api.Attachment.callback_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->callback_id(), output);
   }
@@ -12542,7 +12423,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_id().data(), static_cast<int>(this->author_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_id");
+      "api.Attachment.author_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       5, this->author_id(), output);
   }
@@ -12552,7 +12433,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_name().data(), static_cast<int>(this->author_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_name");
+      "api.Attachment.author_name");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       6, this->author_name(), output);
   }
@@ -12562,7 +12443,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_link().data(), static_cast<int>(this->author_link().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_link");
+      "api.Attachment.author_link");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       7, this->author_link(), output);
   }
@@ -12572,7 +12453,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_icon().data(), static_cast<int>(this->author_icon().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_icon");
+      "api.Attachment.author_icon");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       8, this->author_icon(), output);
   }
@@ -12582,7 +12463,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->title().data(), static_cast<int>(this->title().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.title");
+      "api.Attachment.title");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       9, this->title(), output);
   }
@@ -12592,7 +12473,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->title_prefix().data(), static_cast<int>(this->title_prefix().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.title_prefix");
+      "api.Attachment.title_prefix");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       10, this->title_prefix(), output);
   }
@@ -12602,7 +12483,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->pretext().data(), static_cast<int>(this->pretext().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.pretext");
+      "api.Attachment.pretext");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       11, this->pretext(), output);
   }
@@ -12612,7 +12493,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->text().data(), static_cast<int>(this->text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.text");
+      "api.Attachment.text");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       12, this->text(), output);
   }
@@ -12622,7 +12503,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->image_url().data(), static_cast<int>(this->image_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.image_url");
+      "api.Attachment.image_url");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       13, this->image_url(), output);
   }
@@ -12632,7 +12513,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->thumb_url().data(), static_cast<int>(this->thumb_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.thumb_url");
+      "api.Attachment.thumb_url");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       14, this->thumb_url(), output);
   }
@@ -12650,13 +12531,13 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.SlackAttachment)
+  // @@protoc_insertion_point(serialize_end:api.Attachment)
 }
 
-::google::protobuf::uint8* SlackAttachment::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Attachment::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.SlackAttachment)
+  // @@protoc_insertion_point(serialize_to_array_start:api.Attachment)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -12665,7 +12546,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->color().data(), static_cast<int>(this->color().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.color");
+      "api.Attachment.color");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->color(), target);
@@ -12676,7 +12557,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->fallback().data(), static_cast<int>(this->fallback().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.fallback");
+      "api.Attachment.fallback");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->fallback(), target);
@@ -12687,7 +12568,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->callback_id().data(), static_cast<int>(this->callback_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.callback_id");
+      "api.Attachment.callback_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->callback_id(), target);
@@ -12703,7 +12584,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_id().data(), static_cast<int>(this->author_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_id");
+      "api.Attachment.author_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         5, this->author_id(), target);
@@ -12714,7 +12595,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_name().data(), static_cast<int>(this->author_name().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_name");
+      "api.Attachment.author_name");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         6, this->author_name(), target);
@@ -12725,7 +12606,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_link().data(), static_cast<int>(this->author_link().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_link");
+      "api.Attachment.author_link");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         7, this->author_link(), target);
@@ -12736,7 +12617,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->author_icon().data(), static_cast<int>(this->author_icon().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.author_icon");
+      "api.Attachment.author_icon");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         8, this->author_icon(), target);
@@ -12747,7 +12628,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->title().data(), static_cast<int>(this->title().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.title");
+      "api.Attachment.title");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         9, this->title(), target);
@@ -12758,7 +12639,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->title_prefix().data(), static_cast<int>(this->title_prefix().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.title_prefix");
+      "api.Attachment.title_prefix");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         10, this->title_prefix(), target);
@@ -12769,7 +12650,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->pretext().data(), static_cast<int>(this->pretext().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.pretext");
+      "api.Attachment.pretext");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         11, this->pretext(), target);
@@ -12780,7 +12661,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->text().data(), static_cast<int>(this->text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.text");
+      "api.Attachment.text");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         12, this->text(), target);
@@ -12791,7 +12672,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->image_url().data(), static_cast<int>(this->image_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.image_url");
+      "api.Attachment.image_url");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         13, this->image_url(), target);
@@ -12802,7 +12683,7 @@ void SlackAttachment::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->thumb_url().data(), static_cast<int>(this->thumb_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SlackAttachment.thumb_url");
+      "api.Attachment.thumb_url");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         14, this->thumb_url(), target);
@@ -12820,12 +12701,12 @@ void SlackAttachment::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.SlackAttachment)
+  // @@protoc_insertion_point(serialize_to_array_end:api.Attachment)
   return target;
 }
 
-size_t SlackAttachment::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.SlackAttachment)
+size_t Attachment::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Attachment)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -12947,23 +12828,23 @@ size_t SlackAttachment::ByteSizeLong() const {
   return total_size;
 }
 
-void SlackAttachment::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.SlackAttachment)
+void Attachment::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Attachment)
   GOOGLE_DCHECK_NE(&from, this);
-  const SlackAttachment* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SlackAttachment>(
+  const Attachment* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Attachment>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.SlackAttachment)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Attachment)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.SlackAttachment)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Attachment)
     MergeFrom(*source);
   }
 }
 
-void SlackAttachment::MergeFrom(const SlackAttachment& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.SlackAttachment)
+void Attachment::MergeFrom(const Attachment& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Attachment)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -13027,29 +12908,29 @@ void SlackAttachment::MergeFrom(const SlackAttachment& from) {
   }
 }
 
-void SlackAttachment::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.SlackAttachment)
+void Attachment::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Attachment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SlackAttachment::CopyFrom(const SlackAttachment& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.SlackAttachment)
+void Attachment::CopyFrom(const Attachment& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Attachment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SlackAttachment::IsInitialized() const {
+bool Attachment::IsInitialized() const {
   return true;
 }
 
-void SlackAttachment::Swap(SlackAttachment* other) {
+void Attachment::Swap(Attachment* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SlackAttachment::InternalSwap(SlackAttachment* other) {
+void Attachment::InternalSwap(Attachment* other) {
   using std::swap;
   CastToBase(&fields_)->InternalSwap(CastToBase(&other->fields_));
   color_.Swap(&other->color_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -13082,7 +12963,7 @@ void SlackAttachment::InternalSwap(SlackAttachment* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata SlackAttachment::GetMetadata() const {
+::google::protobuf::Metadata Attachment::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -13091,8 +12972,8 @@ void SlackAttachment::InternalSwap(SlackAttachment* other) {
 // ===================================================================
 
 void AttachmentAction::InitAsDefaultInstance() {
-  ::api::_AttachmentAction_default_instance_._instance.get_mutable()->confirm_ = const_cast< ::api::ConfirmationField*>(
-      ::api::ConfirmationField::internal_default_instance());
+  ::api::_AttachmentAction_default_instance_._instance.get_mutable()->confirm_ = const_cast< ::api::AttachmentConfirmationField*>(
+      ::api::AttachmentConfirmationField::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int AttachmentAction::kNameFieldNumber;
@@ -13152,7 +13033,7 @@ AttachmentAction::AttachmentAction(const AttachmentAction& from)
     url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.url_);
   }
   if (from.has_confirm()) {
-    confirm_ = new ::api::ConfirmationField(*from.confirm_);
+    confirm_ = new ::api::AttachmentConfirmationField(*from.confirm_);
   } else {
     confirm_ = NULL;
   }
@@ -13383,7 +13264,7 @@ bool AttachmentAction::MergePartialFromCodedStream(
         break;
       }
 
-      // .api.ConfirmationField confirm = 11;
+      // .api.AttachmentConfirmationField confirm = 11;
       case 11: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
@@ -13529,7 +13410,7 @@ void AttachmentAction::SerializeWithCachedSizes(
       output);
   }
 
-  // .api.ConfirmationField confirm = 11;
+  // .api.AttachmentConfirmationField confirm = 11;
   if (this->has_confirm()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       11, this->_internal_confirm(), output);
@@ -13654,7 +13535,7 @@ void AttachmentAction::SerializeWithCachedSizes(
         10, this->option_groups(static_cast<int>(i)), deterministic, target);
   }
 
-  // .api.ConfirmationField confirm = 11;
+  // .api.AttachmentConfirmationField confirm = 11;
   if (this->has_confirm()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -13771,7 +13652,7 @@ size_t AttachmentAction::ByteSizeLong() const {
         this->url());
   }
 
-  // .api.ConfirmationField confirm = 11;
+  // .api.AttachmentConfirmationField confirm = 11;
   if (this->has_confirm()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -13844,7 +13725,7 @@ void AttachmentAction::MergeFrom(const AttachmentAction& from) {
     url_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.url_);
   }
   if (from.has_confirm()) {
-    mutable_confirm()->::api::ConfirmationField::MergeFrom(from.confirm());
+    mutable_confirm()->::api::AttachmentConfirmationField::MergeFrom(from.confirm());
   }
   if (from.min_query_length() != 0) {
     set_min_query_length(from.min_query_length());
@@ -13905,23 +13786,23 @@ void AttachmentAction::InternalSwap(AttachmentAction* other) {
 
 // ===================================================================
 
-void ConfirmationField::InitAsDefaultInstance() {
+void AttachmentConfirmationField::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ConfirmationField::kTitleFieldNumber;
-const int ConfirmationField::kTextFieldNumber;
-const int ConfirmationField::kOkTextFieldNumber;
-const int ConfirmationField::kDismissTextFieldNumber;
+const int AttachmentConfirmationField::kTitleFieldNumber;
+const int AttachmentConfirmationField::kTextFieldNumber;
+const int AttachmentConfirmationField::kOkTextFieldNumber;
+const int AttachmentConfirmationField::kDismissTextFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-ConfirmationField::ConfirmationField()
+AttachmentConfirmationField::AttachmentConfirmationField()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_ConfirmationField.base);
+      &protobuf_api_2eproto::scc_info_AttachmentConfirmationField.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.ConfirmationField)
+  // @@protoc_insertion_point(constructor:api.AttachmentConfirmationField)
 }
-ConfirmationField::ConfirmationField(const ConfirmationField& from)
+AttachmentConfirmationField::AttachmentConfirmationField(const AttachmentConfirmationField& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -13941,44 +13822,44 @@ ConfirmationField::ConfirmationField(const ConfirmationField& from)
   if (from.dismiss_text().size() > 0) {
     dismiss_text_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dismiss_text_);
   }
-  // @@protoc_insertion_point(copy_constructor:api.ConfirmationField)
+  // @@protoc_insertion_point(copy_constructor:api.AttachmentConfirmationField)
 }
 
-void ConfirmationField::SharedCtor() {
+void AttachmentConfirmationField::SharedCtor() {
   title_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ok_text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dismiss_text_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-ConfirmationField::~ConfirmationField() {
-  // @@protoc_insertion_point(destructor:api.ConfirmationField)
+AttachmentConfirmationField::~AttachmentConfirmationField() {
+  // @@protoc_insertion_point(destructor:api.AttachmentConfirmationField)
   SharedDtor();
 }
 
-void ConfirmationField::SharedDtor() {
+void AttachmentConfirmationField::SharedDtor() {
   title_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   text_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ok_text_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   dismiss_text_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void ConfirmationField::SetCachedSize(int size) const {
+void AttachmentConfirmationField::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* ConfirmationField::descriptor() {
+const ::google::protobuf::Descriptor* AttachmentConfirmationField::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const ConfirmationField& ConfirmationField::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_ConfirmationField.base);
+const AttachmentConfirmationField& AttachmentConfirmationField::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_AttachmentConfirmationField.base);
   return *internal_default_instance();
 }
 
 
-void ConfirmationField::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.ConfirmationField)
+void AttachmentConfirmationField::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.AttachmentConfirmationField)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -13990,11 +13871,11 @@ void ConfirmationField::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool ConfirmationField::MergePartialFromCodedStream(
+bool AttachmentConfirmationField::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.ConfirmationField)
+  // @@protoc_insertion_point(parse_start:api.AttachmentConfirmationField)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -14009,7 +13890,7 @@ bool ConfirmationField::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->title().data(), static_cast<int>(this->title().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.ConfirmationField.title"));
+            "api.AttachmentConfirmationField.title"));
         } else {
           goto handle_unusual;
         }
@@ -14025,7 +13906,7 @@ bool ConfirmationField::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->text().data(), static_cast<int>(this->text().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.ConfirmationField.text"));
+            "api.AttachmentConfirmationField.text"));
         } else {
           goto handle_unusual;
         }
@@ -14041,7 +13922,7 @@ bool ConfirmationField::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->ok_text().data(), static_cast<int>(this->ok_text().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.ConfirmationField.ok_text"));
+            "api.AttachmentConfirmationField.ok_text"));
         } else {
           goto handle_unusual;
         }
@@ -14057,7 +13938,7 @@ bool ConfirmationField::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->dismiss_text().data(), static_cast<int>(this->dismiss_text().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.ConfirmationField.dismiss_text"));
+            "api.AttachmentConfirmationField.dismiss_text"));
         } else {
           goto handle_unusual;
         }
@@ -14076,17 +13957,17 @@ bool ConfirmationField::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.ConfirmationField)
+  // @@protoc_insertion_point(parse_success:api.AttachmentConfirmationField)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.ConfirmationField)
+  // @@protoc_insertion_point(parse_failure:api.AttachmentConfirmationField)
   return false;
 #undef DO_
 }
 
-void ConfirmationField::SerializeWithCachedSizes(
+void AttachmentConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.ConfirmationField)
+  // @@protoc_insertion_point(serialize_start:api.AttachmentConfirmationField)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -14095,7 +13976,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->title().data(), static_cast<int>(this->title().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.title");
+      "api.AttachmentConfirmationField.title");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->title(), output);
   }
@@ -14105,7 +13986,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->text().data(), static_cast<int>(this->text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.text");
+      "api.AttachmentConfirmationField.text");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       2, this->text(), output);
   }
@@ -14115,7 +13996,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->ok_text().data(), static_cast<int>(this->ok_text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.ok_text");
+      "api.AttachmentConfirmationField.ok_text");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       3, this->ok_text(), output);
   }
@@ -14125,7 +14006,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->dismiss_text().data(), static_cast<int>(this->dismiss_text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.dismiss_text");
+      "api.AttachmentConfirmationField.dismiss_text");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       4, this->dismiss_text(), output);
   }
@@ -14134,13 +14015,13 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.ConfirmationField)
+  // @@protoc_insertion_point(serialize_end:api.AttachmentConfirmationField)
 }
 
-::google::protobuf::uint8* ConfirmationField::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* AttachmentConfirmationField::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.ConfirmationField)
+  // @@protoc_insertion_point(serialize_to_array_start:api.AttachmentConfirmationField)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -14149,7 +14030,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->title().data(), static_cast<int>(this->title().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.title");
+      "api.AttachmentConfirmationField.title");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->title(), target);
@@ -14160,7 +14041,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->text().data(), static_cast<int>(this->text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.text");
+      "api.AttachmentConfirmationField.text");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         2, this->text(), target);
@@ -14171,7 +14052,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->ok_text().data(), static_cast<int>(this->ok_text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.ok_text");
+      "api.AttachmentConfirmationField.ok_text");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         3, this->ok_text(), target);
@@ -14182,7 +14063,7 @@ void ConfirmationField::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->dismiss_text().data(), static_cast<int>(this->dismiss_text().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ConfirmationField.dismiss_text");
+      "api.AttachmentConfirmationField.dismiss_text");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         4, this->dismiss_text(), target);
@@ -14192,12 +14073,12 @@ void ConfirmationField::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.ConfirmationField)
+  // @@protoc_insertion_point(serialize_to_array_end:api.AttachmentConfirmationField)
   return target;
 }
 
-size_t ConfirmationField::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.ConfirmationField)
+size_t AttachmentConfirmationField::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.AttachmentConfirmationField)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -14238,23 +14119,23 @@ size_t ConfirmationField::ByteSizeLong() const {
   return total_size;
 }
 
-void ConfirmationField::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.ConfirmationField)
+void AttachmentConfirmationField::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.AttachmentConfirmationField)
   GOOGLE_DCHECK_NE(&from, this);
-  const ConfirmationField* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ConfirmationField>(
+  const AttachmentConfirmationField* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const AttachmentConfirmationField>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.ConfirmationField)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.AttachmentConfirmationField)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.ConfirmationField)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.AttachmentConfirmationField)
     MergeFrom(*source);
   }
 }
 
-void ConfirmationField::MergeFrom(const ConfirmationField& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.ConfirmationField)
+void AttachmentConfirmationField::MergeFrom(const AttachmentConfirmationField& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.AttachmentConfirmationField)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -14278,29 +14159,29 @@ void ConfirmationField::MergeFrom(const ConfirmationField& from) {
   }
 }
 
-void ConfirmationField::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.ConfirmationField)
+void AttachmentConfirmationField::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.AttachmentConfirmationField)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void ConfirmationField::CopyFrom(const ConfirmationField& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.ConfirmationField)
+void AttachmentConfirmationField::CopyFrom(const AttachmentConfirmationField& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.AttachmentConfirmationField)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool ConfirmationField::IsInitialized() const {
+bool AttachmentConfirmationField::IsInitialized() const {
   return true;
 }
 
-void ConfirmationField::Swap(ConfirmationField* other) {
+void AttachmentConfirmationField::Swap(AttachmentConfirmationField* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void ConfirmationField::InternalSwap(ConfirmationField* other) {
+void AttachmentConfirmationField::InternalSwap(AttachmentConfirmationField* other) {
   using std::swap;
   title_.Swap(&other->title_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -14313,7 +14194,7 @@ void ConfirmationField::InternalSwap(ConfirmationField* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata ConfirmationField::GetMetadata() const {
+::google::protobuf::Metadata AttachmentConfirmationField::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -15386,17 +15267,17 @@ bool JSONMap::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // map<string, bytes> json_map = 1;
+      // map<string, .api.JSON> json_map = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           JSONMap_JsonMapEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
               JSONMap_JsonMapEntry_DoNotUse,
-              ::std::string, ::std::string,
+              ::std::string, ::api::JSON,
               ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_BYTES,
+              ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
               0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&json_map_);
+            ::google::protobuf::Map< ::std::string, ::api::JSON > > parser(&json_map_);
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
               input, &parser));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -15435,9 +15316,9 @@ void JSONMap::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, bytes> json_map = 1;
+  // map<string, .api.JSON> json_map = 1;
   if (!this->json_map().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+    typedef ::google::protobuf::Map< ::std::string, ::api::JSON >::const_pointer
         ConstPtr;
     typedef ConstPtr SortItem;
     typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
@@ -15454,9 +15335,9 @@ void JSONMap::SerializeWithCachedSizes(
         this->json_map().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->json_map().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      typedef ::google::protobuf::Map< ::std::string, ::api::JSON >::size_type size_type;
       size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+      for (::google::protobuf::Map< ::std::string, ::api::JSON >::const_iterator
           it = this->json_map().begin();
           it != this->json_map().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -15472,7 +15353,7 @@ void JSONMap::SerializeWithCachedSizes(
       }
     } else {
       ::std::unique_ptr<JSONMap_JsonMapEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+      for (::google::protobuf::Map< ::std::string, ::api::JSON >::const_iterator
           it = this->json_map().begin();
           it != this->json_map().end(); ++it) {
         entry.reset(json_map_.NewEntryWrapper(
@@ -15498,9 +15379,9 @@ void JSONMap::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // map<string, bytes> json_map = 1;
+  // map<string, .api.JSON> json_map = 1;
   if (!this->json_map().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
+    typedef ::google::protobuf::Map< ::std::string, ::api::JSON >::const_pointer
         ConstPtr;
     typedef ConstPtr SortItem;
     typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
@@ -15517,9 +15398,9 @@ void JSONMap::SerializeWithCachedSizes(
         this->json_map().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
           new SortItem[this->json_map().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
+      typedef ::google::protobuf::Map< ::std::string, ::api::JSON >::size_type size_type;
       size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+      for (::google::protobuf::Map< ::std::string, ::api::JSON >::const_iterator
           it = this->json_map().begin();
           it != this->json_map().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
@@ -15537,7 +15418,7 @@ void JSONMap::SerializeWithCachedSizes(
       }
     } else {
       ::std::unique_ptr<JSONMap_JsonMapEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+      for (::google::protobuf::Map< ::std::string, ::api::JSON >::const_iterator
           it = this->json_map().begin();
           it != this->json_map().end(); ++it) {
         entry.reset(json_map_.NewEntryWrapper(
@@ -15568,12 +15449,12 @@ size_t JSONMap::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // map<string, bytes> json_map = 1;
+  // map<string, .api.JSON> json_map = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->json_map_size());
   {
     ::std::unique_ptr<JSONMap_JsonMapEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
+    for (::google::protobuf::Map< ::std::string, ::api::JSON >::const_iterator
         it = this->json_map().begin();
         it != this->json_map().end(); ++it) {
       entry.reset(json_map_.NewEntryWrapper(it->first, it->second));
@@ -15641,6 +15522,275 @@ void JSONMap::InternalSwap(JSONMap* other) {
 }
 
 ::google::protobuf::Metadata JSONMap::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void JSON::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int JSON::kDataFieldNumber;
+const int JSON::kSizeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+JSON::JSON()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_JSON.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.JSON)
+}
+JSON::JSON(const JSON& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.data().size() > 0) {
+    data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+  }
+  size_ = from.size_;
+  // @@protoc_insertion_point(copy_constructor:api.JSON)
+}
+
+void JSON::SharedCtor() {
+  data_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  size_ = GOOGLE_LONGLONG(0);
+}
+
+JSON::~JSON() {
+  // @@protoc_insertion_point(destructor:api.JSON)
+  SharedDtor();
+}
+
+void JSON::SharedDtor() {
+  data_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void JSON::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* JSON::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const JSON& JSON::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_JSON.base);
+  return *internal_default_instance();
+}
+
+
+void JSON::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.JSON)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  size_ = GOOGLE_LONGLONG(0);
+  _internal_metadata_.Clear();
+}
+
+bool JSON::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.JSON)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // bytes data = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_data()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 size = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &size_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.JSON)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.JSON)
+  return false;
+#undef DO_
+}
+
+void JSON::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.JSON)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes data = 1;
+  if (this->data().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      1, this->data(), output);
+  }
+
+  // int64 size = 2;
+  if (this->size() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->size(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.JSON)
+}
+
+::google::protobuf::uint8* JSON::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.JSON)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes data = 1;
+  if (this->data().size() > 0) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        1, this->data(), target);
+  }
+
+  // int64 size = 2;
+  if (this->size() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->size(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.JSON)
+  return target;
+}
+
+size_t JSON::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.JSON)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // bytes data = 1;
+  if (this->data().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->data());
+  }
+
+  // int64 size = 2;
+  if (this->size() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->size());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void JSON::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.JSON)
+  GOOGLE_DCHECK_NE(&from, this);
+  const JSON* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const JSON>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.JSON)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.JSON)
+    MergeFrom(*source);
+  }
+}
+
+void JSON::MergeFrom(const JSON& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.JSON)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.data().size() > 0) {
+
+    data_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.data_);
+  }
+  if (from.size() != 0) {
+    set_size(from.size());
+  }
+}
+
+void JSON::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.JSON)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void JSON::CopyFrom(const JSON& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.JSON)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool JSON::IsInitialized() const {
+  return true;
+}
+
+void JSON::Swap(JSON* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void JSON::InternalSwap(JSON* other) {
+  using std::swap;
+  data_.Swap(&other->data_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(size_, other->size_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata JSON::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -16126,419 +16276,6 @@ void PubSubTopic::InternalSwap(PubSubTopic* other) {
 }
 
 
-// ===================================================================
-
-Authentication_AnnotationsEntry_DoNotUse::Authentication_AnnotationsEntry_DoNotUse() {}
-Authentication_AnnotationsEntry_DoNotUse::Authentication_AnnotationsEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
-void Authentication_AnnotationsEntry_DoNotUse::MergeFrom(const Authentication_AnnotationsEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::google::protobuf::Metadata Authentication_AnnotationsEntry_DoNotUse::GetMetadata() const {
-  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[38];
-}
-void Authentication_AnnotationsEntry_DoNotUse::MergeFrom(
-    const ::google::protobuf::Message& other) {
-  ::google::protobuf::Message::MergeFrom(other);
-}
-
-
-// ===================================================================
-
-void Authentication::InitAsDefaultInstance() {
-  ::api::_Authentication_default_instance_._instance.get_mutable()->authentication_ = const_cast< ::google::api::Authentication*>(
-      ::google::api::Authentication::internal_default_instance());
-}
-void Authentication::clear_authentication() {
-  if (GetArenaNoVirtual() == NULL && authentication_ != NULL) {
-    delete authentication_;
-  }
-  authentication_ = NULL;
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Authentication::kAuthenticationFieldNumber;
-const int Authentication::kAnnotationsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Authentication::Authentication()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_Authentication.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:api.Authentication)
-}
-Authentication::Authentication(const Authentication& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  annotations_.MergeFrom(from.annotations_);
-  if (from.has_authentication()) {
-    authentication_ = new ::google::api::Authentication(*from.authentication_);
-  } else {
-    authentication_ = NULL;
-  }
-  // @@protoc_insertion_point(copy_constructor:api.Authentication)
-}
-
-void Authentication::SharedCtor() {
-  authentication_ = NULL;
-}
-
-Authentication::~Authentication() {
-  // @@protoc_insertion_point(destructor:api.Authentication)
-  SharedDtor();
-}
-
-void Authentication::SharedDtor() {
-  if (this != internal_default_instance()) delete authentication_;
-}
-
-void Authentication::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Authentication::descriptor() {
-  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const Authentication& Authentication::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Authentication.base);
-  return *internal_default_instance();
-}
-
-
-void Authentication::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.Authentication)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  annotations_.Clear();
-  if (GetArenaNoVirtual() == NULL && authentication_ != NULL) {
-    delete authentication_;
-  }
-  authentication_ = NULL;
-  _internal_metadata_.Clear();
-}
-
-bool Authentication::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.Authentication)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .google.api.Authentication authentication = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_authentication()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // map<string, string> annotations = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          Authentication_AnnotationsEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              Authentication_AnnotationsEntry_DoNotUse,
-              ::std::string, ::std::string,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-              0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&annotations_);
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-              input, &parser));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.key().data(), static_cast<int>(parser.key().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Authentication.AnnotationsEntry.key"));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            parser.value().data(), static_cast<int>(parser.value().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Authentication.AnnotationsEntry.value"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:api.Authentication)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:api.Authentication)
-  return false;
-#undef DO_
-}
-
-void Authentication::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.Authentication)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .google.api.Authentication authentication = 1;
-  if (this->has_authentication()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_authentication(), output);
-  }
-
-  // map<string, string> annotations = 2;
-  if (!this->annotations().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Authentication.AnnotationsEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Authentication.AnnotationsEntry.value");
-      }
-    };
-
-    if (output->IsSerializationDeterministic() &&
-        this->annotations().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->annotations().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->annotations().begin();
-          it != this->annotations().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<Authentication_AnnotationsEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(annotations_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            2, *entry, output);
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
-      }
-    } else {
-      ::std::unique_ptr<Authentication_AnnotationsEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->annotations().begin();
-          it != this->annotations().end(); ++it) {
-        entry.reset(annotations_.NewEntryWrapper(
-            it->first, it->second));
-        ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-            2, *entry, output);
-        Utf8Check::Check(&*it);
-      }
-    }
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:api.Authentication)
-}
-
-::google::protobuf::uint8* Authentication::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.Authentication)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .google.api.Authentication authentication = 1;
-  if (this->has_authentication()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_authentication(), deterministic, target);
-  }
-
-  // map<string, string> annotations = 2;
-  if (!this->annotations().empty()) {
-    typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::google::protobuf::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Authentication.AnnotationsEntry.key");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Authentication.AnnotationsEntry.value");
-      }
-    };
-
-    if (deterministic &&
-        this->annotations().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->annotations().size()]);
-      typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
-      size_type n = 0;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->annotations().begin();
-          it != this->annotations().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<Authentication_AnnotationsEntry_DoNotUse> entry;
-      for (size_type i = 0; i < n; i++) {
-        entry.reset(annotations_.NewEntryWrapper(
-            items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       2, *entry, deterministic, target);
-;
-        Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
-      }
-    } else {
-      ::std::unique_ptr<Authentication_AnnotationsEntry_DoNotUse> entry;
-      for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->annotations().begin();
-          it != this->annotations().end(); ++it) {
-        entry.reset(annotations_.NewEntryWrapper(
-            it->first, it->second));
-        target = ::google::protobuf::internal::WireFormatLite::
-                   InternalWriteMessageNoVirtualToArray(
-                       2, *entry, deterministic, target);
-;
-        Utf8Check::Check(&*it);
-      }
-    }
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:api.Authentication)
-  return target;
-}
-
-size_t Authentication::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.Authentication)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // map<string, string> annotations = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->annotations_size());
-  {
-    ::std::unique_ptr<Authentication_AnnotationsEntry_DoNotUse> entry;
-    for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->annotations().begin();
-        it != this->annotations().end(); ++it) {
-      entry.reset(annotations_.NewEntryWrapper(it->first, it->second));
-      total_size += ::google::protobuf::internal::WireFormatLite::
-          MessageSizeNoVirtual(*entry);
-    }
-  }
-
-  // .google.api.Authentication authentication = 1;
-  if (this->has_authentication()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *authentication_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Authentication::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.Authentication)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Authentication* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Authentication>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Authentication)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Authentication)
-    MergeFrom(*source);
-  }
-}
-
-void Authentication::MergeFrom(const Authentication& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.Authentication)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  annotations_.MergeFrom(from.annotations_);
-  if (from.has_authentication()) {
-    mutable_authentication()->::google::api::Authentication::MergeFrom(from.authentication());
-  }
-}
-
-void Authentication::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.Authentication)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Authentication::CopyFrom(const Authentication& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.Authentication)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Authentication::IsInitialized() const {
-  return true;
-}
-
-void Authentication::Swap(Authentication* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Authentication::InternalSwap(Authentication* other) {
-  using std::swap;
-  annotations_.Swap(&other->annotations_);
-  swap(authentication_, other->authentication_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata Authentication::GetMetadata() const {
-  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -16600,8 +16337,8 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Star* Arena::CreateMaybeMes
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Pin* Arena::CreateMaybeMessage< ::api::Pin >(Arena* arena) {
   return Arena::CreateInternal< ::api::Pin >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Config* Arena::CreateMaybeMessage< ::api::Config >(Arena* arena) {
-  return Arena::CreateInternal< ::api::Config >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Access* Arena::CreateMaybeMessage< ::api::Access >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Access >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::LogConfig* Arena::CreateMaybeMessage< ::api::LogConfig >(Arena* arena) {
   return Arena::CreateInternal< ::api::LogConfig >(arena);
@@ -16627,14 +16364,14 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Fax* Arena::CreateMaybeMess
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::LogHook* Arena::CreateMaybeMessage< ::api::LogHook >(Arena* arena) {
   return Arena::CreateInternal< ::api::LogHook >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::SlackAttachment* Arena::CreateMaybeMessage< ::api::SlackAttachment >(Arena* arena) {
-  return Arena::CreateInternal< ::api::SlackAttachment >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Attachment* Arena::CreateMaybeMessage< ::api::Attachment >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Attachment >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AttachmentAction* Arena::CreateMaybeMessage< ::api::AttachmentAction >(Arena* arena) {
   return Arena::CreateInternal< ::api::AttachmentAction >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::ConfirmationField* Arena::CreateMaybeMessage< ::api::ConfirmationField >(Arena* arena) {
-  return Arena::CreateInternal< ::api::ConfirmationField >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AttachmentConfirmationField* Arena::CreateMaybeMessage< ::api::AttachmentConfirmationField >(Arena* arena) {
+  return Arena::CreateInternal< ::api::AttachmentConfirmationField >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AttachmentActionOptionGroup* Arena::CreateMaybeMessage< ::api::AttachmentActionOptionGroup >(Arena* arena) {
   return Arena::CreateInternal< ::api::AttachmentActionOptionGroup >(arena);
@@ -16651,17 +16388,14 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JSONMap_JsonMapEntry_DoNotU
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JSONMap* Arena::CreateMaybeMessage< ::api::JSONMap >(Arena* arena) {
   return Arena::CreateInternal< ::api::JSONMap >(arena);
 }
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JSON* Arena::CreateMaybeMessage< ::api::JSON >(Arena* arena) {
+  return Arena::CreateInternal< ::api::JSON >(arena);
+}
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::PubSubMessage* Arena::CreateMaybeMessage< ::api::PubSubMessage >(Arena* arena) {
   return Arena::CreateInternal< ::api::PubSubMessage >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::PubSubTopic* Arena::CreateMaybeMessage< ::api::PubSubTopic >(Arena* arena) {
   return Arena::CreateInternal< ::api::PubSubTopic >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Authentication_AnnotationsEntry_DoNotUse* Arena::CreateMaybeMessage< ::api::Authentication_AnnotationsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::api::Authentication_AnnotationsEntry_DoNotUse >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Authentication* Arena::CreateMaybeMessage< ::api::Authentication >(Arena* arena) {
-  return Arena::CreateInternal< ::api::Authentication >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

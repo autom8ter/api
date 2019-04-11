@@ -1348,23 +1348,20 @@ typedef struct Pin__storage_ {
 
 @end
 
-#pragma mark - Config
+#pragma mark - Access
 
-@implementation Config
+@implementation Access
 
-@dynamic debug;
 @dynamic twilioAccount;
 @dynamic twilioKey;
 @dynamic sendgridKey;
 @dynamic stripeKey;
 @dynamic slackKey;
-@dynamic customerIndex;
 @dynamic hasEmailAddress, emailAddress;
 @dynamic hasLogConfig, logConfig;
 
-typedef struct Config__storage_ {
+typedef struct Access__storage_ {
   uint32_t _has_storage_[1];
-  CustomerIndex customerIndex;
   NSString *twilioAccount;
   NSString *twilioKey;
   NSString *sendgridKey;
@@ -1372,7 +1369,7 @@ typedef struct Config__storage_ {
   NSString *slackKey;
   EmailAddress *emailAddress;
   LogConfig *logConfig;
-} Config__storage_;
+} Access__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -1381,94 +1378,76 @@ typedef struct Config__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "debug",
-        .dataTypeSpecific.className = NULL,
-        .number = Config_FieldNumber_Debug,
-        .hasIndex = 0,
-        .offset = 1,  // Stored in _has_storage_ to save space.
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
-      },
-      {
         .name = "twilioAccount",
         .dataTypeSpecific.className = NULL,
-        .number = Config_FieldNumber_TwilioAccount,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Config__storage_, twilioAccount),
+        .number = Access_FieldNumber_TwilioAccount,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Access__storage_, twilioAccount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "twilioKey",
         .dataTypeSpecific.className = NULL,
-        .number = Config_FieldNumber_TwilioKey,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Config__storage_, twilioKey),
+        .number = Access_FieldNumber_TwilioKey,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Access__storage_, twilioKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "sendgridKey",
         .dataTypeSpecific.className = NULL,
-        .number = Config_FieldNumber_SendgridKey,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Config__storage_, sendgridKey),
+        .number = Access_FieldNumber_SendgridKey,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Access__storage_, sendgridKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "stripeKey",
         .dataTypeSpecific.className = NULL,
-        .number = Config_FieldNumber_StripeKey,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(Config__storage_, stripeKey),
+        .number = Access_FieldNumber_StripeKey,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Access__storage_, stripeKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "slackKey",
         .dataTypeSpecific.className = NULL,
-        .number = Config_FieldNumber_SlackKey,
-        .hasIndex = 6,
-        .offset = (uint32_t)offsetof(Config__storage_, slackKey),
+        .number = Access_FieldNumber_SlackKey,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Access__storage_, slackKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "customerIndex",
-        .dataTypeSpecific.enumDescFunc = CustomerIndex_EnumDescriptor,
-        .number = Config_FieldNumber_CustomerIndex,
-        .hasIndex = 7,
-        .offset = (uint32_t)offsetof(Config__storage_, customerIndex),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
-      },
-      {
         .name = "emailAddress",
         .dataTypeSpecific.className = GPBStringifySymbol(EmailAddress),
-        .number = Config_FieldNumber_EmailAddress,
-        .hasIndex = 8,
-        .offset = (uint32_t)offsetof(Config__storage_, emailAddress),
+        .number = Access_FieldNumber_EmailAddress,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(Access__storage_, emailAddress),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "logConfig",
         .dataTypeSpecific.className = GPBStringifySymbol(LogConfig),
-        .number = Config_FieldNumber_LogConfig,
-        .hasIndex = 9,
-        .offset = (uint32_t)offsetof(Config__storage_, logConfig),
+        .number = Access_FieldNumber_LogConfig,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(Access__storage_, logConfig),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Config class]
+        [GPBDescriptor allocDescriptorForClass:[Access class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Config__storage_)
+                                   storageSize:sizeof(Access__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -1477,18 +1456,6 @@ typedef struct Config__storage_ {
 }
 
 @end
-
-int32_t Config_CustomerIndex_RawValue(Config *message) {
-  GPBDescriptor *descriptor = [Config descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Config_FieldNumber_CustomerIndex];
-  return GPBGetMessageInt32Field(message, field);
-}
-
-void SetConfig_CustomerIndex_RawValue(Config *message, int32_t value) {
-  GPBDescriptor *descriptor = [Config descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Config_FieldNumber_CustomerIndex];
-  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
-}
 
 #pragma mark - LogConfig
 
@@ -2063,9 +2030,9 @@ typedef struct LogHook__storage_ {
 
 @end
 
-#pragma mark - SlackAttachment
+#pragma mark - Attachment
 
-@implementation SlackAttachment
+@implementation Attachment
 
 @dynamic color;
 @dynamic fallback;
@@ -2083,7 +2050,7 @@ typedef struct LogHook__storage_ {
 @dynamic thumbURL;
 @dynamic fieldsArray, fieldsArray_Count;
 
-typedef struct SlackAttachment__storage_ {
+typedef struct Attachment__storage_ {
   uint32_t _has_storage_[1];
   NSString *color;
   NSString *fallback;
@@ -2100,7 +2067,7 @@ typedef struct SlackAttachment__storage_ {
   NSString *thumbURL;
   NSMutableArray *fieldsArray;
   int64_t id_p;
-} SlackAttachment__storage_;
+} Attachment__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -2111,146 +2078,146 @@ typedef struct SlackAttachment__storage_ {
       {
         .name = "color",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_Color,
+        .number = Attachment_FieldNumber_Color,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, color),
+        .offset = (uint32_t)offsetof(Attachment__storage_, color),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "fallback",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_Fallback,
+        .number = Attachment_FieldNumber_Fallback,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, fallback),
+        .offset = (uint32_t)offsetof(Attachment__storage_, fallback),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "callbackId",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_CallbackId,
+        .number = Attachment_FieldNumber_CallbackId,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, callbackId),
+        .offset = (uint32_t)offsetof(Attachment__storage_, callbackId),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "id_p",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_Id_p,
+        .number = Attachment_FieldNumber_Id_p,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, id_p),
+        .offset = (uint32_t)offsetof(Attachment__storage_, id_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
       {
         .name = "authorId",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_AuthorId,
+        .number = Attachment_FieldNumber_AuthorId,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorId),
+        .offset = (uint32_t)offsetof(Attachment__storage_, authorId),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "authorName",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_AuthorName,
+        .number = Attachment_FieldNumber_AuthorName,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorName),
+        .offset = (uint32_t)offsetof(Attachment__storage_, authorName),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "authorLink",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_AuthorLink,
+        .number = Attachment_FieldNumber_AuthorLink,
         .hasIndex = 6,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorLink),
+        .offset = (uint32_t)offsetof(Attachment__storage_, authorLink),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "authorIcon",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_AuthorIcon,
+        .number = Attachment_FieldNumber_AuthorIcon,
         .hasIndex = 7,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, authorIcon),
+        .offset = (uint32_t)offsetof(Attachment__storage_, authorIcon),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "title",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_Title,
+        .number = Attachment_FieldNumber_Title,
         .hasIndex = 8,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, title),
+        .offset = (uint32_t)offsetof(Attachment__storage_, title),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "titlePrefix",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_TitlePrefix,
+        .number = Attachment_FieldNumber_TitlePrefix,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, titlePrefix),
+        .offset = (uint32_t)offsetof(Attachment__storage_, titlePrefix),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "pretext",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_Pretext,
+        .number = Attachment_FieldNumber_Pretext,
         .hasIndex = 10,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, pretext),
+        .offset = (uint32_t)offsetof(Attachment__storage_, pretext),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "text",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_Text,
+        .number = Attachment_FieldNumber_Text,
         .hasIndex = 11,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, text),
+        .offset = (uint32_t)offsetof(Attachment__storage_, text),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "imageURL",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_ImageURL,
+        .number = Attachment_FieldNumber_ImageURL,
         .hasIndex = 12,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, imageURL),
+        .offset = (uint32_t)offsetof(Attachment__storage_, imageURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "thumbURL",
         .dataTypeSpecific.className = NULL,
-        .number = SlackAttachment_FieldNumber_ThumbURL,
+        .number = Attachment_FieldNumber_ThumbURL,
         .hasIndex = 13,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, thumbURL),
+        .offset = (uint32_t)offsetof(Attachment__storage_, thumbURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
         .name = "fieldsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(AttachmentField),
-        .number = SlackAttachment_FieldNumber_FieldsArray,
+        .number = Attachment_FieldNumber_FieldsArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(SlackAttachment__storage_, fieldsArray),
+        .offset = (uint32_t)offsetof(Attachment__storage_, fieldsArray),
         .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[SlackAttachment class]
+        [GPBDescriptor allocDescriptorForClass:[Attachment class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(SlackAttachment__storage_)
+                                   storageSize:sizeof(Attachment__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
@@ -2293,7 +2260,7 @@ typedef struct AttachmentAction__storage_ {
   NSMutableArray *optionsArray;
   NSMutableArray *selectedOptionsArray;
   NSMutableArray *optionGroupsArray;
-  ConfirmationField *confirm;
+  AttachmentConfirmationField *confirm;
   NSString *URL;
   int64_t minQueryLength;
 } AttachmentAction__storage_;
@@ -2396,7 +2363,7 @@ typedef struct AttachmentAction__storage_ {
       },
       {
         .name = "confirm",
-        .dataTypeSpecific.className = GPBStringifySymbol(ConfirmationField),
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentConfirmationField),
         .number = AttachmentAction_FieldNumber_Confirm,
         .hasIndex = 7,
         .offset = (uint32_t)offsetof(AttachmentAction__storage_, confirm),
@@ -2434,22 +2401,22 @@ typedef struct AttachmentAction__storage_ {
 
 @end
 
-#pragma mark - ConfirmationField
+#pragma mark - AttachmentConfirmationField
 
-@implementation ConfirmationField
+@implementation AttachmentConfirmationField
 
 @dynamic title;
 @dynamic text;
 @dynamic okText;
 @dynamic dismissText;
 
-typedef struct ConfirmationField__storage_ {
+typedef struct AttachmentConfirmationField__storage_ {
   uint32_t _has_storage_[1];
   NSString *title;
   NSString *text;
   NSString *okText;
   NSString *dismissText;
-} ConfirmationField__storage_;
+} AttachmentConfirmationField__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -2460,47 +2427,47 @@ typedef struct ConfirmationField__storage_ {
       {
         .name = "title",
         .dataTypeSpecific.className = NULL,
-        .number = ConfirmationField_FieldNumber_Title,
+        .number = AttachmentConfirmationField_FieldNumber_Title,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(ConfirmationField__storage_, title),
+        .offset = (uint32_t)offsetof(AttachmentConfirmationField__storage_, title),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "text",
         .dataTypeSpecific.className = NULL,
-        .number = ConfirmationField_FieldNumber_Text,
+        .number = AttachmentConfirmationField_FieldNumber_Text,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(ConfirmationField__storage_, text),
+        .offset = (uint32_t)offsetof(AttachmentConfirmationField__storage_, text),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "okText",
         .dataTypeSpecific.className = NULL,
-        .number = ConfirmationField_FieldNumber_OkText,
+        .number = AttachmentConfirmationField_FieldNumber_OkText,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ConfirmationField__storage_, okText),
+        .offset = (uint32_t)offsetof(AttachmentConfirmationField__storage_, okText),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "dismissText",
         .dataTypeSpecific.className = NULL,
-        .number = ConfirmationField_FieldNumber_DismissText,
+        .number = AttachmentConfirmationField_FieldNumber_DismissText,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(ConfirmationField__storage_, dismissText),
+        .offset = (uint32_t)offsetof(AttachmentConfirmationField__storage_, dismissText),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ConfirmationField class]
+        [GPBDescriptor allocDescriptorForClass:[AttachmentConfirmationField class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ConfirmationField__storage_)
+                                   storageSize:sizeof(AttachmentConfirmationField__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -2712,12 +2679,12 @@ typedef struct JSONMap__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "jsonMap",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(JSON),
         .number = JSONMap_FieldNumber_JsonMap,
         .hasIndex = GPBNoHasBit,
         .offset = (uint32_t)offsetof(JSONMap__storage_, jsonMap),
         .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeBytes,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -2727,6 +2694,60 @@ typedef struct JSONMap__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(JSONMap__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - JSON
+
+@implementation JSON
+
+@dynamic data_p;
+@dynamic size;
+
+typedef struct JSON__storage_ {
+  uint32_t _has_storage_[1];
+  NSData *data_p;
+  int64_t size;
+} JSON__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "data_p",
+        .dataTypeSpecific.className = NULL,
+        .number = JSON_FieldNumber_Data_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(JSON__storage_, data_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "size",
+        .dataTypeSpecific.className = NULL,
+        .number = JSON_FieldNumber_Size,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(JSON__storage_, size),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[JSON class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(JSON__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -2813,60 +2834,6 @@ typedef struct PubSubTopic__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(PubSubTopic__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Authentication
-
-@implementation Authentication
-
-@dynamic hasAuthentication, authentication;
-@dynamic annotations, annotations_Count;
-
-typedef struct Authentication__storage_ {
-  uint32_t _has_storage_[1];
-  GAPIAuthentication *authentication;
-  NSMutableDictionary *annotations;
-} Authentication__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "authentication",
-        .dataTypeSpecific.className = GPBStringifySymbol(GAPIAuthentication),
-        .number = Authentication_FieldNumber_Authentication,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Authentication__storage_, authentication),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "annotations",
-        .dataTypeSpecific.className = NULL,
-        .number = Authentication_FieldNumber_Annotations,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(Authentication__storage_, annotations),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Authentication class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Authentication__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

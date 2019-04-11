@@ -17,19 +17,19 @@ var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/fie
 var google_api_annotations_pb = require('./google/api/annotations_pb.js');
 var google_api_auth_pb = require('./google/api/auth_pb.js');
 var google_pubsub_v1_pubsub_pb = require('./google/pubsub/v1/pubsub_pb.js');
+goog.exportSymbol('proto.api.Access', null, global);
 goog.exportSymbol('proto.api.AddCustomerRequest', null, global);
 goog.exportSymbol('proto.api.Address', null, global);
+goog.exportSymbol('proto.api.Attachment', null, global);
 goog.exportSymbol('proto.api.AttachmentAction', null, global);
 goog.exportSymbol('proto.api.AttachmentActionOption', null, global);
 goog.exportSymbol('proto.api.AttachmentActionOptionGroup', null, global);
+goog.exportSymbol('proto.api.AttachmentConfirmationField', null, global);
 goog.exportSymbol('proto.api.AttachmentField', null, global);
-goog.exportSymbol('proto.api.Authentication', null, global);
 goog.exportSymbol('proto.api.Call', null, global);
 goog.exportSymbol('proto.api.CallRequest', null, global);
 goog.exportSymbol('proto.api.CancelSubscriptionRequest', null, global);
 goog.exportSymbol('proto.api.ChannelReminder', null, global);
-goog.exportSymbol('proto.api.Config', null, global);
-goog.exportSymbol('proto.api.ConfirmationField', null, global);
 goog.exportSymbol('proto.api.CreatePlanRequest', null, global);
 goog.exportSymbol('proto.api.CreatePlanResponse', null, global);
 goog.exportSymbol('proto.api.Customer', null, global);
@@ -40,6 +40,7 @@ goog.exportSymbol('proto.api.EmailRequest', null, global);
 goog.exportSymbol('proto.api.Empty', null, global);
 goog.exportSymbol('proto.api.Fax', null, global);
 goog.exportSymbol('proto.api.ItemRef', null, global);
+goog.exportSymbol('proto.api.JSON', null, global);
 goog.exportSymbol('proto.api.JSONMap', null, global);
 goog.exportSymbol('proto.api.LogConfig', null, global);
 goog.exportSymbol('proto.api.LogHook', null, global);
@@ -50,7 +51,6 @@ goog.exportSymbol('proto.api.PubSubTopic', null, global);
 goog.exportSymbol('proto.api.RecipientEmail', null, global);
 goog.exportSymbol('proto.api.SMS', null, global);
 goog.exportSymbol('proto.api.SMSRequest', null, global);
-goog.exportSymbol('proto.api.SlackAttachment', null, global);
 goog.exportSymbol('proto.api.Star', null, global);
 goog.exportSymbol('proto.api.SubscribeCustomerRequest', null, global);
 goog.exportSymbol('proto.api.SubscribeCustomerResponse', null, global);
@@ -3873,12 +3873,12 @@ proto.api.Pin.prototype.hasItem = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.Config = function(opt_data) {
+proto.api.Access = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.Config, jspb.Message);
+goog.inherits(proto.api.Access, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.Config.displayName = 'proto.api.Config';
+  proto.api.Access.displayName = 'proto.api.Access';
 }
 
 
@@ -3893,8 +3893,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.Config.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.Config.toObject(opt_includeInstance, this);
+proto.api.Access.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.Access.toObject(opt_includeInstance, this);
 };
 
 
@@ -3903,19 +3903,17 @@ proto.api.Config.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.Config} msg The msg instance to transform.
+ * @param {!proto.api.Access} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Config.toObject = function(includeInstance, msg) {
+proto.api.Access.toObject = function(includeInstance, msg) {
   var f, obj = {
-    debug: jspb.Message.getFieldWithDefault(msg, 1, false),
-    twilioAccount: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    twilioKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    sendgridKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    stripeKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    slackKey: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    customerIndex: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    twilioAccount: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    twilioKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    sendgridKey: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    stripeKey: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    slackKey: jspb.Message.getFieldWithDefault(msg, 5, ""),
     emailAddress: (f = msg.getEmailAddress()) && proto.api.EmailAddress.toObject(includeInstance, f),
     logConfig: (f = msg.getLogConfig()) && proto.api.LogConfig.toObject(includeInstance, f)
   };
@@ -3931,23 +3929,23 @@ proto.api.Config.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.Config}
+ * @return {!proto.api.Access}
  */
-proto.api.Config.deserializeBinary = function(bytes) {
+proto.api.Access.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.Config;
-  return proto.api.Config.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.Access;
+  return proto.api.Access.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.Config} msg The message object to deserialize into.
+ * @param {!proto.api.Access} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.Config}
+ * @return {!proto.api.Access}
  */
-proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.Access.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -3955,39 +3953,31 @@ proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDebug(value);
-      break;
-    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTwilioAccount(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setTwilioKey(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setSendgridKey(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setStripeKey(value);
       break;
-    case 6:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setSlackKey(value);
       break;
-    case 7:
-      var value = /** @type {!proto.api.CustomerIndex} */ (reader.readEnum());
-      msg.setCustomerIndex(value);
-      break;
-    case 8:
+    case 6:
       var value = new proto.api.EmailAddress;
       reader.readMessage(value,proto.api.EmailAddress.deserializeBinaryFromReader);
       msg.setEmailAddress(value);
       break;
-    case 9:
+    case 7:
       var value = new proto.api.LogConfig;
       reader.readMessage(value,proto.api.LogConfig.deserializeBinaryFromReader);
       msg.setLogConfig(value);
@@ -4005,9 +3995,9 @@ proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.Config.prototype.serializeBinary = function() {
+proto.api.Access.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.Config.serializeBinaryToWriter(this, writer);
+  proto.api.Access.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -4015,65 +4005,51 @@ proto.api.Config.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.Config} message
+ * @param {!proto.api.Access} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Config.serializeBinaryToWriter = function(message, writer) {
+proto.api.Access.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getDebug();
-  if (f) {
-    writer.writeBool(
-      1,
-      f
-    );
-  }
   f = message.getTwilioAccount();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      1,
       f
     );
   }
   f = message.getTwilioKey();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
   f = message.getSendgridKey();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      3,
       f
     );
   }
   f = message.getStripeKey();
   if (f.length > 0) {
     writer.writeString(
-      5,
+      4,
       f
     );
   }
   f = message.getSlackKey();
   if (f.length > 0) {
     writer.writeString(
-      6,
-      f
-    );
-  }
-  f = message.getCustomerIndex();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      7,
+      5,
       f
     );
   }
   f = message.getEmailAddress();
   if (f != null) {
     writer.writeMessage(
-      8,
+      6,
       f,
       proto.api.EmailAddress.serializeBinaryToWriter
     );
@@ -4081,7 +4057,7 @@ proto.api.Config.serializeBinaryToWriter = function(message, writer) {
   f = message.getLogConfig();
   if (f != null) {
     writer.writeMessage(
-      9,
+      7,
       f,
       proto.api.LogConfig.serializeBinaryToWriter
     );
@@ -4090,129 +4066,97 @@ proto.api.Config.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional bool debug = 1;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
+ * optional string twilio_account = 1;
+ * @return {string}
  */
-proto.api.Config.prototype.getDebug = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
+proto.api.Access.prototype.getTwilioAccount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {boolean} value */
-proto.api.Config.prototype.setDebug = function(value) {
-  jspb.Message.setProto3BooleanField(this, 1, value);
+/** @param {string} value */
+proto.api.Access.prototype.setTwilioAccount = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string twilio_account = 2;
+ * optional string twilio_key = 2;
  * @return {string}
  */
-proto.api.Config.prototype.getTwilioAccount = function() {
+proto.api.Access.prototype.getTwilioKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Config.prototype.setTwilioAccount = function(value) {
+proto.api.Access.prototype.setTwilioKey = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string twilio_key = 3;
+ * optional string sendgrid_key = 3;
  * @return {string}
  */
-proto.api.Config.prototype.getTwilioKey = function() {
+proto.api.Access.prototype.getSendgridKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Config.prototype.setTwilioKey = function(value) {
+proto.api.Access.prototype.setSendgridKey = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string sendgrid_key = 4;
+ * optional string stripe_key = 4;
  * @return {string}
  */
-proto.api.Config.prototype.getSendgridKey = function() {
+proto.api.Access.prototype.getStripeKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Config.prototype.setSendgridKey = function(value) {
+proto.api.Access.prototype.setStripeKey = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string stripe_key = 5;
+ * optional string slack_key = 5;
  * @return {string}
  */
-proto.api.Config.prototype.getStripeKey = function() {
+proto.api.Access.prototype.getSlackKey = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Config.prototype.setStripeKey = function(value) {
+proto.api.Access.prototype.setSlackKey = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string slack_key = 6;
- * @return {string}
- */
-proto.api.Config.prototype.getSlackKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Config.prototype.setSlackKey = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional CustomerIndex customer_index = 7;
- * @return {!proto.api.CustomerIndex}
- */
-proto.api.Config.prototype.getCustomerIndex = function() {
-  return /** @type {!proto.api.CustomerIndex} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/** @param {!proto.api.CustomerIndex} value */
-proto.api.Config.prototype.setCustomerIndex = function(value) {
-  jspb.Message.setProto3EnumField(this, 7, value);
-};
-
-
-/**
- * optional EmailAddress email_address = 8;
+ * optional EmailAddress email_address = 6;
  * @return {?proto.api.EmailAddress}
  */
-proto.api.Config.prototype.getEmailAddress = function() {
+proto.api.Access.prototype.getEmailAddress = function() {
   return /** @type{?proto.api.EmailAddress} */ (
-    jspb.Message.getWrapperField(this, proto.api.EmailAddress, 8));
+    jspb.Message.getWrapperField(this, proto.api.EmailAddress, 6));
 };
 
 
 /** @param {?proto.api.EmailAddress|undefined} value */
-proto.api.Config.prototype.setEmailAddress = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
+proto.api.Access.prototype.setEmailAddress = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
 };
 
 
-proto.api.Config.prototype.clearEmailAddress = function() {
+proto.api.Access.prototype.clearEmailAddress = function() {
   this.setEmailAddress(undefined);
 };
 
@@ -4221,28 +4165,28 @@ proto.api.Config.prototype.clearEmailAddress = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasEmailAddress = function() {
-  return jspb.Message.getField(this, 8) != null;
+proto.api.Access.prototype.hasEmailAddress = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional LogConfig log_config = 9;
+ * optional LogConfig log_config = 7;
  * @return {?proto.api.LogConfig}
  */
-proto.api.Config.prototype.getLogConfig = function() {
+proto.api.Access.prototype.getLogConfig = function() {
   return /** @type{?proto.api.LogConfig} */ (
-    jspb.Message.getWrapperField(this, proto.api.LogConfig, 9));
+    jspb.Message.getWrapperField(this, proto.api.LogConfig, 7));
 };
 
 
 /** @param {?proto.api.LogConfig|undefined} value */
-proto.api.Config.prototype.setLogConfig = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+proto.api.Access.prototype.setLogConfig = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
-proto.api.Config.prototype.clearLogConfig = function() {
+proto.api.Access.prototype.clearLogConfig = function() {
   this.setLogConfig(undefined);
 };
 
@@ -4251,8 +4195,8 @@ proto.api.Config.prototype.clearLogConfig = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasLogConfig = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.api.Access.prototype.hasLogConfig = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -5996,19 +5940,19 @@ proto.api.LogHook.prototype.setTitle = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.SlackAttachment = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.SlackAttachment.repeatedFields_, null);
+proto.api.Attachment = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.Attachment.repeatedFields_, null);
 };
-goog.inherits(proto.api.SlackAttachment, jspb.Message);
+goog.inherits(proto.api.Attachment, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.SlackAttachment.displayName = 'proto.api.SlackAttachment';
+  proto.api.Attachment.displayName = 'proto.api.Attachment';
 }
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.api.SlackAttachment.repeatedFields_ = [15];
+proto.api.Attachment.repeatedFields_ = [15];
 
 
 
@@ -6023,8 +5967,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.SlackAttachment.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.SlackAttachment.toObject(opt_includeInstance, this);
+proto.api.Attachment.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.Attachment.toObject(opt_includeInstance, this);
 };
 
 
@@ -6033,11 +5977,11 @@ proto.api.SlackAttachment.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.SlackAttachment} msg The msg instance to transform.
+ * @param {!proto.api.Attachment} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SlackAttachment.toObject = function(includeInstance, msg) {
+proto.api.Attachment.toObject = function(includeInstance, msg) {
   var f, obj = {
     color: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fallback: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -6068,23 +6012,23 @@ proto.api.SlackAttachment.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.SlackAttachment}
+ * @return {!proto.api.Attachment}
  */
-proto.api.SlackAttachment.deserializeBinary = function(bytes) {
+proto.api.Attachment.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.SlackAttachment;
-  return proto.api.SlackAttachment.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.Attachment;
+  return proto.api.Attachment.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.SlackAttachment} msg The message object to deserialize into.
+ * @param {!proto.api.Attachment} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.SlackAttachment}
+ * @return {!proto.api.Attachment}
  */
-proto.api.SlackAttachment.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.Attachment.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -6165,9 +6109,9 @@ proto.api.SlackAttachment.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.SlackAttachment.prototype.serializeBinary = function() {
+proto.api.Attachment.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.SlackAttachment.serializeBinaryToWriter(this, writer);
+  proto.api.Attachment.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -6175,11 +6119,11 @@ proto.api.SlackAttachment.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.SlackAttachment} message
+ * @param {!proto.api.Attachment} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.SlackAttachment.serializeBinaryToWriter = function(message, writer) {
+proto.api.Attachment.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getColor();
   if (f.length > 0) {
@@ -6294,13 +6238,13 @@ proto.api.SlackAttachment.serializeBinaryToWriter = function(message, writer) {
  * optional string color = 1;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getColor = function() {
+proto.api.Attachment.prototype.getColor = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setColor = function(value) {
+proto.api.Attachment.prototype.setColor = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -6309,13 +6253,13 @@ proto.api.SlackAttachment.prototype.setColor = function(value) {
  * optional string fallback = 2;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getFallback = function() {
+proto.api.Attachment.prototype.getFallback = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setFallback = function(value) {
+proto.api.Attachment.prototype.setFallback = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -6324,13 +6268,13 @@ proto.api.SlackAttachment.prototype.setFallback = function(value) {
  * optional string callback_id = 3;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getCallbackId = function() {
+proto.api.Attachment.prototype.getCallbackId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setCallbackId = function(value) {
+proto.api.Attachment.prototype.setCallbackId = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -6339,13 +6283,13 @@ proto.api.SlackAttachment.prototype.setCallbackId = function(value) {
  * optional int64 id = 4;
  * @return {number}
  */
-proto.api.SlackAttachment.prototype.getId = function() {
+proto.api.Attachment.prototype.getId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /** @param {number} value */
-proto.api.SlackAttachment.prototype.setId = function(value) {
+proto.api.Attachment.prototype.setId = function(value) {
   jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -6354,13 +6298,13 @@ proto.api.SlackAttachment.prototype.setId = function(value) {
  * optional string author_id = 5;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getAuthorId = function() {
+proto.api.Attachment.prototype.getAuthorId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setAuthorId = function(value) {
+proto.api.Attachment.prototype.setAuthorId = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
 };
 
@@ -6369,13 +6313,13 @@ proto.api.SlackAttachment.prototype.setAuthorId = function(value) {
  * optional string author_name = 6;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getAuthorName = function() {
+proto.api.Attachment.prototype.getAuthorName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setAuthorName = function(value) {
+proto.api.Attachment.prototype.setAuthorName = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -6384,13 +6328,13 @@ proto.api.SlackAttachment.prototype.setAuthorName = function(value) {
  * optional string author_link = 7;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getAuthorLink = function() {
+proto.api.Attachment.prototype.getAuthorLink = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setAuthorLink = function(value) {
+proto.api.Attachment.prototype.setAuthorLink = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
 };
 
@@ -6399,13 +6343,13 @@ proto.api.SlackAttachment.prototype.setAuthorLink = function(value) {
  * optional string author_icon = 8;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getAuthorIcon = function() {
+proto.api.Attachment.prototype.getAuthorIcon = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setAuthorIcon = function(value) {
+proto.api.Attachment.prototype.setAuthorIcon = function(value) {
   jspb.Message.setProto3StringField(this, 8, value);
 };
 
@@ -6414,13 +6358,13 @@ proto.api.SlackAttachment.prototype.setAuthorIcon = function(value) {
  * optional string title = 9;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getTitle = function() {
+proto.api.Attachment.prototype.getTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setTitle = function(value) {
+proto.api.Attachment.prototype.setTitle = function(value) {
   jspb.Message.setProto3StringField(this, 9, value);
 };
 
@@ -6429,13 +6373,13 @@ proto.api.SlackAttachment.prototype.setTitle = function(value) {
  * optional string title_prefix = 10;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getTitlePrefix = function() {
+proto.api.Attachment.prototype.getTitlePrefix = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setTitlePrefix = function(value) {
+proto.api.Attachment.prototype.setTitlePrefix = function(value) {
   jspb.Message.setProto3StringField(this, 10, value);
 };
 
@@ -6444,13 +6388,13 @@ proto.api.SlackAttachment.prototype.setTitlePrefix = function(value) {
  * optional string pretext = 11;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getPretext = function() {
+proto.api.Attachment.prototype.getPretext = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setPretext = function(value) {
+proto.api.Attachment.prototype.setPretext = function(value) {
   jspb.Message.setProto3StringField(this, 11, value);
 };
 
@@ -6459,13 +6403,13 @@ proto.api.SlackAttachment.prototype.setPretext = function(value) {
  * optional string text = 12;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getText = function() {
+proto.api.Attachment.prototype.getText = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setText = function(value) {
+proto.api.Attachment.prototype.setText = function(value) {
   jspb.Message.setProto3StringField(this, 12, value);
 };
 
@@ -6474,13 +6418,13 @@ proto.api.SlackAttachment.prototype.setText = function(value) {
  * optional string image_url = 13;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getImageUrl = function() {
+proto.api.Attachment.prototype.getImageUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setImageUrl = function(value) {
+proto.api.Attachment.prototype.setImageUrl = function(value) {
   jspb.Message.setProto3StringField(this, 13, value);
 };
 
@@ -6489,13 +6433,13 @@ proto.api.SlackAttachment.prototype.setImageUrl = function(value) {
  * optional string thumb_url = 14;
  * @return {string}
  */
-proto.api.SlackAttachment.prototype.getThumbUrl = function() {
+proto.api.Attachment.prototype.getThumbUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SlackAttachment.prototype.setThumbUrl = function(value) {
+proto.api.Attachment.prototype.setThumbUrl = function(value) {
   jspb.Message.setProto3StringField(this, 14, value);
 };
 
@@ -6504,14 +6448,14 @@ proto.api.SlackAttachment.prototype.setThumbUrl = function(value) {
  * repeated AttachmentField fields = 15;
  * @return {!Array<!proto.api.AttachmentField>}
  */
-proto.api.SlackAttachment.prototype.getFieldsList = function() {
+proto.api.Attachment.prototype.getFieldsList = function() {
   return /** @type{!Array<!proto.api.AttachmentField>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.api.AttachmentField, 15));
 };
 
 
 /** @param {!Array<!proto.api.AttachmentField>} value */
-proto.api.SlackAttachment.prototype.setFieldsList = function(value) {
+proto.api.Attachment.prototype.setFieldsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 15, value);
 };
 
@@ -6521,12 +6465,12 @@ proto.api.SlackAttachment.prototype.setFieldsList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.api.AttachmentField}
  */
-proto.api.SlackAttachment.prototype.addFields = function(opt_value, opt_index) {
+proto.api.Attachment.prototype.addFields = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.api.AttachmentField, opt_index);
 };
 
 
-proto.api.SlackAttachment.prototype.clearFieldsList = function() {
+proto.api.Attachment.prototype.clearFieldsList = function() {
   this.setFieldsList([]);
 };
 
@@ -6598,7 +6542,7 @@ proto.api.AttachmentAction.toObject = function(includeInstance, msg) {
     proto.api.AttachmentActionOption.toObject, includeInstance),
     optionGroupsList: jspb.Message.toObjectList(msg.getOptionGroupsList(),
     proto.api.AttachmentActionOptionGroup.toObject, includeInstance),
-    confirm: (f = msg.getConfirm()) && proto.api.ConfirmationField.toObject(includeInstance, f),
+    confirm: (f = msg.getConfirm()) && proto.api.AttachmentConfirmationField.toObject(includeInstance, f),
     url: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
@@ -6680,8 +6624,8 @@ proto.api.AttachmentAction.deserializeBinaryFromReader = function(msg, reader) {
       msg.addOptionGroups(value);
       break;
     case 11:
-      var value = new proto.api.ConfirmationField;
-      reader.readMessage(value,proto.api.ConfirmationField.deserializeBinaryFromReader);
+      var value = new proto.api.AttachmentConfirmationField;
+      reader.readMessage(value,proto.api.AttachmentConfirmationField.deserializeBinaryFromReader);
       msg.setConfirm(value);
       break;
     case 12:
@@ -6795,7 +6739,7 @@ proto.api.AttachmentAction.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       11,
       f,
-      proto.api.ConfirmationField.serializeBinaryToWriter
+      proto.api.AttachmentConfirmationField.serializeBinaryToWriter
     );
   }
   f = message.getUrl();
@@ -7007,16 +6951,16 @@ proto.api.AttachmentAction.prototype.clearOptionGroupsList = function() {
 
 
 /**
- * optional ConfirmationField confirm = 11;
- * @return {?proto.api.ConfirmationField}
+ * optional AttachmentConfirmationField confirm = 11;
+ * @return {?proto.api.AttachmentConfirmationField}
  */
 proto.api.AttachmentAction.prototype.getConfirm = function() {
-  return /** @type{?proto.api.ConfirmationField} */ (
-    jspb.Message.getWrapperField(this, proto.api.ConfirmationField, 11));
+  return /** @type{?proto.api.AttachmentConfirmationField} */ (
+    jspb.Message.getWrapperField(this, proto.api.AttachmentConfirmationField, 11));
 };
 
 
-/** @param {?proto.api.ConfirmationField|undefined} value */
+/** @param {?proto.api.AttachmentConfirmationField|undefined} value */
 proto.api.AttachmentAction.prototype.setConfirm = function(value) {
   jspb.Message.setWrapperField(this, 11, value);
 };
@@ -7062,12 +7006,12 @@ proto.api.AttachmentAction.prototype.setUrl = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ConfirmationField = function(opt_data) {
+proto.api.AttachmentConfirmationField = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.ConfirmationField, jspb.Message);
+goog.inherits(proto.api.AttachmentConfirmationField, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.ConfirmationField.displayName = 'proto.api.ConfirmationField';
+  proto.api.AttachmentConfirmationField.displayName = 'proto.api.AttachmentConfirmationField';
 }
 
 
@@ -7082,8 +7026,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.ConfirmationField.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ConfirmationField.toObject(opt_includeInstance, this);
+proto.api.AttachmentConfirmationField.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.AttachmentConfirmationField.toObject(opt_includeInstance, this);
 };
 
 
@@ -7092,11 +7036,11 @@ proto.api.ConfirmationField.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.ConfirmationField} msg The msg instance to transform.
+ * @param {!proto.api.AttachmentConfirmationField} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ConfirmationField.toObject = function(includeInstance, msg) {
+proto.api.AttachmentConfirmationField.toObject = function(includeInstance, msg) {
   var f, obj = {
     title: jspb.Message.getFieldWithDefault(msg, 1, ""),
     text: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -7115,23 +7059,23 @@ proto.api.ConfirmationField.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ConfirmationField}
+ * @return {!proto.api.AttachmentConfirmationField}
  */
-proto.api.ConfirmationField.deserializeBinary = function(bytes) {
+proto.api.AttachmentConfirmationField.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ConfirmationField;
-  return proto.api.ConfirmationField.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.AttachmentConfirmationField;
+  return proto.api.AttachmentConfirmationField.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.ConfirmationField} msg The message object to deserialize into.
+ * @param {!proto.api.AttachmentConfirmationField} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ConfirmationField}
+ * @return {!proto.api.AttachmentConfirmationField}
  */
-proto.api.ConfirmationField.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.AttachmentConfirmationField.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -7167,9 +7111,9 @@ proto.api.ConfirmationField.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.ConfirmationField.prototype.serializeBinary = function() {
+proto.api.AttachmentConfirmationField.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.ConfirmationField.serializeBinaryToWriter(this, writer);
+  proto.api.AttachmentConfirmationField.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -7177,11 +7121,11 @@ proto.api.ConfirmationField.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.ConfirmationField} message
+ * @param {!proto.api.AttachmentConfirmationField} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.ConfirmationField.serializeBinaryToWriter = function(message, writer) {
+proto.api.AttachmentConfirmationField.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTitle();
   if (f.length > 0) {
@@ -7218,13 +7162,13 @@ proto.api.ConfirmationField.serializeBinaryToWriter = function(message, writer) 
  * optional string title = 1;
  * @return {string}
  */
-proto.api.ConfirmationField.prototype.getTitle = function() {
+proto.api.AttachmentConfirmationField.prototype.getTitle = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.ConfirmationField.prototype.setTitle = function(value) {
+proto.api.AttachmentConfirmationField.prototype.setTitle = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -7233,13 +7177,13 @@ proto.api.ConfirmationField.prototype.setTitle = function(value) {
  * optional string text = 2;
  * @return {string}
  */
-proto.api.ConfirmationField.prototype.getText = function() {
+proto.api.AttachmentConfirmationField.prototype.getText = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.api.ConfirmationField.prototype.setText = function(value) {
+proto.api.AttachmentConfirmationField.prototype.setText = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -7248,13 +7192,13 @@ proto.api.ConfirmationField.prototype.setText = function(value) {
  * optional string ok_text = 3;
  * @return {string}
  */
-proto.api.ConfirmationField.prototype.getOkText = function() {
+proto.api.AttachmentConfirmationField.prototype.getOkText = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.api.ConfirmationField.prototype.setOkText = function(value) {
+proto.api.AttachmentConfirmationField.prototype.setOkText = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -7263,13 +7207,13 @@ proto.api.ConfirmationField.prototype.setOkText = function(value) {
  * optional string dismiss_text = 4;
  * @return {string}
  */
-proto.api.ConfirmationField.prototype.getDismissText = function() {
+proto.api.AttachmentConfirmationField.prototype.getDismissText = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
-proto.api.ConfirmationField.prototype.setDismissText = function(value) {
+proto.api.AttachmentConfirmationField.prototype.setDismissText = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
 };
 
@@ -7910,7 +7854,7 @@ proto.api.JSONMap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.JSONMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    jsonMapMap: (f = msg.getJsonMapMap()) ? f.toObject(includeInstance, undefined) : []
+    jsonMapMap: (f = msg.getJsonMapMap()) ? f.toObject(includeInstance, proto.api.JSON.toObject) : []
   };
 
   if (includeInstance) {
@@ -7950,7 +7894,7 @@ proto.api.JSONMap.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = msg.getJsonMapMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.JSON.deserializeBinaryFromReader, "");
          });
       break;
     default:
@@ -7984,26 +7928,219 @@ proto.api.JSONMap.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getJsonMapMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.JSON.serializeBinaryToWriter);
   }
 };
 
 
 /**
- * map<string, bytes> json_map = 1;
+ * map<string, JSON> json_map = 1;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!(string|Uint8Array)>}
+ * @return {!jspb.Map<string,!proto.api.JSON>}
  */
 proto.api.JSONMap.prototype.getJsonMapMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
+  return /** @type {!jspb.Map<string,!proto.api.JSON>} */ (
       jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
+      proto.api.JSON));
 };
 
 
 proto.api.JSONMap.prototype.clearJsonMapMap = function() {
   this.getJsonMapMap().clear();
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.JSON = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.JSON, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.api.JSON.displayName = 'proto.api.JSON';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.JSON.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.JSON.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.JSON} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.JSON.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: msg.getData_asB64(),
+    size: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.JSON}
+ */
+proto.api.JSON.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.JSON;
+  return proto.api.JSON.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.JSON} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.JSON}
+ */
+proto.api.JSON.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setData(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSize(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.JSON.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.JSON.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.JSON} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.JSON.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      1,
+      f
+    );
+  }
+  f = message.getSize();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional bytes data = 1;
+ * @return {!(string|Uint8Array)}
+ */
+proto.api.JSON.prototype.getData = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * optional bytes data = 1;
+ * This is a type-conversion wrapper around `getData()`
+ * @return {string}
+ */
+proto.api.JSON.prototype.getData_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getData()));
+};
+
+
+/**
+ * optional bytes data = 1;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getData()`
+ * @return {!Uint8Array}
+ */
+proto.api.JSON.prototype.getData_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getData()));
+};
+
+
+/** @param {!(string|Uint8Array)} value */
+proto.api.JSON.prototype.setData = function(value) {
+  jspb.Message.setProto3BytesField(this, 1, value);
+};
+
+
+/**
+ * optional int64 size = 2;
+ * @return {number}
+ */
+proto.api.JSON.prototype.getSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/** @param {number} value */
+proto.api.JSON.prototype.setSize = function(value) {
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -8322,194 +8459,6 @@ proto.api.PubSubTopic.prototype.clearTopic = function() {
  */
 proto.api.PubSubTopic.prototype.hasTopic = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.api.Authentication = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.api.Authentication, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.api.Authentication.displayName = 'proto.api.Authentication';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.Authentication.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.Authentication.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.Authentication} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.Authentication.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    authentication: (f = msg.getAuthentication()) && google_api_auth_pb.Authentication.toObject(includeInstance, f),
-    annotationsMap: (f = msg.getAnnotationsMap()) ? f.toObject(includeInstance, undefined) : []
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.Authentication}
- */
-proto.api.Authentication.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.Authentication;
-  return proto.api.Authentication.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.Authentication} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.Authentication}
- */
-proto.api.Authentication.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new google_api_auth_pb.Authentication;
-      reader.readMessage(value,google_api_auth_pb.Authentication.deserializeBinaryFromReader);
-      msg.setAuthentication(value);
-      break;
-    case 2:
-      var value = msg.getAnnotationsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
-         });
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.Authentication.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.Authentication.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.Authentication} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.Authentication.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getAuthentication();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      google_api_auth_pb.Authentication.serializeBinaryToWriter
-    );
-  }
-  f = message.getAnnotationsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-};
-
-
-/**
- * optional google.api.Authentication authentication = 1;
- * @return {?proto.google.api.Authentication}
- */
-proto.api.Authentication.prototype.getAuthentication = function() {
-  return /** @type{?proto.google.api.Authentication} */ (
-    jspb.Message.getWrapperField(this, google_api_auth_pb.Authentication, 1));
-};
-
-
-/** @param {?proto.google.api.Authentication|undefined} value */
-proto.api.Authentication.prototype.setAuthentication = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.api.Authentication.prototype.clearAuthentication = function() {
-  this.setAuthentication(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.Authentication.prototype.hasAuthentication = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * map<string, string> annotations = 2;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
- */
-proto.api.Authentication.prototype.getAnnotationsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
-      null));
-};
-
-
-proto.api.Authentication.prototype.clearAnnotationsMap = function() {
-  this.getAnnotationsMap().clear();
 };
 
 
