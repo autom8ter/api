@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[39];
+  static const ::google::protobuf::internal::ParseTable schema[40];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -170,6 +170,9 @@ extern SubscribeCustomerRequestDefaultTypeInternal _SubscribeCustomerRequest_def
 class SubscribeCustomerResponse;
 class SubscribeCustomerResponseDefaultTypeInternal;
 extern SubscribeCustomerResponseDefaultTypeInternal _SubscribeCustomerResponse_default_instance_;
+class Token;
+class TokenDefaultTypeInternal;
+extern TokenDefaultTypeInternal _Token_default_instance_;
 class UserReminder;
 class UserReminderDefaultTypeInternal;
 extern UserReminderDefaultTypeInternal _UserReminder_default_instance_;
@@ -214,6 +217,7 @@ template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeCustomerRequest* Arena::CreateMaybeMessage<::api::SubscribeCustomerRequest>(Arena*);
 template<> ::api::SubscribeCustomerResponse* Arena::CreateMaybeMessage<::api::SubscribeCustomerResponse>(Arena*);
+template<> ::api::Token* Arena::CreateMaybeMessage<::api::Token>(Arena*);
 template<> ::api::UserReminder* Arena::CreateMaybeMessage<::api::UserReminder>(Arena*);
 }  // namespace protobuf
 }  // namespace google
@@ -240,6 +244,30 @@ inline bool CustomerIndex_Parse(
     const ::std::string& name, CustomerIndex* value) {
   return ::google::protobuf::internal::ParseNamedEnum<CustomerIndex>(
     CustomerIndex_descriptor(), name, value);
+}
+enum Grant {
+  TWILIO = 0,
+  SENDGRID = 1,
+  STRIPE = 2,
+  SLACK = 3,
+  GCP = 4,
+  Grant_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  Grant_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool Grant_IsValid(int value);
+const Grant Grant_MIN = TWILIO;
+const Grant Grant_MAX = GCP;
+const int Grant_ARRAYSIZE = Grant_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Grant_descriptor();
+inline const ::std::string& Grant_Name(Grant value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Grant_descriptor(), value);
+}
+inline bool Grant_Parse(
+    const ::std::string& name, Grant* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Grant>(
+    Grant_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -2989,9 +3017,23 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_twilio_key();
   void set_allocated_twilio_key(::std::string* twilio_key);
 
-  // string sendgrid_key = 3;
+  // string sendgrid_account = 3;
+  void clear_sendgrid_account();
+  static const int kSendgridAccountFieldNumber = 3;
+  const ::std::string& sendgrid_account() const;
+  void set_sendgrid_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_sendgrid_account(::std::string&& value);
+  #endif
+  void set_sendgrid_account(const char* value);
+  void set_sendgrid_account(const char* value, size_t size);
+  ::std::string* mutable_sendgrid_account();
+  ::std::string* release_sendgrid_account();
+  void set_allocated_sendgrid_account(::std::string* sendgrid_account);
+
+  // string sendgrid_key = 4;
   void clear_sendgrid_key();
-  static const int kSendgridKeyFieldNumber = 3;
+  static const int kSendgridKeyFieldNumber = 4;
   const ::std::string& sendgrid_key() const;
   void set_sendgrid_key(const ::std::string& value);
   #if LANG_CXX11
@@ -3003,9 +3045,23 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_sendgrid_key();
   void set_allocated_sendgrid_key(::std::string* sendgrid_key);
 
-  // string stripe_key = 4;
+  // string stripe_account = 5;
+  void clear_stripe_account();
+  static const int kStripeAccountFieldNumber = 5;
+  const ::std::string& stripe_account() const;
+  void set_stripe_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_stripe_account(::std::string&& value);
+  #endif
+  void set_stripe_account(const char* value);
+  void set_stripe_account(const char* value, size_t size);
+  ::std::string* mutable_stripe_account();
+  ::std::string* release_stripe_account();
+  void set_allocated_stripe_account(::std::string* stripe_account);
+
+  // string stripe_key = 6;
   void clear_stripe_key();
-  static const int kStripeKeyFieldNumber = 4;
+  static const int kStripeKeyFieldNumber = 6;
   const ::std::string& stripe_key() const;
   void set_stripe_key(const ::std::string& value);
   #if LANG_CXX11
@@ -3017,9 +3073,23 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_stripe_key();
   void set_allocated_stripe_key(::std::string* stripe_key);
 
-  // string slack_key = 5;
+  // string slack_account = 7;
+  void clear_slack_account();
+  static const int kSlackAccountFieldNumber = 7;
+  const ::std::string& slack_account() const;
+  void set_slack_account(const ::std::string& value);
+  #if LANG_CXX11
+  void set_slack_account(::std::string&& value);
+  #endif
+  void set_slack_account(const char* value);
+  void set_slack_account(const char* value, size_t size);
+  ::std::string* mutable_slack_account();
+  ::std::string* release_slack_account();
+  void set_allocated_slack_account(::std::string* slack_account);
+
+  // string slack_key = 8;
   void clear_slack_key();
-  static const int kSlackKeyFieldNumber = 5;
+  static const int kSlackKeyFieldNumber = 8;
   const ::std::string& slack_key() const;
   void set_slack_key(const ::std::string& value);
   #if LANG_CXX11
@@ -3031,29 +3101,33 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_slack_key();
   void set_allocated_slack_key(::std::string* slack_key);
 
-  // .api.EmailAddress email_address = 6;
-  bool has_email_address() const;
-  void clear_email_address();
-  static const int kEmailAddressFieldNumber = 6;
-  private:
-  const ::api::EmailAddress& _internal_email_address() const;
-  public:
-  const ::api::EmailAddress& email_address() const;
-  ::api::EmailAddress* release_email_address();
-  ::api::EmailAddress* mutable_email_address();
-  void set_allocated_email_address(::api::EmailAddress* email_address);
+  // string gcp_project = 9;
+  void clear_gcp_project();
+  static const int kGcpProjectFieldNumber = 9;
+  const ::std::string& gcp_project() const;
+  void set_gcp_project(const ::std::string& value);
+  #if LANG_CXX11
+  void set_gcp_project(::std::string&& value);
+  #endif
+  void set_gcp_project(const char* value);
+  void set_gcp_project(const char* value, size_t size);
+  ::std::string* mutable_gcp_project();
+  ::std::string* release_gcp_project();
+  void set_allocated_gcp_project(::std::string* gcp_project);
 
-  // .api.LogConfig log_config = 7;
-  bool has_log_config() const;
-  void clear_log_config();
-  static const int kLogConfigFieldNumber = 7;
-  private:
-  const ::api::LogConfig& _internal_log_config() const;
-  public:
-  const ::api::LogConfig& log_config() const;
-  ::api::LogConfig* release_log_config();
-  ::api::LogConfig* mutable_log_config();
-  void set_allocated_log_config(::api::LogConfig* log_config);
+  // string gcp_key = 10;
+  void clear_gcp_key();
+  static const int kGcpKeyFieldNumber = 10;
+  const ::std::string& gcp_key() const;
+  void set_gcp_key(const ::std::string& value);
+  #if LANG_CXX11
+  void set_gcp_key(::std::string&& value);
+  #endif
+  void set_gcp_key(const char* value);
+  void set_gcp_key(const char* value, size_t size);
+  ::std::string* mutable_gcp_key();
+  ::std::string* release_gcp_key();
+  void set_allocated_gcp_key(::std::string* gcp_key);
 
   // @@protoc_insertion_point(class_scope:api.Access)
  private:
@@ -3061,11 +3135,201 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr twilio_account_;
   ::google::protobuf::internal::ArenaStringPtr twilio_key_;
+  ::google::protobuf::internal::ArenaStringPtr sendgrid_account_;
   ::google::protobuf::internal::ArenaStringPtr sendgrid_key_;
+  ::google::protobuf::internal::ArenaStringPtr stripe_account_;
   ::google::protobuf::internal::ArenaStringPtr stripe_key_;
+  ::google::protobuf::internal::ArenaStringPtr slack_account_;
   ::google::protobuf::internal::ArenaStringPtr slack_key_;
-  ::api::EmailAddress* email_address_;
-  ::api::LogConfig* log_config_;
+  ::google::protobuf::internal::ArenaStringPtr gcp_project_;
+  ::google::protobuf::internal::ArenaStringPtr gcp_key_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Token) */ {
+ public:
+  Token();
+  virtual ~Token();
+
+  Token(const Token& from);
+
+  inline Token& operator=(const Token& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Token(Token&& from) noexcept
+    : Token() {
+    *this = ::std::move(from);
+  }
+
+  inline Token& operator=(Token&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Token& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Token* internal_default_instance() {
+    return reinterpret_cast<const Token*>(
+               &_Token_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    20;
+
+  void Swap(Token* other);
+  friend void swap(Token& a, Token& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Token* New() const final {
+    return CreateMaybeMessage<Token>(NULL);
+  }
+
+  Token* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Token>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Token& from);
+  void MergeFrom(const Token& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Token* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .api.Grant grants = 8;
+  int grants_size() const;
+  void clear_grants();
+  static const int kGrantsFieldNumber = 8;
+  ::api::Grant grants(int index) const;
+  void set_grants(int index, ::api::Grant value);
+  void add_grants(::api::Grant value);
+  const ::google::protobuf::RepeatedField<int>& grants() const;
+  ::google::protobuf::RepeatedField<int>* mutable_grants();
+
+  // string audience = 2;
+  void clear_audience();
+  static const int kAudienceFieldNumber = 2;
+  const ::std::string& audience() const;
+  void set_audience(const ::std::string& value);
+  #if LANG_CXX11
+  void set_audience(::std::string&& value);
+  #endif
+  void set_audience(const char* value);
+  void set_audience(const char* value, size_t size);
+  ::std::string* mutable_audience();
+  ::std::string* release_audience();
+  void set_allocated_audience(::std::string* audience);
+
+  // string subject = 3;
+  void clear_subject();
+  static const int kSubjectFieldNumber = 3;
+  const ::std::string& subject() const;
+  void set_subject(const ::std::string& value);
+  #if LANG_CXX11
+  void set_subject(::std::string&& value);
+  #endif
+  void set_subject(const char* value);
+  void set_subject(const char* value, size_t size);
+  ::std::string* mutable_subject();
+  ::std::string* release_subject();
+  void set_allocated_subject(::std::string* subject);
+
+  // string id = 5;
+  void clear_id();
+  static const int kIdFieldNumber = 5;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // .api.Access access = 1;
+  bool has_access() const;
+  void clear_access();
+  static const int kAccessFieldNumber = 1;
+  private:
+  const ::api::Access& _internal_access() const;
+  public:
+  const ::api::Access& access() const;
+  ::api::Access* release_access();
+  ::api::Access* mutable_access();
+  void set_allocated_access(::api::Access* access);
+
+  // int64 expires_at = 4;
+  void clear_expires_at();
+  static const int kExpiresAtFieldNumber = 4;
+  ::google::protobuf::int64 expires_at() const;
+  void set_expires_at(::google::protobuf::int64 value);
+
+  // int64 issued_at = 6;
+  void clear_issued_at();
+  static const int kIssuedAtFieldNumber = 6;
+  ::google::protobuf::int64 issued_at() const;
+  void set_issued_at(::google::protobuf::int64 value);
+
+  // int64 not_before = 7;
+  void clear_not_before();
+  static const int kNotBeforeFieldNumber = 7;
+  ::google::protobuf::int64 not_before() const;
+  void set_not_before(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.Token)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField<int> grants_;
+  mutable int _grants_cached_byte_size_;
+  ::google::protobuf::internal::ArenaStringPtr audience_;
+  ::google::protobuf::internal::ArenaStringPtr subject_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::api::Access* access_;
+  ::google::protobuf::int64 expires_at_;
+  ::google::protobuf::int64 issued_at_;
+  ::google::protobuf::int64 not_before_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -3106,7 +3370,7 @@ class LogConfig : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LogConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(LogConfig* other);
   friend void swap(LogConfig& a, LogConfig& b) {
@@ -3232,7 +3496,7 @@ class EmailAddress : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailAddress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(EmailAddress* other);
   friend void swap(EmailAddress& a, EmailAddress& b) {
@@ -3358,7 +3622,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -3480,7 +3744,7 @@ class RecipientEmail : public ::google::protobuf::Message /* @@protoc_insertion_
                &_RecipientEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(RecipientEmail* other);
   friend void swap(RecipientEmail& a, RecipientEmail& b) {
@@ -3634,7 +3898,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -3820,7 +4084,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -3961,7 +4225,7 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Fax_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(Fax* other);
   friend void swap(Fax& a, Fax& b) {
@@ -4139,7 +4403,7 @@ class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_LogHook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(LogHook* other);
   friend void swap(LogHook& a, LogHook& b) {
@@ -4280,7 +4544,7 @@ class Attachment : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Attachment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   void Swap(Attachment* other);
   friend void swap(Attachment& a, Attachment& b) {
@@ -4591,7 +4855,7 @@ class AttachmentAction : public ::google::protobuf::Message /* @@protoc_insertio
                &_AttachmentAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   void Swap(AttachmentAction* other);
   friend void swap(AttachmentAction& a, AttachmentAction& b) {
@@ -4851,7 +5115,7 @@ class AttachmentConfirmationField : public ::google::protobuf::Message /* @@prot
                &_AttachmentConfirmationField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   void Swap(AttachmentConfirmationField* other);
   friend void swap(AttachmentConfirmationField& a, AttachmentConfirmationField& b) {
@@ -5007,7 +5271,7 @@ class AttachmentActionOptionGroup : public ::google::protobuf::Message /* @@prot
                &_AttachmentActionOptionGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   void Swap(AttachmentActionOptionGroup* other);
   friend void swap(AttachmentActionOptionGroup& a, AttachmentActionOptionGroup& b) {
@@ -5131,7 +5395,7 @@ class AttachmentActionOption : public ::google::protobuf::Message /* @@protoc_in
                &_AttachmentActionOption_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   void Swap(AttachmentActionOption* other);
   friend void swap(AttachmentActionOption& a, AttachmentActionOption& b) {
@@ -5272,7 +5536,7 @@ class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion
                &_AttachmentField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   void Swap(AttachmentField* other);
   friend void swap(AttachmentField& a, AttachmentField& b) {
@@ -5426,7 +5690,7 @@ class JSONMap : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_JSONMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   void Swap(JSONMap* other);
   friend void swap(JSONMap& a, JSONMap& b) {
@@ -5538,7 +5802,7 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_JSON_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   void Swap(JSON* other);
   friend void swap(JSON& a, JSON& b) {
@@ -5656,7 +5920,7 @@ class PubSubMessage : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_PubSubMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   void Swap(PubSubMessage* other);
   friend void swap(PubSubMessage& a, PubSubMessage& b) {
@@ -5765,7 +6029,7 @@ class PubSubTopic : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_PubSubTopic_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   void Swap(PubSubTopic* other);
   friend void swap(PubSubTopic& a, PubSubTopic& b) {
@@ -9114,7 +9378,60 @@ inline void Access::set_allocated_twilio_key(::std::string* twilio_key) {
   // @@protoc_insertion_point(field_set_allocated:api.Access.twilio_key)
 }
 
-// string sendgrid_key = 3;
+// string sendgrid_account = 3;
+inline void Access::clear_sendgrid_account() {
+  sendgrid_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Access::sendgrid_account() const {
+  // @@protoc_insertion_point(field_get:api.Access.sendgrid_account)
+  return sendgrid_account_.GetNoArena();
+}
+inline void Access::set_sendgrid_account(const ::std::string& value) {
+  
+  sendgrid_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Access.sendgrid_account)
+}
+#if LANG_CXX11
+inline void Access::set_sendgrid_account(::std::string&& value) {
+  
+  sendgrid_account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Access.sendgrid_account)
+}
+#endif
+inline void Access::set_sendgrid_account(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  sendgrid_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Access.sendgrid_account)
+}
+inline void Access::set_sendgrid_account(const char* value, size_t size) {
+  
+  sendgrid_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Access.sendgrid_account)
+}
+inline ::std::string* Access::mutable_sendgrid_account() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Access.sendgrid_account)
+  return sendgrid_account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Access::release_sendgrid_account() {
+  // @@protoc_insertion_point(field_release:api.Access.sendgrid_account)
+  
+  return sendgrid_account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Access::set_allocated_sendgrid_account(::std::string* sendgrid_account) {
+  if (sendgrid_account != NULL) {
+    
+  } else {
+    
+  }
+  sendgrid_account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sendgrid_account);
+  // @@protoc_insertion_point(field_set_allocated:api.Access.sendgrid_account)
+}
+
+// string sendgrid_key = 4;
 inline void Access::clear_sendgrid_key() {
   sendgrid_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -9167,7 +9484,60 @@ inline void Access::set_allocated_sendgrid_key(::std::string* sendgrid_key) {
   // @@protoc_insertion_point(field_set_allocated:api.Access.sendgrid_key)
 }
 
-// string stripe_key = 4;
+// string stripe_account = 5;
+inline void Access::clear_stripe_account() {
+  stripe_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Access::stripe_account() const {
+  // @@protoc_insertion_point(field_get:api.Access.stripe_account)
+  return stripe_account_.GetNoArena();
+}
+inline void Access::set_stripe_account(const ::std::string& value) {
+  
+  stripe_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Access.stripe_account)
+}
+#if LANG_CXX11
+inline void Access::set_stripe_account(::std::string&& value) {
+  
+  stripe_account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Access.stripe_account)
+}
+#endif
+inline void Access::set_stripe_account(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  stripe_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Access.stripe_account)
+}
+inline void Access::set_stripe_account(const char* value, size_t size) {
+  
+  stripe_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Access.stripe_account)
+}
+inline ::std::string* Access::mutable_stripe_account() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Access.stripe_account)
+  return stripe_account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Access::release_stripe_account() {
+  // @@protoc_insertion_point(field_release:api.Access.stripe_account)
+  
+  return stripe_account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Access::set_allocated_stripe_account(::std::string* stripe_account) {
+  if (stripe_account != NULL) {
+    
+  } else {
+    
+  }
+  stripe_account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), stripe_account);
+  // @@protoc_insertion_point(field_set_allocated:api.Access.stripe_account)
+}
+
+// string stripe_key = 6;
 inline void Access::clear_stripe_key() {
   stripe_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -9220,7 +9590,60 @@ inline void Access::set_allocated_stripe_key(::std::string* stripe_key) {
   // @@protoc_insertion_point(field_set_allocated:api.Access.stripe_key)
 }
 
-// string slack_key = 5;
+// string slack_account = 7;
+inline void Access::clear_slack_account() {
+  slack_account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Access::slack_account() const {
+  // @@protoc_insertion_point(field_get:api.Access.slack_account)
+  return slack_account_.GetNoArena();
+}
+inline void Access::set_slack_account(const ::std::string& value) {
+  
+  slack_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Access.slack_account)
+}
+#if LANG_CXX11
+inline void Access::set_slack_account(::std::string&& value) {
+  
+  slack_account_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Access.slack_account)
+}
+#endif
+inline void Access::set_slack_account(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  slack_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Access.slack_account)
+}
+inline void Access::set_slack_account(const char* value, size_t size) {
+  
+  slack_account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Access.slack_account)
+}
+inline ::std::string* Access::mutable_slack_account() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Access.slack_account)
+  return slack_account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Access::release_slack_account() {
+  // @@protoc_insertion_point(field_release:api.Access.slack_account)
+  
+  return slack_account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Access::set_allocated_slack_account(::std::string* slack_account) {
+  if (slack_account != NULL) {
+    
+  } else {
+    
+  }
+  slack_account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), slack_account);
+  // @@protoc_insertion_point(field_set_allocated:api.Access.slack_account)
+}
+
+// string slack_key = 8;
 inline void Access::clear_slack_key() {
   slack_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -9273,112 +9696,399 @@ inline void Access::set_allocated_slack_key(::std::string* slack_key) {
   // @@protoc_insertion_point(field_set_allocated:api.Access.slack_key)
 }
 
-// .api.EmailAddress email_address = 6;
-inline bool Access::has_email_address() const {
-  return this != internal_default_instance() && email_address_ != NULL;
+// string gcp_project = 9;
+inline void Access::clear_gcp_project() {
+  gcp_project_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Access::clear_email_address() {
-  if (GetArenaNoVirtual() == NULL && email_address_ != NULL) {
-    delete email_address_;
-  }
-  email_address_ = NULL;
+inline const ::std::string& Access::gcp_project() const {
+  // @@protoc_insertion_point(field_get:api.Access.gcp_project)
+  return gcp_project_.GetNoArena();
 }
-inline const ::api::EmailAddress& Access::_internal_email_address() const {
-  return *email_address_;
-}
-inline const ::api::EmailAddress& Access::email_address() const {
-  const ::api::EmailAddress* p = email_address_;
-  // @@protoc_insertion_point(field_get:api.Access.email_address)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::EmailAddress*>(
-      &::api::_EmailAddress_default_instance_);
-}
-inline ::api::EmailAddress* Access::release_email_address() {
-  // @@protoc_insertion_point(field_release:api.Access.email_address)
+inline void Access::set_gcp_project(const ::std::string& value) {
   
-  ::api::EmailAddress* temp = email_address_;
-  email_address_ = NULL;
-  return temp;
+  gcp_project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Access.gcp_project)
 }
-inline ::api::EmailAddress* Access::mutable_email_address() {
+#if LANG_CXX11
+inline void Access::set_gcp_project(::std::string&& value) {
   
-  if (email_address_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::EmailAddress>(GetArenaNoVirtual());
-    email_address_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.Access.email_address)
-  return email_address_;
+  gcp_project_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Access.gcp_project)
 }
-inline void Access::set_allocated_email_address(::api::EmailAddress* email_address) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete email_address_;
-  }
-  if (email_address) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      email_address = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, email_address, submessage_arena);
-    }
+#endif
+inline void Access::set_gcp_project(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  gcp_project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Access.gcp_project)
+}
+inline void Access::set_gcp_project(const char* value, size_t size) {
+  
+  gcp_project_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Access.gcp_project)
+}
+inline ::std::string* Access::mutable_gcp_project() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Access.gcp_project)
+  return gcp_project_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Access::release_gcp_project() {
+  // @@protoc_insertion_point(field_release:api.Access.gcp_project)
+  
+  return gcp_project_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Access::set_allocated_gcp_project(::std::string* gcp_project) {
+  if (gcp_project != NULL) {
     
   } else {
     
   }
-  email_address_ = email_address;
-  // @@protoc_insertion_point(field_set_allocated:api.Access.email_address)
+  gcp_project_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), gcp_project);
+  // @@protoc_insertion_point(field_set_allocated:api.Access.gcp_project)
 }
 
-// .api.LogConfig log_config = 7;
-inline bool Access::has_log_config() const {
-  return this != internal_default_instance() && log_config_ != NULL;
+// string gcp_key = 10;
+inline void Access::clear_gcp_key() {
+  gcp_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Access::clear_log_config() {
-  if (GetArenaNoVirtual() == NULL && log_config_ != NULL) {
-    delete log_config_;
-  }
-  log_config_ = NULL;
+inline const ::std::string& Access::gcp_key() const {
+  // @@protoc_insertion_point(field_get:api.Access.gcp_key)
+  return gcp_key_.GetNoArena();
 }
-inline const ::api::LogConfig& Access::_internal_log_config() const {
-  return *log_config_;
-}
-inline const ::api::LogConfig& Access::log_config() const {
-  const ::api::LogConfig* p = log_config_;
-  // @@protoc_insertion_point(field_get:api.Access.log_config)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::LogConfig*>(
-      &::api::_LogConfig_default_instance_);
-}
-inline ::api::LogConfig* Access::release_log_config() {
-  // @@protoc_insertion_point(field_release:api.Access.log_config)
+inline void Access::set_gcp_key(const ::std::string& value) {
   
-  ::api::LogConfig* temp = log_config_;
-  log_config_ = NULL;
+  gcp_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Access.gcp_key)
+}
+#if LANG_CXX11
+inline void Access::set_gcp_key(::std::string&& value) {
+  
+  gcp_key_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Access.gcp_key)
+}
+#endif
+inline void Access::set_gcp_key(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  gcp_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Access.gcp_key)
+}
+inline void Access::set_gcp_key(const char* value, size_t size) {
+  
+  gcp_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Access.gcp_key)
+}
+inline ::std::string* Access::mutable_gcp_key() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Access.gcp_key)
+  return gcp_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Access::release_gcp_key() {
+  // @@protoc_insertion_point(field_release:api.Access.gcp_key)
+  
+  return gcp_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Access::set_allocated_gcp_key(::std::string* gcp_key) {
+  if (gcp_key != NULL) {
+    
+  } else {
+    
+  }
+  gcp_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), gcp_key);
+  // @@protoc_insertion_point(field_set_allocated:api.Access.gcp_key)
+}
+
+// -------------------------------------------------------------------
+
+// Token
+
+// .api.Access access = 1;
+inline bool Token::has_access() const {
+  return this != internal_default_instance() && access_ != NULL;
+}
+inline void Token::clear_access() {
+  if (GetArenaNoVirtual() == NULL && access_ != NULL) {
+    delete access_;
+  }
+  access_ = NULL;
+}
+inline const ::api::Access& Token::_internal_access() const {
+  return *access_;
+}
+inline const ::api::Access& Token::access() const {
+  const ::api::Access* p = access_;
+  // @@protoc_insertion_point(field_get:api.Token.access)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Access*>(
+      &::api::_Access_default_instance_);
+}
+inline ::api::Access* Token::release_access() {
+  // @@protoc_insertion_point(field_release:api.Token.access)
+  
+  ::api::Access* temp = access_;
+  access_ = NULL;
   return temp;
 }
-inline ::api::LogConfig* Access::mutable_log_config() {
+inline ::api::Access* Token::mutable_access() {
   
-  if (log_config_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::LogConfig>(GetArenaNoVirtual());
-    log_config_ = p;
+  if (access_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Access>(GetArenaNoVirtual());
+    access_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Access.log_config)
-  return log_config_;
+  // @@protoc_insertion_point(field_mutable:api.Token.access)
+  return access_;
 }
-inline void Access::set_allocated_log_config(::api::LogConfig* log_config) {
+inline void Token::set_allocated_access(::api::Access* access) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete log_config_;
+    delete access_;
   }
-  if (log_config) {
+  if (access) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      log_config = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, log_config, submessage_arena);
+      access = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, access, submessage_arena);
     }
     
   } else {
     
   }
-  log_config_ = log_config;
-  // @@protoc_insertion_point(field_set_allocated:api.Access.log_config)
+  access_ = access;
+  // @@protoc_insertion_point(field_set_allocated:api.Token.access)
+}
+
+// string audience = 2;
+inline void Token::clear_audience() {
+  audience_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::audience() const {
+  // @@protoc_insertion_point(field_get:api.Token.audience)
+  return audience_.GetNoArena();
+}
+inline void Token::set_audience(const ::std::string& value) {
+  
+  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.audience)
+}
+#if LANG_CXX11
+inline void Token::set_audience(::std::string&& value) {
+  
+  audience_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.audience)
+}
+#endif
+inline void Token::set_audience(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.audience)
+}
+inline void Token::set_audience(const char* value, size_t size) {
+  
+  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.audience)
+}
+inline ::std::string* Token::mutable_audience() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.audience)
+  return audience_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_audience() {
+  // @@protoc_insertion_point(field_release:api.Token.audience)
+  
+  return audience_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_audience(::std::string* audience) {
+  if (audience != NULL) {
+    
+  } else {
+    
+  }
+  audience_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), audience);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.audience)
+}
+
+// string subject = 3;
+inline void Token::clear_subject() {
+  subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::subject() const {
+  // @@protoc_insertion_point(field_get:api.Token.subject)
+  return subject_.GetNoArena();
+}
+inline void Token::set_subject(const ::std::string& value) {
+  
+  subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.subject)
+}
+#if LANG_CXX11
+inline void Token::set_subject(::std::string&& value) {
+  
+  subject_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.subject)
+}
+#endif
+inline void Token::set_subject(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.subject)
+}
+inline void Token::set_subject(const char* value, size_t size) {
+  
+  subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.subject)
+}
+inline ::std::string* Token::mutable_subject() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.subject)
+  return subject_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_subject() {
+  // @@protoc_insertion_point(field_release:api.Token.subject)
+  
+  return subject_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_subject(::std::string* subject) {
+  if (subject != NULL) {
+    
+  } else {
+    
+  }
+  subject_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subject);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.subject)
+}
+
+// int64 expires_at = 4;
+inline void Token::clear_expires_at() {
+  expires_at_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Token::expires_at() const {
+  // @@protoc_insertion_point(field_get:api.Token.expires_at)
+  return expires_at_;
+}
+inline void Token::set_expires_at(::google::protobuf::int64 value) {
+  
+  expires_at_ = value;
+  // @@protoc_insertion_point(field_set:api.Token.expires_at)
+}
+
+// string id = 5;
+inline void Token::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::id() const {
+  // @@protoc_insertion_point(field_get:api.Token.id)
+  return id_.GetNoArena();
+}
+inline void Token::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.id)
+}
+#if LANG_CXX11
+inline void Token::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.id)
+}
+#endif
+inline void Token::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.id)
+}
+inline void Token::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.id)
+}
+inline ::std::string* Token::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_id() {
+  // @@protoc_insertion_point(field_release:api.Token.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.id)
+}
+
+// int64 issued_at = 6;
+inline void Token::clear_issued_at() {
+  issued_at_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Token::issued_at() const {
+  // @@protoc_insertion_point(field_get:api.Token.issued_at)
+  return issued_at_;
+}
+inline void Token::set_issued_at(::google::protobuf::int64 value) {
+  
+  issued_at_ = value;
+  // @@protoc_insertion_point(field_set:api.Token.issued_at)
+}
+
+// int64 not_before = 7;
+inline void Token::clear_not_before() {
+  not_before_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Token::not_before() const {
+  // @@protoc_insertion_point(field_get:api.Token.not_before)
+  return not_before_;
+}
+inline void Token::set_not_before(::google::protobuf::int64 value) {
+  
+  not_before_ = value;
+  // @@protoc_insertion_point(field_set:api.Token.not_before)
+}
+
+// repeated .api.Grant grants = 8;
+inline int Token::grants_size() const {
+  return grants_.size();
+}
+inline void Token::clear_grants() {
+  grants_.Clear();
+}
+inline ::api::Grant Token::grants(int index) const {
+  // @@protoc_insertion_point(field_get:api.Token.grants)
+  return static_cast< ::api::Grant >(grants_.Get(index));
+}
+inline void Token::set_grants(int index, ::api::Grant value) {
+  grants_.Set(index, value);
+  // @@protoc_insertion_point(field_set:api.Token.grants)
+}
+inline void Token::add_grants(::api::Grant value) {
+  grants_.Add(value);
+  // @@protoc_insertion_point(field_add:api.Token.grants)
+}
+inline const ::google::protobuf::RepeatedField<int>&
+Token::grants() const {
+  // @@protoc_insertion_point(field_list:api.Token.grants)
+  return grants_;
+}
+inline ::google::protobuf::RepeatedField<int>*
+Token::mutable_grants() {
+  // @@protoc_insertion_point(field_mutable_list:api.Token.grants)
+  return &grants_;
 }
 
 // -------------------------------------------------------------------
@@ -13001,6 +13711,8 @@ inline void PubSubTopic::set_allocated_topic(::google::pubsub::v1::Topic* topic)
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -13013,6 +13725,11 @@ template <> struct is_proto_enum< ::api::CustomerIndex> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::api::CustomerIndex>() {
   return ::api::CustomerIndex_descriptor();
+}
+template <> struct is_proto_enum< ::api::Grant> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::api::Grant>() {
+  return ::api::Grant_descriptor();
 }
 
 }  // namespace protobuf

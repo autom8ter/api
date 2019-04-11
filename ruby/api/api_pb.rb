@@ -110,11 +110,24 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Access" do
     optional :twilio_account, :string, 1
     optional :twilio_key, :string, 2
-    optional :sendgrid_key, :string, 3
-    optional :stripe_key, :string, 4
-    optional :slack_key, :string, 5
-    optional :email_address, :message, 6, "api.EmailAddress"
-    optional :log_config, :message, 7, "api.LogConfig"
+    optional :sendgrid_account, :string, 3
+    optional :sendgrid_key, :string, 4
+    optional :stripe_account, :string, 5
+    optional :stripe_key, :string, 6
+    optional :slack_account, :string, 7
+    optional :slack_key, :string, 8
+    optional :gcp_project, :string, 9
+    optional :gcp_key, :string, 10
+  end
+  add_message "api.Token" do
+    optional :access, :message, 1, "api.Access"
+    optional :audience, :string, 2
+    optional :subject, :string, 3
+    optional :expires_at, :int64, 4
+    optional :id, :string, 5
+    optional :issued_at, :int64, 6
+    optional :not_before, :int64, 7
+    repeated :grants, :enum, 8, "api.Grant"
   end
   add_message "api.LogConfig" do
     optional :username, :string, 1
@@ -229,6 +242,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :EMAIL, 1
     value :PHONE, 2
   end
+  add_enum "api.Grant" do
+    value :TWILIO, 0
+    value :SENDGRID, 1
+    value :STRIPE, 2
+    value :SLACK, 3
+    value :GCP, 4
+  end
 end
 
 module Api
@@ -251,6 +271,7 @@ module Api
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
   Pin = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Pin").msgclass
   Access = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Access").msgclass
+  Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Token").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
   EmailAddress = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailAddress").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
@@ -270,4 +291,5 @@ module Api
   PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
   PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
+  Grant = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Grant").enummodule
 end

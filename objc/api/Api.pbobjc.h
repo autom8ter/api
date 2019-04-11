@@ -27,6 +27,7 @@
 
 CF_EXTERN_C_BEGIN
 
+@class Access;
 @class Address;
 @class AttachmentActionOption;
 @class AttachmentActionOptionGroup;
@@ -35,7 +36,6 @@ CF_EXTERN_C_BEGIN
 @class EmailAddress;
 @class ItemRef;
 @class JSON;
-@class LogConfig;
 @class PubsubMessage;
 @class RecipientEmail;
 @class Topic;
@@ -63,6 +63,30 @@ GPBEnumDescriptor *CustomerIndex_EnumDescriptor(void);
  * the time this source was generated.
  **/
 BOOL CustomerIndex_IsValidValue(int32_t value);
+
+#pragma mark - Enum Grant
+
+typedef GPB_ENUM(Grant) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  Grant_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Grant_Twilio = 0,
+  Grant_Sendgrid = 1,
+  Grant_Stripe = 2,
+  Grant_Slack = 3,
+  Grant_Gcp = 4,
+};
+
+GPBEnumDescriptor *Grant_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL Grant_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -441,11 +465,14 @@ typedef GPB_ENUM(Pin_FieldNumber) {
 typedef GPB_ENUM(Access_FieldNumber) {
   Access_FieldNumber_TwilioAccount = 1,
   Access_FieldNumber_TwilioKey = 2,
-  Access_FieldNumber_SendgridKey = 3,
-  Access_FieldNumber_StripeKey = 4,
-  Access_FieldNumber_SlackKey = 5,
-  Access_FieldNumber_EmailAddress = 6,
-  Access_FieldNumber_LogConfig = 7,
+  Access_FieldNumber_SendgridAccount = 3,
+  Access_FieldNumber_SendgridKey = 4,
+  Access_FieldNumber_StripeAccount = 5,
+  Access_FieldNumber_StripeKey = 6,
+  Access_FieldNumber_SlackAccount = 7,
+  Access_FieldNumber_SlackKey = 8,
+  Access_FieldNumber_GcpProject = 9,
+  Access_FieldNumber_GcpKey = 10,
 };
 
 @interface Access : GPBMessage
@@ -454,19 +481,59 @@ typedef GPB_ENUM(Access_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *twilioKey;
 
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sendgridAccount;
+
 @property(nonatomic, readwrite, copy, null_resettable) NSString *sendgridKey;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *stripeAccount;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *stripeKey;
 
+@property(nonatomic, readwrite, copy, null_resettable) NSString *slackAccount;
+
 @property(nonatomic, readwrite, copy, null_resettable) NSString *slackKey;
 
-@property(nonatomic, readwrite, strong, null_resettable) EmailAddress *emailAddress;
-/** Test to see if @c emailAddress has been set. */
-@property(nonatomic, readwrite) BOOL hasEmailAddress;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *gcpProject;
 
-@property(nonatomic, readwrite, strong, null_resettable) LogConfig *logConfig;
-/** Test to see if @c logConfig has been set. */
-@property(nonatomic, readwrite) BOOL hasLogConfig;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *gcpKey;
+
+@end
+
+#pragma mark - Token
+
+typedef GPB_ENUM(Token_FieldNumber) {
+  Token_FieldNumber_Access = 1,
+  Token_FieldNumber_Audience = 2,
+  Token_FieldNumber_Subject = 3,
+  Token_FieldNumber_ExpiresAt = 4,
+  Token_FieldNumber_Id_p = 5,
+  Token_FieldNumber_IssuedAt = 6,
+  Token_FieldNumber_NotBefore = 7,
+  Token_FieldNumber_GrantsArray = 8,
+};
+
+@interface Token : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Access *access;
+/** Test to see if @c access has been set. */
+@property(nonatomic, readwrite) BOOL hasAccess;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *audience;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
+
+@property(nonatomic, readwrite) int64_t expiresAt;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite) int64_t issuedAt;
+
+@property(nonatomic, readwrite) int64_t notBefore;
+
+// |grantsArray| contains |Grant|
+@property(nonatomic, readwrite, strong, null_resettable) GPBEnumArray *grantsArray;
+/** The number of items in @c grantsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger grantsArray_Count;
 
 @end
 

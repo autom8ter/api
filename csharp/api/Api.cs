@@ -61,81 +61,87 @@ namespace Api {
             "ZWwYASABKAkSDAoEZmlsZRgCIAEoCRIPCgdjb21tZW50GAMgASgJIjAKBFN0",
             "YXISDAoEdGV4dBgBIAEoCRIaCgRpdGVtGAQgASgLMgwuYXBpLkl0ZW1SZWYi",
             "LwoDUGluEgwKBHRleHQYASABKAkSGgoEaXRlbRgEIAEoCzIMLmFwaS5JdGVt",
-            "UmVmIr8BCgZBY2Nlc3MSFgoOdHdpbGlvX2FjY291bnQYASABKAkSEgoKdHdp",
-            "bGlvX2tleRgCIAEoCRIUCgxzZW5kZ3JpZF9rZXkYAyABKAkSEgoKc3RyaXBl",
-            "X2tleRgEIAEoCRIRCglzbGFja19rZXkYBSABKAkSKAoNZW1haWxfYWRkcmVz",
-            "cxgGIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MSIgoKbG9nX2NvbmZpZxgHIAEo",
-            "CzIOLmFwaS5Mb2dDb25maWciLgoJTG9nQ29uZmlnEhAKCHVzZXJuYW1lGAEg",
-            "ASgJEg8KB2NoYW5uZWwYAiABKAkiLQoMRW1haWxBZGRyZXNzEgwKBG5hbWUY",
-            "ASABKAkSDwoHYWRkcmVzcxgCIAEoCSJQCgVFbWFpbBIfCgRmcm9tGAEgASgL",
-            "MhEuYXBpLkVtYWlsQWRkcmVzcxImCglyZWNpcGllbnQYAiABKAsyEy5hcGku",
-            "UmVjaXBpZW50RW1haWwiYgoOUmVjaXBpZW50RW1haWwSHQoCdG8YAiABKAsy",
-            "ES5hcGkuRW1haWxBZGRyZXNzEg8KB3N1YmplY3QYAyABKAkSEgoKcGxhaW5f",
-            "dGV4dBgEIAEoCRIMCgRodG1sGAUgASgJIl8KA1NNUxIKCgJ0bxgBIAEoCRIM",
-            "CgRmcm9tGAIgASgJEgwKBGJvZHkYAyABKAkSEQoJbWVkaWFfdXJsGAQgASgJ",
-            "EhAKCGNhbGxiYWNrGAUgASgJEgsKA2FwcBgGIAEoCSIyCgRDYWxsEgoKAnRv",
-            "GAEgASgJEgwKBGZyb20YAiABKAkSEAoIY2FsbGJhY2sYBSABKAkiagoDRmF4",
-            "EgoKAnRvGAEgASgJEgwKBGZyb20YAiABKAkSEQoJbWVkaWFfdXJsGAMgASgJ",
-            "Eg8KB3F1YWxpdHkYBCABKAkSEAoIY2FsbGJhY2sYBSABKAkSEwoLc3RvcmVf",
-            "bWVkaWEYBiABKAgiNgoHTG9nSG9vaxIOCgZhdXRob3IYASABKAkSDAoEaWNv",
-            "bhgCIAEoCRINCgV0aXRsZRgDIAEoCSKwAgoKQXR0YWNobWVudBINCgVjb2xv",
-            "chgBIAEoCRIQCghmYWxsYmFjaxgCIAEoCRITCgtjYWxsYmFja19pZBgDIAEo",
-            "CRIKCgJpZBgEIAEoAxIRCglhdXRob3JfaWQYBSABKAkSEwoLYXV0aG9yX25h",
-            "bWUYBiABKAkSEwoLYXV0aG9yX2xpbmsYByABKAkSEwoLYXV0aG9yX2ljb24Y",
-            "CCABKAkSDQoFdGl0bGUYCSABKAkSFAoMdGl0bGVfcHJlZml4GAogASgJEg8K",
-            "B3ByZXRleHQYCyABKAkSDAoEdGV4dBgMIAEoCRIRCglpbWFnZV91cmwYDSAB",
-            "KAkSEQoJdGh1bWJfdXJsGA4gASgJEiQKBmZpZWxkcxgPIAMoCzIULmFwaS5B",
-            "dHRhY2htZW50RmllbGQi5wIKEEF0dGFjaG1lbnRBY3Rpb24SDAoEbmFtZRgB",
-            "IAEoCRIMCgR0ZXh0GAIgASgJEg0KBXN0eWxlGAMgASgJEgwKBHR5cGUYBCAB",
-            "KAkSDQoFdmFsdWUYBSABKAkSEwoLZGF0YV9zb3VyY2UYBiABKAkSGAoQbWlu",
-            "X3F1ZXJ5X2xlbmd0aBgHIAEoAxIsCgdvcHRpb25zGAggAygLMhsuYXBpLkF0",
-            "dGFjaG1lbnRBY3Rpb25PcHRpb24SNQoQc2VsZWN0ZWRfb3B0aW9ucxgJIAMo",
-            "CzIbLmFwaS5BdHRhY2htZW50QWN0aW9uT3B0aW9uEjcKDW9wdGlvbl9ncm91",
-            "cHMYCiADKAsyIC5hcGkuQXR0YWNobWVudEFjdGlvbk9wdGlvbkdyb3VwEjEK",
-            "B2NvbmZpcm0YCyABKAsyIC5hcGkuQXR0YWNobWVudENvbmZpcm1hdGlvbkZp",
-            "ZWxkEgsKA3VybBgMIAEoCSJhChtBdHRhY2htZW50Q29uZmlybWF0aW9uRmll",
-            "bGQSDQoFdGl0bGUYASABKAkSDAoEdGV4dBgCIAEoCRIPCgdva190ZXh0GAMg",
-            "ASgJEhQKDGRpc21pc3NfdGV4dBgEIAEoCSJZChtBdHRhY2htZW50QWN0aW9u",
-            "T3B0aW9uR3JvdXASDAoEdGV4dBgBIAEoCRIsCgdvcHRpb25zGAIgAygLMhsu",
-            "YXBpLkF0dGFjaG1lbnRBY3Rpb25PcHRpb24iSwoWQXR0YWNobWVudEFjdGlv",
-            "bk9wdGlvbhINCgV0aXRsZRgBIAEoCRINCgV2YWx1ZRgCIAEoCRITCgtkZXNj",
-            "cmlwdGlvbhgDIAEoCSI+Cg9BdHRhY2htZW50RmllbGQSDQoFdGl0bGUYASAB",
-            "KAkSDQoFdmFsdWUYAiABKAkSDQoFc2hvcnQYAyABKAgicQoHSlNPTk1hcBIr",
-            "Cghqc29uX21hcBgBIAMoCzIZLmFwaS5KU09OTWFwLkpzb25NYXBFbnRyeRo5",
-            "CgxKc29uTWFwRW50cnkSCwoDa2V5GAEgASgJEhgKBXZhbHVlGAIgASgLMgku",
-            "YXBpLkpTT046AjgBIiIKBEpTT04SDAoEZGF0YRgBIAEoDBIMCgRzaXplGAIg",
-            "ASgDIkEKDVB1YlN1Yk1lc3NhZ2USMAoHbWVzc2FnZRgBIAEoCzIfLmdvb2ds",
-            "ZS5wdWJzdWIudjEuUHVic3ViTWVzc2FnZSI1CgtQdWJTdWJUb3BpYxImCgV0",
-            "b3BpYxgBIAEoCzIXLmdvb2dsZS5wdWJzdWIudjEuVG9waWMqLQoNQ3VzdG9t",
-            "ZXJJbmRleBIGCgJJRBAAEgkKBUVNQUlMEAESCQoFUEhPTkUQAjK5CAoLVXNl",
-            "clNlcnZpY2USTwoOQ3JlYXRlQ3VzdG9tZXISFy5hcGkuQWRkQ3VzdG9tZXJS",
-            "ZXF1ZXN0Gg0uYXBpLkN1c3RvbWVyIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoS",
-            "cQoRU3Vic2NyaWJlQ3VzdG9tZXISHS5hcGkuU3Vic2NyaWJlQ3VzdG9tZXJS",
-            "ZXF1ZXN0Gh4uYXBpLlN1YnNjcmliZUN1c3RvbWVyUmVzcG9uc2UiHYLT5JMC",
-            "FyISL2FwaS91c2Vycy97ZW1haWx9OgEqEmAKE1VuU3Vic2NyaWJlQ3VzdG9t",
-            "ZXISHi5hcGkuQ2FuY2VsU3Vic2NyaXB0aW9uUmVxdWVzdBoKLmFwaS5FbXB0",
-            "eSIdgtPkkwIXIhIvYXBpL3VzZXJzL3tlbWFpbH06ASoSagoWQ3JlYXRlU3Vi",
-            "c2NyaXB0aW9uUGxhbhIWLmFwaS5DcmVhdGVQbGFuUmVxdWVzdBoXLmFwaS5D",
-            "cmVhdGVQbGFuUmVzcG9uc2UiH4LT5JMCGSIUL2FwaS9wbGFucy97cGxhbl9p",
-            "ZH06ASoSUwoLU01TQ3VzdG9tZXISDy5hcGkuU01TUmVxdWVzdBoKLmFwaS5F",
-            "bXB0eSIngtPkkwIhIhwvYXBpL2N1c3RvbWVycy9zbXMve3VzZXJfaWR9OgEq",
-            "ElYKDENhbGxDdXN0b21lchIQLmFwaS5DYWxsUmVxdWVzdBoKLmFwaS5FbXB0",
-            "eSIogtPkkwIiIh0vYXBpL2N1c3RvbWVycy9jYWxsL3t1c2VyX2lkfToBKhJT",
-            "CgtNTVNDdXN0b21lchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5IieC",
-            "0+STAiEiHC9hcGkvY3VzdG9tZXJzL21tcy97dXNlcl9pZH06ASoSWQoNRW1h",
-            "aWxDdXN0b21lchIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHkiKYLT",
-            "5JMCIyIeL2FwaS9jdXN0b21lcnMvZW1haWwve3VzZXJfaWR9OgEqEksKB1NN",
-            "U1VzZXISDy5hcGkuU01TUmVxdWVzdBoKLmFwaS5FbXB0eSIjgtPkkwIdIhgv",
-            "YXBpL3VzZXJzL3Ntcy97dXNlcl9pZH06ASoSTgoIQ2FsbFVzZXISEC5hcGku",
-            "Q2FsbFJlcXVlc3QaCi5hcGkuRW1wdHkiJILT5JMCHiIZL2FwaS91c2Vycy9j",
-            "YWxsL3t1c2VyX2lkfToBKhJLCgdNTVNVc2VyEg8uYXBpLk1NU1JlcXVlc3Qa",
-            "Ci5hcGkuRW1wdHkiI4LT5JMCHSIYL2FwaS91c2Vycy9tbXMve3VzZXJfaWR9",
-            "OgEqElEKCUVtYWlsVXNlchIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1w",
-            "dHkiJYLT5JMCHyIaL2FwaS91c2Vycy9lbWFpbC97dXNlcl9pZH06ASpiBnBy",
-            "b3RvMw=="));
+            "UmVmIuABCgZBY2Nlc3MSFgoOdHdpbGlvX2FjY291bnQYASABKAkSEgoKdHdp",
+            "bGlvX2tleRgCIAEoCRIYChBzZW5kZ3JpZF9hY2NvdW50GAMgASgJEhQKDHNl",
+            "bmRncmlkX2tleRgEIAEoCRIWCg5zdHJpcGVfYWNjb3VudBgFIAEoCRISCgpz",
+            "dHJpcGVfa2V5GAYgASgJEhUKDXNsYWNrX2FjY291bnQYByABKAkSEQoJc2xh",
+            "Y2tfa2V5GAggASgJEhMKC2djcF9wcm9qZWN0GAkgASgJEg8KB2djcF9rZXkY",
+            "CiABKAkiqgEKBVRva2VuEhsKBmFjY2VzcxgBIAEoCzILLmFwaS5BY2Nlc3MS",
+            "EAoIYXVkaWVuY2UYAiABKAkSDwoHc3ViamVjdBgDIAEoCRISCgpleHBpcmVz",
+            "X2F0GAQgASgDEgoKAmlkGAUgASgJEhEKCWlzc3VlZF9hdBgGIAEoAxISCgpu",
+            "b3RfYmVmb3JlGAcgASgDEhoKBmdyYW50cxgIIAMoDjIKLmFwaS5HcmFudCIu",
+            "CglMb2dDb25maWcSEAoIdXNlcm5hbWUYASABKAkSDwoHY2hhbm5lbBgCIAEo",
+            "CSItCgxFbWFpbEFkZHJlc3MSDAoEbmFtZRgBIAEoCRIPCgdhZGRyZXNzGAIg",
+            "ASgJIlAKBUVtYWlsEh8KBGZyb20YASABKAsyES5hcGkuRW1haWxBZGRyZXNz",
+            "EiYKCXJlY2lwaWVudBgCIAEoCzITLmFwaS5SZWNpcGllbnRFbWFpbCJiCg5S",
+            "ZWNpcGllbnRFbWFpbBIdCgJ0bxgCIAEoCzIRLmFwaS5FbWFpbEFkZHJlc3MS",
+            "DwoHc3ViamVjdBgDIAEoCRISCgpwbGFpbl90ZXh0GAQgASgJEgwKBGh0bWwY",
+            "BSABKAkiXwoDU01TEgoKAnRvGAEgASgJEgwKBGZyb20YAiABKAkSDAoEYm9k",
+            "eRgDIAEoCRIRCgltZWRpYV91cmwYBCABKAkSEAoIY2FsbGJhY2sYBSABKAkS",
+            "CwoDYXBwGAYgASgJIjIKBENhbGwSCgoCdG8YASABKAkSDAoEZnJvbRgCIAEo",
+            "CRIQCghjYWxsYmFjaxgFIAEoCSJqCgNGYXgSCgoCdG8YASABKAkSDAoEZnJv",
+            "bRgCIAEoCRIRCgltZWRpYV91cmwYAyABKAkSDwoHcXVhbGl0eRgEIAEoCRIQ",
+            "CghjYWxsYmFjaxgFIAEoCRITCgtzdG9yZV9tZWRpYRgGIAEoCCI2CgdMb2dI",
+            "b29rEg4KBmF1dGhvchgBIAEoCRIMCgRpY29uGAIgASgJEg0KBXRpdGxlGAMg",
+            "ASgJIrACCgpBdHRhY2htZW50Eg0KBWNvbG9yGAEgASgJEhAKCGZhbGxiYWNr",
+            "GAIgASgJEhMKC2NhbGxiYWNrX2lkGAMgASgJEgoKAmlkGAQgASgDEhEKCWF1",
+            "dGhvcl9pZBgFIAEoCRITCgthdXRob3JfbmFtZRgGIAEoCRITCgthdXRob3Jf",
+            "bGluaxgHIAEoCRITCgthdXRob3JfaWNvbhgIIAEoCRINCgV0aXRsZRgJIAEo",
+            "CRIUCgx0aXRsZV9wcmVmaXgYCiABKAkSDwoHcHJldGV4dBgLIAEoCRIMCgR0",
+            "ZXh0GAwgASgJEhEKCWltYWdlX3VybBgNIAEoCRIRCgl0aHVtYl91cmwYDiAB",
+            "KAkSJAoGZmllbGRzGA8gAygLMhQuYXBpLkF0dGFjaG1lbnRGaWVsZCLnAgoQ",
+            "QXR0YWNobWVudEFjdGlvbhIMCgRuYW1lGAEgASgJEgwKBHRleHQYAiABKAkS",
+            "DQoFc3R5bGUYAyABKAkSDAoEdHlwZRgEIAEoCRINCgV2YWx1ZRgFIAEoCRIT",
+            "CgtkYXRhX3NvdXJjZRgGIAEoCRIYChBtaW5fcXVlcnlfbGVuZ3RoGAcgASgD",
+            "EiwKB29wdGlvbnMYCCADKAsyGy5hcGkuQXR0YWNobWVudEFjdGlvbk9wdGlv",
+            "bhI1ChBzZWxlY3RlZF9vcHRpb25zGAkgAygLMhsuYXBpLkF0dGFjaG1lbnRB",
+            "Y3Rpb25PcHRpb24SNwoNb3B0aW9uX2dyb3VwcxgKIAMoCzIgLmFwaS5BdHRh",
+            "Y2htZW50QWN0aW9uT3B0aW9uR3JvdXASMQoHY29uZmlybRgLIAEoCzIgLmFw",
+            "aS5BdHRhY2htZW50Q29uZmlybWF0aW9uRmllbGQSCwoDdXJsGAwgASgJImEK",
+            "G0F0dGFjaG1lbnRDb25maXJtYXRpb25GaWVsZBINCgV0aXRsZRgBIAEoCRIM",
+            "CgR0ZXh0GAIgASgJEg8KB29rX3RleHQYAyABKAkSFAoMZGlzbWlzc190ZXh0",
+            "GAQgASgJIlkKG0F0dGFjaG1lbnRBY3Rpb25PcHRpb25Hcm91cBIMCgR0ZXh0",
+            "GAEgASgJEiwKB29wdGlvbnMYAiADKAsyGy5hcGkuQXR0YWNobWVudEFjdGlv",
+            "bk9wdGlvbiJLChZBdHRhY2htZW50QWN0aW9uT3B0aW9uEg0KBXRpdGxlGAEg",
+            "ASgJEg0KBXZhbHVlGAIgASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJIj4KD0F0",
+            "dGFjaG1lbnRGaWVsZBINCgV0aXRsZRgBIAEoCRINCgV2YWx1ZRgCIAEoCRIN",
+            "CgVzaG9ydBgDIAEoCCJxCgdKU09OTWFwEisKCGpzb25fbWFwGAEgAygLMhku",
+            "YXBpLkpTT05NYXAuSnNvbk1hcEVudHJ5GjkKDEpzb25NYXBFbnRyeRILCgNr",
+            "ZXkYASABKAkSGAoFdmFsdWUYAiABKAsyCS5hcGkuSlNPTjoCOAEiIgoESlNP",
+            "ThIMCgRkYXRhGAEgASgMEgwKBHNpemUYAiABKAMiQQoNUHViU3ViTWVzc2Fn",
+            "ZRIwCgdtZXNzYWdlGAEgASgLMh8uZ29vZ2xlLnB1YnN1Yi52MS5QdWJzdWJN",
+            "ZXNzYWdlIjUKC1B1YlN1YlRvcGljEiYKBXRvcGljGAEgASgLMhcuZ29vZ2xl",
+            "LnB1YnN1Yi52MS5Ub3BpYyotCg1DdXN0b21lckluZGV4EgYKAklEEAASCQoF",
+            "RU1BSUwQARIJCgVQSE9ORRACKkEKBUdyYW50EgoKBlRXSUxJTxAAEgwKCFNF",
+            "TkRHUklEEAESCgoGU1RSSVBFEAISCQoFU0xBQ0sQAxIHCgNHQ1AQBDK5CAoL",
+            "VXNlclNlcnZpY2USTwoOQ3JlYXRlQ3VzdG9tZXISFy5hcGkuQWRkQ3VzdG9t",
+            "ZXJSZXF1ZXN0Gg0uYXBpLkN1c3RvbWVyIhWC0+STAg8iCi9hcGkvdXNlcnM6",
+            "ASoScQoRU3Vic2NyaWJlQ3VzdG9tZXISHS5hcGkuU3Vic2NyaWJlQ3VzdG9t",
+            "ZXJSZXF1ZXN0Gh4uYXBpLlN1YnNjcmliZUN1c3RvbWVyUmVzcG9uc2UiHYLT",
+            "5JMCFyISL2FwaS91c2Vycy97ZW1haWx9OgEqEmAKE1VuU3Vic2NyaWJlQ3Vz",
+            "dG9tZXISHi5hcGkuQ2FuY2VsU3Vic2NyaXB0aW9uUmVxdWVzdBoKLmFwaS5F",
+            "bXB0eSIdgtPkkwIXIhIvYXBpL3VzZXJzL3tlbWFpbH06ASoSagoWQ3JlYXRl",
+            "U3Vic2NyaXB0aW9uUGxhbhIWLmFwaS5DcmVhdGVQbGFuUmVxdWVzdBoXLmFw",
+            "aS5DcmVhdGVQbGFuUmVzcG9uc2UiH4LT5JMCGSIUL2FwaS9wbGFucy97cGxh",
+            "bl9pZH06ASoSUwoLU01TQ3VzdG9tZXISDy5hcGkuU01TUmVxdWVzdBoKLmFw",
+            "aS5FbXB0eSIngtPkkwIhIhwvYXBpL2N1c3RvbWVycy9zbXMve3VzZXJfaWR9",
+            "OgEqElYKDENhbGxDdXN0b21lchIQLmFwaS5DYWxsUmVxdWVzdBoKLmFwaS5F",
+            "bXB0eSIogtPkkwIiIh0vYXBpL2N1c3RvbWVycy9jYWxsL3t1c2VyX2lkfToB",
+            "KhJTCgtNTVNDdXN0b21lchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5",
+            "IieC0+STAiEiHC9hcGkvY3VzdG9tZXJzL21tcy97dXNlcl9pZH06ASoSWQoN",
+            "RW1haWxDdXN0b21lchIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHki",
+            "KYLT5JMCIyIeL2FwaS9jdXN0b21lcnMvZW1haWwve3VzZXJfaWR9OgEqEksK",
+            "B1NNU1VzZXISDy5hcGkuU01TUmVxdWVzdBoKLmFwaS5FbXB0eSIjgtPkkwId",
+            "IhgvYXBpL3VzZXJzL3Ntcy97dXNlcl9pZH06ASoSTgoIQ2FsbFVzZXISEC5h",
+            "cGkuQ2FsbFJlcXVlc3QaCi5hcGkuRW1wdHkiJILT5JMCHiIZL2FwaS91c2Vy",
+            "cy9jYWxsL3t1c2VyX2lkfToBKhJLCgdNTVNVc2VyEg8uYXBpLk1NU1JlcXVl",
+            "c3QaCi5hcGkuRW1wdHkiI4LT5JMCHSIYL2FwaS91c2Vycy9tbXMve3VzZXJf",
+            "aWR9OgEqElEKCUVtYWlsVXNlchIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGku",
+            "RW1wdHkiJYLT5JMCHyIaL2FwaS91c2Vycy9lbWFpbC97dXNlcl9pZH06ASpi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.AuthReflection.Descriptor, global::Google.Cloud.PubSub.V1.PubsubReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), typeof(global::Api.Grant), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Empty), global::Api.Empty.Parser, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Customer), global::Api.Customer.Parser, new[]{ "UserId", "Plan", "Name", "Email", "Description", "Phone", "Address", "Metadata", "Deleted", "CreateDate" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AddCustomerRequest), global::Api.AddCustomerRequest.Parser, new[]{ "Email", "Plan", "Phone", "Name", "Description", "Address" }, null, null, null),
@@ -154,7 +160,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.ItemRef), global::Api.ItemRef.Parser, new[]{ "Channel", "File", "Comment" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Star), global::Api.Star.Parser, new[]{ "Text", "Item" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Pin), global::Api.Pin.Parser, new[]{ "Text", "Item" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Access), global::Api.Access.Parser, new[]{ "TwilioAccount", "TwilioKey", "SendgridKey", "StripeKey", "SlackKey", "EmailAddress", "LogConfig" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Access), global::Api.Access.Parser, new[]{ "TwilioAccount", "TwilioKey", "SendgridAccount", "SendgridKey", "StripeAccount", "StripeKey", "SlackAccount", "SlackKey", "GcpProject", "GcpKey" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Token), global::Api.Token.Parser, new[]{ "Access", "Audience", "Subject", "ExpiresAt", "Id", "IssuedAt", "NotBefore", "Grants" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.LogConfig), global::Api.LogConfig.Parser, new[]{ "Username", "Channel" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.EmailAddress), global::Api.EmailAddress.Parser, new[]{ "Name", "Address" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "From", "Recipient" }, null, null, null),
@@ -183,6 +190,14 @@ namespace Api {
     [pbr::OriginalName("ID")] Id = 0,
     [pbr::OriginalName("EMAIL")] Email = 1,
     [pbr::OriginalName("PHONE")] Phone = 2,
+  }
+
+  public enum Grant {
+    [pbr::OriginalName("TWILIO")] Twilio = 0,
+    [pbr::OriginalName("SENDGRID")] Sendgrid = 1,
+    [pbr::OriginalName("STRIPE")] Stripe = 2,
+    [pbr::OriginalName("SLACK")] Slack = 3,
+    [pbr::OriginalName("GCP")] Gcp = 4,
   }
 
   #endregion
@@ -3766,11 +3781,14 @@ namespace Api {
     public Access(Access other) : this() {
       twilioAccount_ = other.twilioAccount_;
       twilioKey_ = other.twilioKey_;
+      sendgridAccount_ = other.sendgridAccount_;
       sendgridKey_ = other.sendgridKey_;
+      stripeAccount_ = other.stripeAccount_;
       stripeKey_ = other.stripeKey_;
+      slackAccount_ = other.slackAccount_;
       slackKey_ = other.slackKey_;
-      emailAddress_ = other.emailAddress_ != null ? other.emailAddress_.Clone() : null;
-      logConfig_ = other.logConfig_ != null ? other.logConfig_.Clone() : null;
+      gcpProject_ = other.gcpProject_;
+      gcpKey_ = other.gcpKey_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3801,8 +3819,19 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "sendgrid_account" field.</summary>
+    public const int SendgridAccountFieldNumber = 3;
+    private string sendgridAccount_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SendgridAccount {
+      get { return sendgridAccount_; }
+      set {
+        sendgridAccount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "sendgrid_key" field.</summary>
-    public const int SendgridKeyFieldNumber = 3;
+    public const int SendgridKeyFieldNumber = 4;
     private string sendgridKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SendgridKey {
@@ -3812,8 +3841,19 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "stripe_account" field.</summary>
+    public const int StripeAccountFieldNumber = 5;
+    private string stripeAccount_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string StripeAccount {
+      get { return stripeAccount_; }
+      set {
+        stripeAccount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "stripe_key" field.</summary>
-    public const int StripeKeyFieldNumber = 4;
+    public const int StripeKeyFieldNumber = 6;
     private string stripeKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string StripeKey {
@@ -3823,8 +3863,19 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "slack_account" field.</summary>
+    public const int SlackAccountFieldNumber = 7;
+    private string slackAccount_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SlackAccount {
+      get { return slackAccount_; }
+      set {
+        slackAccount_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "slack_key" field.</summary>
-    public const int SlackKeyFieldNumber = 5;
+    public const int SlackKeyFieldNumber = 8;
     private string slackKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SlackKey {
@@ -3834,25 +3885,25 @@ namespace Api {
       }
     }
 
-    /// <summary>Field number for the "email_address" field.</summary>
-    public const int EmailAddressFieldNumber = 6;
-    private global::Api.EmailAddress emailAddress_;
+    /// <summary>Field number for the "gcp_project" field.</summary>
+    public const int GcpProjectFieldNumber = 9;
+    private string gcpProject_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Api.EmailAddress EmailAddress {
-      get { return emailAddress_; }
+    public string GcpProject {
+      get { return gcpProject_; }
       set {
-        emailAddress_ = value;
+        gcpProject_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "log_config" field.</summary>
-    public const int LogConfigFieldNumber = 7;
-    private global::Api.LogConfig logConfig_;
+    /// <summary>Field number for the "gcp_key" field.</summary>
+    public const int GcpKeyFieldNumber = 10;
+    private string gcpKey_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Api.LogConfig LogConfig {
-      get { return logConfig_; }
+    public string GcpKey {
+      get { return gcpKey_; }
       set {
-        logConfig_ = value;
+        gcpKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -3871,11 +3922,14 @@ namespace Api {
       }
       if (TwilioAccount != other.TwilioAccount) return false;
       if (TwilioKey != other.TwilioKey) return false;
+      if (SendgridAccount != other.SendgridAccount) return false;
       if (SendgridKey != other.SendgridKey) return false;
+      if (StripeAccount != other.StripeAccount) return false;
       if (StripeKey != other.StripeKey) return false;
+      if (SlackAccount != other.SlackAccount) return false;
       if (SlackKey != other.SlackKey) return false;
-      if (!object.Equals(EmailAddress, other.EmailAddress)) return false;
-      if (!object.Equals(LogConfig, other.LogConfig)) return false;
+      if (GcpProject != other.GcpProject) return false;
+      if (GcpKey != other.GcpKey) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3884,11 +3938,14 @@ namespace Api {
       int hash = 1;
       if (TwilioAccount.Length != 0) hash ^= TwilioAccount.GetHashCode();
       if (TwilioKey.Length != 0) hash ^= TwilioKey.GetHashCode();
+      if (SendgridAccount.Length != 0) hash ^= SendgridAccount.GetHashCode();
       if (SendgridKey.Length != 0) hash ^= SendgridKey.GetHashCode();
+      if (StripeAccount.Length != 0) hash ^= StripeAccount.GetHashCode();
       if (StripeKey.Length != 0) hash ^= StripeKey.GetHashCode();
+      if (SlackAccount.Length != 0) hash ^= SlackAccount.GetHashCode();
       if (SlackKey.Length != 0) hash ^= SlackKey.GetHashCode();
-      if (emailAddress_ != null) hash ^= EmailAddress.GetHashCode();
-      if (logConfig_ != null) hash ^= LogConfig.GetHashCode();
+      if (GcpProject.Length != 0) hash ^= GcpProject.GetHashCode();
+      if (GcpKey.Length != 0) hash ^= GcpKey.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3910,25 +3967,37 @@ namespace Api {
         output.WriteRawTag(18);
         output.WriteString(TwilioKey);
       }
-      if (SendgridKey.Length != 0) {
+      if (SendgridAccount.Length != 0) {
         output.WriteRawTag(26);
+        output.WriteString(SendgridAccount);
+      }
+      if (SendgridKey.Length != 0) {
+        output.WriteRawTag(34);
         output.WriteString(SendgridKey);
       }
+      if (StripeAccount.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(StripeAccount);
+      }
       if (StripeKey.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(50);
         output.WriteString(StripeKey);
       }
+      if (SlackAccount.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(SlackAccount);
+      }
       if (SlackKey.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteString(SlackKey);
       }
-      if (emailAddress_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(EmailAddress);
+      if (GcpProject.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(GcpProject);
       }
-      if (logConfig_ != null) {
-        output.WriteRawTag(58);
-        output.WriteMessage(LogConfig);
+      if (GcpKey.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(GcpKey);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -3944,20 +4013,29 @@ namespace Api {
       if (TwilioKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TwilioKey);
       }
+      if (SendgridAccount.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SendgridAccount);
+      }
       if (SendgridKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SendgridKey);
+      }
+      if (StripeAccount.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StripeAccount);
       }
       if (StripeKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StripeKey);
       }
+      if (SlackAccount.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SlackAccount);
+      }
       if (SlackKey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(SlackKey);
       }
-      if (emailAddress_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EmailAddress);
+      if (GcpProject.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GcpProject);
       }
-      if (logConfig_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LogConfig);
+      if (GcpKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GcpKey);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -3976,26 +4054,29 @@ namespace Api {
       if (other.TwilioKey.Length != 0) {
         TwilioKey = other.TwilioKey;
       }
+      if (other.SendgridAccount.Length != 0) {
+        SendgridAccount = other.SendgridAccount;
+      }
       if (other.SendgridKey.Length != 0) {
         SendgridKey = other.SendgridKey;
+      }
+      if (other.StripeAccount.Length != 0) {
+        StripeAccount = other.StripeAccount;
       }
       if (other.StripeKey.Length != 0) {
         StripeKey = other.StripeKey;
       }
+      if (other.SlackAccount.Length != 0) {
+        SlackAccount = other.SlackAccount;
+      }
       if (other.SlackKey.Length != 0) {
         SlackKey = other.SlackKey;
       }
-      if (other.emailAddress_ != null) {
-        if (emailAddress_ == null) {
-          emailAddress_ = new global::Api.EmailAddress();
-        }
-        EmailAddress.MergeFrom(other.EmailAddress);
+      if (other.GcpProject.Length != 0) {
+        GcpProject = other.GcpProject;
       }
-      if (other.logConfig_ != null) {
-        if (logConfig_ == null) {
-          logConfig_ = new global::Api.LogConfig();
-        }
-        LogConfig.MergeFrom(other.LogConfig);
+      if (other.GcpKey.Length != 0) {
+        GcpKey = other.GcpKey;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4017,29 +4098,359 @@ namespace Api {
             break;
           }
           case 26: {
-            SendgridKey = input.ReadString();
+            SendgridAccount = input.ReadString();
             break;
           }
           case 34: {
-            StripeKey = input.ReadString();
+            SendgridKey = input.ReadString();
             break;
           }
           case 42: {
-            SlackKey = input.ReadString();
+            StripeAccount = input.ReadString();
             break;
           }
           case 50: {
-            if (emailAddress_ == null) {
-              emailAddress_ = new global::Api.EmailAddress();
-            }
-            input.ReadMessage(emailAddress_);
+            StripeKey = input.ReadString();
             break;
           }
           case 58: {
-            if (logConfig_ == null) {
-              logConfig_ = new global::Api.LogConfig();
+            SlackAccount = input.ReadString();
+            break;
+          }
+          case 66: {
+            SlackKey = input.ReadString();
+            break;
+          }
+          case 74: {
+            GcpProject = input.ReadString();
+            break;
+          }
+          case 82: {
+            GcpKey = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Token : pb::IMessage<Token> {
+    private static readonly pb::MessageParser<Token> _parser = new pb::MessageParser<Token>(() => new Token());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Token> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[19]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Token() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Token(Token other) : this() {
+      access_ = other.access_ != null ? other.access_.Clone() : null;
+      audience_ = other.audience_;
+      subject_ = other.subject_;
+      expiresAt_ = other.expiresAt_;
+      id_ = other.id_;
+      issuedAt_ = other.issuedAt_;
+      notBefore_ = other.notBefore_;
+      grants_ = other.grants_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Token Clone() {
+      return new Token(this);
+    }
+
+    /// <summary>Field number for the "access" field.</summary>
+    public const int AccessFieldNumber = 1;
+    private global::Api.Access access_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.Access Access {
+      get { return access_; }
+      set {
+        access_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "audience" field.</summary>
+    public const int AudienceFieldNumber = 2;
+    private string audience_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Audience {
+      get { return audience_; }
+      set {
+        audience_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "subject" field.</summary>
+    public const int SubjectFieldNumber = 3;
+    private string subject_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Subject {
+      get { return subject_; }
+      set {
+        subject_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "expires_at" field.</summary>
+    public const int ExpiresAtFieldNumber = 4;
+    private long expiresAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long ExpiresAt {
+      get { return expiresAt_; }
+      set {
+        expiresAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 5;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "issued_at" field.</summary>
+    public const int IssuedAtFieldNumber = 6;
+    private long issuedAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long IssuedAt {
+      get { return issuedAt_; }
+      set {
+        issuedAt_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "not_before" field.</summary>
+    public const int NotBeforeFieldNumber = 7;
+    private long notBefore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long NotBefore {
+      get { return notBefore_; }
+      set {
+        notBefore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "grants" field.</summary>
+    public const int GrantsFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::Api.Grant> _repeated_grants_codec
+        = pb::FieldCodec.ForEnum(66, x => (int) x, x => (global::Api.Grant) x);
+    private readonly pbc::RepeatedField<global::Api.Grant> grants_ = new pbc::RepeatedField<global::Api.Grant>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Api.Grant> Grants {
+      get { return grants_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Token);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Token other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Access, other.Access)) return false;
+      if (Audience != other.Audience) return false;
+      if (Subject != other.Subject) return false;
+      if (ExpiresAt != other.ExpiresAt) return false;
+      if (Id != other.Id) return false;
+      if (IssuedAt != other.IssuedAt) return false;
+      if (NotBefore != other.NotBefore) return false;
+      if(!grants_.Equals(other.grants_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (access_ != null) hash ^= Access.GetHashCode();
+      if (Audience.Length != 0) hash ^= Audience.GetHashCode();
+      if (Subject.Length != 0) hash ^= Subject.GetHashCode();
+      if (ExpiresAt != 0L) hash ^= ExpiresAt.GetHashCode();
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (IssuedAt != 0L) hash ^= IssuedAt.GetHashCode();
+      if (NotBefore != 0L) hash ^= NotBefore.GetHashCode();
+      hash ^= grants_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (access_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Access);
+      }
+      if (Audience.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Audience);
+      }
+      if (Subject.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Subject);
+      }
+      if (ExpiresAt != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(ExpiresAt);
+      }
+      if (Id.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Id);
+      }
+      if (IssuedAt != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(IssuedAt);
+      }
+      if (NotBefore != 0L) {
+        output.WriteRawTag(56);
+        output.WriteInt64(NotBefore);
+      }
+      grants_.WriteTo(output, _repeated_grants_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (access_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Access);
+      }
+      if (Audience.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Audience);
+      }
+      if (Subject.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subject);
+      }
+      if (ExpiresAt != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(ExpiresAt);
+      }
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (IssuedAt != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(IssuedAt);
+      }
+      if (NotBefore != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(NotBefore);
+      }
+      size += grants_.CalculateSize(_repeated_grants_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Token other) {
+      if (other == null) {
+        return;
+      }
+      if (other.access_ != null) {
+        if (access_ == null) {
+          access_ = new global::Api.Access();
+        }
+        Access.MergeFrom(other.Access);
+      }
+      if (other.Audience.Length != 0) {
+        Audience = other.Audience;
+      }
+      if (other.Subject.Length != 0) {
+        Subject = other.Subject;
+      }
+      if (other.ExpiresAt != 0L) {
+        ExpiresAt = other.ExpiresAt;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      if (other.IssuedAt != 0L) {
+        IssuedAt = other.IssuedAt;
+      }
+      if (other.NotBefore != 0L) {
+        NotBefore = other.NotBefore;
+      }
+      grants_.Add(other.grants_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (access_ == null) {
+              access_ = new global::Api.Access();
             }
-            input.ReadMessage(logConfig_);
+            input.ReadMessage(access_);
+            break;
+          }
+          case 18: {
+            Audience = input.ReadString();
+            break;
+          }
+          case 26: {
+            Subject = input.ReadString();
+            break;
+          }
+          case 32: {
+            ExpiresAt = input.ReadInt64();
+            break;
+          }
+          case 42: {
+            Id = input.ReadString();
+            break;
+          }
+          case 48: {
+            IssuedAt = input.ReadInt64();
+            break;
+          }
+          case 56: {
+            NotBefore = input.ReadInt64();
+            break;
+          }
+          case 66:
+          case 64: {
+            grants_.AddEntriesFrom(input, _repeated_grants_codec);
             break;
           }
         }
@@ -4056,7 +4467,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4213,7 +4624,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4370,7 +4781,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4539,7 +4950,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4758,7 +5169,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5027,7 +5438,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5212,7 +5623,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5481,7 +5892,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5666,7 +6077,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6179,7 +6590,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6598,7 +7009,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6811,7 +7222,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6960,7 +7371,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7145,7 +7556,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7330,7 +7741,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7451,7 +7862,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7608,7 +8019,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[35]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7743,7 +8154,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[36]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

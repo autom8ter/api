@@ -6,6 +6,7 @@ import (
 	"github.com/autom8ter/engine"
 	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/spf13/cobra"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
@@ -70,21 +71,19 @@ func AccessFromJSON(j *JSON) *Access {
 	return a
 }
 
+//TWILIO_ACCOUNT TWILIO_KEY SENDGRID_ACCOUNT SENDGRID_KEY STRIPE_ACCOUNT STRIPE_KEY SLACK_ACCOUNT SLACK_KEY GCP_PROJECT GCP_KEY
 func AccessFromEnv() *Access {
 	return &Access{
-		TwilioAccount: os.Getenv("TWILIO_ACCOUNT"),
-		TwilioKey:     os.Getenv("TWILIO_KEY"),
-		SendgridKey:   os.Getenv("SENDGRID_KEY"),
-		SlackKey:      os.Getenv("SLACK_KEY"),
-		StripeKey:     os.Getenv("STRIPE_KEY"),
-		EmailAddress: &EmailAddress{
-			Address: os.Getenv("EMAIL_ADDRESS"),
-			Name:    os.Getenv("EMAIL_NAME"),
-		},
-		LogConfig: &LogConfig{
-			Username: os.Getenv("SLACK_LOG_USERNAME"),
-			Channel:  os.Getenv("SLACK_LOG_CHANNEL"),
-		},
+		TwilioAccount:   os.Getenv("TWILIO_ACCOUNT"),
+		TwilioKey:       os.Getenv("TWILIO_KEY"),
+		SendgridAccount: os.Getenv("SENDGRID_ACCOUNT"),
+		SendgridKey:     os.Getenv("SENDGRID_KEY"),
+		StripeAccount:   os.Getenv("STRIPE_ACCOUNT"),
+		StripeKey:       os.Getenv("STRIPE_KEY"),
+		SlackAccount:    os.Getenv("SLACK_ACCOUNT"),
+		SlackKey:        os.Getenv("SLACK_KEY"),
+		GcpProject:      os.Getenv("GCP_PROJECT"),
+		GcpKey:          os.Getenv("GCP_KEY"),
 	}
 }
 
@@ -224,3 +223,144 @@ func (j *Customer) AsMap() map[string]interface{} {
 }
 
 ///////////////////////////////////////////////////////////////
+type Claims struct {
+	standardClaims map[string]jwt.StandardClaims
+	token          *Token
+}
+
+func (c *Claims) StandardClaims() map[string]jwt.StandardClaims {
+	return c.standardClaims
+}
+
+func (c *Claims) SignedTwilioToken(secret string) (string, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.TwilioClaims())
+	token.Header = map[string]interface{}{
+		"typ": "JWT",
+		"alg": "HS256",
+		"cty": "twilio-fpa;v=1",
+	}
+
+	return token.SignedString([]byte(secret))
+}
+
+func (c *Claims) SignedSendGridToken(secret string) (string, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.TwilioClaims())
+	token.Header = map[string]interface{}{
+		"typ": "JWT",
+		"alg": "HS256",
+		"cty": "sendgrid",
+	}
+
+	return token.SignedString([]byte(secret))
+}
+
+func (c *Claims) SignedSlackToken(secret string) (string, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.SlackClaims())
+	token.Header = map[string]interface{}{
+		"typ": "JWT",
+		"alg": "HS256",
+		"cty": "slack",
+	}
+	return token.SignedString([]byte(secret))
+}
+
+func (c *Claims) SignedStripeToken(secret string) (string, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.StripeClaims())
+	token.Header = map[string]interface{}{
+		"typ": "JWT",
+		"alg": "HS256",
+		"cty": "stripe",
+	}
+	return token.SignedString([]byte(secret))
+}
+
+func (c *Claims) SignedGCPToken(secret string) (string, error) {
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.GCPClaims())
+	token.Header = map[string]interface{}{
+		"typ": "JWT",
+		"alg": "HS256",
+		"cty": "gcp",
+	}
+	return token.SignedString([]byte(secret))
+}
+
+func (c *Claims) TwilioClaims() jwt.StandardClaims {
+	return c.standardClaims["twilio"]
+}
+
+func (c *Claims) SendGridClaims() jwt.StandardClaims {
+	return c.standardClaims["sendgrid"]
+}
+
+func (c *Claims) GCPClaims() jwt.StandardClaims {
+	return c.standardClaims["gcp"]
+}
+
+func (c *Claims) StripeClaims() jwt.StandardClaims {
+	return c.standardClaims["stripe"]
+}
+
+func (c *Claims) SlackClaims() jwt.StandardClaims {
+	return c.standardClaims["slack"]
+}
+
+func (c *Claims) Token() *Token {
+	return c.token
+}
+
+func (t *Token) AddGrants(grants ...Grant) {
+	t.Grants = append(t.Grants, grants...)
+}
+
+func (t *Token) New() *Claims {
+	claims := make(map[string]jwt.StandardClaims)
+	claims["twilio"] = jwt.StandardClaims{
+		Audience:  t.Audience,
+		ExpiresAt: t.ExpiresAt,
+		Id:        t.Id,
+		IssuedAt:  t.IssuedAt,
+		Issuer:    t.Access.TwilioKey,
+		NotBefore: t.NotBefore,
+		Subject:   t.Access.TwilioAccount,
+	}
+	claims["sendgrid"] = jwt.StandardClaims{
+		Audience:  t.Audience,
+		ExpiresAt: t.ExpiresAt,
+		Id:        t.Id,
+		IssuedAt:  t.IssuedAt,
+		Issuer:    t.Access.SendgridKey,
+		NotBefore: t.NotBefore,
+		Subject:   t.Access.SendgridAccount,
+	}
+	claims["stripe"] = jwt.StandardClaims{
+		Audience:  t.Audience,
+		ExpiresAt: t.ExpiresAt,
+		Id:        t.Id,
+		IssuedAt:  t.IssuedAt,
+		Issuer:    t.Access.StripeKey,
+		NotBefore: t.NotBefore,
+		Subject:   t.Access.StripeAccount,
+	}
+	claims["slack"] = jwt.StandardClaims{
+		Audience:  t.Audience,
+		ExpiresAt: t.ExpiresAt,
+		Id:        t.Id,
+		IssuedAt:  t.IssuedAt,
+		Issuer:    t.Access.SlackKey,
+		NotBefore: t.NotBefore,
+		Subject:   t.Access.SlackAccount,
+	}
+	claims["gcp"] = jwt.StandardClaims{
+		Audience:  t.Audience,
+		ExpiresAt: t.ExpiresAt,
+		Id:        t.Id,
+		IssuedAt:  t.IssuedAt,
+		Issuer:    t.Access.GcpKey,
+		NotBefore: t.NotBefore,
+		Subject:   t.Access.GcpProject,
+	}
+	return &Claims{
+		standardClaims: claims,
+		token:          t,
+	}
+}

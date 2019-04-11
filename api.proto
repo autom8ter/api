@@ -86,7 +86,6 @@ service UserService {
 
 message Empty {}
 
-
 // User is a user of the application
 message Customer {
     string user_id = 1;
@@ -206,14 +205,36 @@ enum CustomerIndex {
     PHONE=2;
 }
 
+enum Grant {
+    TWILIO=0;
+    SENDGRID=1;
+    STRIPE=2;
+    SLACK=3;
+    GCP=4;
+}
+
 message Access {
     string twilio_account=1;
     string twilio_key=2;
-    string sendgrid_key=3;
-    string stripe_key=4;
-    string slack_key=5;
-    EmailAddress email_address=6;
-    LogConfig log_config=7;
+    string sendgrid_account=3;
+    string sendgrid_key=4;
+    string stripe_account=5;
+    string stripe_key=6;
+    string slack_account=7;
+    string slack_key=8;
+    string gcp_project=9;
+    string gcp_key=10;
+}
+
+message Token {
+    Access access=1;
+    string audience=2;
+    string subject =3;
+    int64 expires_at=4;
+    string id =5;
+    int64 issued_at=6;
+    int64 not_before=7;
+    repeated Grant grants=8;
 }
 
 message LogConfig {
