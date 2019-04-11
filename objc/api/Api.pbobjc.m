@@ -57,6 +57,45 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
+#pragma mark - Enum CardType
+
+GPBEnumDescriptor *CardType_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Visa\000Mastercard\000Discover\000Amex\000";
+    static const int32_t values[] = {
+        CardType_Visa,
+        CardType_Mastercard,
+        CardType_Discover,
+        CardType_Amex,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(CardType)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:CardType_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL CardType_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case CardType_Visa:
+    case CardType_Mastercard:
+    case CardType_Discover:
+    case CardType_Amex:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 #pragma mark - Enum CustomerIndex
 
 GPBEnumDescriptor *CustomerIndex_EnumDescriptor(void) {
@@ -100,20 +139,24 @@ GPBEnumDescriptor *Grant_EnumDescriptor(void) {
   static _Atomic(GPBEnumDescriptor*) descriptor = nil;
   if (!descriptor) {
     static const char *valueNames =
-        "Twilio\000Sendgrid\000Stripe\000Slack\000Gcp\000";
+        "Twilio\000Sendgrid\000Stripe\000Slack\000Gcp\000Autom8T"
+        "er\000";
     static const int32_t values[] = {
         Grant_Twilio,
         Grant_Sendgrid,
         Grant_Stripe,
         Grant_Slack,
         Grant_Gcp,
+        Grant_Autom8Ter,
     };
+    static const char *extraTextFormatInfo = "\001\005e\002b\000";
     GPBEnumDescriptor *worker =
         [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Grant)
                                        valueNames:valueNames
                                            values:values
                                             count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:Grant_IsValidValue];
+                                     enumVerifier:Grant_IsValidValue
+                              extraTextFormatInfo:extraTextFormatInfo];
     GPBEnumDescriptor *expected = nil;
     if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
       [worker release];
@@ -129,6 +172,46 @@ BOOL Grant_IsValidValue(int32_t value__) {
     case Grant_Stripe:
     case Grant_Slack:
     case Grant_Gcp:
+    case Grant_Autom8Ter:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
+#pragma mark - Enum SigningMethod
+
+GPBEnumDescriptor *SigningMethod_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Hmac\000Ecdsa\000Rsa\000Rsapps\000";
+    static const int32_t values[] = {
+        SigningMethod_Hmac,
+        SigningMethod_Ecdsa,
+        SigningMethod_Rsa,
+        SigningMethod_Rsapps,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(SigningMethod)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:SigningMethod_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL SigningMethod_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case SigningMethod_Hmac:
+    case SigningMethod_Ecdsa:
+    case SigningMethod_Rsa:
+    case SigningMethod_Rsapps:
       return YES;
     default:
       return NO;
@@ -493,6 +576,169 @@ typedef struct SubscribeCustomerRequest__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(SubscribeCustomerRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Card
+
+@implementation Card
+
+@dynamic cardType;
+@dynamic cardNumber;
+@dynamic expMonth;
+@dynamic expYear;
+@dynamic cvc;
+@dynamic debit;
+
+typedef struct Card__storage_ {
+  uint32_t _has_storage_[1];
+  CardType cardType;
+  NSString *cardNumber;
+  NSString *expMonth;
+  NSString *expYear;
+  NSString *cvc;
+} Card__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "cardType",
+        .dataTypeSpecific.enumDescFunc = CardType_EnumDescriptor,
+        .number = Card_FieldNumber_CardType,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Card__storage_, cardType),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "cardNumber",
+        .dataTypeSpecific.className = NULL,
+        .number = Card_FieldNumber_CardNumber,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Card__storage_, cardNumber),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "expMonth",
+        .dataTypeSpecific.className = NULL,
+        .number = Card_FieldNumber_ExpMonth,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Card__storage_, expMonth),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "expYear",
+        .dataTypeSpecific.className = NULL,
+        .number = Card_FieldNumber_ExpYear,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Card__storage_, expYear),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "cvc",
+        .dataTypeSpecific.className = NULL,
+        .number = Card_FieldNumber_Cvc,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Card__storage_, cvc),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "debit",
+        .dataTypeSpecific.className = NULL,
+        .number = Card_FieldNumber_Debit,
+        .hasIndex = 5,
+        .offset = 6,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Card class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Card__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t Card_CardType_RawValue(Card *message) {
+  GPBDescriptor *descriptor = [Card descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Card_FieldNumber_CardType];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetCard_CardType_RawValue(Card *message, int32_t value) {
+  GPBDescriptor *descriptor = [Card descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:Card_FieldNumber_CardType];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
+
+#pragma mark - BankAccount
+
+@implementation BankAccount
+
+@dynamic accountNumber;
+@dynamic routingNumber;
+
+typedef struct BankAccount__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *accountNumber;
+  NSString *routingNumber;
+} BankAccount__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "accountNumber",
+        .dataTypeSpecific.className = NULL,
+        .number = BankAccount_FieldNumber_AccountNumber,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(BankAccount__storage_, accountNumber),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "routingNumber",
+        .dataTypeSpecific.className = NULL,
+        .number = BankAccount_FieldNumber_RoutingNumber,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(BankAccount__storage_, routingNumber),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[BankAccount class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(BankAccount__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -1393,6 +1639,8 @@ typedef struct Pin__storage_ {
 
 @implementation Access
 
+@dynamic autom8TerAccount;
+@dynamic autom8TerKey;
 @dynamic twilioAccount;
 @dynamic twilioKey;
 @dynamic sendgridAccount;
@@ -1406,6 +1654,8 @@ typedef struct Pin__storage_ {
 
 typedef struct Access__storage_ {
   uint32_t _has_storage_[1];
+  NSString *autom8TerAccount;
+  NSString *autom8TerKey;
   NSString *twilioAccount;
   NSString *twilioKey;
   NSString *sendgridAccount;
@@ -1425,10 +1675,28 @@ typedef struct Access__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
+        .name = "autom8TerAccount",
+        .dataTypeSpecific.className = NULL,
+        .number = Access_FieldNumber_Autom8TerAccount,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Access__storage_, autom8TerAccount),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "autom8TerKey",
+        .dataTypeSpecific.className = NULL,
+        .number = Access_FieldNumber_Autom8TerKey,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Access__storage_, autom8TerKey),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "twilioAccount",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_TwilioAccount,
-        .hasIndex = 0,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(Access__storage_, twilioAccount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1437,7 +1705,7 @@ typedef struct Access__storage_ {
         .name = "twilioKey",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_TwilioKey,
-        .hasIndex = 1,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(Access__storage_, twilioKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1446,7 +1714,7 @@ typedef struct Access__storage_ {
         .name = "sendgridAccount",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_SendgridAccount,
-        .hasIndex = 2,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(Access__storage_, sendgridAccount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1455,7 +1723,7 @@ typedef struct Access__storage_ {
         .name = "sendgridKey",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_SendgridKey,
-        .hasIndex = 3,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(Access__storage_, sendgridKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1464,7 +1732,7 @@ typedef struct Access__storage_ {
         .name = "stripeAccount",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_StripeAccount,
-        .hasIndex = 4,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(Access__storage_, stripeAccount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1473,7 +1741,7 @@ typedef struct Access__storage_ {
         .name = "stripeKey",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_StripeKey,
-        .hasIndex = 5,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(Access__storage_, stripeKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1482,7 +1750,7 @@ typedef struct Access__storage_ {
         .name = "slackAccount",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_SlackAccount,
-        .hasIndex = 6,
+        .hasIndex = 8,
         .offset = (uint32_t)offsetof(Access__storage_, slackAccount),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1491,7 +1759,7 @@ typedef struct Access__storage_ {
         .name = "slackKey",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_SlackKey,
-        .hasIndex = 7,
+        .hasIndex = 9,
         .offset = (uint32_t)offsetof(Access__storage_, slackKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1500,7 +1768,7 @@ typedef struct Access__storage_ {
         .name = "gcpProject",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_GcpProject,
-        .hasIndex = 8,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(Access__storage_, gcpProject),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1509,7 +1777,7 @@ typedef struct Access__storage_ {
         .name = "gcpKey",
         .dataTypeSpecific.className = NULL,
         .number = Access_FieldNumber_GcpKey,
-        .hasIndex = 9,
+        .hasIndex = 11,
         .offset = (uint32_t)offsetof(Access__storage_, gcpKey),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1523,6 +1791,11 @@ typedef struct Access__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Access__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\001\006#\247\000\002\006#\243\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
@@ -2950,6 +3223,115 @@ typedef struct JSON__storage_ {
 }
 
 @end
+
+#pragma mark - JWTToken
+
+@implementation JWTToken
+
+@dynamic raw;
+@dynamic method;
+@dynamic header, header_Count;
+@dynamic claims;
+@dynamic signature;
+@dynamic value;
+
+typedef struct JWTToken__storage_ {
+  uint32_t _has_storage_[1];
+  SigningMethod method;
+  NSString *raw;
+  NSMutableDictionary *header;
+  NSString *claims;
+  NSString *signature;
+} JWTToken__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "raw",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Raw,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, raw),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "method",
+        .dataTypeSpecific.enumDescFunc = SigningMethod_EnumDescriptor,
+        .number = JWTToken_FieldNumber_Method,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, method),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "header",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Header,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, header),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "claims",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Claims,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, claims),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "signature",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Signature,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(JWTToken__storage_, signature),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "value",
+        .dataTypeSpecific.className = NULL,
+        .number = JWTToken_FieldNumber_Value,
+        .hasIndex = 4,
+        .offset = 5,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[JWTToken class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(JWTToken__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t JWTToken_Method_RawValue(JWTToken *message) {
+  GPBDescriptor *descriptor = [JWTToken descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetJWTToken_Method_RawValue(JWTToken *message, int32_t value) {
+  GPBDescriptor *descriptor = [JWTToken descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:JWTToken_FieldNumber_Method];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
 
 #pragma mark - SignedKey
 

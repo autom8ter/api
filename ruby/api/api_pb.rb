@@ -40,6 +40,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :exp_year, :string, 5
     optional :cvc, :string, 6
   end
+  add_message "api.Card" do
+    optional :card_type, :enum, 1, "api.CardType"
+    optional :card_number, :string, 3
+    optional :exp_month, :string, 4
+    optional :exp_year, :string, 5
+    optional :cvc, :string, 6
+    optional :debit, :bool, 7
+  end
+  add_message "api.BankAccount" do
+    optional :account_number, :string, 1
+    optional :routing_number, :string, 2
+  end
   add_message "api.Address" do
     optional :city, :string, 1
     optional :country, :string, 2
@@ -108,16 +120,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :item, :message, 4, "api.ItemRef"
   end
   add_message "api.Access" do
-    optional :twilio_account, :string, 1
-    optional :twilio_key, :string, 2
-    optional :sendgrid_account, :string, 3
-    optional :sendgrid_key, :string, 4
-    optional :stripe_account, :string, 5
-    optional :stripe_key, :string, 6
-    optional :slack_account, :string, 7
-    optional :slack_key, :string, 8
-    optional :gcp_project, :string, 9
-    optional :gcp_key, :string, 10
+    optional :autom8ter_account, :string, 1
+    optional :autom8ter_key, :string, 2
+    optional :twilio_account, :string, 3
+    optional :twilio_key, :string, 4
+    optional :sendgrid_account, :string, 5
+    optional :sendgrid_key, :string, 6
+    optional :stripe_account, :string, 7
+    optional :stripe_key, :string, 8
+    optional :slack_account, :string, 9
+    optional :slack_key, :string, 10
+    optional :gcp_project, :string, 11
+    optional :gcp_key, :string, 12
   end
   add_message "api.Token" do
     optional :access, :message, 1, "api.Access"
@@ -231,6 +245,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :data, :bytes, 1
     optional :size, :int64, 2
   end
+  add_message "api.JWTToken" do
+    optional :raw, :string, 1
+    optional :method, :enum, 2, "api.SigningMethod"
+    map :header, :string, :string, 3
+    optional :claims, :string, 4
+    optional :signature, :string, 5
+    optional :value, :bool, 6
+  end
   add_message "api.SignedKey" do
     optional :signed_key, :string, 1
   end
@@ -239,6 +261,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.PubSubTopic" do
     optional :topic, :message, 1, "google.pubsub.v1.Topic"
+  end
+  add_enum "api.CardType" do
+    value :VISA, 0
+    value :MASTERCARD, 1
+    value :DISCOVER, 2
+    value :AMEX, 3
   end
   add_enum "api.CustomerIndex" do
     value :ID, 0
@@ -251,6 +279,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :STRIPE, 2
     value :SLACK, 3
     value :GCP, 4
+    value :AUTOM8TER, 5
+  end
+  add_enum "api.SigningMethod" do
+    value :HMAC, 0
+    value :ECDSA, 1
+    value :RSA, 2
+    value :RSAPPS, 3
   end
 end
 
@@ -259,6 +294,8 @@ module Api
   Customer = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Customer").msgclass
   AddCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddCustomerRequest").msgclass
   SubscribeCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerRequest").msgclass
+  Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
+  BankAccount = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BankAccount").msgclass
   Address = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Address").msgclass
   SubscribeCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerResponse").msgclass
   CreatePlanResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanResponse").msgclass
@@ -291,9 +328,12 @@ module Api
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
   JSONMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONMap").msgclass
   JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
+  JWTToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWTToken").msgclass
   SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
   PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
   PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
+  CardType = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CardType").enummodule
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
   Grant = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Grant").enummodule
+  SigningMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SigningMethod").enummodule
 end

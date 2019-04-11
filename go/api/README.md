@@ -9,6 +9,24 @@ It translates gRPC into RESTful JSON APIs.
 ## Usage
 
 ```go
+var CardType_name = map[int32]string{
+	0: "VISA",
+	1: "MASTERCARD",
+	2: "DISCOVER",
+	3: "AMEX",
+}
+```
+
+```go
+var CardType_value = map[string]int32{
+	"VISA":       0,
+	"MASTERCARD": 1,
+	"DISCOVER":   2,
+	"AMEX":       3,
+}
+```
+
+```go
 var CustomerIndex_name = map[int32]string{
 	0: "ID",
 	1: "EMAIL",
@@ -31,16 +49,36 @@ var Grant_name = map[int32]string{
 	2: "STRIPE",
 	3: "SLACK",
 	4: "GCP",
+	5: "AUTOM8TER",
 }
 ```
 
 ```go
 var Grant_value = map[string]int32{
-	"TWILIO":   0,
-	"SENDGRID": 1,
-	"STRIPE":   2,
-	"SLACK":    3,
-	"GCP":      4,
+	"TWILIO":    0,
+	"SENDGRID":  1,
+	"STRIPE":    2,
+	"SLACK":     3,
+	"GCP":       4,
+	"AUTOM8TER": 5,
+}
+```
+
+```go
+var SigningMethod_name = map[int32]string{
+	0: "HMAC",
+	1: "ECDSA",
+	2: "RSA",
+	3: "RSAPPS",
+}
+```
+
+```go
+var SigningMethod_value = map[string]int32{
+	"HMAC":   0,
+	"ECDSA":  1,
+	"RSA":    2,
+	"RSAPPS": 3,
 }
 ```
 
@@ -94,16 +132,18 @@ func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer)
 
 ```go
 type Access struct {
-	TwilioAccount        string   `protobuf:"bytes,1,opt,name=twilio_account,json=twilioAccount,proto3" json:"twilio_account,omitempty"`
-	TwilioKey            string   `protobuf:"bytes,2,opt,name=twilio_key,json=twilioKey,proto3" json:"twilio_key,omitempty"`
-	SendgridAccount      string   `protobuf:"bytes,3,opt,name=sendgrid_account,json=sendgridAccount,proto3" json:"sendgrid_account,omitempty"`
-	SendgridKey          string   `protobuf:"bytes,4,opt,name=sendgrid_key,json=sendgridKey,proto3" json:"sendgrid_key,omitempty"`
-	StripeAccount        string   `protobuf:"bytes,5,opt,name=stripe_account,json=stripeAccount,proto3" json:"stripe_account,omitempty"`
-	StripeKey            string   `protobuf:"bytes,6,opt,name=stripe_key,json=stripeKey,proto3" json:"stripe_key,omitempty"`
-	SlackAccount         string   `protobuf:"bytes,7,opt,name=slack_account,json=slackAccount,proto3" json:"slack_account,omitempty"`
-	SlackKey             string   `protobuf:"bytes,8,opt,name=slack_key,json=slackKey,proto3" json:"slack_key,omitempty"`
-	GcpProject           string   `protobuf:"bytes,9,opt,name=gcp_project,json=gcpProject,proto3" json:"gcp_project,omitempty"`
-	GcpKey               string   `protobuf:"bytes,10,opt,name=gcp_key,json=gcpKey,proto3" json:"gcp_key,omitempty"`
+	Autom8TerAccount     string   `protobuf:"bytes,1,opt,name=autom8ter_account,json=autom8terAccount,proto3" json:"autom8ter_account,omitempty"`
+	Autom8TerKey         string   `protobuf:"bytes,2,opt,name=autom8ter_key,json=autom8terKey,proto3" json:"autom8ter_key,omitempty"`
+	TwilioAccount        string   `protobuf:"bytes,3,opt,name=twilio_account,json=twilioAccount,proto3" json:"twilio_account,omitempty"`
+	TwilioKey            string   `protobuf:"bytes,4,opt,name=twilio_key,json=twilioKey,proto3" json:"twilio_key,omitempty"`
+	SendgridAccount      string   `protobuf:"bytes,5,opt,name=sendgrid_account,json=sendgridAccount,proto3" json:"sendgrid_account,omitempty"`
+	SendgridKey          string   `protobuf:"bytes,6,opt,name=sendgrid_key,json=sendgridKey,proto3" json:"sendgrid_key,omitempty"`
+	StripeAccount        string   `protobuf:"bytes,7,opt,name=stripe_account,json=stripeAccount,proto3" json:"stripe_account,omitempty"`
+	StripeKey            string   `protobuf:"bytes,8,opt,name=stripe_key,json=stripeKey,proto3" json:"stripe_key,omitempty"`
+	SlackAccount         string   `protobuf:"bytes,9,opt,name=slack_account,json=slackAccount,proto3" json:"slack_account,omitempty"`
+	SlackKey             string   `protobuf:"bytes,10,opt,name=slack_key,json=slackKey,proto3" json:"slack_key,omitempty"`
+	GcpProject           string   `protobuf:"bytes,11,opt,name=gcp_project,json=gcpProject,proto3" json:"gcp_project,omitempty"`
+	GcpKey               string   `protobuf:"bytes,12,opt,name=gcp_key,json=gcpKey,proto3" json:"gcp_key,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -129,6 +169,18 @@ func AccessFromJSON(j *JSON) *Access
 
 ```go
 func (*Access) Descriptor() ([]byte, []int)
+```
+
+#### func (*Access) GetAutom8TerAccount
+
+```go
+func (m *Access) GetAutom8TerAccount() string
+```
+
+#### func (*Access) GetAutom8TerKey
+
+```go
+func (m *Access) GetAutom8TerKey() string
 ```
 
 #### func (*Access) GetGcpKey
@@ -1172,6 +1224,85 @@ type AttachmentFunc func(a *Attachment)
 ```
 
 
+#### type BankAccount
+
+```go
+type BankAccount struct {
+	AccountNumber        string   `protobuf:"bytes,1,opt,name=account_number,json=accountNumber,proto3" json:"account_number,omitempty"`
+	RoutingNumber        string   `protobuf:"bytes,2,opt,name=routing_number,json=routingNumber,proto3" json:"routing_number,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*BankAccount) Descriptor
+
+```go
+func (*BankAccount) Descriptor() ([]byte, []int)
+```
+
+#### func (*BankAccount) GetAccountNumber
+
+```go
+func (m *BankAccount) GetAccountNumber() string
+```
+
+#### func (*BankAccount) GetRoutingNumber
+
+```go
+func (m *BankAccount) GetRoutingNumber() string
+```
+
+#### func (*BankAccount) ProtoMessage
+
+```go
+func (*BankAccount) ProtoMessage()
+```
+
+#### func (*BankAccount) Reset
+
+```go
+func (m *BankAccount) Reset()
+```
+
+#### func (*BankAccount) String
+
+```go
+func (m *BankAccount) String() string
+```
+
+#### func (*BankAccount) XXX_DiscardUnknown
+
+```go
+func (m *BankAccount) XXX_DiscardUnknown()
+```
+
+#### func (*BankAccount) XXX_Marshal
+
+```go
+func (m *BankAccount) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*BankAccount) XXX_Merge
+
+```go
+func (m *BankAccount) XXX_Merge(src proto.Message)
+```
+
+#### func (*BankAccount) XXX_Size
+
+```go
+func (m *BankAccount) XXX_Size() int
+```
+
+#### func (*BankAccount) XXX_Unmarshal
+
+```go
+func (m *BankAccount) XXX_Unmarshal(b []byte) error
+```
+
 #### type Call
 
 ```go
@@ -1407,6 +1538,141 @@ func (m *CancelSubscriptionRequest) XXX_Size() int
 
 ```go
 func (m *CancelSubscriptionRequest) XXX_Unmarshal(b []byte) error
+```
+
+#### type Card
+
+```go
+type Card struct {
+	CardType             CardType `protobuf:"varint,1,opt,name=card_type,json=cardType,proto3,enum=api.CardType" json:"card_type,omitempty"`
+	CardNumber           string   `protobuf:"bytes,3,opt,name=card_number,json=cardNumber,proto3" json:"card_number,omitempty"`
+	ExpMonth             string   `protobuf:"bytes,4,opt,name=exp_month,json=expMonth,proto3" json:"exp_month,omitempty"`
+	ExpYear              string   `protobuf:"bytes,5,opt,name=exp_year,json=expYear,proto3" json:"exp_year,omitempty"`
+	Cvc                  string   `protobuf:"bytes,6,opt,name=cvc,proto3" json:"cvc,omitempty"`
+	Debit                bool     `protobuf:"varint,7,opt,name=debit,proto3" json:"debit,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Card) Descriptor
+
+```go
+func (*Card) Descriptor() ([]byte, []int)
+```
+
+#### func (*Card) GetCardNumber
+
+```go
+func (m *Card) GetCardNumber() string
+```
+
+#### func (*Card) GetCardType
+
+```go
+func (m *Card) GetCardType() CardType
+```
+
+#### func (*Card) GetCvc
+
+```go
+func (m *Card) GetCvc() string
+```
+
+#### func (*Card) GetDebit
+
+```go
+func (m *Card) GetDebit() bool
+```
+
+#### func (*Card) GetExpMonth
+
+```go
+func (m *Card) GetExpMonth() string
+```
+
+#### func (*Card) GetExpYear
+
+```go
+func (m *Card) GetExpYear() string
+```
+
+#### func (*Card) ProtoMessage
+
+```go
+func (*Card) ProtoMessage()
+```
+
+#### func (*Card) Reset
+
+```go
+func (m *Card) Reset()
+```
+
+#### func (*Card) String
+
+```go
+func (m *Card) String() string
+```
+
+#### func (*Card) XXX_DiscardUnknown
+
+```go
+func (m *Card) XXX_DiscardUnknown()
+```
+
+#### func (*Card) XXX_Marshal
+
+```go
+func (m *Card) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Card) XXX_Merge
+
+```go
+func (m *Card) XXX_Merge(src proto.Message)
+```
+
+#### func (*Card) XXX_Size
+
+```go
+func (m *Card) XXX_Size() int
+```
+
+#### func (*Card) XXX_Unmarshal
+
+```go
+func (m *Card) XXX_Unmarshal(b []byte) error
+```
+
+#### type CardType
+
+```go
+type CardType int32
+```
+
+
+```go
+const (
+	CardType_VISA       CardType = 0
+	CardType_MASTERCARD CardType = 1
+	CardType_DISCOVER   CardType = 2
+	CardType_AMEX       CardType = 3
+)
+```
+
+#### func (CardType) EnumDescriptor
+
+```go
+func (CardType) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (CardType) String
+
+```go
+func (x CardType) String() string
 ```
 
 #### type ChannelReminder
@@ -2388,11 +2654,12 @@ type Grant int32
 
 ```go
 const (
-	Grant_TWILIO   Grant = 0
-	Grant_SENDGRID Grant = 1
-	Grant_STRIPE   Grant = 2
-	Grant_SLACK    Grant = 3
-	Grant_GCP      Grant = 4
+	Grant_TWILIO    Grant = 0
+	Grant_SENDGRID  Grant = 1
+	Grant_STRIPE    Grant = 2
+	Grant_SLACK     Grant = 3
+	Grant_GCP       Grant = 4
+	Grant_AUTOM8TER Grant = 5
 )
 ```
 
@@ -2700,6 +2967,113 @@ func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error
 
 ```go
 func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc
+```
+
+#### type JWTToken
+
+```go
+type JWTToken struct {
+	Raw                  string            `protobuf:"bytes,1,opt,name=raw,proto3" json:"raw,omitempty"`
+	Method               SigningMethod     `protobuf:"varint,2,opt,name=method,proto3,enum=api.SigningMethod" json:"method,omitempty"`
+	Header               map[string]string `protobuf:"bytes,3,rep,name=header,proto3" json:"header,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Claims               string            `protobuf:"bytes,4,opt,name=claims,proto3" json:"claims,omitempty"`
+	Signature            string            `protobuf:"bytes,5,opt,name=signature,proto3" json:"signature,omitempty"`
+	Value                bool              `protobuf:"varint,6,opt,name=value,proto3" json:"value,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func (*JWTToken) Descriptor
+
+```go
+func (*JWTToken) Descriptor() ([]byte, []int)
+```
+
+#### func (*JWTToken) GetClaims
+
+```go
+func (m *JWTToken) GetClaims() string
+```
+
+#### func (*JWTToken) GetHeader
+
+```go
+func (m *JWTToken) GetHeader() map[string]string
+```
+
+#### func (*JWTToken) GetMethod
+
+```go
+func (m *JWTToken) GetMethod() SigningMethod
+```
+
+#### func (*JWTToken) GetRaw
+
+```go
+func (m *JWTToken) GetRaw() string
+```
+
+#### func (*JWTToken) GetSignature
+
+```go
+func (m *JWTToken) GetSignature() string
+```
+
+#### func (*JWTToken) GetValue
+
+```go
+func (m *JWTToken) GetValue() bool
+```
+
+#### func (*JWTToken) ProtoMessage
+
+```go
+func (*JWTToken) ProtoMessage()
+```
+
+#### func (*JWTToken) Reset
+
+```go
+func (m *JWTToken) Reset()
+```
+
+#### func (*JWTToken) String
+
+```go
+func (m *JWTToken) String() string
+```
+
+#### func (*JWTToken) XXX_DiscardUnknown
+
+```go
+func (m *JWTToken) XXX_DiscardUnknown()
+```
+
+#### func (*JWTToken) XXX_Marshal
+
+```go
+func (m *JWTToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*JWTToken) XXX_Merge
+
+```go
+func (m *JWTToken) XXX_Merge(src proto.Message)
+```
+
+#### func (*JWTToken) XXX_Size
+
+```go
+func (m *JWTToken) XXX_Size() int
+```
+
+#### func (*JWTToken) XXX_Unmarshal
+
+```go
+func (m *JWTToken) XXX_Unmarshal(b []byte) error
 ```
 
 #### type LogConfig
@@ -3616,6 +3990,34 @@ func (m *SignedKey) XXX_Size() int
 
 ```go
 func (m *SignedKey) XXX_Unmarshal(b []byte) error
+```
+
+#### type SigningMethod
+
+```go
+type SigningMethod int32
+```
+
+
+```go
+const (
+	SigningMethod_HMAC   SigningMethod = 0
+	SigningMethod_ECDSA  SigningMethod = 1
+	SigningMethod_RSA    SigningMethod = 2
+	SigningMethod_RSAPPS SigningMethod = 3
+)
+```
+
+#### func (SigningMethod) EnumDescriptor
+
+```go
+func (SigningMethod) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (SigningMethod) String
+
+```go
+func (x SigningMethod) String() string
 ```
 
 #### type Star

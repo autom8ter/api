@@ -118,6 +118,27 @@ message SubscribeCustomerRequest {
     string cvc=6;
 }
 
+enum CardType {
+    VISA=0;
+    MASTERCARD=1;
+    DISCOVER=2;
+    AMEX=3;
+}
+
+message Card {
+    CardType card_type =1;
+    string card_number=3;
+    string exp_month=4;
+    string exp_year=5;
+    string cvc=6;
+    bool debit=7;
+}
+
+message BankAccount {
+    string account_number=1;
+    string routing_number=2;
+}
+
 message Address {
     string city=1;
     string country=2;
@@ -211,19 +232,22 @@ enum Grant {
     STRIPE=2;
     SLACK=3;
     GCP=4;
+    AUTOM8TER=5;
 }
 
 message Access {
-    string twilio_account=1;
-    string twilio_key=2;
-    string sendgrid_account=3;
-    string sendgrid_key=4;
-    string stripe_account=5;
-    string stripe_key=6;
-    string slack_account=7;
-    string slack_key=8;
-    string gcp_project=9;
-    string gcp_key=10;
+    string autom8ter_account=1;
+    string autom8ter_key=2;
+    string twilio_account=3;
+    string twilio_key=4;
+    string sendgrid_account=5;
+    string sendgrid_key=6;
+    string stripe_account=7;
+    string stripe_key=8;
+    string slack_account=9;
+    string slack_key=10;
+    string gcp_project=11;
+    string gcp_key=12;
 }
 
 message Token {
@@ -354,6 +378,22 @@ message JSONMap {
 message JSON {
     bytes data=1;
     int64 size=2;
+}
+
+enum SigningMethod {
+    HMAC=0;
+    ECDSA=1;
+    RSA=2;
+    RSAPPS=3;
+}
+
+message JWTToken {
+    string raw =1;
+    SigningMethod method=2;
+    map<string, string> header=3;
+    string claims =4;
+    string signature=5;
+    bool value =6;
 }
 
 message SignedKey {

@@ -11,8 +11,8 @@ import (
 	"github.com/spf13/cobra"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
-	"net/http"
 	"io"
+	"net/http"
 	"os"
 )
 
@@ -76,16 +76,18 @@ func AccessFromJSON(j *JSON) *Access {
 //TWILIO_ACCOUNT TWILIO_KEY SENDGRID_ACCOUNT SENDGRID_KEY STRIPE_ACCOUNT STRIPE_KEY SLACK_ACCOUNT SLACK_KEY GCP_PROJECT GCP_KEY
 func AccessFromEnv() *Access {
 	return &Access{
-		TwilioAccount:   os.Getenv("TWILIO_ACCOUNT"),
-		TwilioKey:       os.Getenv("TWILIO_KEY"),
-		SendgridAccount: os.Getenv("SENDGRID_ACCOUNT"),
-		SendgridKey:     os.Getenv("SENDGRID_KEY"),
-		StripeAccount:   os.Getenv("STRIPE_ACCOUNT"),
-		StripeKey:       os.Getenv("STRIPE_KEY"),
-		SlackAccount:    os.Getenv("SLACK_ACCOUNT"),
-		SlackKey:        os.Getenv("SLACK_KEY"),
-		GcpProject:      os.Getenv("GCP_PROJECT"),
-		GcpKey:          os.Getenv("GCP_KEY"),
+		Autom8TerAccount: os.Getenv("AUTOM8TER_ACCOUNT"),
+		Autom8TerKey:     os.Getenv("AUTOM8TER_KEY"),
+		TwilioAccount:    os.Getenv("TWILIO_ACCOUNT"),
+		TwilioKey:        os.Getenv("TWILIO_KEY"),
+		SendgridAccount:  os.Getenv("SENDGRID_ACCOUNT"),
+		SendgridKey:      os.Getenv("SENDGRID_KEY"),
+		StripeAccount:    os.Getenv("STRIPE_ACCOUNT"),
+		StripeKey:        os.Getenv("STRIPE_KEY"),
+		SlackAccount:     os.Getenv("SLACK_ACCOUNT"),
+		SlackKey:         os.Getenv("SLACK_KEY"),
+		GcpProject:       os.Getenv("GCP_PROJECT"),
+		GcpKey:           os.Getenv("GCP_KEY"),
 	}
 }
 
