@@ -323,7 +323,7 @@ func (t *Token) AddGrants(grants ...Grant) {
 	t.Grants = append(t.Grants, grants...)
 }
 
-func (t *Token) New() *Claims {
+func (t *Token) Claims() *Claims {
 	claims := make(map[string]jwt.StandardClaims)
 	claims["twilio"] = jwt.StandardClaims{
 		Audience:  t.Audience,
