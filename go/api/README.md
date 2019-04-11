@@ -45,10 +45,6 @@ var Grant_value = map[string]int32{
 ```
 
 ```go
-var SIGNING_KEY = os.Getenv("SIGNING_KEY")
-```
-
-```go
 var Util = objectify.Default()
 ```
 
@@ -2692,6 +2688,12 @@ type JWTMiddleware struct {
 
 ```go
 func NewJWTMiddleware(key SignedKey) *JWTMiddleware
+```
+
+#### func (*JWTMiddleware) Check
+
+```go
+func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error
 ```
 
 #### func (*JWTMiddleware) Wrap
