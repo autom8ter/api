@@ -6,6 +6,7 @@ import (
 	"github.com/autom8ter/engine"
 	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
+	"github.com/spf13/cobra"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
 	"io"
@@ -13,6 +14,18 @@ import (
 )
 
 var Util = objectify.Default()
+
+func Cmd(name, description string, fn func() error) *cobra.Command {
+	return &cobra.Command{
+		Use:  name,
+		Long: description,
+		Run: func(cmd *cobra.Command, args []string) {
+			if err := fn(); err != nil {
+				Util.Fatalln(err.Error())
+			}
+		},
+	}
+}
 
 type ClientSet struct {
 	UserSet UserServiceClient
