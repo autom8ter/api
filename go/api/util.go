@@ -8,7 +8,6 @@ import (
 	"github.com/autom8ter/objectify"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
-
 	"io"
 	"os"
 )
@@ -37,8 +36,8 @@ func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*C
 
 func NewServer(addr string, server UserServiceServer) *Server {
 	s := &Server{
-		UserServiceServer: server,
 		Addr:              addr,
+		UserServiceServer: server,
 	}
 	s.PluginFunc = func(server *grpc.Server) {
 		RegisterUserServiceServer(server, s)
@@ -148,8 +147,8 @@ func NewPubSubTopic(opts ...PubSubTopicFunc) *PubSubTopic {
 	return a
 }
 
-func (j *PubSubMessage) MarshalJSON() []byte {
-	return Util.MarshalJSON(j.Message)
+func (j *PubSubMessage) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j.Message), nil
 }
 
 func (j *PubSubMessage) UnMarshalJSON(obj interface{}) error {
