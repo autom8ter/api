@@ -2,6 +2,10 @@ package api
 
 import (
 	"context"
+	"github.com/autom8ter/engine"
+	"github.com/autom8ter/engine/config"
+	"github.com/autom8ter/engine/driver"
+	"google.golang.org/grpc"
 )
 
 type EmailOption func(r *EmailRequest)
@@ -107,6 +111,7 @@ EmailUser(context.Context, *EmailRequest) (*JSON, error)
 type CustomerServiceServerFunctions struct {
 	CreateCustomerFunc      func(context.Context, *CustomerRequest) (*JSON, error)
 	UpdateCustomerFunc      func(context.Context, *UpdateCustomerRequest) (*JSON, error)
+	DeleteCustomerFunc      func(context.Context, *Id) (*JSON, error)
 	ListCustomersFunc       func(context.Context, *Empty) (*JSON, error)
 	ChargeCustomerFunc      func(context.Context, *ChargeRequest) (*JSON, error)
 	RefundCustomerFunc      func(context.Context, *RefundRequest) (*JSON, error)
@@ -116,6 +121,14 @@ type CustomerServiceServerFunctions struct {
 	CallCustomerFunc        func(context.Context, *CallRequest) (*JSON, error)
 	MMSCustomerFunc         func(context.Context, *MMSRequest) (*JSON, error)
 	EmailCustomerFunc       func(context.Context, *EmailRequest) (*JSON, error)
+}
+
+func (a CustomerServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
+	RegisterCustomerServiceServer(s, a)
+}
+
+func (c *CustomerServiceServerFunctions) DeleteCustomer(ctx context.Context, r *Id) (*JSON, error) {
+	return c.DeleteCustomerFunc(ctx, r)
 }
 
 func (c *CustomerServiceServerFunctions) CreateCustomer(ctx context.Context, r *CustomerRequest) (*JSON, error) {
@@ -171,6 +184,10 @@ type UserServiceServerFunctions struct {
 	ListUsersFunc   func(ctx context.Context, r *Empty) (*JSON, error)
 }
 
+func (u UserServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
+	RegisterUserServiceServer(s, u)
+}
+
 func (u *UserServiceServerFunctions) EmailUser(ctx context.Context, r *EmailRequest) (*JSON, error) {
 	return u.EmailUserFunc(ctx, r)
 }
@@ -199,6 +216,10 @@ type PlanServiceServerFunctions struct {
 	CreateSubscriptionPlanFunc func(context.Context, *CreatePlanRequest) (*JSON, error)
 }
 
+func (p PlanServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
+	RegisterPlanServiceServer(s, p)
+}
+
 func (p *PlanServiceServerFunctions) CreateSubscriptionPlan(ctx context.Context, r *CreatePlanRequest) (*JSON, error) {
 	return p.CreateSubscriptionPlanFunc(ctx, r)
 }
@@ -209,6 +230,10 @@ type AccountServiceServerFunctions struct {
 	DeleteAccountFunc func(ctx context.Context, r *Id) (*JSON, error)
 	ReadAccountFunc   func(ctx context.Context, r *Id) (*JSON, error)
 	ListAccountsFunc  func(ctx context.Context, r *Empty) (*JSON, error)
+}
+
+func (a AccountServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
+	RegisterAccountServiceServer(s, a)
 }
 
 func (a *AccountServiceServerFunctions) CreateAccount(ctx context.Context, r *CreateAccountRequest) (*JSON, error) {
@@ -229,4 +254,17 @@ func (a *AccountServiceServerFunctions) ReadAccount(ctx context.Context, r *Id) 
 
 func (a *AccountServiceServerFunctions) ListAccounts(ctx context.Context, r *Empty) (*JSON, error) {
 	return a.ListAccountsFunc(ctx, r)
+}
+
+func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions) {
+	if err := engine.Default("tcp", addr, debug).With(
+		config.WithPlugins(
+			accounts,
+			customer,
+			user,
+			plan,
+		),
+	).Serve(); err != nil {
+		Util.Fatalln("functions:", err.Error())
+	}
 }
