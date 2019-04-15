@@ -112,6 +112,12 @@ service UserService {
             body: "*"
         };
     }
+    rpc MessageUser(UnImplemented) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
     rpc CreateUser(UnImplemented) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
@@ -139,6 +145,11 @@ service UserService {
 }
 
 ///////////////////////////////////////////////Requests/////////////////////////////////////////////////////////////////
+
+message MessageUserRequest {
+    string id =1;
+    string message=2;
+}
 
 message RefundRequest {
     string id =1;

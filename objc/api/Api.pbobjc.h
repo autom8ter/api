@@ -153,6 +153,21 @@ BOOL CardType_IsValidValue(int32_t value);
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - MessageUserRequest
+
+typedef GPB_ENUM(MessageUserRequest_FieldNumber) {
+  MessageUserRequest_FieldNumber_Id_p = 1,
+  MessageUserRequest_FieldNumber_Message = 2,
+};
+
+@interface MessageUserRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *message;
+
+@end
+
 #pragma mark - RefundRequest
 
 typedef GPB_ENUM(RefundRequest_FieldNumber) {

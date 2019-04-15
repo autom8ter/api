@@ -86,6 +86,36 @@ func NewCustomerServer(server CustomerServiceServer) *CustomerServer {
 	return s
 }
 
+type AccountServer struct {
+	AccountServiceServer
+	driver.PluginFunc
+}
+
+func NewAccountServer(server AccountServiceServer) *AccountServer {
+	s := &AccountServer{
+		AccountServiceServer: server,
+	}
+	s.PluginFunc = func(server *grpc.Server) {
+		RegisterAccountServiceServer(server, s)
+	}
+	return s
+}
+
+type PlanServer struct {
+	PlanServiceServer
+	driver.PluginFunc
+}
+
+func NewPlanServer(server PlanServiceServer) *PlanServer {
+	s := &PlanServer{
+		PlanServiceServer: server,
+	}
+	s.PluginFunc = func(server *grpc.Server) {
+		RegisterPlanServiceServer(server, s)
+	}
+	return s
+}
+
 //////////////////////////////////////////////////////
 
 func AccessFromJSON(j *JSON) *Access {
@@ -122,6 +152,7 @@ type SubscribeOption func(r *SubscribeCustomerRequest)
 type RefundOption func(r *RefundRequest)
 type PlanOption func(r *CreatePlanRequest)
 type AccountOption func(r *CreateAccountRequest)
+type MessageOption func(r *MessageUserRequest)
 
 func NewEmailRequest(opts ...EmailOption) *EmailRequest {
 	e := &EmailRequest{}
@@ -189,6 +220,14 @@ func NewPlanRequest(opts ...PlanOption) *CreatePlanRequest {
 
 func NewRefundRequest(opts ...RefundOption) *RefundRequest {
 	e := &RefundRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewMessageRequest(opts ...MessageOption) *MessageUserRequest {
+	e := &MessageUserRequest{}
 	for _, o := range opts {
 		o(e)
 	}

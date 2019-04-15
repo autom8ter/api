@@ -218,6 +218,60 @@ BOOL CardType_IsValidValue(int32_t value__) {
   }
 }
 
+#pragma mark - MessageUserRequest
+
+@implementation MessageUserRequest
+
+@dynamic id_p;
+@dynamic message;
+
+typedef struct MessageUserRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *id_p;
+  NSString *message;
+} MessageUserRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = NULL,
+        .number = MessageUserRequest_FieldNumber_Id_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(MessageUserRequest__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "message",
+        .dataTypeSpecific.className = NULL,
+        .number = MessageUserRequest_FieldNumber_Message,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(MessageUserRequest__storage_, message),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[MessageUserRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(MessageUserRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - RefundRequest
 
 @implementation RefundRequest

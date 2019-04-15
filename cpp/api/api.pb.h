@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[49];
+  static const ::google::protobuf::internal::ParseTable schema[50];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -155,6 +155,9 @@ extern LogHookDefaultTypeInternal _LogHook_default_instance_;
 class MMSRequest;
 class MMSRequestDefaultTypeInternal;
 extern MMSRequestDefaultTypeInternal _MMSRequest_default_instance_;
+class MessageUserRequest;
+class MessageUserRequestDefaultTypeInternal;
+extern MessageUserRequestDefaultTypeInternal _MessageUserRequest_default_instance_;
 class Pin;
 class PinDefaultTypeInternal;
 extern PinDefaultTypeInternal _Pin_default_instance_;
@@ -239,6 +242,7 @@ template<> ::api::JSON* Arena::CreateMaybeMessage<::api::JSON>(Arena*);
 template<> ::api::LogConfig* Arena::CreateMaybeMessage<::api::LogConfig>(Arena*);
 template<> ::api::LogHook* Arena::CreateMaybeMessage<::api::LogHook>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
+template<> ::api::MessageUserRequest* Arena::CreateMaybeMessage<::api::MessageUserRequest>(Arena*);
 template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
 template<> ::api::Product* Arena::CreateMaybeMessage<::api::Product>(Arena*);
 template<> ::api::Product_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Product_TagsEntry_DoNotUse>(Arena*);
@@ -354,6 +358,132 @@ inline bool CardType_Parse(
 }
 // ===================================================================
 
+class MessageUserRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.MessageUserRequest) */ {
+ public:
+  MessageUserRequest();
+  virtual ~MessageUserRequest();
+
+  MessageUserRequest(const MessageUserRequest& from);
+
+  inline MessageUserRequest& operator=(const MessageUserRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  MessageUserRequest(MessageUserRequest&& from) noexcept
+    : MessageUserRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline MessageUserRequest& operator=(MessageUserRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const MessageUserRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MessageUserRequest* internal_default_instance() {
+    return reinterpret_cast<const MessageUserRequest*>(
+               &_MessageUserRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(MessageUserRequest* other);
+  friend void swap(MessageUserRequest& a, MessageUserRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MessageUserRequest* New() const final {
+    return CreateMaybeMessage<MessageUserRequest>(NULL);
+  }
+
+  MessageUserRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<MessageUserRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const MessageUserRequest& from);
+  void MergeFrom(const MessageUserRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MessageUserRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string message = 2;
+  void clear_message();
+  static const int kMessageFieldNumber = 2;
+  const ::std::string& message() const;
+  void set_message(const ::std::string& value);
+  #if LANG_CXX11
+  void set_message(::std::string&& value);
+  #endif
+  void set_message(const char* value);
+  void set_message(const char* value, size_t size);
+  ::std::string* mutable_message();
+  ::std::string* release_message();
+  void set_allocated_message(::std::string* message);
+
+  // @@protoc_insertion_point(class_scope:api.MessageUserRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr message_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class RefundRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.RefundRequest) */ {
  public:
   RefundRequest();
@@ -389,7 +519,7 @@ class RefundRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_RefundRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(RefundRequest* other);
   friend void swap(RefundRequest& a, RefundRequest& b) {
@@ -544,7 +674,7 @@ class ChargeRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_ChargeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(ChargeRequest* other);
   friend void swap(ChargeRequest& a, ChargeRequest& b) {
@@ -668,7 +798,7 @@ class CancelSubscriptionRequest : public ::google::protobuf::Message /* @@protoc
                &_CancelSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(CancelSubscriptionRequest* other);
   friend void swap(CancelSubscriptionRequest& a, CancelSubscriptionRequest& b) {
@@ -779,7 +909,7 @@ class CreatePlanRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_CreatePlanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(CreatePlanRequest* other);
   friend void swap(CreatePlanRequest& a, CreatePlanRequest& b) {
@@ -942,7 +1072,7 @@ class SMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_SMSRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(SMSRequest* other);
   friend void swap(SMSRequest& a, SMSRequest& b) {
@@ -1068,7 +1198,7 @@ class CallRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_CallRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(CallRequest* other);
   friend void swap(CallRequest& a, CallRequest& b) {
@@ -1194,7 +1324,7 @@ class MMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_MMSRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(MMSRequest* other);
   friend void swap(MMSRequest& a, MMSRequest& b) {
@@ -1318,7 +1448,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1474,7 +1604,7 @@ class CustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion
                &_CustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(CustomerRequest* other);
   friend void swap(CustomerRequest& a, CustomerRequest& b) {
@@ -1658,7 +1788,7 @@ class UpdateCustomerRequest : public ::google::protobuf::Message /* @@protoc_ins
                &_UpdateCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(UpdateCustomerRequest* other);
   friend void swap(UpdateCustomerRequest& a, UpdateCustomerRequest& b) {
@@ -1782,7 +1912,7 @@ class SubscribeCustomerRequest : public ::google::protobuf::Message /* @@protoc_
                &_SubscribeCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(SubscribeCustomerRequest* other);
   friend void swap(SubscribeCustomerRequest& a, SubscribeCustomerRequest& b) {
@@ -1968,7 +2098,7 @@ class CreateAccountRequest : public ::google::protobuf::Message /* @@protoc_inse
                &_CreateAccountRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(CreateAccountRequest* other);
   friend void swap(CreateAccountRequest& a, CreateAccountRequest& b) {
@@ -2090,7 +2220,7 @@ class Account : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Account_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(Account* other);
   friend void swap(Account& a, Account& b) {
@@ -2212,7 +2342,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -2444,7 +2574,7 @@ class Profile : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Profile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(Profile* other);
   friend void swap(Profile& a, Profile& b) {
@@ -2668,7 +2798,7 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(Empty* other);
   friend void swap(Empty& a, Empty& b) {
@@ -2785,7 +2915,7 @@ class Customer : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Customer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(Customer* other);
   friend void swap(Customer& a, Customer& b) {
@@ -3014,7 +3144,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -3184,7 +3314,7 @@ class BankAccount : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_BankAccount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(BankAccount* other);
   friend void swap(BankAccount& a, BankAccount& b) {
@@ -3310,7 +3440,7 @@ class Address : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Address_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(Address* other);
   friend void swap(Address& a, Address& b) {
@@ -3496,7 +3626,7 @@ class ChannelReminder : public ::google::protobuf::Message /* @@protoc_insertion
                &_ChannelReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(ChannelReminder* other);
   friend void swap(ChannelReminder& a, ChannelReminder& b) {
@@ -3637,7 +3767,7 @@ class UserReminder : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(UserReminder* other);
   friend void swap(UserReminder& a, UserReminder& b) {
@@ -3791,7 +3921,7 @@ class ItemRef : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_ItemRef_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(ItemRef* other);
   friend void swap(ItemRef& a, ItemRef& b) {
@@ -3932,7 +4062,7 @@ class Star : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Star_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(Star* other);
   friend void swap(Star& a, Star& b) {
@@ -4056,7 +4186,7 @@ class Pin : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Pin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(Pin* other);
   friend void swap(Pin& a, Pin& b) {
@@ -4180,7 +4310,7 @@ class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_SignedKey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(SignedKey* other);
   friend void swap(SignedKey& a, SignedKey& b) {
@@ -4291,7 +4421,7 @@ class UnImplemented : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_UnImplemented_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(UnImplemented* other);
   friend void swap(UnImplemented& a, UnImplemented& b) {
@@ -4387,7 +4517,7 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_Access_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   void Swap(Access* other);
   friend void swap(Access& a, Access& b) {
@@ -4663,7 +4793,7 @@ class StandardClaims : public ::google::protobuf::Message /* @@protoc_insertion_
                &_StandardClaims_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   void Swap(StandardClaims* other);
   friend void swap(StandardClaims& a, StandardClaims& b) {
@@ -4838,7 +4968,7 @@ class LogConfig : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LogConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   void Swap(LogConfig* other);
   friend void swap(LogConfig& a, LogConfig& b) {
@@ -4964,7 +5094,7 @@ class EmailAddress : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailAddress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   void Swap(EmailAddress* other);
   friend void swap(EmailAddress& a, EmailAddress& b) {
@@ -5090,7 +5220,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -5212,7 +5342,7 @@ class RecipientEmail : public ::google::protobuf::Message /* @@protoc_insertion_
                &_RecipientEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   void Swap(RecipientEmail* other);
   friend void swap(RecipientEmail& a, RecipientEmail& b) {
@@ -5366,7 +5496,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -5552,7 +5682,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -5693,7 +5823,7 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Fax_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   void Swap(Fax* other);
   friend void swap(Fax& a, Fax& b) {
@@ -5871,7 +6001,7 @@ class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_LogHook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   void Swap(LogHook* other);
   friend void swap(LogHook& a, LogHook& b) {
@@ -6012,7 +6142,7 @@ class Attachment : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Attachment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   void Swap(Attachment* other);
   friend void swap(Attachment& a, Attachment& b) {
@@ -6323,7 +6453,7 @@ class AttachmentAction : public ::google::protobuf::Message /* @@protoc_insertio
                &_AttachmentAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   void Swap(AttachmentAction* other);
   friend void swap(AttachmentAction& a, AttachmentAction& b) {
@@ -6583,7 +6713,7 @@ class AttachmentConfirmationField : public ::google::protobuf::Message /* @@prot
                &_AttachmentConfirmationField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   void Swap(AttachmentConfirmationField* other);
   friend void swap(AttachmentConfirmationField& a, AttachmentConfirmationField& b) {
@@ -6739,7 +6869,7 @@ class AttachmentActionOptionGroup : public ::google::protobuf::Message /* @@prot
                &_AttachmentActionOptionGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   void Swap(AttachmentActionOptionGroup* other);
   friend void swap(AttachmentActionOptionGroup& a, AttachmentActionOptionGroup& b) {
@@ -6863,7 +6993,7 @@ class AttachmentActionOption : public ::google::protobuf::Message /* @@protoc_in
                &_AttachmentActionOption_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    43;
 
   void Swap(AttachmentActionOption* other);
   friend void swap(AttachmentActionOption& a, AttachmentActionOption& b) {
@@ -7004,7 +7134,7 @@ class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion
                &_AttachmentField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    44;
 
   void Swap(AttachmentField* other);
   friend void swap(AttachmentField& a, AttachmentField& b) {
@@ -7137,7 +7267,7 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_JSON_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    45;
 
   void Swap(JSON* other);
   friend void swap(JSON& a, JSON& b) {
@@ -7276,7 +7406,7 @@ class File : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_File_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    47;
 
   void Swap(File* other);
   friend void swap(File& a, File& b) {
@@ -7446,7 +7576,7 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Product_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    49;
 
   void Swap(Product* other);
   friend void swap(Product& a, Product& b) {
@@ -7587,6 +7717,116 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// MessageUserRequest
+
+// string id = 1;
+inline void MessageUserRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& MessageUserRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.MessageUserRequest.id)
+  return id_.GetNoArena();
+}
+inline void MessageUserRequest::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.MessageUserRequest.id)
+}
+#if LANG_CXX11
+inline void MessageUserRequest::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.MessageUserRequest.id)
+}
+#endif
+inline void MessageUserRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.MessageUserRequest.id)
+}
+inline void MessageUserRequest::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.MessageUserRequest.id)
+}
+inline ::std::string* MessageUserRequest::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.MessageUserRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* MessageUserRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.MessageUserRequest.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void MessageUserRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.MessageUserRequest.id)
+}
+
+// string message = 2;
+inline void MessageUserRequest::clear_message() {
+  message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& MessageUserRequest::message() const {
+  // @@protoc_insertion_point(field_get:api.MessageUserRequest.message)
+  return message_.GetNoArena();
+}
+inline void MessageUserRequest::set_message(const ::std::string& value) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.MessageUserRequest.message)
+}
+#if LANG_CXX11
+inline void MessageUserRequest::set_message(::std::string&& value) {
+  
+  message_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.MessageUserRequest.message)
+}
+#endif
+inline void MessageUserRequest::set_message(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.MessageUserRequest.message)
+}
+inline void MessageUserRequest::set_message(const char* value, size_t size) {
+  
+  message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.MessageUserRequest.message)
+}
+inline ::std::string* MessageUserRequest::mutable_message() {
+  
+  // @@protoc_insertion_point(field_mutable:api.MessageUserRequest.message)
+  return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* MessageUserRequest::release_message() {
+  // @@protoc_insertion_point(field_release:api.MessageUserRequest.message)
+  
+  return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void MessageUserRequest::set_allocated_message(::std::string* message) {
+  if (message != NULL) {
+    
+  } else {
+    
+  }
+  message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
+  // @@protoc_insertion_point(field_set_allocated:api.MessageUserRequest.message)
+}
+
+// -------------------------------------------------------------------
+
 // RefundRequest
 
 // string id = 1;
@@ -17116,6 +17356,8 @@ inline void Product::set_available(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

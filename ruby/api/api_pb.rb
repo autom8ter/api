@@ -10,6 +10,10 @@ require 'google/api/annotations_pb'
 require 'google/api/auth_pb'
 require 'google/pubsub/v1/pubsub_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.MessageUserRequest" do
+    optional :id, :string, 1
+    optional :message, :string, 2
+  end
   add_message "api.RefundRequest" do
     optional :id, :string, 1
     optional :reason, :string, 2
@@ -330,6 +334,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  MessageUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MessageUserRequest").msgclass
   RefundRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefundRequest").msgclass
   ChargeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChargeRequest").msgclass
   CancelSubscriptionRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CancelSubscriptionRequest").msgclass
