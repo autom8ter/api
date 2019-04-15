@@ -183,7 +183,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.AddCustomerRequest"><span class="badge">M</span>AddCustomerRequest</a>
+                  <a href="#api.Account"><span class="badge">M</span>Account</a>
+                </li>
+              
+                <li>
+                  <a href="#api.AddAccountRequest"><span class="badge">M</span>AddAccountRequest</a>
                 </li>
               
                 <li>
@@ -239,15 +243,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.Charge"><span class="badge">M</span>Charge</a>
+                  <a href="#api.ChargeRequest"><span class="badge">M</span>ChargeRequest</a>
                 </li>
               
                 <li>
                   <a href="#api.CreatePlanRequest"><span class="badge">M</span>CreatePlanRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#api.CreatePlanResponse"><span class="badge">M</span>CreatePlanResponse</a>
                 </li>
               
                 <li>
@@ -256,6 +256,10 @@
               
                 <li>
                   <a href="#api.Customer.MetadataEntry"><span class="badge">M</span>Customer.MetadataEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.CustomerRequest"><span class="badge">M</span>CustomerRequest</a>
                 </li>
               
                 <li>
@@ -327,7 +331,7 @@
                 </li>
               
                 <li>
-                  <a href="#api.Refund"><span class="badge">M</span>Refund</a>
+                  <a href="#api.RefundRequest"><span class="badge">M</span>RefundRequest</a>
                 </li>
               
                 <li>
@@ -355,7 +359,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.SubscribeCustomerResponse"><span class="badge">M</span>SubscribeCustomerResponse</a>
+                  <a href="#api.UnImplemented"><span class="badge">M</span>UnImplemented</a>
+                </li>
+              
+                <li>
+                  <a href="#api.UpdateCustomerRequest"><span class="badge">M</span>UpdateCustomerRequest</a>
                 </li>
               
                 <li>
@@ -386,7 +394,15 @@
               
               
                 <li>
+                  <a href="#api.AccountService"><span class="badge">S</span>AccountService</a>
+                </li>
+              
+                <li>
                   <a href="#api.CustomerService"><span class="badge">S</span>CustomerService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.PlanService"><span class="badge">S</span>PlanService</a>
                 </li>
               
                 <li>
@@ -508,7 +524,7 @@
 
         
       
-        <h3 id="api.AddCustomerRequest">AddCustomerRequest</h3>
+        <h3 id="api.Account">Account</h3>
         <p></p>
 
         
@@ -519,43 +535,45 @@
             <tbody>
               
                 <tr>
-                  <td>email</td>
-                  <td><a href="#string">string</a></td>
+                  <td>customer</td>
+                  <td><a href="#api.Customer">Customer</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>plan</td>
-                  <td><a href="#string">string</a></td>
+                  <td>access</td>
+                  <td><a href="#api.Access">Access</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.AddAccountRequest">AddAccountRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>customer</td>
+                  <td><a href="#api.CustomerRequest">CustomerRequest</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>phone</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>description</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>address</td>
-                  <td><a href="#api.Address">Address</a></td>
+                  <td>access</td>
+                  <td><a href="#api.Access">Access</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1071,7 +1089,7 @@
             <tbody>
               
                 <tr>
-                  <td>user_id</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1101,7 +1119,7 @@
             <tbody>
               
                 <tr>
-                  <td>email</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1208,7 +1226,7 @@
 
         
       
-        <h3 id="api.Charge">Charge</h3>
+        <h3 id="api.ChargeRequest">ChargeRequest</h3>
         <p></p>
 
         
@@ -1226,8 +1244,8 @@
                 </tr>
               
                 <tr>
-                  <td>customer</td>
-                  <td><a href="#api.Customer">Customer</a></td>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1289,29 +1307,6 @@
 
         
       
-        <h3 id="api.CreatePlanResponse">CreatePlanResponse</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>plan_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="api.Customer">Customer</h3>
         <p>User is a user of the application</p>
 
@@ -1323,7 +1318,7 @@
             <tbody>
               
                 <tr>
-                  <td>user_id</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1428,6 +1423,64 @@
 
         
       
+        <h3 id="api.CustomerRequest">CustomerRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plan</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#api.Address">Address</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Email">Email</h3>
         <p></p>
 
@@ -1499,7 +1552,7 @@
             <tbody>
               
                 <tr>
-                  <td>user_id</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1816,15 +1869,8 @@
             <tbody>
               
                 <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>body</td>
-                  <td><a href="#string">string</a></td>
+                  <td>sms</td>
+                  <td><a href="#api.SMSRequest">SMSRequest</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2076,7 +2122,7 @@
 
         
       
-        <h3 id="api.Refund">Refund</h3>
+        <h3 id="api.RefundRequest">RefundRequest</h3>
         <p></p>
 
         
@@ -2085,6 +2131,13 @@
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
               
                 <tr>
                   <td>reason</td>
@@ -2189,7 +2242,7 @@
             <tbody>
               
                 <tr>
-                  <td>user_id</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -2337,7 +2390,7 @@
             <tbody>
               
                 <tr>
-                  <td>email</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -2384,7 +2437,14 @@
 
         
       
-        <h3 id="api.SubscribeCustomerResponse">SubscribeCustomerResponse</h3>
+        <h3 id="api.UnImplemented">UnImplemented</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="api.UpdateCustomerRequest">UpdateCustomerRequest</h3>
         <p></p>
 
         
@@ -2395,8 +2455,15 @@
             <tbody>
               
                 <tr>
-                  <td>subscription_id</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>customer</td>
+                  <td><a href="#api.CustomerRequest">CustomerRequest</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2532,7 +2599,7 @@
             <tbody>
               
                 <tr>
-                  <td>user_id</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -2717,8 +2784,26 @@
       
 
       
+        <h3 id="api.AccountService">AccountService</h3>
+        <p>Accounts</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>CreateAccount</td>
+                <td><a href="#api.AddAccountRequest">AddAccountRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
         <h3 id="api.CustomerService">CustomerService</h3>
-        <p></p>
+        <p>Customers</p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -2727,57 +2812,96 @@
             
               <tr>
                 <td>CreateCustomer</td>
-                <td><a href="#api.AddCustomerRequest">AddCustomerRequest</a></td>
-                <td><a href="#api.Customer">Customer</a></td>
+                <td><a href="#api.CustomerRequest">CustomerRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateCustomer</td>
+                <td><a href="#api.UpdateCustomerRequest">UpdateCustomerRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ListCustomers</td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ChargeCustomer</td>
+                <td><a href="#api.ChargeRequest">ChargeRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>RefundCustomer</td>
+                <td><a href="#api.RefundRequest">RefundRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>SubscribeCustomer</td>
                 <td><a href="#api.SubscribeCustomerRequest">SubscribeCustomerRequest</a></td>
-                <td><a href="#api.SubscribeCustomerResponse">SubscribeCustomerResponse</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>UnSubscribeCustomer</td>
                 <td><a href="#api.CancelSubscriptionRequest">CancelSubscriptionRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CreateSubscriptionPlan</td>
-                <td><a href="#api.CreatePlanRequest">CreatePlanRequest</a></td>
-                <td><a href="#api.CreatePlanResponse">CreatePlanResponse</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>SMSCustomer</td>
                 <td><a href="#api.SMSRequest">SMSRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>CallCustomer</td>
                 <td><a href="#api.CallRequest">CallRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>MMSCustomer</td>
                 <td><a href="#api.MMSRequest">MMSRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>EmailCustomer</td>
                 <td><a href="#api.EmailRequest">EmailRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.PlanService">PlanService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>CreateSubscriptionPlan</td>
+                <td><a href="#api.CreatePlanRequest">CreatePlanRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
@@ -2795,7 +2919,35 @@
               <tr>
                 <td>EmailUser</td>
                 <td><a href="#api.EmailRequest">EmailRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CreateUser</td>
+                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateUser</td>
+                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteUser</td>
+                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ListUsers</td>
+                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             

@@ -12,63 +12,127 @@ import "google/pubsub/v1/pubsub.proto";
 
 ///////////////////////////////////////////////Services/////////////////////////////////////////////////////////////////
 
-service CustomerService {
-    rpc CreateCustomer(AddCustomerRequest) returns (Customer) {
+//Accounts
+service AccountService {
+    rpc CreateAccount(AddAccountRequest) returns (JSON) {
         option (google.api.http) = {
-            post: "/api/users"
-            body: "*"
-        };
-    }
-    rpc SubscribeCustomer(SubscribeCustomerRequest) returns (SubscribeCustomerResponse) {
-        option (google.api.http) = {
-            post: "/api/users/{email}"
-            body: "*"
-        };
-    }
-    rpc UnSubscribeCustomer(CancelSubscriptionRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/users/{email}"
-            body: "*"
-        };
-    }
-    rpc CreateSubscriptionPlan(CreatePlanRequest) returns (CreatePlanResponse) {
-        option (google.api.http) = {
-            post: "/api/plans/{plan_id}"
-            body: "*"
-        };
-    }
-    rpc SMSCustomer(SMSRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/customers/sms/{user_id}"
-            body: "*"
-        };
-    }
-    rpc CallCustomer(CallRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/customers/call/{user_id}"
-            body: "*"
-        };
-    }
-    rpc MMSCustomer(MMSRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/customers/mms/{user_id}"
-            body: "*"
-        };
-    }
-    rpc EmailCustomer(EmailRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/customers/email/{user_id}"
+            post: "/api/accounts"
             body: "*"
         };
     }
 }
 
-///////////////////////////////////////////////
+//Customers
+service CustomerService {
+    rpc CreateCustomer(CustomerRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers"
+            body: "*"
+        };
+    }
+    rpc UpdateCustomer(UpdateCustomerRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}"
+            body: "*"
+        };
+    }
+    rpc ListCustomers(Empty) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/list"
+            body: "*"
+        };
+    }
+    rpc ChargeCustomer(ChargeRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/charge"
+            body: "*"
+        };
+    }
+    rpc RefundCustomer(RefundRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/refund"
+            body: "*"
+        };
+    }
+    rpc SubscribeCustomer(SubscribeCustomerRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/subscribe"
+            body: "*"
+        };
+    }
+    rpc UnSubscribeCustomer(CancelSubscriptionRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/unsubscribe"
+            body: "*"
+        };
+    }
+
+    rpc SMSCustomer(SMSRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/sms"
+            body: "*"
+        };
+    }
+    rpc CallCustomer(CallRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/call"
+            body: "*"
+        };
+    }
+    rpc MMSCustomer(MMSRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{sms.id}/mms"
+            body: "*"
+        };
+    }
+    rpc EmailCustomer(EmailRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/email"
+            body: "*"
+        };
+    }
+}
+/////////////Plans
+
+service PlanService {
+    rpc CreateSubscriptionPlan(CreatePlanRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/plans"
+            body: "*"
+        };
+    }
+}
+
+/////////////Users
 
 service UserService {
-    rpc EmailUser(EmailRequest) returns (Empty) {
+    rpc EmailUser(EmailRequest) returns (JSON) {
         option (google.api.http) = {
-            post: "/api/users/email/{user_id}"
+            post: "/api/users/{id}/email"
+            body: "*"
+        };
+    }
+    rpc CreateUser(UnImplemented) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc UpdateUser(UnImplemented) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc DeleteUser(UnImplemented) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/users"
+            body: "*"
+        };
+    }
+    rpc ListUsers(UnImplemented) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/users"
             body: "*"
         };
     }
@@ -76,8 +140,21 @@ service UserService {
 
 ///////////////////////////////////////////////Requests/////////////////////////////////////////////////////////////////
 
+message RefundRequest {
+    string id =1;
+    string reason=2;
+    int64 amount=3;
+    bool reverse_transfer=4;
+    string status=5;
+}
+
+message ChargeRequest {
+    Product product=1;
+    string id =2;
+}
+
 message CancelSubscriptionRequest {
-    string email=1;
+    string id=1;
 }
 
 message CreatePlanRequest {
@@ -89,39 +166,61 @@ message CreatePlanRequest {
 }
 
 message SMSRequest {
-    string user_id =1;
+    string id =1;
     string body=2;
 }
 
 message CallRequest {
-    string user_id =1;
+    string id =1;
     string callback_url=2;
 }
 
 message MMSRequest {
-    string user_id=1;
-    string body=2;
+    SMSRequest sms=1;
     string media_url=3;
 }
 
 message EmailRequest {
-    string user_id =1;
+    string id =1;
     string subject=2;
     string plain_text=3;
     string html_alt=4;
 }
 
-///////////////////////////////////////////////Responses/////////////////////////////////////////////////////////////////
-
-message SubscribeCustomerResponse {
-    string subscription_id=1;
+message CustomerRequest {
+    string email =1;
+    string plan=2;
+    string phone=3;
+    string name=4;
+    string description=7;
+    Address address=8;
 }
 
-message CreatePlanResponse {
-    string plan_id=1;
+message UpdateCustomerRequest {
+    string id=1;
+    CustomerRequest customer=2;
+}
+
+message SubscribeCustomerRequest {
+    string id =1;
+    string plan=2;
+    string card_number=3;
+    string exp_month=4;
+    string exp_year=5;
+    string cvc=6;
+}
+
+message AddAccountRequest {
+    CustomerRequest customer =1;
+    Access access=2;
 }
 
 ///////////////////////////////////////////////Objects/////////////////////////////////////////////////////////////////
+
+message Account {
+    Customer customer=1;
+    Access access=2;
+}
 
 message User {
     string id =1;
@@ -156,7 +255,7 @@ message Empty {}
 
 // User is a user of the application
 message Customer {
-    string user_id = 1;
+    string id = 1;
     string plan = 2;
     string name =3;
     string email=4;
@@ -166,24 +265,6 @@ message Customer {
     map<string, string> metadata = 9;
     bool deleted=10;
     int64 create_date = 20;
-}
-
-message AddCustomerRequest {
-    string email =1;
-    string plan=2;
-    string phone=3;
-    string name=4;
-    string description=7;
-    Address address=8;
-}
-
-message SubscribeCustomerRequest {
-    string email =1;
-    string plan=2;
-    string card_number=3;
-    string exp_month=4;
-    string exp_year=5;
-    string cvc=6;
 }
 
 
@@ -218,7 +299,7 @@ message ChannelReminder {
 }
 
 message UserReminder {
-    string user_id=1;
+    string id=1;
     string text=2;
     string time=3;
     ItemRef item=4;
@@ -243,6 +324,8 @@ message Pin {
 message SignedKey {
     string signed_key=1;
 }
+
+message UnImplemented {}
 
 message Access {
     string autom8ter_account=1;
@@ -399,19 +482,6 @@ message Product {
     map<string, string> tags=5;
     bool available=6;
 }
-
-message Refund {
-    string reason=1;
-    int64 amount=2;
-    bool reverse_transfer=3;
-    string status=4;
-}
-
-message Charge {
-    Product product=1;
-    Customer customer =2;
-}
-
 
 ///////////////////////////////////////////////Enums/////////////////////////////////////////////////////////////////
 

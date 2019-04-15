@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[47];
+  static const ::google::protobuf::internal::ParseTable schema[49];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -59,9 +59,12 @@ namespace api {
 class Access;
 class AccessDefaultTypeInternal;
 extern AccessDefaultTypeInternal _Access_default_instance_;
-class AddCustomerRequest;
-class AddCustomerRequestDefaultTypeInternal;
-extern AddCustomerRequestDefaultTypeInternal _AddCustomerRequest_default_instance_;
+class Account;
+class AccountDefaultTypeInternal;
+extern AccountDefaultTypeInternal _Account_default_instance_;
+class AddAccountRequest;
+class AddAccountRequestDefaultTypeInternal;
+extern AddAccountRequestDefaultTypeInternal _AddAccountRequest_default_instance_;
 class Address;
 class AddressDefaultTypeInternal;
 extern AddressDefaultTypeInternal _Address_default_instance_;
@@ -101,18 +104,18 @@ extern CardDefaultTypeInternal _Card_default_instance_;
 class ChannelReminder;
 class ChannelReminderDefaultTypeInternal;
 extern ChannelReminderDefaultTypeInternal _ChannelReminder_default_instance_;
-class Charge;
-class ChargeDefaultTypeInternal;
-extern ChargeDefaultTypeInternal _Charge_default_instance_;
+class ChargeRequest;
+class ChargeRequestDefaultTypeInternal;
+extern ChargeRequestDefaultTypeInternal _ChargeRequest_default_instance_;
 class CreatePlanRequest;
 class CreatePlanRequestDefaultTypeInternal;
 extern CreatePlanRequestDefaultTypeInternal _CreatePlanRequest_default_instance_;
-class CreatePlanResponse;
-class CreatePlanResponseDefaultTypeInternal;
-extern CreatePlanResponseDefaultTypeInternal _CreatePlanResponse_default_instance_;
 class Customer;
 class CustomerDefaultTypeInternal;
 extern CustomerDefaultTypeInternal _Customer_default_instance_;
+class CustomerRequest;
+class CustomerRequestDefaultTypeInternal;
+extern CustomerRequestDefaultTypeInternal _CustomerRequest_default_instance_;
 class Customer_MetadataEntry_DoNotUse;
 class Customer_MetadataEntry_DoNotUseDefaultTypeInternal;
 extern Customer_MetadataEntry_DoNotUseDefaultTypeInternal _Customer_MetadataEntry_DoNotUse_default_instance_;
@@ -167,9 +170,9 @@ extern ProfileDefaultTypeInternal _Profile_default_instance_;
 class RecipientEmail;
 class RecipientEmailDefaultTypeInternal;
 extern RecipientEmailDefaultTypeInternal _RecipientEmail_default_instance_;
-class Refund;
-class RefundDefaultTypeInternal;
-extern RefundDefaultTypeInternal _Refund_default_instance_;
+class RefundRequest;
+class RefundRequestDefaultTypeInternal;
+extern RefundRequestDefaultTypeInternal _RefundRequest_default_instance_;
 class SMS;
 class SMSDefaultTypeInternal;
 extern SMSDefaultTypeInternal _SMS_default_instance_;
@@ -188,9 +191,12 @@ extern StarDefaultTypeInternal _Star_default_instance_;
 class SubscribeCustomerRequest;
 class SubscribeCustomerRequestDefaultTypeInternal;
 extern SubscribeCustomerRequestDefaultTypeInternal _SubscribeCustomerRequest_default_instance_;
-class SubscribeCustomerResponse;
-class SubscribeCustomerResponseDefaultTypeInternal;
-extern SubscribeCustomerResponseDefaultTypeInternal _SubscribeCustomerResponse_default_instance_;
+class UnImplemented;
+class UnImplementedDefaultTypeInternal;
+extern UnImplementedDefaultTypeInternal _UnImplemented_default_instance_;
+class UpdateCustomerRequest;
+class UpdateCustomerRequestDefaultTypeInternal;
+extern UpdateCustomerRequestDefaultTypeInternal _UpdateCustomerRequest_default_instance_;
 class User;
 class UserDefaultTypeInternal;
 extern UserDefaultTypeInternal _User_default_instance_;
@@ -201,7 +207,8 @@ extern UserReminderDefaultTypeInternal _UserReminder_default_instance_;
 namespace google {
 namespace protobuf {
 template<> ::api::Access* Arena::CreateMaybeMessage<::api::Access>(Arena*);
-template<> ::api::AddCustomerRequest* Arena::CreateMaybeMessage<::api::AddCustomerRequest>(Arena*);
+template<> ::api::Account* Arena::CreateMaybeMessage<::api::Account>(Arena*);
+template<> ::api::AddAccountRequest* Arena::CreateMaybeMessage<::api::AddAccountRequest>(Arena*);
 template<> ::api::Address* Arena::CreateMaybeMessage<::api::Address>(Arena*);
 template<> ::api::Attachment* Arena::CreateMaybeMessage<::api::Attachment>(Arena*);
 template<> ::api::AttachmentAction* Arena::CreateMaybeMessage<::api::AttachmentAction>(Arena*);
@@ -215,10 +222,10 @@ template<> ::api::CallRequest* Arena::CreateMaybeMessage<::api::CallRequest>(Are
 template<> ::api::CancelSubscriptionRequest* Arena::CreateMaybeMessage<::api::CancelSubscriptionRequest>(Arena*);
 template<> ::api::Card* Arena::CreateMaybeMessage<::api::Card>(Arena*);
 template<> ::api::ChannelReminder* Arena::CreateMaybeMessage<::api::ChannelReminder>(Arena*);
-template<> ::api::Charge* Arena::CreateMaybeMessage<::api::Charge>(Arena*);
+template<> ::api::ChargeRequest* Arena::CreateMaybeMessage<::api::ChargeRequest>(Arena*);
 template<> ::api::CreatePlanRequest* Arena::CreateMaybeMessage<::api::CreatePlanRequest>(Arena*);
-template<> ::api::CreatePlanResponse* Arena::CreateMaybeMessage<::api::CreatePlanResponse>(Arena*);
 template<> ::api::Customer* Arena::CreateMaybeMessage<::api::Customer>(Arena*);
+template<> ::api::CustomerRequest* Arena::CreateMaybeMessage<::api::CustomerRequest>(Arena*);
 template<> ::api::Customer_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Customer_MetadataEntry_DoNotUse>(Arena*);
 template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailAddress* Arena::CreateMaybeMessage<::api::EmailAddress>(Arena*);
@@ -237,14 +244,15 @@ template<> ::api::Product* Arena::CreateMaybeMessage<::api::Product>(Arena*);
 template<> ::api::Product_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Product_TagsEntry_DoNotUse>(Arena*);
 template<> ::api::Profile* Arena::CreateMaybeMessage<::api::Profile>(Arena*);
 template<> ::api::RecipientEmail* Arena::CreateMaybeMessage<::api::RecipientEmail>(Arena*);
-template<> ::api::Refund* Arena::CreateMaybeMessage<::api::Refund>(Arena*);
+template<> ::api::RefundRequest* Arena::CreateMaybeMessage<::api::RefundRequest>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
 template<> ::api::SignedKey* Arena::CreateMaybeMessage<::api::SignedKey>(Arena*);
 template<> ::api::StandardClaims* Arena::CreateMaybeMessage<::api::StandardClaims>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::SubscribeCustomerRequest* Arena::CreateMaybeMessage<::api::SubscribeCustomerRequest>(Arena*);
-template<> ::api::SubscribeCustomerResponse* Arena::CreateMaybeMessage<::api::SubscribeCustomerResponse>(Arena*);
+template<> ::api::UnImplemented* Arena::CreateMaybeMessage<::api::UnImplemented>(Arena*);
+template<> ::api::UpdateCustomerRequest* Arena::CreateMaybeMessage<::api::UpdateCustomerRequest>(Arena*);
 template<> ::api::User* Arena::CreateMaybeMessage<::api::User>(Arena*);
 template<> ::api::UserReminder* Arena::CreateMaybeMessage<::api::UserReminder>(Arena*);
 }  // namespace protobuf
@@ -346,6 +354,285 @@ inline bool CardType_Parse(
 }
 // ===================================================================
 
+class RefundRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.RefundRequest) */ {
+ public:
+  RefundRequest();
+  virtual ~RefundRequest();
+
+  RefundRequest(const RefundRequest& from);
+
+  inline RefundRequest& operator=(const RefundRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RefundRequest(RefundRequest&& from) noexcept
+    : RefundRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RefundRequest& operator=(RefundRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RefundRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RefundRequest* internal_default_instance() {
+    return reinterpret_cast<const RefundRequest*>(
+               &_RefundRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(RefundRequest* other);
+  friend void swap(RefundRequest& a, RefundRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RefundRequest* New() const final {
+    return CreateMaybeMessage<RefundRequest>(NULL);
+  }
+
+  RefundRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RefundRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RefundRequest& from);
+  void MergeFrom(const RefundRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RefundRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string reason = 2;
+  void clear_reason();
+  static const int kReasonFieldNumber = 2;
+  const ::std::string& reason() const;
+  void set_reason(const ::std::string& value);
+  #if LANG_CXX11
+  void set_reason(::std::string&& value);
+  #endif
+  void set_reason(const char* value);
+  void set_reason(const char* value, size_t size);
+  ::std::string* mutable_reason();
+  ::std::string* release_reason();
+  void set_allocated_reason(::std::string* reason);
+
+  // string status = 5;
+  void clear_status();
+  static const int kStatusFieldNumber = 5;
+  const ::std::string& status() const;
+  void set_status(const ::std::string& value);
+  #if LANG_CXX11
+  void set_status(::std::string&& value);
+  #endif
+  void set_status(const char* value);
+  void set_status(const char* value, size_t size);
+  ::std::string* mutable_status();
+  ::std::string* release_status();
+  void set_allocated_status(::std::string* status);
+
+  // int64 amount = 3;
+  void clear_amount();
+  static const int kAmountFieldNumber = 3;
+  ::google::protobuf::int64 amount() const;
+  void set_amount(::google::protobuf::int64 value);
+
+  // bool reverse_transfer = 4;
+  void clear_reverse_transfer();
+  static const int kReverseTransferFieldNumber = 4;
+  bool reverse_transfer() const;
+  void set_reverse_transfer(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.RefundRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr reason_;
+  ::google::protobuf::internal::ArenaStringPtr status_;
+  ::google::protobuf::int64 amount_;
+  bool reverse_transfer_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ChargeRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ChargeRequest) */ {
+ public:
+  ChargeRequest();
+  virtual ~ChargeRequest();
+
+  ChargeRequest(const ChargeRequest& from);
+
+  inline ChargeRequest& operator=(const ChargeRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ChargeRequest(ChargeRequest&& from) noexcept
+    : ChargeRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ChargeRequest& operator=(ChargeRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ChargeRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ChargeRequest* internal_default_instance() {
+    return reinterpret_cast<const ChargeRequest*>(
+               &_ChargeRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(ChargeRequest* other);
+  friend void swap(ChargeRequest& a, ChargeRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ChargeRequest* New() const final {
+    return CreateMaybeMessage<ChargeRequest>(NULL);
+  }
+
+  ChargeRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ChargeRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ChargeRequest& from);
+  void MergeFrom(const ChargeRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ChargeRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string id = 2;
+  void clear_id();
+  static const int kIdFieldNumber = 2;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // .api.Product product = 1;
+  bool has_product() const;
+  void clear_product();
+  static const int kProductFieldNumber = 1;
+  private:
+  const ::api::Product& _internal_product() const;
+  public:
+  const ::api::Product& product() const;
+  ::api::Product* release_product();
+  ::api::Product* mutable_product();
+  void set_allocated_product(::api::Product* product);
+
+  // @@protoc_insertion_point(class_scope:api.ChargeRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::api::Product* product_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class CancelSubscriptionRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.CancelSubscriptionRequest) */ {
  public:
   CancelSubscriptionRequest();
@@ -381,7 +668,7 @@ class CancelSubscriptionRequest : public ::google::protobuf::Message /* @@protoc
                &_CancelSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(CancelSubscriptionRequest* other);
   friend void swap(CancelSubscriptionRequest& a, CancelSubscriptionRequest& b) {
@@ -433,25 +720,25 @@ class CancelSubscriptionRequest : public ::google::protobuf::Message /* @@protoc
 
   // accessors -------------------------------------------------------
 
-  // string email = 1;
-  void clear_email();
-  static const int kEmailFieldNumber = 1;
-  const ::std::string& email() const;
-  void set_email(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_email(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_email(const char* value);
-  void set_email(const char* value, size_t size);
-  ::std::string* mutable_email();
-  ::std::string* release_email();
-  void set_allocated_email(::std::string* email);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
   // @@protoc_insertion_point(class_scope:api.CancelSubscriptionRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr email_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -492,7 +779,7 @@ class CreatePlanRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_CreatePlanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(CreatePlanRequest* other);
   friend void swap(CreatePlanRequest& a, CreatePlanRequest& b) {
@@ -655,7 +942,7 @@ class SMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_SMSRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(SMSRequest* other);
   friend void swap(SMSRequest& a, SMSRequest& b) {
@@ -707,19 +994,19 @@ class SMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // string user_id = 1;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  const ::std::string& user_id() const;
-  void set_user_id(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_user_id(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  ::std::string* mutable_user_id();
-  ::std::string* release_user_id();
-  void set_allocated_user_id(::std::string* user_id);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
   // string body = 2;
   void clear_body();
@@ -739,7 +1026,7 @@ class SMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr user_id_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr body_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
@@ -781,7 +1068,7 @@ class CallRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_CallRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(CallRequest* other);
   friend void swap(CallRequest& a, CallRequest& b) {
@@ -833,19 +1120,19 @@ class CallRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // string user_id = 1;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  const ::std::string& user_id() const;
-  void set_user_id(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_user_id(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  ::std::string* mutable_user_id();
-  ::std::string* release_user_id();
-  void set_allocated_user_id(::std::string* user_id);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
   // string callback_url = 2;
   void clear_callback_url();
@@ -865,7 +1152,7 @@ class CallRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr user_id_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr callback_url_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
@@ -907,7 +1194,7 @@ class MMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_MMSRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(MMSRequest* other);
   friend void swap(MMSRequest& a, MMSRequest& b) {
@@ -959,34 +1246,6 @@ class MMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // string user_id = 1;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  const ::std::string& user_id() const;
-  void set_user_id(const ::std::string& value);
-  #if LANG_CXX11
-  void set_user_id(::std::string&& value);
-  #endif
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  ::std::string* mutable_user_id();
-  ::std::string* release_user_id();
-  void set_allocated_user_id(::std::string* user_id);
-
-  // string body = 2;
-  void clear_body();
-  static const int kBodyFieldNumber = 2;
-  const ::std::string& body() const;
-  void set_body(const ::std::string& value);
-  #if LANG_CXX11
-  void set_body(::std::string&& value);
-  #endif
-  void set_body(const char* value);
-  void set_body(const char* value, size_t size);
-  ::std::string* mutable_body();
-  ::std::string* release_body();
-  void set_allocated_body(::std::string* body);
-
   // string media_url = 3;
   void clear_media_url();
   static const int kMediaUrlFieldNumber = 3;
@@ -1001,13 +1260,24 @@ class MMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::std::string* release_media_url();
   void set_allocated_media_url(::std::string* media_url);
 
+  // .api.SMSRequest sms = 1;
+  bool has_sms() const;
+  void clear_sms();
+  static const int kSmsFieldNumber = 1;
+  private:
+  const ::api::SMSRequest& _internal_sms() const;
+  public:
+  const ::api::SMSRequest& sms() const;
+  ::api::SMSRequest* release_sms();
+  ::api::SMSRequest* mutable_sms();
+  void set_allocated_sms(::api::SMSRequest* sms);
+
   // @@protoc_insertion_point(class_scope:api.MMSRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr user_id_;
-  ::google::protobuf::internal::ArenaStringPtr body_;
   ::google::protobuf::internal::ArenaStringPtr media_url_;
+  ::api::SMSRequest* sms_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -1048,7 +1318,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1100,19 +1370,19 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // string user_id = 1;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  const ::std::string& user_id() const;
-  void set_user_id(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_user_id(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  ::std::string* mutable_user_id();
-  ::std::string* release_user_id();
-  void set_allocated_user_id(::std::string* user_id);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
   // string subject = 2;
   void clear_subject();
@@ -1160,7 +1430,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr user_id_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr subject_;
   ::google::protobuf::internal::ArenaStringPtr plain_text_;
   ::google::protobuf::internal::ArenaStringPtr html_alt_;
@@ -1169,24 +1439,24 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
 };
 // -------------------------------------------------------------------
 
-class SubscribeCustomerResponse : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SubscribeCustomerResponse) */ {
+class CustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.CustomerRequest) */ {
  public:
-  SubscribeCustomerResponse();
-  virtual ~SubscribeCustomerResponse();
+  CustomerRequest();
+  virtual ~CustomerRequest();
 
-  SubscribeCustomerResponse(const SubscribeCustomerResponse& from);
+  CustomerRequest(const CustomerRequest& from);
 
-  inline SubscribeCustomerResponse& operator=(const SubscribeCustomerResponse& from) {
+  inline CustomerRequest& operator=(const CustomerRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  SubscribeCustomerResponse(SubscribeCustomerResponse&& from) noexcept
-    : SubscribeCustomerResponse() {
+  CustomerRequest(CustomerRequest&& from) noexcept
+    : CustomerRequest() {
     *this = ::std::move(from);
   }
 
-  inline SubscribeCustomerResponse& operator=(SubscribeCustomerResponse&& from) noexcept {
+  inline CustomerRequest& operator=(CustomerRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1196,34 +1466,34 @@ class SubscribeCustomerResponse : public ::google::protobuf::Message /* @@protoc
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const SubscribeCustomerResponse& default_instance();
+  static const CustomerRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SubscribeCustomerResponse* internal_default_instance() {
-    return reinterpret_cast<const SubscribeCustomerResponse*>(
-               &_SubscribeCustomerResponse_default_instance_);
+  static inline const CustomerRequest* internal_default_instance() {
+    return reinterpret_cast<const CustomerRequest*>(
+               &_CustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
-  void Swap(SubscribeCustomerResponse* other);
-  friend void swap(SubscribeCustomerResponse& a, SubscribeCustomerResponse& b) {
+  void Swap(CustomerRequest* other);
+  friend void swap(CustomerRequest& a, CustomerRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline SubscribeCustomerResponse* New() const final {
-    return CreateMaybeMessage<SubscribeCustomerResponse>(NULL);
+  inline CustomerRequest* New() const final {
+    return CreateMaybeMessage<CustomerRequest>(NULL);
   }
 
-  SubscribeCustomerResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SubscribeCustomerResponse>(arena);
+  CustomerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CustomerRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SubscribeCustomerResponse& from);
-  void MergeFrom(const SubscribeCustomerResponse& from);
+  void CopyFrom(const CustomerRequest& from);
+  void MergeFrom(const CustomerRequest& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -1240,7 +1510,7 @@ class SubscribeCustomerResponse : public ::google::protobuf::Message /* @@protoc
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SubscribeCustomerResponse* other);
+  void InternalSwap(CustomerRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -1256,48 +1526,121 @@ class SubscribeCustomerResponse : public ::google::protobuf::Message /* @@protoc
 
   // accessors -------------------------------------------------------
 
-  // string subscription_id = 1;
-  void clear_subscription_id();
-  static const int kSubscriptionIdFieldNumber = 1;
-  const ::std::string& subscription_id() const;
-  void set_subscription_id(const ::std::string& value);
+  // string email = 1;
+  void clear_email();
+  static const int kEmailFieldNumber = 1;
+  const ::std::string& email() const;
+  void set_email(const ::std::string& value);
   #if LANG_CXX11
-  void set_subscription_id(::std::string&& value);
+  void set_email(::std::string&& value);
   #endif
-  void set_subscription_id(const char* value);
-  void set_subscription_id(const char* value, size_t size);
-  ::std::string* mutable_subscription_id();
-  ::std::string* release_subscription_id();
-  void set_allocated_subscription_id(::std::string* subscription_id);
+  void set_email(const char* value);
+  void set_email(const char* value, size_t size);
+  ::std::string* mutable_email();
+  ::std::string* release_email();
+  void set_allocated_email(::std::string* email);
 
-  // @@protoc_insertion_point(class_scope:api.SubscribeCustomerResponse)
+  // string plan = 2;
+  void clear_plan();
+  static const int kPlanFieldNumber = 2;
+  const ::std::string& plan() const;
+  void set_plan(const ::std::string& value);
+  #if LANG_CXX11
+  void set_plan(::std::string&& value);
+  #endif
+  void set_plan(const char* value);
+  void set_plan(const char* value, size_t size);
+  ::std::string* mutable_plan();
+  ::std::string* release_plan();
+  void set_allocated_plan(::std::string* plan);
+
+  // string phone = 3;
+  void clear_phone();
+  static const int kPhoneFieldNumber = 3;
+  const ::std::string& phone() const;
+  void set_phone(const ::std::string& value);
+  #if LANG_CXX11
+  void set_phone(::std::string&& value);
+  #endif
+  void set_phone(const char* value);
+  void set_phone(const char* value, size_t size);
+  ::std::string* mutable_phone();
+  ::std::string* release_phone();
+  void set_allocated_phone(::std::string* phone);
+
+  // string name = 4;
+  void clear_name();
+  static const int kNameFieldNumber = 4;
+  const ::std::string& name() const;
+  void set_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_name(::std::string&& value);
+  #endif
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  ::std::string* mutable_name();
+  ::std::string* release_name();
+  void set_allocated_name(::std::string* name);
+
+  // string description = 7;
+  void clear_description();
+  static const int kDescriptionFieldNumber = 7;
+  const ::std::string& description() const;
+  void set_description(const ::std::string& value);
+  #if LANG_CXX11
+  void set_description(::std::string&& value);
+  #endif
+  void set_description(const char* value);
+  void set_description(const char* value, size_t size);
+  ::std::string* mutable_description();
+  ::std::string* release_description();
+  void set_allocated_description(::std::string* description);
+
+  // .api.Address address = 8;
+  bool has_address() const;
+  void clear_address();
+  static const int kAddressFieldNumber = 8;
+  private:
+  const ::api::Address& _internal_address() const;
+  public:
+  const ::api::Address& address() const;
+  ::api::Address* release_address();
+  ::api::Address* mutable_address();
+  void set_allocated_address(::api::Address* address);
+
+  // @@protoc_insertion_point(class_scope:api.CustomerRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr subscription_id_;
+  ::google::protobuf::internal::ArenaStringPtr email_;
+  ::google::protobuf::internal::ArenaStringPtr plan_;
+  ::google::protobuf::internal::ArenaStringPtr phone_;
+  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr description_;
+  ::api::Address* address_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class CreatePlanResponse : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.CreatePlanResponse) */ {
+class UpdateCustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.UpdateCustomerRequest) */ {
  public:
-  CreatePlanResponse();
-  virtual ~CreatePlanResponse();
+  UpdateCustomerRequest();
+  virtual ~UpdateCustomerRequest();
 
-  CreatePlanResponse(const CreatePlanResponse& from);
+  UpdateCustomerRequest(const UpdateCustomerRequest& from);
 
-  inline CreatePlanResponse& operator=(const CreatePlanResponse& from) {
+  inline UpdateCustomerRequest& operator=(const UpdateCustomerRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  CreatePlanResponse(CreatePlanResponse&& from) noexcept
-    : CreatePlanResponse() {
+  UpdateCustomerRequest(UpdateCustomerRequest&& from) noexcept
+    : UpdateCustomerRequest() {
     *this = ::std::move(from);
   }
 
-  inline CreatePlanResponse& operator=(CreatePlanResponse&& from) noexcept {
+  inline UpdateCustomerRequest& operator=(UpdateCustomerRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1307,34 +1650,34 @@ class CreatePlanResponse : public ::google::protobuf::Message /* @@protoc_insert
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const CreatePlanResponse& default_instance();
+  static const UpdateCustomerRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const CreatePlanResponse* internal_default_instance() {
-    return reinterpret_cast<const CreatePlanResponse*>(
-               &_CreatePlanResponse_default_instance_);
+  static inline const UpdateCustomerRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateCustomerRequest*>(
+               &_UpdateCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
-  void Swap(CreatePlanResponse* other);
-  friend void swap(CreatePlanResponse& a, CreatePlanResponse& b) {
+  void Swap(UpdateCustomerRequest* other);
+  friend void swap(UpdateCustomerRequest& a, UpdateCustomerRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline CreatePlanResponse* New() const final {
-    return CreateMaybeMessage<CreatePlanResponse>(NULL);
+  inline UpdateCustomerRequest* New() const final {
+    return CreateMaybeMessage<UpdateCustomerRequest>(NULL);
   }
 
-  CreatePlanResponse* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<CreatePlanResponse>(arena);
+  UpdateCustomerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateCustomerRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const CreatePlanResponse& from);
-  void MergeFrom(const CreatePlanResponse& from);
+  void CopyFrom(const UpdateCustomerRequest& from);
+  void MergeFrom(const UpdateCustomerRequest& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -1351,7 +1694,7 @@ class CreatePlanResponse : public ::google::protobuf::Message /* @@protoc_insert
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(CreatePlanResponse* other);
+  void InternalSwap(UpdateCustomerRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -1367,25 +1710,468 @@ class CreatePlanResponse : public ::google::protobuf::Message /* @@protoc_insert
 
   // accessors -------------------------------------------------------
 
-  // string plan_id = 1;
-  void clear_plan_id();
-  static const int kPlanIdFieldNumber = 1;
-  const ::std::string& plan_id() const;
-  void set_plan_id(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_plan_id(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_plan_id(const char* value);
-  void set_plan_id(const char* value, size_t size);
-  ::std::string* mutable_plan_id();
-  ::std::string* release_plan_id();
-  void set_allocated_plan_id(::std::string* plan_id);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
-  // @@protoc_insertion_point(class_scope:api.CreatePlanResponse)
+  // .api.CustomerRequest customer = 2;
+  bool has_customer() const;
+  void clear_customer();
+  static const int kCustomerFieldNumber = 2;
+  private:
+  const ::api::CustomerRequest& _internal_customer() const;
+  public:
+  const ::api::CustomerRequest& customer() const;
+  ::api::CustomerRequest* release_customer();
+  ::api::CustomerRequest* mutable_customer();
+  void set_allocated_customer(::api::CustomerRequest* customer);
+
+  // @@protoc_insertion_point(class_scope:api.UpdateCustomerRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr plan_id_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::api::CustomerRequest* customer_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SubscribeCustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SubscribeCustomerRequest) */ {
+ public:
+  SubscribeCustomerRequest();
+  virtual ~SubscribeCustomerRequest();
+
+  SubscribeCustomerRequest(const SubscribeCustomerRequest& from);
+
+  inline SubscribeCustomerRequest& operator=(const SubscribeCustomerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SubscribeCustomerRequest(SubscribeCustomerRequest&& from) noexcept
+    : SubscribeCustomerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SubscribeCustomerRequest& operator=(SubscribeCustomerRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SubscribeCustomerRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SubscribeCustomerRequest* internal_default_instance() {
+    return reinterpret_cast<const SubscribeCustomerRequest*>(
+               &_SubscribeCustomerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(SubscribeCustomerRequest* other);
+  friend void swap(SubscribeCustomerRequest& a, SubscribeCustomerRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SubscribeCustomerRequest* New() const final {
+    return CreateMaybeMessage<SubscribeCustomerRequest>(NULL);
+  }
+
+  SubscribeCustomerRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SubscribeCustomerRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SubscribeCustomerRequest& from);
+  void MergeFrom(const SubscribeCustomerRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SubscribeCustomerRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string plan = 2;
+  void clear_plan();
+  static const int kPlanFieldNumber = 2;
+  const ::std::string& plan() const;
+  void set_plan(const ::std::string& value);
+  #if LANG_CXX11
+  void set_plan(::std::string&& value);
+  #endif
+  void set_plan(const char* value);
+  void set_plan(const char* value, size_t size);
+  ::std::string* mutable_plan();
+  ::std::string* release_plan();
+  void set_allocated_plan(::std::string* plan);
+
+  // string card_number = 3;
+  void clear_card_number();
+  static const int kCardNumberFieldNumber = 3;
+  const ::std::string& card_number() const;
+  void set_card_number(const ::std::string& value);
+  #if LANG_CXX11
+  void set_card_number(::std::string&& value);
+  #endif
+  void set_card_number(const char* value);
+  void set_card_number(const char* value, size_t size);
+  ::std::string* mutable_card_number();
+  ::std::string* release_card_number();
+  void set_allocated_card_number(::std::string* card_number);
+
+  // string exp_month = 4;
+  void clear_exp_month();
+  static const int kExpMonthFieldNumber = 4;
+  const ::std::string& exp_month() const;
+  void set_exp_month(const ::std::string& value);
+  #if LANG_CXX11
+  void set_exp_month(::std::string&& value);
+  #endif
+  void set_exp_month(const char* value);
+  void set_exp_month(const char* value, size_t size);
+  ::std::string* mutable_exp_month();
+  ::std::string* release_exp_month();
+  void set_allocated_exp_month(::std::string* exp_month);
+
+  // string exp_year = 5;
+  void clear_exp_year();
+  static const int kExpYearFieldNumber = 5;
+  const ::std::string& exp_year() const;
+  void set_exp_year(const ::std::string& value);
+  #if LANG_CXX11
+  void set_exp_year(::std::string&& value);
+  #endif
+  void set_exp_year(const char* value);
+  void set_exp_year(const char* value, size_t size);
+  ::std::string* mutable_exp_year();
+  ::std::string* release_exp_year();
+  void set_allocated_exp_year(::std::string* exp_year);
+
+  // string cvc = 6;
+  void clear_cvc();
+  static const int kCvcFieldNumber = 6;
+  const ::std::string& cvc() const;
+  void set_cvc(const ::std::string& value);
+  #if LANG_CXX11
+  void set_cvc(::std::string&& value);
+  #endif
+  void set_cvc(const char* value);
+  void set_cvc(const char* value, size_t size);
+  ::std::string* mutable_cvc();
+  ::std::string* release_cvc();
+  void set_allocated_cvc(::std::string* cvc);
+
+  // @@protoc_insertion_point(class_scope:api.SubscribeCustomerRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr plan_;
+  ::google::protobuf::internal::ArenaStringPtr card_number_;
+  ::google::protobuf::internal::ArenaStringPtr exp_month_;
+  ::google::protobuf::internal::ArenaStringPtr exp_year_;
+  ::google::protobuf::internal::ArenaStringPtr cvc_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class AddAccountRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AddAccountRequest) */ {
+ public:
+  AddAccountRequest();
+  virtual ~AddAccountRequest();
+
+  AddAccountRequest(const AddAccountRequest& from);
+
+  inline AddAccountRequest& operator=(const AddAccountRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AddAccountRequest(AddAccountRequest&& from) noexcept
+    : AddAccountRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline AddAccountRequest& operator=(AddAccountRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AddAccountRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AddAccountRequest* internal_default_instance() {
+    return reinterpret_cast<const AddAccountRequest*>(
+               &_AddAccountRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(AddAccountRequest* other);
+  friend void swap(AddAccountRequest& a, AddAccountRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AddAccountRequest* New() const final {
+    return CreateMaybeMessage<AddAccountRequest>(NULL);
+  }
+
+  AddAccountRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AddAccountRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AddAccountRequest& from);
+  void MergeFrom(const AddAccountRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AddAccountRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.CustomerRequest customer = 1;
+  bool has_customer() const;
+  void clear_customer();
+  static const int kCustomerFieldNumber = 1;
+  private:
+  const ::api::CustomerRequest& _internal_customer() const;
+  public:
+  const ::api::CustomerRequest& customer() const;
+  ::api::CustomerRequest* release_customer();
+  ::api::CustomerRequest* mutable_customer();
+  void set_allocated_customer(::api::CustomerRequest* customer);
+
+  // .api.Access access = 2;
+  bool has_access() const;
+  void clear_access();
+  static const int kAccessFieldNumber = 2;
+  private:
+  const ::api::Access& _internal_access() const;
+  public:
+  const ::api::Access& access() const;
+  ::api::Access* release_access();
+  ::api::Access* mutable_access();
+  void set_allocated_access(::api::Access* access);
+
+  // @@protoc_insertion_point(class_scope:api.AddAccountRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::CustomerRequest* customer_;
+  ::api::Access* access_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Account : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Account) */ {
+ public:
+  Account();
+  virtual ~Account();
+
+  Account(const Account& from);
+
+  inline Account& operator=(const Account& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Account(Account&& from) noexcept
+    : Account() {
+    *this = ::std::move(from);
+  }
+
+  inline Account& operator=(Account&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Account& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Account* internal_default_instance() {
+    return reinterpret_cast<const Account*>(
+               &_Account_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(Account* other);
+  friend void swap(Account& a, Account& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Account* New() const final {
+    return CreateMaybeMessage<Account>(NULL);
+  }
+
+  Account* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Account>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Account& from);
+  void MergeFrom(const Account& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Account* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.Customer customer = 1;
+  bool has_customer() const;
+  void clear_customer();
+  static const int kCustomerFieldNumber = 1;
+  private:
+  const ::api::Customer& _internal_customer() const;
+  public:
+  const ::api::Customer& customer() const;
+  ::api::Customer* release_customer();
+  ::api::Customer* mutable_customer();
+  void set_allocated_customer(::api::Customer* customer);
+
+  // .api.Access access = 2;
+  bool has_access() const;
+  void clear_access();
+  static const int kAccessFieldNumber = 2;
+  private:
+  const ::api::Access& _internal_access() const;
+  public:
+  const ::api::Access& access() const;
+  ::api::Access* release_access();
+  ::api::Access* mutable_access();
+  void set_allocated_access(::api::Access* access);
+
+  // @@protoc_insertion_point(class_scope:api.Account)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::Customer* customer_;
+  ::api::Access* access_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -1426,7 +2212,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    13;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -1658,7 +2444,7 @@ class Profile : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Profile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    14;
 
   void Swap(Profile* other);
   friend void swap(Profile& a, Profile& b) {
@@ -1882,7 +2668,7 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    15;
 
   void Swap(Empty* other);
   friend void swap(Empty& a, Empty& b) {
@@ -1999,7 +2785,7 @@ class Customer : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Customer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    17;
 
   void Swap(Customer* other);
   friend void swap(Customer& a, Customer& b) {
@@ -2061,19 +2847,19 @@ class Customer : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_metadata();
 
-  // string user_id = 1;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  const ::std::string& user_id() const;
-  void set_user_id(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_user_id(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  ::std::string* mutable_user_id();
-  ::std::string* release_user_id();
-  void set_allocated_user_id(::std::string* user_id);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
   // string plan = 2;
   void clear_plan();
@@ -2179,7 +2965,7 @@ class Customer : public ::google::protobuf::Message /* @@protoc_insertion_point(
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > metadata_;
-  ::google::protobuf::internal::ArenaStringPtr user_id_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr plan_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr email_;
@@ -2188,376 +2974,6 @@ class Customer : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::api::Address* address_;
   bool deleted_;
   ::google::protobuf::int64 create_date_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class AddCustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AddCustomerRequest) */ {
- public:
-  AddCustomerRequest();
-  virtual ~AddCustomerRequest();
-
-  AddCustomerRequest(const AddCustomerRequest& from);
-
-  inline AddCustomerRequest& operator=(const AddCustomerRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  AddCustomerRequest(AddCustomerRequest&& from) noexcept
-    : AddCustomerRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline AddCustomerRequest& operator=(AddCustomerRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const AddCustomerRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AddCustomerRequest* internal_default_instance() {
-    return reinterpret_cast<const AddCustomerRequest*>(
-               &_AddCustomerRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    13;
-
-  void Swap(AddCustomerRequest* other);
-  friend void swap(AddCustomerRequest& a, AddCustomerRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline AddCustomerRequest* New() const final {
-    return CreateMaybeMessage<AddCustomerRequest>(NULL);
-  }
-
-  AddCustomerRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AddCustomerRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AddCustomerRequest& from);
-  void MergeFrom(const AddCustomerRequest& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(AddCustomerRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string email = 1;
-  void clear_email();
-  static const int kEmailFieldNumber = 1;
-  const ::std::string& email() const;
-  void set_email(const ::std::string& value);
-  #if LANG_CXX11
-  void set_email(::std::string&& value);
-  #endif
-  void set_email(const char* value);
-  void set_email(const char* value, size_t size);
-  ::std::string* mutable_email();
-  ::std::string* release_email();
-  void set_allocated_email(::std::string* email);
-
-  // string plan = 2;
-  void clear_plan();
-  static const int kPlanFieldNumber = 2;
-  const ::std::string& plan() const;
-  void set_plan(const ::std::string& value);
-  #if LANG_CXX11
-  void set_plan(::std::string&& value);
-  #endif
-  void set_plan(const char* value);
-  void set_plan(const char* value, size_t size);
-  ::std::string* mutable_plan();
-  ::std::string* release_plan();
-  void set_allocated_plan(::std::string* plan);
-
-  // string phone = 3;
-  void clear_phone();
-  static const int kPhoneFieldNumber = 3;
-  const ::std::string& phone() const;
-  void set_phone(const ::std::string& value);
-  #if LANG_CXX11
-  void set_phone(::std::string&& value);
-  #endif
-  void set_phone(const char* value);
-  void set_phone(const char* value, size_t size);
-  ::std::string* mutable_phone();
-  ::std::string* release_phone();
-  void set_allocated_phone(::std::string* phone);
-
-  // string name = 4;
-  void clear_name();
-  static const int kNameFieldNumber = 4;
-  const ::std::string& name() const;
-  void set_name(const ::std::string& value);
-  #if LANG_CXX11
-  void set_name(::std::string&& value);
-  #endif
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  ::std::string* mutable_name();
-  ::std::string* release_name();
-  void set_allocated_name(::std::string* name);
-
-  // string description = 7;
-  void clear_description();
-  static const int kDescriptionFieldNumber = 7;
-  const ::std::string& description() const;
-  void set_description(const ::std::string& value);
-  #if LANG_CXX11
-  void set_description(::std::string&& value);
-  #endif
-  void set_description(const char* value);
-  void set_description(const char* value, size_t size);
-  ::std::string* mutable_description();
-  ::std::string* release_description();
-  void set_allocated_description(::std::string* description);
-
-  // .api.Address address = 8;
-  bool has_address() const;
-  void clear_address();
-  static const int kAddressFieldNumber = 8;
-  private:
-  const ::api::Address& _internal_address() const;
-  public:
-  const ::api::Address& address() const;
-  ::api::Address* release_address();
-  ::api::Address* mutable_address();
-  void set_allocated_address(::api::Address* address);
-
-  // @@protoc_insertion_point(class_scope:api.AddCustomerRequest)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr email_;
-  ::google::protobuf::internal::ArenaStringPtr plan_;
-  ::google::protobuf::internal::ArenaStringPtr phone_;
-  ::google::protobuf::internal::ArenaStringPtr name_;
-  ::google::protobuf::internal::ArenaStringPtr description_;
-  ::api::Address* address_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class SubscribeCustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SubscribeCustomerRequest) */ {
- public:
-  SubscribeCustomerRequest();
-  virtual ~SubscribeCustomerRequest();
-
-  SubscribeCustomerRequest(const SubscribeCustomerRequest& from);
-
-  inline SubscribeCustomerRequest& operator=(const SubscribeCustomerRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  SubscribeCustomerRequest(SubscribeCustomerRequest&& from) noexcept
-    : SubscribeCustomerRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline SubscribeCustomerRequest& operator=(SubscribeCustomerRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const SubscribeCustomerRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SubscribeCustomerRequest* internal_default_instance() {
-    return reinterpret_cast<const SubscribeCustomerRequest*>(
-               &_SubscribeCustomerRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  void Swap(SubscribeCustomerRequest* other);
-  friend void swap(SubscribeCustomerRequest& a, SubscribeCustomerRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline SubscribeCustomerRequest* New() const final {
-    return CreateMaybeMessage<SubscribeCustomerRequest>(NULL);
-  }
-
-  SubscribeCustomerRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SubscribeCustomerRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SubscribeCustomerRequest& from);
-  void MergeFrom(const SubscribeCustomerRequest& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(SubscribeCustomerRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string email = 1;
-  void clear_email();
-  static const int kEmailFieldNumber = 1;
-  const ::std::string& email() const;
-  void set_email(const ::std::string& value);
-  #if LANG_CXX11
-  void set_email(::std::string&& value);
-  #endif
-  void set_email(const char* value);
-  void set_email(const char* value, size_t size);
-  ::std::string* mutable_email();
-  ::std::string* release_email();
-  void set_allocated_email(::std::string* email);
-
-  // string plan = 2;
-  void clear_plan();
-  static const int kPlanFieldNumber = 2;
-  const ::std::string& plan() const;
-  void set_plan(const ::std::string& value);
-  #if LANG_CXX11
-  void set_plan(::std::string&& value);
-  #endif
-  void set_plan(const char* value);
-  void set_plan(const char* value, size_t size);
-  ::std::string* mutable_plan();
-  ::std::string* release_plan();
-  void set_allocated_plan(::std::string* plan);
-
-  // string card_number = 3;
-  void clear_card_number();
-  static const int kCardNumberFieldNumber = 3;
-  const ::std::string& card_number() const;
-  void set_card_number(const ::std::string& value);
-  #if LANG_CXX11
-  void set_card_number(::std::string&& value);
-  #endif
-  void set_card_number(const char* value);
-  void set_card_number(const char* value, size_t size);
-  ::std::string* mutable_card_number();
-  ::std::string* release_card_number();
-  void set_allocated_card_number(::std::string* card_number);
-
-  // string exp_month = 4;
-  void clear_exp_month();
-  static const int kExpMonthFieldNumber = 4;
-  const ::std::string& exp_month() const;
-  void set_exp_month(const ::std::string& value);
-  #if LANG_CXX11
-  void set_exp_month(::std::string&& value);
-  #endif
-  void set_exp_month(const char* value);
-  void set_exp_month(const char* value, size_t size);
-  ::std::string* mutable_exp_month();
-  ::std::string* release_exp_month();
-  void set_allocated_exp_month(::std::string* exp_month);
-
-  // string exp_year = 5;
-  void clear_exp_year();
-  static const int kExpYearFieldNumber = 5;
-  const ::std::string& exp_year() const;
-  void set_exp_year(const ::std::string& value);
-  #if LANG_CXX11
-  void set_exp_year(::std::string&& value);
-  #endif
-  void set_exp_year(const char* value);
-  void set_exp_year(const char* value, size_t size);
-  ::std::string* mutable_exp_year();
-  ::std::string* release_exp_year();
-  void set_allocated_exp_year(::std::string* exp_year);
-
-  // string cvc = 6;
-  void clear_cvc();
-  static const int kCvcFieldNumber = 6;
-  const ::std::string& cvc() const;
-  void set_cvc(const ::std::string& value);
-  #if LANG_CXX11
-  void set_cvc(::std::string&& value);
-  #endif
-  void set_cvc(const char* value);
-  void set_cvc(const char* value, size_t size);
-  ::std::string* mutable_cvc();
-  ::std::string* release_cvc();
-  void set_allocated_cvc(::std::string* cvc);
-
-  // @@protoc_insertion_point(class_scope:api.SubscribeCustomerRequest)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr email_;
-  ::google::protobuf::internal::ArenaStringPtr plan_;
-  ::google::protobuf::internal::ArenaStringPtr card_number_;
-  ::google::protobuf::internal::ArenaStringPtr exp_month_;
-  ::google::protobuf::internal::ArenaStringPtr exp_year_;
-  ::google::protobuf::internal::ArenaStringPtr cvc_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -2598,7 +3014,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    18;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -2768,7 +3184,7 @@ class BankAccount : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_BankAccount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    19;
 
   void Swap(BankAccount* other);
   friend void swap(BankAccount& a, BankAccount& b) {
@@ -2894,7 +3310,7 @@ class Address : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Address_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    20;
 
   void Swap(Address* other);
   friend void swap(Address& a, Address& b) {
@@ -3080,7 +3496,7 @@ class ChannelReminder : public ::google::protobuf::Message /* @@protoc_insertion
                &_ChannelReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    21;
 
   void Swap(ChannelReminder* other);
   friend void swap(ChannelReminder& a, ChannelReminder& b) {
@@ -3221,7 +3637,7 @@ class UserReminder : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    22;
 
   void Swap(UserReminder* other);
   friend void swap(UserReminder& a, UserReminder& b) {
@@ -3273,19 +3689,19 @@ class UserReminder : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // string user_id = 1;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 1;
-  const ::std::string& user_id() const;
-  void set_user_id(const ::std::string& value);
+  // string id = 1;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_user_id(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_user_id(const char* value);
-  void set_user_id(const char* value, size_t size);
-  ::std::string* mutable_user_id();
-  ::std::string* release_user_id();
-  void set_allocated_user_id(::std::string* user_id);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
   // string text = 2;
   void clear_text();
@@ -3331,7 +3747,7 @@ class UserReminder : public ::google::protobuf::Message /* @@protoc_insertion_po
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr user_id_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr text_;
   ::google::protobuf::internal::ArenaStringPtr time_;
   ::api::ItemRef* item_;
@@ -3375,7 +3791,7 @@ class ItemRef : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_ItemRef_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    23;
 
   void Swap(ItemRef* other);
   friend void swap(ItemRef& a, ItemRef& b) {
@@ -3516,7 +3932,7 @@ class Star : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Star_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    24;
 
   void Swap(Star* other);
   friend void swap(Star& a, Star& b) {
@@ -3640,7 +4056,7 @@ class Pin : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Pin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    25;
 
   void Swap(Pin* other);
   friend void swap(Pin& a, Pin& b) {
@@ -3764,7 +4180,7 @@ class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_SignedKey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    26;
 
   void Swap(SignedKey* other);
   friend void swap(SignedKey& a, SignedKey& b) {
@@ -3840,6 +4256,102 @@ class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point
 };
 // -------------------------------------------------------------------
 
+class UnImplemented : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.UnImplemented) */ {
+ public:
+  UnImplemented();
+  virtual ~UnImplemented();
+
+  UnImplemented(const UnImplemented& from);
+
+  inline UnImplemented& operator=(const UnImplemented& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UnImplemented(UnImplemented&& from) noexcept
+    : UnImplemented() {
+    *this = ::std::move(from);
+  }
+
+  inline UnImplemented& operator=(UnImplemented&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UnImplemented& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UnImplemented* internal_default_instance() {
+    return reinterpret_cast<const UnImplemented*>(
+               &_UnImplemented_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  void Swap(UnImplemented* other);
+  friend void swap(UnImplemented& a, UnImplemented& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UnImplemented* New() const final {
+    return CreateMaybeMessage<UnImplemented>(NULL);
+  }
+
+  UnImplemented* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UnImplemented>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UnImplemented& from);
+  void MergeFrom(const UnImplemented& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UnImplemented* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:api.UnImplemented)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Access) */ {
  public:
   Access();
@@ -3875,7 +4387,7 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_Access_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   void Swap(Access* other);
   friend void swap(Access& a, Access& b) {
@@ -4151,7 +4663,7 @@ class StandardClaims : public ::google::protobuf::Message /* @@protoc_insertion_
                &_StandardClaims_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    29;
 
   void Swap(StandardClaims* other);
   friend void swap(StandardClaims& a, StandardClaims& b) {
@@ -4326,7 +4838,7 @@ class LogConfig : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LogConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    30;
 
   void Swap(LogConfig* other);
   friend void swap(LogConfig& a, LogConfig& b) {
@@ -4452,7 +4964,7 @@ class EmailAddress : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailAddress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   void Swap(EmailAddress* other);
   friend void swap(EmailAddress& a, EmailAddress& b) {
@@ -4578,7 +5090,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -4700,7 +5212,7 @@ class RecipientEmail : public ::google::protobuf::Message /* @@protoc_insertion_
                &_RecipientEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   void Swap(RecipientEmail* other);
   friend void swap(RecipientEmail& a, RecipientEmail& b) {
@@ -4854,7 +5366,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    34;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -5040,7 +5552,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    35;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -5181,7 +5693,7 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Fax_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    36;
 
   void Swap(Fax* other);
   friend void swap(Fax& a, Fax& b) {
@@ -5359,7 +5871,7 @@ class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_LogHook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    37;
 
   void Swap(LogHook* other);
   friend void swap(LogHook& a, LogHook& b) {
@@ -5500,7 +6012,7 @@ class Attachment : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Attachment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    38;
 
   void Swap(Attachment* other);
   friend void swap(Attachment& a, Attachment& b) {
@@ -5811,7 +6323,7 @@ class AttachmentAction : public ::google::protobuf::Message /* @@protoc_insertio
                &_AttachmentAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    39;
 
   void Swap(AttachmentAction* other);
   friend void swap(AttachmentAction& a, AttachmentAction& b) {
@@ -6071,7 +6583,7 @@ class AttachmentConfirmationField : public ::google::protobuf::Message /* @@prot
                &_AttachmentConfirmationField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    40;
 
   void Swap(AttachmentConfirmationField* other);
   friend void swap(AttachmentConfirmationField& a, AttachmentConfirmationField& b) {
@@ -6227,7 +6739,7 @@ class AttachmentActionOptionGroup : public ::google::protobuf::Message /* @@prot
                &_AttachmentActionOptionGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    41;
 
   void Swap(AttachmentActionOptionGroup* other);
   friend void swap(AttachmentActionOptionGroup& a, AttachmentActionOptionGroup& b) {
@@ -6351,7 +6863,7 @@ class AttachmentActionOption : public ::google::protobuf::Message /* @@protoc_in
                &_AttachmentActionOption_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    42;
 
   void Swap(AttachmentActionOption* other);
   friend void swap(AttachmentActionOption& a, AttachmentActionOption& b) {
@@ -6492,7 +7004,7 @@ class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion
                &_AttachmentField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    43;
 
   void Swap(AttachmentField* other);
   friend void swap(AttachmentField& a, AttachmentField& b) {
@@ -6625,7 +7137,7 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_JSON_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    44;
 
   void Swap(JSON* other);
   friend void swap(JSON& a, JSON& b) {
@@ -6764,7 +7276,7 @@ class File : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_File_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    46;
 
   void Swap(File* other);
   friend void swap(File& a, File& b) {
@@ -6934,7 +7446,7 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Product_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    48;
 
   void Swap(Product* other);
   friend void swap(Product& a, Product& b) {
@@ -7066,268 +7578,6 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
-// -------------------------------------------------------------------
-
-class Refund : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Refund) */ {
- public:
-  Refund();
-  virtual ~Refund();
-
-  Refund(const Refund& from);
-
-  inline Refund& operator=(const Refund& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Refund(Refund&& from) noexcept
-    : Refund() {
-    *this = ::std::move(from);
-  }
-
-  inline Refund& operator=(Refund&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Refund& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Refund* internal_default_instance() {
-    return reinterpret_cast<const Refund*>(
-               &_Refund_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    45;
-
-  void Swap(Refund* other);
-  friend void swap(Refund& a, Refund& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Refund* New() const final {
-    return CreateMaybeMessage<Refund>(NULL);
-  }
-
-  Refund* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Refund>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Refund& from);
-  void MergeFrom(const Refund& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Refund* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string reason = 1;
-  void clear_reason();
-  static const int kReasonFieldNumber = 1;
-  const ::std::string& reason() const;
-  void set_reason(const ::std::string& value);
-  #if LANG_CXX11
-  void set_reason(::std::string&& value);
-  #endif
-  void set_reason(const char* value);
-  void set_reason(const char* value, size_t size);
-  ::std::string* mutable_reason();
-  ::std::string* release_reason();
-  void set_allocated_reason(::std::string* reason);
-
-  // string status = 4;
-  void clear_status();
-  static const int kStatusFieldNumber = 4;
-  const ::std::string& status() const;
-  void set_status(const ::std::string& value);
-  #if LANG_CXX11
-  void set_status(::std::string&& value);
-  #endif
-  void set_status(const char* value);
-  void set_status(const char* value, size_t size);
-  ::std::string* mutable_status();
-  ::std::string* release_status();
-  void set_allocated_status(::std::string* status);
-
-  // int64 amount = 2;
-  void clear_amount();
-  static const int kAmountFieldNumber = 2;
-  ::google::protobuf::int64 amount() const;
-  void set_amount(::google::protobuf::int64 value);
-
-  // bool reverse_transfer = 3;
-  void clear_reverse_transfer();
-  static const int kReverseTransferFieldNumber = 3;
-  bool reverse_transfer() const;
-  void set_reverse_transfer(bool value);
-
-  // @@protoc_insertion_point(class_scope:api.Refund)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr reason_;
-  ::google::protobuf::internal::ArenaStringPtr status_;
-  ::google::protobuf::int64 amount_;
-  bool reverse_transfer_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Charge : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Charge) */ {
- public:
-  Charge();
-  virtual ~Charge();
-
-  Charge(const Charge& from);
-
-  inline Charge& operator=(const Charge& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Charge(Charge&& from) noexcept
-    : Charge() {
-    *this = ::std::move(from);
-  }
-
-  inline Charge& operator=(Charge&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Charge& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Charge* internal_default_instance() {
-    return reinterpret_cast<const Charge*>(
-               &_Charge_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    46;
-
-  void Swap(Charge* other);
-  friend void swap(Charge& a, Charge& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Charge* New() const final {
-    return CreateMaybeMessage<Charge>(NULL);
-  }
-
-  Charge* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Charge>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Charge& from);
-  void MergeFrom(const Charge& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Charge* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .api.Product product = 1;
-  bool has_product() const;
-  void clear_product();
-  static const int kProductFieldNumber = 1;
-  private:
-  const ::api::Product& _internal_product() const;
-  public:
-  const ::api::Product& product() const;
-  ::api::Product* release_product();
-  ::api::Product* mutable_product();
-  void set_allocated_product(::api::Product* product);
-
-  // .api.Customer customer = 2;
-  bool has_customer() const;
-  void clear_customer();
-  static const int kCustomerFieldNumber = 2;
-  private:
-  const ::api::Customer& _internal_customer() const;
-  public:
-  const ::api::Customer& customer() const;
-  ::api::Customer* release_customer();
-  ::api::Customer* mutable_customer();
-  void set_allocated_customer(::api::Customer* customer);
-
-  // @@protoc_insertion_point(class_scope:api.Charge)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::api::Product* product_;
-  ::api::Customer* customer_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
 // ===================================================================
 
 
@@ -7337,59 +7587,361 @@ class Charge : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// CancelSubscriptionRequest
+// RefundRequest
 
-// string email = 1;
-inline void CancelSubscriptionRequest::clear_email() {
-  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void RefundRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& CancelSubscriptionRequest::email() const {
-  // @@protoc_insertion_point(field_get:api.CancelSubscriptionRequest.email)
-  return email_.GetNoArena();
+inline const ::std::string& RefundRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.RefundRequest.id)
+  return id_.GetNoArena();
 }
-inline void CancelSubscriptionRequest::set_email(const ::std::string& value) {
+inline void RefundRequest::set_id(const ::std::string& value) {
   
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.CancelSubscriptionRequest.email)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.RefundRequest.id)
 }
 #if LANG_CXX11
-inline void CancelSubscriptionRequest::set_email(::std::string&& value) {
+inline void RefundRequest::set_id(::std::string&& value) {
   
-  email_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.CancelSubscriptionRequest.email)
+  // @@protoc_insertion_point(field_set_rvalue:api.RefundRequest.id)
 }
 #endif
-inline void CancelSubscriptionRequest::set_email(const char* value) {
+inline void RefundRequest::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.CancelSubscriptionRequest.email)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.RefundRequest.id)
 }
-inline void CancelSubscriptionRequest::set_email(const char* value, size_t size) {
+inline void RefundRequest::set_id(const char* value, size_t size) {
   
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.CancelSubscriptionRequest.email)
+  // @@protoc_insertion_point(field_set_pointer:api.RefundRequest.id)
 }
-inline ::std::string* CancelSubscriptionRequest::mutable_email() {
+inline ::std::string* RefundRequest::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.CancelSubscriptionRequest.email)
-  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.RefundRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* CancelSubscriptionRequest::release_email() {
-  // @@protoc_insertion_point(field_release:api.CancelSubscriptionRequest.email)
+inline ::std::string* RefundRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.RefundRequest.id)
   
-  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void CancelSubscriptionRequest::set_allocated_email(::std::string* email) {
-  if (email != NULL) {
+inline void RefundRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
-  // @@protoc_insertion_point(field_set_allocated:api.CancelSubscriptionRequest.email)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.RefundRequest.id)
+}
+
+// string reason = 2;
+inline void RefundRequest::clear_reason() {
+  reason_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& RefundRequest::reason() const {
+  // @@protoc_insertion_point(field_get:api.RefundRequest.reason)
+  return reason_.GetNoArena();
+}
+inline void RefundRequest::set_reason(const ::std::string& value) {
+  
+  reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.RefundRequest.reason)
+}
+#if LANG_CXX11
+inline void RefundRequest::set_reason(::std::string&& value) {
+  
+  reason_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.RefundRequest.reason)
+}
+#endif
+inline void RefundRequest::set_reason(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.RefundRequest.reason)
+}
+inline void RefundRequest::set_reason(const char* value, size_t size) {
+  
+  reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.RefundRequest.reason)
+}
+inline ::std::string* RefundRequest::mutable_reason() {
+  
+  // @@protoc_insertion_point(field_mutable:api.RefundRequest.reason)
+  return reason_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* RefundRequest::release_reason() {
+  // @@protoc_insertion_point(field_release:api.RefundRequest.reason)
+  
+  return reason_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void RefundRequest::set_allocated_reason(::std::string* reason) {
+  if (reason != NULL) {
+    
+  } else {
+    
+  }
+  reason_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason);
+  // @@protoc_insertion_point(field_set_allocated:api.RefundRequest.reason)
+}
+
+// int64 amount = 3;
+inline void RefundRequest::clear_amount() {
+  amount_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 RefundRequest::amount() const {
+  // @@protoc_insertion_point(field_get:api.RefundRequest.amount)
+  return amount_;
+}
+inline void RefundRequest::set_amount(::google::protobuf::int64 value) {
+  
+  amount_ = value;
+  // @@protoc_insertion_point(field_set:api.RefundRequest.amount)
+}
+
+// bool reverse_transfer = 4;
+inline void RefundRequest::clear_reverse_transfer() {
+  reverse_transfer_ = false;
+}
+inline bool RefundRequest::reverse_transfer() const {
+  // @@protoc_insertion_point(field_get:api.RefundRequest.reverse_transfer)
+  return reverse_transfer_;
+}
+inline void RefundRequest::set_reverse_transfer(bool value) {
+  
+  reverse_transfer_ = value;
+  // @@protoc_insertion_point(field_set:api.RefundRequest.reverse_transfer)
+}
+
+// string status = 5;
+inline void RefundRequest::clear_status() {
+  status_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& RefundRequest::status() const {
+  // @@protoc_insertion_point(field_get:api.RefundRequest.status)
+  return status_.GetNoArena();
+}
+inline void RefundRequest::set_status(const ::std::string& value) {
+  
+  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.RefundRequest.status)
+}
+#if LANG_CXX11
+inline void RefundRequest::set_status(::std::string&& value) {
+  
+  status_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.RefundRequest.status)
+}
+#endif
+inline void RefundRequest::set_status(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.RefundRequest.status)
+}
+inline void RefundRequest::set_status(const char* value, size_t size) {
+  
+  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.RefundRequest.status)
+}
+inline ::std::string* RefundRequest::mutable_status() {
+  
+  // @@protoc_insertion_point(field_mutable:api.RefundRequest.status)
+  return status_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* RefundRequest::release_status() {
+  // @@protoc_insertion_point(field_release:api.RefundRequest.status)
+  
+  return status_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void RefundRequest::set_allocated_status(::std::string* status) {
+  if (status != NULL) {
+    
+  } else {
+    
+  }
+  status_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), status);
+  // @@protoc_insertion_point(field_set_allocated:api.RefundRequest.status)
+}
+
+// -------------------------------------------------------------------
+
+// ChargeRequest
+
+// .api.Product product = 1;
+inline bool ChargeRequest::has_product() const {
+  return this != internal_default_instance() && product_ != NULL;
+}
+inline void ChargeRequest::clear_product() {
+  if (GetArenaNoVirtual() == NULL && product_ != NULL) {
+    delete product_;
+  }
+  product_ = NULL;
+}
+inline const ::api::Product& ChargeRequest::_internal_product() const {
+  return *product_;
+}
+inline const ::api::Product& ChargeRequest::product() const {
+  const ::api::Product* p = product_;
+  // @@protoc_insertion_point(field_get:api.ChargeRequest.product)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Product*>(
+      &::api::_Product_default_instance_);
+}
+inline ::api::Product* ChargeRequest::release_product() {
+  // @@protoc_insertion_point(field_release:api.ChargeRequest.product)
+  
+  ::api::Product* temp = product_;
+  product_ = NULL;
+  return temp;
+}
+inline ::api::Product* ChargeRequest::mutable_product() {
+  
+  if (product_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Product>(GetArenaNoVirtual());
+    product_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ChargeRequest.product)
+  return product_;
+}
+inline void ChargeRequest::set_allocated_product(::api::Product* product) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete product_;
+  }
+  if (product) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      product = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, product, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  product_ = product;
+  // @@protoc_insertion_point(field_set_allocated:api.ChargeRequest.product)
+}
+
+// string id = 2;
+inline void ChargeRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ChargeRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.ChargeRequest.id)
+  return id_.GetNoArena();
+}
+inline void ChargeRequest::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ChargeRequest.id)
+}
+#if LANG_CXX11
+inline void ChargeRequest::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ChargeRequest.id)
+}
+#endif
+inline void ChargeRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ChargeRequest.id)
+}
+inline void ChargeRequest::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ChargeRequest.id)
+}
+inline ::std::string* ChargeRequest::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.ChargeRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ChargeRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.ChargeRequest.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ChargeRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.ChargeRequest.id)
+}
+
+// -------------------------------------------------------------------
+
+// CancelSubscriptionRequest
+
+// string id = 1;
+inline void CancelSubscriptionRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CancelSubscriptionRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.CancelSubscriptionRequest.id)
+  return id_.GetNoArena();
+}
+inline void CancelSubscriptionRequest::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CancelSubscriptionRequest.id)
+}
+#if LANG_CXX11
+inline void CancelSubscriptionRequest::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CancelSubscriptionRequest.id)
+}
+#endif
+inline void CancelSubscriptionRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CancelSubscriptionRequest.id)
+}
+inline void CancelSubscriptionRequest::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CancelSubscriptionRequest.id)
+}
+inline ::std::string* CancelSubscriptionRequest::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CancelSubscriptionRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CancelSubscriptionRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.CancelSubscriptionRequest.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CancelSubscriptionRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.CancelSubscriptionRequest.id)
 }
 
 // -------------------------------------------------------------------
@@ -7626,57 +8178,57 @@ inline void CreatePlanRequest::set_allocated_friendly_name(::std::string* friend
 
 // SMSRequest
 
-// string user_id = 1;
-inline void SMSRequest::clear_user_id() {
-  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void SMSRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& SMSRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:api.SMSRequest.user_id)
-  return user_id_.GetNoArena();
+inline const ::std::string& SMSRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.SMSRequest.id)
+  return id_.GetNoArena();
 }
-inline void SMSRequest::set_user_id(const ::std::string& value) {
+inline void SMSRequest::set_id(const ::std::string& value) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SMSRequest.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SMSRequest.id)
 }
 #if LANG_CXX11
-inline void SMSRequest::set_user_id(::std::string&& value) {
+inline void SMSRequest::set_id(::std::string&& value) {
   
-  user_id_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SMSRequest.user_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.SMSRequest.id)
 }
 #endif
-inline void SMSRequest::set_user_id(const char* value) {
+inline void SMSRequest::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SMSRequest.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SMSRequest.id)
 }
-inline void SMSRequest::set_user_id(const char* value, size_t size) {
+inline void SMSRequest::set_id(const char* value, size_t size) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SMSRequest.user_id)
+  // @@protoc_insertion_point(field_set_pointer:api.SMSRequest.id)
 }
-inline ::std::string* SMSRequest::mutable_user_id() {
+inline ::std::string* SMSRequest::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.SMSRequest.user_id)
-  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.SMSRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* SMSRequest::release_user_id() {
-  // @@protoc_insertion_point(field_release:api.SMSRequest.user_id)
+inline ::std::string* SMSRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.SMSRequest.id)
   
-  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void SMSRequest::set_allocated_user_id(::std::string* user_id) {
-  if (user_id != NULL) {
+inline void SMSRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
-  // @@protoc_insertion_point(field_set_allocated:api.SMSRequest.user_id)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.SMSRequest.id)
 }
 
 // string body = 2;
@@ -7736,57 +8288,57 @@ inline void SMSRequest::set_allocated_body(::std::string* body) {
 
 // CallRequest
 
-// string user_id = 1;
-inline void CallRequest::clear_user_id() {
-  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void CallRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& CallRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:api.CallRequest.user_id)
-  return user_id_.GetNoArena();
+inline const ::std::string& CallRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.CallRequest.id)
+  return id_.GetNoArena();
 }
-inline void CallRequest::set_user_id(const ::std::string& value) {
+inline void CallRequest::set_id(const ::std::string& value) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.CallRequest.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CallRequest.id)
 }
 #if LANG_CXX11
-inline void CallRequest::set_user_id(::std::string&& value) {
+inline void CallRequest::set_id(::std::string&& value) {
   
-  user_id_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.CallRequest.user_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.CallRequest.id)
 }
 #endif
-inline void CallRequest::set_user_id(const char* value) {
+inline void CallRequest::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.CallRequest.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CallRequest.id)
 }
-inline void CallRequest::set_user_id(const char* value, size_t size) {
+inline void CallRequest::set_id(const char* value, size_t size) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.CallRequest.user_id)
+  // @@protoc_insertion_point(field_set_pointer:api.CallRequest.id)
 }
-inline ::std::string* CallRequest::mutable_user_id() {
+inline ::std::string* CallRequest::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.CallRequest.user_id)
-  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.CallRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* CallRequest::release_user_id() {
-  // @@protoc_insertion_point(field_release:api.CallRequest.user_id)
+inline ::std::string* CallRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.CallRequest.id)
   
-  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void CallRequest::set_allocated_user_id(::std::string* user_id) {
-  if (user_id != NULL) {
+inline void CallRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
-  // @@protoc_insertion_point(field_set_allocated:api.CallRequest.user_id)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.CallRequest.id)
 }
 
 // string callback_url = 2;
@@ -7846,110 +8398,58 @@ inline void CallRequest::set_allocated_callback_url(::std::string* callback_url)
 
 // MMSRequest
 
-// string user_id = 1;
-inline void MMSRequest::clear_user_id() {
-  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .api.SMSRequest sms = 1;
+inline bool MMSRequest::has_sms() const {
+  return this != internal_default_instance() && sms_ != NULL;
 }
-inline const ::std::string& MMSRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:api.MMSRequest.user_id)
-  return user_id_.GetNoArena();
+inline void MMSRequest::clear_sms() {
+  if (GetArenaNoVirtual() == NULL && sms_ != NULL) {
+    delete sms_;
+  }
+  sms_ = NULL;
 }
-inline void MMSRequest::set_user_id(const ::std::string& value) {
+inline const ::api::SMSRequest& MMSRequest::_internal_sms() const {
+  return *sms_;
+}
+inline const ::api::SMSRequest& MMSRequest::sms() const {
+  const ::api::SMSRequest* p = sms_;
+  // @@protoc_insertion_point(field_get:api.MMSRequest.sms)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::SMSRequest*>(
+      &::api::_SMSRequest_default_instance_);
+}
+inline ::api::SMSRequest* MMSRequest::release_sms() {
+  // @@protoc_insertion_point(field_release:api.MMSRequest.sms)
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.MMSRequest.user_id)
+  ::api::SMSRequest* temp = sms_;
+  sms_ = NULL;
+  return temp;
 }
-#if LANG_CXX11
-inline void MMSRequest::set_user_id(::std::string&& value) {
+inline ::api::SMSRequest* MMSRequest::mutable_sms() {
   
-  user_id_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.MMSRequest.user_id)
+  if (sms_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::SMSRequest>(GetArenaNoVirtual());
+    sms_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.MMSRequest.sms)
+  return sms_;
 }
-#endif
-inline void MMSRequest::set_user_id(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.MMSRequest.user_id)
-}
-inline void MMSRequest::set_user_id(const char* value, size_t size) {
-  
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.MMSRequest.user_id)
-}
-inline ::std::string* MMSRequest::mutable_user_id() {
-  
-  // @@protoc_insertion_point(field_mutable:api.MMSRequest.user_id)
-  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* MMSRequest::release_user_id() {
-  // @@protoc_insertion_point(field_release:api.MMSRequest.user_id)
-  
-  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void MMSRequest::set_allocated_user_id(::std::string* user_id) {
-  if (user_id != NULL) {
+inline void MMSRequest::set_allocated_sms(::api::SMSRequest* sms) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete sms_;
+  }
+  if (sms) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      sms = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, sms, submessage_arena);
+    }
     
   } else {
     
   }
-  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
-  // @@protoc_insertion_point(field_set_allocated:api.MMSRequest.user_id)
-}
-
-// string body = 2;
-inline void MMSRequest::clear_body() {
-  body_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& MMSRequest::body() const {
-  // @@protoc_insertion_point(field_get:api.MMSRequest.body)
-  return body_.GetNoArena();
-}
-inline void MMSRequest::set_body(const ::std::string& value) {
-  
-  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.MMSRequest.body)
-}
-#if LANG_CXX11
-inline void MMSRequest::set_body(::std::string&& value) {
-  
-  body_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.MMSRequest.body)
-}
-#endif
-inline void MMSRequest::set_body(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.MMSRequest.body)
-}
-inline void MMSRequest::set_body(const char* value, size_t size) {
-  
-  body_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.MMSRequest.body)
-}
-inline ::std::string* MMSRequest::mutable_body() {
-  
-  // @@protoc_insertion_point(field_mutable:api.MMSRequest.body)
-  return body_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* MMSRequest::release_body() {
-  // @@protoc_insertion_point(field_release:api.MMSRequest.body)
-  
-  return body_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void MMSRequest::set_allocated_body(::std::string* body) {
-  if (body != NULL) {
-    
-  } else {
-    
-  }
-  body_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), body);
-  // @@protoc_insertion_point(field_set_allocated:api.MMSRequest.body)
+  sms_ = sms;
+  // @@protoc_insertion_point(field_set_allocated:api.MMSRequest.sms)
 }
 
 // string media_url = 3;
@@ -8009,57 +8509,57 @@ inline void MMSRequest::set_allocated_media_url(::std::string* media_url) {
 
 // EmailRequest
 
-// string user_id = 1;
-inline void EmailRequest::clear_user_id() {
-  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void EmailRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& EmailRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:api.EmailRequest.user_id)
-  return user_id_.GetNoArena();
+inline const ::std::string& EmailRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.EmailRequest.id)
+  return id_.GetNoArena();
 }
-inline void EmailRequest::set_user_id(const ::std::string& value) {
+inline void EmailRequest::set_id(const ::std::string& value) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.EmailRequest.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.EmailRequest.id)
 }
 #if LANG_CXX11
-inline void EmailRequest::set_user_id(::std::string&& value) {
+inline void EmailRequest::set_id(::std::string&& value) {
   
-  user_id_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.EmailRequest.user_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.EmailRequest.id)
 }
 #endif
-inline void EmailRequest::set_user_id(const char* value) {
+inline void EmailRequest::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.EmailRequest.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.EmailRequest.id)
 }
-inline void EmailRequest::set_user_id(const char* value, size_t size) {
+inline void EmailRequest::set_id(const char* value, size_t size) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.EmailRequest.user_id)
+  // @@protoc_insertion_point(field_set_pointer:api.EmailRequest.id)
 }
-inline ::std::string* EmailRequest::mutable_user_id() {
+inline ::std::string* EmailRequest::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.EmailRequest.user_id)
-  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.EmailRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* EmailRequest::release_user_id() {
-  // @@protoc_insertion_point(field_release:api.EmailRequest.user_id)
+inline ::std::string* EmailRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.EmailRequest.id)
   
-  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void EmailRequest::set_allocated_user_id(::std::string* user_id) {
-  if (user_id != NULL) {
+inline void EmailRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
-  // @@protoc_insertion_point(field_set_allocated:api.EmailRequest.user_id)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.EmailRequest.id)
 }
 
 // string subject = 2;
@@ -8223,116 +8723,982 @@ inline void EmailRequest::set_allocated_html_alt(::std::string* html_alt) {
 
 // -------------------------------------------------------------------
 
-// SubscribeCustomerResponse
+// CustomerRequest
 
-// string subscription_id = 1;
-inline void SubscribeCustomerResponse::clear_subscription_id() {
-  subscription_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string email = 1;
+inline void CustomerRequest::clear_email() {
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& SubscribeCustomerResponse::subscription_id() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerResponse.subscription_id)
-  return subscription_id_.GetNoArena();
+inline const ::std::string& CustomerRequest::email() const {
+  // @@protoc_insertion_point(field_get:api.CustomerRequest.email)
+  return email_.GetNoArena();
 }
-inline void SubscribeCustomerResponse::set_subscription_id(const ::std::string& value) {
+inline void CustomerRequest::set_email(const ::std::string& value) {
   
-  subscription_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerResponse.subscription_id)
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CustomerRequest.email)
 }
 #if LANG_CXX11
-inline void SubscribeCustomerResponse::set_subscription_id(::std::string&& value) {
+inline void CustomerRequest::set_email(::std::string&& value) {
   
-  subscription_id_.SetNoArena(
+  email_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerResponse.subscription_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.CustomerRequest.email)
 }
 #endif
-inline void SubscribeCustomerResponse::set_subscription_id(const char* value) {
+inline void CustomerRequest::set_email(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  subscription_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerResponse.subscription_id)
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CustomerRequest.email)
 }
-inline void SubscribeCustomerResponse::set_subscription_id(const char* value, size_t size) {
+inline void CustomerRequest::set_email(const char* value, size_t size) {
   
-  subscription_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerResponse.subscription_id)
+  // @@protoc_insertion_point(field_set_pointer:api.CustomerRequest.email)
 }
-inline ::std::string* SubscribeCustomerResponse::mutable_subscription_id() {
+inline ::std::string* CustomerRequest::mutable_email() {
   
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerResponse.subscription_id)
-  return subscription_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.CustomerRequest.email)
+  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* SubscribeCustomerResponse::release_subscription_id() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerResponse.subscription_id)
+inline ::std::string* CustomerRequest::release_email() {
+  // @@protoc_insertion_point(field_release:api.CustomerRequest.email)
   
-  return subscription_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void SubscribeCustomerResponse::set_allocated_subscription_id(::std::string* subscription_id) {
-  if (subscription_id != NULL) {
+inline void CustomerRequest::set_allocated_email(::std::string* email) {
+  if (email != NULL) {
     
   } else {
     
   }
-  subscription_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subscription_id);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerResponse.subscription_id)
+  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:api.CustomerRequest.email)
+}
+
+// string plan = 2;
+inline void CustomerRequest::clear_plan() {
+  plan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CustomerRequest::plan() const {
+  // @@protoc_insertion_point(field_get:api.CustomerRequest.plan)
+  return plan_.GetNoArena();
+}
+inline void CustomerRequest::set_plan(const ::std::string& value) {
+  
+  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CustomerRequest.plan)
+}
+#if LANG_CXX11
+inline void CustomerRequest::set_plan(::std::string&& value) {
+  
+  plan_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CustomerRequest.plan)
+}
+#endif
+inline void CustomerRequest::set_plan(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CustomerRequest.plan)
+}
+inline void CustomerRequest::set_plan(const char* value, size_t size) {
+  
+  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CustomerRequest.plan)
+}
+inline ::std::string* CustomerRequest::mutable_plan() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CustomerRequest.plan)
+  return plan_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CustomerRequest::release_plan() {
+  // @@protoc_insertion_point(field_release:api.CustomerRequest.plan)
+  
+  return plan_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CustomerRequest::set_allocated_plan(::std::string* plan) {
+  if (plan != NULL) {
+    
+  } else {
+    
+  }
+  plan_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plan);
+  // @@protoc_insertion_point(field_set_allocated:api.CustomerRequest.plan)
+}
+
+// string phone = 3;
+inline void CustomerRequest::clear_phone() {
+  phone_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CustomerRequest::phone() const {
+  // @@protoc_insertion_point(field_get:api.CustomerRequest.phone)
+  return phone_.GetNoArena();
+}
+inline void CustomerRequest::set_phone(const ::std::string& value) {
+  
+  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CustomerRequest.phone)
+}
+#if LANG_CXX11
+inline void CustomerRequest::set_phone(::std::string&& value) {
+  
+  phone_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CustomerRequest.phone)
+}
+#endif
+inline void CustomerRequest::set_phone(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CustomerRequest.phone)
+}
+inline void CustomerRequest::set_phone(const char* value, size_t size) {
+  
+  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CustomerRequest.phone)
+}
+inline ::std::string* CustomerRequest::mutable_phone() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CustomerRequest.phone)
+  return phone_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CustomerRequest::release_phone() {
+  // @@protoc_insertion_point(field_release:api.CustomerRequest.phone)
+  
+  return phone_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CustomerRequest::set_allocated_phone(::std::string* phone) {
+  if (phone != NULL) {
+    
+  } else {
+    
+  }
+  phone_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), phone);
+  // @@protoc_insertion_point(field_set_allocated:api.CustomerRequest.phone)
+}
+
+// string name = 4;
+inline void CustomerRequest::clear_name() {
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CustomerRequest::name() const {
+  // @@protoc_insertion_point(field_get:api.CustomerRequest.name)
+  return name_.GetNoArena();
+}
+inline void CustomerRequest::set_name(const ::std::string& value) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CustomerRequest.name)
+}
+#if LANG_CXX11
+inline void CustomerRequest::set_name(::std::string&& value) {
+  
+  name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CustomerRequest.name)
+}
+#endif
+inline void CustomerRequest::set_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CustomerRequest.name)
+}
+inline void CustomerRequest::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CustomerRequest.name)
+}
+inline ::std::string* CustomerRequest::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CustomerRequest.name)
+  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CustomerRequest::release_name() {
+  // @@protoc_insertion_point(field_release:api.CustomerRequest.name)
+  
+  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CustomerRequest::set_allocated_name(::std::string* name) {
+  if (name != NULL) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:api.CustomerRequest.name)
+}
+
+// string description = 7;
+inline void CustomerRequest::clear_description() {
+  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CustomerRequest::description() const {
+  // @@protoc_insertion_point(field_get:api.CustomerRequest.description)
+  return description_.GetNoArena();
+}
+inline void CustomerRequest::set_description(const ::std::string& value) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CustomerRequest.description)
+}
+#if LANG_CXX11
+inline void CustomerRequest::set_description(::std::string&& value) {
+  
+  description_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CustomerRequest.description)
+}
+#endif
+inline void CustomerRequest::set_description(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CustomerRequest.description)
+}
+inline void CustomerRequest::set_description(const char* value, size_t size) {
+  
+  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CustomerRequest.description)
+}
+inline ::std::string* CustomerRequest::mutable_description() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CustomerRequest.description)
+  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CustomerRequest::release_description() {
+  // @@protoc_insertion_point(field_release:api.CustomerRequest.description)
+  
+  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CustomerRequest::set_allocated_description(::std::string* description) {
+  if (description != NULL) {
+    
+  } else {
+    
+  }
+  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
+  // @@protoc_insertion_point(field_set_allocated:api.CustomerRequest.description)
+}
+
+// .api.Address address = 8;
+inline bool CustomerRequest::has_address() const {
+  return this != internal_default_instance() && address_ != NULL;
+}
+inline void CustomerRequest::clear_address() {
+  if (GetArenaNoVirtual() == NULL && address_ != NULL) {
+    delete address_;
+  }
+  address_ = NULL;
+}
+inline const ::api::Address& CustomerRequest::_internal_address() const {
+  return *address_;
+}
+inline const ::api::Address& CustomerRequest::address() const {
+  const ::api::Address* p = address_;
+  // @@protoc_insertion_point(field_get:api.CustomerRequest.address)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Address*>(
+      &::api::_Address_default_instance_);
+}
+inline ::api::Address* CustomerRequest::release_address() {
+  // @@protoc_insertion_point(field_release:api.CustomerRequest.address)
+  
+  ::api::Address* temp = address_;
+  address_ = NULL;
+  return temp;
+}
+inline ::api::Address* CustomerRequest::mutable_address() {
+  
+  if (address_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Address>(GetArenaNoVirtual());
+    address_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.CustomerRequest.address)
+  return address_;
+}
+inline void CustomerRequest::set_allocated_address(::api::Address* address) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete address_;
+  }
+  if (address) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      address = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, address, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  address_ = address;
+  // @@protoc_insertion_point(field_set_allocated:api.CustomerRequest.address)
 }
 
 // -------------------------------------------------------------------
 
-// CreatePlanResponse
+// UpdateCustomerRequest
 
-// string plan_id = 1;
-inline void CreatePlanResponse::clear_plan_id() {
-  plan_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void UpdateCustomerRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& CreatePlanResponse::plan_id() const {
-  // @@protoc_insertion_point(field_get:api.CreatePlanResponse.plan_id)
-  return plan_id_.GetNoArena();
+inline const ::std::string& UpdateCustomerRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.UpdateCustomerRequest.id)
+  return id_.GetNoArena();
 }
-inline void CreatePlanResponse::set_plan_id(const ::std::string& value) {
+inline void UpdateCustomerRequest::set_id(const ::std::string& value) {
   
-  plan_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.CreatePlanResponse.plan_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.UpdateCustomerRequest.id)
 }
 #if LANG_CXX11
-inline void CreatePlanResponse::set_plan_id(::std::string&& value) {
+inline void UpdateCustomerRequest::set_id(::std::string&& value) {
   
-  plan_id_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.CreatePlanResponse.plan_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.UpdateCustomerRequest.id)
 }
 #endif
-inline void CreatePlanResponse::set_plan_id(const char* value) {
+inline void UpdateCustomerRequest::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  plan_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.CreatePlanResponse.plan_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.UpdateCustomerRequest.id)
 }
-inline void CreatePlanResponse::set_plan_id(const char* value, size_t size) {
+inline void UpdateCustomerRequest::set_id(const char* value, size_t size) {
   
-  plan_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.CreatePlanResponse.plan_id)
+  // @@protoc_insertion_point(field_set_pointer:api.UpdateCustomerRequest.id)
 }
-inline ::std::string* CreatePlanResponse::mutable_plan_id() {
+inline ::std::string* UpdateCustomerRequest::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.CreatePlanResponse.plan_id)
-  return plan_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.UpdateCustomerRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* CreatePlanResponse::release_plan_id() {
-  // @@protoc_insertion_point(field_release:api.CreatePlanResponse.plan_id)
+inline ::std::string* UpdateCustomerRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.UpdateCustomerRequest.id)
   
-  return plan_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void CreatePlanResponse::set_allocated_plan_id(::std::string* plan_id) {
-  if (plan_id != NULL) {
+inline void UpdateCustomerRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  plan_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plan_id);
-  // @@protoc_insertion_point(field_set_allocated:api.CreatePlanResponse.plan_id)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.UpdateCustomerRequest.id)
+}
+
+// .api.CustomerRequest customer = 2;
+inline bool UpdateCustomerRequest::has_customer() const {
+  return this != internal_default_instance() && customer_ != NULL;
+}
+inline void UpdateCustomerRequest::clear_customer() {
+  if (GetArenaNoVirtual() == NULL && customer_ != NULL) {
+    delete customer_;
+  }
+  customer_ = NULL;
+}
+inline const ::api::CustomerRequest& UpdateCustomerRequest::_internal_customer() const {
+  return *customer_;
+}
+inline const ::api::CustomerRequest& UpdateCustomerRequest::customer() const {
+  const ::api::CustomerRequest* p = customer_;
+  // @@protoc_insertion_point(field_get:api.UpdateCustomerRequest.customer)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::CustomerRequest*>(
+      &::api::_CustomerRequest_default_instance_);
+}
+inline ::api::CustomerRequest* UpdateCustomerRequest::release_customer() {
+  // @@protoc_insertion_point(field_release:api.UpdateCustomerRequest.customer)
+  
+  ::api::CustomerRequest* temp = customer_;
+  customer_ = NULL;
+  return temp;
+}
+inline ::api::CustomerRequest* UpdateCustomerRequest::mutable_customer() {
+  
+  if (customer_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::CustomerRequest>(GetArenaNoVirtual());
+    customer_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.UpdateCustomerRequest.customer)
+  return customer_;
+}
+inline void UpdateCustomerRequest::set_allocated_customer(::api::CustomerRequest* customer) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete customer_;
+  }
+  if (customer) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      customer = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, customer, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  customer_ = customer;
+  // @@protoc_insertion_point(field_set_allocated:api.UpdateCustomerRequest.customer)
+}
+
+// -------------------------------------------------------------------
+
+// SubscribeCustomerRequest
+
+// string id = 1;
+inline void SubscribeCustomerRequest::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SubscribeCustomerRequest::id() const {
+  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.id)
+  return id_.GetNoArena();
+}
+inline void SubscribeCustomerRequest::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.id)
+}
+#if LANG_CXX11
+inline void SubscribeCustomerRequest::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.id)
+}
+#endif
+inline void SubscribeCustomerRequest::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.id)
+}
+inline void SubscribeCustomerRequest::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.id)
+}
+inline ::std::string* SubscribeCustomerRequest::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SubscribeCustomerRequest::release_id() {
+  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SubscribeCustomerRequest::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.id)
+}
+
+// string plan = 2;
+inline void SubscribeCustomerRequest::clear_plan() {
+  plan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SubscribeCustomerRequest::plan() const {
+  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.plan)
+  return plan_.GetNoArena();
+}
+inline void SubscribeCustomerRequest::set_plan(const ::std::string& value) {
+  
+  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.plan)
+}
+#if LANG_CXX11
+inline void SubscribeCustomerRequest::set_plan(::std::string&& value) {
+  
+  plan_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.plan)
+}
+#endif
+inline void SubscribeCustomerRequest::set_plan(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.plan)
+}
+inline void SubscribeCustomerRequest::set_plan(const char* value, size_t size) {
+  
+  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.plan)
+}
+inline ::std::string* SubscribeCustomerRequest::mutable_plan() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.plan)
+  return plan_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SubscribeCustomerRequest::release_plan() {
+  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.plan)
+  
+  return plan_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SubscribeCustomerRequest::set_allocated_plan(::std::string* plan) {
+  if (plan != NULL) {
+    
+  } else {
+    
+  }
+  plan_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plan);
+  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.plan)
+}
+
+// string card_number = 3;
+inline void SubscribeCustomerRequest::clear_card_number() {
+  card_number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SubscribeCustomerRequest::card_number() const {
+  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.card_number)
+  return card_number_.GetNoArena();
+}
+inline void SubscribeCustomerRequest::set_card_number(const ::std::string& value) {
+  
+  card_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.card_number)
+}
+#if LANG_CXX11
+inline void SubscribeCustomerRequest::set_card_number(::std::string&& value) {
+  
+  card_number_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.card_number)
+}
+#endif
+inline void SubscribeCustomerRequest::set_card_number(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  card_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.card_number)
+}
+inline void SubscribeCustomerRequest::set_card_number(const char* value, size_t size) {
+  
+  card_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.card_number)
+}
+inline ::std::string* SubscribeCustomerRequest::mutable_card_number() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.card_number)
+  return card_number_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SubscribeCustomerRequest::release_card_number() {
+  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.card_number)
+  
+  return card_number_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SubscribeCustomerRequest::set_allocated_card_number(::std::string* card_number) {
+  if (card_number != NULL) {
+    
+  } else {
+    
+  }
+  card_number_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), card_number);
+  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.card_number)
+}
+
+// string exp_month = 4;
+inline void SubscribeCustomerRequest::clear_exp_month() {
+  exp_month_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SubscribeCustomerRequest::exp_month() const {
+  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.exp_month)
+  return exp_month_.GetNoArena();
+}
+inline void SubscribeCustomerRequest::set_exp_month(const ::std::string& value) {
+  
+  exp_month_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.exp_month)
+}
+#if LANG_CXX11
+inline void SubscribeCustomerRequest::set_exp_month(::std::string&& value) {
+  
+  exp_month_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.exp_month)
+}
+#endif
+inline void SubscribeCustomerRequest::set_exp_month(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  exp_month_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.exp_month)
+}
+inline void SubscribeCustomerRequest::set_exp_month(const char* value, size_t size) {
+  
+  exp_month_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.exp_month)
+}
+inline ::std::string* SubscribeCustomerRequest::mutable_exp_month() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.exp_month)
+  return exp_month_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SubscribeCustomerRequest::release_exp_month() {
+  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.exp_month)
+  
+  return exp_month_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SubscribeCustomerRequest::set_allocated_exp_month(::std::string* exp_month) {
+  if (exp_month != NULL) {
+    
+  } else {
+    
+  }
+  exp_month_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exp_month);
+  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.exp_month)
+}
+
+// string exp_year = 5;
+inline void SubscribeCustomerRequest::clear_exp_year() {
+  exp_year_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SubscribeCustomerRequest::exp_year() const {
+  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.exp_year)
+  return exp_year_.GetNoArena();
+}
+inline void SubscribeCustomerRequest::set_exp_year(const ::std::string& value) {
+  
+  exp_year_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.exp_year)
+}
+#if LANG_CXX11
+inline void SubscribeCustomerRequest::set_exp_year(::std::string&& value) {
+  
+  exp_year_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.exp_year)
+}
+#endif
+inline void SubscribeCustomerRequest::set_exp_year(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  exp_year_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.exp_year)
+}
+inline void SubscribeCustomerRequest::set_exp_year(const char* value, size_t size) {
+  
+  exp_year_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.exp_year)
+}
+inline ::std::string* SubscribeCustomerRequest::mutable_exp_year() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.exp_year)
+  return exp_year_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SubscribeCustomerRequest::release_exp_year() {
+  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.exp_year)
+  
+  return exp_year_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SubscribeCustomerRequest::set_allocated_exp_year(::std::string* exp_year) {
+  if (exp_year != NULL) {
+    
+  } else {
+    
+  }
+  exp_year_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exp_year);
+  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.exp_year)
+}
+
+// string cvc = 6;
+inline void SubscribeCustomerRequest::clear_cvc() {
+  cvc_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SubscribeCustomerRequest::cvc() const {
+  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.cvc)
+  return cvc_.GetNoArena();
+}
+inline void SubscribeCustomerRequest::set_cvc(const ::std::string& value) {
+  
+  cvc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.cvc)
+}
+#if LANG_CXX11
+inline void SubscribeCustomerRequest::set_cvc(::std::string&& value) {
+  
+  cvc_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.cvc)
+}
+#endif
+inline void SubscribeCustomerRequest::set_cvc(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  cvc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.cvc)
+}
+inline void SubscribeCustomerRequest::set_cvc(const char* value, size_t size) {
+  
+  cvc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.cvc)
+}
+inline ::std::string* SubscribeCustomerRequest::mutable_cvc() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.cvc)
+  return cvc_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SubscribeCustomerRequest::release_cvc() {
+  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.cvc)
+  
+  return cvc_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SubscribeCustomerRequest::set_allocated_cvc(::std::string* cvc) {
+  if (cvc != NULL) {
+    
+  } else {
+    
+  }
+  cvc_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cvc);
+  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.cvc)
+}
+
+// -------------------------------------------------------------------
+
+// AddAccountRequest
+
+// .api.CustomerRequest customer = 1;
+inline bool AddAccountRequest::has_customer() const {
+  return this != internal_default_instance() && customer_ != NULL;
+}
+inline void AddAccountRequest::clear_customer() {
+  if (GetArenaNoVirtual() == NULL && customer_ != NULL) {
+    delete customer_;
+  }
+  customer_ = NULL;
+}
+inline const ::api::CustomerRequest& AddAccountRequest::_internal_customer() const {
+  return *customer_;
+}
+inline const ::api::CustomerRequest& AddAccountRequest::customer() const {
+  const ::api::CustomerRequest* p = customer_;
+  // @@protoc_insertion_point(field_get:api.AddAccountRequest.customer)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::CustomerRequest*>(
+      &::api::_CustomerRequest_default_instance_);
+}
+inline ::api::CustomerRequest* AddAccountRequest::release_customer() {
+  // @@protoc_insertion_point(field_release:api.AddAccountRequest.customer)
+  
+  ::api::CustomerRequest* temp = customer_;
+  customer_ = NULL;
+  return temp;
+}
+inline ::api::CustomerRequest* AddAccountRequest::mutable_customer() {
+  
+  if (customer_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::CustomerRequest>(GetArenaNoVirtual());
+    customer_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.AddAccountRequest.customer)
+  return customer_;
+}
+inline void AddAccountRequest::set_allocated_customer(::api::CustomerRequest* customer) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete customer_;
+  }
+  if (customer) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      customer = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, customer, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  customer_ = customer;
+  // @@protoc_insertion_point(field_set_allocated:api.AddAccountRequest.customer)
+}
+
+// .api.Access access = 2;
+inline bool AddAccountRequest::has_access() const {
+  return this != internal_default_instance() && access_ != NULL;
+}
+inline void AddAccountRequest::clear_access() {
+  if (GetArenaNoVirtual() == NULL && access_ != NULL) {
+    delete access_;
+  }
+  access_ = NULL;
+}
+inline const ::api::Access& AddAccountRequest::_internal_access() const {
+  return *access_;
+}
+inline const ::api::Access& AddAccountRequest::access() const {
+  const ::api::Access* p = access_;
+  // @@protoc_insertion_point(field_get:api.AddAccountRequest.access)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Access*>(
+      &::api::_Access_default_instance_);
+}
+inline ::api::Access* AddAccountRequest::release_access() {
+  // @@protoc_insertion_point(field_release:api.AddAccountRequest.access)
+  
+  ::api::Access* temp = access_;
+  access_ = NULL;
+  return temp;
+}
+inline ::api::Access* AddAccountRequest::mutable_access() {
+  
+  if (access_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Access>(GetArenaNoVirtual());
+    access_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.AddAccountRequest.access)
+  return access_;
+}
+inline void AddAccountRequest::set_allocated_access(::api::Access* access) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete access_;
+  }
+  if (access) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      access = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, access, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  access_ = access;
+  // @@protoc_insertion_point(field_set_allocated:api.AddAccountRequest.access)
+}
+
+// -------------------------------------------------------------------
+
+// Account
+
+// .api.Customer customer = 1;
+inline bool Account::has_customer() const {
+  return this != internal_default_instance() && customer_ != NULL;
+}
+inline void Account::clear_customer() {
+  if (GetArenaNoVirtual() == NULL && customer_ != NULL) {
+    delete customer_;
+  }
+  customer_ = NULL;
+}
+inline const ::api::Customer& Account::_internal_customer() const {
+  return *customer_;
+}
+inline const ::api::Customer& Account::customer() const {
+  const ::api::Customer* p = customer_;
+  // @@protoc_insertion_point(field_get:api.Account.customer)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Customer*>(
+      &::api::_Customer_default_instance_);
+}
+inline ::api::Customer* Account::release_customer() {
+  // @@protoc_insertion_point(field_release:api.Account.customer)
+  
+  ::api::Customer* temp = customer_;
+  customer_ = NULL;
+  return temp;
+}
+inline ::api::Customer* Account::mutable_customer() {
+  
+  if (customer_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Customer>(GetArenaNoVirtual());
+    customer_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Account.customer)
+  return customer_;
+}
+inline void Account::set_allocated_customer(::api::Customer* customer) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete customer_;
+  }
+  if (customer) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      customer = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, customer, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  customer_ = customer;
+  // @@protoc_insertion_point(field_set_allocated:api.Account.customer)
+}
+
+// .api.Access access = 2;
+inline bool Account::has_access() const {
+  return this != internal_default_instance() && access_ != NULL;
+}
+inline void Account::clear_access() {
+  if (GetArenaNoVirtual() == NULL && access_ != NULL) {
+    delete access_;
+  }
+  access_ = NULL;
+}
+inline const ::api::Access& Account::_internal_access() const {
+  return *access_;
+}
+inline const ::api::Access& Account::access() const {
+  const ::api::Access* p = access_;
+  // @@protoc_insertion_point(field_get:api.Account.access)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Access*>(
+      &::api::_Access_default_instance_);
+}
+inline ::api::Access* Account::release_access() {
+  // @@protoc_insertion_point(field_release:api.Account.access)
+  
+  ::api::Access* temp = access_;
+  access_ = NULL;
+  return temp;
+}
+inline ::api::Access* Account::mutable_access() {
+  
+  if (access_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Access>(GetArenaNoVirtual());
+    access_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Account.access)
+  return access_;
+}
+inline void Account::set_allocated_access(::api::Access* access) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete access_;
+  }
+  if (access) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      access = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, access, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  access_ = access;
+  // @@protoc_insertion_point(field_set_allocated:api.Account.access)
 }
 
 // -------------------------------------------------------------------
@@ -9185,57 +10551,57 @@ inline void Profile::set_allocated_team(::std::string* team) {
 
 // Customer
 
-// string user_id = 1;
-inline void Customer::clear_user_id() {
-  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void Customer::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Customer::user_id() const {
-  // @@protoc_insertion_point(field_get:api.Customer.user_id)
-  return user_id_.GetNoArena();
+inline const ::std::string& Customer::id() const {
+  // @@protoc_insertion_point(field_get:api.Customer.id)
+  return id_.GetNoArena();
 }
-inline void Customer::set_user_id(const ::std::string& value) {
+inline void Customer::set_id(const ::std::string& value) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Customer.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Customer.id)
 }
 #if LANG_CXX11
-inline void Customer::set_user_id(::std::string&& value) {
+inline void Customer::set_id(::std::string&& value) {
   
-  user_id_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Customer.user_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.Customer.id)
 }
 #endif
-inline void Customer::set_user_id(const char* value) {
+inline void Customer::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Customer.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Customer.id)
 }
-inline void Customer::set_user_id(const char* value, size_t size) {
+inline void Customer::set_id(const char* value, size_t size) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Customer.user_id)
+  // @@protoc_insertion_point(field_set_pointer:api.Customer.id)
 }
-inline ::std::string* Customer::mutable_user_id() {
+inline ::std::string* Customer::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.Customer.user_id)
-  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.Customer.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Customer::release_user_id() {
-  // @@protoc_insertion_point(field_release:api.Customer.user_id)
+inline ::std::string* Customer::release_id() {
+  // @@protoc_insertion_point(field_release:api.Customer.id)
   
-  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Customer::set_allocated_user_id(::std::string* user_id) {
-  if (user_id != NULL) {
+inline void Customer::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
-  // @@protoc_insertion_point(field_set_allocated:api.Customer.user_id)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.Customer.id)
 }
 
 // string plan = 2;
@@ -9601,651 +10967,6 @@ inline void Customer::set_create_date(::google::protobuf::int64 value) {
   
   create_date_ = value;
   // @@protoc_insertion_point(field_set:api.Customer.create_date)
-}
-
-// -------------------------------------------------------------------
-
-// AddCustomerRequest
-
-// string email = 1;
-inline void AddCustomerRequest::clear_email() {
-  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AddCustomerRequest::email() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.email)
-  return email_.GetNoArena();
-}
-inline void AddCustomerRequest::set_email(const ::std::string& value) {
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.email)
-}
-#if LANG_CXX11
-inline void AddCustomerRequest::set_email(::std::string&& value) {
-  
-  email_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AddCustomerRequest.email)
-}
-#endif
-inline void AddCustomerRequest::set_email(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AddCustomerRequest.email)
-}
-inline void AddCustomerRequest::set_email(const char* value, size_t size) {
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AddCustomerRequest.email)
-}
-inline ::std::string* AddCustomerRequest::mutable_email() {
-  
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.email)
-  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AddCustomerRequest::release_email() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.email)
-  
-  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AddCustomerRequest::set_allocated_email(::std::string* email) {
-  if (email != NULL) {
-    
-  } else {
-    
-  }
-  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.email)
-}
-
-// string plan = 2;
-inline void AddCustomerRequest::clear_plan() {
-  plan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AddCustomerRequest::plan() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.plan)
-  return plan_.GetNoArena();
-}
-inline void AddCustomerRequest::set_plan(const ::std::string& value) {
-  
-  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.plan)
-}
-#if LANG_CXX11
-inline void AddCustomerRequest::set_plan(::std::string&& value) {
-  
-  plan_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AddCustomerRequest.plan)
-}
-#endif
-inline void AddCustomerRequest::set_plan(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AddCustomerRequest.plan)
-}
-inline void AddCustomerRequest::set_plan(const char* value, size_t size) {
-  
-  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AddCustomerRequest.plan)
-}
-inline ::std::string* AddCustomerRequest::mutable_plan() {
-  
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.plan)
-  return plan_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AddCustomerRequest::release_plan() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.plan)
-  
-  return plan_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AddCustomerRequest::set_allocated_plan(::std::string* plan) {
-  if (plan != NULL) {
-    
-  } else {
-    
-  }
-  plan_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plan);
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.plan)
-}
-
-// string phone = 3;
-inline void AddCustomerRequest::clear_phone() {
-  phone_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AddCustomerRequest::phone() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.phone)
-  return phone_.GetNoArena();
-}
-inline void AddCustomerRequest::set_phone(const ::std::string& value) {
-  
-  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.phone)
-}
-#if LANG_CXX11
-inline void AddCustomerRequest::set_phone(::std::string&& value) {
-  
-  phone_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AddCustomerRequest.phone)
-}
-#endif
-inline void AddCustomerRequest::set_phone(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AddCustomerRequest.phone)
-}
-inline void AddCustomerRequest::set_phone(const char* value, size_t size) {
-  
-  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AddCustomerRequest.phone)
-}
-inline ::std::string* AddCustomerRequest::mutable_phone() {
-  
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.phone)
-  return phone_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AddCustomerRequest::release_phone() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.phone)
-  
-  return phone_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AddCustomerRequest::set_allocated_phone(::std::string* phone) {
-  if (phone != NULL) {
-    
-  } else {
-    
-  }
-  phone_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), phone);
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.phone)
-}
-
-// string name = 4;
-inline void AddCustomerRequest::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AddCustomerRequest::name() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.name)
-  return name_.GetNoArena();
-}
-inline void AddCustomerRequest::set_name(const ::std::string& value) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.name)
-}
-#if LANG_CXX11
-inline void AddCustomerRequest::set_name(::std::string&& value) {
-  
-  name_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AddCustomerRequest.name)
-}
-#endif
-inline void AddCustomerRequest::set_name(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AddCustomerRequest.name)
-}
-inline void AddCustomerRequest::set_name(const char* value, size_t size) {
-  
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AddCustomerRequest.name)
-}
-inline ::std::string* AddCustomerRequest::mutable_name() {
-  
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AddCustomerRequest::release_name() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.name)
-  
-  return name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AddCustomerRequest::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
-    
-  } else {
-    
-  }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.name)
-}
-
-// string description = 7;
-inline void AddCustomerRequest::clear_description() {
-  description_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& AddCustomerRequest::description() const {
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.description)
-  return description_.GetNoArena();
-}
-inline void AddCustomerRequest::set_description(const ::std::string& value) {
-  
-  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AddCustomerRequest.description)
-}
-#if LANG_CXX11
-inline void AddCustomerRequest::set_description(::std::string&& value) {
-  
-  description_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AddCustomerRequest.description)
-}
-#endif
-inline void AddCustomerRequest::set_description(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AddCustomerRequest.description)
-}
-inline void AddCustomerRequest::set_description(const char* value, size_t size) {
-  
-  description_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AddCustomerRequest.description)
-}
-inline ::std::string* AddCustomerRequest::mutable_description() {
-  
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.description)
-  return description_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* AddCustomerRequest::release_description() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.description)
-  
-  return description_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void AddCustomerRequest::set_allocated_description(::std::string* description) {
-  if (description != NULL) {
-    
-  } else {
-    
-  }
-  description_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), description);
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.description)
-}
-
-// .api.Address address = 8;
-inline bool AddCustomerRequest::has_address() const {
-  return this != internal_default_instance() && address_ != NULL;
-}
-inline void AddCustomerRequest::clear_address() {
-  if (GetArenaNoVirtual() == NULL && address_ != NULL) {
-    delete address_;
-  }
-  address_ = NULL;
-}
-inline const ::api::Address& AddCustomerRequest::_internal_address() const {
-  return *address_;
-}
-inline const ::api::Address& AddCustomerRequest::address() const {
-  const ::api::Address* p = address_;
-  // @@protoc_insertion_point(field_get:api.AddCustomerRequest.address)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::Address*>(
-      &::api::_Address_default_instance_);
-}
-inline ::api::Address* AddCustomerRequest::release_address() {
-  // @@protoc_insertion_point(field_release:api.AddCustomerRequest.address)
-  
-  ::api::Address* temp = address_;
-  address_ = NULL;
-  return temp;
-}
-inline ::api::Address* AddCustomerRequest::mutable_address() {
-  
-  if (address_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::Address>(GetArenaNoVirtual());
-    address_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.AddCustomerRequest.address)
-  return address_;
-}
-inline void AddCustomerRequest::set_allocated_address(::api::Address* address) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete address_;
-  }
-  if (address) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      address = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, address, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  address_ = address;
-  // @@protoc_insertion_point(field_set_allocated:api.AddCustomerRequest.address)
-}
-
-// -------------------------------------------------------------------
-
-// SubscribeCustomerRequest
-
-// string email = 1;
-inline void SubscribeCustomerRequest::clear_email() {
-  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SubscribeCustomerRequest::email() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.email)
-  return email_.GetNoArena();
-}
-inline void SubscribeCustomerRequest::set_email(const ::std::string& value) {
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.email)
-}
-#if LANG_CXX11
-inline void SubscribeCustomerRequest::set_email(::std::string&& value) {
-  
-  email_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.email)
-}
-#endif
-inline void SubscribeCustomerRequest::set_email(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.email)
-}
-inline void SubscribeCustomerRequest::set_email(const char* value, size_t size) {
-  
-  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.email)
-}
-inline ::std::string* SubscribeCustomerRequest::mutable_email() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.email)
-  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SubscribeCustomerRequest::release_email() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.email)
-  
-  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SubscribeCustomerRequest::set_allocated_email(::std::string* email) {
-  if (email != NULL) {
-    
-  } else {
-    
-  }
-  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.email)
-}
-
-// string plan = 2;
-inline void SubscribeCustomerRequest::clear_plan() {
-  plan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SubscribeCustomerRequest::plan() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.plan)
-  return plan_.GetNoArena();
-}
-inline void SubscribeCustomerRequest::set_plan(const ::std::string& value) {
-  
-  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.plan)
-}
-#if LANG_CXX11
-inline void SubscribeCustomerRequest::set_plan(::std::string&& value) {
-  
-  plan_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.plan)
-}
-#endif
-inline void SubscribeCustomerRequest::set_plan(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.plan)
-}
-inline void SubscribeCustomerRequest::set_plan(const char* value, size_t size) {
-  
-  plan_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.plan)
-}
-inline ::std::string* SubscribeCustomerRequest::mutable_plan() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.plan)
-  return plan_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SubscribeCustomerRequest::release_plan() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.plan)
-  
-  return plan_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SubscribeCustomerRequest::set_allocated_plan(::std::string* plan) {
-  if (plan != NULL) {
-    
-  } else {
-    
-  }
-  plan_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), plan);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.plan)
-}
-
-// string card_number = 3;
-inline void SubscribeCustomerRequest::clear_card_number() {
-  card_number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SubscribeCustomerRequest::card_number() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.card_number)
-  return card_number_.GetNoArena();
-}
-inline void SubscribeCustomerRequest::set_card_number(const ::std::string& value) {
-  
-  card_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.card_number)
-}
-#if LANG_CXX11
-inline void SubscribeCustomerRequest::set_card_number(::std::string&& value) {
-  
-  card_number_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.card_number)
-}
-#endif
-inline void SubscribeCustomerRequest::set_card_number(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  card_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.card_number)
-}
-inline void SubscribeCustomerRequest::set_card_number(const char* value, size_t size) {
-  
-  card_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.card_number)
-}
-inline ::std::string* SubscribeCustomerRequest::mutable_card_number() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.card_number)
-  return card_number_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SubscribeCustomerRequest::release_card_number() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.card_number)
-  
-  return card_number_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SubscribeCustomerRequest::set_allocated_card_number(::std::string* card_number) {
-  if (card_number != NULL) {
-    
-  } else {
-    
-  }
-  card_number_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), card_number);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.card_number)
-}
-
-// string exp_month = 4;
-inline void SubscribeCustomerRequest::clear_exp_month() {
-  exp_month_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SubscribeCustomerRequest::exp_month() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.exp_month)
-  return exp_month_.GetNoArena();
-}
-inline void SubscribeCustomerRequest::set_exp_month(const ::std::string& value) {
-  
-  exp_month_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.exp_month)
-}
-#if LANG_CXX11
-inline void SubscribeCustomerRequest::set_exp_month(::std::string&& value) {
-  
-  exp_month_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.exp_month)
-}
-#endif
-inline void SubscribeCustomerRequest::set_exp_month(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  exp_month_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.exp_month)
-}
-inline void SubscribeCustomerRequest::set_exp_month(const char* value, size_t size) {
-  
-  exp_month_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.exp_month)
-}
-inline ::std::string* SubscribeCustomerRequest::mutable_exp_month() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.exp_month)
-  return exp_month_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SubscribeCustomerRequest::release_exp_month() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.exp_month)
-  
-  return exp_month_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SubscribeCustomerRequest::set_allocated_exp_month(::std::string* exp_month) {
-  if (exp_month != NULL) {
-    
-  } else {
-    
-  }
-  exp_month_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exp_month);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.exp_month)
-}
-
-// string exp_year = 5;
-inline void SubscribeCustomerRequest::clear_exp_year() {
-  exp_year_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SubscribeCustomerRequest::exp_year() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.exp_year)
-  return exp_year_.GetNoArena();
-}
-inline void SubscribeCustomerRequest::set_exp_year(const ::std::string& value) {
-  
-  exp_year_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.exp_year)
-}
-#if LANG_CXX11
-inline void SubscribeCustomerRequest::set_exp_year(::std::string&& value) {
-  
-  exp_year_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.exp_year)
-}
-#endif
-inline void SubscribeCustomerRequest::set_exp_year(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  exp_year_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.exp_year)
-}
-inline void SubscribeCustomerRequest::set_exp_year(const char* value, size_t size) {
-  
-  exp_year_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.exp_year)
-}
-inline ::std::string* SubscribeCustomerRequest::mutable_exp_year() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.exp_year)
-  return exp_year_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SubscribeCustomerRequest::release_exp_year() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.exp_year)
-  
-  return exp_year_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SubscribeCustomerRequest::set_allocated_exp_year(::std::string* exp_year) {
-  if (exp_year != NULL) {
-    
-  } else {
-    
-  }
-  exp_year_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exp_year);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.exp_year)
-}
-
-// string cvc = 6;
-inline void SubscribeCustomerRequest::clear_cvc() {
-  cvc_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SubscribeCustomerRequest::cvc() const {
-  // @@protoc_insertion_point(field_get:api.SubscribeCustomerRequest.cvc)
-  return cvc_.GetNoArena();
-}
-inline void SubscribeCustomerRequest::set_cvc(const ::std::string& value) {
-  
-  cvc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SubscribeCustomerRequest.cvc)
-}
-#if LANG_CXX11
-inline void SubscribeCustomerRequest::set_cvc(::std::string&& value) {
-  
-  cvc_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SubscribeCustomerRequest.cvc)
-}
-#endif
-inline void SubscribeCustomerRequest::set_cvc(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  cvc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SubscribeCustomerRequest.cvc)
-}
-inline void SubscribeCustomerRequest::set_cvc(const char* value, size_t size) {
-  
-  cvc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SubscribeCustomerRequest.cvc)
-}
-inline ::std::string* SubscribeCustomerRequest::mutable_cvc() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SubscribeCustomerRequest.cvc)
-  return cvc_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SubscribeCustomerRequest::release_cvc() {
-  // @@protoc_insertion_point(field_release:api.SubscribeCustomerRequest.cvc)
-  
-  return cvc_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SubscribeCustomerRequest::set_allocated_cvc(::std::string* cvc) {
-  if (cvc != NULL) {
-    
-  } else {
-    
-  }
-  cvc_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), cvc);
-  // @@protoc_insertion_point(field_set_allocated:api.SubscribeCustomerRequest.cvc)
 }
 
 // -------------------------------------------------------------------
@@ -11091,57 +11812,57 @@ inline void ChannelReminder::set_allocated_time(::std::string* time) {
 
 // UserReminder
 
-// string user_id = 1;
-inline void UserReminder::clear_user_id() {
-  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string id = 1;
+inline void UserReminder::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& UserReminder::user_id() const {
-  // @@protoc_insertion_point(field_get:api.UserReminder.user_id)
-  return user_id_.GetNoArena();
+inline const ::std::string& UserReminder::id() const {
+  // @@protoc_insertion_point(field_get:api.UserReminder.id)
+  return id_.GetNoArena();
 }
-inline void UserReminder::set_user_id(const ::std::string& value) {
+inline void UserReminder::set_id(const ::std::string& value) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.UserReminder.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.UserReminder.id)
 }
 #if LANG_CXX11
-inline void UserReminder::set_user_id(::std::string&& value) {
+inline void UserReminder::set_id(::std::string&& value) {
   
-  user_id_.SetNoArena(
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.UserReminder.user_id)
+  // @@protoc_insertion_point(field_set_rvalue:api.UserReminder.id)
 }
 #endif
-inline void UserReminder::set_user_id(const char* value) {
+inline void UserReminder::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.UserReminder.user_id)
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.UserReminder.id)
 }
-inline void UserReminder::set_user_id(const char* value, size_t size) {
+inline void UserReminder::set_id(const char* value, size_t size) {
   
-  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.UserReminder.user_id)
+  // @@protoc_insertion_point(field_set_pointer:api.UserReminder.id)
 }
-inline ::std::string* UserReminder::mutable_user_id() {
+inline ::std::string* UserReminder::mutable_id() {
   
-  // @@protoc_insertion_point(field_mutable:api.UserReminder.user_id)
-  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.UserReminder.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* UserReminder::release_user_id() {
-  // @@protoc_insertion_point(field_release:api.UserReminder.user_id)
+inline ::std::string* UserReminder::release_id() {
+  // @@protoc_insertion_point(field_release:api.UserReminder.id)
   
-  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void UserReminder::set_allocated_user_id(::std::string* user_id) {
-  if (user_id != NULL) {
+inline void UserReminder::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
     
   } else {
     
   }
-  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
-  // @@protoc_insertion_point(field_set_allocated:api.UserReminder.user_id)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.UserReminder.id)
 }
 
 // string text = 2;
@@ -11745,6 +12466,10 @@ inline void SignedKey::set_allocated_signed_key(::std::string* signed_key) {
   signed_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), signed_key);
   // @@protoc_insertion_point(field_set_allocated:api.SignedKey.signed_key)
 }
+
+// -------------------------------------------------------------------
+
+// UnImplemented
 
 // -------------------------------------------------------------------
 
@@ -16388,259 +17113,13 @@ inline void Product::set_available(bool value) {
   // @@protoc_insertion_point(field_set:api.Product.available)
 }
 
-// -------------------------------------------------------------------
-
-// Refund
-
-// string reason = 1;
-inline void Refund::clear_reason() {
-  reason_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Refund::reason() const {
-  // @@protoc_insertion_point(field_get:api.Refund.reason)
-  return reason_.GetNoArena();
-}
-inline void Refund::set_reason(const ::std::string& value) {
-  
-  reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Refund.reason)
-}
-#if LANG_CXX11
-inline void Refund::set_reason(::std::string&& value) {
-  
-  reason_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Refund.reason)
-}
-#endif
-inline void Refund::set_reason(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Refund.reason)
-}
-inline void Refund::set_reason(const char* value, size_t size) {
-  
-  reason_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Refund.reason)
-}
-inline ::std::string* Refund::mutable_reason() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Refund.reason)
-  return reason_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Refund::release_reason() {
-  // @@protoc_insertion_point(field_release:api.Refund.reason)
-  
-  return reason_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Refund::set_allocated_reason(::std::string* reason) {
-  if (reason != NULL) {
-    
-  } else {
-    
-  }
-  reason_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), reason);
-  // @@protoc_insertion_point(field_set_allocated:api.Refund.reason)
-}
-
-// int64 amount = 2;
-inline void Refund::clear_amount() {
-  amount_ = GOOGLE_LONGLONG(0);
-}
-inline ::google::protobuf::int64 Refund::amount() const {
-  // @@protoc_insertion_point(field_get:api.Refund.amount)
-  return amount_;
-}
-inline void Refund::set_amount(::google::protobuf::int64 value) {
-  
-  amount_ = value;
-  // @@protoc_insertion_point(field_set:api.Refund.amount)
-}
-
-// bool reverse_transfer = 3;
-inline void Refund::clear_reverse_transfer() {
-  reverse_transfer_ = false;
-}
-inline bool Refund::reverse_transfer() const {
-  // @@protoc_insertion_point(field_get:api.Refund.reverse_transfer)
-  return reverse_transfer_;
-}
-inline void Refund::set_reverse_transfer(bool value) {
-  
-  reverse_transfer_ = value;
-  // @@protoc_insertion_point(field_set:api.Refund.reverse_transfer)
-}
-
-// string status = 4;
-inline void Refund::clear_status() {
-  status_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Refund::status() const {
-  // @@protoc_insertion_point(field_get:api.Refund.status)
-  return status_.GetNoArena();
-}
-inline void Refund::set_status(const ::std::string& value) {
-  
-  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Refund.status)
-}
-#if LANG_CXX11
-inline void Refund::set_status(::std::string&& value) {
-  
-  status_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Refund.status)
-}
-#endif
-inline void Refund::set_status(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Refund.status)
-}
-inline void Refund::set_status(const char* value, size_t size) {
-  
-  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Refund.status)
-}
-inline ::std::string* Refund::mutable_status() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Refund.status)
-  return status_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Refund::release_status() {
-  // @@protoc_insertion_point(field_release:api.Refund.status)
-  
-  return status_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Refund::set_allocated_status(::std::string* status) {
-  if (status != NULL) {
-    
-  } else {
-    
-  }
-  status_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), status);
-  // @@protoc_insertion_point(field_set_allocated:api.Refund.status)
-}
-
-// -------------------------------------------------------------------
-
-// Charge
-
-// .api.Product product = 1;
-inline bool Charge::has_product() const {
-  return this != internal_default_instance() && product_ != NULL;
-}
-inline void Charge::clear_product() {
-  if (GetArenaNoVirtual() == NULL && product_ != NULL) {
-    delete product_;
-  }
-  product_ = NULL;
-}
-inline const ::api::Product& Charge::_internal_product() const {
-  return *product_;
-}
-inline const ::api::Product& Charge::product() const {
-  const ::api::Product* p = product_;
-  // @@protoc_insertion_point(field_get:api.Charge.product)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::Product*>(
-      &::api::_Product_default_instance_);
-}
-inline ::api::Product* Charge::release_product() {
-  // @@protoc_insertion_point(field_release:api.Charge.product)
-  
-  ::api::Product* temp = product_;
-  product_ = NULL;
-  return temp;
-}
-inline ::api::Product* Charge::mutable_product() {
-  
-  if (product_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::Product>(GetArenaNoVirtual());
-    product_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.Charge.product)
-  return product_;
-}
-inline void Charge::set_allocated_product(::api::Product* product) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete product_;
-  }
-  if (product) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      product = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, product, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  product_ = product;
-  // @@protoc_insertion_point(field_set_allocated:api.Charge.product)
-}
-
-// .api.Customer customer = 2;
-inline bool Charge::has_customer() const {
-  return this != internal_default_instance() && customer_ != NULL;
-}
-inline void Charge::clear_customer() {
-  if (GetArenaNoVirtual() == NULL && customer_ != NULL) {
-    delete customer_;
-  }
-  customer_ = NULL;
-}
-inline const ::api::Customer& Charge::_internal_customer() const {
-  return *customer_;
-}
-inline const ::api::Customer& Charge::customer() const {
-  const ::api::Customer* p = customer_;
-  // @@protoc_insertion_point(field_get:api.Charge.customer)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::Customer*>(
-      &::api::_Customer_default_instance_);
-}
-inline ::api::Customer* Charge::release_customer() {
-  // @@protoc_insertion_point(field_release:api.Charge.customer)
-  
-  ::api::Customer* temp = customer_;
-  customer_ = NULL;
-  return temp;
-}
-inline ::api::Customer* Charge::mutable_customer() {
-  
-  if (customer_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::Customer>(GetArenaNoVirtual());
-    customer_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.Charge.customer)
-  return customer_;
-}
-inline void Charge::set_allocated_customer(::api::Customer* customer) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete customer_;
-  }
-  if (customer) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      customer = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, customer, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  customer_ = customer;
-  // @@protoc_insertion_point(field_set_allocated:api.Charge.customer)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

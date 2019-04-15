@@ -34,12 +34,14 @@ CF_EXTERN_C_BEGIN
 @class AttachmentConfirmationField;
 @class AttachmentField;
 @class Customer;
+@class CustomerRequest;
 @class EmailAddress;
 @class File;
 @class ItemRef;
 @class Product;
 @class Profile;
 @class RecipientEmail;
+@class SMSRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -151,15 +153,56 @@ BOOL CardType_IsValidValue(int32_t value);
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - RefundRequest
+
+typedef GPB_ENUM(RefundRequest_FieldNumber) {
+  RefundRequest_FieldNumber_Id_p = 1,
+  RefundRequest_FieldNumber_Reason = 2,
+  RefundRequest_FieldNumber_Amount = 3,
+  RefundRequest_FieldNumber_ReverseTransfer = 4,
+  RefundRequest_FieldNumber_Status = 5,
+};
+
+@interface RefundRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *reason;
+
+@property(nonatomic, readwrite) int64_t amount;
+
+@property(nonatomic, readwrite) BOOL reverseTransfer;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
+
+@end
+
+#pragma mark - ChargeRequest
+
+typedef GPB_ENUM(ChargeRequest_FieldNumber) {
+  ChargeRequest_FieldNumber_Product = 1,
+  ChargeRequest_FieldNumber_Id_p = 2,
+};
+
+@interface ChargeRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Product *product;
+/** Test to see if @c product has been set. */
+@property(nonatomic, readwrite) BOOL hasProduct;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
 #pragma mark - CancelSubscriptionRequest
 
 typedef GPB_ENUM(CancelSubscriptionRequest_FieldNumber) {
-  CancelSubscriptionRequest_FieldNumber_Email = 1,
+  CancelSubscriptionRequest_FieldNumber_Id_p = 1,
 };
 
 @interface CancelSubscriptionRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @end
 
@@ -190,13 +233,13 @@ typedef GPB_ENUM(CreatePlanRequest_FieldNumber) {
 #pragma mark - SMSRequest
 
 typedef GPB_ENUM(SMSRequest_FieldNumber) {
-  SMSRequest_FieldNumber_UserId = 1,
+  SMSRequest_FieldNumber_Id_p = 1,
   SMSRequest_FieldNumber_Body = 2,
 };
 
 @interface SMSRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *body;
 
@@ -205,13 +248,13 @@ typedef GPB_ENUM(SMSRequest_FieldNumber) {
 #pragma mark - CallRequest
 
 typedef GPB_ENUM(CallRequest_FieldNumber) {
-  CallRequest_FieldNumber_UserId = 1,
+  CallRequest_FieldNumber_Id_p = 1,
   CallRequest_FieldNumber_CallbackURL = 2,
 };
 
 @interface CallRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *callbackURL;
 
@@ -220,16 +263,15 @@ typedef GPB_ENUM(CallRequest_FieldNumber) {
 #pragma mark - MMSRequest
 
 typedef GPB_ENUM(MMSRequest_FieldNumber) {
-  MMSRequest_FieldNumber_UserId = 1,
-  MMSRequest_FieldNumber_Body = 2,
+  MMSRequest_FieldNumber_Sms = 1,
   MMSRequest_FieldNumber_MediaURL = 3,
 };
 
 @interface MMSRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *body;
+@property(nonatomic, readwrite, strong, null_resettable) SMSRequest *sms;
+/** Test to see if @c sms has been set. */
+@property(nonatomic, readwrite) BOOL hasSms;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
 
@@ -238,7 +280,7 @@ typedef GPB_ENUM(MMSRequest_FieldNumber) {
 #pragma mark - EmailRequest
 
 typedef GPB_ENUM(EmailRequest_FieldNumber) {
-  EmailRequest_FieldNumber_UserId = 1,
+  EmailRequest_FieldNumber_Id_p = 1,
   EmailRequest_FieldNumber_Subject = 2,
   EmailRequest_FieldNumber_PlainText = 3,
   EmailRequest_FieldNumber_HtmlAlt = 4,
@@ -246,7 +288,7 @@ typedef GPB_ENUM(EmailRequest_FieldNumber) {
 
 @interface EmailRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
 
@@ -256,27 +298,114 @@ typedef GPB_ENUM(EmailRequest_FieldNumber) {
 
 @end
 
-#pragma mark - SubscribeCustomerResponse
+#pragma mark - CustomerRequest
 
-typedef GPB_ENUM(SubscribeCustomerResponse_FieldNumber) {
-  SubscribeCustomerResponse_FieldNumber_SubscriptionId = 1,
+typedef GPB_ENUM(CustomerRequest_FieldNumber) {
+  CustomerRequest_FieldNumber_Email = 1,
+  CustomerRequest_FieldNumber_Plan = 2,
+  CustomerRequest_FieldNumber_Phone = 3,
+  CustomerRequest_FieldNumber_Name = 4,
+  CustomerRequest_FieldNumber_Description_p = 7,
+  CustomerRequest_FieldNumber_Address = 8,
 };
 
-@interface SubscribeCustomerResponse : GPBMessage
+@interface CustomerRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *subscriptionId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) Address *address;
+/** Test to see if @c address has been set. */
+@property(nonatomic, readwrite) BOOL hasAddress;
 
 @end
 
-#pragma mark - CreatePlanResponse
+#pragma mark - UpdateCustomerRequest
 
-typedef GPB_ENUM(CreatePlanResponse_FieldNumber) {
-  CreatePlanResponse_FieldNumber_PlanId = 1,
+typedef GPB_ENUM(UpdateCustomerRequest_FieldNumber) {
+  UpdateCustomerRequest_FieldNumber_Id_p = 1,
+  UpdateCustomerRequest_FieldNumber_Customer = 2,
 };
 
-@interface CreatePlanResponse : GPBMessage
+@interface UpdateCustomerRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *planId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) CustomerRequest *customer;
+/** Test to see if @c customer has been set. */
+@property(nonatomic, readwrite) BOOL hasCustomer;
+
+@end
+
+#pragma mark - SubscribeCustomerRequest
+
+typedef GPB_ENUM(SubscribeCustomerRequest_FieldNumber) {
+  SubscribeCustomerRequest_FieldNumber_Id_p = 1,
+  SubscribeCustomerRequest_FieldNumber_Plan = 2,
+  SubscribeCustomerRequest_FieldNumber_CardNumber = 3,
+  SubscribeCustomerRequest_FieldNumber_ExpMonth = 4,
+  SubscribeCustomerRequest_FieldNumber_ExpYear = 5,
+  SubscribeCustomerRequest_FieldNumber_Cvc = 6,
+};
+
+@interface SubscribeCustomerRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cardNumber;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expMonth;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
+
+@end
+
+#pragma mark - AddAccountRequest
+
+typedef GPB_ENUM(AddAccountRequest_FieldNumber) {
+  AddAccountRequest_FieldNumber_Customer = 1,
+  AddAccountRequest_FieldNumber_Access = 2,
+};
+
+@interface AddAccountRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) CustomerRequest *customer;
+/** Test to see if @c customer has been set. */
+@property(nonatomic, readwrite) BOOL hasCustomer;
+
+@property(nonatomic, readwrite, strong, null_resettable) Access *access;
+/** Test to see if @c access has been set. */
+@property(nonatomic, readwrite) BOOL hasAccess;
+
+@end
+
+#pragma mark - Account
+
+typedef GPB_ENUM(Account_FieldNumber) {
+  Account_FieldNumber_Customer = 1,
+  Account_FieldNumber_Access = 2,
+};
+
+@interface Account : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Customer *customer;
+/** Test to see if @c customer has been set. */
+@property(nonatomic, readwrite) BOOL hasCustomer;
+
+@property(nonatomic, readwrite, strong, null_resettable) Access *access;
+/** Test to see if @c access has been set. */
+@property(nonatomic, readwrite) BOOL hasAccess;
 
 @end
 
@@ -377,7 +506,7 @@ typedef GPB_ENUM(Profile_FieldNumber) {
 #pragma mark - Customer
 
 typedef GPB_ENUM(Customer_FieldNumber) {
-  Customer_FieldNumber_UserId = 1,
+  Customer_FieldNumber_Id_p = 1,
   Customer_FieldNumber_Plan = 2,
   Customer_FieldNumber_Name = 3,
   Customer_FieldNumber_Email = 4,
@@ -394,7 +523,7 @@ typedef GPB_ENUM(Customer_FieldNumber) {
  **/
 @interface Customer : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
 
@@ -417,62 +546,6 @@ typedef GPB_ENUM(Customer_FieldNumber) {
 @property(nonatomic, readwrite) BOOL deleted;
 
 @property(nonatomic, readwrite) int64_t createDate;
-
-@end
-
-#pragma mark - AddCustomerRequest
-
-typedef GPB_ENUM(AddCustomerRequest_FieldNumber) {
-  AddCustomerRequest_FieldNumber_Email = 1,
-  AddCustomerRequest_FieldNumber_Plan = 2,
-  AddCustomerRequest_FieldNumber_Phone = 3,
-  AddCustomerRequest_FieldNumber_Name = 4,
-  AddCustomerRequest_FieldNumber_Description_p = 7,
-  AddCustomerRequest_FieldNumber_Address = 8,
-};
-
-@interface AddCustomerRequest : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) Address *address;
-/** Test to see if @c address has been set. */
-@property(nonatomic, readwrite) BOOL hasAddress;
-
-@end
-
-#pragma mark - SubscribeCustomerRequest
-
-typedef GPB_ENUM(SubscribeCustomerRequest_FieldNumber) {
-  SubscribeCustomerRequest_FieldNumber_Email = 1,
-  SubscribeCustomerRequest_FieldNumber_Plan = 2,
-  SubscribeCustomerRequest_FieldNumber_CardNumber = 3,
-  SubscribeCustomerRequest_FieldNumber_ExpMonth = 4,
-  SubscribeCustomerRequest_FieldNumber_ExpYear = 5,
-  SubscribeCustomerRequest_FieldNumber_Cvc = 6,
-};
-
-@interface SubscribeCustomerRequest : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *cardNumber;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *expMonth;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
 
 @end
 
@@ -578,7 +651,7 @@ typedef GPB_ENUM(ChannelReminder_FieldNumber) {
 #pragma mark - UserReminder
 
 typedef GPB_ENUM(UserReminder_FieldNumber) {
-  UserReminder_FieldNumber_UserId = 1,
+  UserReminder_FieldNumber_Id_p = 1,
   UserReminder_FieldNumber_Text = 2,
   UserReminder_FieldNumber_Time = 3,
   UserReminder_FieldNumber_Item = 4,
@@ -586,7 +659,7 @@ typedef GPB_ENUM(UserReminder_FieldNumber) {
 
 @interface UserReminder : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *text;
 
@@ -659,6 +732,12 @@ typedef GPB_ENUM(SignedKey_FieldNumber) {
 @interface SignedKey : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *signedKey;
+
+@end
+
+#pragma mark - UnImplemented
+
+@interface UnImplemented : GPBMessage
 
 @end
 
@@ -1150,46 +1229,6 @@ typedef GPB_ENUM(Product_FieldNumber) {
 @property(nonatomic, readonly) NSUInteger tags_Count;
 
 @property(nonatomic, readwrite) BOOL available;
-
-@end
-
-#pragma mark - Refund
-
-typedef GPB_ENUM(Refund_FieldNumber) {
-  Refund_FieldNumber_Reason = 1,
-  Refund_FieldNumber_Amount = 2,
-  Refund_FieldNumber_ReverseTransfer = 3,
-  Refund_FieldNumber_Status = 4,
-};
-
-@interface Refund : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *reason;
-
-@property(nonatomic, readwrite) int64_t amount;
-
-@property(nonatomic, readwrite) BOOL reverseTransfer;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
-
-@end
-
-#pragma mark - Charge
-
-typedef GPB_ENUM(Charge_FieldNumber) {
-  Charge_FieldNumber_Product = 1,
-  Charge_FieldNumber_Customer = 2,
-};
-
-@interface Charge : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Product *product;
-/** Test to see if @c product has been set. */
-@property(nonatomic, readwrite) BOOL hasProduct;
-
-@property(nonatomic, readwrite, strong, null_resettable) Customer *customer;
-/** Test to see if @c customer has been set. */
-@property(nonatomic, readwrite) BOOL hasCustomer;
 
 @end
 

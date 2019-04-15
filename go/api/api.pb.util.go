@@ -23,14 +23,14 @@ func Serve(addr string, debug bool, plugin driver.Plugin) error {
 type Messenger interface {
 	Attributes(m map[string]string) map[string]string
 	DataBytes() []byte
-	Type() string
+	GoType() string
 }
 
 func AsMessage(attributes map[string]string, m Messenger) *pubsub.PubsubMessage {
 	return &pubsub.PubsubMessage{
 		Data:       m.DataBytes(),
 		Attributes: m.Attributes(attributes),
-		MessageId:  m.Type(),
+		MessageId:  m.GoType(),
 	}
 }
 
@@ -41,7 +41,7 @@ func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error {
 var Util = objectify.Default()
 
 type ClientSet struct {
-	Users UserServiceClient
+	Users     UserServiceClient
 	Customers CustomerServiceClient
 }
 
@@ -51,8 +51,8 @@ func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*C
 		return nil, err
 	}
 	return &ClientSet{
-		Users: NewUserServiceClient(conn),
-		Customers:NewCustomerServiceClient(conn),
+		Users:     NewUserServiceClient(conn),
+		Customers: NewCustomerServiceClient(conn),
 	}, nil
 }
 
@@ -76,7 +76,6 @@ type CustomerServer struct {
 	driver.PluginFunc
 }
 
-
 func NewCustomerServer(server CustomerServiceServer) *CustomerServer {
 	s := &CustomerServer{
 		CustomerServiceServer: server,
@@ -86,8 +85,6 @@ func NewCustomerServer(server CustomerServiceServer) *CustomerServer {
 	}
 	return s
 }
-
-
 
 //////////////////////////////////////////////////////
 
@@ -115,30 +112,77 @@ func AccessFromEnv() *Access {
 	}
 }
 
-//////////////////////////////////////////////////////
+////////////////////Requests/////////////////////////////
+type EmailOption func(r *EmailRequest)
+type SMSOption func(r *SMSRequest)
+type MMSOption func(r *MMSRequest)
+type CallOption func(r *CallRequest)
 
-type AttachmentFunc func(a *Attachment)
-
-type AttachmentActionFunc func(a *AttachmentAction)
-
-func NewAttachment(opts ...AttachmentFunc) *Attachment {
-	a := &Attachment{}
+func NewEmailRequest(opts ...EmailOption) *EmailRequest {
+	e := &EmailRequest{}
 	for _, o := range opts {
-		o(a)
+		o(e)
 	}
-	return a
+	return e
 }
 
-func NewAttachmentAction(opts ...AttachmentActionFunc) *AttachmentAction {
-	a := &AttachmentAction{}
+func NewSMSRequest(opts ...SMSOption) *SMSRequest {
+	e := &SMSRequest{}
 	for _, o := range opts {
-		o(a)
+		o(e)
 	}
-	return a
+	return e
+}
+
+func NewCallRequest(opts ...CallOption) *CallRequest {
+	e := &CallRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewMMSRequest(opts ...MMSOption) *MMSRequest {
+	e := &MMSRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
 }
 
 //////////////////////////////////////////////////////
 
+func (j *Fax) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
+}
+
+func (j *Fax) UnMarshalJSON(obj interface{}) error {
+	return json.Unmarshal(Util.MarshalJSON(j), obj)
+}
+
+func (j *Fax) CompileHTML(text string, w io.Writer) error {
+	return Util.RenderHTML(text, j, w)
+}
+
+func (j *Fax) CompileTXT(text string, w io.Writer) error {
+	return Util.RenderTXT(text, j, w)
+}
+
+func (s *Fax) Attributes(m map[string]string) map[string]string {
+	return Util.Attributes(s)
+
+}
+
+func (s *Fax) DataBytes() []byte {
+	return Util.MarshalJSON(s)
+
+}
+
+func (s *Fax) GoType() string {
+	return reflect.TypeOf(s).String()
+}
+
+//
 func (j *RecipientEmail) MarshalJSON() ([]byte, error) {
 	return Util.MarshalJSON(j), nil
 }
@@ -165,9 +209,10 @@ func (s *RecipientEmail) DataBytes() []byte {
 
 }
 
-func (s *RecipientEmail) Type() string {
+func (s *RecipientEmail) GoType() string {
 	return reflect.TypeOf(s).String()
 }
+
 //
 
 func (j *Profile) MarshalJSON() ([]byte, error) {
@@ -196,9 +241,10 @@ func (s *Profile) DataBytes() []byte {
 
 }
 
-func (s *Profile) Type() string {
+func (s *Profile) GoType() string {
 	return reflect.TypeOf(s).String()
 }
+
 //
 
 func (j *User) MarshalJSON() ([]byte, error) {
@@ -227,38 +273,7 @@ func (s *User) DataBytes() []byte {
 
 }
 
-func (s *User) Type() string {
-	return reflect.TypeOf(s).String()
-}
-//
-
-func (j *Refund) MarshalJSON() ([]byte, error) {
-	return Util.MarshalJSON(j), nil
-}
-
-func (j *Refund) UnMarshalJSON(obj interface{}) error {
-	return json.Unmarshal(Util.MarshalJSON(j), obj)
-}
-
-func (j *Refund) CompileHTML(text string, w io.Writer) error {
-	return Util.RenderHTML(text, j, w)
-}
-
-func (j *Refund) CompileTXT(text string, w io.Writer) error {
-	return Util.RenderTXT(text, j, w)
-}
-
-func (s *Refund) Attributes(m map[string]string) map[string]string {
-	return Util.Attributes(s)
-
-}
-
-func (s *Refund) DataBytes() []byte {
-	return Util.MarshalJSON(s)
-
-}
-
-func (s *Refund) Type() string {
+func (s *User) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -290,39 +305,7 @@ func (s *Product) DataBytes() []byte {
 
 }
 
-func (s *Product) Type() string {
-	return reflect.TypeOf(s).String()
-}
-
-//
-
-func (j *Charge) MarshalJSON() ([]byte, error) {
-	return Util.MarshalJSON(j), nil
-}
-
-func (j *Charge) UnMarshalJSON(obj interface{}) error {
-	return json.Unmarshal(Util.MarshalJSON(j), obj)
-}
-
-func (j *Charge) CompileHTML(text string, w io.Writer) error {
-	return Util.RenderHTML(text, j, w)
-}
-
-func (j *Charge) CompileTXT(text string, w io.Writer) error {
-	return Util.RenderTXT(text, j, w)
-}
-
-func (s *Charge) Attributes(m map[string]string) map[string]string {
-	return Util.Attributes(s)
-
-}
-
-func (s *Charge) DataBytes() []byte {
-	return Util.MarshalJSON(s)
-
-}
-
-func (s *Charge) Type() string {
+func (s *Product) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -354,7 +337,7 @@ func (s *BankAccount) DataBytes() []byte {
 
 }
 
-func (s *BankAccount) Type() string {
+func (s *BankAccount) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -385,7 +368,7 @@ func (s *File) DataBytes() []byte {
 
 }
 
-func (s *File) Type() string {
+func (s *File) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -416,7 +399,7 @@ func (s *StandardClaims) DataBytes() []byte {
 
 }
 
-func (s *StandardClaims) Type() string {
+func (s *StandardClaims) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -448,7 +431,7 @@ func (s *Access) DataBytes() []byte {
 
 }
 
-func (s *Access) Type() string {
+func (s *Access) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -483,7 +466,7 @@ func (s *Card) DataBytes() []byte {
 
 }
 
-func (s *Card) Type() string {
+func (s *Card) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -518,7 +501,7 @@ func (s *Address) DataBytes() []byte {
 
 }
 
-func (s *Address) Type() string {
+func (s *Address) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -550,7 +533,7 @@ func (s *Attachment) DataBytes() []byte {
 
 }
 
-func (s *Attachment) Type() string {
+func (s *Attachment) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -586,7 +569,7 @@ func (s *SMS) DataBytes() []byte {
 
 }
 
-func (s *SMS) Type() string {
+func (s *SMS) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -622,7 +605,7 @@ func (s *Email) DataBytes() []byte {
 
 }
 
-func (s *Email) Type() string {
+func (s *Email) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -658,7 +641,7 @@ func (s *Call) DataBytes() []byte {
 
 }
 
-func (s *Call) Type() string {
+func (s *Call) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -694,7 +677,7 @@ func (s *AttachmentAction) DataBytes() []byte {
 
 }
 
-func (s *AttachmentAction) Type() string {
+func (s *AttachmentAction) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -725,7 +708,7 @@ func (s *JSON) DataBytes() []byte {
 
 }
 
-func (s *JSON) Type() string {
+func (s *JSON) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -757,7 +740,7 @@ func (s *Customer) DataBytes() []byte {
 
 }
 
-func (s *Customer) Type() string {
+func (s *Customer) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -788,7 +771,7 @@ func (s *SignedKey) DataBytes() []byte {
 
 }
 
-func (s *SignedKey) Type() string {
+func (s *SignedKey) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -945,9 +928,3 @@ func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc {
 func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error {
 	return j.middleware.CheckJWT(w, r)
 }
-
-/*
-Attributes(m map[string]string) map[string]string
-	Data()[]byte
-	Type() string
-*/

@@ -10,8 +10,19 @@ require 'google/api/annotations_pb'
 require 'google/api/auth_pb'
 require 'google/pubsub/v1/pubsub_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.RefundRequest" do
+    optional :id, :string, 1
+    optional :reason, :string, 2
+    optional :amount, :int64, 3
+    optional :reverse_transfer, :bool, 4
+    optional :status, :string, 5
+  end
+  add_message "api.ChargeRequest" do
+    optional :product, :message, 1, "api.Product"
+    optional :id, :string, 2
+  end
   add_message "api.CancelSubscriptionRequest" do
-    optional :email, :string, 1
+    optional :id, :string, 1
   end
   add_message "api.CreatePlanRequest" do
     optional :plan_id, :string, 1
@@ -21,29 +32,50 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :friendly_name, :string, 5
   end
   add_message "api.SMSRequest" do
-    optional :user_id, :string, 1
+    optional :id, :string, 1
     optional :body, :string, 2
   end
   add_message "api.CallRequest" do
-    optional :user_id, :string, 1
+    optional :id, :string, 1
     optional :callback_url, :string, 2
   end
   add_message "api.MMSRequest" do
-    optional :user_id, :string, 1
-    optional :body, :string, 2
+    optional :sms, :message, 1, "api.SMSRequest"
     optional :media_url, :string, 3
   end
   add_message "api.EmailRequest" do
-    optional :user_id, :string, 1
+    optional :id, :string, 1
     optional :subject, :string, 2
     optional :plain_text, :string, 3
     optional :html_alt, :string, 4
   end
-  add_message "api.SubscribeCustomerResponse" do
-    optional :subscription_id, :string, 1
+  add_message "api.CustomerRequest" do
+    optional :email, :string, 1
+    optional :plan, :string, 2
+    optional :phone, :string, 3
+    optional :name, :string, 4
+    optional :description, :string, 7
+    optional :address, :message, 8, "api.Address"
   end
-  add_message "api.CreatePlanResponse" do
-    optional :plan_id, :string, 1
+  add_message "api.UpdateCustomerRequest" do
+    optional :id, :string, 1
+    optional :customer, :message, 2, "api.CustomerRequest"
+  end
+  add_message "api.SubscribeCustomerRequest" do
+    optional :id, :string, 1
+    optional :plan, :string, 2
+    optional :card_number, :string, 3
+    optional :exp_month, :string, 4
+    optional :exp_year, :string, 5
+    optional :cvc, :string, 6
+  end
+  add_message "api.AddAccountRequest" do
+    optional :customer, :message, 1, "api.CustomerRequest"
+    optional :access, :message, 2, "api.Access"
+  end
+  add_message "api.Account" do
+    optional :customer, :message, 1, "api.Customer"
+    optional :access, :message, 2, "api.Access"
   end
   add_message "api.User" do
     optional :id, :string, 1
@@ -74,7 +106,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Empty" do
   end
   add_message "api.Customer" do
-    optional :user_id, :string, 1
+    optional :id, :string, 1
     optional :plan, :string, 2
     optional :name, :string, 3
     optional :email, :string, 4
@@ -84,22 +116,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     map :metadata, :string, :string, 9
     optional :deleted, :bool, 10
     optional :create_date, :int64, 20
-  end
-  add_message "api.AddCustomerRequest" do
-    optional :email, :string, 1
-    optional :plan, :string, 2
-    optional :phone, :string, 3
-    optional :name, :string, 4
-    optional :description, :string, 7
-    optional :address, :message, 8, "api.Address"
-  end
-  add_message "api.SubscribeCustomerRequest" do
-    optional :email, :string, 1
-    optional :plan, :string, 2
-    optional :card_number, :string, 3
-    optional :exp_month, :string, 4
-    optional :exp_year, :string, 5
-    optional :cvc, :string, 6
   end
   add_message "api.Card" do
     optional :card_type, :enum, 1, "api.CardType"
@@ -127,7 +143,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :time, :string, 3
   end
   add_message "api.UserReminder" do
-    optional :user_id, :string, 1
+    optional :id, :string, 1
     optional :text, :string, 2
     optional :time, :string, 3
     optional :item, :message, 4, "api.ItemRef"
@@ -147,6 +163,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.SignedKey" do
     optional :signed_key, :string, 1
+  end
+  add_message "api.UnImplemented" do
   end
   add_message "api.Access" do
     optional :autom8ter_account, :string, 1
@@ -284,16 +302,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     map :tags, :string, :string, 5
     optional :available, :bool, 6
   end
-  add_message "api.Refund" do
-    optional :reason, :string, 1
-    optional :amount, :int64, 2
-    optional :reverse_transfer, :bool, 3
-    optional :status, :string, 4
-  end
-  add_message "api.Charge" do
-    optional :product, :message, 1, "api.Product"
-    optional :customer, :message, 2, "api.Customer"
-  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -322,20 +330,23 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  RefundRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefundRequest").msgclass
+  ChargeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChargeRequest").msgclass
   CancelSubscriptionRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CancelSubscriptionRequest").msgclass
   CreatePlanRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanRequest").msgclass
   SMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSRequest").msgclass
   CallRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallRequest").msgclass
   MMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MMSRequest").msgclass
   EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass
-  SubscribeCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerResponse").msgclass
-  CreatePlanResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanResponse").msgclass
+  CustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerRequest").msgclass
+  UpdateCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UpdateCustomerRequest").msgclass
+  SubscribeCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerRequest").msgclass
+  AddAccountRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddAccountRequest").msgclass
+  Account = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Account").msgclass
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   Profile = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Profile").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
   Customer = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Customer").msgclass
-  AddCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddCustomerRequest").msgclass
-  SubscribeCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   BankAccount = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BankAccount").msgclass
   Address = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Address").msgclass
@@ -345,6 +356,7 @@ module Api
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
   Pin = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Pin").msgclass
   SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
+  UnImplemented = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnImplemented").msgclass
   Access = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Access").msgclass
   StandardClaims = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StandardClaims").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass
@@ -364,8 +376,6 @@ module Api
   JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
   File = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.File").msgclass
   Product = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Product").msgclass
-  Refund = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Refund").msgclass
-  Charge = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Charge").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
   Claim = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Claim").enummodule
   SigningMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SigningMethod").enummodule
