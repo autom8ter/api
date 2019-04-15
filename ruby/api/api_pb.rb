@@ -300,6 +300,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :name, :string, 3
     map :tags, :string, :string, 4
   end
+  add_message "api.SlackHook" do
+    optional :username, :string, 1
+    optional :channel, :string, 2
+  end
   add_message "api.Product" do
     optional :name, :string, 1
     optional :amount, :int64, 2
@@ -307,6 +311,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     repeated :files, :message, 4, "api.File"
     map :tags, :string, :string, 5
     optional :available, :bool, 6
+  end
+  add_message "api.StringMapString" do
+    map :map, :string, :string, 1
   end
   add_enum "api.CustomerIndex" do
     value :ID, 0
@@ -382,7 +389,9 @@ module Api
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
   JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
   File = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.File").msgclass
+  SlackHook = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SlackHook").msgclass
   Product = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Product").msgclass
+  StringMapString = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StringMapString").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
   Claim = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Claim").enummodule
   SigningMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SigningMethod").enummodule

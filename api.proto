@@ -536,6 +536,11 @@ message File {
     map<string, string> tags=4;
 }
 
+message SlackHook {
+    string username =1;
+    string channel=2;
+}
+
 message Product {
     string name=1;
     int64 amount=2;
@@ -543,6 +548,10 @@ message Product {
     repeated File files=4;
     map<string, string> tags=5;
     bool available=6;
+}
+
+message StringMapString {
+    map<string,string> map=1;
 }
 
 ///////////////////////////////////////////////Enums/////////////////////////////////////////////////////////////////

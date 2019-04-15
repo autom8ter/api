@@ -1225,6 +1225,21 @@ typedef GPB_ENUM(File_FieldNumber) {
 
 @end
 
+#pragma mark - SlackHook
+
+typedef GPB_ENUM(SlackHook_FieldNumber) {
+  SlackHook_FieldNumber_Username = 1,
+  SlackHook_FieldNumber_Channel = 2,
+};
+
+@interface SlackHook : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *username;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channel;
+
+@end
+
 #pragma mark - Product
 
 typedef GPB_ENUM(Product_FieldNumber) {
@@ -1253,6 +1268,20 @@ typedef GPB_ENUM(Product_FieldNumber) {
 @property(nonatomic, readonly) NSUInteger tags_Count;
 
 @property(nonatomic, readwrite) BOOL available;
+
+@end
+
+#pragma mark - StringMapString
+
+typedef GPB_ENUM(StringMapString_FieldNumber) {
+  StringMapString_FieldNumber_Map = 1,
+};
+
+@interface StringMapString : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *map;
+/** The number of items in @c map without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger map_Count;
 
 @end
 

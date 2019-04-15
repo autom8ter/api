@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[50];
+  static const ::google::protobuf::internal::ParseTable schema[53];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -188,12 +188,21 @@ extern SMSRequestDefaultTypeInternal _SMSRequest_default_instance_;
 class SignedKey;
 class SignedKeyDefaultTypeInternal;
 extern SignedKeyDefaultTypeInternal _SignedKey_default_instance_;
+class SlackHook;
+class SlackHookDefaultTypeInternal;
+extern SlackHookDefaultTypeInternal _SlackHook_default_instance_;
 class StandardClaims;
 class StandardClaimsDefaultTypeInternal;
 extern StandardClaimsDefaultTypeInternal _StandardClaims_default_instance_;
 class Star;
 class StarDefaultTypeInternal;
 extern StarDefaultTypeInternal _Star_default_instance_;
+class StringMapString;
+class StringMapStringDefaultTypeInternal;
+extern StringMapStringDefaultTypeInternal _StringMapString_default_instance_;
+class StringMapString_MapEntry_DoNotUse;
+class StringMapString_MapEntry_DoNotUseDefaultTypeInternal;
+extern StringMapString_MapEntry_DoNotUseDefaultTypeInternal _StringMapString_MapEntry_DoNotUse_default_instance_;
 class SubscribeCustomerRequest;
 class SubscribeCustomerRequestDefaultTypeInternal;
 extern SubscribeCustomerRequestDefaultTypeInternal _SubscribeCustomerRequest_default_instance_;
@@ -253,8 +262,11 @@ template<> ::api::RefundRequest* Arena::CreateMaybeMessage<::api::RefundRequest>
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
 template<> ::api::SignedKey* Arena::CreateMaybeMessage<::api::SignedKey>(Arena*);
+template<> ::api::SlackHook* Arena::CreateMaybeMessage<::api::SlackHook>(Arena*);
 template<> ::api::StandardClaims* Arena::CreateMaybeMessage<::api::StandardClaims>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
+template<> ::api::StringMapString* Arena::CreateMaybeMessage<::api::StringMapString>(Arena*);
+template<> ::api::StringMapString_MapEntry_DoNotUse* Arena::CreateMaybeMessage<::api::StringMapString_MapEntry_DoNotUse>(Arena*);
 template<> ::api::SubscribeCustomerRequest* Arena::CreateMaybeMessage<::api::SubscribeCustomerRequest>(Arena*);
 template<> ::api::UpdateCustomerRequest* Arena::CreateMaybeMessage<::api::UpdateCustomerRequest>(Arena*);
 template<> ::api::User* Arena::CreateMaybeMessage<::api::User>(Arena*);
@@ -7550,6 +7562,132 @@ class File : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 };
 // -------------------------------------------------------------------
 
+class SlackHook : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SlackHook) */ {
+ public:
+  SlackHook();
+  virtual ~SlackHook();
+
+  SlackHook(const SlackHook& from);
+
+  inline SlackHook& operator=(const SlackHook& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SlackHook(SlackHook&& from) noexcept
+    : SlackHook() {
+    *this = ::std::move(from);
+  }
+
+  inline SlackHook& operator=(SlackHook&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SlackHook& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SlackHook* internal_default_instance() {
+    return reinterpret_cast<const SlackHook*>(
+               &_SlackHook_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    48;
+
+  void Swap(SlackHook* other);
+  friend void swap(SlackHook& a, SlackHook& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SlackHook* New() const final {
+    return CreateMaybeMessage<SlackHook>(NULL);
+  }
+
+  SlackHook* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SlackHook>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SlackHook& from);
+  void MergeFrom(const SlackHook& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SlackHook* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string username = 1;
+  void clear_username();
+  static const int kUsernameFieldNumber = 1;
+  const ::std::string& username() const;
+  void set_username(const ::std::string& value);
+  #if LANG_CXX11
+  void set_username(::std::string&& value);
+  #endif
+  void set_username(const char* value);
+  void set_username(const char* value, size_t size);
+  ::std::string* mutable_username();
+  ::std::string* release_username();
+  void set_allocated_username(::std::string* username);
+
+  // string channel = 2;
+  void clear_channel();
+  static const int kChannelFieldNumber = 2;
+  const ::std::string& channel() const;
+  void set_channel(const ::std::string& value);
+  #if LANG_CXX11
+  void set_channel(::std::string&& value);
+  #endif
+  void set_channel(const char* value);
+  void set_channel(const char* value, size_t size);
+  ::std::string* mutable_channel();
+  ::std::string* release_channel();
+  void set_allocated_channel(::std::string* channel);
+
+  // @@protoc_insertion_point(class_scope:api.SlackHook)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr username_;
+  ::google::protobuf::internal::ArenaStringPtr channel_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Product_TagsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Product_TagsEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -7606,7 +7744,7 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Product_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    50;
 
   void Swap(Product* other);
   friend void swap(Product& a, Product& b) {
@@ -7735,6 +7873,139 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::google::protobuf::int64 amount_;
   bool available_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class StringMapString_MapEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<StringMapString_MapEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<StringMapString_MapEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  StringMapString_MapEntry_DoNotUse();
+  StringMapString_MapEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const StringMapString_MapEntry_DoNotUse& other);
+  static const StringMapString_MapEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const StringMapString_MapEntry_DoNotUse*>(&_StringMapString_MapEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class StringMapString : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.StringMapString) */ {
+ public:
+  StringMapString();
+  virtual ~StringMapString();
+
+  StringMapString(const StringMapString& from);
+
+  inline StringMapString& operator=(const StringMapString& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StringMapString(StringMapString&& from) noexcept
+    : StringMapString() {
+    *this = ::std::move(from);
+  }
+
+  inline StringMapString& operator=(StringMapString&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const StringMapString& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StringMapString* internal_default_instance() {
+    return reinterpret_cast<const StringMapString*>(
+               &_StringMapString_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    52;
+
+  void Swap(StringMapString* other);
+  friend void swap(StringMapString& a, StringMapString& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StringMapString* New() const final {
+    return CreateMaybeMessage<StringMapString>(NULL);
+  }
+
+  StringMapString* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StringMapString>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StringMapString& from);
+  void MergeFrom(const StringMapString& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StringMapString* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> map = 1;
+  int map_size() const;
+  void clear_map();
+  static const int kMapFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      map() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_map();
+
+  // @@protoc_insertion_point(class_scope:api.StringMapString)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      StringMapString_MapEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > map_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -17303,6 +17574,116 @@ File::mutable_tags() {
 
 // -------------------------------------------------------------------
 
+// SlackHook
+
+// string username = 1;
+inline void SlackHook::clear_username() {
+  username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackHook::username() const {
+  // @@protoc_insertion_point(field_get:api.SlackHook.username)
+  return username_.GetNoArena();
+}
+inline void SlackHook::set_username(const ::std::string& value) {
+  
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackHook.username)
+}
+#if LANG_CXX11
+inline void SlackHook::set_username(::std::string&& value) {
+  
+  username_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackHook.username)
+}
+#endif
+inline void SlackHook::set_username(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackHook.username)
+}
+inline void SlackHook::set_username(const char* value, size_t size) {
+  
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackHook.username)
+}
+inline ::std::string* SlackHook::mutable_username() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackHook.username)
+  return username_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackHook::release_username() {
+  // @@protoc_insertion_point(field_release:api.SlackHook.username)
+  
+  return username_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackHook::set_allocated_username(::std::string* username) {
+  if (username != NULL) {
+    
+  } else {
+    
+  }
+  username_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), username);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackHook.username)
+}
+
+// string channel = 2;
+inline void SlackHook::clear_channel() {
+  channel_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlackHook::channel() const {
+  // @@protoc_insertion_point(field_get:api.SlackHook.channel)
+  return channel_.GetNoArena();
+}
+inline void SlackHook::set_channel(const ::std::string& value) {
+  
+  channel_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlackHook.channel)
+}
+#if LANG_CXX11
+inline void SlackHook::set_channel(::std::string&& value) {
+  
+  channel_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlackHook.channel)
+}
+#endif
+inline void SlackHook::set_channel(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  channel_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlackHook.channel)
+}
+inline void SlackHook::set_channel(const char* value, size_t size) {
+  
+  channel_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlackHook.channel)
+}
+inline ::std::string* SlackHook::mutable_channel() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlackHook.channel)
+  return channel_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlackHook::release_channel() {
+  // @@protoc_insertion_point(field_release:api.SlackHook.channel)
+  
+  return channel_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlackHook::set_allocated_channel(::std::string* channel) {
+  if (channel != NULL) {
+    
+  } else {
+    
+  }
+  channel_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), channel);
+  // @@protoc_insertion_point(field_set_allocated:api.SlackHook.channel)
+}
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // Product
@@ -17489,9 +17870,39 @@ inline void Product::set_available(bool value) {
   // @@protoc_insertion_point(field_set:api.Product.available)
 }
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// StringMapString
+
+// map<string, string> map = 1;
+inline int StringMapString::map_size() const {
+  return map_.size();
+}
+inline void StringMapString::clear_map() {
+  map_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+StringMapString::map() const {
+  // @@protoc_insertion_point(field_map:api.StringMapString.map)
+  return map_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+StringMapString::mutable_map() {
+  // @@protoc_insertion_point(field_mutable_map:api.StringMapString.map)
+  return map_.MutableMap();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

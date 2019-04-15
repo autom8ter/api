@@ -355,11 +355,23 @@
                 </li>
               
                 <li>
+                  <a href="#api.SlackHook"><span class="badge">M</span>SlackHook</a>
+                </li>
+              
+                <li>
                   <a href="#api.StandardClaims"><span class="badge">M</span>StandardClaims</a>
                 </li>
               
                 <li>
                   <a href="#api.Star"><span class="badge">M</span>Star</a>
+                </li>
+              
+                <li>
+                  <a href="#api.StringMapString"><span class="badge">M</span>StringMapString</a>
+                </li>
+              
+                <li>
+                  <a href="#api.StringMapString.MapEntry"><span class="badge">M</span>StringMapString.MapEntry</a>
                 </li>
               
                 <li>
@@ -2341,6 +2353,36 @@
 
         
       
+        <h3 id="api.SlackHook">SlackHook</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>username</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>channel</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.StandardClaims">StandardClaims</h3>
         <p></p>
 
@@ -2426,6 +2468,59 @@
                 <tr>
                   <td>item</td>
                   <td><a href="#api.ItemRef">ItemRef</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.StringMapString">StringMapString</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>map</td>
+                  <td><a href="#api.StringMapString.MapEntry">StringMapString.MapEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.StringMapString.MapEntry">StringMapString.MapEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

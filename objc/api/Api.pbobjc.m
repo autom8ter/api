@@ -3904,6 +3904,60 @@ typedef struct File__storage_ {
 
 @end
 
+#pragma mark - SlackHook
+
+@implementation SlackHook
+
+@dynamic username;
+@dynamic channel;
+
+typedef struct SlackHook__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *username;
+  NSString *channel;
+} SlackHook__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "username",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackHook_FieldNumber_Username,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SlackHook__storage_, username),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "channel",
+        .dataTypeSpecific.className = NULL,
+        .number = SlackHook_FieldNumber_Channel,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SlackHook__storage_, channel),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SlackHook class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SlackHook__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Product
 
 @implementation Product
@@ -3992,6 +4046,49 @@ typedef struct Product__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Product__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - StringMapString
+
+@implementation StringMapString
+
+@dynamic map, map_Count;
+
+typedef struct StringMapString__storage_ {
+  uint32_t _has_storage_[1];
+  NSMutableDictionary *map;
+} StringMapString__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "map",
+        .dataTypeSpecific.className = NULL,
+        .number = StringMapString_FieldNumber_Map,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(StringMapString__storage_, map),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[StringMapString class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(StringMapString__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
