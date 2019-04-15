@@ -1,6 +1,11 @@
 excludes:
   - vendor
-  - pkg
+  - go
+  - docs
+  - csharp
+  - ruby
+  - python
+  - obj
 protoc:
   version: 3.6.1
   allow_unused_imports: true

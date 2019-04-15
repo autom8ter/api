@@ -17,7 +17,7 @@
   "paths": {
     "/api/accounts": {
       "post": {
-        "operationId": "CreateAccount",
+        "operationId": "ListAccounts",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -32,7 +32,71 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiCreateAccountRequest"
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/api/accounts/{customer.id}": {
+      "post": {
+        "operationId": "UpdateAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiJSON"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "customer.id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiAccount"
+            }
+          }
+        ],
+        "tags": [
+          "AccountService"
+        ]
+      }
+    },
+    "/api/accounts/{id}": {
+      "post": {
+        "operationId": "ReadAccount",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiJSON"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiId"
             }
           }
         ],
@@ -95,7 +159,7 @@
     },
     "/api/customers/{id}": {
       "post": {
-        "operationId": "UpdateCustomer",
+        "operationId": "DeleteCustomer",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -116,7 +180,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUpdateCustomerRequest"
+              "$ref": "#/definitions/apiId"
             }
           }
         ],
@@ -424,7 +488,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUnImplemented"
+              "$ref": "#/definitions/apiEmpty"
             }
           }
         ],
@@ -505,6 +569,17 @@
         },
         "gcp_key": {
           "type": "string"
+        }
+      }
+    },
+    "apiAccount": {
+      "type": "object",
+      "properties": {
+        "customer": {
+          "$ref": "#/definitions/apiCustomer"
+        },
+        "access": {
+          "$ref": "#/definitions/apiAccess"
         }
       }
     },
@@ -593,6 +668,47 @@
         }
       }
     },
+    "apiCustomer": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "plan": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "$ref": "#/definitions/apiAddress"
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "deleted": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "create_date": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "User is a user of the application"
+    },
     "apiCustomerRequest": {
       "type": "object",
       "properties": {
@@ -658,6 +774,14 @@
         }
       }
     },
+    "apiId": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
     "apiJSON": {
       "type": "object",
       "properties": {
@@ -678,6 +802,17 @@
           "$ref": "#/definitions/apiSMSRequest"
         },
         "media_url": {
+          "type": "string"
+        }
+      }
+    },
+    "apiMessageUserRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "message": {
           "type": "string"
         }
       }
@@ -710,6 +845,38 @@
         "available": {
           "type": "boolean",
           "format": "boolean"
+        }
+      }
+    },
+    "apiProfile": {
+      "type": "object",
+      "properties": {
+        "avatar_hash": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "status_emoji": {
+          "type": "string"
+        },
+        "display_name": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "image_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "team": {
+          "type": "string"
         }
       }
     },
@@ -769,9 +936,6 @@
         }
       }
     },
-    "apiUnImplemented": {
-      "type": "object"
-    },
     "apiUpdateCustomerRequest": {
       "type": "object",
       "properties": {
@@ -780,6 +944,62 @@
         },
         "customer": {
           "$ref": "#/definitions/apiCustomerRequest"
+        }
+      }
+    },
+    "apiUser": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "team_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "#/definitions/apiProfile"
+        },
+        "deleted": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "admin": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "ownder": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "primary_owner": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "restricted": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "ultra_restricted": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "stranger": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "bot": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "has2fa": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "locale": {
+          "type": "string"
         }
       }
     }

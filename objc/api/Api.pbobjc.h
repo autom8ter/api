@@ -153,6 +153,18 @@ BOOL CardType_IsValidValue(int32_t value);
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - Id
+
+typedef GPB_ENUM(Id_FieldNumber) {
+  Id_FieldNumber_Id_p = 1,
+};
+
+@interface Id : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
 #pragma mark - MessageUserRequest
 
 typedef GPB_ENUM(MessageUserRequest_FieldNumber) {
@@ -747,12 +759,6 @@ typedef GPB_ENUM(SignedKey_FieldNumber) {
 @interface SignedKey : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *signedKey;
-
-@end
-
-#pragma mark - UnImplemented
-
-@interface UnImplemented : GPBMessage
 
 @end
 

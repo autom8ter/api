@@ -10,6 +10,9 @@ require 'google/api/annotations_pb'
 require 'google/api/auth_pb'
 require 'google/pubsub/v1/pubsub_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.Id" do
+    optional :id, :string, 1
+  end
   add_message "api.MessageUserRequest" do
     optional :id, :string, 1
     optional :message, :string, 2
@@ -167,8 +170,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.SignedKey" do
     optional :signed_key, :string, 1
-  end
-  add_message "api.UnImplemented" do
   end
   add_message "api.Access" do
     optional :autom8ter_account, :string, 1
@@ -334,6 +335,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  Id = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Id").msgclass
   MessageUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MessageUserRequest").msgclass
   RefundRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefundRequest").msgclass
   ChargeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChargeRequest").msgclass
@@ -361,7 +363,6 @@ module Api
   Star = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Star").msgclass
   Pin = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Pin").msgclass
   SignedKey = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SignedKey").msgclass
-  UnImplemented = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnImplemented").msgclass
   Access = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Access").msgclass
   StandardClaims = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StandardClaims").msgclass
   LogConfig = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogConfig").msgclass

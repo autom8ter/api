@@ -45,6 +45,10 @@ func AsMessage(attributes map[string]string, m Messenger) *pubsub.PubsubMessage 
 	}
 }
 
+func ToJSON(obj interface{}) *JSON {
+	return &JSON{Data: Util.MarshalJSON(obj)}
+}
+
 func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error {
 	return json.Unmarshal(msg.Data, obj)
 }
@@ -154,96 +158,6 @@ func AccessFromEnv() *Access {
 }
 
 ////////////////////Requests/////////////////////////////
-type EmailOption func(r *EmailRequest)
-type SMSOption func(r *SMSRequest)
-type MMSOption func(r *MMSRequest)
-type CallOption func(r *CallRequest)
-type ChargeOption func(r *ChargeRequest)
-type SubscribeOption func(r *SubscribeCustomerRequest)
-type RefundOption func(r *RefundRequest)
-type PlanOption func(r *CreatePlanRequest)
-type AccountOption func(r *CreateAccountRequest)
-type MessageOption func(r *MessageUserRequest)
-
-func NewEmailRequest(opts ...EmailOption) *EmailRequest {
-	e := &EmailRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewSMSRequest(opts ...SMSOption) *SMSRequest {
-	e := &SMSRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewCallRequest(opts ...CallOption) *CallRequest {
-	e := &CallRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewMMSRequest(opts ...MMSOption) *MMSRequest {
-	e := &MMSRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewSubscribeRequest(opts ...SubscribeOption) *SubscribeCustomerRequest {
-	e := &SubscribeCustomerRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewChargeRequest(opts ...ChargeOption) *ChargeRequest {
-	e := &ChargeRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewAccountRequest(opts ...AccountOption) *CreateAccountRequest {
-	e := &CreateAccountRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewPlanRequest(opts ...PlanOption) *CreatePlanRequest {
-	e := &CreatePlanRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewRefundRequest(opts ...RefundOption) *RefundRequest {
-	e := &RefundRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
-
-func NewMessageRequest(opts ...MessageOption) *MessageUserRequest {
-	e := &MessageUserRequest{}
-	for _, o := range opts {
-		o(e)
-	}
-	return e
-}
 
 //////////////////////////////////////////////////////
 

@@ -20,6 +20,30 @@ service AccountService {
             body: "*"
         };
     }
+    rpc UpdateAccount(Account) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/accounts/{customer.id}"
+            body: "*"
+        };
+    }
+    rpc DeleteAccount(Id) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/accounts/{id}"
+            body: "*"
+        };
+    }
+    rpc ReadAccount(Id) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/accounts/{id}"
+            body: "*"
+        };
+    }
+    rpc ListAccounts(Empty) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/accounts"
+            body: "*"
+        };
+    }
 }
 
 //Customers
@@ -31,6 +55,12 @@ service CustomerService {
         };
     }
     rpc UpdateCustomer(UpdateCustomerRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}"
+            body: "*"
+        };
+    }
+    rpc DeleteCustomer(Id) returns (JSON) {
         option (google.api.http) = {
             post: "/api/customers/{id}"
             body: "*"
@@ -112,31 +142,31 @@ service UserService {
             body: "*"
         };
     }
-    rpc MessageUser(UnImplemented) returns (JSON) {
+    rpc MessageUser(MessageUserRequest) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
             body: "*"
         };
     }
-    rpc CreateUser(UnImplemented) returns (JSON) {
+    rpc CreateUser(User) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
             body: "*"
         };
     }
-    rpc UpdateUser(UnImplemented) returns (JSON) {
+    rpc UpdateUser(User) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
             body: "*"
         };
     }
-    rpc DeleteUser(UnImplemented) returns (JSON) {
+    rpc DeleteUser(Id) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
             body: "*"
         };
     }
-    rpc ListUsers(UnImplemented) returns (JSON) {
+    rpc ListUsers(Empty) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
             body: "*"
@@ -145,6 +175,10 @@ service UserService {
 }
 
 ///////////////////////////////////////////////Requests/////////////////////////////////////////////////////////////////
+
+message Id {
+    string id =1;
+}
 
 message MessageUserRequest {
     string id =1;
@@ -335,8 +369,6 @@ message Pin {
 message SignedKey {
     string signed_key=1;
 }
-
-message UnImplemented {}
 
 message Access {
     string autom8ter_account=1;

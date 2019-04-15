@@ -487,6 +487,556 @@ public final class Api {
     // @@protoc_insertion_point(enum_scope:api.CardType)
   }
 
+  public interface IdOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Id)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+  }
+  /**
+   * Protobuf type {@code api.Id}
+   */
+  public  static final class Id extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.Id)
+      IdOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Id.newBuilder() to construct.
+    private Id(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Id() {
+      id_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Id(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_Id_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_Id_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.Id.class, api.Api.Id.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.Id)) {
+        return super.equals(obj);
+      }
+      api.Api.Id other = (api.Api.Id) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.Id parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Id parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Id parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Id parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Id parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Id parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Id parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Id parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Id parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.Id parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Id parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Id parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.Id prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.Id}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.Id)
+        api.Api.IdOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_Id_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_Id_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.Id.class, api.Api.Id.Builder.class);
+      }
+
+      // Construct using api.Api.Id.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_Id_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.Id getDefaultInstanceForType() {
+        return api.Api.Id.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.Id build() {
+        api.Api.Id result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.Id buildPartial() {
+        api.Api.Id result = new api.Api.Id(this);
+        result.id_ = id_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.Id) {
+          return mergeFrom((api.Api.Id)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.Id other) {
+        if (other == api.Api.Id.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.Id parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.Id) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Id)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Id)
+    private static final api.Api.Id DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Id();
+    }
+
+    public static api.Api.Id getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Id>
+        PARSER = new com.google.protobuf.AbstractParser<Id>() {
+      @java.lang.Override
+      public Id parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Id(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Id> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Id> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Id getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MessageUserRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.MessageUserRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -25728,418 +26278,6 @@ public final class Api {
 
   }
 
-  public interface UnImplementedOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.UnImplemented)
-      com.google.protobuf.MessageOrBuilder {
-  }
-  /**
-   * Protobuf type {@code api.UnImplemented}
-   */
-  public  static final class UnImplemented extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.UnImplemented)
-      UnImplementedOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use UnImplemented.newBuilder() to construct.
-    private UnImplemented(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private UnImplemented() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private UnImplemented(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return api.Api.internal_static_api_UnImplemented_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_UnImplemented_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              api.Api.UnImplemented.class, api.Api.UnImplemented.Builder.class);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof api.Api.UnImplemented)) {
-        return super.equals(obj);
-      }
-      api.Api.UnImplemented other = (api.Api.UnImplemented) obj;
-
-      boolean result = true;
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static api.Api.UnImplemented parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.UnImplemented parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.UnImplemented parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.UnImplemented parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static api.Api.UnImplemented parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.UnImplemented parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(api.Api.UnImplemented prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code api.UnImplemented}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.UnImplemented)
-        api.Api.UnImplementedOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return api.Api.internal_static_api_UnImplemented_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_UnImplemented_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                api.Api.UnImplemented.class, api.Api.UnImplemented.Builder.class);
-      }
-
-      // Construct using api.Api.UnImplemented.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return api.Api.internal_static_api_UnImplemented_descriptor;
-      }
-
-      @java.lang.Override
-      public api.Api.UnImplemented getDefaultInstanceForType() {
-        return api.Api.UnImplemented.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public api.Api.UnImplemented build() {
-        api.Api.UnImplemented result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public api.Api.UnImplemented buildPartial() {
-        api.Api.UnImplemented result = new api.Api.UnImplemented(this);
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.UnImplemented) {
-          return mergeFrom((api.Api.UnImplemented)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(api.Api.UnImplemented other) {
-        if (other == api.Api.UnImplemented.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        api.Api.UnImplemented parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.UnImplemented) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:api.UnImplemented)
-    }
-
-    // @@protoc_insertion_point(class_scope:api.UnImplemented)
-    private static final api.Api.UnImplemented DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new api.Api.UnImplemented();
-    }
-
-    public static api.Api.UnImplemented getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<UnImplemented>
-        PARSER = new com.google.protobuf.AbstractParser<UnImplemented>() {
-      @java.lang.Override
-      public UnImplemented parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnImplemented(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<UnImplemented> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<UnImplemented> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public api.Api.UnImplemented getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface AccessOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.Access)
       com.google.protobuf.MessageOrBuilder {
@@ -48499,6 +48637,11 @@ public final class Api {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_Id_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_Id_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_MessageUserRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -48639,11 +48782,6 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_SignedKey_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_UnImplemented_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_UnImplemented_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_Access_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -48761,175 +48899,183 @@ public final class Api {
       "proto\032\036google/protobuf/duration.proto\032 g" +
       "oogle/protobuf/field_mask.proto\032\034google/" +
       "api/annotations.proto\032\025google/api/auth.p" +
-      "roto\032\035google/pubsub/v1/pubsub.proto\"1\n\022M" +
-      "essageUserRequest\022\n\n\002id\030\001 \001(\t\022\017\n\007message" +
-      "\030\002 \001(\t\"e\n\rRefundRequest\022\n\n\002id\030\001 \001(\t\022\016\n\006r" +
-      "eason\030\002 \001(\t\022\016\n\006amount\030\003 \001(\003\022\030\n\020reverse_t" +
-      "ransfer\030\004 \001(\010\022\016\n\006status\030\005 \001(\t\":\n\rChargeR" +
-      "equest\022\035\n\007product\030\001 \001(\0132\014.api.Product\022\n\n" +
-      "\002id\030\002 \001(\t\"\'\n\031CancelSubscriptionRequest\022\n" +
-      "\n\002id\030\001 \001(\t\"u\n\021CreatePlanRequest\022\017\n\007plan_" +
-      "id\030\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\022\n\nservice_id\030\003" +
-      " \001(\t\022\024\n\014service_name\030\004 \001(\t\022\025\n\rfriendly_n" +
-      "ame\030\005 \001(\t\"&\n\nSMSRequest\022\n\n\002id\030\001 \001(\t\022\014\n\004b" +
-      "ody\030\002 \001(\t\"/\n\013CallRequest\022\n\n\002id\030\001 \001(\t\022\024\n\014" +
-      "callback_url\030\002 \001(\t\"=\n\nMMSRequest\022\034\n\003sms\030" +
-      "\001 \001(\0132\017.api.SMSRequest\022\021\n\tmedia_url\030\003 \001(" +
-      "\t\"Q\n\014EmailRequest\022\n\n\002id\030\001 \001(\t\022\017\n\007subject" +
-      "\030\002 \001(\t\022\022\n\nplain_text\030\003 \001(\t\022\020\n\010html_alt\030\004" +
-      " \001(\t\"\177\n\017CustomerRequest\022\r\n\005email\030\001 \001(\t\022\014" +
-      "\n\004plan\030\002 \001(\t\022\r\n\005phone\030\003 \001(\t\022\014\n\004name\030\004 \001(" +
-      "\t\022\023\n\013description\030\007 \001(\t\022\035\n\007address\030\010 \001(\0132" +
-      "\014.api.Address\"K\n\025UpdateCustomerRequest\022\n" +
-      "\n\002id\030\001 \001(\t\022&\n\010customer\030\002 \001(\0132\024.api.Custo" +
-      "merRequest\"{\n\030SubscribeCustomerRequest\022\n" +
-      "\n\002id\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\023\n\013card_number\030" +
-      "\003 \001(\t\022\021\n\texp_month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001" +
-      "(\t\022\013\n\003cvc\030\006 \001(\t\"[\n\024CreateAccountRequest\022" +
-      "&\n\010customer\030\001 \001(\0132\024.api.CustomerRequest\022" +
-      "\033\n\006access\030\002 \001(\0132\013.api.Access\"G\n\007Account\022" +
-      "\037\n\010customer\030\001 \001(\0132\r.api.Customer\022\033\n\006acce" +
-      "ss\030\002 \001(\0132\013.api.Access\"\204\002\n\004User\022\n\n\002id\030\001 \001" +
-      "(\t\022\017\n\007team_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\035\n\007pro" +
-      "file\030\004 \001(\0132\014.api.Profile\022\017\n\007deleted\030\005 \001(" +
-      "\010\022\r\n\005admin\030\006 \001(\010\022\016\n\006ownder\030\007 \001(\010\022\025\n\rprim" +
-      "ary_owner\030\010 \001(\010\022\022\n\nrestricted\030\t \001(\010\022\030\n\020u" +
-      "ltra_restricted\030\n \001(\010\022\020\n\010stranger\030\013 \001(\010\022" +
-      "\013\n\003bot\030\014 \001(\010\022\016\n\006has2fa\030\r \001(\010\022\016\n\006locale\030\016" +
-      " \001(\t\"\231\001\n\007Profile\022\023\n\013avatar_hash\030\001 \001(\t\022\016\n" +
-      "\006status\030\002 \001(\t\022\024\n\014status_emoji\030\003 \001(\t\022\024\n\014d" +
-      "isplay_name\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005email" +
-      "\030\006 \001(\t\022\022\n\nimage_urls\030\007 \003(\t\022\014\n\004team\030\010 \001(\t" +
-      "\"\007\n\005Empty\"\212\002\n\010Customer\022\n\n\002id\030\001 \001(\t\022\014\n\004pl" +
-      "an\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\023\n" +
-      "\013description\030\005 \001(\t\022\r\n\005phone\030\006 \001(\t\022\035\n\007add" +
-      "ress\030\010 \001(\0132\014.api.Address\022-\n\010metadata\030\t \003" +
-      "(\0132\033.api.Customer.MetadataEntry\022\017\n\007delet" +
-      "ed\030\n \001(\010\022\023\n\013create_date\030\024 \001(\003\032/\n\rMetadat" +
-      "aEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~" +
-      "\n\004Card\022 \n\tcard_type\030\001 \001(\0162\r.api.CardType" +
-      "\022\023\n\013card_number\030\003 \001(\t\022\021\n\texp_month\030\004 \001(\t" +
-      "\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001(\t\022\r\n\005debit" +
-      "\030\007 \001(\010\"=\n\013BankAccount\022\026\n\016account_number\030" +
-      "\001 \001(\t\022\026\n\016routing_number\030\002 \001(\t\"j\n\007Address" +
-      "\022\014\n\004city\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\r\n\005line1" +
-      "\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022\023\n\013postal_code\030\005 \001" +
-      "(\t\022\r\n\005state\030\006 \001(\t\"A\n\017ChannelReminder\022\022\n\n" +
-      "channel_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003" +
-      " \001(\t\"R\n\014UserReminder\022\n\n\002id\030\001 \001(\t\022\014\n\004text" +
-      "\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api" +
-      ".ItemRef\"9\n\007ItemRef\022\017\n\007channel\030\001 \001(\t\022\014\n\004" +
-      "file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004Star\022\014\n\004t" +
-      "ext\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"/\n" +
-      "\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.I" +
-      "temRef\"\037\n\tSignedKey\022\022\n\nsigned_key\030\001 \001(\t\"" +
-      "\017\n\rUnImplemented\"\222\002\n\006Access\022\031\n\021autom8ter" +
-      "_account\030\001 \001(\t\022\025\n\rautom8ter_key\030\002 \001(\t\022\026\n" +
-      "\016twilio_account\030\003 \001(\t\022\022\n\ntwilio_key\030\004 \001(" +
-      "\t\022\030\n\020sendgrid_account\030\005 \001(\t\022\024\n\014sendgrid_" +
-      "key\030\006 \001(\t\022\026\n\016stripe_account\030\007 \001(\t\022\022\n\nstr" +
-      "ipe_key\030\010 \001(\t\022\025\n\rslack_account\030\t \001(\t\022\021\n\t" +
-      "slack_key\030\n \001(\t\022\023\n\013gcp_project\030\013 \001(\t\022\017\n\007" +
-      "gcp_key\030\014 \001(\t\"\227\001\n\016StandardClaims\022\033\n\006acce" +
-      "ss\030\001 \001(\0132\013.api.Access\022\020\n\010audience\030\002 \001(\t\022" +
-      "\017\n\007subject\030\003 \001(\t\022\022\n\nexpires_at\030\004 \001(\003\022\n\n\002" +
-      "id\030\005 \001(\t\022\021\n\tissued_at\030\006 \001(\003\022\022\n\nnot_befor" +
-      "e\030\007 \001(\003\".\n\tLogConfig\022\020\n\010username\030\001 \001(\t\022\017" +
-      "\n\007channel\030\002 \001(\t\"-\n\014EmailAddress\022\014\n\004name\030" +
-      "\001 \001(\t\022\017\n\007address\030\002 \001(\t\"P\n\005Email\022\037\n\004from\030" +
-      "\001 \001(\0132\021.api.EmailAddress\022&\n\trecipient\030\002 " +
-      "\001(\0132\023.api.RecipientEmail\"b\n\016RecipientEma" +
-      "il\022\035\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007sub" +
-      "ject\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005" +
-      " \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\014\n" +
-      "\004body\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\020\n\010callba" +
-      "ck\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001 \001(" +
-      "\t\022\014\n\004from\030\002 \001(\t\022\020\n\010callback\030\005 \001(\t\"j\n\003Fax" +
-      "\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\021\n\tmedia_url\030" +
-      "\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t" +
-      "\022\023\n\013store_media\030\006 \001(\010\"6\n\007LogHook\022\016\n\006auth" +
-      "or\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\260\002" +
-      "\n\nAttachment\022\r\n\005color\030\001 \001(\t\022\020\n\010fallback\030" +
-      "\002 \001(\t\022\023\n\013callback_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021" +
-      "\n\tauthor_id\030\005 \001(\t\022\023\n\013author_name\030\006 \001(\t\022\023" +
-      "\n\013author_link\030\007 \001(\t\022\023\n\013author_icon\030\010 \001(\t" +
-      "\022\r\n\005title\030\t \001(\t\022\024\n\014title_prefix\030\n \001(\t\022\017\n" +
-      "\007pretext\030\013 \001(\t\022\014\n\004text\030\014 \001(\t\022\021\n\timage_ur" +
-      "l\030\r \001(\t\022\021\n\tthumb_url\030\016 \001(\t\022$\n\006fields\030\017 \003" +
-      "(\0132\024.api.AttachmentField\"\347\002\n\020AttachmentA" +
-      "ction\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005sty" +
-      "le\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n" +
-      "\013data_source\030\006 \001(\t\022\030\n\020min_query_length\030\007" +
-      " \001(\003\022,\n\007options\030\010 \003(\0132\033.api.AttachmentAc" +
-      "tionOption\0225\n\020selected_options\030\t \003(\0132\033.a" +
-      "pi.AttachmentActionOption\0227\n\roption_grou" +
-      "ps\030\n \003(\0132 .api.AttachmentActionOptionGro" +
-      "up\0221\n\007confirm\030\013 \001(\0132 .api.AttachmentConf" +
-      "irmationField\022\013\n\003url\030\014 \001(\t\"a\n\033Attachment" +
-      "ConfirmationField\022\r\n\005title\030\001 \001(\t\022\014\n\004text" +
-      "\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n\014dismiss_text\030" +
-      "\004 \001(\t\"Y\n\033AttachmentActionOptionGroup\022\014\n\004" +
-      "text\030\001 \001(\t\022,\n\007options\030\002 \003(\0132\033.api.Attach" +
-      "mentActionOption\"K\n\026AttachmentActionOpti" +
-      "on\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013desc" +
-      "ription\030\003 \001(\t\">\n\017AttachmentField\022\r\n\005titl" +
-      "e\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005short\030\003 \001(\010\"\"\n" +
-      "\004JSON\022\014\n\004data\030\001 \001(\014\022\014\n\004size\030\002 \001(\003\"\200\001\n\004Fi" +
-      "le\022\014\n\004data\030\001 \001(\014\022\014\n\004size\030\002 \001(\003\022\014\n\004name\030\003" +
-      " \001(\t\022!\n\004tags\030\004 \003(\0132\023.api.File.TagsEntry\032" +
-      "+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001\"\274\001\n\007Product\022\014\n\004name\030\001 \001(\t\022\016\n\006amount" +
-      "\030\002 \001(\003\022\023\n\013description\030\003 \001(\t\022\030\n\005files\030\004 \003" +
-      "(\0132\t.api.File\022$\n\004tags\030\005 \003(\0132\026.api.Produc" +
-      "t.TagsEntry\022\021\n\tavailable\030\006 \001(\010\032+\n\tTagsEn" +
-      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*-\n\rC" +
-      "ustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE" +
-      "\020\002*P\n\005Claim\022\n\n\006TWILIO\020\000\022\014\n\010SENDGRID\020\001\022\n\n" +
-      "\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\004\022\r\n\tAUTOM8T" +
-      "ER\020\005*9\n\rSigningMethod\022\010\n\004HMAC\020\000\022\t\n\005ECDSA" +
-      "\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS\020\003*<\n\010CardType\022\010\n\004V" +
-      "ISA\020\000\022\016\n\nMASTERCARD\020\001\022\014\n\010DISCOVER\020\002\022\010\n\004A" +
-      "MEX\020\0032a\n\016AccountService\022O\n\rCreateAccount" +
-      "\022\031.api.CreateAccountRequest\032\t.api.JSON\"\030" +
-      "\202\323\344\223\002\022\"\r/api/accounts:\001*2\320\007\n\017CustomerSer" +
-      "vice\022L\n\016CreateCustomer\022\024.api.CustomerReq" +
-      "uest\032\t.api.JSON\"\031\202\323\344\223\002\023\"\016/api/customers:" +
-      "\001*\022W\n\016UpdateCustomer\022\032.api.UpdateCustome" +
-      "rRequest\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/custom" +
-      "ers/{id}:\001*\022F\n\rListCustomers\022\n.api.Empty" +
-      "\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/customers/list" +
-      ":\001*\022V\n\016ChargeCustomer\022\022.api.ChargeReques" +
-      "t\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/customers/{id" +
-      "}/charge:\001*\022V\n\016RefundCustomer\022\022.api.Refu" +
-      "ndRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/custo" +
-      "mers/{id}/refund:\001*\022g\n\021SubscribeCustomer" +
-      "\022\035.api.SubscribeCustomerRequest\032\t.api.JS" +
-      "ON\"(\202\323\344\223\002\"\"\035/api/customers/{id}/subscrib" +
-      "e:\001*\022l\n\023UnSubscribeCustomer\022\036.api.Cancel" +
-      "SubscriptionRequest\032\t.api.JSON\"*\202\323\344\223\002$\"\037" +
-      "/api/customers/{id}/unsubscribe:\001*\022M\n\013SM" +
-      "SCustomer\022\017.api.SMSRequest\032\t.api.JSON\"\"\202" +
-      "\323\344\223\002\034\"\027/api/customers/{id}/sms:\001*\022P\n\014Cal" +
-      "lCustomer\022\020.api.CallRequest\032\t.api.JSON\"#" +
-      "\202\323\344\223\002\035\"\030/api/customers/{id}/call:\001*\022Q\n\013M" +
-      "MSCustomer\022\017.api.MMSRequest\032\t.api.JSON\"&" +
-      "\202\323\344\223\002 \"\033/api/customers/{sms.id}/mms:\001*\022S" +
-      "\n\rEmailCustomer\022\021.api.EmailRequest\032\t.api" +
-      ".JSON\"$\202\323\344\223\002\036\"\031/api/customers/{id}/email" +
-      ":\001*2a\n\013PlanService\022R\n\026CreateSubscription" +
-      "Plan\022\026.api.CreatePlanRequest\032\t.api.JSON\"" +
-      "\025\202\323\344\223\002\017\"\n/api/plans:\001*2\256\003\n\013UserService\022K" +
-      "\n\tEmailUser\022\021.api.EmailRequest\032\t.api.JSO" +
-      "N\" \202\323\344\223\002\032\"\025/api/users/{id}/email:\001*\022C\n\013M" +
-      "essageUser\022\022.api.UnImplemented\032\t.api.JSO" +
-      "N\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022B\n\nCreateUser\022\022" +
-      ".api.UnImplemented\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/" +
-      "api/users:\001*\022B\n\nUpdateUser\022\022.api.UnImple" +
-      "mented\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*" +
-      "\022B\n\nDeleteUser\022\022.api.UnImplemented\032\t.api" +
-      ".JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022A\n\tListUser" +
-      "s\022\022.api.UnImplemented\032\t.api.JSON\"\025\202\323\344\223\002\017" +
-      "\"\n/api/users:\001*b\006proto3"
+      "roto\032\035google/pubsub/v1/pubsub.proto\"\020\n\002I" +
+      "d\022\n\n\002id\030\001 \001(\t\"1\n\022MessageUserRequest\022\n\n\002i" +
+      "d\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"e\n\rRefundReques" +
+      "t\022\n\n\002id\030\001 \001(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006amount\030" +
+      "\003 \001(\003\022\030\n\020reverse_transfer\030\004 \001(\010\022\016\n\006statu" +
+      "s\030\005 \001(\t\":\n\rChargeRequest\022\035\n\007product\030\001 \001(" +
+      "\0132\014.api.Product\022\n\n\002id\030\002 \001(\t\"\'\n\031CancelSub" +
+      "scriptionRequest\022\n\n\002id\030\001 \001(\t\"u\n\021CreatePl" +
+      "anRequest\022\017\n\007plan_id\030\001 \001(\t\022\016\n\006amount\030\002 \001" +
+      "(\003\022\022\n\nservice_id\030\003 \001(\t\022\024\n\014service_name\030\004" +
+      " \001(\t\022\025\n\rfriendly_name\030\005 \001(\t\"&\n\nSMSReques" +
+      "t\022\n\n\002id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\"/\n\013CallReque" +
+      "st\022\n\n\002id\030\001 \001(\t\022\024\n\014callback_url\030\002 \001(\t\"=\n\n" +
+      "MMSRequest\022\034\n\003sms\030\001 \001(\0132\017.api.SMSRequest" +
+      "\022\021\n\tmedia_url\030\003 \001(\t\"Q\n\014EmailRequest\022\n\n\002i" +
+      "d\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\022\n\nplain_text\030\003" +
+      " \001(\t\022\020\n\010html_alt\030\004 \001(\t\"\177\n\017CustomerReques" +
+      "t\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\r\n\005phone\030" +
+      "\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n\013description\030\007 \001(\t" +
+      "\022\035\n\007address\030\010 \001(\0132\014.api.Address\"K\n\025Updat" +
+      "eCustomerRequest\022\n\n\002id\030\001 \001(\t\022&\n\010customer" +
+      "\030\002 \001(\0132\024.api.CustomerRequest\"{\n\030Subscrib" +
+      "eCustomerRequest\022\n\n\002id\030\001 \001(\t\022\014\n\004plan\030\002 \001" +
+      "(\t\022\023\n\013card_number\030\003 \001(\t\022\021\n\texp_month\030\004 \001" +
+      "(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001(\t\"[\n\024Cre" +
+      "ateAccountRequest\022&\n\010customer\030\001 \001(\0132\024.ap" +
+      "i.CustomerRequest\022\033\n\006access\030\002 \001(\0132\013.api." +
+      "Access\"G\n\007Account\022\037\n\010customer\030\001 \001(\0132\r.ap" +
+      "i.Customer\022\033\n\006access\030\002 \001(\0132\013.api.Access\"" +
+      "\204\002\n\004User\022\n\n\002id\030\001 \001(\t\022\017\n\007team_id\030\002 \001(\t\022\014\n" +
+      "\004name\030\003 \001(\t\022\035\n\007profile\030\004 \001(\0132\014.api.Profi" +
+      "le\022\017\n\007deleted\030\005 \001(\010\022\r\n\005admin\030\006 \001(\010\022\016\n\006ow" +
+      "nder\030\007 \001(\010\022\025\n\rprimary_owner\030\010 \001(\010\022\022\n\nres" +
+      "tricted\030\t \001(\010\022\030\n\020ultra_restricted\030\n \001(\010\022" +
+      "\020\n\010stranger\030\013 \001(\010\022\013\n\003bot\030\014 \001(\010\022\016\n\006has2fa" +
+      "\030\r \001(\010\022\016\n\006locale\030\016 \001(\t\"\231\001\n\007Profile\022\023\n\013av" +
+      "atar_hash\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\024\n\014statu" +
+      "s_emoji\030\003 \001(\t\022\024\n\014display_name\030\004 \001(\t\022\014\n\004n" +
+      "ame\030\005 \001(\t\022\r\n\005email\030\006 \001(\t\022\022\n\nimage_urls\030\007" +
+      " \003(\t\022\014\n\004team\030\010 \001(\t\"\007\n\005Empty\"\212\002\n\010Customer" +
+      "\022\n\n\002id\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\014\n\004name\030\003 \001(\t" +
+      "\022\r\n\005email\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\r\n\005" +
+      "phone\030\006 \001(\t\022\035\n\007address\030\010 \001(\0132\014.api.Addre" +
+      "ss\022-\n\010metadata\030\t \003(\0132\033.api.Customer.Meta" +
+      "dataEntry\022\017\n\007deleted\030\n \001(\010\022\023\n\013create_dat" +
+      "e\030\024 \001(\003\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t:\0028\001\"~\n\004Card\022 \n\tcard_type\030\001 " +
+      "\001(\0162\r.api.CardType\022\023\n\013card_number\030\003 \001(\t\022" +
+      "\021\n\texp_month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003" +
+      "cvc\030\006 \001(\t\022\r\n\005debit\030\007 \001(\010\"=\n\013BankAccount\022" +
+      "\026\n\016account_number\030\001 \001(\t\022\026\n\016routing_numbe" +
+      "r\030\002 \001(\t\"j\n\007Address\022\014\n\004city\030\001 \001(\t\022\017\n\007coun" +
+      "try\030\002 \001(\t\022\r\n\005line1\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022" +
+      "\023\n\013postal_code\030\005 \001(\t\022\r\n\005state\030\006 \001(\t\"A\n\017C" +
+      "hannelReminder\022\022\n\nchannel_id\030\001 \001(\t\022\014\n\004te" +
+      "xt\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\"R\n\014UserReminder\022\n" +
+      "\n\002id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032" +
+      "\n\004item\030\004 \001(\0132\014.api.ItemRef\"9\n\007ItemRef\022\017\n" +
+      "\007channel\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030" +
+      "\003 \001(\t\"0\n\004Star\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(" +
+      "\0132\014.api.ItemRef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004" +
+      "item\030\004 \001(\0132\014.api.ItemRef\"\037\n\tSignedKey\022\022\n" +
+      "\nsigned_key\030\001 \001(\t\"\222\002\n\006Access\022\031\n\021autom8te" +
+      "r_account\030\001 \001(\t\022\025\n\rautom8ter_key\030\002 \001(\t\022\026" +
+      "\n\016twilio_account\030\003 \001(\t\022\022\n\ntwilio_key\030\004 \001" +
+      "(\t\022\030\n\020sendgrid_account\030\005 \001(\t\022\024\n\014sendgrid" +
+      "_key\030\006 \001(\t\022\026\n\016stripe_account\030\007 \001(\t\022\022\n\nst" +
+      "ripe_key\030\010 \001(\t\022\025\n\rslack_account\030\t \001(\t\022\021\n" +
+      "\tslack_key\030\n \001(\t\022\023\n\013gcp_project\030\013 \001(\t\022\017\n" +
+      "\007gcp_key\030\014 \001(\t\"\227\001\n\016StandardClaims\022\033\n\006acc" +
+      "ess\030\001 \001(\0132\013.api.Access\022\020\n\010audience\030\002 \001(\t" +
+      "\022\017\n\007subject\030\003 \001(\t\022\022\n\nexpires_at\030\004 \001(\003\022\n\n" +
+      "\002id\030\005 \001(\t\022\021\n\tissued_at\030\006 \001(\003\022\022\n\nnot_befo" +
+      "re\030\007 \001(\003\".\n\tLogConfig\022\020\n\010username\030\001 \001(\t\022" +
+      "\017\n\007channel\030\002 \001(\t\"-\n\014EmailAddress\022\014\n\004name" +
+      "\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"P\n\005Email\022\037\n\004from" +
+      "\030\001 \001(\0132\021.api.EmailAddress\022&\n\trecipient\030\002" +
+      " \001(\0132\023.api.RecipientEmail\"b\n\016RecipientEm" +
+      "ail\022\035\n\002to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007su" +
+      "bject\030\003 \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030" +
+      "\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\014" +
+      "\n\004body\030\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\020\n\010callb" +
+      "ack\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001 \001" +
+      "(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010callback\030\005 \001(\t\"j\n\003Fa" +
+      "x\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\021\n\tmedia_url" +
+      "\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\020\n\010callback\030\005 \001(" +
+      "\t\022\023\n\013store_media\030\006 \001(\010\"6\n\007LogHook\022\016\n\006aut" +
+      "hor\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\260" +
+      "\002\n\nAttachment\022\r\n\005color\030\001 \001(\t\022\020\n\010fallback" +
+      "\030\002 \001(\t\022\023\n\013callback_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022" +
+      "\021\n\tauthor_id\030\005 \001(\t\022\023\n\013author_name\030\006 \001(\t\022" +
+      "\023\n\013author_link\030\007 \001(\t\022\023\n\013author_icon\030\010 \001(" +
+      "\t\022\r\n\005title\030\t \001(\t\022\024\n\014title_prefix\030\n \001(\t\022\017" +
+      "\n\007pretext\030\013 \001(\t\022\014\n\004text\030\014 \001(\t\022\021\n\timage_u" +
+      "rl\030\r \001(\t\022\021\n\tthumb_url\030\016 \001(\t\022$\n\006fields\030\017 " +
+      "\003(\0132\024.api.AttachmentField\"\347\002\n\020Attachment" +
+      "Action\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005st" +
+      "yle\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023" +
+      "\n\013data_source\030\006 \001(\t\022\030\n\020min_query_length\030" +
+      "\007 \001(\003\022,\n\007options\030\010 \003(\0132\033.api.AttachmentA" +
+      "ctionOption\0225\n\020selected_options\030\t \003(\0132\033." +
+      "api.AttachmentActionOption\0227\n\roption_gro" +
+      "ups\030\n \003(\0132 .api.AttachmentActionOptionGr" +
+      "oup\0221\n\007confirm\030\013 \001(\0132 .api.AttachmentCon" +
+      "firmationField\022\013\n\003url\030\014 \001(\t\"a\n\033Attachmen" +
+      "tConfirmationField\022\r\n\005title\030\001 \001(\t\022\014\n\004tex" +
+      "t\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022\024\n\014dismiss_text" +
+      "\030\004 \001(\t\"Y\n\033AttachmentActionOptionGroup\022\014\n" +
+      "\004text\030\001 \001(\t\022,\n\007options\030\002 \003(\0132\033.api.Attac" +
+      "hmentActionOption\"K\n\026AttachmentActionOpt" +
+      "ion\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013des" +
+      "cription\030\003 \001(\t\">\n\017AttachmentField\022\r\n\005tit" +
+      "le\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r\n\005short\030\003 \001(\010\"\"" +
+      "\n\004JSON\022\014\n\004data\030\001 \001(\014\022\014\n\004size\030\002 \001(\003\"\200\001\n\004F" +
+      "ile\022\014\n\004data\030\001 \001(\014\022\014\n\004size\030\002 \001(\003\022\014\n\004name\030" +
+      "\003 \001(\t\022!\n\004tags\030\004 \003(\0132\023.api.File.TagsEntry" +
+      "\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
+      "\t:\0028\001\"\274\001\n\007Product\022\014\n\004name\030\001 \001(\t\022\016\n\006amoun" +
+      "t\030\002 \001(\003\022\023\n\013description\030\003 \001(\t\022\030\n\005files\030\004 " +
+      "\003(\0132\t.api.File\022$\n\004tags\030\005 \003(\0132\026.api.Produ" +
+      "ct.TagsEntry\022\021\n\tavailable\030\006 \001(\010\032+\n\tTagsE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*-\n\r" +
+      "CustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHON" +
+      "E\020\002*P\n\005Claim\022\n\n\006TWILIO\020\000\022\014\n\010SENDGRID\020\001\022\n" +
+      "\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\004\022\r\n\tAUTOM8" +
+      "TER\020\005*9\n\rSigningMethod\022\010\n\004HMAC\020\000\022\t\n\005ECDS" +
+      "A\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS\020\003*<\n\010CardType\022\010\n\004" +
+      "VISA\020\000\022\016\n\nMASTERCARD\020\001\022\014\n\010DISCOVER\020\002\022\010\n\004" +
+      "AMEX\020\0032\372\002\n\016AccountService\022O\n\rCreateAccou" +
+      "nt\022\031.api.CreateAccountRequest\032\t.api.JSON" +
+      "\"\030\202\323\344\223\002\022\"\r/api/accounts:\001*\022P\n\rUpdateAcco" +
+      "unt\022\014.api.Account\032\t.api.JSON\"&\202\323\344\223\002 \"\033/a" +
+      "pi/accounts/{customer.id}:\001*\022B\n\rDeleteAc" +
+      "count\022\007.api.Id\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/api/" +
+      "accounts/{id}:\001*\022@\n\013ReadAccount\022\007.api.Id" +
+      "\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/api/accounts/{id}:" +
+      "\001*\022?\n\014ListAccounts\022\n.api.Empty\032\t.api.JSO" +
+      "N\"\030\202\323\344\223\002\022\"\r/api/accounts:\001*2\226\010\n\017Customer" +
+      "Service\022L\n\016CreateCustomer\022\024.api.Customer" +
+      "Request\032\t.api.JSON\"\031\202\323\344\223\002\023\"\016/api/custome" +
+      "rs:\001*\022W\n\016UpdateCustomer\022\032.api.UpdateCust" +
+      "omerRequest\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/cus" +
+      "tomers/{id}:\001*\022D\n\016DeleteCustomer\022\007.api.I" +
+      "d\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/customers/{id" +
+      "}:\001*\022F\n\rListCustomers\022\n.api.Empty\032\t.api." +
+      "JSON\"\036\202\323\344\223\002\030\"\023/api/customers/list:\001*\022V\n\016" +
+      "ChargeCustomer\022\022.api.ChargeRequest\032\t.api" +
+      ".JSON\"%\202\323\344\223\002\037\"\032/api/customers/{id}/charg" +
+      "e:\001*\022V\n\016RefundCustomer\022\022.api.RefundReque" +
+      "st\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/customers/{i" +
+      "d}/refund:\001*\022g\n\021SubscribeCustomer\022\035.api." +
+      "SubscribeCustomerRequest\032\t.api.JSON\"(\202\323\344" +
+      "\223\002\"\"\035/api/customers/{id}/subscribe:\001*\022l\n" +
+      "\023UnSubscribeCustomer\022\036.api.CancelSubscri" +
+      "ptionRequest\032\t.api.JSON\"*\202\323\344\223\002$\"\037/api/cu" +
+      "stomers/{id}/unsubscribe:\001*\022M\n\013SMSCustom" +
+      "er\022\017.api.SMSRequest\032\t.api.JSON\"\"\202\323\344\223\002\034\"\027" +
+      "/api/customers/{id}/sms:\001*\022P\n\014CallCustom" +
+      "er\022\020.api.CallRequest\032\t.api.JSON\"#\202\323\344\223\002\035\"" +
+      "\030/api/customers/{id}/call:\001*\022Q\n\013MMSCusto" +
+      "mer\022\017.api.MMSRequest\032\t.api.JSON\"&\202\323\344\223\002 \"" +
+      "\033/api/customers/{sms.id}/mms:\001*\022S\n\rEmail" +
+      "Customer\022\021.api.EmailRequest\032\t.api.JSON\"$" +
+      "\202\323\344\223\002\036\"\031/api/customers/{id}/email:\001*2a\n\013" +
+      "PlanService\022R\n\026CreateSubscriptionPlan\022\026." +
+      "api.CreatePlanRequest\032\t.api.JSON\"\025\202\323\344\223\002\017" +
+      "\"\n/api/plans:\001*2\216\003\n\013UserService\022K\n\tEmail" +
+      "User\022\021.api.EmailRequest\032\t.api.JSON\" \202\323\344\223" +
+      "\002\032\"\025/api/users/{id}/email:\001*\022H\n\013MessageU" +
+      "ser\022\027.api.MessageUserRequest\032\t.api.JSON\"" +
+      "\025\202\323\344\223\002\017\"\n/api/users:\001*\0229\n\nCreateUser\022\t.a" +
+      "pi.User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001" +
+      "*\0229\n\nUpdateUser\022\t.api.User\032\t.api.JSON\"\025\202" +
+      "\323\344\223\002\017\"\n/api/users:\001*\0227\n\nDeleteUser\022\007.api" +
+      ".Id\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\0229\n" +
+      "\tListUsers\022\n.api.Empty\032\t.api.JSON\"\025\202\323\344\223\002" +
+      "\017\"\n/api/users:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -48949,110 +49095,116 @@ public final class Api {
           com.google.api.AuthProto.getDescriptor(),
           com.google.pubsub.v1.PubsubProto.getDescriptor(),
         }, assigner);
-    internal_static_api_MessageUserRequest_descriptor =
+    internal_static_api_Id_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_Id_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_Id_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_api_MessageUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_MessageUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_MessageUserRequest_descriptor,
         new java.lang.String[] { "Id", "Message", });
     internal_static_api_RefundRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_RefundRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_RefundRequest_descriptor,
         new java.lang.String[] { "Id", "Reason", "Amount", "ReverseTransfer", "Status", });
     internal_static_api_ChargeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_ChargeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ChargeRequest_descriptor,
         new java.lang.String[] { "Product", "Id", });
     internal_static_api_CancelSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_CancelSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CancelSubscriptionRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_CreatePlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_CreatePlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CreatePlanRequest_descriptor,
         new java.lang.String[] { "PlanId", "Amount", "ServiceId", "ServiceName", "FriendlyName", });
     internal_static_api_SMSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_SMSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMSRequest_descriptor,
         new java.lang.String[] { "Id", "Body", });
     internal_static_api_CallRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_CallRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CallRequest_descriptor,
         new java.lang.String[] { "Id", "CallbackUrl", });
     internal_static_api_MMSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_MMSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_MMSRequest_descriptor,
         new java.lang.String[] { "Sms", "MediaUrl", });
     internal_static_api_EmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailRequest_descriptor,
         new java.lang.String[] { "Id", "Subject", "PlainText", "HtmlAlt", });
     internal_static_api_CustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_CustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CustomerRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", "Phone", "Name", "Description", "Address", });
     internal_static_api_UpdateCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_UpdateCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UpdateCustomerRequest_descriptor,
         new java.lang.String[] { "Id", "Customer", });
     internal_static_api_SubscribeCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_SubscribeCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SubscribeCustomerRequest_descriptor,
         new java.lang.String[] { "Id", "Plan", "CardNumber", "ExpMonth", "ExpYear", "Cvc", });
     internal_static_api_CreateAccountRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_CreateAccountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CreateAccountRequest_descriptor,
         new java.lang.String[] { "Customer", "Access", });
     internal_static_api_Account_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_Account_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Account_descriptor,
         new java.lang.String[] { "Customer", "Access", });
     internal_static_api_User_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_User_descriptor,
         new java.lang.String[] { "Id", "TeamId", "Name", "Profile", "Deleted", "Admin", "Ownder", "PrimaryOwner", "Restricted", "UltraRestricted", "Stranger", "Bot", "Has2Fa", "Locale", });
     internal_static_api_Profile_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_Profile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Profile_descriptor,
         new java.lang.String[] { "AvatarHash", "Status", "StatusEmoji", "DisplayName", "Name", "Email", "ImageUrls", "Team", });
     internal_static_api_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Empty_descriptor,
         new java.lang.String[] { });
     internal_static_api_Customer_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_Customer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Customer_descriptor,
@@ -49064,65 +49216,59 @@ public final class Api {
         internal_static_api_Customer_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_Card_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Card_descriptor,
         new java.lang.String[] { "CardType", "CardNumber", "ExpMonth", "ExpYear", "Cvc", "Debit", });
     internal_static_api_BankAccount_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_BankAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_BankAccount_descriptor,
         new java.lang.String[] { "AccountNumber", "RoutingNumber", });
     internal_static_api_Address_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Address_descriptor,
         new java.lang.String[] { "City", "Country", "Line1", "Line2", "PostalCode", "State", });
     internal_static_api_ChannelReminder_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_ChannelReminder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ChannelReminder_descriptor,
         new java.lang.String[] { "ChannelId", "Text", "Time", });
     internal_static_api_UserReminder_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_UserReminder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserReminder_descriptor,
         new java.lang.String[] { "Id", "Text", "Time", "Item", });
     internal_static_api_ItemRef_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_ItemRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ItemRef_descriptor,
         new java.lang.String[] { "Channel", "File", "Comment", });
     internal_static_api_Star_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_Star_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Star_descriptor,
         new java.lang.String[] { "Text", "Item", });
     internal_static_api_Pin_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_Pin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Pin_descriptor,
         new java.lang.String[] { "Text", "Item", });
     internal_static_api_SignedKey_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_SignedKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SignedKey_descriptor,
         new java.lang.String[] { "SignedKey", });
-    internal_static_api_UnImplemented_descriptor =
-      getDescriptor().getMessageTypes().get(27);
-    internal_static_api_UnImplemented_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_UnImplemented_descriptor,
-        new java.lang.String[] { });
     internal_static_api_Access_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_api_Access_fieldAccessorTable = new

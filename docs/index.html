@@ -291,6 +291,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.Id"><span class="badge">M</span>Id</a>
+                </li>
+              
+                <li>
                   <a href="#api.ItemRef"><span class="badge">M</span>ItemRef</a>
                 </li>
               
@@ -360,10 +364,6 @@
               
                 <li>
                   <a href="#api.SubscribeCustomerRequest"><span class="badge">M</span>SubscribeCustomerRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UnImplemented"><span class="badge">M</span>UnImplemented</a>
                 </li>
               
                 <li>
@@ -1728,6 +1728,29 @@
 
         
       
+        <h3 id="api.Id">Id</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.ItemRef">ItemRef</h3>
         <p></p>
 
@@ -2471,13 +2494,6 @@
 
         
       
-        <h3 id="api.UnImplemented">UnImplemented</h3>
-        <p></p>
-
-        
-
-        
-      
         <h3 id="api.UpdateCustomerRequest">UpdateCustomerRequest</h3>
         <p></p>
 
@@ -2833,6 +2849,34 @@
                 <td><p></p></td>
               </tr>
             
+              <tr>
+                <td>UpdateAccount</td>
+                <td><a href="#api.Account">Account</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteAccount</td>
+                <td><a href="#api.Id">Id</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ReadAccount</td>
+                <td><a href="#api.Id">Id</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ListAccounts</td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
           </tbody>
         </table>
       
@@ -2854,6 +2898,13 @@
               <tr>
                 <td>UpdateCustomer</td>
                 <td><a href="#api.UpdateCustomerRequest">UpdateCustomerRequest</a></td>
+                <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteCustomer</td>
+                <td><a href="#api.Id">Id</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
@@ -2959,35 +3010,35 @@
             
               <tr>
                 <td>MessageUser</td>
-                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.MessageUserRequest">MessageUserRequest</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>CreateUser</td>
-                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>UpdateUser</td>
-                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>DeleteUser</td>
-                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.Id">Id</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>ListUsers</td>
-                <td><a href="#api.UnImplemented">UnImplemented</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>
