@@ -10,6 +10,9 @@ require 'google/api/annotations_pb'
 require 'google/api/auth_pb'
 require 'google/pubsub/v1/pubsub_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.String" do
+    optional :text, :string, 1
+  end
   add_message "api.Id" do
     optional :id, :string, 1
   end
@@ -374,6 +377,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  String = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.String").msgclass
   Id = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Id").msgclass
   ActionHookRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ActionHookRequest").msgclass
   MessageUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MessageUserRequest").msgclass

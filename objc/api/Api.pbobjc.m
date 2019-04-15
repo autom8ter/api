@@ -257,6 +257,49 @@ BOOL Topic_IsValidValue(int32_t value__) {
   }
 }
 
+#pragma mark - String
+
+@implementation String
+
+@dynamic text;
+
+typedef struct String__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *text;
+} String__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = String_FieldNumber_Text,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(String__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[String class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(String__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Id
 
 @implementation Id

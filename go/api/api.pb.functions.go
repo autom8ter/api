@@ -1,6 +1,7 @@
 package api
 
 import (
+	"bytes"
 	"context"
 	"github.com/autom8ter/engine"
 	"github.com/autom8ter/engine/config"
@@ -106,6 +107,27 @@ EmailUser(context.Context, *EmailRequest) (*JSON, error)
 	DeleteUser(ctx context.Context, r *UnImplemented)  (*JSON, error)
 	ListUsers(ctx context.Context, r *UnImplemented)  (*JSON, error)
 */
+
+
+type StringServiceServerFunctions struct {
+	obj interface{}
+	buf *bytes.Buffer
+}
+
+func NewStringServiceServerFunctions(obj interface{}) *StringServiceServerFunctions {
+	return &StringServiceServerFunctions{obj: obj, buf: bytes.NewBuffer([]byte{})}
+}
+
+
+func (s StringServiceServerFunctions) Render(ctx context.Context, r *String) (*String, error) {
+	err := Util.RenderHTML(r.Text, nil, s.buf)
+	if err != nil {
+		return nil, err
+	}
+	return &String{
+		Text: s.buf.String(),
+	}, nil
+}
 
 type CustomerServiceServerFunctions struct {
 	CreateCustomerFunc      func(context.Context, *CustomerRequest) (*JSON, error)

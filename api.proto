@@ -212,7 +212,20 @@ service HookService {
         };
     }
 }
+
+service StringService {
+    rpc Render(String) returns (String) {
+        option (google.api.http) = {
+      post: "/api/string/render"
+      body: "*"
+    };
+    }
+}
 ///////////////////////////////////////////////Requests/////////////////////////////////////////////////////////////////
+
+message String {
+    string text = 1;
+}
 
 message Id {
     string id =1;

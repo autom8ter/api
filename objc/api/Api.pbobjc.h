@@ -178,6 +178,18 @@ BOOL Topic_IsValidValue(int32_t value);
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - String
+
+typedef GPB_ENUM(String_FieldNumber) {
+  String_FieldNumber_Text = 1,
+};
+
+@interface String : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@end
+
 #pragma mark - Id
 
 typedef GPB_ENUM(Id_FieldNumber) {

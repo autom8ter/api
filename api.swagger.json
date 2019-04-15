@@ -497,6 +497,32 @@
         ]
       }
     },
+    "/api/string/render": {
+      "post": {
+        "operationId": "Render",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiString"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiString"
+            }
+          }
+        ],
+        "tags": [
+          "StringService"
+        ]
+      }
+    },
     "/api/users": {
       "post": {
         "operationId": "ListUsers",
@@ -1155,6 +1181,14 @@
           "type": "string"
         },
         "trigger_id": {
+          "type": "string"
+        }
+      }
+    },
+    "apiString": {
+      "type": "object",
+      "properties": {
+        "text": {
           "type": "string"
         }
       }
