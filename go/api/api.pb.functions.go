@@ -129,6 +129,10 @@ func (s StringServiceServerFunctions) Render(ctx context.Context, r *String) (*S
 	}, nil
 }
 
+func (a StringServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
+	RegisterStringServiceServer(s, a)
+}
+
 type CustomerServiceServerFunctions struct {
 	CreateCustomerFunc      func(context.Context, *CustomerRequest) (*JSON, error)
 	UpdateCustomerFunc      func(context.Context, *UpdateCustomerRequest) (*JSON, error)
@@ -308,13 +312,14 @@ func (a AccountServiceServerFunctions) ListAccounts(ctx context.Context, r *Empt
 	return a.ListAccountsFunc(ctx, r)
 }
 
-func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions) {
+func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions, strings StringServiceServerFunctions) {
 	if err := engine.Default("tcp", addr, debug).With(
 		config.WithPlugins(
 			accounts,
 			customer,
 			user,
 			plan,
+			strings,
 		),
 	).Serve(); err != nil {
 		Util.Fatalln("functions:", err.Error())
