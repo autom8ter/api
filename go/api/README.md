@@ -27,6 +27,28 @@ var CardType_value = map[string]int32{
 ```
 
 ```go
+var Claim_name = map[int32]string{
+	0: "TWILIO",
+	1: "SENDGRID",
+	2: "STRIPE",
+	3: "SLACK",
+	4: "GCP",
+	5: "AUTOM8TER",
+}
+```
+
+```go
+var Claim_value = map[string]int32{
+	"TWILIO":    0,
+	"SENDGRID":  1,
+	"STRIPE":    2,
+	"SLACK":     3,
+	"GCP":       4,
+	"AUTOM8TER": 5,
+}
+```
+
+```go
 var CustomerIndex_name = map[int32]string{
 	0: "ID",
 	1: "EMAIL",
@@ -39,28 +61,6 @@ var CustomerIndex_value = map[string]int32{
 	"ID":    0,
 	"EMAIL": 1,
 	"PHONE": 2,
-}
-```
-
-```go
-var Grant_name = map[int32]string{
-	0: "TWILIO",
-	1: "SENDGRID",
-	2: "STRIPE",
-	3: "SLACK",
-	4: "GCP",
-	5: "AUTOM8TER",
-}
-```
-
-```go
-var Grant_value = map[string]int32{
-	"TWILIO":    0,
-	"SENDGRID":  1,
-	"STRIPE":    2,
-	"SLACK":     3,
-	"GCP":       4,
-	"AUTOM8TER": 5,
 }
 ```
 
@@ -86,10 +86,16 @@ var SigningMethod_value = map[string]int32{
 var Util = objectify.Default()
 ```
 
-#### func  Cmd
+#### func  AsMessage
 
 ```go
-func Cmd(name, description string, fn func() error) *cobra.Command
+func AsMessage(m Messenger) *pubsub.PubsubMessage
+```
+
+#### func  DataTo
+
+```go
+func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error
 ```
 
 #### func  RegisterUserServiceHandler
@@ -128,6 +134,12 @@ done.
 func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer)
 ```
 
+#### func  Serve
+
+```go
+func Serve(addr string, debug bool, plugin driver.Plugin) error
+```
+
 #### type Access
 
 ```go
@@ -163,6 +175,30 @@ STRIPE_KEY SLACK_ACCOUNT SLACK_KEY GCP_PROJECT GCP_KEY
 
 ```go
 func AccessFromJSON(j *JSON) *Access
+```
+
+#### func (*Access) Attributes
+
+```go
+func (s *Access) Attributes() map[string]string
+```
+
+#### func (*Access) CompileHTML
+
+```go
+func (j *Access) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Access) CompileTXT
+
+```go
+func (j *Access) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Access) DataBytes
+
+```go
+func (s *Access) DataBytes() []byte
 ```
 
 #### func (*Access) Descriptor
@@ -243,6 +279,18 @@ func (m *Access) GetTwilioAccount() string
 func (m *Access) GetTwilioKey() string
 ```
 
+#### func (*Access) ID
+
+```go
+func (s *Access) ID() string
+```
+
+#### func (*Access) MarshalJSON
+
+```go
+func (j *Access) MarshalJSON() ([]byte, error)
+```
+
 #### func (*Access) ProtoMessage
 
 ```go
@@ -259,6 +307,18 @@ func (m *Access) Reset()
 
 ```go
 func (m *Access) String() string
+```
+
+#### func (*Access) UnMarshalJSON
+
+```go
+func (j *Access) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*Access) Validate
+
+```go
+func (a *Access) Validate() error
 ```
 
 #### func (*Access) XXX_DiscardUnknown
@@ -415,6 +475,36 @@ type Address struct {
 ```
 
 
+#### func (*Address) AsMap
+
+```go
+func (j *Address) AsMap() map[string]interface{}
+```
+
+#### func (*Address) Attributes
+
+```go
+func (s *Address) Attributes() map[string]string
+```
+
+#### func (*Address) CompileHTML
+
+```go
+func (j *Address) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Address) CompileTXT
+
+```go
+func (j *Address) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Address) DataBytes
+
+```go
+func (s *Address) DataBytes() []byte
+```
+
 #### func (*Address) Descriptor
 
 ```go
@@ -457,6 +547,18 @@ func (m *Address) GetPostalCode() string
 func (m *Address) GetState() string
 ```
 
+#### func (*Address) ID
+
+```go
+func (s *Address) ID() string
+```
+
+#### func (*Address) MarshalJSON
+
+```go
+func (j *Address) MarshalJSON() ([]byte, error)
+```
+
 #### func (*Address) ProtoMessage
 
 ```go
@@ -473,6 +575,12 @@ func (m *Address) Reset()
 
 ```go
 func (m *Address) String() string
+```
+
+#### func (*Address) UnMarshalJSON
+
+```go
+func (j *Address) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*Address) XXX_DiscardUnknown
@@ -537,10 +645,10 @@ type Attachment struct {
 func NewAttachment(opts ...AttachmentFunc) *Attachment
 ```
 
-#### func (*Attachment) AsMap
+#### func (*Attachment) Attributes
 
 ```go
-func (j *Attachment) AsMap() map[string]interface{}
+func (s *Attachment) Attributes() map[string]string
 ```
 
 #### func (*Attachment) CompileHTML
@@ -553,6 +661,12 @@ func (j *Attachment) CompileHTML(text string, w io.Writer) error
 
 ```go
 func (j *Attachment) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Attachment) DataBytes
+
+```go
+func (s *Attachment) DataBytes() []byte
 ```
 
 #### func (*Attachment) Descriptor
@@ -651,6 +765,12 @@ func (m *Attachment) GetTitle() string
 func (m *Attachment) GetTitlePrefix() string
 ```
 
+#### func (*Attachment) ID
+
+```go
+func (s *Attachment) ID() string
+```
+
 #### func (*Attachment) MarshalJSON
 
 ```go
@@ -740,6 +860,36 @@ type AttachmentAction struct {
 func NewAttachmentAction(opts ...AttachmentActionFunc) *AttachmentAction
 ```
 
+#### func (*AttachmentAction) AsMap
+
+```go
+func (j *AttachmentAction) AsMap() map[string]interface{}
+```
+
+#### func (*AttachmentAction) Attributes
+
+```go
+func (s *AttachmentAction) Attributes() map[string]string
+```
+
+#### func (*AttachmentAction) CompileHTML
+
+```go
+func (j *AttachmentAction) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*AttachmentAction) CompileTXT
+
+```go
+func (j *AttachmentAction) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*AttachmentAction) DataBytes
+
+```go
+func (s *AttachmentAction) DataBytes() []byte
+```
+
 #### func (*AttachmentAction) Descriptor
 
 ```go
@@ -818,6 +968,18 @@ func (m *AttachmentAction) GetUrl() string
 func (m *AttachmentAction) GetValue() string
 ```
 
+#### func (*AttachmentAction) ID
+
+```go
+func (s *AttachmentAction) ID() string
+```
+
+#### func (*AttachmentAction) MarshalJSON
+
+```go
+func (j *AttachmentAction) MarshalJSON() ([]byte, error)
+```
+
 #### func (*AttachmentAction) ProtoMessage
 
 ```go
@@ -834,6 +996,12 @@ func (m *AttachmentAction) Reset()
 
 ```go
 func (m *AttachmentAction) String() string
+```
+
+#### func (*AttachmentAction) UnMarshalJSON
+
+```go
+func (j *AttachmentAction) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*AttachmentAction) XXX_DiscardUnknown
@@ -1237,6 +1405,30 @@ type BankAccount struct {
 ```
 
 
+#### func (*BankAccount) Attributes
+
+```go
+func (s *BankAccount) Attributes() map[string]string
+```
+
+#### func (*BankAccount) CompileHTML
+
+```go
+func (j *BankAccount) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*BankAccount) CompileTXT
+
+```go
+func (j *BankAccount) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*BankAccount) DataBytes
+
+```go
+func (s *BankAccount) DataBytes() []byte
+```
+
 #### func (*BankAccount) Descriptor
 
 ```go
@@ -1255,6 +1447,18 @@ func (m *BankAccount) GetAccountNumber() string
 func (m *BankAccount) GetRoutingNumber() string
 ```
 
+#### func (*BankAccount) ID
+
+```go
+func (s *BankAccount) ID() string
+```
+
+#### func (*BankAccount) MarshalJSON
+
+```go
+func (j *BankAccount) MarshalJSON() ([]byte, error)
+```
+
 #### func (*BankAccount) ProtoMessage
 
 ```go
@@ -1271,6 +1475,12 @@ func (m *BankAccount) Reset()
 
 ```go
 func (m *BankAccount) String() string
+```
+
+#### func (*BankAccount) UnMarshalJSON
+
+```go
+func (j *BankAccount) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*BankAccount) XXX_DiscardUnknown
@@ -1317,6 +1527,36 @@ type Call struct {
 ```
 
 
+#### func (*Call) AsMap
+
+```go
+func (j *Call) AsMap() map[string]interface{}
+```
+
+#### func (*Call) Attributes
+
+```go
+func (s *Call) Attributes() map[string]string
+```
+
+#### func (*Call) CompileHTML
+
+```go
+func (j *Call) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Call) CompileTXT
+
+```go
+func (j *Call) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Call) DataBytes
+
+```go
+func (s *Call) DataBytes() []byte
+```
+
 #### func (*Call) Descriptor
 
 ```go
@@ -1341,6 +1581,18 @@ func (m *Call) GetFrom() string
 func (m *Call) GetTo() string
 ```
 
+#### func (*Call) ID
+
+```go
+func (s *Call) ID() string
+```
+
+#### func (*Call) MarshalJSON
+
+```go
+func (j *Call) MarshalJSON() ([]byte, error)
+```
+
 #### func (*Call) ProtoMessage
 
 ```go
@@ -1357,6 +1609,12 @@ func (m *Call) Reset()
 
 ```go
 func (m *Call) String() string
+```
+
+#### func (*Call) UnMarshalJSON
+
+```go
+func (j *Call) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*Call) XXX_DiscardUnknown
@@ -1557,6 +1815,36 @@ type Card struct {
 ```
 
 
+#### func (*Card) AsMap
+
+```go
+func (j *Card) AsMap() map[string]interface{}
+```
+
+#### func (*Card) Attributes
+
+```go
+func (s *Card) Attributes() map[string]string
+```
+
+#### func (*Card) CompileHTML
+
+```go
+func (j *Card) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Card) CompileTXT
+
+```go
+func (j *Card) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Card) DataBytes
+
+```go
+func (s *Card) DataBytes() []byte
+```
+
 #### func (*Card) Descriptor
 
 ```go
@@ -1599,6 +1887,18 @@ func (m *Card) GetExpMonth() string
 func (m *Card) GetExpYear() string
 ```
 
+#### func (*Card) ID
+
+```go
+func (s *Card) ID() string
+```
+
+#### func (*Card) MarshalJSON
+
+```go
+func (j *Card) MarshalJSON() ([]byte, error)
+```
+
 #### func (*Card) ProtoMessage
 
 ```go
@@ -1615,6 +1915,12 @@ func (m *Card) Reset()
 
 ```go
 func (m *Card) String() string
+```
+
+#### func (*Card) UnMarshalJSON
+
+```go
+func (j *Card) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*Card) XXX_DiscardUnknown
@@ -1761,6 +2067,157 @@ func (m *ChannelReminder) XXX_Size() int
 func (m *ChannelReminder) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Charge
+
+```go
+type Charge struct {
+	Product              *Product  `protobuf:"bytes,1,opt,name=product,proto3" json:"product,omitempty"`
+	Customer             *Customer `protobuf:"bytes,2,opt,name=customer,proto3" json:"customer,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+```
+
+
+#### func (*Charge) Attributes
+
+```go
+func (s *Charge) Attributes() map[string]string
+```
+
+#### func (*Charge) CompileHTML
+
+```go
+func (j *Charge) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Charge) CompileTXT
+
+```go
+func (j *Charge) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Charge) DataBytes
+
+```go
+func (s *Charge) DataBytes() []byte
+```
+
+#### func (*Charge) Descriptor
+
+```go
+func (*Charge) Descriptor() ([]byte, []int)
+```
+
+#### func (*Charge) GetCustomer
+
+```go
+func (m *Charge) GetCustomer() *Customer
+```
+
+#### func (*Charge) GetProduct
+
+```go
+func (m *Charge) GetProduct() *Product
+```
+
+#### func (*Charge) ID
+
+```go
+func (s *Charge) ID() string
+```
+
+#### func (*Charge) MarshalJSON
+
+```go
+func (j *Charge) MarshalJSON() ([]byte, error)
+```
+
+#### func (*Charge) ProtoMessage
+
+```go
+func (*Charge) ProtoMessage()
+```
+
+#### func (*Charge) Reset
+
+```go
+func (m *Charge) Reset()
+```
+
+#### func (*Charge) String
+
+```go
+func (m *Charge) String() string
+```
+
+#### func (*Charge) UnMarshalJSON
+
+```go
+func (j *Charge) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*Charge) XXX_DiscardUnknown
+
+```go
+func (m *Charge) XXX_DiscardUnknown()
+```
+
+#### func (*Charge) XXX_Marshal
+
+```go
+func (m *Charge) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Charge) XXX_Merge
+
+```go
+func (m *Charge) XXX_Merge(src proto.Message)
+```
+
+#### func (*Charge) XXX_Size
+
+```go
+func (m *Charge) XXX_Size() int
+```
+
+#### func (*Charge) XXX_Unmarshal
+
+```go
+func (m *Charge) XXX_Unmarshal(b []byte) error
+```
+
+#### type Claim
+
+```go
+type Claim int32
+```
+
+
+```go
+const (
+	Claim_TWILIO    Claim = 0
+	Claim_SENDGRID  Claim = 1
+	Claim_STRIPE    Claim = 2
+	Claim_SLACK     Claim = 3
+	Claim_GCP       Claim = 4
+	Claim_AUTOM8TER Claim = 5
+)
+```
+
+#### func (Claim) EnumDescriptor
+
+```go
+func (Claim) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (Claim) String
+
+```go
+func (x Claim) String() string
+```
+
 #### type Claims
 
 ```go
@@ -1768,36 +2225,35 @@ type Claims struct {
 }
 ```
 
-/////////////////////////////////////////////////////////////
 
 #### func (*Claims) SignedGCPToken
 
 ```go
-func (c *Claims) SignedGCPToken(secret string) (*SignedKey, error)
+func (c *Claims) SignedGCPToken(secret string, headers map[string]string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedSendGridToken
 
 ```go
-func (c *Claims) SignedSendGridToken(secret string) (*SignedKey, error)
+func (c *Claims) SignedSendGridToken(secret string, headers map[string]string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedSlackToken
 
 ```go
-func (c *Claims) SignedSlackToken(secret string) (*SignedKey, error)
+func (c *Claims) SignedSlackToken(secret string, headers map[string]string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedStripeToken
 
 ```go
-func (c *Claims) SignedStripeToken(secret string) (*SignedKey, error)
+func (c *Claims) SignedStripeToken(secret string, headers map[string]string) (*SignedKey, error)
 ```
 
 #### func (*Claims) SignedTwilioToken
 
 ```go
-func (c *Claims) SignedTwilioToken(secret string) (*SignedKey, error)
+func (c *Claims) SignedTwilioToken(secret string, headers map[string]string) (*SignedKey, error)
 ```
 
 #### type ClientSet
@@ -2009,10 +2465,10 @@ type Customer struct {
 
 User is a user of the application
 
-#### func (*Customer) AsMap
+#### func (*Customer) Attributes
 
 ```go
-func (j *Customer) AsMap() map[string]interface{}
+func (s *Customer) Attributes() map[string]string
 ```
 
 #### func (*Customer) CompileHTML
@@ -2025,6 +2481,12 @@ func (j *Customer) CompileHTML(text string, w io.Writer) error
 
 ```go
 func (j *Customer) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Customer) DataBytes
+
+```go
+func (s *Customer) DataBytes() []byte
 ```
 
 #### func (*Customer) Descriptor
@@ -2091,6 +2553,12 @@ func (m *Customer) GetPlan() string
 
 ```go
 func (m *Customer) GetUserId() string
+```
+
+#### func (*Customer) ID
+
+```go
+func (s *Customer) ID() string
 ```
 
 #### func (*Customer) MarshalJSON
@@ -2193,6 +2661,36 @@ type Email struct {
 ```
 
 
+#### func (*Email) AsMap
+
+```go
+func (j *Email) AsMap() map[string]interface{}
+```
+
+#### func (*Email) Attributes
+
+```go
+func (s *Email) Attributes() map[string]string
+```
+
+#### func (*Email) CompileHTML
+
+```go
+func (j *Email) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Email) CompileTXT
+
+```go
+func (j *Email) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Email) DataBytes
+
+```go
+func (s *Email) DataBytes() []byte
+```
+
 #### func (*Email) Descriptor
 
 ```go
@@ -2211,6 +2709,18 @@ func (m *Email) GetFrom() *EmailAddress
 func (m *Email) GetRecipient() *RecipientEmail
 ```
 
+#### func (*Email) ID
+
+```go
+func (s *Email) ID() string
+```
+
+#### func (*Email) MarshalJSON
+
+```go
+func (j *Email) MarshalJSON() ([]byte, error)
+```
+
 #### func (*Email) ProtoMessage
 
 ```go
@@ -2227,6 +2737,12 @@ func (m *Email) Reset()
 
 ```go
 func (m *Email) String() string
+```
+
+#### func (*Email) UnMarshalJSON
+
+```go
+func (j *Email) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*Email) XXX_DiscardUnknown
@@ -2603,34 +3119,139 @@ func (m *Fax) XXX_Size() int
 func (m *Fax) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Grant
+#### type File
 
 ```go
-type Grant int32
+type File struct {
+	Data                 []byte            `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+	Size                 int64             `protobuf:"varint,2,opt,name=size,proto3" json:"size,omitempty"`
+	Name                 string            `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Tags                 map[string]string `protobuf:"bytes,4,rep,name=tags,proto3" json:"tags,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
 ```
 
 
+#### func (*File) Attributes
+
 ```go
-const (
-	Grant_TWILIO    Grant = 0
-	Grant_SENDGRID  Grant = 1
-	Grant_STRIPE    Grant = 2
-	Grant_SLACK     Grant = 3
-	Grant_GCP       Grant = 4
-	Grant_AUTOM8TER Grant = 5
-)
+func (s *File) Attributes() map[string]string
 ```
 
-#### func (Grant) EnumDescriptor
+#### func (*File) CompileHTML
 
 ```go
-func (Grant) EnumDescriptor() ([]byte, []int)
+func (j *File) CompileHTML(text string, w io.Writer) error
 ```
 
-#### func (Grant) String
+#### func (*File) CompileTXT
 
 ```go
-func (x Grant) String() string
+func (j *File) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*File) DataBytes
+
+```go
+func (s *File) DataBytes() []byte
+```
+
+#### func (*File) Descriptor
+
+```go
+func (*File) Descriptor() ([]byte, []int)
+```
+
+#### func (*File) GetData
+
+```go
+func (m *File) GetData() []byte
+```
+
+#### func (*File) GetName
+
+```go
+func (m *File) GetName() string
+```
+
+#### func (*File) GetSize
+
+```go
+func (m *File) GetSize() int64
+```
+
+#### func (*File) GetTags
+
+```go
+func (m *File) GetTags() map[string]string
+```
+
+#### func (*File) ID
+
+```go
+func (s *File) ID() string
+```
+
+#### func (*File) MarshalJSON
+
+```go
+func (j *File) MarshalJSON() ([]byte, error)
+```
+
+#### func (*File) ProtoMessage
+
+```go
+func (*File) ProtoMessage()
+```
+
+#### func (*File) Reset
+
+```go
+func (m *File) Reset()
+```
+
+#### func (*File) String
+
+```go
+func (m *File) String() string
+```
+
+#### func (*File) UnMarshalJSON
+
+```go
+func (j *File) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*File) XXX_DiscardUnknown
+
+```go
+func (m *File) XXX_DiscardUnknown()
+```
+
+#### func (*File) XXX_Marshal
+
+```go
+func (m *File) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*File) XXX_Merge
+
+```go
+func (m *File) XXX_Merge(src proto.Message)
+```
+
+#### func (*File) XXX_Size
+
+```go
+func (m *File) XXX_Size() int
+```
+
+#### func (*File) XXX_Unmarshal
+
+```go
+func (m *File) XXX_Unmarshal(b []byte) error
 ```
 
 #### type ItemRef
@@ -2732,10 +3353,10 @@ type JSON struct {
 ```
 
 
-#### func (*JSON) AsMap
+#### func (*JSON) Attributes
 
 ```go
-func (j *JSON) AsMap() map[string]interface{}
+func (s *JSON) Attributes() map[string]string
 ```
 
 #### func (*JSON) CompileHTML
@@ -2748,6 +3369,12 @@ func (j *JSON) CompileHTML(text string, w io.Writer) error
 
 ```go
 func (j *JSON) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*JSON) DataBytes
+
+```go
+func (s *JSON) DataBytes() []byte
 ```
 
 #### func (*JSON) Descriptor
@@ -2766,6 +3393,12 @@ func (m *JSON) GetData() []byte
 
 ```go
 func (m *JSON) GetSize() int64
+```
+
+#### func (*JSON) ID
+
+```go
+func (s *JSON) ID() string
 ```
 
 #### func (*JSON) MarshalJSON
@@ -2829,78 +3462,6 @@ func (m *JSON) XXX_Size() int
 func (m *JSON) XXX_Unmarshal(b []byte) error
 ```
 
-#### type JSONMap
-
-```go
-type JSONMap struct {
-	JsonMap              map[string]*JSON `protobuf:"bytes,1,rep,name=json_map,json=jsonMap,proto3" json:"json_map,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
-}
-```
-
-
-#### func (*JSONMap) Descriptor
-
-```go
-func (*JSONMap) Descriptor() ([]byte, []int)
-```
-
-#### func (*JSONMap) GetJsonMap
-
-```go
-func (m *JSONMap) GetJsonMap() map[string]*JSON
-```
-
-#### func (*JSONMap) ProtoMessage
-
-```go
-func (*JSONMap) ProtoMessage()
-```
-
-#### func (*JSONMap) Reset
-
-```go
-func (m *JSONMap) Reset()
-```
-
-#### func (*JSONMap) String
-
-```go
-func (m *JSONMap) String() string
-```
-
-#### func (*JSONMap) XXX_DiscardUnknown
-
-```go
-func (m *JSONMap) XXX_DiscardUnknown()
-```
-
-#### func (*JSONMap) XXX_Marshal
-
-```go
-func (m *JSONMap) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*JSONMap) XXX_Merge
-
-```go
-func (m *JSONMap) XXX_Merge(src proto.Message)
-```
-
-#### func (*JSONMap) XXX_Size
-
-```go
-func (m *JSONMap) XXX_Size() int
-```
-
-#### func (*JSONMap) XXX_Unmarshal
-
-```go
-func (m *JSONMap) XXX_Unmarshal(b []byte) error
-```
-
 #### type JWTMiddleware
 
 ```go
@@ -2925,113 +3486,6 @@ func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error
 
 ```go
 func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc
-```
-
-#### type JWTToken
-
-```go
-type JWTToken struct {
-	Raw                  string            `protobuf:"bytes,1,opt,name=raw,proto3" json:"raw,omitempty"`
-	Method               SigningMethod     `protobuf:"varint,2,opt,name=method,proto3,enum=api.SigningMethod" json:"method,omitempty"`
-	Header               map[string]string `protobuf:"bytes,3,rep,name=header,proto3" json:"header,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Claims               string            `protobuf:"bytes,4,opt,name=claims,proto3" json:"claims,omitempty"`
-	Signature            string            `protobuf:"bytes,5,opt,name=signature,proto3" json:"signature,omitempty"`
-	Value                bool              `protobuf:"varint,6,opt,name=value,proto3" json:"value,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-```
-
-
-#### func (*JWTToken) Descriptor
-
-```go
-func (*JWTToken) Descriptor() ([]byte, []int)
-```
-
-#### func (*JWTToken) GetClaims
-
-```go
-func (m *JWTToken) GetClaims() string
-```
-
-#### func (*JWTToken) GetHeader
-
-```go
-func (m *JWTToken) GetHeader() map[string]string
-```
-
-#### func (*JWTToken) GetMethod
-
-```go
-func (m *JWTToken) GetMethod() SigningMethod
-```
-
-#### func (*JWTToken) GetRaw
-
-```go
-func (m *JWTToken) GetRaw() string
-```
-
-#### func (*JWTToken) GetSignature
-
-```go
-func (m *JWTToken) GetSignature() string
-```
-
-#### func (*JWTToken) GetValue
-
-```go
-func (m *JWTToken) GetValue() bool
-```
-
-#### func (*JWTToken) ProtoMessage
-
-```go
-func (*JWTToken) ProtoMessage()
-```
-
-#### func (*JWTToken) Reset
-
-```go
-func (m *JWTToken) Reset()
-```
-
-#### func (*JWTToken) String
-
-```go
-func (m *JWTToken) String() string
-```
-
-#### func (*JWTToken) XXX_DiscardUnknown
-
-```go
-func (m *JWTToken) XXX_DiscardUnknown()
-```
-
-#### func (*JWTToken) XXX_Marshal
-
-```go
-func (m *JWTToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*JWTToken) XXX_Merge
-
-```go
-func (m *JWTToken) XXX_Merge(src proto.Message)
-```
-
-#### func (*JWTToken) XXX_Size
-
-```go
-func (m *JWTToken) XXX_Size() int
-```
-
-#### func (*JWTToken) XXX_Unmarshal
-
-```go
-func (m *JWTToken) XXX_Unmarshal(b []byte) error
 ```
 
 #### type LogConfig
@@ -3285,6 +3739,17 @@ func (m *MMSRequest) XXX_Size() int
 func (m *MMSRequest) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Messenger
+
+```go
+type Messenger interface {
+	Attributes() map[string]string
+	DataBytes() []byte
+	ID() string
+}
+```
+
+
 #### type Pin
 
 ```go
@@ -3364,18 +3829,16 @@ func (m *Pin) XXX_Size() int
 func (m *Pin) XXX_Unmarshal(b []byte) error
 ```
 
-#### type PubSubFunc
+#### type Product
 
 ```go
-type PubSubFunc func(a *PubSubMessage)
-```
-
-
-#### type PubSubMessage
-
-```go
-type PubSubMessage struct {
-	Message              *v1.PubsubMessage `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+type Product struct {
+	Name                 string            `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Amount               int64             `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	Description          string            `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Files                []*File           `protobuf:"bytes,4,rep,name=files,proto3" json:"files,omitempty"`
+	Tags                 map[string]string `protobuf:"bytes,5,rep,name=tags,proto3" json:"tags,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Available            bool              `protobuf:"varint,6,opt,name=available,proto3" json:"available,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -3383,198 +3846,137 @@ type PubSubMessage struct {
 ```
 
 
-#### func  NewPubSub
+#### func (*Product) Attributes
 
 ```go
-func NewPubSub(opts ...PubSubFunc) *PubSubMessage
+func (s *Product) Attributes() map[string]string
 ```
 
-#### func (*PubSubMessage) AsMap
+#### func (*Product) CompileHTML
 
 ```go
-func (j *PubSubMessage) AsMap() map[string]interface{}
+func (j *Product) CompileHTML(text string, w io.Writer) error
 ```
 
-#### func (*PubSubMessage) CompileHTML
+#### func (*Product) CompileTXT
 
 ```go
-func (j *PubSubMessage) CompileHTML(text string, w io.Writer) error
+func (j *Product) CompileTXT(text string, w io.Writer) error
 ```
 
-#### func (*PubSubMessage) CompileTXT
+#### func (*Product) DataBytes
 
 ```go
-func (j *PubSubMessage) CompileTXT(text string, w io.Writer) error
+func (s *Product) DataBytes() []byte
 ```
 
-#### func (*PubSubMessage) Descriptor
+#### func (*Product) Descriptor
 
 ```go
-func (*PubSubMessage) Descriptor() ([]byte, []int)
+func (*Product) Descriptor() ([]byte, []int)
 ```
 
-#### func (*PubSubMessage) GetMessage
+#### func (*Product) GetAmount
 
 ```go
-func (m *PubSubMessage) GetMessage() *v1.PubsubMessage
+func (m *Product) GetAmount() int64
 ```
 
-#### func (*PubSubMessage) MarshalJSON
+#### func (*Product) GetAvailable
 
 ```go
-func (j *PubSubMessage) MarshalJSON() ([]byte, error)
+func (m *Product) GetAvailable() bool
 ```
 
-#### func (*PubSubMessage) ProtoMessage
+#### func (*Product) GetDescription
 
 ```go
-func (*PubSubMessage) ProtoMessage()
+func (m *Product) GetDescription() string
 ```
 
-#### func (*PubSubMessage) PubSubMessage
+#### func (*Product) GetFiles
 
 ```go
-func (p *PubSubMessage) PubSubMessage() *pubsub.PubsubMessage
+func (m *Product) GetFiles() []*File
 ```
 
-#### func (*PubSubMessage) Reset
+#### func (*Product) GetName
 
 ```go
-func (m *PubSubMessage) Reset()
+func (m *Product) GetName() string
 ```
 
-#### func (*PubSubMessage) String
+#### func (*Product) GetTags
 
 ```go
-func (m *PubSubMessage) String() string
+func (m *Product) GetTags() map[string]string
 ```
 
-#### func (*PubSubMessage) UnMarshalJSON
+#### func (*Product) ID
 
 ```go
-func (j *PubSubMessage) UnMarshalJSON(obj interface{}) error
+func (s *Product) ID() string
 ```
 
-#### func (*PubSubMessage) XXX_DiscardUnknown
+#### func (*Product) MarshalJSON
 
 ```go
-func (m *PubSubMessage) XXX_DiscardUnknown()
+func (j *Product) MarshalJSON() ([]byte, error)
 ```
 
-#### func (*PubSubMessage) XXX_Marshal
+#### func (*Product) ProtoMessage
 
 ```go
-func (m *PubSubMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+func (*Product) ProtoMessage()
 ```
 
-#### func (*PubSubMessage) XXX_Merge
+#### func (*Product) Reset
 
 ```go
-func (m *PubSubMessage) XXX_Merge(src proto.Message)
+func (m *Product) Reset()
 ```
 
-#### func (*PubSubMessage) XXX_Size
+#### func (*Product) String
 
 ```go
-func (m *PubSubMessage) XXX_Size() int
+func (m *Product) String() string
 ```
 
-#### func (*PubSubMessage) XXX_Unmarshal
+#### func (*Product) UnMarshalJSON
 
 ```go
-func (m *PubSubMessage) XXX_Unmarshal(b []byte) error
+func (j *Product) UnMarshalJSON(obj interface{}) error
 ```
 
-#### type PubSubTopic
+#### func (*Product) XXX_DiscardUnknown
 
 ```go
-type PubSubTopic struct {
-	Topic                *v1.Topic `protobuf:"bytes,1,opt,name=topic,proto3" json:"topic,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
-}
+func (m *Product) XXX_DiscardUnknown()
 ```
 
-
-#### func  NewPubSubTopic
+#### func (*Product) XXX_Marshal
 
 ```go
-func NewPubSubTopic(opts ...PubSubTopicFunc) *PubSubTopic
+func (m *Product) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*PubSubTopic) Descriptor
+#### func (*Product) XXX_Merge
 
 ```go
-func (*PubSubTopic) Descriptor() ([]byte, []int)
+func (m *Product) XXX_Merge(src proto.Message)
 ```
 
-#### func (*PubSubTopic) GetTopic
+#### func (*Product) XXX_Size
 
 ```go
-func (m *PubSubTopic) GetTopic() *v1.Topic
+func (m *Product) XXX_Size() int
 ```
 
-#### func (*PubSubTopic) ProtoMessage
+#### func (*Product) XXX_Unmarshal
 
 ```go
-func (*PubSubTopic) ProtoMessage()
+func (m *Product) XXX_Unmarshal(b []byte) error
 ```
-
-#### func (*PubSubTopic) PubSubTopic
-
-```go
-func (p *PubSubTopic) PubSubTopic() *pubsub.Topic
-```
-
-#### func (*PubSubTopic) Reset
-
-```go
-func (m *PubSubTopic) Reset()
-```
-
-#### func (*PubSubTopic) String
-
-```go
-func (m *PubSubTopic) String() string
-```
-
-#### func (*PubSubTopic) XXX_DiscardUnknown
-
-```go
-func (m *PubSubTopic) XXX_DiscardUnknown()
-```
-
-#### func (*PubSubTopic) XXX_Marshal
-
-```go
-func (m *PubSubTopic) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*PubSubTopic) XXX_Merge
-
-```go
-func (m *PubSubTopic) XXX_Merge(src proto.Message)
-```
-
-#### func (*PubSubTopic) XXX_Size
-
-```go
-func (m *PubSubTopic) XXX_Size() int
-```
-
-#### func (*PubSubTopic) XXX_Unmarshal
-
-```go
-func (m *PubSubTopic) XXX_Unmarshal(b []byte) error
-```
-
-#### type PubSubTopicFunc
-
-```go
-type PubSubTopicFunc func(a *PubSubTopic)
-```
-
 
 #### type RecipientEmail
 
@@ -3669,6 +4071,134 @@ func (m *RecipientEmail) XXX_Size() int
 func (m *RecipientEmail) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Refund
+
+```go
+type Refund struct {
+	Reason               string   `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
+	Amount               int64    `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	ReverseTransfer      bool     `protobuf:"varint,3,opt,name=reverse_transfer,json=reverseTransfer,proto3" json:"reverse_transfer,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Refund) Attributes
+
+```go
+func (s *Refund) Attributes() map[string]string
+```
+
+#### func (*Refund) CompileHTML
+
+```go
+func (j *Refund) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Refund) CompileTXT
+
+```go
+func (j *Refund) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Refund) DataBytes
+
+```go
+func (s *Refund) DataBytes() []byte
+```
+
+#### func (*Refund) Descriptor
+
+```go
+func (*Refund) Descriptor() ([]byte, []int)
+```
+
+#### func (*Refund) GetAmount
+
+```go
+func (m *Refund) GetAmount() int64
+```
+
+#### func (*Refund) GetReason
+
+```go
+func (m *Refund) GetReason() string
+```
+
+#### func (*Refund) GetReverseTransfer
+
+```go
+func (m *Refund) GetReverseTransfer() bool
+```
+
+#### func (*Refund) ID
+
+```go
+func (s *Refund) ID() string
+```
+
+#### func (*Refund) MarshalJSON
+
+```go
+func (j *Refund) MarshalJSON() ([]byte, error)
+```
+
+#### func (*Refund) ProtoMessage
+
+```go
+func (*Refund) ProtoMessage()
+```
+
+#### func (*Refund) Reset
+
+```go
+func (m *Refund) Reset()
+```
+
+#### func (*Refund) String
+
+```go
+func (m *Refund) String() string
+```
+
+#### func (*Refund) UnMarshalJSON
+
+```go
+func (j *Refund) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*Refund) XXX_DiscardUnknown
+
+```go
+func (m *Refund) XXX_DiscardUnknown()
+```
+
+#### func (*Refund) XXX_Marshal
+
+```go
+func (m *Refund) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Refund) XXX_Merge
+
+```go
+func (m *Refund) XXX_Merge(src proto.Message)
+```
+
+#### func (*Refund) XXX_Size
+
+```go
+func (m *Refund) XXX_Size() int
+```
+
+#### func (*Refund) XXX_Unmarshal
+
+```go
+func (m *Refund) XXX_Unmarshal(b []byte) error
+```
+
 #### type SMS
 
 ```go
@@ -3685,6 +4215,36 @@ type SMS struct {
 }
 ```
 
+
+#### func (*SMS) AsMap
+
+```go
+func (j *SMS) AsMap() map[string]interface{}
+```
+
+#### func (*SMS) Attributes
+
+```go
+func (s *SMS) Attributes() map[string]string
+```
+
+#### func (*SMS) CompileHTML
+
+```go
+func (j *SMS) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*SMS) CompileTXT
+
+```go
+func (j *SMS) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*SMS) DataBytes
+
+```go
+func (s *SMS) DataBytes() []byte
+```
 
 #### func (*SMS) Descriptor
 
@@ -3728,6 +4288,18 @@ func (m *SMS) GetMediaUrl() string
 func (m *SMS) GetTo() string
 ```
 
+#### func (*SMS) ID
+
+```go
+func (s *SMS) ID() string
+```
+
+#### func (*SMS) MarshalJSON
+
+```go
+func (j *SMS) MarshalJSON() ([]byte, error)
+```
+
 #### func (*SMS) ProtoMessage
 
 ```go
@@ -3744,6 +4316,12 @@ func (m *SMS) Reset()
 
 ```go
 func (m *SMS) String() string
+```
+
+#### func (*SMS) UnMarshalJSON
+
+```go
+func (j *SMS) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*SMS) XXX_DiscardUnknown
@@ -3855,29 +4433,6 @@ func (m *SMSRequest) XXX_Size() int
 func (m *SMSRequest) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Server
-
-```go
-type Server struct {
-	Addr string
-	UserServiceServer
-	driver.PluginFunc
-}
-```
-
-
-#### func  NewServer
-
-```go
-func NewServer(addr string, server UserServiceServer) *Server
-```
-
-#### func (*Server) Serve
-
-```go
-func (s *Server) Serve(debug bool) error
-```
-
 #### type SignedKey
 
 ```go
@@ -3890,6 +4445,30 @@ type SignedKey struct {
 ```
 
 
+#### func (*SignedKey) Attributes
+
+```go
+func (s *SignedKey) Attributes() map[string]string
+```
+
+#### func (*SignedKey) CompileHTML
+
+```go
+func (j *SignedKey) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*SignedKey) CompileTXT
+
+```go
+func (j *SignedKey) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*SignedKey) DataBytes
+
+```go
+func (s *SignedKey) DataBytes() []byte
+```
+
 #### func (*SignedKey) Descriptor
 
 ```go
@@ -3900,6 +4479,18 @@ func (*SignedKey) Descriptor() ([]byte, []int)
 
 ```go
 func (m *SignedKey) GetSignedKey() string
+```
+
+#### func (*SignedKey) ID
+
+```go
+func (s *SignedKey) ID() string
+```
+
+#### func (*SignedKey) MarshalJSON
+
+```go
+func (j *SignedKey) MarshalJSON() ([]byte, error)
 ```
 
 #### func (*SignedKey) ProtoMessage
@@ -3918,6 +4509,12 @@ func (m *SignedKey) Reset()
 
 ```go
 func (m *SignedKey) String() string
+```
+
+#### func (*SignedKey) UnMarshalJSON
+
+```go
+func (j *SignedKey) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*SignedKey) XXX_DiscardUnknown
@@ -3989,7 +4586,6 @@ type StandardClaims struct {
 	Id                   string   `protobuf:"bytes,5,opt,name=id,proto3" json:"id,omitempty"`
 	IssuedAt             int64    `protobuf:"varint,6,opt,name=issued_at,json=issuedAt,proto3" json:"issued_at,omitempty"`
 	NotBefore            int64    `protobuf:"varint,7,opt,name=not_before,json=notBefore,proto3" json:"not_before,omitempty"`
-	Grants               []Grant  `protobuf:"varint,8,rep,packed,name=grants,proto3,enum=api.Grant" json:"grants,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -3997,16 +4593,34 @@ type StandardClaims struct {
 ```
 
 
-#### func (*StandardClaims) AddGrants
+#### func (*StandardClaims) Attributes
 
 ```go
-func (t *StandardClaims) AddGrants(grants ...Grant)
+func (s *StandardClaims) Attributes() map[string]string
 ```
 
 #### func (*StandardClaims) Claims
 
 ```go
 func (t *StandardClaims) Claims() *Claims
+```
+
+#### func (*StandardClaims) CompileHTML
+
+```go
+func (j *StandardClaims) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*StandardClaims) CompileTXT
+
+```go
+func (j *StandardClaims) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*StandardClaims) DataBytes
+
+```go
+func (s *StandardClaims) DataBytes() []byte
 ```
 
 #### func (*StandardClaims) Descriptor
@@ -4033,12 +4647,6 @@ func (m *StandardClaims) GetAudience() string
 func (m *StandardClaims) GetExpiresAt() int64
 ```
 
-#### func (*StandardClaims) GetGrants
-
-```go
-func (m *StandardClaims) GetGrants() []Grant
-```
-
 #### func (*StandardClaims) GetId
 
 ```go
@@ -4063,6 +4671,18 @@ func (m *StandardClaims) GetNotBefore() int64
 func (m *StandardClaims) GetSubject() string
 ```
 
+#### func (*StandardClaims) ID
+
+```go
+func (s *StandardClaims) ID() string
+```
+
+#### func (*StandardClaims) MarshalJSON
+
+```go
+func (j *StandardClaims) MarshalJSON() ([]byte, error)
+```
+
 #### func (*StandardClaims) ProtoMessage
 
 ```go
@@ -4079,6 +4699,12 @@ func (m *StandardClaims) Reset()
 
 ```go
 func (m *StandardClaims) String() string
+```
+
+#### func (*StandardClaims) UnMarshalJSON
+
+```go
+func (j *StandardClaims) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*StandardClaims) XXX_DiscardUnknown
@@ -4369,106 +4995,6 @@ func (m *SubscribeCustomerResponse) XXX_Size() int
 func (m *SubscribeCustomerResponse) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Token
-
-```go
-type Token struct {
-	Raw                  string            `protobuf:"bytes,1,opt,name=raw,proto3" json:"raw,omitempty"`
-	SigningMethod        SigningMethod     `protobuf:"varint,2,opt,name=signing_method,json=signingMethod,proto3,enum=api.SigningMethod" json:"signing_method,omitempty"`
-	Valid                bool              `protobuf:"varint,3,opt,name=valid,proto3" json:"valid,omitempty"`
-	Signature            string            `protobuf:"bytes,4,opt,name=signature,proto3" json:"signature,omitempty"`
-	Header               map[string]string `protobuf:"bytes,5,rep,name=header,proto3" json:"header,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-```
-
-
-#### func (*Token) Descriptor
-
-```go
-func (*Token) Descriptor() ([]byte, []int)
-```
-
-#### func (*Token) GetHeader
-
-```go
-func (m *Token) GetHeader() map[string]string
-```
-
-#### func (*Token) GetRaw
-
-```go
-func (m *Token) GetRaw() string
-```
-
-#### func (*Token) GetSignature
-
-```go
-func (m *Token) GetSignature() string
-```
-
-#### func (*Token) GetSigningMethod
-
-```go
-func (m *Token) GetSigningMethod() SigningMethod
-```
-
-#### func (*Token) GetValid
-
-```go
-func (m *Token) GetValid() bool
-```
-
-#### func (*Token) ProtoMessage
-
-```go
-func (*Token) ProtoMessage()
-```
-
-#### func (*Token) Reset
-
-```go
-func (m *Token) Reset()
-```
-
-#### func (*Token) String
-
-```go
-func (m *Token) String() string
-```
-
-#### func (*Token) XXX_DiscardUnknown
-
-```go
-func (m *Token) XXX_DiscardUnknown()
-```
-
-#### func (*Token) XXX_Marshal
-
-```go
-func (m *Token) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Token) XXX_Merge
-
-```go
-func (m *Token) XXX_Merge(src proto.Message)
-```
-
-#### func (*Token) XXX_Size
-
-```go
-func (m *Token) XXX_Size() int
-```
-
-#### func (*Token) XXX_Unmarshal
-
-```go
-func (m *Token) XXX_Unmarshal(b []byte) error
-```
-
 #### type UserReminder
 
 ```go
@@ -4560,6 +5086,22 @@ func (m *UserReminder) XXX_Size() int
 
 ```go
 func (m *UserReminder) XXX_Unmarshal(b []byte) error
+```
+
+#### type UserServer
+
+```go
+type UserServer struct {
+	UserServiceServer
+	driver.PluginFunc
+}
+```
+
+
+#### func  NewUserServer
+
+```go
+func NewUserServer(addr string, server UserServiceServer) *UserServer
 ```
 
 #### type UserServiceClient

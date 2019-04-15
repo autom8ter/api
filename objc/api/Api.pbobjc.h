@@ -33,12 +33,12 @@ CF_EXTERN_C_BEGIN
 @class AttachmentActionOptionGroup;
 @class AttachmentConfirmationField;
 @class AttachmentField;
+@class Customer;
 @class EmailAddress;
+@class File;
 @class ItemRef;
-@class JSON;
-@class PubsubMessage;
+@class Product;
 @class RecipientEmail;
-@class Topic;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -995,20 +995,6 @@ typedef GPB_ENUM(AttachmentField_FieldNumber) {
 
 @end
 
-#pragma mark - JSONMap
-
-typedef GPB_ENUM(JSONMap_FieldNumber) {
-  JSONMap_FieldNumber_JsonMap = 1,
-};
-
-@interface JSONMap : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, JSON*> *jsonMap;
-/** The number of items in @c jsonMap without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger jsonMap_Count;
-
-@end
-
 #pragma mark - JSON
 
 typedef GPB_ENUM(JSON_FieldNumber) {
@@ -1024,31 +1010,94 @@ typedef GPB_ENUM(JSON_FieldNumber) {
 
 @end
 
-#pragma mark - PubSubMessage
+#pragma mark - File
 
-typedef GPB_ENUM(PubSubMessage_FieldNumber) {
-  PubSubMessage_FieldNumber_Message = 1,
+typedef GPB_ENUM(File_FieldNumber) {
+  File_FieldNumber_Data_p = 1,
+  File_FieldNumber_Size = 2,
+  File_FieldNumber_Name = 3,
+  File_FieldNumber_Tags = 4,
 };
 
-@interface PubSubMessage : GPBMessage
+@interface File : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) PubsubMessage *message;
-/** Test to see if @c message has been set. */
-@property(nonatomic, readwrite) BOOL hasMessage;
+@property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
+
+@property(nonatomic, readwrite) int64_t size;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *tags;
+/** The number of items in @c tags without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tags_Count;
 
 @end
 
-#pragma mark - PubSubTopic
+#pragma mark - Product
 
-typedef GPB_ENUM(PubSubTopic_FieldNumber) {
-  PubSubTopic_FieldNumber_Topic = 1,
+typedef GPB_ENUM(Product_FieldNumber) {
+  Product_FieldNumber_Name = 1,
+  Product_FieldNumber_Amount = 2,
+  Product_FieldNumber_Description_p = 3,
+  Product_FieldNumber_FilesArray = 4,
+  Product_FieldNumber_Tags = 5,
+  Product_FieldNumber_Available = 6,
 };
 
-@interface PubSubTopic : GPBMessage
+@interface Product : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Topic *topic;
-/** Test to see if @c topic has been set. */
-@property(nonatomic, readwrite) BOOL hasTopic;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite) int64_t amount;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<File*> *filesArray;
+/** The number of items in @c filesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger filesArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *tags;
+/** The number of items in @c tags without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tags_Count;
+
+@property(nonatomic, readwrite) BOOL available;
+
+@end
+
+#pragma mark - Refund
+
+typedef GPB_ENUM(Refund_FieldNumber) {
+  Refund_FieldNumber_Reason = 1,
+  Refund_FieldNumber_Amount = 2,
+  Refund_FieldNumber_ReverseTransfer = 3,
+};
+
+@interface Refund : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *reason;
+
+@property(nonatomic, readwrite) int64_t amount;
+
+@property(nonatomic, readwrite) BOOL reverseTransfer;
+
+@end
+
+#pragma mark - Charge
+
+typedef GPB_ENUM(Charge_FieldNumber) {
+  Charge_FieldNumber_Product = 1,
+  Charge_FieldNumber_Customer = 2,
+};
+
+@interface Charge : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Product *product;
+/** Test to see if @c product has been set. */
+@property(nonatomic, readwrite) BOOL hasProduct;
+
+@property(nonatomic, readwrite, strong, null_resettable) Customer *customer;
+/** Test to see if @c customer has been set. */
+@property(nonatomic, readwrite) BOOL hasCustomer;
 
 @end
 

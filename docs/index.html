@@ -239,6 +239,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.Charge"><span class="badge">M</span>Charge</a>
+                </li>
+              
+                <li>
                   <a href="#api.CreatePlanRequest"><span class="badge">M</span>CreatePlanRequest</a>
                 </li>
               
@@ -275,19 +279,19 @@
                 </li>
               
                 <li>
+                  <a href="#api.File"><span class="badge">M</span>File</a>
+                </li>
+              
+                <li>
+                  <a href="#api.File.TagsEntry"><span class="badge">M</span>File.TagsEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.ItemRef"><span class="badge">M</span>ItemRef</a>
                 </li>
               
                 <li>
                   <a href="#api.JSON"><span class="badge">M</span>JSON</a>
-                </li>
-              
-                <li>
-                  <a href="#api.JSONMap"><span class="badge">M</span>JSONMap</a>
-                </li>
-              
-                <li>
-                  <a href="#api.JSONMap.JsonMapEntry"><span class="badge">M</span>JSONMap.JsonMapEntry</a>
                 </li>
               
                 <li>
@@ -307,15 +311,19 @@
                 </li>
               
                 <li>
-                  <a href="#api.PubSubMessage"><span class="badge">M</span>PubSubMessage</a>
+                  <a href="#api.Product"><span class="badge">M</span>Product</a>
                 </li>
               
                 <li>
-                  <a href="#api.PubSubTopic"><span class="badge">M</span>PubSubTopic</a>
+                  <a href="#api.Product.TagsEntry"><span class="badge">M</span>Product.TagsEntry</a>
                 </li>
               
                 <li>
                   <a href="#api.RecipientEmail"><span class="badge">M</span>RecipientEmail</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Refund"><span class="badge">M</span>Refund</a>
                 </li>
               
                 <li>
@@ -1188,6 +1196,36 @@
 
         
       
+        <h3 id="api.Charge">Charge</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>product</td>
+                  <td><a href="#api.Product">Product</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>customer</td>
+                  <td><a href="#api.Customer">Customer</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.CreatePlanRequest">CreatePlanRequest</h3>
         <p></p>
 
@@ -1547,6 +1585,80 @@
 
         
       
+        <h3 id="api.File">File</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>data</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>size</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tags</td>
+                  <td><a href="#api.File.TagsEntry">File.TagsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.File.TagsEntry">File.TagsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.ItemRef">ItemRef</h3>
         <p></p>
 
@@ -1604,59 +1716,6 @@
                 <tr>
                   <td>size</td>
                   <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.JSONMap">JSONMap</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>json_map</td>
-                  <td><a href="#api.JSONMap.JsonMapEntry">JSONMap.JsonMapEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.JSONMap.JsonMapEntry">JSONMap.JsonMapEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#api.JSON">JSON</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1801,7 +1860,7 @@
 
         
       
-        <h3 id="api.PubSubMessage">PubSubMessage</h3>
+        <h3 id="api.Product">Product</h3>
         <p></p>
 
         
@@ -1812,8 +1871,43 @@
             <tbody>
               
                 <tr>
-                  <td>message</td>
-                  <td><a href="#google.pubsub.v1.PubsubMessage">google.pubsub.v1.PubsubMessage</a></td>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>files</td>
+                  <td><a href="#api.File">File</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tags</td>
+                  <td><a href="#api.Product.TagsEntry">Product.TagsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>available</td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1824,7 +1918,7 @@
 
         
       
-        <h3 id="api.PubSubTopic">PubSubTopic</h3>
+        <h3 id="api.Product.TagsEntry">Product.TagsEntry</h3>
         <p></p>
 
         
@@ -1835,8 +1929,15 @@
             <tbody>
               
                 <tr>
-                  <td>topic</td>
-                  <td><a href="#google.pubsub.v1.Topic">google.pubsub.v1.Topic</a></td>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1881,6 +1982,43 @@
                 <tr>
                   <td>html</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Refund">Refund</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>reason</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>amount</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>reverse_transfer</td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>

@@ -240,18 +240,32 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :value, :string, 2
     optional :short, :bool, 3
   end
-  add_message "api.JSONMap" do
-    map :json_map, :string, :message, 1, "api.JSON"
-  end
   add_message "api.JSON" do
     optional :data, :bytes, 1
     optional :size, :int64, 2
   end
-  add_message "api.PubSubMessage" do
-    optional :message, :message, 1, "google.pubsub.v1.PubsubMessage"
+  add_message "api.File" do
+    optional :data, :bytes, 1
+    optional :size, :int64, 2
+    optional :name, :string, 3
+    map :tags, :string, :string, 4
   end
-  add_message "api.PubSubTopic" do
-    optional :topic, :message, 1, "google.pubsub.v1.Topic"
+  add_message "api.Product" do
+    optional :name, :string, 1
+    optional :amount, :int64, 2
+    optional :description, :string, 3
+    repeated :files, :message, 4, "api.File"
+    map :tags, :string, :string, 5
+    optional :available, :bool, 6
+  end
+  add_message "api.Refund" do
+    optional :reason, :string, 1
+    optional :amount, :int64, 2
+    optional :reverse_transfer, :bool, 3
+  end
+  add_message "api.Charge" do
+    optional :product, :message, 1, "api.Product"
+    optional :customer, :message, 2, "api.Customer"
   end
   add_enum "api.CustomerIndex" do
     value :ID, 0
@@ -318,10 +332,11 @@ module Api
   AttachmentActionOptionGroup = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOptionGroup").msgclass
   AttachmentActionOption = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentActionOption").msgclass
   AttachmentField = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentField").msgclass
-  JSONMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONMap").msgclass
   JSON = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSON").msgclass
-  PubSubMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubMessage").msgclass
-  PubSubTopic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PubSubTopic").msgclass
+  File = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.File").msgclass
+  Product = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Product").msgclass
+  Refund = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Refund").msgclass
+  Charge = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Charge").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
   Claim = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Claim").enummodule
   SigningMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SigningMethod").enummodule

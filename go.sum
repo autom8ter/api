@@ -33,6 +33,12 @@ github.com/autom8ter/objectify v0.0.0-20190408065719-a9ebead75a53/go.mod h1:EAzD
 github.com/autom8ter/objectify v0.0.0-20190408071719-79ea764cf5ba/go.mod h1:EAzDHsLulh41WBS3lcJgenwdK21Ep+/KqiiGvWC/lCQ=
 github.com/autom8ter/objectify v0.0.0-20190410085111-a258169d8230 h1:5CVJvFFTlbZmvCiqio1nvmhaxBYs1dEFMdpBWAPzNJ0=
 github.com/autom8ter/objectify v0.0.0-20190410085111-a258169d8230/go.mod h1:pp7rs6TmBjGkr4d2CMCF8vISRBD5k+0e774FIifKtA0=
+github.com/autom8ter/objectify v0.0.0-20190414234732-d15b1f2081bf h1:iZT6cnbKc404L/3mZZ0f8JXswOpWU868l3l9/I6BrxQ=
+github.com/autom8ter/objectify v0.0.0-20190414234732-d15b1f2081bf/go.mod h1:pp7rs6TmBjGkr4d2CMCF8vISRBD5k+0e774FIifKtA0=
+github.com/autom8ter/objectify v0.0.0-20190414235133-8c61febc4e0d h1:2Mrbu6v3ROHLAEYe1ZOmUKvfJQuq0ptj7B6dUEn7uLY=
+github.com/autom8ter/objectify v0.0.0-20190414235133-8c61febc4e0d/go.mod h1:X0Bgvs/G/7yaxBPOKVDsmW6FaoVf1Ax8UhJqQOT5BO4=
+github.com/autom8ter/objectify v0.0.0-20190415004124-24343395b7d6 h1:Wv2kUec92MdL0sBggnORTuMZdeLQK6GZE6T3v3qzI3I=
+github.com/autom8ter/objectify v0.0.0-20190415004124-24343395b7d6/go.mod h1:X0Bgvs/G/7yaxBPOKVDsmW6FaoVf1Ax8UhJqQOT5BO4=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b h1:9/xdefJqW1AlO2awvgxCFPnJjg1m8TO5EzdSk/B0oFU=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b/go.mod h1:2h8US+tG3Wg9A68c4Io0aKdc506t3QyphvcRhvp8p1Q=
 github.com/aws/aws-sdk-go v1.18.6/go.mod h1:KmX6BPdI08NWTb3/sm4ZGu5ShLoqVDhKgpiN924inxo=

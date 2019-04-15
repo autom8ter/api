@@ -110,43 +110,48 @@ namespace Api {
             "bnMYAiADKAsyGy5hcGkuQXR0YWNobWVudEFjdGlvbk9wdGlvbiJLChZBdHRh",
             "Y2htZW50QWN0aW9uT3B0aW9uEg0KBXRpdGxlGAEgASgJEg0KBXZhbHVlGAIg",
             "ASgJEhMKC2Rlc2NyaXB0aW9uGAMgASgJIj4KD0F0dGFjaG1lbnRGaWVsZBIN",
-            "CgV0aXRsZRgBIAEoCRINCgV2YWx1ZRgCIAEoCRINCgVzaG9ydBgDIAEoCCJx",
-            "CgdKU09OTWFwEisKCGpzb25fbWFwGAEgAygLMhkuYXBpLkpTT05NYXAuSnNv",
-            "bk1hcEVudHJ5GjkKDEpzb25NYXBFbnRyeRILCgNrZXkYASABKAkSGAoFdmFs",
-            "dWUYAiABKAsyCS5hcGkuSlNPTjoCOAEiIgoESlNPThIMCgRkYXRhGAEgASgM",
-            "EgwKBHNpemUYAiABKAMiQQoNUHViU3ViTWVzc2FnZRIwCgdtZXNzYWdlGAEg",
-            "ASgLMh8uZ29vZ2xlLnB1YnN1Yi52MS5QdWJzdWJNZXNzYWdlIjUKC1B1YlN1",
-            "YlRvcGljEiYKBXRvcGljGAEgASgLMhcuZ29vZ2xlLnB1YnN1Yi52MS5Ub3Bp",
-            "YyotCg1DdXN0b21lckluZGV4EgYKAklEEAASCQoFRU1BSUwQARIJCgVQSE9O",
-            "RRACKlAKBUNsYWltEgoKBlRXSUxJTxAAEgwKCFNFTkRHUklEEAESCgoGU1RS",
-            "SVBFEAISCQoFU0xBQ0sQAxIHCgNHQ1AQBBINCglBVVRPTThURVIQBSo5Cg1T",
-            "aWduaW5nTWV0aG9kEggKBEhNQUMQABIJCgVFQ0RTQRABEgcKA1JTQRACEgoK",
-            "BlJTQVBQUxADKjwKCENhcmRUeXBlEggKBFZJU0EQABIOCgpNQVNURVJDQVJE",
-            "EAESDAoIRElTQ09WRVIQAhIICgRBTUVYEAMyuQgKC1VzZXJTZXJ2aWNlEk8K",
-            "DkNyZWF0ZUN1c3RvbWVyEhcuYXBpLkFkZEN1c3RvbWVyUmVxdWVzdBoNLmFw",
-            "aS5DdXN0b21lciIVgtPkkwIPIgovYXBpL3VzZXJzOgEqEnEKEVN1YnNjcmli",
-            "ZUN1c3RvbWVyEh0uYXBpLlN1YnNjcmliZUN1c3RvbWVyUmVxdWVzdBoeLmFw",
-            "aS5TdWJzY3JpYmVDdXN0b21lclJlc3BvbnNlIh2C0+STAhciEi9hcGkvdXNl",
-            "cnMve2VtYWlsfToBKhJgChNVblN1YnNjcmliZUN1c3RvbWVyEh4uYXBpLkNh",
-            "bmNlbFN1YnNjcmlwdGlvblJlcXVlc3QaCi5hcGkuRW1wdHkiHYLT5JMCFyIS",
-            "L2FwaS91c2Vycy97ZW1haWx9OgEqEmoKFkNyZWF0ZVN1YnNjcmlwdGlvblBs",
-            "YW4SFi5hcGkuQ3JlYXRlUGxhblJlcXVlc3QaFy5hcGkuQ3JlYXRlUGxhblJl",
-            "c3BvbnNlIh+C0+STAhkiFC9hcGkvcGxhbnMve3BsYW5faWR9OgEqElMKC1NN",
-            "U0N1c3RvbWVyEg8uYXBpLlNNU1JlcXVlc3QaCi5hcGkuRW1wdHkiJ4LT5JMC",
-            "ISIcL2FwaS9jdXN0b21lcnMvc21zL3t1c2VyX2lkfToBKhJWCgxDYWxsQ3Vz",
-            "dG9tZXISEC5hcGkuQ2FsbFJlcXVlc3QaCi5hcGkuRW1wdHkiKILT5JMCIiId",
-            "L2FwaS9jdXN0b21lcnMvY2FsbC97dXNlcl9pZH06ASoSUwoLTU1TQ3VzdG9t",
-            "ZXISDy5hcGkuTU1TUmVxdWVzdBoKLmFwaS5FbXB0eSIngtPkkwIhIhwvYXBp",
-            "L2N1c3RvbWVycy9tbXMve3VzZXJfaWR9OgEqElkKDUVtYWlsQ3VzdG9tZXIS",
-            "ES5hcGkuRW1haWxSZXF1ZXN0GgouYXBpLkVtcHR5IimC0+STAiMiHi9hcGkv",
-            "Y3VzdG9tZXJzL2VtYWlsL3t1c2VyX2lkfToBKhJLCgdTTVNVc2VyEg8uYXBp",
-            "LlNNU1JlcXVlc3QaCi5hcGkuRW1wdHkiI4LT5JMCHSIYL2FwaS91c2Vycy9z",
-            "bXMve3VzZXJfaWR9OgEqEk4KCENhbGxVc2VyEhAuYXBpLkNhbGxSZXF1ZXN0",
-            "GgouYXBpLkVtcHR5IiSC0+STAh4iGS9hcGkvdXNlcnMvY2FsbC97dXNlcl9p",
-            "ZH06ASoSSwoHTU1TVXNlchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5",
-            "IiOC0+STAh0iGC9hcGkvdXNlcnMvbW1zL3t1c2VyX2lkfToBKhJRCglFbWFp",
-            "bFVzZXISES5hcGkuRW1haWxSZXF1ZXN0GgouYXBpLkVtcHR5IiWC0+STAh8i",
-            "Gi9hcGkvdXNlcnMvZW1haWwve3VzZXJfaWR9OgEqYgZwcm90bzM="));
+            "CgV0aXRsZRgBIAEoCRINCgV2YWx1ZRgCIAEoCRINCgVzaG9ydBgDIAEoCCIi",
+            "CgRKU09OEgwKBGRhdGEYASABKAwSDAoEc2l6ZRgCIAEoAyKAAQoERmlsZRIM",
+            "CgRkYXRhGAEgASgMEgwKBHNpemUYAiABKAMSDAoEbmFtZRgDIAEoCRIhCgR0",
+            "YWdzGAQgAygLMhMuYXBpLkZpbGUuVGFnc0VudHJ5GisKCVRhZ3NFbnRyeRIL",
+            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIrwBCgdQcm9kdWN0EgwK",
+            "BG5hbWUYASABKAkSDgoGYW1vdW50GAIgASgDEhMKC2Rlc2NyaXB0aW9uGAMg",
+            "ASgJEhgKBWZpbGVzGAQgAygLMgkuYXBpLkZpbGUSJAoEdGFncxgFIAMoCzIW",
+            "LmFwaS5Qcm9kdWN0LlRhZ3NFbnRyeRIRCglhdmFpbGFibGUYBiABKAgaKwoJ",
+            "VGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAEiQgoG",
+            "UmVmdW5kEg4KBnJlYXNvbhgBIAEoCRIOCgZhbW91bnQYAiABKAMSGAoQcmV2",
+            "ZXJzZV90cmFuc2ZlchgDIAEoCCJICgZDaGFyZ2USHQoHcHJvZHVjdBgBIAEo",
+            "CzIMLmFwaS5Qcm9kdWN0Eh8KCGN1c3RvbWVyGAIgASgLMg0uYXBpLkN1c3Rv",
+            "bWVyKi0KDUN1c3RvbWVySW5kZXgSBgoCSUQQABIJCgVFTUFJTBABEgkKBVBI",
+            "T05FEAIqUAoFQ2xhaW0SCgoGVFdJTElPEAASDAoIU0VOREdSSUQQARIKCgZT",
+            "VFJJUEUQAhIJCgVTTEFDSxADEgcKA0dDUBAEEg0KCUFVVE9NOFRFUhAFKjkK",
+            "DVNpZ25pbmdNZXRob2QSCAoESE1BQxAAEgkKBUVDRFNBEAESBwoDUlNBEAIS",
+            "CgoGUlNBUFBTEAMqPAoIQ2FyZFR5cGUSCAoEVklTQRAAEg4KCk1BU1RFUkNB",
+            "UkQQARIMCghESVNDT1ZFUhACEggKBEFNRVgQAzK5CAoLVXNlclNlcnZpY2US",
+            "TwoOQ3JlYXRlQ3VzdG9tZXISFy5hcGkuQWRkQ3VzdG9tZXJSZXF1ZXN0Gg0u",
+            "YXBpLkN1c3RvbWVyIhWC0+STAg8iCi9hcGkvdXNlcnM6ASoScQoRU3Vic2Ny",
+            "aWJlQ3VzdG9tZXISHS5hcGkuU3Vic2NyaWJlQ3VzdG9tZXJSZXF1ZXN0Gh4u",
+            "YXBpLlN1YnNjcmliZUN1c3RvbWVyUmVzcG9uc2UiHYLT5JMCFyISL2FwaS91",
+            "c2Vycy97ZW1haWx9OgEqEmAKE1VuU3Vic2NyaWJlQ3VzdG9tZXISHi5hcGku",
+            "Q2FuY2VsU3Vic2NyaXB0aW9uUmVxdWVzdBoKLmFwaS5FbXB0eSIdgtPkkwIX",
+            "IhIvYXBpL3VzZXJzL3tlbWFpbH06ASoSagoWQ3JlYXRlU3Vic2NyaXB0aW9u",
+            "UGxhbhIWLmFwaS5DcmVhdGVQbGFuUmVxdWVzdBoXLmFwaS5DcmVhdGVQbGFu",
+            "UmVzcG9uc2UiH4LT5JMCGSIUL2FwaS9wbGFucy97cGxhbl9pZH06ASoSUwoL",
+            "U01TQ3VzdG9tZXISDy5hcGkuU01TUmVxdWVzdBoKLmFwaS5FbXB0eSIngtPk",
+            "kwIhIhwvYXBpL2N1c3RvbWVycy9zbXMve3VzZXJfaWR9OgEqElYKDENhbGxD",
+            "dXN0b21lchIQLmFwaS5DYWxsUmVxdWVzdBoKLmFwaS5FbXB0eSIogtPkkwIi",
+            "Ih0vYXBpL2N1c3RvbWVycy9jYWxsL3t1c2VyX2lkfToBKhJTCgtNTVNDdXN0",
+            "b21lchIPLmFwaS5NTVNSZXF1ZXN0GgouYXBpLkVtcHR5IieC0+STAiEiHC9h",
+            "cGkvY3VzdG9tZXJzL21tcy97dXNlcl9pZH06ASoSWQoNRW1haWxDdXN0b21l",
+            "chIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHkiKYLT5JMCIyIeL2Fw",
+            "aS9jdXN0b21lcnMvZW1haWwve3VzZXJfaWR9OgEqEksKB1NNU1VzZXISDy5h",
+            "cGkuU01TUmVxdWVzdBoKLmFwaS5FbXB0eSIjgtPkkwIdIhgvYXBpL3VzZXJz",
+            "L3Ntcy97dXNlcl9pZH06ASoSTgoIQ2FsbFVzZXISEC5hcGkuQ2FsbFJlcXVl",
+            "c3QaCi5hcGkuRW1wdHkiJILT5JMCHiIZL2FwaS91c2Vycy9jYWxsL3t1c2Vy",
+            "X2lkfToBKhJLCgdNTVNVc2VyEg8uYXBpLk1NU1JlcXVlc3QaCi5hcGkuRW1w",
+            "dHkiI4LT5JMCHSIYL2FwaS91c2Vycy9tbXMve3VzZXJfaWR9OgEqElEKCUVt",
+            "YWlsVXNlchIRLmFwaS5FbWFpbFJlcXVlc3QaCi5hcGkuRW1wdHkiJYLT5JMC",
+            "HyIaL2FwaS91c2Vycy9lbWFpbC97dXNlcl9pZH06ASpiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.AuthReflection.Descriptor, global::Google.Cloud.PubSub.V1.PubsubReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), typeof(global::Api.Claim), typeof(global::Api.SigningMethod), typeof(global::Api.CardType), }, new pbr::GeneratedClrTypeInfo[] {
@@ -187,10 +192,11 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AttachmentActionOptionGroup), global::Api.AttachmentActionOptionGroup.Parser, new[]{ "Text", "Options" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AttachmentActionOption), global::Api.AttachmentActionOption.Parser, new[]{ "Title", "Value", "Description" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AttachmentField), global::Api.AttachmentField.Parser, new[]{ "Title", "Value", "Short" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.JSONMap), global::Api.JSONMap.Parser, new[]{ "JsonMap" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.JSON), global::Api.JSON.Parser, new[]{ "Data", "Size" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.PubSubMessage), global::Api.PubSubMessage.Parser, new[]{ "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.PubSubTopic), global::Api.PubSubTopic.Parser, new[]{ "Topic" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.File), global::Api.File.Parser, new[]{ "Data", "Size", "Name", "Tags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Product), global::Api.Product.Parser, new[]{ "Name", "Amount", "Description", "Files", "Tags", "Available" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Refund), global::Api.Refund.Parser, new[]{ "Reason", "Amount", "ReverseTransfer" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Charge), global::Api.Charge.Parser, new[]{ "Product", "Customer" }, null, null, null)
           }));
     }
     #endregion
@@ -8349,127 +8355,6 @@ namespace Api {
 
   }
 
-  public sealed partial class JSONMap : pb::IMessage<JSONMap> {
-    private static readonly pb::MessageParser<JSONMap> _parser = new pb::MessageParser<JSONMap>(() => new JSONMap());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<JSONMap> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[37]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JSONMap() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JSONMap(JSONMap other) : this() {
-      jsonMap_ = other.jsonMap_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JSONMap Clone() {
-      return new JSONMap(this);
-    }
-
-    /// <summary>Field number for the "json_map" field.</summary>
-    public const int JsonMapFieldNumber = 1;
-    private static readonly pbc::MapField<string, global::Api.JSON>.Codec _map_jsonMap_codec
-        = new pbc::MapField<string, global::Api.JSON>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForMessage(18, global::Api.JSON.Parser), 10);
-    private readonly pbc::MapField<string, global::Api.JSON> jsonMap_ = new pbc::MapField<string, global::Api.JSON>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::Api.JSON> JsonMap {
-      get { return jsonMap_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as JSONMap);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(JSONMap other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!JsonMap.Equals(other.JsonMap)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= JsonMap.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      jsonMap_.WriteTo(output, _map_jsonMap_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += jsonMap_.CalculateSize(_map_jsonMap_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(JSONMap other) {
-      if (other == null) {
-        return;
-      }
-      jsonMap_.Add(other.jsonMap_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            jsonMap_.AddEntriesFrom(input, _map_jsonMap_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class JSON : pb::IMessage<JSON> {
     private static readonly pb::MessageParser<JSON> _parser = new pb::MessageParser<JSON>(() => new JSON());
     private pb::UnknownFieldSet _unknownFields;
@@ -8478,7 +8363,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[38]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8627,11 +8512,216 @@ namespace Api {
 
   }
 
-  public sealed partial class PubSubMessage : pb::IMessage<PubSubMessage> {
-    private static readonly pb::MessageParser<PubSubMessage> _parser = new pb::MessageParser<PubSubMessage>(() => new PubSubMessage());
+  public sealed partial class File : pb::IMessage<File> {
+    private static readonly pb::MessageParser<File> _parser = new pb::MessageParser<File>(() => new File());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<PubSubMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<File> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[38]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public File() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public File(File other) : this() {
+      data_ = other.data_;
+      size_ = other.size_;
+      name_ = other.name_;
+      tags_ = other.tags_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public File Clone() {
+      return new File(this);
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 1;
+    private pb::ByteString data_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pb::ByteString Data {
+      get { return data_; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "size" field.</summary>
+    public const int SizeFieldNumber = 2;
+    private long size_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Size {
+      get { return size_; }
+      set {
+        size_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 4;
+    private static readonly pbc::MapField<string, string>.Codec _map_tags_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
+    private readonly pbc::MapField<string, string> tags_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, string> Tags {
+      get { return tags_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as File);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(File other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Data != other.Data) return false;
+      if (Size != other.Size) return false;
+      if (Name != other.Name) return false;
+      if (!Tags.Equals(other.Tags)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Data.Length != 0) hash ^= Data.GetHashCode();
+      if (Size != 0L) hash ^= Size.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      hash ^= Tags.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Data.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteBytes(Data);
+      }
+      if (Size != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Size);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      tags_.WriteTo(output, _map_tags_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Data.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Data);
+      }
+      if (Size != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Size);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      size += tags_.CalculateSize(_map_tags_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(File other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Data.Length != 0) {
+        Data = other.Data;
+      }
+      if (other.Size != 0L) {
+        Size = other.Size;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      tags_.Add(other.tags_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Data = input.ReadBytes();
+            break;
+          }
+          case 16: {
+            Size = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 34: {
+            tags_.AddEntriesFrom(input, _map_tags_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Product : pb::IMessage<Product> {
+    private static readonly pb::MessageParser<Product> _parser = new pb::MessageParser<Product>(() => new Product());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Product> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -8644,55 +8734,123 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PubSubMessage() {
+    public Product() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PubSubMessage(PubSubMessage other) : this() {
-      message_ = other.message_ != null ? other.message_.Clone() : null;
+    public Product(Product other) : this() {
+      name_ = other.name_;
+      amount_ = other.amount_;
+      description_ = other.description_;
+      files_ = other.files_.Clone();
+      tags_ = other.tags_.Clone();
+      available_ = other.available_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PubSubMessage Clone() {
-      return new PubSubMessage(this);
+    public Product Clone() {
+      return new Product(this);
     }
 
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 1;
-    private global::Google.Cloud.PubSub.V1.PubsubMessage message_;
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.PubSub.V1.PubsubMessage Message {
-      get { return message_; }
+    public string Name {
+      get { return name_; }
       set {
-        message_ = value;
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 2;
+    private long amount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 3;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "files" field.</summary>
+    public const int FilesFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Api.File> _repeated_files_codec
+        = pb::FieldCodec.ForMessage(34, global::Api.File.Parser);
+    private readonly pbc::RepeatedField<global::Api.File> files_ = new pbc::RepeatedField<global::Api.File>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Api.File> Files {
+      get { return files_; }
+    }
+
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 5;
+    private static readonly pbc::MapField<string, string>.Codec _map_tags_codec
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 42);
+    private readonly pbc::MapField<string, string> tags_ = new pbc::MapField<string, string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::MapField<string, string> Tags {
+      get { return tags_; }
+    }
+
+    /// <summary>Field number for the "available" field.</summary>
+    public const int AvailableFieldNumber = 6;
+    private bool available_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Available {
+      get { return available_; }
+      set {
+        available_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as PubSubMessage);
+      return Equals(other as Product);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(PubSubMessage other) {
+    public bool Equals(Product other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Message, other.Message)) return false;
+      if (Name != other.Name) return false;
+      if (Amount != other.Amount) return false;
+      if (Description != other.Description) return false;
+      if(!files_.Equals(other.files_)) return false;
+      if (!Tags.Equals(other.Tags)) return false;
+      if (Available != other.Available) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (message_ != null) hash ^= Message.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Amount != 0L) hash ^= Amount.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      hash ^= files_.GetHashCode();
+      hash ^= Tags.GetHashCode();
+      if (Available != false) hash ^= Available.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8706,9 +8864,23 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (message_ != null) {
+      if (Name.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteMessage(Message);
+        output.WriteString(Name);
+      }
+      if (Amount != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Amount);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Description);
+      }
+      files_.WriteTo(output, _repeated_files_codec);
+      tags_.WriteTo(output, _map_tags_codec);
+      if (Available != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(Available);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -8718,8 +8890,19 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (message_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Message);
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Amount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amount);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      size += files_.CalculateSize(_repeated_files_codec);
+      size += tags_.CalculateSize(_map_tags_codec);
+      if (Available != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -8728,15 +8911,23 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(PubSubMessage other) {
+    public void MergeFrom(Product other) {
       if (other == null) {
         return;
       }
-      if (other.message_ != null) {
-        if (message_ == null) {
-          message_ = new global::Google.Cloud.PubSub.V1.PubsubMessage();
-        }
-        Message.MergeFrom(other.Message);
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Amount != 0L) {
+        Amount = other.Amount;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      files_.Add(other.files_);
+      tags_.Add(other.tags_);
+      if (other.Available != false) {
+        Available = other.Available;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -8750,10 +8941,27 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (message_ == null) {
-              message_ = new global::Google.Cloud.PubSub.V1.PubsubMessage();
-            }
-            input.ReadMessage(message_);
+            Name = input.ReadString();
+            break;
+          }
+          case 16: {
+            Amount = input.ReadInt64();
+            break;
+          }
+          case 26: {
+            Description = input.ReadString();
+            break;
+          }
+          case 34: {
+            files_.AddEntriesFrom(input, _repeated_files_codec);
+            break;
+          }
+          case 42: {
+            tags_.AddEntriesFrom(input, _map_tags_codec);
+            break;
+          }
+          case 48: {
+            Available = input.ReadBool();
             break;
           }
         }
@@ -8762,11 +8970,11 @@ namespace Api {
 
   }
 
-  public sealed partial class PubSubTopic : pb::IMessage<PubSubTopic> {
-    private static readonly pb::MessageParser<PubSubTopic> _parser = new pb::MessageParser<PubSubTopic>(() => new PubSubTopic());
+  public sealed partial class Refund : pb::IMessage<Refund> {
+    private static readonly pb::MessageParser<Refund> _parser = new pb::MessageParser<Refund>(() => new Refund());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<PubSubTopic> Parser { get { return _parser; } }
+    public static pb::MessageParser<Refund> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -8779,55 +8987,83 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PubSubTopic() {
+    public Refund() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PubSubTopic(PubSubTopic other) : this() {
-      topic_ = other.topic_ != null ? other.topic_.Clone() : null;
+    public Refund(Refund other) : this() {
+      reason_ = other.reason_;
+      amount_ = other.amount_;
+      reverseTransfer_ = other.reverseTransfer_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PubSubTopic Clone() {
-      return new PubSubTopic(this);
+    public Refund Clone() {
+      return new Refund(this);
     }
 
-    /// <summary>Field number for the "topic" field.</summary>
-    public const int TopicFieldNumber = 1;
-    private global::Google.Cloud.PubSub.V1.Topic topic_;
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 1;
+    private string reason_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Cloud.PubSub.V1.Topic Topic {
-      get { return topic_; }
+    public string Reason {
+      get { return reason_; }
       set {
-        topic_ = value;
+        reason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "amount" field.</summary>
+    public const int AmountFieldNumber = 2;
+    private long amount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Amount {
+      get { return amount_; }
+      set {
+        amount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reverse_transfer" field.</summary>
+    public const int ReverseTransferFieldNumber = 3;
+    private bool reverseTransfer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool ReverseTransfer {
+      get { return reverseTransfer_; }
+      set {
+        reverseTransfer_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as PubSubTopic);
+      return Equals(other as Refund);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(PubSubTopic other) {
+    public bool Equals(Refund other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Topic, other.Topic)) return false;
+      if (Reason != other.Reason) return false;
+      if (Amount != other.Amount) return false;
+      if (ReverseTransfer != other.ReverseTransfer) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (topic_ != null) hash ^= Topic.GetHashCode();
+      if (Reason.Length != 0) hash ^= Reason.GetHashCode();
+      if (Amount != 0L) hash ^= Amount.GetHashCode();
+      if (ReverseTransfer != false) hash ^= ReverseTransfer.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8841,9 +9077,17 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (topic_ != null) {
+      if (Reason.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteMessage(Topic);
+        output.WriteString(Reason);
+      }
+      if (Amount != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(Amount);
+      }
+      if (ReverseTransfer != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(ReverseTransfer);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -8853,8 +9097,14 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (topic_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Topic);
+      if (Reason.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
+      }
+      if (Amount != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Amount);
+      }
+      if (ReverseTransfer != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -8863,15 +9113,18 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(PubSubTopic other) {
+    public void MergeFrom(Refund other) {
       if (other == null) {
         return;
       }
-      if (other.topic_ != null) {
-        if (topic_ == null) {
-          topic_ = new global::Google.Cloud.PubSub.V1.Topic();
-        }
-        Topic.MergeFrom(other.Topic);
+      if (other.Reason.Length != 0) {
+        Reason = other.Reason;
+      }
+      if (other.Amount != 0L) {
+        Amount = other.Amount;
+      }
+      if (other.ReverseTransfer != false) {
+        ReverseTransfer = other.ReverseTransfer;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -8885,10 +9138,184 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (topic_ == null) {
-              topic_ = new global::Google.Cloud.PubSub.V1.Topic();
+            Reason = input.ReadString();
+            break;
+          }
+          case 16: {
+            Amount = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            ReverseTransfer = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Charge : pb::IMessage<Charge> {
+    private static readonly pb::MessageParser<Charge> _parser = new pb::MessageParser<Charge>(() => new Charge());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Charge> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[41]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Charge() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Charge(Charge other) : this() {
+      product_ = other.product_ != null ? other.product_.Clone() : null;
+      customer_ = other.customer_ != null ? other.customer_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Charge Clone() {
+      return new Charge(this);
+    }
+
+    /// <summary>Field number for the "product" field.</summary>
+    public const int ProductFieldNumber = 1;
+    private global::Api.Product product_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.Product Product {
+      get { return product_; }
+      set {
+        product_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "customer" field.</summary>
+    public const int CustomerFieldNumber = 2;
+    private global::Api.Customer customer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.Customer Customer {
+      get { return customer_; }
+      set {
+        customer_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Charge);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Charge other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Product, other.Product)) return false;
+      if (!object.Equals(Customer, other.Customer)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (product_ != null) hash ^= Product.GetHashCode();
+      if (customer_ != null) hash ^= Customer.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (product_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Product);
+      }
+      if (customer_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Customer);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (product_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Product);
+      }
+      if (customer_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Customer);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Charge other) {
+      if (other == null) {
+        return;
+      }
+      if (other.product_ != null) {
+        if (product_ == null) {
+          product_ = new global::Api.Product();
+        }
+        Product.MergeFrom(other.Product);
+      }
+      if (other.customer_ != null) {
+        if (customer_ == null) {
+          customer_ = new global::Api.Customer();
+        }
+        Customer.MergeFrom(other.Customer);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (product_ == null) {
+              product_ = new global::Api.Product();
             }
-            input.ReadMessage(topic_);
+            input.ReadMessage(product_);
+            break;
+          }
+          case 18: {
+            if (customer_ == null) {
+              customer_ = new global::Api.Customer();
+            }
+            input.ReadMessage(customer_);
             break;
           }
         }

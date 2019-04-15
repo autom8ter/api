@@ -3159,49 +3159,6 @@ typedef struct AttachmentField__storage_ {
 
 @end
 
-#pragma mark - JSONMap
-
-@implementation JSONMap
-
-@dynamic jsonMap, jsonMap_Count;
-
-typedef struct JSONMap__storage_ {
-  uint32_t _has_storage_[1];
-  NSMutableDictionary *jsonMap;
-} JSONMap__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "jsonMap",
-        .dataTypeSpecific.className = GPBStringifySymbol(JSON),
-        .number = JSONMap_FieldNumber_JsonMap,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(JSONMap__storage_, jsonMap),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[JSONMap class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(JSONMap__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
 #pragma mark - JSON
 
 @implementation JSON
@@ -3256,16 +3213,22 @@ typedef struct JSON__storage_ {
 
 @end
 
-#pragma mark - PubSubMessage
+#pragma mark - File
 
-@implementation PubSubMessage
+@implementation File
 
-@dynamic hasMessage, message;
+@dynamic data_p;
+@dynamic size;
+@dynamic name;
+@dynamic tags, tags_Count;
 
-typedef struct PubSubMessage__storage_ {
+typedef struct File__storage_ {
   uint32_t _has_storage_[1];
-  PubsubMessage *message;
-} PubSubMessage__storage_;
+  NSData *data_p;
+  NSString *name;
+  NSMutableDictionary *tags;
+  int64_t size;
+} File__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -3274,22 +3237,49 @@ typedef struct PubSubMessage__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "message",
-        .dataTypeSpecific.className = GPBStringifySymbol(PubsubMessage),
-        .number = PubSubMessage_FieldNumber_Message,
+        .name = "data_p",
+        .dataTypeSpecific.className = NULL,
+        .number = File_FieldNumber_Data_p,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PubSubMessage__storage_, message),
+        .offset = (uint32_t)offsetof(File__storage_, data_p),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "size",
+        .dataTypeSpecific.className = NULL,
+        .number = File_FieldNumber_Size,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(File__storage_, size),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "name",
+        .dataTypeSpecific.className = NULL,
+        .number = File_FieldNumber_Name,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(File__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "tags",
+        .dataTypeSpecific.className = NULL,
+        .number = File_FieldNumber_Tags,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(File__storage_, tags),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PubSubMessage class]
+        [GPBDescriptor allocDescriptorForClass:[File class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PubSubMessage__storage_)
+                                   storageSize:sizeof(File__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -3299,16 +3289,25 @@ typedef struct PubSubMessage__storage_ {
 
 @end
 
-#pragma mark - PubSubTopic
+#pragma mark - Product
 
-@implementation PubSubTopic
+@implementation Product
 
-@dynamic hasTopic, topic;
+@dynamic name;
+@dynamic amount;
+@dynamic description_p;
+@dynamic filesArray, filesArray_Count;
+@dynamic tags, tags_Count;
+@dynamic available;
 
-typedef struct PubSubTopic__storage_ {
+typedef struct Product__storage_ {
   uint32_t _has_storage_[1];
-  Topic *topic;
-} PubSubTopic__storage_;
+  NSString *name;
+  NSString *description_p;
+  NSMutableArray *filesArray;
+  NSMutableDictionary *tags;
+  int64_t amount;
+} Product__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -3317,22 +3316,185 @@ typedef struct PubSubTopic__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "topic",
-        .dataTypeSpecific.className = GPBStringifySymbol(Topic),
-        .number = PubSubTopic_FieldNumber_Topic,
+        .name = "name",
+        .dataTypeSpecific.className = NULL,
+        .number = Product_FieldNumber_Name,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(PubSubTopic__storage_, topic),
+        .offset = (uint32_t)offsetof(Product__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "amount",
+        .dataTypeSpecific.className = NULL,
+        .number = Product_FieldNumber_Amount,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Product__storage_, amount),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "description_p",
+        .dataTypeSpecific.className = NULL,
+        .number = Product_FieldNumber_Description_p,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Product__storage_, description_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "filesArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(File),
+        .number = Product_FieldNumber_FilesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Product__storage_, filesArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "tags",
+        .dataTypeSpecific.className = NULL,
+        .number = Product_FieldNumber_Tags,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Product__storage_, tags),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "available",
+        .dataTypeSpecific.className = NULL,
+        .number = Product_FieldNumber_Available,
+        .hasIndex = 3,
+        .offset = 4,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Product class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Product__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Refund
+
+@implementation Refund
+
+@dynamic reason;
+@dynamic amount;
+@dynamic reverseTransfer;
+
+typedef struct Refund__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *reason;
+  int64_t amount;
+} Refund__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "reason",
+        .dataTypeSpecific.className = NULL,
+        .number = Refund_FieldNumber_Reason,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Refund__storage_, reason),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "amount",
+        .dataTypeSpecific.className = NULL,
+        .number = Refund_FieldNumber_Amount,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Refund__storage_, amount),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "reverseTransfer",
+        .dataTypeSpecific.className = NULL,
+        .number = Refund_FieldNumber_ReverseTransfer,
+        .hasIndex = 2,
+        .offset = 3,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Refund class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Refund__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Charge
+
+@implementation Charge
+
+@dynamic hasProduct, product;
+@dynamic hasCustomer, customer;
+
+typedef struct Charge__storage_ {
+  uint32_t _has_storage_[1];
+  Product *product;
+  Customer *customer;
+} Charge__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "product",
+        .dataTypeSpecific.className = GPBStringifySymbol(Product),
+        .number = Charge_FieldNumber_Product,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Charge__storage_, product),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "customer",
+        .dataTypeSpecific.className = GPBStringifySymbol(Customer),
+        .number = Charge_FieldNumber_Customer,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Charge__storage_, customer),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[PubSubTopic class]
+        [GPBDescriptor allocDescriptorForClass:[Charge class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(PubSubTopic__storage_)
+                                   storageSize:sizeof(Charge__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
