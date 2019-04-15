@@ -4371,6 +4371,82 @@ typedef struct StringMapString__storage_ {
 
 @end
 
+#pragma mark - Msg
+
+@implementation Msg
+
+@dynamic id_p;
+@dynamic attributes, attributes_Count;
+@dynamic data_p;
+@dynamic publishTime;
+
+typedef struct Msg__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *id_p;
+  NSMutableDictionary *attributes;
+  NSData *data_p;
+  NSString *publishTime;
+} Msg__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = NULL,
+        .number = Msg_FieldNumber_Id_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Msg__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "attributes",
+        .dataTypeSpecific.className = NULL,
+        .number = Msg_FieldNumber_Attributes,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Msg__storage_, attributes),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "data_p",
+        .dataTypeSpecific.className = NULL,
+        .number = Msg_FieldNumber_Data_p,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Msg__storage_, data_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "publishTime",
+        .dataTypeSpecific.className = NULL,
+        .number = Msg_FieldNumber_PublishTime,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Msg__storage_, publishTime),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Msg class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Msg__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

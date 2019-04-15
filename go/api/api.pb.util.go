@@ -37,11 +37,15 @@ type Messenger interface {
 	GoType() string
 }
 
-func AsMessage(attributes map[string]string, m Messenger) *pubsub.PubsubMessage {
-	return &pubsub.PubsubMessage{
-		Data:       m.DataBytes(),
-		Attributes: m.Attributes(attributes),
-		MessageId:  m.GoType(),
+
+func AsMessage(attributes map[string]string, m Messenger) *Msg {
+	for k, v := range m.Attributes(attributes) {
+		attributes[k] = v
+	}
+	return &Msg{
+		Id:                   m.GoType(),
+		Attributes:           attributes,
+		Data:                 m.DataBytes(),
 	}
 }
 

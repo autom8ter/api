@@ -595,6 +595,12 @@ message Product {
 message StringMapString {
     map<string,string> map=1;
 }
+message Msg {
+    string id =1;
+    map<string,string> attributes=2;
+    bytes data=3;
+    string publish_time=4;
+}
 
 ///////////////////////////////////////////////Enums/////////////////////////////////////////////////////////////////
 

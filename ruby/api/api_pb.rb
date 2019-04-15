@@ -334,6 +334,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.StringMapString" do
     map :map, :string, :string, 1
   end
+  add_message "api.Msg" do
+    optional :id, :string, 1
+    map :attributes, :string, :string, 2
+    optional :data, :bytes, 3
+    optional :publish_time, :string, 4
+  end
   add_enum "api.CustomerIndex" do
     value :ID, 0
     value :EMAIL, 1
@@ -419,6 +425,7 @@ module Api
   SlackHook = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SlackHook").msgclass
   Product = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Product").msgclass
   StringMapString = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StringMapString").msgclass
+  Msg = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Msg").msgclass
   CustomerIndex = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerIndex").enummodule
   Claim = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Claim").enummodule
   SigningMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SigningMethod").enummodule
