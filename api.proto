@@ -626,3 +626,10 @@ enum CardType {
     DISCOVER=2;
     AMEX=3;
 }
+
+enum Topic {
+    USER=0;
+    ACCOUNT=1;
+    CUSTOMER=2;
+    OTHER=3;
+}

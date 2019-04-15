@@ -1174,7 +1174,7 @@ void InitDefaults() {
 }
 
 ::google::protobuf::Metadata file_level_metadata[55];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[4];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[5];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -1973,70 +1973,71 @@ void AddDescriptorsImpl() {
       "\n\003GCP\020\004\022\r\n\tAUTOM8TER\020\005*9\n\rSigningMethod\022"
       "\010\n\004HMAC\020\000\022\t\n\005ECDSA\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS\020"
       "\003*<\n\010CardType\022\010\n\004VISA\020\000\022\016\n\nMASTERCARD\020\001\022"
-      "\014\n\010DISCOVER\020\002\022\010\n\004AMEX\020\0032\372\002\n\016AccountServi"
-      "ce\022O\n\rCreateAccount\022\031.api.CreateAccountR"
-      "equest\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/accounts"
-      ":\001*\022P\n\rUpdateAccount\022\014.api.Account\032\t.api"
-      ".JSON\"&\202\323\344\223\002 \"\033/api/accounts/{customer.i"
-      "d}:\001*\022B\n\rDeleteAccount\022\007.api.Id\032\t.api.JS"
-      "ON\"\035\202\323\344\223\002\027\"\022/api/accounts/{id}:\001*\022@\n\013Rea"
-      "dAccount\022\007.api.Id\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/a"
-      "pi/accounts/{id}:\001*\022\?\n\014ListAccounts\022\n.ap"
-      "i.Empty\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/account"
-      "s:\001*2\226\010\n\017CustomerService\022L\n\016CreateCustom"
-      "er\022\024.api.CustomerRequest\032\t.api.JSON\"\031\202\323\344"
-      "\223\002\023\"\016/api/customers:\001*\022W\n\016UpdateCustomer"
-      "\022\032.api.UpdateCustomerRequest\032\t.api.JSON\""
-      "\036\202\323\344\223\002\030\"\023/api/customers/{id}:\001*\022D\n\016Delet"
-      "eCustomer\022\007.api.Id\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/"
-      "api/customers/{id}:\001*\022F\n\rListCustomers\022\n"
-      ".api.Empty\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/cust"
-      "omers/list:\001*\022V\n\016ChargeCustomer\022\022.api.Ch"
-      "argeRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/cus"
-      "tomers/{id}/charge:\001*\022V\n\016RefundCustomer\022"
-      "\022.api.RefundRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032"
-      "/api/customers/{id}/refund:\001*\022g\n\021Subscri"
-      "beCustomer\022\035.api.SubscribeCustomerReques"
-      "t\032\t.api.JSON\"(\202\323\344\223\002\"\"\035/api/customers/{id"
-      "}/subscribe:\001*\022l\n\023UnSubscribeCustomer\022\036."
-      "api.CancelSubscriptionRequest\032\t.api.JSON"
-      "\"*\202\323\344\223\002$\"\037/api/customers/{id}/unsubscrib"
-      "e:\001*\022M\n\013SMSCustomer\022\017.api.SMSRequest\032\t.a"
-      "pi.JSON\"\"\202\323\344\223\002\034\"\027/api/customers/{id}/sms"
-      ":\001*\022P\n\014CallCustomer\022\020.api.CallRequest\032\t."
-      "api.JSON\"#\202\323\344\223\002\035\"\030/api/customers/{id}/ca"
-      "ll:\001*\022Q\n\013MMSCustomer\022\017.api.MMSRequest\032\t."
+      "\014\n\010DISCOVER\020\002\022\010\n\004AMEX\020\003*7\n\005Topic\022\010\n\004USER"
+      "\020\000\022\013\n\007ACCOUNT\020\001\022\014\n\010CUSTOMER\020\002\022\t\n\005OTHER\020\003"
+      "2\372\002\n\016AccountService\022O\n\rCreateAccount\022\031.a"
+      "pi.CreateAccountRequest\032\t.api.JSON\"\030\202\323\344\223"
+      "\002\022\"\r/api/accounts:\001*\022P\n\rUpdateAccount\022\014."
+      "api.Account\032\t.api.JSON\"&\202\323\344\223\002 \"\033/api/acc"
+      "ounts/{customer.id}:\001*\022B\n\rDeleteAccount\022"
+      "\007.api.Id\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/api/accoun"
+      "ts/{id}:\001*\022@\n\013ReadAccount\022\007.api.Id\032\t.api"
+      ".JSON\"\035\202\323\344\223\002\027\"\022/api/accounts/{id}:\001*\022\?\n\014"
+      "ListAccounts\022\n.api.Empty\032\t.api.JSON\"\030\202\323\344"
+      "\223\002\022\"\r/api/accounts:\001*2\226\010\n\017CustomerServic"
+      "e\022L\n\016CreateCustomer\022\024.api.CustomerReques"
+      "t\032\t.api.JSON\"\031\202\323\344\223\002\023\"\016/api/customers:\001*\022"
+      "W\n\016UpdateCustomer\022\032.api.UpdateCustomerRe"
+      "quest\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/customers"
+      "/{id}:\001*\022D\n\016DeleteCustomer\022\007.api.Id\032\t.ap"
+      "i.JSON\"\036\202\323\344\223\002\030\"\023/api/customers/{id}:\001*\022F"
+      "\n\rListCustomers\022\n.api.Empty\032\t.api.JSON\"\036"
+      "\202\323\344\223\002\030\"\023/api/customers/list:\001*\022V\n\016Charge"
+      "Customer\022\022.api.ChargeRequest\032\t.api.JSON\""
+      "%\202\323\344\223\002\037\"\032/api/customers/{id}/charge:\001*\022V"
+      "\n\016RefundCustomer\022\022.api.RefundRequest\032\t.a"
+      "pi.JSON\"%\202\323\344\223\002\037\"\032/api/customers/{id}/ref"
+      "und:\001*\022g\n\021SubscribeCustomer\022\035.api.Subscr"
+      "ibeCustomerRequest\032\t.api.JSON\"(\202\323\344\223\002\"\"\035/"
+      "api/customers/{id}/subscribe:\001*\022l\n\023UnSub"
+      "scribeCustomer\022\036.api.CancelSubscriptionR"
+      "equest\032\t.api.JSON\"*\202\323\344\223\002$\"\037/api/customer"
+      "s/{id}/unsubscribe:\001*\022M\n\013SMSCustomer\022\017.a"
+      "pi.SMSRequest\032\t.api.JSON\"\"\202\323\344\223\002\034\"\027/api/c"
+      "ustomers/{id}/sms:\001*\022P\n\014CallCustomer\022\020.a"
+      "pi.CallRequest\032\t.api.JSON\"#\202\323\344\223\002\035\"\030/api/"
+      "customers/{id}/call:\001*\022Q\n\013MMSCustomer\022\017."
+      "api.MMSRequest\032\t.api.JSON\"&\202\323\344\223\002 \"\033/api/"
+      "customers/{sms.id}/mms:\001*\022S\n\rEmailCustom"
+      "er\022\021.api.EmailRequest\032\t.api.JSON\"$\202\323\344\223\002\036"
+      "\"\031/api/customers/{id}/email:\001*2a\n\013PlanSe"
+      "rvice\022R\n\026CreateSubscriptionPlan\022\026.api.Cr"
+      "eatePlanRequest\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api"
+      "/plans:\001*2\366\004\n\013UserService\022K\n\tEmailUser\022\021"
+      ".api.EmailRequest\032\t.api.JSON\" \202\323\344\223\002\032\"\025/a"
+      "pi/users/{id}/email:\001*\022H\n\013MessageUser\022\027."
+      "api.MessageUserRequest\032\t.api.JSON\"\025\202\323\344\223\002"
+      "\017\"\n/api/users:\001*\022I\n\007SMSUser\022\017.api.SMSReq"
+      "uest\032\t.api.JSON\"\"\202\323\344\223\002\034\"\027/api/customers/"
+      "{id}/sms:\001*\022L\n\010CallUser\022\020.api.CallReques"
+      "t\032\t.api.JSON\"#\202\323\344\223\002\035\"\030/api/customers/{id"
+      "}/call:\001*\022M\n\007MMSUser\022\017.api.MMSRequest\032\t."
       "api.JSON\"&\202\323\344\223\002 \"\033/api/customers/{sms.id"
-      "}/mms:\001*\022S\n\rEmailCustomer\022\021.api.EmailReq"
-      "uest\032\t.api.JSON\"$\202\323\344\223\002\036\"\031/api/customers/"
-      "{id}/email:\001*2a\n\013PlanService\022R\n\026CreateSu"
-      "bscriptionPlan\022\026.api.CreatePlanRequest\032\t"
-      ".api.JSON\"\025\202\323\344\223\002\017\"\n/api/plans:\001*2\366\004\n\013Use"
-      "rService\022K\n\tEmailUser\022\021.api.EmailRequest"
-      "\032\t.api.JSON\" \202\323\344\223\002\032\"\025/api/users/{id}/ema"
-      "il:\001*\022H\n\013MessageUser\022\027.api.MessageUserRe"
-      "quest\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022"
-      "I\n\007SMSUser\022\017.api.SMSRequest\032\t.api.JSON\"\""
-      "\202\323\344\223\002\034\"\027/api/customers/{id}/sms:\001*\022L\n\010Ca"
-      "llUser\022\020.api.CallRequest\032\t.api.JSON\"#\202\323\344"
-      "\223\002\035\"\030/api/customers/{id}/call:\001*\022M\n\007MMSU"
-      "ser\022\017.api.MMSRequest\032\t.api.JSON\"&\202\323\344\223\002 \""
-      "\033/api/customers/{sms.id}/mms:\001*\0229\n\nCreat"
-      "eUser\022\t.api.User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/ap"
-      "i/users:\001*\0229\n\nUpdateUser\022\t.api.User\032\t.ap"
-      "i.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\0227\n\nDeleteU"
-      "ser\022\007.api.Id\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/us"
-      "ers:\001*\0229\n\tListUsers\022\n.api.Empty\032\t.api.JS"
-      "ON\"\025\202\323\344\223\002\017\"\n/api/users:\001*2\324\001\n\013HookServic"
-      "e\022:\n\004Hook\022\017.api.Attachment\032\n.api.Empty\"\025"
-      "\202\323\344\223\002\017\"\n/api/hooks:\001*\022G\n\nActionHook\022\026.ap"
-      "i.ActionHookRequest\032\n.api.Empty\"\025\202\323\344\223\002\017\""
-      "\n/api/hooks:\001*\022@\n\010SlashCmd\022\021.api.SlashCo"
-      "mmand\032\n.api.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*"
-      "b\006proto3"
+      "}/mms:\001*\0229\n\nCreateUser\022\t.api.User\032\t.api."
+      "JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\0229\n\nUpdateUse"
+      "r\022\t.api.User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/us"
+      "ers:\001*\0227\n\nDeleteUser\022\007.api.Id\032\t.api.JSON"
+      "\"\025\202\323\344\223\002\017\"\n/api/users:\001*\0229\n\tListUsers\022\n.a"
+      "pi.Empty\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:"
+      "\001*2\324\001\n\013HookService\022:\n\004Hook\022\017.api.Attachm"
+      "ent\032\n.api.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*\022G"
+      "\n\nActionHook\022\026.api.ActionHookRequest\032\n.a"
+      "pi.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*\022@\n\010Slash"
+      "Cmd\022\021.api.SlashCommand\032\n.api.Empty\"\025\202\323\344\223"
+      "\002\017\"\n/api/hooks:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 8208);
+      descriptor, 8265);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -2113,6 +2114,22 @@ const ::google::protobuf::EnumDescriptor* CardType_descriptor() {
   return protobuf_api_2eproto::file_level_enum_descriptors[3];
 }
 bool CardType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::google::protobuf::EnumDescriptor* Topic_descriptor() {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_api_2eproto::file_level_enum_descriptors[4];
+}
+bool Topic_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:

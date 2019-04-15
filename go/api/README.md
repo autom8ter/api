@@ -83,6 +83,24 @@ var SigningMethod_value = map[string]int32{
 ```
 
 ```go
+var Topic_name = map[int32]string{
+	0: "USER",
+	1: "ACCOUNT",
+	2: "CUSTOMER",
+	3: "OTHER",
+}
+```
+
+```go
+var Topic_value = map[string]int32{
+	"USER":     0,
+	"ACCOUNT":  1,
+	"CUSTOMER": 2,
+	"OTHER":    3,
+}
+```
+
+```go
 var Util = objectify.Default()
 ```
 
@@ -6386,6 +6404,34 @@ func (m *SubscribeCustomerRequest) XXX_Unmarshal(b []byte) error
 type SubscribeOption func(r *SubscribeCustomerRequest)
 ```
 
+
+#### type Topic
+
+```go
+type Topic int32
+```
+
+
+```go
+const (
+	Topic_USER     Topic = 0
+	Topic_ACCOUNT  Topic = 1
+	Topic_CUSTOMER Topic = 2
+	Topic_OTHER    Topic = 3
+)
+```
+
+#### func (Topic) EnumDescriptor
+
+```go
+func (Topic) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (Topic) String
+
+```go
+func (x Topic) String() string
+```
 
 #### type UpdateCustomerRequest
 

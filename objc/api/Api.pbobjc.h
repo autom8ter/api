@@ -140,6 +140,29 @@ GPBEnumDescriptor *CardType_EnumDescriptor(void);
  **/
 BOOL CardType_IsValidValue(int32_t value);
 
+#pragma mark - Enum Topic
+
+typedef GPB_ENUM(Topic) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  Topic_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Topic_User = 0,
+  Topic_Account = 1,
+  Topic_Customer = 2,
+  Topic_Other = 3,
+};
+
+GPBEnumDescriptor *Topic_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL Topic_IsValidValue(int32_t value);
+
 #pragma mark - ApiRoot
 
 /**

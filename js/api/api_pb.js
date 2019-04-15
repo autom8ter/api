@@ -69,6 +69,7 @@ goog.exportSymbol('proto.api.StandardClaims', null, global);
 goog.exportSymbol('proto.api.Star', null, global);
 goog.exportSymbol('proto.api.StringMapString', null, global);
 goog.exportSymbol('proto.api.SubscribeCustomerRequest', null, global);
+goog.exportSymbol('proto.api.Topic', null, global);
 goog.exportSymbol('proto.api.UpdateCustomerRequest', null, global);
 goog.exportSymbol('proto.api.User', null, global);
 goog.exportSymbol('proto.api.UserReminder', null, global);
@@ -12560,6 +12561,16 @@ proto.api.CardType = {
   MASTERCARD: 1,
   DISCOVER: 2,
   AMEX: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.Topic = {
+  USER: 0,
+  ACCOUNT: 1,
+  CUSTOMER: 2,
+  OTHER: 3
 };
 
 goog.object.extend(exports, proto.api);

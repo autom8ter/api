@@ -359,6 +359,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :DISCOVER, 2
     value :AMEX, 3
   end
+  add_enum "api.Topic" do
+    value :USER, 0
+    value :ACCOUNT, 1
+    value :CUSTOMER, 2
+    value :OTHER, 3
+  end
 end
 
 module Api
@@ -417,4 +423,5 @@ module Api
   Claim = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Claim").enummodule
   SigningMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SigningMethod").enummodule
   CardType = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CardType").enummodule
+  Topic = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Topic").enummodule
 end

@@ -376,6 +376,29 @@ inline bool CardType_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<CardType>(
     CardType_descriptor(), name, value);
 }
+enum Topic {
+  USER = 0,
+  ACCOUNT = 1,
+  CUSTOMER = 2,
+  OTHER = 3,
+  Topic_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  Topic_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool Topic_IsValid(int value);
+const Topic Topic_MIN = USER;
+const Topic Topic_MAX = OTHER;
+const int Topic_ARRAYSIZE = Topic_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Topic_descriptor();
+inline const ::std::string& Topic_Name(Topic value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Topic_descriptor(), value);
+}
+inline bool Topic_Parse(
+    const ::std::string& name, Topic* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Topic>(
+    Topic_descriptor(), name, value);
+}
 // ===================================================================
 
 class Id : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Id) */ {
@@ -19258,6 +19281,11 @@ template <> struct is_proto_enum< ::api::CardType> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::api::CardType>() {
   return ::api::CardType_descriptor();
+}
+template <> struct is_proto_enum< ::api::Topic> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::api::Topic>() {
+  return ::api::Topic_descriptor();
 }
 
 }  // namespace protobuf
