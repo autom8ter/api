@@ -41,7 +41,8 @@ func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error {
 var Util = objectify.Default()
 
 type ClientSet struct {
-	UserSet UserServiceClient
+	Users UserServiceClient
+	Customers CustomerServiceClient
 }
 
 func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*ClientSet, error) {
@@ -50,7 +51,8 @@ func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*C
 		return nil, err
 	}
 	return &ClientSet{
-		UserSet: NewUserServiceClient(conn),
+		Users: NewUserServiceClient(conn),
+		Customers:NewCustomerServiceClient(conn),
 	}, nil
 }
 
