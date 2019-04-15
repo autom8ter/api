@@ -10,6 +10,8 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/status"
 	"io"
 	"net/http"
 	"os"
@@ -18,6 +20,15 @@ import (
 
 func Serve(addr string, debug bool, plugin driver.Plugin) error {
 	return engine.Serve(addr, debug, plugin)
+}
+
+func Status(err error, code codes.Code, format, msg string) error {
+	err = Util.WrapErrf(err, format, msg)
+	return status.Error(code, err.Error())
+}
+
+func StatusStack(err error, code codes.Code, format, msg string) error {
+	return StatusStack(err, code, format, msg)
 }
 
 type Messenger interface {
