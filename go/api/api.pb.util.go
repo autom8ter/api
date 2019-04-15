@@ -182,6 +182,30 @@ func (s *Fax) Attributes(m map[string]string) map[string]string {
 
 }
 
+func (j *JSON) Write(p []byte) (n int, err error) {
+	if j.Data == nil {
+		j.Data = []byte{}
+	}
+	p = append(p, j.Data...)
+	return len(j.Data), nil
+}
+
+func (j *JSON) Read(p []byte) (n int, err error) {
+	if j.Data == nil {
+		j.Data = []byte{}
+	}
+	j.Data = append(j.Data, p...)
+	return len(p), nil
+}
+
+func (j *JSON) WriteTo(w io.Writer) (n int64, err error) {
+	return io.Copy(w, j)
+}
+
+func (j *JSON) ReadFrom(r io.Reader) (n int64, err error) {
+	return io.Copy(j, r)
+}
+
 func (s *Fax) DataBytes() []byte {
 	return Util.MarshalJSON(s)
 
