@@ -86,6 +86,23 @@ func AccessFromJSON(j *JSON) *Access {
 	return a
 }
 
+func AccessFromFormValues(r *http.Request) *Access {
+	return &Access{
+		Autom8TerAccount: r.FormValue("autom8ter_account"),
+		Autom8TerKey:     r.FormValue("autom8ter_key"),
+		TwilioAccount:    r.FormValue("twilio_account"),
+		TwilioKey:        r.FormValue("twilio_key"),
+		SendgridAccount:  r.FormValue("sendgrid_accunt"),
+		SendgridKey:      r.FormValue("sendgrid_key"),
+		StripeAccount:    r.FormValue("stripe_account"),
+		StripeKey:        r.FormValue("stripe_key"),
+		SlackAccount:     r.FormValue("slack_account"),
+		SlackKey:         r.FormValue("slack_key"),
+		GcpProject:       r.FormValue("gcp_project"),
+		GcpKey:           r.FormValue("gcp_key"),
+	}
+}
+
 //TWILIO_ACCOUNT TWILIO_KEY SENDGRID_ACCOUNT SENDGRID_KEY STRIPE_ACCOUNT STRIPE_KEY SLACK_ACCOUNT SLACK_KEY GCP_PROJECT GCP_KEY
 func AccessFromEnv() *Access {
 	return &Access{
