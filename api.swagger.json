@@ -497,110 +497,6 @@
         ]
       }
     },
-    "/api/string/render/json": {
-      "post": {
-        "operationId": "RenderJSON",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        ],
-        "tags": [
-          "StringService"
-        ]
-      }
-    },
-    "/api/string/render/proto": {
-      "post": {
-        "operationId": "RenderProto",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        ],
-        "tags": [
-          "StringService"
-        ]
-      }
-    },
-    "/api/string/render/xml": {
-      "post": {
-        "operationId": "RenderXML",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        ],
-        "tags": [
-          "StringService"
-        ]
-      }
-    },
-    "/api/string/render/yaml": {
-      "post": {
-        "operationId": "RenderYAML",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiString"
-            }
-          }
-        ],
-        "tags": [
-          "StringService"
-        ]
-      }
-    },
     "/api/users": {
       "post": {
         "operationId": "ListUsers",
@@ -1259,14 +1155,6 @@
           "type": "string"
         },
         "trigger_id": {
-          "type": "string"
-        }
-      }
-    },
-    "apiString": {
-      "type": "object",
-      "properties": {
-        "text": {
           "type": "string"
         }
       }

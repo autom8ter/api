@@ -1,11 +1,9 @@
 package api
 
 import (
-	"bytes"
 	"context"
 	"github.com/autom8ter/engine"
 	"github.com/autom8ter/engine/config"
-	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
 )
 
@@ -98,72 +96,6 @@ func NewMessageRequest(opts ...MessageOption) *MessageUserRequest {
 		o(e)
 	}
 	return e
-}
-
-/*
-EmailUser(context.Context, *EmailRequest) (*JSON, error)
-	MessageUser(ctx context.Context, r *UnImplemented)  (*JSON, error)
-	CreateUser(ctx context.Context, r *UnImplemented)  (*JSON, error)
-	UpdateUser(ctx context.Context, r *UnImplemented)  (*JSON, error)
-	DeleteUser(ctx context.Context, r *UnImplemented)  (*JSON, error)
-	ListUsers(ctx context.Context, r *UnImplemented)  (*JSON, error)
-*/
-
-type StringServiceServerFunctions struct {
-	obj interface{}
-	buf *bytes.Buffer
-}
-
-func NewStringServiceServerFunctions(obj interface{}) *StringServiceServerFunctions {
-	return &StringServiceServerFunctions{obj: obj, buf: bytes.NewBuffer([]byte{})}
-}
-
-func (s StringServiceServerFunctions) RenderJSON(ctx context.Context, r *String) (*String, error) {
-	bits := Util.MarshalJSON(s.obj.(proto.Message))
-	err := Util.RenderHTML(r.Text, string(bits), s.buf)
-	if err != nil {
-		return nil, err
-	}
-	return &String{
-		Text: s.buf.String(),
-	}, nil
-}
-
-func (s StringServiceServerFunctions) RenderProto(ctx context.Context, r *String) (*String, error) {
-	bits := Util.MarshalProto(s.obj.(proto.Message))
-	err := Util.RenderHTML(r.Text, string(bits), s.buf)
-	if err != nil {
-		return nil, err
-	}
-	return &String{
-		Text: s.buf.String(),
-	}, nil
-}
-
-func (s StringServiceServerFunctions) RenderXML(ctx context.Context, r *String) (*String, error) {
-	bits := Util.MarshalXML(s.obj.(proto.Message))
-	err := Util.RenderHTML(r.Text, string(bits), s.buf)
-	if err != nil {
-		return nil, err
-	}
-	return &String{
-		Text: s.buf.String(),
-	}, nil
-}
-
-func (s StringServiceServerFunctions) RenderYAML(ctx context.Context, r *String) (*String, error) {
-	bits := Util.MarshalYAML(s.obj.(proto.Message))
-	err := Util.RenderHTML(r.Text, string(bits), s.buf)
-	if err != nil {
-		return nil, err
-	}
-	return &String{
-		Text: s.buf.String(),
-	}, nil
-}
-
-func (a StringServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
-	RegisterStringServiceServer(s, a)
 }
 
 type CustomerServiceServerFunctions struct {

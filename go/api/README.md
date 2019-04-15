@@ -262,43 +262,6 @@ done.
 func RegisterPlanServiceServer(s *grpc.Server, srv PlanServiceServer)
 ```
 
-#### func  RegisterStringServiceHandler
-
-```go
-func RegisterStringServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterStringServiceHandler registers the http handlers for service
-StringService to "mux". The handlers forward requests to the grpc endpoint over
-"conn".
-
-#### func  RegisterStringServiceHandlerClient
-
-```go
-func RegisterStringServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client StringServiceClient) error
-```
-RegisterStringServiceHandlerClient registers the http handlers for service
-StringService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "StringServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"StringServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "StringServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterStringServiceHandlerFromEndpoint
-
-```go
-func RegisterStringServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterStringServiceHandlerFromEndpoint is same as RegisterStringServiceHandler
-but automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
-
-#### func  RegisterStringServiceServer
-
-```go
-func RegisterStringServiceServer(s *grpc.Server, srv StringServiceServer)
-```
-
 #### func  RegisterUserServiceHandler
 
 ```go
@@ -6388,78 +6351,6 @@ func (m *Star) XXX_Size() int
 func (m *Star) XXX_Unmarshal(b []byte) error
 ```
 
-#### type String
-
-```go
-type String struct {
-	Text                 string   `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*String) Descriptor
-
-```go
-func (*String) Descriptor() ([]byte, []int)
-```
-
-#### func (*String) GetText
-
-```go
-func (m *String) GetText() string
-```
-
-#### func (*String) ProtoMessage
-
-```go
-func (*String) ProtoMessage()
-```
-
-#### func (*String) Reset
-
-```go
-func (m *String) Reset()
-```
-
-#### func (*String) String
-
-```go
-func (m *String) String() string
-```
-
-#### func (*String) XXX_DiscardUnknown
-
-```go
-func (m *String) XXX_DiscardUnknown()
-```
-
-#### func (*String) XXX_Marshal
-
-```go
-func (m *String) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*String) XXX_Merge
-
-```go
-func (m *String) XXX_Merge(src proto.Message)
-```
-
-#### func (*String) XXX_Size
-
-```go
-func (m *String) XXX_Size() int
-```
-
-#### func (*String) XXX_Unmarshal
-
-```go
-func (m *String) XXX_Unmarshal(b []byte) error
-```
-
 #### type StringMapString
 
 ```go
@@ -6530,85 +6421,6 @@ func (m *StringMapString) XXX_Size() int
 
 ```go
 func (m *StringMapString) XXX_Unmarshal(b []byte) error
-```
-
-#### type StringServiceClient
-
-```go
-type StringServiceClient interface {
-	RenderJSON(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
-	RenderProto(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
-	RenderYAML(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
-	RenderXML(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
-}
-```
-
-StringServiceClient is the client API for StringService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewStringServiceClient
-
-```go
-func NewStringServiceClient(cc *grpc.ClientConn) StringServiceClient
-```
-
-#### type StringServiceServer
-
-```go
-type StringServiceServer interface {
-	RenderJSON(context.Context, *String) (*String, error)
-	RenderProto(context.Context, *String) (*String, error)
-	RenderYAML(context.Context, *String) (*String, error)
-	RenderXML(context.Context, *String) (*String, error)
-}
-```
-
-StringServiceServer is the server API for StringService service.
-
-#### type StringServiceServerFunctions
-
-```go
-type StringServiceServerFunctions struct {
-}
-```
-
-
-#### func  NewStringServiceServerFunctions
-
-```go
-func NewStringServiceServerFunctions(obj interface{}) *StringServiceServerFunctions
-```
-
-#### func (StringServiceServerFunctions) RegisterWithServer
-
-```go
-func (a StringServiceServerFunctions) RegisterWithServer(s *grpc.Server)
-```
-
-#### func (StringServiceServerFunctions) RenderJSON
-
-```go
-func (s StringServiceServerFunctions) RenderJSON(ctx context.Context, r *String) (*String, error)
-```
-
-#### func (StringServiceServerFunctions) RenderProto
-
-```go
-func (s StringServiceServerFunctions) RenderProto(ctx context.Context, r *String) (*String, error)
-```
-
-#### func (StringServiceServerFunctions) RenderXML
-
-```go
-func (s StringServiceServerFunctions) RenderXML(ctx context.Context, r *String) (*String, error)
-```
-
-#### func (StringServiceServerFunctions) RenderYAML
-
-```go
-func (s StringServiceServerFunctions) RenderYAML(ctx context.Context, r *String) (*String, error)
 ```
 
 #### type SubscribeCustomerRequest
