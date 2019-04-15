@@ -986,18 +986,18 @@ typedef struct SubscribeCustomerRequest__storage_ {
 
 @end
 
-#pragma mark - AddAccountRequest
+#pragma mark - CreateAccountRequest
 
-@implementation AddAccountRequest
+@implementation CreateAccountRequest
 
 @dynamic hasCustomer, customer;
 @dynamic hasAccess, access;
 
-typedef struct AddAccountRequest__storage_ {
+typedef struct CreateAccountRequest__storage_ {
   uint32_t _has_storage_[1];
   CustomerRequest *customer;
   Access *access;
-} AddAccountRequest__storage_;
+} CreateAccountRequest__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -1008,29 +1008,29 @@ typedef struct AddAccountRequest__storage_ {
       {
         .name = "customer",
         .dataTypeSpecific.className = GPBStringifySymbol(CustomerRequest),
-        .number = AddAccountRequest_FieldNumber_Customer,
+        .number = CreateAccountRequest_FieldNumber_Customer,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(AddAccountRequest__storage_, customer),
+        .offset = (uint32_t)offsetof(CreateAccountRequest__storage_, customer),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "access",
         .dataTypeSpecific.className = GPBStringifySymbol(Access),
-        .number = AddAccountRequest_FieldNumber_Access,
+        .number = CreateAccountRequest_FieldNumber_Access,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(AddAccountRequest__storage_, access),
+        .offset = (uint32_t)offsetof(CreateAccountRequest__storage_, access),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[AddAccountRequest class]
+        [GPBDescriptor allocDescriptorForClass:[CreateAccountRequest class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(AddAccountRequest__storage_)
+                                   storageSize:sizeof(CreateAccountRequest__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

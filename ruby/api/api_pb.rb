@@ -69,7 +69,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :exp_year, :string, 5
     optional :cvc, :string, 6
   end
-  add_message "api.AddAccountRequest" do
+  add_message "api.CreateAccountRequest" do
     optional :customer, :message, 1, "api.CustomerRequest"
     optional :access, :message, 2, "api.Access"
   end
@@ -341,7 +341,7 @@ module Api
   CustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomerRequest").msgclass
   UpdateCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UpdateCustomerRequest").msgclass
   SubscribeCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerRequest").msgclass
-  AddAccountRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddAccountRequest").msgclass
+  CreateAccountRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateAccountRequest").msgclass
   Account = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Account").msgclass
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   Profile = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Profile").msgclass

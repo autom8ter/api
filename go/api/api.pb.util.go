@@ -117,6 +117,11 @@ type EmailOption func(r *EmailRequest)
 type SMSOption func(r *SMSRequest)
 type MMSOption func(r *MMSRequest)
 type CallOption func(r *CallRequest)
+type ChargeOption func(r *ChargeRequest)
+type SubscribeOption func(r *SubscribeCustomerRequest)
+type RefundOption func(r *RefundRequest)
+type PlanOption func(r *CreatePlanRequest)
+type AccountOption func(r *CreateAccountRequest)
 
 func NewEmailRequest(opts ...EmailOption) *EmailRequest {
 	e := &EmailRequest{}
@@ -144,6 +149,46 @@ func NewCallRequest(opts ...CallOption) *CallRequest {
 
 func NewMMSRequest(opts ...MMSOption) *MMSRequest {
 	e := &MMSRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewSubscribeRequest(opts ...SubscribeOption) *SubscribeCustomerRequest {
+	e := &SubscribeCustomerRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewChargeRequest(opts ...ChargeOption) *ChargeRequest {
+	e := &ChargeRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewAccountRequest(opts ...AccountOption) *CreateAccountRequest {
+	e := &CreateAccountRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewPlanRequest(opts ...PlanOption) *CreatePlanRequest {
+	e := &CreatePlanRequest{}
+	for _, o := range opts {
+		o(e)
+	}
+	return e
+}
+
+func NewRefundRequest(opts ...RefundOption) *RefundRequest {
+	e := &RefundRequest{}
 	for _, o := range opts {
 		o(e)
 	}

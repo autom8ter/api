@@ -14,7 +14,7 @@ import "google/pubsub/v1/pubsub.proto";
 
 //Accounts
 service AccountService {
-    rpc CreateAccount(AddAccountRequest) returns (JSON) {
+    rpc CreateAccount(CreateAccountRequest) returns (JSON) {
         option (google.api.http) = {
             post: "/api/accounts"
             body: "*"
@@ -210,7 +210,7 @@ message SubscribeCustomerRequest {
     string cvc=6;
 }
 
-message AddAccountRequest {
+message CreateAccountRequest {
     CustomerRequest customer =1;
     Access access=2;
 }

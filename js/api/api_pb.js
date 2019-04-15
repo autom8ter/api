@@ -19,7 +19,6 @@ var google_api_auth_pb = require('./google/api/auth_pb.js');
 var google_pubsub_v1_pubsub_pb = require('./google/pubsub/v1/pubsub_pb.js');
 goog.exportSymbol('proto.api.Access', null, global);
 goog.exportSymbol('proto.api.Account', null, global);
-goog.exportSymbol('proto.api.AddAccountRequest', null, global);
 goog.exportSymbol('proto.api.Address', null, global);
 goog.exportSymbol('proto.api.Attachment', null, global);
 goog.exportSymbol('proto.api.AttachmentAction', null, global);
@@ -36,6 +35,7 @@ goog.exportSymbol('proto.api.CardType', null, global);
 goog.exportSymbol('proto.api.ChannelReminder', null, global);
 goog.exportSymbol('proto.api.ChargeRequest', null, global);
 goog.exportSymbol('proto.api.Claim', null, global);
+goog.exportSymbol('proto.api.CreateAccountRequest', null, global);
 goog.exportSymbol('proto.api.CreatePlanRequest', null, global);
 goog.exportSymbol('proto.api.Customer', null, global);
 goog.exportSymbol('proto.api.CustomerIndex', null, global);
@@ -2412,12 +2412,12 @@ proto.api.SubscribeCustomerRequest.prototype.setCvc = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AddAccountRequest = function(opt_data) {
+proto.api.CreateAccountRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AddAccountRequest, jspb.Message);
+goog.inherits(proto.api.CreateAccountRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.AddAccountRequest.displayName = 'proto.api.AddAccountRequest';
+  proto.api.CreateAccountRequest.displayName = 'proto.api.CreateAccountRequest';
 }
 
 
@@ -2432,8 +2432,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AddAccountRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AddAccountRequest.toObject(opt_includeInstance, this);
+proto.api.CreateAccountRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.CreateAccountRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -2442,11 +2442,11 @@ proto.api.AddAccountRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AddAccountRequest} msg The msg instance to transform.
+ * @param {!proto.api.CreateAccountRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AddAccountRequest.toObject = function(includeInstance, msg) {
+proto.api.CreateAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     customer: (f = msg.getCustomer()) && proto.api.CustomerRequest.toObject(includeInstance, f),
     access: (f = msg.getAccess()) && proto.api.Access.toObject(includeInstance, f)
@@ -2463,23 +2463,23 @@ proto.api.AddAccountRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AddAccountRequest}
+ * @return {!proto.api.CreateAccountRequest}
  */
-proto.api.AddAccountRequest.deserializeBinary = function(bytes) {
+proto.api.CreateAccountRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AddAccountRequest;
-  return proto.api.AddAccountRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.CreateAccountRequest;
+  return proto.api.CreateAccountRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AddAccountRequest} msg The message object to deserialize into.
+ * @param {!proto.api.CreateAccountRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AddAccountRequest}
+ * @return {!proto.api.CreateAccountRequest}
  */
-proto.api.AddAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.CreateAccountRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -2509,9 +2509,9 @@ proto.api.AddAccountRequest.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AddAccountRequest.prototype.serializeBinary = function() {
+proto.api.CreateAccountRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AddAccountRequest.serializeBinaryToWriter(this, writer);
+  proto.api.CreateAccountRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -2519,11 +2519,11 @@ proto.api.AddAccountRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AddAccountRequest} message
+ * @param {!proto.api.CreateAccountRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AddAccountRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.CreateAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCustomer();
   if (f != null) {
@@ -2548,19 +2548,19 @@ proto.api.AddAccountRequest.serializeBinaryToWriter = function(message, writer) 
  * optional CustomerRequest customer = 1;
  * @return {?proto.api.CustomerRequest}
  */
-proto.api.AddAccountRequest.prototype.getCustomer = function() {
+proto.api.CreateAccountRequest.prototype.getCustomer = function() {
   return /** @type{?proto.api.CustomerRequest} */ (
     jspb.Message.getWrapperField(this, proto.api.CustomerRequest, 1));
 };
 
 
 /** @param {?proto.api.CustomerRequest|undefined} value */
-proto.api.AddAccountRequest.prototype.setCustomer = function(value) {
+proto.api.CreateAccountRequest.prototype.setCustomer = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-proto.api.AddAccountRequest.prototype.clearCustomer = function() {
+proto.api.CreateAccountRequest.prototype.clearCustomer = function() {
   this.setCustomer(undefined);
 };
 
@@ -2569,7 +2569,7 @@ proto.api.AddAccountRequest.prototype.clearCustomer = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.AddAccountRequest.prototype.hasCustomer = function() {
+proto.api.CreateAccountRequest.prototype.hasCustomer = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2578,19 +2578,19 @@ proto.api.AddAccountRequest.prototype.hasCustomer = function() {
  * optional Access access = 2;
  * @return {?proto.api.Access}
  */
-proto.api.AddAccountRequest.prototype.getAccess = function() {
+proto.api.CreateAccountRequest.prototype.getAccess = function() {
   return /** @type{?proto.api.Access} */ (
     jspb.Message.getWrapperField(this, proto.api.Access, 2));
 };
 
 
 /** @param {?proto.api.Access|undefined} value */
-proto.api.AddAccountRequest.prototype.setAccess = function(value) {
+proto.api.CreateAccountRequest.prototype.setAccess = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
 
-proto.api.AddAccountRequest.prototype.clearAccess = function() {
+proto.api.CreateAccountRequest.prototype.clearAccess = function() {
   this.setAccess(undefined);
 };
 
@@ -2599,7 +2599,7 @@ proto.api.AddAccountRequest.prototype.clearAccess = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.AddAccountRequest.prototype.hasAccess = function() {
+proto.api.CreateAccountRequest.prototype.hasAccess = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

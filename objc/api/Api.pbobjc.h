@@ -371,14 +371,14 @@ typedef GPB_ENUM(SubscribeCustomerRequest_FieldNumber) {
 
 @end
 
-#pragma mark - AddAccountRequest
+#pragma mark - CreateAccountRequest
 
-typedef GPB_ENUM(AddAccountRequest_FieldNumber) {
-  AddAccountRequest_FieldNumber_Customer = 1,
-  AddAccountRequest_FieldNumber_Access = 2,
+typedef GPB_ENUM(CreateAccountRequest_FieldNumber) {
+  CreateAccountRequest_FieldNumber_Customer = 1,
+  CreateAccountRequest_FieldNumber_Access = 2,
 };
 
-@interface AddAccountRequest : GPBMessage
+@interface CreateAccountRequest : GPBMessage
 
 @property(nonatomic, readwrite, strong, null_resettable) CustomerRequest *customer;
 /** Test to see if @c customer has been set. */

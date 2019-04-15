@@ -62,9 +62,6 @@ extern AccessDefaultTypeInternal _Access_default_instance_;
 class Account;
 class AccountDefaultTypeInternal;
 extern AccountDefaultTypeInternal _Account_default_instance_;
-class AddAccountRequest;
-class AddAccountRequestDefaultTypeInternal;
-extern AddAccountRequestDefaultTypeInternal _AddAccountRequest_default_instance_;
 class Address;
 class AddressDefaultTypeInternal;
 extern AddressDefaultTypeInternal _Address_default_instance_;
@@ -107,6 +104,9 @@ extern ChannelReminderDefaultTypeInternal _ChannelReminder_default_instance_;
 class ChargeRequest;
 class ChargeRequestDefaultTypeInternal;
 extern ChargeRequestDefaultTypeInternal _ChargeRequest_default_instance_;
+class CreateAccountRequest;
+class CreateAccountRequestDefaultTypeInternal;
+extern CreateAccountRequestDefaultTypeInternal _CreateAccountRequest_default_instance_;
 class CreatePlanRequest;
 class CreatePlanRequestDefaultTypeInternal;
 extern CreatePlanRequestDefaultTypeInternal _CreatePlanRequest_default_instance_;
@@ -208,7 +208,6 @@ namespace google {
 namespace protobuf {
 template<> ::api::Access* Arena::CreateMaybeMessage<::api::Access>(Arena*);
 template<> ::api::Account* Arena::CreateMaybeMessage<::api::Account>(Arena*);
-template<> ::api::AddAccountRequest* Arena::CreateMaybeMessage<::api::AddAccountRequest>(Arena*);
 template<> ::api::Address* Arena::CreateMaybeMessage<::api::Address>(Arena*);
 template<> ::api::Attachment* Arena::CreateMaybeMessage<::api::Attachment>(Arena*);
 template<> ::api::AttachmentAction* Arena::CreateMaybeMessage<::api::AttachmentAction>(Arena*);
@@ -223,6 +222,7 @@ template<> ::api::CancelSubscriptionRequest* Arena::CreateMaybeMessage<::api::Ca
 template<> ::api::Card* Arena::CreateMaybeMessage<::api::Card>(Arena*);
 template<> ::api::ChannelReminder* Arena::CreateMaybeMessage<::api::ChannelReminder>(Arena*);
 template<> ::api::ChargeRequest* Arena::CreateMaybeMessage<::api::ChargeRequest>(Arena*);
+template<> ::api::CreateAccountRequest* Arena::CreateMaybeMessage<::api::CreateAccountRequest>(Arena*);
 template<> ::api::CreatePlanRequest* Arena::CreateMaybeMessage<::api::CreatePlanRequest>(Arena*);
 template<> ::api::Customer* Arena::CreateMaybeMessage<::api::Customer>(Arena*);
 template<> ::api::CustomerRequest* Arena::CreateMaybeMessage<::api::CustomerRequest>(Arena*);
@@ -1933,24 +1933,24 @@ class SubscribeCustomerRequest : public ::google::protobuf::Message /* @@protoc_
 };
 // -------------------------------------------------------------------
 
-class AddAccountRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AddAccountRequest) */ {
+class CreateAccountRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.CreateAccountRequest) */ {
  public:
-  AddAccountRequest();
-  virtual ~AddAccountRequest();
+  CreateAccountRequest();
+  virtual ~CreateAccountRequest();
 
-  AddAccountRequest(const AddAccountRequest& from);
+  CreateAccountRequest(const CreateAccountRequest& from);
 
-  inline AddAccountRequest& operator=(const AddAccountRequest& from) {
+  inline CreateAccountRequest& operator=(const CreateAccountRequest& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  AddAccountRequest(AddAccountRequest&& from) noexcept
-    : AddAccountRequest() {
+  CreateAccountRequest(CreateAccountRequest&& from) noexcept
+    : CreateAccountRequest() {
     *this = ::std::move(from);
   }
 
-  inline AddAccountRequest& operator=(AddAccountRequest&& from) noexcept {
+  inline CreateAccountRequest& operator=(CreateAccountRequest&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -1960,34 +1960,34 @@ class AddAccountRequest : public ::google::protobuf::Message /* @@protoc_inserti
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const AddAccountRequest& default_instance();
+  static const CreateAccountRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AddAccountRequest* internal_default_instance() {
-    return reinterpret_cast<const AddAccountRequest*>(
-               &_AddAccountRequest_default_instance_);
+  static inline const CreateAccountRequest* internal_default_instance() {
+    return reinterpret_cast<const CreateAccountRequest*>(
+               &_CreateAccountRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     11;
 
-  void Swap(AddAccountRequest* other);
-  friend void swap(AddAccountRequest& a, AddAccountRequest& b) {
+  void Swap(CreateAccountRequest* other);
+  friend void swap(CreateAccountRequest& a, CreateAccountRequest& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline AddAccountRequest* New() const final {
-    return CreateMaybeMessage<AddAccountRequest>(NULL);
+  inline CreateAccountRequest* New() const final {
+    return CreateMaybeMessage<CreateAccountRequest>(NULL);
   }
 
-  AddAccountRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AddAccountRequest>(arena);
+  CreateAccountRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CreateAccountRequest>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AddAccountRequest& from);
-  void MergeFrom(const AddAccountRequest& from);
+  void CopyFrom(const CreateAccountRequest& from);
+  void MergeFrom(const CreateAccountRequest& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -2004,7 +2004,7 @@ class AddAccountRequest : public ::google::protobuf::Message /* @@protoc_inserti
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AddAccountRequest* other);
+  void InternalSwap(CreateAccountRequest* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -2044,7 +2044,7 @@ class AddAccountRequest : public ::google::protobuf::Message /* @@protoc_inserti
   ::api::Access* mutable_access();
   void set_allocated_access(::api::Access* access);
 
-  // @@protoc_insertion_point(class_scope:api.AddAccountRequest)
+  // @@protoc_insertion_point(class_scope:api.CreateAccountRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -9479,44 +9479,44 @@ inline void SubscribeCustomerRequest::set_allocated_cvc(::std::string* cvc) {
 
 // -------------------------------------------------------------------
 
-// AddAccountRequest
+// CreateAccountRequest
 
 // .api.CustomerRequest customer = 1;
-inline bool AddAccountRequest::has_customer() const {
+inline bool CreateAccountRequest::has_customer() const {
   return this != internal_default_instance() && customer_ != NULL;
 }
-inline void AddAccountRequest::clear_customer() {
+inline void CreateAccountRequest::clear_customer() {
   if (GetArenaNoVirtual() == NULL && customer_ != NULL) {
     delete customer_;
   }
   customer_ = NULL;
 }
-inline const ::api::CustomerRequest& AddAccountRequest::_internal_customer() const {
+inline const ::api::CustomerRequest& CreateAccountRequest::_internal_customer() const {
   return *customer_;
 }
-inline const ::api::CustomerRequest& AddAccountRequest::customer() const {
+inline const ::api::CustomerRequest& CreateAccountRequest::customer() const {
   const ::api::CustomerRequest* p = customer_;
-  // @@protoc_insertion_point(field_get:api.AddAccountRequest.customer)
+  // @@protoc_insertion_point(field_get:api.CreateAccountRequest.customer)
   return p != NULL ? *p : *reinterpret_cast<const ::api::CustomerRequest*>(
       &::api::_CustomerRequest_default_instance_);
 }
-inline ::api::CustomerRequest* AddAccountRequest::release_customer() {
-  // @@protoc_insertion_point(field_release:api.AddAccountRequest.customer)
+inline ::api::CustomerRequest* CreateAccountRequest::release_customer() {
+  // @@protoc_insertion_point(field_release:api.CreateAccountRequest.customer)
   
   ::api::CustomerRequest* temp = customer_;
   customer_ = NULL;
   return temp;
 }
-inline ::api::CustomerRequest* AddAccountRequest::mutable_customer() {
+inline ::api::CustomerRequest* CreateAccountRequest::mutable_customer() {
   
   if (customer_ == NULL) {
     auto* p = CreateMaybeMessage<::api::CustomerRequest>(GetArenaNoVirtual());
     customer_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.AddAccountRequest.customer)
+  // @@protoc_insertion_point(field_mutable:api.CreateAccountRequest.customer)
   return customer_;
 }
-inline void AddAccountRequest::set_allocated_customer(::api::CustomerRequest* customer) {
+inline void CreateAccountRequest::set_allocated_customer(::api::CustomerRequest* customer) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete customer_;
@@ -9532,45 +9532,45 @@ inline void AddAccountRequest::set_allocated_customer(::api::CustomerRequest* cu
     
   }
   customer_ = customer;
-  // @@protoc_insertion_point(field_set_allocated:api.AddAccountRequest.customer)
+  // @@protoc_insertion_point(field_set_allocated:api.CreateAccountRequest.customer)
 }
 
 // .api.Access access = 2;
-inline bool AddAccountRequest::has_access() const {
+inline bool CreateAccountRequest::has_access() const {
   return this != internal_default_instance() && access_ != NULL;
 }
-inline void AddAccountRequest::clear_access() {
+inline void CreateAccountRequest::clear_access() {
   if (GetArenaNoVirtual() == NULL && access_ != NULL) {
     delete access_;
   }
   access_ = NULL;
 }
-inline const ::api::Access& AddAccountRequest::_internal_access() const {
+inline const ::api::Access& CreateAccountRequest::_internal_access() const {
   return *access_;
 }
-inline const ::api::Access& AddAccountRequest::access() const {
+inline const ::api::Access& CreateAccountRequest::access() const {
   const ::api::Access* p = access_;
-  // @@protoc_insertion_point(field_get:api.AddAccountRequest.access)
+  // @@protoc_insertion_point(field_get:api.CreateAccountRequest.access)
   return p != NULL ? *p : *reinterpret_cast<const ::api::Access*>(
       &::api::_Access_default_instance_);
 }
-inline ::api::Access* AddAccountRequest::release_access() {
-  // @@protoc_insertion_point(field_release:api.AddAccountRequest.access)
+inline ::api::Access* CreateAccountRequest::release_access() {
+  // @@protoc_insertion_point(field_release:api.CreateAccountRequest.access)
   
   ::api::Access* temp = access_;
   access_ = NULL;
   return temp;
 }
-inline ::api::Access* AddAccountRequest::mutable_access() {
+inline ::api::Access* CreateAccountRequest::mutable_access() {
   
   if (access_ == NULL) {
     auto* p = CreateMaybeMessage<::api::Access>(GetArenaNoVirtual());
     access_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.AddAccountRequest.access)
+  // @@protoc_insertion_point(field_mutable:api.CreateAccountRequest.access)
   return access_;
 }
-inline void AddAccountRequest::set_allocated_access(::api::Access* access) {
+inline void CreateAccountRequest::set_allocated_access(::api::Access* access) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete access_;
@@ -9586,7 +9586,7 @@ inline void AddAccountRequest::set_allocated_access(::api::Access* access) {
     
   }
   access_ = access;
-  // @@protoc_insertion_point(field_set_allocated:api.AddAccountRequest.access)
+  // @@protoc_insertion_point(field_set_allocated:api.CreateAccountRequest.access)
 }
 
 // -------------------------------------------------------------------

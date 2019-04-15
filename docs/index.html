@@ -187,10 +187,6 @@
                 </li>
               
                 <li>
-                  <a href="#api.AddAccountRequest"><span class="badge">M</span>AddAccountRequest</a>
-                </li>
-              
-                <li>
                   <a href="#api.Address"><span class="badge">M</span>Address</a>
                 </li>
               
@@ -244,6 +240,10 @@
               
                 <li>
                   <a href="#api.ChargeRequest"><span class="badge">M</span>ChargeRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.CreateAccountRequest"><span class="badge">M</span>CreateAccountRequest</a>
                 </li>
               
                 <li>
@@ -537,36 +537,6 @@
                 <tr>
                   <td>customer</td>
                   <td><a href="#api.Customer">Customer</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>access</td>
-                  <td><a href="#api.Access">Access</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.AddAccountRequest">AddAccountRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>customer</td>
-                  <td><a href="#api.CustomerRequest">CustomerRequest</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1246,6 +1216,36 @@
                 <tr>
                   <td>id</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.CreateAccountRequest">CreateAccountRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>customer</td>
+                  <td><a href="#api.CustomerRequest">CustomerRequest</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>access</td>
+                  <td><a href="#api.Access">Access</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2794,7 +2794,7 @@
             
               <tr>
                 <td>CreateAccount</td>
-                <td><a href="#api.AddAccountRequest">AddAccountRequest</a></td>
+                <td><a href="#api.CreateAccountRequest">CreateAccountRequest</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
                 <td><p></p></td>
               </tr>

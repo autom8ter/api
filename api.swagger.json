@@ -32,7 +32,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiAddAccountRequest"
+              "$ref": "#/definitions/apiCreateAccountRequest"
             }
           }
         ],
@@ -508,17 +508,6 @@
         }
       }
     },
-    "apiAddAccountRequest": {
-      "type": "object",
-      "properties": {
-        "customer": {
-          "$ref": "#/definitions/apiCustomerRequest"
-        },
-        "access": {
-          "$ref": "#/definitions/apiAccess"
-        }
-      }
-    },
     "apiAddress": {
       "type": "object",
       "properties": {
@@ -569,6 +558,17 @@
         },
         "id": {
           "type": "string"
+        }
+      }
+    },
+    "apiCreateAccountRequest": {
+      "type": "object",
+      "properties": {
+        "customer": {
+          "$ref": "#/definitions/apiCustomerRequest"
+        },
+        "access": {
+          "$ref": "#/definitions/apiAccess"
         }
       }
     },
