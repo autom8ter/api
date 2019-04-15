@@ -187,6 +187,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.ActionHookRequest"><span class="badge">M</span>ActionHookRequest</a>
+                </li>
+              
+                <li>
                   <a href="#api.Address"><span class="badge">M</span>Address</a>
                 </li>
               
@@ -359,6 +363,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.SlashCommand"><span class="badge">M</span>SlashCommand</a>
+                </li>
+              
+                <li>
                   <a href="#api.StandardClaims"><span class="badge">M</span>StandardClaims</a>
                 </li>
               
@@ -415,6 +423,10 @@
               
                 <li>
                   <a href="#api.CustomerService"><span class="badge">S</span>CustomerService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.HookService"><span class="badge">S</span>HookService</a>
                 </li>
               
                 <li>
@@ -560,6 +572,36 @@
                 <tr>
                   <td>access</td>
                   <td><a href="#api.Access">Access</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.ActionHookRequest">ActionHookRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>attachment</td>
+                  <td><a href="#api.Attachment">Attachment</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>actions</td>
+                  <td><a href="#api.AttachmentAction">AttachmentAction</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2383,6 +2425,113 @@
 
         
       
+        <h3 id="api.SlashCommand">SlashCommand</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>token</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>team_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>team_domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>enterprise_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>enterprise_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>channel_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>channel_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>user_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>command</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>response_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>trigger_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.StandardClaims">StandardClaims</h3>
         <p></p>
 
@@ -3071,6 +3220,38 @@
                 <td>EmailCustomer</td>
                 <td><a href="#api.EmailRequest">EmailRequest</a></td>
                 <td><a href="#api.JSON">JSON</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.HookService">HookService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Hook</td>
+                <td><a href="#api.Attachment">Attachment</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ActionHook</td>
+                <td><a href="#api.ActionHookRequest">ActionHookRequest</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SlashCmd</td>
+                <td><a href="#api.SlashCommand">SlashCommand</a></td>
+                <td><a href="#api.Empty">Empty</a></td>
                 <td><p></p></td>
               </tr>
             

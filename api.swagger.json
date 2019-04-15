@@ -445,6 +445,32 @@
         ]
       }
     },
+    "/api/hooks": {
+      "post": {
+        "operationId": "SlashCmd",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSlashCommand"
+            }
+          }
+        ],
+        "tags": [
+          "HookService"
+        ]
+      }
+    },
     "/api/plans": {
       "post": {
         "operationId": "CreateSubscriptionPlan",
@@ -583,6 +609,17 @@
         }
       }
     },
+    "apiActionHookRequest": {
+      "type": "object",
+      "properties": {
+        "attachment": {
+          "$ref": "#/definitions/apiAttachment"
+        },
+        "actions": {
+          "$ref": "#/definitions/apiAttachmentAction"
+        }
+      }
+    },
     "apiAddress": {
       "type": "object",
       "properties": {
@@ -603,6 +640,171 @@
         },
         "state": {
           "type": "string"
+        }
+      }
+    },
+    "apiAttachment": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "type": "string"
+        },
+        "fallback": {
+          "type": "string"
+        },
+        "callback_id": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "author_id": {
+          "type": "string"
+        },
+        "author_name": {
+          "type": "string"
+        },
+        "author_link": {
+          "type": "string"
+        },
+        "author_icon": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "title_prefix": {
+          "type": "string"
+        },
+        "pretext": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "image_url": {
+          "type": "string"
+        },
+        "thumb_url": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiAttachmentField"
+          }
+        }
+      }
+    },
+    "apiAttachmentAction": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "data_source": {
+          "type": "string"
+        },
+        "min_query_length": {
+          "type": "string",
+          "format": "int64"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiAttachmentActionOption"
+          }
+        },
+        "selected_options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiAttachmentActionOption"
+          }
+        },
+        "option_groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiAttachmentActionOptionGroup"
+          }
+        },
+        "confirm": {
+          "$ref": "#/definitions/apiAttachmentConfirmationField"
+        },
+        "url": {
+          "type": "string"
+        }
+      }
+    },
+    "apiAttachmentActionOption": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "apiAttachmentActionOptionGroup": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiAttachmentActionOption"
+          }
+        }
+      }
+    },
+    "apiAttachmentConfirmationField": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "ok_text": {
+          "type": "string"
+        },
+        "dismiss_text": {
+          "type": "string"
+        }
+      }
+    },
+    "apiAttachmentField": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "short": {
+          "type": "boolean",
+          "format": "boolean"
         }
       }
     },
@@ -909,6 +1111,50 @@
           "type": "string"
         },
         "body": {
+          "type": "string"
+        }
+      }
+    },
+    "apiSlashCommand": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        },
+        "team_id": {
+          "type": "string"
+        },
+        "team_domain": {
+          "type": "string"
+        },
+        "enterprise_id": {
+          "type": "string"
+        },
+        "enterprise_name": {
+          "type": "string"
+        },
+        "channel_id": {
+          "type": "string"
+        },
+        "channel_name": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "command": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "response_url": {
+          "type": "string"
+        },
+        "trigger_id": {
           "type": "string"
         }
       }

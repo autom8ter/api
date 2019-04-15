@@ -261,6 +261,60 @@ typedef struct Id__storage_ {
 
 @end
 
+#pragma mark - ActionHookRequest
+
+@implementation ActionHookRequest
+
+@dynamic hasAttachment, attachment;
+@dynamic hasActions, actions;
+
+typedef struct ActionHookRequest__storage_ {
+  uint32_t _has_storage_[1];
+  Attachment *attachment;
+  AttachmentAction *actions;
+} ActionHookRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "attachment",
+        .dataTypeSpecific.className = GPBStringifySymbol(Attachment),
+        .number = ActionHookRequest_FieldNumber_Attachment,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ActionHookRequest__storage_, attachment),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "actions",
+        .dataTypeSpecific.className = GPBStringifySymbol(AttachmentAction),
+        .number = ActionHookRequest_FieldNumber_Actions,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ActionHookRequest__storage_, actions),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ActionHookRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ActionHookRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - MessageUserRequest
 
 @implementation MessageUserRequest
@@ -3069,6 +3123,186 @@ typedef struct Fax__storage_ {
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
         "\001\003\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - SlashCommand
+
+@implementation SlashCommand
+
+@dynamic token;
+@dynamic teamId;
+@dynamic teamDomain;
+@dynamic enterpriseId;
+@dynamic enterpriseName;
+@dynamic channelId;
+@dynamic channelName;
+@dynamic userId;
+@dynamic userName;
+@dynamic command;
+@dynamic text;
+@dynamic responseURL;
+@dynamic triggerId;
+
+typedef struct SlashCommand__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *token;
+  NSString *teamId;
+  NSString *teamDomain;
+  NSString *enterpriseId;
+  NSString *enterpriseName;
+  NSString *channelId;
+  NSString *channelName;
+  NSString *userId;
+  NSString *userName;
+  NSString *command;
+  NSString *text;
+  NSString *responseURL;
+  NSString *triggerId;
+} SlashCommand__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "token",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_Token,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, token),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "teamId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_TeamId,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, teamId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "teamDomain",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_TeamDomain,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, teamDomain),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "enterpriseId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_EnterpriseId,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, enterpriseId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "enterpriseName",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_EnterpriseName,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, enterpriseName),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "channelId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_ChannelId,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, channelId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "channelName",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_ChannelName,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, channelName),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "userId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_UserId,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, userId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "userName",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_UserName,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, userName),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "command",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_Command,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, command),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_Text,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, text),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "responseURL",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_ResponseURL,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, responseURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "triggerId",
+        .dataTypeSpecific.className = NULL,
+        .number = SlashCommand_FieldNumber_TriggerId,
+        .hasIndex = 12,
+        .offset = (uint32_t)offsetof(SlashCommand__storage_, triggerId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SlashCommand class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SlashCommand__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\r\010\241!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

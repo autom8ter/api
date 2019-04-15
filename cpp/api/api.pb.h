@@ -48,7 +48,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[53];
+  static const ::google::protobuf::internal::ParseTable schema[55];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -62,6 +62,9 @@ extern AccessDefaultTypeInternal _Access_default_instance_;
 class Account;
 class AccountDefaultTypeInternal;
 extern AccountDefaultTypeInternal _Account_default_instance_;
+class ActionHookRequest;
+class ActionHookRequestDefaultTypeInternal;
+extern ActionHookRequestDefaultTypeInternal _ActionHookRequest_default_instance_;
 class Address;
 class AddressDefaultTypeInternal;
 extern AddressDefaultTypeInternal _Address_default_instance_;
@@ -191,6 +194,9 @@ extern SignedKeyDefaultTypeInternal _SignedKey_default_instance_;
 class SlackHook;
 class SlackHookDefaultTypeInternal;
 extern SlackHookDefaultTypeInternal _SlackHook_default_instance_;
+class SlashCommand;
+class SlashCommandDefaultTypeInternal;
+extern SlashCommandDefaultTypeInternal _SlashCommand_default_instance_;
 class StandardClaims;
 class StandardClaimsDefaultTypeInternal;
 extern StandardClaimsDefaultTypeInternal _StandardClaims_default_instance_;
@@ -220,6 +226,7 @@ namespace google {
 namespace protobuf {
 template<> ::api::Access* Arena::CreateMaybeMessage<::api::Access>(Arena*);
 template<> ::api::Account* Arena::CreateMaybeMessage<::api::Account>(Arena*);
+template<> ::api::ActionHookRequest* Arena::CreateMaybeMessage<::api::ActionHookRequest>(Arena*);
 template<> ::api::Address* Arena::CreateMaybeMessage<::api::Address>(Arena*);
 template<> ::api::Attachment* Arena::CreateMaybeMessage<::api::Attachment>(Arena*);
 template<> ::api::AttachmentAction* Arena::CreateMaybeMessage<::api::AttachmentAction>(Arena*);
@@ -263,6 +270,7 @@ template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSRequest* Arena::CreateMaybeMessage<::api::SMSRequest>(Arena*);
 template<> ::api::SignedKey* Arena::CreateMaybeMessage<::api::SignedKey>(Arena*);
 template<> ::api::SlackHook* Arena::CreateMaybeMessage<::api::SlackHook>(Arena*);
+template<> ::api::SlashCommand* Arena::CreateMaybeMessage<::api::SlashCommand>(Arena*);
 template<> ::api::StandardClaims* Arena::CreateMaybeMessage<::api::StandardClaims>(Arena*);
 template<> ::api::Star* Arena::CreateMaybeMessage<::api::Star>(Arena*);
 template<> ::api::StringMapString* Arena::CreateMaybeMessage<::api::StringMapString>(Arena*);
@@ -481,6 +489,128 @@ class Id : public ::google::protobuf::Message /* @@protoc_insertion_point(class_
 };
 // -------------------------------------------------------------------
 
+class ActionHookRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ActionHookRequest) */ {
+ public:
+  ActionHookRequest();
+  virtual ~ActionHookRequest();
+
+  ActionHookRequest(const ActionHookRequest& from);
+
+  inline ActionHookRequest& operator=(const ActionHookRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ActionHookRequest(ActionHookRequest&& from) noexcept
+    : ActionHookRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ActionHookRequest& operator=(ActionHookRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ActionHookRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ActionHookRequest* internal_default_instance() {
+    return reinterpret_cast<const ActionHookRequest*>(
+               &_ActionHookRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(ActionHookRequest* other);
+  friend void swap(ActionHookRequest& a, ActionHookRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ActionHookRequest* New() const final {
+    return CreateMaybeMessage<ActionHookRequest>(NULL);
+  }
+
+  ActionHookRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ActionHookRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ActionHookRequest& from);
+  void MergeFrom(const ActionHookRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ActionHookRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.Attachment attachment = 1;
+  bool has_attachment() const;
+  void clear_attachment();
+  static const int kAttachmentFieldNumber = 1;
+  private:
+  const ::api::Attachment& _internal_attachment() const;
+  public:
+  const ::api::Attachment& attachment() const;
+  ::api::Attachment* release_attachment();
+  ::api::Attachment* mutable_attachment();
+  void set_allocated_attachment(::api::Attachment* attachment);
+
+  // .api.AttachmentAction actions = 2;
+  bool has_actions() const;
+  void clear_actions();
+  static const int kActionsFieldNumber = 2;
+  private:
+  const ::api::AttachmentAction& _internal_actions() const;
+  public:
+  const ::api::AttachmentAction& actions() const;
+  ::api::AttachmentAction* release_actions();
+  ::api::AttachmentAction* mutable_actions();
+  void set_allocated_actions(::api::AttachmentAction* actions);
+
+  // @@protoc_insertion_point(class_scope:api.ActionHookRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::Attachment* attachment_;
+  ::api::AttachmentAction* actions_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class MessageUserRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.MessageUserRequest) */ {
  public:
   MessageUserRequest();
@@ -516,7 +646,7 @@ class MessageUserRequest : public ::google::protobuf::Message /* @@protoc_insert
                &_MessageUserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(MessageUserRequest* other);
   friend void swap(MessageUserRequest& a, MessageUserRequest& b) {
@@ -642,7 +772,7 @@ class RefundRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_RefundRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(RefundRequest* other);
   friend void swap(RefundRequest& a, RefundRequest& b) {
@@ -797,7 +927,7 @@ class ChargeRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_ChargeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(ChargeRequest* other);
   friend void swap(ChargeRequest& a, ChargeRequest& b) {
@@ -921,7 +1051,7 @@ class CancelSubscriptionRequest : public ::google::protobuf::Message /* @@protoc
                &_CancelSubscriptionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(CancelSubscriptionRequest* other);
   friend void swap(CancelSubscriptionRequest& a, CancelSubscriptionRequest& b) {
@@ -1032,7 +1162,7 @@ class CreatePlanRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_CreatePlanRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(CreatePlanRequest* other);
   friend void swap(CreatePlanRequest& a, CreatePlanRequest& b) {
@@ -1195,7 +1325,7 @@ class SMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_SMSRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(SMSRequest* other);
   friend void swap(SMSRequest& a, SMSRequest& b) {
@@ -1321,7 +1451,7 @@ class CallRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_CallRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(CallRequest* other);
   friend void swap(CallRequest& a, CallRequest& b) {
@@ -1447,7 +1577,7 @@ class MMSRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_MMSRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(MMSRequest* other);
   friend void swap(MMSRequest& a, MMSRequest& b) {
@@ -1571,7 +1701,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1727,7 +1857,7 @@ class CustomerRequest : public ::google::protobuf::Message /* @@protoc_insertion
                &_CustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(CustomerRequest* other);
   friend void swap(CustomerRequest& a, CustomerRequest& b) {
@@ -1911,7 +2041,7 @@ class UpdateCustomerRequest : public ::google::protobuf::Message /* @@protoc_ins
                &_UpdateCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(UpdateCustomerRequest* other);
   friend void swap(UpdateCustomerRequest& a, UpdateCustomerRequest& b) {
@@ -2035,7 +2165,7 @@ class SubscribeCustomerRequest : public ::google::protobuf::Message /* @@protoc_
                &_SubscribeCustomerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(SubscribeCustomerRequest* other);
   friend void swap(SubscribeCustomerRequest& a, SubscribeCustomerRequest& b) {
@@ -2221,7 +2351,7 @@ class CreateAccountRequest : public ::google::protobuf::Message /* @@protoc_inse
                &_CreateAccountRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(CreateAccountRequest* other);
   friend void swap(CreateAccountRequest& a, CreateAccountRequest& b) {
@@ -2343,7 +2473,7 @@ class Account : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Account_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(Account* other);
   friend void swap(Account& a, Account& b) {
@@ -2465,7 +2595,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -2712,7 +2842,7 @@ class Profile : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Profile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Profile* other);
   friend void swap(Profile& a, Profile& b) {
@@ -2936,7 +3066,7 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(Empty* other);
   friend void swap(Empty& a, Empty& b) {
@@ -3053,7 +3183,7 @@ class Customer : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Customer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(Customer* other);
   friend void swap(Customer& a, Customer& b) {
@@ -3282,7 +3412,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -3452,7 +3582,7 @@ class BankAccount : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_BankAccount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(BankAccount* other);
   friend void swap(BankAccount& a, BankAccount& b) {
@@ -3578,7 +3708,7 @@ class Address : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Address_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(Address* other);
   friend void swap(Address& a, Address& b) {
@@ -3764,7 +3894,7 @@ class ChannelReminder : public ::google::protobuf::Message /* @@protoc_insertion
                &_ChannelReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(ChannelReminder* other);
   friend void swap(ChannelReminder& a, ChannelReminder& b) {
@@ -3905,7 +4035,7 @@ class UserReminder : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(UserReminder* other);
   friend void swap(UserReminder& a, UserReminder& b) {
@@ -4059,7 +4189,7 @@ class ItemRef : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_ItemRef_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(ItemRef* other);
   friend void swap(ItemRef& a, ItemRef& b) {
@@ -4200,7 +4330,7 @@ class Star : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Star_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(Star* other);
   friend void swap(Star& a, Star& b) {
@@ -4324,7 +4454,7 @@ class Pin : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Pin_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(Pin* other);
   friend void swap(Pin& a, Pin& b) {
@@ -4448,7 +4578,7 @@ class SignedKey : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_SignedKey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   void Swap(SignedKey* other);
   friend void swap(SignedKey& a, SignedKey& b) {
@@ -4559,7 +4689,7 @@ class Access : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_Access_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   void Swap(Access* other);
   friend void swap(Access& a, Access& b) {
@@ -4835,7 +4965,7 @@ class StandardClaims : public ::google::protobuf::Message /* @@protoc_insertion_
                &_StandardClaims_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   void Swap(StandardClaims* other);
   friend void swap(StandardClaims& a, StandardClaims& b) {
@@ -5010,7 +5140,7 @@ class LogConfig : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_LogConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   void Swap(LogConfig* other);
   friend void swap(LogConfig& a, LogConfig& b) {
@@ -5136,7 +5266,7 @@ class EmailAddress : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailAddress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   void Swap(EmailAddress* other);
   friend void swap(EmailAddress& a, EmailAddress& b) {
@@ -5262,7 +5392,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -5384,7 +5514,7 @@ class RecipientEmail : public ::google::protobuf::Message /* @@protoc_insertion_
                &_RecipientEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   void Swap(RecipientEmail* other);
   friend void swap(RecipientEmail& a, RecipientEmail& b) {
@@ -5538,7 +5668,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -5724,7 +5854,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -5865,7 +5995,7 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Fax_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   void Swap(Fax* other);
   friend void swap(Fax& a, Fax& b) {
@@ -6008,6 +6138,297 @@ class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class
 };
 // -------------------------------------------------------------------
 
+class SlashCommand : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SlashCommand) */ {
+ public:
+  SlashCommand();
+  virtual ~SlashCommand();
+
+  SlashCommand(const SlashCommand& from);
+
+  inline SlashCommand& operator=(const SlashCommand& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SlashCommand(SlashCommand&& from) noexcept
+    : SlashCommand() {
+    *this = ::std::move(from);
+  }
+
+  inline SlashCommand& operator=(SlashCommand&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SlashCommand& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SlashCommand* internal_default_instance() {
+    return reinterpret_cast<const SlashCommand*>(
+               &_SlashCommand_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    39;
+
+  void Swap(SlashCommand* other);
+  friend void swap(SlashCommand& a, SlashCommand& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SlashCommand* New() const final {
+    return CreateMaybeMessage<SlashCommand>(NULL);
+  }
+
+  SlashCommand* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SlashCommand>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SlashCommand& from);
+  void MergeFrom(const SlashCommand& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SlashCommand* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string token = 1;
+  void clear_token();
+  static const int kTokenFieldNumber = 1;
+  const ::std::string& token() const;
+  void set_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token(::std::string&& value);
+  #endif
+  void set_token(const char* value);
+  void set_token(const char* value, size_t size);
+  ::std::string* mutable_token();
+  ::std::string* release_token();
+  void set_allocated_token(::std::string* token);
+
+  // string team_id = 2;
+  void clear_team_id();
+  static const int kTeamIdFieldNumber = 2;
+  const ::std::string& team_id() const;
+  void set_team_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_team_id(::std::string&& value);
+  #endif
+  void set_team_id(const char* value);
+  void set_team_id(const char* value, size_t size);
+  ::std::string* mutable_team_id();
+  ::std::string* release_team_id();
+  void set_allocated_team_id(::std::string* team_id);
+
+  // string team_domain = 3;
+  void clear_team_domain();
+  static const int kTeamDomainFieldNumber = 3;
+  const ::std::string& team_domain() const;
+  void set_team_domain(const ::std::string& value);
+  #if LANG_CXX11
+  void set_team_domain(::std::string&& value);
+  #endif
+  void set_team_domain(const char* value);
+  void set_team_domain(const char* value, size_t size);
+  ::std::string* mutable_team_domain();
+  ::std::string* release_team_domain();
+  void set_allocated_team_domain(::std::string* team_domain);
+
+  // string enterprise_id = 4;
+  void clear_enterprise_id();
+  static const int kEnterpriseIdFieldNumber = 4;
+  const ::std::string& enterprise_id() const;
+  void set_enterprise_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_enterprise_id(::std::string&& value);
+  #endif
+  void set_enterprise_id(const char* value);
+  void set_enterprise_id(const char* value, size_t size);
+  ::std::string* mutable_enterprise_id();
+  ::std::string* release_enterprise_id();
+  void set_allocated_enterprise_id(::std::string* enterprise_id);
+
+  // string enterprise_name = 6;
+  void clear_enterprise_name();
+  static const int kEnterpriseNameFieldNumber = 6;
+  const ::std::string& enterprise_name() const;
+  void set_enterprise_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_enterprise_name(::std::string&& value);
+  #endif
+  void set_enterprise_name(const char* value);
+  void set_enterprise_name(const char* value, size_t size);
+  ::std::string* mutable_enterprise_name();
+  ::std::string* release_enterprise_name();
+  void set_allocated_enterprise_name(::std::string* enterprise_name);
+
+  // string channel_id = 7;
+  void clear_channel_id();
+  static const int kChannelIdFieldNumber = 7;
+  const ::std::string& channel_id() const;
+  void set_channel_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_channel_id(::std::string&& value);
+  #endif
+  void set_channel_id(const char* value);
+  void set_channel_id(const char* value, size_t size);
+  ::std::string* mutable_channel_id();
+  ::std::string* release_channel_id();
+  void set_allocated_channel_id(::std::string* channel_id);
+
+  // string channel_name = 8;
+  void clear_channel_name();
+  static const int kChannelNameFieldNumber = 8;
+  const ::std::string& channel_name() const;
+  void set_channel_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_channel_name(::std::string&& value);
+  #endif
+  void set_channel_name(const char* value);
+  void set_channel_name(const char* value, size_t size);
+  ::std::string* mutable_channel_name();
+  ::std::string* release_channel_name();
+  void set_allocated_channel_name(::std::string* channel_name);
+
+  // string user_id = 9;
+  void clear_user_id();
+  static const int kUserIdFieldNumber = 9;
+  const ::std::string& user_id() const;
+  void set_user_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_user_id(::std::string&& value);
+  #endif
+  void set_user_id(const char* value);
+  void set_user_id(const char* value, size_t size);
+  ::std::string* mutable_user_id();
+  ::std::string* release_user_id();
+  void set_allocated_user_id(::std::string* user_id);
+
+  // string user_name = 10;
+  void clear_user_name();
+  static const int kUserNameFieldNumber = 10;
+  const ::std::string& user_name() const;
+  void set_user_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_user_name(::std::string&& value);
+  #endif
+  void set_user_name(const char* value);
+  void set_user_name(const char* value, size_t size);
+  ::std::string* mutable_user_name();
+  ::std::string* release_user_name();
+  void set_allocated_user_name(::std::string* user_name);
+
+  // string command = 11;
+  void clear_command();
+  static const int kCommandFieldNumber = 11;
+  const ::std::string& command() const;
+  void set_command(const ::std::string& value);
+  #if LANG_CXX11
+  void set_command(::std::string&& value);
+  #endif
+  void set_command(const char* value);
+  void set_command(const char* value, size_t size);
+  ::std::string* mutable_command();
+  ::std::string* release_command();
+  void set_allocated_command(::std::string* command);
+
+  // string text = 12;
+  void clear_text();
+  static const int kTextFieldNumber = 12;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
+  #if LANG_CXX11
+  void set_text(::std::string&& value);
+  #endif
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
+
+  // string response_url = 13;
+  void clear_response_url();
+  static const int kResponseUrlFieldNumber = 13;
+  const ::std::string& response_url() const;
+  void set_response_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_response_url(::std::string&& value);
+  #endif
+  void set_response_url(const char* value);
+  void set_response_url(const char* value, size_t size);
+  ::std::string* mutable_response_url();
+  ::std::string* release_response_url();
+  void set_allocated_response_url(::std::string* response_url);
+
+  // string trigger_id = 14;
+  void clear_trigger_id();
+  static const int kTriggerIdFieldNumber = 14;
+  const ::std::string& trigger_id() const;
+  void set_trigger_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_trigger_id(::std::string&& value);
+  #endif
+  void set_trigger_id(const char* value);
+  void set_trigger_id(const char* value, size_t size);
+  ::std::string* mutable_trigger_id();
+  ::std::string* release_trigger_id();
+  void set_allocated_trigger_id(::std::string* trigger_id);
+
+  // @@protoc_insertion_point(class_scope:api.SlashCommand)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr token_;
+  ::google::protobuf::internal::ArenaStringPtr team_id_;
+  ::google::protobuf::internal::ArenaStringPtr team_domain_;
+  ::google::protobuf::internal::ArenaStringPtr enterprise_id_;
+  ::google::protobuf::internal::ArenaStringPtr enterprise_name_;
+  ::google::protobuf::internal::ArenaStringPtr channel_id_;
+  ::google::protobuf::internal::ArenaStringPtr channel_name_;
+  ::google::protobuf::internal::ArenaStringPtr user_id_;
+  ::google::protobuf::internal::ArenaStringPtr user_name_;
+  ::google::protobuf::internal::ArenaStringPtr command_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  ::google::protobuf::internal::ArenaStringPtr response_url_;
+  ::google::protobuf::internal::ArenaStringPtr trigger_id_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.LogHook) */ {
  public:
   LogHook();
@@ -6043,7 +6464,7 @@ class LogHook : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_LogHook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   void Swap(LogHook* other);
   friend void swap(LogHook& a, LogHook& b) {
@@ -6184,7 +6605,7 @@ class Attachment : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Attachment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   void Swap(Attachment* other);
   friend void swap(Attachment& a, Attachment& b) {
@@ -6495,7 +6916,7 @@ class AttachmentAction : public ::google::protobuf::Message /* @@protoc_insertio
                &_AttachmentAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   void Swap(AttachmentAction* other);
   friend void swap(AttachmentAction& a, AttachmentAction& b) {
@@ -6755,7 +7176,7 @@ class AttachmentConfirmationField : public ::google::protobuf::Message /* @@prot
                &_AttachmentConfirmationField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   void Swap(AttachmentConfirmationField* other);
   friend void swap(AttachmentConfirmationField& a, AttachmentConfirmationField& b) {
@@ -6911,7 +7332,7 @@ class AttachmentActionOptionGroup : public ::google::protobuf::Message /* @@prot
                &_AttachmentActionOptionGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   void Swap(AttachmentActionOptionGroup* other);
   friend void swap(AttachmentActionOptionGroup& a, AttachmentActionOptionGroup& b) {
@@ -7035,7 +7456,7 @@ class AttachmentActionOption : public ::google::protobuf::Message /* @@protoc_in
                &_AttachmentActionOption_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   void Swap(AttachmentActionOption* other);
   friend void swap(AttachmentActionOption& a, AttachmentActionOption& b) {
@@ -7176,7 +7597,7 @@ class AttachmentField : public ::google::protobuf::Message /* @@protoc_insertion
                &_AttachmentField_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   void Swap(AttachmentField* other);
   friend void swap(AttachmentField& a, AttachmentField& b) {
@@ -7309,7 +7730,7 @@ class JSON : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_JSON_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   void Swap(JSON* other);
   friend void swap(JSON& a, JSON& b) {
@@ -7448,7 +7869,7 @@ class File : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_File_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   void Swap(File* other);
   friend void swap(File& a, File& b) {
@@ -7597,7 +8018,7 @@ class SlackHook : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_SlackHook_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   void Swap(SlackHook* other);
   friend void swap(SlackHook& a, SlackHook& b) {
@@ -7744,7 +8165,7 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Product_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   void Swap(Product* other);
   friend void swap(Product& a, Product& b) {
@@ -7934,7 +8355,7 @@ class StringMapString : public ::google::protobuf::Message /* @@protoc_insertion
                &_StringMapString_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   void Swap(StringMapString* other);
   friend void swap(StringMapString& a, StringMapString& b) {
@@ -8071,6 +8492,118 @@ inline void Id::set_allocated_id(::std::string* id) {
   }
   id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
   // @@protoc_insertion_point(field_set_allocated:api.Id.id)
+}
+
+// -------------------------------------------------------------------
+
+// ActionHookRequest
+
+// .api.Attachment attachment = 1;
+inline bool ActionHookRequest::has_attachment() const {
+  return this != internal_default_instance() && attachment_ != NULL;
+}
+inline void ActionHookRequest::clear_attachment() {
+  if (GetArenaNoVirtual() == NULL && attachment_ != NULL) {
+    delete attachment_;
+  }
+  attachment_ = NULL;
+}
+inline const ::api::Attachment& ActionHookRequest::_internal_attachment() const {
+  return *attachment_;
+}
+inline const ::api::Attachment& ActionHookRequest::attachment() const {
+  const ::api::Attachment* p = attachment_;
+  // @@protoc_insertion_point(field_get:api.ActionHookRequest.attachment)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Attachment*>(
+      &::api::_Attachment_default_instance_);
+}
+inline ::api::Attachment* ActionHookRequest::release_attachment() {
+  // @@protoc_insertion_point(field_release:api.ActionHookRequest.attachment)
+  
+  ::api::Attachment* temp = attachment_;
+  attachment_ = NULL;
+  return temp;
+}
+inline ::api::Attachment* ActionHookRequest::mutable_attachment() {
+  
+  if (attachment_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Attachment>(GetArenaNoVirtual());
+    attachment_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ActionHookRequest.attachment)
+  return attachment_;
+}
+inline void ActionHookRequest::set_allocated_attachment(::api::Attachment* attachment) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete attachment_;
+  }
+  if (attachment) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      attachment = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, attachment, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  attachment_ = attachment;
+  // @@protoc_insertion_point(field_set_allocated:api.ActionHookRequest.attachment)
+}
+
+// .api.AttachmentAction actions = 2;
+inline bool ActionHookRequest::has_actions() const {
+  return this != internal_default_instance() && actions_ != NULL;
+}
+inline void ActionHookRequest::clear_actions() {
+  if (GetArenaNoVirtual() == NULL && actions_ != NULL) {
+    delete actions_;
+  }
+  actions_ = NULL;
+}
+inline const ::api::AttachmentAction& ActionHookRequest::_internal_actions() const {
+  return *actions_;
+}
+inline const ::api::AttachmentAction& ActionHookRequest::actions() const {
+  const ::api::AttachmentAction* p = actions_;
+  // @@protoc_insertion_point(field_get:api.ActionHookRequest.actions)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::AttachmentAction*>(
+      &::api::_AttachmentAction_default_instance_);
+}
+inline ::api::AttachmentAction* ActionHookRequest::release_actions() {
+  // @@protoc_insertion_point(field_release:api.ActionHookRequest.actions)
+  
+  ::api::AttachmentAction* temp = actions_;
+  actions_ = NULL;
+  return temp;
+}
+inline ::api::AttachmentAction* ActionHookRequest::mutable_actions() {
+  
+  if (actions_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::AttachmentAction>(GetArenaNoVirtual());
+    actions_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ActionHookRequest.actions)
+  return actions_;
+}
+inline void ActionHookRequest::set_allocated_actions(::api::AttachmentAction* actions) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete actions_;
+  }
+  if (actions) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      actions = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, actions, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  actions_ = actions;
+  // @@protoc_insertion_point(field_set_allocated:api.ActionHookRequest.actions)
 }
 
 // -------------------------------------------------------------------
@@ -15336,6 +15869,699 @@ inline void Fax::set_store_media(bool value) {
 
 // -------------------------------------------------------------------
 
+// SlashCommand
+
+// string token = 1;
+inline void SlashCommand::clear_token() {
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::token() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.token)
+  return token_.GetNoArena();
+}
+inline void SlashCommand::set_token(const ::std::string& value) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.token)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_token(::std::string&& value) {
+  
+  token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.token)
+}
+#endif
+inline void SlashCommand::set_token(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.token)
+}
+inline void SlashCommand::set_token(const char* value, size_t size) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.token)
+}
+inline ::std::string* SlashCommand::mutable_token() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.token)
+  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_token() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.token)
+  
+  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_token(::std::string* token) {
+  if (token != NULL) {
+    
+  } else {
+    
+  }
+  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.token)
+}
+
+// string team_id = 2;
+inline void SlashCommand::clear_team_id() {
+  team_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::team_id() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.team_id)
+  return team_id_.GetNoArena();
+}
+inline void SlashCommand::set_team_id(const ::std::string& value) {
+  
+  team_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.team_id)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_team_id(::std::string&& value) {
+  
+  team_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.team_id)
+}
+#endif
+inline void SlashCommand::set_team_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  team_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.team_id)
+}
+inline void SlashCommand::set_team_id(const char* value, size_t size) {
+  
+  team_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.team_id)
+}
+inline ::std::string* SlashCommand::mutable_team_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.team_id)
+  return team_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_team_id() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.team_id)
+  
+  return team_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_team_id(::std::string* team_id) {
+  if (team_id != NULL) {
+    
+  } else {
+    
+  }
+  team_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), team_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.team_id)
+}
+
+// string team_domain = 3;
+inline void SlashCommand::clear_team_domain() {
+  team_domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::team_domain() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.team_domain)
+  return team_domain_.GetNoArena();
+}
+inline void SlashCommand::set_team_domain(const ::std::string& value) {
+  
+  team_domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.team_domain)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_team_domain(::std::string&& value) {
+  
+  team_domain_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.team_domain)
+}
+#endif
+inline void SlashCommand::set_team_domain(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  team_domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.team_domain)
+}
+inline void SlashCommand::set_team_domain(const char* value, size_t size) {
+  
+  team_domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.team_domain)
+}
+inline ::std::string* SlashCommand::mutable_team_domain() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.team_domain)
+  return team_domain_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_team_domain() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.team_domain)
+  
+  return team_domain_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_team_domain(::std::string* team_domain) {
+  if (team_domain != NULL) {
+    
+  } else {
+    
+  }
+  team_domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), team_domain);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.team_domain)
+}
+
+// string enterprise_id = 4;
+inline void SlashCommand::clear_enterprise_id() {
+  enterprise_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::enterprise_id() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.enterprise_id)
+  return enterprise_id_.GetNoArena();
+}
+inline void SlashCommand::set_enterprise_id(const ::std::string& value) {
+  
+  enterprise_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.enterprise_id)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_enterprise_id(::std::string&& value) {
+  
+  enterprise_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.enterprise_id)
+}
+#endif
+inline void SlashCommand::set_enterprise_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  enterprise_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.enterprise_id)
+}
+inline void SlashCommand::set_enterprise_id(const char* value, size_t size) {
+  
+  enterprise_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.enterprise_id)
+}
+inline ::std::string* SlashCommand::mutable_enterprise_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.enterprise_id)
+  return enterprise_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_enterprise_id() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.enterprise_id)
+  
+  return enterprise_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_enterprise_id(::std::string* enterprise_id) {
+  if (enterprise_id != NULL) {
+    
+  } else {
+    
+  }
+  enterprise_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), enterprise_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.enterprise_id)
+}
+
+// string enterprise_name = 6;
+inline void SlashCommand::clear_enterprise_name() {
+  enterprise_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::enterprise_name() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.enterprise_name)
+  return enterprise_name_.GetNoArena();
+}
+inline void SlashCommand::set_enterprise_name(const ::std::string& value) {
+  
+  enterprise_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.enterprise_name)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_enterprise_name(::std::string&& value) {
+  
+  enterprise_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.enterprise_name)
+}
+#endif
+inline void SlashCommand::set_enterprise_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  enterprise_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.enterprise_name)
+}
+inline void SlashCommand::set_enterprise_name(const char* value, size_t size) {
+  
+  enterprise_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.enterprise_name)
+}
+inline ::std::string* SlashCommand::mutable_enterprise_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.enterprise_name)
+  return enterprise_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_enterprise_name() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.enterprise_name)
+  
+  return enterprise_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_enterprise_name(::std::string* enterprise_name) {
+  if (enterprise_name != NULL) {
+    
+  } else {
+    
+  }
+  enterprise_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), enterprise_name);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.enterprise_name)
+}
+
+// string channel_id = 7;
+inline void SlashCommand::clear_channel_id() {
+  channel_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::channel_id() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.channel_id)
+  return channel_id_.GetNoArena();
+}
+inline void SlashCommand::set_channel_id(const ::std::string& value) {
+  
+  channel_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.channel_id)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_channel_id(::std::string&& value) {
+  
+  channel_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.channel_id)
+}
+#endif
+inline void SlashCommand::set_channel_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  channel_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.channel_id)
+}
+inline void SlashCommand::set_channel_id(const char* value, size_t size) {
+  
+  channel_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.channel_id)
+}
+inline ::std::string* SlashCommand::mutable_channel_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.channel_id)
+  return channel_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_channel_id() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.channel_id)
+  
+  return channel_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_channel_id(::std::string* channel_id) {
+  if (channel_id != NULL) {
+    
+  } else {
+    
+  }
+  channel_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), channel_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.channel_id)
+}
+
+// string channel_name = 8;
+inline void SlashCommand::clear_channel_name() {
+  channel_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::channel_name() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.channel_name)
+  return channel_name_.GetNoArena();
+}
+inline void SlashCommand::set_channel_name(const ::std::string& value) {
+  
+  channel_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.channel_name)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_channel_name(::std::string&& value) {
+  
+  channel_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.channel_name)
+}
+#endif
+inline void SlashCommand::set_channel_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  channel_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.channel_name)
+}
+inline void SlashCommand::set_channel_name(const char* value, size_t size) {
+  
+  channel_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.channel_name)
+}
+inline ::std::string* SlashCommand::mutable_channel_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.channel_name)
+  return channel_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_channel_name() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.channel_name)
+  
+  return channel_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_channel_name(::std::string* channel_name) {
+  if (channel_name != NULL) {
+    
+  } else {
+    
+  }
+  channel_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), channel_name);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.channel_name)
+}
+
+// string user_id = 9;
+inline void SlashCommand::clear_user_id() {
+  user_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::user_id() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.user_id)
+  return user_id_.GetNoArena();
+}
+inline void SlashCommand::set_user_id(const ::std::string& value) {
+  
+  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.user_id)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_user_id(::std::string&& value) {
+  
+  user_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.user_id)
+}
+#endif
+inline void SlashCommand::set_user_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.user_id)
+}
+inline void SlashCommand::set_user_id(const char* value, size_t size) {
+  
+  user_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.user_id)
+}
+inline ::std::string* SlashCommand::mutable_user_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.user_id)
+  return user_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_user_id() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.user_id)
+  
+  return user_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_user_id(::std::string* user_id) {
+  if (user_id != NULL) {
+    
+  } else {
+    
+  }
+  user_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.user_id)
+}
+
+// string user_name = 10;
+inline void SlashCommand::clear_user_name() {
+  user_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::user_name() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.user_name)
+  return user_name_.GetNoArena();
+}
+inline void SlashCommand::set_user_name(const ::std::string& value) {
+  
+  user_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.user_name)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_user_name(::std::string&& value) {
+  
+  user_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.user_name)
+}
+#endif
+inline void SlashCommand::set_user_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  user_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.user_name)
+}
+inline void SlashCommand::set_user_name(const char* value, size_t size) {
+  
+  user_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.user_name)
+}
+inline ::std::string* SlashCommand::mutable_user_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.user_name)
+  return user_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_user_name() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.user_name)
+  
+  return user_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_user_name(::std::string* user_name) {
+  if (user_name != NULL) {
+    
+  } else {
+    
+  }
+  user_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user_name);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.user_name)
+}
+
+// string command = 11;
+inline void SlashCommand::clear_command() {
+  command_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::command() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.command)
+  return command_.GetNoArena();
+}
+inline void SlashCommand::set_command(const ::std::string& value) {
+  
+  command_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.command)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_command(::std::string&& value) {
+  
+  command_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.command)
+}
+#endif
+inline void SlashCommand::set_command(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  command_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.command)
+}
+inline void SlashCommand::set_command(const char* value, size_t size) {
+  
+  command_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.command)
+}
+inline ::std::string* SlashCommand::mutable_command() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.command)
+  return command_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_command() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.command)
+  
+  return command_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_command(::std::string* command) {
+  if (command != NULL) {
+    
+  } else {
+    
+  }
+  command_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), command);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.command)
+}
+
+// string text = 12;
+inline void SlashCommand::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::text() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.text)
+  return text_.GetNoArena();
+}
+inline void SlashCommand::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.text)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_text(::std::string&& value) {
+  
+  text_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.text)
+}
+#endif
+inline void SlashCommand::set_text(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.text)
+}
+inline void SlashCommand::set_text(const char* value, size_t size) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.text)
+}
+inline ::std::string* SlashCommand::mutable_text() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_text() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.text)
+  
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
+    
+  } else {
+    
+  }
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.text)
+}
+
+// string response_url = 13;
+inline void SlashCommand::clear_response_url() {
+  response_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::response_url() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.response_url)
+  return response_url_.GetNoArena();
+}
+inline void SlashCommand::set_response_url(const ::std::string& value) {
+  
+  response_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.response_url)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_response_url(::std::string&& value) {
+  
+  response_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.response_url)
+}
+#endif
+inline void SlashCommand::set_response_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  response_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.response_url)
+}
+inline void SlashCommand::set_response_url(const char* value, size_t size) {
+  
+  response_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.response_url)
+}
+inline ::std::string* SlashCommand::mutable_response_url() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.response_url)
+  return response_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_response_url() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.response_url)
+  
+  return response_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_response_url(::std::string* response_url) {
+  if (response_url != NULL) {
+    
+  } else {
+    
+  }
+  response_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), response_url);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.response_url)
+}
+
+// string trigger_id = 14;
+inline void SlashCommand::clear_trigger_id() {
+  trigger_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SlashCommand::trigger_id() const {
+  // @@protoc_insertion_point(field_get:api.SlashCommand.trigger_id)
+  return trigger_id_.GetNoArena();
+}
+inline void SlashCommand::set_trigger_id(const ::std::string& value) {
+  
+  trigger_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SlashCommand.trigger_id)
+}
+#if LANG_CXX11
+inline void SlashCommand::set_trigger_id(::std::string&& value) {
+  
+  trigger_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SlashCommand.trigger_id)
+}
+#endif
+inline void SlashCommand::set_trigger_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  trigger_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SlashCommand.trigger_id)
+}
+inline void SlashCommand::set_trigger_id(const char* value, size_t size) {
+  
+  trigger_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SlashCommand.trigger_id)
+}
+inline ::std::string* SlashCommand::mutable_trigger_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SlashCommand.trigger_id)
+  return trigger_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SlashCommand::release_trigger_id() {
+  // @@protoc_insertion_point(field_release:api.SlashCommand.trigger_id)
+  
+  return trigger_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SlashCommand::set_allocated_trigger_id(::std::string* trigger_id) {
+  if (trigger_id != NULL) {
+    
+  } else {
+    
+  }
+  trigger_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), trigger_id);
+  // @@protoc_insertion_point(field_set_allocated:api.SlashCommand.trigger_id)
+}
+
+// -------------------------------------------------------------------
+
 // LogHook
 
 // string author = 1;
@@ -17897,6 +19123,10 @@ StringMapString::mutable_map() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

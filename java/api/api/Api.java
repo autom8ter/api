@@ -1037,6 +1037,807 @@ public final class Api {
 
   }
 
+  public interface ActionHookRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.ActionHookRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.Attachment attachment = 1;</code>
+     */
+    boolean hasAttachment();
+    /**
+     * <code>.api.Attachment attachment = 1;</code>
+     */
+    api.Api.Attachment getAttachment();
+    /**
+     * <code>.api.Attachment attachment = 1;</code>
+     */
+    api.Api.AttachmentOrBuilder getAttachmentOrBuilder();
+
+    /**
+     * <code>.api.AttachmentAction actions = 2;</code>
+     */
+    boolean hasActions();
+    /**
+     * <code>.api.AttachmentAction actions = 2;</code>
+     */
+    api.Api.AttachmentAction getActions();
+    /**
+     * <code>.api.AttachmentAction actions = 2;</code>
+     */
+    api.Api.AttachmentActionOrBuilder getActionsOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.ActionHookRequest}
+   */
+  public  static final class ActionHookRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.ActionHookRequest)
+      ActionHookRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ActionHookRequest.newBuilder() to construct.
+    private ActionHookRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ActionHookRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ActionHookRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              api.Api.Attachment.Builder subBuilder = null;
+              if (attachment_ != null) {
+                subBuilder = attachment_.toBuilder();
+              }
+              attachment_ = input.readMessage(api.Api.Attachment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(attachment_);
+                attachment_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              api.Api.AttachmentAction.Builder subBuilder = null;
+              if (actions_ != null) {
+                subBuilder = actions_.toBuilder();
+              }
+              actions_ = input.readMessage(api.Api.AttachmentAction.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(actions_);
+                actions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_ActionHookRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_ActionHookRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.ActionHookRequest.class, api.Api.ActionHookRequest.Builder.class);
+    }
+
+    public static final int ATTACHMENT_FIELD_NUMBER = 1;
+    private api.Api.Attachment attachment_;
+    /**
+     * <code>.api.Attachment attachment = 1;</code>
+     */
+    public boolean hasAttachment() {
+      return attachment_ != null;
+    }
+    /**
+     * <code>.api.Attachment attachment = 1;</code>
+     */
+    public api.Api.Attachment getAttachment() {
+      return attachment_ == null ? api.Api.Attachment.getDefaultInstance() : attachment_;
+    }
+    /**
+     * <code>.api.Attachment attachment = 1;</code>
+     */
+    public api.Api.AttachmentOrBuilder getAttachmentOrBuilder() {
+      return getAttachment();
+    }
+
+    public static final int ACTIONS_FIELD_NUMBER = 2;
+    private api.Api.AttachmentAction actions_;
+    /**
+     * <code>.api.AttachmentAction actions = 2;</code>
+     */
+    public boolean hasActions() {
+      return actions_ != null;
+    }
+    /**
+     * <code>.api.AttachmentAction actions = 2;</code>
+     */
+    public api.Api.AttachmentAction getActions() {
+      return actions_ == null ? api.Api.AttachmentAction.getDefaultInstance() : actions_;
+    }
+    /**
+     * <code>.api.AttachmentAction actions = 2;</code>
+     */
+    public api.Api.AttachmentActionOrBuilder getActionsOrBuilder() {
+      return getActions();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (attachment_ != null) {
+        output.writeMessage(1, getAttachment());
+      }
+      if (actions_ != null) {
+        output.writeMessage(2, getActions());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (attachment_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getAttachment());
+      }
+      if (actions_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getActions());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.ActionHookRequest)) {
+        return super.equals(obj);
+      }
+      api.Api.ActionHookRequest other = (api.Api.ActionHookRequest) obj;
+
+      boolean result = true;
+      result = result && (hasAttachment() == other.hasAttachment());
+      if (hasAttachment()) {
+        result = result && getAttachment()
+            .equals(other.getAttachment());
+      }
+      result = result && (hasActions() == other.hasActions());
+      if (hasActions()) {
+        result = result && getActions()
+            .equals(other.getActions());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAttachment()) {
+        hash = (37 * hash) + ATTACHMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getAttachment().hashCode();
+      }
+      if (hasActions()) {
+        hash = (37 * hash) + ACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getActions().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.ActionHookRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.ActionHookRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.ActionHookRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.ActionHookRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.ActionHookRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.ActionHookRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.ActionHookRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.ActionHookRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.ActionHookRequest)
+        api.Api.ActionHookRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_ActionHookRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_ActionHookRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.ActionHookRequest.class, api.Api.ActionHookRequest.Builder.class);
+      }
+
+      // Construct using api.Api.ActionHookRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (attachmentBuilder_ == null) {
+          attachment_ = null;
+        } else {
+          attachment_ = null;
+          attachmentBuilder_ = null;
+        }
+        if (actionsBuilder_ == null) {
+          actions_ = null;
+        } else {
+          actions_ = null;
+          actionsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_ActionHookRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.ActionHookRequest getDefaultInstanceForType() {
+        return api.Api.ActionHookRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.ActionHookRequest build() {
+        api.Api.ActionHookRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.ActionHookRequest buildPartial() {
+        api.Api.ActionHookRequest result = new api.Api.ActionHookRequest(this);
+        if (attachmentBuilder_ == null) {
+          result.attachment_ = attachment_;
+        } else {
+          result.attachment_ = attachmentBuilder_.build();
+        }
+        if (actionsBuilder_ == null) {
+          result.actions_ = actions_;
+        } else {
+          result.actions_ = actionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.ActionHookRequest) {
+          return mergeFrom((api.Api.ActionHookRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.ActionHookRequest other) {
+        if (other == api.Api.ActionHookRequest.getDefaultInstance()) return this;
+        if (other.hasAttachment()) {
+          mergeAttachment(other.getAttachment());
+        }
+        if (other.hasActions()) {
+          mergeActions(other.getActions());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.ActionHookRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.ActionHookRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private api.Api.Attachment attachment_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Attachment, api.Api.Attachment.Builder, api.Api.AttachmentOrBuilder> attachmentBuilder_;
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public boolean hasAttachment() {
+        return attachmentBuilder_ != null || attachment_ != null;
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public api.Api.Attachment getAttachment() {
+        if (attachmentBuilder_ == null) {
+          return attachment_ == null ? api.Api.Attachment.getDefaultInstance() : attachment_;
+        } else {
+          return attachmentBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public Builder setAttachment(api.Api.Attachment value) {
+        if (attachmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          attachment_ = value;
+          onChanged();
+        } else {
+          attachmentBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public Builder setAttachment(
+          api.Api.Attachment.Builder builderForValue) {
+        if (attachmentBuilder_ == null) {
+          attachment_ = builderForValue.build();
+          onChanged();
+        } else {
+          attachmentBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public Builder mergeAttachment(api.Api.Attachment value) {
+        if (attachmentBuilder_ == null) {
+          if (attachment_ != null) {
+            attachment_ =
+              api.Api.Attachment.newBuilder(attachment_).mergeFrom(value).buildPartial();
+          } else {
+            attachment_ = value;
+          }
+          onChanged();
+        } else {
+          attachmentBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public Builder clearAttachment() {
+        if (attachmentBuilder_ == null) {
+          attachment_ = null;
+          onChanged();
+        } else {
+          attachment_ = null;
+          attachmentBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public api.Api.Attachment.Builder getAttachmentBuilder() {
+        
+        onChanged();
+        return getAttachmentFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      public api.Api.AttachmentOrBuilder getAttachmentOrBuilder() {
+        if (attachmentBuilder_ != null) {
+          return attachmentBuilder_.getMessageOrBuilder();
+        } else {
+          return attachment_ == null ?
+              api.Api.Attachment.getDefaultInstance() : attachment_;
+        }
+      }
+      /**
+       * <code>.api.Attachment attachment = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Attachment, api.Api.Attachment.Builder, api.Api.AttachmentOrBuilder> 
+          getAttachmentFieldBuilder() {
+        if (attachmentBuilder_ == null) {
+          attachmentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.Attachment, api.Api.Attachment.Builder, api.Api.AttachmentOrBuilder>(
+                  getAttachment(),
+                  getParentForChildren(),
+                  isClean());
+          attachment_ = null;
+        }
+        return attachmentBuilder_;
+      }
+
+      private api.Api.AttachmentAction actions_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.AttachmentAction, api.Api.AttachmentAction.Builder, api.Api.AttachmentActionOrBuilder> actionsBuilder_;
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public boolean hasActions() {
+        return actionsBuilder_ != null || actions_ != null;
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public api.Api.AttachmentAction getActions() {
+        if (actionsBuilder_ == null) {
+          return actions_ == null ? api.Api.AttachmentAction.getDefaultInstance() : actions_;
+        } else {
+          return actionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public Builder setActions(api.Api.AttachmentAction value) {
+        if (actionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          actions_ = value;
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public Builder setActions(
+          api.Api.AttachmentAction.Builder builderForValue) {
+        if (actionsBuilder_ == null) {
+          actions_ = builderForValue.build();
+          onChanged();
+        } else {
+          actionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public Builder mergeActions(api.Api.AttachmentAction value) {
+        if (actionsBuilder_ == null) {
+          if (actions_ != null) {
+            actions_ =
+              api.Api.AttachmentAction.newBuilder(actions_).mergeFrom(value).buildPartial();
+          } else {
+            actions_ = value;
+          }
+          onChanged();
+        } else {
+          actionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public Builder clearActions() {
+        if (actionsBuilder_ == null) {
+          actions_ = null;
+          onChanged();
+        } else {
+          actions_ = null;
+          actionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public api.Api.AttachmentAction.Builder getActionsBuilder() {
+        
+        onChanged();
+        return getActionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      public api.Api.AttachmentActionOrBuilder getActionsOrBuilder() {
+        if (actionsBuilder_ != null) {
+          return actionsBuilder_.getMessageOrBuilder();
+        } else {
+          return actions_ == null ?
+              api.Api.AttachmentAction.getDefaultInstance() : actions_;
+        }
+      }
+      /**
+       * <code>.api.AttachmentAction actions = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.AttachmentAction, api.Api.AttachmentAction.Builder, api.Api.AttachmentActionOrBuilder> 
+          getActionsFieldBuilder() {
+        if (actionsBuilder_ == null) {
+          actionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.AttachmentAction, api.Api.AttachmentAction.Builder, api.Api.AttachmentActionOrBuilder>(
+                  getActions(),
+                  getParentForChildren(),
+                  isClean());
+          actions_ = null;
+        }
+        return actionsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.ActionHookRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.ActionHookRequest)
+    private static final api.Api.ActionHookRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.ActionHookRequest();
+    }
+
+    public static api.Api.ActionHookRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ActionHookRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ActionHookRequest>() {
+      @java.lang.Override
+      public ActionHookRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ActionHookRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ActionHookRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ActionHookRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.ActionHookRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MessageUserRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.MessageUserRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -36096,6 +36897,2200 @@ public final class Api {
 
   }
 
+  public interface SlashCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.SlashCommand)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+
+    /**
+     * <code>string team_id = 2;</code>
+     */
+    java.lang.String getTeamId();
+    /**
+     * <code>string team_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTeamIdBytes();
+
+    /**
+     * <code>string team_domain = 3;</code>
+     */
+    java.lang.String getTeamDomain();
+    /**
+     * <code>string team_domain = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getTeamDomainBytes();
+
+    /**
+     * <code>string enterprise_id = 4;</code>
+     */
+    java.lang.String getEnterpriseId();
+    /**
+     * <code>string enterprise_id = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getEnterpriseIdBytes();
+
+    /**
+     * <code>string enterprise_name = 6;</code>
+     */
+    java.lang.String getEnterpriseName();
+    /**
+     * <code>string enterprise_name = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getEnterpriseNameBytes();
+
+    /**
+     * <code>string channel_id = 7;</code>
+     */
+    java.lang.String getChannelId();
+    /**
+     * <code>string channel_id = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getChannelIdBytes();
+
+    /**
+     * <code>string channel_name = 8;</code>
+     */
+    java.lang.String getChannelName();
+    /**
+     * <code>string channel_name = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getChannelNameBytes();
+
+    /**
+     * <code>string user_id = 9;</code>
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string user_name = 10;</code>
+     */
+    java.lang.String getUserName();
+    /**
+     * <code>string user_name = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserNameBytes();
+
+    /**
+     * <code>string command = 11;</code>
+     */
+    java.lang.String getCommand();
+    /**
+     * <code>string command = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getCommandBytes();
+
+    /**
+     * <code>string text = 12;</code>
+     */
+    java.lang.String getText();
+    /**
+     * <code>string text = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getTextBytes();
+
+    /**
+     * <code>string response_url = 13;</code>
+     */
+    java.lang.String getResponseUrl();
+    /**
+     * <code>string response_url = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getResponseUrlBytes();
+
+    /**
+     * <code>string trigger_id = 14;</code>
+     */
+    java.lang.String getTriggerId();
+    /**
+     * <code>string trigger_id = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getTriggerIdBytes();
+  }
+  /**
+   * Protobuf type {@code api.SlashCommand}
+   */
+  public  static final class SlashCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.SlashCommand)
+      SlashCommandOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SlashCommand.newBuilder() to construct.
+    private SlashCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SlashCommand() {
+      token_ = "";
+      teamId_ = "";
+      teamDomain_ = "";
+      enterpriseId_ = "";
+      enterpriseName_ = "";
+      channelId_ = "";
+      channelName_ = "";
+      userId_ = "";
+      userName_ = "";
+      command_ = "";
+      text_ = "";
+      responseUrl_ = "";
+      triggerId_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SlashCommand(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              teamId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              teamDomain_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              enterpriseId_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              enterpriseName_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channelId_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              channelName_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userName_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              command_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              text_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              responseUrl_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              triggerId_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_SlashCommand_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_SlashCommand_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.SlashCommand.class, api.Api.SlashCommand.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 1;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEAM_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object teamId_;
+    /**
+     * <code>string team_id = 2;</code>
+     */
+    public java.lang.String getTeamId() {
+      java.lang.Object ref = teamId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        teamId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string team_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTeamIdBytes() {
+      java.lang.Object ref = teamId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        teamId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEAM_DOMAIN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object teamDomain_;
+    /**
+     * <code>string team_domain = 3;</code>
+     */
+    public java.lang.String getTeamDomain() {
+      java.lang.Object ref = teamDomain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        teamDomain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string team_domain = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTeamDomainBytes() {
+      java.lang.Object ref = teamDomain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        teamDomain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENTERPRISE_ID_FIELD_NUMBER = 4;
+    private volatile java.lang.Object enterpriseId_;
+    /**
+     * <code>string enterprise_id = 4;</code>
+     */
+    public java.lang.String getEnterpriseId() {
+      java.lang.Object ref = enterpriseId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enterpriseId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string enterprise_id = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEnterpriseIdBytes() {
+      java.lang.Object ref = enterpriseId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        enterpriseId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENTERPRISE_NAME_FIELD_NUMBER = 6;
+    private volatile java.lang.Object enterpriseName_;
+    /**
+     * <code>string enterprise_name = 6;</code>
+     */
+    public java.lang.String getEnterpriseName() {
+      java.lang.Object ref = enterpriseName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enterpriseName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string enterprise_name = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEnterpriseNameBytes() {
+      java.lang.Object ref = enterpriseName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        enterpriseName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHANNEL_ID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object channelId_;
+    /**
+     * <code>string channel_id = 7;</code>
+     */
+    public java.lang.String getChannelId() {
+      java.lang.Object ref = channelId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channelId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string channel_id = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getChannelIdBytes() {
+      java.lang.Object ref = channelId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        channelId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHANNEL_NAME_FIELD_NUMBER = 8;
+    private volatile java.lang.Object channelName_;
+    /**
+     * <code>string channel_name = 8;</code>
+     */
+    public java.lang.String getChannelName() {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        channelName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string channel_name = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getChannelNameBytes() {
+      java.lang.Object ref = channelName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        channelName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object userId_;
+    /**
+     * <code>string user_id = 9;</code>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USER_NAME_FIELD_NUMBER = 10;
+    private volatile java.lang.Object userName_;
+    /**
+     * <code>string user_name = 10;</code>
+     */
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_name = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMMAND_FIELD_NUMBER = 11;
+    private volatile java.lang.Object command_;
+    /**
+     * <code>string command = 11;</code>
+     */
+    public java.lang.String getCommand() {
+      java.lang.Object ref = command_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        command_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string command = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCommandBytes() {
+      java.lang.Object ref = command_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        command_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_FIELD_NUMBER = 12;
+    private volatile java.lang.Object text_;
+    /**
+     * <code>string text = 12;</code>
+     */
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        text_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string text = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTextBytes() {
+      java.lang.Object ref = text_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        text_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESPONSE_URL_FIELD_NUMBER = 13;
+    private volatile java.lang.Object responseUrl_;
+    /**
+     * <code>string response_url = 13;</code>
+     */
+    public java.lang.String getResponseUrl() {
+      java.lang.Object ref = responseUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        responseUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string response_url = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResponseUrlBytes() {
+      java.lang.Object ref = responseUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        responseUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TRIGGER_ID_FIELD_NUMBER = 14;
+    private volatile java.lang.Object triggerId_;
+    /**
+     * <code>string trigger_id = 14;</code>
+     */
+    public java.lang.String getTriggerId() {
+      java.lang.Object ref = triggerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        triggerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string trigger_id = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTriggerIdBytes() {
+      java.lang.Object ref = triggerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        triggerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
+      if (!getTeamIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, teamId_);
+      }
+      if (!getTeamDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, teamDomain_);
+      }
+      if (!getEnterpriseIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, enterpriseId_);
+      }
+      if (!getEnterpriseNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, enterpriseName_);
+      }
+      if (!getChannelIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, channelId_);
+      }
+      if (!getChannelNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, channelName_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, userId_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, userName_);
+      }
+      if (!getCommandBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, command_);
+      }
+      if (!getTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, text_);
+      }
+      if (!getResponseUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, responseUrl_);
+      }
+      if (!getTriggerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, triggerId_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      if (!getTeamIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, teamId_);
+      }
+      if (!getTeamDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, teamDomain_);
+      }
+      if (!getEnterpriseIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, enterpriseId_);
+      }
+      if (!getEnterpriseNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, enterpriseName_);
+      }
+      if (!getChannelIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, channelId_);
+      }
+      if (!getChannelNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, channelName_);
+      }
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, userId_);
+      }
+      if (!getUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, userName_);
+      }
+      if (!getCommandBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, command_);
+      }
+      if (!getTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, text_);
+      }
+      if (!getResponseUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, responseUrl_);
+      }
+      if (!getTriggerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, triggerId_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.SlashCommand)) {
+        return super.equals(obj);
+      }
+      api.Api.SlashCommand other = (api.Api.SlashCommand) obj;
+
+      boolean result = true;
+      result = result && getToken()
+          .equals(other.getToken());
+      result = result && getTeamId()
+          .equals(other.getTeamId());
+      result = result && getTeamDomain()
+          .equals(other.getTeamDomain());
+      result = result && getEnterpriseId()
+          .equals(other.getEnterpriseId());
+      result = result && getEnterpriseName()
+          .equals(other.getEnterpriseName());
+      result = result && getChannelId()
+          .equals(other.getChannelId());
+      result = result && getChannelName()
+          .equals(other.getChannelName());
+      result = result && getUserId()
+          .equals(other.getUserId());
+      result = result && getUserName()
+          .equals(other.getUserName());
+      result = result && getCommand()
+          .equals(other.getCommand());
+      result = result && getText()
+          .equals(other.getText());
+      result = result && getResponseUrl()
+          .equals(other.getResponseUrl());
+      result = result && getTriggerId()
+          .equals(other.getTriggerId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + TEAM_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTeamId().hashCode();
+      hash = (37 * hash) + TEAM_DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getTeamDomain().hashCode();
+      hash = (37 * hash) + ENTERPRISE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterpriseId().hashCode();
+      hash = (37 * hash) + ENTERPRISE_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getEnterpriseName().hashCode();
+      hash = (37 * hash) + CHANNEL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelId().hashCode();
+      hash = (37 * hash) + CHANNEL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getChannelName().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUserName().hashCode();
+      hash = (37 * hash) + COMMAND_FIELD_NUMBER;
+      hash = (53 * hash) + getCommand().hashCode();
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
+      hash = (37 * hash) + RESPONSE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getResponseUrl().hashCode();
+      hash = (37 * hash) + TRIGGER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getTriggerId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.SlashCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SlashCommand parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SlashCommand parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SlashCommand parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.SlashCommand parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SlashCommand parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.SlashCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.SlashCommand}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.SlashCommand)
+        api.Api.SlashCommandOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_SlashCommand_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_SlashCommand_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.SlashCommand.class, api.Api.SlashCommand.Builder.class);
+      }
+
+      // Construct using api.Api.SlashCommand.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        token_ = "";
+
+        teamId_ = "";
+
+        teamDomain_ = "";
+
+        enterpriseId_ = "";
+
+        enterpriseName_ = "";
+
+        channelId_ = "";
+
+        channelName_ = "";
+
+        userId_ = "";
+
+        userName_ = "";
+
+        command_ = "";
+
+        text_ = "";
+
+        responseUrl_ = "";
+
+        triggerId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_SlashCommand_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.SlashCommand getDefaultInstanceForType() {
+        return api.Api.SlashCommand.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.SlashCommand build() {
+        api.Api.SlashCommand result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.SlashCommand buildPartial() {
+        api.Api.SlashCommand result = new api.Api.SlashCommand(this);
+        result.token_ = token_;
+        result.teamId_ = teamId_;
+        result.teamDomain_ = teamDomain_;
+        result.enterpriseId_ = enterpriseId_;
+        result.enterpriseName_ = enterpriseName_;
+        result.channelId_ = channelId_;
+        result.channelName_ = channelName_;
+        result.userId_ = userId_;
+        result.userName_ = userName_;
+        result.command_ = command_;
+        result.text_ = text_;
+        result.responseUrl_ = responseUrl_;
+        result.triggerId_ = triggerId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.SlashCommand) {
+          return mergeFrom((api.Api.SlashCommand)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.SlashCommand other) {
+        if (other == api.Api.SlashCommand.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        if (!other.getTeamId().isEmpty()) {
+          teamId_ = other.teamId_;
+          onChanged();
+        }
+        if (!other.getTeamDomain().isEmpty()) {
+          teamDomain_ = other.teamDomain_;
+          onChanged();
+        }
+        if (!other.getEnterpriseId().isEmpty()) {
+          enterpriseId_ = other.enterpriseId_;
+          onChanged();
+        }
+        if (!other.getEnterpriseName().isEmpty()) {
+          enterpriseName_ = other.enterpriseName_;
+          onChanged();
+        }
+        if (!other.getChannelId().isEmpty()) {
+          channelId_ = other.channelId_;
+          onChanged();
+        }
+        if (!other.getChannelName().isEmpty()) {
+          channelName_ = other.channelName_;
+          onChanged();
+        }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getUserName().isEmpty()) {
+          userName_ = other.userName_;
+          onChanged();
+        }
+        if (!other.getCommand().isEmpty()) {
+          command_ = other.command_;
+          onChanged();
+        }
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
+          onChanged();
+        }
+        if (!other.getResponseUrl().isEmpty()) {
+          responseUrl_ = other.responseUrl_;
+          onChanged();
+        }
+        if (!other.getTriggerId().isEmpty()) {
+          triggerId_ = other.triggerId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.SlashCommand parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.SlashCommand) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object teamId_ = "";
+      /**
+       * <code>string team_id = 2;</code>
+       */
+      public java.lang.String getTeamId() {
+        java.lang.Object ref = teamId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          teamId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string team_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTeamIdBytes() {
+        java.lang.Object ref = teamId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          teamId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string team_id = 2;</code>
+       */
+      public Builder setTeamId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        teamId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string team_id = 2;</code>
+       */
+      public Builder clearTeamId() {
+        
+        teamId_ = getDefaultInstance().getTeamId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string team_id = 2;</code>
+       */
+      public Builder setTeamIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        teamId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object teamDomain_ = "";
+      /**
+       * <code>string team_domain = 3;</code>
+       */
+      public java.lang.String getTeamDomain() {
+        java.lang.Object ref = teamDomain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          teamDomain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string team_domain = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTeamDomainBytes() {
+        java.lang.Object ref = teamDomain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          teamDomain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string team_domain = 3;</code>
+       */
+      public Builder setTeamDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        teamDomain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string team_domain = 3;</code>
+       */
+      public Builder clearTeamDomain() {
+        
+        teamDomain_ = getDefaultInstance().getTeamDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string team_domain = 3;</code>
+       */
+      public Builder setTeamDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        teamDomain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object enterpriseId_ = "";
+      /**
+       * <code>string enterprise_id = 4;</code>
+       */
+      public java.lang.String getEnterpriseId() {
+        java.lang.Object ref = enterpriseId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enterpriseId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string enterprise_id = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEnterpriseIdBytes() {
+        java.lang.Object ref = enterpriseId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          enterpriseId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string enterprise_id = 4;</code>
+       */
+      public Builder setEnterpriseId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        enterpriseId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string enterprise_id = 4;</code>
+       */
+      public Builder clearEnterpriseId() {
+        
+        enterpriseId_ = getDefaultInstance().getEnterpriseId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string enterprise_id = 4;</code>
+       */
+      public Builder setEnterpriseIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        enterpriseId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object enterpriseName_ = "";
+      /**
+       * <code>string enterprise_name = 6;</code>
+       */
+      public java.lang.String getEnterpriseName() {
+        java.lang.Object ref = enterpriseName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          enterpriseName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string enterprise_name = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEnterpriseNameBytes() {
+        java.lang.Object ref = enterpriseName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          enterpriseName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string enterprise_name = 6;</code>
+       */
+      public Builder setEnterpriseName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        enterpriseName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string enterprise_name = 6;</code>
+       */
+      public Builder clearEnterpriseName() {
+        
+        enterpriseName_ = getDefaultInstance().getEnterpriseName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string enterprise_name = 6;</code>
+       */
+      public Builder setEnterpriseNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        enterpriseName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object channelId_ = "";
+      /**
+       * <code>string channel_id = 7;</code>
+       */
+      public java.lang.String getChannelId() {
+        java.lang.Object ref = channelId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          channelId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string channel_id = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getChannelIdBytes() {
+        java.lang.Object ref = channelId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          channelId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string channel_id = 7;</code>
+       */
+      public Builder setChannelId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        channelId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string channel_id = 7;</code>
+       */
+      public Builder clearChannelId() {
+        
+        channelId_ = getDefaultInstance().getChannelId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string channel_id = 7;</code>
+       */
+      public Builder setChannelIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        channelId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object channelName_ = "";
+      /**
+       * <code>string channel_name = 8;</code>
+       */
+      public java.lang.String getChannelName() {
+        java.lang.Object ref = channelName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          channelName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string channel_name = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getChannelNameBytes() {
+        java.lang.Object ref = channelName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          channelName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string channel_name = 8;</code>
+       */
+      public Builder setChannelName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        channelName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string channel_name = 8;</code>
+       */
+      public Builder clearChannelName() {
+        
+        channelName_ = getDefaultInstance().getChannelName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string channel_name = 8;</code>
+       */
+      public Builder setChannelNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        channelName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 9;</code>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 9;</code>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 9;</code>
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 9;</code>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object userName_ = "";
+      /**
+       * <code>string user_name = 10;</code>
+       */
+      public java.lang.String getUserName() {
+        java.lang.Object ref = userName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserNameBytes() {
+        java.lang.Object ref = userName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_name = 10;</code>
+       */
+      public Builder setUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 10;</code>
+       */
+      public Builder clearUserName() {
+        
+        userName_ = getDefaultInstance().getUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_name = 10;</code>
+       */
+      public Builder setUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object command_ = "";
+      /**
+       * <code>string command = 11;</code>
+       */
+      public java.lang.String getCommand() {
+        java.lang.Object ref = command_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          command_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string command = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCommandBytes() {
+        java.lang.Object ref = command_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          command_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string command = 11;</code>
+       */
+      public Builder setCommand(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        command_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string command = 11;</code>
+       */
+      public Builder clearCommand() {
+        
+        command_ = getDefaultInstance().getCommand();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string command = 11;</code>
+       */
+      public Builder setCommandBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        command_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object text_ = "";
+      /**
+       * <code>string text = 12;</code>
+       */
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          text_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string text = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTextBytes() {
+        java.lang.Object ref = text_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          text_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string text = 12;</code>
+       */
+      public Builder setText(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        text_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 12;</code>
+       */
+      public Builder clearText() {
+        
+        text_ = getDefaultInstance().getText();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string text = 12;</code>
+       */
+      public Builder setTextBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        text_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object responseUrl_ = "";
+      /**
+       * <code>string response_url = 13;</code>
+       */
+      public java.lang.String getResponseUrl() {
+        java.lang.Object ref = responseUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          responseUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string response_url = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResponseUrlBytes() {
+        java.lang.Object ref = responseUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          responseUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string response_url = 13;</code>
+       */
+      public Builder setResponseUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        responseUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string response_url = 13;</code>
+       */
+      public Builder clearResponseUrl() {
+        
+        responseUrl_ = getDefaultInstance().getResponseUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string response_url = 13;</code>
+       */
+      public Builder setResponseUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        responseUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object triggerId_ = "";
+      /**
+       * <code>string trigger_id = 14;</code>
+       */
+      public java.lang.String getTriggerId() {
+        java.lang.Object ref = triggerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          triggerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string trigger_id = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTriggerIdBytes() {
+        java.lang.Object ref = triggerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          triggerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string trigger_id = 14;</code>
+       */
+      public Builder setTriggerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        triggerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string trigger_id = 14;</code>
+       */
+      public Builder clearTriggerId() {
+        
+        triggerId_ = getDefaultInstance().getTriggerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string trigger_id = 14;</code>
+       */
+      public Builder setTriggerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        triggerId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.SlashCommand)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.SlashCommand)
+    private static final api.Api.SlashCommand DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.SlashCommand();
+    }
+
+    public static api.Api.SlashCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SlashCommand>
+        PARSER = new com.google.protobuf.AbstractParser<SlashCommand>() {
+      @java.lang.Override
+      public SlashCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SlashCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SlashCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SlashCommand> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.SlashCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface LogHookOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.LogHook)
       com.google.protobuf.MessageOrBuilder {
@@ -50188,6 +53183,11 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Id_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_ActionHookRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_ActionHookRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_MessageUserRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -50373,6 +53373,11 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Fax_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_SlashCommand_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_SlashCommand_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_LogHook_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -50461,192 +53466,207 @@ public final class Api {
       "oogle/protobuf/field_mask.proto\032\034google/" +
       "api/annotations.proto\032\025google/api/auth.p" +
       "roto\032\035google/pubsub/v1/pubsub.proto\"\020\n\002I" +
-      "d\022\n\n\002id\030\001 \001(\t\"1\n\022MessageUserRequest\022\n\n\002i" +
-      "d\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\"e\n\rRefundReques" +
-      "t\022\n\n\002id\030\001 \001(\t\022\016\n\006reason\030\002 \001(\t\022\016\n\006amount\030" +
-      "\003 \001(\003\022\030\n\020reverse_transfer\030\004 \001(\010\022\016\n\006statu" +
-      "s\030\005 \001(\t\":\n\rChargeRequest\022\035\n\007product\030\001 \001(" +
-      "\0132\014.api.Product\022\n\n\002id\030\002 \001(\t\"\'\n\031CancelSub" +
-      "scriptionRequest\022\n\n\002id\030\001 \001(\t\"u\n\021CreatePl" +
-      "anRequest\022\017\n\007plan_id\030\001 \001(\t\022\016\n\006amount\030\002 \001" +
-      "(\003\022\022\n\nservice_id\030\003 \001(\t\022\024\n\014service_name\030\004" +
-      " \001(\t\022\025\n\rfriendly_name\030\005 \001(\t\"&\n\nSMSReques" +
-      "t\022\n\n\002id\030\001 \001(\t\022\014\n\004body\030\002 \001(\t\"/\n\013CallReque" +
-      "st\022\n\n\002id\030\001 \001(\t\022\024\n\014callback_url\030\002 \001(\t\"=\n\n" +
-      "MMSRequest\022\034\n\003sms\030\001 \001(\0132\017.api.SMSRequest" +
-      "\022\021\n\tmedia_url\030\003 \001(\t\"Q\n\014EmailRequest\022\n\n\002i" +
-      "d\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\022\n\nplain_text\030\003" +
-      " \001(\t\022\020\n\010html_alt\030\004 \001(\t\"\177\n\017CustomerReques" +
-      "t\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\r\n\005phone\030" +
-      "\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n\013description\030\007 \001(\t" +
-      "\022\035\n\007address\030\010 \001(\0132\014.api.Address\"K\n\025Updat" +
-      "eCustomerRequest\022\n\n\002id\030\001 \001(\t\022&\n\010customer" +
-      "\030\002 \001(\0132\024.api.CustomerRequest\"{\n\030Subscrib" +
-      "eCustomerRequest\022\n\n\002id\030\001 \001(\t\022\014\n\004plan\030\002 \001" +
-      "(\t\022\023\n\013card_number\030\003 \001(\t\022\021\n\texp_month\030\004 \001" +
-      "(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001(\t\"[\n\024Cre" +
-      "ateAccountRequest\022&\n\010customer\030\001 \001(\0132\024.ap" +
-      "i.CustomerRequest\022\033\n\006access\030\002 \001(\0132\013.api." +
-      "Access\"G\n\007Account\022\037\n\010customer\030\001 \001(\0132\r.ap" +
-      "i.Customer\022\033\n\006access\030\002 \001(\0132\013.api.Access\"" +
-      "\223\002\n\004User\022\n\n\002id\030\001 \001(\t\022\017\n\007team_id\030\002 \001(\t\022\014\n" +
-      "\004name\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\035\n\007profile\030\005 " +
-      "\001(\0132\014.api.Profile\022\017\n\007deleted\030\006 \001(\010\022\r\n\005ad" +
-      "min\030\007 \001(\010\022\016\n\006ownder\030\010 \001(\010\022\025\n\rprimary_own" +
-      "er\030\t \001(\010\022\022\n\nrestricted\030\n \001(\010\022\030\n\020ultra_re" +
-      "stricted\030\013 \001(\010\022\020\n\010stranger\030\014 \001(\010\022\013\n\003bot\030" +
-      "\r \001(\010\022\016\n\006has2fa\030\016 \001(\010\022\016\n\006locale\030\017 \001(\t\"\231\001" +
-      "\n\007Profile\022\023\n\013avatar_hash\030\001 \001(\t\022\016\n\006status" +
-      "\030\002 \001(\t\022\024\n\014status_emoji\030\003 \001(\t\022\024\n\014display_" +
-      "name\030\004 \001(\t\022\014\n\004name\030\005 \001(\t\022\r\n\005email\030\006 \001(\t\022" +
-      "\022\n\nimage_urls\030\007 \003(\t\022\014\n\004team\030\010 \001(\t\"\007\n\005Emp" +
-      "ty\"\212\002\n\010Customer\022\n\n\002id\030\001 \001(\t\022\014\n\004plan\030\002 \001(" +
-      "\t\022\014\n\004name\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\023\n\013descri" +
-      "ption\030\005 \001(\t\022\r\n\005phone\030\006 \001(\t\022\035\n\007address\030\010 " +
-      "\001(\0132\014.api.Address\022-\n\010metadata\030\t \003(\0132\033.ap" +
-      "i.Customer.MetadataEntry\022\017\n\007deleted\030\n \001(" +
-      "\010\022\023\n\013create_date\030\024 \001(\003\032/\n\rMetadataEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"~\n\004Card\022" +
-      " \n\tcard_type\030\001 \001(\0162\r.api.CardType\022\023\n\013car" +
-      "d_number\030\003 \001(\t\022\021\n\texp_month\030\004 \001(\t\022\020\n\010exp" +
-      "_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001(\t\022\r\n\005debit\030\007 \001(\010\"" +
-      "=\n\013BankAccount\022\026\n\016account_number\030\001 \001(\t\022\026" +
-      "\n\016routing_number\030\002 \001(\t\"j\n\007Address\022\014\n\004cit" +
-      "y\030\001 \001(\t\022\017\n\007country\030\002 \001(\t\022\r\n\005line1\030\003 \001(\t\022" +
-      "\r\n\005line2\030\004 \001(\t\022\023\n\013postal_code\030\005 \001(\t\022\r\n\005s" +
-      "tate\030\006 \001(\t\"A\n\017ChannelReminder\022\022\n\nchannel" +
-      "_id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\"R\n" +
-      "\014UserReminder\022\n\n\002id\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022" +
-      "\014\n\004time\030\003 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRe" +
-      "f\"9\n\007ItemRef\022\017\n\007channel\030\001 \001(\t\022\014\n\004file\030\002 " +
-      "\001(\t\022\017\n\007comment\030\003 \001(\t\"0\n\004Star\022\014\n\004text\030\001 \001" +
-      "(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"/\n\003Pin\022\014\n" +
-      "\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api.ItemRef\"" +
-      "\037\n\tSignedKey\022\022\n\nsigned_key\030\001 \001(\t\"\222\002\n\006Acc" +
-      "ess\022\031\n\021autom8ter_account\030\001 \001(\t\022\025\n\rautom8" +
-      "ter_key\030\002 \001(\t\022\026\n\016twilio_account\030\003 \001(\t\022\022\n" +
-      "\ntwilio_key\030\004 \001(\t\022\030\n\020sendgrid_account\030\005 " +
-      "\001(\t\022\024\n\014sendgrid_key\030\006 \001(\t\022\026\n\016stripe_acco" +
-      "unt\030\007 \001(\t\022\022\n\nstripe_key\030\010 \001(\t\022\025\n\rslack_a" +
-      "ccount\030\t \001(\t\022\021\n\tslack_key\030\n \001(\t\022\023\n\013gcp_p" +
-      "roject\030\013 \001(\t\022\017\n\007gcp_key\030\014 \001(\t\"\227\001\n\016Standa" +
-      "rdClaims\022\033\n\006access\030\001 \001(\0132\013.api.Access\022\020\n" +
-      "\010audience\030\002 \001(\t\022\017\n\007subject\030\003 \001(\t\022\022\n\nexpi" +
-      "res_at\030\004 \001(\003\022\n\n\002id\030\005 \001(\t\022\021\n\tissued_at\030\006 " +
-      "\001(\003\022\022\n\nnot_before\030\007 \001(\003\".\n\tLogConfig\022\020\n\010" +
-      "username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"-\n\014Email" +
-      "Address\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\"P" +
-      "\n\005Email\022\037\n\004from\030\001 \001(\0132\021.api.EmailAddress" +
-      "\022&\n\trecipient\030\002 \001(\0132\023.api.RecipientEmail" +
-      "\"b\n\016RecipientEmail\022\035\n\002to\030\002 \001(\0132\021.api.Ema" +
-      "ilAddress\022\017\n\007subject\030\003 \001(\t\022\022\n\nplain_text" +
-      "\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_\n\003SMS\022\n\n\002to\030\001 \001(\t\022" +
-      "\014\n\004from\030\002 \001(\t\022\014\n\004body\030\003 \001(\t\022\021\n\tmedia_url" +
-      "\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"2\n" +
-      "\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\020\n\010callb" +
-      "ack\030\005 \001(\t\"j\n\003Fax\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001" +
-      "(\t\022\021\n\tmedia_url\030\003 \001(\t\022\017\n\007quality\030\004 \001(\t\022\020" +
-      "\n\010callback\030\005 \001(\t\022\023\n\013store_media\030\006 \001(\010\"6\n" +
-      "\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030\002 \001(\t\022\r" +
-      "\n\005title\030\003 \001(\t\"\260\002\n\nAttachment\022\r\n\005color\030\001 " +
-      "\001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callback_id\030\003 \001" +
-      "(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t\022\023\n\013aut" +
-      "hor_name\030\006 \001(\t\022\023\n\013author_link\030\007 \001(\t\022\023\n\013a" +
-      "uthor_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024\n\014title" +
-      "_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n\004text\030\014" +
-      " \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb_url\030\016 \001" +
-      "(\t\022$\n\006fields\030\017 \003(\0132\024.api.AttachmentField" +
-      "\"\347\002\n\020AttachmentAction\022\014\n\004name\030\001 \001(\t\022\014\n\004t" +
-      "ext\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030\004 \001(\t\022\r" +
-      "\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001(\t\022\030\n\020mi" +
-      "n_query_length\030\007 \001(\003\022,\n\007options\030\010 \003(\0132\033." +
-      "api.AttachmentActionOption\0225\n\020selected_o" +
-      "ptions\030\t \003(\0132\033.api.AttachmentActionOptio" +
-      "n\0227\n\roption_groups\030\n \003(\0132 .api.Attachmen" +
-      "tActionOptionGroup\0221\n\007confirm\030\013 \001(\0132 .ap" +
-      "i.AttachmentConfirmationField\022\013\n\003url\030\014 \001" +
-      "(\t\"a\n\033AttachmentConfirmationField\022\r\n\005tit" +
-      "le\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_text\030\003 \001(\t\022" +
-      "\024\n\014dismiss_text\030\004 \001(\t\"Y\n\033AttachmentActio" +
-      "nOptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007options\030\002 " +
-      "\003(\0132\033.api.AttachmentActionOption\"K\n\026Atta" +
-      "chmentActionOption\022\r\n\005title\030\001 \001(\t\022\r\n\005val" +
-      "ue\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n\017Attachm" +
-      "entField\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\r" +
-      "\n\005short\030\003 \001(\010\"\"\n\004JSON\022\014\n\004data\030\001 \001(\014\022\014\n\004s" +
-      "ize\030\002 \001(\003\"\200\001\n\004File\022\014\n\004data\030\001 \001(\014\022\014\n\004size" +
-      "\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022!\n\004tags\030\004 \003(\0132\023.api" +
-      ".File.TagsEntry\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\".\n\tSlackHook\022\020\n\010use" +
-      "rname\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"\274\001\n\007Product" +
-      "\022\014\n\004name\030\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\023\n\013descri" +
-      "ption\030\003 \001(\t\022\030\n\005files\030\004 \003(\0132\t.api.File\022$\n" +
-      "\004tags\030\005 \003(\0132\026.api.Product.TagsEntry\022\021\n\ta" +
-      "vailable\030\006 \001(\010\032+\n\tTagsEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"i\n\017StringMapString\022*" +
-      "\n\003map\030\001 \003(\0132\035.api.StringMapString.MapEnt" +
-      "ry\032*\n\010MapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL" +
-      "\020\001\022\t\n\005PHONE\020\002*P\n\005Claim\022\n\n\006TWILIO\020\000\022\014\n\010SE" +
-      "NDGRID\020\001\022\n\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\004" +
-      "\022\r\n\tAUTOM8TER\020\005*9\n\rSigningMethod\022\010\n\004HMAC" +
-      "\020\000\022\t\n\005ECDSA\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS\020\003*<\n\010Ca" +
-      "rdType\022\010\n\004VISA\020\000\022\016\n\nMASTERCARD\020\001\022\014\n\010DISC" +
-      "OVER\020\002\022\010\n\004AMEX\020\0032\372\002\n\016AccountService\022O\n\rC" +
-      "reateAccount\022\031.api.CreateAccountRequest\032" +
-      "\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/accounts:\001*\022P\n\r" +
-      "UpdateAccount\022\014.api.Account\032\t.api.JSON\"&" +
-      "\202\323\344\223\002 \"\033/api/accounts/{customer.id}:\001*\022B" +
-      "\n\rDeleteAccount\022\007.api.Id\032\t.api.JSON\"\035\202\323\344" +
-      "\223\002\027\"\022/api/accounts/{id}:\001*\022@\n\013ReadAccoun" +
-      "t\022\007.api.Id\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/api/acco" +
-      "unts/{id}:\001*\022?\n\014ListAccounts\022\n.api.Empty" +
-      "\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/accounts:\001*2\226\010" +
-      "\n\017CustomerService\022L\n\016CreateCustomer\022\024.ap" +
-      "i.CustomerRequest\032\t.api.JSON\"\031\202\323\344\223\002\023\"\016/a" +
-      "pi/customers:\001*\022W\n\016UpdateCustomer\022\032.api." +
-      "UpdateCustomerRequest\032\t.api.JSON\"\036\202\323\344\223\002\030" +
-      "\"\023/api/customers/{id}:\001*\022D\n\016DeleteCustom" +
-      "er\022\007.api.Id\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/cus" +
-      "tomers/{id}:\001*\022F\n\rListCustomers\022\n.api.Em" +
-      "pty\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/customers/l" +
-      "ist:\001*\022V\n\016ChargeCustomer\022\022.api.ChargeReq" +
-      "uest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/customers/" +
-      "{id}/charge:\001*\022V\n\016RefundCustomer\022\022.api.R" +
-      "efundRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/cu" +
-      "stomers/{id}/refund:\001*\022g\n\021SubscribeCusto" +
-      "mer\022\035.api.SubscribeCustomerRequest\032\t.api" +
-      ".JSON\"(\202\323\344\223\002\"\"\035/api/customers/{id}/subsc" +
-      "ribe:\001*\022l\n\023UnSubscribeCustomer\022\036.api.Can" +
-      "celSubscriptionRequest\032\t.api.JSON\"*\202\323\344\223\002" +
-      "$\"\037/api/customers/{id}/unsubscribe:\001*\022M\n" +
-      "\013SMSCustomer\022\017.api.SMSRequest\032\t.api.JSON" +
-      "\"\"\202\323\344\223\002\034\"\027/api/customers/{id}/sms:\001*\022P\n\014" +
-      "CallCustomer\022\020.api.CallRequest\032\t.api.JSO" +
-      "N\"#\202\323\344\223\002\035\"\030/api/customers/{id}/call:\001*\022Q" +
-      "\n\013MMSCustomer\022\017.api.MMSRequest\032\t.api.JSO" +
-      "N\"&\202\323\344\223\002 \"\033/api/customers/{sms.id}/mms:\001" +
-      "*\022S\n\rEmailCustomer\022\021.api.EmailRequest\032\t." +
-      "api.JSON\"$\202\323\344\223\002\036\"\031/api/customers/{id}/em" +
-      "ail:\001*2a\n\013PlanService\022R\n\026CreateSubscript" +
-      "ionPlan\022\026.api.CreatePlanRequest\032\t.api.JS" +
-      "ON\"\025\202\323\344\223\002\017\"\n/api/plans:\001*2\366\004\n\013UserServic" +
-      "e\022K\n\tEmailUser\022\021.api.EmailRequest\032\t.api." +
-      "JSON\" \202\323\344\223\002\032\"\025/api/users/{id}/email:\001*\022H" +
-      "\n\013MessageUser\022\027.api.MessageUserRequest\032\t" +
-      ".api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022I\n\007SMSU" +
-      "ser\022\017.api.SMSRequest\032\t.api.JSON\"\"\202\323\344\223\002\034\"" +
-      "\027/api/customers/{id}/sms:\001*\022L\n\010CallUser\022" +
-      "\020.api.CallRequest\032\t.api.JSON\"#\202\323\344\223\002\035\"\030/a" +
-      "pi/customers/{id}/call:\001*\022M\n\007MMSUser\022\017.a" +
-      "pi.MMSRequest\032\t.api.JSON\"&\202\323\344\223\002 \"\033/api/c" +
-      "ustomers/{sms.id}/mms:\001*\0229\n\nCreateUser\022\t" +
-      ".api.User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users" +
-      ":\001*\0229\n\nUpdateUser\022\t.api.User\032\t.api.JSON\"" +
-      "\025\202\323\344\223\002\017\"\n/api/users:\001*\0227\n\nDeleteUser\022\007.a" +
-      "pi.Id\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022" +
-      "9\n\tListUsers\022\n.api.Empty\032\t.api.JSON\"\025\202\323\344" +
-      "\223\002\017\"\n/api/users:\001*b\006proto3"
+      "d\022\n\n\002id\030\001 \001(\t\"`\n\021ActionHookRequest\022#\n\nat" +
+      "tachment\030\001 \001(\0132\017.api.Attachment\022&\n\007actio" +
+      "ns\030\002 \001(\0132\025.api.AttachmentAction\"1\n\022Messa" +
+      "geUserRequest\022\n\n\002id\030\001 \001(\t\022\017\n\007message\030\002 \001" +
+      "(\t\"e\n\rRefundRequest\022\n\n\002id\030\001 \001(\t\022\016\n\006reaso" +
+      "n\030\002 \001(\t\022\016\n\006amount\030\003 \001(\003\022\030\n\020reverse_trans" +
+      "fer\030\004 \001(\010\022\016\n\006status\030\005 \001(\t\":\n\rChargeReque" +
+      "st\022\035\n\007product\030\001 \001(\0132\014.api.Product\022\n\n\002id\030" +
+      "\002 \001(\t\"\'\n\031CancelSubscriptionRequest\022\n\n\002id" +
+      "\030\001 \001(\t\"u\n\021CreatePlanRequest\022\017\n\007plan_id\030\001" +
+      " \001(\t\022\016\n\006amount\030\002 \001(\003\022\022\n\nservice_id\030\003 \001(\t" +
+      "\022\024\n\014service_name\030\004 \001(\t\022\025\n\rfriendly_name\030" +
+      "\005 \001(\t\"&\n\nSMSRequest\022\n\n\002id\030\001 \001(\t\022\014\n\004body\030" +
+      "\002 \001(\t\"/\n\013CallRequest\022\n\n\002id\030\001 \001(\t\022\024\n\014call" +
+      "back_url\030\002 \001(\t\"=\n\nMMSRequest\022\034\n\003sms\030\001 \001(" +
+      "\0132\017.api.SMSRequest\022\021\n\tmedia_url\030\003 \001(\t\"Q\n" +
+      "\014EmailRequest\022\n\n\002id\030\001 \001(\t\022\017\n\007subject\030\002 \001" +
+      "(\t\022\022\n\nplain_text\030\003 \001(\t\022\020\n\010html_alt\030\004 \001(\t" +
+      "\"\177\n\017CustomerRequest\022\r\n\005email\030\001 \001(\t\022\014\n\004pl" +
+      "an\030\002 \001(\t\022\r\n\005phone\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\023\n" +
+      "\013description\030\007 \001(\t\022\035\n\007address\030\010 \001(\0132\014.ap" +
+      "i.Address\"K\n\025UpdateCustomerRequest\022\n\n\002id" +
+      "\030\001 \001(\t\022&\n\010customer\030\002 \001(\0132\024.api.CustomerR" +
+      "equest\"{\n\030SubscribeCustomerRequest\022\n\n\002id" +
+      "\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\023\n\013card_number\030\003 \001(" +
+      "\t\022\021\n\texp_month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(\t\022\013" +
+      "\n\003cvc\030\006 \001(\t\"[\n\024CreateAccountRequest\022&\n\010c" +
+      "ustomer\030\001 \001(\0132\024.api.CustomerRequest\022\033\n\006a" +
+      "ccess\030\002 \001(\0132\013.api.Access\"G\n\007Account\022\037\n\010c" +
+      "ustomer\030\001 \001(\0132\r.api.Customer\022\033\n\006access\030\002" +
+      " \001(\0132\013.api.Access\"\223\002\n\004User\022\n\n\002id\030\001 \001(\t\022\017" +
+      "\n\007team_id\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005phone\030\004" +
+      " \001(\t\022\035\n\007profile\030\005 \001(\0132\014.api.Profile\022\017\n\007d" +
+      "eleted\030\006 \001(\010\022\r\n\005admin\030\007 \001(\010\022\016\n\006ownder\030\010 " +
+      "\001(\010\022\025\n\rprimary_owner\030\t \001(\010\022\022\n\nrestricted" +
+      "\030\n \001(\010\022\030\n\020ultra_restricted\030\013 \001(\010\022\020\n\010stra" +
+      "nger\030\014 \001(\010\022\013\n\003bot\030\r \001(\010\022\016\n\006has2fa\030\016 \001(\010\022" +
+      "\016\n\006locale\030\017 \001(\t\"\231\001\n\007Profile\022\023\n\013avatar_ha" +
+      "sh\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\024\n\014status_emoji" +
+      "\030\003 \001(\t\022\024\n\014display_name\030\004 \001(\t\022\014\n\004name\030\005 \001" +
+      "(\t\022\r\n\005email\030\006 \001(\t\022\022\n\nimage_urls\030\007 \003(\t\022\014\n" +
+      "\004team\030\010 \001(\t\"\007\n\005Empty\"\212\002\n\010Customer\022\n\n\002id\030" +
+      "\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\r\n\005ema" +
+      "il\030\004 \001(\t\022\023\n\013description\030\005 \001(\t\022\r\n\005phone\030\006" +
+      " \001(\t\022\035\n\007address\030\010 \001(\0132\014.api.Address\022-\n\010m" +
+      "etadata\030\t \003(\0132\033.api.Customer.MetadataEnt" +
+      "ry\022\017\n\007deleted\030\n \001(\010\022\023\n\013create_date\030\024 \001(\003" +
+      "\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t:\0028\001\"~\n\004Card\022 \n\tcard_type\030\001 \001(\0162\r.a" +
+      "pi.CardType\022\023\n\013card_number\030\003 \001(\t\022\021\n\texp_" +
+      "month\030\004 \001(\t\022\020\n\010exp_year\030\005 \001(\t\022\013\n\003cvc\030\006 \001" +
+      "(\t\022\r\n\005debit\030\007 \001(\010\"=\n\013BankAccount\022\026\n\016acco" +
+      "unt_number\030\001 \001(\t\022\026\n\016routing_number\030\002 \001(\t" +
+      "\"j\n\007Address\022\014\n\004city\030\001 \001(\t\022\017\n\007country\030\002 \001" +
+      "(\t\022\r\n\005line1\030\003 \001(\t\022\r\n\005line2\030\004 \001(\t\022\023\n\013post" +
+      "al_code\030\005 \001(\t\022\r\n\005state\030\006 \001(\t\"A\n\017ChannelR" +
+      "eminder\022\022\n\nchannel_id\030\001 \001(\t\022\014\n\004text\030\002 \001(" +
+      "\t\022\014\n\004time\030\003 \001(\t\"R\n\014UserReminder\022\n\n\002id\030\001 " +
+      "\001(\t\022\014\n\004text\030\002 \001(\t\022\014\n\004time\030\003 \001(\t\022\032\n\004item\030" +
+      "\004 \001(\0132\014.api.ItemRef\"9\n\007ItemRef\022\017\n\007channe" +
+      "l\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007comment\030\003 \001(\t\"0" +
+      "\n\004Star\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 \001(\0132\014.api" +
+      ".ItemRef\"/\n\003Pin\022\014\n\004text\030\001 \001(\t\022\032\n\004item\030\004 " +
+      "\001(\0132\014.api.ItemRef\"\037\n\tSignedKey\022\022\n\nsigned" +
+      "_key\030\001 \001(\t\"\222\002\n\006Access\022\031\n\021autom8ter_accou" +
+      "nt\030\001 \001(\t\022\025\n\rautom8ter_key\030\002 \001(\t\022\026\n\016twili" +
+      "o_account\030\003 \001(\t\022\022\n\ntwilio_key\030\004 \001(\t\022\030\n\020s" +
+      "endgrid_account\030\005 \001(\t\022\024\n\014sendgrid_key\030\006 " +
+      "\001(\t\022\026\n\016stripe_account\030\007 \001(\t\022\022\n\nstripe_ke" +
+      "y\030\010 \001(\t\022\025\n\rslack_account\030\t \001(\t\022\021\n\tslack_" +
+      "key\030\n \001(\t\022\023\n\013gcp_project\030\013 \001(\t\022\017\n\007gcp_ke" +
+      "y\030\014 \001(\t\"\227\001\n\016StandardClaims\022\033\n\006access\030\001 \001" +
+      "(\0132\013.api.Access\022\020\n\010audience\030\002 \001(\t\022\017\n\007sub" +
+      "ject\030\003 \001(\t\022\022\n\nexpires_at\030\004 \001(\003\022\n\n\002id\030\005 \001" +
+      "(\t\022\021\n\tissued_at\030\006 \001(\003\022\022\n\nnot_before\030\007 \001(" +
+      "\003\".\n\tLogConfig\022\020\n\010username\030\001 \001(\t\022\017\n\007chan" +
+      "nel\030\002 \001(\t\"-\n\014EmailAddress\022\014\n\004name\030\001 \001(\t\022" +
+      "\017\n\007address\030\002 \001(\t\"P\n\005Email\022\037\n\004from\030\001 \001(\0132" +
+      "\021.api.EmailAddress\022&\n\trecipient\030\002 \001(\0132\023." +
+      "api.RecipientEmail\"b\n\016RecipientEmail\022\035\n\002" +
+      "to\030\002 \001(\0132\021.api.EmailAddress\022\017\n\007subject\030\003" +
+      " \001(\t\022\022\n\nplain_text\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"_" +
+      "\n\003SMS\022\n\n\002to\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\014\n\004body\030" +
+      "\003 \001(\t\022\021\n\tmedia_url\030\004 \001(\t\022\020\n\010callback\030\005 \001" +
+      "(\t\022\013\n\003app\030\006 \001(\t\"2\n\004Call\022\n\n\002to\030\001 \001(\t\022\014\n\004f" +
+      "rom\030\002 \001(\t\022\020\n\010callback\030\005 \001(\t\"j\n\003Fax\022\n\n\002to" +
+      "\030\001 \001(\t\022\014\n\004from\030\002 \001(\t\022\021\n\tmedia_url\030\003 \001(\t\022" +
+      "\017\n\007quality\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\023\n\013st" +
+      "ore_media\030\006 \001(\010\"\212\002\n\014SlashCommand\022\r\n\005toke" +
+      "n\030\001 \001(\t\022\017\n\007team_id\030\002 \001(\t\022\023\n\013team_domain\030" +
+      "\003 \001(\t\022\025\n\renterprise_id\030\004 \001(\t\022\027\n\017enterpri" +
+      "se_name\030\006 \001(\t\022\022\n\nchannel_id\030\007 \001(\t\022\024\n\014cha" +
+      "nnel_name\030\010 \001(\t\022\017\n\007user_id\030\t \001(\t\022\021\n\tuser" +
+      "_name\030\n \001(\t\022\017\n\007command\030\013 \001(\t\022\014\n\004text\030\014 \001" +
+      "(\t\022\024\n\014response_url\030\r \001(\t\022\022\n\ntrigger_id\030\016" +
+      " \001(\t\"6\n\007LogHook\022\016\n\006author\030\001 \001(\t\022\014\n\004icon\030" +
+      "\002 \001(\t\022\r\n\005title\030\003 \001(\t\"\260\002\n\nAttachment\022\r\n\005c" +
+      "olor\030\001 \001(\t\022\020\n\010fallback\030\002 \001(\t\022\023\n\013callback" +
+      "_id\030\003 \001(\t\022\n\n\002id\030\004 \001(\003\022\021\n\tauthor_id\030\005 \001(\t" +
+      "\022\023\n\013author_name\030\006 \001(\t\022\023\n\013author_link\030\007 \001" +
+      "(\t\022\023\n\013author_icon\030\010 \001(\t\022\r\n\005title\030\t \001(\t\022\024" +
+      "\n\014title_prefix\030\n \001(\t\022\017\n\007pretext\030\013 \001(\t\022\014\n" +
+      "\004text\030\014 \001(\t\022\021\n\timage_url\030\r \001(\t\022\021\n\tthumb_" +
+      "url\030\016 \001(\t\022$\n\006fields\030\017 \003(\0132\024.api.Attachme" +
+      "ntField\"\347\002\n\020AttachmentAction\022\014\n\004name\030\001 \001" +
+      "(\t\022\014\n\004text\030\002 \001(\t\022\r\n\005style\030\003 \001(\t\022\014\n\004type\030" +
+      "\004 \001(\t\022\r\n\005value\030\005 \001(\t\022\023\n\013data_source\030\006 \001(" +
+      "\t\022\030\n\020min_query_length\030\007 \001(\003\022,\n\007options\030\010" +
+      " \003(\0132\033.api.AttachmentActionOption\0225\n\020sel" +
+      "ected_options\030\t \003(\0132\033.api.AttachmentActi" +
+      "onOption\0227\n\roption_groups\030\n \003(\0132 .api.At" +
+      "tachmentActionOptionGroup\0221\n\007confirm\030\013 \001" +
+      "(\0132 .api.AttachmentConfirmationField\022\013\n\003" +
+      "url\030\014 \001(\t\"a\n\033AttachmentConfirmationField" +
+      "\022\r\n\005title\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\022\017\n\007ok_text" +
+      "\030\003 \001(\t\022\024\n\014dismiss_text\030\004 \001(\t\"Y\n\033Attachme" +
+      "ntActionOptionGroup\022\014\n\004text\030\001 \001(\t\022,\n\007opt" +
+      "ions\030\002 \003(\0132\033.api.AttachmentActionOption\"" +
+      "K\n\026AttachmentActionOption\022\r\n\005title\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\">\n\017" +
+      "AttachmentField\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030" +
+      "\002 \001(\t\022\r\n\005short\030\003 \001(\010\"\"\n\004JSON\022\014\n\004data\030\001 \001" +
+      "(\014\022\014\n\004size\030\002 \001(\003\"\200\001\n\004File\022\014\n\004data\030\001 \001(\014\022" +
+      "\014\n\004size\030\002 \001(\003\022\014\n\004name\030\003 \001(\t\022!\n\004tags\030\004 \003(" +
+      "\0132\023.api.File.TagsEntry\032+\n\tTagsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\".\n\tSlackHook" +
+      "\022\020\n\010username\030\001 \001(\t\022\017\n\007channel\030\002 \001(\t\"\274\001\n\007" +
+      "Product\022\014\n\004name\030\001 \001(\t\022\016\n\006amount\030\002 \001(\003\022\023\n" +
+      "\013description\030\003 \001(\t\022\030\n\005files\030\004 \003(\0132\t.api." +
+      "File\022$\n\004tags\030\005 \003(\0132\026.api.Product.TagsEnt" +
+      "ry\022\021\n\tavailable\030\006 \001(\010\032+\n\tTagsEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"i\n\017StringMapS" +
+      "tring\022*\n\003map\030\001 \003(\0132\035.api.StringMapString" +
+      ".MapEntry\032*\n\010MapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va" +
+      "lue\030\002 \001(\t:\0028\001*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t" +
+      "\n\005EMAIL\020\001\022\t\n\005PHONE\020\002*P\n\005Claim\022\n\n\006TWILIO\020" +
+      "\000\022\014\n\010SENDGRID\020\001\022\n\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007" +
+      "\n\003GCP\020\004\022\r\n\tAUTOM8TER\020\005*9\n\rSigningMethod\022" +
+      "\010\n\004HMAC\020\000\022\t\n\005ECDSA\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS\020" +
+      "\003*<\n\010CardType\022\010\n\004VISA\020\000\022\016\n\nMASTERCARD\020\001\022" +
+      "\014\n\010DISCOVER\020\002\022\010\n\004AMEX\020\0032\372\002\n\016AccountServi" +
+      "ce\022O\n\rCreateAccount\022\031.api.CreateAccountR" +
+      "equest\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/accounts" +
+      ":\001*\022P\n\rUpdateAccount\022\014.api.Account\032\t.api" +
+      ".JSON\"&\202\323\344\223\002 \"\033/api/accounts/{customer.i" +
+      "d}:\001*\022B\n\rDeleteAccount\022\007.api.Id\032\t.api.JS" +
+      "ON\"\035\202\323\344\223\002\027\"\022/api/accounts/{id}:\001*\022@\n\013Rea" +
+      "dAccount\022\007.api.Id\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/a" +
+      "pi/accounts/{id}:\001*\022?\n\014ListAccounts\022\n.ap" +
+      "i.Empty\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/account" +
+      "s:\001*2\226\010\n\017CustomerService\022L\n\016CreateCustom" +
+      "er\022\024.api.CustomerRequest\032\t.api.JSON\"\031\202\323\344" +
+      "\223\002\023\"\016/api/customers:\001*\022W\n\016UpdateCustomer" +
+      "\022\032.api.UpdateCustomerRequest\032\t.api.JSON\"" +
+      "\036\202\323\344\223\002\030\"\023/api/customers/{id}:\001*\022D\n\016Delet" +
+      "eCustomer\022\007.api.Id\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/" +
+      "api/customers/{id}:\001*\022F\n\rListCustomers\022\n" +
+      ".api.Empty\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/cust" +
+      "omers/list:\001*\022V\n\016ChargeCustomer\022\022.api.Ch" +
+      "argeRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/cus" +
+      "tomers/{id}/charge:\001*\022V\n\016RefundCustomer\022" +
+      "\022.api.RefundRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032" +
+      "/api/customers/{id}/refund:\001*\022g\n\021Subscri" +
+      "beCustomer\022\035.api.SubscribeCustomerReques" +
+      "t\032\t.api.JSON\"(\202\323\344\223\002\"\"\035/api/customers/{id" +
+      "}/subscribe:\001*\022l\n\023UnSubscribeCustomer\022\036." +
+      "api.CancelSubscriptionRequest\032\t.api.JSON" +
+      "\"*\202\323\344\223\002$\"\037/api/customers/{id}/unsubscrib" +
+      "e:\001*\022M\n\013SMSCustomer\022\017.api.SMSRequest\032\t.a" +
+      "pi.JSON\"\"\202\323\344\223\002\034\"\027/api/customers/{id}/sms" +
+      ":\001*\022P\n\014CallCustomer\022\020.api.CallRequest\032\t." +
+      "api.JSON\"#\202\323\344\223\002\035\"\030/api/customers/{id}/ca" +
+      "ll:\001*\022Q\n\013MMSCustomer\022\017.api.MMSRequest\032\t." +
+      "api.JSON\"&\202\323\344\223\002 \"\033/api/customers/{sms.id" +
+      "}/mms:\001*\022S\n\rEmailCustomer\022\021.api.EmailReq" +
+      "uest\032\t.api.JSON\"$\202\323\344\223\002\036\"\031/api/customers/" +
+      "{id}/email:\001*2a\n\013PlanService\022R\n\026CreateSu" +
+      "bscriptionPlan\022\026.api.CreatePlanRequest\032\t" +
+      ".api.JSON\"\025\202\323\344\223\002\017\"\n/api/plans:\001*2\366\004\n\013Use" +
+      "rService\022K\n\tEmailUser\022\021.api.EmailRequest" +
+      "\032\t.api.JSON\" \202\323\344\223\002\032\"\025/api/users/{id}/ema" +
+      "il:\001*\022H\n\013MessageUser\022\027.api.MessageUserRe" +
+      "quest\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022" +
+      "I\n\007SMSUser\022\017.api.SMSRequest\032\t.api.JSON\"\"" +
+      "\202\323\344\223\002\034\"\027/api/customers/{id}/sms:\001*\022L\n\010Ca" +
+      "llUser\022\020.api.CallRequest\032\t.api.JSON\"#\202\323\344" +
+      "\223\002\035\"\030/api/customers/{id}/call:\001*\022M\n\007MMSU" +
+      "ser\022\017.api.MMSRequest\032\t.api.JSON\"&\202\323\344\223\002 \"" +
+      "\033/api/customers/{sms.id}/mms:\001*\0229\n\nCreat" +
+      "eUser\022\t.api.User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/ap" +
+      "i/users:\001*\0229\n\nUpdateUser\022\t.api.User\032\t.ap" +
+      "i.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\0227\n\nDeleteU" +
+      "ser\022\007.api.Id\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/us" +
+      "ers:\001*\0229\n\tListUsers\022\n.api.Empty\032\t.api.JS" +
+      "ON\"\025\202\323\344\223\002\017\"\n/api/users:\001*2\324\001\n\013HookServic" +
+      "e\022:\n\004Hook\022\017.api.Attachment\032\n.api.Empty\"\025" +
+      "\202\323\344\223\002\017\"\n/api/hooks:\001*\022G\n\nActionHook\022\026.ap" +
+      "i.ActionHookRequest\032\n.api.Empty\"\025\202\323\344\223\002\017\"" +
+      "\n/api/hooks:\001*\022@\n\010SlashCmd\022\021.api.SlashCo" +
+      "mmand\032\n.api.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -50672,110 +53692,116 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Id_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_api_MessageUserRequest_descriptor =
+    internal_static_api_ActionHookRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_api_ActionHookRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_ActionHookRequest_descriptor,
+        new java.lang.String[] { "Attachment", "Actions", });
+    internal_static_api_MessageUserRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_MessageUserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_MessageUserRequest_descriptor,
         new java.lang.String[] { "Id", "Message", });
     internal_static_api_RefundRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_RefundRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_RefundRequest_descriptor,
         new java.lang.String[] { "Id", "Reason", "Amount", "ReverseTransfer", "Status", });
     internal_static_api_ChargeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_ChargeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ChargeRequest_descriptor,
         new java.lang.String[] { "Product", "Id", });
     internal_static_api_CancelSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_CancelSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CancelSubscriptionRequest_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_CreatePlanRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_CreatePlanRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CreatePlanRequest_descriptor,
         new java.lang.String[] { "PlanId", "Amount", "ServiceId", "ServiceName", "FriendlyName", });
     internal_static_api_SMSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_SMSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMSRequest_descriptor,
         new java.lang.String[] { "Id", "Body", });
     internal_static_api_CallRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_CallRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CallRequest_descriptor,
         new java.lang.String[] { "Id", "CallbackUrl", });
     internal_static_api_MMSRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_MMSRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_MMSRequest_descriptor,
         new java.lang.String[] { "Sms", "MediaUrl", });
     internal_static_api_EmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailRequest_descriptor,
         new java.lang.String[] { "Id", "Subject", "PlainText", "HtmlAlt", });
     internal_static_api_CustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_CustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CustomerRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", "Phone", "Name", "Description", "Address", });
     internal_static_api_UpdateCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_UpdateCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UpdateCustomerRequest_descriptor,
         new java.lang.String[] { "Id", "Customer", });
     internal_static_api_SubscribeCustomerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_SubscribeCustomerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SubscribeCustomerRequest_descriptor,
         new java.lang.String[] { "Id", "Plan", "CardNumber", "ExpMonth", "ExpYear", "Cvc", });
     internal_static_api_CreateAccountRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_CreateAccountRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CreateAccountRequest_descriptor,
         new java.lang.String[] { "Customer", "Access", });
     internal_static_api_Account_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_Account_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Account_descriptor,
         new java.lang.String[] { "Customer", "Access", });
     internal_static_api_User_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_User_descriptor,
         new java.lang.String[] { "Id", "TeamId", "Name", "Phone", "Profile", "Deleted", "Admin", "Ownder", "PrimaryOwner", "Restricted", "UltraRestricted", "Stranger", "Bot", "Has2Fa", "Locale", });
     internal_static_api_Profile_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_Profile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Profile_descriptor,
         new java.lang.String[] { "AvatarHash", "Status", "StatusEmoji", "DisplayName", "Name", "Email", "ImageUrls", "Team", });
     internal_static_api_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Empty_descriptor,
         new java.lang.String[] { });
     internal_static_api_Customer_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_Customer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Customer_descriptor,
@@ -50787,163 +53813,169 @@ public final class Api {
         internal_static_api_Customer_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_Card_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Card_descriptor,
         new java.lang.String[] { "CardType", "CardNumber", "ExpMonth", "ExpYear", "Cvc", "Debit", });
     internal_static_api_BankAccount_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_BankAccount_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_BankAccount_descriptor,
         new java.lang.String[] { "AccountNumber", "RoutingNumber", });
     internal_static_api_Address_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Address_descriptor,
         new java.lang.String[] { "City", "Country", "Line1", "Line2", "PostalCode", "State", });
     internal_static_api_ChannelReminder_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_ChannelReminder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ChannelReminder_descriptor,
         new java.lang.String[] { "ChannelId", "Text", "Time", });
     internal_static_api_UserReminder_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_UserReminder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserReminder_descriptor,
         new java.lang.String[] { "Id", "Text", "Time", "Item", });
     internal_static_api_ItemRef_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_ItemRef_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ItemRef_descriptor,
         new java.lang.String[] { "Channel", "File", "Comment", });
     internal_static_api_Star_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_Star_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Star_descriptor,
         new java.lang.String[] { "Text", "Item", });
     internal_static_api_Pin_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_Pin_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Pin_descriptor,
         new java.lang.String[] { "Text", "Item", });
     internal_static_api_SignedKey_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_api_SignedKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SignedKey_descriptor,
         new java.lang.String[] { "SignedKey", });
     internal_static_api_Access_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_api_Access_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Access_descriptor,
         new java.lang.String[] { "Autom8TerAccount", "Autom8TerKey", "TwilioAccount", "TwilioKey", "SendgridAccount", "SendgridKey", "StripeAccount", "StripeKey", "SlackAccount", "SlackKey", "GcpProject", "GcpKey", });
     internal_static_api_StandardClaims_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_api_StandardClaims_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_StandardClaims_descriptor,
         new java.lang.String[] { "Access", "Audience", "Subject", "ExpiresAt", "Id", "IssuedAt", "NotBefore", });
     internal_static_api_LogConfig_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_api_LogConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_LogConfig_descriptor,
         new java.lang.String[] { "Username", "Channel", });
     internal_static_api_EmailAddress_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_api_EmailAddress_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailAddress_descriptor,
         new java.lang.String[] { "Name", "Address", });
     internal_static_api_Email_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
         new java.lang.String[] { "From", "Recipient", });
     internal_static_api_RecipientEmail_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_api_RecipientEmail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_RecipientEmail_descriptor,
         new java.lang.String[] { "To", "Subject", "PlainText", "Html", });
     internal_static_api_SMS_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_api_SMS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMS_descriptor,
         new java.lang.String[] { "To", "From", "Body", "MediaUrl", "Callback", "App", });
     internal_static_api_Call_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_api_Call_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Call_descriptor,
         new java.lang.String[] { "To", "From", "Callback", });
     internal_static_api_Fax_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_api_Fax_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Fax_descriptor,
         new java.lang.String[] { "To", "From", "MediaUrl", "Quality", "Callback", "StoreMedia", });
+    internal_static_api_SlashCommand_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_api_SlashCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_SlashCommand_descriptor,
+        new java.lang.String[] { "Token", "TeamId", "TeamDomain", "EnterpriseId", "EnterpriseName", "ChannelId", "ChannelName", "UserId", "UserName", "Command", "Text", "ResponseUrl", "TriggerId", });
     internal_static_api_LogHook_descriptor =
-      getDescriptor().getMessageTypes().get(37);
+      getDescriptor().getMessageTypes().get(39);
     internal_static_api_LogHook_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_LogHook_descriptor,
         new java.lang.String[] { "Author", "Icon", "Title", });
     internal_static_api_Attachment_descriptor =
-      getDescriptor().getMessageTypes().get(38);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_api_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Attachment_descriptor,
         new java.lang.String[] { "Color", "Fallback", "CallbackId", "Id", "AuthorId", "AuthorName", "AuthorLink", "AuthorIcon", "Title", "TitlePrefix", "Pretext", "Text", "ImageUrl", "ThumbUrl", "Fields", });
     internal_static_api_AttachmentAction_descriptor =
-      getDescriptor().getMessageTypes().get(39);
+      getDescriptor().getMessageTypes().get(41);
     internal_static_api_AttachmentAction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentAction_descriptor,
         new java.lang.String[] { "Name", "Text", "Style", "Type", "Value", "DataSource", "MinQueryLength", "Options", "SelectedOptions", "OptionGroups", "Confirm", "Url", });
     internal_static_api_AttachmentConfirmationField_descriptor =
-      getDescriptor().getMessageTypes().get(40);
+      getDescriptor().getMessageTypes().get(42);
     internal_static_api_AttachmentConfirmationField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentConfirmationField_descriptor,
         new java.lang.String[] { "Title", "Text", "OkText", "DismissText", });
     internal_static_api_AttachmentActionOptionGroup_descriptor =
-      getDescriptor().getMessageTypes().get(41);
+      getDescriptor().getMessageTypes().get(43);
     internal_static_api_AttachmentActionOptionGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentActionOptionGroup_descriptor,
         new java.lang.String[] { "Text", "Options", });
     internal_static_api_AttachmentActionOption_descriptor =
-      getDescriptor().getMessageTypes().get(42);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_api_AttachmentActionOption_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentActionOption_descriptor,
         new java.lang.String[] { "Title", "Value", "Description", });
     internal_static_api_AttachmentField_descriptor =
-      getDescriptor().getMessageTypes().get(43);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_api_AttachmentField_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AttachmentField_descriptor,
         new java.lang.String[] { "Title", "Value", "Short", });
     internal_static_api_JSON_descriptor =
-      getDescriptor().getMessageTypes().get(44);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_api_JSON_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JSON_descriptor,
         new java.lang.String[] { "Data", "Size", });
     internal_static_api_File_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_api_File_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_File_descriptor,
@@ -50955,13 +53987,13 @@ public final class Api {
         internal_static_api_File_TagsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_SlackHook_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_api_SlackHook_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SlackHook_descriptor,
         new java.lang.String[] { "Username", "Channel", });
     internal_static_api_Product_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_api_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Product_descriptor,
@@ -50973,7 +54005,7 @@ public final class Api {
         internal_static_api_Product_TagsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_StringMapString_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(50);
     internal_static_api_StringMapString_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_StringMapString_descriptor,

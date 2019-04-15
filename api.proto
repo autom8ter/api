@@ -192,11 +192,37 @@ service UserService {
     }
 }
 
+service HookService {
+    rpc Hook(Attachment) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/hooks"
+            body: "*"
+        };
+    }
+    rpc ActionHook(ActionHookRequest) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/hooks"
+            body: "*"
+        };
+    }
+    rpc SlashCmd(SlashCommand) returns (Empty) {
+        option (google.api.http) = {
+            post: "/api/hooks"
+            body: "*"
+        };
+    }
+}
 ///////////////////////////////////////////////Requests/////////////////////////////////////////////////////////////////
 
 message Id {
     string id =1;
 }
+
+message ActionHookRequest {
+    Attachment attachment =1;
+    AttachmentAction actions=2;
+}
+
 
 message MessageUserRequest {
     string id =1;
@@ -458,6 +484,22 @@ message Fax {
     string quality=4;
     string callback=5;
     bool store_media=6;
+}
+
+message SlashCommand {
+    string token=1;
+    string team_id=2;
+    string team_domain=3;
+    string enterprise_id=4;
+    string enterprise_name=6;
+    string channel_id=7;
+    string channel_name=8;
+    string user_id=9;
+    string user_name=10;
+    string command=11;
+    string text=12;
+    string response_url=13;
+    string trigger_id=14;
 }
 
 message LogHook {

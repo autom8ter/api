@@ -29,6 +29,8 @@ CF_EXTERN_C_BEGIN
 
 @class Access;
 @class Address;
+@class Attachment;
+@class AttachmentAction;
 @class AttachmentActionOption;
 @class AttachmentActionOptionGroup;
 @class AttachmentConfirmationField;
@@ -162,6 +164,25 @@ typedef GPB_ENUM(Id_FieldNumber) {
 @interface Id : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
+#pragma mark - ActionHookRequest
+
+typedef GPB_ENUM(ActionHookRequest_FieldNumber) {
+  ActionHookRequest_FieldNumber_Attachment = 1,
+  ActionHookRequest_FieldNumber_Actions = 2,
+};
+
+@interface ActionHookRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Attachment *attachment;
+/** Test to see if @c attachment has been set. */
+@property(nonatomic, readwrite) BOOL hasAttachment;
+
+@property(nonatomic, readwrite, strong, null_resettable) AttachmentAction *actions;
+/** Test to see if @c actions has been set. */
+@property(nonatomic, readwrite) BOOL hasActions;
 
 @end
 
@@ -983,6 +1004,54 @@ typedef GPB_ENUM(Fax_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
 
 @property(nonatomic, readwrite) BOOL storeMedia;
+
+@end
+
+#pragma mark - SlashCommand
+
+typedef GPB_ENUM(SlashCommand_FieldNumber) {
+  SlashCommand_FieldNumber_Token = 1,
+  SlashCommand_FieldNumber_TeamId = 2,
+  SlashCommand_FieldNumber_TeamDomain = 3,
+  SlashCommand_FieldNumber_EnterpriseId = 4,
+  SlashCommand_FieldNumber_EnterpriseName = 6,
+  SlashCommand_FieldNumber_ChannelId = 7,
+  SlashCommand_FieldNumber_ChannelName = 8,
+  SlashCommand_FieldNumber_UserId = 9,
+  SlashCommand_FieldNumber_UserName = 10,
+  SlashCommand_FieldNumber_Command = 11,
+  SlashCommand_FieldNumber_Text = 12,
+  SlashCommand_FieldNumber_ResponseURL = 13,
+  SlashCommand_FieldNumber_TriggerId = 14,
+};
+
+@interface SlashCommand : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *teamId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *teamDomain;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *enterpriseId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *enterpriseName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channelId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *channelName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *command;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *responseURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *triggerId;
 
 @end
 

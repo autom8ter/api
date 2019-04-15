@@ -13,6 +13,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Id" do
     optional :id, :string, 1
   end
+  add_message "api.ActionHookRequest" do
+    optional :attachment, :message, 1, "api.Attachment"
+    optional :actions, :message, 2, "api.AttachmentAction"
+  end
   add_message "api.MessageUserRequest" do
     optional :id, :string, 1
     optional :message, :string, 2
@@ -234,6 +238,21 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :callback, :string, 5
     optional :store_media, :bool, 6
   end
+  add_message "api.SlashCommand" do
+    optional :token, :string, 1
+    optional :team_id, :string, 2
+    optional :team_domain, :string, 3
+    optional :enterprise_id, :string, 4
+    optional :enterprise_name, :string, 6
+    optional :channel_id, :string, 7
+    optional :channel_name, :string, 8
+    optional :user_id, :string, 9
+    optional :user_name, :string, 10
+    optional :command, :string, 11
+    optional :text, :string, 12
+    optional :response_url, :string, 13
+    optional :trigger_id, :string, 14
+  end
   add_message "api.LogHook" do
     optional :author, :string, 1
     optional :icon, :string, 2
@@ -344,6 +363,7 @@ end
 
 module Api
   Id = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Id").msgclass
+  ActionHookRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ActionHookRequest").msgclass
   MessageUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MessageUserRequest").msgclass
   RefundRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefundRequest").msgclass
   ChargeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChargeRequest").msgclass
@@ -380,6 +400,7 @@ module Api
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
+  SlashCommand = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SlashCommand").msgclass
   LogHook = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.LogHook").msgclass
   Attachment = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Attachment").msgclass
   AttachmentAction = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AttachmentAction").msgclass
