@@ -277,14 +277,13 @@ func (a AccountServiceServerFunctions) ListAccounts(ctx context.Context, r *Empt
 	return a.ListAccountsFunc(ctx, r)
 }
 
-func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions, strings StringServiceServerFunctions) {
+func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions) {
 	if err := engine.Default("tcp", addr, debug).With(
 		config.WithPlugins(
 			accounts,
 			customer,
 			user,
 			plan,
-			strings,
 		),
 	).Serve(); err != nil {
 		Util.Fatalln("functions:", err.Error())

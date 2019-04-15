@@ -307,7 +307,7 @@ func Serve(addr string, debug bool, plugin driver.Plugin) error
 #### func  ServeFunctions
 
 ```go
-func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions, strings StringServiceServerFunctions)
+func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions)
 ```
 
 #### func  Status
