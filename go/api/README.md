@@ -625,28 +625,34 @@ type AccountServiceServerFunctions struct {
 ```
 
 
-#### func (*AccountServiceServerFunctions) CreateAccount
+#### func  NewAccountServiceServerFunctions
 
 ```go
-func (a *AccountServiceServerFunctions) CreateAccount(ctx context.Context, r *CreateAccountRequest) (*JSON, error)
+func NewAccountServiceServerFunctions(createAccountFunc func(context.Context, *CreateAccountRequest) (*JSON, error), updateAccountFunc func(ctx context.Context, r *Account) (*JSON, error), deleteAccountFunc func(ctx context.Context, r *Id) (*JSON, error), readAccountFunc func(ctx context.Context, r *Id) (*JSON, error), listAccountsFunc func(ctx context.Context, r *Empty) (*JSON, error)) *AccountServiceServerFunctions
 ```
 
-#### func (*AccountServiceServerFunctions) DeleteAccount
+#### func (AccountServiceServerFunctions) CreateAccount
 
 ```go
-func (a *AccountServiceServerFunctions) DeleteAccount(ctx context.Context, r *Id) (*JSON, error)
+func (a AccountServiceServerFunctions) CreateAccount(ctx context.Context, r *CreateAccountRequest) (*JSON, error)
 ```
 
-#### func (*AccountServiceServerFunctions) ListAccounts
+#### func (AccountServiceServerFunctions) DeleteAccount
 
 ```go
-func (a *AccountServiceServerFunctions) ListAccounts(ctx context.Context, r *Empty) (*JSON, error)
+func (a AccountServiceServerFunctions) DeleteAccount(ctx context.Context, r *Id) (*JSON, error)
 ```
 
-#### func (*AccountServiceServerFunctions) ReadAccount
+#### func (AccountServiceServerFunctions) ListAccounts
 
 ```go
-func (a *AccountServiceServerFunctions) ReadAccount(ctx context.Context, r *Id) (*JSON, error)
+func (a AccountServiceServerFunctions) ListAccounts(ctx context.Context, r *Empty) (*JSON, error)
+```
+
+#### func (AccountServiceServerFunctions) ReadAccount
+
+```go
+func (a AccountServiceServerFunctions) ReadAccount(ctx context.Context, r *Id) (*JSON, error)
 ```
 
 #### func (AccountServiceServerFunctions) RegisterWithServer
@@ -655,10 +661,10 @@ func (a *AccountServiceServerFunctions) ReadAccount(ctx context.Context, r *Id) 
 func (a AccountServiceServerFunctions) RegisterWithServer(s *grpc.Server)
 ```
 
-#### func (*AccountServiceServerFunctions) UpdateAccount
+#### func (AccountServiceServerFunctions) UpdateAccount
 
 ```go
-func (a *AccountServiceServerFunctions) UpdateAccount(ctx context.Context, r *Account) (*JSON, error)
+func (a AccountServiceServerFunctions) UpdateAccount(ctx context.Context, r *Account) (*JSON, error)
 ```
 
 #### type Address
@@ -3023,52 +3029,58 @@ type CustomerServiceServerFunctions struct {
 ```
 
 
-#### func (*CustomerServiceServerFunctions) CallCustomer
+#### func  NewCustomerServiceServerFunctions
 
 ```go
-func (c *CustomerServiceServerFunctions) CallCustomer(ctx context.Context, r *CallRequest) (*JSON, error)
+func NewCustomerServiceServerFunctions(createCustomerFunc func(context.Context, *CustomerRequest) (*JSON, error), updateCustomerFunc func(context.Context, *UpdateCustomerRequest) (*JSON, error), deleteCustomerFunc func(context.Context, *Id) (*JSON, error), listCustomersFunc func(context.Context, *Empty) (*JSON, error), chargeCustomerFunc func(context.Context, *ChargeRequest) (*JSON, error), refundCustomerFunc func(context.Context, *RefundRequest) (*JSON, error), subscribeCustomerFunc func(context.Context, *SubscribeCustomerRequest) (*JSON, error), unSubscribeCustomerFunc func(context.Context, *CancelSubscriptionRequest) (*JSON, error), SMSCustomerFunc func(context.Context, *SMSRequest) (*JSON, error), callCustomerFunc func(context.Context, *CallRequest) (*JSON, error), MMSCustomerFunc func(context.Context, *MMSRequest) (*JSON, error), emailCustomerFunc func(context.Context, *EmailRequest) (*JSON, error)) *CustomerServiceServerFunctions
 ```
 
-#### func (*CustomerServiceServerFunctions) ChargeCustomer
+#### func (CustomerServiceServerFunctions) CallCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) ChargeCustomer(ctx context.Context, r *ChargeRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) CallCustomer(ctx context.Context, r *CallRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) CreateCustomer
+#### func (CustomerServiceServerFunctions) ChargeCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) CreateCustomer(ctx context.Context, r *CustomerRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) ChargeCustomer(ctx context.Context, r *ChargeRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) DeleteCustomer
+#### func (CustomerServiceServerFunctions) CreateCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) DeleteCustomer(ctx context.Context, r *Id) (*JSON, error)
+func (c CustomerServiceServerFunctions) CreateCustomer(ctx context.Context, r *CustomerRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) EmailCustomer
+#### func (CustomerServiceServerFunctions) DeleteCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) EmailCustomer(ctx context.Context, r *EmailRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) DeleteCustomer(ctx context.Context, r *Id) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) ListCustomers
+#### func (CustomerServiceServerFunctions) EmailCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) ListCustomers(ctx context.Context, r *Empty) (*JSON, error)
+func (c CustomerServiceServerFunctions) EmailCustomer(ctx context.Context, r *EmailRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) MMSCustomer
+#### func (CustomerServiceServerFunctions) ListCustomers
 
 ```go
-func (c *CustomerServiceServerFunctions) MMSCustomer(ctx context.Context, r *MMSRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) ListCustomers(ctx context.Context, r *Empty) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) RefundCustomer
+#### func (CustomerServiceServerFunctions) MMSCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) RefundCustomer(ctx context.Context, r *RefundRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) MMSCustomer(ctx context.Context, r *MMSRequest) (*JSON, error)
+```
+
+#### func (CustomerServiceServerFunctions) RefundCustomer
+
+```go
+func (c CustomerServiceServerFunctions) RefundCustomer(ctx context.Context, r *RefundRequest) (*JSON, error)
 ```
 
 #### func (CustomerServiceServerFunctions) RegisterWithServer
@@ -3077,28 +3089,28 @@ func (c *CustomerServiceServerFunctions) RefundCustomer(ctx context.Context, r *
 func (a CustomerServiceServerFunctions) RegisterWithServer(s *grpc.Server)
 ```
 
-#### func (*CustomerServiceServerFunctions) SMSCustomer
+#### func (CustomerServiceServerFunctions) SMSCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) SMSCustomer(ctx context.Context, r *SMSRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) SMSCustomer(ctx context.Context, r *SMSRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) SubscribeCustomer
+#### func (CustomerServiceServerFunctions) SubscribeCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) SubscribeCustomer(ctx context.Context, r *SubscribeCustomerRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) SubscribeCustomer(ctx context.Context, r *SubscribeCustomerRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) UnSubscribeCustomer
+#### func (CustomerServiceServerFunctions) UnSubscribeCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) UnSubscribeCustomer(ctx context.Context, r *CancelSubscriptionRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) UnSubscribeCustomer(ctx context.Context, r *CancelSubscriptionRequest) (*JSON, error)
 ```
 
-#### func (*CustomerServiceServerFunctions) UpdateCustomer
+#### func (CustomerServiceServerFunctions) UpdateCustomer
 
 ```go
-func (c *CustomerServiceServerFunctions) UpdateCustomer(ctx context.Context, r *UpdateCustomerRequest) (*JSON, error)
+func (c CustomerServiceServerFunctions) UpdateCustomer(ctx context.Context, r *UpdateCustomerRequest) (*JSON, error)
 ```
 
 #### type Email
@@ -4000,6 +4012,18 @@ func (j *JSON) MarshalJSON() ([]byte, error)
 func (*JSON) ProtoMessage()
 ```
 
+#### func (*JSON) Read
+
+```go
+func (j *JSON) Read(p []byte) (n int, err error)
+```
+
+#### func (*JSON) ReadFrom
+
+```go
+func (j *JSON) ReadFrom(r io.Reader) (n int64, err error)
+```
+
 #### func (*JSON) Reset
 
 ```go
@@ -4016,6 +4040,18 @@ func (m *JSON) String() string
 
 ```go
 func (j *JSON) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*JSON) Write
+
+```go
+func (j *JSON) Write(p []byte) (n int, err error)
+```
+
+#### func (*JSON) WriteTo
+
+```go
+func (j *JSON) WriteTo(w io.Writer) (n int64, err error)
 ```
 
 #### func (*JSON) XXX_DiscardUnknown
@@ -4574,10 +4610,16 @@ type PlanServiceServerFunctions struct {
 ```
 
 
-#### func (*PlanServiceServerFunctions) CreateSubscriptionPlan
+#### func  NewPlanServiceServerFunctions
 
 ```go
-func (p *PlanServiceServerFunctions) CreateSubscriptionPlan(ctx context.Context, r *CreatePlanRequest) (*JSON, error)
+func NewPlanServiceServerFunctions(createSubscriptionPlanFunc func(context.Context, *CreatePlanRequest) (*JSON, error)) *PlanServiceServerFunctions
+```
+
+#### func (PlanServiceServerFunctions) CreateSubscriptionPlan
+
+```go
+func (p PlanServiceServerFunctions) CreateSubscriptionPlan(ctx context.Context, r *CreatePlanRequest) (*JSON, error)
 ```
 
 #### func (PlanServiceServerFunctions) RegisterWithServer
@@ -5982,17 +6024,18 @@ type User struct {
 	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	TeamId               string   `protobuf:"bytes,2,opt,name=team_id,json=teamId,proto3" json:"team_id,omitempty"`
 	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	Profile              *Profile `protobuf:"bytes,4,opt,name=profile,proto3" json:"profile,omitempty"`
-	Deleted              bool     `protobuf:"varint,5,opt,name=deleted,proto3" json:"deleted,omitempty"`
-	Admin                bool     `protobuf:"varint,6,opt,name=admin,proto3" json:"admin,omitempty"`
-	Ownder               bool     `protobuf:"varint,7,opt,name=ownder,proto3" json:"ownder,omitempty"`
-	PrimaryOwner         bool     `protobuf:"varint,8,opt,name=primary_owner,json=primaryOwner,proto3" json:"primary_owner,omitempty"`
-	Restricted           bool     `protobuf:"varint,9,opt,name=restricted,proto3" json:"restricted,omitempty"`
-	UltraRestricted      bool     `protobuf:"varint,10,opt,name=ultra_restricted,json=ultraRestricted,proto3" json:"ultra_restricted,omitempty"`
-	Stranger             bool     `protobuf:"varint,11,opt,name=stranger,proto3" json:"stranger,omitempty"`
-	Bot                  bool     `protobuf:"varint,12,opt,name=bot,proto3" json:"bot,omitempty"`
-	Has2Fa               bool     `protobuf:"varint,13,opt,name=has2fa,proto3" json:"has2fa,omitempty"`
-	Locale               string   `protobuf:"bytes,14,opt,name=locale,proto3" json:"locale,omitempty"`
+	Phone                string   `protobuf:"bytes,4,opt,name=phone,proto3" json:"phone,omitempty"`
+	Profile              *Profile `protobuf:"bytes,5,opt,name=profile,proto3" json:"profile,omitempty"`
+	Deleted              bool     `protobuf:"varint,6,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	Admin                bool     `protobuf:"varint,7,opt,name=admin,proto3" json:"admin,omitempty"`
+	Ownder               bool     `protobuf:"varint,8,opt,name=ownder,proto3" json:"ownder,omitempty"`
+	PrimaryOwner         bool     `protobuf:"varint,9,opt,name=primary_owner,json=primaryOwner,proto3" json:"primary_owner,omitempty"`
+	Restricted           bool     `protobuf:"varint,10,opt,name=restricted,proto3" json:"restricted,omitempty"`
+	UltraRestricted      bool     `protobuf:"varint,11,opt,name=ultra_restricted,json=ultraRestricted,proto3" json:"ultra_restricted,omitempty"`
+	Stranger             bool     `protobuf:"varint,12,opt,name=stranger,proto3" json:"stranger,omitempty"`
+	Bot                  bool     `protobuf:"varint,13,opt,name=bot,proto3" json:"bot,omitempty"`
+	Has2Fa               bool     `protobuf:"varint,14,opt,name=has2fa,proto3" json:"has2fa,omitempty"`
+	Locale               string   `protobuf:"bytes,15,opt,name=locale,proto3" json:"locale,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -6076,6 +6119,12 @@ func (m *User) GetName() string
 
 ```go
 func (m *User) GetOwnder() bool
+```
+
+#### func (*User) GetPhone
+
+```go
+func (m *User) GetPhone() string
 ```
 
 #### func (*User) GetPrimaryOwner
@@ -6295,6 +6344,9 @@ func NewUserServer(server UserServiceServer) *UserServer
 type UserServiceClient interface {
 	EmailUser(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*JSON, error)
 	MessageUser(ctx context.Context, in *MessageUserRequest, opts ...grpc.CallOption) (*JSON, error)
+	SMSUser(ctx context.Context, in *SMSRequest, opts ...grpc.CallOption) (*JSON, error)
+	CallUser(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*JSON, error)
+	MMSUser(ctx context.Context, in *MMSRequest, opts ...grpc.CallOption) (*JSON, error)
 	CreateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*JSON, error)
 	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*JSON, error)
 	DeleteUser(ctx context.Context, in *Id, opts ...grpc.CallOption) (*JSON, error)
@@ -6319,6 +6371,9 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 type UserServiceServer interface {
 	EmailUser(context.Context, *EmailRequest) (*JSON, error)
 	MessageUser(context.Context, *MessageUserRequest) (*JSON, error)
+	SMSUser(context.Context, *SMSRequest) (*JSON, error)
+	CallUser(context.Context, *CallRequest) (*JSON, error)
+	MMSUser(context.Context, *MMSRequest) (*JSON, error)
 	CreateUser(context.Context, *User) (*JSON, error)
 	UpdateUser(context.Context, *User) (*JSON, error)
 	DeleteUser(context.Context, *Id) (*JSON, error)
@@ -6338,38 +6393,59 @@ type UserServiceServerFunctions struct {
 	UpdateUserFunc  func(ctx context.Context, r *User) (*JSON, error)
 	DeleteUserFunc  func(ctx context.Context, r *Id) (*JSON, error)
 	ListUsersFunc   func(ctx context.Context, r *Empty) (*JSON, error)
+	SMSUserFunc     func(ctx context.Context, r *SMSRequest) (*JSON, error)
+	CallUserFunc    func(ctx context.Context, r *CallRequest) (*JSON, error)
+	MMSUserFunc     func(ctx context.Context, r *MMSRequest) (*JSON, error)
 }
 ```
 
 
-#### func (*UserServiceServerFunctions) CreateUser
+#### func  NewUserServiceServerFunctions
 
 ```go
-func (u *UserServiceServerFunctions) CreateUser(ctx context.Context, r *User) (*JSON, error)
+func NewUserServiceServerFunctions(emailUserFunc func(context.Context, *EmailRequest) (*JSON, error), messageUserFunc func(ctx context.Context, r *MessageUserRequest) (*JSON, error), createUserFunc func(ctx context.Context, r *User) (*JSON, error), updateUserFunc func(ctx context.Context, r *User) (*JSON, error), deleteUserFunc func(ctx context.Context, r *Id) (*JSON, error), listUsersFunc func(ctx context.Context, r *Empty) (*JSON, error), SMSUserFunc func(ctx context.Context, r *SMSRequest) (*JSON, error), callUserFunc func(ctx context.Context, r *CallRequest) (*JSON, error), MMSUserFunc func(ctx context.Context, r *MMSRequest) (*JSON, error)) *UserServiceServerFunctions
 ```
 
-#### func (*UserServiceServerFunctions) DeleteUser
+#### func (UserServiceServerFunctions) CallUser
 
 ```go
-func (u *UserServiceServerFunctions) DeleteUser(ctx context.Context, r *Id) (*JSON, error)
+func (u UserServiceServerFunctions) CallUser(ctx context.Context, r *CallRequest) (*JSON, error)
 ```
 
-#### func (*UserServiceServerFunctions) EmailUser
+#### func (UserServiceServerFunctions) CreateUser
 
 ```go
-func (u *UserServiceServerFunctions) EmailUser(ctx context.Context, r *EmailRequest) (*JSON, error)
+func (u UserServiceServerFunctions) CreateUser(ctx context.Context, r *User) (*JSON, error)
 ```
 
-#### func (*UserServiceServerFunctions) ListUsers
+#### func (UserServiceServerFunctions) DeleteUser
 
 ```go
-func (u *UserServiceServerFunctions) ListUsers(ctx context.Context, r *Empty) (*JSON, error)
+func (u UserServiceServerFunctions) DeleteUser(ctx context.Context, r *Id) (*JSON, error)
 ```
 
-#### func (*UserServiceServerFunctions) MessageUser
+#### func (UserServiceServerFunctions) EmailUser
 
 ```go
-func (u *UserServiceServerFunctions) MessageUser(ctx context.Context, r *MessageUserRequest) (*JSON, error)
+func (u UserServiceServerFunctions) EmailUser(ctx context.Context, r *EmailRequest) (*JSON, error)
+```
+
+#### func (UserServiceServerFunctions) ListUsers
+
+```go
+func (u UserServiceServerFunctions) ListUsers(ctx context.Context, r *Empty) (*JSON, error)
+```
+
+#### func (UserServiceServerFunctions) MMSUser
+
+```go
+func (u UserServiceServerFunctions) MMSUser(ctx context.Context, r *MMSRequest) (*JSON, error)
+```
+
+#### func (UserServiceServerFunctions) MessageUser
+
+```go
+func (u UserServiceServerFunctions) MessageUser(ctx context.Context, r *MessageUserRequest) (*JSON, error)
 ```
 
 #### func (UserServiceServerFunctions) RegisterWithServer
@@ -6378,8 +6454,14 @@ func (u *UserServiceServerFunctions) MessageUser(ctx context.Context, r *Message
 func (u UserServiceServerFunctions) RegisterWithServer(s *grpc.Server)
 ```
 
-#### func (*UserServiceServerFunctions) UpdateUser
+#### func (UserServiceServerFunctions) SMSUser
 
 ```go
-func (u *UserServiceServerFunctions) UpdateUser(ctx context.Context, r *User) (*JSON, error)
+func (u UserServiceServerFunctions) SMSUser(ctx context.Context, r *SMSRequest) (*JSON, error)
+```
+
+#### func (UserServiceServerFunctions) UpdateUser
+
+```go
+func (u UserServiceServerFunctions) UpdateUser(ctx context.Context, r *User) (*JSON, error)
 ```
