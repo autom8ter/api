@@ -214,9 +214,27 @@ service HookService {
 }
 
 service StringService {
-    rpc Render(String) returns (String) {
+    rpc RenderJSON(String) returns (String) {
         option (google.api.http) = {
-      post: "/api/string/render"
+      post: "/api/string/render/json"
+      body: "*"
+    };
+    }
+    rpc RenderProto(String) returns (String) {
+        option (google.api.http) = {
+      post: "/api/string/render/proto"
+      body: "*"
+    };
+    }
+    rpc RenderYAML(String) returns (String) {
+        option (google.api.http) = {
+      post: "/api/string/render/yaml"
+      body: "*"
+    };
+    }
+    rpc RenderXML(String) returns (String) {
+        option (google.api.http) = {
+      post: "/api/string/render/xml"
       body: "*"
     };
     }

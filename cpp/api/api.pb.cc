@@ -2129,12 +2129,18 @@ void AddDescriptorsImpl() {
       "\nActionHook\022\026.api.ActionHookRequest\032\n.ap"
       "i.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*\022@\n\010SlashC"
       "md\022\021.api.SlashCommand\032\n.api.Empty\"\025\202\323\344\223\002"
-      "\017\"\n/api/hooks:\001*2R\n\rStringService\022A\n\006Ren"
-      "der\022\013.api.String\032\013.api.String\"\035\202\323\344\223\002\027\"\022/"
-      "api/string/render:\001*b\006proto3"
+      "\017\"\n/api/hooks:\001*2\277\002\n\rStringService\022J\n\nRe"
+      "nderJSON\022\013.api.String\032\013.api.String\"\"\202\323\344\223"
+      "\002\034\"\027/api/string/render/json:\001*\022L\n\013Render"
+      "Proto\022\013.api.String\032\013.api.String\"#\202\323\344\223\002\035\""
+      "\030/api/string/render/proto:\001*\022J\n\nRenderYA"
+      "ML\022\013.api.String\032\013.api.String\"\"\202\323\344\223\002\034\"\027/a"
+      "pi/string/render/yaml:\001*\022H\n\tRenderXML\022\013."
+      "api.String\032\013.api.String\"!\202\323\344\223\002\033\"\026/api/st"
+      "ring/render/xml:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 8508);
+      descriptor, 8746);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();

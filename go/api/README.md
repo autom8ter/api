@@ -104,16 +104,16 @@ var Topic_value = map[string]int32{
 var Util = objectify.Default()
 ```
 
-#### func  AsMessage
+#### func  DataJSONTo
 
 ```go
-func AsMessage(attributes map[string]string, m Messenger) *pubsub.PubsubMessage
+func DataJSONTo(msg *Msg, obj interface{}) error
 ```
 
-#### func  DataTo
+#### func  DataProtoTo
 
 ```go
-func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error
+func DataProtoTo(msg *Msg, obj interface{}) error
 ```
 
 #### func  RegisterAccountServiceHandler
@@ -262,6 +262,43 @@ done.
 func RegisterPlanServiceServer(s *grpc.Server, srv PlanServiceServer)
 ```
 
+#### func  RegisterStringServiceHandler
+
+```go
+func RegisterStringServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterStringServiceHandler registers the http handlers for service
+StringService to "mux". The handlers forward requests to the grpc endpoint over
+"conn".
+
+#### func  RegisterStringServiceHandlerClient
+
+```go
+func RegisterStringServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client StringServiceClient) error
+```
+RegisterStringServiceHandlerClient registers the http handlers for service
+StringService to "mux". The handlers forward requests to the grpc endpoint over
+the given implementation of "StringServiceClient". Note: the gRPC framework
+executes interceptors within the gRPC handler. If the passed in
+"StringServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "StringServiceClient" to call
+the correct interceptors.
+
+#### func  RegisterStringServiceHandlerFromEndpoint
+
+```go
+func RegisterStringServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterStringServiceHandlerFromEndpoint is same as RegisterStringServiceHandler
+but automatically dials to "endpoint" and closes the connection when "ctx" gets
+done.
+
+#### func  RegisterStringServiceServer
+
+```go
+func RegisterStringServiceServer(s *grpc.Server, srv StringServiceServer)
+```
+
 #### func  RegisterUserServiceHandler
 
 ```go
@@ -307,7 +344,7 @@ func Serve(addr string, debug bool, plugin driver.Plugin) error
 #### func  ServeFunctions
 
 ```go
-func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions)
+func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFunctions, customer CustomerServiceServerFunctions, user UserServiceServerFunctions, plan PlanServiceServerFunctions, strings StringServiceServerFunctions)
 ```
 
 #### func  Status
@@ -2546,6 +2583,9 @@ func (c *Claims) SignedTwilioToken(secret string, headers map[string]string) (*S
 type ClientSet struct {
 	Users     UserServiceClient
 	Customers CustomerServiceClient
+	Accounts  AccountServiceClient
+	Plans     PlanServiceClient
+	Strings   StringServiceClient
 }
 ```
 
@@ -4079,12 +4119,6 @@ type JSON struct {
 ```
 
 
-#### func  ToJSON
-
-```go
-func ToJSON(obj interface{}) *JSON
-```
-
 #### func (*JSON) Attributes
 
 ```go
@@ -4603,6 +4637,147 @@ type Messenger interface {
 }
 ```
 
+
+#### type Msg
+
+```go
+type Msg struct {
+	Id                   string            `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Meta                 map[string]string `protobuf:"bytes,2,rep,name=meta,proto3" json:"meta,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Data                 []byte            `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	PublishTime          string            `protobuf:"bytes,4,opt,name=publish_time,json=publishTime,proto3" json:"publish_time,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func  AsMessage
+
+```go
+func AsMessage(attributes map[string]string, m Messenger) *Msg
+```
+
+#### func (*Msg) Attributes
+
+```go
+func (s *Msg) Attributes(m map[string]string) map[string]string
+```
+
+#### func (*Msg) CompileHTML
+
+```go
+func (j *Msg) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Msg) CompileTXT
+
+```go
+func (j *Msg) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Msg) DataBytes
+
+```go
+func (s *Msg) DataBytes() []byte
+```
+
+#### func (*Msg) Descriptor
+
+```go
+func (*Msg) Descriptor() ([]byte, []int)
+```
+
+#### func (*Msg) GetData
+
+```go
+func (m *Msg) GetData() []byte
+```
+
+#### func (*Msg) GetId
+
+```go
+func (m *Msg) GetId() string
+```
+
+#### func (*Msg) GetMeta
+
+```go
+func (m *Msg) GetMeta() map[string]string
+```
+
+#### func (*Msg) GetPublishTime
+
+```go
+func (m *Msg) GetPublishTime() string
+```
+
+#### func (*Msg) GoType
+
+```go
+func (s *Msg) GoType() string
+```
+
+#### func (*Msg) MarshalJSON
+
+```go
+func (j *Msg) MarshalJSON() ([]byte, error)
+```
+
+#### func (*Msg) ProtoMessage
+
+```go
+func (*Msg) ProtoMessage()
+```
+
+#### func (*Msg) Reset
+
+```go
+func (m *Msg) Reset()
+```
+
+#### func (*Msg) String
+
+```go
+func (m *Msg) String() string
+```
+
+#### func (*Msg) UnMarshalJSON
+
+```go
+func (j *Msg) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*Msg) XXX_DiscardUnknown
+
+```go
+func (m *Msg) XXX_DiscardUnknown()
+```
+
+#### func (*Msg) XXX_Marshal
+
+```go
+func (m *Msg) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Msg) XXX_Merge
+
+```go
+func (m *Msg) XXX_Merge(src proto.Message)
+```
+
+#### func (*Msg) XXX_Size
+
+```go
+func (m *Msg) XXX_Size() int
+```
+
+#### func (*Msg) XXX_Unmarshal
+
+```go
+func (m *Msg) XXX_Unmarshal(b []byte) error
+```
 
 #### type Pin
 
@@ -6213,6 +6388,78 @@ func (m *Star) XXX_Size() int
 func (m *Star) XXX_Unmarshal(b []byte) error
 ```
 
+#### type String
+
+```go
+type String struct {
+	Text                 string   `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*String) Descriptor
+
+```go
+func (*String) Descriptor() ([]byte, []int)
+```
+
+#### func (*String) GetText
+
+```go
+func (m *String) GetText() string
+```
+
+#### func (*String) ProtoMessage
+
+```go
+func (*String) ProtoMessage()
+```
+
+#### func (*String) Reset
+
+```go
+func (m *String) Reset()
+```
+
+#### func (*String) String
+
+```go
+func (m *String) String() string
+```
+
+#### func (*String) XXX_DiscardUnknown
+
+```go
+func (m *String) XXX_DiscardUnknown()
+```
+
+#### func (*String) XXX_Marshal
+
+```go
+func (m *String) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*String) XXX_Merge
+
+```go
+func (m *String) XXX_Merge(src proto.Message)
+```
+
+#### func (*String) XXX_Size
+
+```go
+func (m *String) XXX_Size() int
+```
+
+#### func (*String) XXX_Unmarshal
+
+```go
+func (m *String) XXX_Unmarshal(b []byte) error
+```
+
 #### type StringMapString
 
 ```go
@@ -6283,6 +6530,85 @@ func (m *StringMapString) XXX_Size() int
 
 ```go
 func (m *StringMapString) XXX_Unmarshal(b []byte) error
+```
+
+#### type StringServiceClient
+
+```go
+type StringServiceClient interface {
+	RenderJSON(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
+	RenderProto(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
+	RenderYAML(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
+	RenderXML(ctx context.Context, in *String, opts ...grpc.CallOption) (*String, error)
+}
+```
+
+StringServiceClient is the client API for StringService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewStringServiceClient
+
+```go
+func NewStringServiceClient(cc *grpc.ClientConn) StringServiceClient
+```
+
+#### type StringServiceServer
+
+```go
+type StringServiceServer interface {
+	RenderJSON(context.Context, *String) (*String, error)
+	RenderProto(context.Context, *String) (*String, error)
+	RenderYAML(context.Context, *String) (*String, error)
+	RenderXML(context.Context, *String) (*String, error)
+}
+```
+
+StringServiceServer is the server API for StringService service.
+
+#### type StringServiceServerFunctions
+
+```go
+type StringServiceServerFunctions struct {
+}
+```
+
+
+#### func  NewStringServiceServerFunctions
+
+```go
+func NewStringServiceServerFunctions(obj interface{}) *StringServiceServerFunctions
+```
+
+#### func (StringServiceServerFunctions) RegisterWithServer
+
+```go
+func (a StringServiceServerFunctions) RegisterWithServer(s *grpc.Server)
+```
+
+#### func (StringServiceServerFunctions) RenderJSON
+
+```go
+func (s StringServiceServerFunctions) RenderJSON(ctx context.Context, r *String) (*String, error)
+```
+
+#### func (StringServiceServerFunctions) RenderProto
+
+```go
+func (s StringServiceServerFunctions) RenderProto(ctx context.Context, r *String) (*String, error)
+```
+
+#### func (StringServiceServerFunctions) RenderXML
+
+```go
+func (s StringServiceServerFunctions) RenderXML(ctx context.Context, r *String) (*String, error)
+```
+
+#### func (StringServiceServerFunctions) RenderYAML
+
+```go
+func (s StringServiceServerFunctions) RenderYAML(ctx context.Context, r *String) (*String, error)
 ```
 
 #### type SubscribeCustomerRequest

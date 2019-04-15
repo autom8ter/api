@@ -211,9 +211,14 @@ namespace Api {
             "CkFjdGlvbkhvb2sSFi5hcGkuQWN0aW9uSG9va1JlcXVlc3QaCi5hcGkuRW1w",
             "dHkiFYLT5JMCDyIKL2FwaS9ob29rczoBKhJACghTbGFzaENtZBIRLmFwaS5T",
             "bGFzaENvbW1hbmQaCi5hcGkuRW1wdHkiFYLT5JMCDyIKL2FwaS9ob29rczoB",
-            "KjJSCg1TdHJpbmdTZXJ2aWNlEkEKBlJlbmRlchILLmFwaS5TdHJpbmcaCy5h",
-            "cGkuU3RyaW5nIh2C0+STAhciEi9hcGkvc3RyaW5nL3JlbmRlcjoBKmIGcHJv",
-            "dG8z"));
+            "KjK/AgoNU3RyaW5nU2VydmljZRJKCgpSZW5kZXJKU09OEgsuYXBpLlN0cmlu",
+            "ZxoLLmFwaS5TdHJpbmciIoLT5JMCHCIXL2FwaS9zdHJpbmcvcmVuZGVyL2pz",
+            "b246ASoSTAoLUmVuZGVyUHJvdG8SCy5hcGkuU3RyaW5nGgsuYXBpLlN0cmlu",
+            "ZyIjgtPkkwIdIhgvYXBpL3N0cmluZy9yZW5kZXIvcHJvdG86ASoSSgoKUmVu",
+            "ZGVyWUFNTBILLmFwaS5TdHJpbmcaCy5hcGkuU3RyaW5nIiKC0+STAhwiFy9h",
+            "cGkvc3RyaW5nL3JlbmRlci95YW1sOgEqEkgKCVJlbmRlclhNTBILLmFwaS5T",
+            "dHJpbmcaCy5hcGkuU3RyaW5nIiGC0+STAhsiFi9hcGkvc3RyaW5nL3JlbmRl",
+            "ci94bWw6ASpiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.AuthReflection.Descriptor, global::Google.Cloud.PubSub.V1.PubsubReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.CustomerIndex), typeof(global::Api.Claim), typeof(global::Api.SigningMethod), typeof(global::Api.CardType), typeof(global::Api.Topic), }, new pbr::GeneratedClrTypeInfo[] {

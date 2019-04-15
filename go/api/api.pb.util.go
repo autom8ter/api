@@ -37,15 +37,14 @@ type Messenger interface {
 	GoType() string
 }
 
-
 func AsMessage(attributes map[string]string, m Messenger) *Msg {
 	for k, v := range m.Attributes(attributes) {
 		attributes[k] = v
 	}
 	return &Msg{
-		Id:                   m.GoType(),
-		Meta:           attributes,
-		Data:                 m.DataBytes(),
+		Id:   m.GoType(),
+		Meta: attributes,
+		Data: m.DataBytes(),
 	}
 }
 
@@ -62,6 +61,9 @@ var Util = objectify.Default()
 type ClientSet struct {
 	Users     UserServiceClient
 	Customers CustomerServiceClient
+	Accounts  AccountServiceClient
+	Plans     PlanServiceClient
+	Strings   StringServiceClient
 }
 
 func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*ClientSet, error) {
@@ -72,6 +74,9 @@ func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*C
 	return &ClientSet{
 		Users:     NewUserServiceClient(conn),
 		Customers: NewCustomerServiceClient(conn),
+		Accounts:  NewAccountServiceClient(conn),
+		Plans:     NewPlanServiceClient(conn),
+		Strings:   NewStringServiceClient(conn),
 	}, nil
 }
 
@@ -189,6 +194,7 @@ func (s *RecipientEmail) DataBytes() []byte {
 func (s *RecipientEmail) GoType() string {
 	return reflect.TypeOf(s).String()
 }
+
 //
 
 func (j *SlashCommand) MarshalJSON() ([]byte, error) {
@@ -220,6 +226,7 @@ func (s *SlashCommand) DataBytes() []byte {
 func (s *SlashCommand) GoType() string {
 	return reflect.TypeOf(s).String()
 }
+
 //
 
 func (j *Msg) MarshalJSON() ([]byte, error) {
@@ -251,6 +258,7 @@ func (s *Msg) DataBytes() []byte {
 func (s *Msg) GoType() string {
 	return reflect.TypeOf(s).String()
 }
+
 //
 
 func (j *Profile) MarshalJSON() ([]byte, error) {
