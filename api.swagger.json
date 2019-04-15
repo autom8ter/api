@@ -43,7 +43,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     },
@@ -75,7 +75,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     },
@@ -107,7 +107,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     },
@@ -139,7 +139,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     },
@@ -171,7 +171,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     },
@@ -197,39 +197,7 @@
           }
         ],
         "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/users/call/{user_id}": {
-      "post": {
-        "operationId": "CallUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiCallRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     },
@@ -257,70 +225,6 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiEmailRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/users/mms/{user_id}": {
-      "post": {
-        "operationId": "MMSUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiMMSRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/users/sms/{user_id}": {
-      "post": {
-        "operationId": "SMSUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSMSRequest"
             }
           }
         ],
@@ -357,7 +261,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "CustomerService"
         ]
       }
     }

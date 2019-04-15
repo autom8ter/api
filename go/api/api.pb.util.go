@@ -8,7 +8,6 @@ import (
 	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/pkg/errors"
 	"google.golang.org/genproto/googleapis/pubsub/v1"
 	"google.golang.org/grpc"
 	"io"
@@ -17,17 +16,21 @@ import (
 	"reflect"
 )
 
-type Messenger interface {
-	Attributes() map[string]string
-	DataBytes() []byte
-	ID() string
+func Serve(addr string, debug bool, plugin driver.Plugin) error {
+	return engine.Serve(addr, debug, plugin)
 }
 
-func AsMessage(m Messenger) *pubsub.PubsubMessage {
+type Messenger interface {
+	Attributes(m map[string]string) map[string]string
+	DataBytes() []byte
+	Type() string
+}
+
+func AsMessage(attributes map[string]string, m Messenger) *pubsub.PubsubMessage {
 	return &pubsub.PubsubMessage{
 		Data:       m.DataBytes(),
-		Attributes: m.Attributes(),
-		MessageId:  m.ID(),
+		Attributes: m.Attributes(attributes),
+		MessageId:  m.Type(),
 	}
 }
 
@@ -56,7 +59,7 @@ type UserServer struct {
 	driver.PluginFunc
 }
 
-func NewUserServer(addr string, server UserServiceServer) *UserServer {
+func NewUserServer(server UserServiceServer) *UserServer {
 	s := &UserServer{
 		UserServiceServer: server,
 	}
@@ -66,9 +69,23 @@ func NewUserServer(addr string, server UserServiceServer) *UserServer {
 	return s
 }
 
-func Serve(addr string, debug bool, plugin driver.Plugin) error {
-	return engine.Serve(addr, debug, plugin)
+type CustomerServer struct {
+	CustomerServiceServer
+	driver.PluginFunc
 }
+
+
+func NewCustomerServer(server CustomerServiceServer) *CustomerServer {
+	s := &CustomerServer{
+		CustomerServiceServer: server,
+	}
+	s.PluginFunc = func(server *grpc.Server) {
+		RegisterCustomerServiceServer(server, s)
+	}
+	return s
+}
+
+
 
 //////////////////////////////////////////////////////
 
@@ -96,31 +113,6 @@ func AccessFromEnv() *Access {
 	}
 }
 
-func (a *Access) Validate() error {
-	if a.TwilioKey == "" {
-		return errors.New("empty twilio key")
-	}
-	if a.TwilioAccount == "" {
-		return errors.New("empty twilio account")
-	}
-	if a.Autom8TerAccount == "" {
-		return errors.New("empty autom8ter account")
-	}
-	if a.Autom8TerKey == "" {
-		return errors.New("empty autom8ter key")
-	}
-	if a.SendgridKey == "" {
-		return errors.New("empty sendgrid key")
-	}
-	if a.StripeKey == "" {
-		return errors.New("empty stripe key")
-	}
-	if a.SlackKey == "" {
-		return errors.New("empty slack key")
-	}
-	return nil
-}
-
 //////////////////////////////////////////////////////
 
 type AttachmentFunc func(a *Attachment)
@@ -143,6 +135,99 @@ func NewAttachmentAction(opts ...AttachmentActionFunc) *AttachmentAction {
 	return a
 }
 
+//////////////////////////////////////////////////////
+
+func (j *RecipientEmail) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
+}
+
+func (j *RecipientEmail) UnMarshalJSON(obj interface{}) error {
+	return json.Unmarshal(Util.MarshalJSON(j), obj)
+}
+
+func (j *RecipientEmail) CompileHTML(text string, w io.Writer) error {
+	return Util.RenderHTML(text, j, w)
+}
+
+func (j *RecipientEmail) CompileTXT(text string, w io.Writer) error {
+	return Util.RenderTXT(text, j, w)
+}
+
+func (s *RecipientEmail) Attributes(m map[string]string) map[string]string {
+	return Util.Attributes(s)
+
+}
+
+func (s *RecipientEmail) DataBytes() []byte {
+	return Util.MarshalJSON(s)
+
+}
+
+func (s *RecipientEmail) Type() string {
+	return reflect.TypeOf(s).String()
+}
+//
+
+func (j *Profile) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
+}
+
+func (j *Profile) UnMarshalJSON(obj interface{}) error {
+	return json.Unmarshal(Util.MarshalJSON(j), obj)
+}
+
+func (j *Profile) CompileHTML(text string, w io.Writer) error {
+	return Util.RenderHTML(text, j, w)
+}
+
+func (j *Profile) CompileTXT(text string, w io.Writer) error {
+	return Util.RenderTXT(text, j, w)
+}
+
+func (s *Profile) Attributes(m map[string]string) map[string]string {
+	return Util.Attributes(s)
+
+}
+
+func (s *Profile) DataBytes() []byte {
+	return Util.MarshalJSON(s)
+
+}
+
+func (s *Profile) Type() string {
+	return reflect.TypeOf(s).String()
+}
+//
+
+func (j *User) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
+}
+
+func (j *User) UnMarshalJSON(obj interface{}) error {
+	return json.Unmarshal(Util.MarshalJSON(j), obj)
+}
+
+func (j *User) CompileHTML(text string, w io.Writer) error {
+	return Util.RenderHTML(text, j, w)
+}
+
+func (j *User) CompileTXT(text string, w io.Writer) error {
+	return Util.RenderTXT(text, j, w)
+}
+
+func (s *User) Attributes(m map[string]string) map[string]string {
+	return Util.Attributes(s)
+
+}
+
+func (s *User) DataBytes() []byte {
+	return Util.MarshalJSON(s)
+
+}
+
+func (s *User) Type() string {
+	return reflect.TypeOf(s).String()
+}
 //
 
 func (j *Refund) MarshalJSON() ([]byte, error) {
@@ -161,7 +246,7 @@ func (j *Refund) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *Refund) Attributes() map[string]string {
+func (s *Refund) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -171,7 +256,7 @@ func (s *Refund) DataBytes() []byte {
 
 }
 
-func (s *Refund) ID() string {
+func (s *Refund) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -193,7 +278,7 @@ func (j *Product) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *Product) Attributes() map[string]string {
+func (s *Product) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -203,7 +288,7 @@ func (s *Product) DataBytes() []byte {
 
 }
 
-func (s *Product) ID() string {
+func (s *Product) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -225,7 +310,7 @@ func (j *Charge) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *Charge) Attributes() map[string]string {
+func (s *Charge) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -235,7 +320,7 @@ func (s *Charge) DataBytes() []byte {
 
 }
 
-func (s *Charge) ID() string {
+func (s *Charge) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -257,7 +342,7 @@ func (j *BankAccount) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *BankAccount) Attributes() map[string]string {
+func (s *BankAccount) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -267,7 +352,7 @@ func (s *BankAccount) DataBytes() []byte {
 
 }
 
-func (s *BankAccount) ID() string {
+func (s *BankAccount) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -288,7 +373,7 @@ func (j *File) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *File) Attributes() map[string]string {
+func (s *File) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -298,7 +383,7 @@ func (s *File) DataBytes() []byte {
 
 }
 
-func (s *File) ID() string {
+func (s *File) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -319,7 +404,7 @@ func (j *StandardClaims) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *StandardClaims) Attributes() map[string]string {
+func (s *StandardClaims) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -329,7 +414,7 @@ func (s *StandardClaims) DataBytes() []byte {
 
 }
 
-func (s *StandardClaims) ID() string {
+func (s *StandardClaims) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -351,7 +436,7 @@ func (j *Access) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *Access) Attributes() map[string]string {
+func (s *Access) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -361,7 +446,7 @@ func (s *Access) DataBytes() []byte {
 
 }
 
-func (s *Access) ID() string {
+func (s *Access) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -386,7 +471,7 @@ func (j *Card) AsMap() map[string]interface{} {
 	return Util.ToMap(j)
 }
 
-func (s *Card) Attributes() map[string]string {
+func (s *Card) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -396,7 +481,7 @@ func (s *Card) DataBytes() []byte {
 
 }
 
-func (s *Card) ID() string {
+func (s *Card) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -421,7 +506,7 @@ func (j *Address) AsMap() map[string]interface{} {
 	return Util.ToMap(j)
 }
 
-func (s *Address) Attributes() map[string]string {
+func (s *Address) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -431,7 +516,7 @@ func (s *Address) DataBytes() []byte {
 
 }
 
-func (s *Address) ID() string {
+func (s *Address) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -453,7 +538,7 @@ func (j *Attachment) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *Attachment) Attributes() map[string]string {
+func (s *Attachment) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -463,7 +548,7 @@ func (s *Attachment) DataBytes() []byte {
 
 }
 
-func (s *Attachment) ID() string {
+func (s *Attachment) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -489,7 +574,7 @@ func (j *SMS) AsMap() map[string]interface{} {
 	return Util.ToMap(j)
 }
 
-func (s *SMS) Attributes() map[string]string {
+func (s *SMS) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -499,7 +584,7 @@ func (s *SMS) DataBytes() []byte {
 
 }
 
-func (s *SMS) ID() string {
+func (s *SMS) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -525,7 +610,7 @@ func (j *Email) AsMap() map[string]interface{} {
 	return Util.ToMap(j)
 }
 
-func (s *Email) Attributes() map[string]string {
+func (s *Email) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -535,7 +620,7 @@ func (s *Email) DataBytes() []byte {
 
 }
 
-func (s *Email) ID() string {
+func (s *Email) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -561,7 +646,7 @@ func (j *Call) AsMap() map[string]interface{} {
 	return Util.ToMap(j)
 }
 
-func (s *Call) Attributes() map[string]string {
+func (s *Call) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -571,7 +656,7 @@ func (s *Call) DataBytes() []byte {
 
 }
 
-func (s *Call) ID() string {
+func (s *Call) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -597,7 +682,7 @@ func (j *AttachmentAction) AsMap() map[string]interface{} {
 	return Util.ToMap(j)
 }
 
-func (s *AttachmentAction) Attributes() map[string]string {
+func (s *AttachmentAction) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -607,7 +692,7 @@ func (s *AttachmentAction) DataBytes() []byte {
 
 }
 
-func (s *AttachmentAction) ID() string {
+func (s *AttachmentAction) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -628,7 +713,7 @@ func (j *JSON) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j.Data, w)
 }
 
-func (s *JSON) Attributes() map[string]string {
+func (s *JSON) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -638,7 +723,7 @@ func (s *JSON) DataBytes() []byte {
 
 }
 
-func (s *JSON) ID() string {
+func (s *JSON) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -660,7 +745,7 @@ func (j *Customer) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
 
-func (s *Customer) Attributes() map[string]string {
+func (s *Customer) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -670,7 +755,7 @@ func (s *Customer) DataBytes() []byte {
 
 }
 
-func (s *Customer) ID() string {
+func (s *Customer) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -691,7 +776,7 @@ func (j *SignedKey) CompileHTML(text string, w io.Writer) error {
 func (j *SignedKey) CompileTXT(text string, w io.Writer) error {
 	return Util.RenderTXT(text, j, w)
 }
-func (s *SignedKey) Attributes() map[string]string {
+func (s *SignedKey) Attributes(m map[string]string) map[string]string {
 	return Util.Attributes(s)
 
 }
@@ -701,7 +786,7 @@ func (s *SignedKey) DataBytes() []byte {
 
 }
 
-func (s *SignedKey) ID() string {
+func (s *SignedKey) Type() string {
 	return reflect.TypeOf(s).String()
 }
 
@@ -860,7 +945,7 @@ func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error {
 }
 
 /*
-Attributes() map[string]string
+Attributes(m map[string]string) map[string]string
 	Data()[]byte
-	ID() string
+	Type() string
 */

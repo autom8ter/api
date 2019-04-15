@@ -319,6 +319,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.Profile"><span class="badge">M</span>Profile</a>
+                </li>
+              
+                <li>
                   <a href="#api.RecipientEmail"><span class="badge">M</span>RecipientEmail</a>
                 </li>
               
@@ -355,6 +359,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.User"><span class="badge">M</span>User</a>
+                </li>
+              
+                <li>
                   <a href="#api.UserReminder"><span class="badge">M</span>UserReminder</a>
                 </li>
               
@@ -376,6 +384,10 @@
                 </li>
               
               
+              
+                <li>
+                  <a href="#api.CustomerService"><span class="badge">S</span>CustomerService</a>
+                </li>
               
                 <li>
                   <a href="#api.UserService"><span class="badge">S</span>UserService</a>
@@ -1948,6 +1960,78 @@
 
         
       
+        <h3 id="api.Profile">Profile</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>avatar_hash</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status_emoji</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>display_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>image_urls</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>team</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.RecipientEmail">RecipientEmail</h3>
         <p></p>
 
@@ -2019,6 +2103,13 @@
                 <tr>
                   <td>reverse_transfer</td>
                   <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2316,6 +2407,120 @@
 
         
       
+        <h3 id="api.User">User</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>team_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>profile</td>
+                  <td><a href="#api.Profile">Profile</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>deleted</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>admin</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ownder</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>primary_owner</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>restricted</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ultra_restricted</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>stranger</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>bot</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>has2fa</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>locale</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.UserReminder">UserReminder</h3>
         <p></p>
 
@@ -2512,7 +2717,7 @@
       
 
       
-        <h3 id="api.UserService">UserService</h3>
+        <h3 id="api.CustomerService">CustomerService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -2576,26 +2781,16 @@
                 <td><p></p></td>
               </tr>
             
-              <tr>
-                <td>SMSUser</td>
-                <td><a href="#api.SMSRequest">SMSRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CallUser</td>
-                <td><a href="#api.CallRequest">CallRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>MMSUser</td>
-                <td><a href="#api.MMSRequest">MMSRequest</a></td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><p></p></td>
-              </tr>
+          </tbody>
+        </table>
+      
+        <h3 id="api.UserService">UserService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
             
               <tr>
                 <td>EmailUser</td>

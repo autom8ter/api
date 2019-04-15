@@ -89,13 +89,50 @@ var Util = objectify.Default()
 #### func  AsMessage
 
 ```go
-func AsMessage(m Messenger) *pubsub.PubsubMessage
+func AsMessage(attributes map[string]string, m Messenger) *pubsub.PubsubMessage
 ```
 
 #### func  DataTo
 
 ```go
 func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error
+```
+
+#### func  RegisterCustomerServiceHandler
+
+```go
+func RegisterCustomerServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterCustomerServiceHandler registers the http handlers for service
+CustomerService to "mux". The handlers forward requests to the grpc endpoint
+over "conn".
+
+#### func  RegisterCustomerServiceHandlerClient
+
+```go
+func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CustomerServiceClient) error
+```
+RegisterCustomerServiceHandlerClient registers the http handlers for service
+CustomerService to "mux". The handlers forward requests to the grpc endpoint
+over the given implementation of "CustomerServiceClient". Note: the gRPC
+framework executes interceptors within the gRPC handler. If the passed in
+"CustomerServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "CustomerServiceClient" to call
+the correct interceptors.
+
+#### func  RegisterCustomerServiceHandlerFromEndpoint
+
+```go
+func RegisterCustomerServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterCustomerServiceHandlerFromEndpoint is same as
+RegisterCustomerServiceHandler but automatically dials to "endpoint" and closes
+the connection when "ctx" gets done.
+
+#### func  RegisterCustomerServiceServer
+
+```go
+func RegisterCustomerServiceServer(s *grpc.Server, srv CustomerServiceServer)
 ```
 
 #### func  RegisterUserServiceHandler
@@ -180,7 +217,7 @@ func AccessFromJSON(j *JSON) *Access
 #### func (*Access) Attributes
 
 ```go
-func (s *Access) Attributes() map[string]string
+func (s *Access) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Access) CompileHTML
@@ -279,12 +316,6 @@ func (m *Access) GetTwilioAccount() string
 func (m *Access) GetTwilioKey() string
 ```
 
-#### func (*Access) ID
-
-```go
-func (s *Access) ID() string
-```
-
 #### func (*Access) MarshalJSON
 
 ```go
@@ -309,16 +340,16 @@ func (m *Access) Reset()
 func (m *Access) String() string
 ```
 
+#### func (*Access) Type
+
+```go
+func (s *Access) Type() string
+```
+
 #### func (*Access) UnMarshalJSON
 
 ```go
 func (j *Access) UnMarshalJSON(obj interface{}) error
-```
-
-#### func (*Access) Validate
-
-```go
-func (a *Access) Validate() error
 ```
 
 #### func (*Access) XXX_DiscardUnknown
@@ -484,7 +515,7 @@ func (j *Address) AsMap() map[string]interface{}
 #### func (*Address) Attributes
 
 ```go
-func (s *Address) Attributes() map[string]string
+func (s *Address) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Address) CompileHTML
@@ -547,12 +578,6 @@ func (m *Address) GetPostalCode() string
 func (m *Address) GetState() string
 ```
 
-#### func (*Address) ID
-
-```go
-func (s *Address) ID() string
-```
-
 #### func (*Address) MarshalJSON
 
 ```go
@@ -575,6 +600,12 @@ func (m *Address) Reset()
 
 ```go
 func (m *Address) String() string
+```
+
+#### func (*Address) Type
+
+```go
+func (s *Address) Type() string
 ```
 
 #### func (*Address) UnMarshalJSON
@@ -648,7 +679,7 @@ func NewAttachment(opts ...AttachmentFunc) *Attachment
 #### func (*Attachment) Attributes
 
 ```go
-func (s *Attachment) Attributes() map[string]string
+func (s *Attachment) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Attachment) CompileHTML
@@ -765,12 +796,6 @@ func (m *Attachment) GetTitle() string
 func (m *Attachment) GetTitlePrefix() string
 ```
 
-#### func (*Attachment) ID
-
-```go
-func (s *Attachment) ID() string
-```
-
 #### func (*Attachment) MarshalJSON
 
 ```go
@@ -793,6 +818,12 @@ func (m *Attachment) Reset()
 
 ```go
 func (m *Attachment) String() string
+```
+
+#### func (*Attachment) Type
+
+```go
+func (s *Attachment) Type() string
 ```
 
 #### func (*Attachment) UnMarshalJSON
@@ -869,7 +900,7 @@ func (j *AttachmentAction) AsMap() map[string]interface{}
 #### func (*AttachmentAction) Attributes
 
 ```go
-func (s *AttachmentAction) Attributes() map[string]string
+func (s *AttachmentAction) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*AttachmentAction) CompileHTML
@@ -968,12 +999,6 @@ func (m *AttachmentAction) GetUrl() string
 func (m *AttachmentAction) GetValue() string
 ```
 
-#### func (*AttachmentAction) ID
-
-```go
-func (s *AttachmentAction) ID() string
-```
-
 #### func (*AttachmentAction) MarshalJSON
 
 ```go
@@ -996,6 +1021,12 @@ func (m *AttachmentAction) Reset()
 
 ```go
 func (m *AttachmentAction) String() string
+```
+
+#### func (*AttachmentAction) Type
+
+```go
+func (s *AttachmentAction) Type() string
 ```
 
 #### func (*AttachmentAction) UnMarshalJSON
@@ -1408,7 +1439,7 @@ type BankAccount struct {
 #### func (*BankAccount) Attributes
 
 ```go
-func (s *BankAccount) Attributes() map[string]string
+func (s *BankAccount) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*BankAccount) CompileHTML
@@ -1447,12 +1478,6 @@ func (m *BankAccount) GetAccountNumber() string
 func (m *BankAccount) GetRoutingNumber() string
 ```
 
-#### func (*BankAccount) ID
-
-```go
-func (s *BankAccount) ID() string
-```
-
 #### func (*BankAccount) MarshalJSON
 
 ```go
@@ -1475,6 +1500,12 @@ func (m *BankAccount) Reset()
 
 ```go
 func (m *BankAccount) String() string
+```
+
+#### func (*BankAccount) Type
+
+```go
+func (s *BankAccount) Type() string
 ```
 
 #### func (*BankAccount) UnMarshalJSON
@@ -1536,7 +1567,7 @@ func (j *Call) AsMap() map[string]interface{}
 #### func (*Call) Attributes
 
 ```go
-func (s *Call) Attributes() map[string]string
+func (s *Call) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Call) CompileHTML
@@ -1581,12 +1612,6 @@ func (m *Call) GetFrom() string
 func (m *Call) GetTo() string
 ```
 
-#### func (*Call) ID
-
-```go
-func (s *Call) ID() string
-```
-
 #### func (*Call) MarshalJSON
 
 ```go
@@ -1609,6 +1634,12 @@ func (m *Call) Reset()
 
 ```go
 func (m *Call) String() string
+```
+
+#### func (*Call) Type
+
+```go
+func (s *Call) Type() string
 ```
 
 #### func (*Call) UnMarshalJSON
@@ -1824,7 +1855,7 @@ func (j *Card) AsMap() map[string]interface{}
 #### func (*Card) Attributes
 
 ```go
-func (s *Card) Attributes() map[string]string
+func (s *Card) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Card) CompileHTML
@@ -1887,12 +1918,6 @@ func (m *Card) GetExpMonth() string
 func (m *Card) GetExpYear() string
 ```
 
-#### func (*Card) ID
-
-```go
-func (s *Card) ID() string
-```
-
 #### func (*Card) MarshalJSON
 
 ```go
@@ -1915,6 +1940,12 @@ func (m *Card) Reset()
 
 ```go
 func (m *Card) String() string
+```
+
+#### func (*Card) Type
+
+```go
+func (s *Card) Type() string
 ```
 
 #### func (*Card) UnMarshalJSON
@@ -2083,7 +2114,7 @@ type Charge struct {
 #### func (*Charge) Attributes
 
 ```go
-func (s *Charge) Attributes() map[string]string
+func (s *Charge) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Charge) CompileHTML
@@ -2122,12 +2153,6 @@ func (m *Charge) GetCustomer() *Customer
 func (m *Charge) GetProduct() *Product
 ```
 
-#### func (*Charge) ID
-
-```go
-func (s *Charge) ID() string
-```
-
 #### func (*Charge) MarshalJSON
 
 ```go
@@ -2150,6 +2175,12 @@ func (m *Charge) Reset()
 
 ```go
 func (m *Charge) String() string
+```
+
+#### func (*Charge) Type
+
+```go
+func (s *Charge) Type() string
 ```
 
 #### func (*Charge) UnMarshalJSON
@@ -2468,7 +2499,7 @@ User is a user of the application
 #### func (*Customer) Attributes
 
 ```go
-func (s *Customer) Attributes() map[string]string
+func (s *Customer) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Customer) CompileHTML
@@ -2555,12 +2586,6 @@ func (m *Customer) GetPlan() string
 func (m *Customer) GetUserId() string
 ```
 
-#### func (*Customer) ID
-
-```go
-func (s *Customer) ID() string
-```
-
 #### func (*Customer) MarshalJSON
 
 ```go
@@ -2583,6 +2608,12 @@ func (m *Customer) Reset()
 
 ```go
 func (m *Customer) String() string
+```
+
+#### func (*Customer) Type
+
+```go
+func (s *Customer) Type() string
 ```
 
 #### func (*Customer) UnMarshalJSON
@@ -2648,6 +2679,65 @@ func (CustomerIndex) EnumDescriptor() ([]byte, []int)
 func (x CustomerIndex) String() string
 ```
 
+#### type CustomerServer
+
+```go
+type CustomerServer struct {
+	CustomerServiceServer
+	driver.PluginFunc
+}
+```
+
+
+#### func  NewCustomerServer
+
+```go
+func NewCustomerServer(server CustomerServiceServer) *CustomerServer
+```
+
+#### type CustomerServiceClient
+
+```go
+type CustomerServiceClient interface {
+	CreateCustomer(ctx context.Context, in *AddCustomerRequest, opts ...grpc.CallOption) (*Customer, error)
+	SubscribeCustomer(ctx context.Context, in *SubscribeCustomerRequest, opts ...grpc.CallOption) (*SubscribeCustomerResponse, error)
+	UnSubscribeCustomer(ctx context.Context, in *CancelSubscriptionRequest, opts ...grpc.CallOption) (*Empty, error)
+	CreateSubscriptionPlan(ctx context.Context, in *CreatePlanRequest, opts ...grpc.CallOption) (*CreatePlanResponse, error)
+	SMSCustomer(ctx context.Context, in *SMSRequest, opts ...grpc.CallOption) (*Empty, error)
+	CallCustomer(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*Empty, error)
+	MMSCustomer(ctx context.Context, in *MMSRequest, opts ...grpc.CallOption) (*Empty, error)
+	EmailCustomer(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Empty, error)
+}
+```
+
+CustomerServiceClient is the client API for CustomerService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewCustomerServiceClient
+
+```go
+func NewCustomerServiceClient(cc *grpc.ClientConn) CustomerServiceClient
+```
+
+#### type CustomerServiceServer
+
+```go
+type CustomerServiceServer interface {
+	CreateCustomer(context.Context, *AddCustomerRequest) (*Customer, error)
+	SubscribeCustomer(context.Context, *SubscribeCustomerRequest) (*SubscribeCustomerResponse, error)
+	UnSubscribeCustomer(context.Context, *CancelSubscriptionRequest) (*Empty, error)
+	CreateSubscriptionPlan(context.Context, *CreatePlanRequest) (*CreatePlanResponse, error)
+	SMSCustomer(context.Context, *SMSRequest) (*Empty, error)
+	CallCustomer(context.Context, *CallRequest) (*Empty, error)
+	MMSCustomer(context.Context, *MMSRequest) (*Empty, error)
+	EmailCustomer(context.Context, *EmailRequest) (*Empty, error)
+}
+```
+
+CustomerServiceServer is the server API for CustomerService service.
+
 #### type Email
 
 ```go
@@ -2670,7 +2760,7 @@ func (j *Email) AsMap() map[string]interface{}
 #### func (*Email) Attributes
 
 ```go
-func (s *Email) Attributes() map[string]string
+func (s *Email) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Email) CompileHTML
@@ -2709,12 +2799,6 @@ func (m *Email) GetFrom() *EmailAddress
 func (m *Email) GetRecipient() *RecipientEmail
 ```
 
-#### func (*Email) ID
-
-```go
-func (s *Email) ID() string
-```
-
 #### func (*Email) MarshalJSON
 
 ```go
@@ -2737,6 +2821,12 @@ func (m *Email) Reset()
 
 ```go
 func (m *Email) String() string
+```
+
+#### func (*Email) Type
+
+```go
+func (s *Email) Type() string
 ```
 
 #### func (*Email) UnMarshalJSON
@@ -3137,7 +3227,7 @@ type File struct {
 #### func (*File) Attributes
 
 ```go
-func (s *File) Attributes() map[string]string
+func (s *File) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*File) CompileHTML
@@ -3188,12 +3278,6 @@ func (m *File) GetSize() int64
 func (m *File) GetTags() map[string]string
 ```
 
-#### func (*File) ID
-
-```go
-func (s *File) ID() string
-```
-
 #### func (*File) MarshalJSON
 
 ```go
@@ -3216,6 +3300,12 @@ func (m *File) Reset()
 
 ```go
 func (m *File) String() string
+```
+
+#### func (*File) Type
+
+```go
+func (s *File) Type() string
 ```
 
 #### func (*File) UnMarshalJSON
@@ -3356,7 +3446,7 @@ type JSON struct {
 #### func (*JSON) Attributes
 
 ```go
-func (s *JSON) Attributes() map[string]string
+func (s *JSON) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*JSON) CompileHTML
@@ -3395,12 +3485,6 @@ func (m *JSON) GetData() []byte
 func (m *JSON) GetSize() int64
 ```
 
-#### func (*JSON) ID
-
-```go
-func (s *JSON) ID() string
-```
-
 #### func (*JSON) MarshalJSON
 
 ```go
@@ -3424,6 +3508,12 @@ func (m *JSON) Reset()
 
 ```go
 func (m *JSON) String() string
+```
+
+#### func (*JSON) Type
+
+```go
+func (s *JSON) Type() string
 ```
 
 #### func (*JSON) UnMarshalJSON
@@ -3743,9 +3833,9 @@ func (m *MMSRequest) XXX_Unmarshal(b []byte) error
 
 ```go
 type Messenger interface {
-	Attributes() map[string]string
+	Attributes(m map[string]string) map[string]string
 	DataBytes() []byte
-	ID() string
+	Type() string
 }
 ```
 
@@ -3849,7 +3939,7 @@ type Product struct {
 #### func (*Product) Attributes
 
 ```go
-func (s *Product) Attributes() map[string]string
+func (s *Product) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Product) CompileHTML
@@ -3912,12 +4002,6 @@ func (m *Product) GetName() string
 func (m *Product) GetTags() map[string]string
 ```
 
-#### func (*Product) ID
-
-```go
-func (s *Product) ID() string
-```
-
 #### func (*Product) MarshalJSON
 
 ```go
@@ -3940,6 +4024,12 @@ func (m *Product) Reset()
 
 ```go
 func (m *Product) String() string
+```
+
+#### func (*Product) Type
+
+```go
+func (s *Product) Type() string
 ```
 
 #### func (*Product) UnMarshalJSON
@@ -3978,6 +4068,169 @@ func (m *Product) XXX_Size() int
 func (m *Product) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Profile
+
+```go
+type Profile struct {
+	AvatarHash           string   `protobuf:"bytes,1,opt,name=avatar_hash,json=avatarHash,proto3" json:"avatar_hash,omitempty"`
+	Status               string   `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	StatusEmoji          string   `protobuf:"bytes,3,opt,name=status_emoji,json=statusEmoji,proto3" json:"status_emoji,omitempty"`
+	DisplayName          string   `protobuf:"bytes,4,opt,name=display_name,json=displayName,proto3" json:"display_name,omitempty"`
+	Name                 string   `protobuf:"bytes,5,opt,name=name,proto3" json:"name,omitempty"`
+	Email                string   `protobuf:"bytes,6,opt,name=email,proto3" json:"email,omitempty"`
+	ImageUrls            []string `protobuf:"bytes,7,rep,name=image_urls,json=imageUrls,proto3" json:"image_urls,omitempty"`
+	Team                 string   `protobuf:"bytes,8,opt,name=team,proto3" json:"team,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Profile) Attributes
+
+```go
+func (s *Profile) Attributes(m map[string]string) map[string]string
+```
+
+#### func (*Profile) CompileHTML
+
+```go
+func (j *Profile) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*Profile) CompileTXT
+
+```go
+func (j *Profile) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*Profile) DataBytes
+
+```go
+func (s *Profile) DataBytes() []byte
+```
+
+#### func (*Profile) Descriptor
+
+```go
+func (*Profile) Descriptor() ([]byte, []int)
+```
+
+#### func (*Profile) GetAvatarHash
+
+```go
+func (m *Profile) GetAvatarHash() string
+```
+
+#### func (*Profile) GetDisplayName
+
+```go
+func (m *Profile) GetDisplayName() string
+```
+
+#### func (*Profile) GetEmail
+
+```go
+func (m *Profile) GetEmail() string
+```
+
+#### func (*Profile) GetImageUrls
+
+```go
+func (m *Profile) GetImageUrls() []string
+```
+
+#### func (*Profile) GetName
+
+```go
+func (m *Profile) GetName() string
+```
+
+#### func (*Profile) GetStatus
+
+```go
+func (m *Profile) GetStatus() string
+```
+
+#### func (*Profile) GetStatusEmoji
+
+```go
+func (m *Profile) GetStatusEmoji() string
+```
+
+#### func (*Profile) GetTeam
+
+```go
+func (m *Profile) GetTeam() string
+```
+
+#### func (*Profile) MarshalJSON
+
+```go
+func (j *Profile) MarshalJSON() ([]byte, error)
+```
+
+#### func (*Profile) ProtoMessage
+
+```go
+func (*Profile) ProtoMessage()
+```
+
+#### func (*Profile) Reset
+
+```go
+func (m *Profile) Reset()
+```
+
+#### func (*Profile) String
+
+```go
+func (m *Profile) String() string
+```
+
+#### func (*Profile) Type
+
+```go
+func (s *Profile) Type() string
+```
+
+#### func (*Profile) UnMarshalJSON
+
+```go
+func (j *Profile) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*Profile) XXX_DiscardUnknown
+
+```go
+func (m *Profile) XXX_DiscardUnknown()
+```
+
+#### func (*Profile) XXX_Marshal
+
+```go
+func (m *Profile) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Profile) XXX_Merge
+
+```go
+func (m *Profile) XXX_Merge(src proto.Message)
+```
+
+#### func (*Profile) XXX_Size
+
+```go
+func (m *Profile) XXX_Size() int
+```
+
+#### func (*Profile) XXX_Unmarshal
+
+```go
+func (m *Profile) XXX_Unmarshal(b []byte) error
+```
+
 #### type RecipientEmail
 
 ```go
@@ -3992,6 +4245,30 @@ type RecipientEmail struct {
 }
 ```
 
+
+#### func (*RecipientEmail) Attributes
+
+```go
+func (s *RecipientEmail) Attributes(m map[string]string) map[string]string
+```
+
+#### func (*RecipientEmail) CompileHTML
+
+```go
+func (j *RecipientEmail) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*RecipientEmail) CompileTXT
+
+```go
+func (j *RecipientEmail) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*RecipientEmail) DataBytes
+
+```go
+func (s *RecipientEmail) DataBytes() []byte
+```
 
 #### func (*RecipientEmail) Descriptor
 
@@ -4023,6 +4300,12 @@ func (m *RecipientEmail) GetSubject() string
 func (m *RecipientEmail) GetTo() *EmailAddress
 ```
 
+#### func (*RecipientEmail) MarshalJSON
+
+```go
+func (j *RecipientEmail) MarshalJSON() ([]byte, error)
+```
+
 #### func (*RecipientEmail) ProtoMessage
 
 ```go
@@ -4039,6 +4322,18 @@ func (m *RecipientEmail) Reset()
 
 ```go
 func (m *RecipientEmail) String() string
+```
+
+#### func (*RecipientEmail) Type
+
+```go
+func (s *RecipientEmail) Type() string
+```
+
+#### func (*RecipientEmail) UnMarshalJSON
+
+```go
+func (j *RecipientEmail) UnMarshalJSON(obj interface{}) error
 ```
 
 #### func (*RecipientEmail) XXX_DiscardUnknown
@@ -4078,6 +4373,7 @@ type Refund struct {
 	Reason               string   `protobuf:"bytes,1,opt,name=reason,proto3" json:"reason,omitempty"`
 	Amount               int64    `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
 	ReverseTransfer      bool     `protobuf:"varint,3,opt,name=reverse_transfer,json=reverseTransfer,proto3" json:"reverse_transfer,omitempty"`
+	Status               string   `protobuf:"bytes,4,opt,name=status,proto3" json:"status,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -4088,7 +4384,7 @@ type Refund struct {
 #### func (*Refund) Attributes
 
 ```go
-func (s *Refund) Attributes() map[string]string
+func (s *Refund) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*Refund) CompileHTML
@@ -4133,10 +4429,10 @@ func (m *Refund) GetReason() string
 func (m *Refund) GetReverseTransfer() bool
 ```
 
-#### func (*Refund) ID
+#### func (*Refund) GetStatus
 
 ```go
-func (s *Refund) ID() string
+func (m *Refund) GetStatus() string
 ```
 
 #### func (*Refund) MarshalJSON
@@ -4161,6 +4457,12 @@ func (m *Refund) Reset()
 
 ```go
 func (m *Refund) String() string
+```
+
+#### func (*Refund) Type
+
+```go
+func (s *Refund) Type() string
 ```
 
 #### func (*Refund) UnMarshalJSON
@@ -4225,7 +4527,7 @@ func (j *SMS) AsMap() map[string]interface{}
 #### func (*SMS) Attributes
 
 ```go
-func (s *SMS) Attributes() map[string]string
+func (s *SMS) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*SMS) CompileHTML
@@ -4288,12 +4590,6 @@ func (m *SMS) GetMediaUrl() string
 func (m *SMS) GetTo() string
 ```
 
-#### func (*SMS) ID
-
-```go
-func (s *SMS) ID() string
-```
-
 #### func (*SMS) MarshalJSON
 
 ```go
@@ -4316,6 +4612,12 @@ func (m *SMS) Reset()
 
 ```go
 func (m *SMS) String() string
+```
+
+#### func (*SMS) Type
+
+```go
+func (s *SMS) Type() string
 ```
 
 #### func (*SMS) UnMarshalJSON
@@ -4448,7 +4750,7 @@ type SignedKey struct {
 #### func (*SignedKey) Attributes
 
 ```go
-func (s *SignedKey) Attributes() map[string]string
+func (s *SignedKey) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*SignedKey) CompileHTML
@@ -4481,12 +4783,6 @@ func (*SignedKey) Descriptor() ([]byte, []int)
 func (m *SignedKey) GetSignedKey() string
 ```
 
-#### func (*SignedKey) ID
-
-```go
-func (s *SignedKey) ID() string
-```
-
 #### func (*SignedKey) MarshalJSON
 
 ```go
@@ -4509,6 +4805,12 @@ func (m *SignedKey) Reset()
 
 ```go
 func (m *SignedKey) String() string
+```
+
+#### func (*SignedKey) Type
+
+```go
+func (s *SignedKey) Type() string
 ```
 
 #### func (*SignedKey) UnMarshalJSON
@@ -4596,7 +4898,7 @@ type StandardClaims struct {
 #### func (*StandardClaims) Attributes
 
 ```go
-func (s *StandardClaims) Attributes() map[string]string
+func (s *StandardClaims) Attributes(m map[string]string) map[string]string
 ```
 
 #### func (*StandardClaims) Claims
@@ -4671,12 +4973,6 @@ func (m *StandardClaims) GetNotBefore() int64
 func (m *StandardClaims) GetSubject() string
 ```
 
-#### func (*StandardClaims) ID
-
-```go
-func (s *StandardClaims) ID() string
-```
-
 #### func (*StandardClaims) MarshalJSON
 
 ```go
@@ -4699,6 +4995,12 @@ func (m *StandardClaims) Reset()
 
 ```go
 func (m *StandardClaims) String() string
+```
+
+#### func (*StandardClaims) Type
+
+```go
+func (s *StandardClaims) Type() string
 ```
 
 #### func (*StandardClaims) UnMarshalJSON
@@ -4995,6 +5297,211 @@ func (m *SubscribeCustomerResponse) XXX_Size() int
 func (m *SubscribeCustomerResponse) XXX_Unmarshal(b []byte) error
 ```
 
+#### type User
+
+```go
+type User struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	TeamId               string   `protobuf:"bytes,2,opt,name=team_id,json=teamId,proto3" json:"team_id,omitempty"`
+	Name                 string   `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Profile              *Profile `protobuf:"bytes,4,opt,name=profile,proto3" json:"profile,omitempty"`
+	Deleted              bool     `protobuf:"varint,5,opt,name=deleted,proto3" json:"deleted,omitempty"`
+	Admin                bool     `protobuf:"varint,6,opt,name=admin,proto3" json:"admin,omitempty"`
+	Ownder               bool     `protobuf:"varint,7,opt,name=ownder,proto3" json:"ownder,omitempty"`
+	PrimaryOwner         bool     `protobuf:"varint,8,opt,name=primary_owner,json=primaryOwner,proto3" json:"primary_owner,omitempty"`
+	Restricted           bool     `protobuf:"varint,9,opt,name=restricted,proto3" json:"restricted,omitempty"`
+	UltraRestricted      bool     `protobuf:"varint,10,opt,name=ultra_restricted,json=ultraRestricted,proto3" json:"ultra_restricted,omitempty"`
+	Stranger             bool     `protobuf:"varint,11,opt,name=stranger,proto3" json:"stranger,omitempty"`
+	Bot                  bool     `protobuf:"varint,12,opt,name=bot,proto3" json:"bot,omitempty"`
+	Has2Fa               bool     `protobuf:"varint,13,opt,name=has2fa,proto3" json:"has2fa,omitempty"`
+	Locale               string   `protobuf:"bytes,14,opt,name=locale,proto3" json:"locale,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*User) Attributes
+
+```go
+func (s *User) Attributes(m map[string]string) map[string]string
+```
+
+#### func (*User) CompileHTML
+
+```go
+func (j *User) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*User) CompileTXT
+
+```go
+func (j *User) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*User) DataBytes
+
+```go
+func (s *User) DataBytes() []byte
+```
+
+#### func (*User) Descriptor
+
+```go
+func (*User) Descriptor() ([]byte, []int)
+```
+
+#### func (*User) GetAdmin
+
+```go
+func (m *User) GetAdmin() bool
+```
+
+#### func (*User) GetBot
+
+```go
+func (m *User) GetBot() bool
+```
+
+#### func (*User) GetDeleted
+
+```go
+func (m *User) GetDeleted() bool
+```
+
+#### func (*User) GetHas2Fa
+
+```go
+func (m *User) GetHas2Fa() bool
+```
+
+#### func (*User) GetId
+
+```go
+func (m *User) GetId() string
+```
+
+#### func (*User) GetLocale
+
+```go
+func (m *User) GetLocale() string
+```
+
+#### func (*User) GetName
+
+```go
+func (m *User) GetName() string
+```
+
+#### func (*User) GetOwnder
+
+```go
+func (m *User) GetOwnder() bool
+```
+
+#### func (*User) GetPrimaryOwner
+
+```go
+func (m *User) GetPrimaryOwner() bool
+```
+
+#### func (*User) GetProfile
+
+```go
+func (m *User) GetProfile() *Profile
+```
+
+#### func (*User) GetRestricted
+
+```go
+func (m *User) GetRestricted() bool
+```
+
+#### func (*User) GetStranger
+
+```go
+func (m *User) GetStranger() bool
+```
+
+#### func (*User) GetTeamId
+
+```go
+func (m *User) GetTeamId() string
+```
+
+#### func (*User) GetUltraRestricted
+
+```go
+func (m *User) GetUltraRestricted() bool
+```
+
+#### func (*User) MarshalJSON
+
+```go
+func (j *User) MarshalJSON() ([]byte, error)
+```
+
+#### func (*User) ProtoMessage
+
+```go
+func (*User) ProtoMessage()
+```
+
+#### func (*User) Reset
+
+```go
+func (m *User) Reset()
+```
+
+#### func (*User) String
+
+```go
+func (m *User) String() string
+```
+
+#### func (*User) Type
+
+```go
+func (s *User) Type() string
+```
+
+#### func (*User) UnMarshalJSON
+
+```go
+func (j *User) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*User) XXX_DiscardUnknown
+
+```go
+func (m *User) XXX_DiscardUnknown()
+```
+
+#### func (*User) XXX_Marshal
+
+```go
+func (m *User) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*User) XXX_Merge
+
+```go
+func (m *User) XXX_Merge(src proto.Message)
+```
+
+#### func (*User) XXX_Size
+
+```go
+func (m *User) XXX_Size() int
+```
+
+#### func (*User) XXX_Unmarshal
+
+```go
+func (m *User) XXX_Unmarshal(b []byte) error
+```
+
 #### type UserReminder
 
 ```go
@@ -5101,24 +5608,13 @@ type UserServer struct {
 #### func  NewUserServer
 
 ```go
-func NewUserServer(addr string, server UserServiceServer) *UserServer
+func NewUserServer(server UserServiceServer) *UserServer
 ```
 
 #### type UserServiceClient
 
 ```go
 type UserServiceClient interface {
-	CreateCustomer(ctx context.Context, in *AddCustomerRequest, opts ...grpc.CallOption) (*Customer, error)
-	SubscribeCustomer(ctx context.Context, in *SubscribeCustomerRequest, opts ...grpc.CallOption) (*SubscribeCustomerResponse, error)
-	UnSubscribeCustomer(ctx context.Context, in *CancelSubscriptionRequest, opts ...grpc.CallOption) (*Empty, error)
-	CreateSubscriptionPlan(ctx context.Context, in *CreatePlanRequest, opts ...grpc.CallOption) (*CreatePlanResponse, error)
-	SMSCustomer(ctx context.Context, in *SMSRequest, opts ...grpc.CallOption) (*Empty, error)
-	CallCustomer(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*Empty, error)
-	MMSCustomer(ctx context.Context, in *MMSRequest, opts ...grpc.CallOption) (*Empty, error)
-	EmailCustomer(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Empty, error)
-	SMSUser(ctx context.Context, in *SMSRequest, opts ...grpc.CallOption) (*Empty, error)
-	CallUser(ctx context.Context, in *CallRequest, opts ...grpc.CallOption) (*Empty, error)
-	MMSUser(ctx context.Context, in *MMSRequest, opts ...grpc.CallOption) (*Empty, error)
 	EmailUser(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Empty, error)
 }
 ```
@@ -5138,17 +5634,6 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 
 ```go
 type UserServiceServer interface {
-	CreateCustomer(context.Context, *AddCustomerRequest) (*Customer, error)
-	SubscribeCustomer(context.Context, *SubscribeCustomerRequest) (*SubscribeCustomerResponse, error)
-	UnSubscribeCustomer(context.Context, *CancelSubscriptionRequest) (*Empty, error)
-	CreateSubscriptionPlan(context.Context, *CreatePlanRequest) (*CreatePlanResponse, error)
-	SMSCustomer(context.Context, *SMSRequest) (*Empty, error)
-	CallCustomer(context.Context, *CallRequest) (*Empty, error)
-	MMSCustomer(context.Context, *MMSRequest) (*Empty, error)
-	EmailCustomer(context.Context, *EmailRequest) (*Empty, error)
-	SMSUser(context.Context, *SMSRequest) (*Empty, error)
-	CallUser(context.Context, *CallRequest) (*Empty, error)
-	MMSUser(context.Context, *MMSRequest) (*Empty, error)
 	EmailUser(context.Context, *EmailRequest) (*Empty, error)
 }
 ```

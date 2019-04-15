@@ -10,6 +10,67 @@ require 'google/api/annotations_pb'
 require 'google/api/auth_pb'
 require 'google/pubsub/v1/pubsub_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.CancelSubscriptionRequest" do
+    optional :email, :string, 1
+  end
+  add_message "api.CreatePlanRequest" do
+    optional :plan_id, :string, 1
+    optional :amount, :int64, 2
+    optional :service_id, :string, 3
+    optional :service_name, :string, 4
+    optional :friendly_name, :string, 5
+  end
+  add_message "api.SMSRequest" do
+    optional :user_id, :string, 1
+    optional :body, :string, 2
+  end
+  add_message "api.CallRequest" do
+    optional :user_id, :string, 1
+    optional :callback_url, :string, 2
+  end
+  add_message "api.MMSRequest" do
+    optional :user_id, :string, 1
+    optional :body, :string, 2
+    optional :media_url, :string, 3
+  end
+  add_message "api.EmailRequest" do
+    optional :user_id, :string, 1
+    optional :subject, :string, 2
+    optional :plain_text, :string, 3
+    optional :html_alt, :string, 4
+  end
+  add_message "api.SubscribeCustomerResponse" do
+    optional :subscription_id, :string, 1
+  end
+  add_message "api.CreatePlanResponse" do
+    optional :plan_id, :string, 1
+  end
+  add_message "api.User" do
+    optional :id, :string, 1
+    optional :team_id, :string, 2
+    optional :name, :string, 3
+    optional :profile, :message, 4, "api.Profile"
+    optional :deleted, :bool, 5
+    optional :admin, :bool, 6
+    optional :ownder, :bool, 7
+    optional :primary_owner, :bool, 8
+    optional :restricted, :bool, 9
+    optional :ultra_restricted, :bool, 10
+    optional :stranger, :bool, 11
+    optional :bot, :bool, 12
+    optional :has2fa, :bool, 13
+    optional :locale, :string, 14
+  end
+  add_message "api.Profile" do
+    optional :avatar_hash, :string, 1
+    optional :status, :string, 2
+    optional :status_emoji, :string, 3
+    optional :display_name, :string, 4
+    optional :name, :string, 5
+    optional :email, :string, 6
+    repeated :image_urls, :string, 7
+    optional :team, :string, 8
+  end
   add_message "api.Empty" do
   end
   add_message "api.Customer" do
@@ -59,41 +120,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :line2, :string, 4
     optional :postal_code, :string, 5
     optional :state, :string, 6
-  end
-  add_message "api.SubscribeCustomerResponse" do
-    optional :subscription_id, :string, 1
-  end
-  add_message "api.CreatePlanResponse" do
-    optional :plan_id, :string, 1
-  end
-  add_message "api.CancelSubscriptionRequest" do
-    optional :email, :string, 1
-  end
-  add_message "api.CreatePlanRequest" do
-    optional :plan_id, :string, 1
-    optional :amount, :int64, 2
-    optional :service_id, :string, 3
-    optional :service_name, :string, 4
-    optional :friendly_name, :string, 5
-  end
-  add_message "api.SMSRequest" do
-    optional :user_id, :string, 1
-    optional :body, :string, 2
-  end
-  add_message "api.CallRequest" do
-    optional :user_id, :string, 1
-    optional :callback_url, :string, 2
-  end
-  add_message "api.MMSRequest" do
-    optional :user_id, :string, 1
-    optional :body, :string, 2
-    optional :media_url, :string, 3
-  end
-  add_message "api.EmailRequest" do
-    optional :user_id, :string, 1
-    optional :subject, :string, 2
-    optional :plain_text, :string, 3
-    optional :html_alt, :string, 4
   end
   add_message "api.ChannelReminder" do
     optional :channel_id, :string, 1
@@ -262,6 +288,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :reason, :string, 1
     optional :amount, :int64, 2
     optional :reverse_transfer, :bool, 3
+    optional :status, :string, 4
   end
   add_message "api.Charge" do
     optional :product, :message, 1, "api.Product"
@@ -295,6 +322,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  CancelSubscriptionRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CancelSubscriptionRequest").msgclass
+  CreatePlanRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanRequest").msgclass
+  SMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSRequest").msgclass
+  CallRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallRequest").msgclass
+  MMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MMSRequest").msgclass
+  EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass
+  SubscribeCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerResponse").msgclass
+  CreatePlanResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanResponse").msgclass
+  User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
+  Profile = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Profile").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
   Customer = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Customer").msgclass
   AddCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddCustomerRequest").msgclass
@@ -302,14 +339,6 @@ module Api
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   BankAccount = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BankAccount").msgclass
   Address = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Address").msgclass
-  SubscribeCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeCustomerResponse").msgclass
-  CreatePlanResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanResponse").msgclass
-  CancelSubscriptionRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CancelSubscriptionRequest").msgclass
-  CreatePlanRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreatePlanRequest").msgclass
-  SMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSRequest").msgclass
-  CallRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallRequest").msgclass
-  MMSRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.MMSRequest").msgclass
-  EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass
   ChannelReminder = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChannelReminder").msgclass
   UserReminder = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserReminder").msgclass
   ItemRef = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ItemRef").msgclass

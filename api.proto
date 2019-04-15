@@ -9,36 +9,10 @@ import "google/api/annotations.proto";
 import "google/api/auth.proto";
 import "google/pubsub/v1/pubsub.proto";
 
-enum CustomerIndex {
-    ID =0;
-    EMAIL=1;
-    PHONE=2;
-}
 
-enum Claim {
-    TWILIO=0;
-    SENDGRID=1;
-    STRIPE=2;
-    SLACK=3;
-    GCP=4;
-    AUTOM8TER=5;
-}
+///////////////////////////////////////////////Services/////////////////////////////////////////////////////////////////
 
-enum SigningMethod {
-    HMAC=0;
-    ECDSA=1;
-    RSA=2;
-    RSAPPS=3;
-}
-
-enum CardType {
-    VISA=0;
-    MASTERCARD=1;
-    DISCOVER=2;
-    AMEX=3;
-}
-
-service UserService {
+service CustomerService {
     rpc CreateCustomer(AddCustomerRequest) returns (Customer) {
         option (google.api.http) = {
             post: "/api/users"
@@ -87,30 +61,95 @@ service UserService {
             body: "*"
         };
     }
-    rpc SMSUser(SMSRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/users/sms/{user_id}"
-            body: "*"
-        };
-    }
-    rpc CallUser(CallRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/users/call/{user_id}"
-            body: "*"
-        };
-    }
-    rpc MMSUser(MMSRequest) returns (Empty) {
-        option (google.api.http) = {
-            post: "/api/users/mms/{user_id}"
-            body: "*"
-        };
-    }
+}
+
+///////////////////////////////////////////////
+
+service UserService {
     rpc EmailUser(EmailRequest) returns (Empty) {
         option (google.api.http) = {
             post: "/api/users/email/{user_id}"
             body: "*"
         };
     }
+}
+
+///////////////////////////////////////////////Requests/////////////////////////////////////////////////////////////////
+
+message CancelSubscriptionRequest {
+    string email=1;
+}
+
+message CreatePlanRequest {
+    string plan_id=1;
+    int64 amount =2;
+    string service_id=3;
+    string service_name=4;
+    string friendly_name=5;
+}
+
+message SMSRequest {
+    string user_id =1;
+    string body=2;
+}
+
+message CallRequest {
+    string user_id =1;
+    string callback_url=2;
+}
+
+message MMSRequest {
+    string user_id=1;
+    string body=2;
+    string media_url=3;
+}
+
+message EmailRequest {
+    string user_id =1;
+    string subject=2;
+    string plain_text=3;
+    string html_alt=4;
+}
+
+///////////////////////////////////////////////Responses/////////////////////////////////////////////////////////////////
+
+message SubscribeCustomerResponse {
+    string subscription_id=1;
+}
+
+message CreatePlanResponse {
+    string plan_id=1;
+}
+
+///////////////////////////////////////////////Objects/////////////////////////////////////////////////////////////////
+
+message User {
+    string id =1;
+    string team_id=2;
+    string name=3;
+    Profile profile=4;
+    bool deleted=5;
+    bool admin=6;
+    bool ownder=7;
+    bool primary_owner=8;
+    bool restricted=9;
+    bool ultra_restricted=10;
+    bool stranger=11;
+    bool bot=12;
+    bool has2fa=13;
+    string locale=14;
+
+}
+
+message Profile {
+    string avatar_hash=1;
+    string status=2;
+    string status_emoji=3;
+    string display_name=4;
+    string name=5;
+    string email=6;
+    repeated string image_urls=7;
+    string team=8;
 }
 
 message Empty {}
@@ -171,48 +210,6 @@ message Address {
     string state=6;
 }
 
-message SubscribeCustomerResponse {
-    string subscription_id=1;
-}
-
-message CreatePlanResponse {
-    string plan_id=1;
-}
-
-message CancelSubscriptionRequest {
-    string email=1;
-}
-
-message CreatePlanRequest {
-    string plan_id=1;
-    int64 amount =2;
-    string service_id=3;
-    string service_name=4;
-    string friendly_name=5;
-}
-
-message SMSRequest {
-    string user_id =1;
-    string body=2;
-}
-
-message CallRequest {
-    string user_id =1;
-    string callback_url=2;
-}
-
-message MMSRequest {
-    string user_id=1;
-    string body=2;
-    string media_url=3;
-}
-
-message EmailRequest {
-    string user_id =1;
-    string subject=2;
-    string plain_text=3;
-    string html_alt=4;
-}
 
 message ChannelReminder {
     string channel_id=1;
@@ -339,7 +336,7 @@ message Attachment {
     string text=12;
     string image_url=13;
     string thumb_url=14;
-   repeated  AttachmentField fields =15;
+    repeated  AttachmentField fields =15;
 
 }
 
@@ -407,10 +404,42 @@ message Refund {
     string reason=1;
     int64 amount=2;
     bool reverse_transfer=3;
+    string status=4;
+}
+
+message Charge {
+    Product product=1;
+    Customer customer =2;
 }
 
 
-message Charge {
-  Product product=1;
-  Customer customer =2;
+///////////////////////////////////////////////Enums/////////////////////////////////////////////////////////////////
+
+enum CustomerIndex {
+    ID =0;
+    EMAIL=1;
+    PHONE=2;
+}
+
+enum Claim {
+    TWILIO=0;
+    SENDGRID=1;
+    STRIPE=2;
+    SLACK=3;
+    GCP=4;
+    AUTOM8TER=5;
+}
+
+enum SigningMethod {
+    HMAC=0;
+    ECDSA=1;
+    RSA=2;
+    RSAPPS=3;
+}
+
+enum CardType {
+    VISA=0;
+    MASTERCARD=1;
+    DISCOVER=2;
+    AMEX=3;
 }
