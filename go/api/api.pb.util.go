@@ -63,7 +63,6 @@ type ClientSet struct {
 	Customers CustomerServiceClient
 	Accounts  AccountServiceClient
 	Plans     PlanServiceClient
-	Strings   StringServiceClient
 }
 
 func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*ClientSet, error) {
@@ -76,7 +75,6 @@ func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*C
 		Customers: NewCustomerServiceClient(conn),
 		Accounts:  NewAccountServiceClient(conn),
 		Plans:     NewPlanServiceClient(conn),
-		Strings:   NewStringServiceClient(conn),
 	}, nil
 }
 

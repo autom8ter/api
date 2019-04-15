@@ -2548,7 +2548,6 @@ type ClientSet struct {
 	Customers CustomerServiceClient
 	Accounts  AccountServiceClient
 	Plans     PlanServiceClient
-	Strings   StringServiceClient
 }
 ```
 
