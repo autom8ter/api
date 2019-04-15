@@ -442,17 +442,18 @@ typedef GPB_ENUM(User_FieldNumber) {
   User_FieldNumber_Id_p = 1,
   User_FieldNumber_TeamId = 2,
   User_FieldNumber_Name = 3,
-  User_FieldNumber_Profile = 4,
-  User_FieldNumber_Deleted = 5,
-  User_FieldNumber_Admin = 6,
-  User_FieldNumber_Ownder = 7,
-  User_FieldNumber_PrimaryOwner = 8,
-  User_FieldNumber_Restricted = 9,
-  User_FieldNumber_UltraRestricted = 10,
-  User_FieldNumber_Stranger = 11,
-  User_FieldNumber_Bot = 12,
-  User_FieldNumber_Has2Fa = 13,
-  User_FieldNumber_Locale = 14,
+  User_FieldNumber_Phone = 4,
+  User_FieldNumber_Profile = 5,
+  User_FieldNumber_Deleted = 6,
+  User_FieldNumber_Admin = 7,
+  User_FieldNumber_Ownder = 8,
+  User_FieldNumber_PrimaryOwner = 9,
+  User_FieldNumber_Restricted = 10,
+  User_FieldNumber_UltraRestricted = 11,
+  User_FieldNumber_Stranger = 12,
+  User_FieldNumber_Bot = 13,
+  User_FieldNumber_Has2Fa = 14,
+  User_FieldNumber_Locale = 15,
 };
 
 @interface User : GPBMessage
@@ -462,6 +463,8 @@ typedef GPB_ENUM(User_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *teamId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
 
 @property(nonatomic, readwrite, strong, null_resettable) Profile *profile;
 /** Test to see if @c profile has been set. */

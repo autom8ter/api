@@ -122,6 +122,10 @@ type CustomerServiceServerFunctions struct {
 	EmailCustomerFunc       func(context.Context, *EmailRequest) (*JSON, error)
 }
 
+func NewCustomerServiceServerFunctions(createCustomerFunc func(context.Context, *CustomerRequest) (*JSON, error), updateCustomerFunc func(context.Context, *UpdateCustomerRequest) (*JSON, error), deleteCustomerFunc func(context.Context, *Id) (*JSON, error), listCustomersFunc func(context.Context, *Empty) (*JSON, error), chargeCustomerFunc func(context.Context, *ChargeRequest) (*JSON, error), refundCustomerFunc func(context.Context, *RefundRequest) (*JSON, error), subscribeCustomerFunc func(context.Context, *SubscribeCustomerRequest) (*JSON, error), unSubscribeCustomerFunc func(context.Context, *CancelSubscriptionRequest) (*JSON, error), SMSCustomerFunc func(context.Context, *SMSRequest) (*JSON, error), callCustomerFunc func(context.Context, *CallRequest) (*JSON, error), MMSCustomerFunc func(context.Context, *MMSRequest) (*JSON, error), emailCustomerFunc func(context.Context, *EmailRequest) (*JSON, error)) *CustomerServiceServerFunctions {
+	return &CustomerServiceServerFunctions{CreateCustomerFunc: createCustomerFunc, UpdateCustomerFunc: updateCustomerFunc, DeleteCustomerFunc: deleteCustomerFunc, ListCustomersFunc: listCustomersFunc, ChargeCustomerFunc: chargeCustomerFunc, RefundCustomerFunc: refundCustomerFunc, SubscribeCustomerFunc: subscribeCustomerFunc, UnSubscribeCustomerFunc: unSubscribeCustomerFunc, SMSCustomerFunc: SMSCustomerFunc, CallCustomerFunc: callCustomerFunc, MMSCustomerFunc: MMSCustomerFunc, EmailCustomerFunc: emailCustomerFunc}
+}
+
 func (a CustomerServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
 	RegisterCustomerServiceServer(s, a)
 }
@@ -181,6 +185,25 @@ type UserServiceServerFunctions struct {
 	UpdateUserFunc  func(ctx context.Context, r *User) (*JSON, error)
 	DeleteUserFunc  func(ctx context.Context, r *Id) (*JSON, error)
 	ListUsersFunc   func(ctx context.Context, r *Empty) (*JSON, error)
+	SMSUserFunc     func(ctx context.Context, r *SMSRequest) (*JSON, error)
+	CallUserFunc    func(ctx context.Context, r *CallRequest) (*JSON, error)
+	MMSUserFunc     func(ctx context.Context, r *MMSRequest) (*JSON, error)
+}
+
+func NewUserServiceServerFunctions(emailUserFunc func(context.Context, *EmailRequest) (*JSON, error), messageUserFunc func(ctx context.Context, r *MessageUserRequest) (*JSON, error), createUserFunc func(ctx context.Context, r *User) (*JSON, error), updateUserFunc func(ctx context.Context, r *User) (*JSON, error), deleteUserFunc func(ctx context.Context, r *Id) (*JSON, error), listUsersFunc func(ctx context.Context, r *Empty) (*JSON, error), SMSUserFunc func(ctx context.Context, r *SMSRequest) (*JSON, error), callUserFunc func(ctx context.Context, r *CallRequest) (*JSON, error), MMSUserFunc func(ctx context.Context, r *MMSRequest) (*JSON, error)) *UserServiceServerFunctions {
+	return &UserServiceServerFunctions{EmailUserFunc: emailUserFunc, MessageUserFunc: messageUserFunc, CreateUserFunc: createUserFunc, UpdateUserFunc: updateUserFunc, DeleteUserFunc: deleteUserFunc, ListUsersFunc: listUsersFunc, SMSUserFunc: SMSUserFunc, CallUserFunc: callUserFunc, MMSUserFunc: MMSUserFunc}
+}
+
+func (u UserServiceServerFunctions) SMSUser(ctx context.Context, r *SMSRequest) (*JSON, error) {
+	return u.SMSUserFunc(ctx, r)
+}
+
+func (u UserServiceServerFunctions) CallUser(ctx context.Context, r *CallRequest) (*JSON, error) {
+	return u.CallUserFunc(ctx, r)
+}
+
+func (u UserServiceServerFunctions) MMSUser(ctx context.Context, r *MMSRequest) (*JSON, error) {
+	return u.MMSUserFunc(ctx, r)
 }
 
 func (u UserServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
@@ -215,6 +238,10 @@ type PlanServiceServerFunctions struct {
 	CreateSubscriptionPlanFunc func(context.Context, *CreatePlanRequest) (*JSON, error)
 }
 
+func NewPlanServiceServerFunctions(createSubscriptionPlanFunc func(context.Context, *CreatePlanRequest) (*JSON, error)) *PlanServiceServerFunctions {
+	return &PlanServiceServerFunctions{CreateSubscriptionPlanFunc: createSubscriptionPlanFunc}
+}
+
 func (p PlanServiceServerFunctions) RegisterWithServer(s *grpc.Server) {
 	RegisterPlanServiceServer(s, p)
 }
@@ -229,6 +256,10 @@ type AccountServiceServerFunctions struct {
 	DeleteAccountFunc func(ctx context.Context, r *Id) (*JSON, error)
 	ReadAccountFunc   func(ctx context.Context, r *Id) (*JSON, error)
 	ListAccountsFunc  func(ctx context.Context, r *Empty) (*JSON, error)
+}
+
+func NewAccountServiceServerFunctions(createAccountFunc func(context.Context, *CreateAccountRequest) (*JSON, error), updateAccountFunc func(ctx context.Context, r *Account) (*JSON, error), deleteAccountFunc func(ctx context.Context, r *Id) (*JSON, error), readAccountFunc func(ctx context.Context, r *Id) (*JSON, error), listAccountsFunc func(ctx context.Context, r *Empty) (*JSON, error)) *AccountServiceServerFunctions {
+	return &AccountServiceServerFunctions{CreateAccountFunc: createAccountFunc, UpdateAccountFunc: updateAccountFunc, DeleteAccountFunc: deleteAccountFunc, ReadAccountFunc: readAccountFunc, ListAccountsFunc: listAccountsFunc}
 }
 
 func (a AccountServiceServerFunctions) RegisterWithServer(s *grpc.Server) {

@@ -191,7 +191,7 @@
     },
     "/api/customers/{id}/call": {
       "post": {
-        "operationId": "CallCustomer",
+        "operationId": "CallUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -217,7 +217,7 @@
           }
         ],
         "tags": [
-          "CustomerService"
+          "UserService"
         ]
       }
     },
@@ -319,7 +319,7 @@
     },
     "/api/customers/{id}/sms": {
       "post": {
-        "operationId": "SMSCustomer",
+        "operationId": "SMSUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -345,7 +345,7 @@
           }
         ],
         "tags": [
-          "CustomerService"
+          "UserService"
         ]
       }
     },
@@ -415,7 +415,7 @@
     },
     "/api/customers/{sms.id}/mms": {
       "post": {
-        "operationId": "MMSCustomer",
+        "operationId": "MMSUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -441,7 +441,7 @@
           }
         ],
         "tags": [
-          "CustomerService"
+          "UserService"
         ]
       }
     },
@@ -957,6 +957,9 @@
           "type": "string"
         },
         "name": {
+          "type": "string"
+        },
+        "phone": {
           "type": "string"
         },
         "profile": {

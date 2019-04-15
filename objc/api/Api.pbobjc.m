@@ -1198,6 +1198,7 @@ typedef struct Account__storage_ {
 @dynamic id_p;
 @dynamic teamId;
 @dynamic name;
+@dynamic phone;
 @dynamic hasProfile, profile;
 @dynamic deleted;
 @dynamic admin;
@@ -1215,6 +1216,7 @@ typedef struct User__storage_ {
   NSString *id_p;
   NSString *teamId;
   NSString *name;
+  NSString *phone;
   Profile *profile;
   NSString *locale;
 } User__storage_;
@@ -1253,10 +1255,19 @@ typedef struct User__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "phone",
+        .dataTypeSpecific.className = NULL,
+        .number = User_FieldNumber_Phone,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(User__storage_, phone),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "profile",
         .dataTypeSpecific.className = GPBStringifySymbol(Profile),
         .number = User_FieldNumber_Profile,
-        .hasIndex = 3,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(User__storage_, profile),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -1265,8 +1276,8 @@ typedef struct User__storage_ {
         .name = "deleted",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Deleted,
-        .hasIndex = 4,
-        .offset = 5,  // Stored in _has_storage_ to save space.
+        .hasIndex = 5,
+        .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1274,8 +1285,8 @@ typedef struct User__storage_ {
         .name = "admin",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Admin,
-        .hasIndex = 6,
-        .offset = 7,  // Stored in _has_storage_ to save space.
+        .hasIndex = 7,
+        .offset = 8,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1283,8 +1294,8 @@ typedef struct User__storage_ {
         .name = "ownder",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Ownder,
-        .hasIndex = 8,
-        .offset = 9,  // Stored in _has_storage_ to save space.
+        .hasIndex = 9,
+        .offset = 10,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1292,8 +1303,8 @@ typedef struct User__storage_ {
         .name = "primaryOwner",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_PrimaryOwner,
-        .hasIndex = 10,
-        .offset = 11,  // Stored in _has_storage_ to save space.
+        .hasIndex = 11,
+        .offset = 12,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1301,8 +1312,8 @@ typedef struct User__storage_ {
         .name = "restricted",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Restricted,
-        .hasIndex = 12,
-        .offset = 13,  // Stored in _has_storage_ to save space.
+        .hasIndex = 13,
+        .offset = 14,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1310,8 +1321,8 @@ typedef struct User__storage_ {
         .name = "ultraRestricted",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_UltraRestricted,
-        .hasIndex = 14,
-        .offset = 15,  // Stored in _has_storage_ to save space.
+        .hasIndex = 15,
+        .offset = 16,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1319,8 +1330,8 @@ typedef struct User__storage_ {
         .name = "stranger",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Stranger,
-        .hasIndex = 16,
-        .offset = 17,  // Stored in _has_storage_ to save space.
+        .hasIndex = 17,
+        .offset = 18,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1328,8 +1339,8 @@ typedef struct User__storage_ {
         .name = "bot",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Bot,
-        .hasIndex = 18,
-        .offset = 19,  // Stored in _has_storage_ to save space.
+        .hasIndex = 19,
+        .offset = 20,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeBool,
       },
@@ -1337,8 +1348,8 @@ typedef struct User__storage_ {
         .name = "has2Fa",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Has2Fa,
-        .hasIndex = 20,
-        .offset = 21,  // Stored in _has_storage_ to save space.
+        .hasIndex = 21,
+        .offset = 22,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
@@ -1346,7 +1357,7 @@ typedef struct User__storage_ {
         .name = "locale",
         .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Locale,
-        .hasIndex = 22,
+        .hasIndex = 23,
         .offset = (uint32_t)offsetof(User__storage_, locale),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1362,7 +1373,7 @@ typedef struct User__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\r\004\"\000";
+        "\001\016\004\"\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

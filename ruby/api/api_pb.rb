@@ -88,17 +88,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :id, :string, 1
     optional :team_id, :string, 2
     optional :name, :string, 3
-    optional :profile, :message, 4, "api.Profile"
-    optional :deleted, :bool, 5
-    optional :admin, :bool, 6
-    optional :ownder, :bool, 7
-    optional :primary_owner, :bool, 8
-    optional :restricted, :bool, 9
-    optional :ultra_restricted, :bool, 10
-    optional :stranger, :bool, 11
-    optional :bot, :bool, 12
-    optional :has2fa, :bool, 13
-    optional :locale, :string, 14
+    optional :phone, :string, 4
+    optional :profile, :message, 5, "api.Profile"
+    optional :deleted, :bool, 6
+    optional :admin, :bool, 7
+    optional :ownder, :bool, 8
+    optional :primary_owner, :bool, 9
+    optional :restricted, :bool, 10
+    optional :ultra_restricted, :bool, 11
+    optional :stranger, :bool, 12
+    optional :bot, :bool, 13
+    optional :has2fa, :bool, 14
+    optional :locale, :string, 15
   end
   add_message "api.Profile" do
     optional :avatar_hash, :string, 1

@@ -148,6 +148,24 @@ service UserService {
             body: "*"
         };
     }
+    rpc SMSUser(SMSRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/sms"
+            body: "*"
+        };
+    }
+    rpc CallUser(CallRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{id}/call"
+            body: "*"
+        };
+    }
+    rpc MMSUser(MMSRequest) returns (JSON) {
+        option (google.api.http) = {
+            post: "/api/customers/{sms.id}/mms"
+            body: "*"
+        };
+    }
     rpc CreateUser(User) returns (JSON) {
         option (google.api.http) = {
             post: "/api/users"
@@ -271,17 +289,18 @@ message User {
     string id =1;
     string team_id=2;
     string name=3;
-    Profile profile=4;
-    bool deleted=5;
-    bool admin=6;
-    bool ownder=7;
-    bool primary_owner=8;
-    bool restricted=9;
-    bool ultra_restricted=10;
-    bool stranger=11;
-    bool bot=12;
-    bool has2fa=13;
-    string locale=14;
+    string phone=4;
+    Profile profile=5;
+    bool deleted=6;
+    bool admin=7;
+    bool ownder=8;
+    bool primary_owner=9;
+    bool restricted=10;
+    bool ultra_restricted=11;
+    bool stranger=12;
+    bool bot=13;
+    bool has2fa=14;
+    string locale=15;
 
 }
 

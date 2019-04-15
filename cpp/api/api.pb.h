@@ -2547,9 +2547,23 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_name();
   void set_allocated_name(::std::string* name);
 
-  // string locale = 14;
+  // string phone = 4;
+  void clear_phone();
+  static const int kPhoneFieldNumber = 4;
+  const ::std::string& phone() const;
+  void set_phone(const ::std::string& value);
+  #if LANG_CXX11
+  void set_phone(::std::string&& value);
+  #endif
+  void set_phone(const char* value);
+  void set_phone(const char* value, size_t size);
+  ::std::string* mutable_phone();
+  ::std::string* release_phone();
+  void set_allocated_phone(::std::string* phone);
+
+  // string locale = 15;
   void clear_locale();
-  static const int kLocaleFieldNumber = 14;
+  static const int kLocaleFieldNumber = 15;
   const ::std::string& locale() const;
   void set_locale(const ::std::string& value);
   #if LANG_CXX11
@@ -2561,10 +2575,10 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_locale();
   void set_allocated_locale(::std::string* locale);
 
-  // .api.Profile profile = 4;
+  // .api.Profile profile = 5;
   bool has_profile() const;
   void clear_profile();
-  static const int kProfileFieldNumber = 4;
+  static const int kProfileFieldNumber = 5;
   private:
   const ::api::Profile& _internal_profile() const;
   public:
@@ -2573,57 +2587,57 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::api::Profile* mutable_profile();
   void set_allocated_profile(::api::Profile* profile);
 
-  // bool deleted = 5;
+  // bool deleted = 6;
   void clear_deleted();
-  static const int kDeletedFieldNumber = 5;
+  static const int kDeletedFieldNumber = 6;
   bool deleted() const;
   void set_deleted(bool value);
 
-  // bool admin = 6;
+  // bool admin = 7;
   void clear_admin();
-  static const int kAdminFieldNumber = 6;
+  static const int kAdminFieldNumber = 7;
   bool admin() const;
   void set_admin(bool value);
 
-  // bool ownder = 7;
+  // bool ownder = 8;
   void clear_ownder();
-  static const int kOwnderFieldNumber = 7;
+  static const int kOwnderFieldNumber = 8;
   bool ownder() const;
   void set_ownder(bool value);
 
-  // bool primary_owner = 8;
+  // bool primary_owner = 9;
   void clear_primary_owner();
-  static const int kPrimaryOwnerFieldNumber = 8;
+  static const int kPrimaryOwnerFieldNumber = 9;
   bool primary_owner() const;
   void set_primary_owner(bool value);
 
-  // bool restricted = 9;
+  // bool restricted = 10;
   void clear_restricted();
-  static const int kRestrictedFieldNumber = 9;
+  static const int kRestrictedFieldNumber = 10;
   bool restricted() const;
   void set_restricted(bool value);
 
-  // bool ultra_restricted = 10;
+  // bool ultra_restricted = 11;
   void clear_ultra_restricted();
-  static const int kUltraRestrictedFieldNumber = 10;
+  static const int kUltraRestrictedFieldNumber = 11;
   bool ultra_restricted() const;
   void set_ultra_restricted(bool value);
 
-  // bool stranger = 11;
+  // bool stranger = 12;
   void clear_stranger();
-  static const int kStrangerFieldNumber = 11;
+  static const int kStrangerFieldNumber = 12;
   bool stranger() const;
   void set_stranger(bool value);
 
-  // bool bot = 12;
+  // bool bot = 13;
   void clear_bot();
-  static const int kBotFieldNumber = 12;
+  static const int kBotFieldNumber = 13;
   bool bot() const;
   void set_bot(bool value);
 
-  // bool has2fa = 13;
+  // bool has2fa = 14;
   void clear_has2fa();
-  static const int kHas2FaFieldNumber = 13;
+  static const int kHas2FaFieldNumber = 14;
   bool has2fa() const;
   void set_has2fa(bool value);
 
@@ -2634,6 +2648,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr team_id_;
   ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr phone_;
   ::google::protobuf::internal::ArenaStringPtr locale_;
   ::api::Profile* profile_;
   bool deleted_;
@@ -10176,7 +10191,60 @@ inline void User::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:api.User.name)
 }
 
-// .api.Profile profile = 4;
+// string phone = 4;
+inline void User::clear_phone() {
+  phone_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& User::phone() const {
+  // @@protoc_insertion_point(field_get:api.User.phone)
+  return phone_.GetNoArena();
+}
+inline void User::set_phone(const ::std::string& value) {
+  
+  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.User.phone)
+}
+#if LANG_CXX11
+inline void User::set_phone(::std::string&& value) {
+  
+  phone_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.User.phone)
+}
+#endif
+inline void User::set_phone(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.User.phone)
+}
+inline void User::set_phone(const char* value, size_t size) {
+  
+  phone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.User.phone)
+}
+inline ::std::string* User::mutable_phone() {
+  
+  // @@protoc_insertion_point(field_mutable:api.User.phone)
+  return phone_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* User::release_phone() {
+  // @@protoc_insertion_point(field_release:api.User.phone)
+  
+  return phone_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void User::set_allocated_phone(::std::string* phone) {
+  if (phone != NULL) {
+    
+  } else {
+    
+  }
+  phone_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), phone);
+  // @@protoc_insertion_point(field_set_allocated:api.User.phone)
+}
+
+// .api.Profile profile = 5;
 inline bool User::has_profile() const {
   return this != internal_default_instance() && profile_ != NULL;
 }
@@ -10230,7 +10298,7 @@ inline void User::set_allocated_profile(::api::Profile* profile) {
   // @@protoc_insertion_point(field_set_allocated:api.User.profile)
 }
 
-// bool deleted = 5;
+// bool deleted = 6;
 inline void User::clear_deleted() {
   deleted_ = false;
 }
@@ -10244,7 +10312,7 @@ inline void User::set_deleted(bool value) {
   // @@protoc_insertion_point(field_set:api.User.deleted)
 }
 
-// bool admin = 6;
+// bool admin = 7;
 inline void User::clear_admin() {
   admin_ = false;
 }
@@ -10258,7 +10326,7 @@ inline void User::set_admin(bool value) {
   // @@protoc_insertion_point(field_set:api.User.admin)
 }
 
-// bool ownder = 7;
+// bool ownder = 8;
 inline void User::clear_ownder() {
   ownder_ = false;
 }
@@ -10272,7 +10340,7 @@ inline void User::set_ownder(bool value) {
   // @@protoc_insertion_point(field_set:api.User.ownder)
 }
 
-// bool primary_owner = 8;
+// bool primary_owner = 9;
 inline void User::clear_primary_owner() {
   primary_owner_ = false;
 }
@@ -10286,7 +10354,7 @@ inline void User::set_primary_owner(bool value) {
   // @@protoc_insertion_point(field_set:api.User.primary_owner)
 }
 
-// bool restricted = 9;
+// bool restricted = 10;
 inline void User::clear_restricted() {
   restricted_ = false;
 }
@@ -10300,7 +10368,7 @@ inline void User::set_restricted(bool value) {
   // @@protoc_insertion_point(field_set:api.User.restricted)
 }
 
-// bool ultra_restricted = 10;
+// bool ultra_restricted = 11;
 inline void User::clear_ultra_restricted() {
   ultra_restricted_ = false;
 }
@@ -10314,7 +10382,7 @@ inline void User::set_ultra_restricted(bool value) {
   // @@protoc_insertion_point(field_set:api.User.ultra_restricted)
 }
 
-// bool stranger = 11;
+// bool stranger = 12;
 inline void User::clear_stranger() {
   stranger_ = false;
 }
@@ -10328,7 +10396,7 @@ inline void User::set_stranger(bool value) {
   // @@protoc_insertion_point(field_set:api.User.stranger)
 }
 
-// bool bot = 12;
+// bool bot = 13;
 inline void User::clear_bot() {
   bot_ = false;
 }
@@ -10342,7 +10410,7 @@ inline void User::set_bot(bool value) {
   // @@protoc_insertion_point(field_set:api.User.bot)
 }
 
-// bool has2fa = 13;
+// bool has2fa = 14;
 inline void User::clear_has2fa() {
   has2fa_ = false;
 }
@@ -10356,7 +10424,7 @@ inline void User::set_has2fa(bool value) {
   // @@protoc_insertion_point(field_set:api.User.has2fa)
 }
 
-// string locale = 14;
+// string locale = 15;
 inline void User::clear_locale() {
   locale_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

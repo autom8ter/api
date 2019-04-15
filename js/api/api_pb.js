@@ -3169,17 +3169,18 @@ proto.api.User.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     teamId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    phone: jspb.Message.getFieldWithDefault(msg, 4, ""),
     profile: (f = msg.getProfile()) && proto.api.Profile.toObject(includeInstance, f),
-    deleted: jspb.Message.getFieldWithDefault(msg, 5, false),
-    admin: jspb.Message.getFieldWithDefault(msg, 6, false),
-    ownder: jspb.Message.getFieldWithDefault(msg, 7, false),
-    primaryOwner: jspb.Message.getFieldWithDefault(msg, 8, false),
-    restricted: jspb.Message.getFieldWithDefault(msg, 9, false),
-    ultraRestricted: jspb.Message.getFieldWithDefault(msg, 10, false),
-    stranger: jspb.Message.getFieldWithDefault(msg, 11, false),
-    bot: jspb.Message.getFieldWithDefault(msg, 12, false),
-    has2fa: jspb.Message.getFieldWithDefault(msg, 13, false),
-    locale: jspb.Message.getFieldWithDefault(msg, 14, "")
+    deleted: jspb.Message.getFieldWithDefault(msg, 6, false),
+    admin: jspb.Message.getFieldWithDefault(msg, 7, false),
+    ownder: jspb.Message.getFieldWithDefault(msg, 8, false),
+    primaryOwner: jspb.Message.getFieldWithDefault(msg, 9, false),
+    restricted: jspb.Message.getFieldWithDefault(msg, 10, false),
+    ultraRestricted: jspb.Message.getFieldWithDefault(msg, 11, false),
+    stranger: jspb.Message.getFieldWithDefault(msg, 12, false),
+    bot: jspb.Message.getFieldWithDefault(msg, 13, false),
+    has2fa: jspb.Message.getFieldWithDefault(msg, 14, false),
+    locale: jspb.Message.getFieldWithDefault(msg, 15, "")
   };
 
   if (includeInstance) {
@@ -3229,47 +3230,51 @@ proto.api.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setName(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhone(value);
+      break;
+    case 5:
       var value = new proto.api.Profile;
       reader.readMessage(value,proto.api.Profile.deserializeBinaryFromReader);
       msg.setProfile(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDeleted(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAdmin(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOwnder(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPrimaryOwner(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRestricted(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUltraRestricted(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStranger(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setBot(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setHas2fa(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
@@ -3323,10 +3328,17 @@ proto.api.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getPhone();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getProfile();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.api.Profile.serializeBinaryToWriter
     );
@@ -3334,70 +3346,70 @@ proto.api.User.serializeBinaryToWriter = function(message, writer) {
   f = message.getDeleted();
   if (f) {
     writer.writeBool(
-      5,
+      6,
       f
     );
   }
   f = message.getAdmin();
   if (f) {
     writer.writeBool(
-      6,
+      7,
       f
     );
   }
   f = message.getOwnder();
   if (f) {
     writer.writeBool(
-      7,
+      8,
       f
     );
   }
   f = message.getPrimaryOwner();
   if (f) {
     writer.writeBool(
-      8,
+      9,
       f
     );
   }
   f = message.getRestricted();
   if (f) {
     writer.writeBool(
-      9,
+      10,
       f
     );
   }
   f = message.getUltraRestricted();
   if (f) {
     writer.writeBool(
-      10,
+      11,
       f
     );
   }
   f = message.getStranger();
   if (f) {
     writer.writeBool(
-      11,
+      12,
       f
     );
   }
   f = message.getBot();
   if (f) {
     writer.writeBool(
-      12,
+      13,
       f
     );
   }
   f = message.getHas2fa();
   if (f) {
     writer.writeBool(
-      13,
+      14,
       f
     );
   }
   f = message.getLocale();
   if (f.length > 0) {
     writer.writeString(
-      14,
+      15,
       f
     );
   }
@@ -3450,18 +3462,33 @@ proto.api.User.prototype.setName = function(value) {
 
 
 /**
- * optional Profile profile = 4;
+ * optional string phone = 4;
+ * @return {string}
+ */
+proto.api.User.prototype.getPhone = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.api.User.prototype.setPhone = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional Profile profile = 5;
  * @return {?proto.api.Profile}
  */
 proto.api.User.prototype.getProfile = function() {
   return /** @type{?proto.api.Profile} */ (
-    jspb.Message.getWrapperField(this, proto.api.Profile, 4));
+    jspb.Message.getWrapperField(this, proto.api.Profile, 5));
 };
 
 
 /** @param {?proto.api.Profile|undefined} value */
 proto.api.User.prototype.setProfile = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -3475,175 +3502,175 @@ proto.api.User.prototype.clearProfile = function() {
  * @return {!boolean}
  */
 proto.api.User.prototype.hasProfile = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional bool deleted = 5;
+ * optional bool deleted = 6;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.api.User.prototype.getDeleted = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 5, false));
-};
-
-
-/** @param {boolean} value */
-proto.api.User.prototype.setDeleted = function(value) {
-  jspb.Message.setProto3BooleanField(this, 5, value);
-};
-
-
-/**
- * optional bool admin = 6;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
- */
-proto.api.User.prototype.getAdmin = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setAdmin = function(value) {
+proto.api.User.prototype.setDeleted = function(value) {
   jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
 /**
- * optional bool ownder = 7;
+ * optional bool admin = 7;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getOwnder = function() {
+proto.api.User.prototype.getAdmin = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 7, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setOwnder = function(value) {
+proto.api.User.prototype.setAdmin = function(value) {
   jspb.Message.setProto3BooleanField(this, 7, value);
 };
 
 
 /**
- * optional bool primary_owner = 8;
+ * optional bool ownder = 8;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getPrimaryOwner = function() {
+proto.api.User.prototype.getOwnder = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 8, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setPrimaryOwner = function(value) {
+proto.api.User.prototype.setOwnder = function(value) {
   jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * optional bool restricted = 9;
+ * optional bool primary_owner = 9;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getRestricted = function() {
+proto.api.User.prototype.getPrimaryOwner = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 9, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setRestricted = function(value) {
+proto.api.User.prototype.setPrimaryOwner = function(value) {
   jspb.Message.setProto3BooleanField(this, 9, value);
 };
 
 
 /**
- * optional bool ultra_restricted = 10;
+ * optional bool restricted = 10;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getUltraRestricted = function() {
+proto.api.User.prototype.getRestricted = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 10, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setUltraRestricted = function(value) {
+proto.api.User.prototype.setRestricted = function(value) {
   jspb.Message.setProto3BooleanField(this, 10, value);
 };
 
 
 /**
- * optional bool stranger = 11;
+ * optional bool ultra_restricted = 11;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getStranger = function() {
+proto.api.User.prototype.getUltraRestricted = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 11, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setStranger = function(value) {
+proto.api.User.prototype.setUltraRestricted = function(value) {
   jspb.Message.setProto3BooleanField(this, 11, value);
 };
 
 
 /**
- * optional bool bot = 12;
+ * optional bool stranger = 12;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getBot = function() {
+proto.api.User.prototype.getStranger = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 12, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setBot = function(value) {
+proto.api.User.prototype.setStranger = function(value) {
   jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
 /**
- * optional bool has2fa = 13;
+ * optional bool bot = 13;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.User.prototype.getHas2fa = function() {
+proto.api.User.prototype.getBot = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.User.prototype.setHas2fa = function(value) {
+proto.api.User.prototype.setBot = function(value) {
   jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
 /**
- * optional string locale = 14;
+ * optional bool has2fa = 14;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.User.prototype.getHas2fa = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 14, false));
+};
+
+
+/** @param {boolean} value */
+proto.api.User.prototype.setHas2fa = function(value) {
+  jspb.Message.setProto3BooleanField(this, 14, value);
+};
+
+
+/**
+ * optional string locale = 15;
  * @return {string}
  */
 proto.api.User.prototype.getLocale = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
 
 /** @param {string} value */
 proto.api.User.prototype.setLocale = function(value) {
-  jspb.Message.setProto3StringField(this, 14, value);
+  jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
