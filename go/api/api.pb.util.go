@@ -8,7 +8,7 @@ import (
 	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
 	"github.com/dgrijalva/jwt-go"
-	"google.golang.org/genproto/googleapis/pubsub/v1"
+	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -44,17 +44,17 @@ func AsMessage(attributes map[string]string, m Messenger) *Msg {
 	}
 	return &Msg{
 		Id:                   m.GoType(),
-		Attributes:           attributes,
+		Meta:           attributes,
 		Data:                 m.DataBytes(),
 	}
 }
 
-func ToJSON(obj interface{}) *JSON {
-	return &JSON{Data: Util.MarshalJSON(obj)}
+func DataJSONTo(msg *Msg, obj interface{}) error {
+	return json.Unmarshal(msg.Data, obj)
 }
 
-func DataTo(msg *pubsub.PubsubMessage, obj interface{}) error {
-	return json.Unmarshal(msg.Data, obj)
+func DataProtoTo(msg *Msg, obj interface{}) error {
+	return proto.Unmarshal(msg.Data, obj.(proto.Message))
 }
 
 var Util = objectify.Default()
@@ -220,7 +220,37 @@ func (s *SlashCommand) DataBytes() []byte {
 func (s *SlashCommand) GoType() string {
 	return reflect.TypeOf(s).String()
 }
+//
 
+func (j *Msg) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
+}
+
+func (j *Msg) UnMarshalJSON(obj interface{}) error {
+	return json.Unmarshal(Util.MarshalJSON(j), obj)
+}
+
+func (j *Msg) CompileHTML(text string, w io.Writer) error {
+	return Util.RenderHTML(text, j, w)
+}
+
+func (j *Msg) CompileTXT(text string, w io.Writer) error {
+	return Util.RenderTXT(text, j, w)
+}
+
+func (s *Msg) Attributes(m map[string]string) map[string]string {
+	return Util.Attributes(s)
+
+}
+
+func (s *Msg) DataBytes() []byte {
+	return Util.MarshalJSON(s)
+
+}
+
+func (s *Msg) GoType() string {
+	return reflect.TypeOf(s).String()
+}
 //
 
 func (j *Profile) MarshalJSON() ([]byte, error) {

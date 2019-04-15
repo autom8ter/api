@@ -1381,7 +1381,7 @@ typedef GPB_ENUM(StringMapString_FieldNumber) {
 
 typedef GPB_ENUM(Msg_FieldNumber) {
   Msg_FieldNumber_Id_p = 1,
-  Msg_FieldNumber_Attributes = 2,
+  Msg_FieldNumber_Meta = 2,
   Msg_FieldNumber_Data_p = 3,
   Msg_FieldNumber_PublishTime = 4,
 };
@@ -1390,9 +1390,9 @@ typedef GPB_ENUM(Msg_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *attributes;
-/** The number of items in @c attributes without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger attributes_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *meta;
+/** The number of items in @c meta without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger meta_Count;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
 

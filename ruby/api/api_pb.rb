@@ -336,7 +336,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Msg" do
     optional :id, :string, 1
-    map :attributes, :string, :string, 2
+    map :meta, :string, :string, 2
     optional :data, :bytes, 3
     optional :publish_time, :string, 4
   end

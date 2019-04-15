@@ -597,7 +597,7 @@ message StringMapString {
 }
 message Msg {
     string id =1;
-    map<string,string> attributes=2;
+    map<string,string> meta=2;
     bytes data=3;
     string publish_time=4;
 }

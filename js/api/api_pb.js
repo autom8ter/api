@@ -12571,7 +12571,7 @@ proto.api.Msg.prototype.toObject = function(opt_includeInstance) {
 proto.api.Msg.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    attributesMap: (f = msg.getAttributesMap()) ? f.toObject(includeInstance, undefined) : [],
+    metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, undefined) : [],
     data: msg.getData_asB64(),
     publishTime: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -12615,7 +12615,7 @@ proto.api.Msg.deserializeBinaryFromReader = function(msg, reader) {
       msg.setId(value);
       break;
     case 2:
-      var value = msg.getAttributesMap();
+      var value = msg.getMetaMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
@@ -12664,7 +12664,7 @@ proto.api.Msg.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAttributesMap(true);
+  f = message.getMetaMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
@@ -12701,20 +12701,20 @@ proto.api.Msg.prototype.setId = function(value) {
 
 
 /**
- * map<string, string> attributes = 2;
+ * map<string, string> meta = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.api.Msg.prototype.getAttributesMap = function(opt_noLazyCreate) {
+proto.api.Msg.prototype.getMetaMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
 };
 
 
-proto.api.Msg.prototype.clearAttributesMap = function() {
-  this.getAttributesMap().clear();
+proto.api.Msg.prototype.clearMetaMap = function() {
+  this.getMetaMap().clear();
 };
 
 

@@ -29,7 +29,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_EmailAddress;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_File_TagsEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ItemRef;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Msg_AttributesEntry_DoNotUse;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Msg_MetaEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Product_TagsEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Profile;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SMSRequest;
@@ -319,11 +319,11 @@ class StringMapStringDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<StringMapString>
       _instance;
 } _StringMapString_default_instance_;
-class Msg_AttributesEntry_DoNotUseDefaultTypeInternal {
+class Msg_MetaEntry_DoNotUseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Msg_AttributesEntry_DoNotUse>
+  ::google::protobuf::internal::ExplicitlyConstructed<Msg_MetaEntry_DoNotUse>
       _instance;
-} _Msg_AttributesEntry_DoNotUse_default_instance_;
+} _Msg_MetaEntry_DoNotUse_default_instance_;
 class MsgDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Msg>
@@ -1126,18 +1126,18 @@ static void InitDefaultsStringMapString() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsStringMapString}, {
       &protobuf_api_2eproto::scc_info_StringMapString_MapEntry_DoNotUse.base,}};
 
-static void InitDefaultsMsg_AttributesEntry_DoNotUse() {
+static void InitDefaultsMsg_MetaEntry_DoNotUse() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_Msg_AttributesEntry_DoNotUse_default_instance_;
-    new (ptr) ::api::Msg_AttributesEntry_DoNotUse();
+    void* ptr = &::api::_Msg_MetaEntry_DoNotUse_default_instance_;
+    new (ptr) ::api::Msg_MetaEntry_DoNotUse();
   }
-  ::api::Msg_AttributesEntry_DoNotUse::InitAsDefaultInstance();
+  ::api::Msg_MetaEntry_DoNotUse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Msg_AttributesEntry_DoNotUse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMsg_AttributesEntry_DoNotUse}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Msg_MetaEntry_DoNotUse =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMsg_MetaEntry_DoNotUse}, {}};
 
 static void InitDefaultsMsg() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1152,7 +1152,7 @@ static void InitDefaultsMsg() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_Msg =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMsg}, {
-      &protobuf_api_2eproto::scc_info_Msg_AttributesEntry_DoNotUse.base,}};
+      &protobuf_api_2eproto::scc_info_Msg_MetaEntry_DoNotUse.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Id.base);
@@ -1210,7 +1210,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Product.base);
   ::google::protobuf::internal::InitSCC(&scc_info_StringMapString_MapEntry_DoNotUse.base);
   ::google::protobuf::internal::InitSCC(&scc_info_StringMapString.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Msg_AttributesEntry_DoNotUse.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Msg_MetaEntry_DoNotUse.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Msg.base);
 }
 
@@ -1731,13 +1731,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::StringMapString, map_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_AttributesEntry_DoNotUse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_AttributesEntry_DoNotUse, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_MetaEntry_DoNotUse, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_MetaEntry_DoNotUse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_AttributesEntry_DoNotUse, key_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_AttributesEntry_DoNotUse, value_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_MetaEntry_DoNotUse, key_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg_MetaEntry_DoNotUse, value_),
   0,
   1,
   ~0u,  // no _has_bits_
@@ -1746,7 +1746,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg, attributes_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg, data_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Msg, publish_time_),
 };
@@ -1806,7 +1806,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 487, -1, sizeof(::api::Product)},
   { 498, 505, sizeof(::api::StringMapString_MapEntry_DoNotUse)},
   { 507, -1, sizeof(::api::StringMapString)},
-  { 513, 520, sizeof(::api::Msg_AttributesEntry_DoNotUse)},
+  { 513, 520, sizeof(::api::Msg_MetaEntry_DoNotUse)},
   { 522, -1, sizeof(::api::Msg)},
 };
 
@@ -1866,7 +1866,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Product_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_StringMapString_MapEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_StringMapString_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Msg_AttributesEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Msg_MetaEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Msg_default_instance_),
 };
 
@@ -2030,81 +2030,80 @@ void AddDescriptorsImpl() {
       "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"i\n\017StringMapS"
       "tring\022*\n\003map\030\001 \003(\0132\035.api.StringMapString"
       ".MapEntry\032*\n\010MapEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005va"
-      "lue\030\002 \001(\t:\0028\001\"\226\001\n\003Msg\022\n\n\002id\030\001 \001(\t\022,\n\natt"
-      "ributes\030\002 \003(\0132\030.api.Msg.AttributesEntry\022"
-      "\014\n\004data\030\003 \001(\014\022\024\n\014publish_time\030\004 \001(\t\0321\n\017A"
-      "ttributesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-      "(\t:\0028\001*-\n\rCustomerIndex\022\006\n\002ID\020\000\022\t\n\005EMAIL"
-      "\020\001\022\t\n\005PHONE\020\002*P\n\005Claim\022\n\n\006TWILIO\020\000\022\014\n\010SE"
-      "NDGRID\020\001\022\n\n\006STRIPE\020\002\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\004"
-      "\022\r\n\tAUTOM8TER\020\005*9\n\rSigningMethod\022\010\n\004HMAC"
-      "\020\000\022\t\n\005ECDSA\020\001\022\007\n\003RSA\020\002\022\n\n\006RSAPPS\020\003*<\n\010Ca"
-      "rdType\022\010\n\004VISA\020\000\022\016\n\nMASTERCARD\020\001\022\014\n\010DISC"
-      "OVER\020\002\022\010\n\004AMEX\020\003*7\n\005Topic\022\010\n\004USER\020\000\022\013\n\007A"
-      "CCOUNT\020\001\022\014\n\010CUSTOMER\020\002\022\t\n\005OTHER\020\0032\372\002\n\016Ac"
-      "countService\022O\n\rCreateAccount\022\031.api.Crea"
-      "teAccountRequest\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/ap"
-      "i/accounts:\001*\022P\n\rUpdateAccount\022\014.api.Acc"
-      "ount\032\t.api.JSON\"&\202\323\344\223\002 \"\033/api/accounts/{"
-      "customer.id}:\001*\022B\n\rDeleteAccount\022\007.api.I"
-      "d\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/api/accounts/{id}"
-      ":\001*\022@\n\013ReadAccount\022\007.api.Id\032\t.api.JSON\"\035"
-      "\202\323\344\223\002\027\"\022/api/accounts/{id}:\001*\022\?\n\014ListAcc"
-      "ounts\022\n.api.Empty\032\t.api.JSON\"\030\202\323\344\223\002\022\"\r/a"
-      "pi/accounts:\001*2\226\010\n\017CustomerService\022L\n\016Cr"
-      "eateCustomer\022\024.api.CustomerRequest\032\t.api"
-      ".JSON\"\031\202\323\344\223\002\023\"\016/api/customers:\001*\022W\n\016Upda"
-      "teCustomer\022\032.api.UpdateCustomerRequest\032\t"
-      ".api.JSON\"\036\202\323\344\223\002\030\"\023/api/customers/{id}:\001"
-      "*\022D\n\016DeleteCustomer\022\007.api.Id\032\t.api.JSON\""
-      "\036\202\323\344\223\002\030\"\023/api/customers/{id}:\001*\022F\n\rListC"
-      "ustomers\022\n.api.Empty\032\t.api.JSON\"\036\202\323\344\223\002\030\""
-      "\023/api/customers/list:\001*\022V\n\016ChargeCustome"
-      "r\022\022.api.ChargeRequest\032\t.api.JSON\"%\202\323\344\223\002\037"
-      "\"\032/api/customers/{id}/charge:\001*\022V\n\016Refun"
-      "dCustomer\022\022.api.RefundRequest\032\t.api.JSON"
-      "\"%\202\323\344\223\002\037\"\032/api/customers/{id}/refund:\001*\022"
-      "g\n\021SubscribeCustomer\022\035.api.SubscribeCust"
-      "omerRequest\032\t.api.JSON\"(\202\323\344\223\002\"\"\035/api/cus"
-      "tomers/{id}/subscribe:\001*\022l\n\023UnSubscribeC"
-      "ustomer\022\036.api.CancelSubscriptionRequest\032"
-      "\t.api.JSON\"*\202\323\344\223\002$\"\037/api/customers/{id}/"
-      "unsubscribe:\001*\022M\n\013SMSCustomer\022\017.api.SMSR"
-      "equest\032\t.api.JSON\"\"\202\323\344\223\002\034\"\027/api/customer"
-      "s/{id}/sms:\001*\022P\n\014CallCustomer\022\020.api.Call"
-      "Request\032\t.api.JSON\"#\202\323\344\223\002\035\"\030/api/custome"
-      "rs/{id}/call:\001*\022Q\n\013MMSCustomer\022\017.api.MMS"
-      "Request\032\t.api.JSON\"&\202\323\344\223\002 \"\033/api/custome"
-      "rs/{sms.id}/mms:\001*\022S\n\rEmailCustomer\022\021.ap"
-      "i.EmailRequest\032\t.api.JSON\"$\202\323\344\223\002\036\"\031/api/"
-      "customers/{id}/email:\001*2a\n\013PlanService\022R"
-      "\n\026CreateSubscriptionPlan\022\026.api.CreatePla"
-      "nRequest\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/plans:"
-      "\001*2\366\004\n\013UserService\022K\n\tEmailUser\022\021.api.Em"
-      "ailRequest\032\t.api.JSON\" \202\323\344\223\002\032\"\025/api/user"
-      "s/{id}/email:\001*\022H\n\013MessageUser\022\027.api.Mes"
-      "sageUserRequest\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api"
-      "/users:\001*\022I\n\007SMSUser\022\017.api.SMSRequest\032\t."
-      "api.JSON\"\"\202\323\344\223\002\034\"\027/api/customers/{id}/sm"
-      "s:\001*\022L\n\010CallUser\022\020.api.CallRequest\032\t.api"
-      ".JSON\"#\202\323\344\223\002\035\"\030/api/customers/{id}/call:"
-      "\001*\022M\n\007MMSUser\022\017.api.MMSRequest\032\t.api.JSO"
-      "N\"&\202\323\344\223\002 \"\033/api/customers/{sms.id}/mms:\001"
-      "*\0229\n\nCreateUser\022\t.api.User\032\t.api.JSON\"\025\202"
-      "\323\344\223\002\017\"\n/api/users:\001*\0229\n\nUpdateUser\022\t.api"
-      ".User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022"
-      "7\n\nDeleteUser\022\007.api.Id\032\t.api.JSON\"\025\202\323\344\223\002"
-      "\017\"\n/api/users:\001*\0229\n\tListUsers\022\n.api.Empt"
-      "y\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*2\324\001\n\013"
-      "HookService\022:\n\004Hook\022\017.api.Attachment\032\n.a"
-      "pi.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*\022G\n\nActio"
-      "nHook\022\026.api.ActionHookRequest\032\n.api.Empt"
-      "y\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*\022@\n\010SlashCmd\022\021.a"
-      "pi.SlashCommand\032\n.api.Empty\"\025\202\323\344\223\002\017\"\n/ap"
-      "i/hooks:\001*b\006proto3"
+      "lue\030\002 \001(\t:\0028\001\"\204\001\n\003Msg\022\n\n\002id\030\001 \001(\t\022 \n\004met"
+      "a\030\002 \003(\0132\022.api.Msg.MetaEntry\022\014\n\004data\030\003 \001("
+      "\014\022\024\n\014publish_time\030\004 \001(\t\032+\n\tMetaEntry\022\013\n\003"
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001*-\n\rCustomer"
+      "Index\022\006\n\002ID\020\000\022\t\n\005EMAIL\020\001\022\t\n\005PHONE\020\002*P\n\005C"
+      "laim\022\n\n\006TWILIO\020\000\022\014\n\010SENDGRID\020\001\022\n\n\006STRIPE"
+      "\020\002\022\t\n\005SLACK\020\003\022\007\n\003GCP\020\004\022\r\n\tAUTOM8TER\020\005*9\n"
+      "\rSigningMethod\022\010\n\004HMAC\020\000\022\t\n\005ECDSA\020\001\022\007\n\003R"
+      "SA\020\002\022\n\n\006RSAPPS\020\003*<\n\010CardType\022\010\n\004VISA\020\000\022\016"
+      "\n\nMASTERCARD\020\001\022\014\n\010DISCOVER\020\002\022\010\n\004AMEX\020\003*7"
+      "\n\005Topic\022\010\n\004USER\020\000\022\013\n\007ACCOUNT\020\001\022\014\n\010CUSTOM"
+      "ER\020\002\022\t\n\005OTHER\020\0032\372\002\n\016AccountService\022O\n\rCr"
+      "eateAccount\022\031.api.CreateAccountRequest\032\t"
+      ".api.JSON\"\030\202\323\344\223\002\022\"\r/api/accounts:\001*\022P\n\rU"
+      "pdateAccount\022\014.api.Account\032\t.api.JSON\"&\202"
+      "\323\344\223\002 \"\033/api/accounts/{customer.id}:\001*\022B\n"
+      "\rDeleteAccount\022\007.api.Id\032\t.api.JSON\"\035\202\323\344\223"
+      "\002\027\"\022/api/accounts/{id}:\001*\022@\n\013ReadAccount"
+      "\022\007.api.Id\032\t.api.JSON\"\035\202\323\344\223\002\027\"\022/api/accou"
+      "nts/{id}:\001*\022\?\n\014ListAccounts\022\n.api.Empty\032"
+      "\t.api.JSON\"\030\202\323\344\223\002\022\"\r/api/accounts:\001*2\226\010\n"
+      "\017CustomerService\022L\n\016CreateCustomer\022\024.api"
+      ".CustomerRequest\032\t.api.JSON\"\031\202\323\344\223\002\023\"\016/ap"
+      "i/customers:\001*\022W\n\016UpdateCustomer\022\032.api.U"
+      "pdateCustomerRequest\032\t.api.JSON\"\036\202\323\344\223\002\030\""
+      "\023/api/customers/{id}:\001*\022D\n\016DeleteCustome"
+      "r\022\007.api.Id\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/cust"
+      "omers/{id}:\001*\022F\n\rListCustomers\022\n.api.Emp"
+      "ty\032\t.api.JSON\"\036\202\323\344\223\002\030\"\023/api/customers/li"
+      "st:\001*\022V\n\016ChargeCustomer\022\022.api.ChargeRequ"
+      "est\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/customers/{"
+      "id}/charge:\001*\022V\n\016RefundCustomer\022\022.api.Re"
+      "fundRequest\032\t.api.JSON\"%\202\323\344\223\002\037\"\032/api/cus"
+      "tomers/{id}/refund:\001*\022g\n\021SubscribeCustom"
+      "er\022\035.api.SubscribeCustomerRequest\032\t.api."
+      "JSON\"(\202\323\344\223\002\"\"\035/api/customers/{id}/subscr"
+      "ibe:\001*\022l\n\023UnSubscribeCustomer\022\036.api.Canc"
+      "elSubscriptionRequest\032\t.api.JSON\"*\202\323\344\223\002$"
+      "\"\037/api/customers/{id}/unsubscribe:\001*\022M\n\013"
+      "SMSCustomer\022\017.api.SMSRequest\032\t.api.JSON\""
+      "\"\202\323\344\223\002\034\"\027/api/customers/{id}/sms:\001*\022P\n\014C"
+      "allCustomer\022\020.api.CallRequest\032\t.api.JSON"
+      "\"#\202\323\344\223\002\035\"\030/api/customers/{id}/call:\001*\022Q\n"
+      "\013MMSCustomer\022\017.api.MMSRequest\032\t.api.JSON"
+      "\"&\202\323\344\223\002 \"\033/api/customers/{sms.id}/mms:\001*"
+      "\022S\n\rEmailCustomer\022\021.api.EmailRequest\032\t.a"
+      "pi.JSON\"$\202\323\344\223\002\036\"\031/api/customers/{id}/ema"
+      "il:\001*2a\n\013PlanService\022R\n\026CreateSubscripti"
+      "onPlan\022\026.api.CreatePlanRequest\032\t.api.JSO"
+      "N\"\025\202\323\344\223\002\017\"\n/api/plans:\001*2\366\004\n\013UserService"
+      "\022K\n\tEmailUser\022\021.api.EmailRequest\032\t.api.J"
+      "SON\" \202\323\344\223\002\032\"\025/api/users/{id}/email:\001*\022H\n"
+      "\013MessageUser\022\027.api.MessageUserRequest\032\t."
+      "api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\022I\n\007SMSUs"
+      "er\022\017.api.SMSRequest\032\t.api.JSON\"\"\202\323\344\223\002\034\"\027"
+      "/api/customers/{id}/sms:\001*\022L\n\010CallUser\022\020"
+      ".api.CallRequest\032\t.api.JSON\"#\202\323\344\223\002\035\"\030/ap"
+      "i/customers/{id}/call:\001*\022M\n\007MMSUser\022\017.ap"
+      "i.MMSRequest\032\t.api.JSON\"&\202\323\344\223\002 \"\033/api/cu"
+      "stomers/{sms.id}/mms:\001*\0229\n\nCreateUser\022\t."
+      "api.User\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:"
+      "\001*\0229\n\nUpdateUser\022\t.api.User\032\t.api.JSON\"\025"
+      "\202\323\344\223\002\017\"\n/api/users:\001*\0227\n\nDeleteUser\022\007.ap"
+      "i.Id\032\t.api.JSON\"\025\202\323\344\223\002\017\"\n/api/users:\001*\0229"
+      "\n\tListUsers\022\n.api.Empty\032\t.api.JSON\"\025\202\323\344\223"
+      "\002\017\"\n/api/users:\001*2\324\001\n\013HookService\022:\n\004Hoo"
+      "k\022\017.api.Attachment\032\n.api.Empty\"\025\202\323\344\223\002\017\"\n"
+      "/api/hooks:\001*\022G\n\nActionHook\022\026.api.Action"
+      "HookRequest\032\n.api.Empty\"\025\202\323\344\223\002\017\"\n/api/ho"
+      "oks:\001*\022@\n\010SlashCmd\022\021.api.SlashCommand\032\n."
+      "api.Empty\"\025\202\323\344\223\002\017\"\n/api/hooks:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 8418);
+      descriptor, 8400);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fempty_2eproto::AddDescriptors();
@@ -24111,16 +24110,16 @@ void StringMapString::InternalSwap(StringMapString* other) {
 
 // ===================================================================
 
-Msg_AttributesEntry_DoNotUse::Msg_AttributesEntry_DoNotUse() {}
-Msg_AttributesEntry_DoNotUse::Msg_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
-void Msg_AttributesEntry_DoNotUse::MergeFrom(const Msg_AttributesEntry_DoNotUse& other) {
+Msg_MetaEntry_DoNotUse::Msg_MetaEntry_DoNotUse() {}
+Msg_MetaEntry_DoNotUse::Msg_MetaEntry_DoNotUse(::google::protobuf::Arena* arena) : SuperType(arena) {}
+void Msg_MetaEntry_DoNotUse::MergeFrom(const Msg_MetaEntry_DoNotUse& other) {
   MergeFromInternal(other);
 }
-::google::protobuf::Metadata Msg_AttributesEntry_DoNotUse::GetMetadata() const {
+::google::protobuf::Metadata Msg_MetaEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[55];
 }
-void Msg_AttributesEntry_DoNotUse::MergeFrom(
+void Msg_MetaEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
   ::google::protobuf::Message::MergeFrom(other);
 }
@@ -24132,7 +24131,7 @@ void Msg::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Msg::kIdFieldNumber;
-const int Msg::kAttributesFieldNumber;
+const int Msg::kMetaFieldNumber;
 const int Msg::kDataFieldNumber;
 const int Msg::kPublishTimeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -24148,7 +24147,7 @@ Msg::Msg(const Msg& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  attributes_.MergeFrom(from.attributes_);
+  meta_.MergeFrom(from.meta_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -24201,7 +24200,7 @@ void Msg::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  attributes_.Clear();
+  meta_.Clear();
   id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   data_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   publish_time_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -24234,27 +24233,27 @@ bool Msg::MergePartialFromCodedStream(
         break;
       }
 
-      // map<string, string> attributes = 2;
+      // map<string, string> meta = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          Msg_AttributesEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
-              Msg_AttributesEntry_DoNotUse,
+          Msg_MetaEntry_DoNotUse::Parser< ::google::protobuf::internal::MapField<
+              Msg_MetaEntry_DoNotUse,
               ::std::string, ::std::string,
               ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
               ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
               0 >,
-            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&attributes_);
+            ::google::protobuf::Map< ::std::string, ::std::string > > parser(&meta_);
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
               input, &parser));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             parser.key().data(), static_cast<int>(parser.key().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Msg.AttributesEntry.key"));
+            "api.Msg.MetaEntry.key"));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             parser.value().data(), static_cast<int>(parser.value().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Msg.AttributesEntry.value"));
+            "api.Msg.MetaEntry.value"));
         } else {
           goto handle_unusual;
         }
@@ -24325,8 +24324,8 @@ void Msg::SerializeWithCachedSizes(
       1, this->id(), output);
   }
 
-  // map<string, string> attributes = 2;
-  if (!this->attributes().empty()) {
+  // map<string, string> meta = 2;
+  if (!this->meta().empty()) {
     typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
         ConstPtr;
     typedef ConstPtr SortItem;
@@ -24336,40 +24335,40 @@ void Msg::SerializeWithCachedSizes(
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           p->first.data(), static_cast<int>(p->first.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Msg.AttributesEntry.key");
+          "api.Msg.MetaEntry.key");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           p->second.data(), static_cast<int>(p->second.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Msg.AttributesEntry.value");
+          "api.Msg.MetaEntry.value");
       }
     };
 
     if (output->IsSerializationDeterministic() &&
-        this->attributes().size() > 1) {
+        this->meta().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->attributes().size()]);
+          new SortItem[this->meta().size()]);
       typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
       size_type n = 0;
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it, ++n) {
+          it = this->meta().begin();
+          it != this->meta().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<Msg_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<Msg_MetaEntry_DoNotUse> entry;
       for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(
+        entry.reset(meta_.NewEntryWrapper(
             items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             2, *entry, output);
         Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
       }
     } else {
-      ::std::unique_ptr<Msg_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<Msg_MetaEntry_DoNotUse> entry;
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(
+          it = this->meta().begin();
+          it != this->meta().end(); ++it) {
+        entry.reset(meta_.NewEntryWrapper(
             it->first, it->second));
         ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
             2, *entry, output);
@@ -24419,8 +24418,8 @@ void Msg::SerializeWithCachedSizes(
         1, this->id(), target);
   }
 
-  // map<string, string> attributes = 2;
-  if (!this->attributes().empty()) {
+  // map<string, string> meta = 2;
+  if (!this->meta().empty()) {
     typedef ::google::protobuf::Map< ::std::string, ::std::string >::const_pointer
         ConstPtr;
     typedef ConstPtr SortItem;
@@ -24430,29 +24429,29 @@ void Msg::SerializeWithCachedSizes(
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           p->first.data(), static_cast<int>(p->first.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Msg.AttributesEntry.key");
+          "api.Msg.MetaEntry.key");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
           p->second.data(), static_cast<int>(p->second.length()),
           ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-          "api.Msg.AttributesEntry.value");
+          "api.Msg.MetaEntry.value");
       }
     };
 
     if (deterministic &&
-        this->attributes().size() > 1) {
+        this->meta().size() > 1) {
       ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->attributes().size()]);
+          new SortItem[this->meta().size()]);
       typedef ::google::protobuf::Map< ::std::string, ::std::string >::size_type size_type;
       size_type n = 0;
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it, ++n) {
+          it = this->meta().begin();
+          it != this->meta().end(); ++it, ++n) {
         items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      ::std::unique_ptr<Msg_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<Msg_MetaEntry_DoNotUse> entry;
       for (size_type i = 0; i < n; i++) {
-        entry.reset(attributes_.NewEntryWrapper(
+        entry.reset(meta_.NewEntryWrapper(
             items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
@@ -24461,11 +24460,11 @@ void Msg::SerializeWithCachedSizes(
         Utf8Check::Check(items[static_cast<ptrdiff_t>(i)]);
       }
     } else {
-      ::std::unique_ptr<Msg_AttributesEntry_DoNotUse> entry;
+      ::std::unique_ptr<Msg_MetaEntry_DoNotUse> entry;
       for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-          it = this->attributes().begin();
-          it != this->attributes().end(); ++it) {
-        entry.reset(attributes_.NewEntryWrapper(
+          it = this->meta().begin();
+          it != this->meta().end(); ++it) {
+        entry.reset(meta_.NewEntryWrapper(
             it->first, it->second));
         target = ::google::protobuf::internal::WireFormatLite::
                    InternalWriteMessageNoVirtualToArray(
@@ -24511,15 +24510,15 @@ size_t Msg::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // map<string, string> attributes = 2;
+  // map<string, string> meta = 2;
   total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->attributes_size());
+      ::google::protobuf::internal::FromIntSize(this->meta_size());
   {
-    ::std::unique_ptr<Msg_AttributesEntry_DoNotUse> entry;
+    ::std::unique_ptr<Msg_MetaEntry_DoNotUse> entry;
     for (::google::protobuf::Map< ::std::string, ::std::string >::const_iterator
-        it = this->attributes().begin();
-        it != this->attributes().end(); ++it) {
-      entry.reset(attributes_.NewEntryWrapper(it->first, it->second));
+        it = this->meta().begin();
+        it != this->meta().end(); ++it) {
+      entry.reset(meta_.NewEntryWrapper(it->first, it->second));
       total_size += ::google::protobuf::internal::WireFormatLite::
           MessageSizeNoVirtual(*entry);
     }
@@ -24573,7 +24572,7 @@ void Msg::MergeFrom(const Msg& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  attributes_.MergeFrom(from.attributes_);
+  meta_.MergeFrom(from.meta_);
   if (from.id().size() > 0) {
 
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -24612,7 +24611,7 @@ void Msg::Swap(Msg* other) {
 }
 void Msg::InternalSwap(Msg* other) {
   using std::swap;
-  attributes_.Swap(&other->attributes_);
+  meta_.Swap(&other->meta_);
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   data_.Swap(&other->data_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -24797,8 +24796,8 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::StringMapString_MapEntry_Do
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::StringMapString* Arena::CreateMaybeMessage< ::api::StringMapString >(Arena* arena) {
   return Arena::CreateInternal< ::api::StringMapString >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Msg_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage< ::api::Msg_AttributesEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateInternal< ::api::Msg_AttributesEntry_DoNotUse >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Msg_MetaEntry_DoNotUse* Arena::CreateMaybeMessage< ::api::Msg_MetaEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Msg_MetaEntry_DoNotUse >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Msg* Arena::CreateMaybeMessage< ::api::Msg >(Arena* arena) {
   return Arena::CreateInternal< ::api::Msg >(arena);

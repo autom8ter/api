@@ -167,9 +167,9 @@ extern MessageUserRequestDefaultTypeInternal _MessageUserRequest_default_instanc
 class Msg;
 class MsgDefaultTypeInternal;
 extern MsgDefaultTypeInternal _Msg_default_instance_;
-class Msg_AttributesEntry_DoNotUse;
-class Msg_AttributesEntry_DoNotUseDefaultTypeInternal;
-extern Msg_AttributesEntry_DoNotUseDefaultTypeInternal _Msg_AttributesEntry_DoNotUse_default_instance_;
+class Msg_MetaEntry_DoNotUse;
+class Msg_MetaEntry_DoNotUseDefaultTypeInternal;
+extern Msg_MetaEntry_DoNotUseDefaultTypeInternal _Msg_MetaEntry_DoNotUse_default_instance_;
 class Pin;
 class PinDefaultTypeInternal;
 extern PinDefaultTypeInternal _Pin_default_instance_;
@@ -267,7 +267,7 @@ template<> ::api::LogHook* Arena::CreateMaybeMessage<::api::LogHook>(Arena*);
 template<> ::api::MMSRequest* Arena::CreateMaybeMessage<::api::MMSRequest>(Arena*);
 template<> ::api::MessageUserRequest* Arena::CreateMaybeMessage<::api::MessageUserRequest>(Arena*);
 template<> ::api::Msg* Arena::CreateMaybeMessage<::api::Msg>(Arena*);
-template<> ::api::Msg_AttributesEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Msg_AttributesEntry_DoNotUse>(Arena*);
+template<> ::api::Msg_MetaEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Msg_MetaEntry_DoNotUse>(Arena*);
 template<> ::api::Pin* Arena::CreateMaybeMessage<::api::Pin>(Arena*);
 template<> ::api::Product* Arena::CreateMaybeMessage<::api::Product>(Arena*);
 template<> ::api::Product_TagsEntry_DoNotUse* Arena::CreateMaybeMessage<::api::Product_TagsEntry_DoNotUse>(Arena*);
@@ -8463,21 +8463,21 @@ class StringMapString : public ::google::protobuf::Message /* @@protoc_insertion
 };
 // -------------------------------------------------------------------
 
-class Msg_AttributesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Msg_AttributesEntry_DoNotUse, 
+class Msg_MetaEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Msg_MetaEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > {
 public:
-  typedef ::google::protobuf::internal::MapEntry<Msg_AttributesEntry_DoNotUse, 
+  typedef ::google::protobuf::internal::MapEntry<Msg_MetaEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > SuperType;
-  Msg_AttributesEntry_DoNotUse();
-  Msg_AttributesEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const Msg_AttributesEntry_DoNotUse& other);
-  static const Msg_AttributesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Msg_AttributesEntry_DoNotUse*>(&_Msg_AttributesEntry_DoNotUse_default_instance_); }
+  Msg_MetaEntry_DoNotUse();
+  Msg_MetaEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Msg_MetaEntry_DoNotUse& other);
+  static const Msg_MetaEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Msg_MetaEntry_DoNotUse*>(&_Msg_MetaEntry_DoNotUse_default_instance_); }
   void MergeFrom(const ::google::protobuf::Message& other) final;
   ::google::protobuf::Metadata GetMetadata() const;
 };
@@ -8572,14 +8572,14 @@ class Msg : public ::google::protobuf::Message /* @@protoc_insertion_point(class
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> attributes = 2;
-  int attributes_size() const;
-  void clear_attributes();
-  static const int kAttributesFieldNumber = 2;
+  // map<string, string> meta = 2;
+  int meta_size() const;
+  void clear_meta();
+  static const int kMetaFieldNumber = 2;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
-      attributes() const;
+      meta() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_attributes();
+      mutable_meta();
 
   // string id = 1;
   void clear_id();
@@ -8628,11 +8628,11 @@ class Msg : public ::google::protobuf::Message /* @@protoc_insertion_point(class
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::MapField<
-      Msg_AttributesEntry_DoNotUse,
+      Msg_MetaEntry_DoNotUse,
       ::std::string, ::std::string,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > attributes_;
+      0 > meta_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr data_;
   ::google::protobuf::internal::ArenaStringPtr publish_time_;
@@ -19388,22 +19388,22 @@ inline void Msg::set_allocated_id(::std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:api.Msg.id)
 }
 
-// map<string, string> attributes = 2;
-inline int Msg::attributes_size() const {
-  return attributes_.size();
+// map<string, string> meta = 2;
+inline int Msg::meta_size() const {
+  return meta_.size();
 }
-inline void Msg::clear_attributes() {
-  attributes_.Clear();
+inline void Msg::clear_meta() {
+  meta_.Clear();
 }
 inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-Msg::attributes() const {
-  // @@protoc_insertion_point(field_map:api.Msg.attributes)
-  return attributes_.GetMap();
+Msg::meta() const {
+  // @@protoc_insertion_point(field_map:api.Msg.meta)
+  return meta_.GetMap();
 }
 inline ::google::protobuf::Map< ::std::string, ::std::string >*
-Msg::mutable_attributes() {
-  // @@protoc_insertion_point(field_mutable_map:api.Msg.attributes)
-  return attributes_.MutableMap();
+Msg::mutable_meta() {
+  // @@protoc_insertion_point(field_mutable_map:api.Msg.meta)
+  return meta_.MutableMap();
 }
 
 // bytes data = 3;

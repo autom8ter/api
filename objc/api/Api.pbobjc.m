@@ -4376,14 +4376,14 @@ typedef struct StringMapString__storage_ {
 @implementation Msg
 
 @dynamic id_p;
-@dynamic attributes, attributes_Count;
+@dynamic meta, meta_Count;
 @dynamic data_p;
 @dynamic publishTime;
 
 typedef struct Msg__storage_ {
   uint32_t _has_storage_[1];
   NSString *id_p;
-  NSMutableDictionary *attributes;
+  NSMutableDictionary *meta;
   NSData *data_p;
   NSString *publishTime;
 } Msg__storage_;
@@ -4404,11 +4404,11 @@ typedef struct Msg__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "attributes",
+        .name = "meta",
         .dataTypeSpecific.className = NULL,
-        .number = Msg_FieldNumber_Attributes,
+        .number = Msg_FieldNumber_Meta,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(Msg__storage_, attributes),
+        .offset = (uint32_t)offsetof(Msg__storage_, meta),
         .flags = GPBFieldMapKeyString,
         .dataType = GPBDataTypeString,
       },
