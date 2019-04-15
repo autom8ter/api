@@ -71,66 +71,6 @@ func NewClientSet(ctx context.Context, addr string, opts ...grpc.DialOption) (*C
 	}, nil
 }
 
-type UserServer struct {
-	UserServiceServer
-	driver.PluginFunc
-}
-
-func NewUserServer(server UserServiceServer) *UserServer {
-	s := &UserServer{
-		UserServiceServer: server,
-	}
-	s.PluginFunc = func(server *grpc.Server) {
-		RegisterUserServiceServer(server, s)
-	}
-	return s
-}
-
-type CustomerServer struct {
-	CustomerServiceServer
-	driver.PluginFunc
-}
-
-func NewCustomerServer(server CustomerServiceServer) *CustomerServer {
-	s := &CustomerServer{
-		CustomerServiceServer: server,
-	}
-	s.PluginFunc = func(server *grpc.Server) {
-		RegisterCustomerServiceServer(server, s)
-	}
-	return s
-}
-
-type AccountServer struct {
-	AccountServiceServer
-	driver.PluginFunc
-}
-
-func NewAccountServer(server AccountServiceServer) *AccountServer {
-	s := &AccountServer{
-		AccountServiceServer: server,
-	}
-	s.PluginFunc = func(server *grpc.Server) {
-		RegisterAccountServiceServer(server, s)
-	}
-	return s
-}
-
-type PlanServer struct {
-	PlanServiceServer
-	driver.PluginFunc
-}
-
-func NewPlanServer(server PlanServiceServer) *PlanServer {
-	s := &PlanServer{
-		PlanServiceServer: server,
-	}
-	s.PluginFunc = func(server *grpc.Server) {
-		RegisterPlanServiceServer(server, s)
-	}
-	return s
-}
-
 //////////////////////////////////////////////////////
 
 func AccessFromJSON(j *JSON) *Access {
@@ -243,6 +183,37 @@ func (s *RecipientEmail) DataBytes() []byte {
 }
 
 func (s *RecipientEmail) GoType() string {
+	return reflect.TypeOf(s).String()
+}
+//
+
+func (j *SlashCommand) MarshalJSON() ([]byte, error) {
+	return Util.MarshalJSON(j), nil
+}
+
+func (j *SlashCommand) UnMarshalJSON(obj interface{}) error {
+	return json.Unmarshal(Util.MarshalJSON(j), obj)
+}
+
+func (j *SlashCommand) CompileHTML(text string, w io.Writer) error {
+	return Util.RenderHTML(text, j, w)
+}
+
+func (j *SlashCommand) CompileTXT(text string, w io.Writer) error {
+	return Util.RenderTXT(text, j, w)
+}
+
+func (s *SlashCommand) Attributes(m map[string]string) map[string]string {
+	return Util.Attributes(s)
+
+}
+
+func (s *SlashCommand) DataBytes() []byte {
+	return Util.MarshalJSON(s)
+
+}
+
+func (s *SlashCommand) GoType() string {
 	return reflect.TypeOf(s).String()
 }
 

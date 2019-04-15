@@ -172,6 +172,42 @@ the connection when "ctx" gets done.
 func RegisterCustomerServiceServer(s *grpc.Server, srv CustomerServiceServer)
 ```
 
+#### func  RegisterHookServiceHandler
+
+```go
+func RegisterHookServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterHookServiceHandler registers the http handlers for service HookService
+to "mux". The handlers forward requests to the grpc endpoint over "conn".
+
+#### func  RegisterHookServiceHandlerClient
+
+```go
+func RegisterHookServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client HookServiceClient) error
+```
+RegisterHookServiceHandlerClient registers the http handlers for service
+HookService to "mux". The handlers forward requests to the grpc endpoint over
+the given implementation of "HookServiceClient". Note: the gRPC framework
+executes interceptors within the gRPC handler. If the passed in
+"HookServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "HookServiceClient" to call the
+correct interceptors.
+
+#### func  RegisterHookServiceHandlerFromEndpoint
+
+```go
+func RegisterHookServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterHookServiceHandlerFromEndpoint is same as RegisterHookServiceHandler but
+automatically dials to "endpoint" and closes the connection when "ctx" gets
+done.
+
+#### func  RegisterHookServiceServer
+
+```go
+func RegisterHookServiceServer(s *grpc.Server, srv HookServiceServer)
+```
+
 #### func  RegisterPlanServiceHandler
 
 ```go
@@ -559,22 +595,6 @@ type AccountOption func(r *CreateAccountRequest)
 ```
 
 
-#### type AccountServer
-
-```go
-type AccountServer struct {
-	AccountServiceServer
-	driver.PluginFunc
-}
-```
-
-
-#### func  NewAccountServer
-
-```go
-func NewAccountServer(server AccountServiceServer) *AccountServer
-```
-
 #### type AccountServiceClient
 
 ```go
@@ -665,6 +685,85 @@ func (a AccountServiceServerFunctions) RegisterWithServer(s *grpc.Server)
 
 ```go
 func (a AccountServiceServerFunctions) UpdateAccount(ctx context.Context, r *Account) (*JSON, error)
+```
+
+#### type ActionHookRequest
+
+```go
+type ActionHookRequest struct {
+	Attachment           *Attachment       `protobuf:"bytes,1,opt,name=attachment,proto3" json:"attachment,omitempty"`
+	Actions              *AttachmentAction `protobuf:"bytes,2,opt,name=actions,proto3" json:"actions,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func (*ActionHookRequest) Descriptor
+
+```go
+func (*ActionHookRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*ActionHookRequest) GetActions
+
+```go
+func (m *ActionHookRequest) GetActions() *AttachmentAction
+```
+
+#### func (*ActionHookRequest) GetAttachment
+
+```go
+func (m *ActionHookRequest) GetAttachment() *Attachment
+```
+
+#### func (*ActionHookRequest) ProtoMessage
+
+```go
+func (*ActionHookRequest) ProtoMessage()
+```
+
+#### func (*ActionHookRequest) Reset
+
+```go
+func (m *ActionHookRequest) Reset()
+```
+
+#### func (*ActionHookRequest) String
+
+```go
+func (m *ActionHookRequest) String() string
+```
+
+#### func (*ActionHookRequest) XXX_DiscardUnknown
+
+```go
+func (m *ActionHookRequest) XXX_DiscardUnknown()
+```
+
+#### func (*ActionHookRequest) XXX_Marshal
+
+```go
+func (m *ActionHookRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*ActionHookRequest) XXX_Merge
+
+```go
+func (m *ActionHookRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*ActionHookRequest) XXX_Size
+
+```go
+func (m *ActionHookRequest) XXX_Size() int
+```
+
+#### func (*ActionHookRequest) XXX_Unmarshal
+
+```go
+func (m *ActionHookRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Address
@@ -2942,22 +3041,6 @@ func (m *CustomerRequest) XXX_Size() int
 func (m *CustomerRequest) XXX_Unmarshal(b []byte) error
 ```
 
-#### type CustomerServer
-
-```go
-type CustomerServer struct {
-	CustomerServiceServer
-	driver.PluginFunc
-}
-```
-
-
-#### func  NewCustomerServer
-
-```go
-func NewCustomerServer(server CustomerServiceServer) *CustomerServer
-```
-
 #### type CustomerServiceClient
 
 ```go
@@ -3774,6 +3857,39 @@ func (m *File) XXX_Size() int
 func (m *File) XXX_Unmarshal(b []byte) error
 ```
 
+#### type HookServiceClient
+
+```go
+type HookServiceClient interface {
+	Hook(ctx context.Context, in *Attachment, opts ...grpc.CallOption) (*Empty, error)
+	ActionHook(ctx context.Context, in *ActionHookRequest, opts ...grpc.CallOption) (*Empty, error)
+	SlashCmd(ctx context.Context, in *SlashCommand, opts ...grpc.CallOption) (*Empty, error)
+}
+```
+
+HookServiceClient is the client API for HookService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewHookServiceClient
+
+```go
+func NewHookServiceClient(cc *grpc.ClientConn) HookServiceClient
+```
+
+#### type HookServiceServer
+
+```go
+type HookServiceServer interface {
+	Hook(context.Context, *Attachment) (*Empty, error)
+	ActionHook(context.Context, *ActionHookRequest) (*Empty, error)
+	SlashCmd(context.Context, *SlashCommand) (*Empty, error)
+}
+```
+
+HookServiceServer is the server API for HookService service.
+
 #### type Id
 
 ```go
@@ -4555,22 +4671,6 @@ func (m *Pin) XXX_Unmarshal(b []byte) error
 type PlanOption func(r *CreatePlanRequest)
 ```
 
-
-#### type PlanServer
-
-```go
-type PlanServer struct {
-	PlanServiceServer
-	driver.PluginFunc
-}
-```
-
-
-#### func  NewPlanServer
-
-```go
-func NewPlanServer(server PlanServiceServer) *PlanServer
-```
 
 #### type PlanServiceClient
 
@@ -5577,6 +5677,283 @@ func (SigningMethod) EnumDescriptor() ([]byte, []int)
 func (x SigningMethod) String() string
 ```
 
+#### type SlackHook
+
+```go
+type SlackHook struct {
+	Username             string   `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty"`
+	Channel              string   `protobuf:"bytes,2,opt,name=channel,proto3" json:"channel,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*SlackHook) Descriptor
+
+```go
+func (*SlackHook) Descriptor() ([]byte, []int)
+```
+
+#### func (*SlackHook) GetChannel
+
+```go
+func (m *SlackHook) GetChannel() string
+```
+
+#### func (*SlackHook) GetUsername
+
+```go
+func (m *SlackHook) GetUsername() string
+```
+
+#### func (*SlackHook) ProtoMessage
+
+```go
+func (*SlackHook) ProtoMessage()
+```
+
+#### func (*SlackHook) Reset
+
+```go
+func (m *SlackHook) Reset()
+```
+
+#### func (*SlackHook) String
+
+```go
+func (m *SlackHook) String() string
+```
+
+#### func (*SlackHook) XXX_DiscardUnknown
+
+```go
+func (m *SlackHook) XXX_DiscardUnknown()
+```
+
+#### func (*SlackHook) XXX_Marshal
+
+```go
+func (m *SlackHook) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*SlackHook) XXX_Merge
+
+```go
+func (m *SlackHook) XXX_Merge(src proto.Message)
+```
+
+#### func (*SlackHook) XXX_Size
+
+```go
+func (m *SlackHook) XXX_Size() int
+```
+
+#### func (*SlackHook) XXX_Unmarshal
+
+```go
+func (m *SlackHook) XXX_Unmarshal(b []byte) error
+```
+
+#### type SlashCommand
+
+```go
+type SlashCommand struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	TeamId               string   `protobuf:"bytes,2,opt,name=team_id,json=teamId,proto3" json:"team_id,omitempty"`
+	TeamDomain           string   `protobuf:"bytes,3,opt,name=team_domain,json=teamDomain,proto3" json:"team_domain,omitempty"`
+	EnterpriseId         string   `protobuf:"bytes,4,opt,name=enterprise_id,json=enterpriseId,proto3" json:"enterprise_id,omitempty"`
+	EnterpriseName       string   `protobuf:"bytes,6,opt,name=enterprise_name,json=enterpriseName,proto3" json:"enterprise_name,omitempty"`
+	ChannelId            string   `protobuf:"bytes,7,opt,name=channel_id,json=channelId,proto3" json:"channel_id,omitempty"`
+	ChannelName          string   `protobuf:"bytes,8,opt,name=channel_name,json=channelName,proto3" json:"channel_name,omitempty"`
+	UserId               string   `protobuf:"bytes,9,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserName             string   `protobuf:"bytes,10,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	Command              string   `protobuf:"bytes,11,opt,name=command,proto3" json:"command,omitempty"`
+	Text                 string   `protobuf:"bytes,12,opt,name=text,proto3" json:"text,omitempty"`
+	ResponseUrl          string   `protobuf:"bytes,13,opt,name=response_url,json=responseUrl,proto3" json:"response_url,omitempty"`
+	TriggerId            string   `protobuf:"bytes,14,opt,name=trigger_id,json=triggerId,proto3" json:"trigger_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*SlashCommand) Attributes
+
+```go
+func (s *SlashCommand) Attributes(m map[string]string) map[string]string
+```
+
+#### func (*SlashCommand) CompileHTML
+
+```go
+func (j *SlashCommand) CompileHTML(text string, w io.Writer) error
+```
+
+#### func (*SlashCommand) CompileTXT
+
+```go
+func (j *SlashCommand) CompileTXT(text string, w io.Writer) error
+```
+
+#### func (*SlashCommand) DataBytes
+
+```go
+func (s *SlashCommand) DataBytes() []byte
+```
+
+#### func (*SlashCommand) Descriptor
+
+```go
+func (*SlashCommand) Descriptor() ([]byte, []int)
+```
+
+#### func (*SlashCommand) GetChannelId
+
+```go
+func (m *SlashCommand) GetChannelId() string
+```
+
+#### func (*SlashCommand) GetChannelName
+
+```go
+func (m *SlashCommand) GetChannelName() string
+```
+
+#### func (*SlashCommand) GetCommand
+
+```go
+func (m *SlashCommand) GetCommand() string
+```
+
+#### func (*SlashCommand) GetEnterpriseId
+
+```go
+func (m *SlashCommand) GetEnterpriseId() string
+```
+
+#### func (*SlashCommand) GetEnterpriseName
+
+```go
+func (m *SlashCommand) GetEnterpriseName() string
+```
+
+#### func (*SlashCommand) GetResponseUrl
+
+```go
+func (m *SlashCommand) GetResponseUrl() string
+```
+
+#### func (*SlashCommand) GetTeamDomain
+
+```go
+func (m *SlashCommand) GetTeamDomain() string
+```
+
+#### func (*SlashCommand) GetTeamId
+
+```go
+func (m *SlashCommand) GetTeamId() string
+```
+
+#### func (*SlashCommand) GetText
+
+```go
+func (m *SlashCommand) GetText() string
+```
+
+#### func (*SlashCommand) GetToken
+
+```go
+func (m *SlashCommand) GetToken() string
+```
+
+#### func (*SlashCommand) GetTriggerId
+
+```go
+func (m *SlashCommand) GetTriggerId() string
+```
+
+#### func (*SlashCommand) GetUserId
+
+```go
+func (m *SlashCommand) GetUserId() string
+```
+
+#### func (*SlashCommand) GetUserName
+
+```go
+func (m *SlashCommand) GetUserName() string
+```
+
+#### func (*SlashCommand) GoType
+
+```go
+func (s *SlashCommand) GoType() string
+```
+
+#### func (*SlashCommand) MarshalJSON
+
+```go
+func (j *SlashCommand) MarshalJSON() ([]byte, error)
+```
+
+#### func (*SlashCommand) ProtoMessage
+
+```go
+func (*SlashCommand) ProtoMessage()
+```
+
+#### func (*SlashCommand) Reset
+
+```go
+func (m *SlashCommand) Reset()
+```
+
+#### func (*SlashCommand) String
+
+```go
+func (m *SlashCommand) String() string
+```
+
+#### func (*SlashCommand) UnMarshalJSON
+
+```go
+func (j *SlashCommand) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*SlashCommand) XXX_DiscardUnknown
+
+```go
+func (m *SlashCommand) XXX_DiscardUnknown()
+```
+
+#### func (*SlashCommand) XXX_Marshal
+
+```go
+func (m *SlashCommand) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*SlashCommand) XXX_Merge
+
+```go
+func (m *SlashCommand) XXX_Merge(src proto.Message)
+```
+
+#### func (*SlashCommand) XXX_Size
+
+```go
+func (m *SlashCommand) XXX_Size() int
+```
+
+#### func (*SlashCommand) XXX_Unmarshal
+
+```go
+func (m *SlashCommand) XXX_Unmarshal(b []byte) error
+```
+
 #### type StandardClaims
 
 ```go
@@ -5816,6 +6193,78 @@ func (m *Star) XXX_Size() int
 
 ```go
 func (m *Star) XXX_Unmarshal(b []byte) error
+```
+
+#### type StringMapString
+
+```go
+type StringMapString struct {
+	Map                  map[string]string `protobuf:"bytes,1,rep,name=map,proto3" json:"map,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func (*StringMapString) Descriptor
+
+```go
+func (*StringMapString) Descriptor() ([]byte, []int)
+```
+
+#### func (*StringMapString) GetMap
+
+```go
+func (m *StringMapString) GetMap() map[string]string
+```
+
+#### func (*StringMapString) ProtoMessage
+
+```go
+func (*StringMapString) ProtoMessage()
+```
+
+#### func (*StringMapString) Reset
+
+```go
+func (m *StringMapString) Reset()
+```
+
+#### func (*StringMapString) String
+
+```go
+func (m *StringMapString) String() string
+```
+
+#### func (*StringMapString) XXX_DiscardUnknown
+
+```go
+func (m *StringMapString) XXX_DiscardUnknown()
+```
+
+#### func (*StringMapString) XXX_Marshal
+
+```go
+func (m *StringMapString) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*StringMapString) XXX_Merge
+
+```go
+func (m *StringMapString) XXX_Merge(src proto.Message)
+```
+
+#### func (*StringMapString) XXX_Size
+
+```go
+func (m *StringMapString) XXX_Size() int
+```
+
+#### func (*StringMapString) XXX_Unmarshal
+
+```go
+func (m *StringMapString) XXX_Unmarshal(b []byte) error
 ```
 
 #### type SubscribeCustomerRequest
@@ -6320,22 +6769,6 @@ func (m *UserReminder) XXX_Size() int
 
 ```go
 func (m *UserReminder) XXX_Unmarshal(b []byte) error
-```
-
-#### type UserServer
-
-```go
-type UserServer struct {
-	UserServiceServer
-	driver.PluginFunc
-}
-```
-
-
-#### func  NewUserServer
-
-```go
-func NewUserServer(server UserServiceServer) *UserServer
 ```
 
 #### type UserServiceClient
