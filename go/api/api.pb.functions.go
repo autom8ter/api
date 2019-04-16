@@ -286,6 +286,6 @@ func ServeFunctions(addr string, debug bool, accounts AccountServiceServerFuncti
 			plan,
 		),
 	).Serve(); err != nil {
-		Util.Fatalln("functions:", err.Error())
+		Util.Entry().Fatalln("functions:", err.Error())
 	}
 }
