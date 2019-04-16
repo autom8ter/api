@@ -25,8 +25,8 @@ github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7/go.mod h1:
 github.com/autom8ter/engine v0.0.0-20190415024113-50822e48d499 h1:itVnlk2qRRgsU2S5eI0I3BugIdGBBSDzsQJ2Kc5Mu08=
 github.com/autom8ter/engine v0.0.0-20190415024113-50822e48d499/go.mod h1:7WCjaTtYg+ttqSawFX9UtwmMqYj7foyDn8UBWLvSjWo=
 github.com/autom8ter/objectify v0.0.0-20190408065719-a9ebead75a53/go.mod h1:EAzDHsLulh41WBS3lcJgenwdK21Ep+/KqiiGvWC/lCQ=
-github.com/autom8ter/objectify v0.0.0-20190415004124-24343395b7d6 h1:Wv2kUec92MdL0sBggnORTuMZdeLQK6GZE6T3v3qzI3I=
-github.com/autom8ter/objectify v0.0.0-20190415004124-24343395b7d6/go.mod h1:X0Bgvs/G/7yaxBPOKVDsmW6FaoVf1Ax8UhJqQOT5BO4=
+github.com/autom8ter/objectify v0.0.0-20190416215222-c0a994cb5a82 h1:x3qZlM5euzvVzksGC+qQgkrtA9g0viKE0Koih2bb2SQ=
+github.com/autom8ter/objectify v0.0.0-20190416215222-c0a994cb5a82/go.mod h1:6SedWh0h4zIfnBnqfxONPJhKJjeQ+lweBRdWog0fmCA=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b h1:9/xdefJqW1AlO2awvgxCFPnJjg1m8TO5EzdSk/B0oFU=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b/go.mod h1:2h8US+tG3Wg9A68c4Io0aKdc506t3QyphvcRhvp8p1Q=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=

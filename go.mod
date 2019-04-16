@@ -4,7 +4,7 @@ require (
 	cloud.google.com/go v0.37.2 // indirect
 	github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7
 	github.com/autom8ter/engine v0.0.0-20190415024113-50822e48d499
-	github.com/autom8ter/objectify v0.0.0-20190415004124-24343395b7d6
+	github.com/autom8ter/objectify v0.0.0-20190416215222-c0a994cb5a82
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/golang/protobuf v1.3.1
