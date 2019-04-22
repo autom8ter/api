@@ -15,46 +15,20 @@
     "application/json"
   ],
   "paths": {
-    "/api/accounts": {
+    "/api/profile/{email}": {
       "post": {
-        "operationId": "ListAccounts",
+        "operationId": "GetProfile",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiJSON"
+              "$ref": "#/definitions/apiProfile"
             }
           }
         },
         "parameters": [
           {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        ],
-        "tags": [
-          "AccountService"
-        ]
-      }
-    },
-    "/api/accounts/{customer.id}": {
-      "post": {
-        "operationId": "UpdateAccount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "customer.id",
+            "name": "email",
             "in": "path",
             "required": true,
             "type": "string"
@@ -64,987 +38,38 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiAccount"
+              "$ref": "#/definitions/apiGetProfileByEmail"
             }
           }
         ],
         "tags": [
-          "AccountService"
-        ]
-      }
-    },
-    "/api/accounts/{id}": {
-      "post": {
-        "operationId": "ReadAccount",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiId"
-            }
-          }
-        ],
-        "tags": [
-          "AccountService"
-        ]
-      }
-    },
-    "/api/customers": {
-      "post": {
-        "operationId": "CreateCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiCustomerRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/list": {
-      "post": {
-        "operationId": "ListCustomers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{id}": {
-      "post": {
-        "operationId": "DeleteCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiId"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{id}/call": {
-      "post": {
-        "operationId": "CallUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiCallRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/customers/{id}/charge": {
-      "post": {
-        "operationId": "ChargeCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiChargeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{id}/email": {
-      "post": {
-        "operationId": "EmailCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmailRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{id}/refund": {
-      "post": {
-        "operationId": "RefundCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiRefundRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{id}/sms": {
-      "post": {
-        "operationId": "SMSUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSMSRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/customers/{id}/subscribe": {
-      "post": {
-        "operationId": "SubscribeCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSubscribeCustomerRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{id}/unsubscribe": {
-      "post": {
-        "operationId": "UnSubscribeCustomer",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiCancelSubscriptionRequest"
-            }
-          }
-        ],
-        "tags": [
-          "CustomerService"
-        ]
-      }
-    },
-    "/api/customers/{sms.id}/mms": {
-      "post": {
-        "operationId": "MMSUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "sms.id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiMMSRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/hooks": {
-      "post": {
-        "operationId": "SlashCmd",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSlashCommand"
-            }
-          }
-        ],
-        "tags": [
-          "HookService"
-        ]
-      }
-    },
-    "/api/plans": {
-      "post": {
-        "operationId": "CreateSubscriptionPlan",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiCreatePlanRequest"
-            }
-          }
-        ],
-        "tags": [
-          "PlanService"
-        ]
-      }
-    },
-    "/api/users": {
-      "post": {
-        "operationId": "ListUsers",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmpty"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/api/users/{id}/email": {
-      "post": {
-        "operationId": "EmailUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiJSON"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmailRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
+          "ProfileService"
         ]
       }
     }
   },
   "definitions": {
-    "apiAccess": {
-      "type": "object",
-      "properties": {
-        "autom8ter_account": {
-          "type": "string"
-        },
-        "autom8ter_key": {
-          "type": "string"
-        },
-        "twilio_account": {
-          "type": "string"
-        },
-        "twilio_key": {
-          "type": "string"
-        },
-        "sendgrid_account": {
-          "type": "string"
-        },
-        "sendgrid_key": {
-          "type": "string"
-        },
-        "stripe_account": {
-          "type": "string"
-        },
-        "stripe_key": {
-          "type": "string"
-        },
-        "slack_account": {
-          "type": "string"
-        },
-        "slack_key": {
-          "type": "string"
-        },
-        "gcp_project": {
-          "type": "string"
-        },
-        "gcp_key": {
-          "type": "string"
-        }
-      }
-    },
-    "apiAccount": {
-      "type": "object",
-      "properties": {
-        "customer": {
-          "$ref": "#/definitions/apiCustomer"
-        },
-        "access": {
-          "$ref": "#/definitions/apiAccess"
-        }
-      }
-    },
-    "apiActionHookRequest": {
-      "type": "object",
-      "properties": {
-        "attachment": {
-          "$ref": "#/definitions/apiAttachment"
-        },
-        "actions": {
-          "$ref": "#/definitions/apiAttachmentAction"
-        }
-      }
-    },
-    "apiAddress": {
-      "type": "object",
-      "properties": {
-        "city": {
-          "type": "string"
-        },
-        "country": {
-          "type": "string"
-        },
-        "line1": {
-          "type": "string"
-        },
-        "line2": {
-          "type": "string"
-        },
-        "postal_code": {
-          "type": "string"
-        },
-        "state": {
-          "type": "string"
-        }
-      }
-    },
-    "apiAttachment": {
-      "type": "object",
-      "properties": {
-        "color": {
-          "type": "string"
-        },
-        "fallback": {
-          "type": "string"
-        },
-        "callback_id": {
-          "type": "string"
-        },
-        "id": {
-          "type": "string",
-          "format": "int64"
-        },
-        "author_id": {
-          "type": "string"
-        },
-        "author_name": {
-          "type": "string"
-        },
-        "author_link": {
-          "type": "string"
-        },
-        "author_icon": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "title_prefix": {
-          "type": "string"
-        },
-        "pretext": {
-          "type": "string"
-        },
-        "text": {
-          "type": "string"
-        },
-        "image_url": {
-          "type": "string"
-        },
-        "thumb_url": {
-          "type": "string"
-        },
-        "fields": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiAttachmentField"
-          }
-        }
-      }
-    },
-    "apiAttachmentAction": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "text": {
-          "type": "string"
-        },
-        "style": {
-          "type": "string"
-        },
-        "type": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        },
-        "data_source": {
-          "type": "string"
-        },
-        "min_query_length": {
-          "type": "string",
-          "format": "int64"
-        },
-        "options": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiAttachmentActionOption"
-          }
-        },
-        "selected_options": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiAttachmentActionOption"
-          }
-        },
-        "option_groups": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiAttachmentActionOptionGroup"
-          }
-        },
-        "confirm": {
-          "$ref": "#/definitions/apiAttachmentConfirmationField"
-        },
-        "url": {
-          "type": "string"
-        }
-      }
-    },
-    "apiAttachmentActionOption": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        }
-      }
-    },
-    "apiAttachmentActionOptionGroup": {
-      "type": "object",
-      "properties": {
-        "text": {
-          "type": "string"
-        },
-        "options": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiAttachmentActionOption"
-          }
-        }
-      }
-    },
-    "apiAttachmentConfirmationField": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "text": {
-          "type": "string"
-        },
-        "ok_text": {
-          "type": "string"
-        },
-        "dismiss_text": {
-          "type": "string"
-        }
-      }
-    },
-    "apiAttachmentField": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        },
-        "short": {
-          "type": "boolean",
-          "format": "boolean"
-        }
-      }
-    },
-    "apiCallRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "callback_url": {
-          "type": "string"
-        }
-      }
-    },
-    "apiCancelSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        }
-      }
-    },
-    "apiChargeRequest": {
-      "type": "object",
-      "properties": {
-        "product": {
-          "$ref": "#/definitions/apiProduct"
-        },
-        "id": {
-          "type": "string"
-        }
-      }
-    },
-    "apiCreateAccountRequest": {
-      "type": "object",
-      "properties": {
-        "customer": {
-          "$ref": "#/definitions/apiCustomerRequest"
-        },
-        "access": {
-          "$ref": "#/definitions/apiAccess"
-        }
-      }
-    },
-    "apiCreatePlanRequest": {
-      "type": "object",
-      "properties": {
-        "plan_id": {
-          "type": "string"
-        },
-        "amount": {
-          "type": "string",
-          "format": "int64"
-        },
-        "service_id": {
-          "type": "string"
-        },
-        "service_name": {
-          "type": "string"
-        },
-        "friendly_name": {
-          "type": "string"
-        }
-      }
-    },
-    "apiCustomer": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "plan": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "address": {
-          "$ref": "#/definitions/apiAddress"
-        },
-        "metadata": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "deleted": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "create_date": {
-          "type": "string",
-          "format": "int64"
-        }
-      },
-      "title": "User is a user of the application"
-    },
-    "apiCustomerRequest": {
+    "apiGetProfileByEmail": {
       "type": "object",
       "properties": {
         "email": {
           "type": "string"
-        },
-        "plan": {
-          "type": "string"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "description": {
-          "type": "string"
-        },
-        "address": {
-          "$ref": "#/definitions/apiAddress"
         }
       }
     },
-    "apiEmailRequest": {
+    "apiIdentity": {
       "type": "object",
       "properties": {
-        "id": {
+        "provider": {
           "type": "string"
         },
-        "subject": {
+        "user_id": {
           "type": "string"
         },
-        "plain_text": {
+        "connection": {
           "type": "string"
         },
-        "html_alt": {
-          "type": "string"
-        }
-      }
-    },
-    "apiEmpty": {
-      "type": "object"
-    },
-    "apiFile": {
-      "type": "object",
-      "properties": {
-        "data": {
-          "type": "string",
-          "format": "byte"
-        },
-        "size": {
-          "type": "string",
-          "format": "int64"
-        },
-        "name": {
-          "type": "string"
-        },
-        "tags": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "apiId": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        }
-      }
-    },
-    "apiJSON": {
-      "type": "object",
-      "properties": {
-        "data": {
-          "type": "string",
-          "format": "byte"
-        },
-        "size": {
-          "type": "string",
-          "format": "int64"
-        }
-      }
-    },
-    "apiMMSRequest": {
-      "type": "object",
-      "properties": {
-        "sms": {
-          "$ref": "#/definitions/apiSMSRequest"
-        },
-        "media_url": {
-          "type": "string"
-        }
-      }
-    },
-    "apiMessageUserRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "message": {
-          "type": "string"
-        }
-      }
-    },
-    "apiProduct": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "amount": {
-          "type": "string",
-          "format": "int64"
-        },
-        "description": {
-          "type": "string"
-        },
-        "files": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiFile"
-          }
-        },
-        "tags": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        },
-        "available": {
+        "isSocial": {
           "type": "boolean",
           "format": "boolean"
         }
@@ -1053,201 +78,74 @@
     "apiProfile": {
       "type": "object",
       "properties": {
-        "avatar_hash": {
+        "email": {
           "type": "string"
         },
-        "status": {
-          "type": "string"
-        },
-        "status_emoji": {
-          "type": "string"
-        },
-        "display_name": {
-          "type": "string"
+        "email_verified": {
+          "type": "boolean",
+          "format": "boolean"
         },
         "name": {
           "type": "string"
         },
-        "email": {
+        "given_name": {
           "type": "string"
         },
-        "image_urls": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "team": {
-          "type": "string"
-        }
-      }
-    },
-    "apiRefundRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
+        "family_name": {
           "type": "string"
         },
-        "reason": {
+        "picture": {
           "type": "string"
         },
-        "amount": {
-          "type": "string",
-          "format": "int64"
-        },
-        "reverse_transfer": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "status": {
-          "type": "string"
-        }
-      }
-    },
-    "apiSMSRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "body": {
-          "type": "string"
-        }
-      }
-    },
-    "apiSlashCommand": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "type": "string"
-        },
-        "team_id": {
-          "type": "string"
-        },
-        "team_domain": {
-          "type": "string"
-        },
-        "enterprise_id": {
-          "type": "string"
-        },
-        "enterprise_name": {
-          "type": "string"
-        },
-        "channel_id": {
-          "type": "string"
-        },
-        "channel_name": {
+        "locale": {
           "type": "string"
         },
         "user_id": {
           "type": "string"
         },
-        "user_name": {
+        "nickname": {
           "type": "string"
         },
-        "command": {
+        "connection": {
           "type": "string"
         },
-        "text": {
+        "identities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiIdentity"
+          }
+        },
+        "last_ip": {
           "type": "string"
         },
-        "response_url": {
+        "login_count": {
+          "type": "string",
+          "format": "int64"
+        },
+        "updated_at": {
           "type": "string"
         },
-        "trigger_id": {
+        "created_at": {
           "type": "string"
+        },
+        "user_metadata": {
+          "$ref": "#/definitions/apiUserMetadata"
         }
       }
     },
-    "apiSubscribeCustomerRequest": {
+    "apiUserMetadata": {
       "type": "object",
       "properties": {
-        "id": {
+        "phone": {
           "type": "string"
         },
         "plan": {
           "type": "string"
         },
-        "card_number": {
+        "pay_token": {
           "type": "string"
         },
-        "exp_month": {
-          "type": "string"
-        },
-        "exp_year": {
-          "type": "string"
-        },
-        "cvc": {
-          "type": "string"
-        }
-      }
-    },
-    "apiUpdateCustomerRequest": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "customer": {
-          "$ref": "#/definitions/apiCustomerRequest"
-        }
-      }
-    },
-    "apiUser": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "team_id": {
-          "type": "string"
-        },
-        "name": {
-          "type": "string"
-        },
-        "phone": {
-          "type": "string"
-        },
-        "profile": {
-          "$ref": "#/definitions/apiProfile"
-        },
-        "deleted": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "admin": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "ownder": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "primary_owner": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "restricted": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "ultra_restricted": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "stranger": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "bot": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "has2fa": {
-          "type": "boolean",
-          "format": "boolean"
-        },
-        "locale": {
+        "last_contact": {
           "type": "string"
         }
       }

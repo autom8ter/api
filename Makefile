@@ -1,6 +1,6 @@
 .PHONY: proto
 proto: ## generate protobufs
-	@docker run -v `pwd`:/defs colemanword/prototool:1.17_0 generate
+	@docker run -v `pwd`:/defs namely/prototool:1.17_0 generate
 
 clean:
 	@rm -rf sdk/*
