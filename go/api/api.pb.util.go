@@ -3,6 +3,7 @@ package api
 import (
 	"github.com/autom8ter/objectify"
 	"github.com/pkg/errors"
+	"html/template"
 	"io"
 )
 
@@ -19,6 +20,6 @@ func (p *Profile) JSONString() string {
 	return string(Util.MarshalJSON(p))
 }
 
-func (p *Profile) Render(tmpl string, w io.Writer) error {
+func (p *Profile) Render(tmpl *template.Template, w io.Writer) error {
 	return Util.RenderHTML(tmpl, p, w)
 }

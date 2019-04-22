@@ -1,7 +1,7 @@
 module github.com/autom8ter/api
 
 require (
-	github.com/autom8ter/objectify v0.0.0-20190422193702-3644923e4f46
+	github.com/autom8ter/objectify v0.0.0-20190422234248-2629fc698124
 	github.com/golang/protobuf v1.3.1
 	github.com/grpc-ecosystem/grpc-gateway v1.8.5
 	github.com/pkg/errors v0.8.1
