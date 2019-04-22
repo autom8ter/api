@@ -13,3 +13,7 @@ func (p *Profile) Validate() error {
 	}
 	return nil
 }
+
+func (p *Profile) JSONString() string {
+	return string(Util.MarshalJSON(p))
+}
