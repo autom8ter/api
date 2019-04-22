@@ -2,11 +2,10 @@ module github.com/autom8ter/api
 
 require (
 	cloud.google.com/go v0.37.2 // indirect
-	github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7
+	github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7 // indirect
 	github.com/autom8ter/engine v0.0.0-20190416235751-97be227e219e
 	github.com/autom8ter/objectify v0.0.0-20190422193702-3644923e4f46
 	github.com/codegangsta/negroni v1.0.0 // indirect
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/golang/protobuf v1.3.1
 	github.com/grpc-ecosystem/grpc-gateway v1.8.5
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
