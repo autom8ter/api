@@ -3,11 +3,9 @@ package api
 import (
 	"context"
 	"encoding/json"
-	"github.com/auth0/go-jwt-middleware"
 	"github.com/autom8ter/engine"
 	"github.com/autom8ter/engine/driver"
 	"github.com/autom8ter/objectify"
-	"github.com/dgrijalva/jwt-go"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
@@ -17,6 +15,8 @@ import (
 	"os"
 	"reflect"
 )
+
+var Util = objectify.Default()
 
 func Serve(addr string, debug bool, plugin driver.Plugin) error {
 	return engine.Serve(addr, debug, plugin)
@@ -55,8 +55,6 @@ func DataJSONTo(msg *Msg, obj interface{}) error {
 func DataProtoTo(msg *Msg, obj interface{}) error {
 	return proto.Unmarshal(msg.Data, obj.(proto.Message))
 }
-
-var Util = objectify.Default()
 
 type ClientSet struct {
 	Users     UserServiceClient
@@ -834,158 +832,4 @@ func (s *SignedKey) DataBytes() []byte {
 
 func (s *SignedKey) GoType() string {
 	return reflect.TypeOf(s).String()
-}
-
-///////////////////////////////////////////////////////////////
-
-type Claims struct {
-	standardClaims map[string]jwt.StandardClaims
-}
-
-func (c *Claims) SignedTwilioToken(secret string, headers map[string]string) (*SignedKey, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["twilio"])
-	token.Header = map[string]interface{}{
-		"typ": "JWT",
-		"alg": "HS256",
-		"cty": "twilio-fpa;v=1",
-	}
-	for k, v := range headers {
-		token.Header[k] = v
-	}
-	tok, err := token.SignedString([]byte(secret))
-	return &SignedKey{SignedKey: tok}, err
-}
-
-func (c *Claims) SignedSendGridToken(secret string, headers map[string]string) (*SignedKey, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["sendgrid"])
-	token.Header = map[string]interface{}{
-		"typ": "JWT",
-		"alg": "HS256",
-		"cty": "sendgrid",
-	}
-	for k, v := range headers {
-		token.Header[k] = v
-	}
-	tok, err := token.SignedString([]byte(secret))
-	return &SignedKey{SignedKey: tok}, err
-}
-
-func (c *Claims) SignedSlackToken(secret string, headers map[string]string) (*SignedKey, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["slack"])
-	token.Header = map[string]interface{}{
-		"typ": "JWT",
-		"alg": "HS256",
-		"cty": "slack",
-	}
-	for k, v := range headers {
-		token.Header[k] = v
-	}
-	tok, err := token.SignedString([]byte(secret))
-	return &SignedKey{SignedKey: tok}, err
-}
-
-func (c *Claims) SignedStripeToken(secret string, headers map[string]string) (*SignedKey, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["stripe"])
-	token.Header = map[string]interface{}{
-		"typ": "JWT",
-		"alg": "HS256",
-		"cty": "stripe",
-	}
-	for k, v := range headers {
-		token.Header[k] = v
-	}
-	tok, err := token.SignedString([]byte(secret))
-	return &SignedKey{SignedKey: tok}, err
-}
-
-func (c *Claims) SignedGCPToken(secret string, headers map[string]string) (*SignedKey, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c.standardClaims["gcp"])
-	token.Header = map[string]interface{}{
-		"typ": "JWT",
-		"alg": "HS256",
-		"cty": "gcp",
-	}
-
-	signed, err := token.SignedString([]byte(secret))
-	if err != nil {
-		return nil, err
-	}
-	return &SignedKey{
-		SignedKey: signed,
-	}, nil
-}
-
-func (t *StandardClaims) Claims() *Claims {
-	claims := make(map[string]jwt.StandardClaims)
-	claims["twilio"] = jwt.StandardClaims{
-		Audience:  t.Audience,
-		ExpiresAt: t.ExpiresAt,
-		Id:        t.Id,
-		IssuedAt:  t.IssuedAt,
-		Issuer:    t.Access.TwilioKey,
-		NotBefore: t.NotBefore,
-		Subject:   t.Access.TwilioAccount,
-	}
-	claims["sendgrid"] = jwt.StandardClaims{
-		Audience:  t.Audience,
-		ExpiresAt: t.ExpiresAt,
-		Id:        t.Id,
-		IssuedAt:  t.IssuedAt,
-		Issuer:    t.Access.SendgridKey,
-		NotBefore: t.NotBefore,
-		Subject:   t.Access.SendgridAccount,
-	}
-	claims["stripe"] = jwt.StandardClaims{
-		Audience:  t.Audience,
-		ExpiresAt: t.ExpiresAt,
-		Id:        t.Id,
-		IssuedAt:  t.IssuedAt,
-		Issuer:    t.Access.StripeKey,
-		NotBefore: t.NotBefore,
-		Subject:   t.Access.StripeAccount,
-	}
-	claims["slack"] = jwt.StandardClaims{
-		Audience:  t.Audience,
-		ExpiresAt: t.ExpiresAt,
-		Id:        t.Id,
-		IssuedAt:  t.IssuedAt,
-		Issuer:    t.Access.SlackKey,
-		NotBefore: t.NotBefore,
-		Subject:   t.Access.SlackAccount,
-	}
-	claims["gcp"] = jwt.StandardClaims{
-		Audience:  t.Audience,
-		ExpiresAt: t.ExpiresAt,
-		Id:        t.Id,
-		IssuedAt:  t.IssuedAt,
-		Issuer:    t.Access.GcpKey,
-		NotBefore: t.NotBefore,
-		Subject:   t.Access.GcpProject,
-	}
-	return &Claims{
-		standardClaims: claims,
-	}
-}
-
-type JWTMiddleware struct {
-	middleware *jwtmiddleware.JWTMiddleware
-}
-
-func NewJWTMiddleware(key SignedKey) *JWTMiddleware {
-	return &JWTMiddleware{jwtmiddleware.New(jwtmiddleware.Options{
-		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
-			return []byte(key.SignedKey), nil
-		},
-		SigningMethod: jwt.SigningMethodHS256,
-	})}
-}
-
-func (j *JWTMiddleware) Wrap(next http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		j.middleware.HandlerWithNext(w, r, next)
-	}
-}
-
-func (j *JWTMiddleware) Check(w http.ResponseWriter, r *http.Request) error {
-	return j.middleware.CheckJWT(w, r)
 }

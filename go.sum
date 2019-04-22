@@ -31,6 +31,8 @@ github.com/autom8ter/objectify v0.0.0-20190416215222-c0a994cb5a82 h1:x3qZlM5euzv
 github.com/autom8ter/objectify v0.0.0-20190416215222-c0a994cb5a82/go.mod h1:6SedWh0h4zIfnBnqfxONPJhKJjeQ+lweBRdWog0fmCA=
 github.com/autom8ter/objectify v0.0.0-20190416235606-534b2554f5fe h1:ACIuNoSbc2oYdcyTHkMepxtJ2ntnwmygFjD+3Ty6HEY=
 github.com/autom8ter/objectify v0.0.0-20190416235606-534b2554f5fe/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
+github.com/autom8ter/objectify v0.0.0-20190422193702-3644923e4f46 h1:zvQFrbj9TYxw1rDSB2s2YM5LANR6Ggx6oawljn4QJ9c=
+github.com/autom8ter/objectify v0.0.0-20190422193702-3644923e4f46/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b h1:9/xdefJqW1AlO2awvgxCFPnJjg1m8TO5EzdSk/B0oFU=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b/go.mod h1:2h8US+tG3Wg9A68c4Io0aKdc506t3QyphvcRhvp8p1Q=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
