@@ -117,6 +117,30 @@ typedef GPB_ENUM(AppMetadata_FieldNumber) {
 
 @end
 
+#pragma mark - AuthToken
+
+typedef GPB_ENUM(AuthToken_FieldNumber) {
+  AuthToken_FieldNumber_Token = 1,
+};
+
+@interface AuthToken : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@end
+
+#pragma mark - IDToken
+
+typedef GPB_ENUM(IDToken_FieldNumber) {
+  IDToken_FieldNumber_Token = 1,
+};
+
+@interface IDToken : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

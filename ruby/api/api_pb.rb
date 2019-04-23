@@ -23,10 +23,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :plan, :string, 1
     optional :pay_token, :string, 2
   end
+  add_message "api.AuthToken" do
+    optional :token, :string, 1
+  end
+  add_message "api.IDToken" do
+    optional :token, :string, 1
+  end
 end
 
 module Api
   UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
+  AuthToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AuthToken").msgclass
+  IDToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDToken").msgclass
 end

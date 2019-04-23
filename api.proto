@@ -24,3 +24,11 @@ message AppMetadata {
     string plan=1;
     string pay_token=2;
 }
+
+message AuthToken {
+    string token=1;
+}
+
+message IDToken {
+    string token=1;
+}
