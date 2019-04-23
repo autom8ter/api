@@ -39,3 +39,11 @@ func (p *AppMetadata) JSONString() string {
 func (p *AppMetadata) Render(tmpl *template.Template, w io.Writer) error {
 	return Util.RenderHTML(tmpl, p, w)
 }
+
+func (p *Tokens) JSONString() string {
+	return string(Util.MarshalJSON(p))
+}
+
+func (p *Tokens) Render(tmpl *template.Template, w io.Writer) error {
+	return Util.RenderHTML(tmpl, p, w)
+}

@@ -38,7 +38,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[6];
+  static const ::google::protobuf::internal::ParseTable schema[7];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -58,6 +58,9 @@ extern IDTokenDefaultTypeInternal _IDToken_default_instance_;
 class RefreshToken;
 class RefreshTokenDefaultTypeInternal;
 extern RefreshTokenDefaultTypeInternal _RefreshToken_default_instance_;
+class Tokens;
+class TokensDefaultTypeInternal;
+extern TokensDefaultTypeInternal _Tokens_default_instance_;
 class UserInfo;
 class UserInfoDefaultTypeInternal;
 extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
@@ -71,6 +74,7 @@ template<> ::api::AccessToken* Arena::CreateMaybeMessage<::api::AccessToken>(Are
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::IDToken* Arena::CreateMaybeMessage<::api::IDToken>(Arena*);
 template<> ::api::RefreshToken* Arena::CreateMaybeMessage<::api::RefreshToken>(Arena*);
+template<> ::api::Tokens* Arena::CreateMaybeMessage<::api::Tokens>(Arena*);
 template<> ::api::UserInfo* Arena::CreateMaybeMessage<::api::UserInfo>(Arena*);
 template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(Arena*);
 }  // namespace protobuf
@@ -886,6 +890,141 @@ class RefreshToken : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr token_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Tokens : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Tokens) */ {
+ public:
+  Tokens();
+  virtual ~Tokens();
+
+  Tokens(const Tokens& from);
+
+  inline Tokens& operator=(const Tokens& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Tokens(Tokens&& from) noexcept
+    : Tokens() {
+    *this = ::std::move(from);
+  }
+
+  inline Tokens& operator=(Tokens&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Tokens& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Tokens* internal_default_instance() {
+    return reinterpret_cast<const Tokens*>(
+               &_Tokens_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(Tokens* other);
+  friend void swap(Tokens& a, Tokens& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Tokens* New() const final {
+    return CreateMaybeMessage<Tokens>(NULL);
+  }
+
+  Tokens* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Tokens>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Tokens& from);
+  void MergeFrom(const Tokens& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Tokens* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.IDToken id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  private:
+  const ::api::IDToken& _internal_id() const;
+  public:
+  const ::api::IDToken& id() const;
+  ::api::IDToken* release_id();
+  ::api::IDToken* mutable_id();
+  void set_allocated_id(::api::IDToken* id);
+
+  // .api.AccessToken access = 2;
+  bool has_access() const;
+  void clear_access();
+  static const int kAccessFieldNumber = 2;
+  private:
+  const ::api::AccessToken& _internal_access() const;
+  public:
+  const ::api::AccessToken& access() const;
+  ::api::AccessToken* release_access();
+  ::api::AccessToken* mutable_access();
+  void set_allocated_access(::api::AccessToken* access);
+
+  // .api.RefreshToken refresh = 3;
+  bool has_refresh() const;
+  void clear_refresh();
+  static const int kRefreshFieldNumber = 3;
+  private:
+  const ::api::RefreshToken& _internal_refresh() const;
+  public:
+  const ::api::RefreshToken& refresh() const;
+  ::api::RefreshToken* release_refresh();
+  ::api::RefreshToken* mutable_refresh();
+  void set_allocated_refresh(::api::RefreshToken* refresh);
+
+  // @@protoc_insertion_point(class_scope:api.Tokens)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::IDToken* id_;
+  ::api::AccessToken* access_;
+  ::api::RefreshToken* refresh_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -1770,9 +1909,177 @@ inline void RefreshToken::set_allocated_token(::std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:api.RefreshToken.token)
 }
 
+// -------------------------------------------------------------------
+
+// Tokens
+
+// .api.IDToken id = 1;
+inline bool Tokens::has_id() const {
+  return this != internal_default_instance() && id_ != NULL;
+}
+inline void Tokens::clear_id() {
+  if (GetArenaNoVirtual() == NULL && id_ != NULL) {
+    delete id_;
+  }
+  id_ = NULL;
+}
+inline const ::api::IDToken& Tokens::_internal_id() const {
+  return *id_;
+}
+inline const ::api::IDToken& Tokens::id() const {
+  const ::api::IDToken* p = id_;
+  // @@protoc_insertion_point(field_get:api.Tokens.id)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::IDToken*>(
+      &::api::_IDToken_default_instance_);
+}
+inline ::api::IDToken* Tokens::release_id() {
+  // @@protoc_insertion_point(field_release:api.Tokens.id)
+  
+  ::api::IDToken* temp = id_;
+  id_ = NULL;
+  return temp;
+}
+inline ::api::IDToken* Tokens::mutable_id() {
+  
+  if (id_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::IDToken>(GetArenaNoVirtual());
+    id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Tokens.id)
+  return id_;
+}
+inline void Tokens::set_allocated_id(::api::IDToken* id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete id_;
+  }
+  if (id) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  id_ = id;
+  // @@protoc_insertion_point(field_set_allocated:api.Tokens.id)
+}
+
+// .api.AccessToken access = 2;
+inline bool Tokens::has_access() const {
+  return this != internal_default_instance() && access_ != NULL;
+}
+inline void Tokens::clear_access() {
+  if (GetArenaNoVirtual() == NULL && access_ != NULL) {
+    delete access_;
+  }
+  access_ = NULL;
+}
+inline const ::api::AccessToken& Tokens::_internal_access() const {
+  return *access_;
+}
+inline const ::api::AccessToken& Tokens::access() const {
+  const ::api::AccessToken* p = access_;
+  // @@protoc_insertion_point(field_get:api.Tokens.access)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::AccessToken*>(
+      &::api::_AccessToken_default_instance_);
+}
+inline ::api::AccessToken* Tokens::release_access() {
+  // @@protoc_insertion_point(field_release:api.Tokens.access)
+  
+  ::api::AccessToken* temp = access_;
+  access_ = NULL;
+  return temp;
+}
+inline ::api::AccessToken* Tokens::mutable_access() {
+  
+  if (access_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::AccessToken>(GetArenaNoVirtual());
+    access_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Tokens.access)
+  return access_;
+}
+inline void Tokens::set_allocated_access(::api::AccessToken* access) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete access_;
+  }
+  if (access) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      access = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, access, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  access_ = access;
+  // @@protoc_insertion_point(field_set_allocated:api.Tokens.access)
+}
+
+// .api.RefreshToken refresh = 3;
+inline bool Tokens::has_refresh() const {
+  return this != internal_default_instance() && refresh_ != NULL;
+}
+inline void Tokens::clear_refresh() {
+  if (GetArenaNoVirtual() == NULL && refresh_ != NULL) {
+    delete refresh_;
+  }
+  refresh_ = NULL;
+}
+inline const ::api::RefreshToken& Tokens::_internal_refresh() const {
+  return *refresh_;
+}
+inline const ::api::RefreshToken& Tokens::refresh() const {
+  const ::api::RefreshToken* p = refresh_;
+  // @@protoc_insertion_point(field_get:api.Tokens.refresh)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::RefreshToken*>(
+      &::api::_RefreshToken_default_instance_);
+}
+inline ::api::RefreshToken* Tokens::release_refresh() {
+  // @@protoc_insertion_point(field_release:api.Tokens.refresh)
+  
+  ::api::RefreshToken* temp = refresh_;
+  refresh_ = NULL;
+  return temp;
+}
+inline ::api::RefreshToken* Tokens::mutable_refresh() {
+  
+  if (refresh_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::RefreshToken>(GetArenaNoVirtual());
+    refresh_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Tokens.refresh)
+  return refresh_;
+}
+inline void Tokens::set_allocated_refresh(::api::RefreshToken* refresh) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete refresh_;
+  }
+  if (refresh) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      refresh = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, refresh, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  refresh_ = refresh;
+  // @@protoc_insertion_point(field_set_allocated:api.Tokens.refresh)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

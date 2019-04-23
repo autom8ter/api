@@ -410,6 +410,71 @@ typedef struct RefreshToken__storage_ {
 
 @end
 
+#pragma mark - Tokens
+
+@implementation Tokens
+
+@dynamic hasId_p, id_p;
+@dynamic hasAccess, access;
+@dynamic hasRefresh, refresh;
+
+typedef struct Tokens__storage_ {
+  uint32_t _has_storage_[1];
+  IDToken *id_p;
+  AccessToken *access;
+  RefreshToken *refresh;
+} Tokens__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = GPBStringifySymbol(IDToken),
+        .number = Tokens_FieldNumber_Id_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Tokens__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "access",
+        .dataTypeSpecific.className = GPBStringifySymbol(AccessToken),
+        .number = Tokens_FieldNumber_Access,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Tokens__storage_, access),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "refresh",
+        .dataTypeSpecific.className = GPBStringifySymbol(RefreshToken),
+        .number = Tokens_FieldNumber_Refresh,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Tokens__storage_, refresh),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Tokens class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Tokens__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

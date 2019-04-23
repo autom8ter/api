@@ -36,3 +36,9 @@ message IDToken {
 message RefreshToken {
     string token=1;
 }
+
+message Tokens {
+    IDToken id=1;
+    AccessToken access=2;
+    RefreshToken refresh=3;
+}

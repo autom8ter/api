@@ -27,7 +27,10 @@
 
 CF_EXTERN_C_BEGIN
 
+@class AccessToken;
 @class AppMetadata;
+@class IDToken;
+@class RefreshToken;
 @class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -150,6 +153,30 @@ typedef GPB_ENUM(RefreshToken_FieldNumber) {
 @interface RefreshToken : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@end
+
+#pragma mark - Tokens
+
+typedef GPB_ENUM(Tokens_FieldNumber) {
+  Tokens_FieldNumber_Id_p = 1,
+  Tokens_FieldNumber_Access = 2,
+  Tokens_FieldNumber_Refresh = 3,
+};
+
+@interface Tokens : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) IDToken *id_p;
+/** Test to see if @c id_p has been set. */
+@property(nonatomic, readwrite) BOOL hasId_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) AccessToken *access;
+/** Test to see if @c access has been set. */
+@property(nonatomic, readwrite) BOOL hasAccess;
+
+@property(nonatomic, readwrite, strong, null_resettable) RefreshToken *refresh;
+/** Test to see if @c refresh has been set. */
+@property(nonatomic, readwrite) BOOL hasRefresh;
 
 @end
 

@@ -33,7 +33,9 @@ namespace Api {
             "ZWZlcnJlZF9jb250YWN0GAIgASgJIi4KC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
             "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJIhwKC0FjY2Vzc1Rva2VuEg0KBXRv",
             "a2VuGAEgASgJIhgKB0lEVG9rZW4SDQoFdG9rZW4YASABKAkiHQoMUmVmcmVz",
-            "aFRva2VuEg0KBXRva2VuGAEgASgJYgZwcm90bzM="));
+            "aFRva2VuEg0KBXRva2VuGAEgASgJImgKBlRva2VucxIYCgJpZBgBIAEoCzIM",
+            "LmFwaS5JRFRva2VuEiAKBmFjY2VzcxgCIAEoCzIQLmFwaS5BY2Nlc3NUb2tl",
+            "bhIiCgdyZWZyZXNoGAMgASgLMhEuYXBpLlJlZnJlc2hUb2tlbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -42,7 +44,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AccessToken), global::Api.AccessToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.RefreshToken), global::Api.RefreshToken.Parser, new[]{ "Token" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.RefreshToken), global::Api.RefreshToken.Parser, new[]{ "Token" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null)
           }));
     }
     #endregion
@@ -1107,6 +1110,209 @@ namespace Api {
             break;
           case 10: {
             Token = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Tokens : pb::IMessage<Tokens> {
+    private static readonly pb::MessageParser<Tokens> _parser = new pb::MessageParser<Tokens>(() => new Tokens());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Tokens> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Tokens() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Tokens(Tokens other) : this() {
+      id_ = other.id_ != null ? other.id_.Clone() : null;
+      access_ = other.access_ != null ? other.access_.Clone() : null;
+      refresh_ = other.refresh_ != null ? other.refresh_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Tokens Clone() {
+      return new Tokens(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::Api.IDToken id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.IDToken Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "access" field.</summary>
+    public const int AccessFieldNumber = 2;
+    private global::Api.AccessToken access_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.AccessToken Access {
+      get { return access_; }
+      set {
+        access_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "refresh" field.</summary>
+    public const int RefreshFieldNumber = 3;
+    private global::Api.RefreshToken refresh_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.RefreshToken Refresh {
+      get { return refresh_; }
+      set {
+        refresh_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Tokens);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Tokens other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Id, other.Id)) return false;
+      if (!object.Equals(Access, other.Access)) return false;
+      if (!object.Equals(Refresh, other.Refresh)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (id_ != null) hash ^= Id.GetHashCode();
+      if (access_ != null) hash ^= Access.GetHashCode();
+      if (refresh_ != null) hash ^= Refresh.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (id_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Id);
+      }
+      if (access_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Access);
+      }
+      if (refresh_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Refresh);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
+      }
+      if (access_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Access);
+      }
+      if (refresh_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Refresh);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Tokens other) {
+      if (other == null) {
+        return;
+      }
+      if (other.id_ != null) {
+        if (id_ == null) {
+          id_ = new global::Api.IDToken();
+        }
+        Id.MergeFrom(other.Id);
+      }
+      if (other.access_ != null) {
+        if (access_ == null) {
+          access_ = new global::Api.AccessToken();
+        }
+        Access.MergeFrom(other.Access);
+      }
+      if (other.refresh_ != null) {
+        if (refresh_ == null) {
+          refresh_ = new global::Api.RefreshToken();
+        }
+        Refresh.MergeFrom(other.Refresh);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (id_ == null) {
+              id_ = new global::Api.IDToken();
+            }
+            input.ReadMessage(id_);
+            break;
+          }
+          case 18: {
+            if (access_ == null) {
+              access_ = new global::Api.AccessToken();
+            }
+            input.ReadMessage(access_);
+            break;
+          }
+          case 26: {
+            if (refresh_ == null) {
+              refresh_ = new global::Api.RefreshToken();
+            }
+            input.ReadMessage(refresh_);
             break;
           }
         }

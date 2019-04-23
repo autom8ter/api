@@ -32,6 +32,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.RefreshToken" do
     optional :token, :string, 1
   end
+  add_message "api.Tokens" do
+    optional :id, :message, 1, "api.IDToken"
+    optional :access, :message, 2, "api.AccessToken"
+    optional :refresh, :message, 3, "api.RefreshToken"
+  end
 end
 
 module Api
@@ -41,4 +46,5 @@ module Api
   AccessToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AccessToken").msgclass
   IDToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDToken").msgclass
   RefreshToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefreshToken").msgclass
+  Tokens = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Tokens").msgclass
 end

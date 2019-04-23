@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x06Tokens\x12\x18\n\x02id\x18\x01 \x01(\x0b\x32\x0c.api.IDToken\x12 \n\x06\x61\x63\x63\x65ss\x18\x02 \x01(\x0b\x32\x10.api.AccessToken\x12\"\n\x07refresh\x18\x03 \x01(\x0b\x32\x11.api.RefreshTokenb\x06proto3')
 )
 
 
@@ -280,14 +280,63 @@ _REFRESHTOKEN = _descriptor.Descriptor(
   serialized_end=426,
 )
 
+
+_TOKENS = _descriptor.Descriptor(
+  name='Tokens',
+  full_name='api.Tokens',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='api.Tokens.id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='access', full_name='api.Tokens.access', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='refresh', full_name='api.Tokens.refresh', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=428,
+  serialized_end=532,
+)
+
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
 _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
+_TOKENS.fields_by_name['id'].message_type = _IDTOKEN
+_TOKENS.fields_by_name['access'].message_type = _ACCESSTOKEN
+_TOKENS.fields_by_name['refresh'].message_type = _REFRESHTOKEN
 DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
 DESCRIPTOR.message_types_by_name['AccessToken'] = _ACCESSTOKEN
 DESCRIPTOR.message_types_by_name['IDToken'] = _IDTOKEN
 DESCRIPTOR.message_types_by_name['RefreshToken'] = _REFRESHTOKEN
+DESCRIPTOR.message_types_by_name['Tokens'] = _TOKENS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 UserInfo = _reflection.GeneratedProtocolMessageType('UserInfo', (_message.Message,), dict(
@@ -331,6 +380,13 @@ RefreshToken = _reflection.GeneratedProtocolMessageType('RefreshToken', (_messag
   # @@protoc_insertion_point(class_scope:api.RefreshToken)
   ))
 _sym_db.RegisterMessage(RefreshToken)
+
+Tokens = _reflection.GeneratedProtocolMessageType('Tokens', (_message.Message,), dict(
+  DESCRIPTOR = _TOKENS,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.Tokens)
+  ))
+_sym_db.RegisterMessage(Tokens)
 
 
 # @@protoc_insertion_point(module_scope)
