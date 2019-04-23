@@ -1,6 +1,7 @@
 package api
 
 import (
+	"context"
 	"encoding/json"
 	"github.com/autom8ter/oauth2/auth0"
 	"github.com/autom8ter/oauth2/callback"
@@ -11,10 +12,10 @@ import (
 	"net/http"
 	"os"
 	"strings"
-
+	"google.golang.org/grpc/credentials/oauth"
 	"github.com/auth0/go-jwt-middleware"
 	jwt2 "github.com/autom8ter/oauth2/jwt"
-
+	"google.golang.org/grpc"
 	sessions2 "github.com/autom8ter/oauth2/sessions"
 	"github.com/dgrijalva/jwt-go"
 	"golang.org/x/oauth2"
@@ -411,4 +412,36 @@ func Fatalf(format string, args ...interface{}) {
 
 func Warnf(format string, args ...interface{}) {
 	Util.Entry().Warnf(format, args...)
+}
+
+type Dialer struct {
+	conn *grpc.ClientConn
+}
+
+func NewDialer(ctx context.Context, addr string, r *http.Request) (*Dialer,error) {
+	tok, err := sessions2.GetOauthToken(AUTH_SESSION_NAME, r)
+	if err != nil {
+		return nil, err
+	}
+	conn, err := grpc.DialContext(ctx, addr, grpc.WithPerRPCCredentials(oauth.NewOauthAccess(tok)))
+	if err != nil {
+		return nil, err
+	}
+	return &Dialer{
+		conn: conn,
+	}, nil
+}
+
+func (d *Dialer) Conn() *grpc.ClientConn {
+	return d.conn
+}
+
+type ClientSet struct {
+	Subscriptions SubscriptionsServiceClient
+}
+
+func NewClientSet(d *Dialer) *ClientSet {
+	return &ClientSet{
+		Subscriptions: NewSubscriptionsServiceClient(d.conn),
+	}
 }
