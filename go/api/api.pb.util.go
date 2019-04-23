@@ -39,3 +39,11 @@ func (p *AccessToken) JSONString() string {
 func (p *AccessToken) Render(tmpl *template.Template, w io.Writer) error {
 	return Util.RenderHTML(tmpl, p, w)
 }
+
+func (p *UserMetadata) JSONString() string {
+	return string(Util.MarshalJSON(p))
+}
+
+func (p *UserMetadata) Render(tmpl *template.Template, w io.Writer) error {
+	return Util.RenderHTML(tmpl, p, w)
+}
