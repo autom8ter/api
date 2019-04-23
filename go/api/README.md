@@ -254,30 +254,6 @@ type Auth0 struct {
 ```
 
 
-#### func  NewAuth0
-
-```go
-func NewAuth0(debug bool, domain string, clientID string, clientSecret string, redirectURL string, scopes ...string) (*Auth0, error)
-```
-
-#### func (*Auth0) AsMux
-
-```go
-func (a *Auth0) AsMux(resourceURL string, paths *Paths) *http.ServeMux
-```
-
-#### func (*Auth0) Auth0Middleware
-
-```go
-func (a *Auth0) Auth0Middleware(resourceURL string) *jwtmiddleware.JWTMiddleware
-```
-
-#### func (*Auth0) Auth0MiddlewareWithRedirect
-
-```go
-func (a *Auth0) Auth0MiddlewareWithRedirect(redirect string, resourceURL string) *jwtmiddleware.JWTMiddleware
-```
-
 #### func (*Auth0) Descriptor
 
 ```go
@@ -314,48 +290,6 @@ func (m *Auth0) GetRedirect() string
 func (m *Auth0) GetScopes() []string
 ```
 
-#### func (*Auth0) GetTokens
-
-```go
-func (o *Auth0) GetTokens(r *http.Request) (*Tokens, error)
-```
-
-#### func (*Auth0) GetUserInfo
-
-```go
-func (o *Auth0) GetUserInfo(r *http.Request) (*UserInfo, error)
-```
-
-#### func (*Auth0) HandleOAuthCallback
-
-```go
-func (o *Auth0) HandleOAuthCallback(loggedInPath string) http.HandlerFunc
-```
-
-#### func (*Auth0) HandleOAuthLogin
-
-```go
-func (o *Auth0) HandleOAuthLogin(resourceURL string) http.HandlerFunc
-```
-
-#### func (*Auth0) HandleOAuthLogout
-
-```go
-func (o *Auth0) HandleOAuthLogout(returnTo string) http.HandlerFunc
-```
-
-#### func (*Auth0) OAuthConfig
-
-```go
-func (o *Auth0) OAuthConfig() *oauth2.Config
-```
-
-#### func (*Auth0) OAuthLoginURL
-
-```go
-func (o *Auth0) OAuthLoginURL(resourceURL string, randomstate string) string
-```
-
 #### func (*Auth0) ProtoMessage
 
 ```go
@@ -368,64 +302,10 @@ func (*Auth0) ProtoMessage()
 func (m *Auth0) Reset()
 ```
 
-#### func (*Auth0) Secure
-
-```go
-func (o *Auth0) Secure(redirect string, handler http.Handler) http.HandlerFunc
-```
-
-#### func (*Auth0) SecureFunc
-
-```go
-func (o *Auth0) SecureFunc(redirect string, handler http.HandlerFunc) http.HandlerFunc
-```
-
-#### func (*Auth0) SecureJWT
-
-```go
-func (a *Auth0) SecureJWT(resourceURL string, handler http.Handler) http.Handler
-```
-
-#### func (*Auth0) SecureJWTFunc
-
-```go
-func (a *Auth0) SecureJWTFunc(resourceURL string, handler http.HandlerFunc) http.HandlerFunc
-```
-
-#### func (*Auth0) SecureJWTWithRedirect
-
-```go
-func (a *Auth0) SecureJWTWithRedirect(redirect string, resourceURL string, handler http.Handler) http.Handler
-```
-
-#### func (*Auth0) SecureJWTWithRedirectFunc
-
-```go
-func (a *Auth0) SecureJWTWithRedirectFunc(redirect string, resourceURL string, handler http.HandlerFunc) http.HandlerFunc
-```
-
 #### func (*Auth0) String
 
 ```go
 func (m *Auth0) String() string
-```
-
-#### func (*Auth0) TokenHasAudience
-
-```go
-func (o *Auth0) TokenHasAudience(scope string, token string) bool
-```
-
-#### func (*Auth0) TokenHasScope
-
-```go
-func (o *Auth0) TokenHasScope(scope string, token string) bool
-```
-
-#### func (*Auth0) Validate
-
-```go
-func (o *Auth0) Validate()
 ```
 
 #### func (*Auth0) XXX_DiscardUnknown
@@ -462,7 +342,7 @@ func (m *Auth0) XXX_Unmarshal(b []byte) error
 
 ```go
 type ClientSet struct {
-	Subscriptions SubscriptionsServiceClient
+	Customers CustomerServiceClient
 }
 ```
 
