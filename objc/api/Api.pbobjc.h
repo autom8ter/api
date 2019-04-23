@@ -27,9 +27,6 @@
 
 CF_EXTERN_C_BEGIN
 
-@class Identity;
-@class UserMetadata;
-
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - ApiRoot
@@ -47,48 +44,46 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
-#pragma mark - GetProfileByEmail
+#pragma mark - GetByEmail
 
-typedef GPB_ENUM(GetProfileByEmail_FieldNumber) {
-  GetProfileByEmail_FieldNumber_Email = 1,
+typedef GPB_ENUM(GetByEmail_FieldNumber) {
+  GetByEmail_FieldNumber_Email = 1,
 };
 
-@interface GetProfileByEmail : GPBMessage
+@interface GetByEmail : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
 @end
 
-#pragma mark - Profile
+#pragma mark - IDToken
 
-typedef GPB_ENUM(Profile_FieldNumber) {
-  Profile_FieldNumber_Email = 1,
-  Profile_FieldNumber_EmailVerified = 2,
-  Profile_FieldNumber_Name = 3,
-  Profile_FieldNumber_GivenName = 4,
-  Profile_FieldNumber_FamilyName = 5,
-  Profile_FieldNumber_Picture = 6,
-  Profile_FieldNumber_Locale = 7,
-  Profile_FieldNumber_UserId = 8,
-  Profile_FieldNumber_Nickname = 9,
-  Profile_FieldNumber_Connection = 10,
-  Profile_FieldNumber_IdentitiesArray = 11,
-  Profile_FieldNumber_LastIp = 12,
-  Profile_FieldNumber_LoginCount = 13,
-  Profile_FieldNumber_UpdatedAt = 14,
-  Profile_FieldNumber_CreatedAt = 15,
-  Profile_FieldNumber_Sub = 16,
-  Profile_FieldNumber_Iss = 17,
-  Profile_FieldNumber_Aud = 18,
-  Profile_FieldNumber_Iat = 19,
-  Profile_FieldNumber_UserMetadata = 20,
+typedef GPB_ENUM(IDToken_FieldNumber) {
+  IDToken_FieldNumber_Iss = 1,
+  IDToken_FieldNumber_Sub = 2,
+  IDToken_FieldNumber_Aud = 3,
+  IDToken_FieldNumber_Exp = 4,
+  IDToken_FieldNumber_Iat = 5,
+  IDToken_FieldNumber_Name = 6,
+  IDToken_FieldNumber_GivenName = 7,
+  IDToken_FieldNumber_FamilyName = 8,
+  IDToken_FieldNumber_Gender = 9,
+  IDToken_FieldNumber_Birthdate = 10,
+  IDToken_FieldNumber_Email = 11,
+  IDToken_FieldNumber_Picture = 12,
 };
 
-@interface Profile : GPBMessage
+@interface IDToken : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
 
-@property(nonatomic, readwrite) BOOL emailVerified;
+@property(nonatomic, readwrite) BOOL sub;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *aud;
+
+@property(nonatomic, readwrite) int64_t exp;
+
+@property(nonatomic, readwrite) int64_t iat;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
@@ -96,39 +91,13 @@ typedef GPB_ENUM(Profile_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *familyName;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *picture;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *gender;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *locale;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *birthdate;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *nickname;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *connection;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Identity*> *identitiesArray;
-/** The number of items in @c identitiesArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger identitiesArray_Count;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *lastIp;
-
-@property(nonatomic, readwrite) int64_t loginCount;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *updatedAt;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *createdAt;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *sub;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *aud;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *iat;
-
-@property(nonatomic, readwrite, strong, null_resettable) UserMetadata *userMetadata;
-/** Test to see if @c userMetadata has been set. */
-@property(nonatomic, readwrite) BOOL hasUserMetadata;
+@property(nonatomic, readwrite) int64_t picture;
 
 @end
 
@@ -153,24 +122,35 @@ typedef GPB_ENUM(UserMetadata_FieldNumber) {
 
 @end
 
-#pragma mark - Identity
+#pragma mark - AccessToken
 
-typedef GPB_ENUM(Identity_FieldNumber) {
-  Identity_FieldNumber_Provider = 1,
-  Identity_FieldNumber_UserId = 2,
-  Identity_FieldNumber_Connection = 3,
-  Identity_FieldNumber_IsSocial = 4,
+typedef GPB_ENUM(AccessToken_FieldNumber) {
+  AccessToken_FieldNumber_Iss = 1,
+  AccessToken_FieldNumber_Sub = 2,
+  AccessToken_FieldNumber_AudArray = 3,
+  AccessToken_FieldNumber_Azp = 4,
+  AccessToken_FieldNumber_Exp = 5,
+  AccessToken_FieldNumber_Iat = 6,
+  AccessToken_FieldNumber_Scope = 7,
 };
 
-@interface Identity : GPBMessage
+@interface AccessToken : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *provider;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sub;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *connection;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *audArray;
+/** The number of items in @c audArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger audArray_Count;
 
-@property(nonatomic, readwrite) BOOL isSocial;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *azp;
+
+@property(nonatomic, readwrite) int64_t exp;
+
+@property(nonatomic, readwrite) int64_t iat;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *scope;
 
 @end
 

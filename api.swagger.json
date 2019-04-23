@@ -15,14 +15,14 @@
     "application/json"
   ],
   "paths": {
-    "/api/profile/{email}": {
+    "/api/access/{email}": {
       "post": {
-        "operationId": "GetProfile",
+        "operationId": "GetIDToken",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiProfile"
+              "$ref": "#/definitions/apiAccessToken"
             }
           }
         },
@@ -38,18 +38,81 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiGetProfileByEmail"
+              "$ref": "#/definitions/apiGetByEmail"
             }
           }
         ],
         "tags": [
-          "ProfileService"
+          "AccessService"
+        ]
+      }
+    },
+    "/api/id/{email}": {
+      "post": {
+        "operationId": "GetIDToken",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIDToken"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiGetByEmail"
+            }
+          }
+        ],
+        "tags": [
+          "IDService"
         ]
       }
     }
   },
   "definitions": {
-    "apiGetProfileByEmail": {
+    "apiAccessToken": {
+      "type": "object",
+      "properties": {
+        "iss": {
+          "type": "string"
+        },
+        "sub": {
+          "type": "string"
+        },
+        "aud": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "azp": {
+          "type": "string"
+        },
+        "exp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "iat": {
+          "type": "string",
+          "format": "int64"
+        },
+        "scope": {
+          "type": "string"
+        }
+      }
+    },
+    "apiGetByEmail": {
       "type": "object",
       "properties": {
         "email": {
@@ -57,33 +120,26 @@
         }
       }
     },
-    "apiIdentity": {
+    "apiIDToken": {
       "type": "object",
       "properties": {
-        "provider": {
+        "iss": {
           "type": "string"
         },
-        "user_id": {
-          "type": "string"
-        },
-        "connection": {
-          "type": "string"
-        },
-        "isSocial": {
+        "sub": {
           "type": "boolean",
           "format": "boolean"
-        }
-      }
-    },
-    "apiProfile": {
-      "type": "object",
-      "properties": {
-        "email": {
+        },
+        "aud": {
           "type": "string"
         },
-        "email_verified": {
-          "type": "boolean",
-          "format": "boolean"
+        "exp": {
+          "type": "string",
+          "format": "int64"
+        },
+        "iat": {
+          "type": "string",
+          "format": "int64"
         },
         "name": {
           "type": "string"
@@ -94,71 +150,18 @@
         "family_name": {
           "type": "string"
         },
+        "gender": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
         "picture": {
-          "type": "string"
-        },
-        "locale": {
-          "type": "string"
-        },
-        "user_id": {
-          "type": "string"
-        },
-        "nickname": {
-          "type": "string"
-        },
-        "connection": {
-          "type": "string"
-        },
-        "identities": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiIdentity"
-          }
-        },
-        "last_ip": {
-          "type": "string"
-        },
-        "login_count": {
           "type": "string",
           "format": "int64"
-        },
-        "updated_at": {
-          "type": "string"
-        },
-        "created_at": {
-          "type": "string"
-        },
-        "sub": {
-          "type": "string"
-        },
-        "iss": {
-          "type": "string"
-        },
-        "aud": {
-          "type": "string"
-        },
-        "iat": {
-          "type": "string"
-        },
-        "user_metadata": {
-          "$ref": "#/definitions/apiUserMetadata"
-        }
-      }
-    },
-    "apiUserMetadata": {
-      "type": "object",
-      "properties": {
-        "phone": {
-          "type": "string"
-        },
-        "plan": {
-          "type": "string"
-        },
-        "pay_token": {
-          "type": "string"
-        },
-        "last_contact": {
-          "type": "string"
         }
       }
     }

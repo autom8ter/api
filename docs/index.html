@@ -179,15 +179,15 @@
             <ul>
               
                 <li>
-                  <a href="#api.GetProfileByEmail"><span class="badge">M</span>GetProfileByEmail</a>
+                  <a href="#api.AccessToken"><span class="badge">M</span>AccessToken</a>
                 </li>
               
                 <li>
-                  <a href="#api.Identity"><span class="badge">M</span>Identity</a>
+                  <a href="#api.GetByEmail"><span class="badge">M</span>GetByEmail</a>
                 </li>
               
                 <li>
-                  <a href="#api.Profile"><span class="badge">M</span>Profile</a>
+                  <a href="#api.IDToken"><span class="badge">M</span>IDToken</a>
                 </li>
               
                 <li>
@@ -198,7 +198,11 @@
               
               
                 <li>
-                  <a href="#api.ProfileService"><span class="badge">S</span>ProfileService</a>
+                  <a href="#api.AccessService"><span class="badge">S</span>AccessService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.IDService"><span class="badge">S</span>IDService</a>
                 </li>
               
             </ul>
@@ -216,7 +220,72 @@
       <p></p>
 
       
-        <h3 id="api.GetProfileByEmail">GetProfileByEmail</h3>
+        <h3 id="api.AccessToken">AccessToken</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>iss</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sub</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>aud</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>azp</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exp</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>iat</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scope</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.GetByEmail">GetByEmail</h3>
         <p></p>
 
         
@@ -239,7 +308,7 @@
 
         
       
-        <h3 id="api.Identity">Identity</h3>
+        <h3 id="api.IDToken">IDToken</h3>
         <p></p>
 
         
@@ -250,59 +319,36 @@
             <tbody>
               
                 <tr>
-                  <td>provider</td>
+                  <td>iss</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>connection</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>isSocial</td>
+                  <td>sub</td>
                   <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Profile">Profile</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
                 <tr>
-                  <td>email</td>
+                  <td>aud</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>email_verified</td>
-                  <td><a href="#bool">bool</a></td>
+                  <td>exp</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>iat</td>
+                  <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -329,106 +375,29 @@
                 </tr>
               
                 <tr>
+                  <td>gender</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>birthdate</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>picture</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>locale</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>nickname</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>connection</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>identities</td>
-                  <td><a href="#api.Identity">Identity</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>last_ip</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>login_count</td>
                   <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>updated_at</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>created_at</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sub</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>iss</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>aud</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>iat</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user_metadata</td>
-                  <td><a href="#api.UserMetadata">UserMetadata</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -489,8 +458,8 @@
       
 
       
-        <h3 id="api.ProfileService">ProfileService</h3>
-        <p>Accounts</p>
+        <h3 id="api.AccessService">AccessService</h3>
+        <p></p>
         <table class="enum-table">
           <thead>
             <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
@@ -498,9 +467,27 @@
           <tbody>
             
               <tr>
-                <td>GetProfile</td>
-                <td><a href="#api.GetProfileByEmail">GetProfileByEmail</a></td>
-                <td><a href="#api.Profile">Profile</a></td>
+                <td>GetIDToken</td>
+                <td><a href="#api.GetByEmail">GetByEmail</a></td>
+                <td><a href="#api.AccessToken">AccessToken</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.IDService">IDService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetIDToken</td>
+                <td><a href="#api.GetByEmail">GetByEmail</a></td>
+                <td><a href="#api.IDToken">IDToken</a></td>
                 <td><p></p></td>
               </tr>
             

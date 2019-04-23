@@ -12,9 +12,9 @@ var goog = jspb;
 var global = Function('return this')();
 
 var google_api_annotations_pb = require('./google/api/annotations_pb.js');
-goog.exportSymbol('proto.api.GetProfileByEmail', null, global);
-goog.exportSymbol('proto.api.Identity', null, global);
-goog.exportSymbol('proto.api.Profile', null, global);
+goog.exportSymbol('proto.api.AccessToken', null, global);
+goog.exportSymbol('proto.api.GetByEmail', null, global);
+goog.exportSymbol('proto.api.IDToken', null, global);
 goog.exportSymbol('proto.api.UserMetadata', null, global);
 
 /**
@@ -27,12 +27,12 @@ goog.exportSymbol('proto.api.UserMetadata', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.GetProfileByEmail = function(opt_data) {
+proto.api.GetByEmail = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.GetProfileByEmail, jspb.Message);
+goog.inherits(proto.api.GetByEmail, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.GetProfileByEmail.displayName = 'proto.api.GetProfileByEmail';
+  proto.api.GetByEmail.displayName = 'proto.api.GetByEmail';
 }
 
 
@@ -47,8 +47,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.GetProfileByEmail.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.GetProfileByEmail.toObject(opt_includeInstance, this);
+proto.api.GetByEmail.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.GetByEmail.toObject(opt_includeInstance, this);
 };
 
 
@@ -57,11 +57,11 @@ proto.api.GetProfileByEmail.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.GetProfileByEmail} msg The msg instance to transform.
+ * @param {!proto.api.GetByEmail} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProfileByEmail.toObject = function(includeInstance, msg) {
+proto.api.GetByEmail.toObject = function(includeInstance, msg) {
   var f, obj = {
     email: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -77,23 +77,23 @@ proto.api.GetProfileByEmail.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.GetProfileByEmail}
+ * @return {!proto.api.GetByEmail}
  */
-proto.api.GetProfileByEmail.deserializeBinary = function(bytes) {
+proto.api.GetByEmail.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.GetProfileByEmail;
-  return proto.api.GetProfileByEmail.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.GetByEmail;
+  return proto.api.GetByEmail.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.GetProfileByEmail} msg The message object to deserialize into.
+ * @param {!proto.api.GetByEmail} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.GetProfileByEmail}
+ * @return {!proto.api.GetByEmail}
  */
-proto.api.GetProfileByEmail.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.GetByEmail.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -117,9 +117,9 @@ proto.api.GetProfileByEmail.deserializeBinaryFromReader = function(msg, reader) 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.GetProfileByEmail.prototype.serializeBinary = function() {
+proto.api.GetByEmail.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.GetProfileByEmail.serializeBinaryToWriter(this, writer);
+  proto.api.GetByEmail.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -127,11 +127,11 @@ proto.api.GetProfileByEmail.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.GetProfileByEmail} message
+ * @param {!proto.api.GetByEmail} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.GetProfileByEmail.serializeBinaryToWriter = function(message, writer) {
+proto.api.GetByEmail.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getEmail();
   if (f.length > 0) {
@@ -147,13 +147,13 @@ proto.api.GetProfileByEmail.serializeBinaryToWriter = function(message, writer) 
  * optional string email = 1;
  * @return {string}
  */
-proto.api.GetProfileByEmail.prototype.getEmail = function() {
+proto.api.GetByEmail.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.GetProfileByEmail.prototype.setEmail = function(value) {
+proto.api.GetByEmail.prototype.setEmail = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -169,20 +169,13 @@ proto.api.GetProfileByEmail.prototype.setEmail = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.Profile = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.Profile.repeatedFields_, null);
+proto.api.IDToken = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.Profile, jspb.Message);
+goog.inherits(proto.api.IDToken, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.Profile.displayName = 'proto.api.Profile';
+  proto.api.IDToken.displayName = 'proto.api.IDToken';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.Profile.repeatedFields_ = [11];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -196,8 +189,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.Profile.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.Profile.toObject(opt_includeInstance, this);
+proto.api.IDToken.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.IDToken.toObject(opt_includeInstance, this);
 };
 
 
@@ -206,33 +199,24 @@ proto.api.Profile.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.Profile} msg The msg instance to transform.
+ * @param {!proto.api.IDToken} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Profile.toObject = function(includeInstance, msg) {
+proto.api.IDToken.toObject = function(includeInstance, msg) {
   var f, obj = {
-    email: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    emailVerified: jspb.Message.getFieldWithDefault(msg, 2, false),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    givenName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    familyName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    picture: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    locale: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    nickname: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    connection: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    identitiesList: jspb.Message.toObjectList(msg.getIdentitiesList(),
-    proto.api.Identity.toObject, includeInstance),
-    lastIp: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    loginCount: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    sub: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    iss: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    aud: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    iat: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    userMetadata: (f = msg.getUserMetadata()) && proto.api.UserMetadata.toObject(includeInstance, f)
+    iss: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sub: jspb.Message.getFieldWithDefault(msg, 2, false),
+    aud: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    exp: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    iat: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    givenName: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    familyName: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    gender: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    birthdate: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    picture: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -246,23 +230,23 @@ proto.api.Profile.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.Profile}
+ * @return {!proto.api.IDToken}
  */
-proto.api.Profile.deserializeBinary = function(bytes) {
+proto.api.IDToken.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.Profile;
-  return proto.api.Profile.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.IDToken;
+  return proto.api.IDToken.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.Profile} msg The message object to deserialize into.
+ * @param {!proto.api.IDToken} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.Profile}
+ * @return {!proto.api.IDToken}
  */
-proto.api.Profile.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.IDToken.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -271,85 +255,51 @@ proto.api.Profile.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      msg.setIss(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setEmailVerified(value);
+      msg.setSub(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setAud(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setGivenName(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExp(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFamilyName(value);
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setIat(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPicture(value);
+      msg.setName(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLocale(value);
+      msg.setGivenName(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      msg.setFamilyName(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNickname(value);
+      msg.setGender(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConnection(value);
+      msg.setBirthdate(value);
       break;
     case 11:
-      var value = new proto.api.Identity;
-      reader.readMessage(value,proto.api.Identity.deserializeBinaryFromReader);
-      msg.addIdentities(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmail(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLastIp(value);
-      break;
-    case 13:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setLoginCount(value);
-      break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUpdatedAt(value);
-      break;
-    case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCreatedAt(value);
-      break;
-    case 16:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSub(value);
-      break;
-    case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIss(value);
-      break;
-    case 18:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAud(value);
-      break;
-    case 19:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIat(value);
-      break;
-    case 20:
-      var value = new proto.api.UserMetadata;
-      reader.readMessage(value,proto.api.UserMetadata.deserializeBinaryFromReader);
-      msg.setUserMetadata(value);
+      msg.setPicture(value);
       break;
     default:
       reader.skipField();
@@ -364,9 +314,9 @@ proto.api.Profile.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.Profile.prototype.serializeBinary = function() {
+proto.api.IDToken.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.Profile.serializeBinaryToWriter(this, writer);
+  proto.api.IDToken.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -374,487 +324,278 @@ proto.api.Profile.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.Profile} message
+ * @param {!proto.api.IDToken} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Profile.serializeBinaryToWriter = function(message, writer) {
+proto.api.IDToken.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEmail();
+  f = message.getIss();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getEmailVerified();
+  f = message.getSub();
   if (f) {
     writer.writeBool(
       2,
       f
     );
   }
-  f = message.getName();
+  f = message.getAud();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getGivenName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getExp();
+  if (f !== 0) {
+    writer.writeInt64(
       4,
       f
     );
   }
-  f = message.getFamilyName();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getIat();
+  if (f !== 0) {
+    writer.writeInt64(
       5,
       f
     );
   }
-  f = message.getPicture();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getLocale();
+  f = message.getGivenName();
   if (f.length > 0) {
     writer.writeString(
       7,
       f
     );
   }
-  f = message.getUserId();
+  f = message.getFamilyName();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getNickname();
+  f = message.getGender();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getConnection();
+  f = message.getBirthdate();
   if (f.length > 0) {
     writer.writeString(
       10,
       f
     );
   }
-  f = message.getIdentitiesList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      11,
-      f,
-      proto.api.Identity.serializeBinaryToWriter
-    );
-  }
-  f = message.getLastIp();
+  f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      11,
       f
     );
   }
-  f = message.getLoginCount();
+  f = message.getPicture();
   if (f !== 0) {
     writer.writeInt64(
-      13,
+      12,
       f
-    );
-  }
-  f = message.getUpdatedAt();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = message.getCreatedAt();
-  if (f.length > 0) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
-  f = message.getSub();
-  if (f.length > 0) {
-    writer.writeString(
-      16,
-      f
-    );
-  }
-  f = message.getIss();
-  if (f.length > 0) {
-    writer.writeString(
-      17,
-      f
-    );
-  }
-  f = message.getAud();
-  if (f.length > 0) {
-    writer.writeString(
-      18,
-      f
-    );
-  }
-  f = message.getIat();
-  if (f.length > 0) {
-    writer.writeString(
-      19,
-      f
-    );
-  }
-  f = message.getUserMetadata();
-  if (f != null) {
-    writer.writeMessage(
-      20,
-      f,
-      proto.api.UserMetadata.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string email = 1;
+ * optional string iss = 1;
  * @return {string}
  */
-proto.api.Profile.prototype.getEmail = function() {
+proto.api.IDToken.prototype.getIss = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setEmail = function(value) {
+proto.api.IDToken.prototype.setIss = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bool email_verified = 2;
+ * optional bool sub = 2;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.Profile.prototype.getEmailVerified = function() {
+proto.api.IDToken.prototype.getSub = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.Profile.prototype.setEmailVerified = function(value) {
+proto.api.IDToken.prototype.setSub = function(value) {
   jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
 /**
- * optional string name = 3;
+ * optional string aud = 3;
  * @return {string}
  */
-proto.api.Profile.prototype.getName = function() {
+proto.api.IDToken.prototype.getAud = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setName = function(value) {
+proto.api.IDToken.prototype.setAud = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string given_name = 4;
- * @return {string}
+ * optional int64 exp = 4;
+ * @return {number}
  */
-proto.api.Profile.prototype.getGivenName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.api.IDToken.prototype.getExp = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {string} value */
-proto.api.Profile.prototype.setGivenName = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+/** @param {number} value */
+proto.api.IDToken.prototype.setExp = function(value) {
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional string family_name = 5;
- * @return {string}
+ * optional int64 iat = 5;
+ * @return {number}
  */
-proto.api.Profile.prototype.getFamilyName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.api.IDToken.prototype.getIat = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
-/** @param {string} value */
-proto.api.Profile.prototype.setFamilyName = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+/** @param {number} value */
+proto.api.IDToken.prototype.setIat = function(value) {
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional string picture = 6;
+ * optional string name = 6;
  * @return {string}
  */
-proto.api.Profile.prototype.getPicture = function() {
+proto.api.IDToken.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setPicture = function(value) {
+proto.api.IDToken.prototype.setName = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string locale = 7;
+ * optional string given_name = 7;
  * @return {string}
  */
-proto.api.Profile.prototype.getLocale = function() {
+proto.api.IDToken.prototype.getGivenName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setLocale = function(value) {
+proto.api.IDToken.prototype.setGivenName = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string user_id = 8;
+ * optional string family_name = 8;
  * @return {string}
  */
-proto.api.Profile.prototype.getUserId = function() {
+proto.api.IDToken.prototype.getFamilyName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setUserId = function(value) {
+proto.api.IDToken.prototype.setFamilyName = function(value) {
   jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string nickname = 9;
+ * optional string gender = 9;
  * @return {string}
  */
-proto.api.Profile.prototype.getNickname = function() {
+proto.api.IDToken.prototype.getGender = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setNickname = function(value) {
+proto.api.IDToken.prototype.setGender = function(value) {
   jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional string connection = 10;
+ * optional string birthdate = 10;
  * @return {string}
  */
-proto.api.Profile.prototype.getConnection = function() {
+proto.api.IDToken.prototype.getBirthdate = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setConnection = function(value) {
+proto.api.IDToken.prototype.setBirthdate = function(value) {
   jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * repeated Identity identities = 11;
- * @return {!Array<!proto.api.Identity>}
- */
-proto.api.Profile.prototype.getIdentitiesList = function() {
-  return /** @type{!Array<!proto.api.Identity>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.api.Identity, 11));
-};
-
-
-/** @param {!Array<!proto.api.Identity>} value */
-proto.api.Profile.prototype.setIdentitiesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 11, value);
-};
-
-
-/**
- * @param {!proto.api.Identity=} opt_value
- * @param {number=} opt_index
- * @return {!proto.api.Identity}
- */
-proto.api.Profile.prototype.addIdentities = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.api.Identity, opt_index);
-};
-
-
-proto.api.Profile.prototype.clearIdentitiesList = function() {
-  this.setIdentitiesList([]);
-};
-
-
-/**
- * optional string last_ip = 12;
+ * optional string email = 11;
  * @return {string}
  */
-proto.api.Profile.prototype.getLastIp = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.api.IDToken.prototype.getEmail = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Profile.prototype.setLastIp = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
+proto.api.IDToken.prototype.setEmail = function(value) {
+  jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional int64 login_count = 13;
+ * optional int64 picture = 12;
  * @return {number}
  */
-proto.api.Profile.prototype.getLoginCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+proto.api.IDToken.prototype.getPicture = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
 /** @param {number} value */
-proto.api.Profile.prototype.setLoginCount = function(value) {
-  jspb.Message.setProto3IntField(this, 13, value);
-};
-
-
-/**
- * optional string updated_at = 14;
- * @return {string}
- */
-proto.api.Profile.prototype.getUpdatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setUpdatedAt = function(value) {
-  jspb.Message.setProto3StringField(this, 14, value);
-};
-
-
-/**
- * optional string created_at = 15;
- * @return {string}
- */
-proto.api.Profile.prototype.getCreatedAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setCreatedAt = function(value) {
-  jspb.Message.setProto3StringField(this, 15, value);
-};
-
-
-/**
- * optional string sub = 16;
- * @return {string}
- */
-proto.api.Profile.prototype.getSub = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setSub = function(value) {
-  jspb.Message.setProto3StringField(this, 16, value);
-};
-
-
-/**
- * optional string iss = 17;
- * @return {string}
- */
-proto.api.Profile.prototype.getIss = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setIss = function(value) {
-  jspb.Message.setProto3StringField(this, 17, value);
-};
-
-
-/**
- * optional string aud = 18;
- * @return {string}
- */
-proto.api.Profile.prototype.getAud = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setAud = function(value) {
-  jspb.Message.setProto3StringField(this, 18, value);
-};
-
-
-/**
- * optional string iat = 19;
- * @return {string}
- */
-proto.api.Profile.prototype.getIat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setIat = function(value) {
-  jspb.Message.setProto3StringField(this, 19, value);
-};
-
-
-/**
- * optional UserMetadata user_metadata = 20;
- * @return {?proto.api.UserMetadata}
- */
-proto.api.Profile.prototype.getUserMetadata = function() {
-  return /** @type{?proto.api.UserMetadata} */ (
-    jspb.Message.getWrapperField(this, proto.api.UserMetadata, 20));
-};
-
-
-/** @param {?proto.api.UserMetadata|undefined} value */
-proto.api.Profile.prototype.setUserMetadata = function(value) {
-  jspb.Message.setWrapperField(this, 20, value);
-};
-
-
-proto.api.Profile.prototype.clearUserMetadata = function() {
-  this.setUserMetadata(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.Profile.prototype.hasUserMetadata = function() {
-  return jspb.Message.getField(this, 20) != null;
+proto.api.IDToken.prototype.setPicture = function(value) {
+  jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
@@ -1092,13 +833,20 @@ proto.api.UserMetadata.prototype.setLastContact = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.Identity = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+proto.api.AccessToken = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.AccessToken.repeatedFields_, null);
 };
-goog.inherits(proto.api.Identity, jspb.Message);
+goog.inherits(proto.api.AccessToken, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.Identity.displayName = 'proto.api.Identity';
+  proto.api.AccessToken.displayName = 'proto.api.AccessToken';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.AccessToken.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1112,8 +860,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.Identity.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.Identity.toObject(opt_includeInstance, this);
+proto.api.AccessToken.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.AccessToken.toObject(opt_includeInstance, this);
 };
 
 
@@ -1122,16 +870,19 @@ proto.api.Identity.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.Identity} msg The msg instance to transform.
+ * @param {!proto.api.AccessToken} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Identity.toObject = function(includeInstance, msg) {
+proto.api.AccessToken.toObject = function(includeInstance, msg) {
   var f, obj = {
-    provider: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    connection: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    issocial: jspb.Message.getFieldWithDefault(msg, 4, false)
+    iss: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sub: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    audList: jspb.Message.getRepeatedField(msg, 3),
+    azp: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    exp: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    iat: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    scope: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1145,23 +896,23 @@ proto.api.Identity.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.Identity}
+ * @return {!proto.api.AccessToken}
  */
-proto.api.Identity.deserializeBinary = function(bytes) {
+proto.api.AccessToken.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.Identity;
-  return proto.api.Identity.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.AccessToken;
+  return proto.api.AccessToken.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.Identity} msg The message object to deserialize into.
+ * @param {!proto.api.AccessToken} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.Identity}
+ * @return {!proto.api.AccessToken}
  */
-proto.api.Identity.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.AccessToken.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1170,19 +921,31 @@ proto.api.Identity.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProvider(value);
+      msg.setIss(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserId(value);
+      msg.setSub(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConnection(value);
+      msg.addAud(value);
       break;
     case 4:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIssocial(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAzp(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExp(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setIat(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScope(value);
       break;
     default:
       reader.skipField();
@@ -1197,9 +960,9 @@ proto.api.Identity.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.Identity.prototype.serializeBinary = function() {
+proto.api.AccessToken.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.Identity.serializeBinaryToWriter(this, writer);
+  proto.api.AccessToken.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1207,37 +970,58 @@ proto.api.Identity.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.Identity} message
+ * @param {!proto.api.AccessToken} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Identity.serializeBinaryToWriter = function(message, writer) {
+proto.api.AccessToken.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getProvider();
+  f = message.getIss();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getUserId();
+  f = message.getSub();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getConnection();
+  f = message.getAudList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       3,
       f
     );
   }
-  f = message.getIssocial();
-  if (f) {
-    writer.writeBool(
+  f = message.getAzp();
+  if (f.length > 0) {
+    writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getExp();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getIat();
+  if (f !== 0) {
+    writer.writeInt64(
+      6,
+      f
+    );
+  }
+  f = message.getScope();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -1245,64 +1029,121 @@ proto.api.Identity.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string provider = 1;
+ * optional string iss = 1;
  * @return {string}
  */
-proto.api.Identity.prototype.getProvider = function() {
+proto.api.AccessToken.prototype.getIss = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Identity.prototype.setProvider = function(value) {
+proto.api.AccessToken.prototype.setIss = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string user_id = 2;
+ * optional string sub = 2;
  * @return {string}
  */
-proto.api.Identity.prototype.getUserId = function() {
+proto.api.AccessToken.prototype.getSub = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Identity.prototype.setUserId = function(value) {
+proto.api.AccessToken.prototype.setSub = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string connection = 3;
- * @return {string}
+ * repeated string aud = 3;
+ * @return {!Array<string>}
  */
-proto.api.Identity.prototype.getConnection = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.api.AccessToken.prototype.getAudList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
-/** @param {string} value */
-proto.api.Identity.prototype.setConnection = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+/** @param {!Array<string>} value */
+proto.api.AccessToken.prototype.setAudList = function(value) {
+  jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
- * optional bool isSocial = 4;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
+ * @param {!string} value
+ * @param {number=} opt_index
  */
-proto.api.Identity.prototype.getIssocial = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
+proto.api.AccessToken.prototype.addAud = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
-/** @param {boolean} value */
-proto.api.Identity.prototype.setIssocial = function(value) {
-  jspb.Message.setProto3BooleanField(this, 4, value);
+proto.api.AccessToken.prototype.clearAudList = function() {
+  this.setAudList([]);
+};
+
+
+/**
+ * optional string azp = 4;
+ * @return {string}
+ */
+proto.api.AccessToken.prototype.getAzp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.api.AccessToken.prototype.setAzp = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int64 exp = 5;
+ * @return {number}
+ */
+proto.api.AccessToken.prototype.getExp = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/** @param {number} value */
+proto.api.AccessToken.prototype.setExp = function(value) {
+  jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional int64 iat = 6;
+ * @return {number}
+ */
+proto.api.AccessToken.prototype.getIat = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/** @param {number} value */
+proto.api.AccessToken.prototype.setIat = function(value) {
+  jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional string scope = 7;
+ * @return {string}
+ */
+proto.api.AccessToken.prototype.getScope = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/** @param {string} value */
+proto.api.AccessToken.prototype.setScope = function(value) {
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

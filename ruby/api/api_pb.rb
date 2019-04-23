@@ -5,30 +5,22 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "api.GetProfileByEmail" do
+  add_message "api.GetByEmail" do
     optional :email, :string, 1
   end
-  add_message "api.Profile" do
-    optional :email, :string, 1
-    optional :email_verified, :bool, 2
-    optional :name, :string, 3
-    optional :given_name, :string, 4
-    optional :family_name, :string, 5
-    optional :picture, :string, 6
-    optional :locale, :string, 7
-    optional :user_id, :string, 8
-    optional :nickname, :string, 9
-    optional :connection, :string, 10
-    repeated :identities, :message, 11, "api.Identity"
-    optional :last_ip, :string, 12
-    optional :login_count, :int64, 13
-    optional :updated_at, :string, 14
-    optional :created_at, :string, 15
-    optional :sub, :string, 16
-    optional :iss, :string, 17
-    optional :aud, :string, 18
-    optional :iat, :string, 19
-    optional :user_metadata, :message, 20, "api.UserMetadata"
+  add_message "api.IDToken" do
+    optional :iss, :string, 1
+    optional :sub, :bool, 2
+    optional :aud, :string, 3
+    optional :exp, :int64, 4
+    optional :iat, :int64, 5
+    optional :name, :string, 6
+    optional :given_name, :string, 7
+    optional :family_name, :string, 8
+    optional :gender, :string, 9
+    optional :birthdate, :string, 10
+    optional :email, :string, 11
+    optional :picture, :int64, 12
   end
   add_message "api.UserMetadata" do
     optional :phone, :string, 1
@@ -36,17 +28,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :pay_token, :string, 3
     optional :last_contact, :string, 4
   end
-  add_message "api.Identity" do
-    optional :provider, :string, 1
-    optional :user_id, :string, 2
-    optional :connection, :string, 3
-    optional :isSocial, :bool, 4
+  add_message "api.AccessToken" do
+    optional :iss, :string, 1
+    optional :sub, :string, 2
+    repeated :aud, :string, 3
+    optional :azp, :string, 4
+    optional :exp, :int64, 5
+    optional :iat, :int64, 6
+    optional :scope, :string, 7
   end
 end
 
 module Api
-  GetProfileByEmail = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.GetProfileByEmail").msgclass
-  Profile = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Profile").msgclass
+  GetByEmail = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.GetByEmail").msgclass
+  IDToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDToken").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
-  Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass
+  AccessToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AccessToken").msgclass
 end

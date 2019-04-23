@@ -25,40 +25,38 @@ namespace Api {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
-            "byIiChFHZXRQcm9maWxlQnlFbWFpbBINCgVlbWFpbBgBIAEoCSKOAwoHUHJv",
-            "ZmlsZRINCgVlbWFpbBgBIAEoCRIWCg5lbWFpbF92ZXJpZmllZBgCIAEoCBIM",
-            "CgRuYW1lGAMgASgJEhIKCmdpdmVuX25hbWUYBCABKAkSEwoLZmFtaWx5X25h",
-            "bWUYBSABKAkSDwoHcGljdHVyZRgGIAEoCRIOCgZsb2NhbGUYByABKAkSDwoH",
-            "dXNlcl9pZBgIIAEoCRIQCghuaWNrbmFtZRgJIAEoCRISCgpjb25uZWN0aW9u",
-            "GAogASgJEiEKCmlkZW50aXRpZXMYCyADKAsyDS5hcGkuSWRlbnRpdHkSDwoH",
-            "bGFzdF9pcBgMIAEoCRITCgtsb2dpbl9jb3VudBgNIAEoAxISCgp1cGRhdGVk",
-            "X2F0GA4gASgJEhIKCmNyZWF0ZWRfYXQYDyABKAkSCwoDc3ViGBAgASgJEgsK",
-            "A2lzcxgRIAEoCRILCgNhdWQYEiABKAkSCwoDaWF0GBMgASgJEigKDXVzZXJf",
-            "bWV0YWRhdGEYFCABKAsyES5hcGkuVXNlck1ldGFkYXRhIlQKDFVzZXJNZXRh",
-            "ZGF0YRINCgVwaG9uZRgBIAEoCRIMCgRwbGFuGAIgASgJEhEKCXBheV90b2tl",
-            "bhgDIAEoCRIUCgxsYXN0X2NvbnRhY3QYBCABKAkiUwoISWRlbnRpdHkSEAoI",
-            "cHJvdmlkZXIYASABKAkSDwoHdXNlcl9pZBgCIAEoCRISCgpjb25uZWN0aW9u",
-            "GAMgASgJEhAKCGlzU29jaWFsGAQgASgIMmUKDlByb2ZpbGVTZXJ2aWNlElMK",
-            "CkdldFByb2ZpbGUSFi5hcGkuR2V0UHJvZmlsZUJ5RW1haWwaDC5hcGkuUHJv",
-            "ZmlsZSIfgtPkkwIZIhQvYXBpL3Byb2ZpbGUve2VtYWlsfToBKmIGcHJvdG8z"));
+            "byIbCgpHZXRCeUVtYWlsEg0KBWVtYWlsGAEgASgJIsQBCgdJRFRva2VuEgsK",
+            "A2lzcxgBIAEoCRILCgNzdWIYAiABKAgSCwoDYXVkGAMgASgJEgsKA2V4cBgE",
+            "IAEoAxILCgNpYXQYBSABKAMSDAoEbmFtZRgGIAEoCRISCgpnaXZlbl9uYW1l",
+            "GAcgASgJEhMKC2ZhbWlseV9uYW1lGAggASgJEg4KBmdlbmRlchgJIAEoCRIR",
+            "CgliaXJ0aGRhdGUYCiABKAkSDQoFZW1haWwYCyABKAkSDwoHcGljdHVyZRgM",
+            "IAEoAyJUCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUYASABKAkSDAoEcGxhbhgC",
+            "IAEoCRIRCglwYXlfdG9rZW4YAyABKAkSFAoMbGFzdF9jb250YWN0GAQgASgJ",
+            "ImoKC0FjY2Vzc1Rva2VuEgsKA2lzcxgBIAEoCRILCgNzdWIYAiABKAkSCwoD",
+            "YXVkGAMgAygJEgsKA2F6cBgEIAEoCRILCgNleHAYBSABKAMSCwoDaWF0GAYg",
+            "ASgDEg0KBXNjb3BlGAcgASgJMlQKCUlEU2VydmljZRJHCgpHZXRJRFRva2Vu",
+            "Eg8uYXBpLkdldEJ5RW1haWwaDC5hcGkuSURUb2tlbiIagtPkkwIUIg8vYXBp",
+            "L2lkL3tlbWFpbH06ASoyYAoNQWNjZXNzU2VydmljZRJPCgpHZXRJRFRva2Vu",
+            "Eg8uYXBpLkdldEJ5RW1haWwaEC5hcGkuQWNjZXNzVG9rZW4iHoLT5JMCGCIT",
+            "L2FwaS9hY2Nlc3Mve2VtYWlsfToBKmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.GetProfileByEmail), global::Api.GetProfileByEmail.Parser, new[]{ "Email" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Profile), global::Api.Profile.Parser, new[]{ "Email", "EmailVerified", "Name", "GivenName", "FamilyName", "Picture", "Locale", "UserId", "Nickname", "Connection", "Identities", "LastIp", "LoginCount", "UpdatedAt", "CreatedAt", "Sub", "Iss", "Aud", "Iat", "UserMetadata" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.GetByEmail), global::Api.GetByEmail.Parser, new[]{ "Email" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Iss", "Sub", "Aud", "Exp", "Iat", "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "Plan", "PayToken", "LastContact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Identity), global::Api.Identity.Parser, new[]{ "Provider", "UserId", "Connection", "IsSocial" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AccessToken), global::Api.AccessToken.Parser, new[]{ "Iss", "Sub", "Aud", "Azp", "Exp", "Iat", "Scope" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class GetProfileByEmail : pb::IMessage<GetProfileByEmail> {
-    private static readonly pb::MessageParser<GetProfileByEmail> _parser = new pb::MessageParser<GetProfileByEmail>(() => new GetProfileByEmail());
+  public sealed partial class GetByEmail : pb::IMessage<GetByEmail> {
+    private static readonly pb::MessageParser<GetByEmail> _parser = new pb::MessageParser<GetByEmail>(() => new GetByEmail());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetProfileByEmail> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetByEmail> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -71,21 +69,21 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetProfileByEmail() {
+    public GetByEmail() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetProfileByEmail(GetProfileByEmail other) : this() {
+    public GetByEmail(GetByEmail other) : this() {
       email_ = other.email_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetProfileByEmail Clone() {
-      return new GetProfileByEmail(this);
+    public GetByEmail Clone() {
+      return new GetByEmail(this);
     }
 
     /// <summary>Field number for the "email" field.</summary>
@@ -101,11 +99,11 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as GetProfileByEmail);
+      return Equals(other as GetByEmail);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetProfileByEmail other) {
+    public bool Equals(GetByEmail other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -155,7 +153,7 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetProfileByEmail other) {
+    public void MergeFrom(GetByEmail other) {
       if (other == null) {
         return;
       }
@@ -183,11 +181,11 @@ namespace Api {
 
   }
 
-  public sealed partial class Profile : pb::IMessage<Profile> {
-    private static readonly pb::MessageParser<Profile> _parser = new pb::MessageParser<Profile>(() => new Profile());
+  public sealed partial class IDToken : pb::IMessage<IDToken> {
+    private static readonly pb::MessageParser<IDToken> _parser = new pb::MessageParser<IDToken>(() => new IDToken());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Profile> Parser { get { return _parser; } }
+    public static pb::MessageParser<IDToken> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -200,66 +198,91 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Profile() {
+    public IDToken() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Profile(Profile other) : this() {
-      email_ = other.email_;
-      emailVerified_ = other.emailVerified_;
+    public IDToken(IDToken other) : this() {
+      iss_ = other.iss_;
+      sub_ = other.sub_;
+      aud_ = other.aud_;
+      exp_ = other.exp_;
+      iat_ = other.iat_;
       name_ = other.name_;
       givenName_ = other.givenName_;
       familyName_ = other.familyName_;
+      gender_ = other.gender_;
+      birthdate_ = other.birthdate_;
+      email_ = other.email_;
       picture_ = other.picture_;
-      locale_ = other.locale_;
-      userId_ = other.userId_;
-      nickname_ = other.nickname_;
-      connection_ = other.connection_;
-      identities_ = other.identities_.Clone();
-      lastIp_ = other.lastIp_;
-      loginCount_ = other.loginCount_;
-      updatedAt_ = other.updatedAt_;
-      createdAt_ = other.createdAt_;
-      sub_ = other.sub_;
-      iss_ = other.iss_;
-      aud_ = other.aud_;
-      iat_ = other.iat_;
-      userMetadata_ = other.userMetadata_ != null ? other.userMetadata_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Profile Clone() {
-      return new Profile(this);
+    public IDToken Clone() {
+      return new IDToken(this);
     }
 
-    /// <summary>Field number for the "email" field.</summary>
-    public const int EmailFieldNumber = 1;
-    private string email_ = "";
+    /// <summary>Field number for the "iss" field.</summary>
+    public const int IssFieldNumber = 1;
+    private string iss_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Email {
-      get { return email_; }
+    public string Iss {
+      get { return iss_; }
       set {
-        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        iss_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "email_verified" field.</summary>
-    public const int EmailVerifiedFieldNumber = 2;
-    private bool emailVerified_;
+    /// <summary>Field number for the "sub" field.</summary>
+    public const int SubFieldNumber = 2;
+    private bool sub_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool EmailVerified {
-      get { return emailVerified_; }
+    public bool Sub {
+      get { return sub_; }
       set {
-        emailVerified_ = value;
+        sub_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "aud" field.</summary>
+    public const int AudFieldNumber = 3;
+    private string aud_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Aud {
+      get { return aud_; }
+      set {
+        aud_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 4;
+    private long exp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Exp {
+      get { return exp_; }
+      set {
+        exp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "iat" field.</summary>
+    public const int IatFieldNumber = 5;
+    private long iat_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Iat {
+      get { return iat_; }
+      set {
+        iat_ = value;
       }
     }
 
     /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 3;
+    public const int NameFieldNumber = 6;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -270,7 +293,7 @@ namespace Api {
     }
 
     /// <summary>Field number for the "given_name" field.</summary>
-    public const int GivenNameFieldNumber = 4;
+    public const int GivenNameFieldNumber = 7;
     private string givenName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GivenName {
@@ -281,7 +304,7 @@ namespace Api {
     }
 
     /// <summary>Field number for the "family_name" field.</summary>
-    public const int FamilyNameFieldNumber = 5;
+    public const int FamilyNameFieldNumber = 8;
     private string familyName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string FamilyName {
@@ -291,229 +314,93 @@ namespace Api {
       }
     }
 
-    /// <summary>Field number for the "picture" field.</summary>
-    public const int PictureFieldNumber = 6;
-    private string picture_ = "";
+    /// <summary>Field number for the "gender" field.</summary>
+    public const int GenderFieldNumber = 9;
+    private string gender_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Picture {
+    public string Gender {
+      get { return gender_; }
+      set {
+        gender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthdate" field.</summary>
+    public const int BirthdateFieldNumber = 10;
+    private string birthdate_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Birthdate {
+      get { return birthdate_; }
+      set {
+        birthdate_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 11;
+    private string email_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Email {
+      get { return email_; }
+      set {
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "picture" field.</summary>
+    public const int PictureFieldNumber = 12;
+    private long picture_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Picture {
       get { return picture_; }
       set {
-        picture_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "locale" field.</summary>
-    public const int LocaleFieldNumber = 7;
-    private string locale_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Locale {
-      get { return locale_; }
-      set {
-        locale_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "user_id" field.</summary>
-    public const int UserIdFieldNumber = 8;
-    private string userId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UserId {
-      get { return userId_; }
-      set {
-        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "nickname" field.</summary>
-    public const int NicknameFieldNumber = 9;
-    private string nickname_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Nickname {
-      get { return nickname_; }
-      set {
-        nickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "connection" field.</summary>
-    public const int ConnectionFieldNumber = 10;
-    private string connection_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Connection {
-      get { return connection_; }
-      set {
-        connection_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "identities" field.</summary>
-    public const int IdentitiesFieldNumber = 11;
-    private static readonly pb::FieldCodec<global::Api.Identity> _repeated_identities_codec
-        = pb::FieldCodec.ForMessage(90, global::Api.Identity.Parser);
-    private readonly pbc::RepeatedField<global::Api.Identity> identities_ = new pbc::RepeatedField<global::Api.Identity>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Api.Identity> Identities {
-      get { return identities_; }
-    }
-
-    /// <summary>Field number for the "last_ip" field.</summary>
-    public const int LastIpFieldNumber = 12;
-    private string lastIp_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string LastIp {
-      get { return lastIp_; }
-      set {
-        lastIp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "login_count" field.</summary>
-    public const int LoginCountFieldNumber = 13;
-    private long loginCount_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long LoginCount {
-      get { return loginCount_; }
-      set {
-        loginCount_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "updated_at" field.</summary>
-    public const int UpdatedAtFieldNumber = 14;
-    private string updatedAt_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UpdatedAt {
-      get { return updatedAt_; }
-      set {
-        updatedAt_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "created_at" field.</summary>
-    public const int CreatedAtFieldNumber = 15;
-    private string createdAt_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string CreatedAt {
-      get { return createdAt_; }
-      set {
-        createdAt_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "sub" field.</summary>
-    public const int SubFieldNumber = 16;
-    private string sub_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Sub {
-      get { return sub_; }
-      set {
-        sub_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "iss" field.</summary>
-    public const int IssFieldNumber = 17;
-    private string iss_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Iss {
-      get { return iss_; }
-      set {
-        iss_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "aud" field.</summary>
-    public const int AudFieldNumber = 18;
-    private string aud_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Aud {
-      get { return aud_; }
-      set {
-        aud_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "iat" field.</summary>
-    public const int IatFieldNumber = 19;
-    private string iat_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Iat {
-      get { return iat_; }
-      set {
-        iat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "user_metadata" field.</summary>
-    public const int UserMetadataFieldNumber = 20;
-    private global::Api.UserMetadata userMetadata_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Api.UserMetadata UserMetadata {
-      get { return userMetadata_; }
-      set {
-        userMetadata_ = value;
+        picture_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Profile);
+      return Equals(other as IDToken);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Profile other) {
+    public bool Equals(IDToken other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Email != other.Email) return false;
-      if (EmailVerified != other.EmailVerified) return false;
+      if (Iss != other.Iss) return false;
+      if (Sub != other.Sub) return false;
+      if (Aud != other.Aud) return false;
+      if (Exp != other.Exp) return false;
+      if (Iat != other.Iat) return false;
       if (Name != other.Name) return false;
       if (GivenName != other.GivenName) return false;
       if (FamilyName != other.FamilyName) return false;
+      if (Gender != other.Gender) return false;
+      if (Birthdate != other.Birthdate) return false;
+      if (Email != other.Email) return false;
       if (Picture != other.Picture) return false;
-      if (Locale != other.Locale) return false;
-      if (UserId != other.UserId) return false;
-      if (Nickname != other.Nickname) return false;
-      if (Connection != other.Connection) return false;
-      if(!identities_.Equals(other.identities_)) return false;
-      if (LastIp != other.LastIp) return false;
-      if (LoginCount != other.LoginCount) return false;
-      if (UpdatedAt != other.UpdatedAt) return false;
-      if (CreatedAt != other.CreatedAt) return false;
-      if (Sub != other.Sub) return false;
-      if (Iss != other.Iss) return false;
-      if (Aud != other.Aud) return false;
-      if (Iat != other.Iat) return false;
-      if (!object.Equals(UserMetadata, other.UserMetadata)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Email.Length != 0) hash ^= Email.GetHashCode();
-      if (EmailVerified != false) hash ^= EmailVerified.GetHashCode();
+      if (Iss.Length != 0) hash ^= Iss.GetHashCode();
+      if (Sub != false) hash ^= Sub.GetHashCode();
+      if (Aud.Length != 0) hash ^= Aud.GetHashCode();
+      if (Exp != 0L) hash ^= Exp.GetHashCode();
+      if (Iat != 0L) hash ^= Iat.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (GivenName.Length != 0) hash ^= GivenName.GetHashCode();
       if (FamilyName.Length != 0) hash ^= FamilyName.GetHashCode();
-      if (Picture.Length != 0) hash ^= Picture.GetHashCode();
-      if (Locale.Length != 0) hash ^= Locale.GetHashCode();
-      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
-      if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
-      if (Connection.Length != 0) hash ^= Connection.GetHashCode();
-      hash ^= identities_.GetHashCode();
-      if (LastIp.Length != 0) hash ^= LastIp.GetHashCode();
-      if (LoginCount != 0L) hash ^= LoginCount.GetHashCode();
-      if (UpdatedAt.Length != 0) hash ^= UpdatedAt.GetHashCode();
-      if (CreatedAt.Length != 0) hash ^= CreatedAt.GetHashCode();
-      if (Sub.Length != 0) hash ^= Sub.GetHashCode();
-      if (Iss.Length != 0) hash ^= Iss.GetHashCode();
-      if (Aud.Length != 0) hash ^= Aud.GetHashCode();
-      if (Iat.Length != 0) hash ^= Iat.GetHashCode();
-      if (userMetadata_ != null) hash ^= UserMetadata.GetHashCode();
+      if (Gender.Length != 0) hash ^= Gender.GetHashCode();
+      if (Birthdate.Length != 0) hash ^= Birthdate.GetHashCode();
+      if (Email.Length != 0) hash ^= Email.GetHashCode();
+      if (Picture != 0L) hash ^= Picture.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -527,82 +414,53 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Email.Length != 0) {
+      if (Iss.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Email);
+        output.WriteString(Iss);
       }
-      if (EmailVerified != false) {
+      if (Sub != false) {
         output.WriteRawTag(16);
-        output.WriteBool(EmailVerified);
+        output.WriteBool(Sub);
+      }
+      if (Aud.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Aud);
+      }
+      if (Exp != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(Exp);
+      }
+      if (Iat != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(Iat);
       }
       if (Name.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(50);
         output.WriteString(Name);
       }
       if (GivenName.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteString(GivenName);
       }
       if (FamilyName.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteString(FamilyName);
       }
-      if (Picture.Length != 0) {
-        output.WriteRawTag(50);
-        output.WriteString(Picture);
-      }
-      if (Locale.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Locale);
-      }
-      if (UserId.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(UserId);
-      }
-      if (Nickname.Length != 0) {
+      if (Gender.Length != 0) {
         output.WriteRawTag(74);
-        output.WriteString(Nickname);
+        output.WriteString(Gender);
       }
-      if (Connection.Length != 0) {
+      if (Birthdate.Length != 0) {
         output.WriteRawTag(82);
-        output.WriteString(Connection);
+        output.WriteString(Birthdate);
       }
-      identities_.WriteTo(output, _repeated_identities_codec);
-      if (LastIp.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(LastIp);
+      if (Email.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Email);
       }
-      if (LoginCount != 0L) {
-        output.WriteRawTag(104);
-        output.WriteInt64(LoginCount);
-      }
-      if (UpdatedAt.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(UpdatedAt);
-      }
-      if (CreatedAt.Length != 0) {
-        output.WriteRawTag(122);
-        output.WriteString(CreatedAt);
-      }
-      if (Sub.Length != 0) {
-        output.WriteRawTag(130, 1);
-        output.WriteString(Sub);
-      }
-      if (Iss.Length != 0) {
-        output.WriteRawTag(138, 1);
-        output.WriteString(Iss);
-      }
-      if (Aud.Length != 0) {
-        output.WriteRawTag(146, 1);
-        output.WriteString(Aud);
-      }
-      if (Iat.Length != 0) {
-        output.WriteRawTag(154, 1);
-        output.WriteString(Iat);
-      }
-      if (userMetadata_ != null) {
-        output.WriteRawTag(162, 1);
-        output.WriteMessage(UserMetadata);
+      if (Picture != 0L) {
+        output.WriteRawTag(96);
+        output.WriteInt64(Picture);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -612,11 +470,20 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Email.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
+      if (Iss.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Iss);
       }
-      if (EmailVerified != false) {
+      if (Sub != false) {
         size += 1 + 1;
+      }
+      if (Aud.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Aud);
+      }
+      if (Exp != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Exp);
+      }
+      if (Iat != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Iat);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -627,48 +494,17 @@ namespace Api {
       if (FamilyName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(FamilyName);
       }
-      if (Picture.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Picture);
+      if (Gender.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Gender);
       }
-      if (Locale.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Locale);
+      if (Birthdate.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Birthdate);
       }
-      if (UserId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
+      if (Email.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
       }
-      if (Nickname.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
-      }
-      if (Connection.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Connection);
-      }
-      size += identities_.CalculateSize(_repeated_identities_codec);
-      if (LastIp.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastIp);
-      }
-      if (LoginCount != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(LoginCount);
-      }
-      if (UpdatedAt.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UpdatedAt);
-      }
-      if (CreatedAt.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(CreatedAt);
-      }
-      if (Sub.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Sub);
-      }
-      if (Iss.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Iss);
-      }
-      if (Aud.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Aud);
-      }
-      if (Iat.Length != 0) {
-        size += 2 + pb::CodedOutputStream.ComputeStringSize(Iat);
-      }
-      if (userMetadata_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UserMetadata);
+      if (Picture != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Picture);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -677,15 +513,24 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Profile other) {
+    public void MergeFrom(IDToken other) {
       if (other == null) {
         return;
       }
-      if (other.Email.Length != 0) {
-        Email = other.Email;
+      if (other.Iss.Length != 0) {
+        Iss = other.Iss;
       }
-      if (other.EmailVerified != false) {
-        EmailVerified = other.EmailVerified;
+      if (other.Sub != false) {
+        Sub = other.Sub;
+      }
+      if (other.Aud.Length != 0) {
+        Aud = other.Aud;
+      }
+      if (other.Exp != 0L) {
+        Exp = other.Exp;
+      }
+      if (other.Iat != 0L) {
+        Iat = other.Iat;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -696,51 +541,17 @@ namespace Api {
       if (other.FamilyName.Length != 0) {
         FamilyName = other.FamilyName;
       }
-      if (other.Picture.Length != 0) {
+      if (other.Gender.Length != 0) {
+        Gender = other.Gender;
+      }
+      if (other.Birthdate.Length != 0) {
+        Birthdate = other.Birthdate;
+      }
+      if (other.Email.Length != 0) {
+        Email = other.Email;
+      }
+      if (other.Picture != 0L) {
         Picture = other.Picture;
-      }
-      if (other.Locale.Length != 0) {
-        Locale = other.Locale;
-      }
-      if (other.UserId.Length != 0) {
-        UserId = other.UserId;
-      }
-      if (other.Nickname.Length != 0) {
-        Nickname = other.Nickname;
-      }
-      if (other.Connection.Length != 0) {
-        Connection = other.Connection;
-      }
-      identities_.Add(other.identities_);
-      if (other.LastIp.Length != 0) {
-        LastIp = other.LastIp;
-      }
-      if (other.LoginCount != 0L) {
-        LoginCount = other.LoginCount;
-      }
-      if (other.UpdatedAt.Length != 0) {
-        UpdatedAt = other.UpdatedAt;
-      }
-      if (other.CreatedAt.Length != 0) {
-        CreatedAt = other.CreatedAt;
-      }
-      if (other.Sub.Length != 0) {
-        Sub = other.Sub;
-      }
-      if (other.Iss.Length != 0) {
-        Iss = other.Iss;
-      }
-      if (other.Aud.Length != 0) {
-        Aud = other.Aud;
-      }
-      if (other.Iat.Length != 0) {
-        Iat = other.Iat;
-      }
-      if (other.userMetadata_ != null) {
-        if (userMetadata_ == null) {
-          userMetadata_ = new global::Api.UserMetadata();
-        }
-        UserMetadata.MergeFrom(other.UserMetadata);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -754,86 +565,51 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Email = input.ReadString();
-            break;
-          }
-          case 16: {
-            EmailVerified = input.ReadBool();
-            break;
-          }
-          case 26: {
-            Name = input.ReadString();
-            break;
-          }
-          case 34: {
-            GivenName = input.ReadString();
-            break;
-          }
-          case 42: {
-            FamilyName = input.ReadString();
-            break;
-          }
-          case 50: {
-            Picture = input.ReadString();
-            break;
-          }
-          case 58: {
-            Locale = input.ReadString();
-            break;
-          }
-          case 66: {
-            UserId = input.ReadString();
-            break;
-          }
-          case 74: {
-            Nickname = input.ReadString();
-            break;
-          }
-          case 82: {
-            Connection = input.ReadString();
-            break;
-          }
-          case 90: {
-            identities_.AddEntriesFrom(input, _repeated_identities_codec);
-            break;
-          }
-          case 98: {
-            LastIp = input.ReadString();
-            break;
-          }
-          case 104: {
-            LoginCount = input.ReadInt64();
-            break;
-          }
-          case 114: {
-            UpdatedAt = input.ReadString();
-            break;
-          }
-          case 122: {
-            CreatedAt = input.ReadString();
-            break;
-          }
-          case 130: {
-            Sub = input.ReadString();
-            break;
-          }
-          case 138: {
             Iss = input.ReadString();
             break;
           }
-          case 146: {
+          case 16: {
+            Sub = input.ReadBool();
+            break;
+          }
+          case 26: {
             Aud = input.ReadString();
             break;
           }
-          case 154: {
-            Iat = input.ReadString();
+          case 32: {
+            Exp = input.ReadInt64();
             break;
           }
-          case 162: {
-            if (userMetadata_ == null) {
-              userMetadata_ = new global::Api.UserMetadata();
-            }
-            input.ReadMessage(userMetadata_);
+          case 40: {
+            Iat = input.ReadInt64();
+            break;
+          }
+          case 50: {
+            Name = input.ReadString();
+            break;
+          }
+          case 58: {
+            GivenName = input.ReadString();
+            break;
+          }
+          case 66: {
+            FamilyName = input.ReadString();
+            break;
+          }
+          case 74: {
+            Gender = input.ReadString();
+            break;
+          }
+          case 82: {
+            Birthdate = input.ReadString();
+            break;
+          }
+          case 90: {
+            Email = input.ReadString();
+            break;
+          }
+          case 96: {
+            Picture = input.ReadInt64();
             break;
           }
         }
@@ -1055,11 +831,11 @@ namespace Api {
 
   }
 
-  public sealed partial class Identity : pb::IMessage<Identity> {
-    private static readonly pb::MessageParser<Identity> _parser = new pb::MessageParser<Identity>(() => new Identity());
+  public sealed partial class AccessToken : pb::IMessage<AccessToken> {
+    private static readonly pb::MessageParser<AccessToken> _parser = new pb::MessageParser<AccessToken>(() => new AccessToken());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Identity> Parser { get { return _parser; } }
+    public static pb::MessageParser<AccessToken> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -1072,97 +848,138 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Identity() {
+    public AccessToken() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Identity(Identity other) : this() {
-      provider_ = other.provider_;
-      userId_ = other.userId_;
-      connection_ = other.connection_;
-      isSocial_ = other.isSocial_;
+    public AccessToken(AccessToken other) : this() {
+      iss_ = other.iss_;
+      sub_ = other.sub_;
+      aud_ = other.aud_.Clone();
+      azp_ = other.azp_;
+      exp_ = other.exp_;
+      iat_ = other.iat_;
+      scope_ = other.scope_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Identity Clone() {
-      return new Identity(this);
+    public AccessToken Clone() {
+      return new AccessToken(this);
     }
 
-    /// <summary>Field number for the "provider" field.</summary>
-    public const int ProviderFieldNumber = 1;
-    private string provider_ = "";
+    /// <summary>Field number for the "iss" field.</summary>
+    public const int IssFieldNumber = 1;
+    private string iss_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Provider {
-      get { return provider_; }
+    public string Iss {
+      get { return iss_; }
       set {
-        provider_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        iss_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "user_id" field.</summary>
-    public const int UserIdFieldNumber = 2;
-    private string userId_ = "";
+    /// <summary>Field number for the "sub" field.</summary>
+    public const int SubFieldNumber = 2;
+    private string sub_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string UserId {
-      get { return userId_; }
+    public string Sub {
+      get { return sub_; }
       set {
-        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        sub_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "connection" field.</summary>
-    public const int ConnectionFieldNumber = 3;
-    private string connection_ = "";
+    /// <summary>Field number for the "aud" field.</summary>
+    public const int AudFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_aud_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> aud_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Connection {
-      get { return connection_; }
+    public pbc::RepeatedField<string> Aud {
+      get { return aud_; }
+    }
+
+    /// <summary>Field number for the "azp" field.</summary>
+    public const int AzpFieldNumber = 4;
+    private string azp_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Azp {
+      get { return azp_; }
       set {
-        connection_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        azp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "isSocial" field.</summary>
-    public const int IsSocialFieldNumber = 4;
-    private bool isSocial_;
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 5;
+    private long exp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool IsSocial {
-      get { return isSocial_; }
+    public long Exp {
+      get { return exp_; }
       set {
-        isSocial_ = value;
+        exp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "iat" field.</summary>
+    public const int IatFieldNumber = 6;
+    private long iat_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Iat {
+      get { return iat_; }
+      set {
+        iat_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scope" field.</summary>
+    public const int ScopeFieldNumber = 7;
+    private string scope_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Scope {
+      get { return scope_; }
+      set {
+        scope_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Identity);
+      return Equals(other as AccessToken);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Identity other) {
+    public bool Equals(AccessToken other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Provider != other.Provider) return false;
-      if (UserId != other.UserId) return false;
-      if (Connection != other.Connection) return false;
-      if (IsSocial != other.IsSocial) return false;
+      if (Iss != other.Iss) return false;
+      if (Sub != other.Sub) return false;
+      if(!aud_.Equals(other.aud_)) return false;
+      if (Azp != other.Azp) return false;
+      if (Exp != other.Exp) return false;
+      if (Iat != other.Iat) return false;
+      if (Scope != other.Scope) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Provider.Length != 0) hash ^= Provider.GetHashCode();
-      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
-      if (Connection.Length != 0) hash ^= Connection.GetHashCode();
-      if (IsSocial != false) hash ^= IsSocial.GetHashCode();
+      if (Iss.Length != 0) hash ^= Iss.GetHashCode();
+      if (Sub.Length != 0) hash ^= Sub.GetHashCode();
+      hash ^= aud_.GetHashCode();
+      if (Azp.Length != 0) hash ^= Azp.GetHashCode();
+      if (Exp != 0L) hash ^= Exp.GetHashCode();
+      if (Iat != 0L) hash ^= Iat.GetHashCode();
+      if (Scope.Length != 0) hash ^= Scope.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1176,21 +993,30 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Provider.Length != 0) {
+      if (Iss.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Provider);
+        output.WriteString(Iss);
       }
-      if (UserId.Length != 0) {
+      if (Sub.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(UserId);
+        output.WriteString(Sub);
       }
-      if (Connection.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Connection);
+      aud_.WriteTo(output, _repeated_aud_codec);
+      if (Azp.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Azp);
       }
-      if (IsSocial != false) {
-        output.WriteRawTag(32);
-        output.WriteBool(IsSocial);
+      if (Exp != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(Exp);
+      }
+      if (Iat != 0L) {
+        output.WriteRawTag(48);
+        output.WriteInt64(Iat);
+      }
+      if (Scope.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Scope);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1200,17 +1026,24 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Provider.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Provider);
+      if (Iss.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Iss);
       }
-      if (UserId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
+      if (Sub.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sub);
       }
-      if (Connection.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Connection);
+      size += aud_.CalculateSize(_repeated_aud_codec);
+      if (Azp.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Azp);
       }
-      if (IsSocial != false) {
-        size += 1 + 1;
+      if (Exp != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Exp);
+      }
+      if (Iat != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Iat);
+      }
+      if (Scope.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Scope);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1219,21 +1052,28 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Identity other) {
+    public void MergeFrom(AccessToken other) {
       if (other == null) {
         return;
       }
-      if (other.Provider.Length != 0) {
-        Provider = other.Provider;
+      if (other.Iss.Length != 0) {
+        Iss = other.Iss;
       }
-      if (other.UserId.Length != 0) {
-        UserId = other.UserId;
+      if (other.Sub.Length != 0) {
+        Sub = other.Sub;
       }
-      if (other.Connection.Length != 0) {
-        Connection = other.Connection;
+      aud_.Add(other.aud_);
+      if (other.Azp.Length != 0) {
+        Azp = other.Azp;
       }
-      if (other.IsSocial != false) {
-        IsSocial = other.IsSocial;
+      if (other.Exp != 0L) {
+        Exp = other.Exp;
+      }
+      if (other.Iat != 0L) {
+        Iat = other.Iat;
+      }
+      if (other.Scope.Length != 0) {
+        Scope = other.Scope;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1247,19 +1087,31 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Provider = input.ReadString();
+            Iss = input.ReadString();
             break;
           }
           case 18: {
-            UserId = input.ReadString();
+            Sub = input.ReadString();
             break;
           }
           case 26: {
-            Connection = input.ReadString();
+            aud_.AddEntriesFrom(input, _repeated_aud_codec);
             break;
           }
-          case 32: {
-            IsSocial = input.ReadBool();
+          case 34: {
+            Azp = input.ReadString();
+            break;
+          }
+          case 40: {
+            Exp = input.ReadInt64();
+            break;
+          }
+          case 48: {
+            Iat = input.ReadInt64();
+            break;
+          }
+          case 58: {
+            Scope = input.ReadString();
             break;
           }
         }

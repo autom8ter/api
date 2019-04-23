@@ -20,22 +20,22 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\"\n\x11GetProfileByEmail\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"\x8e\x03\n\x07Profile\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x16\n\x0e\x65mail_verified\x18\x02 \x01(\x08\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x12\n\ngiven_name\x18\x04 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x05 \x01(\t\x12\x0f\n\x07picture\x18\x06 \x01(\t\x12\x0e\n\x06locale\x18\x07 \x01(\t\x12\x0f\n\x07user_id\x18\x08 \x01(\t\x12\x10\n\x08nickname\x18\t \x01(\t\x12\x12\n\nconnection\x18\n \x01(\t\x12!\n\nidentities\x18\x0b \x03(\x0b\x32\r.api.Identity\x12\x0f\n\x07last_ip\x18\x0c \x01(\t\x12\x13\n\x0blogin_count\x18\r \x01(\x03\x12\x12\n\nupdated_at\x18\x0e \x01(\t\x12\x12\n\ncreated_at\x18\x0f \x01(\t\x12\x0b\n\x03sub\x18\x10 \x01(\t\x12\x0b\n\x03iss\x18\x11 \x01(\t\x12\x0b\n\x03\x61ud\x18\x12 \x01(\t\x12\x0b\n\x03iat\x18\x13 \x01(\t\x12(\n\ruser_metadata\x18\x14 \x01(\x0b\x32\x11.api.UserMetadata\"T\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x11\n\tpay_token\x18\x03 \x01(\t\x12\x14\n\x0clast_contact\x18\x04 \x01(\t\"S\n\x08Identity\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x12\n\nconnection\x18\x03 \x01(\t\x12\x10\n\x08isSocial\x18\x04 \x01(\x08\x32\x65\n\x0eProfileService\x12S\n\nGetProfile\x12\x16.api.GetProfileByEmail\x1a\x0c.api.Profile\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/api/profile/{email}:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x1b\n\nGetByEmail\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"\xc4\x01\n\x07IDToken\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03sub\x18\x02 \x01(\x08\x12\x0b\n\x03\x61ud\x18\x03 \x01(\t\x12\x0b\n\x03\x65xp\x18\x04 \x01(\x03\x12\x0b\n\x03iat\x18\x05 \x01(\x03\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\x03\"T\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x11\n\tpay_token\x18\x03 \x01(\t\x12\x14\n\x0clast_contact\x18\x04 \x01(\t\"j\n\x0b\x41\x63\x63\x65ssToken\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03sub\x18\x02 \x01(\t\x12\x0b\n\x03\x61ud\x18\x03 \x03(\t\x12\x0b\n\x03\x61zp\x18\x04 \x01(\t\x12\x0b\n\x03\x65xp\x18\x05 \x01(\x03\x12\x0b\n\x03iat\x18\x06 \x01(\x03\x12\r\n\x05scope\x18\x07 \x01(\t2T\n\tIDService\x12G\n\nGetIDToken\x12\x0f.api.GetByEmail\x1a\x0c.api.IDToken\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/api/id/{email}:\x01*2`\n\rAccessService\x12O\n\nGetIDToken\x12\x0f.api.GetByEmail\x1a\x10.api.AccessToken\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/access/{email}:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
 
-_GETPROFILEBYEMAIL = _descriptor.Descriptor(
-  name='GetProfileByEmail',
-  full_name='api.GetProfileByEmail',
+_GETBYEMAIL = _descriptor.Descriptor(
+  name='GetByEmail',
+  full_name='api.GetByEmail',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='email', full_name='api.GetProfileByEmail.email', index=0,
+      name='email', full_name='api.GetByEmail.email', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -54,154 +54,98 @@ _GETPROFILEBYEMAIL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=48,
-  serialized_end=82,
+  serialized_end=75,
 )
 
 
-_PROFILE = _descriptor.Descriptor(
-  name='Profile',
-  full_name='api.Profile',
+_IDTOKEN = _descriptor.Descriptor(
+  name='IDToken',
+  full_name='api.IDToken',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='email', full_name='api.Profile.email', index=0,
+      name='iss', full_name='api.IDToken.iss', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='email_verified', full_name='api.Profile.email_verified', index=1,
+      name='sub', full_name='api.IDToken.sub', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='name', full_name='api.Profile.name', index=2,
+      name='aud', full_name='api.IDToken.aud', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='given_name', full_name='api.Profile.given_name', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='exp', full_name='api.IDToken.exp', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='family_name', full_name='api.Profile.family_name', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='iat', full_name='api.IDToken.iat', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='picture', full_name='api.Profile.picture', index=5,
+      name='name', full_name='api.IDToken.name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='locale', full_name='api.Profile.locale', index=6,
+      name='given_name', full_name='api.IDToken.given_name', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='api.Profile.user_id', index=7,
+      name='family_name', full_name='api.IDToken.family_name', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nickname', full_name='api.Profile.nickname', index=8,
+      name='gender', full_name='api.IDToken.gender', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='api.Profile.connection', index=9,
+      name='birthdate', full_name='api.IDToken.birthdate', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='identities', full_name='api.Profile.identities', index=10,
-      number=11, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='last_ip', full_name='api.Profile.last_ip', index=11,
-      number=12, type=9, cpp_type=9, label=1,
+      name='email', full_name='api.IDToken.email', index=10,
+      number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='login_count', full_name='api.Profile.login_count', index=12,
-      number=13, type=3, cpp_type=2, label=1,
+      name='picture', full_name='api.IDToken.picture', index=11,
+      number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='updated_at', full_name='api.Profile.updated_at', index=13,
-      number=14, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='created_at', full_name='api.Profile.created_at', index=14,
-      number=15, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='sub', full_name='api.Profile.sub', index=15,
-      number=16, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='iss', full_name='api.Profile.iss', index=16,
-      number=17, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='aud', full_name='api.Profile.aud', index=17,
-      number=18, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='iat', full_name='api.Profile.iat', index=18,
-      number=19, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='user_metadata', full_name='api.Profile.user_metadata', index=19,
-      number=20, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -217,8 +161,8 @@ _PROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=85,
-  serialized_end=483,
+  serialized_start=78,
+  serialized_end=274,
 )
 
 
@@ -269,43 +213,64 @@ _USERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=485,
-  serialized_end=569,
+  serialized_start=276,
+  serialized_end=360,
 )
 
 
-_IDENTITY = _descriptor.Descriptor(
-  name='Identity',
-  full_name='api.Identity',
+_ACCESSTOKEN = _descriptor.Descriptor(
+  name='AccessToken',
+  full_name='api.AccessToken',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='provider', full_name='api.Identity.provider', index=0,
+      name='iss', full_name='api.AccessToken.iss', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='user_id', full_name='api.Identity.user_id', index=1,
+      name='sub', full_name='api.AccessToken.sub', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='connection', full_name='api.Identity.connection', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='aud', full_name='api.AccessToken.aud', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='azp', full_name='api.AccessToken.azp', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='isSocial', full_name='api.Identity.isSocial', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='exp', full_name='api.AccessToken.exp', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='iat', full_name='api.AccessToken.iat', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scope', full_name='api.AccessToken.scope', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -321,31 +286,29 @@ _IDENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=654,
+  serialized_start=362,
+  serialized_end=468,
 )
 
-_PROFILE.fields_by_name['identities'].message_type = _IDENTITY
-_PROFILE.fields_by_name['user_metadata'].message_type = _USERMETADATA
-DESCRIPTOR.message_types_by_name['GetProfileByEmail'] = _GETPROFILEBYEMAIL
-DESCRIPTOR.message_types_by_name['Profile'] = _PROFILE
+DESCRIPTOR.message_types_by_name['GetByEmail'] = _GETBYEMAIL
+DESCRIPTOR.message_types_by_name['IDToken'] = _IDTOKEN
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
-DESCRIPTOR.message_types_by_name['Identity'] = _IDENTITY
+DESCRIPTOR.message_types_by_name['AccessToken'] = _ACCESSTOKEN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-GetProfileByEmail = _reflection.GeneratedProtocolMessageType('GetProfileByEmail', (_message.Message,), dict(
-  DESCRIPTOR = _GETPROFILEBYEMAIL,
+GetByEmail = _reflection.GeneratedProtocolMessageType('GetByEmail', (_message.Message,), dict(
+  DESCRIPTOR = _GETBYEMAIL,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.GetProfileByEmail)
+  # @@protoc_insertion_point(class_scope:api.GetByEmail)
   ))
-_sym_db.RegisterMessage(GetProfileByEmail)
+_sym_db.RegisterMessage(GetByEmail)
 
-Profile = _reflection.GeneratedProtocolMessageType('Profile', (_message.Message,), dict(
-  DESCRIPTOR = _PROFILE,
+IDToken = _reflection.GeneratedProtocolMessageType('IDToken', (_message.Message,), dict(
+  DESCRIPTOR = _IDTOKEN,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Profile)
+  # @@protoc_insertion_point(class_scope:api.IDToken)
   ))
-_sym_db.RegisterMessage(Profile)
+_sym_db.RegisterMessage(IDToken)
 
 UserMetadata = _reflection.GeneratedProtocolMessageType('UserMetadata', (_message.Message,), dict(
   DESCRIPTOR = _USERMETADATA,
@@ -354,36 +317,60 @@ UserMetadata = _reflection.GeneratedProtocolMessageType('UserMetadata', (_messag
   ))
 _sym_db.RegisterMessage(UserMetadata)
 
-Identity = _reflection.GeneratedProtocolMessageType('Identity', (_message.Message,), dict(
-  DESCRIPTOR = _IDENTITY,
+AccessToken = _reflection.GeneratedProtocolMessageType('AccessToken', (_message.Message,), dict(
+  DESCRIPTOR = _ACCESSTOKEN,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Identity)
+  # @@protoc_insertion_point(class_scope:api.AccessToken)
   ))
-_sym_db.RegisterMessage(Identity)
+_sym_db.RegisterMessage(AccessToken)
 
 
 
-_PROFILESERVICE = _descriptor.ServiceDescriptor(
-  name='ProfileService',
-  full_name='api.ProfileService',
+_IDSERVICE = _descriptor.ServiceDescriptor(
+  name='IDService',
+  full_name='api.IDService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=656,
-  serialized_end=757,
+  serialized_start=470,
+  serialized_end=554,
   methods=[
   _descriptor.MethodDescriptor(
-    name='GetProfile',
-    full_name='api.ProfileService.GetProfile',
+    name='GetIDToken',
+    full_name='api.IDService.GetIDToken',
     index=0,
     containing_service=None,
-    input_type=_GETPROFILEBYEMAIL,
-    output_type=_PROFILE,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/api/profile/{email}:\001*'),
+    input_type=_GETBYEMAIL,
+    output_type=_IDTOKEN,
+    serialized_options=_b('\202\323\344\223\002\024\"\017/api/id/{email}:\001*'),
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_PROFILESERVICE)
+_sym_db.RegisterServiceDescriptor(_IDSERVICE)
 
-DESCRIPTOR.services_by_name['ProfileService'] = _PROFILESERVICE
+DESCRIPTOR.services_by_name['IDService'] = _IDSERVICE
+
+
+_ACCESSSERVICE = _descriptor.ServiceDescriptor(
+  name='AccessService',
+  full_name='api.AccessService',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=556,
+  serialized_end=652,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='GetIDToken',
+    full_name='api.AccessService.GetIDToken',
+    index=0,
+    containing_service=None,
+    input_type=_GETBYEMAIL,
+    output_type=_ACCESSTOKEN,
+    serialized_options=_b('\202\323\344\223\002\030\"\023/api/access/{email}:\001*'),
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_ACCESSSERVICE)
+
+DESCRIPTOR.services_by_name['AccessService'] = _ACCESSSERVICE
 
 # @@protoc_insertion_point(module_scope)
