@@ -5,7 +5,7 @@ import "google/api/annotations.proto";
 
 
 service SubscriptionsService {
-    rpc Echo(SubscriptionRequest) returns (SubscriptionResponse) {
+    rpc CreateSubsciption(SubscriptionRequest) returns (SubscriptionResponse) {
         option (google.api.http) = {
       post: "/v1/subscriptions"
       body: "*"

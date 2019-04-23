@@ -467,13 +467,13 @@ void AddDescriptorsImpl() {
       "card\030\003 \001(\0132\t.api.Card\"\"\n\024SubscriptionRes"
       "ponse\022\n\n\002id\030\001 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001("
       "\t\022\021\n\texp_month\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013"
-      "\n\003cvc\030\004 \001(\t2q\n\024SubscriptionsService\022Y\n\004E"
-      "cho\022\030.api.SubscriptionRequest\032\031.api.Subs"
-      "criptionResponse\"\034\202\323\344\223\002\026\"\021/v1/subscripti"
-      "ons:\001*b\006proto3"
+      "\n\003cvc\030\004 \001(\t2~\n\024SubscriptionsService\022f\n\021C"
+      "reateSubsciption\022\030.api.SubscriptionReque"
+      "st\032\031.api.SubscriptionResponse\"\034\202\323\344\223\002\026\"\021/"
+      "v1/subscriptions:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1214);
+      descriptor, 1227);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();

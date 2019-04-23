@@ -17,7 +17,7 @@
   "paths": {
     "/v1/subscriptions": {
       "post": {
-        "operationId": "Echo",
+        "operationId": "CreateSubsciption",
         "responses": {
           "200": {
             "description": "A successful response.",

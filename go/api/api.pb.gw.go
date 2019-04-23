@@ -28,7 +28,7 @@ var _ status.Status
 var _ = runtime.String
 var _ = utilities.NewDoubleArray
 
-func request_SubscriptionsService_Echo_0(ctx context.Context, marshaler runtime.Marshaler, client SubscriptionsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_SubscriptionsService_CreateSubsciption_0(ctx context.Context, marshaler runtime.Marshaler, client SubscriptionsServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SubscriptionRequest
 	var metadata runtime.ServerMetadata
 
@@ -40,7 +40,7 @@ func request_SubscriptionsService_Echo_0(ctx context.Context, marshaler runtime.
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.Echo(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.CreateSubsciption(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
@@ -83,7 +83,7 @@ func RegisterSubscriptionsServiceHandler(ctx context.Context, mux *runtime.Serve
 // "SubscriptionsServiceClient" to call the correct interceptors.
 func RegisterSubscriptionsServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SubscriptionsServiceClient) error {
 
-	mux.Handle("POST", pattern_SubscriptionsService_Echo_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_SubscriptionsService_CreateSubsciption_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -92,14 +92,14 @@ func RegisterSubscriptionsServiceHandlerClient(ctx context.Context, mux *runtime
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_SubscriptionsService_Echo_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_SubscriptionsService_CreateSubsciption_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_SubscriptionsService_Echo_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_SubscriptionsService_CreateSubsciption_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -107,9 +107,9 @@ func RegisterSubscriptionsServiceHandlerClient(ctx context.Context, mux *runtime
 }
 
 var (
-	pattern_SubscriptionsService_Echo_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "subscriptions"}, ""))
+	pattern_SubscriptionsService_CreateSubsciption_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "subscriptions"}, ""))
 )
 
 var (
-	forward_SubscriptionsService_Echo_0 = runtime.ForwardResponseMessage
+	forward_SubscriptionsService_CreateSubsciption_0 = runtime.ForwardResponseMessage
 )
