@@ -232,32 +232,6 @@ typedef GPB_ENUM(Paths_FieldNumber) {
 
 @end
 
-#pragma mark - Auth0
-
-typedef GPB_ENUM(Auth0_FieldNumber) {
-  Auth0_FieldNumber_Domain = 1,
-  Auth0_FieldNumber_ClientId = 2,
-  Auth0_FieldNumber_ClientSecret = 3,
-  Auth0_FieldNumber_ScopesArray = 4,
-  Auth0_FieldNumber_Redirect = 5,
-};
-
-@interface Auth0 : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *domain;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *clientId;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *clientSecret;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
-/** The number of items in @c scopesArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger scopesArray_Count;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
-
-@end
-
 #pragma mark - CreateCustomerRequest
 
 typedef GPB_ENUM(CreateCustomerRequest_FieldNumber) {

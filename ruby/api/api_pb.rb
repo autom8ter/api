@@ -54,13 +54,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :debug, :string, 13
     optional :blog, :string, 14
   end
-  add_message "api.Auth0" do
-    optional :domain, :string, 1
-    optional :client_id, :string, 2
-    optional :client_secret, :string, 3
-    repeated :scopes, :string, 4
-    optional :redirect, :string, 5
-  end
   add_message "api.CreateCustomerRequest" do
     optional :user_info, :message, 1, "api.UserInfo"
   end
@@ -78,7 +71,6 @@ module Api
   RefreshToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefreshToken").msgclass
   Tokens = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Tokens").msgclass
   Paths = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Paths").msgclass
-  Auth0 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth0").msgclass
   CreateCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateCustomerRequest").msgclass
   CreateCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateCustomerResponse").msgclass
 end
