@@ -2,41 +2,7 @@ syntax="proto3";
 
 package api;
 
-import "google/api/annotations.proto";
-
-
-///////////////////////////////////////////////Services/////////////////////////////////////////////////////////////////
-
-//Accounts
-
-service IDService {
-    rpc GetIDToken(GetByEmail) returns (IDToken) {
-        option (google.api.http) = {
-            post: "/api/id/{email}"
-            body: "*"
-        };
-    }
-}
-
-service AccessService {
-    rpc GetIDToken(GetByEmail) returns (AccessToken) {
-        option (google.api.http) = {
-            post: "/api/access/{email}"
-            body: "*"
-        };
-    }
-}
-
-message GetByEmail {
-    string email =1;
-}
-
-message IDToken {
-    string iss =1;
-    string sub=2;
-    string aud =3;
-    int64 exp =4;
-    int64 iat=5;
+message UserInfo {
     string name=6;
     string given_name=7;
     string family_name=8;
@@ -44,21 +10,17 @@ message IDToken {
     string birthdate=10;
     string email=11;
     string picture=12;
+    UserMetadata user_metadata=13;
+    AppMetadata app_metadata=14;
+
 }
 
 message UserMetadata {
     string phone =1;
-    string plan=2;
-    string pay_token=3;
-    string last_contact=4;
+    string preferred_contact=2;
 }
 
-message AccessToken {
-    string iss =1;
-    string sub=2;
-    repeated string aud =3;
-    string azp =4;
-    int64 exp =5;
-    int64 iat=6;
-    string scope=7;
+message AppMetadata {
+    string plan=1;
+    string pay_token=2;
 }

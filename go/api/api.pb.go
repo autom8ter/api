@@ -4,11 +4,8 @@
 package api
 
 import (
-	context "context"
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	_ "google.golang.org/genproto/googleapis/api/annotations"
-	grpc "google.golang.org/grpc"
 	math "math"
 )
 
@@ -23,177 +20,112 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type GetByEmail struct {
-	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+type UserInfo struct {
+	Name                 string        `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
+	GivenName            string        `protobuf:"bytes,7,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
+	FamilyName           string        `protobuf:"bytes,8,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
+	Gender               string        `protobuf:"bytes,9,opt,name=gender,proto3" json:"gender,omitempty"`
+	Birthdate            string        `protobuf:"bytes,10,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
+	Email                string        `protobuf:"bytes,11,opt,name=email,proto3" json:"email,omitempty"`
+	Picture              string        `protobuf:"bytes,12,opt,name=picture,proto3" json:"picture,omitempty"`
+	UserMetadata         *UserMetadata `protobuf:"bytes,13,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
+	AppMetadata          *AppMetadata  `protobuf:"bytes,14,opt,name=app_metadata,json=appMetadata,proto3" json:"app_metadata,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
 }
 
-func (m *GetByEmail) Reset()         { *m = GetByEmail{} }
-func (m *GetByEmail) String() string { return proto.CompactTextString(m) }
-func (*GetByEmail) ProtoMessage()    {}
-func (*GetByEmail) Descriptor() ([]byte, []int) {
+func (m *UserInfo) Reset()         { *m = UserInfo{} }
+func (m *UserInfo) String() string { return proto.CompactTextString(m) }
+func (*UserInfo) ProtoMessage()    {}
+func (*UserInfo) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00212fb1f9d3bf1c, []int{0}
 }
 
-func (m *GetByEmail) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetByEmail.Unmarshal(m, b)
+func (m *UserInfo) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UserInfo.Unmarshal(m, b)
 }
-func (m *GetByEmail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetByEmail.Marshal(b, m, deterministic)
+func (m *UserInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UserInfo.Marshal(b, m, deterministic)
 }
-func (m *GetByEmail) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetByEmail.Merge(m, src)
+func (m *UserInfo) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UserInfo.Merge(m, src)
 }
-func (m *GetByEmail) XXX_Size() int {
-	return xxx_messageInfo_GetByEmail.Size(m)
+func (m *UserInfo) XXX_Size() int {
+	return xxx_messageInfo_UserInfo.Size(m)
 }
-func (m *GetByEmail) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetByEmail.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GetByEmail proto.InternalMessageInfo
-
-func (m *GetByEmail) GetEmail() string {
-	if m != nil {
-		return m.Email
-	}
-	return ""
+func (m *UserInfo) XXX_DiscardUnknown() {
+	xxx_messageInfo_UserInfo.DiscardUnknown(m)
 }
 
-type IDToken struct {
-	Iss                  string   `protobuf:"bytes,1,opt,name=iss,proto3" json:"iss,omitempty"`
-	Sub                  string   `protobuf:"bytes,2,opt,name=sub,proto3" json:"sub,omitempty"`
-	Aud                  string   `protobuf:"bytes,3,opt,name=aud,proto3" json:"aud,omitempty"`
-	Exp                  int64    `protobuf:"varint,4,opt,name=exp,proto3" json:"exp,omitempty"`
-	Iat                  int64    `protobuf:"varint,5,opt,name=iat,proto3" json:"iat,omitempty"`
-	Name                 string   `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
-	GivenName            string   `protobuf:"bytes,7,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
-	FamilyName           string   `protobuf:"bytes,8,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
-	Gender               string   `protobuf:"bytes,9,opt,name=gender,proto3" json:"gender,omitempty"`
-	Birthdate            string   `protobuf:"bytes,10,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
-	Email                string   `protobuf:"bytes,11,opt,name=email,proto3" json:"email,omitempty"`
-	Picture              string   `protobuf:"bytes,12,opt,name=picture,proto3" json:"picture,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
+var xxx_messageInfo_UserInfo proto.InternalMessageInfo
 
-func (m *IDToken) Reset()         { *m = IDToken{} }
-func (m *IDToken) String() string { return proto.CompactTextString(m) }
-func (*IDToken) ProtoMessage()    {}
-func (*IDToken) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{1}
-}
-
-func (m *IDToken) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_IDToken.Unmarshal(m, b)
-}
-func (m *IDToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_IDToken.Marshal(b, m, deterministic)
-}
-func (m *IDToken) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_IDToken.Merge(m, src)
-}
-func (m *IDToken) XXX_Size() int {
-	return xxx_messageInfo_IDToken.Size(m)
-}
-func (m *IDToken) XXX_DiscardUnknown() {
-	xxx_messageInfo_IDToken.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_IDToken proto.InternalMessageInfo
-
-func (m *IDToken) GetIss() string {
-	if m != nil {
-		return m.Iss
-	}
-	return ""
-}
-
-func (m *IDToken) GetSub() string {
-	if m != nil {
-		return m.Sub
-	}
-	return ""
-}
-
-func (m *IDToken) GetAud() string {
-	if m != nil {
-		return m.Aud
-	}
-	return ""
-}
-
-func (m *IDToken) GetExp() int64 {
-	if m != nil {
-		return m.Exp
-	}
-	return 0
-}
-
-func (m *IDToken) GetIat() int64 {
-	if m != nil {
-		return m.Iat
-	}
-	return 0
-}
-
-func (m *IDToken) GetName() string {
+func (m *UserInfo) GetName() string {
 	if m != nil {
 		return m.Name
 	}
 	return ""
 }
 
-func (m *IDToken) GetGivenName() string {
+func (m *UserInfo) GetGivenName() string {
 	if m != nil {
 		return m.GivenName
 	}
 	return ""
 }
 
-func (m *IDToken) GetFamilyName() string {
+func (m *UserInfo) GetFamilyName() string {
 	if m != nil {
 		return m.FamilyName
 	}
 	return ""
 }
 
-func (m *IDToken) GetGender() string {
+func (m *UserInfo) GetGender() string {
 	if m != nil {
 		return m.Gender
 	}
 	return ""
 }
 
-func (m *IDToken) GetBirthdate() string {
+func (m *UserInfo) GetBirthdate() string {
 	if m != nil {
 		return m.Birthdate
 	}
 	return ""
 }
 
-func (m *IDToken) GetEmail() string {
+func (m *UserInfo) GetEmail() string {
 	if m != nil {
 		return m.Email
 	}
 	return ""
 }
 
-func (m *IDToken) GetPicture() string {
+func (m *UserInfo) GetPicture() string {
 	if m != nil {
 		return m.Picture
 	}
 	return ""
 }
 
+func (m *UserInfo) GetUserMetadata() *UserMetadata {
+	if m != nil {
+		return m.UserMetadata
+	}
+	return nil
+}
+
+func (m *UserInfo) GetAppMetadata() *AppMetadata {
+	if m != nil {
+		return m.AppMetadata
+	}
+	return nil
+}
+
 type UserMetadata struct {
 	Phone                string   `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"`
-	Plan                 string   `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
-	PayToken             string   `protobuf:"bytes,3,opt,name=pay_token,json=payToken,proto3" json:"pay_token,omitempty"`
-	LastContact          string   `protobuf:"bytes,4,opt,name=last_contact,json=lastContact,proto3" json:"last_contact,omitempty"`
+	PreferredContact     string   `protobuf:"bytes,2,opt,name=preferred_contact,json=preferredContact,proto3" json:"preferred_contact,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -203,7 +135,7 @@ func (m *UserMetadata) Reset()         { *m = UserMetadata{} }
 func (m *UserMetadata) String() string { return proto.CompactTextString(m) }
 func (*UserMetadata) ProtoMessage()    {}
 func (*UserMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{2}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{1}
 }
 
 func (m *UserMetadata) XXX_Unmarshal(b []byte) error {
@@ -231,288 +163,87 @@ func (m *UserMetadata) GetPhone() string {
 	return ""
 }
 
-func (m *UserMetadata) GetPlan() string {
+func (m *UserMetadata) GetPreferredContact() string {
+	if m != nil {
+		return m.PreferredContact
+	}
+	return ""
+}
+
+type AppMetadata struct {
+	Plan                 string   `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	PayToken             string   `protobuf:"bytes,2,opt,name=pay_token,json=payToken,proto3" json:"pay_token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *AppMetadata) Reset()         { *m = AppMetadata{} }
+func (m *AppMetadata) String() string { return proto.CompactTextString(m) }
+func (*AppMetadata) ProtoMessage()    {}
+func (*AppMetadata) Descriptor() ([]byte, []int) {
+	return fileDescriptor_00212fb1f9d3bf1c, []int{2}
+}
+
+func (m *AppMetadata) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_AppMetadata.Unmarshal(m, b)
+}
+func (m *AppMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_AppMetadata.Marshal(b, m, deterministic)
+}
+func (m *AppMetadata) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_AppMetadata.Merge(m, src)
+}
+func (m *AppMetadata) XXX_Size() int {
+	return xxx_messageInfo_AppMetadata.Size(m)
+}
+func (m *AppMetadata) XXX_DiscardUnknown() {
+	xxx_messageInfo_AppMetadata.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_AppMetadata proto.InternalMessageInfo
+
+func (m *AppMetadata) GetPlan() string {
 	if m != nil {
 		return m.Plan
 	}
 	return ""
 }
 
-func (m *UserMetadata) GetPayToken() string {
+func (m *AppMetadata) GetPayToken() string {
 	if m != nil {
 		return m.PayToken
 	}
 	return ""
 }
 
-func (m *UserMetadata) GetLastContact() string {
-	if m != nil {
-		return m.LastContact
-	}
-	return ""
-}
-
-type AccessToken struct {
-	Iss                  string   `protobuf:"bytes,1,opt,name=iss,proto3" json:"iss,omitempty"`
-	Sub                  string   `protobuf:"bytes,2,opt,name=sub,proto3" json:"sub,omitempty"`
-	Aud                  []string `protobuf:"bytes,3,rep,name=aud,proto3" json:"aud,omitempty"`
-	Azp                  string   `protobuf:"bytes,4,opt,name=azp,proto3" json:"azp,omitempty"`
-	Exp                  int64    `protobuf:"varint,5,opt,name=exp,proto3" json:"exp,omitempty"`
-	Iat                  int64    `protobuf:"varint,6,opt,name=iat,proto3" json:"iat,omitempty"`
-	Scope                string   `protobuf:"bytes,7,opt,name=scope,proto3" json:"scope,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *AccessToken) Reset()         { *m = AccessToken{} }
-func (m *AccessToken) String() string { return proto.CompactTextString(m) }
-func (*AccessToken) ProtoMessage()    {}
-func (*AccessToken) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{3}
-}
-
-func (m *AccessToken) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_AccessToken.Unmarshal(m, b)
-}
-func (m *AccessToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_AccessToken.Marshal(b, m, deterministic)
-}
-func (m *AccessToken) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AccessToken.Merge(m, src)
-}
-func (m *AccessToken) XXX_Size() int {
-	return xxx_messageInfo_AccessToken.Size(m)
-}
-func (m *AccessToken) XXX_DiscardUnknown() {
-	xxx_messageInfo_AccessToken.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_AccessToken proto.InternalMessageInfo
-
-func (m *AccessToken) GetIss() string {
-	if m != nil {
-		return m.Iss
-	}
-	return ""
-}
-
-func (m *AccessToken) GetSub() string {
-	if m != nil {
-		return m.Sub
-	}
-	return ""
-}
-
-func (m *AccessToken) GetAud() []string {
-	if m != nil {
-		return m.Aud
-	}
-	return nil
-}
-
-func (m *AccessToken) GetAzp() string {
-	if m != nil {
-		return m.Azp
-	}
-	return ""
-}
-
-func (m *AccessToken) GetExp() int64 {
-	if m != nil {
-		return m.Exp
-	}
-	return 0
-}
-
-func (m *AccessToken) GetIat() int64 {
-	if m != nil {
-		return m.Iat
-	}
-	return 0
-}
-
-func (m *AccessToken) GetScope() string {
-	if m != nil {
-		return m.Scope
-	}
-	return ""
-}
-
 func init() {
-	proto.RegisterType((*GetByEmail)(nil), "api.GetByEmail")
-	proto.RegisterType((*IDToken)(nil), "api.IDToken")
+	proto.RegisterType((*UserInfo)(nil), "api.UserInfo")
 	proto.RegisterType((*UserMetadata)(nil), "api.UserMetadata")
-	proto.RegisterType((*AccessToken)(nil), "api.AccessToken")
+	proto.RegisterType((*AppMetadata)(nil), "api.AppMetadata")
 }
 
 func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
 var fileDescriptor_00212fb1f9d3bf1c = []byte{
-	// 457 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x93, 0xc1, 0x6e, 0x13, 0x31,
-	0x10, 0x86, 0xb5, 0xd9, 0x26, 0xe9, 0x4e, 0x82, 0x5a, 0x99, 0x08, 0x59, 0xa1, 0x40, 0xf1, 0xa9,
-	0xe2, 0xd0, 0x48, 0xe5, 0xc6, 0x0d, 0x28, 0xaa, 0x7a, 0x00, 0xa4, 0x50, 0xce, 0x61, 0xb2, 0x6b,
-	0x52, 0x8b, 0x8d, 0x6d, 0xad, 0xbd, 0x55, 0x02, 0xe2, 0xc2, 0x0b, 0x70, 0xe0, 0xcc, 0x53, 0xf1,
-	0x0a, 0x3c, 0x08, 0xf2, 0x78, 0x97, 0xac, 0x84, 0xc4, 0xa1, 0xb7, 0x99, 0xef, 0x5f, 0xcf, 0xca,
-	0xff, 0x3f, 0x86, 0x0c, 0xad, 0x3a, 0xb5, 0x95, 0xf1, 0x86, 0xa5, 0x68, 0xd5, 0xf4, 0x68, 0x65,
-	0xcc, 0xaa, 0x94, 0x33, 0xb4, 0x6a, 0x86, 0x5a, 0x1b, 0x8f, 0x5e, 0x19, 0xed, 0xe2, 0x27, 0x42,
-	0x00, 0x5c, 0x48, 0xff, 0x62, 0xfb, 0x6a, 0x8d, 0xaa, 0x64, 0x13, 0xe8, 0xcb, 0x50, 0xf0, 0xe4,
-	0x38, 0x39, 0xc9, 0xe6, 0xb1, 0x11, 0x3f, 0x7b, 0x30, 0xbc, 0x3c, 0xbf, 0x32, 0x9f, 0xa4, 0x66,
-	0x87, 0x90, 0x2a, 0xe7, 0x1a, 0x3d, 0x94, 0x81, 0xb8, 0x7a, 0xc9, 0x7b, 0x91, 0xb8, 0x7a, 0x19,
-	0x08, 0xd6, 0x05, 0x4f, 0x23, 0xc1, 0xba, 0x08, 0x44, 0x6e, 0x2c, 0xdf, 0x3b, 0x4e, 0x4e, 0xd2,
-	0x79, 0x28, 0x69, 0x0e, 0x7a, 0xde, 0x8f, 0x44, 0xa1, 0x67, 0x0c, 0xf6, 0x34, 0xae, 0x25, 0x1f,
-	0xd0, 0x31, 0xaa, 0xd9, 0x03, 0x80, 0x95, 0xba, 0x91, 0x7a, 0x41, 0xca, 0x90, 0x94, 0x8c, 0xc8,
-	0x9b, 0x20, 0x3f, 0x82, 0xd1, 0x47, 0x5c, 0xab, 0x72, 0x1b, 0xf5, 0x7d, 0xd2, 0x21, 0x22, 0xfa,
-	0xe0, 0x1e, 0x0c, 0x56, 0x52, 0x17, 0xb2, 0xe2, 0x19, 0x69, 0x4d, 0xc7, 0x8e, 0x20, 0x5b, 0xaa,
-	0xca, 0x5f, 0x17, 0xe8, 0x25, 0x87, 0x38, 0xf6, 0x2f, 0xd8, 0xb9, 0x30, 0xea, 0xb8, 0xc0, 0x38,
-	0x0c, 0xad, 0xca, 0x7d, 0x5d, 0x49, 0x3e, 0x26, 0xde, 0xb6, 0x62, 0x03, 0xe3, 0xf7, 0x4e, 0x56,
-	0xaf, 0xa5, 0xc7, 0x02, 0x3d, 0x86, 0xf3, 0xf6, 0xda, 0x68, 0xd9, 0xba, 0x48, 0x4d, 0xb8, 0x9f,
-	0x2d, 0x51, 0x37, 0x46, 0x51, 0xcd, 0xee, 0x43, 0x66, 0x71, 0xbb, 0xf0, 0xc1, 0xda, 0xc6, 0xaf,
-	0x7d, 0x8b, 0xdb, 0x68, 0xf5, 0x63, 0x18, 0x97, 0xe8, 0xfc, 0x22, 0x37, 0xda, 0x63, 0xee, 0xc9,
-	0xbd, 0x6c, 0x3e, 0x0a, 0xec, 0x65, 0x44, 0xe2, 0x7b, 0x02, 0xa3, 0xe7, 0x79, 0x2e, 0x9d, 0xbb,
-	0x45, 0x3a, 0x69, 0x27, 0x1d, 0xfc, 0x6c, 0x9b, 0xf9, 0xa1, 0x6c, 0xf3, 0xea, 0xff, 0x93, 0xd7,
-	0x60, 0x97, 0xd7, 0x04, 0xfa, 0x2e, 0x37, 0xb6, 0x8d, 0x25, 0x36, 0x67, 0x57, 0x90, 0x5d, 0x9e,
-	0xbf, 0x93, 0xd5, 0x8d, 0xca, 0x25, 0xbb, 0xa0, 0xe5, 0x6a, 0x57, 0xe7, 0xe0, 0x34, 0x6c, 0xe6,
-	0x6e, 0xdb, 0xa6, 0x63, 0x02, 0x8d, 0x2c, 0xa6, 0xdf, 0x7e, 0xfd, 0xfe, 0xd1, 0x9b, 0x88, 0x03,
-	0xda, 0x54, 0x55, 0xcc, 0xbe, 0x90, 0xef, 0x5f, 0x9f, 0x25, 0x4f, 0xce, 0x3e, 0xc0, 0x9d, 0x78,
-	0xcd, 0x76, 0xf2, 0xdb, 0xff, 0x4f, 0x3e, 0x24, 0xd0, 0x71, 0x46, 0x3c, 0xa4, 0xe9, 0x5c, 0xdc,
-	0x8d, 0xef, 0x80, 0x94, 0xce, 0x1f, 0x96, 0x03, 0x7a, 0x0e, 0x4f, 0xff, 0x04, 0x00, 0x00, 0xff,
-	0xff, 0xef, 0x13, 0x17, 0xd9, 0x3e, 0x03, 0x00, 0x00,
-}
-
-// Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
-
-// This is a compile-time assertion to ensure that this generated file
-// is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
-
-// IDServiceClient is the client API for IDService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type IDServiceClient interface {
-	GetIDToken(ctx context.Context, in *GetByEmail, opts ...grpc.CallOption) (*IDToken, error)
-}
-
-type iDServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewIDServiceClient(cc *grpc.ClientConn) IDServiceClient {
-	return &iDServiceClient{cc}
-}
-
-func (c *iDServiceClient) GetIDToken(ctx context.Context, in *GetByEmail, opts ...grpc.CallOption) (*IDToken, error) {
-	out := new(IDToken)
-	err := c.cc.Invoke(ctx, "/api.IDService/GetIDToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// IDServiceServer is the server API for IDService service.
-type IDServiceServer interface {
-	GetIDToken(context.Context, *GetByEmail) (*IDToken, error)
-}
-
-func RegisterIDServiceServer(s *grpc.Server, srv IDServiceServer) {
-	s.RegisterService(&_IDService_serviceDesc, srv)
-}
-
-func _IDService_GetIDToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetByEmail)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(IDServiceServer).GetIDToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.IDService/GetIDToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IDServiceServer).GetIDToken(ctx, req.(*GetByEmail))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _IDService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.IDService",
-	HandlerType: (*IDServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetIDToken",
-			Handler:    _IDService_GetIDToken_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "api.proto",
-}
-
-// AccessServiceClient is the client API for AccessService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AccessServiceClient interface {
-	GetIDToken(ctx context.Context, in *GetByEmail, opts ...grpc.CallOption) (*AccessToken, error)
-}
-
-type accessServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewAccessServiceClient(cc *grpc.ClientConn) AccessServiceClient {
-	return &accessServiceClient{cc}
-}
-
-func (c *accessServiceClient) GetIDToken(ctx context.Context, in *GetByEmail, opts ...grpc.CallOption) (*AccessToken, error) {
-	out := new(AccessToken)
-	err := c.cc.Invoke(ctx, "/api.AccessService/GetIDToken", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// AccessServiceServer is the server API for AccessService service.
-type AccessServiceServer interface {
-	GetIDToken(context.Context, *GetByEmail) (*AccessToken, error)
-}
-
-func RegisterAccessServiceServer(s *grpc.Server, srv AccessServiceServer) {
-	s.RegisterService(&_AccessService_serviceDesc, srv)
-}
-
-func _AccessService_GetIDToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetByEmail)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AccessServiceServer).GetIDToken(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.AccessService/GetIDToken",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AccessServiceServer).GetIDToken(ctx, req.(*GetByEmail))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _AccessService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.AccessService",
-	HandlerType: (*AccessServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetIDToken",
-			Handler:    _AccessService_GetIDToken_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "api.proto",
+	// 304 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x4c, 0x91, 0x41, 0x4b, 0x3b, 0x31,
+	0x10, 0xc5, 0x69, 0xff, 0x7f, 0xdb, 0xee, 0xec, 0x56, 0xda, 0x20, 0x12, 0x50, 0xb1, 0xf4, 0x54,
+	0x10, 0x7a, 0xb0, 0xe0, 0x51, 0x10, 0x4f, 0x1e, 0x14, 0x2c, 0x7a, 0x5e, 0xa6, 0xdd, 0x69, 0x1b,
+	0xec, 0x66, 0x87, 0x34, 0x15, 0xfa, 0xb1, 0xfc, 0x86, 0x92, 0xc9, 0xda, 0xee, 0x2d, 0xef, 0xfd,
+	0xf2, 0x5e, 0x32, 0x0c, 0x24, 0xc8, 0x66, 0xca, 0xae, 0xf2, 0x95, 0xfa, 0x87, 0x6c, 0xc6, 0x3f,
+	0x6d, 0xe8, 0x7d, 0xee, 0xc8, 0xbd, 0xd8, 0x55, 0xa5, 0x14, 0xfc, 0xb7, 0x58, 0x92, 0xee, 0x8c,
+	0x5a, 0x93, 0x64, 0x2e, 0x67, 0x75, 0x03, 0xb0, 0x36, 0xdf, 0x64, 0x73, 0x21, 0x5d, 0x21, 0x89,
+	0x38, 0x6f, 0x01, 0xdf, 0x42, 0xba, 0xc2, 0xd2, 0x6c, 0x0f, 0x91, 0xf7, 0x84, 0x43, 0xb4, 0xe4,
+	0xc2, 0x25, 0x74, 0xd6, 0x64, 0x0b, 0x72, 0x3a, 0x11, 0x56, 0x2b, 0x75, 0x0d, 0xc9, 0xc2, 0x38,
+	0xbf, 0x29, 0xd0, 0x93, 0x86, 0x58, 0x7b, 0x34, 0xd4, 0x05, 0x9c, 0x51, 0x89, 0x66, 0xab, 0x53,
+	0x21, 0x51, 0x28, 0x0d, 0x5d, 0x36, 0x4b, 0xbf, 0x77, 0xa4, 0x33, 0xf1, 0xff, 0xa4, 0x7a, 0x80,
+	0xfe, 0x7e, 0x47, 0x2e, 0x2f, 0xc9, 0x63, 0x81, 0x1e, 0x75, 0x7f, 0xd4, 0x9a, 0xa4, 0xf7, 0xc3,
+	0x69, 0x18, 0x37, 0xcc, 0xf7, 0x5a, 0x83, 0x79, 0xb6, 0x6f, 0x28, 0x35, 0x83, 0x0c, 0x99, 0x4f,
+	0xb1, 0x73, 0x89, 0x0d, 0x24, 0xf6, 0xc4, 0x7c, 0x4c, 0xa5, 0x78, 0x12, 0xe3, 0x77, 0xc8, 0x9a,
+	0x95, 0xe1, 0xb3, 0xbc, 0xa9, 0x2c, 0xe9, 0x56, 0xfc, 0xac, 0x08, 0x75, 0x07, 0x43, 0x76, 0xb4,
+	0x22, 0xe7, 0xa8, 0xc8, 0x97, 0x95, 0xf5, 0xb8, 0xf4, 0xba, 0x2d, 0x37, 0x06, 0x47, 0xf0, 0x1c,
+	0xfd, 0xf1, 0x23, 0xa4, 0x8d, 0xe7, 0xc2, 0x22, 0x78, 0x8b, 0xb6, 0x2e, 0x94, 0xb3, 0xba, 0x82,
+	0x84, 0xf1, 0x90, 0xfb, 0xea, 0x8b, 0x6c, 0xdd, 0xd3, 0x63, 0x3c, 0x7c, 0x04, 0xbd, 0xe8, 0xc8,
+	0x4a, 0x67, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff, 0xd1, 0x95, 0x55, 0xb8, 0xdf, 0x01, 0x00, 0x00,
 }

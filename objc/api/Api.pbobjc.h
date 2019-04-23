@@ -27,6 +27,9 @@
 
 CF_EXTERN_C_BEGIN
 
+@class AppMetadata;
+@class UserMetadata;
+
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - ApiRoot
@@ -44,46 +47,21 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
-#pragma mark - GetByEmail
+#pragma mark - UserInfo
 
-typedef GPB_ENUM(GetByEmail_FieldNumber) {
-  GetByEmail_FieldNumber_Email = 1,
+typedef GPB_ENUM(UserInfo_FieldNumber) {
+  UserInfo_FieldNumber_Name = 6,
+  UserInfo_FieldNumber_GivenName = 7,
+  UserInfo_FieldNumber_FamilyName = 8,
+  UserInfo_FieldNumber_Gender = 9,
+  UserInfo_FieldNumber_Birthdate = 10,
+  UserInfo_FieldNumber_Email = 11,
+  UserInfo_FieldNumber_Picture = 12,
+  UserInfo_FieldNumber_UserMetadata = 13,
+  UserInfo_FieldNumber_AppMetadata = 14,
 };
 
-@interface GetByEmail : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
-
-@end
-
-#pragma mark - IDToken
-
-typedef GPB_ENUM(IDToken_FieldNumber) {
-  IDToken_FieldNumber_Iss = 1,
-  IDToken_FieldNumber_Sub = 2,
-  IDToken_FieldNumber_Aud = 3,
-  IDToken_FieldNumber_Exp = 4,
-  IDToken_FieldNumber_Iat = 5,
-  IDToken_FieldNumber_Name = 6,
-  IDToken_FieldNumber_GivenName = 7,
-  IDToken_FieldNumber_FamilyName = 8,
-  IDToken_FieldNumber_Gender = 9,
-  IDToken_FieldNumber_Birthdate = 10,
-  IDToken_FieldNumber_Email = 11,
-  IDToken_FieldNumber_Picture = 12,
-};
-
-@interface IDToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *sub;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *aud;
-
-@property(nonatomic, readwrite) int64_t exp;
-
-@property(nonatomic, readwrite) int64_t iat;
+@interface UserInfo : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
@@ -99,58 +77,43 @@ typedef GPB_ENUM(IDToken_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *picture;
 
+@property(nonatomic, readwrite, strong, null_resettable) UserMetadata *userMetadata;
+/** Test to see if @c userMetadata has been set. */
+@property(nonatomic, readwrite) BOOL hasUserMetadata;
+
+@property(nonatomic, readwrite, strong, null_resettable) AppMetadata *appMetadata;
+/** Test to see if @c appMetadata has been set. */
+@property(nonatomic, readwrite) BOOL hasAppMetadata;
+
 @end
 
 #pragma mark - UserMetadata
 
 typedef GPB_ENUM(UserMetadata_FieldNumber) {
   UserMetadata_FieldNumber_Phone = 1,
-  UserMetadata_FieldNumber_Plan = 2,
-  UserMetadata_FieldNumber_PayToken = 3,
-  UserMetadata_FieldNumber_LastContact = 4,
+  UserMetadata_FieldNumber_PreferredContact = 2,
 };
 
 @interface UserMetadata : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *payToken;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *lastContact;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *preferredContact;
 
 @end
 
-#pragma mark - AccessToken
+#pragma mark - AppMetadata
 
-typedef GPB_ENUM(AccessToken_FieldNumber) {
-  AccessToken_FieldNumber_Iss = 1,
-  AccessToken_FieldNumber_Sub = 2,
-  AccessToken_FieldNumber_AudArray = 3,
-  AccessToken_FieldNumber_Azp = 4,
-  AccessToken_FieldNumber_Exp = 5,
-  AccessToken_FieldNumber_Iat = 6,
-  AccessToken_FieldNumber_Scope = 7,
+typedef GPB_ENUM(AppMetadata_FieldNumber) {
+  AppMetadata_FieldNumber_Plan = 1,
+  AppMetadata_FieldNumber_PayToken = 2,
 };
 
-@interface AccessToken : GPBMessage
+@interface AppMetadata : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *sub;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *audArray;
-/** The number of items in @c audArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger audArray_Count;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *azp;
-
-@property(nonatomic, readwrite) int64_t exp;
-
-@property(nonatomic, readwrite) int64_t iat;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *scope;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *payToken;
 
 @end
 

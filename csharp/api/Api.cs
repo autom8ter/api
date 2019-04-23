@@ -24,39 +24,31 @@ namespace Api {
     static ApiReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
-            "byIbCgpHZXRCeUVtYWlsEg0KBWVtYWlsGAEgASgJIsQBCgdJRFRva2VuEgsK",
-            "A2lzcxgBIAEoCRILCgNzdWIYAiABKAkSCwoDYXVkGAMgASgJEgsKA2V4cBgE",
-            "IAEoAxILCgNpYXQYBSABKAMSDAoEbmFtZRgGIAEoCRISCgpnaXZlbl9uYW1l",
-            "GAcgASgJEhMKC2ZhbWlseV9uYW1lGAggASgJEg4KBmdlbmRlchgJIAEoCRIR",
-            "CgliaXJ0aGRhdGUYCiABKAkSDQoFZW1haWwYCyABKAkSDwoHcGljdHVyZRgM",
-            "IAEoCSJUCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUYASABKAkSDAoEcGxhbhgC",
-            "IAEoCRIRCglwYXlfdG9rZW4YAyABKAkSFAoMbGFzdF9jb250YWN0GAQgASgJ",
-            "ImoKC0FjY2Vzc1Rva2VuEgsKA2lzcxgBIAEoCRILCgNzdWIYAiABKAkSCwoD",
-            "YXVkGAMgAygJEgsKA2F6cBgEIAEoCRILCgNleHAYBSABKAMSCwoDaWF0GAYg",
-            "ASgDEg0KBXNjb3BlGAcgASgJMlQKCUlEU2VydmljZRJHCgpHZXRJRFRva2Vu",
-            "Eg8uYXBpLkdldEJ5RW1haWwaDC5hcGkuSURUb2tlbiIagtPkkwIUIg8vYXBp",
-            "L2lkL3tlbWFpbH06ASoyYAoNQWNjZXNzU2VydmljZRJPCgpHZXRJRFRva2Vu",
-            "Eg8uYXBpLkdldEJ5RW1haWwaEC5hcGkuQWNjZXNzVG9rZW4iHoLT5JMCGCIT",
-            "L2FwaS9hY2Nlc3Mve2VtYWlsfToBKmIGcHJvdG8z"));
+            "CglhcGkucHJvdG8SA2FwaSLWAQoIVXNlckluZm8SDAoEbmFtZRgGIAEoCRIS",
+            "CgpnaXZlbl9uYW1lGAcgASgJEhMKC2ZhbWlseV9uYW1lGAggASgJEg4KBmdl",
+            "bmRlchgJIAEoCRIRCgliaXJ0aGRhdGUYCiABKAkSDQoFZW1haWwYCyABKAkS",
+            "DwoHcGljdHVyZRgMIAEoCRIoCg11c2VyX21ldGFkYXRhGA0gASgLMhEuYXBp",
+            "LlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEYDiABKAsyEC5hcGkuQXBw",
+            "TWV0YWRhdGEiOAoMVXNlck1ldGFkYXRhEg0KBXBob25lGAEgASgJEhkKEXBy",
+            "ZWZlcnJlZF9jb250YWN0GAIgASgJIi4KC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
+            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.GetByEmail), global::Api.GetByEmail.Parser, new[]{ "Email" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Iss", "Sub", "Aud", "Exp", "Iat", "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "Plan", "PayToken", "LastContact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AccessToken), global::Api.AccessToken.Parser, new[]{ "Iss", "Sub", "Aud", "Azp", "Exp", "Iat", "Scope" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class GetByEmail : pb::IMessage<GetByEmail> {
-    private static readonly pb::MessageParser<GetByEmail> _parser = new pb::MessageParser<GetByEmail>(() => new GetByEmail());
+  public sealed partial class UserInfo : pb::IMessage<UserInfo> {
+    private static readonly pb::MessageParser<UserInfo> _parser = new pb::MessageParser<UserInfo>(() => new UserInfo());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GetByEmail> Parser { get { return _parser; } }
+    public static pb::MessageParser<UserInfo> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -69,148 +61,14 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetByEmail() {
+    public UserInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetByEmail(GetByEmail other) : this() {
-      email_ = other.email_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GetByEmail Clone() {
-      return new GetByEmail(this);
-    }
-
-    /// <summary>Field number for the "email" field.</summary>
-    public const int EmailFieldNumber = 1;
-    private string email_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Email {
-      get { return email_; }
-      set {
-        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as GetByEmail);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GetByEmail other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Email != other.Email) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Email.Length != 0) hash ^= Email.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Email.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Email);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Email.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GetByEmail other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Email.Length != 0) {
-        Email = other.Email;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Email = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class IDToken : pb::IMessage<IDToken> {
-    private static readonly pb::MessageParser<IDToken> _parser = new pb::MessageParser<IDToken>(() => new IDToken());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<IDToken> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public IDToken() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public IDToken(IDToken other) : this() {
-      iss_ = other.iss_;
-      sub_ = other.sub_;
-      aud_ = other.aud_;
-      exp_ = other.exp_;
-      iat_ = other.iat_;
+    public UserInfo(UserInfo other) : this() {
       name_ = other.name_;
       givenName_ = other.givenName_;
       familyName_ = other.familyName_;
@@ -218,67 +76,14 @@ namespace Api {
       birthdate_ = other.birthdate_;
       email_ = other.email_;
       picture_ = other.picture_;
+      userMetadata_ = other.userMetadata_ != null ? other.userMetadata_.Clone() : null;
+      appMetadata_ = other.appMetadata_ != null ? other.appMetadata_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public IDToken Clone() {
-      return new IDToken(this);
-    }
-
-    /// <summary>Field number for the "iss" field.</summary>
-    public const int IssFieldNumber = 1;
-    private string iss_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Iss {
-      get { return iss_; }
-      set {
-        iss_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "sub" field.</summary>
-    public const int SubFieldNumber = 2;
-    private string sub_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Sub {
-      get { return sub_; }
-      set {
-        sub_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "aud" field.</summary>
-    public const int AudFieldNumber = 3;
-    private string aud_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Aud {
-      get { return aud_; }
-      set {
-        aud_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "exp" field.</summary>
-    public const int ExpFieldNumber = 4;
-    private long exp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Exp {
-      get { return exp_; }
-      set {
-        exp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "iat" field.</summary>
-    public const int IatFieldNumber = 5;
-    private long iat_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Iat {
-      get { return iat_; }
-      set {
-        iat_ = value;
-      }
+    public UserInfo Clone() {
+      return new UserInfo(this);
     }
 
     /// <summary>Field number for the "name" field.</summary>
@@ -358,24 +163,41 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "user_metadata" field.</summary>
+    public const int UserMetadataFieldNumber = 13;
+    private global::Api.UserMetadata userMetadata_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as IDToken);
+    public global::Api.UserMetadata UserMetadata {
+      get { return userMetadata_; }
+      set {
+        userMetadata_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "app_metadata" field.</summary>
+    public const int AppMetadataFieldNumber = 14;
+    private global::Api.AppMetadata appMetadata_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.AppMetadata AppMetadata {
+      get { return appMetadata_; }
+      set {
+        appMetadata_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(IDToken other) {
+    public override bool Equals(object other) {
+      return Equals(other as UserInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Iss != other.Iss) return false;
-      if (Sub != other.Sub) return false;
-      if (Aud != other.Aud) return false;
-      if (Exp != other.Exp) return false;
-      if (Iat != other.Iat) return false;
       if (Name != other.Name) return false;
       if (GivenName != other.GivenName) return false;
       if (FamilyName != other.FamilyName) return false;
@@ -383,17 +205,14 @@ namespace Api {
       if (Birthdate != other.Birthdate) return false;
       if (Email != other.Email) return false;
       if (Picture != other.Picture) return false;
+      if (!object.Equals(UserMetadata, other.UserMetadata)) return false;
+      if (!object.Equals(AppMetadata, other.AppMetadata)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Iss.Length != 0) hash ^= Iss.GetHashCode();
-      if (Sub.Length != 0) hash ^= Sub.GetHashCode();
-      if (Aud.Length != 0) hash ^= Aud.GetHashCode();
-      if (Exp != 0L) hash ^= Exp.GetHashCode();
-      if (Iat != 0L) hash ^= Iat.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (GivenName.Length != 0) hash ^= GivenName.GetHashCode();
       if (FamilyName.Length != 0) hash ^= FamilyName.GetHashCode();
@@ -401,6 +220,8 @@ namespace Api {
       if (Birthdate.Length != 0) hash ^= Birthdate.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
       if (Picture.Length != 0) hash ^= Picture.GetHashCode();
+      if (userMetadata_ != null) hash ^= UserMetadata.GetHashCode();
+      if (appMetadata_ != null) hash ^= AppMetadata.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -414,26 +235,6 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Iss.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Iss);
-      }
-      if (Sub.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Sub);
-      }
-      if (Aud.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Aud);
-      }
-      if (Exp != 0L) {
-        output.WriteRawTag(32);
-        output.WriteInt64(Exp);
-      }
-      if (Iat != 0L) {
-        output.WriteRawTag(40);
-        output.WriteInt64(Iat);
-      }
       if (Name.Length != 0) {
         output.WriteRawTag(50);
         output.WriteString(Name);
@@ -462,6 +263,14 @@ namespace Api {
         output.WriteRawTag(98);
         output.WriteString(Picture);
       }
+      if (userMetadata_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(UserMetadata);
+      }
+      if (appMetadata_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(AppMetadata);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -470,21 +279,6 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Iss.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Iss);
-      }
-      if (Sub.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sub);
-      }
-      if (Aud.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Aud);
-      }
-      if (Exp != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Exp);
-      }
-      if (Iat != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Iat);
-      }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
@@ -506,6 +300,12 @@ namespace Api {
       if (Picture.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Picture);
       }
+      if (userMetadata_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserMetadata);
+      }
+      if (appMetadata_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AppMetadata);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -513,24 +313,9 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(IDToken other) {
+    public void MergeFrom(UserInfo other) {
       if (other == null) {
         return;
-      }
-      if (other.Iss.Length != 0) {
-        Iss = other.Iss;
-      }
-      if (other.Sub.Length != 0) {
-        Sub = other.Sub;
-      }
-      if (other.Aud.Length != 0) {
-        Aud = other.Aud;
-      }
-      if (other.Exp != 0L) {
-        Exp = other.Exp;
-      }
-      if (other.Iat != 0L) {
-        Iat = other.Iat;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -553,6 +338,18 @@ namespace Api {
       if (other.Picture.Length != 0) {
         Picture = other.Picture;
       }
+      if (other.userMetadata_ != null) {
+        if (userMetadata_ == null) {
+          userMetadata_ = new global::Api.UserMetadata();
+        }
+        UserMetadata.MergeFrom(other.UserMetadata);
+      }
+      if (other.appMetadata_ != null) {
+        if (appMetadata_ == null) {
+          appMetadata_ = new global::Api.AppMetadata();
+        }
+        AppMetadata.MergeFrom(other.AppMetadata);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -564,26 +361,6 @@ namespace Api {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            Iss = input.ReadString();
-            break;
-          }
-          case 18: {
-            Sub = input.ReadString();
-            break;
-          }
-          case 26: {
-            Aud = input.ReadString();
-            break;
-          }
-          case 32: {
-            Exp = input.ReadInt64();
-            break;
-          }
-          case 40: {
-            Iat = input.ReadInt64();
-            break;
-          }
           case 50: {
             Name = input.ReadString();
             break;
@@ -612,6 +389,20 @@ namespace Api {
             Picture = input.ReadString();
             break;
           }
+          case 106: {
+            if (userMetadata_ == null) {
+              userMetadata_ = new global::Api.UserMetadata();
+            }
+            input.ReadMessage(userMetadata_);
+            break;
+          }
+          case 114: {
+            if (appMetadata_ == null) {
+              appMetadata_ = new global::Api.AppMetadata();
+            }
+            input.ReadMessage(appMetadata_);
+            break;
+          }
         }
       }
     }
@@ -626,7 +417,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -644,9 +435,7 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UserMetadata(UserMetadata other) : this() {
       phone_ = other.phone_;
-      plan_ = other.plan_;
-      payToken_ = other.payToken_;
-      lastContact_ = other.lastContact_;
+      preferredContact_ = other.preferredContact_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -666,36 +455,14 @@ namespace Api {
       }
     }
 
-    /// <summary>Field number for the "plan" field.</summary>
-    public const int PlanFieldNumber = 2;
-    private string plan_ = "";
+    /// <summary>Field number for the "preferred_contact" field.</summary>
+    public const int PreferredContactFieldNumber = 2;
+    private string preferredContact_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Plan {
-      get { return plan_; }
+    public string PreferredContact {
+      get { return preferredContact_; }
       set {
-        plan_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "pay_token" field.</summary>
-    public const int PayTokenFieldNumber = 3;
-    private string payToken_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string PayToken {
-      get { return payToken_; }
-      set {
-        payToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "last_contact" field.</summary>
-    public const int LastContactFieldNumber = 4;
-    private string lastContact_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string LastContact {
-      get { return lastContact_; }
-      set {
-        lastContact_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        preferredContact_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -713,9 +480,7 @@ namespace Api {
         return true;
       }
       if (Phone != other.Phone) return false;
-      if (Plan != other.Plan) return false;
-      if (PayToken != other.PayToken) return false;
-      if (LastContact != other.LastContact) return false;
+      if (PreferredContact != other.PreferredContact) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -723,9 +488,7 @@ namespace Api {
     public override int GetHashCode() {
       int hash = 1;
       if (Phone.Length != 0) hash ^= Phone.GetHashCode();
-      if (Plan.Length != 0) hash ^= Plan.GetHashCode();
-      if (PayToken.Length != 0) hash ^= PayToken.GetHashCode();
-      if (LastContact.Length != 0) hash ^= LastContact.GetHashCode();
+      if (PreferredContact.Length != 0) hash ^= PreferredContact.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -743,17 +506,9 @@ namespace Api {
         output.WriteRawTag(10);
         output.WriteString(Phone);
       }
-      if (Plan.Length != 0) {
+      if (PreferredContact.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Plan);
-      }
-      if (PayToken.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(PayToken);
-      }
-      if (LastContact.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(LastContact);
+        output.WriteString(PreferredContact);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -766,14 +521,8 @@ namespace Api {
       if (Phone.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Phone);
       }
-      if (Plan.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Plan);
-      }
-      if (PayToken.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(PayToken);
-      }
-      if (LastContact.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastContact);
+      if (PreferredContact.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PreferredContact);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -789,14 +538,8 @@ namespace Api {
       if (other.Phone.Length != 0) {
         Phone = other.Phone;
       }
-      if (other.Plan.Length != 0) {
-        Plan = other.Plan;
-      }
-      if (other.PayToken.Length != 0) {
-        PayToken = other.PayToken;
-      }
-      if (other.LastContact.Length != 0) {
-        LastContact = other.LastContact;
+      if (other.PreferredContact.Length != 0) {
+        PreferredContact = other.PreferredContact;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -814,15 +557,7 @@ namespace Api {
             break;
           }
           case 18: {
-            Plan = input.ReadString();
-            break;
-          }
-          case 26: {
-            PayToken = input.ReadString();
-            break;
-          }
-          case 34: {
-            LastContact = input.ReadString();
+            PreferredContact = input.ReadString();
             break;
           }
         }
@@ -831,15 +566,15 @@ namespace Api {
 
   }
 
-  public sealed partial class AccessToken : pb::IMessage<AccessToken> {
-    private static readonly pb::MessageParser<AccessToken> _parser = new pb::MessageParser<AccessToken>(() => new AccessToken());
+  public sealed partial class AppMetadata : pb::IMessage<AppMetadata> {
+    private static readonly pb::MessageParser<AppMetadata> _parser = new pb::MessageParser<AppMetadata>(() => new AppMetadata());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<AccessToken> Parser { get { return _parser; } }
+    public static pb::MessageParser<AppMetadata> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -848,138 +583,69 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AccessToken() {
+    public AppMetadata() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AccessToken(AccessToken other) : this() {
-      iss_ = other.iss_;
-      sub_ = other.sub_;
-      aud_ = other.aud_.Clone();
-      azp_ = other.azp_;
-      exp_ = other.exp_;
-      iat_ = other.iat_;
-      scope_ = other.scope_;
+    public AppMetadata(AppMetadata other) : this() {
+      plan_ = other.plan_;
+      payToken_ = other.payToken_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AccessToken Clone() {
-      return new AccessToken(this);
+    public AppMetadata Clone() {
+      return new AppMetadata(this);
     }
 
-    /// <summary>Field number for the "iss" field.</summary>
-    public const int IssFieldNumber = 1;
-    private string iss_ = "";
+    /// <summary>Field number for the "plan" field.</summary>
+    public const int PlanFieldNumber = 1;
+    private string plan_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Iss {
-      get { return iss_; }
+    public string Plan {
+      get { return plan_; }
       set {
-        iss_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        plan_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "sub" field.</summary>
-    public const int SubFieldNumber = 2;
-    private string sub_ = "";
+    /// <summary>Field number for the "pay_token" field.</summary>
+    public const int PayTokenFieldNumber = 2;
+    private string payToken_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Sub {
-      get { return sub_; }
+    public string PayToken {
+      get { return payToken_; }
       set {
-        sub_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "aud" field.</summary>
-    public const int AudFieldNumber = 3;
-    private static readonly pb::FieldCodec<string> _repeated_aud_codec
-        = pb::FieldCodec.ForString(26);
-    private readonly pbc::RepeatedField<string> aud_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<string> Aud {
-      get { return aud_; }
-    }
-
-    /// <summary>Field number for the "azp" field.</summary>
-    public const int AzpFieldNumber = 4;
-    private string azp_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Azp {
-      get { return azp_; }
-      set {
-        azp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "exp" field.</summary>
-    public const int ExpFieldNumber = 5;
-    private long exp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Exp {
-      get { return exp_; }
-      set {
-        exp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "iat" field.</summary>
-    public const int IatFieldNumber = 6;
-    private long iat_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Iat {
-      get { return iat_; }
-      set {
-        iat_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "scope" field.</summary>
-    public const int ScopeFieldNumber = 7;
-    private string scope_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Scope {
-      get { return scope_; }
-      set {
-        scope_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        payToken_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as AccessToken);
+      return Equals(other as AppMetadata);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(AccessToken other) {
+    public bool Equals(AppMetadata other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Iss != other.Iss) return false;
-      if (Sub != other.Sub) return false;
-      if(!aud_.Equals(other.aud_)) return false;
-      if (Azp != other.Azp) return false;
-      if (Exp != other.Exp) return false;
-      if (Iat != other.Iat) return false;
-      if (Scope != other.Scope) return false;
+      if (Plan != other.Plan) return false;
+      if (PayToken != other.PayToken) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Iss.Length != 0) hash ^= Iss.GetHashCode();
-      if (Sub.Length != 0) hash ^= Sub.GetHashCode();
-      hash ^= aud_.GetHashCode();
-      if (Azp.Length != 0) hash ^= Azp.GetHashCode();
-      if (Exp != 0L) hash ^= Exp.GetHashCode();
-      if (Iat != 0L) hash ^= Iat.GetHashCode();
-      if (Scope.Length != 0) hash ^= Scope.GetHashCode();
+      if (Plan.Length != 0) hash ^= Plan.GetHashCode();
+      if (PayToken.Length != 0) hash ^= PayToken.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -993,30 +659,13 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Iss.Length != 0) {
+      if (Plan.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Iss);
+        output.WriteString(Plan);
       }
-      if (Sub.Length != 0) {
+      if (PayToken.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Sub);
-      }
-      aud_.WriteTo(output, _repeated_aud_codec);
-      if (Azp.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Azp);
-      }
-      if (Exp != 0L) {
-        output.WriteRawTag(40);
-        output.WriteInt64(Exp);
-      }
-      if (Iat != 0L) {
-        output.WriteRawTag(48);
-        output.WriteInt64(Iat);
-      }
-      if (Scope.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Scope);
+        output.WriteString(PayToken);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1026,24 +675,11 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Iss.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Iss);
+      if (Plan.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Plan);
       }
-      if (Sub.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sub);
-      }
-      size += aud_.CalculateSize(_repeated_aud_codec);
-      if (Azp.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Azp);
-      }
-      if (Exp != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Exp);
-      }
-      if (Iat != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Iat);
-      }
-      if (Scope.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Scope);
+      if (PayToken.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PayToken);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1052,28 +688,15 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(AccessToken other) {
+    public void MergeFrom(AppMetadata other) {
       if (other == null) {
         return;
       }
-      if (other.Iss.Length != 0) {
-        Iss = other.Iss;
+      if (other.Plan.Length != 0) {
+        Plan = other.Plan;
       }
-      if (other.Sub.Length != 0) {
-        Sub = other.Sub;
-      }
-      aud_.Add(other.aud_);
-      if (other.Azp.Length != 0) {
-        Azp = other.Azp;
-      }
-      if (other.Exp != 0L) {
-        Exp = other.Exp;
-      }
-      if (other.Iat != 0L) {
-        Iat = other.Iat;
-      }
-      if (other.Scope.Length != 0) {
-        Scope = other.Scope;
+      if (other.PayToken.Length != 0) {
+        PayToken = other.PayToken;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1087,31 +710,11 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Iss = input.ReadString();
+            Plan = input.ReadString();
             break;
           }
           case 18: {
-            Sub = input.ReadString();
-            break;
-          }
-          case 26: {
-            aud_.AddEntriesFrom(input, _repeated_aud_codec);
-            break;
-          }
-          case 34: {
-            Azp = input.ReadString();
-            break;
-          }
-          case 40: {
-            Exp = input.ReadInt64();
-            break;
-          }
-          case 48: {
-            Iat = input.ReadInt64();
-            break;
-          }
-          case 58: {
-            Scope = input.ReadString();
+            PayToken = input.ReadString();
             break;
           }
         }

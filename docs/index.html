@@ -179,15 +179,11 @@
             <ul>
               
                 <li>
-                  <a href="#api.AccessToken"><span class="badge">M</span>AccessToken</a>
+                  <a href="#api.AppMetadata"><span class="badge">M</span>AppMetadata</a>
                 </li>
               
                 <li>
-                  <a href="#api.GetByEmail"><span class="badge">M</span>GetByEmail</a>
-                </li>
-              
-                <li>
-                  <a href="#api.IDToken"><span class="badge">M</span>IDToken</a>
+                  <a href="#api.UserInfo"><span class="badge">M</span>UserInfo</a>
                 </li>
               
                 <li>
@@ -196,14 +192,6 @@
               
               
               
-              
-                <li>
-                  <a href="#api.AccessService"><span class="badge">S</span>AccessService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.IDService"><span class="badge">S</span>IDService</a>
-                </li>
               
             </ul>
           </li>
@@ -220,7 +208,7 @@
       <p></p>
 
       
-        <h3 id="api.AccessToken">AccessToken</h3>
+        <h3 id="api.AppMetadata">AppMetadata</h3>
         <p></p>
 
         
@@ -231,49 +219,14 @@
             <tbody>
               
                 <tr>
-                  <td>iss</td>
+                  <td>plan</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>sub</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>aud</td>
-                  <td><a href="#string">string</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>azp</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>exp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>iat</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>scope</td>
+                  <td>pay_token</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -285,7 +238,7 @@
 
         
       
-        <h3 id="api.GetByEmail">GetByEmail</h3>
+        <h3 id="api.UserInfo">UserInfo</h3>
         <p></p>
 
         
@@ -294,64 +247,6 @@
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.IDToken">IDToken</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>iss</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>sub</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>aud</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>exp</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>iat</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
               
                 <tr>
                   <td>name</td>
@@ -402,6 +297,20 @@
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>user_metadata</td>
+                  <td><a href="#api.UserMetadata">UserMetadata</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>app_metadata</td>
+                  <td><a href="#api.AppMetadata">AppMetadata</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
@@ -426,21 +335,7 @@
                 </tr>
               
                 <tr>
-                  <td>plan</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>pay_token</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>last_contact</td>
+                  <td>preferred_contact</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -457,42 +352,6 @@
 
       
 
-      
-        <h3 id="api.AccessService">AccessService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetIDToken</td>
-                <td><a href="#api.GetByEmail">GetByEmail</a></td>
-                <td><a href="#api.AccessToken">AccessToken</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.IDService">IDService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetIDToken</td>
-                <td><a href="#api.GetByEmail">GetByEmail</a></td>
-                <td><a href="#api.IDToken">IDToken</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
       
     
 
