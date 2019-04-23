@@ -25,26 +25,27 @@ namespace Api {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
-            "byIiChFHZXRQcm9maWxlQnlFbWFpbBINCgVlbWFpbBgBIAEoCSLaAgoHUHJv",
+            "byIiChFHZXRQcm9maWxlQnlFbWFpbBINCgVlbWFpbBgBIAEoCSKOAwoHUHJv",
             "ZmlsZRINCgVlbWFpbBgBIAEoCRIWCg5lbWFpbF92ZXJpZmllZBgCIAEoCBIM",
             "CgRuYW1lGAMgASgJEhIKCmdpdmVuX25hbWUYBCABKAkSEwoLZmFtaWx5X25h",
             "bWUYBSABKAkSDwoHcGljdHVyZRgGIAEoCRIOCgZsb2NhbGUYByABKAkSDwoH",
             "dXNlcl9pZBgIIAEoCRIQCghuaWNrbmFtZRgJIAEoCRISCgpjb25uZWN0aW9u",
             "GAogASgJEiEKCmlkZW50aXRpZXMYCyADKAsyDS5hcGkuSWRlbnRpdHkSDwoH",
             "bGFzdF9pcBgMIAEoCRITCgtsb2dpbl9jb3VudBgNIAEoAxISCgp1cGRhdGVk",
-            "X2F0GA4gASgJEhIKCmNyZWF0ZWRfYXQYDyABKAkSKAoNdXNlcl9tZXRhZGF0",
-            "YRgUIAEoCzIRLmFwaS5Vc2VyTWV0YWRhdGEiVAoMVXNlck1ldGFkYXRhEg0K",
-            "BXBob25lGAEgASgJEgwKBHBsYW4YAiABKAkSEQoJcGF5X3Rva2VuGAMgASgJ",
-            "EhQKDGxhc3RfY29udGFjdBgEIAEoCSJTCghJZGVudGl0eRIQCghwcm92aWRl",
-            "chgBIAEoCRIPCgd1c2VyX2lkGAIgASgJEhIKCmNvbm5lY3Rpb24YAyABKAkS",
-            "EAoIaXNTb2NpYWwYBCABKAgyZQoOUHJvZmlsZVNlcnZpY2USUwoKR2V0UHJv",
-            "ZmlsZRIWLmFwaS5HZXRQcm9maWxlQnlFbWFpbBoMLmFwaS5Qcm9maWxlIh+C",
-            "0+STAhkiFC9hcGkvcHJvZmlsZS97ZW1haWx9OgEqYgZwcm90bzM="));
+            "X2F0GA4gASgJEhIKCmNyZWF0ZWRfYXQYDyABKAkSCwoDc3ViGBAgASgJEgsK",
+            "A2lzcxgRIAEoCRILCgNhdWQYEiABKAkSCwoDaWF0GBMgASgJEigKDXVzZXJf",
+            "bWV0YWRhdGEYFCABKAsyES5hcGkuVXNlck1ldGFkYXRhIlQKDFVzZXJNZXRh",
+            "ZGF0YRINCgVwaG9uZRgBIAEoCRIMCgRwbGFuGAIgASgJEhEKCXBheV90b2tl",
+            "bhgDIAEoCRIUCgxsYXN0X2NvbnRhY3QYBCABKAkiUwoISWRlbnRpdHkSEAoI",
+            "cHJvdmlkZXIYASABKAkSDwoHdXNlcl9pZBgCIAEoCRISCgpjb25uZWN0aW9u",
+            "GAMgASgJEhAKCGlzU29jaWFsGAQgASgIMmUKDlByb2ZpbGVTZXJ2aWNlElMK",
+            "CkdldFByb2ZpbGUSFi5hcGkuR2V0UHJvZmlsZUJ5RW1haWwaDC5hcGkuUHJv",
+            "ZmlsZSIfgtPkkwIZIhQvYXBpL3Byb2ZpbGUve2VtYWlsfToBKmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.GetProfileByEmail), global::Api.GetProfileByEmail.Parser, new[]{ "Email" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Profile), global::Api.Profile.Parser, new[]{ "Email", "EmailVerified", "Name", "GivenName", "FamilyName", "Picture", "Locale", "UserId", "Nickname", "Connection", "Identities", "LastIp", "LoginCount", "UpdatedAt", "CreatedAt", "UserMetadata" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Profile), global::Api.Profile.Parser, new[]{ "Email", "EmailVerified", "Name", "GivenName", "FamilyName", "Picture", "Locale", "UserId", "Nickname", "Connection", "Identities", "LastIp", "LoginCount", "UpdatedAt", "CreatedAt", "Sub", "Iss", "Aud", "Iat", "UserMetadata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "Plan", "PayToken", "LastContact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Identity), global::Api.Identity.Parser, new[]{ "Provider", "UserId", "Connection", "IsSocial" }, null, null, null)
           }));
@@ -222,6 +223,10 @@ namespace Api {
       loginCount_ = other.loginCount_;
       updatedAt_ = other.updatedAt_;
       createdAt_ = other.createdAt_;
+      sub_ = other.sub_;
+      iss_ = other.iss_;
+      aud_ = other.aud_;
+      iat_ = other.iat_;
       userMetadata_ = other.userMetadata_ != null ? other.userMetadata_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -395,6 +400,50 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "sub" field.</summary>
+    public const int SubFieldNumber = 16;
+    private string sub_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Sub {
+      get { return sub_; }
+      set {
+        sub_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "iss" field.</summary>
+    public const int IssFieldNumber = 17;
+    private string iss_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Iss {
+      get { return iss_; }
+      set {
+        iss_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "aud" field.</summary>
+    public const int AudFieldNumber = 18;
+    private string aud_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Aud {
+      get { return aud_; }
+      set {
+        aud_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "iat" field.</summary>
+    public const int IatFieldNumber = 19;
+    private string iat_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Iat {
+      get { return iat_; }
+      set {
+        iat_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "user_metadata" field.</summary>
     public const int UserMetadataFieldNumber = 20;
     private global::Api.UserMetadata userMetadata_;
@@ -434,6 +483,10 @@ namespace Api {
       if (LoginCount != other.LoginCount) return false;
       if (UpdatedAt != other.UpdatedAt) return false;
       if (CreatedAt != other.CreatedAt) return false;
+      if (Sub != other.Sub) return false;
+      if (Iss != other.Iss) return false;
+      if (Aud != other.Aud) return false;
+      if (Iat != other.Iat) return false;
       if (!object.Equals(UserMetadata, other.UserMetadata)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -456,6 +509,10 @@ namespace Api {
       if (LoginCount != 0L) hash ^= LoginCount.GetHashCode();
       if (UpdatedAt.Length != 0) hash ^= UpdatedAt.GetHashCode();
       if (CreatedAt.Length != 0) hash ^= CreatedAt.GetHashCode();
+      if (Sub.Length != 0) hash ^= Sub.GetHashCode();
+      if (Iss.Length != 0) hash ^= Iss.GetHashCode();
+      if (Aud.Length != 0) hash ^= Aud.GetHashCode();
+      if (Iat.Length != 0) hash ^= Iat.GetHashCode();
       if (userMetadata_ != null) hash ^= UserMetadata.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -527,6 +584,22 @@ namespace Api {
         output.WriteRawTag(122);
         output.WriteString(CreatedAt);
       }
+      if (Sub.Length != 0) {
+        output.WriteRawTag(130, 1);
+        output.WriteString(Sub);
+      }
+      if (Iss.Length != 0) {
+        output.WriteRawTag(138, 1);
+        output.WriteString(Iss);
+      }
+      if (Aud.Length != 0) {
+        output.WriteRawTag(146, 1);
+        output.WriteString(Aud);
+      }
+      if (Iat.Length != 0) {
+        output.WriteRawTag(154, 1);
+        output.WriteString(Iat);
+      }
       if (userMetadata_ != null) {
         output.WriteRawTag(162, 1);
         output.WriteMessage(UserMetadata);
@@ -581,6 +654,18 @@ namespace Api {
       }
       if (CreatedAt.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CreatedAt);
+      }
+      if (Sub.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Sub);
+      }
+      if (Iss.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Iss);
+      }
+      if (Aud.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Aud);
+      }
+      if (Iat.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Iat);
       }
       if (userMetadata_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(UserMetadata);
@@ -638,6 +723,18 @@ namespace Api {
       }
       if (other.CreatedAt.Length != 0) {
         CreatedAt = other.CreatedAt;
+      }
+      if (other.Sub.Length != 0) {
+        Sub = other.Sub;
+      }
+      if (other.Iss.Length != 0) {
+        Iss = other.Iss;
+      }
+      if (other.Aud.Length != 0) {
+        Aud = other.Aud;
+      }
+      if (other.Iat.Length != 0) {
+        Iat = other.Iat;
       }
       if (other.userMetadata_ != null) {
         if (userMetadata_ == null) {
@@ -714,6 +811,22 @@ namespace Api {
           }
           case 122: {
             CreatedAt = input.ReadString();
+            break;
+          }
+          case 130: {
+            Sub = input.ReadString();
+            break;
+          }
+          case 138: {
+            Iss = input.ReadString();
+            break;
+          }
+          case 146: {
+            Aud = input.ReadString();
+            break;
+          }
+          case 154: {
+            Iat = input.ReadString();
             break;
           }
           case 162: {

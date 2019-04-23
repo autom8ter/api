@@ -115,6 +115,10 @@ typedef struct GetProfileByEmail__storage_ {
 @dynamic loginCount;
 @dynamic updatedAt;
 @dynamic createdAt;
+@dynamic sub;
+@dynamic iss;
+@dynamic aud;
+@dynamic iat;
 @dynamic hasUserMetadata, userMetadata;
 
 typedef struct Profile__storage_ {
@@ -132,6 +136,10 @@ typedef struct Profile__storage_ {
   NSString *lastIp;
   NSString *updatedAt;
   NSString *createdAt;
+  NSString *sub;
+  NSString *iss;
+  NSString *aud;
+  NSString *iat;
   UserMetadata *userMetadata;
   int64_t loginCount;
 } Profile__storage_;
@@ -278,10 +286,46 @@ typedef struct Profile__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "sub",
+        .dataTypeSpecific.className = NULL,
+        .number = Profile_FieldNumber_Sub,
+        .hasIndex = 15,
+        .offset = (uint32_t)offsetof(Profile__storage_, sub),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "iss",
+        .dataTypeSpecific.className = NULL,
+        .number = Profile_FieldNumber_Iss,
+        .hasIndex = 16,
+        .offset = (uint32_t)offsetof(Profile__storage_, iss),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "aud",
+        .dataTypeSpecific.className = NULL,
+        .number = Profile_FieldNumber_Aud,
+        .hasIndex = 17,
+        .offset = (uint32_t)offsetof(Profile__storage_, aud),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "iat",
+        .dataTypeSpecific.className = NULL,
+        .number = Profile_FieldNumber_Iat,
+        .hasIndex = 18,
+        .offset = (uint32_t)offsetof(Profile__storage_, iat),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "userMetadata",
         .dataTypeSpecific.className = GPBStringifySymbol(UserMetadata),
         .number = Profile_FieldNumber_UserMetadata,
-        .hasIndex = 15,
+        .hasIndex = 19,
         .offset = (uint32_t)offsetof(Profile__storage_, userMetadata),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,

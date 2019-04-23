@@ -228,6 +228,10 @@ proto.api.Profile.toObject = function(includeInstance, msg) {
     loginCount: jspb.Message.getFieldWithDefault(msg, 13, 0),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 14, ""),
     createdAt: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    sub: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    iss: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    aud: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    iat: jspb.Message.getFieldWithDefault(msg, 19, ""),
     userMetadata: (f = msg.getUserMetadata()) && proto.api.UserMetadata.toObject(includeInstance, f)
   };
 
@@ -325,6 +329,22 @@ proto.api.Profile.deserializeBinaryFromReader = function(msg, reader) {
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setCreatedAt(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSub(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIss(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAud(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIat(value);
       break;
     case 20:
       var value = new proto.api.UserMetadata;
@@ -463,6 +483,34 @@ proto.api.Profile.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       15,
+      f
+    );
+  }
+  f = message.getSub();
+  if (f.length > 0) {
+    writer.writeString(
+      16,
+      f
+    );
+  }
+  f = message.getIss();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
+  f = message.getAud();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
+    );
+  }
+  f = message.getIat();
+  if (f.length > 0) {
+    writer.writeString(
+      19,
       f
     );
   }
@@ -717,6 +765,66 @@ proto.api.Profile.prototype.getCreatedAt = function() {
 /** @param {string} value */
 proto.api.Profile.prototype.setCreatedAt = function(value) {
   jspb.Message.setProto3StringField(this, 15, value);
+};
+
+
+/**
+ * optional string sub = 16;
+ * @return {string}
+ */
+proto.api.Profile.prototype.getSub = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Profile.prototype.setSub = function(value) {
+  jspb.Message.setProto3StringField(this, 16, value);
+};
+
+
+/**
+ * optional string iss = 17;
+ * @return {string}
+ */
+proto.api.Profile.prototype.getIss = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Profile.prototype.setIss = function(value) {
+  jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional string aud = 18;
+ * @return {string}
+ */
+proto.api.Profile.prototype.getAud = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Profile.prototype.setAud = function(value) {
+  jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional string iat = 19;
+ * @return {string}
+ */
+proto.api.Profile.prototype.getIat = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Profile.prototype.setIat = function(value) {
+  jspb.Message.setProto3StringField(this, 19, value);
 };
 
 

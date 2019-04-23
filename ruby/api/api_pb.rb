@@ -24,6 +24,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :login_count, :int64, 13
     optional :updated_at, :string, 14
     optional :created_at, :string, 15
+    optional :sub, :string, 16
+    optional :iss, :string, 17
+    optional :aud, :string, 18
+    optional :iat, :string, 19
     optional :user_metadata, :message, 20, "api.UserMetadata"
   end
   add_message "api.UserMetadata" do

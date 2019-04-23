@@ -128,6 +128,18 @@
         "created_at": {
           "type": "string"
         },
+        "sub": {
+          "type": "string"
+        },
+        "iss": {
+          "type": "string"
+        },
+        "aud": {
+          "type": "string"
+        },
+        "iat": {
+          "type": "string"
+        },
         "user_metadata": {
           "$ref": "#/definitions/apiUserMetadata"
         }

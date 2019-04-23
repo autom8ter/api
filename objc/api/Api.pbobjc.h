@@ -77,6 +77,10 @@ typedef GPB_ENUM(Profile_FieldNumber) {
   Profile_FieldNumber_LoginCount = 13,
   Profile_FieldNumber_UpdatedAt = 14,
   Profile_FieldNumber_CreatedAt = 15,
+  Profile_FieldNumber_Sub = 16,
+  Profile_FieldNumber_Iss = 17,
+  Profile_FieldNumber_Aud = 18,
+  Profile_FieldNumber_Iat = 19,
   Profile_FieldNumber_UserMetadata = 20,
 };
 
@@ -113,6 +117,14 @@ typedef GPB_ENUM(Profile_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *updatedAt;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *createdAt;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sub;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *aud;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *iat;
 
 @property(nonatomic, readwrite, strong, null_resettable) UserMetadata *userMetadata;
 /** Test to see if @c userMetadata has been set. */

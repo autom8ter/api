@@ -37,6 +37,10 @@ message Profile {
     int64 login_count=13;
     string updated_at=14;
     string created_at=15;
+    string sub=16;
+    string iss=17;
+    string aud=18;
+    string iat=19;
     UserMetadata user_metadata=20;
 }
 

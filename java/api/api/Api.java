@@ -723,6 +723,46 @@ public final class Api {
         getCreatedAtBytes();
 
     /**
+     * <code>string sub = 16;</code>
+     */
+    java.lang.String getSub();
+    /**
+     * <code>string sub = 16;</code>
+     */
+    com.google.protobuf.ByteString
+        getSubBytes();
+
+    /**
+     * <code>string iss = 17;</code>
+     */
+    java.lang.String getIss();
+    /**
+     * <code>string iss = 17;</code>
+     */
+    com.google.protobuf.ByteString
+        getIssBytes();
+
+    /**
+     * <code>string aud = 18;</code>
+     */
+    java.lang.String getAud();
+    /**
+     * <code>string aud = 18;</code>
+     */
+    com.google.protobuf.ByteString
+        getAudBytes();
+
+    /**
+     * <code>string iat = 19;</code>
+     */
+    java.lang.String getIat();
+    /**
+     * <code>string iat = 19;</code>
+     */
+    com.google.protobuf.ByteString
+        getIatBytes();
+
+    /**
      * <code>.api.UserMetadata user_metadata = 20;</code>
      */
     boolean hasUserMetadata();
@@ -763,6 +803,10 @@ public final class Api {
       loginCount_ = 0L;
       updatedAt_ = "";
       createdAt_ = "";
+      sub_ = "";
+      iss_ = "";
+      aud_ = "";
+      iat_ = "";
     }
 
     @java.lang.Override
@@ -878,6 +922,30 @@ public final class Api {
               java.lang.String s = input.readStringRequireUtf8();
 
               createdAt_ = s;
+              break;
+            }
+            case 130: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sub_ = s;
+              break;
+            }
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              iss_ = s;
+              break;
+            }
+            case 146: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              aud_ = s;
+              break;
+            }
+            case 154: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              iat_ = s;
               break;
             }
             case 162: {
@@ -1390,6 +1458,142 @@ public final class Api {
       }
     }
 
+    public static final int SUB_FIELD_NUMBER = 16;
+    private volatile java.lang.Object sub_;
+    /**
+     * <code>string sub = 16;</code>
+     */
+    public java.lang.String getSub() {
+      java.lang.Object ref = sub_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sub_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sub = 16;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubBytes() {
+      java.lang.Object ref = sub_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sub_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ISS_FIELD_NUMBER = 17;
+    private volatile java.lang.Object iss_;
+    /**
+     * <code>string iss = 17;</code>
+     */
+    public java.lang.String getIss() {
+      java.lang.Object ref = iss_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iss_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string iss = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIssBytes() {
+      java.lang.Object ref = iss_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        iss_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUD_FIELD_NUMBER = 18;
+    private volatile java.lang.Object aud_;
+    /**
+     * <code>string aud = 18;</code>
+     */
+    public java.lang.String getAud() {
+      java.lang.Object ref = aud_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aud_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string aud = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAudBytes() {
+      java.lang.Object ref = aud_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aud_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IAT_FIELD_NUMBER = 19;
+    private volatile java.lang.Object iat_;
+    /**
+     * <code>string iat = 19;</code>
+     */
+    public java.lang.String getIat() {
+      java.lang.Object ref = iat_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iat_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string iat = 19;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIatBytes() {
+      java.lang.Object ref = iat_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        iat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int USER_METADATA_FIELD_NUMBER = 20;
     private api.Api.UserMetadata userMetadata_;
     /**
@@ -1470,6 +1674,18 @@ public final class Api {
       if (!getCreatedAtBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, createdAt_);
       }
+      if (!getSubBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, sub_);
+      }
+      if (!getIssBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, iss_);
+      }
+      if (!getAudBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, aud_);
+      }
+      if (!getIatBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, iat_);
+      }
       if (userMetadata_ != null) {
         output.writeMessage(20, getUserMetadata());
       }
@@ -1530,6 +1746,18 @@ public final class Api {
       if (!getCreatedAtBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, createdAt_);
       }
+      if (!getSubBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, sub_);
+      }
+      if (!getIssBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, iss_);
+      }
+      if (!getAudBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, aud_);
+      }
+      if (!getIatBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, iat_);
+      }
       if (userMetadata_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(20, getUserMetadata());
@@ -1580,6 +1808,14 @@ public final class Api {
           .equals(other.getUpdatedAt());
       result = result && getCreatedAt()
           .equals(other.getCreatedAt());
+      result = result && getSub()
+          .equals(other.getSub());
+      result = result && getIss()
+          .equals(other.getIss());
+      result = result && getAud()
+          .equals(other.getAud());
+      result = result && getIat()
+          .equals(other.getIat());
       result = result && (hasUserMetadata() == other.hasUserMetadata());
       if (hasUserMetadata()) {
         result = result && getUserMetadata()
@@ -1630,6 +1866,14 @@ public final class Api {
       hash = (53 * hash) + getUpdatedAt().hashCode();
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
+      hash = (37 * hash) + SUB_FIELD_NUMBER;
+      hash = (53 * hash) + getSub().hashCode();
+      hash = (37 * hash) + ISS_FIELD_NUMBER;
+      hash = (53 * hash) + getIss().hashCode();
+      hash = (37 * hash) + AUD_FIELD_NUMBER;
+      hash = (53 * hash) + getAud().hashCode();
+      hash = (37 * hash) + IAT_FIELD_NUMBER;
+      hash = (53 * hash) + getIat().hashCode();
       if (hasUserMetadata()) {
         hash = (37 * hash) + USER_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getUserMetadata().hashCode();
@@ -1802,6 +2046,14 @@ public final class Api {
 
         createdAt_ = "";
 
+        sub_ = "";
+
+        iss_ = "";
+
+        aud_ = "";
+
+        iat_ = "";
+
         if (userMetadataBuilder_ == null) {
           userMetadata_ = null;
         } else {
@@ -1859,6 +2111,10 @@ public final class Api {
         result.loginCount_ = loginCount_;
         result.updatedAt_ = updatedAt_;
         result.createdAt_ = createdAt_;
+        result.sub_ = sub_;
+        result.iss_ = iss_;
+        result.aud_ = aud_;
+        result.iat_ = iat_;
         if (userMetadataBuilder_ == null) {
           result.userMetadata_ = userMetadata_;
         } else {
@@ -1991,6 +2247,22 @@ public final class Api {
         }
         if (!other.getCreatedAt().isEmpty()) {
           createdAt_ = other.createdAt_;
+          onChanged();
+        }
+        if (!other.getSub().isEmpty()) {
+          sub_ = other.sub_;
+          onChanged();
+        }
+        if (!other.getIss().isEmpty()) {
+          iss_ = other.iss_;
+          onChanged();
+        }
+        if (!other.getAud().isEmpty()) {
+          aud_ = other.aud_;
+          onChanged();
+        }
+        if (!other.getIat().isEmpty()) {
+          iat_ = other.iat_;
           onChanged();
         }
         if (other.hasUserMetadata()) {
@@ -3142,6 +3414,282 @@ public final class Api {
   checkByteStringIsUtf8(value);
         
         createdAt_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sub_ = "";
+      /**
+       * <code>string sub = 16;</code>
+       */
+      public java.lang.String getSub() {
+        java.lang.Object ref = sub_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sub_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sub = 16;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSubBytes() {
+        java.lang.Object ref = sub_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sub_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sub = 16;</code>
+       */
+      public Builder setSub(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sub_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sub = 16;</code>
+       */
+      public Builder clearSub() {
+        
+        sub_ = getDefaultInstance().getSub();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sub = 16;</code>
+       */
+      public Builder setSubBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sub_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object iss_ = "";
+      /**
+       * <code>string iss = 17;</code>
+       */
+      public java.lang.String getIss() {
+        java.lang.Object ref = iss_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          iss_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string iss = 17;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIssBytes() {
+        java.lang.Object ref = iss_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          iss_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string iss = 17;</code>
+       */
+      public Builder setIss(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        iss_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string iss = 17;</code>
+       */
+      public Builder clearIss() {
+        
+        iss_ = getDefaultInstance().getIss();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string iss = 17;</code>
+       */
+      public Builder setIssBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        iss_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object aud_ = "";
+      /**
+       * <code>string aud = 18;</code>
+       */
+      public java.lang.String getAud() {
+        java.lang.Object ref = aud_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          aud_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string aud = 18;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAudBytes() {
+        java.lang.Object ref = aud_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          aud_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string aud = 18;</code>
+       */
+      public Builder setAud(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        aud_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string aud = 18;</code>
+       */
+      public Builder clearAud() {
+        
+        aud_ = getDefaultInstance().getAud();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string aud = 18;</code>
+       */
+      public Builder setAudBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        aud_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object iat_ = "";
+      /**
+       * <code>string iat = 19;</code>
+       */
+      public java.lang.String getIat() {
+        java.lang.Object ref = iat_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          iat_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string iat = 19;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIatBytes() {
+        java.lang.Object ref = iat_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          iat_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string iat = 19;</code>
+       */
+      public Builder setIat(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        iat_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string iat = 19;</code>
+       */
+      public Builder clearIat() {
+        
+        iat_ = getDefaultInstance().getIat();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string iat = 19;</code>
+       */
+      public Builder setIatBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        iat_ = value;
         onChanged();
         return this;
       }
@@ -5195,22 +5743,24 @@ public final class Api {
     java.lang.String[] descriptorData = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations" +
       ".proto\"\"\n\021GetProfileByEmail\022\r\n\005email\030\001 \001" +
-      "(\t\"\332\002\n\007Profile\022\r\n\005email\030\001 \001(\t\022\026\n\016email_v" +
+      "(\t\"\216\003\n\007Profile\022\r\n\005email\030\001 \001(\t\022\026\n\016email_v" +
       "erified\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\022\022\n\ngiven_nam" +
       "e\030\004 \001(\t\022\023\n\013family_name\030\005 \001(\t\022\017\n\007picture\030" +
       "\006 \001(\t\022\016\n\006locale\030\007 \001(\t\022\017\n\007user_id\030\010 \001(\t\022\020" +
       "\n\010nickname\030\t \001(\t\022\022\n\nconnection\030\n \001(\t\022!\n\n" +
       "identities\030\013 \003(\0132\r.api.Identity\022\017\n\007last_" +
       "ip\030\014 \001(\t\022\023\n\013login_count\030\r \001(\003\022\022\n\nupdated" +
-      "_at\030\016 \001(\t\022\022\n\ncreated_at\030\017 \001(\t\022(\n\ruser_me" +
-      "tadata\030\024 \001(\0132\021.api.UserMetadata\"T\n\014UserM" +
-      "etadata\022\r\n\005phone\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\021\n\t" +
-      "pay_token\030\003 \001(\t\022\024\n\014last_contact\030\004 \001(\t\"S\n" +
-      "\010Identity\022\020\n\010provider\030\001 \001(\t\022\017\n\007user_id\030\002" +
-      " \001(\t\022\022\n\nconnection\030\003 \001(\t\022\020\n\010isSocial\030\004 \001" +
-      "(\0102e\n\016ProfileService\022S\n\nGetProfile\022\026.api" +
-      ".GetProfileByEmail\032\014.api.Profile\"\037\202\323\344\223\002\031" +
-      "\"\024/api/profile/{email}:\001*b\006proto3"
+      "_at\030\016 \001(\t\022\022\n\ncreated_at\030\017 \001(\t\022\013\n\003sub\030\020 \001" +
+      "(\t\022\013\n\003iss\030\021 \001(\t\022\013\n\003aud\030\022 \001(\t\022\013\n\003iat\030\023 \001(" +
+      "\t\022(\n\ruser_metadata\030\024 \001(\0132\021.api.UserMetad" +
+      "ata\"T\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t\022\014\n\004pl" +
+      "an\030\002 \001(\t\022\021\n\tpay_token\030\003 \001(\t\022\024\n\014last_cont" +
+      "act\030\004 \001(\t\"S\n\010Identity\022\020\n\010provider\030\001 \001(\t\022" +
+      "\017\n\007user_id\030\002 \001(\t\022\022\n\nconnection\030\003 \001(\t\022\020\n\010" +
+      "isSocial\030\004 \001(\0102e\n\016ProfileService\022S\n\nGetP" +
+      "rofile\022\026.api.GetProfileByEmail\032\014.api.Pro" +
+      "file\"\037\202\323\344\223\002\031\"\024/api/profile/{email}:\001*b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5236,7 +5786,7 @@ public final class Api {
     internal_static_api_Profile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Profile_descriptor,
-        new java.lang.String[] { "Email", "EmailVerified", "Name", "GivenName", "FamilyName", "Picture", "Locale", "UserId", "Nickname", "Connection", "Identities", "LastIp", "LoginCount", "UpdatedAt", "CreatedAt", "UserMetadata", });
+        new java.lang.String[] { "Email", "EmailVerified", "Name", "GivenName", "FamilyName", "Picture", "Locale", "UserId", "Nickname", "Connection", "Identities", "LastIp", "LoginCount", "UpdatedAt", "CreatedAt", "Sub", "Iss", "Aud", "Iat", "UserMetadata", });
     internal_static_api_UserMetadata_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_api_UserMetadata_fieldAccessorTable = new
