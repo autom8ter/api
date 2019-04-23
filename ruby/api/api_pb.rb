@@ -61,19 +61,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     repeated :scopes, :string, 4
     optional :redirect, :string, 5
   end
-  add_message "api.SubscriptionRequest" do
-    optional :email, :string, 1
-    optional :plan, :string, 2
-    optional :card, :message, 3, "api.Card"
+  add_message "api.CreateCustomerRequest" do
+    optional :user_info, :message, 1, "api.UserInfo"
   end
-  add_message "api.SubscriptionResponse" do
+  add_message "api.CreateCustomerResponse" do
     optional :id, :string, 1
-  end
-  add_message "api.Card" do
-    optional :number, :string, 1
-    optional :exp_month, :string, 2
-    optional :exp_year, :string, 3
-    optional :cvc, :string, 4
   end
 end
 
@@ -87,7 +79,6 @@ module Api
   Tokens = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Tokens").msgclass
   Paths = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Paths").msgclass
   Auth0 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth0").msgclass
-  SubscriptionRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionRequest").msgclass
-  SubscriptionResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionResponse").msgclass
-  Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
+  CreateCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateCustomerRequest").msgclass
+  CreateCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateCustomerResponse").msgclass
 end

@@ -44,14 +44,12 @@ namespace Api {
             "YWN5GAwgASgJEg0KBWRlYnVnGA0gASgJEgwKBGJsb2cYDiABKAkiYwoFQXV0",
             "aDASDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9pZBgCIAEoCRIVCg1jbGll",
             "bnRfc2VjcmV0GAMgASgJEg4KBnNjb3BlcxgEIAMoCRIQCghyZWRpcmVjdBgF",
-            "IAEoCSJLChNTdWJzY3JpcHRpb25SZXF1ZXN0Eg0KBWVtYWlsGAEgASgJEgwK",
-            "BHBsYW4YAiABKAkSFwoEY2FyZBgDIAEoCzIJLmFwaS5DYXJkIiIKFFN1YnNj",
-            "cmlwdGlvblJlc3BvbnNlEgoKAmlkGAEgASgJIkgKBENhcmQSDgoGbnVtYmVy",
-            "GAEgASgJEhEKCWV4cF9tb250aBgCIAEoCRIQCghleHBfeWVhchgDIAEoCRIL",
-            "CgNjdmMYBCABKAkyfgoUU3Vic2NyaXB0aW9uc1NlcnZpY2USZgoRQ3JlYXRl",
-            "U3Vic2NpcHRpb24SGC5hcGkuU3Vic2NyaXB0aW9uUmVxdWVzdBoZLmFwaS5T",
-            "dWJzY3JpcHRpb25SZXNwb25zZSIcgtPkkwIWIhEvdjEvc3Vic2NyaXB0aW9u",
-            "czoBKmIGcHJvdG8z"));
+            "IAEoCSI5ChVDcmVhdGVDdXN0b21lclJlcXVlc3QSIAoJdXNlcl9pbmZvGAEg",
+            "ASgLMg0uYXBpLlVzZXJJbmZvIiQKFkNyZWF0ZUN1c3RvbWVyUmVzcG9uc2US",
+            "CgoCaWQYASABKAkydgoPQ3VzdG9tZXJTZXJ2aWNlEmMKDkNyZWF0ZUN1c3Rv",
+            "bWVyEhouYXBpLkNyZWF0ZUN1c3RvbWVyUmVxdWVzdBobLmFwaS5DcmVhdGVD",
+            "dXN0b21lclJlc3BvbnNlIhiC0+STAhIiDS92MS9jdXN0b21lcnM6ASpiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -64,9 +62,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth0), global::Api.Auth0.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.SubscriptionRequest), global::Api.SubscriptionRequest.Parser, new[]{ "Email", "Plan", "Card" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.SubscriptionResponse), global::Api.SubscriptionResponse.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Card), global::Api.Card.Parser, new[]{ "Number", "ExpMonth", "ExpYear", "Cvc" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.CreateCustomerRequest), global::Api.CreateCustomerRequest.Parser, new[]{ "UserInfo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.CreateCustomerResponse), global::Api.CreateCustomerResponse.Parser, new[]{ "Id" }, null, null, null)
           }));
     }
     #endregion
@@ -2068,11 +2065,11 @@ namespace Api {
 
   }
 
-  public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest> {
-    private static readonly pb::MessageParser<SubscriptionRequest> _parser = new pb::MessageParser<SubscriptionRequest>(() => new SubscriptionRequest());
+  public sealed partial class CreateCustomerRequest : pb::IMessage<CreateCustomerRequest> {
+    private static readonly pb::MessageParser<CreateCustomerRequest> _parser = new pb::MessageParser<CreateCustomerRequest>(() => new CreateCustomerRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<SubscriptionRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateCustomerRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -2085,83 +2082,55 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SubscriptionRequest() {
+    public CreateCustomerRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SubscriptionRequest(SubscriptionRequest other) : this() {
-      email_ = other.email_;
-      plan_ = other.plan_;
-      card_ = other.card_ != null ? other.card_.Clone() : null;
+    public CreateCustomerRequest(CreateCustomerRequest other) : this() {
+      userInfo_ = other.userInfo_ != null ? other.userInfo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SubscriptionRequest Clone() {
-      return new SubscriptionRequest(this);
+    public CreateCustomerRequest Clone() {
+      return new CreateCustomerRequest(this);
     }
 
-    /// <summary>Field number for the "email" field.</summary>
-    public const int EmailFieldNumber = 1;
-    private string email_ = "";
+    /// <summary>Field number for the "user_info" field.</summary>
+    public const int UserInfoFieldNumber = 1;
+    private global::Api.UserInfo userInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Email {
-      get { return email_; }
+    public global::Api.UserInfo UserInfo {
+      get { return userInfo_; }
       set {
-        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "plan" field.</summary>
-    public const int PlanFieldNumber = 2;
-    private string plan_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Plan {
-      get { return plan_; }
-      set {
-        plan_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "card" field.</summary>
-    public const int CardFieldNumber = 3;
-    private global::Api.Card card_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Api.Card Card {
-      get { return card_; }
-      set {
-        card_ = value;
+        userInfo_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as SubscriptionRequest);
+      return Equals(other as CreateCustomerRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(SubscriptionRequest other) {
+    public bool Equals(CreateCustomerRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Email != other.Email) return false;
-      if (Plan != other.Plan) return false;
-      if (!object.Equals(Card, other.Card)) return false;
+      if (!object.Equals(UserInfo, other.UserInfo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Email.Length != 0) hash ^= Email.GetHashCode();
-      if (Plan.Length != 0) hash ^= Plan.GetHashCode();
-      if (card_ != null) hash ^= Card.GetHashCode();
+      if (userInfo_ != null) hash ^= UserInfo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2175,17 +2144,9 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Email.Length != 0) {
+      if (userInfo_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Email);
-      }
-      if (Plan.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Plan);
-      }
-      if (card_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Card);
+        output.WriteMessage(UserInfo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2195,14 +2156,8 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Email.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
-      }
-      if (Plan.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Plan);
-      }
-      if (card_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Card);
+      if (userInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserInfo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2211,21 +2166,15 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(SubscriptionRequest other) {
+    public void MergeFrom(CreateCustomerRequest other) {
       if (other == null) {
         return;
       }
-      if (other.Email.Length != 0) {
-        Email = other.Email;
-      }
-      if (other.Plan.Length != 0) {
-        Plan = other.Plan;
-      }
-      if (other.card_ != null) {
-        if (card_ == null) {
-          card_ = new global::Api.Card();
+      if (other.userInfo_ != null) {
+        if (userInfo_ == null) {
+          userInfo_ = new global::Api.UserInfo();
         }
-        Card.MergeFrom(other.Card);
+        UserInfo.MergeFrom(other.UserInfo);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2239,18 +2188,10 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Email = input.ReadString();
-            break;
-          }
-          case 18: {
-            Plan = input.ReadString();
-            break;
-          }
-          case 26: {
-            if (card_ == null) {
-              card_ = new global::Api.Card();
+            if (userInfo_ == null) {
+              userInfo_ = new global::Api.UserInfo();
             }
-            input.ReadMessage(card_);
+            input.ReadMessage(userInfo_);
             break;
           }
         }
@@ -2259,11 +2200,11 @@ namespace Api {
 
   }
 
-  public sealed partial class SubscriptionResponse : pb::IMessage<SubscriptionResponse> {
-    private static readonly pb::MessageParser<SubscriptionResponse> _parser = new pb::MessageParser<SubscriptionResponse>(() => new SubscriptionResponse());
+  public sealed partial class CreateCustomerResponse : pb::IMessage<CreateCustomerResponse> {
+    private static readonly pb::MessageParser<CreateCustomerResponse> _parser = new pb::MessageParser<CreateCustomerResponse>(() => new CreateCustomerResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<SubscriptionResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateCustomerResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -2276,21 +2217,21 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SubscriptionResponse() {
+    public CreateCustomerResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SubscriptionResponse(SubscriptionResponse other) : this() {
+    public CreateCustomerResponse(CreateCustomerResponse other) : this() {
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SubscriptionResponse Clone() {
-      return new SubscriptionResponse(this);
+    public CreateCustomerResponse Clone() {
+      return new CreateCustomerResponse(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -2306,11 +2247,11 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as SubscriptionResponse);
+      return Equals(other as CreateCustomerResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(SubscriptionResponse other) {
+    public bool Equals(CreateCustomerResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2360,7 +2301,7 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(SubscriptionResponse other) {
+    public void MergeFrom(CreateCustomerResponse other) {
       if (other == null) {
         return;
       }
@@ -2380,219 +2321,6 @@ namespace Api {
             break;
           case 10: {
             Id = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Card : pb::IMessage<Card> {
-    private static readonly pb::MessageParser<Card> _parser = new pb::MessageParser<Card>(() => new Card());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Card> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[11]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Card() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Card(Card other) : this() {
-      number_ = other.number_;
-      expMonth_ = other.expMonth_;
-      expYear_ = other.expYear_;
-      cvc_ = other.cvc_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Card Clone() {
-      return new Card(this);
-    }
-
-    /// <summary>Field number for the "number" field.</summary>
-    public const int NumberFieldNumber = 1;
-    private string number_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Number {
-      get { return number_; }
-      set {
-        number_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "exp_month" field.</summary>
-    public const int ExpMonthFieldNumber = 2;
-    private string expMonth_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ExpMonth {
-      get { return expMonth_; }
-      set {
-        expMonth_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "exp_year" field.</summary>
-    public const int ExpYearFieldNumber = 3;
-    private string expYear_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ExpYear {
-      get { return expYear_; }
-      set {
-        expYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "cvc" field.</summary>
-    public const int CvcFieldNumber = 4;
-    private string cvc_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Cvc {
-      get { return cvc_; }
-      set {
-        cvc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Card);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Card other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Number != other.Number) return false;
-      if (ExpMonth != other.ExpMonth) return false;
-      if (ExpYear != other.ExpYear) return false;
-      if (Cvc != other.Cvc) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Number.Length != 0) hash ^= Number.GetHashCode();
-      if (ExpMonth.Length != 0) hash ^= ExpMonth.GetHashCode();
-      if (ExpYear.Length != 0) hash ^= ExpYear.GetHashCode();
-      if (Cvc.Length != 0) hash ^= Cvc.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Number.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Number);
-      }
-      if (ExpMonth.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(ExpMonth);
-      }
-      if (ExpYear.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(ExpYear);
-      }
-      if (Cvc.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Cvc);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Number.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Number);
-      }
-      if (ExpMonth.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExpMonth);
-      }
-      if (ExpYear.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExpYear);
-      }
-      if (Cvc.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Cvc);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Card other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Number.Length != 0) {
-        Number = other.Number;
-      }
-      if (other.ExpMonth.Length != 0) {
-        ExpMonth = other.ExpMonth;
-      }
-      if (other.ExpYear.Length != 0) {
-        ExpYear = other.ExpYear;
-      }
-      if (other.Cvc.Length != 0) {
-        Cvc = other.Cvc;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Number = input.ReadString();
-            break;
-          }
-          case 18: {
-            ExpMonth = input.ReadString();
-            break;
-          }
-          case 26: {
-            ExpYear = input.ReadString();
-            break;
-          }
-          case 34: {
-            Cvc = input.ReadString();
             break;
           }
         }

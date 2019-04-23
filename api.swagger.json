@@ -15,14 +15,14 @@
     "application/json"
   ],
   "paths": {
-    "/v1/subscriptions": {
+    "/v1/customers": {
       "post": {
-        "operationId": "CreateSubsciption",
+        "operationId": "CreateCustomer",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiSubscriptionResponse"
+              "$ref": "#/definitions/apiCreateCustomerResponse"
             }
           }
         },
@@ -32,52 +32,83 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiSubscriptionRequest"
+              "$ref": "#/definitions/apiCreateCustomerRequest"
             }
           }
         ],
         "tags": [
-          "SubscriptionsService"
+          "CustomerService"
         ]
       }
     }
   },
   "definitions": {
-    "apiCard": {
+    "apiAppMetadata": {
       "type": "object",
       "properties": {
-        "number": {
-          "type": "string"
-        },
-        "exp_month": {
-          "type": "string"
-        },
-        "exp_year": {
-          "type": "string"
-        },
-        "cvc": {
-          "type": "string"
-        }
-      }
-    },
-    "apiSubscriptionRequest": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "type": "string"
-        },
         "plan": {
           "type": "string"
         },
-        "card": {
-          "$ref": "#/definitions/apiCard"
+        "pay_token": {
+          "type": "string"
         }
       }
     },
-    "apiSubscriptionResponse": {
+    "apiCreateCustomerRequest": {
+      "type": "object",
+      "properties": {
+        "user_info": {
+          "$ref": "#/definitions/apiUserInfo"
+        }
+      }
+    },
+    "apiCreateCustomerResponse": {
       "type": "object",
       "properties": {
         "id": {
+          "type": "string"
+        }
+      }
+    },
+    "apiUserInfo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "given_name": {
+          "type": "string"
+        },
+        "family_name": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        },
+        "user_metadata": {
+          "$ref": "#/definitions/apiUserMetadata"
+        },
+        "app_metadata": {
+          "$ref": "#/definitions/apiAppMetadata"
+        }
+      }
+    },
+    "apiUserMetadata": {
+      "type": "object",
+      "properties": {
+        "phone": {
+          "type": "string"
+        },
+        "preferred_contact": {
           "type": "string"
         }
       }

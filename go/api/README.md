@@ -2,6 +2,9 @@
 --
     import "github.com/autom8ter/api/go/api"
 
+Package api is a reverse proxy.
+
+It translates gRPC into RESTful JSON APIs.
 
 ## Usage
 
@@ -21,6 +24,55 @@ var Util = objectify.Default()
 
 ```go
 func Debugf(format string, args ...interface{})
+```
+
+#### func  Fatalf
+
+```go
+func Fatalf(format string, args ...interface{})
+```
+
+#### func  RegisterCustomerServiceHandler
+
+```go
+func RegisterCustomerServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterCustomerServiceHandler registers the http handlers for service
+CustomerService to "mux". The handlers forward requests to the grpc endpoint
+over "conn".
+
+#### func  RegisterCustomerServiceHandlerClient
+
+```go
+func RegisterCustomerServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CustomerServiceClient) error
+```
+RegisterCustomerServiceHandlerClient registers the http handlers for service
+CustomerService to "mux". The handlers forward requests to the grpc endpoint
+over the given implementation of "CustomerServiceClient". Note: the gRPC
+framework executes interceptors within the gRPC handler. If the passed in
+"CustomerServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "CustomerServiceClient" to call
+the correct interceptors.
+
+#### func  RegisterCustomerServiceHandlerFromEndpoint
+
+```go
+func RegisterCustomerServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterCustomerServiceHandlerFromEndpoint is same as
+RegisterCustomerServiceHandler but automatically dials to "endpoint" and closes
+the connection when "ctx" gets done.
+
+#### func  RegisterCustomerServiceServer
+
+```go
+func RegisterCustomerServiceServer(s *grpc.Server, srv CustomerServiceServer)
+```
+
+#### func  Warnf
+
+```go
+func Warnf(format string, args ...interface{})
 ```
 
 #### type AccessToken
@@ -404,6 +456,214 @@ func (m *Auth0) XXX_Size() int
 
 ```go
 func (m *Auth0) XXX_Unmarshal(b []byte) error
+```
+
+#### type ClientSet
+
+```go
+type ClientSet struct {
+	Subscriptions SubscriptionsServiceClient
+}
+```
+
+
+#### func  NewClientSet
+
+```go
+func NewClientSet(d *Dialer) *ClientSet
+```
+
+#### type CreateCustomerRequest
+
+```go
+type CreateCustomerRequest struct {
+	UserInfo             *UserInfo `protobuf:"bytes,1,opt,name=user_info,json=userInfo,proto3" json:"user_info,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+```
+
+
+#### func (*CreateCustomerRequest) Descriptor
+
+```go
+func (*CreateCustomerRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*CreateCustomerRequest) GetUserInfo
+
+```go
+func (m *CreateCustomerRequest) GetUserInfo() *UserInfo
+```
+
+#### func (*CreateCustomerRequest) ProtoMessage
+
+```go
+func (*CreateCustomerRequest) ProtoMessage()
+```
+
+#### func (*CreateCustomerRequest) Reset
+
+```go
+func (m *CreateCustomerRequest) Reset()
+```
+
+#### func (*CreateCustomerRequest) String
+
+```go
+func (m *CreateCustomerRequest) String() string
+```
+
+#### func (*CreateCustomerRequest) XXX_DiscardUnknown
+
+```go
+func (m *CreateCustomerRequest) XXX_DiscardUnknown()
+```
+
+#### func (*CreateCustomerRequest) XXX_Marshal
+
+```go
+func (m *CreateCustomerRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*CreateCustomerRequest) XXX_Merge
+
+```go
+func (m *CreateCustomerRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*CreateCustomerRequest) XXX_Size
+
+```go
+func (m *CreateCustomerRequest) XXX_Size() int
+```
+
+#### func (*CreateCustomerRequest) XXX_Unmarshal
+
+```go
+func (m *CreateCustomerRequest) XXX_Unmarshal(b []byte) error
+```
+
+#### type CreateCustomerResponse
+
+```go
+type CreateCustomerResponse struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*CreateCustomerResponse) Descriptor
+
+```go
+func (*CreateCustomerResponse) Descriptor() ([]byte, []int)
+```
+
+#### func (*CreateCustomerResponse) GetId
+
+```go
+func (m *CreateCustomerResponse) GetId() string
+```
+
+#### func (*CreateCustomerResponse) ProtoMessage
+
+```go
+func (*CreateCustomerResponse) ProtoMessage()
+```
+
+#### func (*CreateCustomerResponse) Reset
+
+```go
+func (m *CreateCustomerResponse) Reset()
+```
+
+#### func (*CreateCustomerResponse) String
+
+```go
+func (m *CreateCustomerResponse) String() string
+```
+
+#### func (*CreateCustomerResponse) XXX_DiscardUnknown
+
+```go
+func (m *CreateCustomerResponse) XXX_DiscardUnknown()
+```
+
+#### func (*CreateCustomerResponse) XXX_Marshal
+
+```go
+func (m *CreateCustomerResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*CreateCustomerResponse) XXX_Merge
+
+```go
+func (m *CreateCustomerResponse) XXX_Merge(src proto.Message)
+```
+
+#### func (*CreateCustomerResponse) XXX_Size
+
+```go
+func (m *CreateCustomerResponse) XXX_Size() int
+```
+
+#### func (*CreateCustomerResponse) XXX_Unmarshal
+
+```go
+func (m *CreateCustomerResponse) XXX_Unmarshal(b []byte) error
+```
+
+#### type CustomerServiceClient
+
+```go
+type CustomerServiceClient interface {
+	CreateCustomer(ctx context.Context, in *CreateCustomerRequest, opts ...grpc.CallOption) (*CreateCustomerResponse, error)
+}
+```
+
+CustomerServiceClient is the client API for CustomerService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewCustomerServiceClient
+
+```go
+func NewCustomerServiceClient(cc *grpc.ClientConn) CustomerServiceClient
+```
+
+#### type CustomerServiceServer
+
+```go
+type CustomerServiceServer interface {
+	CreateCustomer(context.Context, *CreateCustomerRequest) (*CreateCustomerResponse, error)
+}
+```
+
+CustomerServiceServer is the server API for CustomerService service.
+
+#### type Dialer
+
+```go
+type Dialer struct {
+}
+```
+
+
+#### func  NewDialer
+
+```go
+func NewDialer(ctx context.Context, addr string, r *http.Request) (*Dialer, error)
+```
+
+#### func (*Dialer) Conn
+
+```go
+func (d *Dialer) Conn() *grpc.ClientConn
 ```
 
 #### type IDToken

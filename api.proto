@@ -4,10 +4,10 @@ package api;
 import "google/api/annotations.proto";
 
 
-service SubscriptionsService {
-    rpc CreateSubsciption(SubscriptionRequest) returns (SubscriptionResponse) {
+service CustomerService {
+    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {
         option (google.api.http) = {
-      post: "/v1/subscriptions"
+      post: "/v1/customers"
       body: "*"
     };
     }
@@ -79,19 +79,10 @@ message Auth0 {
     string redirect=5;
 }
 
-message SubscriptionRequest {
-    string email =1;
-    string plan =2;
-    Card card =3;
+message CreateCustomerRequest {
+    UserInfo user_info =1;
 }
 
-message SubscriptionResponse {
-    string id=1;
-}
-
-message Card {
-    string number =1;
-    string exp_month=2;
-    string exp_year=3;
-    string cvc=4;
+message CreateCustomerResponse {
+    string id =1;
 }

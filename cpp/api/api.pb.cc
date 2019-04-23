@@ -22,10 +22,10 @@
 namespace protobuf_api_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AccessToken;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AppMetadata;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Card;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_IDToken;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RefreshToken;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UserMetadata;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_UserInfo;
 }  // namespace protobuf_api_2eproto
 namespace api {
 class UserInfoDefaultTypeInternal {
@@ -73,21 +73,16 @@ class Auth0DefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Auth0>
       _instance;
 } _Auth0_default_instance_;
-class SubscriptionRequestDefaultTypeInternal {
+class CreateCustomerRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SubscriptionRequest>
+  ::google::protobuf::internal::ExplicitlyConstructed<CreateCustomerRequest>
       _instance;
-} _SubscriptionRequest_default_instance_;
-class SubscriptionResponseDefaultTypeInternal {
+} _CreateCustomerRequest_default_instance_;
+class CreateCustomerResponseDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SubscriptionResponse>
+  ::google::protobuf::internal::ExplicitlyConstructed<CreateCustomerResponse>
       _instance;
-} _SubscriptionResponse_default_instance_;
-class CardDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Card>
-      _instance;
-} _Card_default_instance_;
+} _CreateCustomerResponse_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsUserInfo() {
@@ -221,48 +216,34 @@ static void InitDefaultsAuth0() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_Auth0 =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAuth0}, {}};
 
-static void InitDefaultsSubscriptionRequest() {
+static void InitDefaultsCreateCustomerRequest() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_SubscriptionRequest_default_instance_;
-    new (ptr) ::api::SubscriptionRequest();
+    void* ptr = &::api::_CreateCustomerRequest_default_instance_;
+    new (ptr) ::api::CreateCustomerRequest();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::SubscriptionRequest::InitAsDefaultInstance();
+  ::api::CreateCustomerRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SubscriptionRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSubscriptionRequest}, {
-      &protobuf_api_2eproto::scc_info_Card.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_CreateCustomerRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCreateCustomerRequest}, {
+      &protobuf_api_2eproto::scc_info_UserInfo.base,}};
 
-static void InitDefaultsSubscriptionResponse() {
+static void InitDefaultsCreateCustomerResponse() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_SubscriptionResponse_default_instance_;
-    new (ptr) ::api::SubscriptionResponse();
+    void* ptr = &::api::_CreateCustomerResponse_default_instance_;
+    new (ptr) ::api::CreateCustomerResponse();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::SubscriptionResponse::InitAsDefaultInstance();
+  ::api::CreateCustomerResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SubscriptionResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSubscriptionResponse}, {}};
-
-static void InitDefaultsCard() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::api::_Card_default_instance_;
-    new (ptr) ::api::Card();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::api::Card::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Card =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCard}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_CreateCustomerResponse =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCreateCustomerResponse}, {}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_UserInfo.base);
@@ -274,12 +255,11 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Tokens.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Paths.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Auth0.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SubscriptionRequest.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SubscriptionResponse.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Card.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_CreateCustomerRequest.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_CreateCustomerResponse.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[12];
+::google::protobuf::Metadata file_level_metadata[11];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -366,28 +346,17 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Auth0, scopes_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Auth0, redirect_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionRequest, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::CreateCustomerRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionRequest, email_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionRequest, plan_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionRequest, card_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::CreateCustomerRequest, user_info_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::CreateCustomerResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, id_),
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Card, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Card, number_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Card, exp_month_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Card, exp_year_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Card, cvc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::CreateCustomerResponse, id_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::UserInfo)},
@@ -399,9 +368,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 46, -1, sizeof(::api::Tokens)},
   { 54, -1, sizeof(::api::Paths)},
   { 73, -1, sizeof(::api::Auth0)},
-  { 83, -1, sizeof(::api::SubscriptionRequest)},
-  { 91, -1, sizeof(::api::SubscriptionResponse)},
-  { 97, -1, sizeof(::api::Card)},
+  { 83, -1, sizeof(::api::CreateCustomerRequest)},
+  { 89, -1, sizeof(::api::CreateCustomerResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -414,9 +382,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Tokens_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Paths_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Auth0_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SubscriptionRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SubscriptionResponse_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Card_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_CreateCustomerRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_CreateCustomerResponse_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -434,7 +401,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 11);
 }
 
 void AddDescriptorsImpl() {
@@ -462,18 +429,16 @@ void AddDescriptorsImpl() {
       "\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022\014\n\004blog\030\016 "
       "\001(\t\"c\n\005Auth0\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_i"
       "d\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t\022\016\n\006scopes"
-      "\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\t\"K\n\023Subscription"
-      "Request\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\027\n\004"
-      "card\030\003 \001(\0132\t.api.Card\"\"\n\024SubscriptionRes"
-      "ponse\022\n\n\002id\030\001 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001("
-      "\t\022\021\n\texp_month\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013"
-      "\n\003cvc\030\004 \001(\t2~\n\024SubscriptionsService\022f\n\021C"
-      "reateSubsciption\022\030.api.SubscriptionReque"
-      "st\032\031.api.SubscriptionResponse\"\034\202\323\344\223\002\026\"\021/"
-      "v1/subscriptions:\001*b\006proto3"
+      "\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\t\"9\n\025CreateCustom"
+      "erRequest\022 \n\tuser_info\030\001 \001(\0132\r.api.UserI"
+      "nfo\"$\n\026CreateCustomerResponse\022\n\n\002id\030\001 \001("
+      "\t2v\n\017CustomerService\022c\n\016CreateCustomer\022\032"
+      ".api.CreateCustomerRequest\032\033.api.CreateC"
+      "ustomerResponse\"\030\202\323\344\223\002\022\"\r/v1/customers:\001"
+      "*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1227);
+      descriptor, 1129);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -4307,137 +4272,89 @@ void Auth0::InternalSwap(Auth0* other) {
 
 // ===================================================================
 
-void SubscriptionRequest::InitAsDefaultInstance() {
-  ::api::_SubscriptionRequest_default_instance_._instance.get_mutable()->card_ = const_cast< ::api::Card*>(
-      ::api::Card::internal_default_instance());
+void CreateCustomerRequest::InitAsDefaultInstance() {
+  ::api::_CreateCustomerRequest_default_instance_._instance.get_mutable()->user_info_ = const_cast< ::api::UserInfo*>(
+      ::api::UserInfo::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SubscriptionRequest::kEmailFieldNumber;
-const int SubscriptionRequest::kPlanFieldNumber;
-const int SubscriptionRequest::kCardFieldNumber;
+const int CreateCustomerRequest::kUserInfoFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SubscriptionRequest::SubscriptionRequest()
+CreateCustomerRequest::CreateCustomerRequest()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_SubscriptionRequest.base);
+      &protobuf_api_2eproto::scc_info_CreateCustomerRequest.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.SubscriptionRequest)
+  // @@protoc_insertion_point(constructor:api.CreateCustomerRequest)
 }
-SubscriptionRequest::SubscriptionRequest(const SubscriptionRequest& from)
+CreateCustomerRequest::CreateCustomerRequest(const CreateCustomerRequest& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.email().size() > 0) {
-    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
-  }
-  plan_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.plan().size() > 0) {
-    plan_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plan_);
-  }
-  if (from.has_card()) {
-    card_ = new ::api::Card(*from.card_);
+  if (from.has_user_info()) {
+    user_info_ = new ::api::UserInfo(*from.user_info_);
   } else {
-    card_ = NULL;
+    user_info_ = NULL;
   }
-  // @@protoc_insertion_point(copy_constructor:api.SubscriptionRequest)
+  // @@protoc_insertion_point(copy_constructor:api.CreateCustomerRequest)
 }
 
-void SubscriptionRequest::SharedCtor() {
-  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plan_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  card_ = NULL;
+void CreateCustomerRequest::SharedCtor() {
+  user_info_ = NULL;
 }
 
-SubscriptionRequest::~SubscriptionRequest() {
-  // @@protoc_insertion_point(destructor:api.SubscriptionRequest)
+CreateCustomerRequest::~CreateCustomerRequest() {
+  // @@protoc_insertion_point(destructor:api.CreateCustomerRequest)
   SharedDtor();
 }
 
-void SubscriptionRequest::SharedDtor() {
-  email_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plan_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete card_;
+void CreateCustomerRequest::SharedDtor() {
+  if (this != internal_default_instance()) delete user_info_;
 }
 
-void SubscriptionRequest::SetCachedSize(int size) const {
+void CreateCustomerRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SubscriptionRequest::descriptor() {
+const ::google::protobuf::Descriptor* CreateCustomerRequest::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const SubscriptionRequest& SubscriptionRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_SubscriptionRequest.base);
+const CreateCustomerRequest& CreateCustomerRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_CreateCustomerRequest.base);
   return *internal_default_instance();
 }
 
 
-void SubscriptionRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.SubscriptionRequest)
+void CreateCustomerRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.CreateCustomerRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  plan_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && card_ != NULL) {
-    delete card_;
+  if (GetArenaNoVirtual() == NULL && user_info_ != NULL) {
+    delete user_info_;
   }
-  card_ = NULL;
+  user_info_ = NULL;
   _internal_metadata_.Clear();
 }
 
-bool SubscriptionRequest::MergePartialFromCodedStream(
+bool CreateCustomerRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.SubscriptionRequest)
+  // @@protoc_insertion_point(parse_start:api.CreateCustomerRequest)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string email = 1;
+      // .api.UserInfo user_info = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_email()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->email().data(), static_cast<int>(this->email().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SubscriptionRequest.email"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string plan = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_plan()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->plan().data(), static_cast<int>(this->plan().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SubscriptionRequest.plan"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .api.Card card = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_card()));
+               input, mutable_user_info()));
         } else {
           goto handle_unusual;
         }
@@ -4456,99 +4373,57 @@ bool SubscriptionRequest::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.SubscriptionRequest)
+  // @@protoc_insertion_point(parse_success:api.CreateCustomerRequest)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.SubscriptionRequest)
+  // @@protoc_insertion_point(parse_failure:api.CreateCustomerRequest)
   return false;
 #undef DO_
 }
 
-void SubscriptionRequest::SerializeWithCachedSizes(
+void CreateCustomerRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.SubscriptionRequest)
+  // @@protoc_insertion_point(serialize_start:api.CreateCustomerRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string email = 1;
-  if (this->email().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->email().data(), static_cast<int>(this->email().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SubscriptionRequest.email");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->email(), output);
-  }
-
-  // string plan = 2;
-  if (this->plan().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plan().data(), static_cast<int>(this->plan().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SubscriptionRequest.plan");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->plan(), output);
-  }
-
-  // .api.Card card = 3;
-  if (this->has_card()) {
+  // .api.UserInfo user_info = 1;
+  if (this->has_user_info()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_card(), output);
+      1, this->_internal_user_info(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.SubscriptionRequest)
+  // @@protoc_insertion_point(serialize_end:api.CreateCustomerRequest)
 }
 
-::google::protobuf::uint8* SubscriptionRequest::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* CreateCustomerRequest::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.SubscriptionRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:api.CreateCustomerRequest)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string email = 1;
-  if (this->email().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->email().data(), static_cast<int>(this->email().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SubscriptionRequest.email");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->email(), target);
-  }
-
-  // string plan = 2;
-  if (this->plan().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->plan().data(), static_cast<int>(this->plan().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SubscriptionRequest.plan");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->plan(), target);
-  }
-
-  // .api.Card card = 3;
-  if (this->has_card()) {
+  // .api.UserInfo user_info = 1;
+  if (this->has_user_info()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, this->_internal_card(), deterministic, target);
+        1, this->_internal_user_info(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.SubscriptionRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:api.CreateCustomerRequest)
   return target;
 }
 
-size_t SubscriptionRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.SubscriptionRequest)
+size_t CreateCustomerRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.CreateCustomerRequest)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4556,25 +4431,11 @@ size_t SubscriptionRequest::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string email = 1;
-  if (this->email().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->email());
-  }
-
-  // string plan = 2;
-  if (this->plan().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->plan());
-  }
-
-  // .api.Card card = 3;
-  if (this->has_card()) {
+  // .api.UserInfo user_info = 1;
+  if (this->has_user_info()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *card_);
+        *user_info_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4582,74 +4443,62 @@ size_t SubscriptionRequest::ByteSizeLong() const {
   return total_size;
 }
 
-void SubscriptionRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.SubscriptionRequest)
+void CreateCustomerRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.CreateCustomerRequest)
   GOOGLE_DCHECK_NE(&from, this);
-  const SubscriptionRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SubscriptionRequest>(
+  const CreateCustomerRequest* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const CreateCustomerRequest>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.SubscriptionRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.CreateCustomerRequest)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.SubscriptionRequest)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.CreateCustomerRequest)
     MergeFrom(*source);
   }
 }
 
-void SubscriptionRequest::MergeFrom(const SubscriptionRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.SubscriptionRequest)
+void CreateCustomerRequest::MergeFrom(const CreateCustomerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.CreateCustomerRequest)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.email().size() > 0) {
-
-    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
-  }
-  if (from.plan().size() > 0) {
-
-    plan_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plan_);
-  }
-  if (from.has_card()) {
-    mutable_card()->::api::Card::MergeFrom(from.card());
+  if (from.has_user_info()) {
+    mutable_user_info()->::api::UserInfo::MergeFrom(from.user_info());
   }
 }
 
-void SubscriptionRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.SubscriptionRequest)
+void CreateCustomerRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.CreateCustomerRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SubscriptionRequest::CopyFrom(const SubscriptionRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.SubscriptionRequest)
+void CreateCustomerRequest::CopyFrom(const CreateCustomerRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.CreateCustomerRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SubscriptionRequest::IsInitialized() const {
+bool CreateCustomerRequest::IsInitialized() const {
   return true;
 }
 
-void SubscriptionRequest::Swap(SubscriptionRequest* other) {
+void CreateCustomerRequest::Swap(CreateCustomerRequest* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SubscriptionRequest::InternalSwap(SubscriptionRequest* other) {
+void CreateCustomerRequest::InternalSwap(CreateCustomerRequest* other) {
   using std::swap;
-  email_.Swap(&other->email_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  plan_.Swap(&other->plan_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(card_, other->card_);
+  swap(user_info_, other->user_info_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata SubscriptionRequest::GetMetadata() const {
+::google::protobuf::Metadata CreateCustomerRequest::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -4657,20 +4506,20 @@ void SubscriptionRequest::InternalSwap(SubscriptionRequest* other) {
 
 // ===================================================================
 
-void SubscriptionResponse::InitAsDefaultInstance() {
+void CreateCustomerResponse::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SubscriptionResponse::kIdFieldNumber;
+const int CreateCustomerResponse::kIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SubscriptionResponse::SubscriptionResponse()
+CreateCustomerResponse::CreateCustomerResponse()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_SubscriptionResponse.base);
+      &protobuf_api_2eproto::scc_info_CreateCustomerResponse.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.SubscriptionResponse)
+  // @@protoc_insertion_point(constructor:api.CreateCustomerResponse)
 }
-SubscriptionResponse::SubscriptionResponse(const SubscriptionResponse& from)
+CreateCustomerResponse::CreateCustomerResponse(const CreateCustomerResponse& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -4678,38 +4527,38 @@ SubscriptionResponse::SubscriptionResponse(const SubscriptionResponse& from)
   if (from.id().size() > 0) {
     id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
-  // @@protoc_insertion_point(copy_constructor:api.SubscriptionResponse)
+  // @@protoc_insertion_point(copy_constructor:api.CreateCustomerResponse)
 }
 
-void SubscriptionResponse::SharedCtor() {
+void CreateCustomerResponse::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-SubscriptionResponse::~SubscriptionResponse() {
-  // @@protoc_insertion_point(destructor:api.SubscriptionResponse)
+CreateCustomerResponse::~CreateCustomerResponse() {
+  // @@protoc_insertion_point(destructor:api.CreateCustomerResponse)
   SharedDtor();
 }
 
-void SubscriptionResponse::SharedDtor() {
+void CreateCustomerResponse::SharedDtor() {
   id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void SubscriptionResponse::SetCachedSize(int size) const {
+void CreateCustomerResponse::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SubscriptionResponse::descriptor() {
+const ::google::protobuf::Descriptor* CreateCustomerResponse::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const SubscriptionResponse& SubscriptionResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_SubscriptionResponse.base);
+const CreateCustomerResponse& CreateCustomerResponse::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_CreateCustomerResponse.base);
   return *internal_default_instance();
 }
 
 
-void SubscriptionResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.SubscriptionResponse)
+void CreateCustomerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.CreateCustomerResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4718,11 +4567,11 @@ void SubscriptionResponse::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool SubscriptionResponse::MergePartialFromCodedStream(
+bool CreateCustomerResponse::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.SubscriptionResponse)
+  // @@protoc_insertion_point(parse_start:api.CreateCustomerResponse)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -4737,7 +4586,7 @@ bool SubscriptionResponse::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->id().data(), static_cast<int>(this->id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.SubscriptionResponse.id"));
+            "api.CreateCustomerResponse.id"));
         } else {
           goto handle_unusual;
         }
@@ -4756,17 +4605,17 @@ bool SubscriptionResponse::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.SubscriptionResponse)
+  // @@protoc_insertion_point(parse_success:api.CreateCustomerResponse)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.SubscriptionResponse)
+  // @@protoc_insertion_point(parse_failure:api.CreateCustomerResponse)
   return false;
 #undef DO_
 }
 
-void SubscriptionResponse::SerializeWithCachedSizes(
+void CreateCustomerResponse::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.SubscriptionResponse)
+  // @@protoc_insertion_point(serialize_start:api.CreateCustomerResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4775,7 +4624,7 @@ void SubscriptionResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->id().data(), static_cast<int>(this->id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SubscriptionResponse.id");
+      "api.CreateCustomerResponse.id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->id(), output);
   }
@@ -4784,13 +4633,13 @@ void SubscriptionResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.SubscriptionResponse)
+  // @@protoc_insertion_point(serialize_end:api.CreateCustomerResponse)
 }
 
-::google::protobuf::uint8* SubscriptionResponse::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* CreateCustomerResponse::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.SubscriptionResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:api.CreateCustomerResponse)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4799,7 +4648,7 @@ void SubscriptionResponse::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->id().data(), static_cast<int>(this->id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.SubscriptionResponse.id");
+      "api.CreateCustomerResponse.id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->id(), target);
@@ -4809,12 +4658,12 @@ void SubscriptionResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.SubscriptionResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:api.CreateCustomerResponse)
   return target;
 }
 
-size_t SubscriptionResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.SubscriptionResponse)
+size_t CreateCustomerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.CreateCustomerResponse)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4834,23 +4683,23 @@ size_t SubscriptionResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void SubscriptionResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.SubscriptionResponse)
+void CreateCustomerResponse::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.CreateCustomerResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const SubscriptionResponse* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SubscriptionResponse>(
+  const CreateCustomerResponse* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const CreateCustomerResponse>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.SubscriptionResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.CreateCustomerResponse)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.SubscriptionResponse)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.CreateCustomerResponse)
     MergeFrom(*source);
   }
 }
 
-void SubscriptionResponse::MergeFrom(const SubscriptionResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.SubscriptionResponse)
+void CreateCustomerResponse::MergeFrom(const CreateCustomerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.CreateCustomerResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -4862,452 +4711,36 @@ void SubscriptionResponse::MergeFrom(const SubscriptionResponse& from) {
   }
 }
 
-void SubscriptionResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.SubscriptionResponse)
+void CreateCustomerResponse::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.CreateCustomerResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SubscriptionResponse::CopyFrom(const SubscriptionResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.SubscriptionResponse)
+void CreateCustomerResponse::CopyFrom(const CreateCustomerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.CreateCustomerResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SubscriptionResponse::IsInitialized() const {
+bool CreateCustomerResponse::IsInitialized() const {
   return true;
 }
 
-void SubscriptionResponse::Swap(SubscriptionResponse* other) {
+void CreateCustomerResponse::Swap(CreateCustomerResponse* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SubscriptionResponse::InternalSwap(SubscriptionResponse* other) {
+void CreateCustomerResponse::InternalSwap(CreateCustomerResponse* other) {
   using std::swap;
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata SubscriptionResponse::GetMetadata() const {
-  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
-void Card::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Card::kNumberFieldNumber;
-const int Card::kExpMonthFieldNumber;
-const int Card::kExpYearFieldNumber;
-const int Card::kCvcFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Card::Card()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_Card.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:api.Card)
-}
-Card::Card(const Card& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  number_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.number().size() > 0) {
-    number_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.number_);
-  }
-  exp_month_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.exp_month().size() > 0) {
-    exp_month_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exp_month_);
-  }
-  exp_year_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.exp_year().size() > 0) {
-    exp_year_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exp_year_);
-  }
-  cvc_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.cvc().size() > 0) {
-    cvc_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cvc_);
-  }
-  // @@protoc_insertion_point(copy_constructor:api.Card)
-}
-
-void Card::SharedCtor() {
-  number_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  exp_month_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  exp_year_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  cvc_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-Card::~Card() {
-  // @@protoc_insertion_point(destructor:api.Card)
-  SharedDtor();
-}
-
-void Card::SharedDtor() {
-  number_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  exp_month_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  exp_year_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  cvc_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void Card::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Card::descriptor() {
-  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const Card& Card::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Card.base);
-  return *internal_default_instance();
-}
-
-
-void Card::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.Card)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  exp_month_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  exp_year_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  cvc_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
-}
-
-bool Card::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.Card)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string number = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_number()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->number().data(), static_cast<int>(this->number().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Card.number"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string exp_month = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_exp_month()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->exp_month().data(), static_cast<int>(this->exp_month().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Card.exp_month"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string exp_year = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_exp_year()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->exp_year().data(), static_cast<int>(this->exp_year().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Card.exp_year"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string cvc = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_cvc()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->cvc().data(), static_cast<int>(this->cvc().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Card.cvc"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:api.Card)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:api.Card)
-  return false;
-#undef DO_
-}
-
-void Card::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.Card)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string number = 1;
-  if (this->number().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->number().data(), static_cast<int>(this->number().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.number");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->number(), output);
-  }
-
-  // string exp_month = 2;
-  if (this->exp_month().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->exp_month().data(), static_cast<int>(this->exp_month().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.exp_month");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->exp_month(), output);
-  }
-
-  // string exp_year = 3;
-  if (this->exp_year().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->exp_year().data(), static_cast<int>(this->exp_year().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.exp_year");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->exp_year(), output);
-  }
-
-  // string cvc = 4;
-  if (this->cvc().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cvc().data(), static_cast<int>(this->cvc().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.cvc");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->cvc(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:api.Card)
-}
-
-::google::protobuf::uint8* Card::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.Card)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string number = 1;
-  if (this->number().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->number().data(), static_cast<int>(this->number().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.number");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->number(), target);
-  }
-
-  // string exp_month = 2;
-  if (this->exp_month().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->exp_month().data(), static_cast<int>(this->exp_month().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.exp_month");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->exp_month(), target);
-  }
-
-  // string exp_year = 3;
-  if (this->exp_year().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->exp_year().data(), static_cast<int>(this->exp_year().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.exp_year");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->exp_year(), target);
-  }
-
-  // string cvc = 4;
-  if (this->cvc().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->cvc().data(), static_cast<int>(this->cvc().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Card.cvc");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->cvc(), target);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:api.Card)
-  return target;
-}
-
-size_t Card::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.Card)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // string number = 1;
-  if (this->number().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->number());
-  }
-
-  // string exp_month = 2;
-  if (this->exp_month().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->exp_month());
-  }
-
-  // string exp_year = 3;
-  if (this->exp_year().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->exp_year());
-  }
-
-  // string cvc = 4;
-  if (this->cvc().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->cvc());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Card::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.Card)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Card* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Card>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Card)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Card)
-    MergeFrom(*source);
-  }
-}
-
-void Card::MergeFrom(const Card& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.Card)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.number().size() > 0) {
-
-    number_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.number_);
-  }
-  if (from.exp_month().size() > 0) {
-
-    exp_month_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exp_month_);
-  }
-  if (from.exp_year().size() > 0) {
-
-    exp_year_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exp_year_);
-  }
-  if (from.cvc().size() > 0) {
-
-    cvc_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.cvc_);
-  }
-}
-
-void Card::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.Card)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Card::CopyFrom(const Card& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.Card)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Card::IsInitialized() const {
-  return true;
-}
-
-void Card::Swap(Card* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Card::InternalSwap(Card* other) {
-  using std::swap;
-  number_.Swap(&other->number_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  exp_month_.Swap(&other->exp_month_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  exp_year_.Swap(&other->exp_year_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  cvc_.Swap(&other->cvc_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata Card::GetMetadata() const {
+::google::protobuf::Metadata CreateCustomerResponse::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -5344,14 +4777,11 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Paths* Arena::CreateMaybeMe
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Auth0* Arena::CreateMaybeMessage< ::api::Auth0 >(Arena* arena) {
   return Arena::CreateInternal< ::api::Auth0 >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::SubscriptionRequest* Arena::CreateMaybeMessage< ::api::SubscriptionRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::api::SubscriptionRequest >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::CreateCustomerRequest* Arena::CreateMaybeMessage< ::api::CreateCustomerRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::api::CreateCustomerRequest >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::SubscriptionResponse* Arena::CreateMaybeMessage< ::api::SubscriptionResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::api::SubscriptionResponse >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Card* Arena::CreateMaybeMessage< ::api::Card >(Arena* arena) {
-  return Arena::CreateInternal< ::api::Card >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::CreateCustomerResponse* Arena::CreateMaybeMessage< ::api::CreateCustomerResponse >(Arena* arena) {
+  return Arena::CreateInternal< ::api::CreateCustomerResponse >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

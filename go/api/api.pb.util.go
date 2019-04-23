@@ -3,22 +3,22 @@ package api
 import (
 	"context"
 	"encoding/json"
+	"github.com/auth0/go-jwt-middleware"
 	"github.com/autom8ter/oauth2/auth0"
 	"github.com/autom8ter/oauth2/callback"
+	jwt2 "github.com/autom8ter/oauth2/jwt"
+	sessions2 "github.com/autom8ter/oauth2/sessions"
 	"github.com/autom8ter/objectify"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/pkg/errors"
+	"golang.org/x/oauth2"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/oauth"
 	"html/template"
 	"io"
 	"net/http"
 	"os"
 	"strings"
-	"google.golang.org/grpc/credentials/oauth"
-	"github.com/auth0/go-jwt-middleware"
-	jwt2 "github.com/autom8ter/oauth2/jwt"
-	"google.golang.org/grpc"
-	sessions2 "github.com/autom8ter/oauth2/sessions"
-	"github.com/dgrijalva/jwt-go"
-	"golang.org/x/oauth2"
 )
 
 func init() {
@@ -62,45 +62,6 @@ func (p *AppMetadata) JSONString() string {
 }
 
 func (p *AppMetadata) Render(tmpl *template.Template, w io.Writer) error {
-	return Util.RenderHTML(tmpl, p, w)
-}
-
-func (p *SubscriptionRequest) Validate() error {
-	if p.Email == "" {
-		return errors.New("Validate: subscription request requires an email")
-	}
-	return Util.Validate(p)
-}
-
-func (p *Card) JSONString() string {
-	return string(Util.MarshalJSON(p))
-}
-
-func (p *Card) Render(tmpl *template.Template, w io.Writer) error {
-	return Util.RenderHTML(tmpl, p, w)
-}
-
-func (p *Card) Validate() error {
-	if p.Number == "" {
-		return errors.New("Validate: card requires number")
-	}
-	if p.Cvc == "" {
-		return errors.New("Validate: card requires cvc")
-	}
-	if p.ExpYear == "" {
-		return errors.New("Validate: card required expiration year")
-	}
-	if p.GetExpMonth() == "" {
-		return errors.New("Validate: card required expiration month")
-	}
-	return Util.Validate(p)
-}
-
-func (p *SubscriptionRequest) JSONString() string {
-	return string(Util.MarshalJSON(p))
-}
-
-func (p *SubscriptionRequest) Render(tmpl *template.Template, w io.Writer) error {
 	return Util.RenderHTML(tmpl, p, w)
 }
 
@@ -418,7 +379,7 @@ type Dialer struct {
 	conn *grpc.ClientConn
 }
 
-func NewDialer(ctx context.Context, addr string, r *http.Request) (*Dialer,error) {
+func NewDialer(ctx context.Context, addr string, r *http.Request) (*Dialer, error) {
 	tok, err := sessions2.GetOauthToken(AUTH_SESSION_NAME, r)
 	if err != nil {
 		return nil, err
@@ -437,11 +398,11 @@ func (d *Dialer) Conn() *grpc.ClientConn {
 }
 
 type ClientSet struct {
-	Subscriptions SubscriptionsServiceClient
+	Customers CustomerServiceClient
 }
 
 func NewClientSet(d *Dialer) *ClientSet {
 	return &ClientSet{
-		Subscriptions: NewSubscriptionsServiceClient(d.conn),
+		Customers: NewCustomerServiceClient(d.conn),
 	}
 }
