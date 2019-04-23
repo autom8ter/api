@@ -2,9 +2,6 @@
 --
     import "github.com/autom8ter/api/go/api"
 
-Package api is a reverse proxy.
-
-It translates gRPC into RESTful JSON APIs.
 
 ## Usage
 
@@ -12,48 +9,11 @@ It translates gRPC into RESTful JSON APIs.
 var Util = objectify.Default()
 ```
 
-#### func  RegisterProfileServiceHandler
+#### type AccessToken
 
 ```go
-func RegisterProfileServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterProfileServiceHandler registers the http handlers for service
-ProfileService to "mux". The handlers forward requests to the grpc endpoint over
-"conn".
-
-#### func  RegisterProfileServiceHandlerClient
-
-```go
-func RegisterProfileServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client ProfileServiceClient) error
-```
-RegisterProfileServiceHandlerClient registers the http handlers for service
-ProfileService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "ProfileServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"ProfileServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "ProfileServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterProfileServiceHandlerFromEndpoint
-
-```go
-func RegisterProfileServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterProfileServiceHandlerFromEndpoint is same as
-RegisterProfileServiceHandler but automatically dials to "endpoint" and closes
-the connection when "ctx" gets done.
-
-#### func  RegisterProfileServiceServer
-
-```go
-func RegisterProfileServiceServer(s *grpc.Server, srv ProfileServiceServer)
-```
-
-#### type GetProfileByEmail
-
-```go
-type GetProfileByEmail struct {
-	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+type AccessToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -61,74 +21,72 @@ type GetProfileByEmail struct {
 ```
 
 
-#### func (*GetProfileByEmail) Descriptor
+#### func (*AccessToken) Descriptor
 
 ```go
-func (*GetProfileByEmail) Descriptor() ([]byte, []int)
+func (*AccessToken) Descriptor() ([]byte, []int)
 ```
 
-#### func (*GetProfileByEmail) GetEmail
+#### func (*AccessToken) GetToken
 
 ```go
-func (m *GetProfileByEmail) GetEmail() string
+func (m *AccessToken) GetToken() string
 ```
 
-#### func (*GetProfileByEmail) ProtoMessage
+#### func (*AccessToken) ProtoMessage
 
 ```go
-func (*GetProfileByEmail) ProtoMessage()
+func (*AccessToken) ProtoMessage()
 ```
 
-#### func (*GetProfileByEmail) Reset
+#### func (*AccessToken) Reset
 
 ```go
-func (m *GetProfileByEmail) Reset()
+func (m *AccessToken) Reset()
 ```
 
-#### func (*GetProfileByEmail) String
+#### func (*AccessToken) String
 
 ```go
-func (m *GetProfileByEmail) String() string
+func (m *AccessToken) String() string
 ```
 
-#### func (*GetProfileByEmail) XXX_DiscardUnknown
+#### func (*AccessToken) XXX_DiscardUnknown
 
 ```go
-func (m *GetProfileByEmail) XXX_DiscardUnknown()
+func (m *AccessToken) XXX_DiscardUnknown()
 ```
 
-#### func (*GetProfileByEmail) XXX_Marshal
+#### func (*AccessToken) XXX_Marshal
 
 ```go
-func (m *GetProfileByEmail) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+func (m *AccessToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*GetProfileByEmail) XXX_Merge
+#### func (*AccessToken) XXX_Merge
 
 ```go
-func (m *GetProfileByEmail) XXX_Merge(src proto.Message)
+func (m *AccessToken) XXX_Merge(src proto.Message)
 ```
 
-#### func (*GetProfileByEmail) XXX_Size
+#### func (*AccessToken) XXX_Size
 
 ```go
-func (m *GetProfileByEmail) XXX_Size() int
+func (m *AccessToken) XXX_Size() int
 ```
 
-#### func (*GetProfileByEmail) XXX_Unmarshal
+#### func (*AccessToken) XXX_Unmarshal
 
 ```go
-func (m *GetProfileByEmail) XXX_Unmarshal(b []byte) error
+func (m *AccessToken) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Identity
+#### type AppMetadata
 
 ```go
-type Identity struct {
-	Provider             string   `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
-	UserId               string   `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Connection           string   `protobuf:"bytes,3,opt,name=connection,proto3" json:"connection,omitempty"`
-	IsSocial             bool     `protobuf:"varint,4,opt,name=isSocial,proto3" json:"isSocial,omitempty"`
+type AppMetadata struct {
+	Plan                 string   `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
+	PayToken             string   `protobuf:"bytes,2,opt,name=pay_token,json=payToken,proto3" json:"pay_token,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -136,104 +94,516 @@ type Identity struct {
 ```
 
 
-#### func (*Identity) Descriptor
+#### func (*AppMetadata) Descriptor
 
 ```go
-func (*Identity) Descriptor() ([]byte, []int)
+func (*AppMetadata) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Identity) GetConnection
+#### func (*AppMetadata) GetPayToken
 
 ```go
-func (m *Identity) GetConnection() string
+func (m *AppMetadata) GetPayToken() string
 ```
 
-#### func (*Identity) GetIsSocial
+#### func (*AppMetadata) GetPlan
 
 ```go
-func (m *Identity) GetIsSocial() bool
+func (m *AppMetadata) GetPlan() string
 ```
 
-#### func (*Identity) GetProvider
+#### func (*AppMetadata) JSONString
 
 ```go
-func (m *Identity) GetProvider() string
+func (p *AppMetadata) JSONString() string
 ```
 
-#### func (*Identity) GetUserId
+#### func (*AppMetadata) ProtoMessage
 
 ```go
-func (m *Identity) GetUserId() string
+func (*AppMetadata) ProtoMessage()
 ```
 
-#### func (*Identity) ProtoMessage
+#### func (*AppMetadata) Render
 
 ```go
-func (*Identity) ProtoMessage()
+func (p *AppMetadata) Render(tmpl *template.Template, w io.Writer) error
 ```
 
-#### func (*Identity) Reset
+#### func (*AppMetadata) Reset
 
 ```go
-func (m *Identity) Reset()
+func (m *AppMetadata) Reset()
 ```
 
-#### func (*Identity) String
+#### func (*AppMetadata) String
 
 ```go
-func (m *Identity) String() string
+func (m *AppMetadata) String() string
 ```
 
-#### func (*Identity) XXX_DiscardUnknown
+#### func (*AppMetadata) XXX_DiscardUnknown
 
 ```go
-func (m *Identity) XXX_DiscardUnknown()
+func (m *AppMetadata) XXX_DiscardUnknown()
 ```
 
-#### func (*Identity) XXX_Marshal
+#### func (*AppMetadata) XXX_Marshal
 
 ```go
-func (m *Identity) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+func (m *AppMetadata) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*Identity) XXX_Merge
+#### func (*AppMetadata) XXX_Merge
 
 ```go
-func (m *Identity) XXX_Merge(src proto.Message)
+func (m *AppMetadata) XXX_Merge(src proto.Message)
 ```
 
-#### func (*Identity) XXX_Size
+#### func (*AppMetadata) XXX_Size
 
 ```go
-func (m *Identity) XXX_Size() int
+func (m *AppMetadata) XXX_Size() int
 ```
 
-#### func (*Identity) XXX_Unmarshal
+#### func (*AppMetadata) XXX_Unmarshal
 
 ```go
-func (m *Identity) XXX_Unmarshal(b []byte) error
+func (m *AppMetadata) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Profile
+#### type Auth0
 
 ```go
-type Profile struct {
-	Email                string        `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	EmailVerified        bool          `protobuf:"varint,2,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
-	Name                 string        `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
-	GivenName            string        `protobuf:"bytes,4,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
-	FamilyName           string        `protobuf:"bytes,5,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
-	Picture              string        `protobuf:"bytes,6,opt,name=picture,proto3" json:"picture,omitempty"`
-	Locale               string        `protobuf:"bytes,7,opt,name=locale,proto3" json:"locale,omitempty"`
-	UserId               string        `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Nickname             string        `protobuf:"bytes,9,opt,name=nickname,proto3" json:"nickname,omitempty"`
-	Connection           string        `protobuf:"bytes,10,opt,name=connection,proto3" json:"connection,omitempty"`
-	Identities           []*Identity   `protobuf:"bytes,11,rep,name=identities,proto3" json:"identities,omitempty"`
-	LastIp               string        `protobuf:"bytes,12,opt,name=last_ip,json=lastIp,proto3" json:"last_ip,omitempty"`
-	LoginCount           int64         `protobuf:"varint,13,opt,name=login_count,json=loginCount,proto3" json:"login_count,omitempty"`
-	UpdatedAt            string        `protobuf:"bytes,14,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	CreatedAt            string        `protobuf:"bytes,15,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	UserMetadata         *UserMetadata `protobuf:"bytes,20,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
+type Auth0 struct {
+	Domain               string   `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain,omitempty"`
+	ClientId             string   `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientSecret         string   `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
+	Scopes               []string `protobuf:"bytes,4,rep,name=scopes,proto3" json:"scopes,omitempty"`
+	Redirect             string   `protobuf:"bytes,5,opt,name=redirect,proto3" json:"redirect,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Auth0) Descriptor
+
+```go
+func (*Auth0) Descriptor() ([]byte, []int)
+```
+
+#### func (*Auth0) GetClientId
+
+```go
+func (m *Auth0) GetClientId() string
+```
+
+#### func (*Auth0) GetClientSecret
+
+```go
+func (m *Auth0) GetClientSecret() string
+```
+
+#### func (*Auth0) GetDomain
+
+```go
+func (m *Auth0) GetDomain() string
+```
+
+#### func (*Auth0) GetRedirect
+
+```go
+func (m *Auth0) GetRedirect() string
+```
+
+#### func (*Auth0) GetScopes
+
+```go
+func (m *Auth0) GetScopes() []string
+```
+
+#### func (*Auth0) ProtoMessage
+
+```go
+func (*Auth0) ProtoMessage()
+```
+
+#### func (*Auth0) Reset
+
+```go
+func (m *Auth0) Reset()
+```
+
+#### func (*Auth0) String
+
+```go
+func (m *Auth0) String() string
+```
+
+#### func (*Auth0) XXX_DiscardUnknown
+
+```go
+func (m *Auth0) XXX_DiscardUnknown()
+```
+
+#### func (*Auth0) XXX_Marshal
+
+```go
+func (m *Auth0) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Auth0) XXX_Merge
+
+```go
+func (m *Auth0) XXX_Merge(src proto.Message)
+```
+
+#### func (*Auth0) XXX_Size
+
+```go
+func (m *Auth0) XXX_Size() int
+```
+
+#### func (*Auth0) XXX_Unmarshal
+
+```go
+func (m *Auth0) XXX_Unmarshal(b []byte) error
+```
+
+#### type IDToken
+
+```go
+type IDToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*IDToken) Descriptor
+
+```go
+func (*IDToken) Descriptor() ([]byte, []int)
+```
+
+#### func (*IDToken) GetToken
+
+```go
+func (m *IDToken) GetToken() string
+```
+
+#### func (*IDToken) ProtoMessage
+
+```go
+func (*IDToken) ProtoMessage()
+```
+
+#### func (*IDToken) Reset
+
+```go
+func (m *IDToken) Reset()
+```
+
+#### func (*IDToken) String
+
+```go
+func (m *IDToken) String() string
+```
+
+#### func (*IDToken) XXX_DiscardUnknown
+
+```go
+func (m *IDToken) XXX_DiscardUnknown()
+```
+
+#### func (*IDToken) XXX_Marshal
+
+```go
+func (m *IDToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*IDToken) XXX_Merge
+
+```go
+func (m *IDToken) XXX_Merge(src proto.Message)
+```
+
+#### func (*IDToken) XXX_Size
+
+```go
+func (m *IDToken) XXX_Size() int
+```
+
+#### func (*IDToken) XXX_Unmarshal
+
+```go
+func (m *IDToken) XXX_Unmarshal(b []byte) error
+```
+
+#### type Paths
+
+```go
+type Paths struct {
+	Home                 string   `protobuf:"bytes,1,opt,name=home,proto3" json:"home,omitempty"`
+	Dashboard            string   `protobuf:"bytes,2,opt,name=dashboard,proto3" json:"dashboard,omitempty"`
+	Settings             string   `protobuf:"bytes,3,opt,name=settings,proto3" json:"settings,omitempty"`
+	Logout               string   `protobuf:"bytes,4,opt,name=logout,proto3" json:"logout,omitempty"`
+	Callback             string   `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
+	Login                string   `protobuf:"bytes,6,opt,name=login,proto3" json:"login,omitempty"`
+	Subscribe            string   `protobuf:"bytes,7,opt,name=subscribe,proto3" json:"subscribe,omitempty"`
+	Unsubscribe          string   `protobuf:"bytes,8,opt,name=unsubscribe,proto3" json:"unsubscribe,omitempty"`
+	Faq                  string   `protobuf:"bytes,9,opt,name=faq,proto3" json:"faq,omitempty"`
+	Support              string   `protobuf:"bytes,10,opt,name=support,proto3" json:"support,omitempty"`
+	Terms                string   `protobuf:"bytes,11,opt,name=terms,proto3" json:"terms,omitempty"`
+	Privacy              string   `protobuf:"bytes,12,opt,name=privacy,proto3" json:"privacy,omitempty"`
+	Debug                string   `protobuf:"bytes,13,opt,name=debug,proto3" json:"debug,omitempty"`
+	Blog                 string   `protobuf:"bytes,14,opt,name=blog,proto3" json:"blog,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func  DefaultPaths
+
+```go
+func DefaultPaths() *Paths
+```
+
+#### func (*Paths) Descriptor
+
+```go
+func (*Paths) Descriptor() ([]byte, []int)
+```
+
+#### func (*Paths) GetBlog
+
+```go
+func (m *Paths) GetBlog() string
+```
+
+#### func (*Paths) GetCallback
+
+```go
+func (m *Paths) GetCallback() string
+```
+
+#### func (*Paths) GetDashboard
+
+```go
+func (m *Paths) GetDashboard() string
+```
+
+#### func (*Paths) GetDebug
+
+```go
+func (m *Paths) GetDebug() string
+```
+
+#### func (*Paths) GetFaq
+
+```go
+func (m *Paths) GetFaq() string
+```
+
+#### func (*Paths) GetHome
+
+```go
+func (m *Paths) GetHome() string
+```
+
+#### func (*Paths) GetLogin
+
+```go
+func (m *Paths) GetLogin() string
+```
+
+#### func (*Paths) GetLogout
+
+```go
+func (m *Paths) GetLogout() string
+```
+
+#### func (*Paths) GetPrivacy
+
+```go
+func (m *Paths) GetPrivacy() string
+```
+
+#### func (*Paths) GetSettings
+
+```go
+func (m *Paths) GetSettings() string
+```
+
+#### func (*Paths) GetSubscribe
+
+```go
+func (m *Paths) GetSubscribe() string
+```
+
+#### func (*Paths) GetSupport
+
+```go
+func (m *Paths) GetSupport() string
+```
+
+#### func (*Paths) GetTerms
+
+```go
+func (m *Paths) GetTerms() string
+```
+
+#### func (*Paths) GetUnsubscribe
+
+```go
+func (m *Paths) GetUnsubscribe() string
+```
+
+#### func (*Paths) JSONString
+
+```go
+func (p *Paths) JSONString() string
+```
+
+#### func (*Paths) ProtoMessage
+
+```go
+func (*Paths) ProtoMessage()
+```
+
+#### func (*Paths) Render
+
+```go
+func (p *Paths) Render(tmpl *template.Template, w io.Writer) error
+```
+
+#### func (*Paths) Reset
+
+```go
+func (m *Paths) Reset()
+```
+
+#### func (*Paths) String
+
+```go
+func (m *Paths) String() string
+```
+
+#### func (*Paths) XXX_DiscardUnknown
+
+```go
+func (m *Paths) XXX_DiscardUnknown()
+```
+
+#### func (*Paths) XXX_Marshal
+
+```go
+func (m *Paths) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Paths) XXX_Merge
+
+```go
+func (m *Paths) XXX_Merge(src proto.Message)
+```
+
+#### func (*Paths) XXX_Size
+
+```go
+func (m *Paths) XXX_Size() int
+```
+
+#### func (*Paths) XXX_Unmarshal
+
+```go
+func (m *Paths) XXX_Unmarshal(b []byte) error
+```
+
+#### type RefreshToken
+
+```go
+type RefreshToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*RefreshToken) Descriptor
+
+```go
+func (*RefreshToken) Descriptor() ([]byte, []int)
+```
+
+#### func (*RefreshToken) GetToken
+
+```go
+func (m *RefreshToken) GetToken() string
+```
+
+#### func (*RefreshToken) ProtoMessage
+
+```go
+func (*RefreshToken) ProtoMessage()
+```
+
+#### func (*RefreshToken) Reset
+
+```go
+func (m *RefreshToken) Reset()
+```
+
+#### func (*RefreshToken) String
+
+```go
+func (m *RefreshToken) String() string
+```
+
+#### func (*RefreshToken) XXX_DiscardUnknown
+
+```go
+func (m *RefreshToken) XXX_DiscardUnknown()
+```
+
+#### func (*RefreshToken) XXX_Marshal
+
+```go
+func (m *RefreshToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*RefreshToken) XXX_Merge
+
+```go
+func (m *RefreshToken) XXX_Merge(src proto.Message)
+```
+
+#### func (*RefreshToken) XXX_Size
+
+```go
+func (m *RefreshToken) XXX_Size() int
+```
+
+#### func (*RefreshToken) XXX_Unmarshal
+
+```go
+func (m *RefreshToken) XXX_Unmarshal(b []byte) error
+```
+
+#### type Tokens
+
+```go
+type Tokens struct {
+	Id                   *IDToken      `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Access               *AccessToken  `protobuf:"bytes,2,opt,name=access,proto3" json:"access,omitempty"`
+	Refresh              *RefreshToken `protobuf:"bytes,3,opt,name=refresh,proto3" json:"refresh,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -241,193 +611,242 @@ type Profile struct {
 ```
 
 
-#### func (*Profile) Descriptor
+#### func (*Tokens) Descriptor
 
 ```go
-func (*Profile) Descriptor() ([]byte, []int)
+func (*Tokens) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Profile) GetConnection
+#### func (*Tokens) GetAccess
 
 ```go
-func (m *Profile) GetConnection() string
+func (m *Tokens) GetAccess() *AccessToken
 ```
 
-#### func (*Profile) GetCreatedAt
+#### func (*Tokens) GetId
 
 ```go
-func (m *Profile) GetCreatedAt() string
+func (m *Tokens) GetId() *IDToken
 ```
 
-#### func (*Profile) GetEmail
+#### func (*Tokens) GetRefresh
 
 ```go
-func (m *Profile) GetEmail() string
+func (m *Tokens) GetRefresh() *RefreshToken
 ```
 
-#### func (*Profile) GetEmailVerified
+#### func (*Tokens) JSONString
 
 ```go
-func (m *Profile) GetEmailVerified() bool
+func (p *Tokens) JSONString() string
 ```
 
-#### func (*Profile) GetFamilyName
+#### func (*Tokens) ProtoMessage
 
 ```go
-func (m *Profile) GetFamilyName() string
+func (*Tokens) ProtoMessage()
 ```
 
-#### func (*Profile) GetGivenName
+#### func (*Tokens) Render
 
 ```go
-func (m *Profile) GetGivenName() string
+func (p *Tokens) Render(tmpl *template.Template, w io.Writer) error
 ```
 
-#### func (*Profile) GetIdentities
+#### func (*Tokens) Reset
 
 ```go
-func (m *Profile) GetIdentities() []*Identity
+func (m *Tokens) Reset()
 ```
 
-#### func (*Profile) GetLastIp
+#### func (*Tokens) String
 
 ```go
-func (m *Profile) GetLastIp() string
+func (m *Tokens) String() string
 ```
 
-#### func (*Profile) GetLocale
+#### func (*Tokens) XXX_DiscardUnknown
 
 ```go
-func (m *Profile) GetLocale() string
+func (m *Tokens) XXX_DiscardUnknown()
 ```
 
-#### func (*Profile) GetLoginCount
+#### func (*Tokens) XXX_Marshal
 
 ```go
-func (m *Profile) GetLoginCount() int64
+func (m *Tokens) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*Profile) GetName
+#### func (*Tokens) XXX_Merge
 
 ```go
-func (m *Profile) GetName() string
+func (m *Tokens) XXX_Merge(src proto.Message)
 ```
 
-#### func (*Profile) GetNickname
+#### func (*Tokens) XXX_Size
 
 ```go
-func (m *Profile) GetNickname() string
+func (m *Tokens) XXX_Size() int
 ```
 
-#### func (*Profile) GetPicture
+#### func (*Tokens) XXX_Unmarshal
 
 ```go
-func (m *Profile) GetPicture() string
+func (m *Tokens) XXX_Unmarshal(b []byte) error
 ```
 
-#### func (*Profile) GetUpdatedAt
+#### type UserInfo
 
 ```go
-func (m *Profile) GetUpdatedAt() string
-```
-
-#### func (*Profile) GetUserId
-
-```go
-func (m *Profile) GetUserId() string
-```
-
-#### func (*Profile) GetUserMetadata
-
-```go
-func (m *Profile) GetUserMetadata() *UserMetadata
-```
-
-#### func (*Profile) ProtoMessage
-
-```go
-func (*Profile) ProtoMessage()
-```
-
-#### func (*Profile) Reset
-
-```go
-func (m *Profile) Reset()
-```
-
-#### func (*Profile) String
-
-```go
-func (m *Profile) String() string
-```
-
-#### func (*Profile) XXX_DiscardUnknown
-
-```go
-func (m *Profile) XXX_DiscardUnknown()
-```
-
-#### func (*Profile) XXX_Marshal
-
-```go
-func (m *Profile) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Profile) XXX_Merge
-
-```go
-func (m *Profile) XXX_Merge(src proto.Message)
-```
-
-#### func (*Profile) XXX_Size
-
-```go
-func (m *Profile) XXX_Size() int
-```
-
-#### func (*Profile) XXX_Unmarshal
-
-```go
-func (m *Profile) XXX_Unmarshal(b []byte) error
-```
-
-#### type ProfileServiceClient
-
-```go
-type ProfileServiceClient interface {
-	GetProfile(ctx context.Context, in *GetProfileByEmail, opts ...grpc.CallOption) (*Profile, error)
+type UserInfo struct {
+	Name                 string        `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
+	GivenName            string        `protobuf:"bytes,7,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
+	FamilyName           string        `protobuf:"bytes,8,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
+	Gender               string        `protobuf:"bytes,9,opt,name=gender,proto3" json:"gender,omitempty"`
+	Birthdate            string        `protobuf:"bytes,10,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
+	Email                string        `protobuf:"bytes,11,opt,name=email,proto3" json:"email,omitempty"`
+	Picture              string        `protobuf:"bytes,12,opt,name=picture,proto3" json:"picture,omitempty"`
+	UserMetadata         *UserMetadata `protobuf:"bytes,13,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
+	AppMetadata          *AppMetadata  `protobuf:"bytes,14,opt,name=app_metadata,json=appMetadata,proto3" json:"app_metadata,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
 }
 ```
 
-ProfileServiceClient is the client API for ProfileService service.
 
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewProfileServiceClient
+#### func (*UserInfo) Descriptor
 
 ```go
-func NewProfileServiceClient(cc *grpc.ClientConn) ProfileServiceClient
+func (*UserInfo) Descriptor() ([]byte, []int)
 ```
 
-#### type ProfileServiceServer
+#### func (*UserInfo) GetAppMetadata
 
 ```go
-type ProfileServiceServer interface {
-	GetProfile(context.Context, *GetProfileByEmail) (*Profile, error)
-}
+func (m *UserInfo) GetAppMetadata() *AppMetadata
 ```
 
-ProfileServiceServer is the server API for ProfileService service.
+#### func (*UserInfo) GetBirthdate
+
+```go
+func (m *UserInfo) GetBirthdate() string
+```
+
+#### func (*UserInfo) GetEmail
+
+```go
+func (m *UserInfo) GetEmail() string
+```
+
+#### func (*UserInfo) GetFamilyName
+
+```go
+func (m *UserInfo) GetFamilyName() string
+```
+
+#### func (*UserInfo) GetGender
+
+```go
+func (m *UserInfo) GetGender() string
+```
+
+#### func (*UserInfo) GetGivenName
+
+```go
+func (m *UserInfo) GetGivenName() string
+```
+
+#### func (*UserInfo) GetName
+
+```go
+func (m *UserInfo) GetName() string
+```
+
+#### func (*UserInfo) GetPicture
+
+```go
+func (m *UserInfo) GetPicture() string
+```
+
+#### func (*UserInfo) GetUserMetadata
+
+```go
+func (m *UserInfo) GetUserMetadata() *UserMetadata
+```
+
+#### func (*UserInfo) JSONString
+
+```go
+func (p *UserInfo) JSONString() string
+```
+
+#### func (*UserInfo) ProtoMessage
+
+```go
+func (*UserInfo) ProtoMessage()
+```
+
+#### func (*UserInfo) Render
+
+```go
+func (p *UserInfo) Render(tmpl *template.Template, w io.Writer) error
+```
+
+#### func (*UserInfo) Reset
+
+```go
+func (m *UserInfo) Reset()
+```
+
+#### func (*UserInfo) String
+
+```go
+func (m *UserInfo) String() string
+```
+
+#### func (*UserInfo) Validate
+
+```go
+func (p *UserInfo) Validate() error
+```
+
+#### func (*UserInfo) XXX_DiscardUnknown
+
+```go
+func (m *UserInfo) XXX_DiscardUnknown()
+```
+
+#### func (*UserInfo) XXX_Marshal
+
+```go
+func (m *UserInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*UserInfo) XXX_Merge
+
+```go
+func (m *UserInfo) XXX_Merge(src proto.Message)
+```
+
+#### func (*UserInfo) XXX_Size
+
+```go
+func (m *UserInfo) XXX_Size() int
+```
+
+#### func (*UserInfo) XXX_Unmarshal
+
+```go
+func (m *UserInfo) XXX_Unmarshal(b []byte) error
+```
 
 #### type UserMetadata
 
 ```go
 type UserMetadata struct {
 	Phone                string   `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"`
-	Plan                 string   `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
-	PayToken             string   `protobuf:"bytes,3,opt,name=pay_token,json=payToken,proto3" json:"pay_token,omitempty"`
-	LastContact          string   `protobuf:"bytes,4,opt,name=last_contact,json=lastContact,proto3" json:"last_contact,omitempty"`
+	PreferredContact     string   `protobuf:"bytes,2,opt,name=preferred_contact,json=preferredContact,proto3" json:"preferred_contact,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -441,34 +860,34 @@ type UserMetadata struct {
 func (*UserMetadata) Descriptor() ([]byte, []int)
 ```
 
-#### func (*UserMetadata) GetLastContact
-
-```go
-func (m *UserMetadata) GetLastContact() string
-```
-
-#### func (*UserMetadata) GetPayToken
-
-```go
-func (m *UserMetadata) GetPayToken() string
-```
-
 #### func (*UserMetadata) GetPhone
 
 ```go
 func (m *UserMetadata) GetPhone() string
 ```
 
-#### func (*UserMetadata) GetPlan
+#### func (*UserMetadata) GetPreferredContact
 
 ```go
-func (m *UserMetadata) GetPlan() string
+func (m *UserMetadata) GetPreferredContact() string
+```
+
+#### func (*UserMetadata) JSONString
+
+```go
+func (p *UserMetadata) JSONString() string
 ```
 
 #### func (*UserMetadata) ProtoMessage
 
 ```go
 func (*UserMetadata) ProtoMessage()
+```
+
+#### func (*UserMetadata) Render
+
+```go
+func (p *UserMetadata) Render(tmpl *template.Template, w io.Writer) error
 ```
 
 #### func (*UserMetadata) Reset

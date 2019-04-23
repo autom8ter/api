@@ -59,3 +59,11 @@ message Paths {
     string debug=13;
     string blog=14;
 }
+
+message Auth0 {
+    string domain=1;
+    string client_id=2;
+    string client_secret=3;
+   repeated string scopes= 4;
+    string redirect=5;
+}

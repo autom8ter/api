@@ -41,7 +41,9 @@ namespace Api {
             "BWxvZ2luGAYgASgJEhEKCXN1YnNjcmliZRgHIAEoCRITCgt1bnN1YnNjcmli",
             "ZRgIIAEoCRILCgNmYXEYCSABKAkSDwoHc3VwcG9ydBgKIAEoCRINCgV0ZXJt",
             "cxgLIAEoCRIPCgdwcml2YWN5GAwgASgJEg0KBWRlYnVnGA0gASgJEgwKBGJs",
-            "b2cYDiABKAliBnByb3RvMw=="));
+            "b2cYDiABKAkiYwoFQXV0aDASDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9p",
+            "ZBgCIAEoCRIVCg1jbGllbnRfc2VjcmV0GAMgASgJEg4KBnNjb3BlcxgEIAMo",
+            "CRIQCghyZWRpcmVjdBgFIAEoCWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -52,7 +54,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.RefreshToken), global::Api.RefreshToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth0), global::Api.Auth0.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect" }, null, null, null)
           }));
     }
     #endregion
@@ -1813,6 +1816,239 @@ namespace Api {
           }
           case 114: {
             Blog = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Auth0 : pb::IMessage<Auth0> {
+    private static readonly pb::MessageParser<Auth0> _parser = new pb::MessageParser<Auth0>(() => new Auth0());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Auth0> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Auth0() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Auth0(Auth0 other) : this() {
+      domain_ = other.domain_;
+      clientId_ = other.clientId_;
+      clientSecret_ = other.clientSecret_;
+      scopes_ = other.scopes_.Clone();
+      redirect_ = other.redirect_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Auth0 Clone() {
+      return new Auth0(this);
+    }
+
+    /// <summary>Field number for the "domain" field.</summary>
+    public const int DomainFieldNumber = 1;
+    private string domain_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Domain {
+      get { return domain_; }
+      set {
+        domain_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_id" field.</summary>
+    public const int ClientIdFieldNumber = 2;
+    private string clientId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ClientId {
+      get { return clientId_; }
+      set {
+        clientId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_secret" field.</summary>
+    public const int ClientSecretFieldNumber = 3;
+    private string clientSecret_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ClientSecret {
+      get { return clientSecret_; }
+      set {
+        clientSecret_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "scopes" field.</summary>
+    public const int ScopesFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_scopes_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> scopes_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Scopes {
+      get { return scopes_; }
+    }
+
+    /// <summary>Field number for the "redirect" field.</summary>
+    public const int RedirectFieldNumber = 5;
+    private string redirect_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Redirect {
+      get { return redirect_; }
+      set {
+        redirect_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Auth0);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Auth0 other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Domain != other.Domain) return false;
+      if (ClientId != other.ClientId) return false;
+      if (ClientSecret != other.ClientSecret) return false;
+      if(!scopes_.Equals(other.scopes_)) return false;
+      if (Redirect != other.Redirect) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Domain.Length != 0) hash ^= Domain.GetHashCode();
+      if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
+      if (ClientSecret.Length != 0) hash ^= ClientSecret.GetHashCode();
+      hash ^= scopes_.GetHashCode();
+      if (Redirect.Length != 0) hash ^= Redirect.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Domain.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Domain);
+      }
+      if (ClientId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ClientId);
+      }
+      if (ClientSecret.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ClientSecret);
+      }
+      scopes_.WriteTo(output, _repeated_scopes_codec);
+      if (Redirect.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Redirect);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Domain.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Domain);
+      }
+      if (ClientId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientId);
+      }
+      if (ClientSecret.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientSecret);
+      }
+      size += scopes_.CalculateSize(_repeated_scopes_codec);
+      if (Redirect.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Redirect);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Auth0 other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Domain.Length != 0) {
+        Domain = other.Domain;
+      }
+      if (other.ClientId.Length != 0) {
+        ClientId = other.ClientId;
+      }
+      if (other.ClientSecret.Length != 0) {
+        ClientSecret = other.ClientSecret;
+      }
+      scopes_.Add(other.scopes_);
+      if (other.Redirect.Length != 0) {
+        Redirect = other.Redirect;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Domain = input.ReadString();
+            break;
+          }
+          case 18: {
+            ClientId = input.ReadString();
+            break;
+          }
+          case 26: {
+            ClientSecret = input.ReadString();
+            break;
+          }
+          case 34: {
+            scopes_.AddEntriesFrom(input, _repeated_scopes_codec);
+            break;
+          }
+          case 42: {
+            Redirect = input.ReadString();
             break;
           }
         }

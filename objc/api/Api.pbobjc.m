@@ -661,6 +661,93 @@ typedef struct Paths__storage_ {
 
 @end
 
+#pragma mark - Auth0
+
+@implementation Auth0
+
+@dynamic domain;
+@dynamic clientId;
+@dynamic clientSecret;
+@dynamic scopesArray, scopesArray_Count;
+@dynamic redirect;
+
+typedef struct Auth0__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *domain;
+  NSString *clientId;
+  NSString *clientSecret;
+  NSMutableArray *scopesArray;
+  NSString *redirect;
+} Auth0__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "domain",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_Domain,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Auth0__storage_, domain),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "clientId",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ClientId,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Auth0__storage_, clientId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "clientSecret",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ClientSecret,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Auth0__storage_, clientSecret),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "scopesArray",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ScopesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Auth0__storage_, scopesArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "redirect",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_Redirect,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Auth0__storage_, redirect),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Auth0 class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Auth0__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

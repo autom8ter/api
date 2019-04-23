@@ -58,19 +58,64 @@ func (p *Paths) Render(tmpl *template.Template, w io.Writer) error {
 
 func DefaultPaths() *Paths {
 	return &Paths{
-		Home:                 "/",
-		Dashboard:            "/dashboard",
-		Settings:             "/dashboard/settings",
-		Logout:               "/logout",
-		Callback:             "/callback",
-		Login:                "/login",
-		Subscribe:            "/subscribe",
-		Unsubscribe:          "/unsubscribe",
-		Faq:                  "/faq",
-		Support:              "/support",
-		Terms:                "/terms",
-		Privacy:              "/privacy",
-		Debug:                "/debug",
-		Blog:                 "/blog",
+		Home:        "/",
+		Dashboard:   "/dashboard",
+		Settings:    "/dashboard/settings",
+		Logout:      "/logout",
+		Callback:    "/callback",
+		Login:       "/login",
+		Subscribe:   "/subscribe",
+		Unsubscribe: "/unsubscribe",
+		Faq:         "/faq",
+		Support:     "/support",
+		Terms:       "/terms",
+		Privacy:     "/privacy",
+		Debug:       "/debug",
+		Blog:        "/blog",
 	}
+}
+
+func NewAuth0() *Paths {
+	return &Paths{
+		Home:        "/",
+		Dashboard:   "/dashboard",
+		Settings:    "/dashboard/settings",
+		Logout:      "/logout",
+		Callback:    "/callback",
+		Login:       "/login",
+		Subscribe:   "/subscribe",
+		Unsubscribe: "/unsubscribe",
+		Faq:         "/faq",
+		Support:     "/support",
+		Terms:       "/terms",
+		Privacy:     "/privacy",
+		Debug:       "/debug",
+		Blog:        "/blog",
+	}
+}
+
+func NewAuth0(debug bool, domain string, clientID string, clientSecret string, redirectURL string, scopes ...string) (*Auth0, error) {
+	a := &Auth0{
+		Domain:       domain,
+		ClientId:     clientID,
+		ClientSecret: clientSecret,
+		Redirect:     redirectURL,
+		Scopes:       scopes,
+	}
+	if a.Domain == "" {
+		return nil, errors.New("empty domain")
+	}
+	if a.ClientId == "" {
+		return nil, errors.New("empty client id")
+	}
+	if a.ClientSecret == "" {
+		return nil, errors.New("empty client secret")
+	}
+	if a.Redirect == "" {
+		return nil, errors.New("empty redirect")
+	}
+	if a.Scopes == nil {
+		a.Scopes = []string{"userid", "profile", "email"}
+	}
+	return a, nil
 }
