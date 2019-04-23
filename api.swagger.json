@@ -137,6 +137,9 @@
         "aud": {
           "type": "string"
         },
+        "iat": {
+          "type": "string"
+        },
         "user_metadata": {
           "$ref": "#/definitions/apiUserMetadata"
         }
