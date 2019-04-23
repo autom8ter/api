@@ -492,20 +492,6 @@ class Profile : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_aud();
   void set_allocated_aud(::std::string* aud);
 
-  // string iat = 19;
-  void clear_iat();
-  static const int kIatFieldNumber = 19;
-  const ::std::string& iat() const;
-  void set_iat(const ::std::string& value);
-  #if LANG_CXX11
-  void set_iat(::std::string&& value);
-  #endif
-  void set_iat(const char* value);
-  void set_iat(const char* value, size_t size);
-  ::std::string* mutable_iat();
-  ::std::string* release_iat();
-  void set_allocated_iat(::std::string* iat);
-
   // .api.UserMetadata user_metadata = 20;
   bool has_user_metadata() const;
   void clear_user_metadata();
@@ -550,7 +536,6 @@ class Profile : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr sub_;
   ::google::protobuf::internal::ArenaStringPtr iss_;
   ::google::protobuf::internal::ArenaStringPtr aud_;
-  ::google::protobuf::internal::ArenaStringPtr iat_;
   ::api::UserMetadata* user_metadata_;
   ::google::protobuf::int64 login_count_;
   bool email_verified_;
@@ -1780,59 +1765,6 @@ inline void Profile::set_allocated_aud(::std::string* aud) {
   }
   aud_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), aud);
   // @@protoc_insertion_point(field_set_allocated:api.Profile.aud)
-}
-
-// string iat = 19;
-inline void Profile::clear_iat() {
-  iat_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Profile::iat() const {
-  // @@protoc_insertion_point(field_get:api.Profile.iat)
-  return iat_.GetNoArena();
-}
-inline void Profile::set_iat(const ::std::string& value) {
-  
-  iat_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Profile.iat)
-}
-#if LANG_CXX11
-inline void Profile::set_iat(::std::string&& value) {
-  
-  iat_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Profile.iat)
-}
-#endif
-inline void Profile::set_iat(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  iat_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Profile.iat)
-}
-inline void Profile::set_iat(const char* value, size_t size) {
-  
-  iat_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Profile.iat)
-}
-inline ::std::string* Profile::mutable_iat() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Profile.iat)
-  return iat_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Profile::release_iat() {
-  // @@protoc_insertion_point(field_release:api.Profile.iat)
-  
-  return iat_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Profile::set_allocated_iat(::std::string* iat) {
-  if (iat != NULL) {
-    
-  } else {
-    
-  }
-  iat_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), iat);
-  // @@protoc_insertion_point(field_set_allocated:api.Profile.iat)
 }
 
 // .api.UserMetadata user_metadata = 20;

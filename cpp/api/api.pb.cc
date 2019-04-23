@@ -143,7 +143,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Profile, sub_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Profile, iss_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Profile, aud_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Profile, iat_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Profile, user_metadata_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::UserMetadata, _internal_metadata_),
@@ -167,8 +166,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::GetProfileByEmail)},
   { 6, -1, sizeof(::api::Profile)},
-  { 31, -1, sizeof(::api::UserMetadata)},
-  { 40, -1, sizeof(::api::Identity)},
+  { 30, -1, sizeof(::api::UserMetadata)},
+  { 39, -1, sizeof(::api::Identity)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -201,7 +200,7 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations"
       ".proto\"\"\n\021GetProfileByEmail\022\r\n\005email\030\001 \001"
-      "(\t\"\216\003\n\007Profile\022\r\n\005email\030\001 \001(\t\022\026\n\016email_v"
+      "(\t\"\201\003\n\007Profile\022\r\n\005email\030\001 \001(\t\022\026\n\016email_v"
       "erified\030\002 \001(\010\022\014\n\004name\030\003 \001(\t\022\022\n\ngiven_nam"
       "e\030\004 \001(\t\022\023\n\013family_name\030\005 \001(\t\022\017\n\007picture\030"
       "\006 \001(\t\022\016\n\006locale\030\007 \001(\t\022\017\n\007user_id\030\010 \001(\t\022\020"
@@ -209,19 +208,18 @@ void AddDescriptorsImpl() {
       "identities\030\013 \003(\0132\r.api.Identity\022\017\n\007last_"
       "ip\030\014 \001(\t\022\023\n\013login_count\030\r \001(\003\022\022\n\nupdated"
       "_at\030\016 \001(\t\022\022\n\ncreated_at\030\017 \001(\t\022\013\n\003sub\030\020 \001"
-      "(\t\022\013\n\003iss\030\021 \001(\t\022\013\n\003aud\030\022 \001(\t\022\013\n\003iat\030\023 \001("
-      "\t\022(\n\ruser_metadata\030\024 \001(\0132\021.api.UserMetad"
-      "ata\"T\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t\022\014\n\004pl"
-      "an\030\002 \001(\t\022\021\n\tpay_token\030\003 \001(\t\022\024\n\014last_cont"
-      "act\030\004 \001(\t\"S\n\010Identity\022\020\n\010provider\030\001 \001(\t\022"
-      "\017\n\007user_id\030\002 \001(\t\022\022\n\nconnection\030\003 \001(\t\022\020\n\010"
-      "isSocial\030\004 \001(\0102e\n\016ProfileService\022S\n\nGetP"
-      "rofile\022\026.api.GetProfileByEmail\032\014.api.Pro"
-      "file\"\037\202\323\344\223\002\031\"\024/api/profile/{email}:\001*b\006p"
-      "roto3"
+      "(\t\022\013\n\003iss\030\021 \001(\t\022\013\n\003aud\030\022 \001(\t\022(\n\ruser_met"
+      "adata\030\024 \001(\0132\021.api.UserMetadata\"T\n\014UserMe"
+      "tadata\022\r\n\005phone\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\021\n\tp"
+      "ay_token\030\003 \001(\t\022\024\n\014last_contact\030\004 \001(\t\"S\n\010"
+      "Identity\022\020\n\010provider\030\001 \001(\t\022\017\n\007user_id\030\002 "
+      "\001(\t\022\022\n\nconnection\030\003 \001(\t\022\020\n\010isSocial\030\004 \001("
+      "\0102e\n\016ProfileService\022S\n\nGetProfile\022\026.api."
+      "GetProfileByEmail\032\014.api.Profile\"\037\202\323\344\223\002\031\""
+      "\024/api/profile/{email}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 765);
+      descriptor, 752);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -507,7 +505,6 @@ const int Profile::kCreatedAtFieldNumber;
 const int Profile::kSubFieldNumber;
 const int Profile::kIssFieldNumber;
 const int Profile::kAudFieldNumber;
-const int Profile::kIatFieldNumber;
 const int Profile::kUserMetadataFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -583,10 +580,6 @@ Profile::Profile(const Profile& from)
   if (from.aud().size() > 0) {
     aud_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.aud_);
   }
-  iat_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.iat().size() > 0) {
-    iat_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.iat_);
-  }
   if (from.has_user_metadata()) {
     user_metadata_ = new ::api::UserMetadata(*from.user_metadata_);
   } else {
@@ -614,7 +607,6 @@ void Profile::SharedCtor() {
   sub_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   iss_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   aud_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  iat_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&user_metadata_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&email_verified_) -
       reinterpret_cast<char*>(&user_metadata_)) + sizeof(email_verified_));
@@ -641,7 +633,6 @@ void Profile::SharedDtor() {
   sub_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   iss_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   aud_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  iat_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete user_metadata_;
 }
 
@@ -681,7 +672,6 @@ void Profile::Clear() {
   sub_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   iss_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   aud_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  iat_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == NULL && user_metadata_ != NULL) {
     delete user_metadata_;
   }
@@ -982,22 +972,6 @@ bool Profile::MergePartialFromCodedStream(
         break;
       }
 
-      // string iat = 19;
-      case 19: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(154u /* 154 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_iat()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->iat().data(), static_cast<int>(this->iat().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.Profile.iat"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       // .api.UserMetadata user_metadata = 20;
       case 20: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
@@ -1205,16 +1179,6 @@ void Profile::SerializeWithCachedSizes(
       18, this->aud(), output);
   }
 
-  // string iat = 19;
-  if (this->iat().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->iat().data(), static_cast<int>(this->iat().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Profile.iat");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      19, this->iat(), output);
-  }
-
   // .api.UserMetadata user_metadata = 20;
   if (this->has_user_metadata()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -1418,17 +1382,6 @@ void Profile::SerializeWithCachedSizes(
         18, this->aud(), target);
   }
 
-  // string iat = 19;
-  if (this->iat().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->iat().data(), static_cast<int>(this->iat().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.Profile.iat");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        19, this->iat(), target);
-  }
-
   // .api.UserMetadata user_metadata = 20;
   if (this->has_user_metadata()) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -1569,13 +1522,6 @@ size_t Profile::ByteSizeLong() const {
         this->aud());
   }
 
-  // string iat = 19;
-  if (this->iat().size() > 0) {
-    total_size += 2 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->iat());
-  }
-
   // .api.UserMetadata user_metadata = 20;
   if (this->has_user_metadata()) {
     total_size += 2 +
@@ -1683,10 +1629,6 @@ void Profile::MergeFrom(const Profile& from) {
 
     aud_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.aud_);
   }
-  if (from.iat().size() > 0) {
-
-    iat_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.iat_);
-  }
   if (from.has_user_metadata()) {
     mutable_user_metadata()->::api::UserMetadata::MergeFrom(from.user_metadata());
   }
@@ -1752,8 +1694,6 @@ void Profile::InternalSwap(Profile* other) {
   iss_.Swap(&other->iss_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   aud_.Swap(&other->aud_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  iat_.Swap(&other->iat_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(user_metadata_, other->user_metadata_);
   swap(login_count_, other->login_count_);

@@ -231,7 +231,6 @@ proto.api.Profile.toObject = function(includeInstance, msg) {
     sub: jspb.Message.getFieldWithDefault(msg, 16, ""),
     iss: jspb.Message.getFieldWithDefault(msg, 17, ""),
     aud: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    iat: jspb.Message.getFieldWithDefault(msg, 19, ""),
     userMetadata: (f = msg.getUserMetadata()) && proto.api.UserMetadata.toObject(includeInstance, f)
   };
 
@@ -341,10 +340,6 @@ proto.api.Profile.deserializeBinaryFromReader = function(msg, reader) {
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setAud(value);
-      break;
-    case 19:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setIat(value);
       break;
     case 20:
       var value = new proto.api.UserMetadata;
@@ -504,13 +499,6 @@ proto.api.Profile.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       18,
-      f
-    );
-  }
-  f = message.getIat();
-  if (f.length > 0) {
-    writer.writeString(
-      19,
       f
     );
   }
@@ -810,21 +798,6 @@ proto.api.Profile.prototype.getAud = function() {
 /** @param {string} value */
 proto.api.Profile.prototype.setAud = function(value) {
   jspb.Message.setProto3StringField(this, 18, value);
-};
-
-
-/**
- * optional string iat = 19;
- * @return {string}
- */
-proto.api.Profile.prototype.getIat = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Profile.prototype.setIat = function(value) {
-  jspb.Message.setProto3StringField(this, 19, value);
 };
 
 

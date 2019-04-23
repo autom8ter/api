@@ -40,7 +40,6 @@ message Profile {
     string sub=16;
     string iss=17;
     string aud=18;
-    string iat=19;
     UserMetadata user_metadata=20;
 }
 
