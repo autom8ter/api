@@ -26,11 +26,11 @@ namespace Api {
           string.Concat(
             "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
             "byIbCgpHZXRCeUVtYWlsEg0KBWVtYWlsGAEgASgJIsQBCgdJRFRva2VuEgsK",
-            "A2lzcxgBIAEoCRILCgNzdWIYAiABKAgSCwoDYXVkGAMgASgJEgsKA2V4cBgE",
+            "A2lzcxgBIAEoCRILCgNzdWIYAiABKAkSCwoDYXVkGAMgASgJEgsKA2V4cBgE",
             "IAEoAxILCgNpYXQYBSABKAMSDAoEbmFtZRgGIAEoCRISCgpnaXZlbl9uYW1l",
             "GAcgASgJEhMKC2ZhbWlseV9uYW1lGAggASgJEg4KBmdlbmRlchgJIAEoCRIR",
             "CgliaXJ0aGRhdGUYCiABKAkSDQoFZW1haWwYCyABKAkSDwoHcGljdHVyZRgM",
-            "IAEoAyJUCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUYASABKAkSDAoEcGxhbhgC",
+            "IAEoCSJUCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUYASABKAkSDAoEcGxhbhgC",
             "IAEoCRIRCglwYXlfdG9rZW4YAyABKAkSFAoMbGFzdF9jb250YWN0GAQgASgJ",
             "ImoKC0FjY2Vzc1Rva2VuEgsKA2lzcxgBIAEoCRILCgNzdWIYAiABKAkSCwoD",
             "YXVkGAMgAygJEgsKA2F6cBgEIAEoCRILCgNleHAYBSABKAMSCwoDaWF0GAYg",
@@ -239,12 +239,12 @@ namespace Api {
 
     /// <summary>Field number for the "sub" field.</summary>
     public const int SubFieldNumber = 2;
-    private bool sub_;
+    private string sub_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Sub {
+    public string Sub {
       get { return sub_; }
       set {
-        sub_ = value;
+        sub_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -349,12 +349,12 @@ namespace Api {
 
     /// <summary>Field number for the "picture" field.</summary>
     public const int PictureFieldNumber = 12;
-    private long picture_;
+    private string picture_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public long Picture {
+    public string Picture {
       get { return picture_; }
       set {
-        picture_ = value;
+        picture_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -390,7 +390,7 @@ namespace Api {
     public override int GetHashCode() {
       int hash = 1;
       if (Iss.Length != 0) hash ^= Iss.GetHashCode();
-      if (Sub != false) hash ^= Sub.GetHashCode();
+      if (Sub.Length != 0) hash ^= Sub.GetHashCode();
       if (Aud.Length != 0) hash ^= Aud.GetHashCode();
       if (Exp != 0L) hash ^= Exp.GetHashCode();
       if (Iat != 0L) hash ^= Iat.GetHashCode();
@@ -400,7 +400,7 @@ namespace Api {
       if (Gender.Length != 0) hash ^= Gender.GetHashCode();
       if (Birthdate.Length != 0) hash ^= Birthdate.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
-      if (Picture != 0L) hash ^= Picture.GetHashCode();
+      if (Picture.Length != 0) hash ^= Picture.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -418,9 +418,9 @@ namespace Api {
         output.WriteRawTag(10);
         output.WriteString(Iss);
       }
-      if (Sub != false) {
-        output.WriteRawTag(16);
-        output.WriteBool(Sub);
+      if (Sub.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Sub);
       }
       if (Aud.Length != 0) {
         output.WriteRawTag(26);
@@ -458,9 +458,9 @@ namespace Api {
         output.WriteRawTag(90);
         output.WriteString(Email);
       }
-      if (Picture != 0L) {
-        output.WriteRawTag(96);
-        output.WriteInt64(Picture);
+      if (Picture.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(Picture);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -473,8 +473,8 @@ namespace Api {
       if (Iss.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Iss);
       }
-      if (Sub != false) {
-        size += 1 + 1;
+      if (Sub.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sub);
       }
       if (Aud.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Aud);
@@ -503,8 +503,8 @@ namespace Api {
       if (Email.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
       }
-      if (Picture != 0L) {
-        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Picture);
+      if (Picture.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Picture);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -520,7 +520,7 @@ namespace Api {
       if (other.Iss.Length != 0) {
         Iss = other.Iss;
       }
-      if (other.Sub != false) {
+      if (other.Sub.Length != 0) {
         Sub = other.Sub;
       }
       if (other.Aud.Length != 0) {
@@ -550,7 +550,7 @@ namespace Api {
       if (other.Email.Length != 0) {
         Email = other.Email;
       }
-      if (other.Picture != 0L) {
+      if (other.Picture.Length != 0) {
         Picture = other.Picture;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -568,8 +568,8 @@ namespace Api {
             Iss = input.ReadString();
             break;
           }
-          case 16: {
-            Sub = input.ReadBool();
+          case 18: {
+            Sub = input.ReadString();
             break;
           }
           case 26: {
@@ -608,8 +608,8 @@ namespace Api {
             Email = input.ReadString();
             break;
           }
-          case 96: {
-            Picture = input.ReadInt64();
+          case 98: {
+            Picture = input.ReadString();
             break;
           }
         }

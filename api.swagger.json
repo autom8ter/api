@@ -127,8 +127,7 @@
           "type": "string"
         },
         "sub": {
-          "type": "boolean",
-          "format": "boolean"
+          "type": "string"
         },
         "aud": {
           "type": "string"
@@ -160,8 +159,7 @@
           "type": "string"
         },
         "picture": {
-          "type": "string",
-          "format": "int64"
+          "type": "string"
         }
       }
     }

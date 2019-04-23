@@ -284,6 +284,20 @@ class IDToken : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_iss();
   void set_allocated_iss(::std::string* iss);
 
+  // string sub = 2;
+  void clear_sub();
+  static const int kSubFieldNumber = 2;
+  const ::std::string& sub() const;
+  void set_sub(const ::std::string& value);
+  #if LANG_CXX11
+  void set_sub(::std::string&& value);
+  #endif
+  void set_sub(const char* value);
+  void set_sub(const char* value, size_t size);
+  ::std::string* mutable_sub();
+  ::std::string* release_sub();
+  void set_allocated_sub(::std::string* sub);
+
   // string aud = 3;
   void clear_aud();
   static const int kAudFieldNumber = 3;
@@ -382,6 +396,20 @@ class IDToken : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::std::string* release_email();
   void set_allocated_email(::std::string* email);
 
+  // string picture = 12;
+  void clear_picture();
+  static const int kPictureFieldNumber = 12;
+  const ::std::string& picture() const;
+  void set_picture(const ::std::string& value);
+  #if LANG_CXX11
+  void set_picture(::std::string&& value);
+  #endif
+  void set_picture(const char* value);
+  void set_picture(const char* value, size_t size);
+  ::std::string* mutable_picture();
+  ::std::string* release_picture();
+  void set_allocated_picture(::std::string* picture);
+
   // int64 exp = 4;
   void clear_exp();
   static const int kExpFieldNumber = 4;
@@ -394,23 +422,12 @@ class IDToken : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::int64 iat() const;
   void set_iat(::google::protobuf::int64 value);
 
-  // int64 picture = 12;
-  void clear_picture();
-  static const int kPictureFieldNumber = 12;
-  ::google::protobuf::int64 picture() const;
-  void set_picture(::google::protobuf::int64 value);
-
-  // bool sub = 2;
-  void clear_sub();
-  static const int kSubFieldNumber = 2;
-  bool sub() const;
-  void set_sub(bool value);
-
   // @@protoc_insertion_point(class_scope:api.IDToken)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr iss_;
+  ::google::protobuf::internal::ArenaStringPtr sub_;
   ::google::protobuf::internal::ArenaStringPtr aud_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr given_name_;
@@ -418,10 +435,9 @@ class IDToken : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   ::google::protobuf::internal::ArenaStringPtr gender_;
   ::google::protobuf::internal::ArenaStringPtr birthdate_;
   ::google::protobuf::internal::ArenaStringPtr email_;
+  ::google::protobuf::internal::ArenaStringPtr picture_;
   ::google::protobuf::int64 exp_;
   ::google::protobuf::int64 iat_;
-  ::google::protobuf::int64 picture_;
-  bool sub_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -895,18 +911,57 @@ inline void IDToken::set_allocated_iss(::std::string* iss) {
   // @@protoc_insertion_point(field_set_allocated:api.IDToken.iss)
 }
 
-// bool sub = 2;
+// string sub = 2;
 inline void IDToken::clear_sub() {
-  sub_ = false;
+  sub_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline bool IDToken::sub() const {
+inline const ::std::string& IDToken::sub() const {
   // @@protoc_insertion_point(field_get:api.IDToken.sub)
-  return sub_;
+  return sub_.GetNoArena();
 }
-inline void IDToken::set_sub(bool value) {
+inline void IDToken::set_sub(const ::std::string& value) {
   
-  sub_ = value;
+  sub_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.IDToken.sub)
+}
+#if LANG_CXX11
+inline void IDToken::set_sub(::std::string&& value) {
+  
+  sub_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.IDToken.sub)
+}
+#endif
+inline void IDToken::set_sub(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  sub_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.IDToken.sub)
+}
+inline void IDToken::set_sub(const char* value, size_t size) {
+  
+  sub_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.IDToken.sub)
+}
+inline ::std::string* IDToken::mutable_sub() {
+  
+  // @@protoc_insertion_point(field_mutable:api.IDToken.sub)
+  return sub_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* IDToken::release_sub() {
+  // @@protoc_insertion_point(field_release:api.IDToken.sub)
+  
+  return sub_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void IDToken::set_allocated_sub(::std::string* sub) {
+  if (sub != NULL) {
+    
+  } else {
+    
+  }
+  sub_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sub);
+  // @@protoc_insertion_point(field_set_allocated:api.IDToken.sub)
 }
 
 // string aud = 3;
@@ -1308,18 +1363,57 @@ inline void IDToken::set_allocated_email(::std::string* email) {
   // @@protoc_insertion_point(field_set_allocated:api.IDToken.email)
 }
 
-// int64 picture = 12;
+// string picture = 12;
 inline void IDToken::clear_picture() {
-  picture_ = GOOGLE_LONGLONG(0);
+  picture_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int64 IDToken::picture() const {
+inline const ::std::string& IDToken::picture() const {
   // @@protoc_insertion_point(field_get:api.IDToken.picture)
-  return picture_;
+  return picture_.GetNoArena();
 }
-inline void IDToken::set_picture(::google::protobuf::int64 value) {
+inline void IDToken::set_picture(const ::std::string& value) {
   
-  picture_ = value;
+  picture_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:api.IDToken.picture)
+}
+#if LANG_CXX11
+inline void IDToken::set_picture(::std::string&& value) {
+  
+  picture_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.IDToken.picture)
+}
+#endif
+inline void IDToken::set_picture(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  picture_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.IDToken.picture)
+}
+inline void IDToken::set_picture(const char* value, size_t size) {
+  
+  picture_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.IDToken.picture)
+}
+inline ::std::string* IDToken::mutable_picture() {
+  
+  // @@protoc_insertion_point(field_mutable:api.IDToken.picture)
+  return picture_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* IDToken::release_picture() {
+  // @@protoc_insertion_point(field_release:api.IDToken.picture)
+  
+  return picture_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void IDToken::set_allocated_picture(::std::string* picture) {
+  if (picture != NULL) {
+    
+  } else {
+    
+  }
+  picture_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), picture);
+  // @@protoc_insertion_point(field_set_allocated:api.IDToken.picture)
 }
 
 // -------------------------------------------------------------------

@@ -10,7 +10,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.IDToken" do
     optional :iss, :string, 1
-    optional :sub, :bool, 2
+    optional :sub, :string, 2
     optional :aud, :string, 3
     optional :exp, :int64, 4
     optional :iat, :int64, 5
@@ -20,7 +20,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :gender, :string, 9
     optional :birthdate, :string, 10
     optional :email, :string, 11
-    optional :picture, :int64, 12
+    optional :picture, :string, 12
   end
   add_message "api.UserMetadata" do
     optional :phone, :string, 1

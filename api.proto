@@ -33,7 +33,7 @@ message GetByEmail {
 
 message IDToken {
     string iss =1;
-    bool sub=2;
+    string sub=2;
     string aud =3;
     int64 exp =4;
     int64 iat=5;
@@ -43,7 +43,7 @@ message IDToken {
     string gender =9;
     string birthdate=10;
     string email=11;
-    int64 picture=12;
+    string picture=12;
 }
 
 message UserMetadata {

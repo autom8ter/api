@@ -116,6 +116,7 @@ typedef struct GetByEmail__storage_ {
 typedef struct IDToken__storage_ {
   uint32_t _has_storage_[1];
   NSString *iss;
+  NSString *sub;
   NSString *aud;
   NSString *name;
   NSString *givenName;
@@ -123,9 +124,9 @@ typedef struct IDToken__storage_ {
   NSString *gender;
   NSString *birthdate;
   NSString *email;
+  NSString *picture;
   int64_t exp;
   int64_t iat;
-  int64_t picture;
 } IDToken__storage_;
 
 // This method is threadsafe because it is initially called
@@ -148,15 +149,15 @@ typedef struct IDToken__storage_ {
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Sub,
         .hasIndex = 1,
-        .offset = 2,  // Stored in _has_storage_ to save space.
+        .offset = (uint32_t)offsetof(IDToken__storage_, sub),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "aud",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Aud,
-        .hasIndex = 3,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(IDToken__storage_, aud),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -165,7 +166,7 @@ typedef struct IDToken__storage_ {
         .name = "exp",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Exp,
-        .hasIndex = 4,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(IDToken__storage_, exp),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
@@ -174,7 +175,7 @@ typedef struct IDToken__storage_ {
         .name = "iat",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Iat,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(IDToken__storage_, iat),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
@@ -183,7 +184,7 @@ typedef struct IDToken__storage_ {
         .name = "name",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Name,
-        .hasIndex = 6,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(IDToken__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -192,7 +193,7 @@ typedef struct IDToken__storage_ {
         .name = "givenName",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_GivenName,
-        .hasIndex = 7,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(IDToken__storage_, givenName),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -201,7 +202,7 @@ typedef struct IDToken__storage_ {
         .name = "familyName",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_FamilyName,
-        .hasIndex = 8,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(IDToken__storage_, familyName),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -210,7 +211,7 @@ typedef struct IDToken__storage_ {
         .name = "gender",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Gender,
-        .hasIndex = 9,
+        .hasIndex = 8,
         .offset = (uint32_t)offsetof(IDToken__storage_, gender),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -219,7 +220,7 @@ typedef struct IDToken__storage_ {
         .name = "birthdate",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Birthdate,
-        .hasIndex = 10,
+        .hasIndex = 9,
         .offset = (uint32_t)offsetof(IDToken__storage_, birthdate),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -228,7 +229,7 @@ typedef struct IDToken__storage_ {
         .name = "email",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Email,
-        .hasIndex = 11,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(IDToken__storage_, email),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -237,10 +238,10 @@ typedef struct IDToken__storage_ {
         .name = "picture",
         .dataTypeSpecific.className = NULL,
         .number = IDToken_FieldNumber_Picture,
-        .hasIndex = 12,
+        .hasIndex = 11,
         .offset = (uint32_t)offsetof(IDToken__storage_, picture),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt64,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =

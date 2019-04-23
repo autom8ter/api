@@ -206,7 +206,7 @@ proto.api.IDToken.prototype.toObject = function(opt_includeInstance) {
 proto.api.IDToken.toObject = function(includeInstance, msg) {
   var f, obj = {
     iss: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sub: jspb.Message.getFieldWithDefault(msg, 2, false),
+    sub: jspb.Message.getFieldWithDefault(msg, 2, ""),
     aud: jspb.Message.getFieldWithDefault(msg, 3, ""),
     exp: jspb.Message.getFieldWithDefault(msg, 4, 0),
     iat: jspb.Message.getFieldWithDefault(msg, 5, 0),
@@ -216,7 +216,7 @@ proto.api.IDToken.toObject = function(includeInstance, msg) {
     gender: jspb.Message.getFieldWithDefault(msg, 9, ""),
     birthdate: jspb.Message.getFieldWithDefault(msg, 10, ""),
     email: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    picture: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    picture: jspb.Message.getFieldWithDefault(msg, 12, "")
   };
 
   if (includeInstance) {
@@ -258,7 +258,7 @@ proto.api.IDToken.deserializeBinaryFromReader = function(msg, reader) {
       msg.setIss(value);
       break;
     case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
+      var value = /** @type {string} */ (reader.readString());
       msg.setSub(value);
       break;
     case 3:
@@ -298,7 +298,7 @@ proto.api.IDToken.deserializeBinaryFromReader = function(msg, reader) {
       msg.setEmail(value);
       break;
     case 12:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPicture(value);
       break;
     default:
@@ -338,8 +338,8 @@ proto.api.IDToken.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getSub();
-  if (f) {
-    writer.writeBool(
+  if (f.length > 0) {
+    writer.writeString(
       2,
       f
     );
@@ -408,8 +408,8 @@ proto.api.IDToken.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPicture();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f.length > 0) {
+    writer.writeString(
       12,
       f
     );
@@ -433,19 +433,17 @@ proto.api.IDToken.prototype.setIss = function(value) {
 
 
 /**
- * optional bool sub = 2;
- * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
- * You should avoid comparisons like {@code val === true/false} in those cases.
- * @return {boolean}
+ * optional string sub = 2;
+ * @return {string}
  */
 proto.api.IDToken.prototype.getSub = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {boolean} value */
+/** @param {string} value */
 proto.api.IDToken.prototype.setSub = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -585,17 +583,17 @@ proto.api.IDToken.prototype.setEmail = function(value) {
 
 
 /**
- * optional int64 picture = 12;
- * @return {number}
+ * optional string picture = 12;
+ * @return {string}
  */
 proto.api.IDToken.prototype.getPicture = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
-/** @param {number} value */
+/** @param {string} value */
 proto.api.IDToken.prototype.setPicture = function(value) {
-  jspb.Message.setProto3IntField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 12, value);
 };
 
 

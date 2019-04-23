@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x1b\n\nGetByEmail\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"\xc4\x01\n\x07IDToken\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03sub\x18\x02 \x01(\x08\x12\x0b\n\x03\x61ud\x18\x03 \x01(\t\x12\x0b\n\x03\x65xp\x18\x04 \x01(\x03\x12\x0b\n\x03iat\x18\x05 \x01(\x03\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\x03\"T\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x11\n\tpay_token\x18\x03 \x01(\t\x12\x14\n\x0clast_contact\x18\x04 \x01(\t\"j\n\x0b\x41\x63\x63\x65ssToken\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03sub\x18\x02 \x01(\t\x12\x0b\n\x03\x61ud\x18\x03 \x03(\t\x12\x0b\n\x03\x61zp\x18\x04 \x01(\t\x12\x0b\n\x03\x65xp\x18\x05 \x01(\x03\x12\x0b\n\x03iat\x18\x06 \x01(\x03\x12\r\n\x05scope\x18\x07 \x01(\t2T\n\tIDService\x12G\n\nGetIDToken\x12\x0f.api.GetByEmail\x1a\x0c.api.IDToken\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/api/id/{email}:\x01*2`\n\rAccessService\x12O\n\nGetIDToken\x12\x0f.api.GetByEmail\x1a\x10.api.AccessToken\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/access/{email}:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x1b\n\nGetByEmail\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"\xc4\x01\n\x07IDToken\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03sub\x18\x02 \x01(\t\x12\x0b\n\x03\x61ud\x18\x03 \x01(\t\x12\x0b\n\x03\x65xp\x18\x04 \x01(\x03\x12\x0b\n\x03iat\x18\x05 \x01(\x03\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\"T\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x11\n\tpay_token\x18\x03 \x01(\t\x12\x14\n\x0clast_contact\x18\x04 \x01(\t\"j\n\x0b\x41\x63\x63\x65ssToken\x12\x0b\n\x03iss\x18\x01 \x01(\t\x12\x0b\n\x03sub\x18\x02 \x01(\t\x12\x0b\n\x03\x61ud\x18\x03 \x03(\t\x12\x0b\n\x03\x61zp\x18\x04 \x01(\t\x12\x0b\n\x03\x65xp\x18\x05 \x01(\x03\x12\x0b\n\x03iat\x18\x06 \x01(\x03\x12\r\n\x05scope\x18\x07 \x01(\t2T\n\tIDService\x12G\n\nGetIDToken\x12\x0f.api.GetByEmail\x1a\x0c.api.IDToken\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/api/id/{email}:\x01*2`\n\rAccessService\x12O\n\nGetIDToken\x12\x0f.api.GetByEmail\x1a\x10.api.AccessToken\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/api/access/{email}:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -74,8 +74,8 @@ _IDTOKEN = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub', full_name='api.IDToken.sub', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -144,8 +144,8 @@ _IDTOKEN = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='picture', full_name='api.IDToken.picture', index=11,
-      number=12, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),

@@ -190,11 +190,11 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations"
       ".proto\"\033\n\nGetByEmail\022\r\n\005email\030\001 \001(\t\"\304\001\n\007"
-      "IDToken\022\013\n\003iss\030\001 \001(\t\022\013\n\003sub\030\002 \001(\010\022\013\n\003aud"
+      "IDToken\022\013\n\003iss\030\001 \001(\t\022\013\n\003sub\030\002 \001(\t\022\013\n\003aud"
       "\030\003 \001(\t\022\013\n\003exp\030\004 \001(\003\022\013\n\003iat\030\005 \001(\003\022\014\n\004name"
       "\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013family_nam"
       "e\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdate\030\n \001"
-      "(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\003\"T\n\014Us"
+      "(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\"T\n\014Us"
       "erMetadata\022\r\n\005phone\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022"
       "\021\n\tpay_token\030\003 \001(\t\022\024\n\014last_contact\030\004 \001(\t"
       "\"j\n\013AccessToken\022\013\n\003iss\030\001 \001(\t\022\013\n\003sub\030\002 \001("
@@ -502,6 +502,10 @@ IDToken::IDToken(const IDToken& from)
   if (from.iss().size() > 0) {
     iss_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.iss_);
   }
+  sub_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.sub().size() > 0) {
+    sub_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sub_);
+  }
   aud_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.aud().size() > 0) {
     aud_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.aud_);
@@ -530,14 +534,19 @@ IDToken::IDToken(const IDToken& from)
   if (from.email().size() > 0) {
     email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
   }
+  picture_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.picture().size() > 0) {
+    picture_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.picture_);
+  }
   ::memcpy(&exp_, &from.exp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&sub_) -
-    reinterpret_cast<char*>(&exp_)) + sizeof(sub_));
+    static_cast<size_t>(reinterpret_cast<char*>(&iat_) -
+    reinterpret_cast<char*>(&exp_)) + sizeof(iat_));
   // @@protoc_insertion_point(copy_constructor:api.IDToken)
 }
 
 void IDToken::SharedCtor() {
   iss_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sub_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   aud_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   given_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -545,9 +554,10 @@ void IDToken::SharedCtor() {
   gender_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   birthdate_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  picture_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&exp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&sub_) -
-      reinterpret_cast<char*>(&exp_)) + sizeof(sub_));
+      reinterpret_cast<char*>(&iat_) -
+      reinterpret_cast<char*>(&exp_)) + sizeof(iat_));
 }
 
 IDToken::~IDToken() {
@@ -557,6 +567,7 @@ IDToken::~IDToken() {
 
 void IDToken::SharedDtor() {
   iss_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sub_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   aud_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   given_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -564,6 +575,7 @@ void IDToken::SharedDtor() {
   gender_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   birthdate_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  picture_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void IDToken::SetCachedSize(int size) const {
@@ -587,6 +599,7 @@ void IDToken::Clear() {
   (void) cached_has_bits;
 
   iss_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sub_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   aud_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   given_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -594,9 +607,10 @@ void IDToken::Clear() {
   gender_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   birthdate_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  picture_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&exp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&sub_) -
-      reinterpret_cast<char*>(&exp_)) + sizeof(sub_));
+      reinterpret_cast<char*>(&iat_) -
+      reinterpret_cast<char*>(&exp_)) + sizeof(iat_));
   _internal_metadata_.Clear();
 }
 
@@ -626,14 +640,16 @@ bool IDToken::MergePartialFromCodedStream(
         break;
       }
 
-      // bool sub = 2;
+      // string sub = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &sub_)));
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_sub()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->sub().data(), static_cast<int>(this->sub().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.IDToken.sub"));
         } else {
           goto handle_unusual;
         }
@@ -780,14 +796,16 @@ bool IDToken::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 picture = 12;
+      // string picture = 12;
       case 12: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(96u /* 96 & 0xFF */)) {
-
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &picture_)));
+            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_picture()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->picture().data(), static_cast<int>(this->picture().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.IDToken.picture"));
         } else {
           goto handle_unusual;
         }
@@ -830,9 +848,14 @@ void IDToken::SerializeWithCachedSizes(
       1, this->iss(), output);
   }
 
-  // bool sub = 2;
-  if (this->sub() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->sub(), output);
+  // string sub = 2;
+  if (this->sub().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->sub().data(), static_cast<int>(this->sub().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.IDToken.sub");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->sub(), output);
   }
 
   // string aud = 3;
@@ -915,9 +938,14 @@ void IDToken::SerializeWithCachedSizes(
       11, this->email(), output);
   }
 
-  // int64 picture = 12;
-  if (this->picture() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(12, this->picture(), output);
+  // string picture = 12;
+  if (this->picture().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->picture().data(), static_cast<int>(this->picture().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.IDToken.picture");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->picture(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -945,9 +973,15 @@ void IDToken::SerializeWithCachedSizes(
         1, this->iss(), target);
   }
 
-  // bool sub = 2;
-  if (this->sub() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->sub(), target);
+  // string sub = 2;
+  if (this->sub().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->sub().data(), static_cast<int>(this->sub().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.IDToken.sub");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->sub(), target);
   }
 
   // string aud = 3;
@@ -1037,9 +1071,15 @@ void IDToken::SerializeWithCachedSizes(
         11, this->email(), target);
   }
 
-  // int64 picture = 12;
-  if (this->picture() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(12, this->picture(), target);
+  // string picture = 12;
+  if (this->picture().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->picture().data(), static_cast<int>(this->picture().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.IDToken.picture");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->picture(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1064,6 +1104,13 @@ size_t IDToken::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->iss());
+  }
+
+  // string sub = 2;
+  if (this->sub().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->sub());
   }
 
   // string aud = 3;
@@ -1115,6 +1162,13 @@ size_t IDToken::ByteSizeLong() const {
         this->email());
   }
 
+  // string picture = 12;
+  if (this->picture().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->picture());
+  }
+
   // int64 exp = 4;
   if (this->exp() != 0) {
     total_size += 1 +
@@ -1127,18 +1181,6 @@ size_t IDToken::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->iat());
-  }
-
-  // int64 picture = 12;
-  if (this->picture() != 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->picture());
-  }
-
-  // bool sub = 2;
-  if (this->sub() != 0) {
-    total_size += 1 + 1;
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1172,6 +1214,10 @@ void IDToken::MergeFrom(const IDToken& from) {
 
     iss_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.iss_);
   }
+  if (from.sub().size() > 0) {
+
+    sub_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sub_);
+  }
   if (from.aud().size() > 0) {
 
     aud_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.aud_);
@@ -1200,17 +1246,15 @@ void IDToken::MergeFrom(const IDToken& from) {
 
     email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
   }
+  if (from.picture().size() > 0) {
+
+    picture_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.picture_);
+  }
   if (from.exp() != 0) {
     set_exp(from.exp());
   }
   if (from.iat() != 0) {
     set_iat(from.iat());
-  }
-  if (from.picture() != 0) {
-    set_picture(from.picture());
-  }
-  if (from.sub() != 0) {
-    set_sub(from.sub());
   }
 }
 
@@ -1240,6 +1284,8 @@ void IDToken::InternalSwap(IDToken* other) {
   using std::swap;
   iss_.Swap(&other->iss_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  sub_.Swap(&other->sub_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   aud_.Swap(&other->aud_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
@@ -1254,10 +1300,10 @@ void IDToken::InternalSwap(IDToken* other) {
     GetArenaNoVirtual());
   email_.Swap(&other->email_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  picture_.Swap(&other->picture_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(exp_, other->exp_);
   swap(iat_, other->iat_);
-  swap(picture_, other->picture_);
-  swap(sub_, other->sub_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

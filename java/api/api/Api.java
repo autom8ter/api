@@ -579,9 +579,14 @@ public final class Api {
         getIssBytes();
 
     /**
-     * <code>bool sub = 2;</code>
+     * <code>string sub = 2;</code>
      */
-    boolean getSub();
+    java.lang.String getSub();
+    /**
+     * <code>string sub = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSubBytes();
 
     /**
      * <code>string aud = 3;</code>
@@ -664,9 +669,14 @@ public final class Api {
         getEmailBytes();
 
     /**
-     * <code>int64 picture = 12;</code>
+     * <code>string picture = 12;</code>
      */
-    long getPicture();
+    java.lang.String getPicture();
+    /**
+     * <code>string picture = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getPictureBytes();
   }
   /**
    * Protobuf type {@code api.IDToken}
@@ -682,7 +692,7 @@ public final class Api {
     }
     private IDToken() {
       iss_ = "";
-      sub_ = false;
+      sub_ = "";
       aud_ = "";
       exp_ = 0L;
       iat_ = 0L;
@@ -692,7 +702,7 @@ public final class Api {
       gender_ = "";
       birthdate_ = "";
       email_ = "";
-      picture_ = 0L;
+      picture_ = "";
     }
 
     @java.lang.Override
@@ -725,9 +735,10 @@ public final class Api {
               iss_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              sub_ = input.readBool();
+              sub_ = s;
               break;
             }
             case 26: {
@@ -782,9 +793,10 @@ public final class Api {
               email_ = s;
               break;
             }
-            case 96: {
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              picture_ = input.readInt64();
+              picture_ = s;
               break;
             }
             default: {
@@ -854,12 +866,37 @@ public final class Api {
     }
 
     public static final int SUB_FIELD_NUMBER = 2;
-    private boolean sub_;
+    private volatile java.lang.Object sub_;
     /**
-     * <code>bool sub = 2;</code>
+     * <code>string sub = 2;</code>
      */
-    public boolean getSub() {
-      return sub_;
+    public java.lang.String getSub() {
+      java.lang.Object ref = sub_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sub_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sub = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubBytes() {
+      java.lang.Object ref = sub_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sub_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int AUD_FIELD_NUMBER = 3;
@@ -1119,12 +1156,37 @@ public final class Api {
     }
 
     public static final int PICTURE_FIELD_NUMBER = 12;
-    private long picture_;
+    private volatile java.lang.Object picture_;
     /**
-     * <code>int64 picture = 12;</code>
+     * <code>string picture = 12;</code>
      */
-    public long getPicture() {
-      return picture_;
+    public java.lang.String getPicture() {
+      java.lang.Object ref = picture_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        picture_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string picture = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPictureBytes() {
+      java.lang.Object ref = picture_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        picture_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1144,8 +1206,8 @@ public final class Api {
       if (!getIssBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, iss_);
       }
-      if (sub_ != false) {
-        output.writeBool(2, sub_);
+      if (!getSubBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sub_);
       }
       if (!getAudBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, aud_);
@@ -1174,8 +1236,8 @@ public final class Api {
       if (!getEmailBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, email_);
       }
-      if (picture_ != 0L) {
-        output.writeInt64(12, picture_);
+      if (!getPictureBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, picture_);
       }
       unknownFields.writeTo(output);
     }
@@ -1189,9 +1251,8 @@ public final class Api {
       if (!getIssBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, iss_);
       }
-      if (sub_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, sub_);
+      if (!getSubBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sub_);
       }
       if (!getAudBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, aud_);
@@ -1222,9 +1283,8 @@ public final class Api {
       if (!getEmailBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, email_);
       }
-      if (picture_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, picture_);
+      if (!getPictureBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, picture_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1244,8 +1304,8 @@ public final class Api {
       boolean result = true;
       result = result && getIss()
           .equals(other.getIss());
-      result = result && (getSub()
-          == other.getSub());
+      result = result && getSub()
+          .equals(other.getSub());
       result = result && getAud()
           .equals(other.getAud());
       result = result && (getExp()
@@ -1264,8 +1324,8 @@ public final class Api {
           .equals(other.getBirthdate());
       result = result && getEmail()
           .equals(other.getEmail());
-      result = result && (getPicture()
-          == other.getPicture());
+      result = result && getPicture()
+          .equals(other.getPicture());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1280,8 +1340,7 @@ public final class Api {
       hash = (37 * hash) + ISS_FIELD_NUMBER;
       hash = (53 * hash) + getIss().hashCode();
       hash = (37 * hash) + SUB_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getSub());
+      hash = (53 * hash) + getSub().hashCode();
       hash = (37 * hash) + AUD_FIELD_NUMBER;
       hash = (53 * hash) + getAud().hashCode();
       hash = (37 * hash) + EXP_FIELD_NUMBER;
@@ -1303,8 +1362,7 @@ public final class Api {
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + PICTURE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPicture());
+      hash = (53 * hash) + getPicture().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1440,7 +1498,7 @@ public final class Api {
         super.clear();
         iss_ = "";
 
-        sub_ = false;
+        sub_ = "";
 
         aud_ = "";
 
@@ -1460,7 +1518,7 @@ public final class Api {
 
         email_ = "";
 
-        picture_ = 0L;
+        picture_ = "";
 
         return this;
       }
@@ -1552,8 +1610,9 @@ public final class Api {
           iss_ = other.iss_;
           onChanged();
         }
-        if (other.getSub() != false) {
-          setSub(other.getSub());
+        if (!other.getSub().isEmpty()) {
+          sub_ = other.sub_;
+          onChanged();
         }
         if (!other.getAud().isEmpty()) {
           aud_ = other.aud_;
@@ -1589,8 +1648,9 @@ public final class Api {
           email_ = other.email_;
           onChanged();
         }
-        if (other.getPicture() != 0L) {
-          setPicture(other.getPicture());
+        if (!other.getPicture().isEmpty()) {
+          picture_ = other.picture_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1690,28 +1750,71 @@ public final class Api {
         return this;
       }
 
-      private boolean sub_ ;
+      private java.lang.Object sub_ = "";
       /**
-       * <code>bool sub = 2;</code>
+       * <code>string sub = 2;</code>
        */
-      public boolean getSub() {
-        return sub_;
+      public java.lang.String getSub() {
+        java.lang.Object ref = sub_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sub_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>bool sub = 2;</code>
+       * <code>string sub = 2;</code>
        */
-      public Builder setSub(boolean value) {
-        
+      public com.google.protobuf.ByteString
+          getSubBytes() {
+        java.lang.Object ref = sub_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sub_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sub = 2;</code>
+       */
+      public Builder setSub(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         sub_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool sub = 2;</code>
+       * <code>string sub = 2;</code>
        */
       public Builder clearSub() {
         
-        sub_ = false;
+        sub_ = getDefaultInstance().getSub();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sub = 2;</code>
+       */
+      public Builder setSubBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sub_ = value;
         onChanged();
         return this;
       }
@@ -2251,28 +2354,71 @@ public final class Api {
         return this;
       }
 
-      private long picture_ ;
+      private java.lang.Object picture_ = "";
       /**
-       * <code>int64 picture = 12;</code>
+       * <code>string picture = 12;</code>
        */
-      public long getPicture() {
-        return picture_;
+      public java.lang.String getPicture() {
+        java.lang.Object ref = picture_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          picture_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int64 picture = 12;</code>
+       * <code>string picture = 12;</code>
        */
-      public Builder setPicture(long value) {
-        
+      public com.google.protobuf.ByteString
+          getPictureBytes() {
+        java.lang.Object ref = picture_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          picture_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string picture = 12;</code>
+       */
+      public Builder setPicture(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         picture_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 picture = 12;</code>
+       * <code>string picture = 12;</code>
        */
       public Builder clearPicture() {
         
-        picture_ = 0L;
+        picture_ = getDefaultInstance().getPicture();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string picture = 12;</code>
+       */
+      public Builder setPictureBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        picture_ = value;
         onChanged();
         return this;
       }
@@ -4604,11 +4750,11 @@ public final class Api {
     java.lang.String[] descriptorData = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations" +
       ".proto\"\033\n\nGetByEmail\022\r\n\005email\030\001 \001(\t\"\304\001\n\007" +
-      "IDToken\022\013\n\003iss\030\001 \001(\t\022\013\n\003sub\030\002 \001(\010\022\013\n\003aud" +
+      "IDToken\022\013\n\003iss\030\001 \001(\t\022\013\n\003sub\030\002 \001(\t\022\013\n\003aud" +
       "\030\003 \001(\t\022\013\n\003exp\030\004 \001(\003\022\013\n\003iat\030\005 \001(\003\022\014\n\004name" +
       "\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013family_nam" +
       "e\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdate\030\n \001" +
-      "(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\003\"T\n\014Us" +
+      "(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\"T\n\014Us" +
       "erMetadata\022\r\n\005phone\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022" +
       "\021\n\tpay_token\030\003 \001(\t\022\024\n\014last_contact\030\004 \001(\t" +
       "\"j\n\013AccessToken\022\013\n\003iss\030\001 \001(\t\022\013\n\003sub\030\002 \001(" +

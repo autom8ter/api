@@ -77,7 +77,7 @@ typedef GPB_ENUM(IDToken_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *iss;
 
-@property(nonatomic, readwrite) BOOL sub;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sub;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *aud;
 
@@ -97,7 +97,7 @@ typedef GPB_ENUM(IDToken_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
-@property(nonatomic, readwrite) int64_t picture;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *picture;
 
 @end
 
