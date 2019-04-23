@@ -5793,6 +5793,2337 @@ public final class Api {
 
   }
 
+  public interface PathsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Paths)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string home = 1;</code>
+     */
+    java.lang.String getHome();
+    /**
+     * <code>string home = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getHomeBytes();
+
+    /**
+     * <code>string dashboard = 2;</code>
+     */
+    java.lang.String getDashboard();
+    /**
+     * <code>string dashboard = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getDashboardBytes();
+
+    /**
+     * <code>string settings = 3;</code>
+     */
+    java.lang.String getSettings();
+    /**
+     * <code>string settings = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSettingsBytes();
+
+    /**
+     * <code>string logout = 4;</code>
+     */
+    java.lang.String getLogout();
+    /**
+     * <code>string logout = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getLogoutBytes();
+
+    /**
+     * <code>string callback = 5;</code>
+     */
+    java.lang.String getCallback();
+    /**
+     * <code>string callback = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getCallbackBytes();
+
+    /**
+     * <code>string login = 6;</code>
+     */
+    java.lang.String getLogin();
+    /**
+     * <code>string login = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getLoginBytes();
+
+    /**
+     * <code>string subscribe = 7;</code>
+     */
+    java.lang.String getSubscribe();
+    /**
+     * <code>string subscribe = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getSubscribeBytes();
+
+    /**
+     * <code>string unsubscribe = 8;</code>
+     */
+    java.lang.String getUnsubscribe();
+    /**
+     * <code>string unsubscribe = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getUnsubscribeBytes();
+
+    /**
+     * <code>string faq = 9;</code>
+     */
+    java.lang.String getFaq();
+    /**
+     * <code>string faq = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getFaqBytes();
+
+    /**
+     * <code>string support = 10;</code>
+     */
+    java.lang.String getSupport();
+    /**
+     * <code>string support = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getSupportBytes();
+
+    /**
+     * <code>string terms = 11;</code>
+     */
+    java.lang.String getTerms();
+    /**
+     * <code>string terms = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getTermsBytes();
+
+    /**
+     * <code>string privacy = 12;</code>
+     */
+    java.lang.String getPrivacy();
+    /**
+     * <code>string privacy = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getPrivacyBytes();
+
+    /**
+     * <code>string debug = 13;</code>
+     */
+    java.lang.String getDebug();
+    /**
+     * <code>string debug = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getDebugBytes();
+
+    /**
+     * <code>string blog = 14;</code>
+     */
+    java.lang.String getBlog();
+    /**
+     * <code>string blog = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getBlogBytes();
+  }
+  /**
+   * Protobuf type {@code api.Paths}
+   */
+  public  static final class Paths extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.Paths)
+      PathsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Paths.newBuilder() to construct.
+    private Paths(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Paths() {
+      home_ = "";
+      dashboard_ = "";
+      settings_ = "";
+      logout_ = "";
+      callback_ = "";
+      login_ = "";
+      subscribe_ = "";
+      unsubscribe_ = "";
+      faq_ = "";
+      support_ = "";
+      terms_ = "";
+      privacy_ = "";
+      debug_ = "";
+      blog_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Paths(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              home_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              dashboard_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              settings_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              logout_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              callback_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              login_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subscribe_ = s;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              unsubscribe_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              faq_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              support_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              terms_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              privacy_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              debug_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              blog_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_Paths_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_Paths_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.Paths.class, api.Api.Paths.Builder.class);
+    }
+
+    public static final int HOME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object home_;
+    /**
+     * <code>string home = 1;</code>
+     */
+    public java.lang.String getHome() {
+      java.lang.Object ref = home_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        home_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string home = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHomeBytes() {
+      java.lang.Object ref = home_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        home_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DASHBOARD_FIELD_NUMBER = 2;
+    private volatile java.lang.Object dashboard_;
+    /**
+     * <code>string dashboard = 2;</code>
+     */
+    public java.lang.String getDashboard() {
+      java.lang.Object ref = dashboard_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dashboard_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string dashboard = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDashboardBytes() {
+      java.lang.Object ref = dashboard_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dashboard_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SETTINGS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object settings_;
+    /**
+     * <code>string settings = 3;</code>
+     */
+    public java.lang.String getSettings() {
+      java.lang.Object ref = settings_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        settings_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string settings = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSettingsBytes() {
+      java.lang.Object ref = settings_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        settings_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOGOUT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object logout_;
+    /**
+     * <code>string logout = 4;</code>
+     */
+    public java.lang.String getLogout() {
+      java.lang.Object ref = logout_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logout_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string logout = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLogoutBytes() {
+      java.lang.Object ref = logout_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logout_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CALLBACK_FIELD_NUMBER = 5;
+    private volatile java.lang.Object callback_;
+    /**
+     * <code>string callback = 5;</code>
+     */
+    public java.lang.String getCallback() {
+      java.lang.Object ref = callback_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        callback_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string callback = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCallbackBytes() {
+      java.lang.Object ref = callback_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        callback_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LOGIN_FIELD_NUMBER = 6;
+    private volatile java.lang.Object login_;
+    /**
+     * <code>string login = 6;</code>
+     */
+    public java.lang.String getLogin() {
+      java.lang.Object ref = login_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        login_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string login = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLoginBytes() {
+      java.lang.Object ref = login_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        login_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBSCRIBE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object subscribe_;
+    /**
+     * <code>string subscribe = 7;</code>
+     */
+    public java.lang.String getSubscribe() {
+      java.lang.Object ref = subscribe_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subscribe_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string subscribe = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSubscribeBytes() {
+      java.lang.Object ref = subscribe_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subscribe_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int UNSUBSCRIBE_FIELD_NUMBER = 8;
+    private volatile java.lang.Object unsubscribe_;
+    /**
+     * <code>string unsubscribe = 8;</code>
+     */
+    public java.lang.String getUnsubscribe() {
+      java.lang.Object ref = unsubscribe_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unsubscribe_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string unsubscribe = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUnsubscribeBytes() {
+      java.lang.Object ref = unsubscribe_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unsubscribe_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FAQ_FIELD_NUMBER = 9;
+    private volatile java.lang.Object faq_;
+    /**
+     * <code>string faq = 9;</code>
+     */
+    public java.lang.String getFaq() {
+      java.lang.Object ref = faq_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        faq_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string faq = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFaqBytes() {
+      java.lang.Object ref = faq_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        faq_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUPPORT_FIELD_NUMBER = 10;
+    private volatile java.lang.Object support_;
+    /**
+     * <code>string support = 10;</code>
+     */
+    public java.lang.String getSupport() {
+      java.lang.Object ref = support_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        support_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string support = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSupportBytes() {
+      java.lang.Object ref = support_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        support_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TERMS_FIELD_NUMBER = 11;
+    private volatile java.lang.Object terms_;
+    /**
+     * <code>string terms = 11;</code>
+     */
+    public java.lang.String getTerms() {
+      java.lang.Object ref = terms_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        terms_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string terms = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTermsBytes() {
+      java.lang.Object ref = terms_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        terms_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVACY_FIELD_NUMBER = 12;
+    private volatile java.lang.Object privacy_;
+    /**
+     * <code>string privacy = 12;</code>
+     */
+    public java.lang.String getPrivacy() {
+      java.lang.Object ref = privacy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privacy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string privacy = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPrivacyBytes() {
+      java.lang.Object ref = privacy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        privacy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEBUG_FIELD_NUMBER = 13;
+    private volatile java.lang.Object debug_;
+    /**
+     * <code>string debug = 13;</code>
+     */
+    public java.lang.String getDebug() {
+      java.lang.Object ref = debug_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        debug_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string debug = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDebugBytes() {
+      java.lang.Object ref = debug_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        debug_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BLOG_FIELD_NUMBER = 14;
+    private volatile java.lang.Object blog_;
+    /**
+     * <code>string blog = 14;</code>
+     */
+    public java.lang.String getBlog() {
+      java.lang.Object ref = blog_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        blog_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string blog = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBlogBytes() {
+      java.lang.Object ref = blog_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        blog_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getHomeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, home_);
+      }
+      if (!getDashboardBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dashboard_);
+      }
+      if (!getSettingsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, settings_);
+      }
+      if (!getLogoutBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, logout_);
+      }
+      if (!getCallbackBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, callback_);
+      }
+      if (!getLoginBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, login_);
+      }
+      if (!getSubscribeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, subscribe_);
+      }
+      if (!getUnsubscribeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unsubscribe_);
+      }
+      if (!getFaqBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, faq_);
+      }
+      if (!getSupportBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, support_);
+      }
+      if (!getTermsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, terms_);
+      }
+      if (!getPrivacyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, privacy_);
+      }
+      if (!getDebugBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, debug_);
+      }
+      if (!getBlogBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, blog_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getHomeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, home_);
+      }
+      if (!getDashboardBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dashboard_);
+      }
+      if (!getSettingsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, settings_);
+      }
+      if (!getLogoutBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, logout_);
+      }
+      if (!getCallbackBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, callback_);
+      }
+      if (!getLoginBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, login_);
+      }
+      if (!getSubscribeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, subscribe_);
+      }
+      if (!getUnsubscribeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, unsubscribe_);
+      }
+      if (!getFaqBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, faq_);
+      }
+      if (!getSupportBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, support_);
+      }
+      if (!getTermsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, terms_);
+      }
+      if (!getPrivacyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, privacy_);
+      }
+      if (!getDebugBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, debug_);
+      }
+      if (!getBlogBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, blog_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.Paths)) {
+        return super.equals(obj);
+      }
+      api.Api.Paths other = (api.Api.Paths) obj;
+
+      boolean result = true;
+      result = result && getHome()
+          .equals(other.getHome());
+      result = result && getDashboard()
+          .equals(other.getDashboard());
+      result = result && getSettings()
+          .equals(other.getSettings());
+      result = result && getLogout()
+          .equals(other.getLogout());
+      result = result && getCallback()
+          .equals(other.getCallback());
+      result = result && getLogin()
+          .equals(other.getLogin());
+      result = result && getSubscribe()
+          .equals(other.getSubscribe());
+      result = result && getUnsubscribe()
+          .equals(other.getUnsubscribe());
+      result = result && getFaq()
+          .equals(other.getFaq());
+      result = result && getSupport()
+          .equals(other.getSupport());
+      result = result && getTerms()
+          .equals(other.getTerms());
+      result = result && getPrivacy()
+          .equals(other.getPrivacy());
+      result = result && getDebug()
+          .equals(other.getDebug());
+      result = result && getBlog()
+          .equals(other.getBlog());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HOME_FIELD_NUMBER;
+      hash = (53 * hash) + getHome().hashCode();
+      hash = (37 * hash) + DASHBOARD_FIELD_NUMBER;
+      hash = (53 * hash) + getDashboard().hashCode();
+      hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSettings().hashCode();
+      hash = (37 * hash) + LOGOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getLogout().hashCode();
+      hash = (37 * hash) + CALLBACK_FIELD_NUMBER;
+      hash = (53 * hash) + getCallback().hashCode();
+      hash = (37 * hash) + LOGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getLogin().hashCode();
+      hash = (37 * hash) + SUBSCRIBE_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscribe().hashCode();
+      hash = (37 * hash) + UNSUBSCRIBE_FIELD_NUMBER;
+      hash = (53 * hash) + getUnsubscribe().hashCode();
+      hash = (37 * hash) + FAQ_FIELD_NUMBER;
+      hash = (53 * hash) + getFaq().hashCode();
+      hash = (37 * hash) + SUPPORT_FIELD_NUMBER;
+      hash = (53 * hash) + getSupport().hashCode();
+      hash = (37 * hash) + TERMS_FIELD_NUMBER;
+      hash = (53 * hash) + getTerms().hashCode();
+      hash = (37 * hash) + PRIVACY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivacy().hashCode();
+      hash = (37 * hash) + DEBUG_FIELD_NUMBER;
+      hash = (53 * hash) + getDebug().hashCode();
+      hash = (37 * hash) + BLOG_FIELD_NUMBER;
+      hash = (53 * hash) + getBlog().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.Paths parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Paths parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Paths parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Paths parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Paths parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Paths parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Paths parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Paths parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Paths parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.Paths parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Paths parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Paths parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.Paths prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.Paths}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.Paths)
+        api.Api.PathsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_Paths_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_Paths_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.Paths.class, api.Api.Paths.Builder.class);
+      }
+
+      // Construct using api.Api.Paths.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        home_ = "";
+
+        dashboard_ = "";
+
+        settings_ = "";
+
+        logout_ = "";
+
+        callback_ = "";
+
+        login_ = "";
+
+        subscribe_ = "";
+
+        unsubscribe_ = "";
+
+        faq_ = "";
+
+        support_ = "";
+
+        terms_ = "";
+
+        privacy_ = "";
+
+        debug_ = "";
+
+        blog_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_Paths_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.Paths getDefaultInstanceForType() {
+        return api.Api.Paths.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.Paths build() {
+        api.Api.Paths result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.Paths buildPartial() {
+        api.Api.Paths result = new api.Api.Paths(this);
+        result.home_ = home_;
+        result.dashboard_ = dashboard_;
+        result.settings_ = settings_;
+        result.logout_ = logout_;
+        result.callback_ = callback_;
+        result.login_ = login_;
+        result.subscribe_ = subscribe_;
+        result.unsubscribe_ = unsubscribe_;
+        result.faq_ = faq_;
+        result.support_ = support_;
+        result.terms_ = terms_;
+        result.privacy_ = privacy_;
+        result.debug_ = debug_;
+        result.blog_ = blog_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.Paths) {
+          return mergeFrom((api.Api.Paths)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.Paths other) {
+        if (other == api.Api.Paths.getDefaultInstance()) return this;
+        if (!other.getHome().isEmpty()) {
+          home_ = other.home_;
+          onChanged();
+        }
+        if (!other.getDashboard().isEmpty()) {
+          dashboard_ = other.dashboard_;
+          onChanged();
+        }
+        if (!other.getSettings().isEmpty()) {
+          settings_ = other.settings_;
+          onChanged();
+        }
+        if (!other.getLogout().isEmpty()) {
+          logout_ = other.logout_;
+          onChanged();
+        }
+        if (!other.getCallback().isEmpty()) {
+          callback_ = other.callback_;
+          onChanged();
+        }
+        if (!other.getLogin().isEmpty()) {
+          login_ = other.login_;
+          onChanged();
+        }
+        if (!other.getSubscribe().isEmpty()) {
+          subscribe_ = other.subscribe_;
+          onChanged();
+        }
+        if (!other.getUnsubscribe().isEmpty()) {
+          unsubscribe_ = other.unsubscribe_;
+          onChanged();
+        }
+        if (!other.getFaq().isEmpty()) {
+          faq_ = other.faq_;
+          onChanged();
+        }
+        if (!other.getSupport().isEmpty()) {
+          support_ = other.support_;
+          onChanged();
+        }
+        if (!other.getTerms().isEmpty()) {
+          terms_ = other.terms_;
+          onChanged();
+        }
+        if (!other.getPrivacy().isEmpty()) {
+          privacy_ = other.privacy_;
+          onChanged();
+        }
+        if (!other.getDebug().isEmpty()) {
+          debug_ = other.debug_;
+          onChanged();
+        }
+        if (!other.getBlog().isEmpty()) {
+          blog_ = other.blog_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.Paths parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.Paths) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object home_ = "";
+      /**
+       * <code>string home = 1;</code>
+       */
+      public java.lang.String getHome() {
+        java.lang.Object ref = home_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          home_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string home = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHomeBytes() {
+        java.lang.Object ref = home_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          home_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string home = 1;</code>
+       */
+      public Builder setHome(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        home_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string home = 1;</code>
+       */
+      public Builder clearHome() {
+        
+        home_ = getDefaultInstance().getHome();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string home = 1;</code>
+       */
+      public Builder setHomeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        home_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object dashboard_ = "";
+      /**
+       * <code>string dashboard = 2;</code>
+       */
+      public java.lang.String getDashboard() {
+        java.lang.Object ref = dashboard_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          dashboard_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string dashboard = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDashboardBytes() {
+        java.lang.Object ref = dashboard_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dashboard_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string dashboard = 2;</code>
+       */
+      public Builder setDashboard(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        dashboard_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string dashboard = 2;</code>
+       */
+      public Builder clearDashboard() {
+        
+        dashboard_ = getDefaultInstance().getDashboard();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string dashboard = 2;</code>
+       */
+      public Builder setDashboardBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        dashboard_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object settings_ = "";
+      /**
+       * <code>string settings = 3;</code>
+       */
+      public java.lang.String getSettings() {
+        java.lang.Object ref = settings_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          settings_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string settings = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSettingsBytes() {
+        java.lang.Object ref = settings_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          settings_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string settings = 3;</code>
+       */
+      public Builder setSettings(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        settings_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string settings = 3;</code>
+       */
+      public Builder clearSettings() {
+        
+        settings_ = getDefaultInstance().getSettings();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string settings = 3;</code>
+       */
+      public Builder setSettingsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        settings_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object logout_ = "";
+      /**
+       * <code>string logout = 4;</code>
+       */
+      public java.lang.String getLogout() {
+        java.lang.Object ref = logout_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          logout_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string logout = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLogoutBytes() {
+        java.lang.Object ref = logout_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          logout_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string logout = 4;</code>
+       */
+      public Builder setLogout(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        logout_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string logout = 4;</code>
+       */
+      public Builder clearLogout() {
+        
+        logout_ = getDefaultInstance().getLogout();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string logout = 4;</code>
+       */
+      public Builder setLogoutBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        logout_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object callback_ = "";
+      /**
+       * <code>string callback = 5;</code>
+       */
+      public java.lang.String getCallback() {
+        java.lang.Object ref = callback_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          callback_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string callback = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCallbackBytes() {
+        java.lang.Object ref = callback_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          callback_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string callback = 5;</code>
+       */
+      public Builder setCallback(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        callback_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string callback = 5;</code>
+       */
+      public Builder clearCallback() {
+        
+        callback_ = getDefaultInstance().getCallback();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string callback = 5;</code>
+       */
+      public Builder setCallbackBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        callback_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object login_ = "";
+      /**
+       * <code>string login = 6;</code>
+       */
+      public java.lang.String getLogin() {
+        java.lang.Object ref = login_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          login_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string login = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLoginBytes() {
+        java.lang.Object ref = login_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          login_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string login = 6;</code>
+       */
+      public Builder setLogin(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        login_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login = 6;</code>
+       */
+      public Builder clearLogin() {
+        
+        login_ = getDefaultInstance().getLogin();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login = 6;</code>
+       */
+      public Builder setLoginBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        login_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object subscribe_ = "";
+      /**
+       * <code>string subscribe = 7;</code>
+       */
+      public java.lang.String getSubscribe() {
+        java.lang.Object ref = subscribe_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subscribe_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string subscribe = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSubscribeBytes() {
+        java.lang.Object ref = subscribe_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subscribe_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subscribe = 7;</code>
+       */
+      public Builder setSubscribe(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        subscribe_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscribe = 7;</code>
+       */
+      public Builder clearSubscribe() {
+        
+        subscribe_ = getDefaultInstance().getSubscribe();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscribe = 7;</code>
+       */
+      public Builder setSubscribeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        subscribe_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object unsubscribe_ = "";
+      /**
+       * <code>string unsubscribe = 8;</code>
+       */
+      public java.lang.String getUnsubscribe() {
+        java.lang.Object ref = unsubscribe_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unsubscribe_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string unsubscribe = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUnsubscribeBytes() {
+        java.lang.Object ref = unsubscribe_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unsubscribe_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string unsubscribe = 8;</code>
+       */
+      public Builder setUnsubscribe(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        unsubscribe_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string unsubscribe = 8;</code>
+       */
+      public Builder clearUnsubscribe() {
+        
+        unsubscribe_ = getDefaultInstance().getUnsubscribe();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string unsubscribe = 8;</code>
+       */
+      public Builder setUnsubscribeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        unsubscribe_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object faq_ = "";
+      /**
+       * <code>string faq = 9;</code>
+       */
+      public java.lang.String getFaq() {
+        java.lang.Object ref = faq_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          faq_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string faq = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFaqBytes() {
+        java.lang.Object ref = faq_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          faq_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string faq = 9;</code>
+       */
+      public Builder setFaq(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        faq_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string faq = 9;</code>
+       */
+      public Builder clearFaq() {
+        
+        faq_ = getDefaultInstance().getFaq();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string faq = 9;</code>
+       */
+      public Builder setFaqBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        faq_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object support_ = "";
+      /**
+       * <code>string support = 10;</code>
+       */
+      public java.lang.String getSupport() {
+        java.lang.Object ref = support_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          support_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string support = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSupportBytes() {
+        java.lang.Object ref = support_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          support_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string support = 10;</code>
+       */
+      public Builder setSupport(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        support_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string support = 10;</code>
+       */
+      public Builder clearSupport() {
+        
+        support_ = getDefaultInstance().getSupport();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string support = 10;</code>
+       */
+      public Builder setSupportBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        support_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object terms_ = "";
+      /**
+       * <code>string terms = 11;</code>
+       */
+      public java.lang.String getTerms() {
+        java.lang.Object ref = terms_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          terms_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string terms = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTermsBytes() {
+        java.lang.Object ref = terms_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          terms_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string terms = 11;</code>
+       */
+      public Builder setTerms(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        terms_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string terms = 11;</code>
+       */
+      public Builder clearTerms() {
+        
+        terms_ = getDefaultInstance().getTerms();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string terms = 11;</code>
+       */
+      public Builder setTermsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        terms_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object privacy_ = "";
+      /**
+       * <code>string privacy = 12;</code>
+       */
+      public java.lang.String getPrivacy() {
+        java.lang.Object ref = privacy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          privacy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string privacy = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPrivacyBytes() {
+        java.lang.Object ref = privacy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          privacy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string privacy = 12;</code>
+       */
+      public Builder setPrivacy(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        privacy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string privacy = 12;</code>
+       */
+      public Builder clearPrivacy() {
+        
+        privacy_ = getDefaultInstance().getPrivacy();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string privacy = 12;</code>
+       */
+      public Builder setPrivacyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        privacy_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object debug_ = "";
+      /**
+       * <code>string debug = 13;</code>
+       */
+      public java.lang.String getDebug() {
+        java.lang.Object ref = debug_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          debug_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string debug = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDebugBytes() {
+        java.lang.Object ref = debug_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          debug_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string debug = 13;</code>
+       */
+      public Builder setDebug(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        debug_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string debug = 13;</code>
+       */
+      public Builder clearDebug() {
+        
+        debug_ = getDefaultInstance().getDebug();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string debug = 13;</code>
+       */
+      public Builder setDebugBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        debug_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object blog_ = "";
+      /**
+       * <code>string blog = 14;</code>
+       */
+      public java.lang.String getBlog() {
+        java.lang.Object ref = blog_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          blog_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string blog = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBlogBytes() {
+        java.lang.Object ref = blog_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          blog_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string blog = 14;</code>
+       */
+      public Builder setBlog(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        blog_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string blog = 14;</code>
+       */
+      public Builder clearBlog() {
+        
+        blog_ = getDefaultInstance().getBlog();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string blog = 14;</code>
+       */
+      public Builder setBlogBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        blog_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Paths)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Paths)
+    private static final api.Api.Paths DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Paths();
+    }
+
+    public static api.Api.Paths getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Paths>
+        PARSER = new com.google.protobuf.AbstractParser<Paths>() {
+      @java.lang.Override
+      public Paths parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Paths(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Paths> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Paths> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Paths getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_UserInfo_descriptor;
   private static final 
@@ -5828,6 +8159,11 @@ public final class Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Tokens_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_Paths_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_Paths_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5850,7 +8186,13 @@ public final class Api {
       "efreshToken\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002" +
       "id\030\001 \001(\0132\014.api.IDToken\022 \n\006access\030\002 \001(\0132\020" +
       ".api.AccessToken\022\"\n\007refresh\030\003 \001(\0132\021.api." +
-      "RefreshTokenb\006proto3"
+      "RefreshToken\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\t" +
+      "dashboard\030\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006log" +
+      "out\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001" +
+      "(\t\022\021\n\tsubscribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001" +
+      "(\t\022\013\n\003faq\030\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005term" +
+      "s\030\013 \001(\t\022\017\n\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022" +
+      "\014\n\004blog\030\016 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5906,6 +8248,12 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Tokens_descriptor,
         new java.lang.String[] { "Id", "Access", "Refresh", });
+    internal_static_api_Paths_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_api_Paths_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_Paths_descriptor,
+        new java.lang.String[] { "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

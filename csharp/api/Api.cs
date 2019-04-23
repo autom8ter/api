@@ -35,7 +35,13 @@ namespace Api {
             "a2VuGAEgASgJIhgKB0lEVG9rZW4SDQoFdG9rZW4YASABKAkiHQoMUmVmcmVz",
             "aFRva2VuEg0KBXRva2VuGAEgASgJImgKBlRva2VucxIYCgJpZBgBIAEoCzIM",
             "LmFwaS5JRFRva2VuEiAKBmFjY2VzcxgCIAEoCzIQLmFwaS5BY2Nlc3NUb2tl",
-            "bhIiCgdyZWZyZXNoGAMgASgLMhEuYXBpLlJlZnJlc2hUb2tlbmIGcHJvdG8z"));
+            "bhIiCgdyZWZyZXNoGAMgASgLMhEuYXBpLlJlZnJlc2hUb2tlbiLuAQoFUGF0",
+            "aHMSDAoEaG9tZRgBIAEoCRIRCglkYXNoYm9hcmQYAiABKAkSEAoIc2V0dGlu",
+            "Z3MYAyABKAkSDgoGbG9nb3V0GAQgASgJEhAKCGNhbGxiYWNrGAUgASgJEg0K",
+            "BWxvZ2luGAYgASgJEhEKCXN1YnNjcmliZRgHIAEoCRITCgt1bnN1YnNjcmli",
+            "ZRgIIAEoCRILCgNmYXEYCSABKAkSDwoHc3VwcG9ydBgKIAEoCRINCgV0ZXJt",
+            "cxgLIAEoCRIPCgdwcml2YWN5GAwgASgJEg0KBWRlYnVnGA0gASgJEgwKBGJs",
+            "b2cYDiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -45,7 +51,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AccessToken), global::Api.AccessToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.RefreshToken), global::Api.RefreshToken.Parser, new[]{ "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog" }, null, null, null)
           }));
     }
     #endregion
@@ -1313,6 +1320,499 @@ namespace Api {
               refresh_ = new global::Api.RefreshToken();
             }
             input.ReadMessage(refresh_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Paths : pb::IMessage<Paths> {
+    private static readonly pb::MessageParser<Paths> _parser = new pb::MessageParser<Paths>(() => new Paths());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Paths> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Paths() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Paths(Paths other) : this() {
+      home_ = other.home_;
+      dashboard_ = other.dashboard_;
+      settings_ = other.settings_;
+      logout_ = other.logout_;
+      callback_ = other.callback_;
+      login_ = other.login_;
+      subscribe_ = other.subscribe_;
+      unsubscribe_ = other.unsubscribe_;
+      faq_ = other.faq_;
+      support_ = other.support_;
+      terms_ = other.terms_;
+      privacy_ = other.privacy_;
+      debug_ = other.debug_;
+      blog_ = other.blog_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Paths Clone() {
+      return new Paths(this);
+    }
+
+    /// <summary>Field number for the "home" field.</summary>
+    public const int HomeFieldNumber = 1;
+    private string home_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Home {
+      get { return home_; }
+      set {
+        home_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "dashboard" field.</summary>
+    public const int DashboardFieldNumber = 2;
+    private string dashboard_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Dashboard {
+      get { return dashboard_; }
+      set {
+        dashboard_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "settings" field.</summary>
+    public const int SettingsFieldNumber = 3;
+    private string settings_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Settings {
+      get { return settings_; }
+      set {
+        settings_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "logout" field.</summary>
+    public const int LogoutFieldNumber = 4;
+    private string logout_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Logout {
+      get { return logout_; }
+      set {
+        logout_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "callback" field.</summary>
+    public const int CallbackFieldNumber = 5;
+    private string callback_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Callback {
+      get { return callback_; }
+      set {
+        callback_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "login" field.</summary>
+    public const int LoginFieldNumber = 6;
+    private string login_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Login {
+      get { return login_; }
+      set {
+        login_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "subscribe" field.</summary>
+    public const int SubscribeFieldNumber = 7;
+    private string subscribe_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Subscribe {
+      get { return subscribe_; }
+      set {
+        subscribe_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "unsubscribe" field.</summary>
+    public const int UnsubscribeFieldNumber = 8;
+    private string unsubscribe_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Unsubscribe {
+      get { return unsubscribe_; }
+      set {
+        unsubscribe_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "faq" field.</summary>
+    public const int FaqFieldNumber = 9;
+    private string faq_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Faq {
+      get { return faq_; }
+      set {
+        faq_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "support" field.</summary>
+    public const int SupportFieldNumber = 10;
+    private string support_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Support {
+      get { return support_; }
+      set {
+        support_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "terms" field.</summary>
+    public const int TermsFieldNumber = 11;
+    private string terms_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Terms {
+      get { return terms_; }
+      set {
+        terms_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "privacy" field.</summary>
+    public const int PrivacyFieldNumber = 12;
+    private string privacy_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Privacy {
+      get { return privacy_; }
+      set {
+        privacy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "debug" field.</summary>
+    public const int DebugFieldNumber = 13;
+    private string debug_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Debug {
+      get { return debug_; }
+      set {
+        debug_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "blog" field.</summary>
+    public const int BlogFieldNumber = 14;
+    private string blog_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Blog {
+      get { return blog_; }
+      set {
+        blog_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Paths);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Paths other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Home != other.Home) return false;
+      if (Dashboard != other.Dashboard) return false;
+      if (Settings != other.Settings) return false;
+      if (Logout != other.Logout) return false;
+      if (Callback != other.Callback) return false;
+      if (Login != other.Login) return false;
+      if (Subscribe != other.Subscribe) return false;
+      if (Unsubscribe != other.Unsubscribe) return false;
+      if (Faq != other.Faq) return false;
+      if (Support != other.Support) return false;
+      if (Terms != other.Terms) return false;
+      if (Privacy != other.Privacy) return false;
+      if (Debug != other.Debug) return false;
+      if (Blog != other.Blog) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Home.Length != 0) hash ^= Home.GetHashCode();
+      if (Dashboard.Length != 0) hash ^= Dashboard.GetHashCode();
+      if (Settings.Length != 0) hash ^= Settings.GetHashCode();
+      if (Logout.Length != 0) hash ^= Logout.GetHashCode();
+      if (Callback.Length != 0) hash ^= Callback.GetHashCode();
+      if (Login.Length != 0) hash ^= Login.GetHashCode();
+      if (Subscribe.Length != 0) hash ^= Subscribe.GetHashCode();
+      if (Unsubscribe.Length != 0) hash ^= Unsubscribe.GetHashCode();
+      if (Faq.Length != 0) hash ^= Faq.GetHashCode();
+      if (Support.Length != 0) hash ^= Support.GetHashCode();
+      if (Terms.Length != 0) hash ^= Terms.GetHashCode();
+      if (Privacy.Length != 0) hash ^= Privacy.GetHashCode();
+      if (Debug.Length != 0) hash ^= Debug.GetHashCode();
+      if (Blog.Length != 0) hash ^= Blog.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Home.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Home);
+      }
+      if (Dashboard.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Dashboard);
+      }
+      if (Settings.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Settings);
+      }
+      if (Logout.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Logout);
+      }
+      if (Callback.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Callback);
+      }
+      if (Login.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Login);
+      }
+      if (Subscribe.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Subscribe);
+      }
+      if (Unsubscribe.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Unsubscribe);
+      }
+      if (Faq.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Faq);
+      }
+      if (Support.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Support);
+      }
+      if (Terms.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Terms);
+      }
+      if (Privacy.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(Privacy);
+      }
+      if (Debug.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Debug);
+      }
+      if (Blog.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(Blog);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Home.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Home);
+      }
+      if (Dashboard.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Dashboard);
+      }
+      if (Settings.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Settings);
+      }
+      if (Logout.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Logout);
+      }
+      if (Callback.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Callback);
+      }
+      if (Login.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Login);
+      }
+      if (Subscribe.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subscribe);
+      }
+      if (Unsubscribe.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unsubscribe);
+      }
+      if (Faq.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Faq);
+      }
+      if (Support.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Support);
+      }
+      if (Terms.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Terms);
+      }
+      if (Privacy.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Privacy);
+      }
+      if (Debug.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Debug);
+      }
+      if (Blog.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Blog);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Paths other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Home.Length != 0) {
+        Home = other.Home;
+      }
+      if (other.Dashboard.Length != 0) {
+        Dashboard = other.Dashboard;
+      }
+      if (other.Settings.Length != 0) {
+        Settings = other.Settings;
+      }
+      if (other.Logout.Length != 0) {
+        Logout = other.Logout;
+      }
+      if (other.Callback.Length != 0) {
+        Callback = other.Callback;
+      }
+      if (other.Login.Length != 0) {
+        Login = other.Login;
+      }
+      if (other.Subscribe.Length != 0) {
+        Subscribe = other.Subscribe;
+      }
+      if (other.Unsubscribe.Length != 0) {
+        Unsubscribe = other.Unsubscribe;
+      }
+      if (other.Faq.Length != 0) {
+        Faq = other.Faq;
+      }
+      if (other.Support.Length != 0) {
+        Support = other.Support;
+      }
+      if (other.Terms.Length != 0) {
+        Terms = other.Terms;
+      }
+      if (other.Privacy.Length != 0) {
+        Privacy = other.Privacy;
+      }
+      if (other.Debug.Length != 0) {
+        Debug = other.Debug;
+      }
+      if (other.Blog.Length != 0) {
+        Blog = other.Blog;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Home = input.ReadString();
+            break;
+          }
+          case 18: {
+            Dashboard = input.ReadString();
+            break;
+          }
+          case 26: {
+            Settings = input.ReadString();
+            break;
+          }
+          case 34: {
+            Logout = input.ReadString();
+            break;
+          }
+          case 42: {
+            Callback = input.ReadString();
+            break;
+          }
+          case 50: {
+            Login = input.ReadString();
+            break;
+          }
+          case 58: {
+            Subscribe = input.ReadString();
+            break;
+          }
+          case 66: {
+            Unsubscribe = input.ReadString();
+            break;
+          }
+          case 74: {
+            Faq = input.ReadString();
+            break;
+          }
+          case 82: {
+            Support = input.ReadString();
+            break;
+          }
+          case 90: {
+            Terms = input.ReadString();
+            break;
+          }
+          case 98: {
+            Privacy = input.ReadString();
+            break;
+          }
+          case 106: {
+            Debug = input.ReadString();
+            break;
+          }
+          case 114: {
+            Blog = input.ReadString();
             break;
           }
         }

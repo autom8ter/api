@@ -180,6 +180,57 @@ typedef GPB_ENUM(Tokens_FieldNumber) {
 
 @end
 
+#pragma mark - Paths
+
+typedef GPB_ENUM(Paths_FieldNumber) {
+  Paths_FieldNumber_Home = 1,
+  Paths_FieldNumber_Dashboard = 2,
+  Paths_FieldNumber_Settings = 3,
+  Paths_FieldNumber_Logout = 4,
+  Paths_FieldNumber_Callback = 5,
+  Paths_FieldNumber_Login = 6,
+  Paths_FieldNumber_Subscribe = 7,
+  Paths_FieldNumber_Unsubscribe = 8,
+  Paths_FieldNumber_Faq = 9,
+  Paths_FieldNumber_Support = 10,
+  Paths_FieldNumber_Terms = 11,
+  Paths_FieldNumber_Privacy = 12,
+  Paths_FieldNumber_Debug = 13,
+  Paths_FieldNumber_Blog = 14,
+};
+
+@interface Paths : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *home;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *dashboard;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *settings;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *logout;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *login;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subscribe;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *unsubscribe;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *faq;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *support;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *terms;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *privacy;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *debug;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *blog;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

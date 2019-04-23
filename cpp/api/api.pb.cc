@@ -62,6 +62,11 @@ class TokensDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Tokens>
       _instance;
 } _Tokens_default_instance_;
+class PathsDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Paths>
+      _instance;
+} _Paths_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsUserInfo() {
@@ -167,6 +172,20 @@ static void InitDefaultsTokens() {
       &protobuf_api_2eproto::scc_info_AccessToken.base,
       &protobuf_api_2eproto::scc_info_RefreshToken.base,}};
 
+static void InitDefaultsPaths() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_Paths_default_instance_;
+    new (ptr) ::api::Paths();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::Paths::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Paths =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPaths}, {}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_UserInfo.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserMetadata.base);
@@ -175,9 +194,10 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_IDToken.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RefreshToken.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Tokens.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Paths.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[7];
+::google::protobuf::Metadata file_level_metadata[8];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -234,6 +254,25 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Tokens, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Tokens, access_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Tokens, refresh_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, home_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, dashboard_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, settings_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, logout_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, callback_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, login_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, subscribe_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, unsubscribe_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, faq_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, support_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, terms_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, privacy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, debug_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Paths, blog_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::UserInfo)},
@@ -243,6 +282,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 34, -1, sizeof(::api::IDToken)},
   { 40, -1, sizeof(::api::RefreshToken)},
   { 46, -1, sizeof(::api::Tokens)},
+  { 54, -1, sizeof(::api::Paths)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -253,6 +293,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_IDToken_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_RefreshToken_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Tokens_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Paths_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -270,7 +311,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 7);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 8);
 }
 
 void AddDescriptorsImpl() {
@@ -289,10 +330,16 @@ void AddDescriptorsImpl() {
       "efreshToken\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002"
       "id\030\001 \001(\0132\014.api.IDToken\022 \n\006access\030\002 \001(\0132\020"
       ".api.AccessToken\022\"\n\007refresh\030\003 \001(\0132\021.api."
-      "RefreshTokenb\006proto3"
+      "RefreshToken\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\t"
+      "dashboard\030\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006log"
+      "out\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001"
+      "(\t\022\021\n\tsubscribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001"
+      "(\t\022\013\n\003faq\030\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005term"
+      "s\030\013 \001(\t\022\017\n\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022"
+      "\014\n\004blog\030\016 \001(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 540);
+      descriptor, 781);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
 }
@@ -2661,6 +2708,1002 @@ void Tokens::InternalSwap(Tokens* other) {
 }
 
 
+// ===================================================================
+
+void Paths::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Paths::kHomeFieldNumber;
+const int Paths::kDashboardFieldNumber;
+const int Paths::kSettingsFieldNumber;
+const int Paths::kLogoutFieldNumber;
+const int Paths::kCallbackFieldNumber;
+const int Paths::kLoginFieldNumber;
+const int Paths::kSubscribeFieldNumber;
+const int Paths::kUnsubscribeFieldNumber;
+const int Paths::kFaqFieldNumber;
+const int Paths::kSupportFieldNumber;
+const int Paths::kTermsFieldNumber;
+const int Paths::kPrivacyFieldNumber;
+const int Paths::kDebugFieldNumber;
+const int Paths::kBlogFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Paths::Paths()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_Paths.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.Paths)
+}
+Paths::Paths(const Paths& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  home_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.home().size() > 0) {
+    home_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.home_);
+  }
+  dashboard_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.dashboard().size() > 0) {
+    dashboard_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dashboard_);
+  }
+  settings_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.settings().size() > 0) {
+    settings_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.settings_);
+  }
+  logout_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.logout().size() > 0) {
+    logout_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.logout_);
+  }
+  callback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.callback().size() > 0) {
+    callback_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.callback_);
+  }
+  login_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.login().size() > 0) {
+    login_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.login_);
+  }
+  subscribe_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.subscribe().size() > 0) {
+    subscribe_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subscribe_);
+  }
+  unsubscribe_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.unsubscribe().size() > 0) {
+    unsubscribe_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.unsubscribe_);
+  }
+  faq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.faq().size() > 0) {
+    faq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.faq_);
+  }
+  support_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.support().size() > 0) {
+    support_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.support_);
+  }
+  terms_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.terms().size() > 0) {
+    terms_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.terms_);
+  }
+  privacy_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.privacy().size() > 0) {
+    privacy_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.privacy_);
+  }
+  debug_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.debug().size() > 0) {
+    debug_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.debug_);
+  }
+  blog_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.blog().size() > 0) {
+    blog_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.blog_);
+  }
+  // @@protoc_insertion_point(copy_constructor:api.Paths)
+}
+
+void Paths::SharedCtor() {
+  home_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dashboard_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  settings_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  logout_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  callback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  login_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  subscribe_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  unsubscribe_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  faq_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  support_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  terms_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  privacy_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  debug_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  blog_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+Paths::~Paths() {
+  // @@protoc_insertion_point(destructor:api.Paths)
+  SharedDtor();
+}
+
+void Paths::SharedDtor() {
+  home_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dashboard_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  settings_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  logout_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  callback_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  login_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  subscribe_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  unsubscribe_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  faq_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  support_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  terms_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  privacy_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  debug_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  blog_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void Paths::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Paths::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Paths& Paths::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Paths.base);
+  return *internal_default_instance();
+}
+
+
+void Paths::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Paths)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  home_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  dashboard_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  settings_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  logout_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  callback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  login_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  subscribe_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  unsubscribe_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  faq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  support_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  terms_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  privacy_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  debug_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  blog_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool Paths::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.Paths)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string home = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_home()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->home().data(), static_cast<int>(this->home().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.home"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string dashboard = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_dashboard()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->dashboard().data(), static_cast<int>(this->dashboard().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.dashboard"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string settings = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_settings()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->settings().data(), static_cast<int>(this->settings().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.settings"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string logout = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_logout()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->logout().data(), static_cast<int>(this->logout().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.logout"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string callback = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_callback()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->callback().data(), static_cast<int>(this->callback().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.callback"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string login = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_login()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->login().data(), static_cast<int>(this->login().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.login"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string subscribe = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_subscribe()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->subscribe().data(), static_cast<int>(this->subscribe().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.subscribe"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string unsubscribe = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_unsubscribe()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->unsubscribe().data(), static_cast<int>(this->unsubscribe().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.unsubscribe"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string faq = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_faq()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->faq().data(), static_cast<int>(this->faq().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.faq"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string support = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_support()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->support().data(), static_cast<int>(this->support().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.support"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string terms = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_terms()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->terms().data(), static_cast<int>(this->terms().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.terms"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string privacy = 12;
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_privacy()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->privacy().data(), static_cast<int>(this->privacy().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.privacy"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string debug = 13;
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_debug()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->debug().data(), static_cast<int>(this->debug().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.debug"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string blog = 14;
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(114u /* 114 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_blog()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->blog().data(), static_cast<int>(this->blog().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Paths.blog"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.Paths)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.Paths)
+  return false;
+#undef DO_
+}
+
+void Paths::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.Paths)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string home = 1;
+  if (this->home().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->home().data(), static_cast<int>(this->home().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.home");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->home(), output);
+  }
+
+  // string dashboard = 2;
+  if (this->dashboard().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->dashboard().data(), static_cast<int>(this->dashboard().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.dashboard");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->dashboard(), output);
+  }
+
+  // string settings = 3;
+  if (this->settings().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->settings().data(), static_cast<int>(this->settings().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.settings");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->settings(), output);
+  }
+
+  // string logout = 4;
+  if (this->logout().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->logout().data(), static_cast<int>(this->logout().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.logout");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->logout(), output);
+  }
+
+  // string callback = 5;
+  if (this->callback().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->callback().data(), static_cast<int>(this->callback().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.callback");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->callback(), output);
+  }
+
+  // string login = 6;
+  if (this->login().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->login().data(), static_cast<int>(this->login().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.login");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->login(), output);
+  }
+
+  // string subscribe = 7;
+  if (this->subscribe().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->subscribe().data(), static_cast<int>(this->subscribe().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.subscribe");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->subscribe(), output);
+  }
+
+  // string unsubscribe = 8;
+  if (this->unsubscribe().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->unsubscribe().data(), static_cast<int>(this->unsubscribe().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.unsubscribe");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->unsubscribe(), output);
+  }
+
+  // string faq = 9;
+  if (this->faq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->faq().data(), static_cast<int>(this->faq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.faq");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      9, this->faq(), output);
+  }
+
+  // string support = 10;
+  if (this->support().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->support().data(), static_cast<int>(this->support().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.support");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      10, this->support(), output);
+  }
+
+  // string terms = 11;
+  if (this->terms().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->terms().data(), static_cast<int>(this->terms().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.terms");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->terms(), output);
+  }
+
+  // string privacy = 12;
+  if (this->privacy().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->privacy().data(), static_cast<int>(this->privacy().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.privacy");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->privacy(), output);
+  }
+
+  // string debug = 13;
+  if (this->debug().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->debug().data(), static_cast<int>(this->debug().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.debug");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      13, this->debug(), output);
+  }
+
+  // string blog = 14;
+  if (this->blog().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->blog().data(), static_cast<int>(this->blog().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.blog");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      14, this->blog(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.Paths)
+}
+
+::google::protobuf::uint8* Paths::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.Paths)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string home = 1;
+  if (this->home().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->home().data(), static_cast<int>(this->home().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.home");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->home(), target);
+  }
+
+  // string dashboard = 2;
+  if (this->dashboard().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->dashboard().data(), static_cast<int>(this->dashboard().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.dashboard");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->dashboard(), target);
+  }
+
+  // string settings = 3;
+  if (this->settings().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->settings().data(), static_cast<int>(this->settings().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.settings");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->settings(), target);
+  }
+
+  // string logout = 4;
+  if (this->logout().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->logout().data(), static_cast<int>(this->logout().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.logout");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->logout(), target);
+  }
+
+  // string callback = 5;
+  if (this->callback().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->callback().data(), static_cast<int>(this->callback().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.callback");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->callback(), target);
+  }
+
+  // string login = 6;
+  if (this->login().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->login().data(), static_cast<int>(this->login().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.login");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->login(), target);
+  }
+
+  // string subscribe = 7;
+  if (this->subscribe().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->subscribe().data(), static_cast<int>(this->subscribe().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.subscribe");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->subscribe(), target);
+  }
+
+  // string unsubscribe = 8;
+  if (this->unsubscribe().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->unsubscribe().data(), static_cast<int>(this->unsubscribe().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.unsubscribe");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->unsubscribe(), target);
+  }
+
+  // string faq = 9;
+  if (this->faq().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->faq().data(), static_cast<int>(this->faq().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.faq");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        9, this->faq(), target);
+  }
+
+  // string support = 10;
+  if (this->support().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->support().data(), static_cast<int>(this->support().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.support");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        10, this->support(), target);
+  }
+
+  // string terms = 11;
+  if (this->terms().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->terms().data(), static_cast<int>(this->terms().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.terms");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        11, this->terms(), target);
+  }
+
+  // string privacy = 12;
+  if (this->privacy().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->privacy().data(), static_cast<int>(this->privacy().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.privacy");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->privacy(), target);
+  }
+
+  // string debug = 13;
+  if (this->debug().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->debug().data(), static_cast<int>(this->debug().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.debug");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        13, this->debug(), target);
+  }
+
+  // string blog = 14;
+  if (this->blog().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->blog().data(), static_cast<int>(this->blog().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Paths.blog");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        14, this->blog(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.Paths)
+  return target;
+}
+
+size_t Paths::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Paths)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string home = 1;
+  if (this->home().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->home());
+  }
+
+  // string dashboard = 2;
+  if (this->dashboard().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->dashboard());
+  }
+
+  // string settings = 3;
+  if (this->settings().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->settings());
+  }
+
+  // string logout = 4;
+  if (this->logout().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->logout());
+  }
+
+  // string callback = 5;
+  if (this->callback().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->callback());
+  }
+
+  // string login = 6;
+  if (this->login().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->login());
+  }
+
+  // string subscribe = 7;
+  if (this->subscribe().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->subscribe());
+  }
+
+  // string unsubscribe = 8;
+  if (this->unsubscribe().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->unsubscribe());
+  }
+
+  // string faq = 9;
+  if (this->faq().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->faq());
+  }
+
+  // string support = 10;
+  if (this->support().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->support());
+  }
+
+  // string terms = 11;
+  if (this->terms().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->terms());
+  }
+
+  // string privacy = 12;
+  if (this->privacy().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->privacy());
+  }
+
+  // string debug = 13;
+  if (this->debug().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->debug());
+  }
+
+  // string blog = 14;
+  if (this->blog().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->blog());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Paths::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Paths)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Paths* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Paths>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Paths)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Paths)
+    MergeFrom(*source);
+  }
+}
+
+void Paths::MergeFrom(const Paths& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Paths)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.home().size() > 0) {
+
+    home_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.home_);
+  }
+  if (from.dashboard().size() > 0) {
+
+    dashboard_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dashboard_);
+  }
+  if (from.settings().size() > 0) {
+
+    settings_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.settings_);
+  }
+  if (from.logout().size() > 0) {
+
+    logout_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.logout_);
+  }
+  if (from.callback().size() > 0) {
+
+    callback_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.callback_);
+  }
+  if (from.login().size() > 0) {
+
+    login_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.login_);
+  }
+  if (from.subscribe().size() > 0) {
+
+    subscribe_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subscribe_);
+  }
+  if (from.unsubscribe().size() > 0) {
+
+    unsubscribe_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.unsubscribe_);
+  }
+  if (from.faq().size() > 0) {
+
+    faq_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.faq_);
+  }
+  if (from.support().size() > 0) {
+
+    support_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.support_);
+  }
+  if (from.terms().size() > 0) {
+
+    terms_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.terms_);
+  }
+  if (from.privacy().size() > 0) {
+
+    privacy_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.privacy_);
+  }
+  if (from.debug().size() > 0) {
+
+    debug_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.debug_);
+  }
+  if (from.blog().size() > 0) {
+
+    blog_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.blog_);
+  }
+}
+
+void Paths::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Paths)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Paths::CopyFrom(const Paths& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Paths)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Paths::IsInitialized() const {
+  return true;
+}
+
+void Paths::Swap(Paths* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Paths::InternalSwap(Paths* other) {
+  using std::swap;
+  home_.Swap(&other->home_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  dashboard_.Swap(&other->dashboard_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  settings_.Swap(&other->settings_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  logout_.Swap(&other->logout_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  callback_.Swap(&other->callback_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  login_.Swap(&other->login_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  subscribe_.Swap(&other->subscribe_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  unsubscribe_.Swap(&other->unsubscribe_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  faq_.Swap(&other->faq_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  support_.Swap(&other->support_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  terms_.Swap(&other->terms_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  privacy_.Swap(&other->privacy_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  debug_.Swap(&other->debug_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  blog_.Swap(&other->blog_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Paths::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -2685,6 +3728,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::RefreshToken* Arena::Create
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Tokens* Arena::CreateMaybeMessage< ::api::Tokens >(Arena* arena) {
   return Arena::CreateInternal< ::api::Tokens >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Paths* Arena::CreateMaybeMessage< ::api::Paths >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Paths >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

@@ -47,3 +47,33 @@ func (p *Tokens) JSONString() string {
 func (p *Tokens) Render(tmpl *template.Template, w io.Writer) error {
 	return Util.RenderHTML(tmpl, p, w)
 }
+
+func (p *Paths) JSONString() string {
+	return string(Util.MarshalJSON(p))
+}
+
+func (p *Paths) Render(tmpl *template.Template, w io.Writer) error {
+	return Util.RenderHTML(tmpl, p, w)
+}
+
+func DefaultPaths() *Paths {
+	return &Paths{
+		Home:                 "/",
+		Dashboard:            "/dashboard",
+		Settings:             "/dashboard/settings",
+		Logout:               "/logout",
+		Callback:             "/callback",
+		Login:                "/login",
+		Subscribe:            "/subscribe",
+		Unsubscribe:          "/unsubscribe",
+		Faq:                  "/faq",
+		Support:              "/support",
+		Terms:                "/terms",
+		Privacy:              "/privacy",
+		Debug:                "/debug",
+		Blog:                 "/blog",
+		XXX_NoUnkeyedLiteral: struct{}{},
+		XXX_unrecognized:     nil,
+		XXX_sizecache:        0,
+	}
+}

@@ -42,3 +42,20 @@ message Tokens {
     AccessToken access=2;
     RefreshToken refresh=3;
 }
+
+message Paths {
+    string home =1;
+    string dashboard=2;
+    string settings =3;
+    string logout =4;
+    string callback=5;
+    string login=6;
+    string subscribe=7;
+    string unsubscribe=8;
+    string faq=9;
+    string support=10;
+    string terms=11;
+    string privacy=12;
+    string debug=13;
+    string blog=14;
+}

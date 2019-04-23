@@ -37,6 +37,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :access, :message, 2, "api.AccessToken"
     optional :refresh, :message, 3, "api.RefreshToken"
   end
+  add_message "api.Paths" do
+    optional :home, :string, 1
+    optional :dashboard, :string, 2
+    optional :settings, :string, 3
+    optional :logout, :string, 4
+    optional :callback, :string, 5
+    optional :login, :string, 6
+    optional :subscribe, :string, 7
+    optional :unsubscribe, :string, 8
+    optional :faq, :string, 9
+    optional :support, :string, 10
+    optional :terms, :string, 11
+    optional :privacy, :string, 12
+    optional :debug, :string, 13
+    optional :blog, :string, 14
+  end
 end
 
 module Api
@@ -47,4 +63,5 @@ module Api
   IDToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDToken").msgclass
   RefreshToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefreshToken").msgclass
   Tokens = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Tokens").msgclass
+  Paths = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Paths").msgclass
 end
