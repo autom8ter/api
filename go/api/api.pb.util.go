@@ -72,8 +72,5 @@ func DefaultPaths() *Paths {
 		Privacy:              "/privacy",
 		Debug:                "/debug",
 		Blog:                 "/blog",
-		XXX_NoUnkeyedLiteral: struct{}{},
-		XXX_unrecognized:     nil,
-		XXX_sizecache:        0,
 	}
 }
