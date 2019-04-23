@@ -1,15 +1,10 @@
 package api
 
 import (
-	"context"
-	sessions2 "github.com/autom8ter/oauth2/sessions"
 	"github.com/autom8ter/objectify"
 	"github.com/pkg/errors"
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/oauth"
 	"html/template"
 	"io"
-	"net/http"
 	"os"
 	"strings"
 )
@@ -25,7 +20,6 @@ func init() {
 
 var Util = objectify.Default()
 var Debug bool
-var AUTH_SESSION_NAME = "autom8ter"
 
 func (p *UserInfo) Validate() error {
 	if p.Name == "" {
@@ -105,36 +99,4 @@ func Fatalf(format string, args ...interface{}) {
 
 func Warnf(format string, args ...interface{}) {
 	Util.Entry().Warnf(format, args...)
-}
-
-type Dialer struct {
-	conn *grpc.ClientConn
-}
-
-func NewDialer(ctx context.Context, addr string, r *http.Request) (*Dialer, error) {
-	tok, err := sessions2.GetOauthToken(AUTH_SESSION_NAME, r)
-	if err != nil {
-		return nil, err
-	}
-	conn, err := grpc.DialContext(ctx, addr, grpc.WithPerRPCCredentials(oauth.NewOauthAccess(tok)))
-	if err != nil {
-		return nil, err
-	}
-	return &Dialer{
-		conn: conn,
-	}, nil
-}
-
-func (d *Dialer) Conn() *grpc.ClientConn {
-	return d.conn
-}
-
-type ClientSet struct {
-	Customers CustomerServiceClient
-}
-
-func NewClientSet(d *Dialer) *ClientSet {
-	return &ClientSet{
-		Customers: NewCustomerServiceClient(d.conn),
-	}
 }

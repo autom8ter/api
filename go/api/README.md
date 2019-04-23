@@ -9,10 +9,6 @@ It translates gRPC into RESTful JSON APIs.
 ## Usage
 
 ```go
-var AUTH_SESSION_NAME = "autom8ter"
-```
-
-```go
 var Debug bool
 ```
 
@@ -338,21 +334,6 @@ func (m *Auth0) XXX_Size() int
 func (m *Auth0) XXX_Unmarshal(b []byte) error
 ```
 
-#### type ClientSet
-
-```go
-type ClientSet struct {
-	Customers CustomerServiceClient
-}
-```
-
-
-#### func  NewClientSet
-
-```go
-func NewClientSet(d *Dialer) *ClientSet
-```
-
 #### type CreateCustomerRequest
 
 ```go
@@ -525,26 +506,6 @@ type CustomerServiceServer interface {
 ```
 
 CustomerServiceServer is the server API for CustomerService service.
-
-#### type Dialer
-
-```go
-type Dialer struct {
-}
-```
-
-
-#### func  NewDialer
-
-```go
-func NewDialer(ctx context.Context, addr string, r *http.Request) (*Dialer, error)
-```
-
-#### func (*Dialer) Conn
-
-```go
-func (d *Dialer) Conn() *grpc.ClientConn
-```
 
 #### type IDToken
 
