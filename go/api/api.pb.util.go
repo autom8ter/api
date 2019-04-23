@@ -75,25 +75,6 @@ func DefaultPaths() *Paths {
 	}
 }
 
-func NewAuth0() *Paths {
-	return &Paths{
-		Home:        "/",
-		Dashboard:   "/dashboard",
-		Settings:    "/dashboard/settings",
-		Logout:      "/logout",
-		Callback:    "/callback",
-		Login:       "/login",
-		Subscribe:   "/subscribe",
-		Unsubscribe: "/unsubscribe",
-		Faq:         "/faq",
-		Support:     "/support",
-		Terms:       "/terms",
-		Privacy:     "/privacy",
-		Debug:       "/debug",
-		Blog:        "/blog",
-	}
-}
-
 func NewAuth0(debug bool, domain string, clientID string, clientSecret string, redirectURL string, scopes ...string) (*Auth0, error) {
 	a := &Auth0{
 		Domain:       domain,
