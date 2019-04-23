@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1a\n\tAuthToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\tb\x06proto3')
 )
 
 
@@ -188,15 +188,15 @@ _APPMETADATA = _descriptor.Descriptor(
 )
 
 
-_AUTHTOKEN = _descriptor.Descriptor(
-  name='AuthToken',
-  full_name='api.AuthToken',
+_ACCESSTOKEN = _descriptor.Descriptor(
+  name='AccessToken',
+  full_name='api.AccessToken',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='token', full_name='api.AuthToken.token', index=0,
+      name='token', full_name='api.AccessToken.token', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -215,7 +215,7 @@ _AUTHTOKEN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=341,
-  serialized_end=367,
+  serialized_end=369,
 )
 
 
@@ -245,8 +245,8 @@ _IDTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=369,
-  serialized_end=393,
+  serialized_start=371,
+  serialized_end=395,
 )
 
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
@@ -254,7 +254,7 @@ _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
 DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
-DESCRIPTOR.message_types_by_name['AuthToken'] = _AUTHTOKEN
+DESCRIPTOR.message_types_by_name['AccessToken'] = _ACCESSTOKEN
 DESCRIPTOR.message_types_by_name['IDToken'] = _IDTOKEN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -279,12 +279,12 @@ AppMetadata = _reflection.GeneratedProtocolMessageType('AppMetadata', (_message.
   ))
 _sym_db.RegisterMessage(AppMetadata)
 
-AuthToken = _reflection.GeneratedProtocolMessageType('AuthToken', (_message.Message,), dict(
-  DESCRIPTOR = _AUTHTOKEN,
+AccessToken = _reflection.GeneratedProtocolMessageType('AccessToken', (_message.Message,), dict(
+  DESCRIPTOR = _ACCESSTOKEN,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.AuthToken)
+  # @@protoc_insertion_point(class_scope:api.AccessToken)
   ))
-_sym_db.RegisterMessage(AuthToken)
+_sym_db.RegisterMessage(AccessToken)
 
 IDToken = _reflection.GeneratedProtocolMessageType('IDToken', (_message.Message,), dict(
   DESCRIPTOR = _IDTOKEN,

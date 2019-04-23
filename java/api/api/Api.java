@@ -3148,8 +3148,8 @@ public final class Api {
 
   }
 
-  public interface AuthTokenOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.AuthToken)
+  public interface AccessTokenOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.AccessToken)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3163,18 +3163,18 @@ public final class Api {
         getTokenBytes();
   }
   /**
-   * Protobuf type {@code api.AuthToken}
+   * Protobuf type {@code api.AccessToken}
    */
-  public  static final class AuthToken extends
+  public  static final class AccessToken extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.AuthToken)
-      AuthTokenOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.AccessToken)
+      AccessTokenOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use AuthToken.newBuilder() to construct.
-    private AuthToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use AccessToken.newBuilder() to construct.
+    private AccessToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private AuthToken() {
+    private AccessToken() {
       token_ = "";
     }
 
@@ -3183,7 +3183,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AuthToken(
+    private AccessToken(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3229,15 +3229,15 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_AuthToken_descriptor;
+      return api.Api.internal_static_api_AccessToken_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_AuthToken_fieldAccessorTable
+      return api.Api.internal_static_api_AccessToken_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.AuthToken.class, api.Api.AuthToken.Builder.class);
+              api.Api.AccessToken.class, api.Api.AccessToken.Builder.class);
     }
 
     public static final int TOKEN_FIELD_NUMBER = 1;
@@ -3313,10 +3313,10 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.AuthToken)) {
+      if (!(obj instanceof api.Api.AccessToken)) {
         return super.equals(obj);
       }
-      api.Api.AuthToken other = (api.Api.AuthToken) obj;
+      api.Api.AccessToken other = (api.Api.AccessToken) obj;
 
       boolean result = true;
       result = result && getToken()
@@ -3339,69 +3339,69 @@ public final class Api {
       return hash;
     }
 
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.AuthToken parseFrom(byte[] data)
+    public static api.Api.AccessToken parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.AuthToken parseFrom(java.io.InputStream input)
+    public static api.Api.AccessToken parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.AuthToken parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.AccessToken parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.AuthToken parseDelimitedFrom(
+    public static api.Api.AccessToken parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.AuthToken parseFrom(
+    public static api.Api.AccessToken parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3414,7 +3414,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.AuthToken prototype) {
+    public static Builder newBuilder(api.Api.AccessToken prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3430,26 +3430,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.AuthToken}
+     * Protobuf type {@code api.AccessToken}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.AuthToken)
-        api.Api.AuthTokenOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.AccessToken)
+        api.Api.AccessTokenOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_AuthToken_descriptor;
+        return api.Api.internal_static_api_AccessToken_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_AuthToken_fieldAccessorTable
+        return api.Api.internal_static_api_AccessToken_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.AuthToken.class, api.Api.AuthToken.Builder.class);
+                api.Api.AccessToken.class, api.Api.AccessToken.Builder.class);
       }
 
-      // Construct using api.Api.AuthToken.newBuilder()
+      // Construct using api.Api.AccessToken.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3475,17 +3475,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_AuthToken_descriptor;
+        return api.Api.internal_static_api_AccessToken_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.AuthToken getDefaultInstanceForType() {
-        return api.Api.AuthToken.getDefaultInstance();
+      public api.Api.AccessToken getDefaultInstanceForType() {
+        return api.Api.AccessToken.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.AuthToken build() {
-        api.Api.AuthToken result = buildPartial();
+      public api.Api.AccessToken build() {
+        api.Api.AccessToken result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3493,8 +3493,8 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.AuthToken buildPartial() {
-        api.Api.AuthToken result = new api.Api.AuthToken(this);
+      public api.Api.AccessToken buildPartial() {
+        api.Api.AccessToken result = new api.Api.AccessToken(this);
         result.token_ = token_;
         onBuilt();
         return result;
@@ -3534,16 +3534,16 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.AuthToken) {
-          return mergeFrom((api.Api.AuthToken)other);
+        if (other instanceof api.Api.AccessToken) {
+          return mergeFrom((api.Api.AccessToken)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.AuthToken other) {
-        if (other == api.Api.AuthToken.getDefaultInstance()) return this;
+      public Builder mergeFrom(api.Api.AccessToken other) {
+        if (other == api.Api.AccessToken.getDefaultInstance()) return this;
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
           onChanged();
@@ -3563,11 +3563,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.AuthToken parsedMessage = null;
+        api.Api.AccessToken parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.AuthToken) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.AccessToken) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3658,41 +3658,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.AuthToken)
+      // @@protoc_insertion_point(builder_scope:api.AccessToken)
     }
 
-    // @@protoc_insertion_point(class_scope:api.AuthToken)
-    private static final api.Api.AuthToken DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.AccessToken)
+    private static final api.Api.AccessToken DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.AuthToken();
+      DEFAULT_INSTANCE = new api.Api.AccessToken();
     }
 
-    public static api.Api.AuthToken getDefaultInstance() {
+    public static api.Api.AccessToken getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<AuthToken>
-        PARSER = new com.google.protobuf.AbstractParser<AuthToken>() {
+    private static final com.google.protobuf.Parser<AccessToken>
+        PARSER = new com.google.protobuf.AbstractParser<AccessToken>() {
       @java.lang.Override
-      public AuthToken parsePartialFrom(
+      public AccessToken parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AuthToken(input, extensionRegistry);
+        return new AccessToken(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<AuthToken> parser() {
+    public static com.google.protobuf.Parser<AccessToken> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<AuthToken> getParserForType() {
+    public com.google.protobuf.Parser<AccessToken> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.AuthToken getDefaultInstanceForType() {
+    public api.Api.AccessToken getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4264,10 +4264,10 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_AppMetadata_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_AuthToken_descriptor;
+    internal_static_api_AccessToken_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_AuthToken_fieldAccessorTable;
+      internal_static_api_AccessToken_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_IDToken_descriptor;
   private static final 
@@ -4290,9 +4290,9 @@ public final class Api {
       "_metadata\030\016 \001(\0132\020.api.AppMetadata\"8\n\014Use" +
       "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co" +
       "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t" +
-      "\022\021\n\tpay_token\030\002 \001(\t\"\032\n\tAuthToken\022\r\n\005toke" +
-      "n\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\tb\006proto" +
-      "3"
+      "\022\021\n\tpay_token\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005to" +
+      "ken\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\tb\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4324,11 +4324,11 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AppMetadata_descriptor,
         new java.lang.String[] { "Plan", "PayToken", });
-    internal_static_api_AuthToken_descriptor =
+    internal_static_api_AccessToken_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_api_AuthToken_fieldAccessorTable = new
+    internal_static_api_AccessToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_AuthToken_descriptor,
+        internal_static_api_AccessToken_descriptor,
         new java.lang.String[] { "Token", });
     internal_static_api_IDToken_descriptor =
       getDescriptor().getMessageTypes().get(4);

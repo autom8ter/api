@@ -31,15 +31,15 @@ namespace Api {
             "LlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEYDiABKAsyEC5hcGkuQXBw",
             "TWV0YWRhdGEiOAoMVXNlck1ldGFkYXRhEg0KBXBob25lGAEgASgJEhkKEXBy",
             "ZWZlcnJlZF9jb250YWN0GAIgASgJIi4KC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
-            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJIhoKCUF1dGhUb2tlbhINCgV0b2tl",
-            "bhgBIAEoCSIYCgdJRFRva2VuEg0KBXRva2VuGAEgASgJYgZwcm90bzM="));
+            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJIhwKC0FjY2Vzc1Rva2VuEg0KBXRv",
+            "a2VuGAEgASgJIhgKB0lEVG9rZW4SDQoFdG9rZW4YASABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AuthToken), global::Api.AuthToken.Parser, new[]{ "Token" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AccessToken), global::Api.AccessToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Token" }, null, null, null)
           }));
     }
@@ -726,11 +726,11 @@ namespace Api {
 
   }
 
-  public sealed partial class AuthToken : pb::IMessage<AuthToken> {
-    private static readonly pb::MessageParser<AuthToken> _parser = new pb::MessageParser<AuthToken>(() => new AuthToken());
+  public sealed partial class AccessToken : pb::IMessage<AccessToken> {
+    private static readonly pb::MessageParser<AccessToken> _parser = new pb::MessageParser<AccessToken>(() => new AccessToken());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<AuthToken> Parser { get { return _parser; } }
+    public static pb::MessageParser<AccessToken> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -743,21 +743,21 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AuthToken() {
+    public AccessToken() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AuthToken(AuthToken other) : this() {
+    public AccessToken(AccessToken other) : this() {
       token_ = other.token_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public AuthToken Clone() {
-      return new AuthToken(this);
+    public AccessToken Clone() {
+      return new AccessToken(this);
     }
 
     /// <summary>Field number for the "token" field.</summary>
@@ -773,11 +773,11 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as AuthToken);
+      return Equals(other as AccessToken);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(AuthToken other) {
+    public bool Equals(AccessToken other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -827,7 +827,7 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(AuthToken other) {
+    public void MergeFrom(AccessToken other) {
       if (other == null) {
         return;
       }

@@ -39,11 +39,11 @@ class AppMetadataDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<AppMetadata>
       _instance;
 } _AppMetadata_default_instance_;
-class AuthTokenDefaultTypeInternal {
+class AccessTokenDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<AuthToken>
+  ::google::protobuf::internal::ExplicitlyConstructed<AccessToken>
       _instance;
-} _AuthToken_default_instance_;
+} _AccessToken_default_instance_;
 class IDTokenDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<IDToken>
@@ -95,19 +95,19 @@ static void InitDefaultsAppMetadata() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_AppMetadata =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAppMetadata}, {}};
 
-static void InitDefaultsAuthToken() {
+static void InitDefaultsAccessToken() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_AuthToken_default_instance_;
-    new (ptr) ::api::AuthToken();
+    void* ptr = &::api::_AccessToken_default_instance_;
+    new (ptr) ::api::AccessToken();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::AuthToken::InitAsDefaultInstance();
+  ::api::AccessToken::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_AuthToken =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAuthToken}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_AccessToken =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsAccessToken}, {}};
 
 static void InitDefaultsIDToken() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -127,7 +127,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_UserInfo.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserMetadata.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AppMetadata.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_AuthToken.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_AccessToken.base);
   ::google::protobuf::internal::InitSCC(&scc_info_IDToken.base);
 }
 
@@ -163,11 +163,11 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AppMetadata, plan_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AppMetadata, pay_token_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AuthToken, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AccessToken, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AuthToken, token_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AccessToken, token_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::IDToken, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -179,7 +179,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 0, -1, sizeof(::api::UserInfo)},
   { 14, -1, sizeof(::api::UserMetadata)},
   { 21, -1, sizeof(::api::AppMetadata)},
-  { 28, -1, sizeof(::api::AuthToken)},
+  { 28, -1, sizeof(::api::AccessToken)},
   { 34, -1, sizeof(::api::IDToken)},
 };
 
@@ -187,7 +187,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UserInfo_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UserMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AppMetadata_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AuthToken_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AccessToken_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_IDToken_default_instance_),
 };
 
@@ -220,12 +220,12 @@ void AddDescriptorsImpl() {
       "_metadata\030\016 \001(\0132\020.api.AppMetadata\"8\n\014Use"
       "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co"
       "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t"
-      "\022\021\n\tpay_token\030\002 \001(\t\"\032\n\tAuthToken\022\r\n\005toke"
-      "n\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\tb\006proto"
-      "3"
+      "\022\021\n\tpay_token\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005to"
+      "ken\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\tb\006pro"
+      "to3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 401);
+      descriptor, 403);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
 }
@@ -1536,20 +1536,20 @@ void AppMetadata::InternalSwap(AppMetadata* other) {
 
 // ===================================================================
 
-void AuthToken::InitAsDefaultInstance() {
+void AccessToken::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int AuthToken::kTokenFieldNumber;
+const int AccessToken::kTokenFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-AuthToken::AuthToken()
+AccessToken::AccessToken()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_AuthToken.base);
+      &protobuf_api_2eproto::scc_info_AccessToken.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.AuthToken)
+  // @@protoc_insertion_point(constructor:api.AccessToken)
 }
-AuthToken::AuthToken(const AuthToken& from)
+AccessToken::AccessToken(const AccessToken& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -1557,38 +1557,38 @@ AuthToken::AuthToken(const AuthToken& from)
   if (from.token().size() > 0) {
     token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
   }
-  // @@protoc_insertion_point(copy_constructor:api.AuthToken)
+  // @@protoc_insertion_point(copy_constructor:api.AccessToken)
 }
 
-void AuthToken::SharedCtor() {
+void AccessToken::SharedCtor() {
   token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-AuthToken::~AuthToken() {
-  // @@protoc_insertion_point(destructor:api.AuthToken)
+AccessToken::~AccessToken() {
+  // @@protoc_insertion_point(destructor:api.AccessToken)
   SharedDtor();
 }
 
-void AuthToken::SharedDtor() {
+void AccessToken::SharedDtor() {
   token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void AuthToken::SetCachedSize(int size) const {
+void AccessToken::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* AuthToken::descriptor() {
+const ::google::protobuf::Descriptor* AccessToken::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const AuthToken& AuthToken::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_AuthToken.base);
+const AccessToken& AccessToken::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_AccessToken.base);
   return *internal_default_instance();
 }
 
 
-void AuthToken::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.AuthToken)
+void AccessToken::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.AccessToken)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1597,11 +1597,11 @@ void AuthToken::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool AuthToken::MergePartialFromCodedStream(
+bool AccessToken::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.AuthToken)
+  // @@protoc_insertion_point(parse_start:api.AccessToken)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -1616,7 +1616,7 @@ bool AuthToken::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->token().data(), static_cast<int>(this->token().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.AuthToken.token"));
+            "api.AccessToken.token"));
         } else {
           goto handle_unusual;
         }
@@ -1635,17 +1635,17 @@ bool AuthToken::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.AuthToken)
+  // @@protoc_insertion_point(parse_success:api.AccessToken)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.AuthToken)
+  // @@protoc_insertion_point(parse_failure:api.AccessToken)
   return false;
 #undef DO_
 }
 
-void AuthToken::SerializeWithCachedSizes(
+void AccessToken::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.AuthToken)
+  // @@protoc_insertion_point(serialize_start:api.AccessToken)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1654,7 +1654,7 @@ void AuthToken::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->token().data(), static_cast<int>(this->token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.AuthToken.token");
+      "api.AccessToken.token");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->token(), output);
   }
@@ -1663,13 +1663,13 @@ void AuthToken::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.AuthToken)
+  // @@protoc_insertion_point(serialize_end:api.AccessToken)
 }
 
-::google::protobuf::uint8* AuthToken::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* AccessToken::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.AuthToken)
+  // @@protoc_insertion_point(serialize_to_array_start:api.AccessToken)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1678,7 +1678,7 @@ void AuthToken::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->token().data(), static_cast<int>(this->token().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.AuthToken.token");
+      "api.AccessToken.token");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->token(), target);
@@ -1688,12 +1688,12 @@ void AuthToken::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.AuthToken)
+  // @@protoc_insertion_point(serialize_to_array_end:api.AccessToken)
   return target;
 }
 
-size_t AuthToken::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.AuthToken)
+size_t AccessToken::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.AccessToken)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1713,23 +1713,23 @@ size_t AuthToken::ByteSizeLong() const {
   return total_size;
 }
 
-void AuthToken::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.AuthToken)
+void AccessToken::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.AccessToken)
   GOOGLE_DCHECK_NE(&from, this);
-  const AuthToken* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const AuthToken>(
+  const AccessToken* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const AccessToken>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.AuthToken)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.AccessToken)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.AuthToken)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.AccessToken)
     MergeFrom(*source);
   }
 }
 
-void AuthToken::MergeFrom(const AuthToken& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.AuthToken)
+void AccessToken::MergeFrom(const AccessToken& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.AccessToken)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -1741,36 +1741,36 @@ void AuthToken::MergeFrom(const AuthToken& from) {
   }
 }
 
-void AuthToken::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.AuthToken)
+void AccessToken::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.AccessToken)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void AuthToken::CopyFrom(const AuthToken& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.AuthToken)
+void AccessToken::CopyFrom(const AccessToken& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.AccessToken)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool AuthToken::IsInitialized() const {
+bool AccessToken::IsInitialized() const {
   return true;
 }
 
-void AuthToken::Swap(AuthToken* other) {
+void AccessToken::Swap(AccessToken* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void AuthToken::InternalSwap(AuthToken* other) {
+void AccessToken::InternalSwap(AccessToken* other) {
   using std::swap;
   token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata AuthToken::GetMetadata() const {
+::google::protobuf::Metadata AccessToken::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -2031,8 +2031,8 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::UserMetadata* Arena::Create
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AppMetadata* Arena::CreateMaybeMessage< ::api::AppMetadata >(Arena* arena) {
   return Arena::CreateInternal< ::api::AppMetadata >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AuthToken* Arena::CreateMaybeMessage< ::api::AuthToken >(Arena* arena) {
-  return Arena::CreateInternal< ::api::AuthToken >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AccessToken* Arena::CreateMaybeMessage< ::api::AccessToken >(Arena* arena) {
+  return Arena::CreateInternal< ::api::AccessToken >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::IDToken* Arena::CreateMaybeMessage< ::api::IDToken >(Arena* arena) {
   return Arena::CreateInternal< ::api::IDToken >(arena);

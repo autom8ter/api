@@ -281,16 +281,16 @@ typedef struct AppMetadata__storage_ {
 
 @end
 
-#pragma mark - AuthToken
+#pragma mark - AccessToken
 
-@implementation AuthToken
+@implementation AccessToken
 
 @dynamic token;
 
-typedef struct AuthToken__storage_ {
+typedef struct AccessToken__storage_ {
   uint32_t _has_storage_[1];
   NSString *token;
-} AuthToken__storage_;
+} AccessToken__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -301,20 +301,20 @@ typedef struct AuthToken__storage_ {
       {
         .name = "token",
         .dataTypeSpecific.className = NULL,
-        .number = AuthToken_FieldNumber_Token,
+        .number = AccessToken_FieldNumber_Token,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(AuthToken__storage_, token),
+        .offset = (uint32_t)offsetof(AccessToken__storage_, token),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[AuthToken class]
+        [GPBDescriptor allocDescriptorForClass:[AccessToken class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(AuthToken__storage_)
+                                   storageSize:sizeof(AccessToken__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

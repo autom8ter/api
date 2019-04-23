@@ -46,12 +46,12 @@ struct TableStruct {
 void AddDescriptors();
 }  // namespace protobuf_api_2eproto
 namespace api {
+class AccessToken;
+class AccessTokenDefaultTypeInternal;
+extern AccessTokenDefaultTypeInternal _AccessToken_default_instance_;
 class AppMetadata;
 class AppMetadataDefaultTypeInternal;
 extern AppMetadataDefaultTypeInternal _AppMetadata_default_instance_;
-class AuthToken;
-class AuthTokenDefaultTypeInternal;
-extern AuthTokenDefaultTypeInternal _AuthToken_default_instance_;
 class IDToken;
 class IDTokenDefaultTypeInternal;
 extern IDTokenDefaultTypeInternal _IDToken_default_instance_;
@@ -64,8 +64,8 @@ extern UserMetadataDefaultTypeInternal _UserMetadata_default_instance_;
 }  // namespace api
 namespace google {
 namespace protobuf {
+template<> ::api::AccessToken* Arena::CreateMaybeMessage<::api::AccessToken>(Arena*);
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
-template<> ::api::AuthToken* Arena::CreateMaybeMessage<::api::AuthToken>(Arena*);
 template<> ::api::IDToken* Arena::CreateMaybeMessage<::api::IDToken>(Arena*);
 template<> ::api::UserInfo* Arena::CreateMaybeMessage<::api::UserInfo>(Arena*);
 template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(Arena*);
@@ -554,24 +554,24 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
 };
 // -------------------------------------------------------------------
 
-class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AuthToken) */ {
+class AccessToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AccessToken) */ {
  public:
-  AuthToken();
-  virtual ~AuthToken();
+  AccessToken();
+  virtual ~AccessToken();
 
-  AuthToken(const AuthToken& from);
+  AccessToken(const AccessToken& from);
 
-  inline AuthToken& operator=(const AuthToken& from) {
+  inline AccessToken& operator=(const AccessToken& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  AuthToken(AuthToken&& from) noexcept
-    : AuthToken() {
+  AccessToken(AccessToken&& from) noexcept
+    : AccessToken() {
     *this = ::std::move(from);
   }
 
-  inline AuthToken& operator=(AuthToken&& from) noexcept {
+  inline AccessToken& operator=(AccessToken&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -581,34 +581,34 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const AuthToken& default_instance();
+  static const AccessToken& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AuthToken* internal_default_instance() {
-    return reinterpret_cast<const AuthToken*>(
-               &_AuthToken_default_instance_);
+  static inline const AccessToken* internal_default_instance() {
+    return reinterpret_cast<const AccessToken*>(
+               &_AccessToken_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     3;
 
-  void Swap(AuthToken* other);
-  friend void swap(AuthToken& a, AuthToken& b) {
+  void Swap(AccessToken* other);
+  friend void swap(AccessToken& a, AccessToken& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline AuthToken* New() const final {
-    return CreateMaybeMessage<AuthToken>(NULL);
+  inline AccessToken* New() const final {
+    return CreateMaybeMessage<AccessToken>(NULL);
   }
 
-  AuthToken* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AuthToken>(arena);
+  AccessToken* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AccessToken>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AuthToken& from);
-  void MergeFrom(const AuthToken& from);
+  void CopyFrom(const AccessToken& from);
+  void MergeFrom(const AccessToken& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -625,7 +625,7 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AuthToken* other);
+  void InternalSwap(AccessToken* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -655,7 +655,7 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
-  // @@protoc_insertion_point(class_scope:api.AuthToken)
+  // @@protoc_insertion_point(class_scope:api.AccessToken)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -1486,59 +1486,59 @@ inline void AppMetadata::set_allocated_pay_token(::std::string* pay_token) {
 
 // -------------------------------------------------------------------
 
-// AuthToken
+// AccessToken
 
 // string token = 1;
-inline void AuthToken::clear_token() {
+inline void AccessToken::clear_token() {
   token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& AuthToken::token() const {
-  // @@protoc_insertion_point(field_get:api.AuthToken.token)
+inline const ::std::string& AccessToken::token() const {
+  // @@protoc_insertion_point(field_get:api.AccessToken.token)
   return token_.GetNoArena();
 }
-inline void AuthToken::set_token(const ::std::string& value) {
+inline void AccessToken::set_token(const ::std::string& value) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.AuthToken.token)
+  // @@protoc_insertion_point(field_set:api.AccessToken.token)
 }
 #if LANG_CXX11
-inline void AuthToken::set_token(::std::string&& value) {
+inline void AccessToken::set_token(::std::string&& value) {
   
   token_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.AuthToken.token)
+  // @@protoc_insertion_point(field_set_rvalue:api.AccessToken.token)
 }
 #endif
-inline void AuthToken::set_token(const char* value) {
+inline void AccessToken::set_token(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.AuthToken.token)
+  // @@protoc_insertion_point(field_set_char:api.AccessToken.token)
 }
-inline void AuthToken::set_token(const char* value, size_t size) {
+inline void AccessToken::set_token(const char* value, size_t size) {
   
   token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.AuthToken.token)
+  // @@protoc_insertion_point(field_set_pointer:api.AccessToken.token)
 }
-inline ::std::string* AuthToken::mutable_token() {
+inline ::std::string* AccessToken::mutable_token() {
   
-  // @@protoc_insertion_point(field_mutable:api.AuthToken.token)
+  // @@protoc_insertion_point(field_mutable:api.AccessToken.token)
   return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* AuthToken::release_token() {
-  // @@protoc_insertion_point(field_release:api.AuthToken.token)
+inline ::std::string* AccessToken::release_token() {
+  // @@protoc_insertion_point(field_release:api.AccessToken.token)
   
   return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void AuthToken::set_allocated_token(::std::string* token) {
+inline void AccessToken::set_allocated_token(::std::string* token) {
   if (token != NULL) {
     
   } else {
     
   }
   token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:api.AuthToken.token)
+  // @@protoc_insertion_point(field_set_allocated:api.AccessToken.token)
 }
 
 // -------------------------------------------------------------------

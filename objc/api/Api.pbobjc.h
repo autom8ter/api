@@ -117,13 +117,13 @@ typedef GPB_ENUM(AppMetadata_FieldNumber) {
 
 @end
 
-#pragma mark - AuthToken
+#pragma mark - AccessToken
 
-typedef GPB_ENUM(AuthToken_FieldNumber) {
-  AuthToken_FieldNumber_Token = 1,
+typedef GPB_ENUM(AccessToken_FieldNumber) {
+  AccessToken_FieldNumber_Token = 1,
 };
 
-@interface AuthToken : GPBMessage
+@interface AccessToken : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 

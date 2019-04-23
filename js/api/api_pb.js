@@ -11,8 +11,8 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+goog.exportSymbol('proto.api.AccessToken', null, global);
 goog.exportSymbol('proto.api.AppMetadata', null, global);
-goog.exportSymbol('proto.api.AuthToken', null, global);
 goog.exportSymbol('proto.api.IDToken', null, global);
 goog.exportSymbol('proto.api.UserInfo', null, global);
 goog.exportSymbol('proto.api.UserMetadata', null, global);
@@ -757,12 +757,12 @@ proto.api.AppMetadata.prototype.setPayToken = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.AuthToken = function(opt_data) {
+proto.api.AccessToken = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.AuthToken, jspb.Message);
+goog.inherits(proto.api.AccessToken, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.AuthToken.displayName = 'proto.api.AuthToken';
+  proto.api.AccessToken.displayName = 'proto.api.AccessToken';
 }
 
 
@@ -777,8 +777,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.AuthToken.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.AuthToken.toObject(opt_includeInstance, this);
+proto.api.AccessToken.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.AccessToken.toObject(opt_includeInstance, this);
 };
 
 
@@ -787,11 +787,11 @@ proto.api.AuthToken.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.AuthToken} msg The msg instance to transform.
+ * @param {!proto.api.AccessToken} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AuthToken.toObject = function(includeInstance, msg) {
+proto.api.AccessToken.toObject = function(includeInstance, msg) {
   var f, obj = {
     token: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -807,23 +807,23 @@ proto.api.AuthToken.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.AuthToken}
+ * @return {!proto.api.AccessToken}
  */
-proto.api.AuthToken.deserializeBinary = function(bytes) {
+proto.api.AccessToken.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.AuthToken;
-  return proto.api.AuthToken.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.AccessToken;
+  return proto.api.AccessToken.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.AuthToken} msg The message object to deserialize into.
+ * @param {!proto.api.AccessToken} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.AuthToken}
+ * @return {!proto.api.AccessToken}
  */
-proto.api.AuthToken.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.AccessToken.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -847,9 +847,9 @@ proto.api.AuthToken.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.AuthToken.prototype.serializeBinary = function() {
+proto.api.AccessToken.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.AuthToken.serializeBinaryToWriter(this, writer);
+  proto.api.AccessToken.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -857,11 +857,11 @@ proto.api.AuthToken.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.AuthToken} message
+ * @param {!proto.api.AccessToken} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.AuthToken.serializeBinaryToWriter = function(message, writer) {
+proto.api.AccessToken.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getToken();
   if (f.length > 0) {
@@ -877,13 +877,13 @@ proto.api.AuthToken.serializeBinaryToWriter = function(message, writer) {
  * optional string token = 1;
  * @return {string}
  */
-proto.api.AuthToken.prototype.getToken = function() {
+proto.api.AccessToken.prototype.getToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.AuthToken.prototype.setToken = function(value) {
+proto.api.AccessToken.prototype.setToken = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
