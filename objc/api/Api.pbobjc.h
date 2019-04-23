@@ -141,6 +141,18 @@ typedef GPB_ENUM(IDToken_FieldNumber) {
 
 @end
 
+#pragma mark - RefreshToken
+
+typedef GPB_ENUM(RefreshToken_FieldNumber) {
+  RefreshToken_FieldNumber_Token = 1,
+};
+
+@interface RefreshToken : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

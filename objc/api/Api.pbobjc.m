@@ -367,6 +367,49 @@ typedef struct IDToken__storage_ {
 
 @end
 
+#pragma mark - RefreshToken
+
+@implementation RefreshToken
+
+@dynamic token;
+
+typedef struct RefreshToken__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *token;
+} RefreshToken__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "token",
+        .dataTypeSpecific.className = NULL,
+        .number = RefreshToken_FieldNumber_Token,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(RefreshToken__storage_, token),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[RefreshToken class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(RefreshToken__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

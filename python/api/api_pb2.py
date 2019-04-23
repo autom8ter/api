@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\tb\x06proto3')
 )
 
 
@@ -249,6 +249,37 @@ _IDTOKEN = _descriptor.Descriptor(
   serialized_end=395,
 )
 
+
+_REFRESHTOKEN = _descriptor.Descriptor(
+  name='RefreshToken',
+  full_name='api.RefreshToken',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='token', full_name='api.RefreshToken.token', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=397,
+  serialized_end=426,
+)
+
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
 _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
 DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
@@ -256,6 +287,7 @@ DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
 DESCRIPTOR.message_types_by_name['AccessToken'] = _ACCESSTOKEN
 DESCRIPTOR.message_types_by_name['IDToken'] = _IDTOKEN
+DESCRIPTOR.message_types_by_name['RefreshToken'] = _REFRESHTOKEN
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 UserInfo = _reflection.GeneratedProtocolMessageType('UserInfo', (_message.Message,), dict(
@@ -292,6 +324,13 @@ IDToken = _reflection.GeneratedProtocolMessageType('IDToken', (_message.Message,
   # @@protoc_insertion_point(class_scope:api.IDToken)
   ))
 _sym_db.RegisterMessage(IDToken)
+
+RefreshToken = _reflection.GeneratedProtocolMessageType('RefreshToken', (_message.Message,), dict(
+  DESCRIPTOR = _REFRESHTOKEN,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.RefreshToken)
+  ))
+_sym_db.RegisterMessage(RefreshToken)
 
 
 # @@protoc_insertion_point(module_scope)

@@ -38,7 +38,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[5];
+  static const ::google::protobuf::internal::ParseTable schema[6];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -55,6 +55,9 @@ extern AppMetadataDefaultTypeInternal _AppMetadata_default_instance_;
 class IDToken;
 class IDTokenDefaultTypeInternal;
 extern IDTokenDefaultTypeInternal _IDToken_default_instance_;
+class RefreshToken;
+class RefreshTokenDefaultTypeInternal;
+extern RefreshTokenDefaultTypeInternal _RefreshToken_default_instance_;
 class UserInfo;
 class UserInfoDefaultTypeInternal;
 extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
@@ -67,6 +70,7 @@ namespace protobuf {
 template<> ::api::AccessToken* Arena::CreateMaybeMessage<::api::AccessToken>(Arena*);
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::IDToken* Arena::CreateMaybeMessage<::api::IDToken>(Arena*);
+template<> ::api::RefreshToken* Arena::CreateMaybeMessage<::api::RefreshToken>(Arena*);
 template<> ::api::UserInfo* Arena::CreateMaybeMessage<::api::UserInfo>(Arena*);
 template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(Arena*);
 }  // namespace protobuf
@@ -767,6 +771,117 @@ class IDToken : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   void set_allocated_token(::std::string* token);
 
   // @@protoc_insertion_point(class_scope:api.IDToken)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr token_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class RefreshToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.RefreshToken) */ {
+ public:
+  RefreshToken();
+  virtual ~RefreshToken();
+
+  RefreshToken(const RefreshToken& from);
+
+  inline RefreshToken& operator=(const RefreshToken& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RefreshToken(RefreshToken&& from) noexcept
+    : RefreshToken() {
+    *this = ::std::move(from);
+  }
+
+  inline RefreshToken& operator=(RefreshToken&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RefreshToken& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RefreshToken* internal_default_instance() {
+    return reinterpret_cast<const RefreshToken*>(
+               &_RefreshToken_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(RefreshToken* other);
+  friend void swap(RefreshToken& a, RefreshToken& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RefreshToken* New() const final {
+    return CreateMaybeMessage<RefreshToken>(NULL);
+  }
+
+  RefreshToken* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RefreshToken>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RefreshToken& from);
+  void MergeFrom(const RefreshToken& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RefreshToken* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string token = 1;
+  void clear_token();
+  static const int kTokenFieldNumber = 1;
+  const ::std::string& token() const;
+  void set_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token(::std::string&& value);
+  #endif
+  void set_token(const char* value);
+  void set_token(const char* value, size_t size);
+  ::std::string* mutable_token();
+  ::std::string* release_token();
+  void set_allocated_token(::std::string* token);
+
+  // @@protoc_insertion_point(class_scope:api.RefreshToken)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -1598,9 +1713,68 @@ inline void IDToken::set_allocated_token(::std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:api.IDToken.token)
 }
 
+// -------------------------------------------------------------------
+
+// RefreshToken
+
+// string token = 1;
+inline void RefreshToken::clear_token() {
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& RefreshToken::token() const {
+  // @@protoc_insertion_point(field_get:api.RefreshToken.token)
+  return token_.GetNoArena();
+}
+inline void RefreshToken::set_token(const ::std::string& value) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.RefreshToken.token)
+}
+#if LANG_CXX11
+inline void RefreshToken::set_token(::std::string&& value) {
+  
+  token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.RefreshToken.token)
+}
+#endif
+inline void RefreshToken::set_token(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.RefreshToken.token)
+}
+inline void RefreshToken::set_token(const char* value, size_t size) {
+  
+  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.RefreshToken.token)
+}
+inline ::std::string* RefreshToken::mutable_token() {
+  
+  // @@protoc_insertion_point(field_mutable:api.RefreshToken.token)
+  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* RefreshToken::release_token() {
+  // @@protoc_insertion_point(field_release:api.RefreshToken.token)
+  
+  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void RefreshToken::set_allocated_token(::std::string* token) {
+  if (token != NULL) {
+    
+  } else {
+    
+  }
+  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
+  // @@protoc_insertion_point(field_set_allocated:api.RefreshToken.token)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

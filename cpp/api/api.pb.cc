@@ -49,6 +49,11 @@ class IDTokenDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<IDToken>
       _instance;
 } _IDToken_default_instance_;
+class RefreshTokenDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<RefreshToken>
+      _instance;
+} _RefreshToken_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsUserInfo() {
@@ -123,15 +128,30 @@ static void InitDefaultsIDToken() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_IDToken =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsIDToken}, {}};
 
+static void InitDefaultsRefreshToken() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_RefreshToken_default_instance_;
+    new (ptr) ::api::RefreshToken();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::RefreshToken::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_RefreshToken =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRefreshToken}, {}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_UserInfo.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserMetadata.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AppMetadata.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AccessToken.base);
   ::google::protobuf::internal::InitSCC(&scc_info_IDToken.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_RefreshToken.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[5];
+::google::protobuf::Metadata file_level_metadata[6];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -174,6 +194,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::IDToken, token_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RefreshToken, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RefreshToken, token_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::UserInfo)},
@@ -181,6 +207,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 21, -1, sizeof(::api::AppMetadata)},
   { 28, -1, sizeof(::api::AccessToken)},
   { 34, -1, sizeof(::api::IDToken)},
+  { 40, -1, sizeof(::api::RefreshToken)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -189,6 +216,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AppMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AccessToken_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_IDToken_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_RefreshToken_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -206,7 +234,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 5);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 6);
 }
 
 void AddDescriptorsImpl() {
@@ -221,11 +249,11 @@ void AddDescriptorsImpl() {
       "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co"
       "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t"
       "\022\021\n\tpay_token\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005to"
-      "ken\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\tb\006pro"
-      "to3"
+      "ken\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\t\"\035\n\014R"
+      "efreshToken\022\r\n\005token\030\001 \001(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 403);
+      descriptor, 434);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
 }
@@ -2018,6 +2046,248 @@ void IDToken::InternalSwap(IDToken* other) {
 }
 
 
+// ===================================================================
+
+void RefreshToken::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int RefreshToken::kTokenFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+RefreshToken::RefreshToken()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_RefreshToken.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.RefreshToken)
+}
+RefreshToken::RefreshToken(const RefreshToken& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.token().size() > 0) {
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
+  // @@protoc_insertion_point(copy_constructor:api.RefreshToken)
+}
+
+void RefreshToken::SharedCtor() {
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+RefreshToken::~RefreshToken() {
+  // @@protoc_insertion_point(destructor:api.RefreshToken)
+  SharedDtor();
+}
+
+void RefreshToken::SharedDtor() {
+  token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void RefreshToken::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* RefreshToken::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const RefreshToken& RefreshToken::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_RefreshToken.base);
+  return *internal_default_instance();
+}
+
+
+void RefreshToken::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.RefreshToken)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool RefreshToken::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.RefreshToken)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string token = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_token()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->token().data(), static_cast<int>(this->token().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.RefreshToken.token"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.RefreshToken)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.RefreshToken)
+  return false;
+#undef DO_
+}
+
+void RefreshToken::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.RefreshToken)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RefreshToken.token");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->token(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.RefreshToken)
+}
+
+::google::protobuf::uint8* RefreshToken::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.RefreshToken)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.RefreshToken.token");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->token(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.RefreshToken)
+  return target;
+}
+
+size_t RefreshToken::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.RefreshToken)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string token = 1;
+  if (this->token().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->token());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RefreshToken::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.RefreshToken)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RefreshToken* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const RefreshToken>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.RefreshToken)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.RefreshToken)
+    MergeFrom(*source);
+  }
+}
+
+void RefreshToken::MergeFrom(const RefreshToken& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.RefreshToken)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.token().size() > 0) {
+
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
+}
+
+void RefreshToken::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.RefreshToken)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RefreshToken::CopyFrom(const RefreshToken& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.RefreshToken)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RefreshToken::IsInitialized() const {
+  return true;
+}
+
+void RefreshToken::Swap(RefreshToken* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void RefreshToken::InternalSwap(RefreshToken* other) {
+  using std::swap;
+  token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata RefreshToken::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -2036,6 +2306,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AccessToken* Arena::CreateM
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::IDToken* Arena::CreateMaybeMessage< ::api::IDToken >(Arena* arena) {
   return Arena::CreateInternal< ::api::IDToken >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::RefreshToken* Arena::CreateMaybeMessage< ::api::RefreshToken >(Arena* arena) {
+  return Arena::CreateInternal< ::api::RefreshToken >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
