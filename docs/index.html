@@ -191,6 +191,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.Card"><span class="badge">M</span>Card</a>
+                </li>
+              
+                <li>
                   <a href="#api.IDToken"><span class="badge">M</span>IDToken</a>
                 </li>
               
@@ -200,6 +204,14 @@
               
                 <li>
                   <a href="#api.RefreshToken"><span class="badge">M</span>RefreshToken</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SubscriptionRequest"><span class="badge">M</span>SubscriptionRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SubscriptionResponse"><span class="badge">M</span>SubscriptionResponse</a>
                 </li>
               
                 <li>
@@ -216,6 +228,10 @@
               
               
               
+              
+                <li>
+                  <a href="#api.SubscriptionsService"><span class="badge">S</span>SubscriptionsService</a>
+                </li>
               
             </ul>
           </li>
@@ -325,6 +341,50 @@
               
                 <tr>
                   <td>redirect</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Card">Card</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exp_month</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exp_year</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cvc</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -496,6 +556,66 @@
 
         
       
+        <h3 id="api.SubscriptionRequest">SubscriptionRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plan</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>card</td>
+                  <td><a href="#api.Card">Card</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.SubscriptionResponse">SubscriptionResponse</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Tokens">Tokens</h3>
         <p></p>
 
@@ -647,6 +767,24 @@
 
       
 
+      
+        <h3 id="api.SubscriptionsService">SubscriptionsService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Echo</td>
+                <td><a href="#api.SubscriptionRequest">SubscriptionRequest</a></td>
+                <td><a href="#api.SubscriptionResponse">SubscriptionResponse</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
     
 

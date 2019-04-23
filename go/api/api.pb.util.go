@@ -64,6 +64,45 @@ func (p *AppMetadata) Render(tmpl *template.Template, w io.Writer) error {
 	return Util.RenderHTML(tmpl, p, w)
 }
 
+func (p *SubscriptionRequest) Validate() error {
+	if p.Email == "" {
+		return errors.New("Validate: subscription request requires an email")
+	}
+	return Util.Validate(p)
+}
+
+func (p *Card) JSONString() string {
+	return string(Util.MarshalJSON(p))
+}
+
+func (p *Card) Render(tmpl *template.Template, w io.Writer) error {
+	return Util.RenderHTML(tmpl, p, w)
+}
+
+func (p *Card) Validate() error {
+	if p.Number == "" {
+		return errors.New("Validate: card requires number")
+	}
+	if p.Cvc == "" {
+		return errors.New("Validate: card requires cvc")
+	}
+	if p.ExpYear == "" {
+		return errors.New("Validate: card required expiration year")
+	}
+	if p.GetExpMonth() == "" {
+		return errors.New("Validate: card required expiration month")
+	}
+	return Util.Validate(p)
+}
+
+func (p *SubscriptionRequest) JSONString() string {
+	return string(Util.MarshalJSON(p))
+}
+
+func (p *SubscriptionRequest) Render(tmpl *template.Template, w io.Writer) error {
+	return Util.RenderHTML(tmpl, p, w)
+}
+
 func (p *Tokens) JSONString() string {
 	return string(Util.MarshalJSON(p))
 }
@@ -106,6 +145,9 @@ func NewAuth0(debug bool, domain string, clientID string, clientSecret string, r
 		ClientSecret: clientSecret,
 		Redirect:     redirectURL,
 		Scopes:       scopes,
+	}
+	if debug {
+		Debug = true
 	}
 	if a.Domain == "" {
 		return nil, errors.New("empty domain")
@@ -215,7 +257,7 @@ func (o *Auth0) GetTokens(r *http.Request) (*Tokens, error) {
 func (o *Auth0) SecureFunc(redirect string, handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		prof, err := o.GetUserInfo(r)
-		Debugf("got profile: %s", Util.MarshalJSON(prof))
+		Debugf("got user info: %s", Util.MarshalJSON(prof))
 		if err != nil {
 			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
 			return
@@ -239,7 +281,7 @@ func (o *Auth0) SecureFunc(redirect string, handler http.HandlerFunc) http.Handl
 func (o *Auth0) Secure(redirect string, handler http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		prof, err := o.GetUserInfo(r)
-		Debugf("got profile: %s", Util.MarshalJSON(prof))
+		Debugf("got user info: %s", Util.MarshalJSON(prof))
 		if err != nil {
 			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
 			return
@@ -361,4 +403,12 @@ func Debugf(format string, args ...interface{}) {
 	if Debug {
 		Util.Entry().Debugf(format, args...)
 	}
+}
+
+func Fatalf(format string, args ...interface{}) {
+	Util.Entry().Fatalf(format, args...)
+}
+
+func Warnf(format string, args ...interface{}) {
+	Util.Entry().Warnf(format, args...)
 }

@@ -24,28 +24,35 @@ namespace Api {
     static ApiReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CglhcGkucHJvdG8SA2FwaSLWAQoIVXNlckluZm8SDAoEbmFtZRgGIAEoCRIS",
-            "CgpnaXZlbl9uYW1lGAcgASgJEhMKC2ZhbWlseV9uYW1lGAggASgJEg4KBmdl",
-            "bmRlchgJIAEoCRIRCgliaXJ0aGRhdGUYCiABKAkSDQoFZW1haWwYCyABKAkS",
-            "DwoHcGljdHVyZRgMIAEoCRIoCg11c2VyX21ldGFkYXRhGA0gASgLMhEuYXBp",
-            "LlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEYDiABKAsyEC5hcGkuQXBw",
-            "TWV0YWRhdGEiOAoMVXNlck1ldGFkYXRhEg0KBXBob25lGAEgASgJEhkKEXBy",
-            "ZWZlcnJlZF9jb250YWN0GAIgASgJIi4KC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
-            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJIhwKC0FjY2Vzc1Rva2VuEg0KBXRv",
-            "a2VuGAEgASgJIhgKB0lEVG9rZW4SDQoFdG9rZW4YASABKAkiHQoMUmVmcmVz",
-            "aFRva2VuEg0KBXRva2VuGAEgASgJImgKBlRva2VucxIYCgJpZBgBIAEoCzIM",
-            "LmFwaS5JRFRva2VuEiAKBmFjY2VzcxgCIAEoCzIQLmFwaS5BY2Nlc3NUb2tl",
-            "bhIiCgdyZWZyZXNoGAMgASgLMhEuYXBpLlJlZnJlc2hUb2tlbiLuAQoFUGF0",
-            "aHMSDAoEaG9tZRgBIAEoCRIRCglkYXNoYm9hcmQYAiABKAkSEAoIc2V0dGlu",
-            "Z3MYAyABKAkSDgoGbG9nb3V0GAQgASgJEhAKCGNhbGxiYWNrGAUgASgJEg0K",
-            "BWxvZ2luGAYgASgJEhEKCXN1YnNjcmliZRgHIAEoCRITCgt1bnN1YnNjcmli",
-            "ZRgIIAEoCRILCgNmYXEYCSABKAkSDwoHc3VwcG9ydBgKIAEoCRINCgV0ZXJt",
-            "cxgLIAEoCRIPCgdwcml2YWN5GAwgASgJEg0KBWRlYnVnGA0gASgJEgwKBGJs",
-            "b2cYDiABKAkiYwoFQXV0aDASDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9p",
-            "ZBgCIAEoCRIVCg1jbGllbnRfc2VjcmV0GAMgASgJEg4KBnNjb3BlcxgEIAMo",
-            "CRIQCghyZWRpcmVjdBgFIAEoCWIGcHJvdG8z"));
+            "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
+            "byLWAQoIVXNlckluZm8SDAoEbmFtZRgGIAEoCRISCgpnaXZlbl9uYW1lGAcg",
+            "ASgJEhMKC2ZhbWlseV9uYW1lGAggASgJEg4KBmdlbmRlchgJIAEoCRIRCgli",
+            "aXJ0aGRhdGUYCiABKAkSDQoFZW1haWwYCyABKAkSDwoHcGljdHVyZRgMIAEo",
+            "CRIoCg11c2VyX21ldGFkYXRhGA0gASgLMhEuYXBpLlVzZXJNZXRhZGF0YRIm",
+            "CgxhcHBfbWV0YWRhdGEYDiABKAsyEC5hcGkuQXBwTWV0YWRhdGEiOAoMVXNl",
+            "ck1ldGFkYXRhEg0KBXBob25lGAEgASgJEhkKEXByZWZlcnJlZF9jb250YWN0",
+            "GAIgASgJIi4KC0FwcE1ldGFkYXRhEgwKBHBsYW4YASABKAkSEQoJcGF5X3Rv",
+            "a2VuGAIgASgJIhwKC0FjY2Vzc1Rva2VuEg0KBXRva2VuGAEgASgJIhgKB0lE",
+            "VG9rZW4SDQoFdG9rZW4YASABKAkiHQoMUmVmcmVzaFRva2VuEg0KBXRva2Vu",
+            "GAEgASgJImgKBlRva2VucxIYCgJpZBgBIAEoCzIMLmFwaS5JRFRva2VuEiAK",
+            "BmFjY2VzcxgCIAEoCzIQLmFwaS5BY2Nlc3NUb2tlbhIiCgdyZWZyZXNoGAMg",
+            "ASgLMhEuYXBpLlJlZnJlc2hUb2tlbiLuAQoFUGF0aHMSDAoEaG9tZRgBIAEo",
+            "CRIRCglkYXNoYm9hcmQYAiABKAkSEAoIc2V0dGluZ3MYAyABKAkSDgoGbG9n",
+            "b3V0GAQgASgJEhAKCGNhbGxiYWNrGAUgASgJEg0KBWxvZ2luGAYgASgJEhEK",
+            "CXN1YnNjcmliZRgHIAEoCRITCgt1bnN1YnNjcmliZRgIIAEoCRILCgNmYXEY",
+            "CSABKAkSDwoHc3VwcG9ydBgKIAEoCRINCgV0ZXJtcxgLIAEoCRIPCgdwcml2",
+            "YWN5GAwgASgJEg0KBWRlYnVnGA0gASgJEgwKBGJsb2cYDiABKAkiYwoFQXV0",
+            "aDASDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9pZBgCIAEoCRIVCg1jbGll",
+            "bnRfc2VjcmV0GAMgASgJEg4KBnNjb3BlcxgEIAMoCRIQCghyZWRpcmVjdBgF",
+            "IAEoCSJLChNTdWJzY3JpcHRpb25SZXF1ZXN0Eg0KBWVtYWlsGAEgASgJEgwK",
+            "BHBsYW4YAiABKAkSFwoEY2FyZBgDIAEoCzIJLmFwaS5DYXJkIiIKFFN1YnNj",
+            "cmlwdGlvblJlc3BvbnNlEgoKAmlkGAEgASgJIkgKBENhcmQSDgoGbnVtYmVy",
+            "GAEgASgJEhEKCWV4cF9tb250aBgCIAEoCRIQCghleHBfeWVhchgDIAEoCRIL",
+            "CgNjdmMYBCABKAkycQoUU3Vic2NyaXB0aW9uc1NlcnZpY2USWQoERWNobxIY",
+            "LmFwaS5TdWJzY3JpcHRpb25SZXF1ZXN0GhkuYXBpLlN1YnNjcmlwdGlvblJl",
+            "c3BvbnNlIhyC0+STAhYiES92MS9zdWJzY3JpcHRpb25zOgEqYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact" }, null, null, null),
@@ -55,7 +62,10 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.RefreshToken), global::Api.RefreshToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth0), global::Api.Auth0.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth0), global::Api.Auth0.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.SubscriptionRequest), global::Api.SubscriptionRequest.Parser, new[]{ "Email", "Plan", "Card" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.SubscriptionResponse), global::Api.SubscriptionResponse.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Card), global::Api.Card.Parser, new[]{ "Number", "ExpMonth", "ExpYear", "Cvc" }, null, null, null)
           }));
     }
     #endregion
@@ -2049,6 +2059,539 @@ namespace Api {
           }
           case 42: {
             Redirect = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SubscriptionRequest : pb::IMessage<SubscriptionRequest> {
+    private static readonly pb::MessageParser<SubscriptionRequest> _parser = new pb::MessageParser<SubscriptionRequest>(() => new SubscriptionRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SubscriptionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubscriptionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubscriptionRequest(SubscriptionRequest other) : this() {
+      email_ = other.email_;
+      plan_ = other.plan_;
+      card_ = other.card_ != null ? other.card_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubscriptionRequest Clone() {
+      return new SubscriptionRequest(this);
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 1;
+    private string email_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Email {
+      get { return email_; }
+      set {
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "plan" field.</summary>
+    public const int PlanFieldNumber = 2;
+    private string plan_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Plan {
+      get { return plan_; }
+      set {
+        plan_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "card" field.</summary>
+    public const int CardFieldNumber = 3;
+    private global::Api.Card card_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.Card Card {
+      get { return card_; }
+      set {
+        card_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SubscriptionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SubscriptionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Email != other.Email) return false;
+      if (Plan != other.Plan) return false;
+      if (!object.Equals(Card, other.Card)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Email.Length != 0) hash ^= Email.GetHashCode();
+      if (Plan.Length != 0) hash ^= Plan.GetHashCode();
+      if (card_ != null) hash ^= Card.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Email.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Email);
+      }
+      if (Plan.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Plan);
+      }
+      if (card_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Card);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Email.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
+      }
+      if (Plan.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Plan);
+      }
+      if (card_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Card);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SubscriptionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Email.Length != 0) {
+        Email = other.Email;
+      }
+      if (other.Plan.Length != 0) {
+        Plan = other.Plan;
+      }
+      if (other.card_ != null) {
+        if (card_ == null) {
+          card_ = new global::Api.Card();
+        }
+        Card.MergeFrom(other.Card);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Email = input.ReadString();
+            break;
+          }
+          case 18: {
+            Plan = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (card_ == null) {
+              card_ = new global::Api.Card();
+            }
+            input.ReadMessage(card_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class SubscriptionResponse : pb::IMessage<SubscriptionResponse> {
+    private static readonly pb::MessageParser<SubscriptionResponse> _parser = new pb::MessageParser<SubscriptionResponse>(() => new SubscriptionResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SubscriptionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubscriptionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubscriptionResponse(SubscriptionResponse other) : this() {
+      id_ = other.id_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SubscriptionResponse Clone() {
+      return new SubscriptionResponse(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SubscriptionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SubscriptionResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SubscriptionResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Card : pb::IMessage<Card> {
+    private static readonly pb::MessageParser<Card> _parser = new pb::MessageParser<Card>(() => new Card());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Card> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Card() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Card(Card other) : this() {
+      number_ = other.number_;
+      expMonth_ = other.expMonth_;
+      expYear_ = other.expYear_;
+      cvc_ = other.cvc_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Card Clone() {
+      return new Card(this);
+    }
+
+    /// <summary>Field number for the "number" field.</summary>
+    public const int NumberFieldNumber = 1;
+    private string number_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Number {
+      get { return number_; }
+      set {
+        number_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "exp_month" field.</summary>
+    public const int ExpMonthFieldNumber = 2;
+    private string expMonth_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ExpMonth {
+      get { return expMonth_; }
+      set {
+        expMonth_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "exp_year" field.</summary>
+    public const int ExpYearFieldNumber = 3;
+    private string expYear_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ExpYear {
+      get { return expYear_; }
+      set {
+        expYear_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "cvc" field.</summary>
+    public const int CvcFieldNumber = 4;
+    private string cvc_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Cvc {
+      get { return cvc_; }
+      set {
+        cvc_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Card);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Card other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Number != other.Number) return false;
+      if (ExpMonth != other.ExpMonth) return false;
+      if (ExpYear != other.ExpYear) return false;
+      if (Cvc != other.Cvc) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Number.Length != 0) hash ^= Number.GetHashCode();
+      if (ExpMonth.Length != 0) hash ^= ExpMonth.GetHashCode();
+      if (ExpYear.Length != 0) hash ^= ExpYear.GetHashCode();
+      if (Cvc.Length != 0) hash ^= Cvc.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Number.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Number);
+      }
+      if (ExpMonth.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(ExpMonth);
+      }
+      if (ExpYear.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(ExpYear);
+      }
+      if (Cvc.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Cvc);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Number.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Number);
+      }
+      if (ExpMonth.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExpMonth);
+      }
+      if (ExpYear.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExpYear);
+      }
+      if (Cvc.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Cvc);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Card other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Number.Length != 0) {
+        Number = other.Number;
+      }
+      if (other.ExpMonth.Length != 0) {
+        ExpMonth = other.ExpMonth;
+      }
+      if (other.ExpYear.Length != 0) {
+        ExpYear = other.ExpYear;
+      }
+      if (other.Cvc.Length != 0) {
+        Cvc = other.Cvc;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Number = input.ReadString();
+            break;
+          }
+          case 18: {
+            ExpMonth = input.ReadString();
+            break;
+          }
+          case 26: {
+            ExpYear = input.ReadString();
+            break;
+          }
+          case 34: {
+            Cvc = input.ReadString();
             break;
           }
         }

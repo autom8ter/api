@@ -12,6 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x06Tokens\x12\x18\n\x02id\x18\x01 \x01(\x0b\x32\x0c.api.IDToken\x12 \n\x06\x61\x63\x63\x65ss\x18\x02 \x01(\x0b\x32\x10.api.AccessToken\x12\"\n\x07refresh\x18\x03 \x01(\x0b\x32\x11.api.RefreshToken\"\xee\x01\n\x05Paths\x12\x0c\n\x04home\x18\x01 \x01(\t\x12\x11\n\tdashboard\x18\x02 \x01(\t\x12\x10\n\x08settings\x18\x03 \x01(\t\x12\x0e\n\x06logout\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\r\n\x05login\x18\x06 \x01(\t\x12\x11\n\tsubscribe\x18\x07 \x01(\t\x12\x13\n\x0bunsubscribe\x18\x08 \x01(\t\x12\x0b\n\x03\x66\x61q\x18\t \x01(\t\x12\x0f\n\x07support\x18\n \x01(\t\x12\r\n\x05terms\x18\x0b \x01(\t\x12\x0f\n\x07privacy\x18\x0c \x01(\t\x12\r\n\x05\x64\x65\x62ug\x18\r \x01(\t\x12\x0c\n\x04\x62log\x18\x0e \x01(\t\"c\n\x05\x41uth0\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x10\n\x08redirect\x18\x05 \x01(\tb\x06proto3')
-)
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x06Tokens\x12\x18\n\x02id\x18\x01 \x01(\x0b\x32\x0c.api.IDToken\x12 \n\x06\x61\x63\x63\x65ss\x18\x02 \x01(\x0b\x32\x10.api.AccessToken\x12\"\n\x07refresh\x18\x03 \x01(\x0b\x32\x11.api.RefreshToken\"\xee\x01\n\x05Paths\x12\x0c\n\x04home\x18\x01 \x01(\t\x12\x11\n\tdashboard\x18\x02 \x01(\t\x12\x10\n\x08settings\x18\x03 \x01(\t\x12\x0e\n\x06logout\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\r\n\x05login\x18\x06 \x01(\t\x12\x11\n\tsubscribe\x18\x07 \x01(\t\x12\x13\n\x0bunsubscribe\x18\x08 \x01(\t\x12\x0b\n\x03\x66\x61q\x18\t \x01(\t\x12\x0f\n\x07support\x18\n \x01(\t\x12\r\n\x05terms\x18\x0b \x01(\t\x12\x0f\n\x07privacy\x18\x0c \x01(\t\x12\r\n\x05\x64\x65\x62ug\x18\r \x01(\t\x12\x0c\n\x04\x62log\x18\x0e \x01(\t\"c\n\x05\x41uth0\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x10\n\x08redirect\x18\x05 \x01(\t\"K\n\x13SubscriptionRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x17\n\x04\x63\x61rd\x18\x03 \x01(\x0b\x32\t.api.Card\"\"\n\x14SubscriptionResponse\x12\n\n\x02id\x18\x01 \x01(\t\"H\n\x04\x43\x61rd\x12\x0e\n\x06number\x18\x01 \x01(\t\x12\x11\n\texp_month\x18\x02 \x01(\t\x12\x10\n\x08\x65xp_year\x18\x03 \x01(\t\x12\x0b\n\x03\x63vc\x18\x04 \x01(\t2q\n\x14SubscriptionsService\x12Y\n\x04\x45\x63ho\x12\x18.api.SubscriptionRequest\x1a\x19.api.SubscriptionResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/subscriptions:\x01*b\x06proto3')
+  ,
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -107,8 +109,8 @@ _USERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19,
-  serialized_end=233,
+  serialized_start=49,
+  serialized_end=263,
 )
 
 
@@ -145,8 +147,8 @@ _USERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=235,
-  serialized_end=291,
+  serialized_start=265,
+  serialized_end=321,
 )
 
 
@@ -183,8 +185,8 @@ _APPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=293,
-  serialized_end=339,
+  serialized_start=323,
+  serialized_end=369,
 )
 
 
@@ -214,8 +216,8 @@ _ACCESSTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=341,
-  serialized_end=369,
+  serialized_start=371,
+  serialized_end=399,
 )
 
 
@@ -245,8 +247,8 @@ _IDTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=395,
+  serialized_start=401,
+  serialized_end=425,
 )
 
 
@@ -276,8 +278,8 @@ _REFRESHTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=397,
-  serialized_end=426,
+  serialized_start=427,
+  serialized_end=456,
 )
 
 
@@ -321,8 +323,8 @@ _TOKENS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=428,
-  serialized_end=532,
+  serialized_start=458,
+  serialized_end=562,
 )
 
 
@@ -443,8 +445,8 @@ _PATHS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=535,
-  serialized_end=773,
+  serialized_start=565,
+  serialized_end=803,
 )
 
 
@@ -502,8 +504,136 @@ _AUTH0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=775,
-  serialized_end=874,
+  serialized_start=805,
+  serialized_end=904,
+)
+
+
+_SUBSCRIPTIONREQUEST = _descriptor.Descriptor(
+  name='SubscriptionRequest',
+  full_name='api.SubscriptionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='email', full_name='api.SubscriptionRequest.email', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='plan', full_name='api.SubscriptionRequest.plan', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='card', full_name='api.SubscriptionRequest.card', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=906,
+  serialized_end=981,
+)
+
+
+_SUBSCRIPTIONRESPONSE = _descriptor.Descriptor(
+  name='SubscriptionResponse',
+  full_name='api.SubscriptionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='api.SubscriptionResponse.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=983,
+  serialized_end=1017,
+)
+
+
+_CARD = _descriptor.Descriptor(
+  name='Card',
+  full_name='api.Card',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='number', full_name='api.Card.number', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exp_month', full_name='api.Card.exp_month', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exp_year', full_name='api.Card.exp_year', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cvc', full_name='api.Card.cvc', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1019,
+  serialized_end=1091,
 )
 
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
@@ -511,6 +641,7 @@ _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
 _TOKENS.fields_by_name['id'].message_type = _IDTOKEN
 _TOKENS.fields_by_name['access'].message_type = _ACCESSTOKEN
 _TOKENS.fields_by_name['refresh'].message_type = _REFRESHTOKEN
+_SUBSCRIPTIONREQUEST.fields_by_name['card'].message_type = _CARD
 DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
@@ -520,6 +651,9 @@ DESCRIPTOR.message_types_by_name['RefreshToken'] = _REFRESHTOKEN
 DESCRIPTOR.message_types_by_name['Tokens'] = _TOKENS
 DESCRIPTOR.message_types_by_name['Paths'] = _PATHS
 DESCRIPTOR.message_types_by_name['Auth0'] = _AUTH0
+DESCRIPTOR.message_types_by_name['SubscriptionRequest'] = _SUBSCRIPTIONREQUEST
+DESCRIPTOR.message_types_by_name['SubscriptionResponse'] = _SUBSCRIPTIONRESPONSE
+DESCRIPTOR.message_types_by_name['Card'] = _CARD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 UserInfo = _reflection.GeneratedProtocolMessageType('UserInfo', (_message.Message,), dict(
@@ -585,5 +719,50 @@ Auth0 = _reflection.GeneratedProtocolMessageType('Auth0', (_message.Message,), d
   ))
 _sym_db.RegisterMessage(Auth0)
 
+SubscriptionRequest = _reflection.GeneratedProtocolMessageType('SubscriptionRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SUBSCRIPTIONREQUEST,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.SubscriptionRequest)
+  ))
+_sym_db.RegisterMessage(SubscriptionRequest)
+
+SubscriptionResponse = _reflection.GeneratedProtocolMessageType('SubscriptionResponse', (_message.Message,), dict(
+  DESCRIPTOR = _SUBSCRIPTIONRESPONSE,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.SubscriptionResponse)
+  ))
+_sym_db.RegisterMessage(SubscriptionResponse)
+
+Card = _reflection.GeneratedProtocolMessageType('Card', (_message.Message,), dict(
+  DESCRIPTOR = _CARD,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.Card)
+  ))
+_sym_db.RegisterMessage(Card)
+
+
+
+_SUBSCRIPTIONSSERVICE = _descriptor.ServiceDescriptor(
+  name='SubscriptionsService',
+  full_name='api.SubscriptionsService',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  serialized_start=1093,
+  serialized_end=1206,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Echo',
+    full_name='api.SubscriptionsService.Echo',
+    index=0,
+    containing_service=None,
+    input_type=_SUBSCRIPTIONREQUEST,
+    output_type=_SUBSCRIPTIONRESPONSE,
+    serialized_options=_b('\202\323\344\223\002\026\"\021/v1/subscriptions:\001*'),
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_SUBSCRIPTIONSSERVICE)
+
+DESCRIPTOR.services_by_name['SubscriptionsService'] = _SUBSCRIPTIONSSERVICE
 
 # @@protoc_insertion_point(module_scope)

@@ -9279,6 +9279,2398 @@ public final class Api {
 
   }
 
+  public interface SubscriptionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.SubscriptionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string email = 1;</code>
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>string plan = 2;</code>
+     */
+    java.lang.String getPlan();
+    /**
+     * <code>string plan = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPlanBytes();
+
+    /**
+     * <code>.api.Card card = 3;</code>
+     */
+    boolean hasCard();
+    /**
+     * <code>.api.Card card = 3;</code>
+     */
+    api.Api.Card getCard();
+    /**
+     * <code>.api.Card card = 3;</code>
+     */
+    api.Api.CardOrBuilder getCardOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.SubscriptionRequest}
+   */
+  public  static final class SubscriptionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.SubscriptionRequest)
+      SubscriptionRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubscriptionRequest.newBuilder() to construct.
+    private SubscriptionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubscriptionRequest() {
+      email_ = "";
+      plan_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubscriptionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              plan_ = s;
+              break;
+            }
+            case 26: {
+              api.Api.Card.Builder subBuilder = null;
+              if (card_ != null) {
+                subBuilder = card_.toBuilder();
+              }
+              card_ = input.readMessage(api.Api.Card.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(card_);
+                card_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_SubscriptionRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_SubscriptionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.SubscriptionRequest.class, api.Api.SubscriptionRequest.Builder.class);
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object email_;
+    /**
+     * <code>string email = 1;</code>
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLAN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object plan_;
+    /**
+     * <code>string plan = 2;</code>
+     */
+    public java.lang.String getPlan() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plan_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string plan = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPlanBytes() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CARD_FIELD_NUMBER = 3;
+    private api.Api.Card card_;
+    /**
+     * <code>.api.Card card = 3;</code>
+     */
+    public boolean hasCard() {
+      return card_ != null;
+    }
+    /**
+     * <code>.api.Card card = 3;</code>
+     */
+    public api.Api.Card getCard() {
+      return card_ == null ? api.Api.Card.getDefaultInstance() : card_;
+    }
+    /**
+     * <code>.api.Card card = 3;</code>
+     */
+    public api.Api.CardOrBuilder getCardOrBuilder() {
+      return getCard();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, email_);
+      }
+      if (!getPlanBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, plan_);
+      }
+      if (card_ != null) {
+        output.writeMessage(3, getCard());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, email_);
+      }
+      if (!getPlanBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, plan_);
+      }
+      if (card_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getCard());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.SubscriptionRequest)) {
+        return super.equals(obj);
+      }
+      api.Api.SubscriptionRequest other = (api.Api.SubscriptionRequest) obj;
+
+      boolean result = true;
+      result = result && getEmail()
+          .equals(other.getEmail());
+      result = result && getPlan()
+          .equals(other.getPlan());
+      result = result && (hasCard() == other.hasCard());
+      if (hasCard()) {
+        result = result && getCard()
+            .equals(other.getCard());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + PLAN_FIELD_NUMBER;
+      hash = (53 * hash) + getPlan().hashCode();
+      if (hasCard()) {
+        hash = (37 * hash) + CARD_FIELD_NUMBER;
+        hash = (53 * hash) + getCard().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.SubscriptionRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SubscriptionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.SubscriptionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SubscriptionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.SubscriptionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.SubscriptionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.SubscriptionRequest)
+        api.Api.SubscriptionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_SubscriptionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_SubscriptionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.SubscriptionRequest.class, api.Api.SubscriptionRequest.Builder.class);
+      }
+
+      // Construct using api.Api.SubscriptionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        email_ = "";
+
+        plan_ = "";
+
+        if (cardBuilder_ == null) {
+          card_ = null;
+        } else {
+          card_ = null;
+          cardBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_SubscriptionRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.SubscriptionRequest getDefaultInstanceForType() {
+        return api.Api.SubscriptionRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.SubscriptionRequest build() {
+        api.Api.SubscriptionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.SubscriptionRequest buildPartial() {
+        api.Api.SubscriptionRequest result = new api.Api.SubscriptionRequest(this);
+        result.email_ = email_;
+        result.plan_ = plan_;
+        if (cardBuilder_ == null) {
+          result.card_ = card_;
+        } else {
+          result.card_ = cardBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.SubscriptionRequest) {
+          return mergeFrom((api.Api.SubscriptionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.SubscriptionRequest other) {
+        if (other == api.Api.SubscriptionRequest.getDefaultInstance()) return this;
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
+        }
+        if (!other.getPlan().isEmpty()) {
+          plan_ = other.plan_;
+          onChanged();
+        }
+        if (other.hasCard()) {
+          mergeCard(other.getCard());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.SubscriptionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.SubscriptionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 1;</code>
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string email = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string email = 1;</code>
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 1;</code>
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 1;</code>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object plan_ = "";
+      /**
+       * <code>string plan = 2;</code>
+       */
+      public java.lang.String getPlan() {
+        java.lang.Object ref = plan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string plan = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPlanBytes() {
+        java.lang.Object ref = plan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string plan = 2;</code>
+       */
+      public Builder setPlan(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plan_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plan = 2;</code>
+       */
+      public Builder clearPlan() {
+        
+        plan_ = getDefaultInstance().getPlan();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plan = 2;</code>
+       */
+      public Builder setPlanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plan_ = value;
+        onChanged();
+        return this;
+      }
+
+      private api.Api.Card card_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Card, api.Api.Card.Builder, api.Api.CardOrBuilder> cardBuilder_;
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public boolean hasCard() {
+        return cardBuilder_ != null || card_ != null;
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public api.Api.Card getCard() {
+        if (cardBuilder_ == null) {
+          return card_ == null ? api.Api.Card.getDefaultInstance() : card_;
+        } else {
+          return cardBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public Builder setCard(api.Api.Card value) {
+        if (cardBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          card_ = value;
+          onChanged();
+        } else {
+          cardBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public Builder setCard(
+          api.Api.Card.Builder builderForValue) {
+        if (cardBuilder_ == null) {
+          card_ = builderForValue.build();
+          onChanged();
+        } else {
+          cardBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public Builder mergeCard(api.Api.Card value) {
+        if (cardBuilder_ == null) {
+          if (card_ != null) {
+            card_ =
+              api.Api.Card.newBuilder(card_).mergeFrom(value).buildPartial();
+          } else {
+            card_ = value;
+          }
+          onChanged();
+        } else {
+          cardBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public Builder clearCard() {
+        if (cardBuilder_ == null) {
+          card_ = null;
+          onChanged();
+        } else {
+          card_ = null;
+          cardBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public api.Api.Card.Builder getCardBuilder() {
+        
+        onChanged();
+        return getCardFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      public api.Api.CardOrBuilder getCardOrBuilder() {
+        if (cardBuilder_ != null) {
+          return cardBuilder_.getMessageOrBuilder();
+        } else {
+          return card_ == null ?
+              api.Api.Card.getDefaultInstance() : card_;
+        }
+      }
+      /**
+       * <code>.api.Card card = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Card, api.Api.Card.Builder, api.Api.CardOrBuilder> 
+          getCardFieldBuilder() {
+        if (cardBuilder_ == null) {
+          cardBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.Card, api.Api.Card.Builder, api.Api.CardOrBuilder>(
+                  getCard(),
+                  getParentForChildren(),
+                  isClean());
+          card_ = null;
+        }
+        return cardBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.SubscriptionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.SubscriptionRequest)
+    private static final api.Api.SubscriptionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.SubscriptionRequest();
+    }
+
+    public static api.Api.SubscriptionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubscriptionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<SubscriptionRequest>() {
+      @java.lang.Override
+      public SubscriptionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubscriptionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubscriptionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubscriptionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.SubscriptionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SubscriptionResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.SubscriptionResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+  }
+  /**
+   * Protobuf type {@code api.SubscriptionResponse}
+   */
+  public  static final class SubscriptionResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.SubscriptionResponse)
+      SubscriptionResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use SubscriptionResponse.newBuilder() to construct.
+    private SubscriptionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private SubscriptionResponse() {
+      id_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SubscriptionResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_SubscriptionResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_SubscriptionResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.SubscriptionResponse.class, api.Api.SubscriptionResponse.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.SubscriptionResponse)) {
+        return super.equals(obj);
+      }
+      api.Api.SubscriptionResponse other = (api.Api.SubscriptionResponse) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.SubscriptionResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SubscriptionResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.SubscriptionResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.SubscriptionResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.SubscriptionResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.SubscriptionResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.SubscriptionResponse)
+        api.Api.SubscriptionResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_SubscriptionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_SubscriptionResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.SubscriptionResponse.class, api.Api.SubscriptionResponse.Builder.class);
+      }
+
+      // Construct using api.Api.SubscriptionResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_SubscriptionResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.SubscriptionResponse getDefaultInstanceForType() {
+        return api.Api.SubscriptionResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.SubscriptionResponse build() {
+        api.Api.SubscriptionResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.SubscriptionResponse buildPartial() {
+        api.Api.SubscriptionResponse result = new api.Api.SubscriptionResponse(this);
+        result.id_ = id_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.SubscriptionResponse) {
+          return mergeFrom((api.Api.SubscriptionResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.SubscriptionResponse other) {
+        if (other == api.Api.SubscriptionResponse.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.SubscriptionResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.SubscriptionResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.SubscriptionResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.SubscriptionResponse)
+    private static final api.Api.SubscriptionResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.SubscriptionResponse();
+    }
+
+    public static api.Api.SubscriptionResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubscriptionResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SubscriptionResponse>() {
+      @java.lang.Override
+      public SubscriptionResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SubscriptionResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubscriptionResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubscriptionResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.SubscriptionResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CardOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Card)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string number = 1;</code>
+     */
+    java.lang.String getNumber();
+    /**
+     * <code>string number = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNumberBytes();
+
+    /**
+     * <code>string exp_month = 2;</code>
+     */
+    java.lang.String getExpMonth();
+    /**
+     * <code>string exp_month = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getExpMonthBytes();
+
+    /**
+     * <code>string exp_year = 3;</code>
+     */
+    java.lang.String getExpYear();
+    /**
+     * <code>string exp_year = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getExpYearBytes();
+
+    /**
+     * <code>string cvc = 4;</code>
+     */
+    java.lang.String getCvc();
+    /**
+     * <code>string cvc = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getCvcBytes();
+  }
+  /**
+   * Protobuf type {@code api.Card}
+   */
+  public  static final class Card extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.Card)
+      CardOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Card.newBuilder() to construct.
+    private Card(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Card() {
+      number_ = "";
+      expMonth_ = "";
+      expYear_ = "";
+      cvc_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Card(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              number_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expMonth_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expYear_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cvc_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_Card_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_Card_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.Card.class, api.Api.Card.Builder.class);
+    }
+
+    public static final int NUMBER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object number_;
+    /**
+     * <code>string number = 1;</code>
+     */
+    public java.lang.String getNumber() {
+      java.lang.Object ref = number_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        number_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string number = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNumberBytes() {
+      java.lang.Object ref = number_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        number_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXP_MONTH_FIELD_NUMBER = 2;
+    private volatile java.lang.Object expMonth_;
+    /**
+     * <code>string exp_month = 2;</code>
+     */
+    public java.lang.String getExpMonth() {
+      java.lang.Object ref = expMonth_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expMonth_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string exp_month = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExpMonthBytes() {
+      java.lang.Object ref = expMonth_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expMonth_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXP_YEAR_FIELD_NUMBER = 3;
+    private volatile java.lang.Object expYear_;
+    /**
+     * <code>string exp_year = 3;</code>
+     */
+    public java.lang.String getExpYear() {
+      java.lang.Object ref = expYear_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expYear_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string exp_year = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExpYearBytes() {
+      java.lang.Object ref = expYear_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expYear_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CVC_FIELD_NUMBER = 4;
+    private volatile java.lang.Object cvc_;
+    /**
+     * <code>string cvc = 4;</code>
+     */
+    public java.lang.String getCvc() {
+      java.lang.Object ref = cvc_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cvc_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cvc = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCvcBytes() {
+      java.lang.Object ref = cvc_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cvc_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNumberBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, number_);
+      }
+      if (!getExpMonthBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, expMonth_);
+      }
+      if (!getExpYearBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, expYear_);
+      }
+      if (!getCvcBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, cvc_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNumberBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, number_);
+      }
+      if (!getExpMonthBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, expMonth_);
+      }
+      if (!getExpYearBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, expYear_);
+      }
+      if (!getCvcBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, cvc_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.Card)) {
+        return super.equals(obj);
+      }
+      api.Api.Card other = (api.Api.Card) obj;
+
+      boolean result = true;
+      result = result && getNumber()
+          .equals(other.getNumber());
+      result = result && getExpMonth()
+          .equals(other.getExpMonth());
+      result = result && getExpYear()
+          .equals(other.getExpYear());
+      result = result && getCvc()
+          .equals(other.getCvc());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getNumber().hashCode();
+      hash = (37 * hash) + EXP_MONTH_FIELD_NUMBER;
+      hash = (53 * hash) + getExpMonth().hashCode();
+      hash = (37 * hash) + EXP_YEAR_FIELD_NUMBER;
+      hash = (53 * hash) + getExpYear().hashCode();
+      hash = (37 * hash) + CVC_FIELD_NUMBER;
+      hash = (53 * hash) + getCvc().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.Card parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Card parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Card parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Card parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Card parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Card parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Card parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Card parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Card parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.Card parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Card parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Card parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.Card prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.Card}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.Card)
+        api.Api.CardOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_Card_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_Card_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.Card.class, api.Api.Card.Builder.class);
+      }
+
+      // Construct using api.Api.Card.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        number_ = "";
+
+        expMonth_ = "";
+
+        expYear_ = "";
+
+        cvc_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_Card_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.Card getDefaultInstanceForType() {
+        return api.Api.Card.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.Card build() {
+        api.Api.Card result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.Card buildPartial() {
+        api.Api.Card result = new api.Api.Card(this);
+        result.number_ = number_;
+        result.expMonth_ = expMonth_;
+        result.expYear_ = expYear_;
+        result.cvc_ = cvc_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.Card) {
+          return mergeFrom((api.Api.Card)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.Card other) {
+        if (other == api.Api.Card.getDefaultInstance()) return this;
+        if (!other.getNumber().isEmpty()) {
+          number_ = other.number_;
+          onChanged();
+        }
+        if (!other.getExpMonth().isEmpty()) {
+          expMonth_ = other.expMonth_;
+          onChanged();
+        }
+        if (!other.getExpYear().isEmpty()) {
+          expYear_ = other.expYear_;
+          onChanged();
+        }
+        if (!other.getCvc().isEmpty()) {
+          cvc_ = other.cvc_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.Card parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.Card) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object number_ = "";
+      /**
+       * <code>string number = 1;</code>
+       */
+      public java.lang.String getNumber() {
+        java.lang.Object ref = number_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          number_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string number = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNumberBytes() {
+        java.lang.Object ref = number_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          number_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string number = 1;</code>
+       */
+      public Builder setNumber(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        number_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string number = 1;</code>
+       */
+      public Builder clearNumber() {
+        
+        number_ = getDefaultInstance().getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string number = 1;</code>
+       */
+      public Builder setNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        number_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object expMonth_ = "";
+      /**
+       * <code>string exp_month = 2;</code>
+       */
+      public java.lang.String getExpMonth() {
+        java.lang.Object ref = expMonth_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expMonth_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string exp_month = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExpMonthBytes() {
+        java.lang.Object ref = expMonth_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expMonth_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string exp_month = 2;</code>
+       */
+      public Builder setExpMonth(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        expMonth_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string exp_month = 2;</code>
+       */
+      public Builder clearExpMonth() {
+        
+        expMonth_ = getDefaultInstance().getExpMonth();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string exp_month = 2;</code>
+       */
+      public Builder setExpMonthBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        expMonth_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object expYear_ = "";
+      /**
+       * <code>string exp_year = 3;</code>
+       */
+      public java.lang.String getExpYear() {
+        java.lang.Object ref = expYear_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expYear_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string exp_year = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExpYearBytes() {
+        java.lang.Object ref = expYear_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expYear_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string exp_year = 3;</code>
+       */
+      public Builder setExpYear(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        expYear_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string exp_year = 3;</code>
+       */
+      public Builder clearExpYear() {
+        
+        expYear_ = getDefaultInstance().getExpYear();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string exp_year = 3;</code>
+       */
+      public Builder setExpYearBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        expYear_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cvc_ = "";
+      /**
+       * <code>string cvc = 4;</code>
+       */
+      public java.lang.String getCvc() {
+        java.lang.Object ref = cvc_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cvc_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cvc = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCvcBytes() {
+        java.lang.Object ref = cvc_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cvc_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cvc = 4;</code>
+       */
+      public Builder setCvc(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cvc_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cvc = 4;</code>
+       */
+      public Builder clearCvc() {
+        
+        cvc_ = getDefaultInstance().getCvc();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cvc = 4;</code>
+       */
+      public Builder setCvcBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cvc_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Card)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Card)
+    private static final api.Api.Card DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Card();
+    }
+
+    public static api.Api.Card getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Card>
+        PARSER = new com.google.protobuf.AbstractParser<Card>() {
+      @java.lang.Override
+      public Card parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Card(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Card> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Card> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Card getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_UserInfo_descriptor;
   private static final 
@@ -9324,6 +11716,21 @@ public final class Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Auth0_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_SubscriptionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_SubscriptionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_SubscriptionResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_SubscriptionResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_Card_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_Card_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9333,29 +11740,37 @@ public final class Api {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tapi.proto\022\003api\"\326\001\n\010UserInfo\022\014\n\004name\030\006 " +
-      "\001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013family_name\030\010" +
-      " \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022" +
-      "\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_" +
-      "metadata\030\r \001(\0132\021.api.UserMetadata\022&\n\014app" +
-      "_metadata\030\016 \001(\0132\020.api.AppMetadata\"8\n\014Use" +
-      "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co" +
-      "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t" +
-      "\022\021\n\tpay_token\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005to" +
-      "ken\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\t\"\035\n\014R" +
-      "efreshToken\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002" +
-      "id\030\001 \001(\0132\014.api.IDToken\022 \n\006access\030\002 \001(\0132\020" +
-      ".api.AccessToken\022\"\n\007refresh\030\003 \001(\0132\021.api." +
-      "RefreshToken\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\t" +
-      "dashboard\030\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006log" +
-      "out\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001" +
-      "(\t\022\021\n\tsubscribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001" +
-      "(\t\022\013\n\003faq\030\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005term" +
-      "s\030\013 \001(\t\022\017\n\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022" +
-      "\014\n\004blog\030\016 \001(\t\"c\n\005Auth0\022\016\n\006domain\030\001 \001(\t\022\021" +
-      "\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t" +
-      "\022\016\n\006scopes\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\tb\006prot" +
-      "o3"
+      "\n\tapi.proto\022\003api\032\034google/api/annotations" +
+      ".proto\"\326\001\n\010UserInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiv" +
+      "en_name\030\007 \001(\t\022\023\n\013family_name\030\010 \001(\t\022\016\n\006ge" +
+      "nder\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005email\030\013" +
+      " \001(\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_metadata\030\r" +
+      " \001(\0132\021.api.UserMetadata\022&\n\014app_metadata\030" +
+      "\016 \001(\0132\020.api.AppMetadata\"8\n\014UserMetadata\022" +
+      "\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_contact\030\002 \001(" +
+      "\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022\021\n\tpay_to" +
+      "ken\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005token\030\001 \001(\t\"" +
+      "\030\n\007IDToken\022\r\n\005token\030\001 \001(\t\"\035\n\014RefreshToke" +
+      "n\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002id\030\001 \001(\0132\014" +
+      ".api.IDToken\022 \n\006access\030\002 \001(\0132\020.api.Acces" +
+      "sToken\022\"\n\007refresh\030\003 \001(\0132\021.api.RefreshTok" +
+      "en\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\tdashboard\030" +
+      "\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006logout\030\004 \001(\t\022" +
+      "\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001(\t\022\021\n\tsubs" +
+      "cribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001(\t\022\013\n\003faq\030" +
+      "\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005terms\030\013 \001(\t\022\017\n" +
+      "\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022\014\n\004blog\030\016 " +
+      "\001(\t\"c\n\005Auth0\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_i" +
+      "d\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t\022\016\n\006scopes" +
+      "\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\t\"K\n\023Subscription" +
+      "Request\022\r\n\005email\030\001 \001(\t\022\014\n\004plan\030\002 \001(\t\022\027\n\004" +
+      "card\030\003 \001(\0132\t.api.Card\"\"\n\024SubscriptionRes" +
+      "ponse\022\n\n\002id\030\001 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001(" +
+      "\t\022\021\n\texp_month\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013" +
+      "\n\003cvc\030\004 \001(\t2q\n\024SubscriptionsService\022Y\n\004E" +
+      "cho\022\030.api.SubscriptionRequest\032\031.api.Subs" +
+      "criptionResponse\"\034\202\323\344\223\002\026\"\021/v1/subscripti" +
+      "ons:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9368,6 +11783,7 @@ public final class Api {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.AnnotationsProto.getDescriptor(),
         }, assigner);
     internal_static_api_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9423,6 +11839,30 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Auth0_descriptor,
         new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect", });
+    internal_static_api_SubscriptionRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_api_SubscriptionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_SubscriptionRequest_descriptor,
+        new java.lang.String[] { "Email", "Plan", "Card", });
+    internal_static_api_SubscriptionResponse_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_api_SubscriptionResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_SubscriptionResponse_descriptor,
+        new java.lang.String[] { "Id", });
+    internal_static_api_Card_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_api_Card_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_Card_descriptor,
+        new java.lang.String[] { "Number", "ExpMonth", "ExpYear", "Cvc", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.AnnotationsProto.http);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

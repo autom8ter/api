@@ -29,6 +29,7 @@ CF_EXTERN_C_BEGIN
 
 @class AccessToken;
 @class AppMetadata;
+@class Card;
 @class IDToken;
 @class RefreshToken;
 @class UserMetadata;
@@ -254,6 +255,59 @@ typedef GPB_ENUM(Auth0_FieldNumber) {
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
+
+@end
+
+#pragma mark - SubscriptionRequest
+
+typedef GPB_ENUM(SubscriptionRequest_FieldNumber) {
+  SubscriptionRequest_FieldNumber_Email = 1,
+  SubscriptionRequest_FieldNumber_Plan = 2,
+  SubscriptionRequest_FieldNumber_Card = 3,
+};
+
+@interface SubscriptionRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+
+@property(nonatomic, readwrite, strong, null_resettable) Card *card;
+/** Test to see if @c card has been set. */
+@property(nonatomic, readwrite) BOOL hasCard;
+
+@end
+
+#pragma mark - SubscriptionResponse
+
+typedef GPB_ENUM(SubscriptionResponse_FieldNumber) {
+  SubscriptionResponse_FieldNumber_Id_p = 1,
+};
+
+@interface SubscriptionResponse : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
+#pragma mark - Card
+
+typedef GPB_ENUM(Card_FieldNumber) {
+  Card_FieldNumber_Number = 1,
+  Card_FieldNumber_ExpMonth = 2,
+  Card_FieldNumber_ExpYear = 3,
+  Card_FieldNumber_Cvc = 4,
+};
+
+@interface Card : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *number;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expMonth;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
 
 @end
 

@@ -14,6 +14,73 @@
   "produces": [
     "application/json"
   ],
-  "paths": {},
-  "definitions": {}
+  "paths": {
+    "/v1/subscriptions": {
+      "post": {
+        "operationId": "Echo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiSubscriptionResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSubscriptionRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SubscriptionsService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "apiCard": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "exp_month": {
+          "type": "string"
+        },
+        "exp_year": {
+          "type": "string"
+        },
+        "cvc": {
+          "type": "string"
+        }
+      }
+    },
+    "apiSubscriptionRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "plan": {
+          "type": "string"
+        },
+        "card": {
+          "$ref": "#/definitions/apiCard"
+        }
+      }
+    },
+    "apiSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }

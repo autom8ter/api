@@ -1,6 +1,17 @@
 syntax="proto3";
 
 package api;
+import "google/api/annotations.proto";
+
+
+service SubscriptionsService {
+    rpc Echo(SubscriptionRequest) returns (SubscriptionResponse) {
+        option (google.api.http) = {
+      post: "/v1/subscriptions"
+      body: "*"
+    };
+    }
+}
 
 message UserInfo {
     string name=6;
@@ -66,4 +77,21 @@ message Auth0 {
     string client_secret=3;
    repeated string scopes= 4;
     string redirect=5;
+}
+
+message SubscriptionRequest {
+    string email =1;
+    string plan =2;
+    Card card =3;
+}
+
+message SubscriptionResponse {
+    string id=1;
+}
+
+message Card {
+    string number =1;
+    string exp_month=2;
+    string exp_year=3;
+    string cvc=4;
 }
