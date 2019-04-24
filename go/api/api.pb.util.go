@@ -208,6 +208,10 @@ func (o *Auth0) GetTokens(r *http.Request) (*Tokens, error) {
 	}, nil
 }
 
+func (o *Auth0) SecureFunc(redirect string, handler http.HandlerFunc) http.HandlerFunc {
+	return o.Secure(redirect, handler)
+}
+
 func (o *Auth0) Secure(redirect string, handler http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		prof, err := o.GetUserInfo(r)
