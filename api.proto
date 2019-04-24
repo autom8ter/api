@@ -11,6 +11,12 @@ service EchoService {
       body: "*"
     };
     }
+    rpc EchoSpanish(EchoMessage) returns (EchoMessage) {
+        option (google.api.http) = {
+      post: "/echo/spanish"
+      body: "*"
+    };
+    }
 }
 
 message EchoMessage {
@@ -33,11 +39,15 @@ message UserInfo {
 message UserMetadata {
     string phone =1;
     string preferred_contact=2;
+    string status=3;
+    repeated string tags=4;
 }
 
 message AppMetadata {
     string plan=1;
     string pay_token=2;
+    string delinquent=3;
+    repeated string tags=4;
 }
 
 message Auth {
@@ -47,11 +57,6 @@ message Auth {
     string redirect=4;
     string audience=5;
     repeated string scopes=6;
-}
-
-message Template {
-    string name =1;
-    string text =2;
 }
 
 message Bytes {

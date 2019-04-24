@@ -104,6 +104,8 @@ typedef GPB_ENUM(UserInfo_FieldNumber) {
 typedef GPB_ENUM(UserMetadata_FieldNumber) {
   UserMetadata_FieldNumber_Phone = 1,
   UserMetadata_FieldNumber_PreferredContact = 2,
+  UserMetadata_FieldNumber_Status = 3,
+  UserMetadata_FieldNumber_TagsArray = 4,
 };
 
 @interface UserMetadata : GPBMessage
@@ -112,6 +114,12 @@ typedef GPB_ENUM(UserMetadata_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *preferredContact;
 
+@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *tagsArray;
+/** The number of items in @c tagsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tagsArray_Count;
+
 @end
 
 #pragma mark - AppMetadata
@@ -119,6 +127,8 @@ typedef GPB_ENUM(UserMetadata_FieldNumber) {
 typedef GPB_ENUM(AppMetadata_FieldNumber) {
   AppMetadata_FieldNumber_Plan = 1,
   AppMetadata_FieldNumber_PayToken = 2,
+  AppMetadata_FieldNumber_Delinquent = 3,
+  AppMetadata_FieldNumber_TagsArray = 4,
 };
 
 @interface AppMetadata : GPBMessage
@@ -126,6 +136,12 @@ typedef GPB_ENUM(AppMetadata_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *payToken;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *delinquent;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *tagsArray;
+/** The number of items in @c tagsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tagsArray_Count;
 
 @end
 
@@ -155,21 +171,6 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
 /** The number of items in @c scopesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
-
-@end
-
-#pragma mark - Template
-
-typedef GPB_ENUM(Template_FieldNumber) {
-  Template_FieldNumber_Name = 1,
-  Template_FieldNumber_Text = 2,
-};
-
-@interface Template : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
 
 @end
 

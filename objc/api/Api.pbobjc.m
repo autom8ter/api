@@ -233,11 +233,15 @@ typedef struct UserInfo__storage_ {
 
 @dynamic phone;
 @dynamic preferredContact;
+@dynamic status;
+@dynamic tagsArray, tagsArray_Count;
 
 typedef struct UserMetadata__storage_ {
   uint32_t _has_storage_[1];
   NSString *phone;
   NSString *preferredContact;
+  NSString *status;
+  NSMutableArray *tagsArray;
 } UserMetadata__storage_;
 
 // This method is threadsafe because it is initially called
@@ -264,6 +268,24 @@ typedef struct UserMetadata__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "status",
+        .dataTypeSpecific.className = NULL,
+        .number = UserMetadata_FieldNumber_Status,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(UserMetadata__storage_, status),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "tagsArray",
+        .dataTypeSpecific.className = NULL,
+        .number = UserMetadata_FieldNumber_TagsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(UserMetadata__storage_, tagsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[UserMetadata class]
@@ -287,11 +309,15 @@ typedef struct UserMetadata__storage_ {
 
 @dynamic plan;
 @dynamic payToken;
+@dynamic delinquent;
+@dynamic tagsArray, tagsArray_Count;
 
 typedef struct AppMetadata__storage_ {
   uint32_t _has_storage_[1];
   NSString *plan;
   NSString *payToken;
+  NSString *delinquent;
+  NSMutableArray *tagsArray;
 } AppMetadata__storage_;
 
 // This method is threadsafe because it is initially called
@@ -316,6 +342,24 @@ typedef struct AppMetadata__storage_ {
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(AppMetadata__storage_, payToken),
         .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "delinquent",
+        .dataTypeSpecific.className = NULL,
+        .number = AppMetadata_FieldNumber_Delinquent,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(AppMetadata__storage_, delinquent),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "tagsArray",
+        .dataTypeSpecific.className = NULL,
+        .number = AppMetadata_FieldNumber_TagsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(AppMetadata__storage_, tagsArray),
+        .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeString,
       },
     };
@@ -424,60 +468,6 @@ typedef struct Auth__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Auth__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Template
-
-@implementation Template
-
-@dynamic name;
-@dynamic text;
-
-typedef struct Template__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *name;
-  NSString *text;
-} Template__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "name",
-        .dataTypeSpecific.className = NULL,
-        .number = Template_FieldNumber_Name,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Template__storage_, name),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "text",
-        .dataTypeSpecific.className = NULL,
-        .number = Template_FieldNumber_Text,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Template__storage_, text),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Template class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Template__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

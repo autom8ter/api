@@ -22,10 +22,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.UserMetadata" do
     optional :phone, :string, 1
     optional :preferred_contact, :string, 2
+    optional :status, :string, 3
+    repeated :tags, :string, 4
   end
   add_message "api.AppMetadata" do
     optional :plan, :string, 1
     optional :pay_token, :string, 2
+    optional :delinquent, :string, 3
+    repeated :tags, :string, 4
   end
   add_message "api.Auth" do
     optional :domain, :string, 1
@@ -34,10 +38,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :redirect, :string, 4
     optional :audience, :string, 5
     repeated :scopes, :string, 6
-  end
-  add_message "api.Template" do
-    optional :name, :string, 1
-    optional :text, :string, 2
   end
   add_message "api.Bytes" do
     optional :bits, :bytes, 1
@@ -50,6 +50,5 @@ module Api
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
   Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
-  Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
   Bytes = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Bytes").msgclass
 end

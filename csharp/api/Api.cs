@@ -30,24 +30,26 @@ namespace Api {
             "YW1lGAggASgJEg4KBmdlbmRlchgJIAEoCRIRCgliaXJ0aGRhdGUYCiABKAkS",
             "DQoFZW1haWwYCyABKAkSDwoHcGljdHVyZRgMIAEoCRIoCg11c2VyX21ldGFk",
             "YXRhGA0gASgLMhEuYXBpLlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEY",
-            "DiABKAsyEC5hcGkuQXBwTWV0YWRhdGEiOAoMVXNlck1ldGFkYXRhEg0KBXBo",
-            "b25lGAEgASgJEhkKEXByZWZlcnJlZF9jb250YWN0GAIgASgJIi4KC0FwcE1l",
-            "dGFkYXRhEgwKBHBsYW4YASABKAkSEQoJcGF5X3Rva2VuGAIgASgJInQKBEF1",
-            "dGgSDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9pZBgCIAEoCRIVCg1jbGll",
-            "bnRfc2VjcmV0GAMgASgJEhAKCHJlZGlyZWN0GAQgASgJEhAKCGF1ZGllbmNl",
-            "GAUgASgJEg4KBnNjb3BlcxgGIAMoCSImCghUZW1wbGF0ZRIMCgRuYW1lGAEg",
-            "ASgJEgwKBHRleHQYAiABKAkiFQoFQnl0ZXMSDAoEYml0cxgBIAEoDDJLCgtF",
-            "Y2hvU2VydmljZRI8CgRFY2hvEhAuYXBpLkVjaG9NZXNzYWdlGhAuYXBpLkVj",
-            "aG9NZXNzYWdlIhCC0+STAgoiBS9lY2hvOgEqYgZwcm90bzM="));
+            "DiABKAsyEC5hcGkuQXBwTWV0YWRhdGEiVgoMVXNlck1ldGFkYXRhEg0KBXBo",
+            "b25lGAEgASgJEhkKEXByZWZlcnJlZF9jb250YWN0GAIgASgJEg4KBnN0YXR1",
+            "cxgDIAEoCRIMCgR0YWdzGAQgAygJIlAKC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
+            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJEhIKCmRlbGlucXVlbnQYAyABKAkS",
+            "DAoEdGFncxgEIAMoCSJ0CgRBdXRoEg4KBmRvbWFpbhgBIAEoCRIRCgljbGll",
+            "bnRfaWQYAiABKAkSFQoNY2xpZW50X3NlY3JldBgDIAEoCRIQCghyZWRpcmVj",
+            "dBgEIAEoCRIQCghhdWRpZW5jZRgFIAEoCRIOCgZzY29wZXMYBiADKAkiFQoF",
+            "Qnl0ZXMSDAoEYml0cxgBIAEoDDKYAQoLRWNob1NlcnZpY2USPAoERWNobxIQ",
+            "LmFwaS5FY2hvTWVzc2FnZRoQLmFwaS5FY2hvTWVzc2FnZSIQgtPkkwIKIgUv",
+            "ZWNobzoBKhJLCgtFY2hvU3BhbmlzaBIQLmFwaS5FY2hvTWVzc2FnZRoQLmFw",
+            "aS5FY2hvTWVzc2FnZSIYgtPkkwISIg0vZWNoby9zcGFuaXNoOgEqYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.EchoMessage), global::Api.EchoMessage.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact", "Status", "Tags" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken", "Delinquent", "Tags" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth), global::Api.Auth.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Template), global::Api.Template.Parser, new[]{ "Name", "Text" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Bytes), global::Api.Bytes.Parser, new[]{ "Bits" }, null, null, null)
           }));
     }
@@ -576,6 +578,8 @@ namespace Api {
     public UserMetadata(UserMetadata other) : this() {
       phone_ = other.phone_;
       preferredContact_ = other.preferredContact_;
+      status_ = other.status_;
+      tags_ = other.tags_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -606,6 +610,27 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 3;
+    private string status_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Status {
+      get { return status_; }
+      set {
+        status_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_tags_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> tags_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Tags {
+      get { return tags_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UserMetadata);
@@ -621,6 +646,8 @@ namespace Api {
       }
       if (Phone != other.Phone) return false;
       if (PreferredContact != other.PreferredContact) return false;
+      if (Status != other.Status) return false;
+      if(!tags_.Equals(other.tags_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -629,6 +656,8 @@ namespace Api {
       int hash = 1;
       if (Phone.Length != 0) hash ^= Phone.GetHashCode();
       if (PreferredContact.Length != 0) hash ^= PreferredContact.GetHashCode();
+      if (Status.Length != 0) hash ^= Status.GetHashCode();
+      hash ^= tags_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -650,6 +679,11 @@ namespace Api {
         output.WriteRawTag(18);
         output.WriteString(PreferredContact);
       }
+      if (Status.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Status);
+      }
+      tags_.WriteTo(output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -664,6 +698,10 @@ namespace Api {
       if (PreferredContact.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PreferredContact);
       }
+      if (Status.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Status);
+      }
+      size += tags_.CalculateSize(_repeated_tags_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -681,6 +719,10 @@ namespace Api {
       if (other.PreferredContact.Length != 0) {
         PreferredContact = other.PreferredContact;
       }
+      if (other.Status.Length != 0) {
+        Status = other.Status;
+      }
+      tags_.Add(other.tags_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -698,6 +740,14 @@ namespace Api {
           }
           case 18: {
             PreferredContact = input.ReadString();
+            break;
+          }
+          case 26: {
+            Status = input.ReadString();
+            break;
+          }
+          case 34: {
+            tags_.AddEntriesFrom(input, _repeated_tags_codec);
             break;
           }
         }
@@ -733,6 +783,8 @@ namespace Api {
     public AppMetadata(AppMetadata other) : this() {
       plan_ = other.plan_;
       payToken_ = other.payToken_;
+      delinquent_ = other.delinquent_;
+      tags_ = other.tags_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -763,6 +815,27 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "delinquent" field.</summary>
+    public const int DelinquentFieldNumber = 3;
+    private string delinquent_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Delinquent {
+      get { return delinquent_; }
+      set {
+        delinquent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tags" field.</summary>
+    public const int TagsFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_tags_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> tags_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Tags {
+      get { return tags_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as AppMetadata);
@@ -778,6 +851,8 @@ namespace Api {
       }
       if (Plan != other.Plan) return false;
       if (PayToken != other.PayToken) return false;
+      if (Delinquent != other.Delinquent) return false;
+      if(!tags_.Equals(other.tags_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -786,6 +861,8 @@ namespace Api {
       int hash = 1;
       if (Plan.Length != 0) hash ^= Plan.GetHashCode();
       if (PayToken.Length != 0) hash ^= PayToken.GetHashCode();
+      if (Delinquent.Length != 0) hash ^= Delinquent.GetHashCode();
+      hash ^= tags_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -807,6 +884,11 @@ namespace Api {
         output.WriteRawTag(18);
         output.WriteString(PayToken);
       }
+      if (Delinquent.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Delinquent);
+      }
+      tags_.WriteTo(output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -821,6 +903,10 @@ namespace Api {
       if (PayToken.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PayToken);
       }
+      if (Delinquent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Delinquent);
+      }
+      size += tags_.CalculateSize(_repeated_tags_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -838,6 +924,10 @@ namespace Api {
       if (other.PayToken.Length != 0) {
         PayToken = other.PayToken;
       }
+      if (other.Delinquent.Length != 0) {
+        Delinquent = other.Delinquent;
+      }
+      tags_.Add(other.tags_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -855,6 +945,14 @@ namespace Api {
           }
           case 18: {
             PayToken = input.ReadString();
+            break;
+          }
+          case 26: {
+            Delinquent = input.ReadString();
+            break;
+          }
+          case 34: {
+            tags_.AddEntriesFrom(input, _repeated_tags_codec);
             break;
           }
         }
@@ -1124,163 +1222,6 @@ namespace Api {
 
   }
 
-  public sealed partial class Template : pb::IMessage<Template> {
-    private static readonly pb::MessageParser<Template> _parser = new pb::MessageParser<Template>(() => new Template());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Template> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Template() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Template(Template other) : this() {
-      name_ = other.name_;
-      text_ = other.text_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Template Clone() {
-      return new Template(this);
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "text" field.</summary>
-    public const int TextFieldNumber = 2;
-    private string text_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Text {
-      get { return text_; }
-      set {
-        text_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Template);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Template other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Name != other.Name) return false;
-      if (Text != other.Text) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Text.Length != 0) hash ^= Text.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Name.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Name);
-      }
-      if (Text.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Text);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (Text.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Template other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      if (other.Text.Length != 0) {
-        Text = other.Text;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Name = input.ReadString();
-            break;
-          }
-          case 18: {
-            Text = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class Bytes : pb::IMessage<Bytes> {
     private static readonly pb::MessageParser<Bytes> _parser = new pb::MessageParser<Bytes>(() => new Bytes());
     private pb::UnknownFieldSet _unknownFields;
@@ -1289,7 +1230,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

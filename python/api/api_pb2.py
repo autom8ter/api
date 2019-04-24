@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x1c\n\x0b\x45\x63hoMessage\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"&\n\x08Template\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\x32K\n\x0b\x45\x63hoService\x12<\n\x04\x45\x63ho\x12\x10.api.EchoMessage\x1a\x10.api.EchoMessage\"\x10\x82\xd3\xe4\x93\x02\n\"\x05/echo:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x1c\n\x0b\x45\x63hoMessage\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\x32\x98\x01\n\x0b\x45\x63hoService\x12<\n\x04\x45\x63ho\x12\x10.api.EchoMessage\x1a\x10.api.EchoMessage\"\x10\x82\xd3\xe4\x93\x02\n\"\x05/echo:\x01*\x12K\n\x0b\x45\x63hoSpanish\x12\x10.api.EchoMessage\x1a\x10.api.EchoMessage\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/spanish:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -166,6 +166,20 @@ _USERMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='api.UserMetadata.status', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='api.UserMetadata.tags', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -179,7 +193,7 @@ _USERMETADATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=295,
-  serialized_end=351,
+  serialized_end=381,
 )
 
 
@@ -204,6 +218,20 @@ _APPMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='delinquent', full_name='api.AppMetadata.delinquent', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='api.AppMetadata.tags', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -216,8 +244,8 @@ _APPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=353,
-  serialized_end=399,
+  serialized_start=383,
+  serialized_end=463,
 )
 
 
@@ -282,46 +310,8 @@ _AUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=401,
-  serialized_end=517,
-)
-
-
-_TEMPLATE = _descriptor.Descriptor(
-  name='Template',
-  full_name='api.Template',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='api.Template.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='text', full_name='api.Template.text', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=519,
-  serialized_end=557,
+  serialized_start=465,
+  serialized_end=581,
 )
 
 
@@ -351,8 +341,8 @@ _BYTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=559,
-  serialized_end=580,
+  serialized_start=583,
+  serialized_end=604,
 )
 
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
@@ -362,7 +352,6 @@ DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
 DESCRIPTOR.message_types_by_name['Auth'] = _AUTH
-DESCRIPTOR.message_types_by_name['Template'] = _TEMPLATE
 DESCRIPTOR.message_types_by_name['Bytes'] = _BYTES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -401,13 +390,6 @@ Auth = _reflection.GeneratedProtocolMessageType('Auth', (_message.Message,), dic
   ))
 _sym_db.RegisterMessage(Auth)
 
-Template = _reflection.GeneratedProtocolMessageType('Template', (_message.Message,), dict(
-  DESCRIPTOR = _TEMPLATE,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Template)
-  ))
-_sym_db.RegisterMessage(Template)
-
 Bytes = _reflection.GeneratedProtocolMessageType('Bytes', (_message.Message,), dict(
   DESCRIPTOR = _BYTES,
   __module__ = 'api_pb2'
@@ -423,8 +405,8 @@ _ECHOSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=582,
-  serialized_end=657,
+  serialized_start=607,
+  serialized_end=759,
   methods=[
   _descriptor.MethodDescriptor(
     name='Echo',
@@ -434,6 +416,15 @@ _ECHOSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ECHOMESSAGE,
     output_type=_ECHOMESSAGE,
     serialized_options=_b('\202\323\344\223\002\n\"\005/echo:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='EchoSpanish',
+    full_name='api.EchoService.EchoSpanish',
+    index=1,
+    containing_service=None,
+    input_type=_ECHOMESSAGE,
+    output_type=_ECHOMESSAGE,
+    serialized_options=_b('\202\323\344\223\002\022\"\r/echo/spanish:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_ECHOSERVICE)
