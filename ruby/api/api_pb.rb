@@ -3,7 +3,6 @@
 
 require 'google/protobuf'
 
-require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.UserInfo" do
     optional :name, :string, 6
@@ -54,11 +53,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :debug, :string, 13
     optional :blog, :string, 14
   end
-  add_message "api.CreateCustomerRequest" do
-    optional :user_info, :message, 1, "api.UserInfo"
-  end
-  add_message "api.CreateCustomerResponse" do
-    optional :id, :string, 1
+  add_message "api.Auth0" do
+    optional :domain, :string, 1
+    optional :client_id, :string, 2
+    optional :client_secret, :string, 3
+    repeated :scopes, :string, 4
+    optional :redirect, :string, 5
   end
 end
 
@@ -71,6 +71,5 @@ module Api
   RefreshToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefreshToken").msgclass
   Tokens = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Tokens").msgclass
   Paths = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Paths").msgclass
-  CreateCustomerRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateCustomerRequest").msgclass
-  CreateCustomerResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CreateCustomerResponse").msgclass
+  Auth0 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth0").msgclass
 end

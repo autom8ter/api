@@ -8124,641 +8124,87 @@ public final class Api {
 
   }
 
-  public interface CreateCustomerRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.CreateCustomerRequest)
+  public interface Auth0OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Auth0)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.api.UserInfo user_info = 1;</code>
+     * <code>string domain = 1;</code>
      */
-    boolean hasUserInfo();
+    java.lang.String getDomain();
     /**
-     * <code>.api.UserInfo user_info = 1;</code>
-     */
-    api.Api.UserInfo getUserInfo();
-    /**
-     * <code>.api.UserInfo user_info = 1;</code>
-     */
-    api.Api.UserInfoOrBuilder getUserInfoOrBuilder();
-  }
-  /**
-   * Protobuf type {@code api.CreateCustomerRequest}
-   */
-  public  static final class CreateCustomerRequest extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.CreateCustomerRequest)
-      CreateCustomerRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use CreateCustomerRequest.newBuilder() to construct.
-    private CreateCustomerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private CreateCustomerRequest() {
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private CreateCustomerRequest(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              api.Api.UserInfo.Builder subBuilder = null;
-              if (userInfo_ != null) {
-                subBuilder = userInfo_.toBuilder();
-              }
-              userInfo_ = input.readMessage(api.Api.UserInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(userInfo_);
-                userInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return api.Api.internal_static_api_CreateCustomerRequest_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_CreateCustomerRequest_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              api.Api.CreateCustomerRequest.class, api.Api.CreateCustomerRequest.Builder.class);
-    }
-
-    public static final int USER_INFO_FIELD_NUMBER = 1;
-    private api.Api.UserInfo userInfo_;
-    /**
-     * <code>.api.UserInfo user_info = 1;</code>
-     */
-    public boolean hasUserInfo() {
-      return userInfo_ != null;
-    }
-    /**
-     * <code>.api.UserInfo user_info = 1;</code>
-     */
-    public api.Api.UserInfo getUserInfo() {
-      return userInfo_ == null ? api.Api.UserInfo.getDefaultInstance() : userInfo_;
-    }
-    /**
-     * <code>.api.UserInfo user_info = 1;</code>
-     */
-    public api.Api.UserInfoOrBuilder getUserInfoOrBuilder() {
-      return getUserInfo();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (userInfo_ != null) {
-        output.writeMessage(1, getUserInfo());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (userInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getUserInfo());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof api.Api.CreateCustomerRequest)) {
-        return super.equals(obj);
-      }
-      api.Api.CreateCustomerRequest other = (api.Api.CreateCustomerRequest) obj;
-
-      boolean result = true;
-      result = result && (hasUserInfo() == other.hasUserInfo());
-      if (hasUserInfo()) {
-        result = result && getUserInfo()
-            .equals(other.getUserInfo());
-      }
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasUserInfo()) {
-        hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getUserInfo().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static api.Api.CreateCustomerRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.CreateCustomerRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static api.Api.CreateCustomerRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.CreateCustomerRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(api.Api.CreateCustomerRequest prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code api.CreateCustomerRequest}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.CreateCustomerRequest)
-        api.Api.CreateCustomerRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return api.Api.internal_static_api_CreateCustomerRequest_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_CreateCustomerRequest_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                api.Api.CreateCustomerRequest.class, api.Api.CreateCustomerRequest.Builder.class);
-      }
-
-      // Construct using api.Api.CreateCustomerRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (userInfoBuilder_ == null) {
-          userInfo_ = null;
-        } else {
-          userInfo_ = null;
-          userInfoBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return api.Api.internal_static_api_CreateCustomerRequest_descriptor;
-      }
-
-      @java.lang.Override
-      public api.Api.CreateCustomerRequest getDefaultInstanceForType() {
-        return api.Api.CreateCustomerRequest.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public api.Api.CreateCustomerRequest build() {
-        api.Api.CreateCustomerRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public api.Api.CreateCustomerRequest buildPartial() {
-        api.Api.CreateCustomerRequest result = new api.Api.CreateCustomerRequest(this);
-        if (userInfoBuilder_ == null) {
-          result.userInfo_ = userInfo_;
-        } else {
-          result.userInfo_ = userInfoBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.CreateCustomerRequest) {
-          return mergeFrom((api.Api.CreateCustomerRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(api.Api.CreateCustomerRequest other) {
-        if (other == api.Api.CreateCustomerRequest.getDefaultInstance()) return this;
-        if (other.hasUserInfo()) {
-          mergeUserInfo(other.getUserInfo());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        api.Api.CreateCustomerRequest parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.CreateCustomerRequest) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private api.Api.UserInfo userInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.UserInfo, api.Api.UserInfo.Builder, api.Api.UserInfoOrBuilder> userInfoBuilder_;
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public boolean hasUserInfo() {
-        return userInfoBuilder_ != null || userInfo_ != null;
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public api.Api.UserInfo getUserInfo() {
-        if (userInfoBuilder_ == null) {
-          return userInfo_ == null ? api.Api.UserInfo.getDefaultInstance() : userInfo_;
-        } else {
-          return userInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public Builder setUserInfo(api.Api.UserInfo value) {
-        if (userInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          userInfo_ = value;
-          onChanged();
-        } else {
-          userInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public Builder setUserInfo(
-          api.Api.UserInfo.Builder builderForValue) {
-        if (userInfoBuilder_ == null) {
-          userInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          userInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public Builder mergeUserInfo(api.Api.UserInfo value) {
-        if (userInfoBuilder_ == null) {
-          if (userInfo_ != null) {
-            userInfo_ =
-              api.Api.UserInfo.newBuilder(userInfo_).mergeFrom(value).buildPartial();
-          } else {
-            userInfo_ = value;
-          }
-          onChanged();
-        } else {
-          userInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public Builder clearUserInfo() {
-        if (userInfoBuilder_ == null) {
-          userInfo_ = null;
-          onChanged();
-        } else {
-          userInfo_ = null;
-          userInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public api.Api.UserInfo.Builder getUserInfoBuilder() {
-        
-        onChanged();
-        return getUserInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      public api.Api.UserInfoOrBuilder getUserInfoOrBuilder() {
-        if (userInfoBuilder_ != null) {
-          return userInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return userInfo_ == null ?
-              api.Api.UserInfo.getDefaultInstance() : userInfo_;
-        }
-      }
-      /**
-       * <code>.api.UserInfo user_info = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.UserInfo, api.Api.UserInfo.Builder, api.Api.UserInfoOrBuilder> 
-          getUserInfoFieldBuilder() {
-        if (userInfoBuilder_ == null) {
-          userInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.UserInfo, api.Api.UserInfo.Builder, api.Api.UserInfoOrBuilder>(
-                  getUserInfo(),
-                  getParentForChildren(),
-                  isClean());
-          userInfo_ = null;
-        }
-        return userInfoBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:api.CreateCustomerRequest)
-    }
-
-    // @@protoc_insertion_point(class_scope:api.CreateCustomerRequest)
-    private static final api.Api.CreateCustomerRequest DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new api.Api.CreateCustomerRequest();
-    }
-
-    public static api.Api.CreateCustomerRequest getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CreateCustomerRequest>
-        PARSER = new com.google.protobuf.AbstractParser<CreateCustomerRequest>() {
-      @java.lang.Override
-      public CreateCustomerRequest parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateCustomerRequest(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<CreateCustomerRequest> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CreateCustomerRequest> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public api.Api.CreateCustomerRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface CreateCustomerResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.CreateCustomerResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string id = 1;</code>
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 1;</code>
+     * <code>string domain = 1;</code>
      */
     com.google.protobuf.ByteString
-        getIdBytes();
+        getDomainBytes();
+
+    /**
+     * <code>string client_id = 2;</code>
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+
+    /**
+     * <code>string client_secret = 3;</code>
+     */
+    java.lang.String getClientSecret();
+    /**
+     * <code>string client_secret = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getClientSecretBytes();
+
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    java.util.List<java.lang.String>
+        getScopesList();
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    int getScopesCount();
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    java.lang.String getScopes(int index);
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getScopesBytes(int index);
+
+    /**
+     * <code>string redirect = 5;</code>
+     */
+    java.lang.String getRedirect();
+    /**
+     * <code>string redirect = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getRedirectBytes();
   }
   /**
-   * Protobuf type {@code api.CreateCustomerResponse}
+   * Protobuf type {@code api.Auth0}
    */
-  public  static final class CreateCustomerResponse extends
+  public  static final class Auth0 extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.CreateCustomerResponse)
-      CreateCustomerResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.Auth0)
+      Auth0OrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use CreateCustomerResponse.newBuilder() to construct.
-    private CreateCustomerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Auth0.newBuilder() to construct.
+    private Auth0(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private CreateCustomerResponse() {
-      id_ = "";
+    private Auth0() {
+      domain_ = "";
+      clientId_ = "";
+      clientSecret_ = "";
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      redirect_ = "";
     }
 
     @java.lang.Override
@@ -8766,7 +8212,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateCustomerResponse(
+    private Auth0(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8788,7 +8234,34 @@ public final class Api {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
+              domain_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientSecret_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                scopes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              scopes_.add(s);
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              redirect_ = s;
               break;
             }
             default: {
@@ -8806,51 +8279,186 @@ public final class Api {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          scopes_ = scopes_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_CreateCustomerResponse_descriptor;
+      return api.Api.internal_static_api_Auth0_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_CreateCustomerResponse_fieldAccessorTable
+      return api.Api.internal_static_api_Auth0_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.CreateCustomerResponse.class, api.Api.CreateCustomerResponse.Builder.class);
+              api.Api.Auth0.class, api.Api.Auth0.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object id_;
+    private int bitField0_;
+    public static final int DOMAIN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object domain_;
     /**
-     * <code>string id = 1;</code>
+     * <code>string domain = 1;</code>
      */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        id_ = s;
+        domain_ = s;
         return s;
       }
     }
     /**
-     * <code>string id = 1;</code>
+     * <code>string domain = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        id_ = b;
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object clientId_;
+    /**
+     * <code>string client_id = 2;</code>
+     */
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CLIENT_SECRET_FIELD_NUMBER = 3;
+    private volatile java.lang.Object clientSecret_;
+    /**
+     * <code>string client_secret = 3;</code>
+     */
+    public java.lang.String getClientSecret() {
+      java.lang.Object ref = clientSecret_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientSecret_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_secret = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClientSecretBytes() {
+      java.lang.Object ref = clientSecret_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientSecret_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCOPES_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList scopes_;
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getScopesList() {
+      return scopes_;
+    }
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    public int getScopesCount() {
+      return scopes_.size();
+    }
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    public java.lang.String getScopes(int index) {
+      return scopes_.get(index);
+    }
+    /**
+     * <code>repeated string scopes = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getScopesBytes(int index) {
+      return scopes_.getByteString(index);
+    }
+
+    public static final int REDIRECT_FIELD_NUMBER = 5;
+    private volatile java.lang.Object redirect_;
+    /**
+     * <code>string redirect = 5;</code>
+     */
+    public java.lang.String getRedirect() {
+      java.lang.Object ref = redirect_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redirect_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string redirect = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRedirectBytes() {
+      java.lang.Object ref = redirect_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        redirect_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -8871,8 +8479,20 @@ public final class Api {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (!getDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, domain_);
+      }
+      if (!getClientIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, clientId_);
+      }
+      if (!getClientSecretBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, clientSecret_);
+      }
+      for (int i = 0; i < scopes_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, scopes_.getRaw(i));
+      }
+      if (!getRedirectBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, redirect_);
       }
       unknownFields.writeTo(output);
     }
@@ -8883,8 +8503,25 @@ public final class Api {
       if (size != -1) return size;
 
       size = 0;
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      if (!getDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, domain_);
+      }
+      if (!getClientIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, clientId_);
+      }
+      if (!getClientSecretBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, clientSecret_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < scopes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getScopesList().size();
+      }
+      if (!getRedirectBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, redirect_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8896,14 +8533,22 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.CreateCustomerResponse)) {
+      if (!(obj instanceof api.Api.Auth0)) {
         return super.equals(obj);
       }
-      api.Api.CreateCustomerResponse other = (api.Api.CreateCustomerResponse) obj;
+      api.Api.Auth0 other = (api.Api.Auth0) obj;
 
       boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
+      result = result && getDomain()
+          .equals(other.getDomain());
+      result = result && getClientId()
+          .equals(other.getClientId());
+      result = result && getClientSecret()
+          .equals(other.getClientSecret());
+      result = result && getScopesList()
+          .equals(other.getScopesList());
+      result = result && getRedirect()
+          .equals(other.getRedirect());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -8915,76 +8560,86 @@ public final class Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      hash = (37 * hash) + CLIENT_SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getClientSecret().hashCode();
+      if (getScopesCount() > 0) {
+        hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+        hash = (53 * hash) + getScopesList().hashCode();
+      }
+      hash = (37 * hash) + REDIRECT_FIELD_NUMBER;
+      hash = (53 * hash) + getRedirect().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(byte[] data)
+    public static api.Api.Auth0 parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(java.io.InputStream input)
+    public static api.Api.Auth0 parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.CreateCustomerResponse parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.Auth0 parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.CreateCustomerResponse parseDelimitedFrom(
+    public static api.Api.Auth0 parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.CreateCustomerResponse parseFrom(
+    public static api.Api.Auth0 parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8997,7 +8652,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.CreateCustomerResponse prototype) {
+    public static Builder newBuilder(api.Api.Auth0 prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9013,26 +8668,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.CreateCustomerResponse}
+     * Protobuf type {@code api.Auth0}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.CreateCustomerResponse)
-        api.Api.CreateCustomerResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.Auth0)
+        api.Api.Auth0OrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_CreateCustomerResponse_descriptor;
+        return api.Api.internal_static_api_Auth0_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_CreateCustomerResponse_fieldAccessorTable
+        return api.Api.internal_static_api_Auth0_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.CreateCustomerResponse.class, api.Api.CreateCustomerResponse.Builder.class);
+                api.Api.Auth0.class, api.Api.Auth0.Builder.class);
       }
 
-      // Construct using api.Api.CreateCustomerResponse.newBuilder()
+      // Construct using api.Api.Auth0.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9050,7 +8705,15 @@ public final class Api {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        id_ = "";
+        domain_ = "";
+
+        clientId_ = "";
+
+        clientSecret_ = "";
+
+        scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        redirect_ = "";
 
         return this;
       }
@@ -9058,17 +8721,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_CreateCustomerResponse_descriptor;
+        return api.Api.internal_static_api_Auth0_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.CreateCustomerResponse getDefaultInstanceForType() {
-        return api.Api.CreateCustomerResponse.getDefaultInstance();
+      public api.Api.Auth0 getDefaultInstanceForType() {
+        return api.Api.Auth0.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.CreateCustomerResponse build() {
-        api.Api.CreateCustomerResponse result = buildPartial();
+      public api.Api.Auth0 build() {
+        api.Api.Auth0 result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9076,9 +8739,20 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.CreateCustomerResponse buildPartial() {
-        api.Api.CreateCustomerResponse result = new api.Api.CreateCustomerResponse(this);
-        result.id_ = id_;
+      public api.Api.Auth0 buildPartial() {
+        api.Api.Auth0 result = new api.Api.Auth0(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.domain_ = domain_;
+        result.clientId_ = clientId_;
+        result.clientSecret_ = clientSecret_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          scopes_ = scopes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.scopes_ = scopes_;
+        result.redirect_ = redirect_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -9117,18 +8791,40 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.CreateCustomerResponse) {
-          return mergeFrom((api.Api.CreateCustomerResponse)other);
+        if (other instanceof api.Api.Auth0) {
+          return mergeFrom((api.Api.Auth0)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.CreateCustomerResponse other) {
-        if (other == api.Api.CreateCustomerResponse.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
+      public Builder mergeFrom(api.Api.Auth0 other) {
+        if (other == api.Api.Auth0.getDefaultInstance()) return this;
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          onChanged();
+        }
+        if (!other.getClientSecret().isEmpty()) {
+          clientSecret_ = other.clientSecret_;
+          onChanged();
+        }
+        if (!other.scopes_.isEmpty()) {
+          if (scopes_.isEmpty()) {
+            scopes_ = other.scopes_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureScopesIsMutable();
+            scopes_.addAll(other.scopes_);
+          }
+          onChanged();
+        }
+        if (!other.getRedirect().isEmpty()) {
+          redirect_ = other.redirect_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9146,11 +8842,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.CreateCustomerResponse parsedMessage = null;
+        api.Api.Auth0 parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.CreateCustomerResponse) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.Auth0) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9159,72 +8855,374 @@ public final class Api {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object id_ = "";
+      private java.lang.Object domain_ = "";
       /**
-       * <code>string id = 1;</code>
+       * <code>string domain = 1;</code>
        */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          id_ = s;
+          domain_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string domain = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          id_ = b;
+          domain_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string domain = 1;</code>
        */
-      public Builder setId(
+      public Builder setDomain(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        id_ = value;
+        domain_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string domain = 1;</code>
        */
-      public Builder clearId() {
+      public Builder clearDomain() {
         
-        id_ = getDefaultInstance().getId();
+        domain_ = getDefaultInstance().getDomain();
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>string domain = 1;</code>
        */
-      public Builder setIdBytes(
+      public Builder setDomainBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        id_ = value;
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 2;</code>
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 2;</code>
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 2;</code>
+       */
+      public Builder clearClientId() {
+        
+        clientId_ = getDefaultInstance().getClientId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 2;</code>
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object clientSecret_ = "";
+      /**
+       * <code>string client_secret = 3;</code>
+       */
+      public java.lang.String getClientSecret() {
+        java.lang.Object ref = clientSecret_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientSecret_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_secret = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClientSecretBytes() {
+        java.lang.Object ref = clientSecret_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientSecret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_secret = 3;</code>
+       */
+      public Builder setClientSecret(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientSecret_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_secret = 3;</code>
+       */
+      public Builder clearClientSecret() {
+        
+        clientSecret_ = getDefaultInstance().getClientSecret();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_secret = 3;</code>
+       */
+      public Builder setClientSecretBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clientSecret_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureScopesIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getScopesList() {
+        return scopes_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public int getScopesCount() {
+        return scopes_.size();
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public java.lang.String getScopes(int index) {
+        return scopes_.get(index);
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getScopesBytes(int index) {
+        return scopes_.getByteString(index);
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public Builder setScopes(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureScopesIsMutable();
+        scopes_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public Builder addScopes(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureScopesIsMutable();
+        scopes_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public Builder addAllScopes(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureScopesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, scopes_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public Builder clearScopes() {
+        scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 4;</code>
+       */
+      public Builder addScopesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureScopesIsMutable();
+        scopes_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object redirect_ = "";
+      /**
+       * <code>string redirect = 5;</code>
+       */
+      public java.lang.String getRedirect() {
+        java.lang.Object ref = redirect_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          redirect_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string redirect = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRedirectBytes() {
+        java.lang.Object ref = redirect_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          redirect_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string redirect = 5;</code>
+       */
+      public Builder setRedirect(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        redirect_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string redirect = 5;</code>
+       */
+      public Builder clearRedirect() {
+        
+        redirect_ = getDefaultInstance().getRedirect();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string redirect = 5;</code>
+       */
+      public Builder setRedirectBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        redirect_ = value;
         onChanged();
         return this;
       }
@@ -9241,41 +9239,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.CreateCustomerResponse)
+      // @@protoc_insertion_point(builder_scope:api.Auth0)
     }
 
-    // @@protoc_insertion_point(class_scope:api.CreateCustomerResponse)
-    private static final api.Api.CreateCustomerResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.Auth0)
+    private static final api.Api.Auth0 DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.CreateCustomerResponse();
+      DEFAULT_INSTANCE = new api.Api.Auth0();
     }
 
-    public static api.Api.CreateCustomerResponse getDefaultInstance() {
+    public static api.Api.Auth0 getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CreateCustomerResponse>
-        PARSER = new com.google.protobuf.AbstractParser<CreateCustomerResponse>() {
+    private static final com.google.protobuf.Parser<Auth0>
+        PARSER = new com.google.protobuf.AbstractParser<Auth0>() {
       @java.lang.Override
-      public CreateCustomerResponse parsePartialFrom(
+      public Auth0 parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateCustomerResponse(input, extensionRegistry);
+        return new Auth0(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<CreateCustomerResponse> parser() {
+    public static com.google.protobuf.Parser<Auth0> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CreateCustomerResponse> getParserForType() {
+    public com.google.protobuf.Parser<Auth0> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.CreateCustomerResponse getDefaultInstanceForType() {
+    public api.Api.Auth0 getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9322,15 +9320,10 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Paths_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_CreateCustomerRequest_descriptor;
+    internal_static_api_Auth0_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_CreateCustomerRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_CreateCustomerResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_CreateCustomerResponse_fieldAccessorTable;
+      internal_static_api_Auth0_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9340,32 +9333,29 @@ public final class Api {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\tapi.proto\022\003api\032\034google/api/annotations" +
-      ".proto\"\326\001\n\010UserInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiv" +
-      "en_name\030\007 \001(\t\022\023\n\013family_name\030\010 \001(\t\022\016\n\006ge" +
-      "nder\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005email\030\013" +
-      " \001(\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_metadata\030\r" +
-      " \001(\0132\021.api.UserMetadata\022&\n\014app_metadata\030" +
-      "\016 \001(\0132\020.api.AppMetadata\"8\n\014UserMetadata\022" +
-      "\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_contact\030\002 \001(" +
-      "\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022\021\n\tpay_to" +
-      "ken\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005token\030\001 \001(\t\"" +
-      "\030\n\007IDToken\022\r\n\005token\030\001 \001(\t\"\035\n\014RefreshToke" +
-      "n\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002id\030\001 \001(\0132\014" +
-      ".api.IDToken\022 \n\006access\030\002 \001(\0132\020.api.Acces" +
-      "sToken\022\"\n\007refresh\030\003 \001(\0132\021.api.RefreshTok" +
-      "en\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\tdashboard\030" +
-      "\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006logout\030\004 \001(\t\022" +
-      "\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001(\t\022\021\n\tsubs" +
-      "cribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001(\t\022\013\n\003faq\030" +
-      "\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005terms\030\013 \001(\t\022\017\n" +
-      "\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022\014\n\004blog\030\016 " +
-      "\001(\t\"9\n\025CreateCustomerRequest\022 \n\tuser_inf" +
-      "o\030\001 \001(\0132\r.api.UserInfo\"$\n\026CreateCustomer" +
-      "Response\022\n\n\002id\030\001 \001(\t2v\n\017CustomerService\022" +
-      "c\n\016CreateCustomer\022\032.api.CreateCustomerRe" +
-      "quest\032\033.api.CreateCustomerResponse\"\030\202\323\344\223" +
-      "\002\022\"\r/v1/customers:\001*b\006proto3"
+      "\n\tapi.proto\022\003api\"\326\001\n\010UserInfo\022\014\n\004name\030\006 " +
+      "\001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013family_name\030\010" +
+      " \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022" +
+      "\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_" +
+      "metadata\030\r \001(\0132\021.api.UserMetadata\022&\n\014app" +
+      "_metadata\030\016 \001(\0132\020.api.AppMetadata\"8\n\014Use" +
+      "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co" +
+      "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t" +
+      "\022\021\n\tpay_token\030\002 \001(\t\"\034\n\013AccessToken\022\r\n\005to" +
+      "ken\030\001 \001(\t\"\030\n\007IDToken\022\r\n\005token\030\001 \001(\t\"\035\n\014R" +
+      "efreshToken\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002" +
+      "id\030\001 \001(\0132\014.api.IDToken\022 \n\006access\030\002 \001(\0132\020" +
+      ".api.AccessToken\022\"\n\007refresh\030\003 \001(\0132\021.api." +
+      "RefreshToken\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\t" +
+      "dashboard\030\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006log" +
+      "out\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001" +
+      "(\t\022\021\n\tsubscribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001" +
+      "(\t\022\013\n\003faq\030\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005term" +
+      "s\030\013 \001(\t\022\017\n\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022" +
+      "\014\n\004blog\030\016 \001(\t\"c\n\005Auth0\022\016\n\006domain\030\001 \001(\t\022\021" +
+      "\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t" +
+      "\022\016\n\006scopes\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\tb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9378,7 +9368,6 @@ public final class Api {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
         }, assigner);
     internal_static_api_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -9428,24 +9417,12 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Paths_descriptor,
         new java.lang.String[] { "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog", });
-    internal_static_api_CreateCustomerRequest_descriptor =
+    internal_static_api_Auth0_descriptor =
       getDescriptor().getMessageTypes().get(8);
-    internal_static_api_CreateCustomerRequest_fieldAccessorTable = new
+    internal_static_api_Auth0_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_CreateCustomerRequest_descriptor,
-        new java.lang.String[] { "UserInfo", });
-    internal_static_api_CreateCustomerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_api_CreateCustomerResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_CreateCustomerResponse_descriptor,
-        new java.lang.String[] { "Id", });
-    com.google.protobuf.ExtensionRegistry registry =
-        com.google.protobuf.ExtensionRegistry.newInstance();
-    registry.add(com.google.api.AnnotationsProto.http);
-    com.google.protobuf.Descriptors.FileDescriptor
-        .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
+        internal_static_api_Auth0_descriptor,
+        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -14,7 +14,6 @@
 #endif
 
 #import "Api.pbobjc.h"
-#import "google/api/Annotations.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -24,18 +23,8 @@
 
 @implementation ApiRoot
 
-+ (GPBExtensionRegistry*)extensionRegistry {
-  // This is called by +initialize so there is no need to worry
-  // about thread safety and initialization of registry.
-  static GPBExtensionRegistry* registry = nil;
-  if (!registry) {
-    GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
-    registry = [[GPBExtensionRegistry alloc] init];
-    // Merge in the imports (direct or indirect) that defined extensions.
-    [registry addExtensions:[GAPIAnnotationsRoot extensionRegistry]];
-  }
-  return registry;
-}
+// No extensions in the file and no imports, so no need to generate
+// +extensionRegistry.
 
 @end
 
@@ -672,16 +661,24 @@ typedef struct Paths__storage_ {
 
 @end
 
-#pragma mark - CreateCustomerRequest
+#pragma mark - Auth0
 
-@implementation CreateCustomerRequest
+@implementation Auth0
 
-@dynamic hasUserInfo, userInfo;
+@dynamic domain;
+@dynamic clientId;
+@dynamic clientSecret;
+@dynamic scopesArray, scopesArray_Count;
+@dynamic redirect;
 
-typedef struct CreateCustomerRequest__storage_ {
+typedef struct Auth0__storage_ {
   uint32_t _has_storage_[1];
-  UserInfo *userInfo;
-} CreateCustomerRequest__storage_;
+  NSString *domain;
+  NSString *clientId;
+  NSString *clientSecret;
+  NSMutableArray *scopesArray;
+  NSString *redirect;
+} Auth0__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -690,65 +687,58 @@ typedef struct CreateCustomerRequest__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "userInfo",
-        .dataTypeSpecific.className = GPBStringifySymbol(UserInfo),
-        .number = CreateCustomerRequest_FieldNumber_UserInfo,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(CreateCustomerRequest__storage_, userInfo),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[CreateCustomerRequest class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(CreateCustomerRequest__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - CreateCustomerResponse
-
-@implementation CreateCustomerResponse
-
-@dynamic id_p;
-
-typedef struct CreateCustomerResponse__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *id_p;
-} CreateCustomerResponse__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "id_p",
+        .name = "domain",
         .dataTypeSpecific.className = NULL,
-        .number = CreateCustomerResponse_FieldNumber_Id_p,
+        .number = Auth0_FieldNumber_Domain,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(CreateCustomerResponse__storage_, id_p),
+        .offset = (uint32_t)offsetof(Auth0__storage_, domain),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "clientId",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ClientId,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Auth0__storage_, clientId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "clientSecret",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ClientSecret,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Auth0__storage_, clientSecret),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "scopesArray",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ScopesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Auth0__storage_, scopesArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "redirect",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_Redirect,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Auth0__storage_, redirect),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[CreateCustomerResponse class]
+        [GPBDescriptor allocDescriptorForClass:[Auth0 class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(CreateCustomerResponse__storage_)
+                                   storageSize:sizeof(Auth0__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

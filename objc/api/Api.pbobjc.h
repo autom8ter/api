@@ -31,7 +31,6 @@ CF_EXTERN_C_BEGIN
 @class AppMetadata;
 @class IDToken;
 @class RefreshToken;
-@class UserInfo;
 @class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -232,29 +231,29 @@ typedef GPB_ENUM(Paths_FieldNumber) {
 
 @end
 
-#pragma mark - CreateCustomerRequest
+#pragma mark - Auth0
 
-typedef GPB_ENUM(CreateCustomerRequest_FieldNumber) {
-  CreateCustomerRequest_FieldNumber_UserInfo = 1,
+typedef GPB_ENUM(Auth0_FieldNumber) {
+  Auth0_FieldNumber_Domain = 1,
+  Auth0_FieldNumber_ClientId = 2,
+  Auth0_FieldNumber_ClientSecret = 3,
+  Auth0_FieldNumber_ScopesArray = 4,
+  Auth0_FieldNumber_Redirect = 5,
 };
 
-@interface CreateCustomerRequest : GPBMessage
+@interface Auth0 : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) UserInfo *userInfo;
-/** Test to see if @c userInfo has been set. */
-@property(nonatomic, readwrite) BOOL hasUserInfo;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *domain;
 
-@end
+@property(nonatomic, readwrite, copy, null_resettable) NSString *clientId;
 
-#pragma mark - CreateCustomerResponse
+@property(nonatomic, readwrite, copy, null_resettable) NSString *clientSecret;
 
-typedef GPB_ENUM(CreateCustomerResponse_FieldNumber) {
-  CreateCustomerResponse_FieldNumber_Id_p = 1,
-};
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+/** The number of items in @c scopesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger scopesArray_Count;
 
-@interface CreateCustomerResponse : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
 
 @end
 

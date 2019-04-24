@@ -12,7 +12,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x06Tokens\x12\x18\n\x02id\x18\x01 \x01(\x0b\x32\x0c.api.IDToken\x12 \n\x06\x61\x63\x63\x65ss\x18\x02 \x01(\x0b\x32\x10.api.AccessToken\x12\"\n\x07refresh\x18\x03 \x01(\x0b\x32\x11.api.RefreshToken\"\xee\x01\n\x05Paths\x12\x0c\n\x04home\x18\x01 \x01(\t\x12\x11\n\tdashboard\x18\x02 \x01(\t\x12\x10\n\x08settings\x18\x03 \x01(\t\x12\x0e\n\x06logout\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\r\n\x05login\x18\x06 \x01(\t\x12\x11\n\tsubscribe\x18\x07 \x01(\t\x12\x13\n\x0bunsubscribe\x18\x08 \x01(\t\x12\x0b\n\x03\x66\x61q\x18\t \x01(\t\x12\x0f\n\x07support\x18\n \x01(\t\x12\r\n\x05terms\x18\x0b \x01(\t\x12\x0f\n\x07privacy\x18\x0c \x01(\t\x12\r\n\x05\x64\x65\x62ug\x18\r \x01(\t\x12\x0c\n\x04\x62log\x18\x0e \x01(\t\"9\n\x15\x43reateCustomerRequest\x12 \n\tuser_info\x18\x01 \x01(\x0b\x32\r.api.UserInfo\"$\n\x16\x43reateCustomerResponse\x12\n\n\x02id\x18\x01 \x01(\t2v\n\x0f\x43ustomerService\x12\x63\n\x0e\x43reateCustomer\x12\x1a.api.CreateCustomerRequest\x1a\x1b.api.CreateCustomerResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/customers:\x01*b\x06proto3')
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"8\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\".\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\"\x1c\n\x0b\x41\x63\x63\x65ssToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x18\n\x07IDToken\x12\r\n\x05token\x18\x01 \x01(\t\"\x1d\n\x0cRefreshToken\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x06Tokens\x12\x18\n\x02id\x18\x01 \x01(\x0b\x32\x0c.api.IDToken\x12 \n\x06\x61\x63\x63\x65ss\x18\x02 \x01(\x0b\x32\x10.api.AccessToken\x12\"\n\x07refresh\x18\x03 \x01(\x0b\x32\x11.api.RefreshToken\"\xee\x01\n\x05Paths\x12\x0c\n\x04home\x18\x01 \x01(\t\x12\x11\n\tdashboard\x18\x02 \x01(\t\x12\x10\n\x08settings\x18\x03 \x01(\t\x12\x0e\n\x06logout\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\r\n\x05login\x18\x06 \x01(\t\x12\x11\n\tsubscribe\x18\x07 \x01(\t\x12\x13\n\x0bunsubscribe\x18\x08 \x01(\t\x12\x0b\n\x03\x66\x61q\x18\t \x01(\t\x12\x0f\n\x07support\x18\n \x01(\t\x12\r\n\x05terms\x18\x0b \x01(\t\x12\x0f\n\x07privacy\x18\x0c \x01(\t\x12\r\n\x05\x64\x65\x62ug\x18\r \x01(\t\x12\x0c\n\x04\x62log\x18\x0e \x01(\t\"c\n\x05\x41uth0\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x10\n\x08redirect\x18\x05 \x01(\tb\x06proto3')
+)
 
 
 
@@ -109,8 +107,8 @@ _USERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=49,
-  serialized_end=263,
+  serialized_start=19,
+  serialized_end=233,
 )
 
 
@@ -147,8 +145,8 @@ _USERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=265,
-  serialized_end=321,
+  serialized_start=235,
+  serialized_end=291,
 )
 
 
@@ -185,8 +183,8 @@ _APPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=369,
+  serialized_start=293,
+  serialized_end=339,
 )
 
 
@@ -216,8 +214,8 @@ _ACCESSTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=371,
-  serialized_end=399,
+  serialized_start=341,
+  serialized_end=369,
 )
 
 
@@ -247,8 +245,8 @@ _IDTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=401,
-  serialized_end=425,
+  serialized_start=371,
+  serialized_end=395,
 )
 
 
@@ -278,8 +276,8 @@ _REFRESHTOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=427,
-  serialized_end=456,
+  serialized_start=397,
+  serialized_end=426,
 )
 
 
@@ -323,8 +321,8 @@ _TOKENS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=458,
-  serialized_end=562,
+  serialized_start=428,
+  serialized_end=532,
 )
 
 
@@ -445,52 +443,49 @@ _PATHS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=565,
-  serialized_end=803,
+  serialized_start=535,
+  serialized_end=773,
 )
 
 
-_CREATECUSTOMERREQUEST = _descriptor.Descriptor(
-  name='CreateCustomerRequest',
-  full_name='api.CreateCustomerRequest',
+_AUTH0 = _descriptor.Descriptor(
+  name='Auth0',
+  full_name='api.Auth0',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='user_info', full_name='api.CreateCustomerRequest.user_info', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='domain', full_name='api.Auth0.domain', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=805,
-  serialized_end=862,
-)
-
-
-_CREATECUSTOMERRESPONSE = _descriptor.Descriptor(
-  name='CreateCustomerResponse',
-  full_name='api.CreateCustomerResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='api.CreateCustomerResponse.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='client_id', full_name='api.Auth0.client_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='client_secret', full_name='api.Auth0.client_secret', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='api.Auth0.scopes', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='redirect', full_name='api.Auth0.redirect', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -507,8 +502,8 @@ _CREATECUSTOMERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=864,
-  serialized_end=900,
+  serialized_start=775,
+  serialized_end=874,
 )
 
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
@@ -516,7 +511,6 @@ _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
 _TOKENS.fields_by_name['id'].message_type = _IDTOKEN
 _TOKENS.fields_by_name['access'].message_type = _ACCESSTOKEN
 _TOKENS.fields_by_name['refresh'].message_type = _REFRESHTOKEN
-_CREATECUSTOMERREQUEST.fields_by_name['user_info'].message_type = _USERINFO
 DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
@@ -525,8 +519,7 @@ DESCRIPTOR.message_types_by_name['IDToken'] = _IDTOKEN
 DESCRIPTOR.message_types_by_name['RefreshToken'] = _REFRESHTOKEN
 DESCRIPTOR.message_types_by_name['Tokens'] = _TOKENS
 DESCRIPTOR.message_types_by_name['Paths'] = _PATHS
-DESCRIPTOR.message_types_by_name['CreateCustomerRequest'] = _CREATECUSTOMERREQUEST
-DESCRIPTOR.message_types_by_name['CreateCustomerResponse'] = _CREATECUSTOMERRESPONSE
+DESCRIPTOR.message_types_by_name['Auth0'] = _AUTH0
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 UserInfo = _reflection.GeneratedProtocolMessageType('UserInfo', (_message.Message,), dict(
@@ -585,43 +578,12 @@ Paths = _reflection.GeneratedProtocolMessageType('Paths', (_message.Message,), d
   ))
 _sym_db.RegisterMessage(Paths)
 
-CreateCustomerRequest = _reflection.GeneratedProtocolMessageType('CreateCustomerRequest', (_message.Message,), dict(
-  DESCRIPTOR = _CREATECUSTOMERREQUEST,
+Auth0 = _reflection.GeneratedProtocolMessageType('Auth0', (_message.Message,), dict(
+  DESCRIPTOR = _AUTH0,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.CreateCustomerRequest)
+  # @@protoc_insertion_point(class_scope:api.Auth0)
   ))
-_sym_db.RegisterMessage(CreateCustomerRequest)
+_sym_db.RegisterMessage(Auth0)
 
-CreateCustomerResponse = _reflection.GeneratedProtocolMessageType('CreateCustomerResponse', (_message.Message,), dict(
-  DESCRIPTOR = _CREATECUSTOMERRESPONSE,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.CreateCustomerResponse)
-  ))
-_sym_db.RegisterMessage(CreateCustomerResponse)
-
-
-
-_CUSTOMERSERVICE = _descriptor.ServiceDescriptor(
-  name='CustomerService',
-  full_name='api.CustomerService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  serialized_start=902,
-  serialized_end=1020,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='CreateCustomer',
-    full_name='api.CustomerService.CreateCustomer',
-    index=0,
-    containing_service=None,
-    input_type=_CREATECUSTOMERREQUEST,
-    output_type=_CREATECUSTOMERRESPONSE,
-    serialized_options=_b('\202\323\344\223\002\022\"\r/v1/customers:\001*'),
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_CUSTOMERSERVICE)
-
-DESCRIPTOR.services_by_name['CustomerService'] = _CUSTOMERSERVICE
 
 # @@protoc_insertion_point(module_scope)

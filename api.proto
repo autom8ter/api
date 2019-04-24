@@ -1,17 +1,6 @@
 syntax="proto3";
 
 package api;
-import "google/api/annotations.proto";
-
-
-service CustomerService {
-    rpc CreateCustomer(CreateCustomerRequest) returns (CreateCustomerResponse) {
-        option (google.api.http) = {
-      post: "/v1/customers"
-      body: "*"
-    };
-    }
-}
 
 message UserInfo {
     string name=6;
@@ -71,10 +60,10 @@ message Paths {
     string blog=14;
 }
 
-message CreateCustomerRequest {
-    UserInfo user_info =1;
-}
-
-message CreateCustomerResponse {
-    string id =1;
+message Auth0 {
+    string domain=1;
+    string client_id=2;
+    string client_secret=3;
+    repeated string scopes= 4;
+    string redirect=5;
 }
