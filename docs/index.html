@@ -191,7 +191,27 @@
                 </li>
               
                 <li>
+                  <a href="#api.Call"><span class="badge">M</span>Call</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Email"><span class="badge">M</span>Email</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Identifier"><span class="badge">M</span>Identifier</a>
+                </li>
+              
+                <li>
                   <a href="#api.Message"><span class="badge">M</span>Message</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SMS"><span class="badge">M</span>SMS</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SMSStatus"><span class="badge">M</span>SMSStatus</a>
                 </li>
               
                 <li>
@@ -208,6 +228,10 @@
               
               
               
+              
+                <li>
+                  <a href="#api.ContactService"><span class="badge">S</span>ContactService</a>
+                </li>
               
                 <li>
                   <a href="#api.UtilityService"><span class="badge">S</span>UtilityService</a>
@@ -353,6 +377,96 @@
 
         
       
+        <h3 id="api.Call">Call</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>to</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>callback</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Email">Email</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#api.Message">Message</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Identifier">Identifier</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Message">Message</h3>
         <p></p>
 
@@ -365,6 +479,87 @@
               
                 <tr>
                   <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.SMS">SMS</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>to</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#api.Message">Message</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mediaURL</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.SMSStatus">SMSStatus</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#api.Identifier">Identifier</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sms</td>
+                  <td><a href="#api.SMS">SMS</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>uri</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -534,6 +729,45 @@
 
       
 
+      
+        <h3 id="api.ContactService">ContactService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>SendSMS</td>
+                <td><a href="#api.SMS">SMS</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>GetSMS</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.SMSStatus">SMSStatus</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SendEmail</td>
+                <td><a href="#api.Email">Email</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SendCall</td>
+                <td><a href="#api.Call">Call</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
         <h3 id="api.UtilityService">UtilityService</h3>
         <p></p>

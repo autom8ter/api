@@ -5,6 +5,29 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.Identifier" do
+    optional :id, :string, 1
+  end
+  add_message "api.SMSStatus" do
+    optional :id, :message, 1, "api.Identifier"
+    optional :sms, :message, 2, "api.SMS"
+    optional :status, :string, 3
+    optional :uri, :string, 4
+  end
+  add_message "api.SMS" do
+    optional :to, :string, 1
+    optional :message, :message, 2, "api.Message"
+    optional :mediaURL, :string, 3
+  end
+  add_message "api.Email" do
+    optional :address, :string, 1
+    optional :subject, :string, 2
+    optional :message, :message, 3, "api.Message"
+  end
+  add_message "api.Call" do
+    optional :to, :string, 1
+    optional :callback, :string, 2
+  end
   add_message "api.Message" do
     optional :value, :string, 1
   end
@@ -49,6 +72,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
+  SMSStatus = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSStatus").msgclass
+  SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
+  Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
+  Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass
   UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass

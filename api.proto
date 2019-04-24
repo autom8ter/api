@@ -68,6 +68,61 @@ service UtilityService {
 
 }
 
+service ContactService {
+    rpc SendSMS(SMS) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/contact/sms/{to}"
+      body: "*"
+    };
+    }
+    rpc GetSMS(Identifier) returns (SMSStatus) {
+        option (google.api.http) = {
+      post: "/contact/sms/{id}"
+      body: "*"
+    };
+    }
+    rpc SendEmail(Email) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/contact/email/{address}"
+      body: "*"
+    };
+    }
+    rpc SendCall(Call) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/contact/call/{to}"
+      body: "*"
+    };
+    }
+}
+
+message Identifier {
+    string id=1;
+}
+
+message SMSStatus {
+    Identifier id=1;
+    SMS sms =2;
+    string status=3;
+    string uri =4;
+}
+
+message SMS {
+    string to =1;
+    Message message=2;
+    string mediaURL =3;
+}
+
+message Email {
+    string address =1;
+    string subject =2;
+    Message message=3;
+}
+
+message Call {
+    string to =1;
+    string callback =2;
+}
+
 message Message {
     string value = 1;
 }

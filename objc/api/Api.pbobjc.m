@@ -53,6 +53,314 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
+#pragma mark - Identifier
+
+@implementation Identifier
+
+@dynamic id_p;
+
+typedef struct Identifier__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *id_p;
+} Identifier__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = NULL,
+        .number = Identifier_FieldNumber_Id_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Identifier__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Identifier class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Identifier__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - SMSStatus
+
+@implementation SMSStatus
+
+@dynamic hasId_p, id_p;
+@dynamic hasSms, sms;
+@dynamic status;
+@dynamic uri;
+
+typedef struct SMSStatus__storage_ {
+  uint32_t _has_storage_[1];
+  Identifier *id_p;
+  SMS *sms;
+  NSString *status;
+  NSString *uri;
+} SMSStatus__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = GPBStringifySymbol(Identifier),
+        .number = SMSStatus_FieldNumber_Id_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SMSStatus__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "sms",
+        .dataTypeSpecific.className = GPBStringifySymbol(SMS),
+        .number = SMSStatus_FieldNumber_Sms,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SMSStatus__storage_, sms),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "status",
+        .dataTypeSpecific.className = NULL,
+        .number = SMSStatus_FieldNumber_Status,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SMSStatus__storage_, status),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "uri",
+        .dataTypeSpecific.className = NULL,
+        .number = SMSStatus_FieldNumber_Uri,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(SMSStatus__storage_, uri),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SMSStatus class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SMSStatus__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - SMS
+
+@implementation SMS
+
+@dynamic to;
+@dynamic hasMessage, message;
+@dynamic mediaURL;
+
+typedef struct SMS__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *to;
+  Message *message;
+  NSString *mediaURL;
+} SMS__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SMS__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "message",
+        .dataTypeSpecific.className = GPBStringifySymbol(Message),
+        .number = SMS_FieldNumber_Message,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SMS__storage_, message),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "mediaURL",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_MediaURL,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SMS__storage_, mediaURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SMS class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SMS__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\003\010\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Email
+
+@implementation Email
+
+@dynamic address;
+@dynamic subject;
+@dynamic hasMessage, message;
+
+typedef struct Email__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *address;
+  NSString *subject;
+  Message *message;
+} Email__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "address",
+        .dataTypeSpecific.className = NULL,
+        .number = Email_FieldNumber_Address,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Email__storage_, address),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "subject",
+        .dataTypeSpecific.className = NULL,
+        .number = Email_FieldNumber_Subject,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Email__storage_, subject),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "message",
+        .dataTypeSpecific.className = GPBStringifySymbol(Message),
+        .number = Email_FieldNumber_Message,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Email__storage_, message),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Email class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Email__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Call
+
+@implementation Call
+
+@dynamic to;
+@dynamic callback;
+
+typedef struct Call__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *to;
+  NSString *callback;
+} Call__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = NULL,
+        .number = Call_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Call__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = NULL,
+        .number = Call_FieldNumber_Callback,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Call__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Call class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Call__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Message
 
 @implementation Message

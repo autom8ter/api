@@ -28,6 +28,9 @@
 CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
+@class Identifier;
+@class Message;
+@class SMS;
 @class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -45,6 +48,98 @@ NS_ASSUME_NONNULL_BEGIN
  * this file and all files that it depends on.
  **/
 @interface ApiRoot : GPBRootObject
+@end
+
+#pragma mark - Identifier
+
+typedef GPB_ENUM(Identifier_FieldNumber) {
+  Identifier_FieldNumber_Id_p = 1,
+};
+
+@interface Identifier : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
+#pragma mark - SMSStatus
+
+typedef GPB_ENUM(SMSStatus_FieldNumber) {
+  SMSStatus_FieldNumber_Id_p = 1,
+  SMSStatus_FieldNumber_Sms = 2,
+  SMSStatus_FieldNumber_Status = 3,
+  SMSStatus_FieldNumber_Uri = 4,
+};
+
+@interface SMSStatus : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
+/** Test to see if @c id_p has been set. */
+@property(nonatomic, readwrite) BOOL hasId_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) SMS *sms;
+/** Test to see if @c sms has been set. */
+@property(nonatomic, readwrite) BOOL hasSms;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *uri;
+
+@end
+
+#pragma mark - SMS
+
+typedef GPB_ENUM(SMS_FieldNumber) {
+  SMS_FieldNumber_To = 1,
+  SMS_FieldNumber_Message = 2,
+  SMS_FieldNumber_MediaURL = 3,
+};
+
+@interface SMS : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+
+@property(nonatomic, readwrite, strong, null_resettable) Message *message;
+/** Test to see if @c message has been set. */
+@property(nonatomic, readwrite) BOOL hasMessage;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
+
+@end
+
+#pragma mark - Email
+
+typedef GPB_ENUM(Email_FieldNumber) {
+  Email_FieldNumber_Address = 1,
+  Email_FieldNumber_Subject = 2,
+  Email_FieldNumber_Message = 3,
+};
+
+@interface Email : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *address;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
+
+@property(nonatomic, readwrite, strong, null_resettable) Message *message;
+/** Test to see if @c message has been set. */
+@property(nonatomic, readwrite) BOOL hasMessage;
+
+@end
+
+#pragma mark - Call
+
+typedef GPB_ENUM(Call_FieldNumber) {
+  Call_FieldNumber_To = 1,
+  Call_FieldNumber_Callback = 2,
+};
+
+@interface Call : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
 @end
 
 #pragma mark - Message

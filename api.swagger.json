@@ -15,6 +15,134 @@
     "application/json"
   ],
   "paths": {
+    "/contact/call/{to}": {
+      "post": {
+        "operationId": "SendCall",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "to",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCall"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
+    "/contact/email/{address}": {
+      "post": {
+        "operationId": "SendEmail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiEmail"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
+    "/contact/sms/{id}": {
+      "post": {
+        "operationId": "GetSMS",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiSMSStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
+    "/contact/sms/{to}": {
+      "post": {
+        "operationId": "SendSMS",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "to",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSMS"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
     "/utility/echo": {
       "post": {
         "operationId": "Echo",
@@ -260,10 +388,74 @@
         }
       }
     },
+    "apiCall": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string"
+        },
+        "callback": {
+          "type": "string"
+        }
+      }
+    },
+    "apiEmail": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "message": {
+          "$ref": "#/definitions/apiMessage"
+        }
+      }
+    },
+    "apiIdentifier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
     "apiMessage": {
       "type": "object",
       "properties": {
         "value": {
+          "type": "string"
+        }
+      }
+    },
+    "apiSMS": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string"
+        },
+        "message": {
+          "$ref": "#/definitions/apiMessage"
+        },
+        "mediaURL": {
+          "type": "string"
+        }
+      }
+    },
+    "apiSMSStatus": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/apiIdentifier"
+        },
+        "sms": {
+          "$ref": "#/definitions/apiSMS"
+        },
+        "status": {
+          "type": "string"
+        },
+        "uri": {
           "type": "string"
         }
       }
