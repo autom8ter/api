@@ -117,18 +117,18 @@ typedef GPB_ENUM(AppMetadata_FieldNumber) {
 
 @end
 
-#pragma mark - Config
+#pragma mark - Auth
 
-typedef GPB_ENUM(Config_FieldNumber) {
-  Config_FieldNumber_Domain = 1,
-  Config_FieldNumber_ClientId = 2,
-  Config_FieldNumber_ClientSecret = 3,
-  Config_FieldNumber_Redirect = 4,
-  Config_FieldNumber_Audience = 5,
-  Config_FieldNumber_ScopesArray = 6,
+typedef GPB_ENUM(Auth_FieldNumber) {
+  Auth_FieldNumber_Domain = 1,
+  Auth_FieldNumber_ClientId = 2,
+  Auth_FieldNumber_ClientSecret = 3,
+  Auth_FieldNumber_Redirect = 4,
+  Auth_FieldNumber_Audience = 5,
+  Auth_FieldNumber_ScopesArray = 6,
 };
 
-@interface Config : GPBMessage
+@interface Auth : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *domain;
 
@@ -143,6 +143,33 @@ typedef GPB_ENUM(Config_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
 /** The number of items in @c scopesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
+
+@end
+
+#pragma mark - Template
+
+typedef GPB_ENUM(Template_FieldNumber) {
+  Template_FieldNumber_Name = 1,
+  Template_FieldNumber_Text = 2,
+};
+
+@interface Template : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@end
+
+#pragma mark - Bytes
+
+typedef GPB_ENUM(Bytes_FieldNumber) {
+  Bytes_FieldNumber_Bits = 1,
+};
+
+@interface Bytes : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *bits;
 
 @end
 

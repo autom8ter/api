@@ -25,11 +25,20 @@ message AppMetadata {
     string pay_token=2;
 }
 
-message Config {
+message Auth {
     string domain =1;
     string client_id=2;
     string client_secret=3;
     string redirect=4;
     string audience=5;
     repeated string scopes=6;
+}
+
+message Template {
+    string name =1;
+    string text =2;
+}
+
+message Bytes {
+    bytes bits =1;
 }

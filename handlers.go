@@ -4,31 +4,72 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
+	"github.com/Masterminds/sprig"
+	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
+	"html/template"
 	"net/http"
 	"net/url"
 )
 
-func (c *Config) CallbackHandler(loggedIn string) http.HandlerFunc {
+var LOGIN_PATH = "/login"
+var LOGOUT_PATH = "/logout"
+var CALLBACK_PATH = "/callback"
+var HOMEURL = "http://localhost:8080"
+var DEFAULT_REDIRECT = "http://localhost:8080/callback"
+var DEFAULT_SCOPES = []string{"openid", "profile", "email"}
+
+func (a *Auth) defaultIfEmpty() {
+	if len(a.Scopes) == 0 {
+		a.Scopes = DEFAULT_SCOPES
+	}
+	if a.Audience == "" {
+		a.Audience = "https://" + a.Domain + "/userinfo"
+	}
+	if a.Redirect == "" {
+		a.Redirect = DEFAULT_REDIRECT
+	}
+
+}
+func (a *Auth) validate() error {
+	if len(a.Scopes) == 0 {
+		return errors.New("validation error: empty scope")
+	}
+	if a.Redirect == "" {
+		return errors.New("validation error: empty redirect")
+	}
+	if a.ClientId == "" {
+		return errors.New("validation error: empty client id")
+	}
+	if a.Domain == "" {
+		return errors.New("validation error: empty domain")
+	}
+	if a.ClientSecret == "" {
+		return errors.New("validation error: empty client secret")
+	}
+	if a.Audience == "" {
+		return errors.New("validation error: empty audience")
+	}
+	return nil
+}
+
+func (a *Auth) callbackHandler(loggedInPath string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		if len(c.Scopes) == 0 {
-			c.Scopes = []string{"openid", "profile", "email"}
+		a.defaultIfEmpty()
+		if err := a.validate(); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
 		}
 		conf := &oauth2.Config{
-			ClientID:     c.ClientId,
-			ClientSecret: c.ClientSecret,
-			RedirectURL:  c.Redirect,
-			Scopes:       c.Scopes,
+			ClientID:     a.ClientId,
+			ClientSecret: a.ClientSecret,
+			RedirectURL:  a.Redirect,
+			Scopes:       a.Scopes,
 			Endpoint: oauth2.Endpoint{
-				AuthURL:  "https://" + c.Domain + "/authorize",
-				TokenURL: "https://" + c.Domain + "/oauth/token",
+				AuthURL:  "https://" + a.Domain + "/authorize",
+				TokenURL: "https://" + a.Domain + "/oauth/token",
 			},
 		}
-
-		if c.Audience == "" {
-			c.Audience = "https://" + c.Domain + "/userinfo"
-		}
-
 		state := r.URL.Query().Get("state")
 		session, err := store.Get(r, "state")
 		if err != nil {
@@ -51,7 +92,7 @@ func (c *Config) CallbackHandler(loggedIn string) http.HandlerFunc {
 
 		// Getting now the userInfo
 		client := conf.Client(r.Context(), token)
-		resp, err := client.Get(c.Audience)
+		resp, err := client.Get(a.Audience)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
@@ -82,29 +123,27 @@ func (c *Config) CallbackHandler(loggedIn string) http.HandlerFunc {
 		}
 
 		// Redirect to logged in page
-		http.Redirect(w, r, loggedIn, http.StatusSeeOther)
+		http.Redirect(w, r, loggedInPath, http.StatusSeeOther)
 	}
 
 }
 
-func (c *Config) LoginHandler() http.HandlerFunc {
+func (a *Auth) loginHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		if len(c.Scopes) == 0 {
-			c.Scopes = []string{"openid", "profile", "email"}
+		a.defaultIfEmpty()
+		if err := a.validate(); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
 		}
 		conf := &oauth2.Config{
-			ClientID:     c.ClientId,
-			ClientSecret: c.ClientSecret,
-			RedirectURL:  c.Redirect,
-			Scopes:       c.Scopes,
+			ClientID:     a.ClientId,
+			ClientSecret: a.ClientSecret,
+			RedirectURL:  a.Redirect,
+			Scopes:       a.Scopes,
 			Endpoint: oauth2.Endpoint{
-				AuthURL:  "https://" + c.Domain + "/authorize",
-				TokenURL: "https://" + c.Domain + "/oauth/token",
+				AuthURL:  "https://" + a.Domain + "/authorize",
+				TokenURL: "https://" + a.Domain + "/oauth/token",
 			},
-		}
-
-		if c.Audience == "" {
-			c.Audience = "https://" + c.Domain + "/userinfo"
 		}
 
 		// Generate random state
@@ -124,17 +163,22 @@ func (c *Config) LoginHandler() http.HandlerFunc {
 			return
 		}
 
-		audience := oauth2.SetAuthURLParam("audience", c.Audience)
-		url := conf.AuthCodeURL(state, audience)
+		audience := oauth2.SetAuthURLParam("audience", a.Audience)
+		u := conf.AuthCodeURL(state, audience)
 
-		http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+		http.Redirect(w, r, u, http.StatusTemporaryRedirect)
 	}
 }
 
-func (c *Config) LogoutHandler(returnTo string) http.HandlerFunc {
+func (a *Auth) logoutHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		a.defaultIfEmpty()
+		if err := a.validate(); err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
 		var Url *url.URL
-		Url, err := url.Parse("https://" + c.Domain)
+		Url, err := url.Parse("https://" + a.Domain)
 
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -143,10 +187,42 @@ func (c *Config) LogoutHandler(returnTo string) http.HandlerFunc {
 
 		Url.Path += "/v2/logout"
 		parameters := url.Values{}
-		parameters.Add("returnTo", returnTo)
-		parameters.Add("client_id", c.ClientId)
+		parameters.Add("returnTo", HOMEURL)
+		parameters.Add("client_id", a.ClientId)
 		Url.RawQuery = parameters.Encode()
 
 		http.Redirect(w, r, Url.String(), http.StatusTemporaryRedirect)
 	}
+}
+
+func (a *Auth) RequireLogin(next http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		session, err := store.Get(r, AUTH_SESSION)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		if _, ok := session.Values["userinfo"]; !ok {
+			http.Redirect(w, r, LOGIN_PATH, http.StatusSeeOther)
+		} else {
+			next(w, r)
+		}
+	}
+}
+
+func (a *Auth) Mux(loggedInPath string) *http.ServeMux {
+	m := http.NewServeMux()
+	m.HandleFunc(LOGOUT_PATH, a.logoutHandler())
+	m.HandleFunc(LOGIN_PATH, a.loginHandler())
+	m.HandleFunc(CALLBACK_PATH, a.callbackHandler(loggedInPath))
+	return m
+}
+
+func FuncMap() template.FuncMap {
+	m := make(map[string]interface{})
+	for k, v := range sprig.GenericFuncMap() {
+		m[k] = v
+	}
+	return m
 }

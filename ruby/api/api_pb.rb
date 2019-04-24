@@ -23,7 +23,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :plan, :string, 1
     optional :pay_token, :string, 2
   end
-  add_message "api.Config" do
+  add_message "api.Auth" do
     optional :domain, :string, 1
     optional :client_id, :string, 2
     optional :client_secret, :string, 3
@@ -31,11 +31,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :audience, :string, 5
     repeated :scopes, :string, 6
   end
+  add_message "api.Template" do
+    optional :name, :string, 1
+    optional :text, :string, 2
+  end
+  add_message "api.Bytes" do
+    optional :bits, :bytes, 1
+  end
 end
 
 module Api
   UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
-  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
+  Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
+  Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
+  Bytes = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Bytes").msgclass
 end
