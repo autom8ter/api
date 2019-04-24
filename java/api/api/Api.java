@@ -5818,16 +5818,6 @@ public final class Api {
         getDashboardBytes();
 
     /**
-     * <code>string settings = 3;</code>
-     */
-    java.lang.String getSettings();
-    /**
-     * <code>string settings = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getSettingsBytes();
-
-    /**
      * <code>string logout = 4;</code>
      */
     java.lang.String getLogout();
@@ -5858,84 +5848,14 @@ public final class Api {
         getLoginBytes();
 
     /**
-     * <code>string subscribe = 7;</code>
+     * <code>string logged_out_return_to = 7;</code>
      */
-    java.lang.String getSubscribe();
+    java.lang.String getLoggedOutReturnTo();
     /**
-     * <code>string subscribe = 7;</code>
+     * <code>string logged_out_return_to = 7;</code>
      */
     com.google.protobuf.ByteString
-        getSubscribeBytes();
-
-    /**
-     * <code>string unsubscribe = 8;</code>
-     */
-    java.lang.String getUnsubscribe();
-    /**
-     * <code>string unsubscribe = 8;</code>
-     */
-    com.google.protobuf.ByteString
-        getUnsubscribeBytes();
-
-    /**
-     * <code>string faq = 9;</code>
-     */
-    java.lang.String getFaq();
-    /**
-     * <code>string faq = 9;</code>
-     */
-    com.google.protobuf.ByteString
-        getFaqBytes();
-
-    /**
-     * <code>string support = 10;</code>
-     */
-    java.lang.String getSupport();
-    /**
-     * <code>string support = 10;</code>
-     */
-    com.google.protobuf.ByteString
-        getSupportBytes();
-
-    /**
-     * <code>string terms = 11;</code>
-     */
-    java.lang.String getTerms();
-    /**
-     * <code>string terms = 11;</code>
-     */
-    com.google.protobuf.ByteString
-        getTermsBytes();
-
-    /**
-     * <code>string privacy = 12;</code>
-     */
-    java.lang.String getPrivacy();
-    /**
-     * <code>string privacy = 12;</code>
-     */
-    com.google.protobuf.ByteString
-        getPrivacyBytes();
-
-    /**
-     * <code>string debug = 13;</code>
-     */
-    java.lang.String getDebug();
-    /**
-     * <code>string debug = 13;</code>
-     */
-    com.google.protobuf.ByteString
-        getDebugBytes();
-
-    /**
-     * <code>string blog = 14;</code>
-     */
-    java.lang.String getBlog();
-    /**
-     * <code>string blog = 14;</code>
-     */
-    com.google.protobuf.ByteString
-        getBlogBytes();
+        getLoggedOutReturnToBytes();
   }
   /**
    * Protobuf type {@code api.Paths}
@@ -5952,18 +5872,10 @@ public final class Api {
     private Paths() {
       home_ = "";
       dashboard_ = "";
-      settings_ = "";
       logout_ = "";
       callback_ = "";
       login_ = "";
-      subscribe_ = "";
-      unsubscribe_ = "";
-      faq_ = "";
-      support_ = "";
-      terms_ = "";
-      privacy_ = "";
-      debug_ = "";
-      blog_ = "";
+      loggedOutReturnTo_ = "";
     }
 
     @java.lang.Override
@@ -6002,12 +5914,6 @@ public final class Api {
               dashboard_ = s;
               break;
             }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              settings_ = s;
-              break;
-            }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -6029,49 +5935,7 @@ public final class Api {
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              subscribe_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unsubscribe_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              faq_ = s;
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              support_ = s;
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              terms_ = s;
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              privacy_ = s;
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              debug_ = s;
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              blog_ = s;
+              loggedOutReturnTo_ = s;
               break;
             }
             default: {
@@ -6168,40 +6032,6 @@ public final class Api {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         dashboard_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SETTINGS_FIELD_NUMBER = 3;
-    private volatile java.lang.Object settings_;
-    /**
-     * <code>string settings = 3;</code>
-     */
-    public java.lang.String getSettings() {
-      java.lang.Object ref = settings_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        settings_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string settings = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSettingsBytes() {
-      java.lang.Object ref = settings_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        settings_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6310,272 +6140,34 @@ public final class Api {
       }
     }
 
-    public static final int SUBSCRIBE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object subscribe_;
+    public static final int LOGGED_OUT_RETURN_TO_FIELD_NUMBER = 7;
+    private volatile java.lang.Object loggedOutReturnTo_;
     /**
-     * <code>string subscribe = 7;</code>
+     * <code>string logged_out_return_to = 7;</code>
      */
-    public java.lang.String getSubscribe() {
-      java.lang.Object ref = subscribe_;
+    public java.lang.String getLoggedOutReturnTo() {
+      java.lang.Object ref = loggedOutReturnTo_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        subscribe_ = s;
+        loggedOutReturnTo_ = s;
         return s;
       }
     }
     /**
-     * <code>string subscribe = 7;</code>
+     * <code>string logged_out_return_to = 7;</code>
      */
     public com.google.protobuf.ByteString
-        getSubscribeBytes() {
-      java.lang.Object ref = subscribe_;
+        getLoggedOutReturnToBytes() {
+      java.lang.Object ref = loggedOutReturnTo_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        subscribe_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UNSUBSCRIBE_FIELD_NUMBER = 8;
-    private volatile java.lang.Object unsubscribe_;
-    /**
-     * <code>string unsubscribe = 8;</code>
-     */
-    public java.lang.String getUnsubscribe() {
-      java.lang.Object ref = unsubscribe_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        unsubscribe_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string unsubscribe = 8;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUnsubscribeBytes() {
-      java.lang.Object ref = unsubscribe_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        unsubscribe_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int FAQ_FIELD_NUMBER = 9;
-    private volatile java.lang.Object faq_;
-    /**
-     * <code>string faq = 9;</code>
-     */
-    public java.lang.String getFaq() {
-      java.lang.Object ref = faq_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        faq_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string faq = 9;</code>
-     */
-    public com.google.protobuf.ByteString
-        getFaqBytes() {
-      java.lang.Object ref = faq_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        faq_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SUPPORT_FIELD_NUMBER = 10;
-    private volatile java.lang.Object support_;
-    /**
-     * <code>string support = 10;</code>
-     */
-    public java.lang.String getSupport() {
-      java.lang.Object ref = support_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        support_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string support = 10;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSupportBytes() {
-      java.lang.Object ref = support_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        support_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TERMS_FIELD_NUMBER = 11;
-    private volatile java.lang.Object terms_;
-    /**
-     * <code>string terms = 11;</code>
-     */
-    public java.lang.String getTerms() {
-      java.lang.Object ref = terms_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        terms_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string terms = 11;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTermsBytes() {
-      java.lang.Object ref = terms_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        terms_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PRIVACY_FIELD_NUMBER = 12;
-    private volatile java.lang.Object privacy_;
-    /**
-     * <code>string privacy = 12;</code>
-     */
-    public java.lang.String getPrivacy() {
-      java.lang.Object ref = privacy_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        privacy_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string privacy = 12;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPrivacyBytes() {
-      java.lang.Object ref = privacy_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        privacy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int DEBUG_FIELD_NUMBER = 13;
-    private volatile java.lang.Object debug_;
-    /**
-     * <code>string debug = 13;</code>
-     */
-    public java.lang.String getDebug() {
-      java.lang.Object ref = debug_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        debug_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string debug = 13;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDebugBytes() {
-      java.lang.Object ref = debug_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        debug_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int BLOG_FIELD_NUMBER = 14;
-    private volatile java.lang.Object blog_;
-    /**
-     * <code>string blog = 14;</code>
-     */
-    public java.lang.String getBlog() {
-      java.lang.Object ref = blog_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        blog_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string blog = 14;</code>
-     */
-    public com.google.protobuf.ByteString
-        getBlogBytes() {
-      java.lang.Object ref = blog_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        blog_ = b;
+        loggedOutReturnTo_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -6602,9 +6194,6 @@ public final class Api {
       if (!getDashboardBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, dashboard_);
       }
-      if (!getSettingsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, settings_);
-      }
       if (!getLogoutBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, logout_);
       }
@@ -6614,29 +6203,8 @@ public final class Api {
       if (!getLoginBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, login_);
       }
-      if (!getSubscribeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, subscribe_);
-      }
-      if (!getUnsubscribeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, unsubscribe_);
-      }
-      if (!getFaqBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, faq_);
-      }
-      if (!getSupportBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, support_);
-      }
-      if (!getTermsBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, terms_);
-      }
-      if (!getPrivacyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, privacy_);
-      }
-      if (!getDebugBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, debug_);
-      }
-      if (!getBlogBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, blog_);
+      if (!getLoggedOutReturnToBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, loggedOutReturnTo_);
       }
       unknownFields.writeTo(output);
     }
@@ -6653,9 +6221,6 @@ public final class Api {
       if (!getDashboardBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, dashboard_);
       }
-      if (!getSettingsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, settings_);
-      }
       if (!getLogoutBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, logout_);
       }
@@ -6665,29 +6230,8 @@ public final class Api {
       if (!getLoginBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, login_);
       }
-      if (!getSubscribeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, subscribe_);
-      }
-      if (!getUnsubscribeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, unsubscribe_);
-      }
-      if (!getFaqBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, faq_);
-      }
-      if (!getSupportBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, support_);
-      }
-      if (!getTermsBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, terms_);
-      }
-      if (!getPrivacyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, privacy_);
-      }
-      if (!getDebugBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, debug_);
-      }
-      if (!getBlogBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, blog_);
+      if (!getLoggedOutReturnToBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, loggedOutReturnTo_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6709,30 +6253,14 @@ public final class Api {
           .equals(other.getHome());
       result = result && getDashboard()
           .equals(other.getDashboard());
-      result = result && getSettings()
-          .equals(other.getSettings());
       result = result && getLogout()
           .equals(other.getLogout());
       result = result && getCallback()
           .equals(other.getCallback());
       result = result && getLogin()
           .equals(other.getLogin());
-      result = result && getSubscribe()
-          .equals(other.getSubscribe());
-      result = result && getUnsubscribe()
-          .equals(other.getUnsubscribe());
-      result = result && getFaq()
-          .equals(other.getFaq());
-      result = result && getSupport()
-          .equals(other.getSupport());
-      result = result && getTerms()
-          .equals(other.getTerms());
-      result = result && getPrivacy()
-          .equals(other.getPrivacy());
-      result = result && getDebug()
-          .equals(other.getDebug());
-      result = result && getBlog()
-          .equals(other.getBlog());
+      result = result && getLoggedOutReturnTo()
+          .equals(other.getLoggedOutReturnTo());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -6748,30 +6276,14 @@ public final class Api {
       hash = (53 * hash) + getHome().hashCode();
       hash = (37 * hash) + DASHBOARD_FIELD_NUMBER;
       hash = (53 * hash) + getDashboard().hashCode();
-      hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
-      hash = (53 * hash) + getSettings().hashCode();
       hash = (37 * hash) + LOGOUT_FIELD_NUMBER;
       hash = (53 * hash) + getLogout().hashCode();
       hash = (37 * hash) + CALLBACK_FIELD_NUMBER;
       hash = (53 * hash) + getCallback().hashCode();
       hash = (37 * hash) + LOGIN_FIELD_NUMBER;
       hash = (53 * hash) + getLogin().hashCode();
-      hash = (37 * hash) + SUBSCRIBE_FIELD_NUMBER;
-      hash = (53 * hash) + getSubscribe().hashCode();
-      hash = (37 * hash) + UNSUBSCRIBE_FIELD_NUMBER;
-      hash = (53 * hash) + getUnsubscribe().hashCode();
-      hash = (37 * hash) + FAQ_FIELD_NUMBER;
-      hash = (53 * hash) + getFaq().hashCode();
-      hash = (37 * hash) + SUPPORT_FIELD_NUMBER;
-      hash = (53 * hash) + getSupport().hashCode();
-      hash = (37 * hash) + TERMS_FIELD_NUMBER;
-      hash = (53 * hash) + getTerms().hashCode();
-      hash = (37 * hash) + PRIVACY_FIELD_NUMBER;
-      hash = (53 * hash) + getPrivacy().hashCode();
-      hash = (37 * hash) + DEBUG_FIELD_NUMBER;
-      hash = (53 * hash) + getDebug().hashCode();
-      hash = (37 * hash) + BLOG_FIELD_NUMBER;
-      hash = (53 * hash) + getBlog().hashCode();
+      hash = (37 * hash) + LOGGED_OUT_RETURN_TO_FIELD_NUMBER;
+      hash = (53 * hash) + getLoggedOutReturnTo().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6909,29 +6421,13 @@ public final class Api {
 
         dashboard_ = "";
 
-        settings_ = "";
-
         logout_ = "";
 
         callback_ = "";
 
         login_ = "";
 
-        subscribe_ = "";
-
-        unsubscribe_ = "";
-
-        faq_ = "";
-
-        support_ = "";
-
-        terms_ = "";
-
-        privacy_ = "";
-
-        debug_ = "";
-
-        blog_ = "";
+        loggedOutReturnTo_ = "";
 
         return this;
       }
@@ -6961,18 +6457,10 @@ public final class Api {
         api.Api.Paths result = new api.Api.Paths(this);
         result.home_ = home_;
         result.dashboard_ = dashboard_;
-        result.settings_ = settings_;
         result.logout_ = logout_;
         result.callback_ = callback_;
         result.login_ = login_;
-        result.subscribe_ = subscribe_;
-        result.unsubscribe_ = unsubscribe_;
-        result.faq_ = faq_;
-        result.support_ = support_;
-        result.terms_ = terms_;
-        result.privacy_ = privacy_;
-        result.debug_ = debug_;
-        result.blog_ = blog_;
+        result.loggedOutReturnTo_ = loggedOutReturnTo_;
         onBuilt();
         return result;
       }
@@ -7029,10 +6517,6 @@ public final class Api {
           dashboard_ = other.dashboard_;
           onChanged();
         }
-        if (!other.getSettings().isEmpty()) {
-          settings_ = other.settings_;
-          onChanged();
-        }
         if (!other.getLogout().isEmpty()) {
           logout_ = other.logout_;
           onChanged();
@@ -7045,36 +6529,8 @@ public final class Api {
           login_ = other.login_;
           onChanged();
         }
-        if (!other.getSubscribe().isEmpty()) {
-          subscribe_ = other.subscribe_;
-          onChanged();
-        }
-        if (!other.getUnsubscribe().isEmpty()) {
-          unsubscribe_ = other.unsubscribe_;
-          onChanged();
-        }
-        if (!other.getFaq().isEmpty()) {
-          faq_ = other.faq_;
-          onChanged();
-        }
-        if (!other.getSupport().isEmpty()) {
-          support_ = other.support_;
-          onChanged();
-        }
-        if (!other.getTerms().isEmpty()) {
-          terms_ = other.terms_;
-          onChanged();
-        }
-        if (!other.getPrivacy().isEmpty()) {
-          privacy_ = other.privacy_;
-          onChanged();
-        }
-        if (!other.getDebug().isEmpty()) {
-          debug_ = other.debug_;
-          onChanged();
-        }
-        if (!other.getBlog().isEmpty()) {
-          blog_ = other.blog_;
+        if (!other.getLoggedOutReturnTo().isEmpty()) {
+          loggedOutReturnTo_ = other.loggedOutReturnTo_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -7240,75 +6696,6 @@ public final class Api {
   checkByteStringIsUtf8(value);
         
         dashboard_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object settings_ = "";
-      /**
-       * <code>string settings = 3;</code>
-       */
-      public java.lang.String getSettings() {
-        java.lang.Object ref = settings_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          settings_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string settings = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSettingsBytes() {
-        java.lang.Object ref = settings_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          settings_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string settings = 3;</code>
-       */
-      public Builder setSettings(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        settings_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string settings = 3;</code>
-       */
-      public Builder clearSettings() {
-        
-        settings_ = getDefaultInstance().getSettings();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string settings = 3;</code>
-       */
-      public Builder setSettingsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        settings_ = value;
         onChanged();
         return this;
       }
@@ -7520,554 +6907,71 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object subscribe_ = "";
+      private java.lang.Object loggedOutReturnTo_ = "";
       /**
-       * <code>string subscribe = 7;</code>
+       * <code>string logged_out_return_to = 7;</code>
        */
-      public java.lang.String getSubscribe() {
-        java.lang.Object ref = subscribe_;
+      public java.lang.String getLoggedOutReturnTo() {
+        java.lang.Object ref = loggedOutReturnTo_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          subscribe_ = s;
+          loggedOutReturnTo_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string subscribe = 7;</code>
+       * <code>string logged_out_return_to = 7;</code>
        */
       public com.google.protobuf.ByteString
-          getSubscribeBytes() {
-        java.lang.Object ref = subscribe_;
+          getLoggedOutReturnToBytes() {
+        java.lang.Object ref = loggedOutReturnTo_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          subscribe_ = b;
+          loggedOutReturnTo_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string subscribe = 7;</code>
+       * <code>string logged_out_return_to = 7;</code>
        */
-      public Builder setSubscribe(
+      public Builder setLoggedOutReturnTo(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        subscribe_ = value;
+        loggedOutReturnTo_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string subscribe = 7;</code>
+       * <code>string logged_out_return_to = 7;</code>
        */
-      public Builder clearSubscribe() {
+      public Builder clearLoggedOutReturnTo() {
         
-        subscribe_ = getDefaultInstance().getSubscribe();
+        loggedOutReturnTo_ = getDefaultInstance().getLoggedOutReturnTo();
         onChanged();
         return this;
       }
       /**
-       * <code>string subscribe = 7;</code>
+       * <code>string logged_out_return_to = 7;</code>
        */
-      public Builder setSubscribeBytes(
+      public Builder setLoggedOutReturnToBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        subscribe_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object unsubscribe_ = "";
-      /**
-       * <code>string unsubscribe = 8;</code>
-       */
-      public java.lang.String getUnsubscribe() {
-        java.lang.Object ref = unsubscribe_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          unsubscribe_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string unsubscribe = 8;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUnsubscribeBytes() {
-        java.lang.Object ref = unsubscribe_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unsubscribe_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string unsubscribe = 8;</code>
-       */
-      public Builder setUnsubscribe(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        unsubscribe_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string unsubscribe = 8;</code>
-       */
-      public Builder clearUnsubscribe() {
-        
-        unsubscribe_ = getDefaultInstance().getUnsubscribe();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string unsubscribe = 8;</code>
-       */
-      public Builder setUnsubscribeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        unsubscribe_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object faq_ = "";
-      /**
-       * <code>string faq = 9;</code>
-       */
-      public java.lang.String getFaq() {
-        java.lang.Object ref = faq_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          faq_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string faq = 9;</code>
-       */
-      public com.google.protobuf.ByteString
-          getFaqBytes() {
-        java.lang.Object ref = faq_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          faq_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string faq = 9;</code>
-       */
-      public Builder setFaq(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        faq_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string faq = 9;</code>
-       */
-      public Builder clearFaq() {
-        
-        faq_ = getDefaultInstance().getFaq();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string faq = 9;</code>
-       */
-      public Builder setFaqBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        faq_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object support_ = "";
-      /**
-       * <code>string support = 10;</code>
-       */
-      public java.lang.String getSupport() {
-        java.lang.Object ref = support_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          support_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string support = 10;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSupportBytes() {
-        java.lang.Object ref = support_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          support_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string support = 10;</code>
-       */
-      public Builder setSupport(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        support_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string support = 10;</code>
-       */
-      public Builder clearSupport() {
-        
-        support_ = getDefaultInstance().getSupport();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string support = 10;</code>
-       */
-      public Builder setSupportBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        support_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object terms_ = "";
-      /**
-       * <code>string terms = 11;</code>
-       */
-      public java.lang.String getTerms() {
-        java.lang.Object ref = terms_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          terms_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string terms = 11;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTermsBytes() {
-        java.lang.Object ref = terms_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          terms_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string terms = 11;</code>
-       */
-      public Builder setTerms(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        terms_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string terms = 11;</code>
-       */
-      public Builder clearTerms() {
-        
-        terms_ = getDefaultInstance().getTerms();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string terms = 11;</code>
-       */
-      public Builder setTermsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        terms_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object privacy_ = "";
-      /**
-       * <code>string privacy = 12;</code>
-       */
-      public java.lang.String getPrivacy() {
-        java.lang.Object ref = privacy_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          privacy_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string privacy = 12;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPrivacyBytes() {
-        java.lang.Object ref = privacy_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          privacy_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string privacy = 12;</code>
-       */
-      public Builder setPrivacy(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        privacy_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string privacy = 12;</code>
-       */
-      public Builder clearPrivacy() {
-        
-        privacy_ = getDefaultInstance().getPrivacy();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string privacy = 12;</code>
-       */
-      public Builder setPrivacyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        privacy_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object debug_ = "";
-      /**
-       * <code>string debug = 13;</code>
-       */
-      public java.lang.String getDebug() {
-        java.lang.Object ref = debug_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          debug_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string debug = 13;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDebugBytes() {
-        java.lang.Object ref = debug_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          debug_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string debug = 13;</code>
-       */
-      public Builder setDebug(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        debug_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string debug = 13;</code>
-       */
-      public Builder clearDebug() {
-        
-        debug_ = getDefaultInstance().getDebug();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string debug = 13;</code>
-       */
-      public Builder setDebugBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        debug_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object blog_ = "";
-      /**
-       * <code>string blog = 14;</code>
-       */
-      public java.lang.String getBlog() {
-        java.lang.Object ref = blog_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          blog_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string blog = 14;</code>
-       */
-      public com.google.protobuf.ByteString
-          getBlogBytes() {
-        java.lang.Object ref = blog_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          blog_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string blog = 14;</code>
-       */
-      public Builder setBlog(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        blog_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string blog = 14;</code>
-       */
-      public Builder clearBlog() {
-        
-        blog_ = getDefaultInstance().getBlog();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string blog = 14;</code>
-       */
-      public Builder setBlogBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        blog_ = value;
+        loggedOutReturnTo_ = value;
         onChanged();
         return this;
       }
@@ -8186,6 +7090,16 @@ public final class Api {
      */
     com.google.protobuf.ByteString
         getRedirectBytes();
+
+    /**
+     * <code>string resource_url = 6;</code>
+     */
+    java.lang.String getResourceUrl();
+    /**
+     * <code>string resource_url = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getResourceUrlBytes();
   }
   /**
    * Protobuf type {@code api.Auth0}
@@ -8205,6 +7119,7 @@ public final class Api {
       clientSecret_ = "";
       scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       redirect_ = "";
+      resourceUrl_ = "";
     }
 
     @java.lang.Override
@@ -8262,6 +7177,12 @@ public final class Api {
               java.lang.String s = input.readStringRequireUtf8();
 
               redirect_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceUrl_ = s;
               break;
             }
             default: {
@@ -8465,6 +7386,40 @@ public final class Api {
       }
     }
 
+    public static final int RESOURCE_URL_FIELD_NUMBER = 6;
+    private volatile java.lang.Object resourceUrl_;
+    /**
+     * <code>string resource_url = 6;</code>
+     */
+    public java.lang.String getResourceUrl() {
+      java.lang.Object ref = resourceUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string resource_url = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResourceUrlBytes() {
+      java.lang.Object ref = resourceUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8493,6 +7448,9 @@ public final class Api {
       }
       if (!getRedirectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, redirect_);
+      }
+      if (!getResourceUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, resourceUrl_);
       }
       unknownFields.writeTo(output);
     }
@@ -8523,6 +7481,9 @@ public final class Api {
       if (!getRedirectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, redirect_);
       }
+      if (!getResourceUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, resourceUrl_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -8549,6 +7510,8 @@ public final class Api {
           .equals(other.getScopesList());
       result = result && getRedirect()
           .equals(other.getRedirect());
+      result = result && getResourceUrl()
+          .equals(other.getResourceUrl());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -8572,6 +7535,8 @@ public final class Api {
       }
       hash = (37 * hash) + REDIRECT_FIELD_NUMBER;
       hash = (53 * hash) + getRedirect().hashCode();
+      hash = (37 * hash) + RESOURCE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getResourceUrl().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8715,6 +7680,8 @@ public final class Api {
         bitField0_ = (bitField0_ & ~0x00000008);
         redirect_ = "";
 
+        resourceUrl_ = "";
+
         return this;
       }
 
@@ -8752,6 +7719,7 @@ public final class Api {
         }
         result.scopes_ = scopes_;
         result.redirect_ = redirect_;
+        result.resourceUrl_ = resourceUrl_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -8825,6 +7793,10 @@ public final class Api {
         }
         if (!other.getRedirect().isEmpty()) {
           redirect_ = other.redirect_;
+          onChanged();
+        }
+        if (!other.getResourceUrl().isEmpty()) {
+          resourceUrl_ = other.resourceUrl_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -9226,6 +8198,75 @@ public final class Api {
         onChanged();
         return this;
       }
+
+      private java.lang.Object resourceUrl_ = "";
+      /**
+       * <code>string resource_url = 6;</code>
+       */
+      public java.lang.String getResourceUrl() {
+        java.lang.Object ref = resourceUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resourceUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string resource_url = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResourceUrlBytes() {
+        java.lang.Object ref = resourceUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resourceUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string resource_url = 6;</code>
+       */
+      public Builder setResourceUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resourceUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resource_url = 6;</code>
+       */
+      public Builder clearResourceUrl() {
+        
+        resourceUrl_ = getDefaultInstance().getResourceUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resource_url = 6;</code>
+       */
+      public Builder setResourceUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resourceUrl_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -9346,16 +8387,13 @@ public final class Api {
       "efreshToken\022\r\n\005token\030\001 \001(\t\"h\n\006Tokens\022\030\n\002" +
       "id\030\001 \001(\0132\014.api.IDToken\022 \n\006access\030\002 \001(\0132\020" +
       ".api.AccessToken\022\"\n\007refresh\030\003 \001(\0132\021.api." +
-      "RefreshToken\"\356\001\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\t" +
-      "dashboard\030\002 \001(\t\022\020\n\010settings\030\003 \001(\t\022\016\n\006log" +
-      "out\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\r\n\005login\030\006 \001" +
-      "(\t\022\021\n\tsubscribe\030\007 \001(\t\022\023\n\013unsubscribe\030\010 \001" +
-      "(\t\022\013\n\003faq\030\t \001(\t\022\017\n\007support\030\n \001(\t\022\r\n\005term" +
-      "s\030\013 \001(\t\022\017\n\007privacy\030\014 \001(\t\022\r\n\005debug\030\r \001(\t\022" +
-      "\014\n\004blog\030\016 \001(\t\"c\n\005Auth0\022\016\n\006domain\030\001 \001(\t\022\021" +
+      "RefreshToken\"w\n\005Paths\022\014\n\004home\030\001 \001(\t\022\021\n\td" +
+      "ashboard\030\002 \001(\t\022\016\n\006logout\030\004 \001(\t\022\020\n\010callba" +
+      "ck\030\005 \001(\t\022\r\n\005login\030\006 \001(\t\022\034\n\024logged_out_re" +
+      "turn_to\030\007 \001(\t\"y\n\005Auth0\022\016\n\006domain\030\001 \001(\t\022\021" +
       "\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t" +
-      "\022\016\n\006scopes\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\tb\006prot" +
-      "o3"
+      "\022\016\n\006scopes\030\004 \003(\t\022\020\n\010redirect\030\005 \001(\t\022\024\n\014re" +
+      "source_url\030\006 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9416,13 +8454,13 @@ public final class Api {
     internal_static_api_Paths_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Paths_descriptor,
-        new java.lang.String[] { "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog", });
+        new java.lang.String[] { "Home", "Dashboard", "Logout", "Callback", "Login", "LoggedOutReturnTo", });
     internal_static_api_Auth0_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_api_Auth0_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Auth0_descriptor,
-        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect", });
+        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect", "ResourceUrl", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -40,18 +40,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Paths" do
     optional :home, :string, 1
     optional :dashboard, :string, 2
-    optional :settings, :string, 3
     optional :logout, :string, 4
     optional :callback, :string, 5
     optional :login, :string, 6
-    optional :subscribe, :string, 7
-    optional :unsubscribe, :string, 8
-    optional :faq, :string, 9
-    optional :support, :string, 10
-    optional :terms, :string, 11
-    optional :privacy, :string, 12
-    optional :debug, :string, 13
-    optional :blog, :string, 14
+    optional :logged_out_return_to, :string, 7
   end
   add_message "api.Auth0" do
     optional :domain, :string, 1
@@ -59,6 +51,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :client_secret, :string, 3
     repeated :scopes, :string, 4
     optional :redirect, :string, 5
+    optional :resource_url, :string, 6
   end
 end
 

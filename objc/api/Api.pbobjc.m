@@ -481,35 +481,19 @@ typedef struct Tokens__storage_ {
 
 @dynamic home;
 @dynamic dashboard;
-@dynamic settings;
 @dynamic logout;
 @dynamic callback;
 @dynamic login;
-@dynamic subscribe;
-@dynamic unsubscribe;
-@dynamic faq;
-@dynamic support;
-@dynamic terms;
-@dynamic privacy;
-@dynamic debug;
-@dynamic blog;
+@dynamic loggedOutReturnTo;
 
 typedef struct Paths__storage_ {
   uint32_t _has_storage_[1];
   NSString *home;
   NSString *dashboard;
-  NSString *settings;
   NSString *logout;
   NSString *callback;
   NSString *login;
-  NSString *subscribe;
-  NSString *unsubscribe;
-  NSString *faq;
-  NSString *support;
-  NSString *terms;
-  NSString *privacy;
-  NSString *debug;
-  NSString *blog;
+  NSString *loggedOutReturnTo;
 } Paths__storage_;
 
 // This method is threadsafe because it is initially called
@@ -537,19 +521,10 @@ typedef struct Paths__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "settings",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Settings,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Paths__storage_, settings),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "logout",
         .dataTypeSpecific.className = NULL,
         .number = Paths_FieldNumber_Logout,
-        .hasIndex = 3,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(Paths__storage_, logout),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -558,7 +533,7 @@ typedef struct Paths__storage_ {
         .name = "callback",
         .dataTypeSpecific.className = NULL,
         .number = Paths_FieldNumber_Callback,
-        .hasIndex = 4,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(Paths__storage_, callback),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -567,80 +542,17 @@ typedef struct Paths__storage_ {
         .name = "login",
         .dataTypeSpecific.className = NULL,
         .number = Paths_FieldNumber_Login,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(Paths__storage_, login),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "subscribe",
+        .name = "loggedOutReturnTo",
         .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Subscribe,
-        .hasIndex = 6,
-        .offset = (uint32_t)offsetof(Paths__storage_, subscribe),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "unsubscribe",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Unsubscribe,
-        .hasIndex = 7,
-        .offset = (uint32_t)offsetof(Paths__storage_, unsubscribe),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "faq",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Faq,
-        .hasIndex = 8,
-        .offset = (uint32_t)offsetof(Paths__storage_, faq),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "support",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Support,
-        .hasIndex = 9,
-        .offset = (uint32_t)offsetof(Paths__storage_, support),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "terms",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Terms,
-        .hasIndex = 10,
-        .offset = (uint32_t)offsetof(Paths__storage_, terms),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "privacy",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Privacy,
-        .hasIndex = 11,
-        .offset = (uint32_t)offsetof(Paths__storage_, privacy),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "debug",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Debug,
-        .hasIndex = 12,
-        .offset = (uint32_t)offsetof(Paths__storage_, debug),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "blog",
-        .dataTypeSpecific.className = NULL,
-        .number = Paths_FieldNumber_Blog,
-        .hasIndex = 13,
-        .offset = (uint32_t)offsetof(Paths__storage_, blog),
+        .number = Paths_FieldNumber_LoggedOutReturnTo,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(Paths__storage_, loggedOutReturnTo),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
@@ -670,6 +582,7 @@ typedef struct Paths__storage_ {
 @dynamic clientSecret;
 @dynamic scopesArray, scopesArray_Count;
 @dynamic redirect;
+@dynamic resourceURL;
 
 typedef struct Auth0__storage_ {
   uint32_t _has_storage_[1];
@@ -678,6 +591,7 @@ typedef struct Auth0__storage_ {
   NSString *clientSecret;
   NSMutableArray *scopesArray;
   NSString *redirect;
+  NSString *resourceURL;
 } Auth0__storage_;
 
 // This method is threadsafe because it is initially called
@@ -731,6 +645,15 @@ typedef struct Auth0__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "resourceURL",
+        .dataTypeSpecific.className = NULL,
+        .number = Auth0_FieldNumber_ResourceURL,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Auth0__storage_, resourceURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[Auth0 class]
@@ -740,6 +663,11 @@ typedef struct Auth0__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Auth0__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\006\010\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }

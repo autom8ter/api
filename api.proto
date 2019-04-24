@@ -46,18 +46,10 @@ message Tokens {
 message Paths {
     string home =1;
     string dashboard=2;
-    string settings =3;
     string logout =4;
     string callback=5;
     string login=6;
-    string subscribe=7;
-    string unsubscribe=8;
-    string faq=9;
-    string support=10;
-    string terms=11;
-    string privacy=12;
-    string debug=13;
-    string blog=14;
+    string logged_out_return_to=7;
 }
 
 message Auth0 {
@@ -66,4 +58,5 @@ message Auth0 {
     string client_secret=3;
     repeated string scopes= 4;
     string redirect=5;
+    string resource_url=6;
 }

@@ -35,15 +35,13 @@ namespace Api {
             "a2VuGAEgASgJIhgKB0lEVG9rZW4SDQoFdG9rZW4YASABKAkiHQoMUmVmcmVz",
             "aFRva2VuEg0KBXRva2VuGAEgASgJImgKBlRva2VucxIYCgJpZBgBIAEoCzIM",
             "LmFwaS5JRFRva2VuEiAKBmFjY2VzcxgCIAEoCzIQLmFwaS5BY2Nlc3NUb2tl",
-            "bhIiCgdyZWZyZXNoGAMgASgLMhEuYXBpLlJlZnJlc2hUb2tlbiLuAQoFUGF0",
-            "aHMSDAoEaG9tZRgBIAEoCRIRCglkYXNoYm9hcmQYAiABKAkSEAoIc2V0dGlu",
-            "Z3MYAyABKAkSDgoGbG9nb3V0GAQgASgJEhAKCGNhbGxiYWNrGAUgASgJEg0K",
-            "BWxvZ2luGAYgASgJEhEKCXN1YnNjcmliZRgHIAEoCRITCgt1bnN1YnNjcmli",
-            "ZRgIIAEoCRILCgNmYXEYCSABKAkSDwoHc3VwcG9ydBgKIAEoCRINCgV0ZXJt",
-            "cxgLIAEoCRIPCgdwcml2YWN5GAwgASgJEg0KBWRlYnVnGA0gASgJEgwKBGJs",
-            "b2cYDiABKAkiYwoFQXV0aDASDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9p",
-            "ZBgCIAEoCRIVCg1jbGllbnRfc2VjcmV0GAMgASgJEg4KBnNjb3BlcxgEIAMo",
-            "CRIQCghyZWRpcmVjdBgFIAEoCWIGcHJvdG8z"));
+            "bhIiCgdyZWZyZXNoGAMgASgLMhEuYXBpLlJlZnJlc2hUb2tlbiJ3CgVQYXRo",
+            "cxIMCgRob21lGAEgASgJEhEKCWRhc2hib2FyZBgCIAEoCRIOCgZsb2dvdXQY",
+            "BCABKAkSEAoIY2FsbGJhY2sYBSABKAkSDQoFbG9naW4YBiABKAkSHAoUbG9n",
+            "Z2VkX291dF9yZXR1cm5fdG8YByABKAkieQoFQXV0aDASDgoGZG9tYWluGAEg",
+            "ASgJEhEKCWNsaWVudF9pZBgCIAEoCRIVCg1jbGllbnRfc2VjcmV0GAMgASgJ",
+            "Eg4KBnNjb3BlcxgEIAMoCRIQCghyZWRpcmVjdBgFIAEoCRIUCgxyZXNvdXJj",
+            "ZV91cmwYBiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -54,8 +52,8 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.IDToken), global::Api.IDToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.RefreshToken), global::Api.RefreshToken.Parser, new[]{ "Token" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Tokens), global::Api.Tokens.Parser, new[]{ "Id", "Access", "Refresh" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Settings", "Logout", "Callback", "Login", "Subscribe", "Unsubscribe", "Faq", "Support", "Terms", "Privacy", "Debug", "Blog" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth0), global::Api.Auth0.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Paths), global::Api.Paths.Parser, new[]{ "Home", "Dashboard", "Logout", "Callback", "Login", "LoggedOutReturnTo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth0), global::Api.Auth0.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Scopes", "Redirect", "ResourceUrl" }, null, null, null)
           }));
     }
     #endregion
@@ -1358,18 +1356,10 @@ namespace Api {
     public Paths(Paths other) : this() {
       home_ = other.home_;
       dashboard_ = other.dashboard_;
-      settings_ = other.settings_;
       logout_ = other.logout_;
       callback_ = other.callback_;
       login_ = other.login_;
-      subscribe_ = other.subscribe_;
-      unsubscribe_ = other.unsubscribe_;
-      faq_ = other.faq_;
-      support_ = other.support_;
-      terms_ = other.terms_;
-      privacy_ = other.privacy_;
-      debug_ = other.debug_;
-      blog_ = other.blog_;
+      loggedOutReturnTo_ = other.loggedOutReturnTo_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1397,17 +1387,6 @@ namespace Api {
       get { return dashboard_; }
       set {
         dashboard_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "settings" field.</summary>
-    public const int SettingsFieldNumber = 3;
-    private string settings_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Settings {
-      get { return settings_; }
-      set {
-        settings_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1444,91 +1423,14 @@ namespace Api {
       }
     }
 
-    /// <summary>Field number for the "subscribe" field.</summary>
-    public const int SubscribeFieldNumber = 7;
-    private string subscribe_ = "";
+    /// <summary>Field number for the "logged_out_return_to" field.</summary>
+    public const int LoggedOutReturnToFieldNumber = 7;
+    private string loggedOutReturnTo_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Subscribe {
-      get { return subscribe_; }
+    public string LoggedOutReturnTo {
+      get { return loggedOutReturnTo_; }
       set {
-        subscribe_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "unsubscribe" field.</summary>
-    public const int UnsubscribeFieldNumber = 8;
-    private string unsubscribe_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Unsubscribe {
-      get { return unsubscribe_; }
-      set {
-        unsubscribe_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "faq" field.</summary>
-    public const int FaqFieldNumber = 9;
-    private string faq_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Faq {
-      get { return faq_; }
-      set {
-        faq_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "support" field.</summary>
-    public const int SupportFieldNumber = 10;
-    private string support_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Support {
-      get { return support_; }
-      set {
-        support_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "terms" field.</summary>
-    public const int TermsFieldNumber = 11;
-    private string terms_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Terms {
-      get { return terms_; }
-      set {
-        terms_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "privacy" field.</summary>
-    public const int PrivacyFieldNumber = 12;
-    private string privacy_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Privacy {
-      get { return privacy_; }
-      set {
-        privacy_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "debug" field.</summary>
-    public const int DebugFieldNumber = 13;
-    private string debug_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Debug {
-      get { return debug_; }
-      set {
-        debug_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "blog" field.</summary>
-    public const int BlogFieldNumber = 14;
-    private string blog_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Blog {
-      get { return blog_; }
-      set {
-        blog_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        loggedOutReturnTo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -1547,18 +1449,10 @@ namespace Api {
       }
       if (Home != other.Home) return false;
       if (Dashboard != other.Dashboard) return false;
-      if (Settings != other.Settings) return false;
       if (Logout != other.Logout) return false;
       if (Callback != other.Callback) return false;
       if (Login != other.Login) return false;
-      if (Subscribe != other.Subscribe) return false;
-      if (Unsubscribe != other.Unsubscribe) return false;
-      if (Faq != other.Faq) return false;
-      if (Support != other.Support) return false;
-      if (Terms != other.Terms) return false;
-      if (Privacy != other.Privacy) return false;
-      if (Debug != other.Debug) return false;
-      if (Blog != other.Blog) return false;
+      if (LoggedOutReturnTo != other.LoggedOutReturnTo) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1567,18 +1461,10 @@ namespace Api {
       int hash = 1;
       if (Home.Length != 0) hash ^= Home.GetHashCode();
       if (Dashboard.Length != 0) hash ^= Dashboard.GetHashCode();
-      if (Settings.Length != 0) hash ^= Settings.GetHashCode();
       if (Logout.Length != 0) hash ^= Logout.GetHashCode();
       if (Callback.Length != 0) hash ^= Callback.GetHashCode();
       if (Login.Length != 0) hash ^= Login.GetHashCode();
-      if (Subscribe.Length != 0) hash ^= Subscribe.GetHashCode();
-      if (Unsubscribe.Length != 0) hash ^= Unsubscribe.GetHashCode();
-      if (Faq.Length != 0) hash ^= Faq.GetHashCode();
-      if (Support.Length != 0) hash ^= Support.GetHashCode();
-      if (Terms.Length != 0) hash ^= Terms.GetHashCode();
-      if (Privacy.Length != 0) hash ^= Privacy.GetHashCode();
-      if (Debug.Length != 0) hash ^= Debug.GetHashCode();
-      if (Blog.Length != 0) hash ^= Blog.GetHashCode();
+      if (LoggedOutReturnTo.Length != 0) hash ^= LoggedOutReturnTo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1600,10 +1486,6 @@ namespace Api {
         output.WriteRawTag(18);
         output.WriteString(Dashboard);
       }
-      if (Settings.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Settings);
-      }
       if (Logout.Length != 0) {
         output.WriteRawTag(34);
         output.WriteString(Logout);
@@ -1616,37 +1498,9 @@ namespace Api {
         output.WriteRawTag(50);
         output.WriteString(Login);
       }
-      if (Subscribe.Length != 0) {
+      if (LoggedOutReturnTo.Length != 0) {
         output.WriteRawTag(58);
-        output.WriteString(Subscribe);
-      }
-      if (Unsubscribe.Length != 0) {
-        output.WriteRawTag(66);
-        output.WriteString(Unsubscribe);
-      }
-      if (Faq.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(Faq);
-      }
-      if (Support.Length != 0) {
-        output.WriteRawTag(82);
-        output.WriteString(Support);
-      }
-      if (Terms.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(Terms);
-      }
-      if (Privacy.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(Privacy);
-      }
-      if (Debug.Length != 0) {
-        output.WriteRawTag(106);
-        output.WriteString(Debug);
-      }
-      if (Blog.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(Blog);
+        output.WriteString(LoggedOutReturnTo);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1662,9 +1516,6 @@ namespace Api {
       if (Dashboard.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Dashboard);
       }
-      if (Settings.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Settings);
-      }
       if (Logout.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Logout);
       }
@@ -1674,29 +1525,8 @@ namespace Api {
       if (Login.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Login);
       }
-      if (Subscribe.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Subscribe);
-      }
-      if (Unsubscribe.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Unsubscribe);
-      }
-      if (Faq.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Faq);
-      }
-      if (Support.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Support);
-      }
-      if (Terms.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Terms);
-      }
-      if (Privacy.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Privacy);
-      }
-      if (Debug.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Debug);
-      }
-      if (Blog.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Blog);
+      if (LoggedOutReturnTo.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LoggedOutReturnTo);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1715,9 +1545,6 @@ namespace Api {
       if (other.Dashboard.Length != 0) {
         Dashboard = other.Dashboard;
       }
-      if (other.Settings.Length != 0) {
-        Settings = other.Settings;
-      }
       if (other.Logout.Length != 0) {
         Logout = other.Logout;
       }
@@ -1727,29 +1554,8 @@ namespace Api {
       if (other.Login.Length != 0) {
         Login = other.Login;
       }
-      if (other.Subscribe.Length != 0) {
-        Subscribe = other.Subscribe;
-      }
-      if (other.Unsubscribe.Length != 0) {
-        Unsubscribe = other.Unsubscribe;
-      }
-      if (other.Faq.Length != 0) {
-        Faq = other.Faq;
-      }
-      if (other.Support.Length != 0) {
-        Support = other.Support;
-      }
-      if (other.Terms.Length != 0) {
-        Terms = other.Terms;
-      }
-      if (other.Privacy.Length != 0) {
-        Privacy = other.Privacy;
-      }
-      if (other.Debug.Length != 0) {
-        Debug = other.Debug;
-      }
-      if (other.Blog.Length != 0) {
-        Blog = other.Blog;
+      if (other.LoggedOutReturnTo.Length != 0) {
+        LoggedOutReturnTo = other.LoggedOutReturnTo;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1770,10 +1576,6 @@ namespace Api {
             Dashboard = input.ReadString();
             break;
           }
-          case 26: {
-            Settings = input.ReadString();
-            break;
-          }
           case 34: {
             Logout = input.ReadString();
             break;
@@ -1787,35 +1589,7 @@ namespace Api {
             break;
           }
           case 58: {
-            Subscribe = input.ReadString();
-            break;
-          }
-          case 66: {
-            Unsubscribe = input.ReadString();
-            break;
-          }
-          case 74: {
-            Faq = input.ReadString();
-            break;
-          }
-          case 82: {
-            Support = input.ReadString();
-            break;
-          }
-          case 90: {
-            Terms = input.ReadString();
-            break;
-          }
-          case 98: {
-            Privacy = input.ReadString();
-            break;
-          }
-          case 106: {
-            Debug = input.ReadString();
-            break;
-          }
-          case 114: {
-            Blog = input.ReadString();
+            LoggedOutReturnTo = input.ReadString();
             break;
           }
         }
@@ -1854,6 +1628,7 @@ namespace Api {
       clientSecret_ = other.clientSecret_;
       scopes_ = other.scopes_.Clone();
       redirect_ = other.redirect_;
+      resourceUrl_ = other.resourceUrl_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1916,6 +1691,17 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "resource_url" field.</summary>
+    public const int ResourceUrlFieldNumber = 6;
+    private string resourceUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ResourceUrl {
+      get { return resourceUrl_; }
+      set {
+        resourceUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Auth0);
@@ -1934,6 +1720,7 @@ namespace Api {
       if (ClientSecret != other.ClientSecret) return false;
       if(!scopes_.Equals(other.scopes_)) return false;
       if (Redirect != other.Redirect) return false;
+      if (ResourceUrl != other.ResourceUrl) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1945,6 +1732,7 @@ namespace Api {
       if (ClientSecret.Length != 0) hash ^= ClientSecret.GetHashCode();
       hash ^= scopes_.GetHashCode();
       if (Redirect.Length != 0) hash ^= Redirect.GetHashCode();
+      if (ResourceUrl.Length != 0) hash ^= ResourceUrl.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1975,6 +1763,10 @@ namespace Api {
         output.WriteRawTag(42);
         output.WriteString(Redirect);
       }
+      if (ResourceUrl.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ResourceUrl);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1995,6 +1787,9 @@ namespace Api {
       size += scopes_.CalculateSize(_repeated_scopes_codec);
       if (Redirect.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Redirect);
+      }
+      if (ResourceUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ResourceUrl);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -2019,6 +1814,9 @@ namespace Api {
       scopes_.Add(other.scopes_);
       if (other.Redirect.Length != 0) {
         Redirect = other.Redirect;
+      }
+      if (other.ResourceUrl.Length != 0) {
+        ResourceUrl = other.ResourceUrl;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2049,6 +1847,10 @@ namespace Api {
           }
           case 42: {
             Redirect = input.ReadString();
+            break;
+          }
+          case 50: {
+            ResourceUrl = input.ReadString();
             break;
           }
         }

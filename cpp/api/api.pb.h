@@ -1153,20 +1153,6 @@ class Paths : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::std::string* release_dashboard();
   void set_allocated_dashboard(::std::string* dashboard);
 
-  // string settings = 3;
-  void clear_settings();
-  static const int kSettingsFieldNumber = 3;
-  const ::std::string& settings() const;
-  void set_settings(const ::std::string& value);
-  #if LANG_CXX11
-  void set_settings(::std::string&& value);
-  #endif
-  void set_settings(const char* value);
-  void set_settings(const char* value, size_t size);
-  ::std::string* mutable_settings();
-  ::std::string* release_settings();
-  void set_allocated_settings(::std::string* settings);
-
   // string logout = 4;
   void clear_logout();
   static const int kLogoutFieldNumber = 4;
@@ -1209,117 +1195,19 @@ class Paths : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::std::string* release_login();
   void set_allocated_login(::std::string* login);
 
-  // string subscribe = 7;
-  void clear_subscribe();
-  static const int kSubscribeFieldNumber = 7;
-  const ::std::string& subscribe() const;
-  void set_subscribe(const ::std::string& value);
+  // string logged_out_return_to = 7;
+  void clear_logged_out_return_to();
+  static const int kLoggedOutReturnToFieldNumber = 7;
+  const ::std::string& logged_out_return_to() const;
+  void set_logged_out_return_to(const ::std::string& value);
   #if LANG_CXX11
-  void set_subscribe(::std::string&& value);
+  void set_logged_out_return_to(::std::string&& value);
   #endif
-  void set_subscribe(const char* value);
-  void set_subscribe(const char* value, size_t size);
-  ::std::string* mutable_subscribe();
-  ::std::string* release_subscribe();
-  void set_allocated_subscribe(::std::string* subscribe);
-
-  // string unsubscribe = 8;
-  void clear_unsubscribe();
-  static const int kUnsubscribeFieldNumber = 8;
-  const ::std::string& unsubscribe() const;
-  void set_unsubscribe(const ::std::string& value);
-  #if LANG_CXX11
-  void set_unsubscribe(::std::string&& value);
-  #endif
-  void set_unsubscribe(const char* value);
-  void set_unsubscribe(const char* value, size_t size);
-  ::std::string* mutable_unsubscribe();
-  ::std::string* release_unsubscribe();
-  void set_allocated_unsubscribe(::std::string* unsubscribe);
-
-  // string faq = 9;
-  void clear_faq();
-  static const int kFaqFieldNumber = 9;
-  const ::std::string& faq() const;
-  void set_faq(const ::std::string& value);
-  #if LANG_CXX11
-  void set_faq(::std::string&& value);
-  #endif
-  void set_faq(const char* value);
-  void set_faq(const char* value, size_t size);
-  ::std::string* mutable_faq();
-  ::std::string* release_faq();
-  void set_allocated_faq(::std::string* faq);
-
-  // string support = 10;
-  void clear_support();
-  static const int kSupportFieldNumber = 10;
-  const ::std::string& support() const;
-  void set_support(const ::std::string& value);
-  #if LANG_CXX11
-  void set_support(::std::string&& value);
-  #endif
-  void set_support(const char* value);
-  void set_support(const char* value, size_t size);
-  ::std::string* mutable_support();
-  ::std::string* release_support();
-  void set_allocated_support(::std::string* support);
-
-  // string terms = 11;
-  void clear_terms();
-  static const int kTermsFieldNumber = 11;
-  const ::std::string& terms() const;
-  void set_terms(const ::std::string& value);
-  #if LANG_CXX11
-  void set_terms(::std::string&& value);
-  #endif
-  void set_terms(const char* value);
-  void set_terms(const char* value, size_t size);
-  ::std::string* mutable_terms();
-  ::std::string* release_terms();
-  void set_allocated_terms(::std::string* terms);
-
-  // string privacy = 12;
-  void clear_privacy();
-  static const int kPrivacyFieldNumber = 12;
-  const ::std::string& privacy() const;
-  void set_privacy(const ::std::string& value);
-  #if LANG_CXX11
-  void set_privacy(::std::string&& value);
-  #endif
-  void set_privacy(const char* value);
-  void set_privacy(const char* value, size_t size);
-  ::std::string* mutable_privacy();
-  ::std::string* release_privacy();
-  void set_allocated_privacy(::std::string* privacy);
-
-  // string debug = 13;
-  void clear_debug();
-  static const int kDebugFieldNumber = 13;
-  const ::std::string& debug() const;
-  void set_debug(const ::std::string& value);
-  #if LANG_CXX11
-  void set_debug(::std::string&& value);
-  #endif
-  void set_debug(const char* value);
-  void set_debug(const char* value, size_t size);
-  ::std::string* mutable_debug();
-  ::std::string* release_debug();
-  void set_allocated_debug(::std::string* debug);
-
-  // string blog = 14;
-  void clear_blog();
-  static const int kBlogFieldNumber = 14;
-  const ::std::string& blog() const;
-  void set_blog(const ::std::string& value);
-  #if LANG_CXX11
-  void set_blog(::std::string&& value);
-  #endif
-  void set_blog(const char* value);
-  void set_blog(const char* value, size_t size);
-  ::std::string* mutable_blog();
-  ::std::string* release_blog();
-  void set_allocated_blog(::std::string* blog);
+  void set_logged_out_return_to(const char* value);
+  void set_logged_out_return_to(const char* value, size_t size);
+  ::std::string* mutable_logged_out_return_to();
+  ::std::string* release_logged_out_return_to();
+  void set_allocated_logged_out_return_to(::std::string* logged_out_return_to);
 
   // @@protoc_insertion_point(class_scope:api.Paths)
  private:
@@ -1327,18 +1215,10 @@ class Paths : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr home_;
   ::google::protobuf::internal::ArenaStringPtr dashboard_;
-  ::google::protobuf::internal::ArenaStringPtr settings_;
   ::google::protobuf::internal::ArenaStringPtr logout_;
   ::google::protobuf::internal::ArenaStringPtr callback_;
   ::google::protobuf::internal::ArenaStringPtr login_;
-  ::google::protobuf::internal::ArenaStringPtr subscribe_;
-  ::google::protobuf::internal::ArenaStringPtr unsubscribe_;
-  ::google::protobuf::internal::ArenaStringPtr faq_;
-  ::google::protobuf::internal::ArenaStringPtr support_;
-  ::google::protobuf::internal::ArenaStringPtr terms_;
-  ::google::protobuf::internal::ArenaStringPtr privacy_;
-  ::google::protobuf::internal::ArenaStringPtr debug_;
-  ::google::protobuf::internal::ArenaStringPtr blog_;
+  ::google::protobuf::internal::ArenaStringPtr logged_out_return_to_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -1509,6 +1389,20 @@ class Auth0 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::std::string* release_redirect();
   void set_allocated_redirect(::std::string* redirect);
 
+  // string resource_url = 6;
+  void clear_resource_url();
+  static const int kResourceUrlFieldNumber = 6;
+  const ::std::string& resource_url() const;
+  void set_resource_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_resource_url(::std::string&& value);
+  #endif
+  void set_resource_url(const char* value);
+  void set_resource_url(const char* value, size_t size);
+  ::std::string* mutable_resource_url();
+  ::std::string* release_resource_url();
+  void set_allocated_resource_url(::std::string* resource_url);
+
   // @@protoc_insertion_point(class_scope:api.Auth0)
  private:
 
@@ -1518,6 +1412,7 @@ class Auth0 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::google::protobuf::internal::ArenaStringPtr client_id_;
   ::google::protobuf::internal::ArenaStringPtr client_secret_;
   ::google::protobuf::internal::ArenaStringPtr redirect_;
+  ::google::protobuf::internal::ArenaStringPtr resource_url_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -2678,59 +2573,6 @@ inline void Paths::set_allocated_dashboard(::std::string* dashboard) {
   // @@protoc_insertion_point(field_set_allocated:api.Paths.dashboard)
 }
 
-// string settings = 3;
-inline void Paths::clear_settings() {
-  settings_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::settings() const {
-  // @@protoc_insertion_point(field_get:api.Paths.settings)
-  return settings_.GetNoArena();
-}
-inline void Paths::set_settings(const ::std::string& value) {
-  
-  settings_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.settings)
-}
-#if LANG_CXX11
-inline void Paths::set_settings(::std::string&& value) {
-  
-  settings_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.settings)
-}
-#endif
-inline void Paths::set_settings(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  settings_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.settings)
-}
-inline void Paths::set_settings(const char* value, size_t size) {
-  
-  settings_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.settings)
-}
-inline ::std::string* Paths::mutable_settings() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.settings)
-  return settings_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_settings() {
-  // @@protoc_insertion_point(field_release:api.Paths.settings)
-  
-  return settings_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_settings(::std::string* settings) {
-  if (settings != NULL) {
-    
-  } else {
-    
-  }
-  settings_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), settings);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.settings)
-}
-
 // string logout = 4;
 inline void Paths::clear_logout() {
   logout_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -2890,428 +2732,57 @@ inline void Paths::set_allocated_login(::std::string* login) {
   // @@protoc_insertion_point(field_set_allocated:api.Paths.login)
 }
 
-// string subscribe = 7;
-inline void Paths::clear_subscribe() {
-  subscribe_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string logged_out_return_to = 7;
+inline void Paths::clear_logged_out_return_to() {
+  logged_out_return_to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Paths::subscribe() const {
-  // @@protoc_insertion_point(field_get:api.Paths.subscribe)
-  return subscribe_.GetNoArena();
+inline const ::std::string& Paths::logged_out_return_to() const {
+  // @@protoc_insertion_point(field_get:api.Paths.logged_out_return_to)
+  return logged_out_return_to_.GetNoArena();
 }
-inline void Paths::set_subscribe(const ::std::string& value) {
+inline void Paths::set_logged_out_return_to(const ::std::string& value) {
   
-  subscribe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.subscribe)
+  logged_out_return_to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Paths.logged_out_return_to)
 }
 #if LANG_CXX11
-inline void Paths::set_subscribe(::std::string&& value) {
+inline void Paths::set_logged_out_return_to(::std::string&& value) {
   
-  subscribe_.SetNoArena(
+  logged_out_return_to_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.subscribe)
+  // @@protoc_insertion_point(field_set_rvalue:api.Paths.logged_out_return_to)
 }
 #endif
-inline void Paths::set_subscribe(const char* value) {
+inline void Paths::set_logged_out_return_to(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  subscribe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.subscribe)
+  logged_out_return_to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Paths.logged_out_return_to)
 }
-inline void Paths::set_subscribe(const char* value, size_t size) {
+inline void Paths::set_logged_out_return_to(const char* value, size_t size) {
   
-  subscribe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  logged_out_return_to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.subscribe)
+  // @@protoc_insertion_point(field_set_pointer:api.Paths.logged_out_return_to)
 }
-inline ::std::string* Paths::mutable_subscribe() {
+inline ::std::string* Paths::mutable_logged_out_return_to() {
   
-  // @@protoc_insertion_point(field_mutable:api.Paths.subscribe)
-  return subscribe_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.Paths.logged_out_return_to)
+  return logged_out_return_to_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Paths::release_subscribe() {
-  // @@protoc_insertion_point(field_release:api.Paths.subscribe)
+inline ::std::string* Paths::release_logged_out_return_to() {
+  // @@protoc_insertion_point(field_release:api.Paths.logged_out_return_to)
   
-  return subscribe_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return logged_out_return_to_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Paths::set_allocated_subscribe(::std::string* subscribe) {
-  if (subscribe != NULL) {
+inline void Paths::set_allocated_logged_out_return_to(::std::string* logged_out_return_to) {
+  if (logged_out_return_to != NULL) {
     
   } else {
     
   }
-  subscribe_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subscribe);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.subscribe)
-}
-
-// string unsubscribe = 8;
-inline void Paths::clear_unsubscribe() {
-  unsubscribe_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::unsubscribe() const {
-  // @@protoc_insertion_point(field_get:api.Paths.unsubscribe)
-  return unsubscribe_.GetNoArena();
-}
-inline void Paths::set_unsubscribe(const ::std::string& value) {
-  
-  unsubscribe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.unsubscribe)
-}
-#if LANG_CXX11
-inline void Paths::set_unsubscribe(::std::string&& value) {
-  
-  unsubscribe_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.unsubscribe)
-}
-#endif
-inline void Paths::set_unsubscribe(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  unsubscribe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.unsubscribe)
-}
-inline void Paths::set_unsubscribe(const char* value, size_t size) {
-  
-  unsubscribe_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.unsubscribe)
-}
-inline ::std::string* Paths::mutable_unsubscribe() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.unsubscribe)
-  return unsubscribe_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_unsubscribe() {
-  // @@protoc_insertion_point(field_release:api.Paths.unsubscribe)
-  
-  return unsubscribe_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_unsubscribe(::std::string* unsubscribe) {
-  if (unsubscribe != NULL) {
-    
-  } else {
-    
-  }
-  unsubscribe_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), unsubscribe);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.unsubscribe)
-}
-
-// string faq = 9;
-inline void Paths::clear_faq() {
-  faq_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::faq() const {
-  // @@protoc_insertion_point(field_get:api.Paths.faq)
-  return faq_.GetNoArena();
-}
-inline void Paths::set_faq(const ::std::string& value) {
-  
-  faq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.faq)
-}
-#if LANG_CXX11
-inline void Paths::set_faq(::std::string&& value) {
-  
-  faq_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.faq)
-}
-#endif
-inline void Paths::set_faq(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  faq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.faq)
-}
-inline void Paths::set_faq(const char* value, size_t size) {
-  
-  faq_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.faq)
-}
-inline ::std::string* Paths::mutable_faq() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.faq)
-  return faq_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_faq() {
-  // @@protoc_insertion_point(field_release:api.Paths.faq)
-  
-  return faq_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_faq(::std::string* faq) {
-  if (faq != NULL) {
-    
-  } else {
-    
-  }
-  faq_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), faq);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.faq)
-}
-
-// string support = 10;
-inline void Paths::clear_support() {
-  support_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::support() const {
-  // @@protoc_insertion_point(field_get:api.Paths.support)
-  return support_.GetNoArena();
-}
-inline void Paths::set_support(const ::std::string& value) {
-  
-  support_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.support)
-}
-#if LANG_CXX11
-inline void Paths::set_support(::std::string&& value) {
-  
-  support_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.support)
-}
-#endif
-inline void Paths::set_support(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  support_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.support)
-}
-inline void Paths::set_support(const char* value, size_t size) {
-  
-  support_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.support)
-}
-inline ::std::string* Paths::mutable_support() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.support)
-  return support_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_support() {
-  // @@protoc_insertion_point(field_release:api.Paths.support)
-  
-  return support_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_support(::std::string* support) {
-  if (support != NULL) {
-    
-  } else {
-    
-  }
-  support_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), support);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.support)
-}
-
-// string terms = 11;
-inline void Paths::clear_terms() {
-  terms_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::terms() const {
-  // @@protoc_insertion_point(field_get:api.Paths.terms)
-  return terms_.GetNoArena();
-}
-inline void Paths::set_terms(const ::std::string& value) {
-  
-  terms_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.terms)
-}
-#if LANG_CXX11
-inline void Paths::set_terms(::std::string&& value) {
-  
-  terms_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.terms)
-}
-#endif
-inline void Paths::set_terms(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  terms_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.terms)
-}
-inline void Paths::set_terms(const char* value, size_t size) {
-  
-  terms_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.terms)
-}
-inline ::std::string* Paths::mutable_terms() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.terms)
-  return terms_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_terms() {
-  // @@protoc_insertion_point(field_release:api.Paths.terms)
-  
-  return terms_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_terms(::std::string* terms) {
-  if (terms != NULL) {
-    
-  } else {
-    
-  }
-  terms_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), terms);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.terms)
-}
-
-// string privacy = 12;
-inline void Paths::clear_privacy() {
-  privacy_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::privacy() const {
-  // @@protoc_insertion_point(field_get:api.Paths.privacy)
-  return privacy_.GetNoArena();
-}
-inline void Paths::set_privacy(const ::std::string& value) {
-  
-  privacy_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.privacy)
-}
-#if LANG_CXX11
-inline void Paths::set_privacy(::std::string&& value) {
-  
-  privacy_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.privacy)
-}
-#endif
-inline void Paths::set_privacy(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  privacy_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.privacy)
-}
-inline void Paths::set_privacy(const char* value, size_t size) {
-  
-  privacy_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.privacy)
-}
-inline ::std::string* Paths::mutable_privacy() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.privacy)
-  return privacy_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_privacy() {
-  // @@protoc_insertion_point(field_release:api.Paths.privacy)
-  
-  return privacy_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_privacy(::std::string* privacy) {
-  if (privacy != NULL) {
-    
-  } else {
-    
-  }
-  privacy_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), privacy);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.privacy)
-}
-
-// string debug = 13;
-inline void Paths::clear_debug() {
-  debug_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::debug() const {
-  // @@protoc_insertion_point(field_get:api.Paths.debug)
-  return debug_.GetNoArena();
-}
-inline void Paths::set_debug(const ::std::string& value) {
-  
-  debug_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.debug)
-}
-#if LANG_CXX11
-inline void Paths::set_debug(::std::string&& value) {
-  
-  debug_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.debug)
-}
-#endif
-inline void Paths::set_debug(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  debug_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.debug)
-}
-inline void Paths::set_debug(const char* value, size_t size) {
-  
-  debug_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.debug)
-}
-inline ::std::string* Paths::mutable_debug() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.debug)
-  return debug_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_debug() {
-  // @@protoc_insertion_point(field_release:api.Paths.debug)
-  
-  return debug_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_debug(::std::string* debug) {
-  if (debug != NULL) {
-    
-  } else {
-    
-  }
-  debug_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), debug);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.debug)
-}
-
-// string blog = 14;
-inline void Paths::clear_blog() {
-  blog_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Paths::blog() const {
-  // @@protoc_insertion_point(field_get:api.Paths.blog)
-  return blog_.GetNoArena();
-}
-inline void Paths::set_blog(const ::std::string& value) {
-  
-  blog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Paths.blog)
-}
-#if LANG_CXX11
-inline void Paths::set_blog(::std::string&& value) {
-  
-  blog_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Paths.blog)
-}
-#endif
-inline void Paths::set_blog(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  blog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Paths.blog)
-}
-inline void Paths::set_blog(const char* value, size_t size) {
-  
-  blog_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Paths.blog)
-}
-inline ::std::string* Paths::mutable_blog() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Paths.blog)
-  return blog_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Paths::release_blog() {
-  // @@protoc_insertion_point(field_release:api.Paths.blog)
-  
-  return blog_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Paths::set_allocated_blog(::std::string* blog) {
-  if (blog != NULL) {
-    
-  } else {
-    
-  }
-  blog_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), blog);
-  // @@protoc_insertion_point(field_set_allocated:api.Paths.blog)
+  logged_out_return_to_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), logged_out_return_to);
+  // @@protoc_insertion_point(field_set_allocated:api.Paths.logged_out_return_to)
 }
 
 // -------------------------------------------------------------------
@@ -3597,6 +3068,59 @@ inline void Auth0::set_allocated_redirect(::std::string* redirect) {
   }
   redirect_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), redirect);
   // @@protoc_insertion_point(field_set_allocated:api.Auth0.redirect)
+}
+
+// string resource_url = 6;
+inline void Auth0::clear_resource_url() {
+  resource_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Auth0::resource_url() const {
+  // @@protoc_insertion_point(field_get:api.Auth0.resource_url)
+  return resource_url_.GetNoArena();
+}
+inline void Auth0::set_resource_url(const ::std::string& value) {
+  
+  resource_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Auth0.resource_url)
+}
+#if LANG_CXX11
+inline void Auth0::set_resource_url(::std::string&& value) {
+  
+  resource_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Auth0.resource_url)
+}
+#endif
+inline void Auth0::set_resource_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  resource_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Auth0.resource_url)
+}
+inline void Auth0::set_resource_url(const char* value, size_t size) {
+  
+  resource_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Auth0.resource_url)
+}
+inline ::std::string* Auth0::mutable_resource_url() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Auth0.resource_url)
+  return resource_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Auth0::release_resource_url() {
+  // @@protoc_insertion_point(field_release:api.Auth0.resource_url)
+  
+  return resource_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Auth0::set_allocated_resource_url(::std::string* resource_url) {
+  if (resource_url != NULL) {
+    
+  } else {
+    
+  }
+  resource_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), resource_url);
+  // @@protoc_insertion_point(field_set_allocated:api.Auth0.resource_url)
 }
 
 #ifdef __GNUC__

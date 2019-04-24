@@ -82,24 +82,16 @@ func (p *Paths) Render(tmpl *template.Template, w io.Writer) error {
 
 func DefaultPaths() *Paths {
 	return &Paths{
-		Home:        "/",
-		Dashboard:   "/dashboard",
-		Settings:    "/dashboard/settings",
-		Logout:      "/logout",
-		Callback:    "/callback",
-		Login:       "/login",
-		Subscribe:   "/subscribe",
-		Unsubscribe: "/unsubscribe",
-		Faq:         "/faq",
-		Support:     "/support",
-		Terms:       "/terms",
-		Privacy:     "/privacy",
-		Debug:       "/debug",
-		Blog:        "/blog",
+		Home:              "/",
+		Dashboard:         "/dashboard",
+		Logout:            "/logout",
+		Callback:          "/callback",
+		Login:             "/login",
+		LoggedOutReturnTo: "http://localhost:8080",
 	}
 }
 
-func NewAuth0(debug bool, domain string, clientID string, clientSecret string, redirectURL string, scopes ...string) (*Auth0, error) {
+func NewAuth0(domain string, clientID string, clientSecret string, redirectURL string, scopes ...string) (*Auth0, error) {
 	a := &Auth0{
 		Domain:       domain,
 		ClientId:     clientID,

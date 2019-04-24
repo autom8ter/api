@@ -1472,18 +1472,10 @@ proto.api.Paths.toObject = function(includeInstance, msg) {
   var f, obj = {
     home: jspb.Message.getFieldWithDefault(msg, 1, ""),
     dashboard: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    settings: jspb.Message.getFieldWithDefault(msg, 3, ""),
     logout: jspb.Message.getFieldWithDefault(msg, 4, ""),
     callback: jspb.Message.getFieldWithDefault(msg, 5, ""),
     login: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    subscribe: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    unsubscribe: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    faq: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    support: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    terms: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    privacy: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    debug: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    blog: jspb.Message.getFieldWithDefault(msg, 14, "")
+    loggedOutReturnTo: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1528,10 +1520,6 @@ proto.api.Paths.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setDashboard(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSettings(value);
-      break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setLogout(value);
@@ -1546,35 +1534,7 @@ proto.api.Paths.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSubscribe(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setUnsubscribe(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFaq(value);
-      break;
-    case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSupport(value);
-      break;
-    case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTerms(value);
-      break;
-    case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPrivacy(value);
-      break;
-    case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDebug(value);
-      break;
-    case 14:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBlog(value);
+      msg.setLoggedOutReturnTo(value);
       break;
     default:
       reader.skipField();
@@ -1619,13 +1579,6 @@ proto.api.Paths.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSettings();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
   f = message.getLogout();
   if (f.length > 0) {
     writer.writeString(
@@ -1647,59 +1600,10 @@ proto.api.Paths.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getSubscribe();
+  f = message.getLoggedOutReturnTo();
   if (f.length > 0) {
     writer.writeString(
       7,
-      f
-    );
-  }
-  f = message.getUnsubscribe();
-  if (f.length > 0) {
-    writer.writeString(
-      8,
-      f
-    );
-  }
-  f = message.getFaq();
-  if (f.length > 0) {
-    writer.writeString(
-      9,
-      f
-    );
-  }
-  f = message.getSupport();
-  if (f.length > 0) {
-    writer.writeString(
-      10,
-      f
-    );
-  }
-  f = message.getTerms();
-  if (f.length > 0) {
-    writer.writeString(
-      11,
-      f
-    );
-  }
-  f = message.getPrivacy();
-  if (f.length > 0) {
-    writer.writeString(
-      12,
-      f
-    );
-  }
-  f = message.getDebug();
-  if (f.length > 0) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
-  f = message.getBlog();
-  if (f.length > 0) {
-    writer.writeString(
-      14,
       f
     );
   }
@@ -1733,21 +1637,6 @@ proto.api.Paths.prototype.getDashboard = function() {
 /** @param {string} value */
 proto.api.Paths.prototype.setDashboard = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string settings = 3;
- * @return {string}
- */
-proto.api.Paths.prototype.getSettings = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setSettings = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1797,122 +1686,17 @@ proto.api.Paths.prototype.setLogin = function(value) {
 
 
 /**
- * optional string subscribe = 7;
+ * optional string logged_out_return_to = 7;
  * @return {string}
  */
-proto.api.Paths.prototype.getSubscribe = function() {
+proto.api.Paths.prototype.getLoggedOutReturnTo = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Paths.prototype.setSubscribe = function(value) {
+proto.api.Paths.prototype.setLoggedOutReturnTo = function(value) {
   jspb.Message.setProto3StringField(this, 7, value);
-};
-
-
-/**
- * optional string unsubscribe = 8;
- * @return {string}
- */
-proto.api.Paths.prototype.getUnsubscribe = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setUnsubscribe = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
-};
-
-
-/**
- * optional string faq = 9;
- * @return {string}
- */
-proto.api.Paths.prototype.getFaq = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setFaq = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
-};
-
-
-/**
- * optional string support = 10;
- * @return {string}
- */
-proto.api.Paths.prototype.getSupport = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setSupport = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
-};
-
-
-/**
- * optional string terms = 11;
- * @return {string}
- */
-proto.api.Paths.prototype.getTerms = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setTerms = function(value) {
-  jspb.Message.setProto3StringField(this, 11, value);
-};
-
-
-/**
- * optional string privacy = 12;
- * @return {string}
- */
-proto.api.Paths.prototype.getPrivacy = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setPrivacy = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
-};
-
-
-/**
- * optional string debug = 13;
- * @return {string}
- */
-proto.api.Paths.prototype.getDebug = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setDebug = function(value) {
-  jspb.Message.setProto3StringField(this, 13, value);
-};
-
-
-/**
- * optional string blog = 14;
- * @return {string}
- */
-proto.api.Paths.prototype.getBlog = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
-};
-
-
-/** @param {string} value */
-proto.api.Paths.prototype.setBlog = function(value) {
-  jspb.Message.setProto3StringField(this, 14, value);
 };
 
 
@@ -1974,7 +1758,8 @@ proto.api.Auth0.toObject = function(includeInstance, msg) {
     clientId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     clientSecret: jspb.Message.getFieldWithDefault(msg, 3, ""),
     scopesList: jspb.Message.getRepeatedField(msg, 4),
-    redirect: jspb.Message.getFieldWithDefault(msg, 5, "")
+    redirect: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    resourceUrl: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -2030,6 +1815,10 @@ proto.api.Auth0.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setRedirect(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setResourceUrl(value);
       break;
     default:
       reader.skipField();
@@ -2092,6 +1881,13 @@ proto.api.Auth0.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getResourceUrl();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
       f
     );
   }
@@ -2184,6 +1980,21 @@ proto.api.Auth0.prototype.getRedirect = function() {
 /** @param {string} value */
 proto.api.Auth0.prototype.setRedirect = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string resource_url = 6;
+ * @return {string}
+ */
+proto.api.Auth0.prototype.getResourceUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Auth0.prototype.setResourceUrl = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
