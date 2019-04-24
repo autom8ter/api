@@ -30,11 +30,33 @@ func Setup(t *testing.T) *httptest.Server {
 	return httptest.NewServer(m)
 }
 
-func Test(t *testing.T) {
+func TestHome(t *testing.T) {
 	server := Setup(t)
 	defer server.Close()
 	fmt.Println("Server URL: ", server.URL)
 	resp, err := http.Get(server.URL)
+	Fail(err, t)
+	bits, err := ioutil.ReadAll(resp.Body)
+	Fail(err, t)
+	fmt.Println(string(bits))
+}
+
+func TestLogin(t *testing.T) {
+	server := Setup(t)
+	defer server.Close()
+	fmt.Println("Server URL: ", server.URL)
+	resp, err := http.Get(server.URL+"/login")
+	Fail(err, t)
+	bits, err := ioutil.ReadAll(resp.Body)
+	Fail(err, t)
+	fmt.Println(string(bits))
+}
+
+func TestDashboard(t *testing.T) {
+	server := Setup(t)
+	defer server.Close()
+	fmt.Println("Server URL: ", server.URL)
+	resp, err := http.Get(server.URL+"/dashboard")
 	Fail(err, t)
 	bits, err := ioutil.ReadAll(resp.Body)
 	Fail(err, t)
