@@ -4,21 +4,22 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
-	"github.com/Masterminds/sprig"
+	"github.com/gorilla/mux"
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
-	"html/template"
-	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
-	"strings"
 )
 
-var LOGIN_PATH = "/login"
-var LOGOUT_PATH = "/logout"
-var CALLBACK_PATH = "/callback"
-var HOMEURL = "http://localhost:8080"
+type RouterPaths struct {
+	HomePath     string
+	LoggedInPath string
+	LoginPath    string
+	LogoutPath   string
+	CallbackPath string
+	HomeURL      string
+}
+
 var DEFAULT_REDIRECT = "http://localhost:8080/callback"
 var DEFAULT_SCOPES = []string{"openid", "profile", "email"}
 
@@ -56,7 +57,7 @@ func (a *Auth) validate() error {
 	return nil
 }
 
-func (a *Auth) callbackHandler(loggedInPath string) http.HandlerFunc {
+func (a *Auth) callbackHandler(c *RouterPaths) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		a.defaultIfEmpty()
 		if err := a.validate(); err != nil {
@@ -126,7 +127,7 @@ func (a *Auth) callbackHandler(loggedInPath string) http.HandlerFunc {
 		}
 
 		// Redirect to logged in page
-		http.Redirect(w, r, loggedInPath, http.StatusSeeOther)
+		http.Redirect(w, r, c.LoggedInPath, http.StatusSeeOther)
 	}
 
 }
@@ -173,7 +174,7 @@ func (a *Auth) loginHandler() http.HandlerFunc {
 	}
 }
 
-func (a *Auth) logoutHandler() http.HandlerFunc {
+func (a *Auth) logoutHandler(c *RouterPaths) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		a.defaultIfEmpty()
 		if err := a.validate(); err != nil {
@@ -190,7 +191,7 @@ func (a *Auth) logoutHandler() http.HandlerFunc {
 
 		Url.Path += "/v2/logout"
 		parameters := url.Values{}
-		parameters.Add("returnTo", HOMEURL)
+		parameters.Add("returnTo", c.HomeURL)
 		parameters.Add("client_id", a.ClientId)
 		Url.RawQuery = parameters.Encode()
 
@@ -198,7 +199,7 @@ func (a *Auth) logoutHandler() http.HandlerFunc {
 	}
 }
 
-func (a *Auth) RequireLogin(next http.HandlerFunc) http.HandlerFunc {
+func (a *Auth) RequireLogin(c *RouterPaths, next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		session, err := store.Get(r, AUTH_SESSION)
 		if err != nil {
@@ -207,100 +208,23 @@ func (a *Auth) RequireLogin(next http.HandlerFunc) http.HandlerFunc {
 		}
 
 		if _, ok := session.Values["userinfo"]; !ok {
-			http.Redirect(w, r, LOGIN_PATH, http.StatusSeeOther)
+			http.Redirect(w, r, c.LoginPath, http.StatusSeeOther)
 		} else {
 			next(w, r)
 		}
 	}
 }
 
-func (a *Auth) Mux(loggedInPath string) *http.ServeMux {
-	m := http.NewServeMux()
-	m.HandleFunc(LOGOUT_PATH, a.logoutHandler())
-	m.HandleFunc(LOGIN_PATH, a.loginHandler())
-	m.HandleFunc(CALLBACK_PATH, a.callbackHandler(loggedInPath))
+func (a *Auth) Router(c *RouterPaths, home, loggedIn http.HandlerFunc) *mux.Router {
+	m := mux.NewRouter()
+	m.HandleFunc(c.LogoutPath, a.logoutHandler(c))
+	m.HandleFunc(c.LoginPath, a.loginHandler())
+	m.HandleFunc(c.CallbackPath, a.callbackHandler(c))
+	m.HandleFunc(c.HomePath, home)
+	m.HandleFunc(c.LoggedInPath, a.RequireLogin(c, loggedIn))
 	return m
 }
 
-func FuncMap() template.FuncMap {
-	m := make(map[string]interface{})
-	for k, v := range sprig.GenericFuncMap() {
-		m[k] = v
-	}
-	return m
-}
-
-func RenderFileWithUserInfo(filename string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		session, err := store.Get(r, AUTH_SESSION)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		bits, err := ioutil.ReadFile(filename)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		bitstring := string(bits)
-		if strings.Contains(bitstring, "{{") {
-			templ, err := template.New("").Funcs(FuncMap()).Parse(string(bits))
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			obj := session.Values["userinfo"]
-			bits, err := json.Marshal(obj)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			u := &UserInfo{}
-			err = json.Unmarshal(bits, u)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			err = templ.Execute(w, u)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			return
-		}
-		io.WriteString(w, bitstring)
-		return
-	}
-}
-
-func RenderFileWithData(name string, data interface{}) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		bits, err := ioutil.ReadFile(name)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		bitstring := string(bits)
-		if strings.Contains(bitstring, "{{") {
-			templ, err := template.New("").Funcs(FuncMap()).Parse(string(bits))
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			err = templ.Execute(w, data)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			return
-		}
-		_, err = io.WriteString(w, bitstring)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		return
-	}
-
+func (a *Auth) ListenAndServe(addr string, c *RouterPaths, home, loggedIn http.HandlerFunc) error {
+	return http.ListenAndServe(addr, a.Router(c, home, loggedIn))
 }
