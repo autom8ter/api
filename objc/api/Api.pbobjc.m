@@ -14,6 +14,7 @@
 #endif
 
 #import "Api.pbobjc.h"
+#import "google/api/Annotations.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -23,8 +24,18 @@
 
 @implementation ApiRoot
 
-// No extensions in the file and no imports, so no need to generate
-// +extensionRegistry.
++ (GPBExtensionRegistry*)extensionRegistry {
+  // This is called by +initialize so there is no need to worry
+  // about thread safety and initialization of registry.
+  static GPBExtensionRegistry* registry = nil;
+  if (!registry) {
+    GPB_DEBUG_CHECK_RUNTIME_VERSIONS();
+    registry = [[GPBExtensionRegistry alloc] init];
+    // Merge in the imports (direct or indirect) that defined extensions.
+    [registry addExtensions:[GAPIAnnotationsRoot extensionRegistry]];
+  }
+  return registry;
+}
 
 @end
 
@@ -41,6 +52,49 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   }
   return descriptor;
 }
+
+#pragma mark - EchoMessage
+
+@implementation EchoMessage
+
+@dynamic value;
+
+typedef struct EchoMessage__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *value;
+} EchoMessage__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "value",
+        .dataTypeSpecific.className = NULL,
+        .number = EchoMessage_FieldNumber_Value,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(EchoMessage__storage_, value),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[EchoMessage class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(EchoMessage__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
 
 #pragma mark - UserInfo
 

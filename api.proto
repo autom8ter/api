@@ -2,6 +2,21 @@ syntax="proto3";
 
 package api;
 
+import "google/api/annotations.proto";
+
+service EchoService {
+    rpc Echo(EchoMessage) returns (EchoMessage) {
+        option (google.api.http) = {
+      post: "/echo"
+      body: "*"
+    };
+    }
+}
+
+message EchoMessage {
+    string value = 1;
+}
+
 message UserInfo {
     string name=6;
     string given_name=7;

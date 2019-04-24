@@ -30,6 +30,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "google/api/annotations.pb.h"
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto 
 
@@ -38,7 +39,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[6];
+  static const ::google::protobuf::internal::ParseTable schema[7];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -55,6 +56,9 @@ extern AuthDefaultTypeInternal _Auth_default_instance_;
 class Bytes;
 class BytesDefaultTypeInternal;
 extern BytesDefaultTypeInternal _Bytes_default_instance_;
+class EchoMessage;
+class EchoMessageDefaultTypeInternal;
+extern EchoMessageDefaultTypeInternal _EchoMessage_default_instance_;
 class Template;
 class TemplateDefaultTypeInternal;
 extern TemplateDefaultTypeInternal _Template_default_instance_;
@@ -70,6 +74,7 @@ namespace protobuf {
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
 template<> ::api::Bytes* Arena::CreateMaybeMessage<::api::Bytes>(Arena*);
+template<> ::api::EchoMessage* Arena::CreateMaybeMessage<::api::EchoMessage>(Arena*);
 template<> ::api::Template* Arena::CreateMaybeMessage<::api::Template>(Arena*);
 template<> ::api::UserInfo* Arena::CreateMaybeMessage<::api::UserInfo>(Arena*);
 template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(Arena*);
@@ -78,6 +83,117 @@ template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(A
 namespace api {
 
 // ===================================================================
+
+class EchoMessage : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EchoMessage) */ {
+ public:
+  EchoMessage();
+  virtual ~EchoMessage();
+
+  EchoMessage(const EchoMessage& from);
+
+  inline EchoMessage& operator=(const EchoMessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EchoMessage(EchoMessage&& from) noexcept
+    : EchoMessage() {
+    *this = ::std::move(from);
+  }
+
+  inline EchoMessage& operator=(EchoMessage&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const EchoMessage& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EchoMessage* internal_default_instance() {
+    return reinterpret_cast<const EchoMessage*>(
+               &_EchoMessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(EchoMessage* other);
+  friend void swap(EchoMessage& a, EchoMessage& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EchoMessage* New() const final {
+    return CreateMaybeMessage<EchoMessage>(NULL);
+  }
+
+  EchoMessage* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EchoMessage>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EchoMessage& from);
+  void MergeFrom(const EchoMessage& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EchoMessage* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string value = 1;
+  void clear_value();
+  static const int kValueFieldNumber = 1;
+  const ::std::string& value() const;
+  void set_value(const ::std::string& value);
+  #if LANG_CXX11
+  void set_value(::std::string&& value);
+  #endif
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  ::std::string* mutable_value();
+  ::std::string* release_value();
+  void set_allocated_value(::std::string* value);
+
+  // @@protoc_insertion_point(class_scope:api.EchoMessage)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr value_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.UserInfo) */ {
  public:
@@ -114,7 +230,7 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_UserInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(UserInfo* other);
   friend void swap(UserInfo& a, UserInfo& b) {
@@ -341,7 +457,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -467,7 +583,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -593,7 +709,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -787,7 +903,7 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Template_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(Template* other);
   friend void swap(Template& a, Template& b) {
@@ -913,7 +1029,7 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Bytes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(Bytes* other);
   friend void swap(Bytes& a, Bytes& b) {
@@ -996,6 +1112,63 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// EchoMessage
+
+// string value = 1;
+inline void EchoMessage::clear_value() {
+  value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& EchoMessage::value() const {
+  // @@protoc_insertion_point(field_get:api.EchoMessage.value)
+  return value_.GetNoArena();
+}
+inline void EchoMessage::set_value(const ::std::string& value) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.EchoMessage.value)
+}
+#if LANG_CXX11
+inline void EchoMessage::set_value(::std::string&& value) {
+  
+  value_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.EchoMessage.value)
+}
+#endif
+inline void EchoMessage::set_value(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.EchoMessage.value)
+}
+inline void EchoMessage::set_value(const char* value, size_t size) {
+  
+  value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.EchoMessage.value)
+}
+inline ::std::string* EchoMessage::mutable_value() {
+  
+  // @@protoc_insertion_point(field_mutable:api.EchoMessage.value)
+  return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* EchoMessage::release_value() {
+  // @@protoc_insertion_point(field_release:api.EchoMessage.value)
+  
+  return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void EchoMessage::set_allocated_value(::std::string* value) {
+  if (value != NULL) {
+    
+  } else {
+    
+  }
+  value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set_allocated:api.EchoMessage.value)
+}
+
+// -------------------------------------------------------------------
+
 // UserInfo
 
 // string name = 6;
@@ -2205,6 +2378,8 @@ inline void Bytes::set_allocated_bits(::std::string* bits) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
