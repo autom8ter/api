@@ -3201,6 +3201,25 @@ public final class Api {
      */
     com.google.protobuf.ByteString
         getAudienceBytes();
+
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    java.util.List<java.lang.String>
+        getScopesList();
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    int getScopesCount();
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    java.lang.String getScopes(int index);
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getScopesBytes(int index);
   }
   /**
    * Protobuf type {@code api.Config}
@@ -3220,6 +3239,7 @@ public final class Api {
       clientSecret_ = "";
       redirect_ = "";
       audience_ = "";
+      scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -3276,6 +3296,15 @@ public final class Api {
               audience_ = s;
               break;
             }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                scopes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              scopes_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3291,6 +3320,9 @@ public final class Api {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          scopes_ = scopes_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -3308,6 +3340,7 @@ public final class Api {
               api.Api.Config.class, api.Api.Config.Builder.class);
     }
 
+    private int bitField0_;
     public static final int DOMAIN_FIELD_NUMBER = 1;
     private volatile java.lang.Object domain_;
     /**
@@ -3478,6 +3511,35 @@ public final class Api {
       }
     }
 
+    public static final int SCOPES_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList scopes_;
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getScopesList() {
+      return scopes_;
+    }
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    public int getScopesCount() {
+      return scopes_.size();
+    }
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    public java.lang.String getScopes(int index) {
+      return scopes_.get(index);
+    }
+    /**
+     * <code>repeated string scopes = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getScopesBytes(int index) {
+      return scopes_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3507,6 +3569,9 @@ public final class Api {
       if (!getAudienceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, audience_);
       }
+      for (int i = 0; i < scopes_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, scopes_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3530,6 +3595,14 @@ public final class Api {
       }
       if (!getAudienceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, audience_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < scopes_.size(); i++) {
+          dataSize += computeStringSizeNoTag(scopes_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getScopesList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3557,6 +3630,8 @@ public final class Api {
           .equals(other.getRedirect());
       result = result && getAudience()
           .equals(other.getAudience());
+      result = result && getScopesList()
+          .equals(other.getScopesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3578,6 +3653,10 @@ public final class Api {
       hash = (53 * hash) + getRedirect().hashCode();
       hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
       hash = (53 * hash) + getAudience().hashCode();
+      if (getScopesCount() > 0) {
+        hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+        hash = (53 * hash) + getScopesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3721,6 +3800,8 @@ public final class Api {
 
         audience_ = "";
 
+        scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -3747,11 +3828,19 @@ public final class Api {
       @java.lang.Override
       public api.Api.Config buildPartial() {
         api.Api.Config result = new api.Api.Config(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.domain_ = domain_;
         result.clientId_ = clientId_;
         result.clientSecret_ = clientSecret_;
         result.redirect_ = redirect_;
         result.audience_ = audience_;
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          scopes_ = scopes_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.scopes_ = scopes_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -3820,6 +3909,16 @@ public final class Api {
           audience_ = other.audience_;
           onChanged();
         }
+        if (!other.scopes_.isEmpty()) {
+          if (scopes_.isEmpty()) {
+            scopes_ = other.scopes_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureScopesIsMutable();
+            scopes_.addAll(other.scopes_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3848,6 +3947,7 @@ public final class Api {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object domain_ = "";
       /**
@@ -4193,6 +4293,100 @@ public final class Api {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.LazyStringList scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureScopesIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getScopesList() {
+        return scopes_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public int getScopesCount() {
+        return scopes_.size();
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public java.lang.String getScopes(int index) {
+        return scopes_.get(index);
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getScopesBytes(int index) {
+        return scopes_.getByteString(index);
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public Builder setScopes(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureScopesIsMutable();
+        scopes_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public Builder addScopes(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureScopesIsMutable();
+        scopes_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public Builder addAllScopes(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureScopesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, scopes_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public Builder clearScopes() {
+        scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string scopes = 6;</code>
+       */
+      public Builder addScopesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureScopesIsMutable();
+        scopes_.add(value);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4283,10 +4477,10 @@ public final class Api {
       "_metadata\030\016 \001(\0132\020.api.AppMetadata\"8\n\014Use" +
       "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co" +
       "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t" +
-      "\022\021\n\tpay_token\030\002 \001(\t\"f\n\006Config\022\016\n\006domain\030" +
+      "\022\021\n\tpay_token\030\002 \001(\t\"v\n\006Config\022\016\n\006domain\030" +
       "\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secre" +
       "t\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 " +
-      "\001(\tb\006proto3"
+      "\001(\t\022\016\n\006scopes\030\006 \003(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4323,7 +4517,7 @@ public final class Api {
     internal_static_api_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Config_descriptor,
-        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", });
+        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

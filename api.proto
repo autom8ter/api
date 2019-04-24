@@ -31,4 +31,5 @@ message Config {
     string client_secret=3;
     string redirect=4;
     string audience=5;
+    repeated string scopes=6;
 }

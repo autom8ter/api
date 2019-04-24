@@ -11,17 +11,20 @@ import (
 
 func (c *Config) CallbackHandler(loggedIn string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
+		if len(c.Scopes) == 0 {
+			c.Scopes = []string{"openid", "profile", "email"}
+		}
 		conf := &oauth2.Config{
 			ClientID:     c.ClientId,
 			ClientSecret: c.ClientSecret,
 			RedirectURL:  c.Redirect,
-			Scopes:       []string{"openid", "profile", "email"},
+			Scopes:       c.Scopes,
 			Endpoint: oauth2.Endpoint{
 				AuthURL:  "https://" + c.Domain + "/authorize",
 				TokenURL: "https://" + c.Domain + "/oauth/token",
 			},
 		}
+
 		if c.Audience == "" {
 			c.Audience = "https://" + c.Domain + "/userinfo"
 		}
@@ -86,11 +89,14 @@ func (c *Config) CallbackHandler(loggedIn string) http.HandlerFunc {
 
 func (c *Config) LoginHandler() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		if len(c.Scopes) == 0 {
+			c.Scopes = []string{"openid", "profile", "email"}
+		}
 		conf := &oauth2.Config{
 			ClientID:     c.ClientId,
 			ClientSecret: c.ClientSecret,
 			RedirectURL:  c.Redirect,
-			Scopes:       []string{"openid", "profile", "email"},
+			Scopes:       c.Scopes,
 			Endpoint: oauth2.Endpoint{
 				AuthURL:  "https://" + c.Domain + "/authorize",
 				TokenURL: "https://" + c.Domain + "/oauth/token",

@@ -637,6 +637,28 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 
   // accessors -------------------------------------------------------
 
+  // repeated string scopes = 6;
+  int scopes_size() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 6;
+  const ::std::string& scopes(int index) const;
+  ::std::string* mutable_scopes(int index);
+  void set_scopes(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_scopes(int index, ::std::string&& value);
+  #endif
+  void set_scopes(int index, const char* value);
+  void set_scopes(int index, const char* value, size_t size);
+  ::std::string* add_scopes();
+  void add_scopes(const ::std::string& value);
+  #if LANG_CXX11
+  void add_scopes(::std::string&& value);
+  #endif
+  void add_scopes(const char* value);
+  void add_scopes(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& scopes() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_scopes();
+
   // string domain = 1;
   void clear_domain();
   static const int kDomainFieldNumber = 1;
@@ -711,6 +733,7 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> scopes_;
   ::google::protobuf::internal::ArenaStringPtr domain_;
   ::google::protobuf::internal::ArenaStringPtr client_id_;
   ::google::protobuf::internal::ArenaStringPtr client_secret_;
@@ -1696,6 +1719,75 @@ inline void Config::set_allocated_audience(::std::string* audience) {
   }
   audience_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), audience);
   // @@protoc_insertion_point(field_set_allocated:api.Config.audience)
+}
+
+// repeated string scopes = 6;
+inline int Config::scopes_size() const {
+  return scopes_.size();
+}
+inline void Config::clear_scopes() {
+  scopes_.Clear();
+}
+inline const ::std::string& Config::scopes(int index) const {
+  // @@protoc_insertion_point(field_get:api.Config.scopes)
+  return scopes_.Get(index);
+}
+inline ::std::string* Config::mutable_scopes(int index) {
+  // @@protoc_insertion_point(field_mutable:api.Config.scopes)
+  return scopes_.Mutable(index);
+}
+inline void Config::set_scopes(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:api.Config.scopes)
+  scopes_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Config::set_scopes(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:api.Config.scopes)
+  scopes_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Config::set_scopes(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:api.Config.scopes)
+}
+inline void Config::set_scopes(int index, const char* value, size_t size) {
+  scopes_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:api.Config.scopes)
+}
+inline ::std::string* Config::add_scopes() {
+  // @@protoc_insertion_point(field_add_mutable:api.Config.scopes)
+  return scopes_.Add();
+}
+inline void Config::add_scopes(const ::std::string& value) {
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:api.Config.scopes)
+}
+#if LANG_CXX11
+inline void Config::add_scopes(::std::string&& value) {
+  scopes_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:api.Config.scopes)
+}
+#endif
+inline void Config::add_scopes(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:api.Config.scopes)
+}
+inline void Config::add_scopes(const char* value, size_t size) {
+  scopes_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:api.Config.scopes)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Config::scopes() const {
+  // @@protoc_insertion_point(field_list:api.Config.scopes)
+  return scopes_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Config::mutable_scopes() {
+  // @@protoc_insertion_point(field_mutable_list:api.Config.scopes)
+  return &scopes_;
 }
 
 #ifdef __GNUC__

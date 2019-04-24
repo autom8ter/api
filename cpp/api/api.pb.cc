@@ -152,6 +152,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, client_secret_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, redirect_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, audience_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Config, scopes_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::UserInfo)},
@@ -196,13 +197,13 @@ void AddDescriptorsImpl() {
       "_metadata\030\016 \001(\0132\020.api.AppMetadata\"8\n\014Use"
       "rMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_co"
       "ntact\030\002 \001(\t\".\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t"
-      "\022\021\n\tpay_token\030\002 \001(\t\"f\n\006Config\022\016\n\006domain\030"
+      "\022\021\n\tpay_token\030\002 \001(\t\"v\n\006Config\022\016\n\006domain\030"
       "\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secre"
       "t\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 "
-      "\001(\tb\006proto3"
+      "\001(\t\022\016\n\006scopes\030\006 \003(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 451);
+      descriptor, 467);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
 }
@@ -1521,6 +1522,7 @@ const int Config::kClientIdFieldNumber;
 const int Config::kClientSecretFieldNumber;
 const int Config::kRedirectFieldNumber;
 const int Config::kAudienceFieldNumber;
+const int Config::kScopesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Config::Config()
@@ -1532,7 +1534,8 @@ Config::Config()
 }
 Config::Config(const Config& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      scopes_(from.scopes_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   domain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.domain().size() > 0) {
@@ -1598,6 +1601,7 @@ void Config::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  scopes_.Clear();
   domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   client_secret_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -1696,6 +1700,23 @@ bool Config::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated string scopes = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_scopes()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->scopes(this->scopes_size() - 1).data(),
+            static_cast<int>(this->scopes(this->scopes_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Config.scopes"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -1772,6 +1793,16 @@ void Config::SerializeWithCachedSizes(
       5, this->audience(), output);
   }
 
+  // repeated string scopes = 6;
+  for (int i = 0, n = this->scopes_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->scopes(i).data(), static_cast<int>(this->scopes(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Config.scopes");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      6, this->scopes(i), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -1841,6 +1872,16 @@ void Config::SerializeWithCachedSizes(
         5, this->audience(), target);
   }
 
+  // repeated string scopes = 6;
+  for (int i = 0, n = this->scopes_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->scopes(i).data(), static_cast<int>(this->scopes(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Config.scopes");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(6, this->scopes(i), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1858,6 +1899,14 @@ size_t Config::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // repeated string scopes = 6;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->scopes_size());
+  for (int i = 0, n = this->scopes_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->scopes(i));
+  }
+
   // string domain = 1;
   if (this->domain().size() > 0) {
     total_size += 1 +
@@ -1920,6 +1969,7 @@ void Config::MergeFrom(const Config& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  scopes_.MergeFrom(from.scopes_);
   if (from.domain().size() > 0) {
 
     domain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.domain_);
@@ -1966,6 +2016,7 @@ void Config::Swap(Config* other) {
 }
 void Config::InternalSwap(Config* other) {
   using std::swap;
+  scopes_.InternalSwap(CastToBase(&other->scopes_));
   domain_.Swap(&other->domain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   client_id_.Swap(&other->client_id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),

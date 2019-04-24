@@ -29,6 +29,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :client_secret, :string, 3
     optional :redirect, :string, 4
     optional :audience, :string, 5
+    repeated :scopes, :string, 6
   end
 end
 

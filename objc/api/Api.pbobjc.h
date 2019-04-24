@@ -125,6 +125,7 @@ typedef GPB_ENUM(Config_FieldNumber) {
   Config_FieldNumber_ClientSecret = 3,
   Config_FieldNumber_Redirect = 4,
   Config_FieldNumber_Audience = 5,
+  Config_FieldNumber_ScopesArray = 6,
 };
 
 @interface Config : GPBMessage
@@ -138,6 +139,10 @@ typedef GPB_ENUM(Config_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *audience;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+/** The number of items in @c scopesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger scopesArray_Count;
 
 @end
 

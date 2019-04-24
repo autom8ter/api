@@ -290,6 +290,7 @@ typedef struct AppMetadata__storage_ {
 @dynamic clientSecret;
 @dynamic redirect;
 @dynamic audience;
+@dynamic scopesArray, scopesArray_Count;
 
 typedef struct Config__storage_ {
   uint32_t _has_storage_[1];
@@ -298,6 +299,7 @@ typedef struct Config__storage_ {
   NSString *clientSecret;
   NSString *redirect;
   NSString *audience;
+  NSMutableArray *scopesArray;
 } Config__storage_;
 
 // This method is threadsafe because it is initially called
@@ -349,6 +351,15 @@ typedef struct Config__storage_ {
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(Config__storage_, audience),
         .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "scopesArray",
+        .dataTypeSpecific.className = NULL,
+        .number = Config_FieldNumber_ScopesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Config__storage_, scopesArray),
+        .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeString,
       },
     };

@@ -757,12 +757,19 @@ proto.api.AppMetadata.prototype.setPayToken = function(value) {
  * @constructor
  */
 proto.api.Config = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.Config.repeatedFields_, null);
 };
 goog.inherits(proto.api.Config, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.api.Config.displayName = 'proto.api.Config';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.Config.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -796,7 +803,8 @@ proto.api.Config.toObject = function(includeInstance, msg) {
     clientId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     clientSecret: jspb.Message.getFieldWithDefault(msg, 3, ""),
     redirect: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    audience: jspb.Message.getFieldWithDefault(msg, 5, "")
+    audience: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    scopesList: jspb.Message.getRepeatedField(msg, 6)
   };
 
   if (includeInstance) {
@@ -852,6 +860,10 @@ proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAudience(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addScopes(value);
       break;
     default:
       reader.skipField();
@@ -914,6 +926,13 @@ proto.api.Config.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getScopesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
       f
     );
   }
@@ -992,6 +1011,35 @@ proto.api.Config.prototype.getAudience = function() {
 /** @param {string} value */
 proto.api.Config.prototype.setAudience = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated string scopes = 6;
+ * @return {!Array<string>}
+ */
+proto.api.Config.prototype.getScopesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+};
+
+
+/** @param {!Array<string>} value */
+proto.api.Config.prototype.setScopesList = function(value) {
+  jspb.Message.setField(this, 6, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.api.Config.prototype.addScopes = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
+proto.api.Config.prototype.clearScopesList = function() {
+  this.setScopesList([]);
 };
 
 

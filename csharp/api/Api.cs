@@ -31,17 +31,17 @@ namespace Api {
             "LlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEYDiABKAsyEC5hcGkuQXBw",
             "TWV0YWRhdGEiOAoMVXNlck1ldGFkYXRhEg0KBXBob25lGAEgASgJEhkKEXBy",
             "ZWZlcnJlZF9jb250YWN0GAIgASgJIi4KC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
-            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJImYKBkNvbmZpZxIOCgZkb21haW4Y",
+            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJInYKBkNvbmZpZxIOCgZkb21haW4Y",
             "ASABKAkSEQoJY2xpZW50X2lkGAIgASgJEhUKDWNsaWVudF9zZWNyZXQYAyAB",
-            "KAkSEAoIcmVkaXJlY3QYBCABKAkSEAoIYXVkaWVuY2UYBSABKAliBnByb3Rv",
-            "Mw=="));
+            "KAkSEAoIcmVkaXJlY3QYBCABKAkSEAoIYXVkaWVuY2UYBSABKAkSDgoGc2Nv",
+            "cGVzGAYgAygJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Config), global::Api.Config.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Redirect", "Audience" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Config), global::Api.Config.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes" }, null, null, null)
           }));
     }
     #endregion
@@ -757,6 +757,7 @@ namespace Api {
       clientSecret_ = other.clientSecret_;
       redirect_ = other.redirect_;
       audience_ = other.audience_;
+      scopes_ = other.scopes_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -820,6 +821,16 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "scopes" field.</summary>
+    public const int ScopesFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_scopes_codec
+        = pb::FieldCodec.ForString(50);
+    private readonly pbc::RepeatedField<string> scopes_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Scopes {
+      get { return scopes_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Config);
@@ -838,6 +849,7 @@ namespace Api {
       if (ClientSecret != other.ClientSecret) return false;
       if (Redirect != other.Redirect) return false;
       if (Audience != other.Audience) return false;
+      if(!scopes_.Equals(other.scopes_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -849,6 +861,7 @@ namespace Api {
       if (ClientSecret.Length != 0) hash ^= ClientSecret.GetHashCode();
       if (Redirect.Length != 0) hash ^= Redirect.GetHashCode();
       if (Audience.Length != 0) hash ^= Audience.GetHashCode();
+      hash ^= scopes_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -882,6 +895,7 @@ namespace Api {
         output.WriteRawTag(42);
         output.WriteString(Audience);
       }
+      scopes_.WriteTo(output, _repeated_scopes_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -905,6 +919,7 @@ namespace Api {
       if (Audience.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Audience);
       }
+      size += scopes_.CalculateSize(_repeated_scopes_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -931,6 +946,7 @@ namespace Api {
       if (other.Audience.Length != 0) {
         Audience = other.Audience;
       }
+      scopes_.Add(other.scopes_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -960,6 +976,10 @@ namespace Api {
           }
           case 42: {
             Audience = input.ReadString();
+            break;
+          }
+          case 50: {
+            scopes_.AddEntriesFrom(input, _repeated_scopes_codec);
             break;
           }
         }
