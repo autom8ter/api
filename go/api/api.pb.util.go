@@ -91,13 +91,14 @@ func DefaultPaths() *Paths {
 	}
 }
 
-func NewAuth0(domain string, clientID string, clientSecret string, redirectURL string, scopes ...string) (*Auth0, error) {
+func NewAuth0(domain string, clientID string, clientSecret string, redirectURL string, resourceURL string, scopes ...string) (*Auth0, error) {
 	a := &Auth0{
 		Domain:       domain,
 		ClientId:     clientID,
 		ClientSecret: clientSecret,
-		Redirect:     redirectURL,
 		Scopes:       scopes,
+		Redirect:     redirectURL,
+		ResourceUrl:  resourceURL,
 	}
 	if a.Domain == "" {
 		return nil, errors.New("empty domain")
@@ -114,6 +115,9 @@ func NewAuth0(domain string, clientID string, clientSecret string, redirectURL s
 	if a.Scopes == nil {
 		a.Scopes = []string{"userid", "profile", "email"}
 	}
+	if a.ResourceUrl == "" {
+		a.ResourceUrl = oauth3.UserInfoEndpoint(a.Domain)
+	}
 	return a, nil
 }
 
@@ -127,15 +131,15 @@ func (o *Auth0) Validate() {
 	}
 }
 
-func (o *Auth0) OAuthLoginURL(resourceURL string, randomstate string) string {
-	return o.OAuthConfig().AuthCodeURL(randomstate, oauth2.SetAuthURLParam("audience", resourceURL))
+func (o *Auth0) OAuthLoginURL(randomstate string) string {
+	return o.OAuthConfig().AuthCodeURL(randomstate, oauth2.SetAuthURLParam("audience", o.ResourceUrl))
 }
 
-func (o *Auth0) HandleOAuthCallback(loggedInPath string) http.HandlerFunc {
-	return callback.HandleOAuthCallback(o.OAuthConfig(), AUTH_SESSION_NAME, oauth3.UserInfoEndpoint(o.Domain), loggedInPath)
+func (o *Auth0) HandleOAuthCallback(p *Paths) http.HandlerFunc {
+	return callback.HandleOAuthCallback(o.OAuthConfig(), AUTH_SESSION_NAME, oauth3.UserInfoEndpoint(o.Domain), p.Dashboard)
 }
 
-func (o *Auth0) HandleOAuthLogin(resourceURL string) http.HandlerFunc {
+func (o *Auth0) HandleOAuthLogin() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		// Generate random state
 		state := Util.RandomString(32)
@@ -151,18 +155,18 @@ func (o *Auth0) HandleOAuthLogin(resourceURL string) http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		http.Redirect(w, r, o.OAuthConfig().AuthCodeURL(state, oauth2.SetAuthURLParam("audience", resourceURL)), http.StatusTemporaryRedirect)
+		http.Redirect(w, r, o.OAuthConfig().AuthCodeURL(state, oauth2.SetAuthURLParam("audience", o.ResourceUrl)), http.StatusTemporaryRedirect)
 	}
 }
 
-func (o *Auth0) HandleOAuthLogout(returnTo string) http.HandlerFunc {
+func (o *Auth0) HandleOAuthLogout(p *Paths) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		u, err := oauth3.LogoutEndpoint(o.ClientId, o.Domain, returnTo)
+		u, err := oauth3.LogoutEndpoint(o.ClientId, o.Domain, p.LoggedOutReturnTo)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		Debugf("logging out and returning to: %s\n", returnTo)
+		Debugf("logging out and returning to: %s\n", p.LoggedOutReturnTo)
 		http.Redirect(w, r, u, http.StatusTemporaryRedirect)
 	}
 }
@@ -204,30 +208,6 @@ func (o *Auth0) GetTokens(r *http.Request) (*Tokens, error) {
 	}, nil
 }
 
-func (o *Auth0) SecureFunc(redirect string, handler http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		prof, err := o.GetUserInfo(r)
-		Debugf("got profile: %s", Util.MarshalJSON(prof))
-		if err != nil {
-			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
-		}
-		if prof == nil {
-			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
-		}
-		if prof.Name == "" {
-			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
-		}
-		if err := Util.Validate(prof); err != nil {
-			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
-		}
-		handler.ServeHTTP(w, r)
-	}
-}
-
 func (o *Auth0) Secure(redirect string, handler http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		prof, err := o.GetUserInfo(r)
@@ -252,18 +232,18 @@ func (o *Auth0) Secure(redirect string, handler http.Handler) http.HandlerFunc {
 	}
 }
 
-func (a *Auth0) SecureJWTFunc(resourceURL string, handler http.HandlerFunc) http.HandlerFunc {
+func (a *Auth0) SecureJWTFunc(handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		a.Auth0Middleware(resourceURL).Handler(handler).ServeHTTP(w, r)
+		a.Auth0Middleware().Handler(handler).ServeHTTP(w, r)
 	}
 }
 
-func (a *Auth0) SecureJWT(resourceURL string, handler http.Handler) http.Handler {
-	return a.Auth0Middleware(resourceURL).Handler(handler)
+func (a *Auth0) SecureJWT(handler http.Handler) http.Handler {
+	return a.Auth0Middleware().Handler(handler)
 }
 
-func (a *Auth0) SecureJWTWithRedirectFunc(redirect string, resourceURL string, handler http.HandlerFunc) http.HandlerFunc {
-	middle := a.Auth0MiddlewareWithRedirect(redirect, resourceURL)
+func (a *Auth0) SecureJWTWithRedirectFunc(redirect string, handler http.HandlerFunc) http.HandlerFunc {
+	middle := a.Auth0MiddlewareWithRedirect(redirect)
 	return func(w http.ResponseWriter, r *http.Request) {
 		middle.Handler(handler).ServeHTTP(w, r)
 	}
@@ -271,22 +251,22 @@ func (a *Auth0) SecureJWTWithRedirectFunc(redirect string, resourceURL string, h
 
 func (a *Auth0) AsMux(resourceURL string, paths *Paths) *http.ServeMux {
 	mux := http.NewServeMux()
-	mux.HandleFunc(paths.Callback, a.HandleOAuthCallback(paths.Dashboard))
-	mux.HandleFunc(paths.Logout, a.HandleOAuthLogout(paths.Home))
-	mux.HandleFunc(paths.Login, a.HandleOAuthLogin(resourceURL))
+	mux.HandleFunc(paths.Callback, a.HandleOAuthCallback(paths))
+	mux.HandleFunc(paths.Logout, a.HandleOAuthLogout(paths))
+	mux.HandleFunc(paths.Login, a.HandleOAuthLogin())
 	return mux
 }
 
-func (a *Auth0) SecureJWTWithRedirect(redirect string, resourceURL string, handler http.Handler) http.Handler {
-	middle := a.Auth0MiddlewareWithRedirect(redirect, resourceURL)
+func (a *Auth0) SecureJWTWithRedirect(redirect string, handler http.Handler) http.Handler {
+	middle := a.Auth0MiddlewareWithRedirect(redirect)
 	return middle.Handler(handler)
 }
 
-func (a *Auth0) Auth0Middleware(resourceURL string) *jwtmiddleware.JWTMiddleware {
+func (a *Auth0) Auth0Middleware() *jwtmiddleware.JWTMiddleware {
 	return jwtmiddleware.New(jwtmiddleware.Options{
 		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
 			// Verify 'aud' claim
-			checkAud := token.Claims.(jwt.MapClaims).VerifyAudience(resourceURL, false)
+			checkAud := token.Claims.(jwt.MapClaims).VerifyAudience(a.ResourceUrl, false)
 			if !checkAud {
 				return token, errors.New("Invalid audience.")
 			}
@@ -310,11 +290,11 @@ func (a *Auth0) Auth0Middleware(resourceURL string) *jwtmiddleware.JWTMiddleware
 	})
 }
 
-func (a *Auth0) Auth0MiddlewareWithRedirect(redirect string, resourceURL string) *jwtmiddleware.JWTMiddleware {
+func (a *Auth0) Auth0MiddlewareWithRedirect(redirect string) *jwtmiddleware.JWTMiddleware {
 	return jwtmiddleware.New(jwtmiddleware.Options{
 		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
 			// Verify 'aud' claim
-			checkAud := token.Claims.(jwt.MapClaims).VerifyAudience(resourceURL, false)
+			checkAud := token.Claims.(jwt.MapClaims).VerifyAudience(a.ResourceUrl, false)
 			if !checkAud {
 				return token, errors.New("Invalid audience.")
 			}
@@ -352,5 +332,17 @@ func (o *Auth0) TokenHasAudience(scope string, token string) bool {
 func Debugf(format string, args ...interface{}) {
 	if Debug {
 		Util.Entry().Debugf(format, args...)
+	}
+}
+
+func Fatalf(format string, args ...interface{}) {
+	if Debug {
+		Util.Entry().Fatalf(format, args...)
+	}
+}
+
+func Warnf(format string, args ...interface{}) {
+	if Debug {
+		Util.Entry().Warnf(format, args...)
 	}
 }
