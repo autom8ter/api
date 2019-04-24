@@ -91,6 +91,14 @@ func DefaultPaths() *Paths {
 	}
 }
 
+func (a *Auth0) AsMux(paths *Paths) *http.ServeMux {
+	mux := http.NewServeMux()
+	mux.HandleFunc(paths.Callback, a.HandleOAuthCallback(paths))
+	mux.HandleFunc(paths.Logout, a.HandleOAuthLogout(paths))
+	mux.HandleFunc(paths.Login, a.HandleOAuthLogin())
+	return mux
+}
+
 func NewAuth0(domain string, clientID string, clientSecret string, redirectURL string, resourceURL string, scopes ...string) (*Auth0, error) {
 	a := &Auth0{
 		Domain:       domain,
@@ -155,7 +163,7 @@ func (o *Auth0) HandleOAuthLogin() http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		http.Redirect(w, r, o.OAuthConfig().AuthCodeURL(state, oauth2.SetAuthURLParam("audience", o.ResourceUrl)), http.StatusTemporaryRedirect)
+		http.Redirect(w, r, o.OAuthLoginURL(state), http.StatusTemporaryRedirect)
 	}
 }
 
@@ -173,12 +181,21 @@ func (o *Auth0) HandleOAuthLogout(p *Paths) http.HandlerFunc {
 
 func (o *Auth0) GetUserInfo(r *http.Request) (*UserInfo, error) {
 	obj, err := sessions2.GetResourceFromSession(oauth3.UserInfoEndpoint(o.Domain), AUTH_SESSION_NAME, r)
+	if err != nil {
+		return nil, err
+	}
 	bits := Util.MarshalJSON(obj)
+	Debugf("got resource from session: %s", bits)
+	if len(bits) == 0 {
+		Fatalf("failed to marshal resource from session")
+	}
 	p := &UserInfo{}
 	err = json.Unmarshal(bits, p)
 	if err != nil {
 		return p, err
 	}
+	Debugf("got user info from resource: %s", p)
+
 	return p, nil
 }
 
@@ -217,20 +234,20 @@ func (o *Auth0) Secure(redirect string, handler http.Handler) http.HandlerFunc {
 		prof, err := o.GetUserInfo(r)
 		Debugf("got profile: %s", Util.MarshalJSON(prof))
 		if err != nil {
+			Debugf("redirect: error")
 			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
 		}
 		if prof == nil {
+			Debugf("redirect: empty profile")
 			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
 		}
 		if prof.Name == "" {
+			Debugf("redirect: empty name")
 			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
 		}
 		if err := Util.Validate(prof); err != nil {
+			Debugf("redirect: validation error")
 			http.Redirect(w, r, redirect, http.StatusTemporaryRedirect)
-			return
 		}
 		handler.ServeHTTP(w, r)
 	}
@@ -251,14 +268,6 @@ func (a *Auth0) SecureJWTWithRedirectFunc(redirect string, handler http.HandlerF
 	return func(w http.ResponseWriter, r *http.Request) {
 		middle.Handler(handler).ServeHTTP(w, r)
 	}
-}
-
-func (a *Auth0) AsMux(resourceURL string, paths *Paths) *http.ServeMux {
-	mux := http.NewServeMux()
-	mux.HandleFunc(paths.Callback, a.HandleOAuthCallback(paths))
-	mux.HandleFunc(paths.Logout, a.HandleOAuthLogout(paths))
-	mux.HandleFunc(paths.Login, a.HandleOAuthLogin())
-	return mux
 }
 
 func (a *Auth0) SecureJWTWithRedirect(redirect string, handler http.Handler) http.Handler {
