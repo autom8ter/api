@@ -28,11 +28,11 @@ generate:
     - name: go
       type: go
       flags: plugins=grpc
-      output: go/api
+      output: .
 
     - name: grpc-gateway
       type: go
-      output: go/api
+      output: .
 
     - flags: binary,import_style=commonjs
       name: js

@@ -27,10 +27,7 @@
 
 CF_EXTERN_C_BEGIN
 
-@class AccessToken;
 @class AppMetadata;
-@class IDToken;
-@class RefreshToken;
 @class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -120,105 +117,17 @@ typedef GPB_ENUM(AppMetadata_FieldNumber) {
 
 @end
 
-#pragma mark - AccessToken
+#pragma mark - Config
 
-typedef GPB_ENUM(AccessToken_FieldNumber) {
-  AccessToken_FieldNumber_Token = 1,
+typedef GPB_ENUM(Config_FieldNumber) {
+  Config_FieldNumber_Domain = 1,
+  Config_FieldNumber_ClientId = 2,
+  Config_FieldNumber_ClientSecret = 3,
+  Config_FieldNumber_Redirect = 4,
+  Config_FieldNumber_Audience = 5,
 };
 
-@interface AccessToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
-
-@end
-
-#pragma mark - IDToken
-
-typedef GPB_ENUM(IDToken_FieldNumber) {
-  IDToken_FieldNumber_Token = 1,
-};
-
-@interface IDToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
-
-@end
-
-#pragma mark - RefreshToken
-
-typedef GPB_ENUM(RefreshToken_FieldNumber) {
-  RefreshToken_FieldNumber_Token = 1,
-};
-
-@interface RefreshToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
-
-@end
-
-#pragma mark - Tokens
-
-typedef GPB_ENUM(Tokens_FieldNumber) {
-  Tokens_FieldNumber_Id_p = 1,
-  Tokens_FieldNumber_Access = 2,
-  Tokens_FieldNumber_Refresh = 3,
-};
-
-@interface Tokens : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) IDToken *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) AccessToken *access;
-/** Test to see if @c access has been set. */
-@property(nonatomic, readwrite) BOOL hasAccess;
-
-@property(nonatomic, readwrite, strong, null_resettable) RefreshToken *refresh;
-/** Test to see if @c refresh has been set. */
-@property(nonatomic, readwrite) BOOL hasRefresh;
-
-@end
-
-#pragma mark - Paths
-
-typedef GPB_ENUM(Paths_FieldNumber) {
-  Paths_FieldNumber_Home = 1,
-  Paths_FieldNumber_Dashboard = 2,
-  Paths_FieldNumber_Logout = 4,
-  Paths_FieldNumber_Callback = 5,
-  Paths_FieldNumber_Login = 6,
-  Paths_FieldNumber_LoggedOutReturnTo = 7,
-};
-
-@interface Paths : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *home;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *dashboard;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *logout;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *login;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *loggedOutReturnTo;
-
-@end
-
-#pragma mark - Auth0
-
-typedef GPB_ENUM(Auth0_FieldNumber) {
-  Auth0_FieldNumber_Domain = 1,
-  Auth0_FieldNumber_ClientId = 2,
-  Auth0_FieldNumber_ClientSecret = 3,
-  Auth0_FieldNumber_ScopesArray = 4,
-  Auth0_FieldNumber_Redirect = 5,
-  Auth0_FieldNumber_ResourceURL = 6,
-};
-
-@interface Auth0 : GPBMessage
+@interface Config : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *domain;
 
@@ -226,13 +135,9 @@ typedef GPB_ENUM(Auth0_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *clientSecret;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
-/** The number of items in @c scopesArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger scopesArray_Count;
-
 @property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *resourceURL;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *audience;
 
 @end
 

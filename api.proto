@@ -25,38 +25,10 @@ message AppMetadata {
     string pay_token=2;
 }
 
-message AccessToken {
-    string token=1;
-}
-
-message IDToken {
-    string token=1;
-}
-
-message RefreshToken {
-    string token=1;
-}
-
-message Tokens {
-    IDToken id=1;
-    AccessToken access=2;
-    RefreshToken refresh=3;
-}
-
-message Paths {
-    string home =1;
-    string dashboard=2;
-    string logout =4;
-    string callback=5;
-    string login=6;
-    string logged_out_return_to=7;
-}
-
-message Auth0 {
-    string domain=1;
+message Config {
+    string domain =1;
     string client_id=2;
     string client_secret=3;
-    repeated string scopes= 4;
-    string redirect=5;
-    string resource_url=6;
+    string redirect=4;
+    string audience=5;
 }

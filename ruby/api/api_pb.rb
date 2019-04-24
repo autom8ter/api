@@ -23,35 +23,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :plan, :string, 1
     optional :pay_token, :string, 2
   end
-  add_message "api.AccessToken" do
-    optional :token, :string, 1
-  end
-  add_message "api.IDToken" do
-    optional :token, :string, 1
-  end
-  add_message "api.RefreshToken" do
-    optional :token, :string, 1
-  end
-  add_message "api.Tokens" do
-    optional :id, :message, 1, "api.IDToken"
-    optional :access, :message, 2, "api.AccessToken"
-    optional :refresh, :message, 3, "api.RefreshToken"
-  end
-  add_message "api.Paths" do
-    optional :home, :string, 1
-    optional :dashboard, :string, 2
-    optional :logout, :string, 4
-    optional :callback, :string, 5
-    optional :login, :string, 6
-    optional :logged_out_return_to, :string, 7
-  end
-  add_message "api.Auth0" do
+  add_message "api.Config" do
     optional :domain, :string, 1
     optional :client_id, :string, 2
     optional :client_secret, :string, 3
-    repeated :scopes, :string, 4
-    optional :redirect, :string, 5
-    optional :resource_url, :string, 6
+    optional :redirect, :string, 4
+    optional :audience, :string, 5
   end
 end
 
@@ -59,10 +36,5 @@ module Api
   UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
-  AccessToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AccessToken").msgclass
-  IDToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDToken").msgclass
-  RefreshToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RefreshToken").msgclass
-  Tokens = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Tokens").msgclass
-  Paths = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Paths").msgclass
-  Auth0 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth0").msgclass
+  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
 end
