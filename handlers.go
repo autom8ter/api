@@ -226,3 +226,25 @@ func FuncMap() template.FuncMap {
 	}
 	return m
 }
+
+func ServeTemplate(name string, sessVal string) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		session, err := store.Get(r, AUTH_SESSION)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+
+		templ, err := template.New(name).Funcs(FuncMap()).ParseFiles(name)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		err = templ.Execute(w, session.Values[sessVal])
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+	}
+
+}
