@@ -4,61 +4,58 @@ package api;
 
 import "google/api/annotations.proto";
 
-service EchoService {
+service UtilityService {
     rpc Echo(Message) returns (Message) {
         option (google.api.http) = {
-      post: "/echo"
+      post: "/utility/echo"
       body: "*"
     };
     }
     rpc EchoSpanish(Message) returns (Message) {
         option (google.api.http) = {
-      post: "/echo/spanish"
+      post: "/utility/echo/spanish"
       body: "*"
     };
     }
     rpc EchoChinese(Message) returns (Message) {
         option (google.api.http) = {
-      post: "/echo/chinese"
+      post: "/utility/echo/chinese"
       body: "*"
     };
     }
     rpc EchoEnglish(Message) returns (Message) {
         option (google.api.http) = {
-      post: "/echo/english"
+      post: "/utility/echo/english"
       body: "*"
     };
     }
     rpc EchoHindi(Message) returns (Message) {
         option (google.api.http) = {
-      post: "/echo/hindi"
+      post: "/utility/echo/hindi"
       body: "*"
     };
     }
     rpc EchoArabic(Message) returns (Message) {
         option (google.api.http) = {
-      post: "/echo/arabic"
+      post: "/utility/echo/arabic"
       body: "*"
     };
     }
-}
-
-service MarshalService {
-    rpc JSON(Bytes) returns (Bytes) {
+    rpc MarshalJSON(Bytes) returns (Bytes) {
         option (google.api.http) = {
-      post: "/marshal/json"
+      post: "/utility/marshal/json"
       body: "*"
     };
     }
-    rpc YAML(Bytes) returns (Bytes) {
+    rpc MarshalYAML(Bytes) returns (Bytes) {
         option (google.api.http) = {
-      post: "/marshal/yaml"
+      post: "/utility/marshal/yaml"
       body: "*"
     };
     }
-    rpc XML(Bytes) returns (Bytes) {
+    rpc MarshalXML(Bytes) returns (Bytes) {
         option (google.api.http) = {
-      post: "/marshal/xml"
+      post: "/utility/marshal/xml"
       body: "*"
     };
     }

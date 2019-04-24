@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/echo": {
+    "/utility/echo": {
       "post": {
         "operationId": "Echo",
         "responses": {
@@ -37,11 +37,11 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "UtilityService"
         ]
       }
     },
-    "/echo/arabic": {
+    "/utility/echo/arabic": {
       "post": {
         "operationId": "EchoArabic",
         "responses": {
@@ -63,11 +63,11 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "UtilityService"
         ]
       }
     },
-    "/echo/chinese": {
+    "/utility/echo/chinese": {
       "post": {
         "operationId": "EchoChinese",
         "responses": {
@@ -89,11 +89,11 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "UtilityService"
         ]
       }
     },
-    "/echo/english": {
+    "/utility/echo/english": {
       "post": {
         "operationId": "EchoEnglish",
         "responses": {
@@ -115,11 +115,11 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "UtilityService"
         ]
       }
     },
-    "/echo/hindi": {
+    "/utility/echo/hindi": {
       "post": {
         "operationId": "EchoHindi",
         "responses": {
@@ -141,11 +141,11 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "UtilityService"
         ]
       }
     },
-    "/echo/spanish": {
+    "/utility/echo/spanish": {
       "post": {
         "operationId": "EchoSpanish",
         "responses": {
@@ -167,13 +167,13 @@
           }
         ],
         "tags": [
-          "EchoService"
+          "UtilityService"
         ]
       }
     },
-    "/marshal/json": {
+    "/utility/marshal/json": {
       "post": {
-        "operationId": "JSON",
+        "operationId": "MarshalJSON",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -193,13 +193,13 @@
           }
         ],
         "tags": [
-          "MarshalService"
+          "UtilityService"
         ]
       }
     },
-    "/marshal/xml": {
+    "/utility/marshal/xml": {
       "post": {
-        "operationId": "XML",
+        "operationId": "MarshalXML",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -219,13 +219,13 @@
           }
         ],
         "tags": [
-          "MarshalService"
+          "UtilityService"
         ]
       }
     },
-    "/marshal/yaml": {
+    "/utility/marshal/yaml": {
       "post": {
-        "operationId": "YAML",
+        "operationId": "MarshalYAML",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -245,7 +245,7 @@
           }
         ],
         "tags": [
-          "MarshalService"
+          "UtilityService"
         ]
       }
     }

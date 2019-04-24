@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x18\n\x07Message\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\x32\x96\x03\n\x0b\x45\x63hoService\x12\x34\n\x04\x45\x63ho\x12\x0c.api.Message\x1a\x0c.api.Message\"\x10\x82\xd3\xe4\x93\x02\n\"\x05/echo:\x01*\x12\x43\n\x0b\x45\x63hoSpanish\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/spanish:\x01*\x12\x43\n\x0b\x45\x63hoChinese\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/chinese:\x01*\x12\x43\n\x0b\x45\x63hoEnglish\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/english:\x01*\x12?\n\tEchoHindi\x12\x0c.api.Message\x1a\x0c.api.Message\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/echo/hindi:\x01*\x12\x41\n\nEchoArabic\x12\x0c.api.Message\x1a\x0c.api.Message\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/echo/arabic:\x01*2\xbc\x01\n\x0eMarshalService\x12\x38\n\x04JSON\x12\n.api.Bytes\x1a\n.api.Bytes\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/marshal/json:\x01*\x12\x38\n\x04YAML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/marshal/yaml:\x01*\x12\x36\n\x03XML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/marshal/xml:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x18\n\x07Message\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\x32\xa2\x05\n\x0eUtilityService\x12<\n\x04\x45\x63ho\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/utility/echo:\x01*\x12K\n\x0b\x45\x63hoSpanish\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/spanish:\x01*\x12K\n\x0b\x45\x63hoChinese\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/chinese:\x01*\x12K\n\x0b\x45\x63hoEnglish\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/english:\x01*\x12G\n\tEchoHindi\x12\x0c.api.Message\x1a\x0c.api.Message\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/utility/echo/hindi:\x01*\x12I\n\nEchoArabic\x12\x0c.api.Message\x1a\x0c.api.Message\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/echo/arabic:\x01*\x12G\n\x0bMarshalJSON\x12\n.api.Bytes\x1a\n.api.Bytes\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/marshal/json:\x01*\x12G\n\x0bMarshalYAML\x12\n.api.Bytes\x1a\n.api.Bytes\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/marshal/yaml:\x01*\x12\x45\n\nMarshalXML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/marshal/xml:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -399,114 +399,99 @@ _sym_db.RegisterMessage(Bytes)
 
 
 
-_ECHOSERVICE = _descriptor.ServiceDescriptor(
-  name='EchoService',
-  full_name='api.EchoService',
+_UTILITYSERVICE = _descriptor.ServiceDescriptor(
+  name='UtilityService',
+  full_name='api.UtilityService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   serialized_start=603,
-  serialized_end=1009,
+  serialized_end=1277,
   methods=[
   _descriptor.MethodDescriptor(
     name='Echo',
-    full_name='api.EchoService.Echo',
+    full_name='api.UtilityService.Echo',
     index=0,
     containing_service=None,
     input_type=_MESSAGE,
     output_type=_MESSAGE,
-    serialized_options=_b('\202\323\344\223\002\n\"\005/echo:\001*'),
+    serialized_options=_b('\202\323\344\223\002\022\"\r/utility/echo:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EchoSpanish',
-    full_name='api.EchoService.EchoSpanish',
+    full_name='api.UtilityService.EchoSpanish',
     index=1,
     containing_service=None,
     input_type=_MESSAGE,
     output_type=_MESSAGE,
-    serialized_options=_b('\202\323\344\223\002\022\"\r/echo/spanish:\001*'),
+    serialized_options=_b('\202\323\344\223\002\032\"\025/utility/echo/spanish:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EchoChinese',
-    full_name='api.EchoService.EchoChinese',
+    full_name='api.UtilityService.EchoChinese',
     index=2,
     containing_service=None,
     input_type=_MESSAGE,
     output_type=_MESSAGE,
-    serialized_options=_b('\202\323\344\223\002\022\"\r/echo/chinese:\001*'),
+    serialized_options=_b('\202\323\344\223\002\032\"\025/utility/echo/chinese:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EchoEnglish',
-    full_name='api.EchoService.EchoEnglish',
+    full_name='api.UtilityService.EchoEnglish',
     index=3,
     containing_service=None,
     input_type=_MESSAGE,
     output_type=_MESSAGE,
-    serialized_options=_b('\202\323\344\223\002\022\"\r/echo/english:\001*'),
+    serialized_options=_b('\202\323\344\223\002\032\"\025/utility/echo/english:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EchoHindi',
-    full_name='api.EchoService.EchoHindi',
+    full_name='api.UtilityService.EchoHindi',
     index=4,
     containing_service=None,
     input_type=_MESSAGE,
     output_type=_MESSAGE,
-    serialized_options=_b('\202\323\344\223\002\020\"\013/echo/hindi:\001*'),
+    serialized_options=_b('\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='EchoArabic',
-    full_name='api.EchoService.EchoArabic',
+    full_name='api.UtilityService.EchoArabic',
     index=5,
     containing_service=None,
     input_type=_MESSAGE,
     output_type=_MESSAGE,
-    serialized_options=_b('\202\323\344\223\002\021\"\014/echo/arabic:\001*'),
+    serialized_options=_b('\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='MarshalJSON',
+    full_name='api.UtilityService.MarshalJSON',
+    index=6,
+    containing_service=None,
+    input_type=_BYTES,
+    output_type=_BYTES,
+    serialized_options=_b('\202\323\344\223\002\032\"\025/utility/marshal/json:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='MarshalYAML',
+    full_name='api.UtilityService.MarshalYAML',
+    index=7,
+    containing_service=None,
+    input_type=_BYTES,
+    output_type=_BYTES,
+    serialized_options=_b('\202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='MarshalXML',
+    full_name='api.UtilityService.MarshalXML',
+    index=8,
+    containing_service=None,
+    input_type=_BYTES,
+    output_type=_BYTES,
+    serialized_options=_b('\202\323\344\223\002\031\"\024/utility/marshal/xml:\001*'),
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_ECHOSERVICE)
+_sym_db.RegisterServiceDescriptor(_UTILITYSERVICE)
 
-DESCRIPTOR.services_by_name['EchoService'] = _ECHOSERVICE
-
-
-_MARSHALSERVICE = _descriptor.ServiceDescriptor(
-  name='MarshalService',
-  full_name='api.MarshalService',
-  file=DESCRIPTOR,
-  index=1,
-  serialized_options=None,
-  serialized_start=1012,
-  serialized_end=1200,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='JSON',
-    full_name='api.MarshalService.JSON',
-    index=0,
-    containing_service=None,
-    input_type=_BYTES,
-    output_type=_BYTES,
-    serialized_options=_b('\202\323\344\223\002\022\"\r/marshal/json:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='YAML',
-    full_name='api.MarshalService.YAML',
-    index=1,
-    containing_service=None,
-    input_type=_BYTES,
-    output_type=_BYTES,
-    serialized_options=_b('\202\323\344\223\002\022\"\r/marshal/yaml:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='XML',
-    full_name='api.MarshalService.XML',
-    index=2,
-    containing_service=None,
-    input_type=_BYTES,
-    output_type=_BYTES,
-    serialized_options=_b('\202\323\344\223\002\021\"\014/marshal/xml:\001*'),
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_MARSHALSERVICE)
-
-DESCRIPTOR.services_by_name['MarshalService'] = _MARSHALSERVICE
+DESCRIPTOR.services_by_name['UtilityService'] = _UTILITYSERVICE
 
 # @@protoc_insertion_point(module_scope)

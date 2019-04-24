@@ -6185,22 +6185,24 @@ public final class Api {
       "\001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030" +
       "\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001(" +
       "\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014" +
-      "2\226\003\n\013EchoService\0224\n\004Echo\022\014.api.Message\032\014" +
-      ".api.Message\"\020\202\323\344\223\002\n\"\005/echo:\001*\022C\n\013EchoSp" +
-      "anish\022\014.api.Message\032\014.api.Message\"\030\202\323\344\223\002" +
-      "\022\"\r/echo/spanish:\001*\022C\n\013EchoChinese\022\014.api" +
-      ".Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/echo/ch" +
-      "inese:\001*\022C\n\013EchoEnglish\022\014.api.Message\032\014." +
-      "api.Message\"\030\202\323\344\223\002\022\"\r/echo/english:\001*\022?\n" +
-      "\tEchoHindi\022\014.api.Message\032\014.api.Message\"\026" +
-      "\202\323\344\223\002\020\"\013/echo/hindi:\001*\022A\n\nEchoArabic\022\014.a" +
-      "pi.Message\032\014.api.Message\"\027\202\323\344\223\002\021\"\014/echo/" +
-      "arabic:\001*2\274\001\n\016MarshalService\0228\n\004JSON\022\n.a" +
-      "pi.Bytes\032\n.api.Bytes\"\030\202\323\344\223\002\022\"\r/marshal/j" +
-      "son:\001*\0228\n\004YAML\022\n.api.Bytes\032\n.api.Bytes\"\030" +
-      "\202\323\344\223\002\022\"\r/marshal/yaml:\001*\0226\n\003XML\022\n.api.By" +
-      "tes\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/marshal/xml:\001*" +
-      "b\006proto3"
+      "2\242\005\n\016UtilityService\022<\n\004Echo\022\014.api.Messag" +
+      "e\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/utility/echo:\001" +
+      "*\022K\n\013EchoSpanish\022\014.api.Message\032\014.api.Mes" +
+      "sage\" \202\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022K" +
+      "\n\013EchoChinese\022\014.api.Message\032\014.api.Messag" +
+      "e\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022K\n\013E" +
+      "choEnglish\022\014.api.Message\032\014.api.Message\" " +
+      "\202\323\344\223\002\032\"\025/utility/echo/english:\001*\022G\n\tEcho" +
+      "Hindi\022\014.api.Message\032\014.api.Message\"\036\202\323\344\223\002" +
+      "\030\"\023/utility/echo/hindi:\001*\022I\n\nEchoArabic\022" +
+      "\014.api.Message\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/ut" +
+      "ility/echo/arabic:\001*\022G\n\013MarshalJSON\022\n.ap" +
+      "i.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/ma" +
+      "rshal/json:\001*\022G\n\013MarshalYAML\022\n.api.Bytes" +
+      "\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/y" +
+      "aml:\001*\022E\n\nMarshalXML\022\n.api.Bytes\032\n.api.B" +
+      "ytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:\001*b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

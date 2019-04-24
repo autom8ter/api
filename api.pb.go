@@ -421,50 +421,51 @@ func init() {
 func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
 var fileDescriptor_00212fb1f9d3bf1c = []byte{
-	// 688 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x54, 0xcd, 0x6a, 0x23, 0x47,
-	0x10, 0x46, 0xd6, 0x8f, 0xa5, 0xd2, 0xc8, 0xc8, 0x4d, 0x70, 0x06, 0xd9, 0x89, 0xcd, 0xe4, 0x62,
-	0x1c, 0xb0, 0xc0, 0x0e, 0xc6, 0xf8, 0x12, 0x14, 0x63, 0x88, 0x43, 0xe4, 0x80, 0x9d, 0x40, 0x72,
-	0x12, 0xad, 0x99, 0xb2, 0xa6, 0x93, 0x51, 0x4f, 0xa7, 0xbb, 0xc7, 0x44, 0x87, 0x5c, 0xf6, 0x15,
-	0x16, 0xf6, 0x39, 0x76, 0xef, 0xfb, 0x16, 0xfb, 0x0a, 0xfb, 0x20, 0x4b, 0x57, 0xcf, 0xc8, 0xb3,
-	0xb0, 0x08, 0x7c, 0xeb, 0xaf, 0xbe, 0xfa, 0xbe, 0xfa, 0xa6, 0x0a, 0x09, 0x7a, 0x5c, 0x89, 0x53,
-	0xa5, 0x73, 0x9b, 0xb3, 0x26, 0x57, 0x62, 0x74, 0xb0, 0xc8, 0xf3, 0x45, 0x86, 0x63, 0xae, 0xc4,
-	0x98, 0x4b, 0x99, 0x5b, 0x6e, 0x45, 0x2e, 0x8d, 0x6f, 0x89, 0x0e, 0x61, 0x7b, 0x8a, 0xc6, 0xf0,
-	0x05, 0xb2, 0xaf, 0xa0, 0xfd, 0xc4, 0xb3, 0x02, 0xc3, 0xc6, 0x51, 0xe3, 0xb8, 0x77, 0xef, 0x41,
-	0xf4, 0x6e, 0x0b, 0xba, 0x7f, 0x18, 0xd4, 0xb7, 0xf2, 0x31, 0x67, 0x0c, 0x5a, 0x92, 0x2f, 0x31,
-	0xec, 0x50, 0x07, 0xbd, 0xd9, 0x37, 0x00, 0x0b, 0xf1, 0x84, 0x72, 0x46, 0xcc, 0x36, 0x31, 0x3d,
-	0xaa, 0xdc, 0x39, 0xfa, 0x10, 0xfa, 0x8f, 0x7c, 0x29, 0xb2, 0x95, 0xe7, 0xbb, 0xc4, 0x83, 0x2f,
-	0x51, 0xc3, 0x1e, 0x74, 0x16, 0x28, 0x13, 0xd4, 0x61, 0x8f, 0xb8, 0x12, 0xb1, 0x03, 0xe8, 0xcd,
-	0x85, 0xb6, 0x69, 0xc2, 0x2d, 0x86, 0xe0, 0x6d, 0xd7, 0x05, 0x17, 0x16, 0x97, 0x5c, 0x64, 0x61,
-	0xdf, 0x87, 0x25, 0xc0, 0x42, 0xd8, 0x56, 0x22, 0xb6, 0x85, 0xc6, 0x30, 0xa0, 0x7a, 0x05, 0xd9,
-	0x05, 0x0c, 0x0a, 0x83, 0x7a, 0xb6, 0x44, 0xcb, 0x13, 0x6e, 0x79, 0x38, 0x38, 0x6a, 0x1c, 0xf7,
-	0xcf, 0x76, 0x4f, 0xdd, 0xb6, 0xdc, 0xf7, 0x4d, 0x4b, 0xe2, 0x3e, 0x28, 0x6a, 0x88, 0x9d, 0x43,
-	0xc0, 0x95, 0x7a, 0x96, 0xed, 0x90, 0x6c, 0x48, 0xb2, 0x89, 0x52, 0x6b, 0x55, 0x9f, 0x3f, 0x83,
-	0xe8, 0x7f, 0x08, 0xea, 0x96, 0x2e, 0xac, 0x4a, 0x73, 0xb9, 0xde, 0x2c, 0x01, 0xf6, 0x3d, 0xec,
-	0x2a, 0x8d, 0x8f, 0xa8, 0x35, 0x26, 0xb3, 0x38, 0x97, 0x96, 0xc7, 0x36, 0xdc, 0xa2, 0x8e, 0xe1,
-	0x9a, 0xb8, 0xf6, 0x75, 0xb7, 0x25, 0x63, 0xb9, 0x2d, 0x4c, 0xd8, 0xf4, 0x5b, 0xf2, 0xc8, 0x5d,
-	0xc4, 0xf2, 0x85, 0x09, 0x5b, 0x47, 0x4d, 0x77, 0x11, 0xf7, 0x8e, 0x34, 0xf4, 0x6b, 0xd1, 0x5c,
-	0x8b, 0xca, 0xb8, 0x2c, 0x87, 0xd3, 0x9b, 0xed, 0x43, 0x4f, 0xf1, 0xd5, 0xcc, 0xe6, 0xff, 0xa0,
-	0x2c, 0x67, 0x76, 0x15, 0x5f, 0xfd, 0xee, 0x30, 0xfb, 0x16, 0x20, 0xc1, 0x4c, 0xc8, 0x7f, 0x0b,
-	0x94, 0xb6, 0x9c, 0x57, 0xab, 0x7c, 0x71, 0xe6, 0xdb, 0x06, 0xb4, 0x26, 0x85, 0x4d, 0x5d, 0xd0,
-	0x24, 0x5f, 0x72, 0x51, 0xcd, 0x2b, 0x91, 0x9b, 0x18, 0x67, 0x02, 0xa5, 0x9d, 0x89, 0xa4, 0x9a,
-	0xe8, 0x0b, 0xb7, 0x09, 0xfb, 0x0e, 0x06, 0x25, 0x69, 0x30, 0xd6, 0x58, 0x0d, 0x0d, 0x7c, 0xf1,
-	0x81, 0x6a, 0x6c, 0x04, 0x5d, 0x8d, 0x89, 0xd0, 0x18, 0xdb, 0xb0, 0xe5, 0x0d, 0x2a, 0xec, 0x38,
-	0x5e, 0x24, 0x02, 0x65, 0x8c, 0x61, 0xdb, 0x73, 0x15, 0xa6, 0xd5, 0xc5, 0xb9, 0x42, 0x13, 0x76,
-	0x28, 0x70, 0x89, 0xa2, 0x7d, 0x68, 0xff, 0xb4, 0xb2, 0x48, 0x3b, 0x9c, 0x0b, 0x6b, 0x28, 0x70,
-	0x70, 0x4f, 0xef, 0xb3, 0x37, 0x4d, 0xe8, 0xdf, 0xc4, 0x69, 0xfe, 0x80, 0xfa, 0x49, 0xc4, 0xc8,
-	0x7e, 0x80, 0x96, 0x83, 0x2c, 0xa0, 0xcb, 0x97, 0x3f, 0x99, 0xd1, 0x67, 0x28, 0x1a, 0xbe, 0xfa,
-	0xf0, 0xf1, 0xf5, 0x16, 0x44, 0xed, 0x31, 0xc6, 0x69, 0x7e, 0xd5, 0x38, 0x61, 0xd7, 0xa5, 0x89,
-	0xe2, 0x52, 0x98, 0x74, 0xa3, 0x38, 0x24, 0x31, 0x8b, 0x06, 0x24, 0x1e, 0x1b, 0x2f, 0xa9, 0x99,
-	0x5c, 0xa7, 0x42, 0xa2, 0xc1, 0x97, 0x98, 0xc4, 0x5e, 0x52, 0x33, 0xb9, 0x91, 0x8b, 0xec, 0x85,
-	0x49, 0xd0, 0x4b, 0x9c, 0xc9, 0x8f, 0xd0, 0x73, 0x26, 0x3f, 0x0b, 0x99, 0x88, 0x8d, 0x16, 0x7b,
-	0x64, 0x31, 0x8c, 0xfa, 0xde, 0x22, 0x75, 0x02, 0x67, 0x30, 0x01, 0x70, 0x06, 0x13, 0xcd, 0xe7,
-	0x22, 0xde, 0xe8, 0xf0, 0x35, 0x39, 0xec, 0x46, 0x81, 0x77, 0xe0, 0xa4, 0xb8, 0x6a, 0x9c, 0x9c,
-	0xbd, 0x6f, 0xc0, 0xce, 0x94, 0x6b, 0x93, 0xf2, 0xac, 0xba, 0xcd, 0x25, 0xb4, 0x7e, 0x79, 0xf8,
-	0xed, 0x8e, 0x01, 0x39, 0xd0, 0x4d, 0x47, 0xb5, 0x77, 0xed, 0x83, 0x96, 0x5e, 0x38, 0xfe, 0xdb,
-	0xe4, 0xd2, 0xe5, 0xb9, 0x84, 0xd6, 0x5f, 0x93, 0xe9, 0xaf, 0x2f, 0x50, 0xae, 0xf8, 0x32, 0x73,
-	0xca, 0x0b, 0x68, 0xfe, 0xb9, 0x41, 0xf8, 0x1c, 0xbf, 0x12, 0xfe, 0x47, 0xba, 0x79, 0x87, 0xfe,
-	0x76, 0xcf, 0x3f, 0x05, 0x00, 0x00, 0xff, 0xff, 0x8d, 0xf6, 0xea, 0x6b, 0xa6, 0x05, 0x00, 0x00,
+	// 690 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x94, 0xc1, 0x6e, 0x13, 0x3b,
+	0x14, 0x86, 0x95, 0x36, 0x49, 0x93, 0x93, 0xa4, 0x6a, 0x7d, 0x7b, 0xaf, 0x7c, 0xd3, 0xde, 0x36,
+	0x9a, 0xbb, 0xa9, 0x40, 0x6a, 0xa4, 0x56, 0x62, 0x81, 0xd8, 0x84, 0xaa, 0x82, 0x02, 0x29, 0x52,
+	0x43, 0x25, 0x58, 0x45, 0xce, 0xcc, 0x69, 0xc6, 0x30, 0xb1, 0x8d, 0xed, 0xa9, 0xc8, 0x82, 0x0d,
+	0xaf, 0xc0, 0x1b, 0xf0, 0x04, 0xf0, 0x2c, 0xbc, 0x02, 0x0f, 0x82, 0x6c, 0x4f, 0xd2, 0x44, 0x54,
+	0x59, 0x74, 0xe7, 0xff, 0xfc, 0xfe, 0xbf, 0x73, 0xe6, 0x58, 0x09, 0xd4, 0x99, 0xe2, 0x47, 0x4a,
+	0x4b, 0x2b, 0xc9, 0x3a, 0x53, 0xbc, 0xbd, 0x37, 0x96, 0x72, 0x9c, 0x61, 0x97, 0x29, 0xde, 0x65,
+	0x42, 0x48, 0xcb, 0x2c, 0x97, 0xc2, 0x84, 0x2b, 0xd1, 0x01, 0x6c, 0xf4, 0xd1, 0x18, 0x36, 0x46,
+	0xb2, 0x03, 0x95, 0x1b, 0x96, 0xe5, 0x48, 0x4b, 0x9d, 0xd2, 0x61, 0xfd, 0x32, 0x88, 0xe8, 0xc7,
+	0x1a, 0xd4, 0xae, 0x0c, 0xea, 0x73, 0x71, 0x2d, 0x09, 0x81, 0xb2, 0x60, 0x13, 0xa4, 0x55, 0x7f,
+	0xc3, 0x9f, 0xc9, 0x7f, 0x00, 0x63, 0x7e, 0x83, 0x62, 0xe8, 0x9d, 0x0d, 0xef, 0xd4, 0x7d, 0xe5,
+	0xc2, 0xd9, 0x07, 0xd0, 0xb8, 0x66, 0x13, 0x9e, 0x4d, 0x83, 0x5f, 0xf3, 0x3e, 0x84, 0x92, 0xbf,
+	0xf0, 0x0f, 0x54, 0xc7, 0x28, 0x12, 0xd4, 0xb4, 0xee, 0xbd, 0x42, 0x91, 0x3d, 0xa8, 0x8f, 0xb8,
+	0xb6, 0x69, 0xc2, 0x2c, 0x52, 0x08, 0xd8, 0x79, 0xc1, 0x0d, 0x8b, 0x13, 0xc6, 0x33, 0xda, 0x08,
+	0xc3, 0x7a, 0x41, 0x28, 0x6c, 0x28, 0x1e, 0xdb, 0x5c, 0x23, 0x6d, 0xfa, 0xfa, 0x4c, 0x92, 0x47,
+	0xd0, 0xca, 0x0d, 0xea, 0xe1, 0x04, 0x2d, 0x4b, 0x98, 0x65, 0xb4, 0xd5, 0x29, 0x1d, 0x36, 0x8e,
+	0xb7, 0x8f, 0xdc, 0xb6, 0xdc, 0xf7, 0xf5, 0x0b, 0xe3, 0xb2, 0x99, 0x2f, 0x28, 0x72, 0x02, 0x4d,
+	0xa6, 0xd4, 0x6d, 0x6c, 0xd3, 0xc7, 0xb6, 0x7c, 0xac, 0xa7, 0xd4, 0x3c, 0xd5, 0x60, 0xb7, 0x22,
+	0xfa, 0x0c, 0xcd, 0x45, 0xa4, 0x1b, 0x56, 0xa5, 0x52, 0xcc, 0x37, 0xeb, 0x05, 0x79, 0x08, 0xdb,
+	0x4a, 0xe3, 0x35, 0x6a, 0x8d, 0xc9, 0x30, 0x96, 0xc2, 0xb2, 0xd8, 0xd2, 0x35, 0x7f, 0x63, 0x6b,
+	0x6e, 0x9c, 0x86, 0xba, 0xdb, 0x92, 0xb1, 0xcc, 0xe6, 0x86, 0xae, 0x87, 0x2d, 0x05, 0xe5, 0x5e,
+	0xc4, 0xb2, 0xb1, 0xa1, 0xe5, 0xce, 0xba, 0x7b, 0x11, 0x77, 0x8e, 0x34, 0x34, 0x16, 0x46, 0x73,
+	0x57, 0x54, 0xc6, 0x44, 0xd1, 0xdc, 0x9f, 0xc9, 0x2e, 0xd4, 0x15, 0x9b, 0x0e, 0xad, 0xfc, 0x80,
+	0xa2, 0xe8, 0x59, 0x53, 0x6c, 0xfa, 0xc6, 0x69, 0xb2, 0x0f, 0x90, 0x60, 0xc6, 0xc5, 0xc7, 0x1c,
+	0x85, 0x2d, 0xfa, 0x2d, 0x54, 0xee, 0xec, 0xf9, 0xbd, 0x04, 0xe5, 0x5e, 0x6e, 0x53, 0x37, 0x68,
+	0x22, 0x27, 0x8c, 0xcf, 0xfa, 0x15, 0xca, 0x75, 0x8c, 0x33, 0x8e, 0xc2, 0x0e, 0x79, 0x32, 0xeb,
+	0x18, 0x0a, 0xe7, 0x09, 0xf9, 0x1f, 0x5a, 0x85, 0x69, 0x30, 0xd6, 0x38, 0x6b, 0xda, 0x0c, 0xc5,
+	0x81, 0xaf, 0x91, 0x36, 0xd4, 0x34, 0x26, 0x5c, 0x63, 0x6c, 0x69, 0x39, 0x00, 0x66, 0xda, 0x79,
+	0x2c, 0x4f, 0x38, 0x8a, 0x18, 0x69, 0x25, 0x78, 0x33, 0xed, 0x57, 0x17, 0x4b, 0x85, 0x86, 0x56,
+	0xfd, 0xc0, 0x85, 0x8a, 0x76, 0xa1, 0xf2, 0x74, 0x6a, 0xd1, 0xef, 0x70, 0xc4, 0xad, 0xf1, 0x03,
+	0x37, 0x2f, 0xfd, 0xf9, 0xf8, 0x5b, 0x05, 0x36, 0xaf, 0x2c, 0xcf, 0xb8, 0x9d, 0x0e, 0x50, 0xdf,
+	0xf0, 0x18, 0xc9, 0x13, 0x28, 0x9f, 0xc5, 0xa9, 0x24, 0x4d, 0xff, 0xf8, 0xc5, 0xaf, 0xa6, 0xbd,
+	0xa4, 0x22, 0xfa, 0xe5, 0xe7, 0xaf, 0xaf, 0x6b, 0x24, 0x6a, 0x75, 0xf3, 0x10, 0xee, 0x62, 0x9c,
+	0xca, 0xc7, 0xa5, 0x07, 0xe4, 0x25, 0x34, 0x5c, 0x7a, 0xa0, 0x98, 0xe0, 0x26, 0x5d, 0x09, 0xe9,
+	0x78, 0x48, 0x3b, 0xfa, 0x7b, 0x09, 0xd2, 0x35, 0x21, 0xba, 0x00, 0x3b, 0x4d, 0xb9, 0x40, 0x83,
+	0xf7, 0x81, 0xc5, 0x21, 0xba, 0x00, 0x3b, 0x13, 0xe3, 0xec, 0x9e, 0x93, 0x61, 0x88, 0x3a, 0xd8,
+	0x33, 0xa8, 0x3b, 0xd8, 0x73, 0x2e, 0x12, 0xbe, 0x12, 0xb5, 0xef, 0x51, 0x34, 0xfa, 0x6b, 0x19,
+	0x95, 0xba, 0xa0, 0x03, 0x9d, 0x03, 0x38, 0x50, 0x4f, 0xb3, 0x11, 0x8f, 0x57, 0x92, 0x0e, 0x3c,
+	0xe9, 0xdf, 0x68, 0x67, 0x99, 0xc4, 0x7c, 0x32, 0xcc, 0xd4, 0xe8, 0x33, 0x6d, 0x52, 0x96, 0xbd,
+	0x18, 0xbc, 0xbe, 0x20, 0xe0, 0xd3, 0xfe, 0xe9, 0xdb, 0x0b, 0xe7, 0x3b, 0x3e, 0x6e, 0x12, 0x52,
+	0xdd, 0xf7, 0x46, 0x8a, 0x65, 0xd0, 0xbb, 0x5e, 0xff, 0xd5, 0x3d, 0x40, 0x53, 0x36, 0xc9, 0x1c,
+	0xe8, 0x0c, 0xa0, 0x00, 0xbd, 0x5d, 0xc1, 0xf9, 0xf3, 0xc3, 0x66, 0x9c, 0x4f, 0x1e, 0x33, 0xaa,
+	0xfa, 0xff, 0xf0, 0x93, 0xdf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x42, 0xd6, 0x31, 0x0b, 0xf3, 0x05,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -475,359 +476,328 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// EchoServiceClient is the client API for EchoService service.
+// UtilityServiceClient is the client API for UtilityService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type EchoServiceClient interface {
+type UtilityServiceClient interface {
 	Echo(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
 	EchoSpanish(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
 	EchoChinese(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
 	EchoEnglish(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
 	EchoHindi(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
 	EchoArabic(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
+	MarshalJSON(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
+	MarshalYAML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
+	MarshalXML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
 }
 
-type echoServiceClient struct {
+type utilityServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewEchoServiceClient(cc *grpc.ClientConn) EchoServiceClient {
-	return &echoServiceClient{cc}
+func NewUtilityServiceClient(cc *grpc.ClientConn) UtilityServiceClient {
+	return &utilityServiceClient{cc}
 }
 
-func (c *echoServiceClient) Echo(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *utilityServiceClient) Echo(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/api.EchoService/Echo", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/Echo", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *echoServiceClient) EchoSpanish(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *utilityServiceClient) EchoSpanish(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/api.EchoService/EchoSpanish", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/EchoSpanish", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *echoServiceClient) EchoChinese(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *utilityServiceClient) EchoChinese(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/api.EchoService/EchoChinese", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/EchoChinese", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *echoServiceClient) EchoEnglish(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *utilityServiceClient) EchoEnglish(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/api.EchoService/EchoEnglish", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/EchoEnglish", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *echoServiceClient) EchoHindi(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *utilityServiceClient) EchoHindi(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/api.EchoService/EchoHindi", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/EchoHindi", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *echoServiceClient) EchoArabic(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *utilityServiceClient) EchoArabic(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/api.EchoService/EchoArabic", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/EchoArabic", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// EchoServiceServer is the server API for EchoService service.
-type EchoServiceServer interface {
+func (c *utilityServiceClient) MarshalJSON(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error) {
+	out := new(Bytes)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/MarshalJSON", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *utilityServiceClient) MarshalYAML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error) {
+	out := new(Bytes)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/MarshalYAML", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *utilityServiceClient) MarshalXML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error) {
+	out := new(Bytes)
+	err := c.cc.Invoke(ctx, "/api.UtilityService/MarshalXML", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// UtilityServiceServer is the server API for UtilityService service.
+type UtilityServiceServer interface {
 	Echo(context.Context, *Message) (*Message, error)
 	EchoSpanish(context.Context, *Message) (*Message, error)
 	EchoChinese(context.Context, *Message) (*Message, error)
 	EchoEnglish(context.Context, *Message) (*Message, error)
 	EchoHindi(context.Context, *Message) (*Message, error)
 	EchoArabic(context.Context, *Message) (*Message, error)
+	MarshalJSON(context.Context, *Bytes) (*Bytes, error)
+	MarshalYAML(context.Context, *Bytes) (*Bytes, error)
+	MarshalXML(context.Context, *Bytes) (*Bytes, error)
 }
 
-func RegisterEchoServiceServer(s *grpc.Server, srv EchoServiceServer) {
-	s.RegisterService(&_EchoService_serviceDesc, srv)
+func RegisterUtilityServiceServer(s *grpc.Server, srv UtilityServiceServer) {
+	s.RegisterService(&_UtilityService_serviceDesc, srv)
 }
 
-func _EchoService_Echo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UtilityService_Echo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EchoServiceServer).Echo(ctx, in)
+		return srv.(UtilityServiceServer).Echo(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.EchoService/Echo",
+		FullMethod: "/api.UtilityService/Echo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EchoServiceServer).Echo(ctx, req.(*Message))
+		return srv.(UtilityServiceServer).Echo(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EchoService_EchoSpanish_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UtilityService_EchoSpanish_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EchoServiceServer).EchoSpanish(ctx, in)
+		return srv.(UtilityServiceServer).EchoSpanish(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.EchoService/EchoSpanish",
+		FullMethod: "/api.UtilityService/EchoSpanish",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EchoServiceServer).EchoSpanish(ctx, req.(*Message))
+		return srv.(UtilityServiceServer).EchoSpanish(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EchoService_EchoChinese_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UtilityService_EchoChinese_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EchoServiceServer).EchoChinese(ctx, in)
+		return srv.(UtilityServiceServer).EchoChinese(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.EchoService/EchoChinese",
+		FullMethod: "/api.UtilityService/EchoChinese",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EchoServiceServer).EchoChinese(ctx, req.(*Message))
+		return srv.(UtilityServiceServer).EchoChinese(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EchoService_EchoEnglish_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UtilityService_EchoEnglish_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EchoServiceServer).EchoEnglish(ctx, in)
+		return srv.(UtilityServiceServer).EchoEnglish(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.EchoService/EchoEnglish",
+		FullMethod: "/api.UtilityService/EchoEnglish",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EchoServiceServer).EchoEnglish(ctx, req.(*Message))
+		return srv.(UtilityServiceServer).EchoEnglish(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EchoService_EchoHindi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UtilityService_EchoHindi_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EchoServiceServer).EchoHindi(ctx, in)
+		return srv.(UtilityServiceServer).EchoHindi(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.EchoService/EchoHindi",
+		FullMethod: "/api.UtilityService/EchoHindi",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EchoServiceServer).EchoHindi(ctx, req.(*Message))
+		return srv.(UtilityServiceServer).EchoHindi(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _EchoService_EchoArabic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _UtilityService_EchoArabic_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(EchoServiceServer).EchoArabic(ctx, in)
+		return srv.(UtilityServiceServer).EchoArabic(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.EchoService/EchoArabic",
+		FullMethod: "/api.UtilityService/EchoArabic",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EchoServiceServer).EchoArabic(ctx, req.(*Message))
+		return srv.(UtilityServiceServer).EchoArabic(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _EchoService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.EchoService",
-	HandlerType: (*EchoServiceServer)(nil),
+func _UtilityService_MarshalJSON_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Bytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UtilityServiceServer).MarshalJSON(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.UtilityService/MarshalJSON",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UtilityServiceServer).MarshalJSON(ctx, req.(*Bytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UtilityService_MarshalYAML_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Bytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UtilityServiceServer).MarshalYAML(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.UtilityService/MarshalYAML",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UtilityServiceServer).MarshalYAML(ctx, req.(*Bytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UtilityService_MarshalXML_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(Bytes)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UtilityServiceServer).MarshalXML(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.UtilityService/MarshalXML",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UtilityServiceServer).MarshalXML(ctx, req.(*Bytes))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _UtilityService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.UtilityService",
+	HandlerType: (*UtilityServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Echo",
-			Handler:    _EchoService_Echo_Handler,
+			Handler:    _UtilityService_Echo_Handler,
 		},
 		{
 			MethodName: "EchoSpanish",
-			Handler:    _EchoService_EchoSpanish_Handler,
+			Handler:    _UtilityService_EchoSpanish_Handler,
 		},
 		{
 			MethodName: "EchoChinese",
-			Handler:    _EchoService_EchoChinese_Handler,
+			Handler:    _UtilityService_EchoChinese_Handler,
 		},
 		{
 			MethodName: "EchoEnglish",
-			Handler:    _EchoService_EchoEnglish_Handler,
+			Handler:    _UtilityService_EchoEnglish_Handler,
 		},
 		{
 			MethodName: "EchoHindi",
-			Handler:    _EchoService_EchoHindi_Handler,
+			Handler:    _UtilityService_EchoHindi_Handler,
 		},
 		{
 			MethodName: "EchoArabic",
-			Handler:    _EchoService_EchoArabic_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "api.proto",
-}
-
-// MarshalServiceClient is the client API for MarshalService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type MarshalServiceClient interface {
-	JSON(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
-	YAML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
-	XML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
-}
-
-type marshalServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewMarshalServiceClient(cc *grpc.ClientConn) MarshalServiceClient {
-	return &marshalServiceClient{cc}
-}
-
-func (c *marshalServiceClient) JSON(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error) {
-	out := new(Bytes)
-	err := c.cc.Invoke(ctx, "/api.MarshalService/JSON", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *marshalServiceClient) YAML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error) {
-	out := new(Bytes)
-	err := c.cc.Invoke(ctx, "/api.MarshalService/YAML", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *marshalServiceClient) XML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error) {
-	out := new(Bytes)
-	err := c.cc.Invoke(ctx, "/api.MarshalService/XML", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// MarshalServiceServer is the server API for MarshalService service.
-type MarshalServiceServer interface {
-	JSON(context.Context, *Bytes) (*Bytes, error)
-	YAML(context.Context, *Bytes) (*Bytes, error)
-	XML(context.Context, *Bytes) (*Bytes, error)
-}
-
-func RegisterMarshalServiceServer(s *grpc.Server, srv MarshalServiceServer) {
-	s.RegisterService(&_MarshalService_serviceDesc, srv)
-}
-
-func _MarshalService_JSON_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Bytes)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MarshalServiceServer).JSON(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.MarshalService/JSON",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MarshalServiceServer).JSON(ctx, req.(*Bytes))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _MarshalService_YAML_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Bytes)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MarshalServiceServer).YAML(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.MarshalService/YAML",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MarshalServiceServer).YAML(ctx, req.(*Bytes))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _MarshalService_XML_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Bytes)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MarshalServiceServer).XML(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.MarshalService/XML",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MarshalServiceServer).XML(ctx, req.(*Bytes))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _MarshalService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.MarshalService",
-	HandlerType: (*MarshalServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "JSON",
-			Handler:    _MarshalService_JSON_Handler,
+			Handler:    _UtilityService_EchoArabic_Handler,
 		},
 		{
-			MethodName: "YAML",
-			Handler:    _MarshalService_YAML_Handler,
+			MethodName: "MarshalJSON",
+			Handler:    _UtilityService_MarshalJSON_Handler,
 		},
 		{
-			MethodName: "XML",
-			Handler:    _MarshalService_XML_Handler,
+			MethodName: "MarshalYAML",
+			Handler:    _UtilityService_MarshalYAML_Handler,
+		},
+		{
+			MethodName: "MarshalXML",
+			Handler:    _UtilityService_MarshalXML_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -5,13 +5,11 @@ import (
 )
 
 type ClientSet struct {
-	Echoer    EchoServiceClient
-	Marshaler MarshalServiceClient
+	Utility    UtilityServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	return &ClientSet{
-		Echoer:    NewEchoServiceClient(conn),
-		Marshaler: NewMarshalServiceClient(conn),
+		Utility: NewUtilityServiceClient(conn),
 	}
 }
