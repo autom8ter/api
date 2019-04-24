@@ -230,7 +230,7 @@ func FuncMap() template.FuncMap {
 	return m
 }
 
-func ServeTemplate(name string, sessVal string) http.HandlerFunc {
+func RenderFileWithSessionValue(filename string, sessVal string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		session, err := store.Get(r, AUTH_SESSION)
 		if err != nil {
@@ -238,14 +238,14 @@ func ServeTemplate(name string, sessVal string) http.HandlerFunc {
 			return
 		}
 
-		bits, err := ioutil.ReadFile(name)
+		bits, err := ioutil.ReadFile(filename)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
 		bitstring := string(bits)
 		if strings.Contains(bitstring, "{{") {
-			templ, err := template.New(name).Funcs(FuncMap()).Parse(string(bits))
+			templ, err := template.New("").Funcs(FuncMap()).Parse(string(bits))
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
@@ -258,6 +258,36 @@ func ServeTemplate(name string, sessVal string) http.HandlerFunc {
 			return
 		}
 		io.WriteString(w, bitstring)
+		return
+	}
+
+}
+func RenderFileWithData(name string, data interface{}) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		bits, err := ioutil.ReadFile(name)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
+		bitstring := string(bits)
+		if strings.Contains(bitstring, "{{") {
+			templ, err := template.New("").Funcs(FuncMap()).Parse(string(bits))
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			err = templ.Execute(w, data)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			return
+		}
+		_, err = io.WriteString(w, bitstring)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
 		return
 	}
 
