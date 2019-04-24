@@ -24,11 +24,11 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UserMetadata;
 }  // namespace protobuf_api_2eproto
 namespace api {
-class EchoMessageDefaultTypeInternal {
+class MessageDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<EchoMessage>
+  ::google::protobuf::internal::ExplicitlyConstructed<Message>
       _instance;
-} _EchoMessage_default_instance_;
+} _Message_default_instance_;
 class UserInfoDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<UserInfo>
@@ -56,19 +56,19 @@ class BytesDefaultTypeInternal {
 } _Bytes_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
-static void InitDefaultsEchoMessage() {
+static void InitDefaultsMessage() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::api::_EchoMessage_default_instance_;
-    new (ptr) ::api::EchoMessage();
+    void* ptr = &::api::_Message_default_instance_;
+    new (ptr) ::api::Message();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::api::EchoMessage::InitAsDefaultInstance();
+  ::api::Message::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_EchoMessage =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEchoMessage}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Message =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMessage}, {}};
 
 static void InitDefaultsUserInfo() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -143,7 +143,7 @@ static void InitDefaultsBytes() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBytes}, {}};
 
 void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_EchoMessage.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Message.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserInfo.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserMetadata.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AppMetadata.base);
@@ -155,11 +155,11 @@ void InitDefaults() {
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::EchoMessage, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Message, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::EchoMessage, value_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Message, value_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::UserInfo, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -211,7 +211,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Bytes, bits_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::api::EchoMessage)},
+  { 0, -1, sizeof(::api::Message)},
   { 6, -1, sizeof(::api::UserInfo)},
   { 20, -1, sizeof(::api::UserMetadata)},
   { 29, -1, sizeof(::api::AppMetadata)},
@@ -220,7 +220,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_EchoMessage_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Message_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UserInfo_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UserMetadata_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AppMetadata_default_instance_),
@@ -250,28 +250,39 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations"
-      ".proto\"\034\n\013EchoMessage\022\r\n\005value\030\001 \001(\t\"\326\001\n"
-      "\010UserInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 "
-      "\001(\t\022\023\n\013family_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t"
-      "\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007pi"
-      "cture\030\014 \001(\t\022(\n\ruser_metadata\030\r \001(\0132\021.api"
-      ".UserMetadata\022&\n\014app_metadata\030\016 \001(\0132\020.ap"
-      "i.AppMetadata\"V\n\014UserMetadata\022\r\n\005phone\030\001"
-      " \001(\t\022\031\n\021preferred_contact\030\002 \001(\t\022\016\n\006statu"
-      "s\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004"
-      "plan\030\001 \001(\t\022\021\n\tpay_token\030\002 \001(\t\022\022\n\ndelinqu"
-      "ent\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domai"
-      "n\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_sec"
-      "ret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030"
-      "\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001"
-      " \001(\0142\230\001\n\013EchoService\022<\n\004Echo\022\020.api.EchoM"
-      "essage\032\020.api.EchoMessage\"\020\202\323\344\223\002\n\"\005/echo:"
-      "\001*\022K\n\013EchoSpanish\022\020.api.EchoMessage\032\020.ap"
-      "i.EchoMessage\"\030\202\323\344\223\002\022\"\r/echo/spanish:\001*b"
-      "\006proto3"
+      ".proto\"\030\n\007Message\022\r\n\005value\030\001 \001(\t\"\326\001\n\010Use"
+      "rInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022"
+      "\023\n\013family_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\t"
+      "birthdate\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007pictur"
+      "e\030\014 \001(\t\022(\n\ruser_metadata\030\r \001(\0132\021.api.Use"
+      "rMetadata\022&\n\014app_metadata\030\016 \001(\0132\020.api.Ap"
+      "pMetadata\"V\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t"
+      "\022\031\n\021preferred_contact\030\002 \001(\t\022\016\n\006status\030\003 "
+      "\001(\t\022\014\n\004tags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004plan"
+      "\030\001 \001(\t\022\021\n\tpay_token\030\002 \001(\t\022\022\n\ndelinquent\030"
+      "\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domain\030\001 "
+      "\001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030"
+      "\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001("
+      "\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014"
+      "2\226\003\n\013EchoService\0224\n\004Echo\022\014.api.Message\032\014"
+      ".api.Message\"\020\202\323\344\223\002\n\"\005/echo:\001*\022C\n\013EchoSp"
+      "anish\022\014.api.Message\032\014.api.Message\"\030\202\323\344\223\002"
+      "\022\"\r/echo/spanish:\001*\022C\n\013EchoChinese\022\014.api"
+      ".Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/echo/ch"
+      "inese:\001*\022C\n\013EchoEnglish\022\014.api.Message\032\014."
+      "api.Message\"\030\202\323\344\223\002\022\"\r/echo/english:\001*\022\?\n"
+      "\tEchoHindi\022\014.api.Message\032\014.api.Message\"\026"
+      "\202\323\344\223\002\020\"\013/echo/hindi:\001*\022A\n\nEchoArabic\022\014.a"
+      "pi.Message\032\014.api.Message\"\027\202\323\344\223\002\021\"\014/echo/"
+      "arabic:\001*2\274\001\n\016MarshalService\0228\n\004JSON\022\n.a"
+      "pi.Bytes\032\n.api.Bytes\"\030\202\323\344\223\002\022\"\r/marshal/j"
+      "son:\001*\0228\n\004YAML\022\n.api.Bytes\032\n.api.Bytes\"\030"
+      "\202\323\344\223\002\022\"\r/marshal/yaml:\001*\0226\n\003XML\022\n.api.By"
+      "tes\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/marshal/xml:\001*"
+      "b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 767);
+      descriptor, 1208);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -292,20 +303,20 @@ namespace api {
 
 // ===================================================================
 
-void EchoMessage::InitAsDefaultInstance() {
+void Message::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int EchoMessage::kValueFieldNumber;
+const int Message::kValueFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-EchoMessage::EchoMessage()
+Message::Message()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_EchoMessage.base);
+      &protobuf_api_2eproto::scc_info_Message.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:api.EchoMessage)
+  // @@protoc_insertion_point(constructor:api.Message)
 }
-EchoMessage::EchoMessage(const EchoMessage& from)
+Message::Message(const Message& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
@@ -313,38 +324,38 @@ EchoMessage::EchoMessage(const EchoMessage& from)
   if (from.value().size() > 0) {
     value_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.value_);
   }
-  // @@protoc_insertion_point(copy_constructor:api.EchoMessage)
+  // @@protoc_insertion_point(copy_constructor:api.Message)
 }
 
-void EchoMessage::SharedCtor() {
+void Message::SharedCtor() {
   value_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-EchoMessage::~EchoMessage() {
-  // @@protoc_insertion_point(destructor:api.EchoMessage)
+Message::~Message() {
+  // @@protoc_insertion_point(destructor:api.Message)
   SharedDtor();
 }
 
-void EchoMessage::SharedDtor() {
+void Message::SharedDtor() {
   value_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void EchoMessage::SetCachedSize(int size) const {
+void Message::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* EchoMessage::descriptor() {
+const ::google::protobuf::Descriptor* Message::descriptor() {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const EchoMessage& EchoMessage::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_EchoMessage.base);
+const Message& Message::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Message.base);
   return *internal_default_instance();
 }
 
 
-void EchoMessage::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.EchoMessage)
+void Message::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Message)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -353,11 +364,11 @@ void EchoMessage::Clear() {
   _internal_metadata_.Clear();
 }
 
-bool EchoMessage::MergePartialFromCodedStream(
+bool Message::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.EchoMessage)
+  // @@protoc_insertion_point(parse_start:api.Message)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
@@ -372,7 +383,7 @@ bool EchoMessage::MergePartialFromCodedStream(
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             this->value().data(), static_cast<int>(this->value().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.EchoMessage.value"));
+            "api.Message.value"));
         } else {
           goto handle_unusual;
         }
@@ -391,17 +402,17 @@ bool EchoMessage::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:api.EchoMessage)
+  // @@protoc_insertion_point(parse_success:api.Message)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:api.EchoMessage)
+  // @@protoc_insertion_point(parse_failure:api.Message)
   return false;
 #undef DO_
 }
 
-void EchoMessage::SerializeWithCachedSizes(
+void Message::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.EchoMessage)
+  // @@protoc_insertion_point(serialize_start:api.Message)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -410,7 +421,7 @@ void EchoMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->value().data(), static_cast<int>(this->value().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.EchoMessage.value");
+      "api.Message.value");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       1, this->value(), output);
   }
@@ -419,13 +430,13 @@ void EchoMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
   }
-  // @@protoc_insertion_point(serialize_end:api.EchoMessage)
+  // @@protoc_insertion_point(serialize_end:api.Message)
 }
 
-::google::protobuf::uint8* EchoMessage::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* Message::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.EchoMessage)
+  // @@protoc_insertion_point(serialize_to_array_start:api.Message)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -434,7 +445,7 @@ void EchoMessage::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->value().data(), static_cast<int>(this->value().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.EchoMessage.value");
+      "api.Message.value");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
         1, this->value(), target);
@@ -444,12 +455,12 @@ void EchoMessage::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:api.EchoMessage)
+  // @@protoc_insertion_point(serialize_to_array_end:api.Message)
   return target;
 }
 
-size_t EchoMessage::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.EchoMessage)
+size_t Message::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Message)
   size_t total_size = 0;
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -469,23 +480,23 @@ size_t EchoMessage::ByteSizeLong() const {
   return total_size;
 }
 
-void EchoMessage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.EchoMessage)
+void Message::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Message)
   GOOGLE_DCHECK_NE(&from, this);
-  const EchoMessage* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const EchoMessage>(
+  const Message* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Message>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.EchoMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Message)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.EchoMessage)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Message)
     MergeFrom(*source);
   }
 }
 
-void EchoMessage::MergeFrom(const EchoMessage& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.EchoMessage)
+void Message::MergeFrom(const Message& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Message)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -497,36 +508,36 @@ void EchoMessage::MergeFrom(const EchoMessage& from) {
   }
 }
 
-void EchoMessage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.EchoMessage)
+void Message::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Message)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void EchoMessage::CopyFrom(const EchoMessage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.EchoMessage)
+void Message::CopyFrom(const Message& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Message)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool EchoMessage::IsInitialized() const {
+bool Message::IsInitialized() const {
   return true;
 }
 
-void EchoMessage::Swap(EchoMessage* other) {
+void Message::Swap(Message* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void EchoMessage::InternalSwap(EchoMessage* other) {
+void Message::InternalSwap(Message* other) {
   using std::swap;
   value_.Swap(&other->value_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata EchoMessage::GetMetadata() const {
+::google::protobuf::Metadata Message::GetMetadata() const {
   protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -2797,8 +2808,8 @@ void Bytes::InternalSwap(Bytes* other) {
 }  // namespace api
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::EchoMessage* Arena::CreateMaybeMessage< ::api::EchoMessage >(Arena* arena) {
-  return Arena::CreateInternal< ::api::EchoMessage >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Message* Arena::CreateMaybeMessage< ::api::Message >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Message >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::UserInfo* Arena::CreateMaybeMessage< ::api::UserInfo >(Arena* arena) {
   return Arena::CreateInternal< ::api::UserInfo >(arena);

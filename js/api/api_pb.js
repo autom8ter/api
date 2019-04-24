@@ -15,7 +15,7 @@ var google_api_annotations_pb = require('./google/api/annotations_pb.js');
 goog.exportSymbol('proto.api.AppMetadata', null, global);
 goog.exportSymbol('proto.api.Auth', null, global);
 goog.exportSymbol('proto.api.Bytes', null, global);
-goog.exportSymbol('proto.api.EchoMessage', null, global);
+goog.exportSymbol('proto.api.Message', null, global);
 goog.exportSymbol('proto.api.UserInfo', null, global);
 goog.exportSymbol('proto.api.UserMetadata', null, global);
 
@@ -29,12 +29,12 @@ goog.exportSymbol('proto.api.UserMetadata', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.EchoMessage = function(opt_data) {
+proto.api.Message = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.EchoMessage, jspb.Message);
+goog.inherits(proto.api.Message, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.EchoMessage.displayName = 'proto.api.EchoMessage';
+  proto.api.Message.displayName = 'proto.api.Message';
 }
 
 
@@ -49,8 +49,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.EchoMessage.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.EchoMessage.toObject(opt_includeInstance, this);
+proto.api.Message.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.Message.toObject(opt_includeInstance, this);
 };
 
 
@@ -59,11 +59,11 @@ proto.api.EchoMessage.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.EchoMessage} msg The msg instance to transform.
+ * @param {!proto.api.Message} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EchoMessage.toObject = function(includeInstance, msg) {
+proto.api.Message.toObject = function(includeInstance, msg) {
   var f, obj = {
     value: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
@@ -79,23 +79,23 @@ proto.api.EchoMessage.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.EchoMessage}
+ * @return {!proto.api.Message}
  */
-proto.api.EchoMessage.deserializeBinary = function(bytes) {
+proto.api.Message.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.EchoMessage;
-  return proto.api.EchoMessage.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.Message;
+  return proto.api.Message.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.EchoMessage} msg The message object to deserialize into.
+ * @param {!proto.api.Message} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.EchoMessage}
+ * @return {!proto.api.Message}
  */
-proto.api.EchoMessage.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.Message.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -119,9 +119,9 @@ proto.api.EchoMessage.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.EchoMessage.prototype.serializeBinary = function() {
+proto.api.Message.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.EchoMessage.serializeBinaryToWriter(this, writer);
+  proto.api.Message.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -129,11 +129,11 @@ proto.api.EchoMessage.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.EchoMessage} message
+ * @param {!proto.api.Message} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.EchoMessage.serializeBinaryToWriter = function(message, writer) {
+proto.api.Message.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getValue();
   if (f.length > 0) {
@@ -149,13 +149,13 @@ proto.api.EchoMessage.serializeBinaryToWriter = function(message, writer) {
  * optional string value = 1;
  * @return {string}
  */
-proto.api.EchoMessage.prototype.getValue = function() {
+proto.api.Message.prototype.getValue = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.EchoMessage.prototype.setValue = function(value) {
+proto.api.Message.prototype.setValue = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 

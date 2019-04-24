@@ -22,7 +22,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiEchoMessage"
+              "$ref": "#/definitions/apiMessage"
             }
           }
         },
@@ -32,7 +32,111 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiEchoMessage"
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        ],
+        "tags": [
+          "EchoService"
+        ]
+      }
+    },
+    "/echo/arabic": {
+      "post": {
+        "operationId": "EchoArabic",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        ],
+        "tags": [
+          "EchoService"
+        ]
+      }
+    },
+    "/echo/chinese": {
+      "post": {
+        "operationId": "EchoChinese",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        ],
+        "tags": [
+          "EchoService"
+        ]
+      }
+    },
+    "/echo/english": {
+      "post": {
+        "operationId": "EchoEnglish",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        ],
+        "tags": [
+          "EchoService"
+        ]
+      }
+    },
+    "/echo/hindi": {
+      "post": {
+        "operationId": "EchoHindi",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
             }
           }
         ],
@@ -48,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiEchoMessage"
+              "$ref": "#/definitions/apiMessage"
             }
           }
         },
@@ -58,7 +162,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiEchoMessage"
+              "$ref": "#/definitions/apiMessage"
             }
           }
         ],
@@ -66,10 +170,97 @@
           "EchoService"
         ]
       }
+    },
+    "/marshal/json": {
+      "post": {
+        "operationId": "JSON",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        ],
+        "tags": [
+          "MarshalService"
+        ]
+      }
+    },
+    "/marshal/xml": {
+      "post": {
+        "operationId": "XML",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        ],
+        "tags": [
+          "MarshalService"
+        ]
+      }
+    },
+    "/marshal/yaml": {
+      "post": {
+        "operationId": "YAML",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        ],
+        "tags": [
+          "MarshalService"
+        ]
+      }
     }
   },
   "definitions": {
-    "apiEchoMessage": {
+    "apiBytes": {
+      "type": "object",
+      "properties": {
+        "bits": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "apiMessage": {
       "type": "object",
       "properties": {
         "value": {

@@ -20,22 +20,22 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x1c\n\x0b\x45\x63hoMessage\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\x32\x98\x01\n\x0b\x45\x63hoService\x12<\n\x04\x45\x63ho\x12\x10.api.EchoMessage\x1a\x10.api.EchoMessage\"\x10\x82\xd3\xe4\x93\x02\n\"\x05/echo:\x01*\x12K\n\x0b\x45\x63hoSpanish\x12\x10.api.EchoMessage\x1a\x10.api.EchoMessage\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/spanish:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x18\n\x07Message\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\x32\x96\x03\n\x0b\x45\x63hoService\x12\x34\n\x04\x45\x63ho\x12\x0c.api.Message\x1a\x0c.api.Message\"\x10\x82\xd3\xe4\x93\x02\n\"\x05/echo:\x01*\x12\x43\n\x0b\x45\x63hoSpanish\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/spanish:\x01*\x12\x43\n\x0b\x45\x63hoChinese\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/chinese:\x01*\x12\x43\n\x0b\x45\x63hoEnglish\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/echo/english:\x01*\x12?\n\tEchoHindi\x12\x0c.api.Message\x1a\x0c.api.Message\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/echo/hindi:\x01*\x12\x41\n\nEchoArabic\x12\x0c.api.Message\x1a\x0c.api.Message\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/echo/arabic:\x01*2\xbc\x01\n\x0eMarshalService\x12\x38\n\x04JSON\x12\n.api.Bytes\x1a\n.api.Bytes\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/marshal/json:\x01*\x12\x38\n\x04YAML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/marshal/yaml:\x01*\x12\x36\n\x03XML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/marshal/xml:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
 
-_ECHOMESSAGE = _descriptor.Descriptor(
-  name='EchoMessage',
-  full_name='api.EchoMessage',
+_MESSAGE = _descriptor.Descriptor(
+  name='Message',
+  full_name='api.Message',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='api.EchoMessage.value', index=0,
+      name='value', full_name='api.Message.value', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -54,7 +54,7 @@ _ECHOMESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=48,
-  serialized_end=76,
+  serialized_end=72,
 )
 
 
@@ -140,8 +140,8 @@ _USERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=79,
-  serialized_end=293,
+  serialized_start=75,
+  serialized_end=289,
 )
 
 
@@ -192,8 +192,8 @@ _USERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=295,
-  serialized_end=381,
+  serialized_start=291,
+  serialized_end=377,
 )
 
 
@@ -244,8 +244,8 @@ _APPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=383,
-  serialized_end=463,
+  serialized_start=379,
+  serialized_end=459,
 )
 
 
@@ -310,8 +310,8 @@ _AUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=581,
+  serialized_start=461,
+  serialized_end=577,
 )
 
 
@@ -341,13 +341,13 @@ _BYTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=583,
-  serialized_end=604,
+  serialized_start=579,
+  serialized_end=600,
 )
 
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
 _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
-DESCRIPTOR.message_types_by_name['EchoMessage'] = _ECHOMESSAGE
+DESCRIPTOR.message_types_by_name['Message'] = _MESSAGE
 DESCRIPTOR.message_types_by_name['UserInfo'] = _USERINFO
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
 DESCRIPTOR.message_types_by_name['AppMetadata'] = _APPMETADATA
@@ -355,12 +355,12 @@ DESCRIPTOR.message_types_by_name['Auth'] = _AUTH
 DESCRIPTOR.message_types_by_name['Bytes'] = _BYTES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-EchoMessage = _reflection.GeneratedProtocolMessageType('EchoMessage', (_message.Message,), dict(
-  DESCRIPTOR = _ECHOMESSAGE,
+Message = _reflection.GeneratedProtocolMessageType('Message', (_message.Message,), dict(
+  DESCRIPTOR = _MESSAGE,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.EchoMessage)
+  # @@protoc_insertion_point(class_scope:api.Message)
   ))
-_sym_db.RegisterMessage(EchoMessage)
+_sym_db.RegisterMessage(Message)
 
 UserInfo = _reflection.GeneratedProtocolMessageType('UserInfo', (_message.Message,), dict(
   DESCRIPTOR = _USERINFO,
@@ -405,16 +405,16 @@ _ECHOSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=607,
-  serialized_end=759,
+  serialized_start=603,
+  serialized_end=1009,
   methods=[
   _descriptor.MethodDescriptor(
     name='Echo',
     full_name='api.EchoService.Echo',
     index=0,
     containing_service=None,
-    input_type=_ECHOMESSAGE,
-    output_type=_ECHOMESSAGE,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
     serialized_options=_b('\202\323\344\223\002\n\"\005/echo:\001*'),
   ),
   _descriptor.MethodDescriptor(
@@ -422,13 +422,91 @@ _ECHOSERVICE = _descriptor.ServiceDescriptor(
     full_name='api.EchoService.EchoSpanish',
     index=1,
     containing_service=None,
-    input_type=_ECHOMESSAGE,
-    output_type=_ECHOMESSAGE,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
     serialized_options=_b('\202\323\344\223\002\022\"\r/echo/spanish:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='EchoChinese',
+    full_name='api.EchoService.EchoChinese',
+    index=2,
+    containing_service=None,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
+    serialized_options=_b('\202\323\344\223\002\022\"\r/echo/chinese:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='EchoEnglish',
+    full_name='api.EchoService.EchoEnglish',
+    index=3,
+    containing_service=None,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
+    serialized_options=_b('\202\323\344\223\002\022\"\r/echo/english:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='EchoHindi',
+    full_name='api.EchoService.EchoHindi',
+    index=4,
+    containing_service=None,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
+    serialized_options=_b('\202\323\344\223\002\020\"\013/echo/hindi:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='EchoArabic',
+    full_name='api.EchoService.EchoArabic',
+    index=5,
+    containing_service=None,
+    input_type=_MESSAGE,
+    output_type=_MESSAGE,
+    serialized_options=_b('\202\323\344\223\002\021\"\014/echo/arabic:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_ECHOSERVICE)
 
 DESCRIPTOR.services_by_name['EchoService'] = _ECHOSERVICE
+
+
+_MARSHALSERVICE = _descriptor.ServiceDescriptor(
+  name='MarshalService',
+  full_name='api.MarshalService',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=1012,
+  serialized_end=1200,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='JSON',
+    full_name='api.MarshalService.JSON',
+    index=0,
+    containing_service=None,
+    input_type=_BYTES,
+    output_type=_BYTES,
+    serialized_options=_b('\202\323\344\223\002\022\"\r/marshal/json:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='YAML',
+    full_name='api.MarshalService.YAML',
+    index=1,
+    containing_service=None,
+    input_type=_BYTES,
+    output_type=_BYTES,
+    serialized_options=_b('\202\323\344\223\002\022\"\r/marshal/yaml:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='XML',
+    full_name='api.MarshalService.XML',
+    index=2,
+    containing_service=None,
+    input_type=_BYTES,
+    output_type=_BYTES,
+    serialized_options=_b('\202\323\344\223\002\021\"\014/marshal/xml:\001*'),
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_MARSHALSERVICE)
+
+DESCRIPTOR.services_by_name['MarshalService'] = _MARSHALSERVICE
 
 # @@protoc_insertion_point(module_scope)

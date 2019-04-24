@@ -56,9 +56,9 @@ extern AuthDefaultTypeInternal _Auth_default_instance_;
 class Bytes;
 class BytesDefaultTypeInternal;
 extern BytesDefaultTypeInternal _Bytes_default_instance_;
-class EchoMessage;
-class EchoMessageDefaultTypeInternal;
-extern EchoMessageDefaultTypeInternal _EchoMessage_default_instance_;
+class Message;
+class MessageDefaultTypeInternal;
+extern MessageDefaultTypeInternal _Message_default_instance_;
 class UserInfo;
 class UserInfoDefaultTypeInternal;
 extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
@@ -71,7 +71,7 @@ namespace protobuf {
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
 template<> ::api::Bytes* Arena::CreateMaybeMessage<::api::Bytes>(Arena*);
-template<> ::api::EchoMessage* Arena::CreateMaybeMessage<::api::EchoMessage>(Arena*);
+template<> ::api::Message* Arena::CreateMaybeMessage<::api::Message>(Arena*);
 template<> ::api::UserInfo* Arena::CreateMaybeMessage<::api::UserInfo>(Arena*);
 template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(Arena*);
 }  // namespace protobuf
@@ -80,24 +80,24 @@ namespace api {
 
 // ===================================================================
 
-class EchoMessage : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EchoMessage) */ {
+class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Message) */ {
  public:
-  EchoMessage();
-  virtual ~EchoMessage();
+  Message();
+  virtual ~Message();
 
-  EchoMessage(const EchoMessage& from);
+  Message(const Message& from);
 
-  inline EchoMessage& operator=(const EchoMessage& from) {
+  inline Message& operator=(const Message& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  EchoMessage(EchoMessage&& from) noexcept
-    : EchoMessage() {
+  Message(Message&& from) noexcept
+    : Message() {
     *this = ::std::move(from);
   }
 
-  inline EchoMessage& operator=(EchoMessage&& from) noexcept {
+  inline Message& operator=(Message&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -107,34 +107,34 @@ class EchoMessage : public ::google::protobuf::Message /* @@protoc_insertion_poi
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const EchoMessage& default_instance();
+  static const Message& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const EchoMessage* internal_default_instance() {
-    return reinterpret_cast<const EchoMessage*>(
-               &_EchoMessage_default_instance_);
+  static inline const Message* internal_default_instance() {
+    return reinterpret_cast<const Message*>(
+               &_Message_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  void Swap(EchoMessage* other);
-  friend void swap(EchoMessage& a, EchoMessage& b) {
+  void Swap(Message* other);
+  friend void swap(Message& a, Message& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline EchoMessage* New() const final {
-    return CreateMaybeMessage<EchoMessage>(NULL);
+  inline Message* New() const final {
+    return CreateMaybeMessage<Message>(NULL);
   }
 
-  EchoMessage* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<EchoMessage>(arena);
+  Message* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Message>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const EchoMessage& from);
-  void MergeFrom(const EchoMessage& from);
+  void CopyFrom(const Message& from);
+  void MergeFrom(const Message& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -151,7 +151,7 @@ class EchoMessage : public ::google::protobuf::Message /* @@protoc_insertion_poi
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(EchoMessage* other);
+  void InternalSwap(Message* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -181,7 +181,7 @@ class EchoMessage : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_value();
   void set_allocated_value(::std::string* value);
 
-  // @@protoc_insertion_point(class_scope:api.EchoMessage)
+  // @@protoc_insertion_point(class_scope:api.Message)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -1058,59 +1058,59 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// EchoMessage
+// Message
 
 // string value = 1;
-inline void EchoMessage::clear_value() {
+inline void Message::clear_value() {
   value_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& EchoMessage::value() const {
-  // @@protoc_insertion_point(field_get:api.EchoMessage.value)
+inline const ::std::string& Message::value() const {
+  // @@protoc_insertion_point(field_get:api.Message.value)
   return value_.GetNoArena();
 }
-inline void EchoMessage::set_value(const ::std::string& value) {
+inline void Message::set_value(const ::std::string& value) {
   
   value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.EchoMessage.value)
+  // @@protoc_insertion_point(field_set:api.Message.value)
 }
 #if LANG_CXX11
-inline void EchoMessage::set_value(::std::string&& value) {
+inline void Message::set_value(::std::string&& value) {
   
   value_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.EchoMessage.value)
+  // @@protoc_insertion_point(field_set_rvalue:api.Message.value)
 }
 #endif
-inline void EchoMessage::set_value(const char* value) {
+inline void Message::set_value(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.EchoMessage.value)
+  // @@protoc_insertion_point(field_set_char:api.Message.value)
 }
-inline void EchoMessage::set_value(const char* value, size_t size) {
+inline void Message::set_value(const char* value, size_t size) {
   
   value_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.EchoMessage.value)
+  // @@protoc_insertion_point(field_set_pointer:api.Message.value)
 }
-inline ::std::string* EchoMessage::mutable_value() {
+inline ::std::string* Message::mutable_value() {
   
-  // @@protoc_insertion_point(field_mutable:api.EchoMessage.value)
+  // @@protoc_insertion_point(field_mutable:api.Message.value)
   return value_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* EchoMessage::release_value() {
-  // @@protoc_insertion_point(field_release:api.EchoMessage.value)
+inline ::std::string* Message::release_value() {
+  // @@protoc_insertion_point(field_release:api.Message.value)
   
   return value_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void EchoMessage::set_allocated_value(::std::string* value) {
+inline void Message::set_allocated_value(::std::string* value) {
   if (value != NULL) {
     
   } else {
     
   }
   value_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set_allocated:api.EchoMessage.value)
+  // @@protoc_insertion_point(field_set_allocated:api.Message.value)
 }
 
 // -------------------------------------------------------------------

@@ -5,21 +5,66 @@ package api;
 import "google/api/annotations.proto";
 
 service EchoService {
-    rpc Echo(EchoMessage) returns (EchoMessage) {
+    rpc Echo(Message) returns (Message) {
         option (google.api.http) = {
       post: "/echo"
       body: "*"
     };
     }
-    rpc EchoSpanish(EchoMessage) returns (EchoMessage) {
+    rpc EchoSpanish(Message) returns (Message) {
         option (google.api.http) = {
       post: "/echo/spanish"
       body: "*"
     };
     }
+    rpc EchoChinese(Message) returns (Message) {
+        option (google.api.http) = {
+      post: "/echo/chinese"
+      body: "*"
+    };
+    }
+    rpc EchoEnglish(Message) returns (Message) {
+        option (google.api.http) = {
+      post: "/echo/english"
+      body: "*"
+    };
+    }
+    rpc EchoHindi(Message) returns (Message) {
+        option (google.api.http) = {
+      post: "/echo/hindi"
+      body: "*"
+    };
+    }
+    rpc EchoArabic(Message) returns (Message) {
+        option (google.api.http) = {
+      post: "/echo/arabic"
+      body: "*"
+    };
+    }
 }
 
-message EchoMessage {
+service MarshalService {
+    rpc JSON(Bytes) returns (Bytes) {
+        option (google.api.http) = {
+      post: "/marshal/json"
+      body: "*"
+    };
+    }
+    rpc YAML(Bytes) returns (Bytes) {
+        option (google.api.http) = {
+      post: "/marshal/yaml"
+      body: "*"
+    };
+    }
+    rpc XML(Bytes) returns (Bytes) {
+        option (google.api.http) = {
+      post: "/marshal/xml"
+      body: "*"
+    };
+    }
+}
+
+message Message {
     string value = 1;
 }
 

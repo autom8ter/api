@@ -5,7 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "api.EchoMessage" do
+  add_message "api.Message" do
     optional :value, :string, 1
   end
   add_message "api.UserInfo" do
@@ -45,7 +45,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
-  EchoMessage = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EchoMessage").msgclass
+  Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass
   UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass

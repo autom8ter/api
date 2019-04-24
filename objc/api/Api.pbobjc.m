@@ -53,16 +53,16 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
-#pragma mark - EchoMessage
+#pragma mark - Message
 
-@implementation EchoMessage
+@implementation Message
 
 @dynamic value;
 
-typedef struct EchoMessage__storage_ {
+typedef struct Message__storage_ {
   uint32_t _has_storage_[1];
   NSString *value;
-} EchoMessage__storage_;
+} Message__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -73,20 +73,20 @@ typedef struct EchoMessage__storage_ {
       {
         .name = "value",
         .dataTypeSpecific.className = NULL,
-        .number = EchoMessage_FieldNumber_Value,
+        .number = Message_FieldNumber_Value,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(EchoMessage__storage_, value),
+        .offset = (uint32_t)offsetof(Message__storage_, value),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[EchoMessage class]
+        [GPBDescriptor allocDescriptorForClass:[Message class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(EchoMessage__storage_)
+                                   storageSize:sizeof(Message__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

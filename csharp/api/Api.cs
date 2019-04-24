@@ -25,27 +25,36 @@ namespace Api {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
-            "byIcCgtFY2hvTWVzc2FnZRINCgV2YWx1ZRgBIAEoCSLWAQoIVXNlckluZm8S",
-            "DAoEbmFtZRgGIAEoCRISCgpnaXZlbl9uYW1lGAcgASgJEhMKC2ZhbWlseV9u",
-            "YW1lGAggASgJEg4KBmdlbmRlchgJIAEoCRIRCgliaXJ0aGRhdGUYCiABKAkS",
-            "DQoFZW1haWwYCyABKAkSDwoHcGljdHVyZRgMIAEoCRIoCg11c2VyX21ldGFk",
-            "YXRhGA0gASgLMhEuYXBpLlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEY",
-            "DiABKAsyEC5hcGkuQXBwTWV0YWRhdGEiVgoMVXNlck1ldGFkYXRhEg0KBXBo",
-            "b25lGAEgASgJEhkKEXByZWZlcnJlZF9jb250YWN0GAIgASgJEg4KBnN0YXR1",
-            "cxgDIAEoCRIMCgR0YWdzGAQgAygJIlAKC0FwcE1ldGFkYXRhEgwKBHBsYW4Y",
-            "ASABKAkSEQoJcGF5X3Rva2VuGAIgASgJEhIKCmRlbGlucXVlbnQYAyABKAkS",
-            "DAoEdGFncxgEIAMoCSJ0CgRBdXRoEg4KBmRvbWFpbhgBIAEoCRIRCgljbGll",
-            "bnRfaWQYAiABKAkSFQoNY2xpZW50X3NlY3JldBgDIAEoCRIQCghyZWRpcmVj",
-            "dBgEIAEoCRIQCghhdWRpZW5jZRgFIAEoCRIOCgZzY29wZXMYBiADKAkiFQoF",
-            "Qnl0ZXMSDAoEYml0cxgBIAEoDDKYAQoLRWNob1NlcnZpY2USPAoERWNobxIQ",
-            "LmFwaS5FY2hvTWVzc2FnZRoQLmFwaS5FY2hvTWVzc2FnZSIQgtPkkwIKIgUv",
-            "ZWNobzoBKhJLCgtFY2hvU3BhbmlzaBIQLmFwaS5FY2hvTWVzc2FnZRoQLmFw",
-            "aS5FY2hvTWVzc2FnZSIYgtPkkwISIg0vZWNoby9zcGFuaXNoOgEqYgZwcm90",
-            "bzM="));
+            "byIYCgdNZXNzYWdlEg0KBXZhbHVlGAEgASgJItYBCghVc2VySW5mbxIMCgRu",
+            "YW1lGAYgASgJEhIKCmdpdmVuX25hbWUYByABKAkSEwoLZmFtaWx5X25hbWUY",
+            "CCABKAkSDgoGZ2VuZGVyGAkgASgJEhEKCWJpcnRoZGF0ZRgKIAEoCRINCgVl",
+            "bWFpbBgLIAEoCRIPCgdwaWN0dXJlGAwgASgJEigKDXVzZXJfbWV0YWRhdGEY",
+            "DSABKAsyES5hcGkuVXNlck1ldGFkYXRhEiYKDGFwcF9tZXRhZGF0YRgOIAEo",
+            "CzIQLmFwaS5BcHBNZXRhZGF0YSJWCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUY",
+            "ASABKAkSGQoRcHJlZmVycmVkX2NvbnRhY3QYAiABKAkSDgoGc3RhdHVzGAMg",
+            "ASgJEgwKBHRhZ3MYBCADKAkiUAoLQXBwTWV0YWRhdGESDAoEcGxhbhgBIAEo",
+            "CRIRCglwYXlfdG9rZW4YAiABKAkSEgoKZGVsaW5xdWVudBgDIAEoCRIMCgR0",
+            "YWdzGAQgAygJInQKBEF1dGgSDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9p",
+            "ZBgCIAEoCRIVCg1jbGllbnRfc2VjcmV0GAMgASgJEhAKCHJlZGlyZWN0GAQg",
+            "ASgJEhAKCGF1ZGllbmNlGAUgASgJEg4KBnNjb3BlcxgGIAMoCSIVCgVCeXRl",
+            "cxIMCgRiaXRzGAEgASgMMpYDCgtFY2hvU2VydmljZRI0CgRFY2hvEgwuYXBp",
+            "Lk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIQgtPkkwIKIgUvZWNobzoBKhJDCgtF",
+            "Y2hvU3BhbmlzaBIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiGILT5JMC",
+            "EiINL2VjaG8vc3BhbmlzaDoBKhJDCgtFY2hvQ2hpbmVzZRIMLmFwaS5NZXNz",
+            "YWdlGgwuYXBpLk1lc3NhZ2UiGILT5JMCEiINL2VjaG8vY2hpbmVzZToBKhJD",
+            "CgtFY2hvRW5nbGlzaBIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiGILT",
+            "5JMCEiINL2VjaG8vZW5nbGlzaDoBKhI/CglFY2hvSGluZGkSDC5hcGkuTWVz",
+            "c2FnZRoMLmFwaS5NZXNzYWdlIhaC0+STAhAiCy9lY2hvL2hpbmRpOgEqEkEK",
+            "CkVjaG9BcmFiaWMSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIheC0+ST",
+            "AhEiDC9lY2hvL2FyYWJpYzoBKjK8AQoOTWFyc2hhbFNlcnZpY2USOAoESlNP",
+            "ThIKLmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIYgtPkkwISIg0vbWFyc2hhbC9q",
+            "c29uOgEqEjgKBFlBTUwSCi5hcGkuQnl0ZXMaCi5hcGkuQnl0ZXMiGILT5JMC",
+            "EiINL21hcnNoYWwveWFtbDoBKhI2CgNYTUwSCi5hcGkuQnl0ZXMaCi5hcGku",
+            "Qnl0ZXMiF4LT5JMCESIML21hcnNoYWwveG1sOgEqYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.EchoMessage), global::Api.EchoMessage.Parser, new[]{ "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Message), global::Api.Message.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Phone", "PreferredContact", "Status", "Tags" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Plan", "PayToken", "Delinquent", "Tags" }, null, null, null),
@@ -57,11 +66,11 @@ namespace Api {
 
   }
   #region Messages
-  public sealed partial class EchoMessage : pb::IMessage<EchoMessage> {
-    private static readonly pb::MessageParser<EchoMessage> _parser = new pb::MessageParser<EchoMessage>(() => new EchoMessage());
+  public sealed partial class Message : pb::IMessage<Message> {
+    private static readonly pb::MessageParser<Message> _parser = new pb::MessageParser<Message>(() => new Message());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<EchoMessage> Parser { get { return _parser; } }
+    public static pb::MessageParser<Message> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -74,21 +83,21 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EchoMessage() {
+    public Message() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EchoMessage(EchoMessage other) : this() {
+    public Message(Message other) : this() {
       value_ = other.value_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EchoMessage Clone() {
-      return new EchoMessage(this);
+    public Message Clone() {
+      return new Message(this);
     }
 
     /// <summary>Field number for the "value" field.</summary>
@@ -104,11 +113,11 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as EchoMessage);
+      return Equals(other as Message);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EchoMessage other) {
+    public bool Equals(Message other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -158,7 +167,7 @@ namespace Api {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EchoMessage other) {
+    public void MergeFrom(Message other) {
       if (other == null) {
         return;
       }

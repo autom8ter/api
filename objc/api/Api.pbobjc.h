@@ -47,13 +47,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
-#pragma mark - EchoMessage
+#pragma mark - Message
 
-typedef GPB_ENUM(EchoMessage_FieldNumber) {
-  EchoMessage_FieldNumber_Value = 1,
+typedef GPB_ENUM(Message_FieldNumber) {
+  Message_FieldNumber_Value = 1,
 };
 
-@interface EchoMessage : GPBMessage
+@interface Message : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *value;
 

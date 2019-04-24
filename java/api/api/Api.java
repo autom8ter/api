@@ -14,8 +14,8 @@ public final class Api {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface EchoMessageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.EchoMessage)
+  public interface MessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Message)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -29,18 +29,18 @@ public final class Api {
         getValueBytes();
   }
   /**
-   * Protobuf type {@code api.EchoMessage}
+   * Protobuf type {@code api.Message}
    */
-  public  static final class EchoMessage extends
+  public  static final class Message extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.EchoMessage)
-      EchoMessageOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.Message)
+      MessageOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use EchoMessage.newBuilder() to construct.
-    private EchoMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Message.newBuilder() to construct.
+    private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private EchoMessage() {
+    private Message() {
       value_ = "";
     }
 
@@ -49,7 +49,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EchoMessage(
+    private Message(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -95,15 +95,15 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_EchoMessage_descriptor;
+      return api.Api.internal_static_api_Message_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_EchoMessage_fieldAccessorTable
+      return api.Api.internal_static_api_Message_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.EchoMessage.class, api.Api.EchoMessage.Builder.class);
+              api.Api.Message.class, api.Api.Message.Builder.class);
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
@@ -179,10 +179,10 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.EchoMessage)) {
+      if (!(obj instanceof api.Api.Message)) {
         return super.equals(obj);
       }
-      api.Api.EchoMessage other = (api.Api.EchoMessage) obj;
+      api.Api.Message other = (api.Api.Message) obj;
 
       boolean result = true;
       result = result && getValue()
@@ -205,69 +205,69 @@ public final class Api {
       return hash;
     }
 
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.EchoMessage parseFrom(byte[] data)
+    public static api.Api.Message parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.EchoMessage parseFrom(java.io.InputStream input)
+    public static api.Api.Message parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.EchoMessage parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.Message parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.EchoMessage parseDelimitedFrom(
+    public static api.Api.Message parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.EchoMessage parseFrom(
+    public static api.Api.Message parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -280,7 +280,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.EchoMessage prototype) {
+    public static Builder newBuilder(api.Api.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -296,26 +296,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.EchoMessage}
+     * Protobuf type {@code api.Message}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.EchoMessage)
-        api.Api.EchoMessageOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.Message)
+        api.Api.MessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_EchoMessage_descriptor;
+        return api.Api.internal_static_api_Message_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_EchoMessage_fieldAccessorTable
+        return api.Api.internal_static_api_Message_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.EchoMessage.class, api.Api.EchoMessage.Builder.class);
+                api.Api.Message.class, api.Api.Message.Builder.class);
       }
 
-      // Construct using api.Api.EchoMessage.newBuilder()
+      // Construct using api.Api.Message.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -341,17 +341,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_EchoMessage_descriptor;
+        return api.Api.internal_static_api_Message_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.EchoMessage getDefaultInstanceForType() {
-        return api.Api.EchoMessage.getDefaultInstance();
+      public api.Api.Message getDefaultInstanceForType() {
+        return api.Api.Message.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.EchoMessage build() {
-        api.Api.EchoMessage result = buildPartial();
+      public api.Api.Message build() {
+        api.Api.Message result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -359,8 +359,8 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.EchoMessage buildPartial() {
-        api.Api.EchoMessage result = new api.Api.EchoMessage(this);
+      public api.Api.Message buildPartial() {
+        api.Api.Message result = new api.Api.Message(this);
         result.value_ = value_;
         onBuilt();
         return result;
@@ -400,16 +400,16 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.EchoMessage) {
-          return mergeFrom((api.Api.EchoMessage)other);
+        if (other instanceof api.Api.Message) {
+          return mergeFrom((api.Api.Message)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.EchoMessage other) {
-        if (other == api.Api.EchoMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(api.Api.Message other) {
+        if (other == api.Api.Message.getDefaultInstance()) return this;
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
           onChanged();
@@ -429,11 +429,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.EchoMessage parsedMessage = null;
+        api.Api.Message parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.EchoMessage) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.Message) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -524,41 +524,41 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.EchoMessage)
+      // @@protoc_insertion_point(builder_scope:api.Message)
     }
 
-    // @@protoc_insertion_point(class_scope:api.EchoMessage)
-    private static final api.Api.EchoMessage DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.Message)
+    private static final api.Api.Message DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.EchoMessage();
+      DEFAULT_INSTANCE = new api.Api.Message();
     }
 
-    public static api.Api.EchoMessage getDefaultInstance() {
+    public static api.Api.Message getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<EchoMessage>
-        PARSER = new com.google.protobuf.AbstractParser<EchoMessage>() {
+    private static final com.google.protobuf.Parser<Message>
+        PARSER = new com.google.protobuf.AbstractParser<Message>() {
       @java.lang.Override
-      public EchoMessage parsePartialFrom(
+      public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EchoMessage(input, extensionRegistry);
+        return new Message(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<EchoMessage> parser() {
+    public static com.google.protobuf.Parser<Message> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<EchoMessage> getParserForType() {
+    public com.google.protobuf.Parser<Message> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.EchoMessage getDefaultInstanceForType() {
+    public api.Api.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6132,10 +6132,10 @@ public final class Api {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_EchoMessage_descriptor;
+    internal_static_api_Message_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_EchoMessage_fieldAccessorTable;
+      internal_static_api_Message_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_UserInfo_descriptor;
   private static final 
@@ -6171,25 +6171,36 @@ public final class Api {
   static {
     java.lang.String[] descriptorData = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations" +
-      ".proto\"\034\n\013EchoMessage\022\r\n\005value\030\001 \001(\t\"\326\001\n" +
-      "\010UserInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 " +
-      "\001(\t\022\023\n\013family_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t" +
-      "\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007pi" +
-      "cture\030\014 \001(\t\022(\n\ruser_metadata\030\r \001(\0132\021.api" +
-      ".UserMetadata\022&\n\014app_metadata\030\016 \001(\0132\020.ap" +
-      "i.AppMetadata\"V\n\014UserMetadata\022\r\n\005phone\030\001" +
-      " \001(\t\022\031\n\021preferred_contact\030\002 \001(\t\022\016\n\006statu" +
-      "s\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004" +
-      "plan\030\001 \001(\t\022\021\n\tpay_token\030\002 \001(\t\022\022\n\ndelinqu" +
-      "ent\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domai" +
-      "n\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_sec" +
-      "ret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030" +
-      "\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001" +
-      " \001(\0142\230\001\n\013EchoService\022<\n\004Echo\022\020.api.EchoM" +
-      "essage\032\020.api.EchoMessage\"\020\202\323\344\223\002\n\"\005/echo:" +
-      "\001*\022K\n\013EchoSpanish\022\020.api.EchoMessage\032\020.ap" +
-      "i.EchoMessage\"\030\202\323\344\223\002\022\"\r/echo/spanish:\001*b" +
-      "\006proto3"
+      ".proto\"\030\n\007Message\022\r\n\005value\030\001 \001(\t\"\326\001\n\010Use" +
+      "rInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022" +
+      "\023\n\013family_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\t" +
+      "birthdate\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007pictur" +
+      "e\030\014 \001(\t\022(\n\ruser_metadata\030\r \001(\0132\021.api.Use" +
+      "rMetadata\022&\n\014app_metadata\030\016 \001(\0132\020.api.Ap" +
+      "pMetadata\"V\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t" +
+      "\022\031\n\021preferred_contact\030\002 \001(\t\022\016\n\006status\030\003 " +
+      "\001(\t\022\014\n\004tags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004plan" +
+      "\030\001 \001(\t\022\021\n\tpay_token\030\002 \001(\t\022\022\n\ndelinquent\030" +
+      "\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domain\030\001 " +
+      "\001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030" +
+      "\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001(" +
+      "\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014" +
+      "2\226\003\n\013EchoService\0224\n\004Echo\022\014.api.Message\032\014" +
+      ".api.Message\"\020\202\323\344\223\002\n\"\005/echo:\001*\022C\n\013EchoSp" +
+      "anish\022\014.api.Message\032\014.api.Message\"\030\202\323\344\223\002" +
+      "\022\"\r/echo/spanish:\001*\022C\n\013EchoChinese\022\014.api" +
+      ".Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/echo/ch" +
+      "inese:\001*\022C\n\013EchoEnglish\022\014.api.Message\032\014." +
+      "api.Message\"\030\202\323\344\223\002\022\"\r/echo/english:\001*\022?\n" +
+      "\tEchoHindi\022\014.api.Message\032\014.api.Message\"\026" +
+      "\202\323\344\223\002\020\"\013/echo/hindi:\001*\022A\n\nEchoArabic\022\014.a" +
+      "pi.Message\032\014.api.Message\"\027\202\323\344\223\002\021\"\014/echo/" +
+      "arabic:\001*2\274\001\n\016MarshalService\0228\n\004JSON\022\n.a" +
+      "pi.Bytes\032\n.api.Bytes\"\030\202\323\344\223\002\022\"\r/marshal/j" +
+      "son:\001*\0228\n\004YAML\022\n.api.Bytes\032\n.api.Bytes\"\030" +
+      "\202\323\344\223\002\022\"\r/marshal/yaml:\001*\0226\n\003XML\022\n.api.By" +
+      "tes\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/marshal/xml:\001*" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6204,11 +6215,11 @@ public final class Api {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
         }, assigner);
-    internal_static_api_EchoMessage_descriptor =
+    internal_static_api_Message_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_api_EchoMessage_fieldAccessorTable = new
+    internal_static_api_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_EchoMessage_descriptor,
+        internal_static_api_Message_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_api_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
