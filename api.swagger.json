@@ -199,7 +199,7 @@
     },
     "/utility/marshal/xml": {
       "post": {
-        "operationId": "MarshalXML",
+        "operationId": "Render",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -214,7 +214,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/apiTemplate"
             }
           }
         ],
@@ -265,6 +265,18 @@
       "properties": {
         "value": {
           "type": "string"
+        }
+      }
+    },
+    "apiTemplate": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string",
+          "format": "byte"
         }
       }
     }

@@ -186,6 +186,21 @@ typedef GPB_ENUM(Bytes_FieldNumber) {
 
 @end
 
+#pragma mark - Template
+
+typedef GPB_ENUM(Template_FieldNumber) {
+  Template_FieldNumber_Text = 1,
+  Template_FieldNumber_Data_p = 2,
+};
+
+@interface Template : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

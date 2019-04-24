@@ -42,6 +42,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Bytes" do
     optional :bits, :bytes, 1
   end
+  add_message "api.Template" do
+    optional :text, :string, 1
+    optional :data, :bytes, 2
+  end
 end
 
 module Api
@@ -51,4 +55,5 @@ module Api
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
   Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
   Bytes = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Bytes").msgclass
+  Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
 end

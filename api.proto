@@ -59,6 +59,13 @@ service UtilityService {
       body: "*"
     };
     }
+    rpc Render(Template) returns (Bytes) {
+        option (google.api.http) = {
+      post: "/utility/marshal/xml"
+      body: "*"
+    };
+    }
+
 }
 
 message Message {
@@ -103,4 +110,9 @@ message Auth {
 
 message Bytes {
     bytes bits =1;
+}
+
+message Template {
+    string text =1;
+    bytes data =2;
 }
