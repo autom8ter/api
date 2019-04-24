@@ -8,8 +8,11 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	"html/template"
+	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 var LOGIN_PATH = "/login"
@@ -235,16 +238,27 @@ func ServeTemplate(name string, sessVal string) http.HandlerFunc {
 			return
 		}
 
-		templ, err := template.New(name).Funcs(FuncMap()).ParseFiles(name)
+		bits, err := ioutil.ReadFile(name)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		err = templ.Execute(w, session.Values[sessVal])
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+		bitstring := string(bits)
+		if strings.Contains(bitstring, "{{") {
+			templ, err := template.New(name).Funcs(FuncMap()).Parse(string(bits))
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			err = templ.Execute(w, session.Values[sessVal])
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
 			return
 		}
+		io.WriteString(w, bitstring)
+		return
 	}
 
 }
