@@ -230,7 +230,7 @@ func FuncMap() template.FuncMap {
 	return m
 }
 
-func RenderFileWithSessionValue(filename string, sessVal string) http.HandlerFunc {
+func RenderFileWithUserInfo(filename string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		session, err := store.Get(r, AUTH_SESSION)
 		if err != nil {
@@ -250,7 +250,19 @@ func RenderFileWithSessionValue(filename string, sessVal string) http.HandlerFun
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
-			err = templ.Execute(w, session.Values[sessVal])
+			obj := session.Values["userinfo"]
+			bits, err := json.Marshal(obj)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			u := &UserInfo{}
+			err = json.Unmarshal(bits, u)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			err = templ.Execute(w, u)
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
@@ -260,8 +272,8 @@ func RenderFileWithSessionValue(filename string, sessVal string) http.HandlerFun
 		io.WriteString(w, bitstring)
 		return
 	}
-
 }
+
 func RenderFileWithData(name string, data interface{}) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		bits, err := ioutil.ReadFile(name)
