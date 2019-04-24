@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"github.com/Masterminds/sprig"
+	"html/template"
 	"io"
 	"io/ioutil"
 	"net/http"

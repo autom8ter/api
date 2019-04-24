@@ -3,7 +3,6 @@ package api_test
 import (
 	"fmt"
 	"github.com/autom8ter/api"
-	"io"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
@@ -19,15 +18,19 @@ func Setup(t *testing.T) *httptest.Server {
 		ClientId:     os.Getenv("AUTH0_CLIENT_ID"),
 		ClientSecret: os.Getenv("AUTH0_CLIENT_SECRET"),
 	}
-	m := a.Mux("/dashboard")
-	m.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		io.WriteString(w, "Logged Out")
-	})
-	m.HandleFunc("/dashboard", a.RequireLogin(func(w http.ResponseWriter, r *http.Request) {
-		io.WriteString(w, "Logged In")
-	}))
 
-	return httptest.NewServer(m)
+	return httptest.NewServer(a.Router(&api.RouterPaths{
+		HomePath:     "/",
+		LoggedInPath: "/dashboard",
+		LoginPath:    "/login",
+		LogoutPath:   "/logout",
+		CallbackPath: "/callback",
+		HomeURL:      "http://localhost:8080",
+	}, func(w http.ResponseWriter, r *http.Request) {
+
+	}, func(w http.ResponseWriter, r *http.Request) {
+
+	}))
 }
 
 func TestHome(t *testing.T) {
