@@ -183,6 +183,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.AppMetadata.MetadataEntry"><span class="badge">M</span>AppMetadata.MetadataEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.Auth"><span class="badge">M</span>Auth</a>
                 </li>
               
@@ -227,6 +231,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.Identity"><span class="badge">M</span>Identity</a>
+                </li>
+              
+                <li>
                   <a href="#api.Message"><span class="badge">M</span>Message</a>
                 </li>
               
@@ -268,6 +276,10 @@
               
                 <li>
                   <a href="#api.UserMetadata"><span class="badge">M</span>UserMetadata</a>
+                </li>
+              
+                <li>
+                  <a href="#api.UserMetadata.MetadataEntry"><span class="badge">M</span>UserMetadata.MetadataEntry</a>
                 </li>
               
                 <li>
@@ -319,30 +331,39 @@
             <tbody>
               
                 <tr>
-                  <td>plan</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>pay_token</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>delinquent</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>tags</td>
-                  <td><a href="#string">string</a></td>
+                  <td>metadata</td>
+                  <td><a href="#api.AppMetadata.MetadataEntry">AppMetadata.MetadataEntry</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.AppMetadata.MetadataEntry">AppMetadata.MetadataEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -743,6 +764,50 @@
 
         
       
+        <h3 id="api.Identity">Identity</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>connection</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>provider</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>isSocial</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Message">Message</h3>
         <p></p>
 
@@ -1045,6 +1110,13 @@
             <tbody>
               
                 <tr>
+                  <td>user_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -1087,6 +1159,13 @@
                 </tr>
               
                 <tr>
+                  <td>phone_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>picture</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -1107,6 +1186,62 @@
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>last_ip</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>blocked</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nickname</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>multifactor</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>created_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>updated_at</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone_verified</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>identities</td>
+                  <td><a href="#api.Identity">Identity</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
@@ -1124,30 +1259,39 @@
             <tbody>
               
                 <tr>
-                  <td>phone</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>preferred_contact</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>status</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>tags</td>
-                  <td><a href="#string">string</a></td>
+                  <td>metadata</td>
+                  <td><a href="#api.UserMetadata.MetadataEntry">UserMetadata.MetadataEntry</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.UserMetadata.MetadataEntry">UserMetadata.MetadataEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1198,6 +1342,13 @@
                 <td>GetDashboard</td>
                 <td><a href="#api.Secret">Secret</a></td>
                 <td><a href="#api.Dashboard">Dashboard</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>EmailUser</td>
+                <td><a href="#api.Email">Email</a></td>
+                <td><a href="#api.Message">Message</a></td>
                 <td><p></p></td>
               </tr>
             
@@ -1261,6 +1412,20 @@
               <tr>
                 <td>Unsubscribe</td>
                 <td><a href="#api.UnSubscribeRequest">UnSubscribeRequest</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>GetUser</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.UserInfo">UserInfo</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateUser</td>
+                <td><a href="#api.UserInfo">UserInfo</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>

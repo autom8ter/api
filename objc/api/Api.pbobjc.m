@@ -1131,27 +1131,45 @@ typedef struct Message__storage_ {
 
 @implementation UserInfo
 
+@dynamic userId;
 @dynamic name;
 @dynamic givenName;
 @dynamic familyName;
 @dynamic gender;
 @dynamic birthdate;
 @dynamic email;
+@dynamic phoneNumber;
 @dynamic picture;
 @dynamic hasUserMetadata, userMetadata;
 @dynamic hasAppMetadata, appMetadata;
+@dynamic lastIp;
+@dynamic blocked;
+@dynamic nickname;
+@dynamic multifactorArray, multifactorArray_Count;
+@dynamic createdAt;
+@dynamic updatedAt;
+@dynamic phoneVerified;
+@dynamic identitiesArray, identitiesArray_Count;
 
 typedef struct UserInfo__storage_ {
   uint32_t _has_storage_[1];
+  NSString *userId;
   NSString *name;
   NSString *givenName;
   NSString *familyName;
   NSString *gender;
   NSString *birthdate;
   NSString *email;
+  NSString *phoneNumber;
   NSString *picture;
   UserMetadata *userMetadata;
   AppMetadata *appMetadata;
+  NSString *lastIp;
+  NSString *nickname;
+  NSMutableArray *multifactorArray;
+  NSString *createdAt;
+  NSString *updatedAt;
+  NSMutableArray *identitiesArray;
 } UserInfo__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1161,10 +1179,19 @@ typedef struct UserInfo__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
+        .name = "userId",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_UserId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, userId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "name",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_Name,
-        .hasIndex = 0,
+        .hasIndex = 1,
         .offset = (uint32_t)offsetof(UserInfo__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1173,7 +1200,7 @@ typedef struct UserInfo__storage_ {
         .name = "givenName",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_GivenName,
-        .hasIndex = 1,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(UserInfo__storage_, givenName),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1182,7 +1209,7 @@ typedef struct UserInfo__storage_ {
         .name = "familyName",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_FamilyName,
-        .hasIndex = 2,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(UserInfo__storage_, familyName),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1191,7 +1218,7 @@ typedef struct UserInfo__storage_ {
         .name = "gender",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_Gender,
-        .hasIndex = 3,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(UserInfo__storage_, gender),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1200,7 +1227,7 @@ typedef struct UserInfo__storage_ {
         .name = "birthdate",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_Birthdate,
-        .hasIndex = 4,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(UserInfo__storage_, birthdate),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1209,8 +1236,17 @@ typedef struct UserInfo__storage_ {
         .name = "email",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_Email,
-        .hasIndex = 5,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(UserInfo__storage_, email),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "phoneNumber",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_PhoneNumber,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, phoneNumber),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
@@ -1218,7 +1254,7 @@ typedef struct UserInfo__storage_ {
         .name = "picture",
         .dataTypeSpecific.className = NULL,
         .number = UserInfo_FieldNumber_Picture,
-        .hasIndex = 6,
+        .hasIndex = 8,
         .offset = (uint32_t)offsetof(UserInfo__storage_, picture),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -1227,7 +1263,7 @@ typedef struct UserInfo__storage_ {
         .name = "userMetadata",
         .dataTypeSpecific.className = GPBStringifySymbol(UserMetadata),
         .number = UserInfo_FieldNumber_UserMetadata,
-        .hasIndex = 7,
+        .hasIndex = 9,
         .offset = (uint32_t)offsetof(UserInfo__storage_, userMetadata),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -1236,9 +1272,81 @@ typedef struct UserInfo__storage_ {
         .name = "appMetadata",
         .dataTypeSpecific.className = GPBStringifySymbol(AppMetadata),
         .number = UserInfo_FieldNumber_AppMetadata,
-        .hasIndex = 8,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(UserInfo__storage_, appMetadata),
         .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "lastIp",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_LastIp,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, lastIp),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "blocked",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_Blocked,
+        .hasIndex = 12,
+        .offset = 13,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "nickname",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_Nickname,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, nickname),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "multifactorArray",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_MultifactorArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, multifactorArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "createdAt",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_CreatedAt,
+        .hasIndex = 15,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, createdAt),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "updatedAt",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_UpdatedAt,
+        .hasIndex = 16,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, updatedAt),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "phoneVerified",
+        .dataTypeSpecific.className = NULL,
+        .number = UserInfo_FieldNumber_PhoneVerified,
+        .hasIndex = 17,
+        .offset = 18,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "identitiesArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(Identity),
+        .number = UserInfo_FieldNumber_IdentitiesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(UserInfo__storage_, identitiesArray),
+        .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeMessage,
       },
     };
@@ -1258,21 +1366,96 @@ typedef struct UserInfo__storage_ {
 
 @end
 
+#pragma mark - Identity
+
+@implementation Identity
+
+@dynamic connection;
+@dynamic userId;
+@dynamic provider;
+@dynamic isSocial;
+
+typedef struct Identity__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *connection;
+  NSString *userId;
+  NSString *provider;
+  NSString *isSocial;
+} Identity__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "connection",
+        .dataTypeSpecific.className = NULL,
+        .number = Identity_FieldNumber_Connection,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Identity__storage_, connection),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "userId",
+        .dataTypeSpecific.className = NULL,
+        .number = Identity_FieldNumber_UserId,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Identity__storage_, userId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "provider",
+        .dataTypeSpecific.className = NULL,
+        .number = Identity_FieldNumber_Provider,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Identity__storage_, provider),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "isSocial",
+        .dataTypeSpecific.className = NULL,
+        .number = Identity_FieldNumber_IsSocial,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Identity__storage_, isSocial),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Identity class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Identity__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\004\010\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - UserMetadata
 
 @implementation UserMetadata
 
-@dynamic phone;
-@dynamic preferredContact;
-@dynamic status;
-@dynamic tagsArray, tagsArray_Count;
+@dynamic metadata, metadata_Count;
 
 typedef struct UserMetadata__storage_ {
   uint32_t _has_storage_[1];
-  NSString *phone;
-  NSString *preferredContact;
-  NSString *status;
-  NSMutableArray *tagsArray;
+  NSMutableDictionary *metadata;
 } UserMetadata__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1282,39 +1465,12 @@ typedef struct UserMetadata__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "phone",
+        .name = "metadata",
         .dataTypeSpecific.className = NULL,
-        .number = UserMetadata_FieldNumber_Phone,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(UserMetadata__storage_, phone),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "preferredContact",
-        .dataTypeSpecific.className = NULL,
-        .number = UserMetadata_FieldNumber_PreferredContact,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(UserMetadata__storage_, preferredContact),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "status",
-        .dataTypeSpecific.className = NULL,
-        .number = UserMetadata_FieldNumber_Status,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(UserMetadata__storage_, status),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "tagsArray",
-        .dataTypeSpecific.className = NULL,
-        .number = UserMetadata_FieldNumber_TagsArray,
+        .number = UserMetadata_FieldNumber_Metadata,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(UserMetadata__storage_, tagsArray),
-        .flags = GPBFieldRepeated,
+        .offset = (uint32_t)offsetof(UserMetadata__storage_, metadata),
+        .flags = GPBFieldMapKeyString,
         .dataType = GPBDataTypeString,
       },
     };
@@ -1338,17 +1494,11 @@ typedef struct UserMetadata__storage_ {
 
 @implementation AppMetadata
 
-@dynamic plan;
-@dynamic payToken;
-@dynamic delinquent;
-@dynamic tagsArray, tagsArray_Count;
+@dynamic metadata, metadata_Count;
 
 typedef struct AppMetadata__storage_ {
   uint32_t _has_storage_[1];
-  NSString *plan;
-  NSString *payToken;
-  NSString *delinquent;
-  NSMutableArray *tagsArray;
+  NSMutableDictionary *metadata;
 } AppMetadata__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1358,39 +1508,12 @@ typedef struct AppMetadata__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "plan",
+        .name = "metadata",
         .dataTypeSpecific.className = NULL,
-        .number = AppMetadata_FieldNumber_Plan,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(AppMetadata__storage_, plan),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "payToken",
-        .dataTypeSpecific.className = NULL,
-        .number = AppMetadata_FieldNumber_PayToken,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(AppMetadata__storage_, payToken),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "delinquent",
-        .dataTypeSpecific.className = NULL,
-        .number = AppMetadata_FieldNumber_Delinquent,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(AppMetadata__storage_, delinquent),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "tagsArray",
-        .dataTypeSpecific.className = NULL,
-        .number = AppMetadata_FieldNumber_TagsArray,
+        .number = AppMetadata_FieldNumber_Metadata,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(AppMetadata__storage_, tagsArray),
-        .flags = GPBFieldRepeated,
+        .offset = (uint32_t)offsetof(AppMetadata__storage_, metadata),
+        .flags = GPBFieldMapKeyString,
         .dataType = GPBDataTypeString,
       },
     };

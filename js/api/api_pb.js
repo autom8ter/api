@@ -24,6 +24,7 @@ goog.exportSymbol('proto.api.Email', null, global);
 goog.exportSymbol('proto.api.EmailRequest', null, global);
 goog.exportSymbol('proto.api.Empty', null, global);
 goog.exportSymbol('proto.api.Identifier', null, global);
+goog.exportSymbol('proto.api.Identity', null, global);
 goog.exportSymbol('proto.api.Message', null, global);
 goog.exportSymbol('proto.api.PlansWidget', null, global);
 goog.exportSymbol('proto.api.SMS', null, global);
@@ -3504,12 +3505,19 @@ proto.api.Message.prototype.setValue = function(value) {
  * @constructor
  */
 proto.api.UserInfo = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.UserInfo.repeatedFields_, null);
 };
 goog.inherits(proto.api.UserInfo, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.api.UserInfo.displayName = 'proto.api.UserInfo';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.UserInfo.repeatedFields_ = [15,20];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3539,15 +3547,26 @@ proto.api.UserInfo.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.UserInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    givenName: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    familyName: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    gender: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    birthdate: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    picture: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    givenName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    familyName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    gender: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    birthdate: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    phoneNumber: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    picture: jspb.Message.getFieldWithDefault(msg, 9, ""),
     userMetadata: (f = msg.getUserMetadata()) && proto.api.UserMetadata.toObject(includeInstance, f),
-    appMetadata: (f = msg.getAppMetadata()) && proto.api.AppMetadata.toObject(includeInstance, f)
+    appMetadata: (f = msg.getAppMetadata()) && proto.api.AppMetadata.toObject(includeInstance, f),
+    lastIp: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    blocked: jspb.Message.getFieldWithDefault(msg, 13, false),
+    nickname: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    multifactorList: jspb.Message.getRepeatedField(msg, 15),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    phoneVerified: jspb.Message.getFieldWithDefault(msg, 19, false),
+    identitiesList: jspb.Message.toObjectList(msg.getIdentitiesList(),
+    proto.api.Identity.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3584,43 +3603,84 @@ proto.api.UserInfo.deserializeBinaryFromReader = function(msg, reader) {
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 6:
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
-    case 7:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setGivenName(value);
       break;
-    case 8:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setFamilyName(value);
       break;
-    case 9:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setGender(value);
       break;
-    case 10:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setBirthdate(value);
       break;
-    case 11:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmail(value);
       break;
-    case 12:
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhoneNumber(value);
+      break;
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setPicture(value);
       break;
-    case 13:
+    case 10:
       var value = new proto.api.UserMetadata;
       reader.readMessage(value,proto.api.UserMetadata.deserializeBinaryFromReader);
       msg.setUserMetadata(value);
       break;
-    case 14:
+    case 11:
       var value = new proto.api.AppMetadata;
       reader.readMessage(value,proto.api.AppMetadata.deserializeBinaryFromReader);
       msg.setAppMetadata(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLastIp(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBlocked(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNickname(value);
+      break;
+    case 15:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addMultifactor(value);
+      break;
+    case 17:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCreatedAt(value);
+      break;
+    case 18:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUpdatedAt(value);
+      break;
+    case 19:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPhoneVerified(value);
+      break;
+    case 20:
+      var value = new proto.api.Identity;
+      reader.readMessage(value,proto.api.Identity.deserializeBinaryFromReader);
+      msg.addIdentities(value);
       break;
     default:
       reader.skipField();
@@ -3651,59 +3711,73 @@ proto.api.UserInfo.prototype.serializeBinary = function() {
  */
 proto.api.UserInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getName();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      2,
       f
     );
   }
   f = message.getGivenName();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      3,
       f
     );
   }
   f = message.getFamilyName();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      4,
       f
     );
   }
   f = message.getGender();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      5,
       f
     );
   }
   f = message.getBirthdate();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      6,
       f
     );
   }
   f = message.getEmail();
   if (f.length > 0) {
     writer.writeString(
-      11,
+      7,
+      f
+    );
+  }
+  f = message.getPhoneNumber();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
   f = message.getPicture();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      9,
       f
     );
   }
   f = message.getUserMetadata();
   if (f != null) {
     writer.writeMessage(
-      13,
+      10,
       f,
       proto.api.UserMetadata.serializeBinaryToWriter
     );
@@ -3711,132 +3785,219 @@ proto.api.UserInfo.serializeBinaryToWriter = function(message, writer) {
   f = message.getAppMetadata();
   if (f != null) {
     writer.writeMessage(
-      14,
+      11,
       f,
       proto.api.AppMetadata.serializeBinaryToWriter
+    );
+  }
+  f = message.getLastIp();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getBlocked();
+  if (f) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
+  f = message.getNickname();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+  f = message.getMultifactorList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      15,
+      f
+    );
+  }
+  f = message.getCreatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      17,
+      f
+    );
+  }
+  f = message.getUpdatedAt();
+  if (f.length > 0) {
+    writer.writeString(
+      18,
+      f
+    );
+  }
+  f = message.getPhoneVerified();
+  if (f) {
+    writer.writeBool(
+      19,
+      f
+    );
+  }
+  f = message.getIdentitiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      20,
+      f,
+      proto.api.Identity.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string name = 6;
+ * optional string user_id = 1;
+ * @return {string}
+ */
+proto.api.UserInfo.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.api.UserInfo.prototype.setUserId = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string given_name = 7;
+ * optional string given_name = 3;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getGivenName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setGivenName = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string family_name = 8;
+ * optional string family_name = 4;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getFamilyName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setFamilyName = function(value) {
-  jspb.Message.setProto3StringField(this, 8, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string gender = 9;
+ * optional string gender = 5;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getGender = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setGender = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string birthdate = 10;
+ * optional string birthdate = 6;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getBirthdate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setBirthdate = function(value) {
-  jspb.Message.setProto3StringField(this, 10, value);
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional string email = 11;
+ * optional string email = 7;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getEmail = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setEmail = function(value) {
-  jspb.Message.setProto3StringField(this, 11, value);
+  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional string picture = 12;
+ * optional string phone_number = 8;
+ * @return {string}
+ */
+proto.api.UserInfo.prototype.getPhoneNumber = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/** @param {string} value */
+proto.api.UserInfo.prototype.setPhoneNumber = function(value) {
+  jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+/**
+ * optional string picture = 9;
  * @return {string}
  */
 proto.api.UserInfo.prototype.getPicture = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
 proto.api.UserInfo.prototype.setPicture = function(value) {
-  jspb.Message.setProto3StringField(this, 12, value);
+  jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional UserMetadata user_metadata = 13;
+ * optional UserMetadata user_metadata = 10;
  * @return {?proto.api.UserMetadata}
  */
 proto.api.UserInfo.prototype.getUserMetadata = function() {
   return /** @type{?proto.api.UserMetadata} */ (
-    jspb.Message.getWrapperField(this, proto.api.UserMetadata, 13));
+    jspb.Message.getWrapperField(this, proto.api.UserMetadata, 10));
 };
 
 
 /** @param {?proto.api.UserMetadata|undefined} value */
 proto.api.UserInfo.prototype.setUserMetadata = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -3850,23 +4011,23 @@ proto.api.UserInfo.prototype.clearUserMetadata = function() {
  * @return {!boolean}
  */
 proto.api.UserInfo.prototype.hasUserMetadata = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional AppMetadata app_metadata = 14;
+ * optional AppMetadata app_metadata = 11;
  * @return {?proto.api.AppMetadata}
  */
 proto.api.UserInfo.prototype.getAppMetadata = function() {
   return /** @type{?proto.api.AppMetadata} */ (
-    jspb.Message.getWrapperField(this, proto.api.AppMetadata, 14));
+    jspb.Message.getWrapperField(this, proto.api.AppMetadata, 11));
 };
 
 
 /** @param {?proto.api.AppMetadata|undefined} value */
 proto.api.UserInfo.prototype.setAppMetadata = function(value) {
-  jspb.Message.setWrapperField(this, 14, value);
+  jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -3880,7 +4041,384 @@ proto.api.UserInfo.prototype.clearAppMetadata = function() {
  * @return {!boolean}
  */
 proto.api.UserInfo.prototype.hasAppMetadata = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional string last_ip = 12;
+ * @return {string}
+ */
+proto.api.UserInfo.prototype.getLastIp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/** @param {string} value */
+proto.api.UserInfo.prototype.setLastIp = function(value) {
+  jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional bool blocked = 13;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.UserInfo.prototype.getBlocked = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
+};
+
+
+/** @param {boolean} value */
+proto.api.UserInfo.prototype.setBlocked = function(value) {
+  jspb.Message.setProto3BooleanField(this, 13, value);
+};
+
+
+/**
+ * optional string nickname = 14;
+ * @return {string}
+ */
+proto.api.UserInfo.prototype.getNickname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/** @param {string} value */
+proto.api.UserInfo.prototype.setNickname = function(value) {
+  jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+/**
+ * repeated string multifactor = 15;
+ * @return {!Array<string>}
+ */
+proto.api.UserInfo.prototype.getMultifactorList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 15));
+};
+
+
+/** @param {!Array<string>} value */
+proto.api.UserInfo.prototype.setMultifactorList = function(value) {
+  jspb.Message.setField(this, 15, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.api.UserInfo.prototype.addMultifactor = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 15, value, opt_index);
+};
+
+
+proto.api.UserInfo.prototype.clearMultifactorList = function() {
+  this.setMultifactorList([]);
+};
+
+
+/**
+ * optional string created_at = 17;
+ * @return {string}
+ */
+proto.api.UserInfo.prototype.getCreatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+};
+
+
+/** @param {string} value */
+proto.api.UserInfo.prototype.setCreatedAt = function(value) {
+  jspb.Message.setProto3StringField(this, 17, value);
+};
+
+
+/**
+ * optional string updated_at = 18;
+ * @return {string}
+ */
+proto.api.UserInfo.prototype.getUpdatedAt = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
+};
+
+
+/** @param {string} value */
+proto.api.UserInfo.prototype.setUpdatedAt = function(value) {
+  jspb.Message.setProto3StringField(this, 18, value);
+};
+
+
+/**
+ * optional bool phone_verified = 19;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.UserInfo.prototype.getPhoneVerified = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
+};
+
+
+/** @param {boolean} value */
+proto.api.UserInfo.prototype.setPhoneVerified = function(value) {
+  jspb.Message.setProto3BooleanField(this, 19, value);
+};
+
+
+/**
+ * repeated Identity identities = 20;
+ * @return {!Array<!proto.api.Identity>}
+ */
+proto.api.UserInfo.prototype.getIdentitiesList = function() {
+  return /** @type{!Array<!proto.api.Identity>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.api.Identity, 20));
+};
+
+
+/** @param {!Array<!proto.api.Identity>} value */
+proto.api.UserInfo.prototype.setIdentitiesList = function(value) {
+  jspb.Message.setRepeatedWrapperField(this, 20, value);
+};
+
+
+/**
+ * @param {!proto.api.Identity=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.api.Identity}
+ */
+proto.api.UserInfo.prototype.addIdentities = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 20, opt_value, proto.api.Identity, opt_index);
+};
+
+
+proto.api.UserInfo.prototype.clearIdentitiesList = function() {
+  this.setIdentitiesList([]);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.Identity = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.Identity, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.api.Identity.displayName = 'proto.api.Identity';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.Identity.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.Identity.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.Identity} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.Identity.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    connection: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    userId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    provider: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    issocial: jspb.Message.getFieldWithDefault(msg, 4, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.Identity}
+ */
+proto.api.Identity.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.Identity;
+  return proto.api.Identity.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.Identity} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.Identity}
+ */
+proto.api.Identity.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConnection(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUserId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProvider(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIssocial(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.Identity.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.Identity.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.Identity} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.Identity.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConnection();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getUserId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getProvider();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getIssocial();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string connection = 1;
+ * @return {string}
+ */
+proto.api.Identity.prototype.getConnection = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Identity.prototype.setConnection = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string user_id = 2;
+ * @return {string}
+ */
+proto.api.Identity.prototype.getUserId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Identity.prototype.setUserId = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string provider = 3;
+ * @return {string}
+ */
+proto.api.Identity.prototype.getProvider = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Identity.prototype.setProvider = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string isSocial = 4;
+ * @return {string}
+ */
+proto.api.Identity.prototype.getIssocial = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.api.Identity.prototype.setIssocial = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -3896,19 +4434,12 @@ proto.api.UserInfo.prototype.hasAppMetadata = function() {
  * @constructor
  */
 proto.api.UserMetadata = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.UserMetadata.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.UserMetadata, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.api.UserMetadata.displayName = 'proto.api.UserMetadata';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.UserMetadata.repeatedFields_ = [4];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3938,10 +4469,7 @@ proto.api.UserMetadata.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.UserMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
-    phone: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    preferredContact: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    tagsList: jspb.Message.getRepeatedField(msg, 4)
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -3979,20 +4507,10 @@ proto.api.UserMetadata.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPhone(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPreferredContact(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
+      var value = msg.getMetadataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
+         });
       break;
     default:
       reader.skipField();
@@ -4023,108 +4541,28 @@ proto.api.UserMetadata.prototype.serializeBinary = function() {
  */
 proto.api.UserMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPhone();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getPreferredContact();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
-      f
-    );
+  f = message.getMetadataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * optional string phone = 1;
- * @return {string}
+ * map<string, string> metadata = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.api.UserMetadata.prototype.getPhone = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.api.UserMetadata.prototype.getMetadataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
 };
 
 
-/** @param {string} value */
-proto.api.UserMetadata.prototype.setPhone = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string preferred_contact = 2;
- * @return {string}
- */
-proto.api.UserMetadata.prototype.getPreferredContact = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/** @param {string} value */
-proto.api.UserMetadata.prototype.setPreferredContact = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string status = 3;
- * @return {string}
- */
-proto.api.UserMetadata.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.api.UserMetadata.prototype.setStatus = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * repeated string tags = 4;
- * @return {!Array<string>}
- */
-proto.api.UserMetadata.prototype.getTagsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/** @param {!Array<string>} value */
-proto.api.UserMetadata.prototype.setTagsList = function(value) {
-  jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.api.UserMetadata.prototype.addTags = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-proto.api.UserMetadata.prototype.clearTagsList = function() {
-  this.setTagsList([]);
+proto.api.UserMetadata.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
 };
 
 
@@ -4140,19 +4578,12 @@ proto.api.UserMetadata.prototype.clearTagsList = function() {
  * @constructor
  */
 proto.api.AppMetadata = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.AppMetadata.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.api.AppMetadata, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.api.AppMetadata.displayName = 'proto.api.AppMetadata';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.api.AppMetadata.repeatedFields_ = [4];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -4182,10 +4613,7 @@ proto.api.AppMetadata.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.AppMetadata.toObject = function(includeInstance, msg) {
   var f, obj = {
-    plan: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    payToken: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    delinquent: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    tagsList: jspb.Message.getRepeatedField(msg, 4)
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -4223,20 +4651,10 @@ proto.api.AppMetadata.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlan(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPayToken(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDelinquent(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addTags(value);
+      var value = msg.getMetadataMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
+         });
       break;
     default:
       reader.skipField();
@@ -4267,108 +4685,28 @@ proto.api.AppMetadata.prototype.serializeBinary = function() {
  */
 proto.api.AppMetadata.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPlan();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getPayToken();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getDelinquent();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getTagsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      4,
-      f
-    );
+  f = message.getMetadataMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
 
 /**
- * optional string plan = 1;
- * @return {string}
+ * map<string, string> metadata = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
  */
-proto.api.AppMetadata.prototype.getPlan = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.api.AppMetadata.prototype.getMetadataMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
 };
 
 
-/** @param {string} value */
-proto.api.AppMetadata.prototype.setPlan = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string pay_token = 2;
- * @return {string}
- */
-proto.api.AppMetadata.prototype.getPayToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/** @param {string} value */
-proto.api.AppMetadata.prototype.setPayToken = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string delinquent = 3;
- * @return {string}
- */
-proto.api.AppMetadata.prototype.getDelinquent = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/** @param {string} value */
-proto.api.AppMetadata.prototype.setDelinquent = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * repeated string tags = 4;
- * @return {!Array<string>}
- */
-proto.api.AppMetadata.prototype.getTagsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
-};
-
-
-/** @param {!Array<string>} value */
-proto.api.AppMetadata.prototype.setTagsList = function(value) {
-  jspb.Message.setField(this, 4, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.api.AppMetadata.prototype.addTags = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
-};
-
-
-proto.api.AppMetadata.prototype.clearTagsList = function() {
-  this.setTagsList([]);
+proto.api.AppMetadata.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
 };
 
 

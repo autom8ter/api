@@ -15,6 +15,64 @@
     "application/json"
   ],
   "paths": {
+    "/admin/dashboard": {
+      "post": {
+        "operationId": "GetDashboard",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiDashboard"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSecret"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/admin/email/{address}": {
+      "post": {
+        "operationId": "EmailUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiEmail"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/contact/call/{to}": {
       "post": {
         "operationId": "SendCall",
@@ -143,29 +201,35 @@
         ]
       }
     },
-    "/dashboard": {
+    "/user/get/{id}": {
       "post": {
-        "operationId": "GetDashboard",
+        "operationId": "GetUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiDashboard"
+              "$ref": "#/definitions/apiUserInfo"
             }
           }
         },
         "parameters": [
           {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiSecret"
+              "$ref": "#/definitions/apiIdentifier"
             }
           }
         ],
         "tags": [
-          "AdminService"
+          "UserService"
         ]
       }
     },
@@ -225,6 +289,38 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiUnSubscribeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/user/update/{email}": {
+      "post": {
+        "operationId": "UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUserInfo"
             }
           }
         ],
@@ -469,6 +565,17 @@
     }
   },
   "definitions": {
+    "apiAppMetadata": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "apiBytes": {
       "type": "object",
       "properties": {
@@ -597,6 +704,23 @@
         }
       }
     },
+    "apiIdentity": {
+      "type": "object",
+      "properties": {
+        "connection": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "isSocial": {
+          "type": "string"
+        }
+      }
+    },
     "apiMessage": {
       "type": "object",
       "properties": {
@@ -705,6 +829,87 @@
         },
         "plan": {
           "type": "string"
+        }
+      }
+    },
+    "apiUserInfo": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "given_name": {
+          "type": "string"
+        },
+        "family_name": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        },
+        "user_metadata": {
+          "$ref": "#/definitions/apiUserMetadata"
+        },
+        "app_metadata": {
+          "$ref": "#/definitions/apiAppMetadata"
+        },
+        "last_ip": {
+          "type": "string"
+        },
+        "blocked": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "multifactor": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "phone_verified": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "identities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiIdentity"
+          }
+        }
+      }
+    },
+    "apiUserMetadata": {
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       }
     },

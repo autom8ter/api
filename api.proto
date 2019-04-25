@@ -108,12 +108,30 @@ service UserService {
       body: "*"
     };
     }
+    rpc GetUser(Identifier) returns (UserInfo) {
+        option (google.api.http) = {
+      post: "/user/get/{id}"
+      body: "*"
+    };
+    }
+    rpc UpdateUser(UserInfo) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/user/update/{email}"
+      body: "*"
+    };
+    }
 }
 
 service AdminService {
     rpc GetDashboard(Secret) returns (Dashboard) {
         option (google.api.http) = {
-      post: "/dashboard"
+      post: "/admin/dashboard"
+      body: "*"
+    };
+    }
+    rpc EmailUser(Email) returns (Message) {
+        option (google.api.http) = {
+      post: "/admin/email/{address}"
       body: "*"
     };
     }
@@ -218,30 +236,40 @@ message Message {
 }
 
 message UserInfo {
-    string name=6;
-    string given_name=7;
-    string family_name=8;
-    string gender =9;
-    string birthdate=10;
-    string email=11;
-    string picture=12;
-    UserMetadata user_metadata=13;
-    AppMetadata app_metadata=14;
+    string user_id=1;
+    string name=2;
+    string given_name=3;
+    string family_name=4;
+    string gender =5;
+    string birthdate=6;
+    string email=7;
+    string phone_number=8;
+    string picture=9;
+    UserMetadata user_metadata=10;
+    AppMetadata app_metadata=11;
+    string last_ip =12;
+    bool blocked =13;
+    string nickname =14;
+    repeated string multifactor=15;
+    string created_at=17;
+    string updated_at=18;
+    bool phone_verified=19;
+    repeated Identity identities =20;
+}
 
+message Identity{
+    string connection =1;
+    string user_id=2;
+    string provider=3;
+    string isSocial=4;
 }
 
 message UserMetadata {
-    string phone =1;
-    string preferred_contact=2;
-    string status=3;
-    repeated string tags=4;
+    map<string,string> metadata =1;
 }
 
 message AppMetadata {
-    string plan=1;
-    string pay_token=2;
-    string delinquent=3;
-    repeated string tags=4;
+    map<string,string> metadata =1;
 }
 
 message Auth {
@@ -261,3 +289,4 @@ message Template {
     string text =1;
     bytes data =2;
 }
+

@@ -87,27 +87,37 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :value, :string, 1
   end
   add_message "api.UserInfo" do
-    optional :name, :string, 6
-    optional :given_name, :string, 7
-    optional :family_name, :string, 8
-    optional :gender, :string, 9
-    optional :birthdate, :string, 10
-    optional :email, :string, 11
-    optional :picture, :string, 12
-    optional :user_metadata, :message, 13, "api.UserMetadata"
-    optional :app_metadata, :message, 14, "api.AppMetadata"
+    optional :user_id, :string, 1
+    optional :name, :string, 2
+    optional :given_name, :string, 3
+    optional :family_name, :string, 4
+    optional :gender, :string, 5
+    optional :birthdate, :string, 6
+    optional :email, :string, 7
+    optional :phone_number, :string, 8
+    optional :picture, :string, 9
+    optional :user_metadata, :message, 10, "api.UserMetadata"
+    optional :app_metadata, :message, 11, "api.AppMetadata"
+    optional :last_ip, :string, 12
+    optional :blocked, :bool, 13
+    optional :nickname, :string, 14
+    repeated :multifactor, :string, 15
+    optional :created_at, :string, 17
+    optional :updated_at, :string, 18
+    optional :phone_verified, :bool, 19
+    repeated :identities, :message, 20, "api.Identity"
+  end
+  add_message "api.Identity" do
+    optional :connection, :string, 1
+    optional :user_id, :string, 2
+    optional :provider, :string, 3
+    optional :isSocial, :string, 4
   end
   add_message "api.UserMetadata" do
-    optional :phone, :string, 1
-    optional :preferred_contact, :string, 2
-    optional :status, :string, 3
-    repeated :tags, :string, 4
+    map :metadata, :string, :string, 1
   end
   add_message "api.AppMetadata" do
-    optional :plan, :string, 1
-    optional :pay_token, :string, 2
-    optional :delinquent, :string, 3
-    repeated :tags, :string, 4
+    map :metadata, :string, :string, 1
   end
   add_message "api.Auth" do
     optional :domain, :string, 1
@@ -146,6 +156,7 @@ module Api
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass
   UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
+  Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
   Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass

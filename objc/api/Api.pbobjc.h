@@ -33,6 +33,7 @@ CF_EXTERN_C_BEGIN
 @class CustomersWidget;
 @class Email;
 @class Identifier;
+@class Identity;
 @class Message;
 @class PlansWidget;
 @class SMS;
@@ -374,18 +375,30 @@ typedef GPB_ENUM(Message_FieldNumber) {
 #pragma mark - UserInfo
 
 typedef GPB_ENUM(UserInfo_FieldNumber) {
-  UserInfo_FieldNumber_Name = 6,
-  UserInfo_FieldNumber_GivenName = 7,
-  UserInfo_FieldNumber_FamilyName = 8,
-  UserInfo_FieldNumber_Gender = 9,
-  UserInfo_FieldNumber_Birthdate = 10,
-  UserInfo_FieldNumber_Email = 11,
-  UserInfo_FieldNumber_Picture = 12,
-  UserInfo_FieldNumber_UserMetadata = 13,
-  UserInfo_FieldNumber_AppMetadata = 14,
+  UserInfo_FieldNumber_UserId = 1,
+  UserInfo_FieldNumber_Name = 2,
+  UserInfo_FieldNumber_GivenName = 3,
+  UserInfo_FieldNumber_FamilyName = 4,
+  UserInfo_FieldNumber_Gender = 5,
+  UserInfo_FieldNumber_Birthdate = 6,
+  UserInfo_FieldNumber_Email = 7,
+  UserInfo_FieldNumber_PhoneNumber = 8,
+  UserInfo_FieldNumber_Picture = 9,
+  UserInfo_FieldNumber_UserMetadata = 10,
+  UserInfo_FieldNumber_AppMetadata = 11,
+  UserInfo_FieldNumber_LastIp = 12,
+  UserInfo_FieldNumber_Blocked = 13,
+  UserInfo_FieldNumber_Nickname = 14,
+  UserInfo_FieldNumber_MultifactorArray = 15,
+  UserInfo_FieldNumber_CreatedAt = 17,
+  UserInfo_FieldNumber_UpdatedAt = 18,
+  UserInfo_FieldNumber_PhoneVerified = 19,
+  UserInfo_FieldNumber_IdentitiesArray = 20,
 };
 
 @interface UserInfo : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
@@ -399,6 +412,8 @@ typedef GPB_ENUM(UserInfo_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phoneNumber;
+
 @property(nonatomic, readwrite, copy, null_resettable) NSString *picture;
 
 @property(nonatomic, readwrite, strong, null_resettable) UserMetadata *userMetadata;
@@ -409,51 +424,74 @@ typedef GPB_ENUM(UserInfo_FieldNumber) {
 /** Test to see if @c appMetadata has been set. */
 @property(nonatomic, readwrite) BOOL hasAppMetadata;
 
+@property(nonatomic, readwrite, copy, null_resettable) NSString *lastIp;
+
+@property(nonatomic, readwrite) BOOL blocked;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *nickname;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *multifactorArray;
+/** The number of items in @c multifactorArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger multifactorArray_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *createdAt;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *updatedAt;
+
+@property(nonatomic, readwrite) BOOL phoneVerified;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Identity*> *identitiesArray;
+/** The number of items in @c identitiesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger identitiesArray_Count;
+
+@end
+
+#pragma mark - Identity
+
+typedef GPB_ENUM(Identity_FieldNumber) {
+  Identity_FieldNumber_Connection = 1,
+  Identity_FieldNumber_UserId = 2,
+  Identity_FieldNumber_Provider = 3,
+  Identity_FieldNumber_IsSocial = 4,
+};
+
+@interface Identity : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *connection;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *provider;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *isSocial;
+
 @end
 
 #pragma mark - UserMetadata
 
 typedef GPB_ENUM(UserMetadata_FieldNumber) {
-  UserMetadata_FieldNumber_Phone = 1,
-  UserMetadata_FieldNumber_PreferredContact = 2,
-  UserMetadata_FieldNumber_Status = 3,
-  UserMetadata_FieldNumber_TagsArray = 4,
+  UserMetadata_FieldNumber_Metadata = 1,
 };
 
 @interface UserMetadata : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *preferredContact;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *tagsArray;
-/** The number of items in @c tagsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger tagsArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *metadata;
+/** The number of items in @c metadata without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger metadata_Count;
 
 @end
 
 #pragma mark - AppMetadata
 
 typedef GPB_ENUM(AppMetadata_FieldNumber) {
-  AppMetadata_FieldNumber_Plan = 1,
-  AppMetadata_FieldNumber_PayToken = 2,
-  AppMetadata_FieldNumber_Delinquent = 3,
-  AppMetadata_FieldNumber_TagsArray = 4,
+  AppMetadata_FieldNumber_Metadata = 1,
 };
 
 @interface AppMetadata : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *payToken;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *delinquent;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *tagsArray;
-/** The number of items in @c tagsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger tagsArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *metadata;
+/** The number of items in @c metadata without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger metadata_Count;
 
 @end
 

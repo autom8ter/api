@@ -207,6 +207,7 @@ func RenderFileWithUserInfo(filename string) http.HandlerFunc
 ```go
 type AdminServiceClient interface {
 	GetDashboard(ctx context.Context, in *Secret, opts ...grpc.CallOption) (*Dashboard, error)
+	EmailUser(ctx context.Context, in *Email, opts ...grpc.CallOption) (*Message, error)
 }
 ```
 
@@ -226,6 +227,7 @@ func NewAdminServiceClient(cc *grpc.ClientConn) AdminServiceClient
 ```go
 type AdminServiceServer interface {
 	GetDashboard(context.Context, *Secret) (*Dashboard, error)
+	EmailUser(context.Context, *Email) (*Message, error)
 }
 ```
 
@@ -235,13 +237,10 @@ AdminServiceServer is the server API for AdminService service.
 
 ```go
 type AppMetadata struct {
-	Plan                 string   `protobuf:"bytes,1,opt,name=plan,proto3" json:"plan,omitempty"`
-	PayToken             string   `protobuf:"bytes,2,opt,name=pay_token,json=payToken,proto3" json:"pay_token,omitempty"`
-	Delinquent           string   `protobuf:"bytes,3,opt,name=delinquent,proto3" json:"delinquent,omitempty"`
-	Tags                 []string `protobuf:"bytes,4,rep,name=tags,proto3" json:"tags,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Metadata             map[string]string `protobuf:"bytes,1,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 ```
 
@@ -252,28 +251,10 @@ type AppMetadata struct {
 func (*AppMetadata) Descriptor() ([]byte, []int)
 ```
 
-#### func (*AppMetadata) GetDelinquent
+#### func (*AppMetadata) GetMetadata
 
 ```go
-func (m *AppMetadata) GetDelinquent() string
-```
-
-#### func (*AppMetadata) GetPayToken
-
-```go
-func (m *AppMetadata) GetPayToken() string
-```
-
-#### func (*AppMetadata) GetPlan
-
-```go
-func (m *AppMetadata) GetPlan() string
-```
-
-#### func (*AppMetadata) GetTags
-
-```go
-func (m *AppMetadata) GetTags() []string
+func (m *AppMetadata) GetMetadata() map[string]string
 ```
 
 #### func (*AppMetadata) ProtoMessage
@@ -798,6 +779,8 @@ func (m *ChargesWidget) XXX_Unmarshal(b []byte) error
 type ClientSet struct {
 	Utility UtilityServiceClient
 	Contact ContactServiceClient
+	User    UserServiceClient
+	Admin   AdminServiceClient
 }
 ```
 
@@ -1336,6 +1319,99 @@ func (m *Identifier) XXX_Size() int
 
 ```go
 func (m *Identifier) XXX_Unmarshal(b []byte) error
+```
+
+#### type Identity
+
+```go
+type Identity struct {
+	Connection           string   `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
+	UserId               string   `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Provider             string   `protobuf:"bytes,3,opt,name=provider,proto3" json:"provider,omitempty"`
+	IsSocial             string   `protobuf:"bytes,4,opt,name=isSocial,proto3" json:"isSocial,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Identity) Descriptor
+
+```go
+func (*Identity) Descriptor() ([]byte, []int)
+```
+
+#### func (*Identity) GetConnection
+
+```go
+func (m *Identity) GetConnection() string
+```
+
+#### func (*Identity) GetIsSocial
+
+```go
+func (m *Identity) GetIsSocial() string
+```
+
+#### func (*Identity) GetProvider
+
+```go
+func (m *Identity) GetProvider() string
+```
+
+#### func (*Identity) GetUserId
+
+```go
+func (m *Identity) GetUserId() string
+```
+
+#### func (*Identity) ProtoMessage
+
+```go
+func (*Identity) ProtoMessage()
+```
+
+#### func (*Identity) Reset
+
+```go
+func (m *Identity) Reset()
+```
+
+#### func (*Identity) String
+
+```go
+func (m *Identity) String() string
+```
+
+#### func (*Identity) XXX_DiscardUnknown
+
+```go
+func (m *Identity) XXX_DiscardUnknown()
+```
+
+#### func (*Identity) XXX_Marshal
+
+```go
+func (m *Identity) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Identity) XXX_Merge
+
+```go
+func (m *Identity) XXX_Merge(src proto.Message)
+```
+
+#### func (*Identity) XXX_Size
+
+```go
+func (m *Identity) XXX_Size() int
+```
+
+#### func (*Identity) XXX_Unmarshal
+
+```go
+func (m *Identity) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Message
@@ -2088,15 +2164,25 @@ func (m *UnSubscribeRequest) XXX_Unmarshal(b []byte) error
 
 ```go
 type UserInfo struct {
-	Name                 string        `protobuf:"bytes,6,opt,name=name,proto3" json:"name,omitempty"`
-	GivenName            string        `protobuf:"bytes,7,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
-	FamilyName           string        `protobuf:"bytes,8,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
-	Gender               string        `protobuf:"bytes,9,opt,name=gender,proto3" json:"gender,omitempty"`
-	Birthdate            string        `protobuf:"bytes,10,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
-	Email                string        `protobuf:"bytes,11,opt,name=email,proto3" json:"email,omitempty"`
-	Picture              string        `protobuf:"bytes,12,opt,name=picture,proto3" json:"picture,omitempty"`
-	UserMetadata         *UserMetadata `protobuf:"bytes,13,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
-	AppMetadata          *AppMetadata  `protobuf:"bytes,14,opt,name=app_metadata,json=appMetadata,proto3" json:"app_metadata,omitempty"`
+	UserId               string        `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Name                 string        `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	GivenName            string        `protobuf:"bytes,3,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
+	FamilyName           string        `protobuf:"bytes,4,opt,name=family_name,json=familyName,proto3" json:"family_name,omitempty"`
+	Gender               string        `protobuf:"bytes,5,opt,name=gender,proto3" json:"gender,omitempty"`
+	Birthdate            string        `protobuf:"bytes,6,opt,name=birthdate,proto3" json:"birthdate,omitempty"`
+	Email                string        `protobuf:"bytes,7,opt,name=email,proto3" json:"email,omitempty"`
+	PhoneNumber          string        `protobuf:"bytes,8,opt,name=phone_number,json=phoneNumber,proto3" json:"phone_number,omitempty"`
+	Picture              string        `protobuf:"bytes,9,opt,name=picture,proto3" json:"picture,omitempty"`
+	UserMetadata         *UserMetadata `protobuf:"bytes,10,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
+	AppMetadata          *AppMetadata  `protobuf:"bytes,11,opt,name=app_metadata,json=appMetadata,proto3" json:"app_metadata,omitempty"`
+	LastIp               string        `protobuf:"bytes,12,opt,name=last_ip,json=lastIp,proto3" json:"last_ip,omitempty"`
+	Blocked              bool          `protobuf:"varint,13,opt,name=blocked,proto3" json:"blocked,omitempty"`
+	Nickname             string        `protobuf:"bytes,14,opt,name=nickname,proto3" json:"nickname,omitempty"`
+	Multifactor          []string      `protobuf:"bytes,15,rep,name=multifactor,proto3" json:"multifactor,omitempty"`
+	CreatedAt            string        `protobuf:"bytes,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
+	UpdatedAt            string        `protobuf:"bytes,18,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	PhoneVerified        bool          `protobuf:"varint,19,opt,name=phone_verified,json=phoneVerified,proto3" json:"phone_verified,omitempty"`
+	Identities           []*Identity   `protobuf:"bytes,20,rep,name=identities,proto3" json:"identities,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
 	XXX_unrecognized     []byte        `json:"-"`
 	XXX_sizecache        int32         `json:"-"`
@@ -2120,6 +2206,18 @@ func (m *UserInfo) GetAppMetadata() *AppMetadata
 
 ```go
 func (m *UserInfo) GetBirthdate() string
+```
+
+#### func (*UserInfo) GetBlocked
+
+```go
+func (m *UserInfo) GetBlocked() bool
+```
+
+#### func (*UserInfo) GetCreatedAt
+
+```go
+func (m *UserInfo) GetCreatedAt() string
 ```
 
 #### func (*UserInfo) GetEmail
@@ -2146,16 +2244,64 @@ func (m *UserInfo) GetGender() string
 func (m *UserInfo) GetGivenName() string
 ```
 
+#### func (*UserInfo) GetIdentities
+
+```go
+func (m *UserInfo) GetIdentities() []*Identity
+```
+
+#### func (*UserInfo) GetLastIp
+
+```go
+func (m *UserInfo) GetLastIp() string
+```
+
+#### func (*UserInfo) GetMultifactor
+
+```go
+func (m *UserInfo) GetMultifactor() []string
+```
+
 #### func (*UserInfo) GetName
 
 ```go
 func (m *UserInfo) GetName() string
 ```
 
+#### func (*UserInfo) GetNickname
+
+```go
+func (m *UserInfo) GetNickname() string
+```
+
+#### func (*UserInfo) GetPhoneNumber
+
+```go
+func (m *UserInfo) GetPhoneNumber() string
+```
+
+#### func (*UserInfo) GetPhoneVerified
+
+```go
+func (m *UserInfo) GetPhoneVerified() bool
+```
+
 #### func (*UserInfo) GetPicture
 
 ```go
 func (m *UserInfo) GetPicture() string
+```
+
+#### func (*UserInfo) GetUpdatedAt
+
+```go
+func (m *UserInfo) GetUpdatedAt() string
+```
+
+#### func (*UserInfo) GetUserId
+
+```go
+func (m *UserInfo) GetUserId() string
 ```
 
 #### func (*UserInfo) GetUserMetadata
@@ -2216,13 +2362,10 @@ func (m *UserInfo) XXX_Unmarshal(b []byte) error
 
 ```go
 type UserMetadata struct {
-	Phone                string   `protobuf:"bytes,1,opt,name=phone,proto3" json:"phone,omitempty"`
-	PreferredContact     string   `protobuf:"bytes,2,opt,name=preferred_contact,json=preferredContact,proto3" json:"preferred_contact,omitempty"`
-	Status               string   `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
-	Tags                 []string `protobuf:"bytes,4,rep,name=tags,proto3" json:"tags,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Metadata             map[string]string `protobuf:"bytes,1,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 ```
 
@@ -2233,28 +2376,10 @@ type UserMetadata struct {
 func (*UserMetadata) Descriptor() ([]byte, []int)
 ```
 
-#### func (*UserMetadata) GetPhone
+#### func (*UserMetadata) GetMetadata
 
 ```go
-func (m *UserMetadata) GetPhone() string
-```
-
-#### func (*UserMetadata) GetPreferredContact
-
-```go
-func (m *UserMetadata) GetPreferredContact() string
-```
-
-#### func (*UserMetadata) GetStatus
-
-```go
-func (m *UserMetadata) GetStatus() string
-```
-
-#### func (*UserMetadata) GetTags
-
-```go
-func (m *UserMetadata) GetTags() []string
+func (m *UserMetadata) GetMetadata() map[string]string
 ```
 
 #### func (*UserMetadata) ProtoMessage
@@ -2311,6 +2436,8 @@ func (m *UserMetadata) XXX_Unmarshal(b []byte) error
 type UserServiceClient interface {
 	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
 	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
+	GetUser(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*UserInfo, error)
+	UpdateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Identifier, error)
 }
 ```
 
@@ -2331,6 +2458,8 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 type UserServiceServer interface {
 	Subscribe(context.Context, *SubscribeRequest) (*Identifier, error)
 	Unsubscribe(context.Context, *UnSubscribeRequest) (*Identifier, error)
+	GetUser(context.Context, *Identifier) (*UserInfo, error)
+	UpdateUser(context.Context, *UserInfo) (*Identifier, error)
 }
 ```
 
