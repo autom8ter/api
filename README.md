@@ -1081,7 +1081,7 @@ type ContactServiceClient interface {
 	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Message, error)
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Bytes, error)
-	SendCallBlast(ctx context.Context, in *CallBlast, opts ...grpc.CallOption) (*Bytes, error)
+	SendCallBlast(ctx context.Context, in *CallBlast, opts ...grpc.CallOption) (ContactService_SendCallBlastClient, error)
 }
 ```
 
@@ -1106,11 +1106,31 @@ type ContactServiceServer interface {
 	SendEmail(context.Context, *EmailRequest) (*Message, error)
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*Bytes, error)
-	SendCallBlast(context.Context, *CallBlast) (*Bytes, error)
+	SendCallBlast(*CallBlast, ContactService_SendCallBlastServer) error
 }
 ```
 
 ContactServiceServer is the server API for ContactService service.
+
+#### type ContactService_SendCallBlastClient
+
+```go
+type ContactService_SendCallBlastClient interface {
+	Recv() (*Bytes, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type ContactService_SendCallBlastServer
+
+```go
+type ContactService_SendCallBlastServer interface {
+	Send(*Bytes) error
+	grpc.ServerStream
+}
+```
+
 
 #### type ContactService_SendEmailBlastClient
 

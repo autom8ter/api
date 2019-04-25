@@ -388,7 +388,7 @@ func request_ContactService_SendCall_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func request_ContactService_SendCallBlast_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_ContactService_SendCallBlast_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (ContactService_SendCallBlastClient, runtime.ServerMetadata, error) {
 	var protoReq CallBlast
 	var metadata runtime.ServerMetadata
 
@@ -400,8 +400,16 @@ func request_ContactService_SendCallBlast_0(ctx context.Context, marshaler runti
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.SendCallBlast(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
-	return msg, metadata, err
+	stream, err := client.SendCallBlast(ctx, &protoReq)
+	if err != nil {
+		return nil, metadata, err
+	}
+	header, err := stream.Header()
+	if err != nil {
+		return nil, metadata, err
+	}
+	metadata.HeaderMD = header
+	return stream, metadata, nil
 
 }
 
@@ -1081,7 +1089,7 @@ func RegisterContactServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_ContactService_SendCallBlast_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_ContactService_SendCallBlast_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1117,7 +1125,7 @@ var (
 
 	forward_ContactService_SendCall_0 = runtime.ForwardResponseMessage
 
-	forward_ContactService_SendCallBlast_0 = runtime.ForwardResponseMessage
+	forward_ContactService_SendCallBlast_0 = runtime.ForwardResponseStream
 )
 
 // RegisterPaymentServiceHandlerFromEndpoint is same as RegisterPaymentServiceHandler but

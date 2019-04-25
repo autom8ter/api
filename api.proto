@@ -105,13 +105,14 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SendCallBlast(CallBlast) returns (Bytes) {
+    rpc SendCallBlast(CallBlast) returns (stream Bytes) {
         option (google.api.http) = {
       post: "/contact/call/blast"
       body: "*"
     };
     }
 }
+
 service PaymentService {
     rpc Subscribe(SubscribeRequest) returns (Bytes) {
         option (google.api.http) = {
