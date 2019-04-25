@@ -94,20 +94,22 @@ service ContactService {
     };
     }
 }
-
-service UserService {
+service PaymetService {
     rpc Subscribe(SubscribeRequest) returns (Identifier) {
         option (google.api.http) = {
-      post: "/user/subscribe/{email}"
+      post: "/payment/subscribe/{email}"
       body: "*"
     };
     }
     rpc Unsubscribe(UnSubscribeRequest) returns (Identifier) {
         option (google.api.http) = {
-      post: "/user/unsubscribe/{email}"
+      post: "/payment/unsubscribe/{email}"
       body: "*"
     };
     }
+}
+
+service UserService {
     rpc GetUser(Identifier) returns (UserInfo) {
         option (google.api.http) = {
       post: "/user/get/{id}"
@@ -117,6 +119,18 @@ service UserService {
     rpc UpdateUser(UserInfo) returns (Identifier) {
         option (google.api.http) = {
       post: "/user/update/{email}"
+      body: "*"
+    };
+    }
+    rpc CreateUser(UserInfo) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/user/create/{email}"
+      body: "*"
+    };
+    }
+    rpc DeleteUser(Identifier) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/user/delete/{id}"
       body: "*"
     };
     }

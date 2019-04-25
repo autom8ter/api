@@ -981,23 +981,27 @@ void AddDescriptorsImpl() {
       "essage\")\202\323\344\223\002#\"\036/contact/email/{email.ad"
       "dress}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.I"
       "dentifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*"
-      "2\332\002\n\013UserService\022W\n\tSubscribe\022\025.api.Subs"
-      "cribeRequest\032\017.api.Identifier\"\"\202\323\344\223\002\034\"\027/"
-      "user/subscribe/{email}:\001*\022]\n\013Unsubscribe"
-      "\022\027.api.UnSubscribeRequest\032\017.api.Identifi"
-      "er\"$\202\323\344\223\002\036\"\031/user/unsubscribe/{email}:\001*"
-      "\022D\n\007GetUser\022\017.api.Identifier\032\r.api.UserI"
-      "nfo\"\031\202\323\344\223\002\023\"\016/user/get/{id}:\001*\022M\n\nUpdate"
-      "User\022\r.api.UserInfo\032\017.api.Identifier\"\037\202\323"
-      "\344\223\002\031\"\024/user/update/{email}:\001*2\242\001\n\014AdminS"
-      "ervice\022H\n\014GetDashboard\022\013.api.Secret\032\016.ap"
-      "i.Dashboard\"\033\202\323\344\223\002\025\"\020/admin/dashboard:\001*"
-      "\022H\n\tEmailUser\022\n.api.Email\032\014.api.Message\""
-      "!\202\323\344\223\002\033\"\026/admin/email/{address}:\001*b\006prot"
-      "o3"
+      "2\315\001\n\rPaymetService\022Z\n\tSubscribe\022\025.api.Su"
+      "bscribeRequest\032\017.api.Identifier\"%\202\323\344\223\002\037\""
+      "\032/payment/subscribe/{email}:\001*\022`\n\013Unsubs"
+      "cribe\022\027.api.UnSubscribeRequest\032\017.api.Ide"
+      "ntifier\"\'\202\323\344\223\002!\"\034/payment/unsubscribe/{e"
+      "mail}:\001*2\277\002\n\013UserService\022D\n\007GetUser\022\017.ap"
+      "i.Identifier\032\r.api.UserInfo\"\031\202\323\344\223\002\023\"\016/us"
+      "er/get/{id}:\001*\022M\n\nUpdateUser\022\r.api.UserI"
+      "nfo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/upda"
+      "te/{email}:\001*\022M\n\nCreateUser\022\r.api.UserIn"
+      "fo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/creat"
+      "e/{email}:\001*\022L\n\nDeleteUser\022\017.api.Identif"
+      "ier\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/user/dele"
+      "te/{id}:\001*2\242\001\n\014AdminService\022H\n\014GetDashbo"
+      "ard\022\013.api.Secret\032\016.api.Dashboard\"\033\202\323\344\223\002\025"
+      "\"\020/admin/dashboard:\001*\022H\n\tEmailUser\022\n.api"
+      ".Email\032\014.api.Message\"!\202\323\344\223\002\033\"\026/admin/ema"
+      "il/{address}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3682);
+      descriptor, 3863);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();

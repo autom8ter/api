@@ -117,6 +117,43 @@ the connection when "ctx" gets done.
 func RegisterContactServiceServer(s *grpc.Server, srv ContactServiceServer)
 ```
 
+#### func  RegisterPaymetServiceHandler
+
+```go
+func RegisterPaymetServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterPaymetServiceHandler registers the http handlers for service
+PaymetService to "mux". The handlers forward requests to the grpc endpoint over
+"conn".
+
+#### func  RegisterPaymetServiceHandlerClient
+
+```go
+func RegisterPaymetServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PaymetServiceClient) error
+```
+RegisterPaymetServiceHandlerClient registers the http handlers for service
+PaymetService to "mux". The handlers forward requests to the grpc endpoint over
+the given implementation of "PaymetServiceClient". Note: the gRPC framework
+executes interceptors within the gRPC handler. If the passed in
+"PaymetServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "PaymetServiceClient" to call
+the correct interceptors.
+
+#### func  RegisterPaymetServiceHandlerFromEndpoint
+
+```go
+func RegisterPaymetServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterPaymetServiceHandlerFromEndpoint is same as RegisterPaymetServiceHandler
+but automatically dials to "endpoint" and closes the connection when "ctx" gets
+done.
+
+#### func  RegisterPaymetServiceServer
+
+```go
+func RegisterPaymetServiceServer(s *grpc.Server, srv PaymetServiceServer)
+```
+
 #### func  RegisterUserServiceHandler
 
 ```go
@@ -1486,6 +1523,37 @@ func (m *Message) XXX_Size() int
 func (m *Message) XXX_Unmarshal(b []byte) error
 ```
 
+#### type PaymetServiceClient
+
+```go
+type PaymetServiceClient interface {
+	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
+	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
+}
+```
+
+PaymetServiceClient is the client API for PaymetService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewPaymetServiceClient
+
+```go
+func NewPaymetServiceClient(cc *grpc.ClientConn) PaymetServiceClient
+```
+
+#### type PaymetServiceServer
+
+```go
+type PaymetServiceServer interface {
+	Subscribe(context.Context, *SubscribeRequest) (*Identifier, error)
+	Unsubscribe(context.Context, *UnSubscribeRequest) (*Identifier, error)
+}
+```
+
+PaymetServiceServer is the server API for PaymetService service.
+
 #### type PlansWidget
 
 ```go
@@ -2434,10 +2502,10 @@ func (m *UserMetadata) XXX_Unmarshal(b []byte) error
 
 ```go
 type UserServiceClient interface {
-	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
-	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
 	GetUser(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*UserInfo, error)
 	UpdateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Identifier, error)
+	CreateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Identifier, error)
+	DeleteUser(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*Identifier, error)
 }
 ```
 
@@ -2456,10 +2524,10 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 
 ```go
 type UserServiceServer interface {
-	Subscribe(context.Context, *SubscribeRequest) (*Identifier, error)
-	Unsubscribe(context.Context, *UnSubscribeRequest) (*Identifier, error)
 	GetUser(context.Context, *Identifier) (*UserInfo, error)
 	UpdateUser(context.Context, *UserInfo) (*Identifier, error)
+	CreateUser(context.Context, *UserInfo) (*Identifier, error)
+	DeleteUser(context.Context, *Identifier) (*Identifier, error)
 }
 ```
 

@@ -298,6 +298,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.PaymetService"><span class="badge">S</span>PaymetService</a>
+                </li>
+              
+                <li>
                   <a href="#api.UserService"><span class="badge">S</span>UserService</a>
                 </li>
               
@@ -1394,7 +1398,7 @@
           </tbody>
         </table>
       
-        <h3 id="api.UserService">UserService</h3>
+        <h3 id="api.PaymetService">PaymetService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -1416,6 +1420,17 @@
                 <td><p></p></td>
               </tr>
             
+          </tbody>
+        </table>
+      
+        <h3 id="api.UserService">UserService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
               <tr>
                 <td>GetUser</td>
                 <td><a href="#api.Identifier">Identifier</a></td>
@@ -1426,6 +1441,20 @@
               <tr>
                 <td>UpdateUser</td>
                 <td><a href="#api.UserInfo">UserInfo</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CreateUser</td>
+                <td><a href="#api.UserInfo">UserInfo</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteUser</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>

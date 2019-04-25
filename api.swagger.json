@@ -201,39 +201,7 @@
         ]
       }
     },
-    "/user/get/{id}": {
-      "post": {
-        "operationId": "GetUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUserInfo"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiIdentifier"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/user/subscribe/{email}": {
+    "/payment/subscribe/{email}": {
       "post": {
         "operationId": "Subscribe",
         "responses": {
@@ -261,11 +229,11 @@
           }
         ],
         "tags": [
-          "UserService"
+          "PaymetService"
         ]
       }
     },
-    "/user/unsubscribe/{email}": {
+    "/payment/unsubscribe/{email}": {
       "post": {
         "operationId": "Unsubscribe",
         "responses": {
@@ -289,6 +257,102 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiUnSubscribeRequest"
+            }
+          }
+        ],
+        "tags": [
+          "PaymetService"
+        ]
+      }
+    },
+    "/user/create/{email}": {
+      "post": {
+        "operationId": "CreateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUserInfo"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/user/delete/{id}": {
+      "post": {
+        "operationId": "DeleteUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/user/get/{id}": {
+      "post": {
+        "operationId": "GetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUserInfo"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
             }
           }
         ],
