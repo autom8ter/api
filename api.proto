@@ -94,7 +94,7 @@ service ContactService {
     };
     }
 }
-service PaymetService {
+service PaymentService {
     rpc Subscribe(SubscribeRequest) returns (Identifier) {
         option (google.api.http) = {
       post: "/payment/subscribe/{email}"

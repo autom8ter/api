@@ -229,7 +229,7 @@
           }
         ],
         "tags": [
-          "PaymetService"
+          "PaymentService"
         ]
       }
     },
@@ -261,7 +261,7 @@
           }
         ],
         "tags": [
-          "PaymetService"
+          "PaymentService"
         ]
       }
     },

@@ -21961,24 +21961,24 @@ public final class Api {
       "essage\")\202\323\344\223\002#\"\036/contact/email/{email.ad" +
       "dress}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.I" +
       "dentifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*" +
-      "2\315\001\n\rPaymetService\022Z\n\tSubscribe\022\025.api.Su" +
-      "bscribeRequest\032\017.api.Identifier\"%\202\323\344\223\002\037\"" +
-      "\032/payment/subscribe/{email}:\001*\022`\n\013Unsubs" +
-      "cribe\022\027.api.UnSubscribeRequest\032\017.api.Ide" +
-      "ntifier\"\'\202\323\344\223\002!\"\034/payment/unsubscribe/{e" +
-      "mail}:\001*2\277\002\n\013UserService\022D\n\007GetUser\022\017.ap" +
-      "i.Identifier\032\r.api.UserInfo\"\031\202\323\344\223\002\023\"\016/us" +
-      "er/get/{id}:\001*\022M\n\nUpdateUser\022\r.api.UserI" +
-      "nfo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/upda" +
-      "te/{email}:\001*\022M\n\nCreateUser\022\r.api.UserIn" +
-      "fo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/creat" +
-      "e/{email}:\001*\022L\n\nDeleteUser\022\017.api.Identif" +
-      "ier\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/user/dele" +
-      "te/{id}:\001*2\242\001\n\014AdminService\022H\n\014GetDashbo" +
-      "ard\022\013.api.Secret\032\016.api.Dashboard\"\033\202\323\344\223\002\025" +
-      "\"\020/admin/dashboard:\001*\022H\n\tEmailUser\022\n.api" +
-      ".Email\032\014.api.Message\"!\202\323\344\223\002\033\"\026/admin/ema" +
-      "il/{address}:\001*b\006proto3"
+      "2\316\001\n\016PaymentService\022Z\n\tSubscribe\022\025.api.S" +
+      "ubscribeRequest\032\017.api.Identifier\"%\202\323\344\223\002\037" +
+      "\"\032/payment/subscribe/{email}:\001*\022`\n\013Unsub" +
+      "scribe\022\027.api.UnSubscribeRequest\032\017.api.Id" +
+      "entifier\"\'\202\323\344\223\002!\"\034/payment/unsubscribe/{" +
+      "email}:\001*2\277\002\n\013UserService\022D\n\007GetUser\022\017.a" +
+      "pi.Identifier\032\r.api.UserInfo\"\031\202\323\344\223\002\023\"\016/u" +
+      "ser/get/{id}:\001*\022M\n\nUpdateUser\022\r.api.User" +
+      "Info\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/upd" +
+      "ate/{email}:\001*\022M\n\nCreateUser\022\r.api.UserI" +
+      "nfo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/crea" +
+      "te/{email}:\001*\022L\n\nDeleteUser\022\017.api.Identi" +
+      "fier\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/user/del" +
+      "ete/{id}:\001*2\242\001\n\014AdminService\022H\n\014GetDashb" +
+      "oard\022\013.api.Secret\032\016.api.Dashboard\"\033\202\323\344\223\002" +
+      "\025\"\020/admin/dashboard:\001*\022H\n\tEmailUser\022\n.ap" +
+      "i.Email\032\014.api.Message\"!\202\323\344\223\002\033\"\026/admin/em" +
+      "ail/{address}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

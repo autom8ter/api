@@ -338,7 +338,7 @@ func request_ContactService_SendCall_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func request_PaymetService_Subscribe_0(ctx context.Context, marshaler runtime.Marshaler, client PaymetServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_PaymentService_Subscribe_0(ctx context.Context, marshaler runtime.Marshaler, client PaymentServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq SubscribeRequest
 	var metadata runtime.ServerMetadata
 
@@ -373,7 +373,7 @@ func request_PaymetService_Subscribe_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func request_PaymetService_Unsubscribe_0(ctx context.Context, marshaler runtime.Marshaler, client PaymetServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_PaymentService_Unsubscribe_0(ctx context.Context, marshaler runtime.Marshaler, client PaymentServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq UnSubscribeRequest
 	var metadata runtime.ServerMetadata
 
@@ -1026,9 +1026,9 @@ var (
 	forward_ContactService_SendCall_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterPaymetServiceHandlerFromEndpoint is same as RegisterPaymetServiceHandler but
+// RegisterPaymentServiceHandlerFromEndpoint is same as RegisterPaymentServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterPaymetServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterPaymentServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -1048,23 +1048,23 @@ func RegisterPaymetServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.
 		}()
 	}()
 
-	return RegisterPaymetServiceHandler(ctx, mux, conn)
+	return RegisterPaymentServiceHandler(ctx, mux, conn)
 }
 
-// RegisterPaymetServiceHandler registers the http handlers for service PaymetService to "mux".
+// RegisterPaymentServiceHandler registers the http handlers for service PaymentService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterPaymetServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterPaymetServiceHandlerClient(ctx, mux, NewPaymetServiceClient(conn))
+func RegisterPaymentServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterPaymentServiceHandlerClient(ctx, mux, NewPaymentServiceClient(conn))
 }
 
-// RegisterPaymetServiceHandlerClient registers the http handlers for service PaymetService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "PaymetServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "PaymetServiceClient"
+// RegisterPaymentServiceHandlerClient registers the http handlers for service PaymentService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "PaymentServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "PaymentServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "PaymetServiceClient" to call the correct interceptors.
-func RegisterPaymetServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PaymetServiceClient) error {
+// "PaymentServiceClient" to call the correct interceptors.
+func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PaymentServiceClient) error {
 
-	mux.Handle("POST", pattern_PaymetService_Subscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PaymentService_Subscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -1073,18 +1073,18 @@ func RegisterPaymetServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PaymetService_Subscribe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PaymentService_Subscribe_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_PaymetService_Subscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_PaymentService_Subscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_PaymetService_Unsubscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_PaymentService_Unsubscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -1093,14 +1093,14 @@ func RegisterPaymetServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PaymetService_Unsubscribe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_PaymentService_Unsubscribe_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_PaymetService_Unsubscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_PaymentService_Unsubscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1108,15 +1108,15 @@ func RegisterPaymetServiceHandlerClient(ctx context.Context, mux *runtime.ServeM
 }
 
 var (
-	pattern_PaymetService_Subscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "subscribe", "email"}, ""))
+	pattern_PaymentService_Subscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "subscribe", "email"}, ""))
 
-	pattern_PaymetService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "unsubscribe", "email"}, ""))
+	pattern_PaymentService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "unsubscribe", "email"}, ""))
 )
 
 var (
-	forward_PaymetService_Subscribe_0 = runtime.ForwardResponseMessage
+	forward_PaymentService_Subscribe_0 = runtime.ForwardResponseMessage
 
-	forward_PaymetService_Unsubscribe_0 = runtime.ForwardResponseMessage
+	forward_PaymentService_Unsubscribe_0 = runtime.ForwardResponseMessage
 )
 
 // RegisterUserServiceHandlerFromEndpoint is same as RegisterUserServiceHandler but
