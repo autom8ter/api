@@ -32,12 +32,10 @@ CF_EXTERN_C_BEGIN
 @class Card;
 @class Email;
 @class EmailBlast;
-@class Identifier;
 @class Identity;
 @class JSONWebKeys;
 @class ManagementToken;
 @class Message;
-@class SMS;
 @class User;
 @class UserMetadata;
 
@@ -236,31 +234,6 @@ typedef GPB_ENUM(Identifier_FieldNumber) {
 @interface Identifier : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
-
-@end
-
-#pragma mark - SMSStatus
-
-typedef GPB_ENUM(SMSStatus_FieldNumber) {
-  SMSStatus_FieldNumber_Id_p = 1,
-  SMSStatus_FieldNumber_Sms = 2,
-  SMSStatus_FieldNumber_Status = 3,
-  SMSStatus_FieldNumber_Uri = 4,
-};
-
-@interface SMSStatus : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) SMS *sms;
-/** Test to see if @c sms has been set. */
-@property(nonatomic, readwrite) BOOL hasSms;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *uri;
 
 @end
 

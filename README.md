@@ -650,6 +650,12 @@ func NewBytes() *Bytes
 func (m *Bytes) BitString() string
 ```
 
+#### func (*Bytes) Clear
+
+```go
+func (m *Bytes) Clear()
+```
+
 #### func (*Bytes) Compile
 
 ```go
@@ -985,7 +991,7 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet
 type ContactServiceClient interface {
 	SendSMS(ctx context.Context, in *SMS, opts ...grpc.CallOption) (*Bytes, error)
 	SendSMSBlast(ctx context.Context, in *SMSBlast, opts ...grpc.CallOption) (ContactService_SendSMSBlastClient, error)
-	GetSMS(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*SMSStatus, error)
+	GetSMS(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*Bytes, error)
 	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Message, error)
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Bytes, error)
@@ -1009,7 +1015,7 @@ func NewContactServiceClient(cc *grpc.ClientConn) ContactServiceClient
 type ContactServiceServer interface {
 	SendSMS(context.Context, *SMS) (*Bytes, error)
 	SendSMSBlast(*SMSBlast, ContactService_SendSMSBlastServer) error
-	GetSMS(context.Context, *Identifier) (*SMSStatus, error)
+	GetSMS(context.Context, *Identifier) (*Bytes, error)
 	SendEmail(context.Context, *EmailRequest) (*Message, error)
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*Bytes, error)
@@ -2405,99 +2411,6 @@ func (m *SMSBlast) XXX_Size() int
 
 ```go
 func (m *SMSBlast) XXX_Unmarshal(b []byte) error
-```
-
-#### type SMSStatus
-
-```go
-type SMSStatus struct {
-	Id                   *Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Sms                  *SMS        `protobuf:"bytes,2,opt,name=sms,proto3" json:"sms,omitempty"`
-	Status               string      `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
-	Uri                  string      `protobuf:"bytes,4,opt,name=uri,proto3" json:"uri,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
-}
-```
-
-
-#### func (*SMSStatus) Descriptor
-
-```go
-func (*SMSStatus) Descriptor() ([]byte, []int)
-```
-
-#### func (*SMSStatus) GetId
-
-```go
-func (m *SMSStatus) GetId() *Identifier
-```
-
-#### func (*SMSStatus) GetSms
-
-```go
-func (m *SMSStatus) GetSms() *SMS
-```
-
-#### func (*SMSStatus) GetStatus
-
-```go
-func (m *SMSStatus) GetStatus() string
-```
-
-#### func (*SMSStatus) GetUri
-
-```go
-func (m *SMSStatus) GetUri() string
-```
-
-#### func (*SMSStatus) ProtoMessage
-
-```go
-func (*SMSStatus) ProtoMessage()
-```
-
-#### func (*SMSStatus) Reset
-
-```go
-func (m *SMSStatus) Reset()
-```
-
-#### func (*SMSStatus) String
-
-```go
-func (m *SMSStatus) String() string
-```
-
-#### func (*SMSStatus) XXX_DiscardUnknown
-
-```go
-func (m *SMSStatus) XXX_DiscardUnknown()
-```
-
-#### func (*SMSStatus) XXX_Marshal
-
-```go
-func (m *SMSStatus) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*SMSStatus) XXX_Merge
-
-```go
-func (m *SMSStatus) XXX_Merge(src proto.Message)
-```
-
-#### func (*SMSStatus) XXX_Size
-
-```go
-func (m *SMSStatus) XXX_Size() int
-```
-
-#### func (*SMSStatus) XXX_Unmarshal
-
-```go
-func (m *SMSStatus) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Scope

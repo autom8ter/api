@@ -81,7 +81,7 @@ service ContactService {
       body: "*"
     };
     }
-    rpc GetSMS(Identifier) returns (SMSStatus) {
+    rpc GetSMS(Identifier) returns (Bytes) {
         option (google.api.http) = {
       post: "/contact/sms/{id}"
       body: "*"
@@ -189,13 +189,6 @@ message UserByEmailRequest {
 }
 message Identifier {
     string id=1;
-}
-
-message SMSStatus {
-    Identifier id=1;
-    SMS sms =2;
-    string status=3;
-    string uri =4;
 }
 
 message SMS {

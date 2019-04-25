@@ -36,12 +36,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Identifier" do
     optional :id, :string, 1
   end
-  add_message "api.SMSStatus" do
-    optional :id, :message, 1, "api.Identifier"
-    optional :sms, :message, 2, "api.SMS"
-    optional :status, :string, 3
-    optional :uri, :string, 4
-  end
   add_message "api.SMS" do
     optional :service, :string, 1
     optional :to, :string, 2
@@ -195,7 +189,6 @@ module Api
   UserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserRequest").msgclass
   UserByEmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserByEmailRequest").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
-  SMSStatus = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSStatus").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
   SMSBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSBlast").msgclass
   EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass

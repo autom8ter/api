@@ -43,7 +43,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[33];
+  static const ::google::protobuf::internal::ParseTable schema[32];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -123,9 +123,6 @@ extern SMSDefaultTypeInternal _SMS_default_instance_;
 class SMSBlast;
 class SMSBlastDefaultTypeInternal;
 extern SMSBlastDefaultTypeInternal _SMSBlast_default_instance_;
-class SMSStatus;
-class SMSStatusDefaultTypeInternal;
-extern SMSStatusDefaultTypeInternal _SMSStatus_default_instance_;
 class SubscribeRequest;
 class SubscribeRequestDefaultTypeInternal;
 extern SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
@@ -177,7 +174,6 @@ template<> ::api::ManagementToken* Arena::CreateMaybeMessage<::api::ManagementTo
 template<> ::api::Message* Arena::CreateMaybeMessage<::api::Message>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSBlast* Arena::CreateMaybeMessage<::api::SMSBlast>(Arena*);
-template<> ::api::SMSStatus* Arena::CreateMaybeMessage<::api::SMSStatus>(Arena*);
 template<> ::api::SubscribeRequest* Arena::CreateMaybeMessage<::api::SubscribeRequest>(Arena*);
 template<> ::api::Template* Arena::CreateMaybeMessage<::api::Template>(Arena*);
 template<> ::api::UnSubscribeRequest* Arena::CreateMaybeMessage<::api::UnSubscribeRequest>(Arena*);
@@ -1236,158 +1232,6 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
 };
 // -------------------------------------------------------------------
 
-class SMSStatus : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SMSStatus) */ {
- public:
-  SMSStatus();
-  virtual ~SMSStatus();
-
-  SMSStatus(const SMSStatus& from);
-
-  inline SMSStatus& operator=(const SMSStatus& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  SMSStatus(SMSStatus&& from) noexcept
-    : SMSStatus() {
-    *this = ::std::move(from);
-  }
-
-  inline SMSStatus& operator=(SMSStatus&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const SMSStatus& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SMSStatus* internal_default_instance() {
-    return reinterpret_cast<const SMSStatus*>(
-               &_SMSStatus_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  void Swap(SMSStatus* other);
-  friend void swap(SMSStatus& a, SMSStatus& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline SMSStatus* New() const final {
-    return CreateMaybeMessage<SMSStatus>(NULL);
-  }
-
-  SMSStatus* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SMSStatus>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SMSStatus& from);
-  void MergeFrom(const SMSStatus& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(SMSStatus* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // string status = 3;
-  void clear_status();
-  static const int kStatusFieldNumber = 3;
-  const ::std::string& status() const;
-  void set_status(const ::std::string& value);
-  #if LANG_CXX11
-  void set_status(::std::string&& value);
-  #endif
-  void set_status(const char* value);
-  void set_status(const char* value, size_t size);
-  ::std::string* mutable_status();
-  ::std::string* release_status();
-  void set_allocated_status(::std::string* status);
-
-  // string uri = 4;
-  void clear_uri();
-  static const int kUriFieldNumber = 4;
-  const ::std::string& uri() const;
-  void set_uri(const ::std::string& value);
-  #if LANG_CXX11
-  void set_uri(::std::string&& value);
-  #endif
-  void set_uri(const char* value);
-  void set_uri(const char* value, size_t size);
-  ::std::string* mutable_uri();
-  ::std::string* release_uri();
-  void set_allocated_uri(::std::string* uri);
-
-  // .api.Identifier id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  private:
-  const ::api::Identifier& _internal_id() const;
-  public:
-  const ::api::Identifier& id() const;
-  ::api::Identifier* release_id();
-  ::api::Identifier* mutable_id();
-  void set_allocated_id(::api::Identifier* id);
-
-  // .api.SMS sms = 2;
-  bool has_sms() const;
-  void clear_sms();
-  static const int kSmsFieldNumber = 2;
-  private:
-  const ::api::SMS& _internal_sms() const;
-  public:
-  const ::api::SMS& sms() const;
-  ::api::SMS* release_sms();
-  ::api::SMS* mutable_sms();
-  void set_allocated_sms(::api::SMS* sms);
-
-  // @@protoc_insertion_point(class_scope:api.SMSStatus)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr status_;
-  ::google::protobuf::internal::ArenaStringPtr uri_;
-  ::api::Identifier* id_;
-  ::api::SMS* sms_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SMS) */ {
  public:
   SMS();
@@ -1423,7 +1267,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -1607,7 +1451,7 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_SMSBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(SMSBlast* other);
   friend void swap(SMSBlast& a, SMSBlast& b) {
@@ -1791,7 +1635,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1930,7 +1774,7 @@ class EmailBlastRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_EmailBlastRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(EmailBlastRequest* other);
   friend void swap(EmailBlastRequest& a, EmailBlastRequest& b) {
@@ -2090,7 +1934,7 @@ class EmailBlast : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_EmailBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   void Swap(EmailBlast* other);
   friend void swap(EmailBlast& a, EmailBlast& b) {
@@ -2247,7 +2091,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -2418,7 +2262,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -2559,7 +2403,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Message_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   void Swap(Message* other);
   friend void swap(Message& a, Message& b) {
@@ -2670,7 +2514,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -3037,7 +2881,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   void Swap(Identity* other);
   friend void swap(Identity& a, Identity& b) {
@@ -3214,7 +3058,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -3347,7 +3191,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -3459,7 +3303,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -3642,7 +3486,7 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Bytes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   void Swap(Bytes* other);
   friend void swap(Bytes& a, Bytes& b) {
@@ -3753,7 +3597,7 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Template_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   void Swap(Template* other);
   friend void swap(Template& a, Template& b) {
@@ -3879,7 +3723,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    26;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -4073,7 +3917,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    27;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -4245,7 +4089,7 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_HTTPRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    31;
 
   void Swap(HTTPRequest* other);
   friend void swap(HTTPRequest& a, HTTPRequest& b) {
@@ -5266,224 +5110,6 @@ inline void Identifier::set_allocated_id(::std::string* id) {
   }
   id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
   // @@protoc_insertion_point(field_set_allocated:api.Identifier.id)
-}
-
-// -------------------------------------------------------------------
-
-// SMSStatus
-
-// .api.Identifier id = 1;
-inline bool SMSStatus::has_id() const {
-  return this != internal_default_instance() && id_ != NULL;
-}
-inline void SMSStatus::clear_id() {
-  if (GetArenaNoVirtual() == NULL && id_ != NULL) {
-    delete id_;
-  }
-  id_ = NULL;
-}
-inline const ::api::Identifier& SMSStatus::_internal_id() const {
-  return *id_;
-}
-inline const ::api::Identifier& SMSStatus::id() const {
-  const ::api::Identifier* p = id_;
-  // @@protoc_insertion_point(field_get:api.SMSStatus.id)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::Identifier*>(
-      &::api::_Identifier_default_instance_);
-}
-inline ::api::Identifier* SMSStatus::release_id() {
-  // @@protoc_insertion_point(field_release:api.SMSStatus.id)
-  
-  ::api::Identifier* temp = id_;
-  id_ = NULL;
-  return temp;
-}
-inline ::api::Identifier* SMSStatus::mutable_id() {
-  
-  if (id_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::Identifier>(GetArenaNoVirtual());
-    id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.SMSStatus.id)
-  return id_;
-}
-inline void SMSStatus::set_allocated_id(::api::Identifier* id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete id_;
-  }
-  if (id) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:api.SMSStatus.id)
-}
-
-// .api.SMS sms = 2;
-inline bool SMSStatus::has_sms() const {
-  return this != internal_default_instance() && sms_ != NULL;
-}
-inline void SMSStatus::clear_sms() {
-  if (GetArenaNoVirtual() == NULL && sms_ != NULL) {
-    delete sms_;
-  }
-  sms_ = NULL;
-}
-inline const ::api::SMS& SMSStatus::_internal_sms() const {
-  return *sms_;
-}
-inline const ::api::SMS& SMSStatus::sms() const {
-  const ::api::SMS* p = sms_;
-  // @@protoc_insertion_point(field_get:api.SMSStatus.sms)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::SMS*>(
-      &::api::_SMS_default_instance_);
-}
-inline ::api::SMS* SMSStatus::release_sms() {
-  // @@protoc_insertion_point(field_release:api.SMSStatus.sms)
-  
-  ::api::SMS* temp = sms_;
-  sms_ = NULL;
-  return temp;
-}
-inline ::api::SMS* SMSStatus::mutable_sms() {
-  
-  if (sms_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::SMS>(GetArenaNoVirtual());
-    sms_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.SMSStatus.sms)
-  return sms_;
-}
-inline void SMSStatus::set_allocated_sms(::api::SMS* sms) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete sms_;
-  }
-  if (sms) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      sms = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, sms, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  sms_ = sms;
-  // @@protoc_insertion_point(field_set_allocated:api.SMSStatus.sms)
-}
-
-// string status = 3;
-inline void SMSStatus::clear_status() {
-  status_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SMSStatus::status() const {
-  // @@protoc_insertion_point(field_get:api.SMSStatus.status)
-  return status_.GetNoArena();
-}
-inline void SMSStatus::set_status(const ::std::string& value) {
-  
-  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SMSStatus.status)
-}
-#if LANG_CXX11
-inline void SMSStatus::set_status(::std::string&& value) {
-  
-  status_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SMSStatus.status)
-}
-#endif
-inline void SMSStatus::set_status(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SMSStatus.status)
-}
-inline void SMSStatus::set_status(const char* value, size_t size) {
-  
-  status_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SMSStatus.status)
-}
-inline ::std::string* SMSStatus::mutable_status() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SMSStatus.status)
-  return status_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SMSStatus::release_status() {
-  // @@protoc_insertion_point(field_release:api.SMSStatus.status)
-  
-  return status_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SMSStatus::set_allocated_status(::std::string* status) {
-  if (status != NULL) {
-    
-  } else {
-    
-  }
-  status_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), status);
-  // @@protoc_insertion_point(field_set_allocated:api.SMSStatus.status)
-}
-
-// string uri = 4;
-inline void SMSStatus::clear_uri() {
-  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& SMSStatus::uri() const {
-  // @@protoc_insertion_point(field_get:api.SMSStatus.uri)
-  return uri_.GetNoArena();
-}
-inline void SMSStatus::set_uri(const ::std::string& value) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.SMSStatus.uri)
-}
-#if LANG_CXX11
-inline void SMSStatus::set_uri(::std::string&& value) {
-  
-  uri_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SMSStatus.uri)
-}
-#endif
-inline void SMSStatus::set_uri(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.SMSStatus.uri)
-}
-inline void SMSStatus::set_uri(const char* value, size_t size) {
-  
-  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.SMSStatus.uri)
-}
-inline ::std::string* SMSStatus::mutable_uri() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SMSStatus.uri)
-  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SMSStatus::release_uri() {
-  // @@protoc_insertion_point(field_release:api.SMSStatus.uri)
-  
-  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SMSStatus::set_allocated_uri(::std::string* uri) {
-  if (uri != NULL) {
-    
-  } else {
-    
-  }
-  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
-  // @@protoc_insertion_point(field_set_allocated:api.SMSStatus.uri)
 }
 
 // -------------------------------------------------------------------
@@ -9509,8 +9135,6 @@ inline void HTTPRequest::set_allocated_body(::api::Bytes* body) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

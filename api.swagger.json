@@ -138,7 +138,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiSMSStatus"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -845,23 +845,6 @@
           "type": "string"
         },
         "app": {
-          "type": "string"
-        }
-      }
-    },
-    "apiSMSStatus": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/apiIdentifier"
-        },
-        "sms": {
-          "$ref": "#/definitions/apiSMS"
-        },
-        "status": {
-          "type": "string"
-        },
-        "uri": {
           "type": "string"
         }
       }
