@@ -246,15 +246,19 @@ typedef struct SMS__storage_ {
 
 @implementation Email
 
+@dynamic name;
 @dynamic address;
 @dynamic subject;
-@dynamic hasMessage, message;
+@dynamic plain;
+@dynamic html;
 
 typedef struct Email__storage_ {
   uint32_t _has_storage_[1];
+  NSString *name;
   NSString *address;
   NSString *subject;
-  Message *message;
+  NSString *plain;
+  NSString *html;
 } Email__storage_;
 
 // This method is threadsafe because it is initially called
@@ -264,10 +268,19 @@ typedef struct Email__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
+        .name = "name",
+        .dataTypeSpecific.className = NULL,
+        .number = Email_FieldNumber_Name,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Email__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "address",
         .dataTypeSpecific.className = NULL,
         .number = Email_FieldNumber_Address,
-        .hasIndex = 0,
+        .hasIndex = 1,
         .offset = (uint32_t)offsetof(Email__storage_, address),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -276,19 +289,28 @@ typedef struct Email__storage_ {
         .name = "subject",
         .dataTypeSpecific.className = NULL,
         .number = Email_FieldNumber_Subject,
-        .hasIndex = 1,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(Email__storage_, subject),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "message",
-        .dataTypeSpecific.className = GPBStringifySymbol(Message),
-        .number = Email_FieldNumber_Message,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Email__storage_, message),
+        .name = "plain",
+        .dataTypeSpecific.className = NULL,
+        .number = Email_FieldNumber_Plain,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Email__storage_, plain),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "html",
+        .dataTypeSpecific.className = NULL,
+        .number = Email_FieldNumber_Html,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Email__storage_, html),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =

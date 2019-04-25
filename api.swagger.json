@@ -402,14 +402,20 @@
     "apiEmail": {
       "type": "object",
       "properties": {
+        "name": {
+          "type": "string"
+        },
         "address": {
           "type": "string"
         },
         "subject": {
           "type": "string"
         },
-        "message": {
-          "$ref": "#/definitions/apiMessage"
+        "plain": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string"
         }
       }
     },

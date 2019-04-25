@@ -29,53 +29,53 @@ namespace Api {
             "ZBgBIAEoCzIPLmFwaS5JZGVudGlmaWVyEhUKA3NtcxgCIAEoCzIILmFwaS5T",
             "TVMSDgoGc3RhdHVzGAMgASgJEgsKA3VyaRgEIAEoCSJCCgNTTVMSCgoCdG8Y",
             "ASABKAkSHQoHbWVzc2FnZRgCIAEoCzIMLmFwaS5NZXNzYWdlEhAKCG1lZGlh",
-            "VVJMGAMgASgJIkgKBUVtYWlsEg8KB2FkZHJlc3MYASABKAkSDwoHc3ViamVj",
-            "dBgCIAEoCRIdCgdtZXNzYWdlGAMgASgLMgwuYXBpLk1lc3NhZ2UiJAoEQ2Fs",
-            "bBIKCgJ0bxgBIAEoCRIQCghjYWxsYmFjaxgCIAEoCSIYCgdNZXNzYWdlEg0K",
-            "BXZhbHVlGAEgASgJItYBCghVc2VySW5mbxIMCgRuYW1lGAYgASgJEhIKCmdp",
-            "dmVuX25hbWUYByABKAkSEwoLZmFtaWx5X25hbWUYCCABKAkSDgoGZ2VuZGVy",
-            "GAkgASgJEhEKCWJpcnRoZGF0ZRgKIAEoCRINCgVlbWFpbBgLIAEoCRIPCgdw",
-            "aWN0dXJlGAwgASgJEigKDXVzZXJfbWV0YWRhdGEYDSABKAsyES5hcGkuVXNl",
-            "ck1ldGFkYXRhEiYKDGFwcF9tZXRhZGF0YRgOIAEoCzIQLmFwaS5BcHBNZXRh",
-            "ZGF0YSJWCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUYASABKAkSGQoRcHJlZmVy",
-            "cmVkX2NvbnRhY3QYAiABKAkSDgoGc3RhdHVzGAMgASgJEgwKBHRhZ3MYBCAD",
-            "KAkiUAoLQXBwTWV0YWRhdGESDAoEcGxhbhgBIAEoCRIRCglwYXlfdG9rZW4Y",
-            "AiABKAkSEgoKZGVsaW5xdWVudBgDIAEoCRIMCgR0YWdzGAQgAygJInQKBEF1",
-            "dGgSDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9pZBgCIAEoCRIVCg1jbGll",
-            "bnRfc2VjcmV0GAMgASgJEhAKCHJlZGlyZWN0GAQgASgJEhAKCGF1ZGllbmNl",
-            "GAUgASgJEg4KBnNjb3BlcxgGIAMoCSIVCgVCeXRlcxIMCgRiaXRzGAEgASgM",
-            "IiYKCFRlbXBsYXRlEgwKBHRleHQYASABKAkSDAoEZGF0YRgCIAEoDDLoBQoO",
-            "VXRpbGl0eVNlcnZpY2USPAoERWNobxIMLmFwaS5NZXNzYWdlGgwuYXBpLk1l",
-            "c3NhZ2UiGILT5JMCEiINL3V0aWxpdHkvZWNobzoBKhJLCgtFY2hvU3Bhbmlz",
-            "aBIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT5JMCGiIVL3V0aWxp",
-            "dHkvZWNoby9zcGFuaXNoOgEqEksKC0VjaG9DaGluZXNlEgwuYXBpLk1lc3Nh",
-            "Z2UaDC5hcGkuTWVzc2FnZSIggtPkkwIaIhUvdXRpbGl0eS9lY2hvL2NoaW5l",
-            "c2U6ASoSSwoLRWNob0VuZ2xpc2gSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNz",
-            "YWdlIiCC0+STAhoiFS91dGlsaXR5L2VjaG8vZW5nbGlzaDoBKhJHCglFY2hv",
-            "SGluZGkSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIh6C0+STAhgiEy91",
-            "dGlsaXR5L2VjaG8vaGluZGk6ASoSSQoKRWNob0FyYWJpYxIMLmFwaS5NZXNz",
-            "YWdlGgwuYXBpLk1lc3NhZ2UiH4LT5JMCGSIUL3V0aWxpdHkvZWNoby9hcmFi",
-            "aWM6ASoSRwoLTWFyc2hhbEpTT04SCi5hcGkuQnl0ZXMaCi5hcGkuQnl0ZXMi",
-            "IILT5JMCGiIVL3V0aWxpdHkvbWFyc2hhbC9qc29uOgEqEkcKC01hcnNoYWxZ",
-            "QU1MEgouYXBpLkJ5dGVzGgouYXBpLkJ5dGVzIiCC0+STAhoiFS91dGlsaXR5",
-            "L21hcnNoYWwveWFtbDoBKhJFCgpNYXJzaGFsWE1MEgouYXBpLkJ5dGVzGgou",
-            "YXBpLkJ5dGVzIh+C0+STAhkiFC91dGlsaXR5L21hcnNoYWwveG1sOgEqEkQK",
-            "BlJlbmRlchINLmFwaS5UZW1wbGF0ZRoKLmFwaS5CeXRlcyIfgtPkkwIZIhQv",
-            "dXRpbGl0eS9tYXJzaGFsL3htbDoBKjKzAgoOQ29udGFjdFNlcnZpY2USQgoH",
-            "U2VuZFNNUxIILmFwaS5TTVMaDy5hcGkuSWRlbnRpZmllciIcgtPkkwIWIhEv",
-            "Y29udGFjdC9zbXMve3RvfToBKhJHCgZHZXRTTVMSDy5hcGkuSWRlbnRpZmll",
-            "choOLmFwaS5TTVNTdGF0dXMiHILT5JMCFiIRL2NvbnRhY3Qvc21zL3tpZH06",
-            "ASoSTQoJU2VuZEVtYWlsEgouYXBpLkVtYWlsGg8uYXBpLklkZW50aWZpZXIi",
-            "I4LT5JMCHSIYL2NvbnRhY3QvZW1haWwve2FkZHJlc3N9OgEqEkUKCFNlbmRD",
-            "YWxsEgkuYXBpLkNhbGwaDy5hcGkuSWRlbnRpZmllciIdgtPkkwIXIhIvY29u",
-            "dGFjdC9jYWxsL3t0b306ASpiBnByb3RvMw=="));
+            "VVJMGAMgASgJIlQKBUVtYWlsEgwKBG5hbWUYASABKAkSDwoHYWRkcmVzcxgC",
+            "IAEoCRIPCgdzdWJqZWN0GAMgASgJEg0KBXBsYWluGAQgASgJEgwKBGh0bWwY",
+            "BSABKAkiJAoEQ2FsbBIKCgJ0bxgBIAEoCRIQCghjYWxsYmFjaxgCIAEoCSIY",
+            "CgdNZXNzYWdlEg0KBXZhbHVlGAEgASgJItYBCghVc2VySW5mbxIMCgRuYW1l",
+            "GAYgASgJEhIKCmdpdmVuX25hbWUYByABKAkSEwoLZmFtaWx5X25hbWUYCCAB",
+            "KAkSDgoGZ2VuZGVyGAkgASgJEhEKCWJpcnRoZGF0ZRgKIAEoCRINCgVlbWFp",
+            "bBgLIAEoCRIPCgdwaWN0dXJlGAwgASgJEigKDXVzZXJfbWV0YWRhdGEYDSAB",
+            "KAsyES5hcGkuVXNlck1ldGFkYXRhEiYKDGFwcF9tZXRhZGF0YRgOIAEoCzIQ",
+            "LmFwaS5BcHBNZXRhZGF0YSJWCgxVc2VyTWV0YWRhdGESDQoFcGhvbmUYASAB",
+            "KAkSGQoRcHJlZmVycmVkX2NvbnRhY3QYAiABKAkSDgoGc3RhdHVzGAMgASgJ",
+            "EgwKBHRhZ3MYBCADKAkiUAoLQXBwTWV0YWRhdGESDAoEcGxhbhgBIAEoCRIR",
+            "CglwYXlfdG9rZW4YAiABKAkSEgoKZGVsaW5xdWVudBgDIAEoCRIMCgR0YWdz",
+            "GAQgAygJInQKBEF1dGgSDgoGZG9tYWluGAEgASgJEhEKCWNsaWVudF9pZBgC",
+            "IAEoCRIVCg1jbGllbnRfc2VjcmV0GAMgASgJEhAKCHJlZGlyZWN0GAQgASgJ",
+            "EhAKCGF1ZGllbmNlGAUgASgJEg4KBnNjb3BlcxgGIAMoCSIVCgVCeXRlcxIM",
+            "CgRiaXRzGAEgASgMIiYKCFRlbXBsYXRlEgwKBHRleHQYASABKAkSDAoEZGF0",
+            "YRgCIAEoDDLoBQoOVXRpbGl0eVNlcnZpY2USPAoERWNobxIMLmFwaS5NZXNz",
+            "YWdlGgwuYXBpLk1lc3NhZ2UiGILT5JMCEiINL3V0aWxpdHkvZWNobzoBKhJL",
+            "CgtFY2hvU3BhbmlzaBIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT",
+            "5JMCGiIVL3V0aWxpdHkvZWNoby9zcGFuaXNoOgEqEksKC0VjaG9DaGluZXNl",
+            "EgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIggtPkkwIaIhUvdXRpbGl0",
+            "eS9lY2hvL2NoaW5lc2U6ASoSSwoLRWNob0VuZ2xpc2gSDC5hcGkuTWVzc2Fn",
+            "ZRoMLmFwaS5NZXNzYWdlIiCC0+STAhoiFS91dGlsaXR5L2VjaG8vZW5nbGlz",
+            "aDoBKhJHCglFY2hvSGluZGkSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdl",
+            "Ih6C0+STAhgiEy91dGlsaXR5L2VjaG8vaGluZGk6ASoSSQoKRWNob0FyYWJp",
+            "YxIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiH4LT5JMCGSIUL3V0aWxp",
+            "dHkvZWNoby9hcmFiaWM6ASoSRwoLTWFyc2hhbEpTT04SCi5hcGkuQnl0ZXMa",
+            "Ci5hcGkuQnl0ZXMiIILT5JMCGiIVL3V0aWxpdHkvbWFyc2hhbC9qc29uOgEq",
+            "EkcKC01hcnNoYWxZQU1MEgouYXBpLkJ5dGVzGgouYXBpLkJ5dGVzIiCC0+ST",
+            "AhoiFS91dGlsaXR5L21hcnNoYWwveWFtbDoBKhJFCgpNYXJzaGFsWE1MEgou",
+            "YXBpLkJ5dGVzGgouYXBpLkJ5dGVzIh+C0+STAhkiFC91dGlsaXR5L21hcnNo",
+            "YWwveG1sOgEqEkQKBlJlbmRlchINLmFwaS5UZW1wbGF0ZRoKLmFwaS5CeXRl",
+            "cyIfgtPkkwIZIhQvdXRpbGl0eS9tYXJzaGFsL3htbDoBKjKzAgoOQ29udGFj",
+            "dFNlcnZpY2USQgoHU2VuZFNNUxIILmFwaS5TTVMaDy5hcGkuSWRlbnRpZmll",
+            "ciIcgtPkkwIWIhEvY29udGFjdC9zbXMve3RvfToBKhJHCgZHZXRTTVMSDy5h",
+            "cGkuSWRlbnRpZmllchoOLmFwaS5TTVNTdGF0dXMiHILT5JMCFiIRL2NvbnRh",
+            "Y3Qvc21zL3tpZH06ASoSTQoJU2VuZEVtYWlsEgouYXBpLkVtYWlsGg8uYXBp",
+            "LklkZW50aWZpZXIiI4LT5JMCHSIYL2NvbnRhY3QvZW1haWwve2FkZHJlc3N9",
+            "OgEqEkUKCFNlbmRDYWxsEgkuYXBpLkNhbGwaDy5hcGkuSWRlbnRpZmllciId",
+            "gtPkkwIXIhIvY29udGFjdC9jYWxsL3t0b306ASpiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Identifier), global::Api.Identifier.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.SMSStatus), global::Api.SMSStatus.Parser, new[]{ "Id", "Sms", "Status", "Uri" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.SMS), global::Api.SMS.Parser, new[]{ "To", "Message", "MediaURL" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "Address", "Subject", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Email), global::Api.Email.Parser, new[]{ "Name", "Address", "Subject", "Plain", "Html" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Call), global::Api.Call.Parser, new[]{ "To", "Callback" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Message), global::Api.Message.Parser, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserInfo), global::Api.UserInfo.Parser, new[]{ "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata" }, null, null, null),
@@ -660,9 +660,11 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Email(Email other) : this() {
+      name_ = other.name_;
       address_ = other.address_;
       subject_ = other.subject_;
-      message_ = other.message_ != null ? other.message_.Clone() : null;
+      plain_ = other.plain_;
+      html_ = other.html_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -671,8 +673,19 @@ namespace Api {
       return new Email(this);
     }
 
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "address" field.</summary>
-    public const int AddressFieldNumber = 1;
+    public const int AddressFieldNumber = 2;
     private string address_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Address {
@@ -683,7 +696,7 @@ namespace Api {
     }
 
     /// <summary>Field number for the "subject" field.</summary>
-    public const int SubjectFieldNumber = 2;
+    public const int SubjectFieldNumber = 3;
     private string subject_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Subject {
@@ -693,14 +706,25 @@ namespace Api {
       }
     }
 
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 3;
-    private global::Api.Message message_;
+    /// <summary>Field number for the "plain" field.</summary>
+    public const int PlainFieldNumber = 4;
+    private string plain_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Api.Message Message {
-      get { return message_; }
+    public string Plain {
+      get { return plain_; }
       set {
-        message_ = value;
+        plain_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "html" field.</summary>
+    public const int HtmlFieldNumber = 5;
+    private string html_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Html {
+      get { return html_; }
+      set {
+        html_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -717,18 +741,22 @@ namespace Api {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Name != other.Name) return false;
       if (Address != other.Address) return false;
       if (Subject != other.Subject) return false;
-      if (!object.Equals(Message, other.Message)) return false;
+      if (Plain != other.Plain) return false;
+      if (Html != other.Html) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Address.Length != 0) hash ^= Address.GetHashCode();
       if (Subject.Length != 0) hash ^= Subject.GetHashCode();
-      if (message_ != null) hash ^= Message.GetHashCode();
+      if (Plain.Length != 0) hash ^= Plain.GetHashCode();
+      if (Html.Length != 0) hash ^= Html.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -742,17 +770,25 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Address.Length != 0) {
+      if (Name.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (Address.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Address);
       }
       if (Subject.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(Subject);
       }
-      if (message_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Message);
+      if (Plain.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Plain);
+      }
+      if (Html.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Html);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -762,14 +798,20 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
       if (Address.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
       }
       if (Subject.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Subject);
       }
-      if (message_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Message);
+      if (Plain.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Plain);
+      }
+      if (Html.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Html);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -782,17 +824,20 @@ namespace Api {
       if (other == null) {
         return;
       }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
       if (other.Address.Length != 0) {
         Address = other.Address;
       }
       if (other.Subject.Length != 0) {
         Subject = other.Subject;
       }
-      if (other.message_ != null) {
-        if (message_ == null) {
-          message_ = new global::Api.Message();
-        }
-        Message.MergeFrom(other.Message);
+      if (other.Plain.Length != 0) {
+        Plain = other.Plain;
+      }
+      if (other.Html.Length != 0) {
+        Html = other.Html;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -806,18 +851,23 @@ namespace Api {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Address = input.ReadString();
+            Name = input.ReadString();
             break;
           }
           case 18: {
-            Subject = input.ReadString();
+            Address = input.ReadString();
             break;
           }
           case 26: {
-            if (message_ == null) {
-              message_ = new global::Api.Message();
-            }
-            input.ReadMessage(message_);
+            Subject = input.ReadString();
+            break;
+          }
+          case 34: {
+            Plain = input.ReadString();
+            break;
+          }
+          case 42: {
+            Html = input.ReadString();
             break;
           }
         }

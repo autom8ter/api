@@ -110,20 +110,24 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 #pragma mark - Email
 
 typedef GPB_ENUM(Email_FieldNumber) {
-  Email_FieldNumber_Address = 1,
-  Email_FieldNumber_Subject = 2,
-  Email_FieldNumber_Message = 3,
+  Email_FieldNumber_Name = 1,
+  Email_FieldNumber_Address = 2,
+  Email_FieldNumber_Subject = 3,
+  Email_FieldNumber_Plain = 4,
+  Email_FieldNumber_Html = 5,
 };
 
 @interface Email : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *address;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
 
-@property(nonatomic, readwrite, strong, null_resettable) Message *message;
-/** Test to see if @c message has been set. */
-@property(nonatomic, readwrite) BOOL hasMessage;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plain;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *html;
 
 @end
 

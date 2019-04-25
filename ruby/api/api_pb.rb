@@ -20,9 +20,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :mediaURL, :string, 3
   end
   add_message "api.Email" do
-    optional :address, :string, 1
-    optional :subject, :string, 2
-    optional :message, :message, 3, "api.Message"
+    optional :name, :string, 1
+    optional :address, :string, 2
+    optional :subject, :string, 3
+    optional :plain, :string, 4
+    optional :html, :string, 5
   end
   add_message "api.Call" do
     optional :to, :string, 1

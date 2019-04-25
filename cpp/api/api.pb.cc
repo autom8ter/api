@@ -145,9 +145,8 @@ static void InitDefaultsEmail() {
   ::api::Email::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_Email =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEmail}, {
-      &protobuf_api_2eproto::scc_info_Message.base,}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Email =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmail}, {}};
 
 static void InitDefaultsCall() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -309,9 +308,11 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, name_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, address_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, subject_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, message_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, plain_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Email, html_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Call, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -387,14 +388,14 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 6, -1, sizeof(::api::SMSStatus)},
   { 15, -1, sizeof(::api::SMS)},
   { 23, -1, sizeof(::api::Email)},
-  { 31, -1, sizeof(::api::Call)},
-  { 38, -1, sizeof(::api::Message)},
-  { 44, -1, sizeof(::api::UserInfo)},
-  { 58, -1, sizeof(::api::UserMetadata)},
-  { 67, -1, sizeof(::api::AppMetadata)},
-  { 76, -1, sizeof(::api::Auth)},
-  { 87, -1, sizeof(::api::Bytes)},
-  { 93, -1, sizeof(::api::Template)},
+  { 33, -1, sizeof(::api::Call)},
+  { 40, -1, sizeof(::api::Message)},
+  { 46, -1, sizeof(::api::UserInfo)},
+  { 60, -1, sizeof(::api::UserMetadata)},
+  { 69, -1, sizeof(::api::AppMetadata)},
+  { 78, -1, sizeof(::api::Auth)},
+  { 89, -1, sizeof(::api::Bytes)},
+  { 95, -1, sizeof(::api::Template)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -438,55 +439,55 @@ void AddDescriptorsImpl() {
       "tatus\022\033\n\002id\030\001 \001(\0132\017.api.Identifier\022\025\n\003sm"
       "s\030\002 \001(\0132\010.api.SMS\022\016\n\006status\030\003 \001(\t\022\013\n\003uri"
       "\030\004 \001(\t\"B\n\003SMS\022\n\n\002to\030\001 \001(\t\022\035\n\007message\030\002 \001"
-      "(\0132\014.api.Message\022\020\n\010mediaURL\030\003 \001(\t\"H\n\005Em"
-      "ail\022\017\n\007address\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\035\n"
-      "\007message\030\003 \001(\0132\014.api.Message\"$\n\004Call\022\n\n\002"
-      "to\030\001 \001(\t\022\020\n\010callback\030\002 \001(\t\"\030\n\007Message\022\r\n"
-      "\005value\030\001 \001(\t\"\326\001\n\010UserInfo\022\014\n\004name\030\006 \001(\t\022"
-      "\022\n\ngiven_name\030\007 \001(\t\022\023\n\013family_name\030\010 \001(\t"
-      "\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005e"
-      "mail\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_meta"
-      "data\030\r \001(\0132\021.api.UserMetadata\022&\n\014app_met"
-      "adata\030\016 \001(\0132\020.api.AppMetadata\"V\n\014UserMet"
-      "adata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_contac"
-      "t\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"P\n"
-      "\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022\021\n\tpay_token\030"
-      "\002 \001(\t\022\022\n\ndelinquent\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\""
-      "t\n\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001"
-      "(\t\022\025\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 "
-      "\001(\t\022\020\n\010audience\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n"
-      "\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Template\022\014\n\004text"
-      "\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\350\005\n\016UtilityService\022"
-      "<\n\004Echo\022\014.api.Message\032\014.api.Message\"\030\202\323\344"
-      "\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSpanish\022\014.a"
-      "pi.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utili"
-      "ty/echo/spanish:\001*\022K\n\013EchoChinese\022\014.api."
-      "Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/"
-      "echo/chinese:\001*\022K\n\013EchoEnglish\022\014.api.Mes"
-      "sage\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/ech"
-      "o/english:\001*\022G\n\tEchoHindi\022\014.api.Message\032"
-      "\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility/echo/hin"
-      "di:\001*\022I\n\nEchoArabic\022\014.api.Message\032\014.api."
-      "Message\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*"
-      "\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.api.Bytes\""
-      " \202\323\344\223\002\032\"\025/utility/marshal/json:\001*\022G\n\013Mar"
-      "shalYAML\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032"
-      "\"\025/utility/marshal/yaml:\001*\022E\n\nMarshalXML"
-      "\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utili"
-      "ty/marshal/xml:\001*\022D\n\006Render\022\r.api.Templa"
-      "te\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal"
-      "/xml:\001*2\263\002\n\016ContactService\022B\n\007SendSMS\022\010."
-      "api.SMS\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/conta"
-      "ct/sms/{to}:\001*\022G\n\006GetSMS\022\017.api.Identifie"
-      "r\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021/contact/sms/"
-      "{id}:\001*\022M\n\tSendEmail\022\n.api.Email\032\017.api.I"
-      "dentifier\"#\202\323\344\223\002\035\"\030/contact/email/{addre"
-      "ss}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.Iden"
-      "tifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*b\006p"
-      "roto3"
+      "(\0132\014.api.Message\022\020\n\010mediaURL\030\003 \001(\t\"T\n\005Em"
+      "ail\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007su"
+      "bject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004html\030\005 \001(\t"
+      "\"$\n\004Call\022\n\n\002to\030\001 \001(\t\022\020\n\010callback\030\002 \001(\t\"\030"
+      "\n\007Message\022\r\n\005value\030\001 \001(\t\"\326\001\n\010UserInfo\022\014\n"
+      "\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013famil"
+      "y_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdat"
+      "e\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\022"
+      "(\n\ruser_metadata\030\r \001(\0132\021.api.UserMetadat"
+      "a\022&\n\014app_metadata\030\016 \001(\0132\020.api.AppMetadat"
+      "a\"V\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021pref"
+      "erred_contact\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\014\n\004t"
+      "ags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022\021"
+      "\n\tpay_token\030\002 \001(\t\022\022\n\ndelinquent\030\003 \001(\t\022\014\n"
+      "\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tc"
+      "lient_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t\022\020\n"
+      "\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001(\t\022\016\n\006sco"
+      "pes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Temp"
+      "late\022\014\n\004text\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\350\005\n\016Uti"
+      "lityService\022<\n\004Echo\022\014.api.Message\032\014.api."
+      "Message\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013Ech"
+      "oSpanish\022\014.api.Message\032\014.api.Message\" \202\323"
+      "\344\223\002\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoCh"
+      "inese\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002"
+      "\032\"\025/utility/echo/chinese:\001*\022K\n\013EchoEngli"
+      "sh\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025"
+      "/utility/echo/english:\001*\022G\n\tEchoHindi\022\014."
+      "api.Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/util"
+      "ity/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.Me"
+      "ssage\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/ec"
+      "ho/arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032"
+      "\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/js"
+      "on:\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api.B"
+      "ytes\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E"
+      "\n\nMarshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323"
+      "\344\223\002\031\"\024/utility/marshal/xml:\001*\022D\n\006Render\022"
+      "\r.api.Template\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/uti"
+      "lity/marshal/xml:\001*2\263\002\n\016ContactService\022B"
+      "\n\007SendSMS\022\010.api.SMS\032\017.api.Identifier\"\034\202\323"
+      "\344\223\002\026\"\021/contact/sms/{to}:\001*\022G\n\006GetSMS\022\017.a"
+      "pi.Identifier\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021/"
+      "contact/sms/{id}:\001*\022M\n\tSendEmail\022\n.api.E"
+      "mail\032\017.api.Identifier\"#\202\323\344\223\002\035\"\030/contact/"
+      "email/{address}:\001*\022E\n\010SendCall\022\t.api.Cal"
+      "l\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/cal"
+      "l/{to}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2005);
+      descriptor, 2017);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -1501,13 +1502,13 @@ void SMS::InternalSwap(SMS* other) {
 // ===================================================================
 
 void Email::InitAsDefaultInstance() {
-  ::api::_Email_default_instance_._instance.get_mutable()->message_ = const_cast< ::api::Message*>(
-      ::api::Message::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Email::kNameFieldNumber;
 const int Email::kAddressFieldNumber;
 const int Email::kSubjectFieldNumber;
-const int Email::kMessageFieldNumber;
+const int Email::kPlainFieldNumber;
+const int Email::kHtmlFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Email::Email()
@@ -1521,6 +1522,10 @@ Email::Email(const Email& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.address().size() > 0) {
     address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
@@ -1529,18 +1534,23 @@ Email::Email(const Email& from)
   if (from.subject().size() > 0) {
     subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
   }
-  if (from.has_message()) {
-    message_ = new ::api::Message(*from.message_);
-  } else {
-    message_ = NULL;
+  plain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.plain().size() > 0) {
+    plain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_);
+  }
+  html_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.html().size() > 0) {
+    html_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.html_);
   }
   // @@protoc_insertion_point(copy_constructor:api.Email)
 }
 
 void Email::SharedCtor() {
+  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subject_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  message_ = NULL;
+  plain_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  html_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 Email::~Email() {
@@ -1549,9 +1559,11 @@ Email::~Email() {
 }
 
 void Email::SharedDtor() {
+  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subject_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete message_;
+  plain_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  html_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void Email::SetCachedSize(int size) const {
@@ -1574,12 +1586,11 @@ void Email::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == NULL && message_ != NULL) {
-    delete message_;
-  }
-  message_ = NULL;
+  plain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  html_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -1593,10 +1604,26 @@ bool Email::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string address = 1;
+      // string name = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Email.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string address = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_address()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1609,10 +1636,10 @@ bool Email::MergePartialFromCodedStream(
         break;
       }
 
-      // string subject = 2;
-      case 2: {
+      // string subject = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_subject()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1625,12 +1652,32 @@ bool Email::MergePartialFromCodedStream(
         break;
       }
 
-      // .api.Message message = 3;
-      case 3: {
+      // string plain = 4;
+      case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_message()));
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_plain()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->plain().data(), static_cast<int>(this->plain().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Email.plain"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string html = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_html()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->html().data(), static_cast<int>(this->html().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.Email.html"));
         } else {
           goto handle_unusual;
         }
@@ -1663,30 +1710,54 @@ void Email::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string address = 1;
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Email.name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->name(), output);
+  }
+
+  // string address = 2;
   if (this->address().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->address().data(), static_cast<int>(this->address().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "api.Email.address");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->address(), output);
+      2, this->address(), output);
   }
 
-  // string subject = 2;
+  // string subject = 3;
   if (this->subject().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->subject().data(), static_cast<int>(this->subject().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "api.Email.subject");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->subject(), output);
+      3, this->subject(), output);
   }
 
-  // .api.Message message = 3;
-  if (this->has_message()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_message(), output);
+  // string plain = 4;
+  if (this->plain().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plain().data(), static_cast<int>(this->plain().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Email.plain");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->plain(), output);
+  }
+
+  // string html = 5;
+  if (this->html().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->html().data(), static_cast<int>(this->html().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Email.html");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->html(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1703,7 +1774,18 @@ void Email::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string address = 1;
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Email.name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->name(), target);
+  }
+
+  // string address = 2;
   if (this->address().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->address().data(), static_cast<int>(this->address().length()),
@@ -1711,10 +1793,10 @@ void Email::SerializeWithCachedSizes(
       "api.Email.address");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->address(), target);
+        2, this->address(), target);
   }
 
-  // string subject = 2;
+  // string subject = 3;
   if (this->subject().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->subject().data(), static_cast<int>(this->subject().length()),
@@ -1722,14 +1804,29 @@ void Email::SerializeWithCachedSizes(
       "api.Email.subject");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->subject(), target);
+        3, this->subject(), target);
   }
 
-  // .api.Message message = 3;
-  if (this->has_message()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->_internal_message(), deterministic, target);
+  // string plain = 4;
+  if (this->plain().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->plain().data(), static_cast<int>(this->plain().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Email.plain");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->plain(), target);
+  }
+
+  // string html = 5;
+  if (this->html().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->html().data(), static_cast<int>(this->html().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.Email.html");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->html(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1749,25 +1846,39 @@ size_t Email::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string address = 1;
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->name());
+  }
+
+  // string address = 2;
   if (this->address().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->address());
   }
 
-  // string subject = 2;
+  // string subject = 3;
   if (this->subject().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->subject());
   }
 
-  // .api.Message message = 3;
-  if (this->has_message()) {
+  // string plain = 4;
+  if (this->plain().size() > 0) {
     total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *message_);
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->plain());
+  }
+
+  // string html = 5;
+  if (this->html().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->html());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -1797,6 +1908,10 @@ void Email::MergeFrom(const Email& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
   if (from.address().size() > 0) {
 
     address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
@@ -1805,8 +1920,13 @@ void Email::MergeFrom(const Email& from) {
 
     subject_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.subject_);
   }
-  if (from.has_message()) {
-    mutable_message()->::api::Message::MergeFrom(from.message());
+  if (from.plain().size() > 0) {
+
+    plain_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.plain_);
+  }
+  if (from.html().size() > 0) {
+
+    html_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.html_);
   }
 }
 
@@ -1834,11 +1954,16 @@ void Email::Swap(Email* other) {
 }
 void Email::InternalSwap(Email* other) {
   using std::swap;
+  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   address_.Swap(&other->address_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   subject_.Swap(&other->subject_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  swap(message_, other->message_);
+  plain_.Swap(&other->plain_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  html_.Swap(&other->html_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

@@ -2525,37 +2525,54 @@ public final class Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string address = 1;</code>
+     * <code>string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string address = 2;</code>
      */
     java.lang.String getAddress();
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 2;</code>
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>string subject = 2;</code>
+     * <code>string subject = 3;</code>
      */
     java.lang.String getSubject();
     /**
-     * <code>string subject = 2;</code>
+     * <code>string subject = 3;</code>
      */
     com.google.protobuf.ByteString
         getSubjectBytes();
 
     /**
-     * <code>.api.Message message = 3;</code>
+     * <code>string plain = 4;</code>
      */
-    boolean hasMessage();
+    java.lang.String getPlain();
     /**
-     * <code>.api.Message message = 3;</code>
+     * <code>string plain = 4;</code>
      */
-    api.Api.Message getMessage();
+    com.google.protobuf.ByteString
+        getPlainBytes();
+
     /**
-     * <code>.api.Message message = 3;</code>
+     * <code>string html = 5;</code>
      */
-    api.Api.MessageOrBuilder getMessageOrBuilder();
+    java.lang.String getHtml();
+    /**
+     * <code>string html = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getHtmlBytes();
   }
   /**
    * Protobuf type {@code api.Email}
@@ -2570,8 +2587,11 @@ public final class Api {
       super(builder);
     }
     private Email() {
+      name_ = "";
       address_ = "";
       subject_ = "";
+      plain_ = "";
+      html_ = "";
     }
 
     @java.lang.Override
@@ -2601,26 +2621,31 @@ public final class Api {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              address_ = s;
+              name_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              subject_ = s;
+              address_ = s;
               break;
             }
             case 26: {
-              api.Api.Message.Builder subBuilder = null;
-              if (message_ != null) {
-                subBuilder = message_.toBuilder();
-              }
-              message_ = input.readMessage(api.Api.Message.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(message_);
-                message_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              subject_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              plain_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              html_ = s;
               break;
             }
             default: {
@@ -2655,10 +2680,44 @@ public final class Api {
               api.Api.Email.class, api.Api.Email.Builder.class);
     }
 
-    public static final int ADDRESS_FIELD_NUMBER = 1;
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object address_;
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 2;</code>
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -2673,7 +2732,7 @@ public final class Api {
       }
     }
     /**
-     * <code>string address = 1;</code>
+     * <code>string address = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -2689,10 +2748,10 @@ public final class Api {
       }
     }
 
-    public static final int SUBJECT_FIELD_NUMBER = 2;
+    public static final int SUBJECT_FIELD_NUMBER = 3;
     private volatile java.lang.Object subject_;
     /**
-     * <code>string subject = 2;</code>
+     * <code>string subject = 3;</code>
      */
     public java.lang.String getSubject() {
       java.lang.Object ref = subject_;
@@ -2707,7 +2766,7 @@ public final class Api {
       }
     }
     /**
-     * <code>string subject = 2;</code>
+     * <code>string subject = 3;</code>
      */
     public com.google.protobuf.ByteString
         getSubjectBytes() {
@@ -2723,25 +2782,72 @@ public final class Api {
       }
     }
 
-    public static final int MESSAGE_FIELD_NUMBER = 3;
-    private api.Api.Message message_;
+    public static final int PLAIN_FIELD_NUMBER = 4;
+    private volatile java.lang.Object plain_;
     /**
-     * <code>.api.Message message = 3;</code>
+     * <code>string plain = 4;</code>
      */
-    public boolean hasMessage() {
-      return message_ != null;
+    public java.lang.String getPlain() {
+      java.lang.Object ref = plain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plain_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.api.Message message = 3;</code>
+     * <code>string plain = 4;</code>
      */
-    public api.Api.Message getMessage() {
-      return message_ == null ? api.Api.Message.getDefaultInstance() : message_;
+    public com.google.protobuf.ByteString
+        getPlainBytes() {
+      java.lang.Object ref = plain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HTML_FIELD_NUMBER = 5;
+    private volatile java.lang.Object html_;
+    /**
+     * <code>string html = 5;</code>
+     */
+    public java.lang.String getHtml() {
+      java.lang.Object ref = html_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        html_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.api.Message message = 3;</code>
+     * <code>string html = 5;</code>
      */
-    public api.Api.MessageOrBuilder getMessageOrBuilder() {
-      return getMessage();
+    public com.google.protobuf.ByteString
+        getHtmlBytes() {
+      java.lang.Object ref = html_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        html_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2758,14 +2864,20 @@ public final class Api {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
       if (!getAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, address_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
       }
       if (!getSubjectBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subject_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subject_);
       }
-      if (message_ != null) {
-        output.writeMessage(3, getMessage());
+      if (!getPlainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, plain_);
+      }
+      if (!getHtmlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, html_);
       }
       unknownFields.writeTo(output);
     }
@@ -2776,15 +2888,20 @@ public final class Api {
       if (size != -1) return size;
 
       size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
       if (!getAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, address_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
       }
       if (!getSubjectBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subject_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subject_);
       }
-      if (message_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getMessage());
+      if (!getPlainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, plain_);
+      }
+      if (!getHtmlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, html_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2802,15 +2919,16 @@ public final class Api {
       api.Api.Email other = (api.Api.Email) obj;
 
       boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
       result = result && getAddress()
           .equals(other.getAddress());
       result = result && getSubject()
           .equals(other.getSubject());
-      result = result && (hasMessage() == other.hasMessage());
-      if (hasMessage()) {
-        result = result && getMessage()
-            .equals(other.getMessage());
-      }
+      result = result && getPlain()
+          .equals(other.getPlain());
+      result = result && getHtml()
+          .equals(other.getHtml());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2822,14 +2940,16 @@ public final class Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
       hash = (53 * hash) + getSubject().hashCode();
-      if (hasMessage()) {
-        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
-        hash = (53 * hash) + getMessage().hashCode();
-      }
+      hash = (37 * hash) + PLAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getPlain().hashCode();
+      hash = (37 * hash) + HTML_FIELD_NUMBER;
+      hash = (53 * hash) + getHtml().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2963,16 +3083,16 @@ public final class Api {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        name_ = "";
+
         address_ = "";
 
         subject_ = "";
 
-        if (messageBuilder_ == null) {
-          message_ = null;
-        } else {
-          message_ = null;
-          messageBuilder_ = null;
-        }
+        plain_ = "";
+
+        html_ = "";
+
         return this;
       }
 
@@ -2999,13 +3119,11 @@ public final class Api {
       @java.lang.Override
       public api.Api.Email buildPartial() {
         api.Api.Email result = new api.Api.Email(this);
+        result.name_ = name_;
         result.address_ = address_;
         result.subject_ = subject_;
-        if (messageBuilder_ == null) {
-          result.message_ = message_;
-        } else {
-          result.message_ = messageBuilder_.build();
-        }
+        result.plain_ = plain_;
+        result.html_ = html_;
         onBuilt();
         return result;
       }
@@ -3054,6 +3172,10 @@ public final class Api {
 
       public Builder mergeFrom(api.Api.Email other) {
         if (other == api.Api.Email.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
         if (!other.getAddress().isEmpty()) {
           address_ = other.address_;
           onChanged();
@@ -3062,8 +3184,13 @@ public final class Api {
           subject_ = other.subject_;
           onChanged();
         }
-        if (other.hasMessage()) {
-          mergeMessage(other.getMessage());
+        if (!other.getPlain().isEmpty()) {
+          plain_ = other.plain_;
+          onChanged();
+        }
+        if (!other.getHtml().isEmpty()) {
+          html_ = other.html_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3094,9 +3221,78 @@ public final class Api {
         return this;
       }
 
+      private java.lang.Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object address_ = "";
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 2;</code>
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -3111,7 +3307,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -3127,7 +3323,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -3140,7 +3336,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -3149,7 +3345,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string address = 1;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -3165,7 +3361,7 @@ public final class Api {
 
       private java.lang.Object subject_ = "";
       /**
-       * <code>string subject = 2;</code>
+       * <code>string subject = 3;</code>
        */
       public java.lang.String getSubject() {
         java.lang.Object ref = subject_;
@@ -3180,7 +3376,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string subject = 2;</code>
+       * <code>string subject = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSubjectBytes() {
@@ -3196,7 +3392,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string subject = 2;</code>
+       * <code>string subject = 3;</code>
        */
       public Builder setSubject(
           java.lang.String value) {
@@ -3209,7 +3405,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string subject = 2;</code>
+       * <code>string subject = 3;</code>
        */
       public Builder clearSubject() {
         
@@ -3218,7 +3414,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string subject = 2;</code>
+       * <code>string subject = 3;</code>
        */
       public Builder setSubjectBytes(
           com.google.protobuf.ByteString value) {
@@ -3232,121 +3428,142 @@ public final class Api {
         return this;
       }
 
-      private api.Api.Message message_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.Message, api.Api.Message.Builder, api.Api.MessageOrBuilder> messageBuilder_;
+      private java.lang.Object plain_ = "";
       /**
-       * <code>.api.Message message = 3;</code>
+       * <code>string plain = 4;</code>
        */
-      public boolean hasMessage() {
-        return messageBuilder_ != null || message_ != null;
-      }
-      /**
-       * <code>.api.Message message = 3;</code>
-       */
-      public api.Api.Message getMessage() {
-        if (messageBuilder_ == null) {
-          return message_ == null ? api.Api.Message.getDefaultInstance() : message_;
+      public java.lang.String getPlain() {
+        java.lang.Object ref = plain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          plain_ = s;
+          return s;
         } else {
-          return messageBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.api.Message message = 3;</code>
+       * <code>string plain = 4;</code>
        */
-      public Builder setMessage(api.Api.Message value) {
-        if (messageBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          message_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getPlainBytes() {
+        java.lang.Object ref = plain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          plain_ = b;
+          return b;
         } else {
-          messageBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.api.Message message = 3;</code>
+       * <code>string plain = 4;</code>
        */
-      public Builder setMessage(
-          api.Api.Message.Builder builderForValue) {
-        if (messageBuilder_ == null) {
-          message_ = builderForValue.build();
-          onChanged();
-        } else {
-          messageBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.Message message = 3;</code>
-       */
-      public Builder mergeMessage(api.Api.Message value) {
-        if (messageBuilder_ == null) {
-          if (message_ != null) {
-            message_ =
-              api.Api.Message.newBuilder(message_).mergeFrom(value).buildPartial();
-          } else {
-            message_ = value;
-          }
-          onChanged();
-        } else {
-          messageBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.Message message = 3;</code>
-       */
-      public Builder clearMessage() {
-        if (messageBuilder_ == null) {
-          message_ = null;
-          onChanged();
-        } else {
-          message_ = null;
-          messageBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.Message message = 3;</code>
-       */
-      public api.Api.Message.Builder getMessageBuilder() {
-        
+      public Builder setPlain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        plain_ = value;
         onChanged();
-        return getMessageFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.api.Message message = 3;</code>
+       * <code>string plain = 4;</code>
        */
-      public api.Api.MessageOrBuilder getMessageOrBuilder() {
-        if (messageBuilder_ != null) {
-          return messageBuilder_.getMessageOrBuilder();
+      public Builder clearPlain() {
+        
+        plain_ = getDefaultInstance().getPlain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string plain = 4;</code>
+       */
+      public Builder setPlainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        plain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object html_ = "";
+      /**
+       * <code>string html = 5;</code>
+       */
+      public java.lang.String getHtml() {
+        java.lang.Object ref = html_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          html_ = s;
+          return s;
         } else {
-          return message_ == null ?
-              api.Api.Message.getDefaultInstance() : message_;
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.api.Message message = 3;</code>
+       * <code>string html = 5;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.Message, api.Api.Message.Builder, api.Api.MessageOrBuilder> 
-          getMessageFieldBuilder() {
-        if (messageBuilder_ == null) {
-          messageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.Message, api.Api.Message.Builder, api.Api.MessageOrBuilder>(
-                  getMessage(),
-                  getParentForChildren(),
-                  isClean());
-          message_ = null;
+      public com.google.protobuf.ByteString
+          getHtmlBytes() {
+        java.lang.Object ref = html_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          html_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
         }
-        return messageBuilder_;
+      }
+      /**
+       * <code>string html = 5;</code>
+       */
+      public Builder setHtml(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        html_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string html = 5;</code>
+       */
+      public Builder clearHtml() {
+        
+        html_ = getDefaultInstance().getHtml();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string html = 5;</code>
+       */
+      public Builder setHtmlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        html_ = value;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10895,52 +11112,52 @@ public final class Api {
       "tatus\022\033\n\002id\030\001 \001(\0132\017.api.Identifier\022\025\n\003sm" +
       "s\030\002 \001(\0132\010.api.SMS\022\016\n\006status\030\003 \001(\t\022\013\n\003uri" +
       "\030\004 \001(\t\"B\n\003SMS\022\n\n\002to\030\001 \001(\t\022\035\n\007message\030\002 \001" +
-      "(\0132\014.api.Message\022\020\n\010mediaURL\030\003 \001(\t\"H\n\005Em" +
-      "ail\022\017\n\007address\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\035\n" +
-      "\007message\030\003 \001(\0132\014.api.Message\"$\n\004Call\022\n\n\002" +
-      "to\030\001 \001(\t\022\020\n\010callback\030\002 \001(\t\"\030\n\007Message\022\r\n" +
-      "\005value\030\001 \001(\t\"\326\001\n\010UserInfo\022\014\n\004name\030\006 \001(\t\022" +
-      "\022\n\ngiven_name\030\007 \001(\t\022\023\n\013family_name\030\010 \001(\t" +
-      "\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005e" +
-      "mail\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_meta" +
-      "data\030\r \001(\0132\021.api.UserMetadata\022&\n\014app_met" +
-      "adata\030\016 \001(\0132\020.api.AppMetadata\"V\n\014UserMet" +
-      "adata\022\r\n\005phone\030\001 \001(\t\022\031\n\021preferred_contac" +
-      "t\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"P\n" +
-      "\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022\021\n\tpay_token\030" +
-      "\002 \001(\t\022\022\n\ndelinquent\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"" +
-      "t\n\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001" +
-      "(\t\022\025\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 " +
-      "\001(\t\022\020\n\010audience\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n" +
-      "\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Template\022\014\n\004text" +
-      "\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\350\005\n\016UtilityService\022" +
-      "<\n\004Echo\022\014.api.Message\032\014.api.Message\"\030\202\323\344" +
-      "\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSpanish\022\014.a" +
-      "pi.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utili" +
-      "ty/echo/spanish:\001*\022K\n\013EchoChinese\022\014.api." +
-      "Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/" +
-      "echo/chinese:\001*\022K\n\013EchoEnglish\022\014.api.Mes" +
-      "sage\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/ech" +
-      "o/english:\001*\022G\n\tEchoHindi\022\014.api.Message\032" +
-      "\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility/echo/hin" +
-      "di:\001*\022I\n\nEchoArabic\022\014.api.Message\032\014.api." +
-      "Message\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*" +
-      "\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.api.Bytes\"" +
-      " \202\323\344\223\002\032\"\025/utility/marshal/json:\001*\022G\n\013Mar" +
-      "shalYAML\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032" +
-      "\"\025/utility/marshal/yaml:\001*\022E\n\nMarshalXML" +
-      "\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utili" +
-      "ty/marshal/xml:\001*\022D\n\006Render\022\r.api.Templa" +
-      "te\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal" +
-      "/xml:\001*2\263\002\n\016ContactService\022B\n\007SendSMS\022\010." +
-      "api.SMS\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/conta" +
-      "ct/sms/{to}:\001*\022G\n\006GetSMS\022\017.api.Identifie" +
-      "r\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021/contact/sms/" +
-      "{id}:\001*\022M\n\tSendEmail\022\n.api.Email\032\017.api.I" +
-      "dentifier\"#\202\323\344\223\002\035\"\030/contact/email/{addre" +
-      "ss}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.Iden" +
-      "tifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*b\006p" +
-      "roto3"
+      "(\0132\014.api.Message\022\020\n\010mediaURL\030\003 \001(\t\"T\n\005Em" +
+      "ail\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007su" +
+      "bject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004html\030\005 \001(\t" +
+      "\"$\n\004Call\022\n\n\002to\030\001 \001(\t\022\020\n\010callback\030\002 \001(\t\"\030" +
+      "\n\007Message\022\r\n\005value\030\001 \001(\t\"\326\001\n\010UserInfo\022\014\n" +
+      "\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013famil" +
+      "y_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthdat" +
+      "e\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t\022" +
+      "(\n\ruser_metadata\030\r \001(\0132\021.api.UserMetadat" +
+      "a\022&\n\014app_metadata\030\016 \001(\0132\020.api.AppMetadat" +
+      "a\"V\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021pref" +
+      "erred_contact\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\014\n\004t" +
+      "ags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022\021" +
+      "\n\tpay_token\030\002 \001(\t\022\022\n\ndelinquent\030\003 \001(\t\022\014\n" +
+      "\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tc" +
+      "lient_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t\022\020\n" +
+      "\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001(\t\022\016\n\006sco" +
+      "pes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Temp" +
+      "late\022\014\n\004text\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\350\005\n\016Uti" +
+      "lityService\022<\n\004Echo\022\014.api.Message\032\014.api." +
+      "Message\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013Ech" +
+      "oSpanish\022\014.api.Message\032\014.api.Message\" \202\323" +
+      "\344\223\002\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoCh" +
+      "inese\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002" +
+      "\032\"\025/utility/echo/chinese:\001*\022K\n\013EchoEngli" +
+      "sh\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025" +
+      "/utility/echo/english:\001*\022G\n\tEchoHindi\022\014." +
+      "api.Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/util" +
+      "ity/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.Me" +
+      "ssage\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/ec" +
+      "ho/arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032" +
+      "\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/js" +
+      "on:\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api.B" +
+      "ytes\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E" +
+      "\n\nMarshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323" +
+      "\344\223\002\031\"\024/utility/marshal/xml:\001*\022D\n\006Render\022" +
+      "\r.api.Template\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/uti" +
+      "lity/marshal/xml:\001*2\263\002\n\016ContactService\022B" +
+      "\n\007SendSMS\022\010.api.SMS\032\017.api.Identifier\"\034\202\323" +
+      "\344\223\002\026\"\021/contact/sms/{to}:\001*\022G\n\006GetSMS\022\017.a" +
+      "pi.Identifier\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021/" +
+      "contact/sms/{id}:\001*\022M\n\tSendEmail\022\n.api.E" +
+      "mail\032\017.api.Identifier\"#\202\323\344\223\002\035\"\030/contact/" +
+      "email/{address}:\001*\022E\n\010SendCall\022\t.api.Cal" +
+      "l\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/cal" +
+      "l/{to}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10978,7 +11195,7 @@ public final class Api {
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
-        new java.lang.String[] { "Address", "Subject", "Message", });
+        new java.lang.String[] { "Name", "Address", "Subject", "Plain", "Html", });
     internal_static_api_Call_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_api_Call_fieldAccessorTable = new
