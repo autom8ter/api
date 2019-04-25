@@ -22,7 +22,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -112,7 +112,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -170,7 +170,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -202,7 +202,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -234,7 +234,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -266,7 +266,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -292,7 +292,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },
@@ -382,7 +382,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         },

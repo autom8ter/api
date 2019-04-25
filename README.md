@@ -698,6 +698,12 @@ func (m *Bytes) Length() int
 func (*Bytes) ProtoMessage()
 ```
 
+#### func (*Bytes) Read
+
+```go
+func (m *Bytes) Read(p []byte) (n int, err error)
+```
+
 #### func (*Bytes) Reset
 
 ```go
@@ -977,12 +983,12 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet
 
 ```go
 type ContactServiceClient interface {
-	SendSMS(ctx context.Context, in *SMS, opts ...grpc.CallOption) (*Identifier, error)
+	SendSMS(ctx context.Context, in *SMS, opts ...grpc.CallOption) (*Bytes, error)
 	SendSMSBlast(ctx context.Context, in *SMSBlast, opts ...grpc.CallOption) (ContactService_SendSMSBlastClient, error)
 	GetSMS(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*SMSStatus, error)
 	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Message, error)
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
-	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Identifier, error)
+	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Bytes, error)
 }
 ```
 
@@ -1001,12 +1007,12 @@ func NewContactServiceClient(cc *grpc.ClientConn) ContactServiceClient
 
 ```go
 type ContactServiceServer interface {
-	SendSMS(context.Context, *SMS) (*Identifier, error)
+	SendSMS(context.Context, *SMS) (*Bytes, error)
 	SendSMSBlast(*SMSBlast, ContactService_SendSMSBlastServer) error
 	GetSMS(context.Context, *Identifier) (*SMSStatus, error)
 	SendEmail(context.Context, *EmailRequest) (*Message, error)
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
-	SendCall(context.Context, *Call) (*Identifier, error)
+	SendCall(context.Context, *Call) (*Bytes, error)
 }
 ```
 
@@ -1036,7 +1042,7 @@ type ContactService_SendEmailBlastServer interface {
 
 ```go
 type ContactService_SendSMSBlastClient interface {
-	Recv() (*Identifier, error)
+	Recv() (*Bytes, error)
 	grpc.ClientStream
 }
 ```
@@ -1046,7 +1052,7 @@ type ContactService_SendSMSBlastClient interface {
 
 ```go
 type ContactService_SendSMSBlastServer interface {
-	Send(*Identifier) error
+	Send(*Bytes) error
 	grpc.ServerStream
 }
 ```
@@ -2146,8 +2152,8 @@ func (m *Message) XXX_Unmarshal(b []byte) error
 
 ```go
 type PaymentServiceClient interface {
-	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
-	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
+	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Bytes, error)
+	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Bytes, error)
 }
 ```
 
@@ -2166,8 +2172,8 @@ func NewPaymentServiceClient(cc *grpc.ClientConn) PaymentServiceClient
 
 ```go
 type PaymentServiceServer interface {
-	Subscribe(context.Context, *SubscribeRequest) (*Identifier, error)
-	Unsubscribe(context.Context, *UnSubscribeRequest) (*Identifier, error)
+	Subscribe(context.Context, *SubscribeRequest) (*Bytes, error)
+	Unsubscribe(context.Context, *UnSubscribeRequest) (*Bytes, error)
 }
 ```
 
@@ -3256,9 +3262,9 @@ func (m *UserRequest) XXX_Unmarshal(b []byte) error
 ```go
 type UserServiceClient interface {
 	GetUser(ctx context.Context, in *UserByEmailRequest, opts ...grpc.CallOption) (*User, error)
-	UpdateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Identifier, error)
-	CreateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Identifier, error)
-	DeleteUser(ctx context.Context, in *UserByEmailRequest, opts ...grpc.CallOption) (*Identifier, error)
+	UpdateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Bytes, error)
+	CreateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Bytes, error)
+	DeleteUser(ctx context.Context, in *UserByEmailRequest, opts ...grpc.CallOption) (*Bytes, error)
 	ListUsers(ctx context.Context, in *ManagementToken, opts ...grpc.CallOption) (UserService_ListUsersClient, error)
 }
 ```
@@ -3279,9 +3285,9 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 ```go
 type UserServiceServer interface {
 	GetUser(context.Context, *UserByEmailRequest) (*User, error)
-	UpdateUser(context.Context, *UserRequest) (*Identifier, error)
-	CreateUser(context.Context, *UserRequest) (*Identifier, error)
-	DeleteUser(context.Context, *UserByEmailRequest) (*Identifier, error)
+	UpdateUser(context.Context, *UserRequest) (*Bytes, error)
+	CreateUser(context.Context, *UserRequest) (*Bytes, error)
+	DeleteUser(context.Context, *UserByEmailRequest) (*Bytes, error)
 	ListUsers(*ManagementToken, UserService_ListUsersServer) error
 }
 ```

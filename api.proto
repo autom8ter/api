@@ -69,13 +69,13 @@ service UtilityService {
 }
 
 service ContactService {
-    rpc SendSMS(SMS) returns (Identifier) {
+    rpc SendSMS(SMS) returns (Bytes) {
         option (google.api.http) = {
       post: "/contact/sms/{to}"
       body: "*"
     };
     }
-    rpc SendSMSBlast(SMSBlast) returns (stream Identifier) {
+    rpc SendSMSBlast(SMSBlast) returns (stream Bytes) {
         option (google.api.http) = {
       post: "/contact/sms/blast"
       body: "*"
@@ -99,7 +99,7 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SendCall(Call) returns (Identifier) {
+    rpc SendCall(Call) returns (Bytes) {
         option (google.api.http) = {
       post: "/contact/call/{to}"
       body: "*"
@@ -107,13 +107,13 @@ service ContactService {
     }
 }
 service PaymentService {
-    rpc Subscribe(SubscribeRequest) returns (Identifier) {
+    rpc Subscribe(SubscribeRequest) returns (Bytes) {
         option (google.api.http) = {
       post: "/payment/subscribe/{email}"
       body: "*"
     };
     }
-    rpc Unsubscribe(UnSubscribeRequest) returns (Identifier) {
+    rpc Unsubscribe(UnSubscribeRequest) returns (Bytes) {
         option (google.api.http) = {
       post: "/payment/unsubscribe/{email}"
       body: "*"
@@ -128,19 +128,19 @@ service UserService {
       body: "*"
     };
     }
-    rpc UpdateUser(UserRequest) returns (Identifier) {
+    rpc UpdateUser(UserRequest) returns (Bytes) {
         option (google.api.http) = {
       post: "/user/update/{user.email}"
       body: "*"
     };
     }
-    rpc CreateUser(UserRequest) returns (Identifier) {
+    rpc CreateUser(UserRequest) returns (Bytes) {
         option (google.api.http) = {
       post: "/user/create"
       body: "*"
     };
     }
-    rpc DeleteUser(UserByEmailRequest) returns (Identifier) {
+    rpc DeleteUser(UserByEmailRequest) returns (Bytes) {
         option (google.api.http) = {
       post: "/user/delete/{email}"
       body: "*"

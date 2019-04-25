@@ -27643,32 +27643,31 @@ public final class Api {
       "Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/mars" +
       "hal/xml:\001*\022D\n\006Render\022\r.api.Template\032\n.ap" +
       "i.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:\001*" +
-      "2\351\003\n\016ContactService\022B\n\007SendSMS\022\010.api.SMS" +
-      "\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/contact/sms/" +
-      "{to}:\001*\022O\n\014SendSMSBlast\022\r.api.SMSBlast\032\017" +
-      ".api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/sms/bl" +
-      "ast:\001*0\001\022G\n\006GetSMS\022\017.api.Identifier\032\016.ap" +
-      "i.SMSStatus\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001" +
-      "*\022W\n\tSendEmail\022\021.api.EmailRequest\032\014.api." +
-      "Message\")\202\323\344\223\002#\"\036/contact/email/{email.a" +
-      "ddress}:\001*\022Y\n\016SendEmailBlast\022\026.api.Email" +
-      "BlastRequest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/con" +
-      "tact/email/blast:\001*0\001\022E\n\010SendCall\022\t.api." +
-      "Call\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/" +
-      "call/{to}:\001*2\316\001\n\016PaymentService\022Z\n\tSubsc" +
-      "ribe\022\025.api.SubscribeRequest\032\017.api.Identi" +
-      "fier\"%\202\323\344\223\002\037\"\032/payment/subscribe/{email}" +
-      ":\001*\022`\n\013Unsubscribe\022\027.api.UnSubscribeRequ" +
-      "est\032\017.api.Identifier\"\'\202\323\344\223\002!\"\034/payment/u" +
-      "nsubscribe/{email}:\001*2\233\003\n\013UserService\022K\n" +
-      "\007GetUser\022\027.api.UserByEmailRequest\032\t.api." +
-      "User\"\034\202\323\344\223\002\026\"\021/user/get/{email}:\001*\022U\n\nUp" +
-      "dateUser\022\020.api.UserRequest\032\017.api.Identif" +
-      "ier\"$\202\323\344\223\002\036\"\031/user/update/{user.email}:\001" +
-      "*\022H\n\nCreateUser\022\020.api.UserRequest\032\017.api." +
-      "Identifier\"\027\202\323\344\223\002\021\"\014/user/create:\001*\022W\n\nD" +
-      "eleteUser\022\027.api.UserByEmailRequest\032\017.api" +
-      ".Identifier\"\037\202\323\344\223\002\031\"\024/user/delete/{email" +
+      "2\332\003\n\016ContactService\022=\n\007SendSMS\022\010.api.SMS" +
+      "\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{to}:" +
+      "\001*\022J\n\014SendSMSBlast\022\r.api.SMSBlast\032\n.api." +
+      "Bytes\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022G" +
+      "\n\006GetSMS\022\017.api.Identifier\032\016.api.SMSStatu" +
+      "s\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*\022W\n\tSendE" +
+      "mail\022\021.api.EmailRequest\032\014.api.Message\")\202" +
+      "\323\344\223\002#\"\036/contact/email/{email.address}:\001*" +
+      "\022Y\n\016SendEmailBlast\022\026.api.EmailBlastReque" +
+      "st\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/contact/email" +
+      "/blast:\001*0\001\022@\n\010SendCall\022\t.api.Call\032\n.api" +
+      ".Bytes\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*2\304\001" +
+      "\n\016PaymentService\022U\n\tSubscribe\022\025.api.Subs" +
+      "cribeRequest\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032/payme" +
+      "nt/subscribe/{email}:\001*\022[\n\013Unsubscribe\022\027" +
+      ".api.UnSubscribeRequest\032\n.api.Bytes\"\'\202\323\344" +
+      "\223\002!\"\034/payment/unsubscribe/{email}:\001*2\214\003\n" +
+      "\013UserService\022K\n\007GetUser\022\027.api.UserByEmai" +
+      "lRequest\032\t.api.User\"\034\202\323\344\223\002\026\"\021/user/get/{" +
+      "email}:\001*\022P\n\nUpdateUser\022\020.api.UserReques" +
+      "t\032\n.api.Bytes\"$\202\323\344\223\002\036\"\031/user/update/{use" +
+      "r.email}:\001*\022C\n\nCreateUser\022\020.api.UserRequ" +
+      "est\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/user/create:\001*" +
+      "\022R\n\nDeleteUser\022\027.api.UserByEmailRequest\032" +
+      "\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/user/delete/{email" +
       "}:\001*\022E\n\tListUsers\022\024.api.ManagementToken\032" +
       "\t.api.User\"\025\202\323\344\223\002\017\"\n/user/list:\001*0\001b\006pro" +
       "to3"
