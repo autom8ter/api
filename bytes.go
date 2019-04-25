@@ -112,6 +112,10 @@ func (m *Bytes) UnMarshalProto(obj interface{}) error {
 	return proto.Unmarshal(m.Bits, obj.(proto.Message))
 }
 
+func (m *Bytes) Clear() {
+	m.Bits = []byte{}
+}
+
 func AsBytes(obj interface{}) *Bytes {
 	return &Bytes{
 		Bits: Util.MarshalJSON(obj),
