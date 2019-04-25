@@ -44,6 +44,42 @@ func FuncMap() template.FuncMap
 func InitSessions(secret string) error
 ```
 
+#### func  RegisterAdminServiceHandler
+
+```go
+func RegisterAdminServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterAdminServiceHandler registers the http handlers for service AdminService
+to "mux". The handlers forward requests to the grpc endpoint over "conn".
+
+#### func  RegisterAdminServiceHandlerClient
+
+```go
+func RegisterAdminServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AdminServiceClient) error
+```
+RegisterAdminServiceHandlerClient registers the http handlers for service
+AdminService to "mux". The handlers forward requests to the grpc endpoint over
+the given implementation of "AdminServiceClient". Note: the gRPC framework
+executes interceptors within the gRPC handler. If the passed in
+"AdminServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "AdminServiceClient" to call
+the correct interceptors.
+
+#### func  RegisterAdminServiceHandlerFromEndpoint
+
+```go
+func RegisterAdminServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterAdminServiceHandlerFromEndpoint is same as RegisterAdminServiceHandler
+but automatically dials to "endpoint" and closes the connection when "ctx" gets
+done.
+
+#### func  RegisterAdminServiceServer
+
+```go
+func RegisterAdminServiceServer(s *grpc.Server, srv AdminServiceServer)
+```
+
 #### func  RegisterContactServiceHandler
 
 ```go
@@ -79,6 +115,42 @@ the connection when "ctx" gets done.
 
 ```go
 func RegisterContactServiceServer(s *grpc.Server, srv ContactServiceServer)
+```
+
+#### func  RegisterUserServiceHandler
+
+```go
+func RegisterUserServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterUserServiceHandler registers the http handlers for service UserService
+to "mux". The handlers forward requests to the grpc endpoint over "conn".
+
+#### func  RegisterUserServiceHandlerClient
+
+```go
+func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client UserServiceClient) error
+```
+RegisterUserServiceHandlerClient registers the http handlers for service
+UserService to "mux". The handlers forward requests to the grpc endpoint over
+the given implementation of "UserServiceClient". Note: the gRPC framework
+executes interceptors within the gRPC handler. If the passed in
+"UserServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "UserServiceClient" to call the
+correct interceptors.
+
+#### func  RegisterUserServiceHandlerFromEndpoint
+
+```go
+func RegisterUserServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterUserServiceHandlerFromEndpoint is same as RegisterUserServiceHandler but
+automatically dials to "endpoint" and closes the connection when "ctx" gets
+done.
+
+#### func  RegisterUserServiceServer
+
+```go
+func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer)
 ```
 
 #### func  RegisterUtilityServiceHandler
@@ -129,6 +201,35 @@ func RenderFileWithData(name string, data interface{}) http.HandlerFunc
 ```go
 func RenderFileWithUserInfo(filename string) http.HandlerFunc
 ```
+
+#### type AdminServiceClient
+
+```go
+type AdminServiceClient interface {
+	GetDashboard(ctx context.Context, in *Secret, opts ...grpc.CallOption) (*Dashboard, error)
+}
+```
+
+AdminServiceClient is the client API for AdminService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewAdminServiceClient
+
+```go
+func NewAdminServiceClient(cc *grpc.ClientConn) AdminServiceClient
+```
+
+#### type AdminServiceServer
+
+```go
+type AdminServiceServer interface {
+	GetDashboard(context.Context, *Secret) (*Dashboard, error)
+}
+```
+
+AdminServiceServer is the server API for AdminService service.
 
 #### type AppMetadata
 
@@ -512,6 +613,185 @@ func (m *Call) XXX_Size() int
 func (m *Call) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Card
+
+```go
+type Card struct {
+	Number               string   `protobuf:"bytes,1,opt,name=number,proto3" json:"number,omitempty"`
+	ExpMonth             string   `protobuf:"bytes,2,opt,name=exp_month,json=expMonth,proto3" json:"exp_month,omitempty"`
+	ExpYear              string   `protobuf:"bytes,3,opt,name=exp_year,json=expYear,proto3" json:"exp_year,omitempty"`
+	Cvc                  string   `protobuf:"bytes,4,opt,name=cvc,proto3" json:"cvc,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Card) Descriptor
+
+```go
+func (*Card) Descriptor() ([]byte, []int)
+```
+
+#### func (*Card) GetCvc
+
+```go
+func (m *Card) GetCvc() string
+```
+
+#### func (*Card) GetExpMonth
+
+```go
+func (m *Card) GetExpMonth() string
+```
+
+#### func (*Card) GetExpYear
+
+```go
+func (m *Card) GetExpYear() string
+```
+
+#### func (*Card) GetNumber
+
+```go
+func (m *Card) GetNumber() string
+```
+
+#### func (*Card) ProtoMessage
+
+```go
+func (*Card) ProtoMessage()
+```
+
+#### func (*Card) Reset
+
+```go
+func (m *Card) Reset()
+```
+
+#### func (*Card) String
+
+```go
+func (m *Card) String() string
+```
+
+#### func (*Card) XXX_DiscardUnknown
+
+```go
+func (m *Card) XXX_DiscardUnknown()
+```
+
+#### func (*Card) XXX_Marshal
+
+```go
+func (m *Card) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Card) XXX_Merge
+
+```go
+func (m *Card) XXX_Merge(src proto.Message)
+```
+
+#### func (*Card) XXX_Size
+
+```go
+func (m *Card) XXX_Size() int
+```
+
+#### func (*Card) XXX_Unmarshal
+
+```go
+func (m *Card) XXX_Unmarshal(b []byte) error
+```
+
+#### type ChargesWidget
+
+```go
+type ChargesWidget struct {
+	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	Total                float64  `protobuf:"fixed64,2,opt,name=total,proto3" json:"total,omitempty"`
+	DollarsPerCharge     float64  `protobuf:"fixed64,3,opt,name=dollars_per_charge,json=dollarsPerCharge,proto3" json:"dollars_per_charge,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*ChargesWidget) Descriptor
+
+```go
+func (*ChargesWidget) Descriptor() ([]byte, []int)
+```
+
+#### func (*ChargesWidget) GetCount
+
+```go
+func (m *ChargesWidget) GetCount() int64
+```
+
+#### func (*ChargesWidget) GetDollarsPerCharge
+
+```go
+func (m *ChargesWidget) GetDollarsPerCharge() float64
+```
+
+#### func (*ChargesWidget) GetTotal
+
+```go
+func (m *ChargesWidget) GetTotal() float64
+```
+
+#### func (*ChargesWidget) ProtoMessage
+
+```go
+func (*ChargesWidget) ProtoMessage()
+```
+
+#### func (*ChargesWidget) Reset
+
+```go
+func (m *ChargesWidget) Reset()
+```
+
+#### func (*ChargesWidget) String
+
+```go
+func (m *ChargesWidget) String() string
+```
+
+#### func (*ChargesWidget) XXX_DiscardUnknown
+
+```go
+func (m *ChargesWidget) XXX_DiscardUnknown()
+```
+
+#### func (*ChargesWidget) XXX_Marshal
+
+```go
+func (m *ChargesWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*ChargesWidget) XXX_Merge
+
+```go
+func (m *ChargesWidget) XXX_Merge(src proto.Message)
+```
+
+#### func (*ChargesWidget) XXX_Size
+
+```go
+func (m *ChargesWidget) XXX_Size() int
+```
+
+#### func (*ChargesWidget) XXX_Unmarshal
+
+```go
+func (m *ChargesWidget) XXX_Unmarshal(b []byte) error
+```
+
 #### type ClientSet
 
 ```go
@@ -562,6 +842,178 @@ type ContactServiceServer interface {
 ```
 
 ContactServiceServer is the server API for ContactService service.
+
+#### type CustomersWidget
+
+```go
+type CustomersWidget struct {
+	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*CustomersWidget) Descriptor
+
+```go
+func (*CustomersWidget) Descriptor() ([]byte, []int)
+```
+
+#### func (*CustomersWidget) GetCount
+
+```go
+func (m *CustomersWidget) GetCount() int64
+```
+
+#### func (*CustomersWidget) ProtoMessage
+
+```go
+func (*CustomersWidget) ProtoMessage()
+```
+
+#### func (*CustomersWidget) Reset
+
+```go
+func (m *CustomersWidget) Reset()
+```
+
+#### func (*CustomersWidget) String
+
+```go
+func (m *CustomersWidget) String() string
+```
+
+#### func (*CustomersWidget) XXX_DiscardUnknown
+
+```go
+func (m *CustomersWidget) XXX_DiscardUnknown()
+```
+
+#### func (*CustomersWidget) XXX_Marshal
+
+```go
+func (m *CustomersWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*CustomersWidget) XXX_Merge
+
+```go
+func (m *CustomersWidget) XXX_Merge(src proto.Message)
+```
+
+#### func (*CustomersWidget) XXX_Size
+
+```go
+func (m *CustomersWidget) XXX_Size() int
+```
+
+#### func (*CustomersWidget) XXX_Unmarshal
+
+```go
+func (m *CustomersWidget) XXX_Unmarshal(b []byte) error
+```
+
+#### type Dashboard
+
+```go
+type Dashboard struct {
+	Users                *UsersWidget         `protobuf:"bytes,1,opt,name=users,proto3" json:"users,omitempty"`
+	Customers            *CustomersWidget     `protobuf:"bytes,2,opt,name=customers,proto3" json:"customers,omitempty"`
+	Plans                *PlansWidget         `protobuf:"bytes,3,opt,name=plans,proto3" json:"plans,omitempty"`
+	Subscriptions        *SubscriptionsWidget `protobuf:"bytes,4,opt,name=subscriptions,proto3" json:"subscriptions,omitempty"`
+	Charges              *ChargesWidget       `protobuf:"bytes,5,opt,name=charges,proto3" json:"charges,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
+	XXX_unrecognized     []byte               `json:"-"`
+	XXX_sizecache        int32                `json:"-"`
+}
+```
+
+
+#### func (*Dashboard) Descriptor
+
+```go
+func (*Dashboard) Descriptor() ([]byte, []int)
+```
+
+#### func (*Dashboard) GetCharges
+
+```go
+func (m *Dashboard) GetCharges() *ChargesWidget
+```
+
+#### func (*Dashboard) GetCustomers
+
+```go
+func (m *Dashboard) GetCustomers() *CustomersWidget
+```
+
+#### func (*Dashboard) GetPlans
+
+```go
+func (m *Dashboard) GetPlans() *PlansWidget
+```
+
+#### func (*Dashboard) GetSubscriptions
+
+```go
+func (m *Dashboard) GetSubscriptions() *SubscriptionsWidget
+```
+
+#### func (*Dashboard) GetUsers
+
+```go
+func (m *Dashboard) GetUsers() *UsersWidget
+```
+
+#### func (*Dashboard) ProtoMessage
+
+```go
+func (*Dashboard) ProtoMessage()
+```
+
+#### func (*Dashboard) Reset
+
+```go
+func (m *Dashboard) Reset()
+```
+
+#### func (*Dashboard) String
+
+```go
+func (m *Dashboard) String() string
+```
+
+#### func (*Dashboard) XXX_DiscardUnknown
+
+```go
+func (m *Dashboard) XXX_DiscardUnknown()
+```
+
+#### func (*Dashboard) XXX_Marshal
+
+```go
+func (m *Dashboard) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Dashboard) XXX_Merge
+
+```go
+func (m *Dashboard) XXX_Merge(src proto.Message)
+```
+
+#### func (*Dashboard) XXX_Size
+
+```go
+func (m *Dashboard) XXX_Size() int
+```
+
+#### func (*Dashboard) XXX_Unmarshal
+
+```go
+func (m *Dashboard) XXX_Unmarshal(b []byte) error
+```
 
 #### type Email
 
@@ -749,6 +1201,71 @@ func (m *EmailRequest) XXX_Size() int
 func (m *EmailRequest) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Empty
+
+```go
+type Empty struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Empty) Descriptor
+
+```go
+func (*Empty) Descriptor() ([]byte, []int)
+```
+
+#### func (*Empty) ProtoMessage
+
+```go
+func (*Empty) ProtoMessage()
+```
+
+#### func (*Empty) Reset
+
+```go
+func (m *Empty) Reset()
+```
+
+#### func (*Empty) String
+
+```go
+func (m *Empty) String() string
+```
+
+#### func (*Empty) XXX_DiscardUnknown
+
+```go
+func (m *Empty) XXX_DiscardUnknown()
+```
+
+#### func (*Empty) XXX_Marshal
+
+```go
+func (m *Empty) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Empty) XXX_Merge
+
+```go
+func (m *Empty) XXX_Merge(src proto.Message)
+```
+
+#### func (*Empty) XXX_Size
+
+```go
+func (m *Empty) XXX_Size() int
+```
+
+#### func (*Empty) XXX_Unmarshal
+
+```go
+func (m *Empty) XXX_Unmarshal(b []byte) error
+```
+
 #### type Identifier
 
 ```go
@@ -891,6 +1408,78 @@ func (m *Message) XXX_Size() int
 
 ```go
 func (m *Message) XXX_Unmarshal(b []byte) error
+```
+
+#### type PlansWidget
+
+```go
+type PlansWidget struct {
+	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*PlansWidget) Descriptor
+
+```go
+func (*PlansWidget) Descriptor() ([]byte, []int)
+```
+
+#### func (*PlansWidget) GetCount
+
+```go
+func (m *PlansWidget) GetCount() int64
+```
+
+#### func (*PlansWidget) ProtoMessage
+
+```go
+func (*PlansWidget) ProtoMessage()
+```
+
+#### func (*PlansWidget) Reset
+
+```go
+func (m *PlansWidget) Reset()
+```
+
+#### func (*PlansWidget) String
+
+```go
+func (m *PlansWidget) String() string
+```
+
+#### func (*PlansWidget) XXX_DiscardUnknown
+
+```go
+func (m *PlansWidget) XXX_DiscardUnknown()
+```
+
+#### func (*PlansWidget) XXX_Marshal
+
+```go
+func (m *PlansWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*PlansWidget) XXX_Merge
+
+```go
+func (m *PlansWidget) XXX_Merge(src proto.Message)
+```
+
+#### func (*PlansWidget) XXX_Size
+
+```go
+func (m *PlansWidget) XXX_Size() int
+```
+
+#### func (*PlansWidget) XXX_Unmarshal
+
+```go
+func (m *PlansWidget) XXX_Unmarshal(b []byte) error
 ```
 
 #### type RouterPaths
@@ -1107,6 +1696,236 @@ func (m *SMSStatus) XXX_Size() int
 func (m *SMSStatus) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Secret
+
+```go
+type Secret struct {
+	Text                 string   `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Secret) Descriptor
+
+```go
+func (*Secret) Descriptor() ([]byte, []int)
+```
+
+#### func (*Secret) GetText
+
+```go
+func (m *Secret) GetText() string
+```
+
+#### func (*Secret) ProtoMessage
+
+```go
+func (*Secret) ProtoMessage()
+```
+
+#### func (*Secret) Reset
+
+```go
+func (m *Secret) Reset()
+```
+
+#### func (*Secret) String
+
+```go
+func (m *Secret) String() string
+```
+
+#### func (*Secret) XXX_DiscardUnknown
+
+```go
+func (m *Secret) XXX_DiscardUnknown()
+```
+
+#### func (*Secret) XXX_Marshal
+
+```go
+func (m *Secret) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Secret) XXX_Merge
+
+```go
+func (m *Secret) XXX_Merge(src proto.Message)
+```
+
+#### func (*Secret) XXX_Size
+
+```go
+func (m *Secret) XXX_Size() int
+```
+
+#### func (*Secret) XXX_Unmarshal
+
+```go
+func (m *Secret) XXX_Unmarshal(b []byte) error
+```
+
+#### type SubscribeRequest
+
+```go
+type SubscribeRequest struct {
+	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Plan                 string   `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
+	Card                 *Card    `protobuf:"bytes,3,opt,name=card,proto3" json:"card,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*SubscribeRequest) Descriptor
+
+```go
+func (*SubscribeRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*SubscribeRequest) GetCard
+
+```go
+func (m *SubscribeRequest) GetCard() *Card
+```
+
+#### func (*SubscribeRequest) GetEmail
+
+```go
+func (m *SubscribeRequest) GetEmail() string
+```
+
+#### func (*SubscribeRequest) GetPlan
+
+```go
+func (m *SubscribeRequest) GetPlan() string
+```
+
+#### func (*SubscribeRequest) ProtoMessage
+
+```go
+func (*SubscribeRequest) ProtoMessage()
+```
+
+#### func (*SubscribeRequest) Reset
+
+```go
+func (m *SubscribeRequest) Reset()
+```
+
+#### func (*SubscribeRequest) String
+
+```go
+func (m *SubscribeRequest) String() string
+```
+
+#### func (*SubscribeRequest) XXX_DiscardUnknown
+
+```go
+func (m *SubscribeRequest) XXX_DiscardUnknown()
+```
+
+#### func (*SubscribeRequest) XXX_Marshal
+
+```go
+func (m *SubscribeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*SubscribeRequest) XXX_Merge
+
+```go
+func (m *SubscribeRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*SubscribeRequest) XXX_Size
+
+```go
+func (m *SubscribeRequest) XXX_Size() int
+```
+
+#### func (*SubscribeRequest) XXX_Unmarshal
+
+```go
+func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error
+```
+
+#### type SubscriptionsWidget
+
+```go
+type SubscriptionsWidget struct {
+	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*SubscriptionsWidget) Descriptor
+
+```go
+func (*SubscriptionsWidget) Descriptor() ([]byte, []int)
+```
+
+#### func (*SubscriptionsWidget) GetCount
+
+```go
+func (m *SubscriptionsWidget) GetCount() int64
+```
+
+#### func (*SubscriptionsWidget) ProtoMessage
+
+```go
+func (*SubscriptionsWidget) ProtoMessage()
+```
+
+#### func (*SubscriptionsWidget) Reset
+
+```go
+func (m *SubscriptionsWidget) Reset()
+```
+
+#### func (*SubscriptionsWidget) String
+
+```go
+func (m *SubscriptionsWidget) String() string
+```
+
+#### func (*SubscriptionsWidget) XXX_DiscardUnknown
+
+```go
+func (m *SubscriptionsWidget) XXX_DiscardUnknown()
+```
+
+#### func (*SubscriptionsWidget) XXX_Marshal
+
+```go
+func (m *SubscriptionsWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*SubscriptionsWidget) XXX_Merge
+
+```go
+func (m *SubscriptionsWidget) XXX_Merge(src proto.Message)
+```
+
+#### func (*SubscriptionsWidget) XXX_Size
+
+```go
+func (m *SubscriptionsWidget) XXX_Size() int
+```
+
+#### func (*SubscriptionsWidget) XXX_Unmarshal
+
+```go
+func (m *SubscriptionsWidget) XXX_Unmarshal(b []byte) error
+```
+
 #### type Template
 
 ```go
@@ -1184,6 +2003,85 @@ func (m *Template) XXX_Size() int
 
 ```go
 func (m *Template) XXX_Unmarshal(b []byte) error
+```
+
+#### type UnSubscribeRequest
+
+```go
+type UnSubscribeRequest struct {
+	Email                string   `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Plan                 string   `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*UnSubscribeRequest) Descriptor
+
+```go
+func (*UnSubscribeRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*UnSubscribeRequest) GetEmail
+
+```go
+func (m *UnSubscribeRequest) GetEmail() string
+```
+
+#### func (*UnSubscribeRequest) GetPlan
+
+```go
+func (m *UnSubscribeRequest) GetPlan() string
+```
+
+#### func (*UnSubscribeRequest) ProtoMessage
+
+```go
+func (*UnSubscribeRequest) ProtoMessage()
+```
+
+#### func (*UnSubscribeRequest) Reset
+
+```go
+func (m *UnSubscribeRequest) Reset()
+```
+
+#### func (*UnSubscribeRequest) String
+
+```go
+func (m *UnSubscribeRequest) String() string
+```
+
+#### func (*UnSubscribeRequest) XXX_DiscardUnknown
+
+```go
+func (m *UnSubscribeRequest) XXX_DiscardUnknown()
+```
+
+#### func (*UnSubscribeRequest) XXX_Marshal
+
+```go
+func (m *UnSubscribeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*UnSubscribeRequest) XXX_Merge
+
+```go
+func (m *UnSubscribeRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*UnSubscribeRequest) XXX_Size
+
+```go
+func (m *UnSubscribeRequest) XXX_Size() int
+```
+
+#### func (*UnSubscribeRequest) XXX_Unmarshal
+
+```go
+func (m *UnSubscribeRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type UserInfo
@@ -1405,6 +2303,109 @@ func (m *UserMetadata) XXX_Size() int
 
 ```go
 func (m *UserMetadata) XXX_Unmarshal(b []byte) error
+```
+
+#### type UserServiceClient
+
+```go
+type UserServiceClient interface {
+	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
+	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
+}
+```
+
+UserServiceClient is the client API for UserService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewUserServiceClient
+
+```go
+func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
+```
+
+#### type UserServiceServer
+
+```go
+type UserServiceServer interface {
+	Subscribe(context.Context, *SubscribeRequest) (*Identifier, error)
+	Unsubscribe(context.Context, *UnSubscribeRequest) (*Identifier, error)
+}
+```
+
+UserServiceServer is the server API for UserService service.
+
+#### type UsersWidget
+
+```go
+type UsersWidget struct {
+	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*UsersWidget) Descriptor
+
+```go
+func (*UsersWidget) Descriptor() ([]byte, []int)
+```
+
+#### func (*UsersWidget) GetCount
+
+```go
+func (m *UsersWidget) GetCount() int64
+```
+
+#### func (*UsersWidget) ProtoMessage
+
+```go
+func (*UsersWidget) ProtoMessage()
+```
+
+#### func (*UsersWidget) Reset
+
+```go
+func (m *UsersWidget) Reset()
+```
+
+#### func (*UsersWidget) String
+
+```go
+func (m *UsersWidget) String() string
+```
+
+#### func (*UsersWidget) XXX_DiscardUnknown
+
+```go
+func (m *UsersWidget) XXX_DiscardUnknown()
+```
+
+#### func (*UsersWidget) XXX_Marshal
+
+```go
+func (m *UsersWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*UsersWidget) XXX_Merge
+
+```go
+func (m *UsersWidget) XXX_Merge(src proto.Message)
+```
+
+#### func (*UsersWidget) XXX_Size
+
+```go
+func (m *UsersWidget) XXX_Size() int
+```
+
+#### func (*UsersWidget) XXX_Unmarshal
+
+```go
+func (m *UsersWidget) XXX_Unmarshal(b []byte) error
 ```
 
 #### type UtilityServiceClient
