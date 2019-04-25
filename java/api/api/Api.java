@@ -11149,15 +11149,15 @@ public final class Api {
       "\n\nMarshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323" +
       "\344\223\002\031\"\024/utility/marshal/xml:\001*\022D\n\006Render\022" +
       "\r.api.Template\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/uti" +
-      "lity/marshal/xml:\001*2\263\002\n\016ContactService\022B" +
+      "lity/marshal/xml:\001*2\260\002\n\016ContactService\022B" +
       "\n\007SendSMS\022\010.api.SMS\032\017.api.Identifier\"\034\202\323" +
       "\344\223\002\026\"\021/contact/sms/{to}:\001*\022G\n\006GetSMS\022\017.a" +
       "pi.Identifier\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021/" +
-      "contact/sms/{id}:\001*\022M\n\tSendEmail\022\n.api.E" +
-      "mail\032\017.api.Identifier\"#\202\323\344\223\002\035\"\030/contact/" +
-      "email/{address}:\001*\022E\n\010SendCall\022\t.api.Cal" +
-      "l\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/cal" +
-      "l/{to}:\001*b\006proto3"
+      "contact/sms/{id}:\001*\022J\n\tSendEmail\022\n.api.E" +
+      "mail\032\014.api.Message\"#\202\323\344\223\002\035\"\030/contact/ema" +
+      "il/{address}:\001*\022E\n\010SendCall\022\t.api.Call\032\017" +
+      ".api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/call/{" +
+      "to}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

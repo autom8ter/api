@@ -81,7 +81,7 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SendEmail(Email) returns (Identifier) {
+    rpc SendEmail(Email) returns (Message) {
         option (google.api.http) = {
       post: "/contact/email/{address}"
       body: "*"
