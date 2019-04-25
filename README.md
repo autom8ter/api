@@ -2419,7 +2419,7 @@ func (m *SMS) XXX_Unmarshal(b []byte) error
 ```go
 type SMSBlast struct {
 	Service              string   `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
-	To                   string   `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
+	To                   []string `protobuf:"bytes,2,rep,name=to,proto3" json:"to,omitempty"`
 	Message              *Message `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	MediaURL             string   `protobuf:"bytes,4,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
 	Callback             string   `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
@@ -2470,7 +2470,7 @@ func (m *SMSBlast) GetService() string
 #### func (*SMSBlast) GetTo
 
 ```go
-func (m *SMSBlast) GetTo() string
+func (m *SMSBlast) GetTo() []string
 ```
 
 #### func (*SMSBlast) ProtoMessage

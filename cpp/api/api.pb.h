@@ -1507,6 +1507,28 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   // accessors -------------------------------------------------------
 
+  // repeated string to = 2;
+  int to_size() const;
+  void clear_to();
+  static const int kToFieldNumber = 2;
+  const ::std::string& to(int index) const;
+  ::std::string* mutable_to(int index);
+  void set_to(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_to(int index, ::std::string&& value);
+  #endif
+  void set_to(int index, const char* value);
+  void set_to(int index, const char* value, size_t size);
+  ::std::string* add_to();
+  void add_to(const ::std::string& value);
+  #if LANG_CXX11
+  void add_to(::std::string&& value);
+  #endif
+  void add_to(const char* value);
+  void add_to(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& to() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_to();
+
   // string service = 1;
   void clear_service();
   static const int kServiceFieldNumber = 1;
@@ -1520,20 +1542,6 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* mutable_service();
   ::std::string* release_service();
   void set_allocated_service(::std::string* service);
-
-  // string to = 2;
-  void clear_to();
-  static const int kToFieldNumber = 2;
-  const ::std::string& to() const;
-  void set_to(const ::std::string& value);
-  #if LANG_CXX11
-  void set_to(::std::string&& value);
-  #endif
-  void set_to(const char* value);
-  void set_to(const char* value, size_t size);
-  ::std::string* mutable_to();
-  ::std::string* release_to();
-  void set_allocated_to(::std::string* to);
 
   // string mediaURL = 4;
   void clear_mediaurl();
@@ -1593,8 +1601,8 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> to_;
   ::google::protobuf::internal::ArenaStringPtr service_;
-  ::google::protobuf::internal::ArenaStringPtr to_;
   ::google::protobuf::internal::ArenaStringPtr mediaurl_;
   ::google::protobuf::internal::ArenaStringPtr callback_;
   ::google::protobuf::internal::ArenaStringPtr app_;
@@ -5645,57 +5653,73 @@ inline void SMSBlast::set_allocated_service(::std::string* service) {
   // @@protoc_insertion_point(field_set_allocated:api.SMSBlast.service)
 }
 
-// string to = 2;
+// repeated string to = 2;
+inline int SMSBlast::to_size() const {
+  return to_.size();
+}
 inline void SMSBlast::clear_to() {
-  to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  to_.Clear();
 }
-inline const ::std::string& SMSBlast::to() const {
+inline const ::std::string& SMSBlast::to(int index) const {
   // @@protoc_insertion_point(field_get:api.SMSBlast.to)
-  return to_.GetNoArena();
+  return to_.Get(index);
 }
-inline void SMSBlast::set_to(const ::std::string& value) {
-  
-  to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+inline ::std::string* SMSBlast::mutable_to(int index) {
+  // @@protoc_insertion_point(field_mutable:api.SMSBlast.to)
+  return to_.Mutable(index);
+}
+inline void SMSBlast::set_to(int index, const ::std::string& value) {
   // @@protoc_insertion_point(field_set:api.SMSBlast.to)
+  to_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void SMSBlast::set_to(::std::string&& value) {
-  
-  to_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.SMSBlast.to)
+inline void SMSBlast::set_to(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:api.SMSBlast.to)
+  to_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void SMSBlast::set_to(const char* value) {
+inline void SMSBlast::set_to(int index, const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  
-  to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  to_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:api.SMSBlast.to)
 }
-inline void SMSBlast::set_to(const char* value, size_t size) {
-  
-  to_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
+inline void SMSBlast::set_to(int index, const char* value, size_t size) {
+  to_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_set_pointer:api.SMSBlast.to)
 }
-inline ::std::string* SMSBlast::mutable_to() {
-  
-  // @@protoc_insertion_point(field_mutable:api.SMSBlast.to)
-  return to_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* SMSBlast::add_to() {
+  // @@protoc_insertion_point(field_add_mutable:api.SMSBlast.to)
+  return to_.Add();
 }
-inline ::std::string* SMSBlast::release_to() {
-  // @@protoc_insertion_point(field_release:api.SMSBlast.to)
-  
-  return to_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SMSBlast::add_to(const ::std::string& value) {
+  to_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:api.SMSBlast.to)
 }
-inline void SMSBlast::set_allocated_to(::std::string* to) {
-  if (to != NULL) {
-    
-  } else {
-    
-  }
-  to_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), to);
-  // @@protoc_insertion_point(field_set_allocated:api.SMSBlast.to)
+#if LANG_CXX11
+inline void SMSBlast::add_to(::std::string&& value) {
+  to_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:api.SMSBlast.to)
+}
+#endif
+inline void SMSBlast::add_to(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  to_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:api.SMSBlast.to)
+}
+inline void SMSBlast::add_to(const char* value, size_t size) {
+  to_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:api.SMSBlast.to)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+SMSBlast::to() const {
+  // @@protoc_insertion_point(field_list:api.SMSBlast.to)
+  return to_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+SMSBlast::mutable_to() {
+  // @@protoc_insertion_point(field_mutable_list:api.SMSBlast.to)
+  return &to_;
 }
 
 // .api.Message message = 3;

@@ -1118,7 +1118,7 @@ void AddDescriptorsImpl() {
       "vice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132"
       "\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callb"
       "ack\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007se"
-      "rvice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\013"
+      "rvice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\013"
       "2\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010call"
       "back\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022"
       "\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031"
@@ -4149,15 +4149,12 @@ SMSBlast::SMSBlast()
 }
 SMSBlast::SMSBlast(const SMSBlast& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
+      _internal_metadata_(NULL),
+      to_(from.to_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   service_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.service().size() > 0) {
     service_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.service_);
-  }
-  to_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.to().size() > 0) {
-    to_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.to_);
   }
   mediaurl_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.mediaurl().size() > 0) {
@@ -4181,7 +4178,6 @@ SMSBlast::SMSBlast(const SMSBlast& from)
 
 void SMSBlast::SharedCtor() {
   service_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  to_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mediaurl_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   app_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -4195,7 +4191,6 @@ SMSBlast::~SMSBlast() {
 
 void SMSBlast::SharedDtor() {
   service_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  to_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mediaurl_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   app_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -4222,8 +4217,8 @@ void SMSBlast::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  to_.Clear();
   service_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   mediaurl_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   app_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -4260,14 +4255,15 @@ bool SMSBlast::MergePartialFromCodedStream(
         break;
       }
 
-      // string to = 2;
+      // repeated string to = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_to()));
+                input, this->add_to()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->to().data(), static_cast<int>(this->to().length()),
+            this->to(this->to_size() - 1).data(),
+            static_cast<int>(this->to(this->to_size() - 1).length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
             "api.SMSBlast.to"));
         } else {
@@ -4372,14 +4368,14 @@ void SMSBlast::SerializeWithCachedSizes(
       1, this->service(), output);
   }
 
-  // string to = 2;
-  if (this->to().size() > 0) {
+  // repeated string to = 2;
+  for (int i = 0, n = this->to_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->to().data(), static_cast<int>(this->to().length()),
+      this->to(i).data(), static_cast<int>(this->to(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "api.SMSBlast.to");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->to(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->to(i), output);
   }
 
   // .api.Message message = 3;
@@ -4443,15 +4439,14 @@ void SMSBlast::SerializeWithCachedSizes(
         1, this->service(), target);
   }
 
-  // string to = 2;
-  if (this->to().size() > 0) {
+  // repeated string to = 2;
+  for (int i = 0, n = this->to_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->to().data(), static_cast<int>(this->to().length()),
+      this->to(i).data(), static_cast<int>(this->to(i).length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "api.SMSBlast.to");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->to(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(2, this->to(i), target);
   }
 
   // .api.Message message = 3;
@@ -4511,18 +4506,19 @@ size_t SMSBlast::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
+  // repeated string to = 2;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->to_size());
+  for (int i = 0, n = this->to_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->to(i));
+  }
+
   // string service = 1;
   if (this->service().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->service());
-  }
-
-  // string to = 2;
-  if (this->to().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->to());
   }
 
   // string mediaURL = 4;
@@ -4580,13 +4576,10 @@ void SMSBlast::MergeFrom(const SMSBlast& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  to_.MergeFrom(from.to_);
   if (from.service().size() > 0) {
 
     service_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.service_);
-  }
-  if (from.to().size() > 0) {
-
-    to_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.to_);
   }
   if (from.mediaurl().size() > 0) {
 
@@ -4629,9 +4622,8 @@ void SMSBlast::Swap(SMSBlast* other) {
 }
 void SMSBlast::InternalSwap(SMSBlast* other) {
   using std::swap;
+  to_.InternalSwap(CastToBase(&other->to_));
   service_.Swap(&other->service_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  to_.Swap(&other->to_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   mediaurl_.Swap(&other->mediaurl_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());

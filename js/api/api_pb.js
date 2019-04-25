@@ -1741,12 +1741,19 @@ proto.api.SMS.prototype.setApp = function(value) {
  * @constructor
  */
 proto.api.SMSBlast = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.api.SMSBlast.repeatedFields_, null);
 };
 goog.inherits(proto.api.SMSBlast, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.api.SMSBlast.displayName = 'proto.api.SMSBlast';
 }
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.api.SMSBlast.repeatedFields_ = [2];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1777,7 +1784,7 @@ proto.api.SMSBlast.prototype.toObject = function(opt_includeInstance) {
 proto.api.SMSBlast.toObject = function(includeInstance, msg) {
   var f, obj = {
     service: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    to: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    toList: jspb.Message.getRepeatedField(msg, 2),
     message: (f = msg.getMessage()) && proto.api.Message.toObject(includeInstance, f),
     mediaurl: jspb.Message.getFieldWithDefault(msg, 4, ""),
     callback: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -1824,7 +1831,7 @@ proto.api.SMSBlast.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTo(value);
+      msg.addTo(value);
       break;
     case 3:
       var value = new proto.api.Message;
@@ -1879,9 +1886,9 @@ proto.api.SMSBlast.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTo();
+  f = message.getToList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       2,
       f
     );
@@ -1934,17 +1941,31 @@ proto.api.SMSBlast.prototype.setService = function(value) {
 
 
 /**
- * optional string to = 2;
- * @return {string}
+ * repeated string to = 2;
+ * @return {!Array<string>}
  */
-proto.api.SMSBlast.prototype.getTo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.api.SMSBlast.prototype.getToList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {string} value */
-proto.api.SMSBlast.prototype.setTo = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+/** @param {!Array<string>} value */
+proto.api.SMSBlast.prototype.setToList = function(value) {
+  jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.api.SMSBlast.prototype.addTo = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+proto.api.SMSBlast.prototype.clearToList = function() {
+  this.setToList([]);
 };
 
 

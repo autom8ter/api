@@ -7256,14 +7256,23 @@ public final class Api {
         getServiceBytes();
 
     /**
-     * <code>string to = 2;</code>
+     * <code>repeated string to = 2;</code>
      */
-    java.lang.String getTo();
+    java.util.List<java.lang.String>
+        getToList();
     /**
-     * <code>string to = 2;</code>
+     * <code>repeated string to = 2;</code>
+     */
+    int getToCount();
+    /**
+     * <code>repeated string to = 2;</code>
+     */
+    java.lang.String getTo(int index);
+    /**
+     * <code>repeated string to = 2;</code>
      */
     com.google.protobuf.ByteString
-        getToBytes();
+        getToBytes(int index);
 
     /**
      * <code>.api.Message message = 3;</code>
@@ -7322,7 +7331,7 @@ public final class Api {
     }
     private SMSBlast() {
       service_ = "";
-      to_ = "";
+      to_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       mediaURL_ = "";
       callback_ = "";
       app_ = "";
@@ -7360,8 +7369,11 @@ public final class Api {
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
-
-              to_ = s;
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                to_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              to_.add(s);
               break;
             }
             case 26: {
@@ -7410,6 +7422,9 @@ public final class Api {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_ = to_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -7427,6 +7442,7 @@ public final class Api {
               api.Api.SMSBlast.class, api.Api.SMSBlast.Builder.class);
     }
 
+    private int bitField0_;
     public static final int SERVICE_FIELD_NUMBER = 1;
     private volatile java.lang.Object service_;
     /**
@@ -7462,37 +7478,32 @@ public final class Api {
     }
 
     public static final int TO_FIELD_NUMBER = 2;
-    private volatile java.lang.Object to_;
+    private com.google.protobuf.LazyStringList to_;
     /**
-     * <code>string to = 2;</code>
+     * <code>repeated string to = 2;</code>
      */
-    public java.lang.String getTo() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        to_ = s;
-        return s;
-      }
+    public com.google.protobuf.ProtocolStringList
+        getToList() {
+      return to_;
     }
     /**
-     * <code>string to = 2;</code>
+     * <code>repeated string to = 2;</code>
+     */
+    public int getToCount() {
+      return to_.size();
+    }
+    /**
+     * <code>repeated string to = 2;</code>
+     */
+    public java.lang.String getTo(int index) {
+      return to_.get(index);
+    }
+    /**
+     * <code>repeated string to = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getToBytes() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        to_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getToBytes(int index) {
+      return to_.getByteString(index);
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 3;
@@ -7635,8 +7646,8 @@ public final class Api {
       if (!getServiceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
       }
-      if (!getToBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, to_);
+      for (int i = 0; i < to_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, to_.getRaw(i));
       }
       if (message_ != null) {
         output.writeMessage(3, getMessage());
@@ -7662,8 +7673,13 @@ public final class Api {
       if (!getServiceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, service_);
       }
-      if (!getToBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, to_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < to_.size(); i++) {
+          dataSize += computeStringSizeNoTag(to_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getToList().size();
       }
       if (message_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -7696,8 +7712,8 @@ public final class Api {
       boolean result = true;
       result = result && getService()
           .equals(other.getService());
-      result = result && getTo()
-          .equals(other.getTo());
+      result = result && getToList()
+          .equals(other.getToList());
       result = result && (hasMessage() == other.hasMessage());
       if (hasMessage()) {
         result = result && getMessage()
@@ -7722,8 +7738,10 @@ public final class Api {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
-      hash = (37 * hash) + TO_FIELD_NUMBER;
-      hash = (53 * hash) + getTo().hashCode();
+      if (getToCount() > 0) {
+        hash = (37 * hash) + TO_FIELD_NUMBER;
+        hash = (53 * hash) + getToList().hashCode();
+      }
       if (hasMessage()) {
         hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
         hash = (53 * hash) + getMessage().hashCode();
@@ -7869,8 +7887,8 @@ public final class Api {
         super.clear();
         service_ = "";
 
-        to_ = "";
-
+        to_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (messageBuilder_ == null) {
           message_ = null;
         } else {
@@ -7909,7 +7927,13 @@ public final class Api {
       @java.lang.Override
       public api.Api.SMSBlast buildPartial() {
         api.Api.SMSBlast result = new api.Api.SMSBlast(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.service_ = service_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          to_ = to_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
         result.to_ = to_;
         if (messageBuilder_ == null) {
           result.message_ = message_;
@@ -7919,6 +7943,7 @@ public final class Api {
         result.mediaURL_ = mediaURL_;
         result.callback_ = callback_;
         result.app_ = app_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -7971,8 +7996,14 @@ public final class Api {
           service_ = other.service_;
           onChanged();
         }
-        if (!other.getTo().isEmpty()) {
-          to_ = other.to_;
+        if (!other.to_.isEmpty()) {
+          if (to_.isEmpty()) {
+            to_ = other.to_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureToIsMutable();
+            to_.addAll(other.to_);
+          }
           onChanged();
         }
         if (other.hasMessage()) {
@@ -8018,6 +8049,7 @@ public final class Api {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object service_ = "";
       /**
@@ -8088,71 +8120,96 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object to_ = "";
-      /**
-       * <code>string to = 2;</code>
-       */
-      public java.lang.String getTo() {
-        java.lang.Object ref = to_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          to_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      private com.google.protobuf.LazyStringList to_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureToIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          to_ = new com.google.protobuf.LazyStringArrayList(to_);
+          bitField0_ |= 0x00000002;
+         }
       }
       /**
-       * <code>string to = 2;</code>
+       * <code>repeated string to = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getToList() {
+        return to_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string to = 2;</code>
+       */
+      public int getToCount() {
+        return to_.size();
+      }
+      /**
+       * <code>repeated string to = 2;</code>
+       */
+      public java.lang.String getTo(int index) {
+        return to_.get(index);
+      }
+      /**
+       * <code>repeated string to = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getToBytes() {
-        java.lang.Object ref = to_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          to_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getToBytes(int index) {
+        return to_.getByteString(index);
       }
       /**
-       * <code>string to = 2;</code>
+       * <code>repeated string to = 2;</code>
        */
       public Builder setTo(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureToIsMutable();
+        to_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string to = 2;</code>
+       */
+      public Builder addTo(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        to_ = value;
+  ensureToIsMutable();
+        to_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>string to = 2;</code>
+       * <code>repeated string to = 2;</code>
+       */
+      public Builder addAllTo(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureToIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, to_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string to = 2;</code>
        */
       public Builder clearTo() {
-        
-        to_ = getDefaultInstance().getTo();
+        to_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string to = 2;</code>
+       * <code>repeated string to = 2;</code>
        */
-      public Builder setToBytes(
+      public Builder addToBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        to_ = value;
+        ensureToIsMutable();
+        to_.add(value);
         onChanged();
         return this;
       }
@@ -27366,7 +27423,7 @@ public final class Api {
       "vice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132" +
       "\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callb" +
       "ack\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007se" +
-      "rvice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\013" +
+      "rvice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\013" +
       "2\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010call" +
       "back\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022" +
       "\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031" +

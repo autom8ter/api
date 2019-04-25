@@ -37,7 +37,7 @@ namespace Api {
             "ZmllchIKCgJpZBgBIAEoCSJyCgNTTVMSDwoHc2VydmljZRgBIAEoCRIKCgJ0",
             "bxgCIAEoCRIdCgdtZXNzYWdlGAMgASgLMgwuYXBpLk1lc3NhZ2USEAoIbWVk",
             "aWFVUkwYBCABKAkSEAoIY2FsbGJhY2sYBSABKAkSCwoDYXBwGAYgASgJIncK",
-            "CFNNU0JsYXN0Eg8KB3NlcnZpY2UYASABKAkSCgoCdG8YAiABKAkSHQoHbWVz",
+            "CFNNU0JsYXN0Eg8KB3NlcnZpY2UYASABKAkSCgoCdG8YAiADKAkSHQoHbWVz",
             "c2FnZRgDIAEoCzIMLmFwaS5NZXNzYWdlEhAKCG1lZGlhVVJMGAQgASgJEhAK",
             "CGNhbGxiYWNrGAUgASgJEgsKA2FwcBgGIAEoCSJQCgxFbWFpbFJlcXVlc3QS",
             "EQoJZnJvbV9uYW1lGAEgASgJEhIKCmZyb21fZW1haWwYAiABKAkSGQoFZW1h",
@@ -1755,7 +1755,7 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SMSBlast(SMSBlast other) : this() {
       service_ = other.service_;
-      to_ = other.to_;
+      to_ = other.to_.Clone();
       message_ = other.message_ != null ? other.message_.Clone() : null;
       mediaURL_ = other.mediaURL_;
       callback_ = other.callback_;
@@ -1781,13 +1781,12 @@ namespace Api {
 
     /// <summary>Field number for the "to" field.</summary>
     public const int ToFieldNumber = 2;
-    private string to_ = "";
+    private static readonly pb::FieldCodec<string> _repeated_to_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> to_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string To {
+    public pbc::RepeatedField<string> To {
       get { return to_; }
-      set {
-        to_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
     }
 
     /// <summary>Field number for the "message" field.</summary>
@@ -1848,7 +1847,7 @@ namespace Api {
         return true;
       }
       if (Service != other.Service) return false;
-      if (To != other.To) return false;
+      if(!to_.Equals(other.to_)) return false;
       if (!object.Equals(Message, other.Message)) return false;
       if (MediaURL != other.MediaURL) return false;
       if (Callback != other.Callback) return false;
@@ -1860,7 +1859,7 @@ namespace Api {
     public override int GetHashCode() {
       int hash = 1;
       if (Service.Length != 0) hash ^= Service.GetHashCode();
-      if (To.Length != 0) hash ^= To.GetHashCode();
+      hash ^= to_.GetHashCode();
       if (message_ != null) hash ^= Message.GetHashCode();
       if (MediaURL.Length != 0) hash ^= MediaURL.GetHashCode();
       if (Callback.Length != 0) hash ^= Callback.GetHashCode();
@@ -1882,10 +1881,7 @@ namespace Api {
         output.WriteRawTag(10);
         output.WriteString(Service);
       }
-      if (To.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(To);
-      }
+      to_.WriteTo(output, _repeated_to_codec);
       if (message_ != null) {
         output.WriteRawTag(26);
         output.WriteMessage(Message);
@@ -1913,9 +1909,7 @@ namespace Api {
       if (Service.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Service);
       }
-      if (To.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(To);
-      }
+      size += to_.CalculateSize(_repeated_to_codec);
       if (message_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Message);
       }
@@ -1942,9 +1936,7 @@ namespace Api {
       if (other.Service.Length != 0) {
         Service = other.Service;
       }
-      if (other.To.Length != 0) {
-        To = other.To;
-      }
+      to_.Add(other.to_);
       if (other.message_ != null) {
         if (message_ == null) {
           message_ = new global::Api.Message();
@@ -1976,7 +1968,7 @@ namespace Api {
             break;
           }
           case 18: {
-            To = input.ReadString();
+            to_.AddEntriesFrom(input, _repeated_to_codec);
             break;
           }
           case 26: {

@@ -209,7 +209,7 @@ message SMS {
 
 message SMSBlast {
     string service =1;
-    string to =2;
+    repeated string to =2;
     Message message=3;
     string mediaURL =4;
     string callback=5;

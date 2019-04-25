@@ -46,7 +46,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.SMSBlast" do
     optional :service, :string, 1
-    optional :to, :string, 2
+    repeated :to, :string, 2
     optional :message, :message, 3, "api.Message"
     optional :mediaURL, :string, 4
     optional :callback, :string, 5

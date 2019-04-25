@@ -270,7 +270,7 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 
 typedef GPB_ENUM(SMSBlast_FieldNumber) {
   SMSBlast_FieldNumber_Service = 1,
-  SMSBlast_FieldNumber_To = 2,
+  SMSBlast_FieldNumber_ToArray = 2,
   SMSBlast_FieldNumber_Message = 3,
   SMSBlast_FieldNumber_MediaURL = 4,
   SMSBlast_FieldNumber_Callback = 5,
@@ -281,7 +281,9 @@ typedef GPB_ENUM(SMSBlast_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *service;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *toArray;
+/** The number of items in @c toArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger toArray_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) Message *message;
 /** Test to see if @c message has been set. */

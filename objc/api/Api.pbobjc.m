@@ -691,7 +691,7 @@ typedef struct SMS__storage_ {
 @implementation SMSBlast
 
 @dynamic service;
-@dynamic to;
+@dynamic toArray, toArray_Count;
 @dynamic hasMessage, message;
 @dynamic mediaURL;
 @dynamic callback;
@@ -700,7 +700,7 @@ typedef struct SMS__storage_ {
 typedef struct SMSBlast__storage_ {
   uint32_t _has_storage_[1];
   NSString *service;
-  NSString *to;
+  NSMutableArray *toArray;
   Message *message;
   NSString *mediaURL;
   NSString *callback;
@@ -723,19 +723,19 @@ typedef struct SMSBlast__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "to",
+        .name = "toArray",
         .dataTypeSpecific.className = NULL,
-        .number = SMSBlast_FieldNumber_To,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(SMSBlast__storage_, to),
-        .flags = GPBFieldOptional,
+        .number = SMSBlast_FieldNumber_ToArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(SMSBlast__storage_, toArray),
+        .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "message",
         .dataTypeSpecific.className = GPBStringifySymbol(Message),
         .number = SMSBlast_FieldNumber_Message,
-        .hasIndex = 2,
+        .hasIndex = 1,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, message),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -744,7 +744,7 @@ typedef struct SMSBlast__storage_ {
         .name = "mediaURL",
         .dataTypeSpecific.className = NULL,
         .number = SMSBlast_FieldNumber_MediaURL,
-        .hasIndex = 3,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -753,7 +753,7 @@ typedef struct SMSBlast__storage_ {
         .name = "callback",
         .dataTypeSpecific.className = NULL,
         .number = SMSBlast_FieldNumber_Callback,
-        .hasIndex = 4,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, callback),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -762,7 +762,7 @@ typedef struct SMSBlast__storage_ {
         .name = "app",
         .dataTypeSpecific.className = NULL,
         .number = SMSBlast_FieldNumber_App,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, app),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
