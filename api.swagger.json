@@ -15,64 +15,6 @@
     "application/json"
   ],
   "paths": {
-    "/admin/dashboard": {
-      "post": {
-        "operationId": "GetDashboard",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiDashboard"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSecret"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/admin/email/{address}": {
-      "post": {
-        "operationId": "EmailUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiMessage"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "address",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmail"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/contact/call/{to}": {
       "post": {
         "operationId": "SendCall",
@@ -105,6 +47,32 @@
         ]
       }
     },
+    "/contact/email/blast": {
+      "post": {
+        "operationId": "SendEmailBlast",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiMessage"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiEmailBlastRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
     "/contact/email/{email.address}": {
       "post": {
         "operationId": "SendEmail",
@@ -129,6 +97,32 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiEmailRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
+    "/contact/sms/blast": {
+      "post": {
+        "operationId": "SendSMSBlast",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSMSBlast"
             }
           }
         ],
@@ -288,7 +282,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUserInfo"
+              "$ref": "#/definitions/apiUser"
             }
           }
         ],
@@ -336,7 +330,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUserInfo"
+              "$ref": "#/definitions/apiUser"
             }
           }
         },
@@ -353,6 +347,32 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/user/list": {
+      "post": {
+        "operationId": "ListUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
             }
           }
         ],
@@ -384,7 +404,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUserInfo"
+              "$ref": "#/definitions/apiUser"
             }
           }
         ],
@@ -680,52 +700,6 @@
         }
       }
     },
-    "apiChargesWidget": {
-      "type": "object",
-      "properties": {
-        "count": {
-          "type": "string",
-          "format": "int64"
-        },
-        "total": {
-          "type": "number",
-          "format": "double"
-        },
-        "dollars_per_charge": {
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "apiCustomersWidget": {
-      "type": "object",
-      "properties": {
-        "count": {
-          "type": "string",
-          "format": "int64"
-        }
-      }
-    },
-    "apiDashboard": {
-      "type": "object",
-      "properties": {
-        "users": {
-          "$ref": "#/definitions/apiUsersWidget"
-        },
-        "customers": {
-          "$ref": "#/definitions/apiCustomersWidget"
-        },
-        "plans": {
-          "$ref": "#/definitions/apiPlansWidget"
-        },
-        "subscriptions": {
-          "$ref": "#/definitions/apiSubscriptionsWidget"
-        },
-        "charges": {
-          "$ref": "#/definitions/apiChargesWidget"
-        }
-      }
-    },
     "apiEmail": {
       "type": "object",
       "properties": {
@@ -746,6 +720,40 @@
         }
       }
     },
+    "apiEmailBlast": {
+      "type": "object",
+      "properties": {
+        "name_address": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "subject": {
+          "type": "string"
+        },
+        "plain": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string"
+        }
+      }
+    },
+    "apiEmailBlastRequest": {
+      "type": "object",
+      "properties": {
+        "from_name": {
+          "type": "string"
+        },
+        "from_email": {
+          "type": "string"
+        },
+        "blast": {
+          "$ref": "#/definitions/apiEmailBlast"
+        }
+      }
+    },
     "apiEmailRequest": {
       "type": "object",
       "properties": {
@@ -759,6 +767,9 @@
           "$ref": "#/definitions/apiEmail"
         }
       }
+    },
+    "apiEmpty": {
+      "type": "object"
     },
     "apiIdentifier": {
       "type": "object",
@@ -793,16 +804,30 @@
         }
       }
     },
-    "apiPlansWidget": {
+    "apiSMS": {
       "type": "object",
       "properties": {
-        "count": {
-          "type": "string",
-          "format": "int64"
+        "service": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "message": {
+          "$ref": "#/definitions/apiMessage"
+        },
+        "mediaURL": {
+          "type": "string"
+        },
+        "callback": {
+          "type": "string"
+        },
+        "app": {
+          "type": "string"
         }
       }
     },
-    "apiSMS": {
+    "apiSMSBlast": {
       "type": "object",
       "properties": {
         "service": {
@@ -842,14 +867,6 @@
         }
       }
     },
-    "apiSecret": {
-      "type": "object",
-      "properties": {
-        "text": {
-          "type": "string"
-        }
-      }
-    },
     "apiSubscribeRequest": {
       "type": "object",
       "properties": {
@@ -861,15 +878,6 @@
         },
         "card": {
           "$ref": "#/definitions/apiCard"
-        }
-      }
-    },
-    "apiSubscriptionsWidget": {
-      "type": "object",
-      "properties": {
-        "count": {
-          "type": "string",
-          "format": "int64"
         }
       }
     },
@@ -896,7 +904,7 @@
         }
       }
     },
-    "apiUserInfo": {
+    "apiUser": {
       "type": "object",
       "properties": {
         "user_id": {
@@ -974,15 +982,6 @@
           "additionalProperties": {
             "type": "string"
           }
-        }
-      }
-    },
-    "apiUsersWidget": {
-      "type": "object",
-      "properties": {
-        "count": {
-          "type": "string",
-          "format": "int64"
         }
       }
     }

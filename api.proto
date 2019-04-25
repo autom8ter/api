@@ -75,6 +75,12 @@ service ContactService {
       body: "*"
     };
     }
+    rpc SendSMSBlast(SMSBlast) returns (stream Identifier) {
+        option (google.api.http) = {
+      post: "/contact/sms/blast"
+      body: "*"
+    };
+    }
     rpc GetSMS(Identifier) returns (SMSStatus) {
         option (google.api.http) = {
       post: "/contact/sms/{id}"
@@ -84,6 +90,12 @@ service ContactService {
     rpc SendEmail(EmailRequest) returns (Message) {
         option (google.api.http) = {
       post: "/contact/email/{email.address}"
+      body: "*"
+    };
+    }
+    rpc SendEmailBlast(EmailBlastRequest) returns (stream Message) {
+        option (google.api.http) = {
+      post: "/contact/email/blast"
       body: "*"
     };
     }
@@ -110,19 +122,19 @@ service PaymentService {
 }
 
 service UserService {
-    rpc GetUser(Identifier) returns (UserInfo) {
+    rpc GetUser(Identifier) returns (User) {
         option (google.api.http) = {
       post: "/user/get/{id}"
       body: "*"
     };
     }
-    rpc UpdateUser(UserInfo) returns (Identifier) {
+    rpc UpdateUser(User) returns (Identifier) {
         option (google.api.http) = {
       post: "/user/update/{email}"
       body: "*"
     };
     }
-    rpc CreateUser(UserInfo) returns (Identifier) {
+    rpc CreateUser(User) returns (Identifier) {
         option (google.api.http) = {
       post: "/user/create/{email}"
       body: "*"
@@ -134,18 +146,9 @@ service UserService {
       body: "*"
     };
     }
-}
-
-service AdminService {
-    rpc GetDashboard(Secret) returns (Dashboard) {
+    rpc ListUsers(Empty) returns (stream User) {
         option (google.api.http) = {
-      post: "/admin/dashboard"
-      body: "*"
-    };
-    }
-    rpc EmailUser(Email) returns (Message) {
-        option (google.api.http) = {
-      post: "/admin/email/{address}"
+      post: "/user/list"
       body: "*"
     };
     }
@@ -175,36 +178,6 @@ message Secret {
 
 message Empty {}
 
-message Dashboard {
-    UsersWidget users=1;
-    CustomersWidget customers =2;
-    PlansWidget plans=3;
-    SubscriptionsWidget subscriptions=4;
-    ChargesWidget charges=5;
-}
-
-message CustomersWidget {
-    int64 count=1;
-}
-
-message PlansWidget {
-    int64 count=1;
-}
-
-message SubscriptionsWidget {
-    int64 count=1;
-}
-
-message ChargesWidget {
-    int64 count=1;
-    double total =2;
-    double dollars_per_charge =3;
-}
-
-message UsersWidget {
-    int64 count=1;
-}
-
 message Identifier {
     string id=1;
 }
@@ -225,10 +198,31 @@ message SMS {
     string app=6;
 }
 
+message SMSBlast {
+    string service =1;
+    string to =2;
+    Message message=3;
+    string mediaURL =4;
+    string callback=5;
+    string app=6;
+}
+
 message EmailRequest {
     string from_name =1;
     string from_email =2;
     Email email =3;
+}
+message EmailBlastRequest {
+    string from_name =1;
+    string from_email =2;
+    EmailBlast blast =3;
+}
+
+message EmailBlast {
+    map<string,string> name_address =1;
+    string subject =2;
+    string plain=3;
+    string html=4;
 }
 
 message Email {
@@ -249,7 +243,7 @@ message Message {
     string value = 1;
 }
 
-message UserInfo {
+message User {
     string user_id=1;
     string name=2;
     string given_name=3;
@@ -292,7 +286,7 @@ message Auth {
     string client_secret=3;
     string redirect=4;
     string audience=5;
-    repeated string scopes=6;
+    repeated Scope scopes=6;
 }
 
 message Bytes {
@@ -315,4 +309,26 @@ message JSONWebKeys {
 
 message Jwks {
     repeated JSONWebKeys keys=1;
+}
+
+enum Scope {
+    OPENID =0;
+    PROFILE =1;
+    EMAIL =2;
+    READ_USERS=3;
+    READ_USER_IDP_TOKENS=4;
+    CREATE_USERS=5;
+    READ_STATS=6;
+    READ_EMAIL_TEMPLATES =7;
+    UPDATE_EMAIL_TEMPLATES=8;
+    CREATE_EMAIL_TEMPLATES=9;
+    READ_RULES =10;
+    UPDATE_RULES=11;
+    CREATE_RULES=12;
+    DELETE_RULES=13;
+    READ_ROLES =14;
+    UPDATE_ROLES=15;
+    CREATE_ROLES=16;
+    DELETE_ROLES=17;
+    READ_LOGS=18;
 }

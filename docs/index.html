@@ -203,19 +203,19 @@
                 </li>
               
                 <li>
-                  <a href="#api.ChargesWidget"><span class="badge">M</span>ChargesWidget</a>
-                </li>
-              
-                <li>
-                  <a href="#api.CustomersWidget"><span class="badge">M</span>CustomersWidget</a>
-                </li>
-              
-                <li>
-                  <a href="#api.Dashboard"><span class="badge">M</span>Dashboard</a>
-                </li>
-              
-                <li>
                   <a href="#api.Email"><span class="badge">M</span>Email</a>
+                </li>
+              
+                <li>
+                  <a href="#api.EmailBlast"><span class="badge">M</span>EmailBlast</a>
+                </li>
+              
+                <li>
+                  <a href="#api.EmailBlast.NameAddressEntry"><span class="badge">M</span>EmailBlast.NameAddressEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.EmailBlastRequest"><span class="badge">M</span>EmailBlastRequest</a>
                 </li>
               
                 <li>
@@ -247,11 +247,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.PlansWidget"><span class="badge">M</span>PlansWidget</a>
+                  <a href="#api.SMS"><span class="badge">M</span>SMS</a>
                 </li>
               
                 <li>
-                  <a href="#api.SMS"><span class="badge">M</span>SMS</a>
+                  <a href="#api.SMSBlast"><span class="badge">M</span>SMSBlast</a>
                 </li>
               
                 <li>
@@ -267,10 +267,6 @@
                 </li>
               
                 <li>
-                  <a href="#api.SubscriptionsWidget"><span class="badge">M</span>SubscriptionsWidget</a>
-                </li>
-              
-                <li>
                   <a href="#api.Template"><span class="badge">M</span>Template</a>
                 </li>
               
@@ -279,7 +275,7 @@
                 </li>
               
                 <li>
-                  <a href="#api.UserInfo"><span class="badge">M</span>UserInfo</a>
+                  <a href="#api.User"><span class="badge">M</span>User</a>
                 </li>
               
                 <li>
@@ -290,16 +286,12 @@
                   <a href="#api.UserMetadata.MetadataEntry"><span class="badge">M</span>UserMetadata.MetadataEntry</a>
                 </li>
               
+              
                 <li>
-                  <a href="#api.UsersWidget"><span class="badge">M</span>UsersWidget</a>
+                  <a href="#api.Scope"><span class="badge">E</span>Scope</a>
                 </li>
               
               
-              
-              
-                <li>
-                  <a href="#api.AdminService"><span class="badge">S</span>AdminService</a>
-                </li>
               
                 <li>
                   <a href="#api.ContactService"><span class="badge">S</span>ContactService</a>
@@ -432,7 +424,7 @@
               
                 <tr>
                   <td>scopes</td>
-                  <td><a href="#string">string</a></td>
+                  <td><a href="#api.Scope">Scope</a></td>
                   <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
@@ -547,117 +539,6 @@
 
         
       
-        <h3 id="api.ChargesWidget">ChargesWidget</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>count</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>total</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>dollars_per_charge</td>
-                  <td><a href="#double">double</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.CustomersWidget">CustomersWidget</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>count</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Dashboard">Dashboard</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>users</td>
-                  <td><a href="#api.UsersWidget">UsersWidget</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>customers</td>
-                  <td><a href="#api.CustomersWidget">CustomersWidget</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>plans</td>
-                  <td><a href="#api.PlansWidget">PlansWidget</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>subscriptions</td>
-                  <td><a href="#api.SubscriptionsWidget">SubscriptionsWidget</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>charges</td>
-                  <td><a href="#api.ChargesWidget">ChargesWidget</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="api.Email">Email</h3>
         <p></p>
 
@@ -699,6 +580,117 @@
                 <tr>
                   <td>html</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.EmailBlast">EmailBlast</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name_address</td>
+                  <td><a href="#api.EmailBlast.NameAddressEntry">EmailBlast.NameAddressEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>html</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.EmailBlast.NameAddressEntry">EmailBlast.NameAddressEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.EmailBlastRequest">EmailBlastRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>from_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>from_email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>blast</td>
+                  <td><a href="#api.EmailBlast">EmailBlast</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -924,7 +916,7 @@
 
         
       
-        <h3 id="api.PlansWidget">PlansWidget</h3>
+        <h3 id="api.SMS">SMS</h3>
         <p></p>
 
         
@@ -935,8 +927,43 @@
             <tbody>
               
                 <tr>
-                  <td>count</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td>service</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>to</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#api.Message">Message</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mediaURL</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>callback</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>app</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -947,7 +974,7 @@
 
         
       
-        <h3 id="api.SMS">SMS</h3>
+        <h3 id="api.SMSBlast">SMSBlast</h3>
         <p></p>
 
         
@@ -1109,29 +1136,6 @@
 
         
       
-        <h3 id="api.SubscriptionsWidget">SubscriptionsWidget</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>count</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="api.Template">Template</h3>
         <p></p>
 
@@ -1192,7 +1196,7 @@
 
         
       
-        <h3 id="api.UserInfo">UserInfo</h3>
+        <h3 id="api.User">User</h3>
         <p></p>
 
         
@@ -1394,59 +1398,136 @@
 
         
       
-        <h3 id="api.UsersWidget">UsersWidget</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>count</td>
-                  <td><a href="#int64">int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
 
       
-
-      
-
-      
-        <h3 id="api.AdminService">AdminService</h3>
+        <h3 id="api.Scope">Scope</h3>
         <p></p>
         <table class="enum-table">
           <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
           </thead>
           <tbody>
             
               <tr>
-                <td>GetDashboard</td>
-                <td><a href="#api.Secret">Secret</a></td>
-                <td><a href="#api.Dashboard">Dashboard</a></td>
+                <td>OPENID</td>
+                <td>0</td>
                 <td><p></p></td>
               </tr>
             
               <tr>
-                <td>EmailUser</td>
-                <td><a href="#api.Email">Email</a></td>
-                <td><a href="#api.Message">Message</a></td>
+                <td>PROFILE</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>EMAIL</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_USERS</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_USER_IDP_TOKENS</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CREATE_USERS</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_STATS</td>
+                <td>6</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_EMAIL_TEMPLATES</td>
+                <td>7</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UPDATE_EMAIL_TEMPLATES</td>
+                <td>8</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CREATE_EMAIL_TEMPLATES</td>
+                <td>9</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_RULES</td>
+                <td>10</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UPDATE_RULES</td>
+                <td>11</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CREATE_RULES</td>
+                <td>12</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DELETE_RULES</td>
+                <td>13</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_ROLES</td>
+                <td>14</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UPDATE_ROLES</td>
+                <td>15</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CREATE_ROLES</td>
+                <td>16</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DELETE_ROLES</td>
+                <td>17</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>READ_LOGS</td>
+                <td>18</td>
                 <td><p></p></td>
               </tr>
             
           </tbody>
         </table>
+      
+
+      
+
       
         <h3 id="api.ContactService">ContactService</h3>
         <p></p>
@@ -1464,6 +1545,13 @@
               </tr>
             
               <tr>
+                <td>SendSMSBlast</td>
+                <td><a href="#api.SMSBlast">SMSBlast</a></td>
+                <td><a href="#api.Identifier">Identifier</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
                 <td>GetSMS</td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><a href="#api.SMSStatus">SMSStatus</a></td>
@@ -1474,6 +1562,13 @@
                 <td>SendEmail</td>
                 <td><a href="#api.EmailRequest">EmailRequest</a></td>
                 <td><a href="#api.Message">Message</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SendEmailBlast</td>
+                <td><a href="#api.EmailBlastRequest">EmailBlastRequest</a></td>
+                <td><a href="#api.Message">Message</a> stream</td>
                 <td><p></p></td>
               </tr>
             
@@ -1523,20 +1618,20 @@
               <tr>
                 <td>GetUser</td>
                 <td><a href="#api.Identifier">Identifier</a></td>
-                <td><a href="#api.UserInfo">UserInfo</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>UpdateUser</td>
-                <td><a href="#api.UserInfo">UserInfo</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>CreateUser</td>
-                <td><a href="#api.UserInfo">UserInfo</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
@@ -1545,6 +1640,13 @@
                 <td>DeleteUser</td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ListUsers</td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.User">User</a> stream</td>
                 <td><p></p></td>
               </tr>
             

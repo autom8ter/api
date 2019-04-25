@@ -12,7 +12,6 @@ import (
 	"golang.org/x/oauth2"
 	"net/http"
 	"net/url"
-	"strings"
 )
 
 type RouterPaths struct {
@@ -24,18 +23,18 @@ type RouterPaths struct {
 	HomeURL      string
 }
 
-var DEFAULT_REDIRECT = "http://localhost:8080/callback"
-var DEFAULT_SCOPES = []string{"openid", "profile", "email"}
+var DEFAULT_OAUTH_REDIRECT = "http://localhost:8080/callback"
+var DEFAULT_OAUTH_SCOPES = []Scope{Scope_OPENID, Scope_PROFILE, Scope_EMAIL}
 
 func (a *Auth) defaultIfEmpty() {
 	if len(a.Scopes) == 0 {
-		a.Scopes = DEFAULT_SCOPES
+		a.Scopes = DEFAULT_OAUTH_SCOPES
 	}
 	if a.Audience == "" {
-		a.Audience = "https://" + a.Domain + "/userinfo"
+		a.Audience = a.UserInfoURL()
 	}
 	if a.Redirect == "" {
-		a.Redirect = DEFAULT_REDIRECT
+		a.Redirect = DEFAULT_OAUTH_REDIRECT
 	}
 
 }
@@ -68,14 +67,15 @@ func (a *Auth) callbackHandler(c *RouterPaths) http.HandlerFunc {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
+
 		conf := &oauth2.Config{
 			ClientID:     a.ClientId,
 			ClientSecret: a.ClientSecret,
 			RedirectURL:  a.Redirect,
-			Scopes:       a.Scopes,
+			Scopes:       NormalizeScopes(a.Scopes...),
 			Endpoint: oauth2.Endpoint{
-				AuthURL:  "https://" + a.Domain + "/authorize",
-				TokenURL: "https://" + a.Domain + "/oauth/token",
+				AuthURL:  a.AuthURL(),
+				TokenURL: a.TokenURL(),
 			},
 		}
 		state := r.URL.Query().Get("state")
@@ -123,7 +123,7 @@ func (a *Auth) callbackHandler(c *RouterPaths) http.HandlerFunc {
 		session.Values["id_token"] = token.Extra("id_token")
 		session.Values["refresh_token"] = token.RefreshToken
 		session.Values["access_token"] = token.AccessToken
-		session.Values["userinfo"] = userinfo
+		session.Values["user"] = userinfo
 		err = session.Save(r, w)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -147,10 +147,10 @@ func (a *Auth) loginHandler() http.HandlerFunc {
 			ClientID:     a.ClientId,
 			ClientSecret: a.ClientSecret,
 			RedirectURL:  a.Redirect,
-			Scopes:       a.Scopes,
+			Scopes:       NormalizeScopes(a.Scopes...),
 			Endpoint: oauth2.Endpoint{
-				AuthURL:  "https://" + a.Domain + "/authorize",
-				TokenURL: "https://" + a.Domain + "/oauth/token",
+				AuthURL:  a.AuthURL(),
+				TokenURL: a.TokenURL(),
 			},
 		}
 
@@ -178,32 +178,23 @@ func (a *Auth) loginHandler() http.HandlerFunc {
 	}
 }
 
-func (a *Auth) logoutHandler(c *RouterPaths) http.HandlerFunc {
+func (a *Auth) logoutHandler(paths *RouterPaths) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		a.defaultIfEmpty()
 		if err := a.validate(); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		var Url *url.URL
-		Url, err := url.Parse("https://" + a.Domain)
-
+		u, err := a.LogoutURL(paths)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-
-		Url.Path += "/v2/logout"
-		parameters := url.Values{}
-		parameters.Add("returnTo", c.HomeURL)
-		parameters.Add("client_id", a.ClientId)
-		Url.RawQuery = parameters.Encode()
-
-		http.Redirect(w, r, Url.String(), http.StatusTemporaryRedirect)
+		http.Redirect(w, r, u, http.StatusTemporaryRedirect)
 	}
 }
 
-func (a *Auth) RequireLogin(c *RouterPaths, next http.HandlerFunc) http.HandlerFunc {
+func (a *Auth) RequireLogin(paths *RouterPaths, next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		session, err := store.Get(r, AUTH_SESSION)
 		if err != nil {
@@ -211,8 +202,8 @@ func (a *Auth) RequireLogin(c *RouterPaths, next http.HandlerFunc) http.HandlerF
 			return
 		}
 
-		if _, ok := session.Values["userinfo"]; !ok {
-			http.Redirect(w, r, c.LoginPath, http.StatusSeeOther)
+		if _, ok := session.Values["user"]; !ok {
+			http.Redirect(w, r, paths.LoginPath, http.StatusSeeOther)
 		} else {
 			next(w, r)
 		}
@@ -235,6 +226,22 @@ func (a *Auth) ListenAndServe(addr string, c *RouterPaths, home, loggedIn http.H
 
 func (c *Auth) AuthURL() string {
 	return "https://" + c.Domain + "/authorize"
+}
+
+func (c *Auth) LogoutURL(r *RouterPaths) (string, error) {
+	var Url *url.URL
+	Url, err := url.Parse("https://" + c.Domain)
+	if err != nil {
+		return "", err
+	}
+
+	Url.Path += "/v2/logout"
+	parameters := url.Values{}
+	parameters.Add("returnTo", r.HomeURL)
+	parameters.Add("client_id", c.ClientId)
+	Url.RawQuery = parameters.Encode()
+
+	return Url.String(), nil
 }
 
 func (c *Auth) TokenURL() string {
@@ -273,6 +280,10 @@ func (c *Auth) ClientsURL() string {
 	return "https://" + c.Domain + "/api/v2/clients"
 }
 
+func (c *Auth) ClientGrantsURL() string {
+	return "https://" + c.Domain + "/api/v2/client-grants"
+}
+
 func (c *Auth) ConnectionsURL() string {
 	return "https://" + c.Domain + "/api/v2/connections"
 }
@@ -305,22 +316,18 @@ func (c *Auth) JWKSURL() string {
 	return "https://" + c.Domain + "/.well-known/jwks.json"
 }
 
-func (c *Auth) GetJWKS(token *jwt.Token) (*Jwks, error) {
+func (c *Auth) GetJWKS() (*Jwks, error) {
 	resp, err := HTTPClient.Get(c.JWKSURL())
-
 	if err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()
-
 	var jwks = &Jwks{}
 	err = json.NewDecoder(resp.Body).Decode(&jwks)
-
 	if err != nil {
 		return nil, err
 	}
 	return jwks, nil
-
 }
 
 func (c *Jwks) GetCert(token *jwt.Token) (string, error) {
@@ -330,32 +337,9 @@ func (c *Jwks) GetCert(token *jwt.Token) (string, error) {
 			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C[0] + "\n-----END CERTIFICATE-----"
 		}
 	}
-
 	if cert == "" {
 		err := errors.New("Unable to find appropriate key.")
 		return cert, err
 	}
-
 	return cert, nil
-}
-
-type CustomClaims struct {
-	Scope string `json:"scope"`
-	jwt.StandardClaims
-}
-
-func (c *CustomClaims) CheckScope(scope string, tokenString string) bool {
-	token, _ := jwt.ParseWithClaims(tokenString, c, nil)
-
-	claims, _ := token.Claims.(*CustomClaims)
-
-	hasScope := false
-	result := strings.Split(claims.Scope, " ")
-	for i := range result {
-		if result[i] == scope {
-			hasScope = true
-		}
-	}
-
-	return hasScope
 }

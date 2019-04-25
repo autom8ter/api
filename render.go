@@ -38,13 +38,13 @@ func RenderFileWithUserInfo(filename string) http.HandlerFunc {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
-			obj := session.Values["userinfo"]
+			obj := session.Values["user"]
 			bits, err := json.Marshal(obj)
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
-			u := &UserInfo{}
+			u := &User{}
 			err = json.Unmarshal(bits, u)
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)

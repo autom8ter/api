@@ -25,30 +25,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Empty" do
   end
-  add_message "api.Dashboard" do
-    optional :users, :message, 1, "api.UsersWidget"
-    optional :customers, :message, 2, "api.CustomersWidget"
-    optional :plans, :message, 3, "api.PlansWidget"
-    optional :subscriptions, :message, 4, "api.SubscriptionsWidget"
-    optional :charges, :message, 5, "api.ChargesWidget"
-  end
-  add_message "api.CustomersWidget" do
-    optional :count, :int64, 1
-  end
-  add_message "api.PlansWidget" do
-    optional :count, :int64, 1
-  end
-  add_message "api.SubscriptionsWidget" do
-    optional :count, :int64, 1
-  end
-  add_message "api.ChargesWidget" do
-    optional :count, :int64, 1
-    optional :total, :double, 2
-    optional :dollars_per_charge, :double, 3
-  end
-  add_message "api.UsersWidget" do
-    optional :count, :int64, 1
-  end
   add_message "api.Identifier" do
     optional :id, :string, 1
   end
@@ -66,10 +42,29 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :callback, :string, 5
     optional :app, :string, 6
   end
+  add_message "api.SMSBlast" do
+    optional :service, :string, 1
+    optional :to, :string, 2
+    optional :message, :message, 3, "api.Message"
+    optional :mediaURL, :string, 4
+    optional :callback, :string, 5
+    optional :app, :string, 6
+  end
   add_message "api.EmailRequest" do
     optional :from_name, :string, 1
     optional :from_email, :string, 2
     optional :email, :message, 3, "api.Email"
+  end
+  add_message "api.EmailBlastRequest" do
+    optional :from_name, :string, 1
+    optional :from_email, :string, 2
+    optional :blast, :message, 3, "api.EmailBlast"
+  end
+  add_message "api.EmailBlast" do
+    map :name_address, :string, :string, 1
+    optional :subject, :string, 2
+    optional :plain, :string, 3
+    optional :html, :string, 4
   end
   add_message "api.Email" do
     optional :name, :string, 1
@@ -86,7 +81,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Message" do
     optional :value, :string, 1
   end
-  add_message "api.UserInfo" do
+  add_message "api.User" do
     optional :user_id, :string, 1
     optional :name, :string, 2
     optional :given_name, :string, 3
@@ -125,7 +120,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :client_secret, :string, 3
     optional :redirect, :string, 4
     optional :audience, :string, 5
-    repeated :scopes, :string, 6
+    repeated :scopes, :enum, 6, "api.Scope"
   end
   add_message "api.Bytes" do
     optional :bits, :bytes, 1
@@ -145,6 +140,27 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Jwks" do
     repeated :keys, :message, 1, "api.JSONWebKeys"
   end
+  add_enum "api.Scope" do
+    value :OPENID, 0
+    value :PROFILE, 1
+    value :EMAIL, 2
+    value :READ_USERS, 3
+    value :READ_USER_IDP_TOKENS, 4
+    value :CREATE_USERS, 5
+    value :READ_STATS, 6
+    value :READ_EMAIL_TEMPLATES, 7
+    value :UPDATE_EMAIL_TEMPLATES, 8
+    value :CREATE_EMAIL_TEMPLATES, 9
+    value :READ_RULES, 10
+    value :UPDATE_RULES, 11
+    value :CREATE_RULES, 12
+    value :DELETE_RULES, 13
+    value :READ_ROLES, 14
+    value :UPDATE_ROLES, 15
+    value :CREATE_ROLES, 16
+    value :DELETE_ROLES, 17
+    value :READ_LOGS, 18
+  end
 end
 
 module Api
@@ -153,20 +169,17 @@ module Api
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   Secret = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Secret").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
-  Dashboard = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Dashboard").msgclass
-  CustomersWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomersWidget").msgclass
-  PlansWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PlansWidget").msgclass
-  SubscriptionsWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionsWidget").msgclass
-  ChargesWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChargesWidget").msgclass
-  UsersWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UsersWidget").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
   SMSStatus = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSStatus").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
+  SMSBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSBlast").msgclass
   EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass
+  EmailBlastRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailBlastRequest").msgclass
+  EmailBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailBlast").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass
-  UserInfo = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserInfo").msgclass
+  User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
   AppMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AppMetadata").msgclass
@@ -175,4 +188,5 @@ module Api
   Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
+  Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
 end

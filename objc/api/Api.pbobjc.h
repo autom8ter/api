@@ -29,20 +29,54 @@ CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
 @class Card;
-@class ChargesWidget;
-@class CustomersWidget;
 @class Email;
+@class EmailBlast;
 @class Identifier;
 @class Identity;
 @class JSONWebKeys;
 @class Message;
-@class PlansWidget;
 @class SMS;
-@class SubscriptionsWidget;
 @class UserMetadata;
-@class UsersWidget;
 
 NS_ASSUME_NONNULL_BEGIN
+
+#pragma mark - Enum Scope
+
+typedef GPB_ENUM(Scope) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  Scope_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Scope_Openid = 0,
+  Scope_Profile = 1,
+  Scope_Email = 2,
+  Scope_ReadUsers = 3,
+  Scope_ReadUserIdpTokens = 4,
+  Scope_CreateUsers = 5,
+  Scope_ReadStats = 6,
+  Scope_ReadEmailTemplates = 7,
+  Scope_UpdateEmailTemplates = 8,
+  Scope_CreateEmailTemplates = 9,
+  Scope_ReadRules = 10,
+  Scope_UpdateRules = 11,
+  Scope_CreateRules = 12,
+  Scope_DeleteRules = 13,
+  Scope_ReadRoles = 14,
+  Scope_UpdateRoles = 15,
+  Scope_CreateRoles = 16,
+  Scope_DeleteRoles = 17,
+  Scope_ReadLogs = 18,
+};
+
+GPBEnumDescriptor *Scope_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL Scope_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -133,106 +167,6 @@ typedef GPB_ENUM(Secret_FieldNumber) {
 
 @end
 
-#pragma mark - Dashboard
-
-typedef GPB_ENUM(Dashboard_FieldNumber) {
-  Dashboard_FieldNumber_Users = 1,
-  Dashboard_FieldNumber_Customers = 2,
-  Dashboard_FieldNumber_Plans = 3,
-  Dashboard_FieldNumber_Subscriptions = 4,
-  Dashboard_FieldNumber_Charges = 5,
-};
-
-@interface Dashboard : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) UsersWidget *users;
-/** Test to see if @c users has been set. */
-@property(nonatomic, readwrite) BOOL hasUsers;
-
-@property(nonatomic, readwrite, strong, null_resettable) CustomersWidget *customers;
-/** Test to see if @c customers has been set. */
-@property(nonatomic, readwrite) BOOL hasCustomers;
-
-@property(nonatomic, readwrite, strong, null_resettable) PlansWidget *plans;
-/** Test to see if @c plans has been set. */
-@property(nonatomic, readwrite) BOOL hasPlans;
-
-@property(nonatomic, readwrite, strong, null_resettable) SubscriptionsWidget *subscriptions;
-/** Test to see if @c subscriptions has been set. */
-@property(nonatomic, readwrite) BOOL hasSubscriptions;
-
-@property(nonatomic, readwrite, strong, null_resettable) ChargesWidget *charges;
-/** Test to see if @c charges has been set. */
-@property(nonatomic, readwrite) BOOL hasCharges;
-
-@end
-
-#pragma mark - CustomersWidget
-
-typedef GPB_ENUM(CustomersWidget_FieldNumber) {
-  CustomersWidget_FieldNumber_Count = 1,
-};
-
-@interface CustomersWidget : GPBMessage
-
-@property(nonatomic, readwrite) int64_t count;
-
-@end
-
-#pragma mark - PlansWidget
-
-typedef GPB_ENUM(PlansWidget_FieldNumber) {
-  PlansWidget_FieldNumber_Count = 1,
-};
-
-@interface PlansWidget : GPBMessage
-
-@property(nonatomic, readwrite) int64_t count;
-
-@end
-
-#pragma mark - SubscriptionsWidget
-
-typedef GPB_ENUM(SubscriptionsWidget_FieldNumber) {
-  SubscriptionsWidget_FieldNumber_Count = 1,
-};
-
-@interface SubscriptionsWidget : GPBMessage
-
-@property(nonatomic, readwrite) int64_t count;
-
-@end
-
-#pragma mark - ChargesWidget
-
-typedef GPB_ENUM(ChargesWidget_FieldNumber) {
-  ChargesWidget_FieldNumber_Count = 1,
-  ChargesWidget_FieldNumber_Total = 2,
-  ChargesWidget_FieldNumber_DollarsPerCharge = 3,
-};
-
-@interface ChargesWidget : GPBMessage
-
-@property(nonatomic, readwrite) int64_t count;
-
-@property(nonatomic, readwrite) double total;
-
-@property(nonatomic, readwrite) double dollarsPerCharge;
-
-@end
-
-#pragma mark - UsersWidget
-
-typedef GPB_ENUM(UsersWidget_FieldNumber) {
-  UsersWidget_FieldNumber_Count = 1,
-};
-
-@interface UsersWidget : GPBMessage
-
-@property(nonatomic, readwrite) int64_t count;
-
-@end
-
 #pragma mark - Identifier
 
 typedef GPB_ENUM(Identifier_FieldNumber) {
@@ -299,6 +233,35 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 
 @end
 
+#pragma mark - SMSBlast
+
+typedef GPB_ENUM(SMSBlast_FieldNumber) {
+  SMSBlast_FieldNumber_Service = 1,
+  SMSBlast_FieldNumber_To = 2,
+  SMSBlast_FieldNumber_Message = 3,
+  SMSBlast_FieldNumber_MediaURL = 4,
+  SMSBlast_FieldNumber_Callback = 5,
+  SMSBlast_FieldNumber_App = 6,
+};
+
+@interface SMSBlast : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *service;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *to;
+
+@property(nonatomic, readwrite, strong, null_resettable) Message *message;
+/** Test to see if @c message has been set. */
+@property(nonatomic, readwrite) BOOL hasMessage;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *app;
+
+@end
+
 #pragma mark - EmailRequest
 
 typedef GPB_ENUM(EmailRequest_FieldNumber) {
@@ -316,6 +279,49 @@ typedef GPB_ENUM(EmailRequest_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) Email *email;
 /** Test to see if @c email has been set. */
 @property(nonatomic, readwrite) BOOL hasEmail;
+
+@end
+
+#pragma mark - EmailBlastRequest
+
+typedef GPB_ENUM(EmailBlastRequest_FieldNumber) {
+  EmailBlastRequest_FieldNumber_FromName = 1,
+  EmailBlastRequest_FieldNumber_FromEmail = 2,
+  EmailBlastRequest_FieldNumber_Blast = 3,
+};
+
+@interface EmailBlastRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *fromName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *fromEmail;
+
+@property(nonatomic, readwrite, strong, null_resettable) EmailBlast *blast;
+/** Test to see if @c blast has been set. */
+@property(nonatomic, readwrite) BOOL hasBlast;
+
+@end
+
+#pragma mark - EmailBlast
+
+typedef GPB_ENUM(EmailBlast_FieldNumber) {
+  EmailBlast_FieldNumber_NameAddress = 1,
+  EmailBlast_FieldNumber_Subject = 2,
+  EmailBlast_FieldNumber_Plain = 3,
+  EmailBlast_FieldNumber_Html = 4,
+};
+
+@interface EmailBlast : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *nameAddress;
+/** The number of items in @c nameAddress without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger nameAddress_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plain;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *html;
 
 @end
 
@@ -373,31 +379,31 @@ typedef GPB_ENUM(Message_FieldNumber) {
 
 @end
 
-#pragma mark - UserInfo
+#pragma mark - User
 
-typedef GPB_ENUM(UserInfo_FieldNumber) {
-  UserInfo_FieldNumber_UserId = 1,
-  UserInfo_FieldNumber_Name = 2,
-  UserInfo_FieldNumber_GivenName = 3,
-  UserInfo_FieldNumber_FamilyName = 4,
-  UserInfo_FieldNumber_Gender = 5,
-  UserInfo_FieldNumber_Birthdate = 6,
-  UserInfo_FieldNumber_Email = 7,
-  UserInfo_FieldNumber_PhoneNumber = 8,
-  UserInfo_FieldNumber_Picture = 9,
-  UserInfo_FieldNumber_UserMetadata = 10,
-  UserInfo_FieldNumber_AppMetadata = 11,
-  UserInfo_FieldNumber_LastIp = 12,
-  UserInfo_FieldNumber_Blocked = 13,
-  UserInfo_FieldNumber_Nickname = 14,
-  UserInfo_FieldNumber_MultifactorArray = 15,
-  UserInfo_FieldNumber_CreatedAt = 17,
-  UserInfo_FieldNumber_UpdatedAt = 18,
-  UserInfo_FieldNumber_PhoneVerified = 19,
-  UserInfo_FieldNumber_IdentitiesArray = 20,
+typedef GPB_ENUM(User_FieldNumber) {
+  User_FieldNumber_UserId = 1,
+  User_FieldNumber_Name = 2,
+  User_FieldNumber_GivenName = 3,
+  User_FieldNumber_FamilyName = 4,
+  User_FieldNumber_Gender = 5,
+  User_FieldNumber_Birthdate = 6,
+  User_FieldNumber_Email = 7,
+  User_FieldNumber_PhoneNumber = 8,
+  User_FieldNumber_Picture = 9,
+  User_FieldNumber_UserMetadata = 10,
+  User_FieldNumber_AppMetadata = 11,
+  User_FieldNumber_LastIp = 12,
+  User_FieldNumber_Blocked = 13,
+  User_FieldNumber_Nickname = 14,
+  User_FieldNumber_MultifactorArray = 15,
+  User_FieldNumber_CreatedAt = 17,
+  User_FieldNumber_UpdatedAt = 18,
+  User_FieldNumber_PhoneVerified = 19,
+  User_FieldNumber_IdentitiesArray = 20,
 };
 
-@interface UserInfo : GPBMessage
+@interface User : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
@@ -519,7 +525,8 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *audience;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+// |scopesArray| contains |Scope|
+@property(nonatomic, readwrite, strong, null_resettable) GPBEnumArray *scopesArray;
 /** The number of items in @c scopesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
 
