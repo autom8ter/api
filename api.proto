@@ -221,6 +221,7 @@ message EmailRequest {
     string from_email =2;
     Email email =3;
 }
+
 message EmailBlastRequest {
     string from_name =1;
     string from_email =2;
@@ -303,8 +304,8 @@ message Bytes {
 }
 
 message Template {
-    string text =1;
-    bytes data =2;
+    string name =1;
+    string text =2;
 }
 
 message JSONWebKeys {
@@ -340,4 +341,21 @@ enum Scope {
     CREATE_ROLES=16;
     DELETE_ROLES=17;
     READ_LOGS=18;
+}
+
+enum HTTPMethod {
+    GET =0;
+    POST=1;
+}
+
+message HTTPRequest {
+    HTTPMethod method=1;
+    string url =2;
+    string token =3;
+    string account =4;
+    string contentType =5;
+    map<string, string> headers =6;
+    map<string, string> form =7;
+    map<string, string> cookies =8;
+    Bytes body =9;
 }

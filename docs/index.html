@@ -227,6 +227,22 @@
                 </li>
               
                 <li>
+                  <a href="#api.HTTPRequest"><span class="badge">M</span>HTTPRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.HTTPRequest.CookiesEntry"><span class="badge">M</span>HTTPRequest.CookiesEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.HTTPRequest.FormEntry"><span class="badge">M</span>HTTPRequest.FormEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.HTTPRequest.HeadersEntry"><span class="badge">M</span>HTTPRequest.HeadersEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.Identifier"><span class="badge">M</span>Identifier</a>
                 </li>
               
@@ -294,6 +310,10 @@
                   <a href="#api.UserRequest"><span class="badge">M</span>UserRequest</a>
                 </li>
               
+              
+                <li>
+                  <a href="#api.HTTPMethod"><span class="badge">E</span>HTTPMethod</a>
+                </li>
               
                 <li>
                   <a href="#api.Scope"><span class="badge">E</span>Scope</a>
@@ -753,6 +773,175 @@
 
         
       
+        <h3 id="api.HTTPRequest">HTTPRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>method</td>
+                  <td><a href="#api.HTTPMethod">HTTPMethod</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>token</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>account</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>contentType</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>headers</td>
+                  <td><a href="#api.HTTPRequest.HeadersEntry">HTTPRequest.HeadersEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>form</td>
+                  <td><a href="#api.HTTPRequest.FormEntry">HTTPRequest.FormEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cookies</td>
+                  <td><a href="#api.HTTPRequest.CookiesEntry">HTTPRequest.CookiesEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>body</td>
+                  <td><a href="#api.Bytes">Bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.HTTPRequest.CookiesEntry">HTTPRequest.CookiesEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.HTTPRequest.FormEntry">HTTPRequest.FormEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.HTTPRequest.HeadersEntry">HTTPRequest.HeadersEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Identifier">Identifier</h3>
         <p></p>
 
@@ -1155,15 +1344,15 @@
             <tbody>
               
                 <tr>
-                  <td>text</td>
+                  <td>name</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>data</td>
-                  <td><a href="#bytes">bytes</a></td>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1467,6 +1656,29 @@
         
       
 
+      
+        <h3 id="api.HTTPMethod">HTTPMethod</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GET</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>POST</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
         <h3 id="api.Scope">Scope</h3>
         <p></p>

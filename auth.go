@@ -317,7 +317,7 @@ func (c *Auth) JWKSURL() string {
 }
 
 func (c *Auth) GetJWKS() (*Jwks, error) {
-	resp, err := HTTPClient.Get(c.JWKSURL())
+	resp, err := httpClient.Get(c.JWKSURL())
 	if err != nil {
 		return nil, err
 	}

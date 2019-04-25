@@ -129,6 +129,41 @@ BOOL Scope_IsValidValue(int32_t value__) {
   }
 }
 
+#pragma mark - Enum HTTPMethod
+
+GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Get\000Post\000";
+    static const int32_t values[] = {
+        HTTPMethod_Get,
+        HTTPMethod_Post,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(HTTPMethod)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:HTTPMethod_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL HTTPMethod_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case HTTPMethod_Get:
+    case HTTPMethod_Post:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 #pragma mark - SubscribeRequest
 
 @implementation SubscribeRequest
@@ -1782,13 +1817,13 @@ typedef struct Bytes__storage_ {
 
 @implementation Template
 
+@dynamic name;
 @dynamic text;
-@dynamic data_p;
 
 typedef struct Template__storage_ {
   uint32_t _has_storage_[1];
+  NSString *name;
   NSString *text;
-  NSData *data_p;
 } Template__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1798,22 +1833,22 @@ typedef struct Template__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "text",
+        .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = Template_FieldNumber_Text,
+        .number = Template_FieldNumber_Name,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Template__storage_, text),
+        .offset = (uint32_t)offsetof(Template__storage_, name),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "data_p",
+        .name = "text",
         .dataTypeSpecific.className = NULL,
-        .number = Template_FieldNumber_Data_p,
+        .number = Template_FieldNumber_Text,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Template__storage_, data_p),
+        .offset = (uint32_t)offsetof(Template__storage_, text),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBytes,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1977,6 +2012,154 @@ typedef struct Jwks__storage_ {
 }
 
 @end
+
+#pragma mark - HTTPRequest
+
+@implementation HTTPRequest
+
+@dynamic method;
+@dynamic URL;
+@dynamic token;
+@dynamic account;
+@dynamic contentType;
+@dynamic headers, headers_Count;
+@dynamic form, form_Count;
+@dynamic cookies, cookies_Count;
+@dynamic hasBody, body;
+
+typedef struct HTTPRequest__storage_ {
+  uint32_t _has_storage_[1];
+  HTTPMethod method;
+  NSString *URL;
+  NSString *token;
+  NSString *account;
+  NSString *contentType;
+  NSMutableDictionary *headers;
+  NSMutableDictionary *form;
+  NSMutableDictionary *cookies;
+  Bytes *body;
+} HTTPRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "method",
+        .dataTypeSpecific.enumDescFunc = HTTPMethod_EnumDescriptor,
+        .number = HTTPRequest_FieldNumber_Method,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, method),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "URL",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_URL,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, URL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "token",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_Token,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, token),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "account",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_Account,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, account),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "contentType",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_ContentType,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, contentType),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "headers",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_Headers,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, headers),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "form",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_Form,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, form),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "cookies",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_Cookies,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, cookies),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "body",
+        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
+        .number = HTTPRequest_FieldNumber_Body,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, body),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[HTTPRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(HTTPRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\002!!!\000\005\013\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t HTTPRequest_Method_RawValue(HTTPRequest *message) {
+  GPBDescriptor *descriptor = [HTTPRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [HTTPRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
 
 
 #pragma clang diagnostic pop

@@ -134,8 +134,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :bits, :bytes, 1
   end
   add_message "api.Template" do
-    optional :text, :string, 1
-    optional :data, :bytes, 2
+    optional :name, :string, 1
+    optional :text, :string, 2
   end
   add_message "api.JSONWebKeys" do
     optional :kty, :string, 1
@@ -147,6 +147,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Jwks" do
     repeated :keys, :message, 1, "api.JSONWebKeys"
+  end
+  add_message "api.HTTPRequest" do
+    optional :method, :enum, 1, "api.HTTPMethod"
+    optional :url, :string, 2
+    optional :token, :string, 3
+    optional :account, :string, 4
+    optional :contentType, :string, 5
+    map :headers, :string, :string, 6
+    map :form, :string, :string, 7
+    map :cookies, :string, :string, 8
+    optional :body, :message, 9, "api.Bytes"
   end
   add_enum "api.Scope" do
     value :OPENID, 0
@@ -168,6 +179,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :CREATE_ROLES, 16
     value :DELETE_ROLES, 17
     value :READ_LOGS, 18
+  end
+  add_enum "api.HTTPMethod" do
+    value :GET, 0
+    value :POST, 1
   end
 end
 
@@ -198,5 +213,7 @@ module Api
   Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
+  HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPRequest").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
+  HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPMethod").enummodule
 end

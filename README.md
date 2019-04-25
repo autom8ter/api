@@ -17,15 +17,73 @@ var Context context.Context
 ```
 
 ```go
-var DEFAULT_REDIRECT = "http://localhost:8080/callback"
+var DEFAULT_OAUTH_REDIRECT = "http://localhost:8080/callback"
 ```
 
 ```go
-var DEFAULT_SCOPES = []string{"openid", "profile", "email"}
+var DEFAULT_OAUTH_SCOPES = []Scope{Scope_OPENID, Scope_PROFILE, Scope_EMAIL}
 ```
 
 ```go
-var HTTPClient *http.Client
+var HTTPMethod_name = map[int32]string{
+	0: "GET",
+	1: "POST",
+}
+```
+
+```go
+var HTTPMethod_value = map[string]int32{
+	"GET":  0,
+	"POST": 1,
+}
+```
+
+```go
+var Scope_name = map[int32]string{
+	0:  "OPENID",
+	1:  "PROFILE",
+	2:  "EMAIL",
+	3:  "READ_USERS",
+	4:  "READ_USER_IDP_TOKENS",
+	5:  "CREATE_USERS",
+	6:  "READ_STATS",
+	7:  "READ_EMAIL_TEMPLATES",
+	8:  "UPDATE_EMAIL_TEMPLATES",
+	9:  "CREATE_EMAIL_TEMPLATES",
+	10: "READ_RULES",
+	11: "UPDATE_RULES",
+	12: "CREATE_RULES",
+	13: "DELETE_RULES",
+	14: "READ_ROLES",
+	15: "UPDATE_ROLES",
+	16: "CREATE_ROLES",
+	17: "DELETE_ROLES",
+	18: "READ_LOGS",
+}
+```
+
+```go
+var Scope_value = map[string]int32{
+	"OPENID":                 0,
+	"PROFILE":                1,
+	"EMAIL":                  2,
+	"READ_USERS":             3,
+	"READ_USER_IDP_TOKENS":   4,
+	"CREATE_USERS":           5,
+	"READ_STATS":             6,
+	"READ_EMAIL_TEMPLATES":   7,
+	"UPDATE_EMAIL_TEMPLATES": 8,
+	"CREATE_EMAIL_TEMPLATES": 9,
+	"READ_RULES":             10,
+	"UPDATE_RULES":           11,
+	"CREATE_RULES":           12,
+	"DELETE_RULES":           13,
+	"READ_ROLES":             14,
+	"UPDATE_ROLES":           15,
+	"CREATE_ROLES":           16,
+	"DELETE_ROLES":           17,
+	"READ_LOGS":              18,
+}
 ```
 
 ```go
@@ -50,40 +108,10 @@ func FuncMap() template.FuncMap
 func InitSessions(secret string) error
 ```
 
-#### func  RegisterAdminServiceHandler
+#### func  NormalizeScopes
 
 ```go
-func RegisterAdminServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterAdminServiceHandler registers the http handlers for service AdminService
-to "mux". The handlers forward requests to the grpc endpoint over "conn".
-
-#### func  RegisterAdminServiceHandlerClient
-
-```go
-func RegisterAdminServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AdminServiceClient) error
-```
-RegisterAdminServiceHandlerClient registers the http handlers for service
-AdminService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "AdminServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"AdminServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "AdminServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterAdminServiceHandlerFromEndpoint
-
-```go
-func RegisterAdminServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterAdminServiceHandlerFromEndpoint is same as RegisterAdminServiceHandler
-but automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
-
-#### func  RegisterAdminServiceServer
-
-```go
-func RegisterAdminServiceServer(s *grpc.Server, srv AdminServiceServer)
+func NormalizeScopes(scopes ...Scope) []string
 ```
 
 #### func  RegisterContactServiceHandler
@@ -233,48 +261,17 @@ the connection when "ctx" gets done.
 func RegisterUtilityServiceServer(s *grpc.Server, srv UtilityServiceServer)
 ```
 
-#### func  RenderFileWithData
+#### func  RenderFile
 
 ```go
-func RenderFileWithData(name string, data interface{}) http.HandlerFunc
+func RenderFile(name string, data []byte) http.HandlerFunc
 ```
 
-#### func  RenderFileWithUserInfo
+#### func  WriteFile
 
 ```go
-func RenderFileWithUserInfo(filename string) http.HandlerFunc
+func WriteFile(name string) http.HandlerFunc
 ```
-
-#### type AdminServiceClient
-
-```go
-type AdminServiceClient interface {
-	GetDashboard(ctx context.Context, in *Secret, opts ...grpc.CallOption) (*Dashboard, error)
-	EmailUser(ctx context.Context, in *Email, opts ...grpc.CallOption) (*Message, error)
-}
-```
-
-AdminServiceClient is the client API for AdminService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewAdminServiceClient
-
-```go
-func NewAdminServiceClient(cc *grpc.ClientConn) AdminServiceClient
-```
-
-#### type AdminServiceServer
-
-```go
-type AdminServiceServer interface {
-	GetDashboard(context.Context, *Secret) (*Dashboard, error)
-	EmailUser(context.Context, *Email) (*Message, error)
-}
-```
-
-AdminServiceServer is the server API for AdminService service.
 
 #### type AppMetadata
 
@@ -357,7 +354,7 @@ type Auth struct {
 	ClientSecret         string   `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
 	Redirect             string   `protobuf:"bytes,4,opt,name=redirect,proto3" json:"redirect,omitempty"`
 	Audience             string   `protobuf:"bytes,5,opt,name=audience,proto3" json:"audience,omitempty"`
-	Scopes               []string `protobuf:"bytes,6,rep,name=scopes,proto3" json:"scopes,omitempty"`
+	Scopes               []Scope  `protobuf:"varint,6,rep,packed,name=scopes,proto3,enum=api.Scope" json:"scopes,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -369,6 +366,12 @@ type Auth struct {
 
 ```go
 func (c *Auth) AuthURL() string
+```
+
+#### func (*Auth) ClientGrantsURL
+
+```go
+func (c *Auth) ClientGrantsURL() string
 ```
 
 #### func (*Auth) ClientsURL
@@ -440,7 +443,7 @@ func (m *Auth) GetDomain() string
 #### func (*Auth) GetJWKS
 
 ```go
-func (c *Auth) GetJWKS(token *jwt.Token) (*Jwks, error)
+func (c *Auth) GetJWKS() (*Jwks, error)
 ```
 
 #### func (*Auth) GetRedirect
@@ -452,7 +455,7 @@ func (m *Auth) GetRedirect() string
 #### func (*Auth) GetScopes
 
 ```go
-func (m *Auth) GetScopes() []string
+func (m *Auth) GetScopes() []Scope
 ```
 
 #### func (*Auth) GrantsURL
@@ -473,6 +476,12 @@ func (c *Auth) JWKSURL() string
 func (a *Auth) ListenAndServe(addr string, c *RouterPaths, home, loggedIn http.HandlerFunc) error
 ```
 
+#### func (*Auth) LogoutURL
+
+```go
+func (c *Auth) LogoutURL(r *RouterPaths) (string, error)
+```
+
 #### func (*Auth) LogsURL
 
 ```go
@@ -488,7 +497,7 @@ func (*Auth) ProtoMessage()
 #### func (*Auth) RequireLogin
 
 ```go
-func (a *Auth) RequireLogin(c *RouterPaths, next http.HandlerFunc) http.HandlerFunc
+func (a *Auth) RequireLogin(paths *RouterPaths, next http.HandlerFunc) http.HandlerFunc
 ```
 
 #### func (*Auth) Reset
@@ -599,6 +608,66 @@ type Bytes struct {
 ```
 
 
+#### func  AsBytes
+
+```go
+func AsBytes(obj interface{}) *Bytes
+```
+
+#### func  BytesFromBytes
+
+```go
+func BytesFromBytes(bits []byte) *Bytes
+```
+
+#### func  BytesFromFile
+
+```go
+func BytesFromFile(fileName string) (*Bytes, error)
+```
+
+#### func  BytesFromReader
+
+```go
+func BytesFromReader(r io.Reader) (*Bytes, error)
+```
+
+#### func  BytesFromString
+
+```go
+func BytesFromString(str string) *Bytes
+```
+
+#### func  NewBytes
+
+```go
+func NewBytes() *Bytes
+```
+
+#### func (*Bytes) BitString
+
+```go
+func (m *Bytes) BitString() string
+```
+
+#### func (*Bytes) Compile
+
+```go
+func (m *Bytes) Compile(w io.Writer, t *Template) error
+```
+
+#### func (*Bytes) CompileHTTP
+
+```go
+func (m *Bytes) CompileHTTP(t *Template) http.HandlerFunc
+```
+
+#### func (*Bytes) Contains
+
+```go
+func (m *Bytes) Contains(str string) bool
+```
+
 #### func (*Bytes) Descriptor
 
 ```go
@@ -609,6 +678,18 @@ func (*Bytes) Descriptor() ([]byte, []int)
 
 ```go
 func (m *Bytes) GetBits() []byte
+```
+
+#### func (*Bytes) JSON
+
+```go
+func (m *Bytes) JSON() []byte
+```
+
+#### func (*Bytes) Length
+
+```go
+func (m *Bytes) Length() int
 ```
 
 #### func (*Bytes) ProtoMessage
@@ -629,10 +710,34 @@ func (m *Bytes) Reset()
 func (m *Bytes) String() string
 ```
 
+#### func (*Bytes) UnMarshalJSON
+
+```go
+func (m *Bytes) UnMarshalJSON(obj interface{}) error
+```
+
+#### func (*Bytes) UnMarshalProto
+
+```go
+func (m *Bytes) UnMarshalProto(obj interface{}) error
+```
+
 #### func (*Bytes) Write
 
 ```go
 func (m *Bytes) Write(p []byte) (n int, err error)
+```
+
+#### func (*Bytes) WriteHTTP
+
+```go
+func (m *Bytes) WriteHTTP() http.HandlerFunc
+```
+
+#### func (*Bytes) XML
+
+```go
+func (m *Bytes) XML() []byte
 ```
 
 #### func (*Bytes) XXX_DiscardUnknown
@@ -663,6 +768,12 @@ func (m *Bytes) XXX_Size() int
 
 ```go
 func (m *Bytes) XXX_Unmarshal(b []byte) error
+```
+
+#### func (*Bytes) YAML
+
+```go
+func (m *Bytes) YAML() []byte
 ```
 
 #### type Call
@@ -844,92 +955,6 @@ func (m *Card) XXX_Size() int
 func (m *Card) XXX_Unmarshal(b []byte) error
 ```
 
-#### type ChargesWidget
-
-```go
-type ChargesWidget struct {
-	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	Total                float64  `protobuf:"fixed64,2,opt,name=total,proto3" json:"total,omitempty"`
-	DollarsPerCharge     float64  `protobuf:"fixed64,3,opt,name=dollars_per_charge,json=dollarsPerCharge,proto3" json:"dollars_per_charge,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*ChargesWidget) Descriptor
-
-```go
-func (*ChargesWidget) Descriptor() ([]byte, []int)
-```
-
-#### func (*ChargesWidget) GetCount
-
-```go
-func (m *ChargesWidget) GetCount() int64
-```
-
-#### func (*ChargesWidget) GetDollarsPerCharge
-
-```go
-func (m *ChargesWidget) GetDollarsPerCharge() float64
-```
-
-#### func (*ChargesWidget) GetTotal
-
-```go
-func (m *ChargesWidget) GetTotal() float64
-```
-
-#### func (*ChargesWidget) ProtoMessage
-
-```go
-func (*ChargesWidget) ProtoMessage()
-```
-
-#### func (*ChargesWidget) Reset
-
-```go
-func (m *ChargesWidget) Reset()
-```
-
-#### func (*ChargesWidget) String
-
-```go
-func (m *ChargesWidget) String() string
-```
-
-#### func (*ChargesWidget) XXX_DiscardUnknown
-
-```go
-func (m *ChargesWidget) XXX_DiscardUnknown()
-```
-
-#### func (*ChargesWidget) XXX_Marshal
-
-```go
-func (m *ChargesWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*ChargesWidget) XXX_Merge
-
-```go
-func (m *ChargesWidget) XXX_Merge(src proto.Message)
-```
-
-#### func (*ChargesWidget) XXX_Size
-
-```go
-func (m *ChargesWidget) XXX_Size() int
-```
-
-#### func (*ChargesWidget) XXX_Unmarshal
-
-```go
-func (m *ChargesWidget) XXX_Unmarshal(b []byte) error
-```
-
 #### type ClientSet
 
 ```go
@@ -937,7 +962,6 @@ type ClientSet struct {
 	Utility UtilityServiceClient
 	Contact ContactServiceClient
 	User    UserServiceClient
-	Admin   AdminServiceClient
 	Payment PaymentServiceClient
 }
 ```
@@ -954,8 +978,10 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet
 ```go
 type ContactServiceClient interface {
 	SendSMS(ctx context.Context, in *SMS, opts ...grpc.CallOption) (*Identifier, error)
+	SendSMSBlast(ctx context.Context, in *SMSBlast, opts ...grpc.CallOption) (ContactService_SendSMSBlastClient, error)
 	GetSMS(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*SMSStatus, error)
 	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Message, error)
+	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Identifier, error)
 }
 ```
@@ -976,201 +1002,55 @@ func NewContactServiceClient(cc *grpc.ClientConn) ContactServiceClient
 ```go
 type ContactServiceServer interface {
 	SendSMS(context.Context, *SMS) (*Identifier, error)
+	SendSMSBlast(*SMSBlast, ContactService_SendSMSBlastServer) error
 	GetSMS(context.Context, *Identifier) (*SMSStatus, error)
 	SendEmail(context.Context, *EmailRequest) (*Message, error)
+	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*Identifier, error)
 }
 ```
 
 ContactServiceServer is the server API for ContactService service.
 
-#### type CustomClaims
+#### type ContactService_SendEmailBlastClient
 
 ```go
-type CustomClaims struct {
-	Scope string `json:"scope"`
-	jwt.StandardClaims
+type ContactService_SendEmailBlastClient interface {
+	Recv() (*Message, error)
+	grpc.ClientStream
 }
 ```
 
 
-#### func (*CustomClaims) CheckScope
+#### type ContactService_SendEmailBlastServer
 
 ```go
-func (c *CustomClaims) CheckScope(scope string, tokenString string) bool
-```
-
-#### type CustomersWidget
-
-```go
-type CustomersWidget struct {
-	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+type ContactService_SendEmailBlastServer interface {
+	Send(*Message) error
+	grpc.ServerStream
 }
 ```
 
 
-#### func (*CustomersWidget) Descriptor
+#### type ContactService_SendSMSBlastClient
 
 ```go
-func (*CustomersWidget) Descriptor() ([]byte, []int)
-```
-
-#### func (*CustomersWidget) GetCount
-
-```go
-func (m *CustomersWidget) GetCount() int64
-```
-
-#### func (*CustomersWidget) ProtoMessage
-
-```go
-func (*CustomersWidget) ProtoMessage()
-```
-
-#### func (*CustomersWidget) Reset
-
-```go
-func (m *CustomersWidget) Reset()
-```
-
-#### func (*CustomersWidget) String
-
-```go
-func (m *CustomersWidget) String() string
-```
-
-#### func (*CustomersWidget) XXX_DiscardUnknown
-
-```go
-func (m *CustomersWidget) XXX_DiscardUnknown()
-```
-
-#### func (*CustomersWidget) XXX_Marshal
-
-```go
-func (m *CustomersWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*CustomersWidget) XXX_Merge
-
-```go
-func (m *CustomersWidget) XXX_Merge(src proto.Message)
-```
-
-#### func (*CustomersWidget) XXX_Size
-
-```go
-func (m *CustomersWidget) XXX_Size() int
-```
-
-#### func (*CustomersWidget) XXX_Unmarshal
-
-```go
-func (m *CustomersWidget) XXX_Unmarshal(b []byte) error
-```
-
-#### type Dashboard
-
-```go
-type Dashboard struct {
-	Users                *UsersWidget         `protobuf:"bytes,1,opt,name=users,proto3" json:"users,omitempty"`
-	Customers            *CustomersWidget     `protobuf:"bytes,2,opt,name=customers,proto3" json:"customers,omitempty"`
-	Plans                *PlansWidget         `protobuf:"bytes,3,opt,name=plans,proto3" json:"plans,omitempty"`
-	Subscriptions        *SubscriptionsWidget `protobuf:"bytes,4,opt,name=subscriptions,proto3" json:"subscriptions,omitempty"`
-	Charges              *ChargesWidget       `protobuf:"bytes,5,opt,name=charges,proto3" json:"charges,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
-	XXX_unrecognized     []byte               `json:"-"`
-	XXX_sizecache        int32                `json:"-"`
+type ContactService_SendSMSBlastClient interface {
+	Recv() (*Identifier, error)
+	grpc.ClientStream
 }
 ```
 
 
-#### func (*Dashboard) Descriptor
+#### type ContactService_SendSMSBlastServer
 
 ```go
-func (*Dashboard) Descriptor() ([]byte, []int)
+type ContactService_SendSMSBlastServer interface {
+	Send(*Identifier) error
+	grpc.ServerStream
+}
 ```
 
-#### func (*Dashboard) GetCharges
-
-```go
-func (m *Dashboard) GetCharges() *ChargesWidget
-```
-
-#### func (*Dashboard) GetCustomers
-
-```go
-func (m *Dashboard) GetCustomers() *CustomersWidget
-```
-
-#### func (*Dashboard) GetPlans
-
-```go
-func (m *Dashboard) GetPlans() *PlansWidget
-```
-
-#### func (*Dashboard) GetSubscriptions
-
-```go
-func (m *Dashboard) GetSubscriptions() *SubscriptionsWidget
-```
-
-#### func (*Dashboard) GetUsers
-
-```go
-func (m *Dashboard) GetUsers() *UsersWidget
-```
-
-#### func (*Dashboard) ProtoMessage
-
-```go
-func (*Dashboard) ProtoMessage()
-```
-
-#### func (*Dashboard) Reset
-
-```go
-func (m *Dashboard) Reset()
-```
-
-#### func (*Dashboard) String
-
-```go
-func (m *Dashboard) String() string
-```
-
-#### func (*Dashboard) XXX_DiscardUnknown
-
-```go
-func (m *Dashboard) XXX_DiscardUnknown()
-```
-
-#### func (*Dashboard) XXX_Marshal
-
-```go
-func (m *Dashboard) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Dashboard) XXX_Merge
-
-```go
-func (m *Dashboard) XXX_Merge(src proto.Message)
-```
-
-#### func (*Dashboard) XXX_Size
-
-```go
-func (m *Dashboard) XXX_Size() int
-```
-
-#### func (*Dashboard) XXX_Unmarshal
-
-```go
-func (m *Dashboard) XXX_Unmarshal(b []byte) error
-```
 
 #### type Email
 
@@ -1270,6 +1150,185 @@ func (m *Email) XXX_Size() int
 
 ```go
 func (m *Email) XXX_Unmarshal(b []byte) error
+```
+
+#### type EmailBlast
+
+```go
+type EmailBlast struct {
+	NameAddress          map[string]string `protobuf:"bytes,1,rep,name=name_address,json=nameAddress,proto3" json:"name_address,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Subject              string            `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
+	Plain                string            `protobuf:"bytes,3,opt,name=plain,proto3" json:"plain,omitempty"`
+	Html                 string            `protobuf:"bytes,4,opt,name=html,proto3" json:"html,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func (*EmailBlast) Descriptor
+
+```go
+func (*EmailBlast) Descriptor() ([]byte, []int)
+```
+
+#### func (*EmailBlast) GetHtml
+
+```go
+func (m *EmailBlast) GetHtml() string
+```
+
+#### func (*EmailBlast) GetNameAddress
+
+```go
+func (m *EmailBlast) GetNameAddress() map[string]string
+```
+
+#### func (*EmailBlast) GetPlain
+
+```go
+func (m *EmailBlast) GetPlain() string
+```
+
+#### func (*EmailBlast) GetSubject
+
+```go
+func (m *EmailBlast) GetSubject() string
+```
+
+#### func (*EmailBlast) ProtoMessage
+
+```go
+func (*EmailBlast) ProtoMessage()
+```
+
+#### func (*EmailBlast) Reset
+
+```go
+func (m *EmailBlast) Reset()
+```
+
+#### func (*EmailBlast) String
+
+```go
+func (m *EmailBlast) String() string
+```
+
+#### func (*EmailBlast) XXX_DiscardUnknown
+
+```go
+func (m *EmailBlast) XXX_DiscardUnknown()
+```
+
+#### func (*EmailBlast) XXX_Marshal
+
+```go
+func (m *EmailBlast) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*EmailBlast) XXX_Merge
+
+```go
+func (m *EmailBlast) XXX_Merge(src proto.Message)
+```
+
+#### func (*EmailBlast) XXX_Size
+
+```go
+func (m *EmailBlast) XXX_Size() int
+```
+
+#### func (*EmailBlast) XXX_Unmarshal
+
+```go
+func (m *EmailBlast) XXX_Unmarshal(b []byte) error
+```
+
+#### type EmailBlastRequest
+
+```go
+type EmailBlastRequest struct {
+	FromName             string      `protobuf:"bytes,1,opt,name=from_name,json=fromName,proto3" json:"from_name,omitempty"`
+	FromEmail            string      `protobuf:"bytes,2,opt,name=from_email,json=fromEmail,proto3" json:"from_email,omitempty"`
+	Blast                *EmailBlast `protobuf:"bytes,3,opt,name=blast,proto3" json:"blast,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
+	XXX_unrecognized     []byte      `json:"-"`
+	XXX_sizecache        int32       `json:"-"`
+}
+```
+
+
+#### func (*EmailBlastRequest) Descriptor
+
+```go
+func (*EmailBlastRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*EmailBlastRequest) GetBlast
+
+```go
+func (m *EmailBlastRequest) GetBlast() *EmailBlast
+```
+
+#### func (*EmailBlastRequest) GetFromEmail
+
+```go
+func (m *EmailBlastRequest) GetFromEmail() string
+```
+
+#### func (*EmailBlastRequest) GetFromName
+
+```go
+func (m *EmailBlastRequest) GetFromName() string
+```
+
+#### func (*EmailBlastRequest) ProtoMessage
+
+```go
+func (*EmailBlastRequest) ProtoMessage()
+```
+
+#### func (*EmailBlastRequest) Reset
+
+```go
+func (m *EmailBlastRequest) Reset()
+```
+
+#### func (*EmailBlastRequest) String
+
+```go
+func (m *EmailBlastRequest) String() string
+```
+
+#### func (*EmailBlastRequest) XXX_DiscardUnknown
+
+```go
+func (m *EmailBlastRequest) XXX_DiscardUnknown()
+```
+
+#### func (*EmailBlastRequest) XXX_Marshal
+
+```go
+func (m *EmailBlastRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*EmailBlastRequest) XXX_Merge
+
+```go
+func (m *EmailBlastRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*EmailBlastRequest) XXX_Size
+
+```go
+func (m *EmailBlastRequest) XXX_Size() int
+```
+
+#### func (*EmailBlastRequest) XXX_Unmarshal
+
+```go
+func (m *EmailBlastRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type EmailRequest
@@ -1421,6 +1480,172 @@ func (m *Empty) XXX_Size() int
 
 ```go
 func (m *Empty) XXX_Unmarshal(b []byte) error
+```
+
+#### type HTTPMethod
+
+```go
+type HTTPMethod int32
+```
+
+
+```go
+const (
+	HTTPMethod_GET  HTTPMethod = 0
+	HTTPMethod_POST HTTPMethod = 1
+)
+```
+
+#### func (HTTPMethod) EnumDescriptor
+
+```go
+func (HTTPMethod) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (HTTPMethod) Normalize
+
+```go
+func (h HTTPMethod) Normalize() string
+```
+
+#### func (HTTPMethod) String
+
+```go
+func (x HTTPMethod) String() string
+```
+
+#### type HTTPRequest
+
+```go
+type HTTPRequest struct {
+	Method               HTTPMethod        `protobuf:"varint,1,opt,name=method,proto3,enum=api.HTTPMethod" json:"method,omitempty"`
+	Url                  string            `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
+	Token                string            `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
+	Account              string            `protobuf:"bytes,4,opt,name=account,proto3" json:"account,omitempty"`
+	ContentType          string            `protobuf:"bytes,5,opt,name=contentType,proto3" json:"contentType,omitempty"`
+	Headers              map[string]string `protobuf:"bytes,6,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Form                 map[string]string `protobuf:"bytes,7,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Cookies              map[string]string `protobuf:"bytes,8,rep,name=cookies,proto3" json:"cookies,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Body                 *Bytes            `protobuf:"bytes,9,opt,name=body,proto3" json:"body,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func (*HTTPRequest) Descriptor
+
+```go
+func (*HTTPRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*HTTPRequest) Do
+
+```go
+func (h *HTTPRequest) Do() (*Bytes, error)
+```
+
+#### func (*HTTPRequest) GetAccount
+
+```go
+func (m *HTTPRequest) GetAccount() string
+```
+
+#### func (*HTTPRequest) GetBody
+
+```go
+func (m *HTTPRequest) GetBody() *Bytes
+```
+
+#### func (*HTTPRequest) GetContentType
+
+```go
+func (m *HTTPRequest) GetContentType() string
+```
+
+#### func (*HTTPRequest) GetCookies
+
+```go
+func (m *HTTPRequest) GetCookies() map[string]string
+```
+
+#### func (*HTTPRequest) GetForm
+
+```go
+func (m *HTTPRequest) GetForm() map[string]string
+```
+
+#### func (*HTTPRequest) GetHeaders
+
+```go
+func (m *HTTPRequest) GetHeaders() map[string]string
+```
+
+#### func (*HTTPRequest) GetMethod
+
+```go
+func (m *HTTPRequest) GetMethod() HTTPMethod
+```
+
+#### func (*HTTPRequest) GetToken
+
+```go
+func (m *HTTPRequest) GetToken() string
+```
+
+#### func (*HTTPRequest) GetUrl
+
+```go
+func (m *HTTPRequest) GetUrl() string
+```
+
+#### func (*HTTPRequest) ProtoMessage
+
+```go
+func (*HTTPRequest) ProtoMessage()
+```
+
+#### func (*HTTPRequest) Reset
+
+```go
+func (m *HTTPRequest) Reset()
+```
+
+#### func (*HTTPRequest) String
+
+```go
+func (m *HTTPRequest) String() string
+```
+
+#### func (*HTTPRequest) XXX_DiscardUnknown
+
+```go
+func (m *HTTPRequest) XXX_DiscardUnknown()
+```
+
+#### func (*HTTPRequest) XXX_Marshal
+
+```go
+func (m *HTTPRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*HTTPRequest) XXX_Merge
+
+```go
+func (m *HTTPRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*HTTPRequest) XXX_Size
+
+```go
+func (m *HTTPRequest) XXX_Size() int
+```
+
+#### func (*HTTPRequest) XXX_Unmarshal
+
+```go
+func (m *HTTPRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Identifier
@@ -1773,6 +1998,78 @@ func (m *Jwks) XXX_Size() int
 func (m *Jwks) XXX_Unmarshal(b []byte) error
 ```
 
+#### type ManagementToken
+
+```go
+type ManagementToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*ManagementToken) Descriptor
+
+```go
+func (*ManagementToken) Descriptor() ([]byte, []int)
+```
+
+#### func (*ManagementToken) GetToken
+
+```go
+func (m *ManagementToken) GetToken() string
+```
+
+#### func (*ManagementToken) ProtoMessage
+
+```go
+func (*ManagementToken) ProtoMessage()
+```
+
+#### func (*ManagementToken) Reset
+
+```go
+func (m *ManagementToken) Reset()
+```
+
+#### func (*ManagementToken) String
+
+```go
+func (m *ManagementToken) String() string
+```
+
+#### func (*ManagementToken) XXX_DiscardUnknown
+
+```go
+func (m *ManagementToken) XXX_DiscardUnknown()
+```
+
+#### func (*ManagementToken) XXX_Marshal
+
+```go
+func (m *ManagementToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*ManagementToken) XXX_Merge
+
+```go
+func (m *ManagementToken) XXX_Merge(src proto.Message)
+```
+
+#### func (*ManagementToken) XXX_Size
+
+```go
+func (m *ManagementToken) XXX_Size() int
+```
+
+#### func (*ManagementToken) XXX_Unmarshal
+
+```go
+func (m *ManagementToken) XXX_Unmarshal(b []byte) error
+```
+
 #### type Message
 
 ```go
@@ -1875,78 +2172,6 @@ type PaymentServiceServer interface {
 ```
 
 PaymentServiceServer is the server API for PaymentService service.
-
-#### type PlansWidget
-
-```go
-type PlansWidget struct {
-	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*PlansWidget) Descriptor
-
-```go
-func (*PlansWidget) Descriptor() ([]byte, []int)
-```
-
-#### func (*PlansWidget) GetCount
-
-```go
-func (m *PlansWidget) GetCount() int64
-```
-
-#### func (*PlansWidget) ProtoMessage
-
-```go
-func (*PlansWidget) ProtoMessage()
-```
-
-#### func (*PlansWidget) Reset
-
-```go
-func (m *PlansWidget) Reset()
-```
-
-#### func (*PlansWidget) String
-
-```go
-func (m *PlansWidget) String() string
-```
-
-#### func (*PlansWidget) XXX_DiscardUnknown
-
-```go
-func (m *PlansWidget) XXX_DiscardUnknown()
-```
-
-#### func (*PlansWidget) XXX_Marshal
-
-```go
-func (m *PlansWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*PlansWidget) XXX_Merge
-
-```go
-func (m *PlansWidget) XXX_Merge(src proto.Message)
-```
-
-#### func (*PlansWidget) XXX_Size
-
-```go
-func (m *PlansWidget) XXX_Size() int
-```
-
-#### func (*PlansWidget) XXX_Unmarshal
-
-```go
-func (m *PlansWidget) XXX_Unmarshal(b []byte) error
-```
 
 #### type RouterPaths
 
@@ -2069,6 +2294,113 @@ func (m *SMS) XXX_Size() int
 func (m *SMS) XXX_Unmarshal(b []byte) error
 ```
 
+#### type SMSBlast
+
+```go
+type SMSBlast struct {
+	Service              string   `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
+	To                   string   `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
+	Message              *Message `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	MediaURL             string   `protobuf:"bytes,4,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
+	Callback             string   `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
+	App                  string   `protobuf:"bytes,6,opt,name=app,proto3" json:"app,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*SMSBlast) Descriptor
+
+```go
+func (*SMSBlast) Descriptor() ([]byte, []int)
+```
+
+#### func (*SMSBlast) GetApp
+
+```go
+func (m *SMSBlast) GetApp() string
+```
+
+#### func (*SMSBlast) GetCallback
+
+```go
+func (m *SMSBlast) GetCallback() string
+```
+
+#### func (*SMSBlast) GetMediaURL
+
+```go
+func (m *SMSBlast) GetMediaURL() string
+```
+
+#### func (*SMSBlast) GetMessage
+
+```go
+func (m *SMSBlast) GetMessage() *Message
+```
+
+#### func (*SMSBlast) GetService
+
+```go
+func (m *SMSBlast) GetService() string
+```
+
+#### func (*SMSBlast) GetTo
+
+```go
+func (m *SMSBlast) GetTo() string
+```
+
+#### func (*SMSBlast) ProtoMessage
+
+```go
+func (*SMSBlast) ProtoMessage()
+```
+
+#### func (*SMSBlast) Reset
+
+```go
+func (m *SMSBlast) Reset()
+```
+
+#### func (*SMSBlast) String
+
+```go
+func (m *SMSBlast) String() string
+```
+
+#### func (*SMSBlast) XXX_DiscardUnknown
+
+```go
+func (m *SMSBlast) XXX_DiscardUnknown()
+```
+
+#### func (*SMSBlast) XXX_Marshal
+
+```go
+func (m *SMSBlast) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*SMSBlast) XXX_Merge
+
+```go
+func (m *SMSBlast) XXX_Merge(src proto.Message)
+```
+
+#### func (*SMSBlast) XXX_Size
+
+```go
+func (m *SMSBlast) XXX_Size() int
+```
+
+#### func (*SMSBlast) XXX_Unmarshal
+
+```go
+func (m *SMSBlast) XXX_Unmarshal(b []byte) error
+```
+
 #### type SMSStatus
 
 ```go
@@ -2165,94 +2497,50 @@ func (m *SMSStatus) XXX_Unmarshal(b []byte) error
 #### type Scope
 
 ```go
-type Scope int
+type Scope int32
 ```
 
 
 ```go
 const (
-	OPENID Scope = iota
-	PROFILE
-	EMAIL
+	Scope_OPENID                 Scope = 0
+	Scope_PROFILE                Scope = 1
+	Scope_EMAIL                  Scope = 2
+	Scope_READ_USERS             Scope = 3
+	Scope_READ_USER_IDP_TOKENS   Scope = 4
+	Scope_CREATE_USERS           Scope = 5
+	Scope_READ_STATS             Scope = 6
+	Scope_READ_EMAIL_TEMPLATES   Scope = 7
+	Scope_UPDATE_EMAIL_TEMPLATES Scope = 8
+	Scope_CREATE_EMAIL_TEMPLATES Scope = 9
+	Scope_READ_RULES             Scope = 10
+	Scope_UPDATE_RULES           Scope = 11
+	Scope_CREATE_RULES           Scope = 12
+	Scope_DELETE_RULES           Scope = 13
+	Scope_READ_ROLES             Scope = 14
+	Scope_UPDATE_ROLES           Scope = 15
+	Scope_CREATE_ROLES           Scope = 16
+	Scope_DELETE_ROLES           Scope = 17
+	Scope_READ_LOGS              Scope = 18
 )
+```
+
+#### func (Scope) EnumDescriptor
+
+```go
+func (Scope) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (Scope) Normalize
+
+```go
+func (s Scope) Normalize() string
 ```
 
 #### func (Scope) String
 
 ```go
-func (s Scope) String() string
-```
-
-#### type Secret
-
-```go
-type Secret struct {
-	Text                 string   `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*Secret) Descriptor
-
-```go
-func (*Secret) Descriptor() ([]byte, []int)
-```
-
-#### func (*Secret) GetText
-
-```go
-func (m *Secret) GetText() string
-```
-
-#### func (*Secret) ProtoMessage
-
-```go
-func (*Secret) ProtoMessage()
-```
-
-#### func (*Secret) Reset
-
-```go
-func (m *Secret) Reset()
-```
-
-#### func (*Secret) String
-
-```go
-func (m *Secret) String() string
-```
-
-#### func (*Secret) XXX_DiscardUnknown
-
-```go
-func (m *Secret) XXX_DiscardUnknown()
-```
-
-#### func (*Secret) XXX_Marshal
-
-```go
-func (m *Secret) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Secret) XXX_Merge
-
-```go
-func (m *Secret) XXX_Merge(src proto.Message)
-```
-
-#### func (*Secret) XXX_Size
-
-```go
-func (m *Secret) XXX_Size() int
-```
-
-#### func (*Secret) XXX_Unmarshal
-
-```go
-func (m *Secret) XXX_Unmarshal(b []byte) error
+func (x Scope) String() string
 ```
 
 #### type SubscribeRequest
@@ -2341,90 +2629,30 @@ func (m *SubscribeRequest) XXX_Size() int
 func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error
 ```
 
-#### type SubscriptionsWidget
-
-```go
-type SubscriptionsWidget struct {
-	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*SubscriptionsWidget) Descriptor
-
-```go
-func (*SubscriptionsWidget) Descriptor() ([]byte, []int)
-```
-
-#### func (*SubscriptionsWidget) GetCount
-
-```go
-func (m *SubscriptionsWidget) GetCount() int64
-```
-
-#### func (*SubscriptionsWidget) ProtoMessage
-
-```go
-func (*SubscriptionsWidget) ProtoMessage()
-```
-
-#### func (*SubscriptionsWidget) Reset
-
-```go
-func (m *SubscriptionsWidget) Reset()
-```
-
-#### func (*SubscriptionsWidget) String
-
-```go
-func (m *SubscriptionsWidget) String() string
-```
-
-#### func (*SubscriptionsWidget) XXX_DiscardUnknown
-
-```go
-func (m *SubscriptionsWidget) XXX_DiscardUnknown()
-```
-
-#### func (*SubscriptionsWidget) XXX_Marshal
-
-```go
-func (m *SubscriptionsWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*SubscriptionsWidget) XXX_Merge
-
-```go
-func (m *SubscriptionsWidget) XXX_Merge(src proto.Message)
-```
-
-#### func (*SubscriptionsWidget) XXX_Size
-
-```go
-func (m *SubscriptionsWidget) XXX_Size() int
-```
-
-#### func (*SubscriptionsWidget) XXX_Unmarshal
-
-```go
-func (m *SubscriptionsWidget) XXX_Unmarshal(b []byte) error
-```
-
 #### type Template
 
 ```go
 type Template struct {
-	Text                 string   `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
-	Data                 []byte   `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Text                 string   `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 ```
 
+
+#### func  NewTemplateFromFile
+
+```go
+func NewTemplateFromFile(filename string) (*Template, error)
+```
+
+#### func (*Template) AsTemplate
+
+```go
+func (m *Template) AsTemplate() (*template.Template, error)
+```
 
 #### func (*Template) Descriptor
 
@@ -2432,10 +2660,10 @@ type Template struct {
 func (*Template) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Template) GetData
+#### func (*Template) GetName
 
 ```go
-func (m *Template) GetData() []byte
+func (m *Template) GetName() string
 ```
 
 #### func (*Template) GetText
@@ -2444,10 +2672,34 @@ func (m *Template) GetData() []byte
 func (m *Template) GetText() string
 ```
 
+#### func (*Template) IsTemplate
+
+```go
+func (m *Template) IsTemplate() bool
+```
+
 #### func (*Template) ProtoMessage
 
 ```go
 func (*Template) ProtoMessage()
+```
+
+#### func (*Template) Render
+
+```go
+func (m *Template) Render(w io.Writer, data interface{}) error
+```
+
+#### func (*Template) RenderBytes
+
+```go
+func (m *Template) RenderBytes(w io.Writer, bits *Bytes) error
+```
+
+#### func (*Template) RenderUser
+
+```go
+func (t *Template) RenderUser() http.HandlerFunc
 ```
 
 #### func (*Template) Reset
@@ -2571,10 +2823,10 @@ func (m *UnSubscribeRequest) XXX_Size() int
 func (m *UnSubscribeRequest) XXX_Unmarshal(b []byte) error
 ```
 
-#### type UserInfo
+#### type User
 
 ```go
-type UserInfo struct {
+type User struct {
 	UserId               string        `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Name                 string        `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	GivenName            string        `protobuf:"bytes,3,opt,name=given_name,json=givenName,proto3" json:"given_name,omitempty"`
@@ -2601,172 +2853,251 @@ type UserInfo struct {
 ```
 
 
-#### func (*UserInfo) Descriptor
+#### func (*User) Descriptor
 
 ```go
-func (*UserInfo) Descriptor() ([]byte, []int)
+func (*User) Descriptor() ([]byte, []int)
 ```
 
-#### func (*UserInfo) GetAppMetadata
+#### func (*User) GetAppMetadata
 
 ```go
-func (m *UserInfo) GetAppMetadata() *AppMetadata
+func (m *User) GetAppMetadata() *AppMetadata
 ```
 
-#### func (*UserInfo) GetBirthdate
+#### func (*User) GetBirthdate
 
 ```go
-func (m *UserInfo) GetBirthdate() string
+func (m *User) GetBirthdate() string
 ```
 
-#### func (*UserInfo) GetBlocked
+#### func (*User) GetBlocked
 
 ```go
-func (m *UserInfo) GetBlocked() bool
+func (m *User) GetBlocked() bool
 ```
 
-#### func (*UserInfo) GetCreatedAt
+#### func (*User) GetCreatedAt
 
 ```go
-func (m *UserInfo) GetCreatedAt() string
+func (m *User) GetCreatedAt() string
 ```
 
-#### func (*UserInfo) GetEmail
+#### func (*User) GetEmail
 
 ```go
-func (m *UserInfo) GetEmail() string
+func (m *User) GetEmail() string
 ```
 
-#### func (*UserInfo) GetFamilyName
+#### func (*User) GetFamilyName
 
 ```go
-func (m *UserInfo) GetFamilyName() string
+func (m *User) GetFamilyName() string
 ```
 
-#### func (*UserInfo) GetGender
+#### func (*User) GetGender
 
 ```go
-func (m *UserInfo) GetGender() string
+func (m *User) GetGender() string
 ```
 
-#### func (*UserInfo) GetGivenName
+#### func (*User) GetGivenName
 
 ```go
-func (m *UserInfo) GetGivenName() string
+func (m *User) GetGivenName() string
 ```
 
-#### func (*UserInfo) GetIdentities
+#### func (*User) GetIdentities
 
 ```go
-func (m *UserInfo) GetIdentities() []*Identity
+func (m *User) GetIdentities() []*Identity
 ```
 
-#### func (*UserInfo) GetLastIp
+#### func (*User) GetLastIp
 
 ```go
-func (m *UserInfo) GetLastIp() string
+func (m *User) GetLastIp() string
 ```
 
-#### func (*UserInfo) GetMultifactor
+#### func (*User) GetMultifactor
 
 ```go
-func (m *UserInfo) GetMultifactor() []string
+func (m *User) GetMultifactor() []string
 ```
 
-#### func (*UserInfo) GetName
+#### func (*User) GetName
 
 ```go
-func (m *UserInfo) GetName() string
+func (m *User) GetName() string
 ```
 
-#### func (*UserInfo) GetNickname
+#### func (*User) GetNickname
 
 ```go
-func (m *UserInfo) GetNickname() string
+func (m *User) GetNickname() string
 ```
 
-#### func (*UserInfo) GetPhoneNumber
+#### func (*User) GetPhoneNumber
 
 ```go
-func (m *UserInfo) GetPhoneNumber() string
+func (m *User) GetPhoneNumber() string
 ```
 
-#### func (*UserInfo) GetPhoneVerified
+#### func (*User) GetPhoneVerified
 
 ```go
-func (m *UserInfo) GetPhoneVerified() bool
+func (m *User) GetPhoneVerified() bool
 ```
 
-#### func (*UserInfo) GetPicture
+#### func (*User) GetPicture
 
 ```go
-func (m *UserInfo) GetPicture() string
+func (m *User) GetPicture() string
 ```
 
-#### func (*UserInfo) GetUpdatedAt
+#### func (*User) GetUpdatedAt
 
 ```go
-func (m *UserInfo) GetUpdatedAt() string
+func (m *User) GetUpdatedAt() string
 ```
 
-#### func (*UserInfo) GetUserId
+#### func (*User) GetUserId
 
 ```go
-func (m *UserInfo) GetUserId() string
+func (m *User) GetUserId() string
 ```
 
-#### func (*UserInfo) GetUserMetadata
+#### func (*User) GetUserMetadata
 
 ```go
-func (m *UserInfo) GetUserMetadata() *UserMetadata
+func (m *User) GetUserMetadata() *UserMetadata
 ```
 
-#### func (*UserInfo) ProtoMessage
+#### func (*User) ProtoMessage
 
 ```go
-func (*UserInfo) ProtoMessage()
+func (*User) ProtoMessage()
 ```
 
-#### func (*UserInfo) Reset
+#### func (*User) Reset
 
 ```go
-func (m *UserInfo) Reset()
+func (m *User) Reset()
 ```
 
-#### func (*UserInfo) String
+#### func (*User) String
 
 ```go
-func (m *UserInfo) String() string
+func (m *User) String() string
 ```
 
-#### func (*UserInfo) XXX_DiscardUnknown
+#### func (*User) XXX_DiscardUnknown
 
 ```go
-func (m *UserInfo) XXX_DiscardUnknown()
+func (m *User) XXX_DiscardUnknown()
 ```
 
-#### func (*UserInfo) XXX_Marshal
+#### func (*User) XXX_Marshal
 
 ```go
-func (m *UserInfo) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+func (m *User) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*UserInfo) XXX_Merge
+#### func (*User) XXX_Merge
 
 ```go
-func (m *UserInfo) XXX_Merge(src proto.Message)
+func (m *User) XXX_Merge(src proto.Message)
 ```
 
-#### func (*UserInfo) XXX_Size
+#### func (*User) XXX_Size
 
 ```go
-func (m *UserInfo) XXX_Size() int
+func (m *User) XXX_Size() int
 ```
 
-#### func (*UserInfo) XXX_Unmarshal
+#### func (*User) XXX_Unmarshal
 
 ```go
-func (m *UserInfo) XXX_Unmarshal(b []byte) error
+func (m *User) XXX_Unmarshal(b []byte) error
+```
+
+#### type UserByEmailRequest
+
+```go
+type UserByEmailRequest struct {
+	Token                *ManagementToken `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Email                string           `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
+}
+```
+
+
+#### func (*UserByEmailRequest) Descriptor
+
+```go
+func (*UserByEmailRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*UserByEmailRequest) GetEmail
+
+```go
+func (m *UserByEmailRequest) GetEmail() string
+```
+
+#### func (*UserByEmailRequest) GetToken
+
+```go
+func (m *UserByEmailRequest) GetToken() *ManagementToken
+```
+
+#### func (*UserByEmailRequest) ProtoMessage
+
+```go
+func (*UserByEmailRequest) ProtoMessage()
+```
+
+#### func (*UserByEmailRequest) Reset
+
+```go
+func (m *UserByEmailRequest) Reset()
+```
+
+#### func (*UserByEmailRequest) String
+
+```go
+func (m *UserByEmailRequest) String() string
+```
+
+#### func (*UserByEmailRequest) XXX_DiscardUnknown
+
+```go
+func (m *UserByEmailRequest) XXX_DiscardUnknown()
+```
+
+#### func (*UserByEmailRequest) XXX_Marshal
+
+```go
+func (m *UserByEmailRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*UserByEmailRequest) XXX_Merge
+
+```go
+func (m *UserByEmailRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*UserByEmailRequest) XXX_Size
+
+```go
+func (m *UserByEmailRequest) XXX_Size() int
+```
+
+#### func (*UserByEmailRequest) XXX_Unmarshal
+
+```go
+func (m *UserByEmailRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type UserMetadata
@@ -2841,14 +3172,94 @@ func (m *UserMetadata) XXX_Size() int
 func (m *UserMetadata) XXX_Unmarshal(b []byte) error
 ```
 
+#### type UserRequest
+
+```go
+type UserRequest struct {
+	String_              *ManagementToken `protobuf:"bytes,1,opt,name=string,proto3" json:"string,omitempty"`
+	User                 *User            `protobuf:"bytes,2,opt,name=user,proto3" json:"user,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
+}
+```
+
+
+#### func (*UserRequest) Descriptor
+
+```go
+func (*UserRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*UserRequest) GetString_
+
+```go
+func (m *UserRequest) GetString_() *ManagementToken
+```
+
+#### func (*UserRequest) GetUser
+
+```go
+func (m *UserRequest) GetUser() *User
+```
+
+#### func (*UserRequest) ProtoMessage
+
+```go
+func (*UserRequest) ProtoMessage()
+```
+
+#### func (*UserRequest) Reset
+
+```go
+func (m *UserRequest) Reset()
+```
+
+#### func (*UserRequest) String
+
+```go
+func (m *UserRequest) String() string
+```
+
+#### func (*UserRequest) XXX_DiscardUnknown
+
+```go
+func (m *UserRequest) XXX_DiscardUnknown()
+```
+
+#### func (*UserRequest) XXX_Marshal
+
+```go
+func (m *UserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*UserRequest) XXX_Merge
+
+```go
+func (m *UserRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*UserRequest) XXX_Size
+
+```go
+func (m *UserRequest) XXX_Size() int
+```
+
+#### func (*UserRequest) XXX_Unmarshal
+
+```go
+func (m *UserRequest) XXX_Unmarshal(b []byte) error
+```
+
 #### type UserServiceClient
 
 ```go
 type UserServiceClient interface {
-	GetUser(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*UserInfo, error)
-	UpdateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Identifier, error)
-	CreateUser(ctx context.Context, in *UserInfo, opts ...grpc.CallOption) (*Identifier, error)
-	DeleteUser(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*Identifier, error)
+	GetUser(ctx context.Context, in *UserByEmailRequest, opts ...grpc.CallOption) (*User, error)
+	UpdateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Identifier, error)
+	CreateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Identifier, error)
+	DeleteUser(ctx context.Context, in *UserByEmailRequest, opts ...grpc.CallOption) (*Identifier, error)
+	ListUsers(ctx context.Context, in *ManagementToken, opts ...grpc.CallOption) (UserService_ListUsersClient, error)
 }
 ```
 
@@ -2867,86 +3278,35 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 
 ```go
 type UserServiceServer interface {
-	GetUser(context.Context, *Identifier) (*UserInfo, error)
-	UpdateUser(context.Context, *UserInfo) (*Identifier, error)
-	CreateUser(context.Context, *UserInfo) (*Identifier, error)
-	DeleteUser(context.Context, *Identifier) (*Identifier, error)
+	GetUser(context.Context, *UserByEmailRequest) (*User, error)
+	UpdateUser(context.Context, *UserRequest) (*Identifier, error)
+	CreateUser(context.Context, *UserRequest) (*Identifier, error)
+	DeleteUser(context.Context, *UserByEmailRequest) (*Identifier, error)
+	ListUsers(*ManagementToken, UserService_ListUsersServer) error
 }
 ```
 
 UserServiceServer is the server API for UserService service.
 
-#### type UsersWidget
+#### type UserService_ListUsersClient
 
 ```go
-type UsersWidget struct {
-	Count                int64    `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+type UserService_ListUsersClient interface {
+	Recv() (*User, error)
+	grpc.ClientStream
 }
 ```
 
 
-#### func (*UsersWidget) Descriptor
+#### type UserService_ListUsersServer
 
 ```go
-func (*UsersWidget) Descriptor() ([]byte, []int)
+type UserService_ListUsersServer interface {
+	Send(*User) error
+	grpc.ServerStream
+}
 ```
 
-#### func (*UsersWidget) GetCount
-
-```go
-func (m *UsersWidget) GetCount() int64
-```
-
-#### func (*UsersWidget) ProtoMessage
-
-```go
-func (*UsersWidget) ProtoMessage()
-```
-
-#### func (*UsersWidget) Reset
-
-```go
-func (m *UsersWidget) Reset()
-```
-
-#### func (*UsersWidget) String
-
-```go
-func (m *UsersWidget) String() string
-```
-
-#### func (*UsersWidget) XXX_DiscardUnknown
-
-```go
-func (m *UsersWidget) XXX_DiscardUnknown()
-```
-
-#### func (*UsersWidget) XXX_Marshal
-
-```go
-func (m *UsersWidget) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*UsersWidget) XXX_Merge
-
-```go
-func (m *UsersWidget) XXX_Merge(src proto.Message)
-```
-
-#### func (*UsersWidget) XXX_Size
-
-```go
-func (m *UsersWidget) XXX_Size() int
-```
-
-#### func (*UsersWidget) XXX_Unmarshal
-
-```go
-func (m *UsersWidget) XXX_Unmarshal(b []byte) error
-```
 
 #### type UtilityServiceClient
 

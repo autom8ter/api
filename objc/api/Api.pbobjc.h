@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
+@class Bytes;
 @class Card;
 @class Email;
 @class EmailBlast;
@@ -79,6 +80,27 @@ GPBEnumDescriptor *Scope_EnumDescriptor(void);
  * the time this source was generated.
  **/
 BOOL Scope_IsValidValue(int32_t value);
+
+#pragma mark - Enum HTTPMethod
+
+typedef GPB_ENUM(HTTPMethod) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  HTTPMethod_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  HTTPMethod_Get = 0,
+  HTTPMethod_Post = 1,
+};
+
+GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL HTTPMethod_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -585,15 +607,15 @@ typedef GPB_ENUM(Bytes_FieldNumber) {
 #pragma mark - Template
 
 typedef GPB_ENUM(Template_FieldNumber) {
-  Template_FieldNumber_Text = 1,
-  Template_FieldNumber_Data_p = 2,
+  Template_FieldNumber_Name = 1,
+  Template_FieldNumber_Text = 2,
 };
 
 @interface Template : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
 
 @end
 
@@ -639,6 +661,62 @@ typedef GPB_ENUM(Jwks_FieldNumber) {
 @property(nonatomic, readonly) NSUInteger keysArray_Count;
 
 @end
+
+#pragma mark - HTTPRequest
+
+typedef GPB_ENUM(HTTPRequest_FieldNumber) {
+  HTTPRequest_FieldNumber_Method = 1,
+  HTTPRequest_FieldNumber_URL = 2,
+  HTTPRequest_FieldNumber_Token = 3,
+  HTTPRequest_FieldNumber_Account = 4,
+  HTTPRequest_FieldNumber_ContentType = 5,
+  HTTPRequest_FieldNumber_Headers = 6,
+  HTTPRequest_FieldNumber_Form = 7,
+  HTTPRequest_FieldNumber_Cookies = 8,
+  HTTPRequest_FieldNumber_Body = 9,
+};
+
+@interface HTTPRequest : GPBMessage
+
+@property(nonatomic, readwrite) HTTPMethod method;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *account;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *contentType;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *headers;
+/** The number of items in @c headers without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger headers_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
+/** The number of items in @c form without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger form_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *cookies;
+/** The number of items in @c cookies without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger cookies_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
+/** Test to see if @c body has been set. */
+@property(nonatomic, readwrite) BOOL hasBody;
+
+@end
+
+/**
+ * Fetches the raw value of a @c HTTPRequest's @c method property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t HTTPRequest_Method_RawValue(HTTPRequest *message);
+/**
+ * Sets the raw value of an @c HTTPRequest's @c method property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value);
 
 NS_ASSUME_NONNULL_END
 

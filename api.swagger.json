@@ -883,12 +883,11 @@
     "apiTemplate": {
       "type": "object",
       "properties": {
-        "text": {
+        "name": {
           "type": "string"
         },
-        "data": {
-          "type": "string",
-          "format": "byte"
+        "text": {
+          "type": "string"
         }
       }
     },
