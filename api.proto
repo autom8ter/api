@@ -122,31 +122,31 @@ service PaymentService {
 }
 
 service UserService {
-    rpc GetUser(Identifier) returns (User) {
+    rpc GetUser(UserByEmailRequest) returns (User) {
         option (google.api.http) = {
-      post: "/user/get/{id}"
+      post: "/user/get/{email}"
       body: "*"
     };
     }
-    rpc UpdateUser(User) returns (Identifier) {
+    rpc UpdateUser(UserRequest) returns (Identifier) {
         option (google.api.http) = {
-      post: "/user/update/{email}"
+      post: "/user/update/{user.email}"
       body: "*"
     };
     }
-    rpc CreateUser(User) returns (Identifier) {
+    rpc CreateUser(UserRequest) returns (Identifier) {
         option (google.api.http) = {
-      post: "/user/create/{email}"
+      post: "/user/create"
       body: "*"
     };
     }
-    rpc DeleteUser(Identifier) returns (Identifier) {
+    rpc DeleteUser(UserByEmailRequest) returns (Identifier) {
         option (google.api.http) = {
-      post: "/user/delete/{id}"
+      post: "/user/delete/{email}"
       body: "*"
     };
     }
-    rpc ListUsers(Empty) returns (stream User) {
+    rpc ListUsers(ManagementToken) returns (stream User) {
         option (google.api.http) = {
       post: "/user/list"
       body: "*"
@@ -172,12 +172,21 @@ message Card {
     string cvc=4;
 }
 
-message Secret {
-    string text =1;
-}
-
 message Empty {}
 
+message ManagementToken {
+    string token=1;
+}
+
+message UserRequest {
+    ManagementToken string=1;
+    User user=2;
+}
+
+message UserByEmailRequest {
+    ManagementToken token=1;
+    string email =2;
+}
 message Identifier {
     string id=1;
 }

@@ -243,6 +243,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.ManagementToken"><span class="badge">M</span>ManagementToken</a>
+                </li>
+              
+                <li>
                   <a href="#api.Message"><span class="badge">M</span>Message</a>
                 </li>
               
@@ -256,10 +260,6 @@
               
                 <li>
                   <a href="#api.SMSStatus"><span class="badge">M</span>SMSStatus</a>
-                </li>
-              
-                <li>
-                  <a href="#api.Secret"><span class="badge">M</span>Secret</a>
                 </li>
               
                 <li>
@@ -279,11 +279,19 @@
                 </li>
               
                 <li>
+                  <a href="#api.UserByEmailRequest"><span class="badge">M</span>UserByEmailRequest</a>
+                </li>
+              
+                <li>
                   <a href="#api.UserMetadata"><span class="badge">M</span>UserMetadata</a>
                 </li>
               
                 <li>
                   <a href="#api.UserMetadata.MetadataEntry"><span class="badge">M</span>UserMetadata.MetadataEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.UserRequest"><span class="badge">M</span>UserRequest</a>
                 </li>
               
               
@@ -893,6 +901,29 @@
 
         
       
+        <h3 id="api.ManagementToken">ManagementToken</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>token</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Message">Message</h3>
         <p></p>
 
@@ -1065,29 +1096,6 @@
               
                 <tr>
                   <td>uri</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Secret">Secret</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>text</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1345,6 +1353,36 @@
 
         
       
+        <h3 id="api.UserByEmailRequest">UserByEmailRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>token</td>
+                  <td><a href="#api.ManagementToken">ManagementToken</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.UserMetadata">UserMetadata</h3>
         <p></p>
 
@@ -1388,6 +1426,36 @@
                 <tr>
                   <td>value</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.UserRequest">UserRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>string</td>
+                  <td><a href="#api.ManagementToken">ManagementToken</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>user</td>
+                  <td><a href="#api.User">User</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1617,35 +1685,35 @@
             
               <tr>
                 <td>GetUser</td>
-                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.UserByEmailRequest">UserByEmailRequest</a></td>
                 <td><a href="#api.User">User</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>UpdateUser</td>
-                <td><a href="#api.User">User</a></td>
+                <td><a href="#api.UserRequest">UserRequest</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>CreateUser</td>
-                <td><a href="#api.User">User</a></td>
+                <td><a href="#api.UserRequest">UserRequest</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>DeleteUser</td>
-                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.UserByEmailRequest">UserByEmailRequest</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>ListUsers</td>
-                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.ManagementToken">ManagementToken</a></td>
                 <td><a href="#api.User">User</a> stream</td>
                 <td><p></p></td>
               </tr>

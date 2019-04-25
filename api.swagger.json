@@ -259,9 +259,35 @@
         ]
       }
     },
-    "/user/create/{email}": {
+    "/user/create": {
       "post": {
         "operationId": "CreateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUserRequest"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/user/delete/{email}": {
+      "post": {
+        "operationId": "DeleteUser",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -282,7 +308,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/apiUserByEmailRequest"
             }
           }
         ],
@@ -291,39 +317,7 @@
         ]
       }
     },
-    "/user/delete/{id}": {
-      "post": {
-        "operationId": "DeleteUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiIdentifier"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiIdentifier"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/user/get/{id}": {
+    "/user/get/{email}": {
       "post": {
         "operationId": "GetUser",
         "responses": {
@@ -336,7 +330,7 @@
         },
         "parameters": [
           {
-            "name": "id",
+            "name": "email",
             "in": "path",
             "required": true,
             "type": "string"
@@ -346,7 +340,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/apiUserByEmailRequest"
             }
           }
         ],
@@ -372,7 +366,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiEmpty"
+              "$ref": "#/definitions/apiManagementToken"
             }
           }
         ],
@@ -381,7 +375,7 @@
         ]
       }
     },
-    "/user/update/{email}": {
+    "/user/update/{user.email}": {
       "post": {
         "operationId": "UpdateUser",
         "responses": {
@@ -394,7 +388,7 @@
         },
         "parameters": [
           {
-            "name": "email",
+            "name": "user.email",
             "in": "path",
             "required": true,
             "type": "string"
@@ -404,7 +398,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/apiUserRequest"
             }
           }
         ],
@@ -768,9 +762,6 @@
         }
       }
     },
-    "apiEmpty": {
-      "type": "object"
-    },
     "apiIdentifier": {
       "type": "object",
       "properties": {
@@ -792,6 +783,14 @@
           "type": "string"
         },
         "isSocial": {
+          "type": "string"
+        }
+      }
+    },
+    "apiManagementToken": {
+      "type": "object",
+      "properties": {
+        "token": {
           "type": "string"
         }
       }
@@ -974,6 +973,17 @@
         }
       }
     },
+    "apiUserByEmailRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiManagementToken"
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    },
     "apiUserMetadata": {
       "type": "object",
       "properties": {
@@ -982,6 +992,17 @@
           "additionalProperties": {
             "type": "string"
           }
+        }
+      }
+    },
+    "apiUserRequest": {
+      "type": "object",
+      "properties": {
+        "string": {
+          "$ref": "#/definitions/apiManagementToken"
+        },
+        "user": {
+          "$ref": "#/definitions/apiUser"
         }
       }
     }

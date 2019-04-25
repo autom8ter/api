@@ -34,8 +34,10 @@ CF_EXTERN_C_BEGIN
 @class Identifier;
 @class Identity;
 @class JSONWebKeys;
+@class ManagementToken;
 @class Message;
 @class SMS;
+@class User;
 @class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -149,21 +151,57 @@ typedef GPB_ENUM(Card_FieldNumber) {
 
 @end
 
-#pragma mark - Secret
-
-typedef GPB_ENUM(Secret_FieldNumber) {
-  Secret_FieldNumber_Text = 1,
-};
-
-@interface Secret : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
-
-@end
-
 #pragma mark - Empty
 
 @interface Empty : GPBMessage
+
+@end
+
+#pragma mark - ManagementToken
+
+typedef GPB_ENUM(ManagementToken_FieldNumber) {
+  ManagementToken_FieldNumber_Token = 1,
+};
+
+@interface ManagementToken : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+
+@end
+
+#pragma mark - UserRequest
+
+typedef GPB_ENUM(UserRequest_FieldNumber) {
+  UserRequest_FieldNumber_String = 1,
+  UserRequest_FieldNumber_User = 2,
+};
+
+@interface UserRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) ManagementToken *string;
+/** Test to see if @c string has been set. */
+@property(nonatomic, readwrite) BOOL hasString;
+
+@property(nonatomic, readwrite, strong, null_resettable) User *user;
+/** Test to see if @c user has been set. */
+@property(nonatomic, readwrite) BOOL hasUser;
+
+@end
+
+#pragma mark - UserByEmailRequest
+
+typedef GPB_ENUM(UserByEmailRequest_FieldNumber) {
+  UserByEmailRequest_FieldNumber_Token = 1,
+  UserByEmailRequest_FieldNumber_Email = 2,
+};
+
+@interface UserByEmailRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) ManagementToken *token;
+/** Test to see if @c token has been set. */
+@property(nonatomic, readwrite) BOOL hasToken;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
 @end
 
