@@ -176,17 +176,21 @@ typedef struct SMSStatus__storage_ {
 
 @implementation SMS
 
-@dynamic from;
+@dynamic service;
 @dynamic to;
 @dynamic hasMessage, message;
 @dynamic mediaURL;
+@dynamic callback;
+@dynamic app;
 
 typedef struct SMS__storage_ {
   uint32_t _has_storage_[1];
-  NSString *from;
+  NSString *service;
   NSString *to;
   Message *message;
   NSString *mediaURL;
+  NSString *callback;
+  NSString *app;
 } SMS__storage_;
 
 // This method is threadsafe because it is initially called
@@ -196,11 +200,11 @@ typedef struct SMS__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "from",
+        .name = "service",
         .dataTypeSpecific.className = NULL,
-        .number = SMS_FieldNumber_From,
+        .number = SMS_FieldNumber_Service,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(SMS__storage_, from),
+        .offset = (uint32_t)offsetof(SMS__storage_, service),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
@@ -229,6 +233,24 @@ typedef struct SMS__storage_ {
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(SMS__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_Callback,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(SMS__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "app",
+        .dataTypeSpecific.className = NULL,
+        .number = SMS_FieldNumber_App,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(SMS__storage_, app),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
@@ -411,13 +433,13 @@ typedef struct Email__storage_ {
 
 @dynamic from;
 @dynamic to;
-@dynamic callback;
+@dynamic app;
 
 typedef struct Call__storage_ {
   uint32_t _has_storage_[1];
   NSString *from;
   NSString *to;
-  NSString *callback;
+  NSString *app;
 } Call__storage_;
 
 // This method is threadsafe because it is initially called
@@ -445,11 +467,11 @@ typedef struct Call__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "callback",
+        .name = "app",
         .dataTypeSpecific.className = NULL,
-        .number = Call_FieldNumber_Callback,
+        .number = Call_FieldNumber_App,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Call__storage_, callback),
+        .offset = (uint32_t)offsetof(Call__storage_, app),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },

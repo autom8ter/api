@@ -471,10 +471,12 @@ proto.api.SMS.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.SMS.toObject = function(includeInstance, msg) {
   var f, obj = {
-    from: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    service: jspb.Message.getFieldWithDefault(msg, 1, ""),
     to: jspb.Message.getFieldWithDefault(msg, 2, ""),
     message: (f = msg.getMessage()) && proto.api.Message.toObject(includeInstance, f),
-    mediaurl: jspb.Message.getFieldWithDefault(msg, 4, "")
+    mediaurl: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    callback: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    app: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -513,7 +515,7 @@ proto.api.SMS.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFrom(value);
+      msg.setService(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -527,6 +529,14 @@ proto.api.SMS.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setMediaurl(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCallback(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setApp(value);
       break;
     default:
       reader.skipField();
@@ -557,7 +567,7 @@ proto.api.SMS.prototype.serializeBinary = function() {
  */
 proto.api.SMS.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFrom();
+  f = message.getService();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -586,20 +596,34 @@ proto.api.SMS.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getCallback();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getApp();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string from = 1;
+ * optional string service = 1;
  * @return {string}
  */
-proto.api.SMS.prototype.getFrom = function() {
+proto.api.SMS.prototype.getService = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.api.SMS.prototype.setFrom = function(value) {
+proto.api.SMS.prototype.setService = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -661,6 +685,36 @@ proto.api.SMS.prototype.getMediaurl = function() {
 /** @param {string} value */
 proto.api.SMS.prototype.setMediaurl = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string callback = 5;
+ * @return {string}
+ */
+proto.api.SMS.prototype.getCallback = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.api.SMS.prototype.setCallback = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string app = 6;
+ * @return {string}
+ */
+proto.api.SMS.prototype.getApp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.api.SMS.prototype.setApp = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -1176,7 +1230,7 @@ proto.api.Call.toObject = function(includeInstance, msg) {
   var f, obj = {
     from: jspb.Message.getFieldWithDefault(msg, 1, ""),
     to: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    callback: jspb.Message.getFieldWithDefault(msg, 3, "")
+    app: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1223,7 +1277,7 @@ proto.api.Call.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCallback(value);
+      msg.setApp(value);
       break;
     default:
       reader.skipField();
@@ -1268,7 +1322,7 @@ proto.api.Call.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getCallback();
+  f = message.getApp();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -1309,16 +1363,16 @@ proto.api.Call.prototype.setTo = function(value) {
 
 
 /**
- * optional string callback = 3;
+ * optional string app = 3;
  * @return {string}
  */
-proto.api.Call.prototype.getCallback = function() {
+proto.api.Call.prototype.getApp = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.api.Call.prototype.setCallback = function(value) {
+proto.api.Call.prototype.setApp = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 

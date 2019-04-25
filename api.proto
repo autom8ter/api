@@ -107,10 +107,12 @@ message SMSStatus {
 }
 
 message SMS {
-    string from =1;
+    string service =1;
     string to =2;
     Message message=3;
     string mediaURL =4;
+    string callback=5;
+    string app=6;
 }
 
 message EmailRequest {
@@ -130,7 +132,7 @@ message Email {
 message Call {
     string from=1;
     string to =2;
-    string callback =3;
+    string app=3;
 }
 
 message Message {

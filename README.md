@@ -13,6 +13,10 @@ var AUTH_SESSION = "auth-session"
 ```
 
 ```go
+var Context context.Context
+```
+
+```go
 var DEFAULT_REDIRECT = "http://localhost:8080/callback"
 ```
 
@@ -22,6 +26,10 @@ var DEFAULT_SCOPES = []string{"openid", "profile", "email"}
 
 ```go
 var SESSIONS_PATH = os.Getenv("PWD") + "/sessions"
+```
+
+```go
+var Util = objectify.Default()
 ```
 
 #### func  FuncMap
@@ -422,8 +430,9 @@ func (m *Bytes) XXX_Unmarshal(b []byte) error
 
 ```go
 type Call struct {
-	To                   string   `protobuf:"bytes,1,opt,name=to,proto3" json:"to,omitempty"`
-	Callback             string   `protobuf:"bytes,2,opt,name=callback,proto3" json:"callback,omitempty"`
+	From                 string   `protobuf:"bytes,1,opt,name=from,proto3" json:"from,omitempty"`
+	To                   string   `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
+	App                  string   `protobuf:"bytes,3,opt,name=app,proto3" json:"app,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -437,10 +446,16 @@ type Call struct {
 func (*Call) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Call) GetCallback
+#### func (*Call) GetApp
 
 ```go
-func (m *Call) GetCallback() string
+func (m *Call) GetApp() string
+```
+
+#### func (*Call) GetFrom
+
+```go
+func (m *Call) GetFrom() string
 ```
 
 #### func (*Call) GetTo
@@ -519,7 +534,7 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet
 type ContactServiceClient interface {
 	SendSMS(ctx context.Context, in *SMS, opts ...grpc.CallOption) (*Identifier, error)
 	GetSMS(ctx context.Context, in *Identifier, opts ...grpc.CallOption) (*SMSStatus, error)
-	SendEmail(ctx context.Context, in *Email, opts ...grpc.CallOption) (*Identifier, error)
+	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Message, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Identifier, error)
 }
 ```
@@ -541,7 +556,7 @@ func NewContactServiceClient(cc *grpc.ClientConn) ContactServiceClient
 type ContactServiceServer interface {
 	SendSMS(context.Context, *SMS) (*Identifier, error)
 	GetSMS(context.Context, *Identifier) (*SMSStatus, error)
-	SendEmail(context.Context, *Email) (*Identifier, error)
+	SendEmail(context.Context, *EmailRequest) (*Message, error)
 	SendCall(context.Context, *Call) (*Identifier, error)
 }
 ```
@@ -552,9 +567,11 @@ ContactServiceServer is the server API for ContactService service.
 
 ```go
 type Email struct {
-	Address              string   `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
-	Subject              string   `protobuf:"bytes,2,opt,name=subject,proto3" json:"subject,omitempty"`
-	Message              *Message `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Address              string   `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
+	Subject              string   `protobuf:"bytes,3,opt,name=subject,proto3" json:"subject,omitempty"`
+	Plain                string   `protobuf:"bytes,4,opt,name=plain,proto3" json:"plain,omitempty"`
+	Html                 string   `protobuf:"bytes,5,opt,name=html,proto3" json:"html,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -574,10 +591,22 @@ func (*Email) Descriptor() ([]byte, []int)
 func (m *Email) GetAddress() string
 ```
 
-#### func (*Email) GetMessage
+#### func (*Email) GetHtml
 
 ```go
-func (m *Email) GetMessage() *Message
+func (m *Email) GetHtml() string
+```
+
+#### func (*Email) GetName
+
+```go
+func (m *Email) GetName() string
+```
+
+#### func (*Email) GetPlain
+
+```go
+func (m *Email) GetPlain() string
 ```
 
 #### func (*Email) GetSubject
@@ -632,6 +661,92 @@ func (m *Email) XXX_Size() int
 
 ```go
 func (m *Email) XXX_Unmarshal(b []byte) error
+```
+
+#### type EmailRequest
+
+```go
+type EmailRequest struct {
+	FromName             string   `protobuf:"bytes,1,opt,name=from_name,json=fromName,proto3" json:"from_name,omitempty"`
+	FromEmail            string   `protobuf:"bytes,2,opt,name=from_email,json=fromEmail,proto3" json:"from_email,omitempty"`
+	Email                *Email   `protobuf:"bytes,3,opt,name=email,proto3" json:"email,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*EmailRequest) Descriptor
+
+```go
+func (*EmailRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*EmailRequest) GetEmail
+
+```go
+func (m *EmailRequest) GetEmail() *Email
+```
+
+#### func (*EmailRequest) GetFromEmail
+
+```go
+func (m *EmailRequest) GetFromEmail() string
+```
+
+#### func (*EmailRequest) GetFromName
+
+```go
+func (m *EmailRequest) GetFromName() string
+```
+
+#### func (*EmailRequest) ProtoMessage
+
+```go
+func (*EmailRequest) ProtoMessage()
+```
+
+#### func (*EmailRequest) Reset
+
+```go
+func (m *EmailRequest) Reset()
+```
+
+#### func (*EmailRequest) String
+
+```go
+func (m *EmailRequest) String() string
+```
+
+#### func (*EmailRequest) XXX_DiscardUnknown
+
+```go
+func (m *EmailRequest) XXX_DiscardUnknown()
+```
+
+#### func (*EmailRequest) XXX_Marshal
+
+```go
+func (m *EmailRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*EmailRequest) XXX_Merge
+
+```go
+func (m *EmailRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*EmailRequest) XXX_Size
+
+```go
+func (m *EmailRequest) XXX_Size() int
+```
+
+#### func (*EmailRequest) XXX_Unmarshal
+
+```go
+func (m *EmailRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Identifier
@@ -796,9 +911,12 @@ type RouterPaths struct {
 
 ```go
 type SMS struct {
-	To                   string   `protobuf:"bytes,1,opt,name=to,proto3" json:"to,omitempty"`
-	Message              *Message `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
-	MediaURL             string   `protobuf:"bytes,3,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
+	Service              string   `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
+	To                   string   `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
+	Message              *Message `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	MediaURL             string   `protobuf:"bytes,4,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
+	Callback             string   `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
+	App                  string   `protobuf:"bytes,6,opt,name=app,proto3" json:"app,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -812,6 +930,18 @@ type SMS struct {
 func (*SMS) Descriptor() ([]byte, []int)
 ```
 
+#### func (*SMS) GetApp
+
+```go
+func (m *SMS) GetApp() string
+```
+
+#### func (*SMS) GetCallback
+
+```go
+func (m *SMS) GetCallback() string
+```
+
 #### func (*SMS) GetMediaURL
 
 ```go
@@ -822,6 +952,12 @@ func (m *SMS) GetMediaURL() string
 
 ```go
 func (m *SMS) GetMessage() *Message
+```
+
+#### func (*SMS) GetService
+
+```go
+func (m *SMS) GetService() string
 ```
 
 #### func (*SMS) GetTo

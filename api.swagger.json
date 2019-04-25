@@ -397,7 +397,7 @@
         "to": {
           "type": "string"
         },
-        "callback": {
+        "app": {
           "type": "string"
         }
       }
@@ -455,7 +455,7 @@
     "apiSMS": {
       "type": "object",
       "properties": {
-        "from": {
+        "service": {
           "type": "string"
         },
         "to": {
@@ -465,6 +465,12 @@
           "$ref": "#/definitions/apiMessage"
         },
         "mediaURL": {
+          "type": "string"
+        },
+        "callback": {
+          "type": "string"
+        },
+        "app": {
           "type": "string"
         }
       }

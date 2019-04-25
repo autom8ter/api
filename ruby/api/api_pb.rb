@@ -15,10 +15,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :uri, :string, 4
   end
   add_message "api.SMS" do
-    optional :from, :string, 1
+    optional :service, :string, 1
     optional :to, :string, 2
     optional :message, :message, 3, "api.Message"
     optional :mediaURL, :string, 4
+    optional :callback, :string, 5
+    optional :app, :string, 6
   end
   add_message "api.EmailRequest" do
     optional :from_name, :string, 1
@@ -35,7 +37,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Call" do
     optional :from, :string, 1
     optional :to, :string, 2
-    optional :callback, :string, 3
+    optional :app, :string, 3
   end
   add_message "api.Message" do
     optional :value, :string, 1

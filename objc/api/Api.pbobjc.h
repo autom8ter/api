@@ -91,15 +91,17 @@ typedef GPB_ENUM(SMSStatus_FieldNumber) {
 #pragma mark - SMS
 
 typedef GPB_ENUM(SMS_FieldNumber) {
-  SMS_FieldNumber_From = 1,
+  SMS_FieldNumber_Service = 1,
   SMS_FieldNumber_To = 2,
   SMS_FieldNumber_Message = 3,
   SMS_FieldNumber_MediaURL = 4,
+  SMS_FieldNumber_Callback = 5,
+  SMS_FieldNumber_App = 6,
 };
 
 @interface SMS : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *service;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *to;
 
@@ -108,6 +110,10 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasMessage;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *app;
 
 @end
 
@@ -160,7 +166,7 @@ typedef GPB_ENUM(Email_FieldNumber) {
 typedef GPB_ENUM(Call_FieldNumber) {
   Call_FieldNumber_From = 1,
   Call_FieldNumber_To = 2,
-  Call_FieldNumber_Callback = 3,
+  Call_FieldNumber_App = 3,
 };
 
 @interface Call : GPBMessage
@@ -169,7 +175,7 @@ typedef GPB_ENUM(Call_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *to;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *callback;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *app;
 
 @end
 
