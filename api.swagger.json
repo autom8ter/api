@@ -617,7 +617,7 @@
     },
     "/utility/marshal/xml": {
       "post": {
-        "operationId": "Render",
+        "operationId": "MarshalXML",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -632,7 +632,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiTemplate"
+              "$ref": "#/definitions/apiBytes"
             }
           }
         ],
@@ -659,6 +659,32 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiBytes"
+            }
+          }
+        ],
+        "tags": [
+          "UtilityService"
+        ]
+      }
+    },
+    "/utility/render": {
+      "post": {
+        "operationId": "Render",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiRenderRequest"
             }
           }
         ],
@@ -843,6 +869,17 @@
       "properties": {
         "value": {
           "type": "string"
+        }
+      }
+    },
+    "apiRenderRequest": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "$ref": "#/definitions/apiTemplate"
+        },
+        "data": {
+          "$ref": "#/definitions/apiBytes"
         }
       }
     },

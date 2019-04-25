@@ -182,7 +182,7 @@ func request_UtilityService_MarshalXML_0(ctx context.Context, marshaler runtime.
 }
 
 func request_UtilityService_Render_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Template
+	var protoReq RenderRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -890,7 +890,7 @@ var (
 
 	pattern_UtilityService_MarshalXML_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"utility", "marshal", "xml"}, ""))
 
-	pattern_UtilityService_Render_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"utility", "marshal", "xml"}, ""))
+	pattern_UtilityService_Render_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"utility", "render"}, ""))
 )
 
 var (

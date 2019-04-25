@@ -2293,6 +2293,85 @@ type PaymentServiceServer interface {
 
 PaymentServiceServer is the server API for PaymentService service.
 
+#### type RenderRequest
+
+```go
+type RenderRequest struct {
+	Template             *Template `protobuf:"bytes,1,opt,name=template,proto3" json:"template,omitempty"`
+	Data                 *Bytes    `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
+}
+```
+
+
+#### func (*RenderRequest) Descriptor
+
+```go
+func (*RenderRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*RenderRequest) GetData
+
+```go
+func (m *RenderRequest) GetData() *Bytes
+```
+
+#### func (*RenderRequest) GetTemplate
+
+```go
+func (m *RenderRequest) GetTemplate() *Template
+```
+
+#### func (*RenderRequest) ProtoMessage
+
+```go
+func (*RenderRequest) ProtoMessage()
+```
+
+#### func (*RenderRequest) Reset
+
+```go
+func (m *RenderRequest) Reset()
+```
+
+#### func (*RenderRequest) String
+
+```go
+func (m *RenderRequest) String() string
+```
+
+#### func (*RenderRequest) XXX_DiscardUnknown
+
+```go
+func (m *RenderRequest) XXX_DiscardUnknown()
+```
+
+#### func (*RenderRequest) XXX_Marshal
+
+```go
+func (m *RenderRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*RenderRequest) XXX_Merge
+
+```go
+func (m *RenderRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*RenderRequest) XXX_Size
+
+```go
+func (m *RenderRequest) XXX_Size() int
+```
+
+#### func (*RenderRequest) XXX_Unmarshal
+
+```go
+func (m *RenderRequest) XXX_Unmarshal(b []byte) error
+```
+
 #### type RouterPaths
 
 ```go
@@ -3348,7 +3427,7 @@ type UtilityServiceClient interface {
 	MarshalJSON(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
 	MarshalYAML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
 	MarshalXML(ctx context.Context, in *Bytes, opts ...grpc.CallOption) (*Bytes, error)
-	Render(ctx context.Context, in *Template, opts ...grpc.CallOption) (*Bytes, error)
+	Render(ctx context.Context, in *RenderRequest, opts ...grpc.CallOption) (*Bytes, error)
 }
 ```
 
@@ -3376,7 +3455,7 @@ type UtilityServiceServer interface {
 	MarshalJSON(context.Context, *Bytes) (*Bytes, error)
 	MarshalYAML(context.Context, *Bytes) (*Bytes, error)
 	MarshalXML(context.Context, *Bytes) (*Bytes, error)
-	Render(context.Context, *Template) (*Bytes, error)
+	Render(context.Context, *RenderRequest) (*Bytes, error)
 }
 ```
 

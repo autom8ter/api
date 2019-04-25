@@ -2150,6 +2150,60 @@ void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value) {
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
+#pragma mark - RenderRequest
+
+@implementation RenderRequest
+
+@dynamic hasTemplate_p, template_p;
+@dynamic hasData_p, data_p;
+
+typedef struct RenderRequest__storage_ {
+  uint32_t _has_storage_[1];
+  Template *template_p;
+  Bytes *data_p;
+} RenderRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "template_p",
+        .dataTypeSpecific.className = GPBStringifySymbol(Template),
+        .number = RenderRequest_FieldNumber_Template_p,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(RenderRequest__storage_, template_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "data_p",
+        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
+        .number = RenderRequest_FieldNumber_Data_p,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(RenderRequest__storage_, data_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[RenderRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(RenderRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

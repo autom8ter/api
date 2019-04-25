@@ -36,6 +36,7 @@ CF_EXTERN_C_BEGIN
 @class JSONWebKeys;
 @class ManagementToken;
 @class Message;
+@class Template;
 @class User;
 @class UserMetadata;
 
@@ -712,6 +713,25 @@ int32_t HTTPRequest_Method_RawValue(HTTPRequest *message);
  * was generated.
  **/
 void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value);
+
+#pragma mark - RenderRequest
+
+typedef GPB_ENUM(RenderRequest_FieldNumber) {
+  RenderRequest_FieldNumber_Template_p = 1,
+  RenderRequest_FieldNumber_Data_p = 2,
+};
+
+@interface RenderRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Template *template_p;
+/** Test to see if @c template_p has been set. */
+@property(nonatomic, readwrite) BOOL hasTemplate_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) Bytes *data_p;
+/** Test to see if @c data_p has been set. */
+@property(nonatomic, readwrite) BOOL hasData_p;
+
+@end
 
 NS_ASSUME_NONNULL_END
 

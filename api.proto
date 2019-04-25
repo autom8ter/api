@@ -59,9 +59,9 @@ service UtilityService {
       body: "*"
     };
     }
-    rpc Render(Template) returns (Bytes) {
+    rpc Render(RenderRequest) returns (Bytes) {
         option (google.api.http) = {
-      post: "/utility/marshal/xml"
+      post: "/utility/render"
       body: "*"
     };
     }
@@ -364,4 +364,9 @@ message HTTPRequest {
     map<string, string> form =7;
     map<string, string> cookies =8;
     Bytes body =9;
+}
+
+message RenderRequest {
+    Template template=1;
+    Bytes data=2;
 }

@@ -43,7 +43,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[33];
+  static const ::google::protobuf::internal::ParseTable schema[34];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -120,6 +120,9 @@ extern ManagementTokenDefaultTypeInternal _ManagementToken_default_instance_;
 class Message;
 class MessageDefaultTypeInternal;
 extern MessageDefaultTypeInternal _Message_default_instance_;
+class RenderRequest;
+class RenderRequestDefaultTypeInternal;
+extern RenderRequestDefaultTypeInternal _RenderRequest_default_instance_;
 class SMS;
 class SMSDefaultTypeInternal;
 extern SMSDefaultTypeInternal _SMS_default_instance_;
@@ -176,6 +179,7 @@ template<> ::api::JSONWebKeys* Arena::CreateMaybeMessage<::api::JSONWebKeys>(Are
 template<> ::api::Jwks* Arena::CreateMaybeMessage<::api::Jwks>(Arena*);
 template<> ::api::ManagementToken* Arena::CreateMaybeMessage<::api::ManagementToken>(Arena*);
 template<> ::api::Message* Arena::CreateMaybeMessage<::api::Message>(Arena*);
+template<> ::api::RenderRequest* Arena::CreateMaybeMessage<::api::RenderRequest>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSBlast* Arena::CreateMaybeMessage<::api::SMSBlast>(Arena*);
 template<> ::api::SubscribeRequest* Arena::CreateMaybeMessage<::api::SubscribeRequest>(Arena*);
@@ -4432,6 +4436,128 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::internal::ArenaStringPtr contenttype_;
   ::api::Bytes* body_;
   int method_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class RenderRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.RenderRequest) */ {
+ public:
+  RenderRequest();
+  virtual ~RenderRequest();
+
+  RenderRequest(const RenderRequest& from);
+
+  inline RenderRequest& operator=(const RenderRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  RenderRequest(RenderRequest&& from) noexcept
+    : RenderRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline RenderRequest& operator=(RenderRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const RenderRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const RenderRequest* internal_default_instance() {
+    return reinterpret_cast<const RenderRequest*>(
+               &_RenderRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    33;
+
+  void Swap(RenderRequest* other);
+  friend void swap(RenderRequest& a, RenderRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RenderRequest* New() const final {
+    return CreateMaybeMessage<RenderRequest>(NULL);
+  }
+
+  RenderRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<RenderRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const RenderRequest& from);
+  void MergeFrom(const RenderRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RenderRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .api.Template template = 1;
+  bool has_template_() const;
+  void clear_template_();
+  static const int kTemplateFieldNumber = 1;
+  private:
+  const ::api::Template& _internal_template_() const;
+  public:
+  const ::api::Template& template_() const;
+  ::api::Template* release_template_();
+  ::api::Template* mutable_template_();
+  void set_allocated_template_(::api::Template* template_);
+
+  // .api.Bytes data = 2;
+  bool has_data() const;
+  void clear_data();
+  static const int kDataFieldNumber = 2;
+  private:
+  const ::api::Bytes& _internal_data() const;
+  public:
+  const ::api::Bytes& data() const;
+  ::api::Bytes* release_data();
+  ::api::Bytes* mutable_data();
+  void set_allocated_data(::api::Bytes* data);
+
+  // @@protoc_insertion_point(class_scope:api.RenderRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::api::Template* template__;
+  ::api::Bytes* data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -9488,9 +9614,123 @@ inline void HTTPRequest::set_allocated_body(::api::Bytes* body) {
   // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.body)
 }
 
+// -------------------------------------------------------------------
+
+// RenderRequest
+
+// .api.Template template = 1;
+inline bool RenderRequest::has_template_() const {
+  return this != internal_default_instance() && template__ != NULL;
+}
+inline void RenderRequest::clear_template_() {
+  if (GetArenaNoVirtual() == NULL && template__ != NULL) {
+    delete template__;
+  }
+  template__ = NULL;
+}
+inline const ::api::Template& RenderRequest::_internal_template_() const {
+  return *template__;
+}
+inline const ::api::Template& RenderRequest::template_() const {
+  const ::api::Template* p = template__;
+  // @@protoc_insertion_point(field_get:api.RenderRequest.template)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Template*>(
+      &::api::_Template_default_instance_);
+}
+inline ::api::Template* RenderRequest::release_template_() {
+  // @@protoc_insertion_point(field_release:api.RenderRequest.template)
+  
+  ::api::Template* temp = template__;
+  template__ = NULL;
+  return temp;
+}
+inline ::api::Template* RenderRequest::mutable_template_() {
+  
+  if (template__ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Template>(GetArenaNoVirtual());
+    template__ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.RenderRequest.template)
+  return template__;
+}
+inline void RenderRequest::set_allocated_template_(::api::Template* template_) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete template__;
+  }
+  if (template_) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      template_ = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, template_, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  template__ = template_;
+  // @@protoc_insertion_point(field_set_allocated:api.RenderRequest.template)
+}
+
+// .api.Bytes data = 2;
+inline bool RenderRequest::has_data() const {
+  return this != internal_default_instance() && data_ != NULL;
+}
+inline void RenderRequest::clear_data() {
+  if (GetArenaNoVirtual() == NULL && data_ != NULL) {
+    delete data_;
+  }
+  data_ = NULL;
+}
+inline const ::api::Bytes& RenderRequest::_internal_data() const {
+  return *data_;
+}
+inline const ::api::Bytes& RenderRequest::data() const {
+  const ::api::Bytes* p = data_;
+  // @@protoc_insertion_point(field_get:api.RenderRequest.data)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Bytes*>(
+      &::api::_Bytes_default_instance_);
+}
+inline ::api::Bytes* RenderRequest::release_data() {
+  // @@protoc_insertion_point(field_release:api.RenderRequest.data)
+  
+  ::api::Bytes* temp = data_;
+  data_ = NULL;
+  return temp;
+}
+inline ::api::Bytes* RenderRequest::mutable_data() {
+  
+  if (data_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Bytes>(GetArenaNoVirtual());
+    data_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.RenderRequest.data)
+  return data_;
+}
+inline void RenderRequest::set_allocated_data(::api::Bytes* data) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete data_;
+  }
+  if (data) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      data = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  data_ = data;
+  // @@protoc_insertion_point(field_set_allocated:api.RenderRequest.data)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

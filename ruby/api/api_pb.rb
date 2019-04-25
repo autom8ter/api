@@ -158,6 +158,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     map :cookies, :string, :string, 8
     optional :body, :message, 9, "api.Bytes"
   end
+  add_message "api.RenderRequest" do
+    optional :template, :message, 1, "api.Template"
+    optional :data, :message, 2, "api.Bytes"
+  end
   add_enum "api.Scope" do
     value :OPENID, 0
     value :PROFILE, 1
@@ -213,6 +217,7 @@ module Api
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
   HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPRequest").msgclass
+  RenderRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RenderRequest").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPMethod").enummodule
 end

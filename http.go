@@ -23,6 +23,9 @@ func (h *HTTPRequest) Do() (*Bytes, error) {
 		Method: h.Method.Normalize(),
 		URL:    u,
 	}
+	if h.Token != "" {
+		r.Header.Set("Authorization", "Bearer "+h.Token)
+	}
 	for k, v := range h.Headers {
 		r.Header.Set(k, v)
 	}
