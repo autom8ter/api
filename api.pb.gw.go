@@ -269,7 +269,7 @@ func request_ContactService_GetSMS_0(ctx context.Context, marshaler runtime.Mars
 }
 
 func request_ContactService_SendEmail_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Email
+	var protoReq EmailRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -287,15 +287,15 @@ func request_ContactService_SendEmail_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["address"]
+	val, ok = pathParams["email.address"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "address")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "email.address")
 	}
 
-	protoReq.Address, err = runtime.String(val)
+	err = runtime.PopulateFieldFromPath(&protoReq, "email.address", val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "address", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "email.address", err)
 	}
 
 	msg, err := client.SendEmail(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -749,7 +749,7 @@ var (
 
 	pattern_ContactService_GetSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "sms", "id"}, ""))
 
-	pattern_ContactService_SendEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "email", "address"}, ""))
+	pattern_ContactService_SendEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "email", "email.address"}, ""))
 
 	pattern_ContactService_SendCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "call", "to"}, ""))
 )

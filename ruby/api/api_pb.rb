@@ -15,9 +15,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :uri, :string, 4
   end
   add_message "api.SMS" do
-    optional :to, :string, 1
-    optional :message, :message, 2, "api.Message"
-    optional :mediaURL, :string, 3
+    optional :from, :string, 1
+    optional :to, :string, 2
+    optional :message, :message, 3, "api.Message"
+    optional :mediaURL, :string, 4
+  end
+  add_message "api.EmailRequest" do
+    optional :from_name, :string, 1
+    optional :from_email, :string, 2
+    optional :email, :message, 3, "api.Email"
   end
   add_message "api.Email" do
     optional :name, :string, 1
@@ -27,8 +33,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :html, :string, 5
   end
   add_message "api.Call" do
-    optional :to, :string, 1
-    optional :callback, :string, 2
+    optional :from, :string, 1
+    optional :to, :string, 2
+    optional :callback, :string, 3
   end
   add_message "api.Message" do
     optional :value, :string, 1
@@ -77,6 +84,7 @@ module Api
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
   SMSStatus = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSStatus").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
+  EmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailRequest").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
   Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass

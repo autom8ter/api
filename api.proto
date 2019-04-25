@@ -81,9 +81,9 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SendEmail(Email) returns (Message) {
+    rpc SendEmail(EmailRequest) returns (Message) {
         option (google.api.http) = {
-      post: "/contact/email/{address}"
+      post: "/contact/email/{email.address}"
       body: "*"
     };
     }
@@ -107,9 +107,16 @@ message SMSStatus {
 }
 
 message SMS {
-    string to =1;
-    Message message=2;
-    string mediaURL =3;
+    string from =1;
+    string to =2;
+    Message message=3;
+    string mediaURL =4;
+}
+
+message EmailRequest {
+    string from_name =1;
+    string from_email =2;
+    Email email =3;
 }
 
 message Email {
@@ -121,8 +128,9 @@ message Email {
 }
 
 message Call {
-    string to =1;
-    string callback =2;
+    string from=1;
+    string to =2;
+    string callback =3;
 }
 
 message Message {

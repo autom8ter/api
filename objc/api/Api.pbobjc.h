@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
+@class Email;
 @class Identifier;
 @class Message;
 @class SMS;
@@ -90,12 +91,15 @@ typedef GPB_ENUM(SMSStatus_FieldNumber) {
 #pragma mark - SMS
 
 typedef GPB_ENUM(SMS_FieldNumber) {
-  SMS_FieldNumber_To = 1,
-  SMS_FieldNumber_Message = 2,
-  SMS_FieldNumber_MediaURL = 3,
+  SMS_FieldNumber_From = 1,
+  SMS_FieldNumber_To = 2,
+  SMS_FieldNumber_Message = 3,
+  SMS_FieldNumber_MediaURL = 4,
 };
 
 @interface SMS : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *to;
 
@@ -104,6 +108,26 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasMessage;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *mediaURL;
+
+@end
+
+#pragma mark - EmailRequest
+
+typedef GPB_ENUM(EmailRequest_FieldNumber) {
+  EmailRequest_FieldNumber_FromName = 1,
+  EmailRequest_FieldNumber_FromEmail = 2,
+  EmailRequest_FieldNumber_Email = 3,
+};
+
+@interface EmailRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *fromName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *fromEmail;
+
+@property(nonatomic, readwrite, strong, null_resettable) Email *email;
+/** Test to see if @c email has been set. */
+@property(nonatomic, readwrite) BOOL hasEmail;
 
 @end
 
@@ -134,11 +158,14 @@ typedef GPB_ENUM(Email_FieldNumber) {
 #pragma mark - Call
 
 typedef GPB_ENUM(Call_FieldNumber) {
-  Call_FieldNumber_To = 1,
-  Call_FieldNumber_Callback = 2,
+  Call_FieldNumber_From = 1,
+  Call_FieldNumber_To = 2,
+  Call_FieldNumber_Callback = 3,
 };
 
 @interface Call : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *to;
 

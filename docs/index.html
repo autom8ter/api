@@ -199,6 +199,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.EmailRequest"><span class="badge">M</span>EmailRequest</a>
+                </li>
+              
+                <li>
                   <a href="#api.Identifier"><span class="badge">M</span>Identifier</a>
                 </li>
               
@@ -388,6 +392,13 @@
             <tbody>
               
                 <tr>
+                  <td>from</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>to</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
@@ -458,6 +469,43 @@
 
         
       
+        <h3 id="api.EmailRequest">EmailRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>from_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>from_email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#api.Email">Email</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Identifier">Identifier</h3>
         <p></p>
 
@@ -513,6 +561,13 @@
               <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
             </thead>
             <tbody>
+              
+                <tr>
+                  <td>from</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
               
                 <tr>
                   <td>to</td>
@@ -768,7 +823,7 @@
             
               <tr>
                 <td>SendEmail</td>
-                <td><a href="#api.Email">Email</a></td>
+                <td><a href="#api.EmailRequest">EmailRequest</a></td>
                 <td><a href="#api.Message">Message</a></td>
                 <td><p></p></td>
               </tr>

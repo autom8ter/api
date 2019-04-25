@@ -3,7 +3,7 @@ module github.com/autom8ter/api
 require (
 	github.com/Masterminds/sprig v2.18.0+incompatible
 	github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668 // indirect
-	github.com/autom8ter/objectify v0.0.0-20190422234248-2629fc698124 // indirect
+	github.com/autom8ter/objectify v0.0.0-20190422234248-2629fc698124
 	github.com/golang/protobuf v1.3.1
 	github.com/gopherjs/vecty v0.0.0-20190121081546-d00da0c86b42
 	github.com/gorilla/mux v1.7.1

@@ -39,7 +39,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[12];
+  static const ::google::protobuf::internal::ParseTable schema[13];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -62,6 +62,9 @@ extern CallDefaultTypeInternal _Call_default_instance_;
 class Email;
 class EmailDefaultTypeInternal;
 extern EmailDefaultTypeInternal _Email_default_instance_;
+class EmailRequest;
+class EmailRequestDefaultTypeInternal;
+extern EmailRequestDefaultTypeInternal _EmailRequest_default_instance_;
 class Identifier;
 class IdentifierDefaultTypeInternal;
 extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
@@ -91,6 +94,7 @@ template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
 template<> ::api::Bytes* Arena::CreateMaybeMessage<::api::Bytes>(Arena*);
 template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
 template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
+template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(Arena*);
 template<> ::api::Identifier* Arena::CreateMaybeMessage<::api::Identifier>(Arena*);
 template<> ::api::Message* Arena::CreateMaybeMessage<::api::Message>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
@@ -454,9 +458,23 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
 
   // accessors -------------------------------------------------------
 
-  // string to = 1;
+  // string from = 1;
+  void clear_from();
+  static const int kFromFieldNumber = 1;
+  const ::std::string& from() const;
+  void set_from(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from(::std::string&& value);
+  #endif
+  void set_from(const char* value);
+  void set_from(const char* value, size_t size);
+  ::std::string* mutable_from();
+  ::std::string* release_from();
+  void set_allocated_from(::std::string* from);
+
+  // string to = 2;
   void clear_to();
-  static const int kToFieldNumber = 1;
+  static const int kToFieldNumber = 2;
   const ::std::string& to() const;
   void set_to(const ::std::string& value);
   #if LANG_CXX11
@@ -468,9 +486,9 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
   ::std::string* release_to();
   void set_allocated_to(::std::string* to);
 
-  // string mediaURL = 3;
+  // string mediaURL = 4;
   void clear_mediaurl();
-  static const int kMediaURLFieldNumber = 3;
+  static const int kMediaURLFieldNumber = 4;
   const ::std::string& mediaurl() const;
   void set_mediaurl(const ::std::string& value);
   #if LANG_CXX11
@@ -482,10 +500,10 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
   ::std::string* release_mediaurl();
   void set_allocated_mediaurl(::std::string* mediaurl);
 
-  // .api.Message message = 2;
+  // .api.Message message = 3;
   bool has_message() const;
   void clear_message();
-  static const int kMessageFieldNumber = 2;
+  static const int kMessageFieldNumber = 3;
   private:
   const ::api::Message& _internal_message() const;
   public:
@@ -498,9 +516,149 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr from_;
   ::google::protobuf::internal::ArenaStringPtr to_;
   ::google::protobuf::internal::ArenaStringPtr mediaurl_;
   ::api::Message* message_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.EmailRequest) */ {
+ public:
+  EmailRequest();
+  virtual ~EmailRequest();
+
+  EmailRequest(const EmailRequest& from);
+
+  inline EmailRequest& operator=(const EmailRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  EmailRequest(EmailRequest&& from) noexcept
+    : EmailRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline EmailRequest& operator=(EmailRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const EmailRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const EmailRequest* internal_default_instance() {
+    return reinterpret_cast<const EmailRequest*>(
+               &_EmailRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(EmailRequest* other);
+  friend void swap(EmailRequest& a, EmailRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline EmailRequest* New() const final {
+    return CreateMaybeMessage<EmailRequest>(NULL);
+  }
+
+  EmailRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<EmailRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const EmailRequest& from);
+  void MergeFrom(const EmailRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(EmailRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string from_name = 1;
+  void clear_from_name();
+  static const int kFromNameFieldNumber = 1;
+  const ::std::string& from_name() const;
+  void set_from_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from_name(::std::string&& value);
+  #endif
+  void set_from_name(const char* value);
+  void set_from_name(const char* value, size_t size);
+  ::std::string* mutable_from_name();
+  ::std::string* release_from_name();
+  void set_allocated_from_name(::std::string* from_name);
+
+  // string from_email = 2;
+  void clear_from_email();
+  static const int kFromEmailFieldNumber = 2;
+  const ::std::string& from_email() const;
+  void set_from_email(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from_email(::std::string&& value);
+  #endif
+  void set_from_email(const char* value);
+  void set_from_email(const char* value, size_t size);
+  ::std::string* mutable_from_email();
+  ::std::string* release_from_email();
+  void set_allocated_from_email(::std::string* from_email);
+
+  // .api.Email email = 3;
+  bool has_email() const;
+  void clear_email();
+  static const int kEmailFieldNumber = 3;
+  private:
+  const ::api::Email& _internal_email() const;
+  public:
+  const ::api::Email& email() const;
+  ::api::Email* release_email();
+  ::api::Email* mutable_email();
+  void set_allocated_email(::api::Email* email);
+
+  // @@protoc_insertion_point(class_scope:api.EmailRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr from_name_;
+  ::google::protobuf::internal::ArenaStringPtr from_email_;
+  ::api::Email* email_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -541,7 +699,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -712,7 +870,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -764,9 +922,23 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // accessors -------------------------------------------------------
 
-  // string to = 1;
+  // string from = 1;
+  void clear_from();
+  static const int kFromFieldNumber = 1;
+  const ::std::string& from() const;
+  void set_from(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from(::std::string&& value);
+  #endif
+  void set_from(const char* value);
+  void set_from(const char* value, size_t size);
+  ::std::string* mutable_from();
+  ::std::string* release_from();
+  void set_allocated_from(::std::string* from);
+
+  // string to = 2;
   void clear_to();
-  static const int kToFieldNumber = 1;
+  static const int kToFieldNumber = 2;
   const ::std::string& to() const;
   void set_to(const ::std::string& value);
   #if LANG_CXX11
@@ -778,9 +950,9 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_to();
   void set_allocated_to(::std::string* to);
 
-  // string callback = 2;
+  // string callback = 3;
   void clear_callback();
-  static const int kCallbackFieldNumber = 2;
+  static const int kCallbackFieldNumber = 3;
   const ::std::string& callback() const;
   void set_callback(const ::std::string& value);
   #if LANG_CXX11
@@ -796,6 +968,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr from_;
   ::google::protobuf::internal::ArenaStringPtr to_;
   ::google::protobuf::internal::ArenaStringPtr callback_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -838,7 +1011,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Message_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(Message* other);
   friend void swap(Message& a, Message& b) {
@@ -949,7 +1122,7 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_UserInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(UserInfo* other);
   friend void swap(UserInfo& a, UserInfo& b) {
@@ -1176,7 +1349,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -1340,7 +1513,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -1504,7 +1677,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -1698,7 +1871,7 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Bytes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Bytes* other);
   friend void swap(Bytes& a, Bytes& b) {
@@ -1809,7 +1982,7 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Template_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(Template* other);
   friend void swap(Template& a, Template& b) {
@@ -2184,7 +2357,60 @@ inline void SMSStatus::set_allocated_uri(::std::string* uri) {
 
 // SMS
 
-// string to = 1;
+// string from = 1;
+inline void SMS::clear_from() {
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SMS::from() const {
+  // @@protoc_insertion_point(field_get:api.SMS.from)
+  return from_.GetNoArena();
+}
+inline void SMS::set_from(const ::std::string& value) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SMS.from)
+}
+#if LANG_CXX11
+inline void SMS::set_from(::std::string&& value) {
+  
+  from_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SMS.from)
+}
+#endif
+inline void SMS::set_from(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SMS.from)
+}
+inline void SMS::set_from(const char* value, size_t size) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SMS.from)
+}
+inline ::std::string* SMS::mutable_from() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SMS.from)
+  return from_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SMS::release_from() {
+  // @@protoc_insertion_point(field_release:api.SMS.from)
+  
+  return from_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SMS::set_allocated_from(::std::string* from) {
+  if (from != NULL) {
+    
+  } else {
+    
+  }
+  from_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from);
+  // @@protoc_insertion_point(field_set_allocated:api.SMS.from)
+}
+
+// string to = 2;
 inline void SMS::clear_to() {
   to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2237,7 +2463,7 @@ inline void SMS::set_allocated_to(::std::string* to) {
   // @@protoc_insertion_point(field_set_allocated:api.SMS.to)
 }
 
-// .api.Message message = 2;
+// .api.Message message = 3;
 inline bool SMS::has_message() const {
   return this != internal_default_instance() && message_ != NULL;
 }
@@ -2291,7 +2517,7 @@ inline void SMS::set_allocated_message(::api::Message* message) {
   // @@protoc_insertion_point(field_set_allocated:api.SMS.message)
 }
 
-// string mediaURL = 3;
+// string mediaURL = 4;
 inline void SMS::clear_mediaurl() {
   mediaurl_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2342,6 +2568,170 @@ inline void SMS::set_allocated_mediaurl(::std::string* mediaurl) {
   }
   mediaurl_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), mediaurl);
   // @@protoc_insertion_point(field_set_allocated:api.SMS.mediaURL)
+}
+
+// -------------------------------------------------------------------
+
+// EmailRequest
+
+// string from_name = 1;
+inline void EmailRequest::clear_from_name() {
+  from_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& EmailRequest::from_name() const {
+  // @@protoc_insertion_point(field_get:api.EmailRequest.from_name)
+  return from_name_.GetNoArena();
+}
+inline void EmailRequest::set_from_name(const ::std::string& value) {
+  
+  from_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.EmailRequest.from_name)
+}
+#if LANG_CXX11
+inline void EmailRequest::set_from_name(::std::string&& value) {
+  
+  from_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.EmailRequest.from_name)
+}
+#endif
+inline void EmailRequest::set_from_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.EmailRequest.from_name)
+}
+inline void EmailRequest::set_from_name(const char* value, size_t size) {
+  
+  from_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.EmailRequest.from_name)
+}
+inline ::std::string* EmailRequest::mutable_from_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.EmailRequest.from_name)
+  return from_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* EmailRequest::release_from_name() {
+  // @@protoc_insertion_point(field_release:api.EmailRequest.from_name)
+  
+  return from_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void EmailRequest::set_allocated_from_name(::std::string* from_name) {
+  if (from_name != NULL) {
+    
+  } else {
+    
+  }
+  from_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from_name);
+  // @@protoc_insertion_point(field_set_allocated:api.EmailRequest.from_name)
+}
+
+// string from_email = 2;
+inline void EmailRequest::clear_from_email() {
+  from_email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& EmailRequest::from_email() const {
+  // @@protoc_insertion_point(field_get:api.EmailRequest.from_email)
+  return from_email_.GetNoArena();
+}
+inline void EmailRequest::set_from_email(const ::std::string& value) {
+  
+  from_email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.EmailRequest.from_email)
+}
+#if LANG_CXX11
+inline void EmailRequest::set_from_email(::std::string&& value) {
+  
+  from_email_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.EmailRequest.from_email)
+}
+#endif
+inline void EmailRequest::set_from_email(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.EmailRequest.from_email)
+}
+inline void EmailRequest::set_from_email(const char* value, size_t size) {
+  
+  from_email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.EmailRequest.from_email)
+}
+inline ::std::string* EmailRequest::mutable_from_email() {
+  
+  // @@protoc_insertion_point(field_mutable:api.EmailRequest.from_email)
+  return from_email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* EmailRequest::release_from_email() {
+  // @@protoc_insertion_point(field_release:api.EmailRequest.from_email)
+  
+  return from_email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void EmailRequest::set_allocated_from_email(::std::string* from_email) {
+  if (from_email != NULL) {
+    
+  } else {
+    
+  }
+  from_email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from_email);
+  // @@protoc_insertion_point(field_set_allocated:api.EmailRequest.from_email)
+}
+
+// .api.Email email = 3;
+inline bool EmailRequest::has_email() const {
+  return this != internal_default_instance() && email_ != NULL;
+}
+inline void EmailRequest::clear_email() {
+  if (GetArenaNoVirtual() == NULL && email_ != NULL) {
+    delete email_;
+  }
+  email_ = NULL;
+}
+inline const ::api::Email& EmailRequest::_internal_email() const {
+  return *email_;
+}
+inline const ::api::Email& EmailRequest::email() const {
+  const ::api::Email* p = email_;
+  // @@protoc_insertion_point(field_get:api.EmailRequest.email)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Email*>(
+      &::api::_Email_default_instance_);
+}
+inline ::api::Email* EmailRequest::release_email() {
+  // @@protoc_insertion_point(field_release:api.EmailRequest.email)
+  
+  ::api::Email* temp = email_;
+  email_ = NULL;
+  return temp;
+}
+inline ::api::Email* EmailRequest::mutable_email() {
+  
+  if (email_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Email>(GetArenaNoVirtual());
+    email_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.EmailRequest.email)
+  return email_;
+}
+inline void EmailRequest::set_allocated_email(::api::Email* email) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete email_;
+  }
+  if (email) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      email = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, email, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  email_ = email;
+  // @@protoc_insertion_point(field_set_allocated:api.EmailRequest.email)
 }
 
 // -------------------------------------------------------------------
@@ -2617,7 +3007,60 @@ inline void Email::set_allocated_html(::std::string* html) {
 
 // Call
 
-// string to = 1;
+// string from = 1;
+inline void Call::clear_from() {
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Call::from() const {
+  // @@protoc_insertion_point(field_get:api.Call.from)
+  return from_.GetNoArena();
+}
+inline void Call::set_from(const ::std::string& value) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Call.from)
+}
+#if LANG_CXX11
+inline void Call::set_from(::std::string&& value) {
+  
+  from_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Call.from)
+}
+#endif
+inline void Call::set_from(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Call.from)
+}
+inline void Call::set_from(const char* value, size_t size) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Call.from)
+}
+inline ::std::string* Call::mutable_from() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Call.from)
+  return from_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Call::release_from() {
+  // @@protoc_insertion_point(field_release:api.Call.from)
+  
+  return from_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Call::set_allocated_from(::std::string* from) {
+  if (from != NULL) {
+    
+  } else {
+    
+  }
+  from_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from);
+  // @@protoc_insertion_point(field_set_allocated:api.Call.from)
+}
+
+// string to = 2;
 inline void Call::clear_to() {
   to_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2670,7 +3113,7 @@ inline void Call::set_allocated_to(::std::string* to) {
   // @@protoc_insertion_point(field_set_allocated:api.Call.to)
 }
 
-// string callback = 2;
+// string callback = 3;
 inline void Call::clear_callback() {
   callback_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -4235,6 +4678,8 @@ inline void Template::set_allocated_data(::std::string* data) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

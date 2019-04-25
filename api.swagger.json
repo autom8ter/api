@@ -47,7 +47,7 @@
         ]
       }
     },
-    "/contact/email/{address}": {
+    "/contact/email/{email.address}": {
       "post": {
         "operationId": "SendEmail",
         "responses": {
@@ -60,7 +60,7 @@
         },
         "parameters": [
           {
-            "name": "address",
+            "name": "email.address",
             "in": "path",
             "required": true,
             "type": "string"
@@ -70,7 +70,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiEmail"
+              "$ref": "#/definitions/apiEmailRequest"
             }
           }
         ],
@@ -391,6 +391,9 @@
     "apiCall": {
       "type": "object",
       "properties": {
+        "from": {
+          "type": "string"
+        },
         "to": {
           "type": "string"
         },
@@ -419,6 +422,20 @@
         }
       }
     },
+    "apiEmailRequest": {
+      "type": "object",
+      "properties": {
+        "from_name": {
+          "type": "string"
+        },
+        "from_email": {
+          "type": "string"
+        },
+        "email": {
+          "$ref": "#/definitions/apiEmail"
+        }
+      }
+    },
     "apiIdentifier": {
       "type": "object",
       "properties": {
@@ -438,6 +455,9 @@
     "apiSMS": {
       "type": "object",
       "properties": {
+        "from": {
+          "type": "string"
+        },
         "to": {
           "type": "string"
         },
