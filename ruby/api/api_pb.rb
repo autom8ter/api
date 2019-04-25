@@ -5,14 +5,49 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.SubscribeRequest" do
+    optional :email, :string, 1
+    optional :plan, :string, 2
+    optional :card, :message, 3, "api.Card"
+  end
+  add_message "api.UnSubscribeRequest" do
+    optional :email, :string, 1
+    optional :plan, :string, 2
+  end
+  add_message "api.Card" do
+    optional :number, :string, 1
+    optional :exp_month, :string, 2
+    optional :exp_year, :string, 3
+    optional :cvc, :string, 4
+  end
+  add_message "api.Secret" do
+    optional :text, :string, 1
+  end
   add_message "api.Empty" do
   end
   add_message "api.Dashboard" do
-    optional :total_users, :int64, 1
-    optional :total_customers, :int64, 2
-    optional :total_plans, :int64, 3
-    optional :total_subscriptions, :int64, 4
-    optional :total_charges, :int64, 5
+    optional :users, :message, 1, "api.UsersWidget"
+    optional :customers, :message, 2, "api.CustomersWidget"
+    optional :plans, :message, 3, "api.PlansWidget"
+    optional :subscriptions, :message, 4, "api.SubscriptionsWidget"
+    optional :charges, :message, 5, "api.ChargesWidget"
+  end
+  add_message "api.CustomersWidget" do
+    optional :count, :int64, 1
+  end
+  add_message "api.PlansWidget" do
+    optional :count, :int64, 1
+  end
+  add_message "api.SubscriptionsWidget" do
+    optional :count, :int64, 1
+  end
+  add_message "api.ChargesWidget" do
+    optional :count, :int64, 1
+    optional :total, :double, 2
+    optional :dollars_per_charge, :double, 3
+  end
+  add_message "api.UsersWidget" do
+    optional :count, :int64, 1
   end
   add_message "api.Identifier" do
     optional :id, :string, 1
@@ -92,8 +127,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
+  UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
+  Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
+  Secret = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Secret").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
   Dashboard = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Dashboard").msgclass
+  CustomersWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CustomersWidget").msgclass
+  PlansWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PlansWidget").msgclass
+  SubscriptionsWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionsWidget").msgclass
+  ChargesWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ChargesWidget").msgclass
+  UsersWidget = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UsersWidget").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
   SMSStatus = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSStatus").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass

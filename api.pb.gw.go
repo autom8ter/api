@@ -338,8 +338,8 @@ func request_ContactService_SendCall_0(ctx context.Context, marshaler runtime.Ma
 
 }
 
-func request_PaymentService_Subscribe_0(ctx context.Context, marshaler runtime.Marshaler, client PaymentServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Call
+func request_UserService_Subscribe_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq SubscribeRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -357,15 +357,15 @@ func request_PaymentService_Subscribe_0(ctx context.Context, marshaler runtime.M
 		_   = err
 	)
 
-	val, ok = pathParams["to"]
+	val, ok = pathParams["email"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "to")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "email")
 	}
 
-	protoReq.To, err = runtime.String(val)
+	protoReq.Email, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "to", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "email", err)
 	}
 
 	msg, err := client.Subscribe(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -373,8 +373,8 @@ func request_PaymentService_Subscribe_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func request_PaymentService_Unsubscribe_0(ctx context.Context, marshaler runtime.Marshaler, client PaymentServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Call
+func request_UserService_Unsubscribe_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq UnSubscribeRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -392,15 +392,15 @@ func request_PaymentService_Unsubscribe_0(ctx context.Context, marshaler runtime
 		_   = err
 	)
 
-	val, ok = pathParams["to"]
+	val, ok = pathParams["email"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "to")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "email")
 	}
 
-	protoReq.To, err = runtime.String(val)
+	protoReq.Email, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "to", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "email", err)
 	}
 
 	msg, err := client.Unsubscribe(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -408,8 +408,8 @@ func request_PaymentService_Unsubscribe_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_DashboardService_GetDashboard_0(ctx context.Context, marshaler runtime.Marshaler, client DashboardServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Empty
+func request_AdminService_GetDashboard_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq Secret
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -851,9 +851,9 @@ var (
 	forward_ContactService_SendCall_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterPaymentServiceHandlerFromEndpoint is same as RegisterPaymentServiceHandler but
+// RegisterUserServiceHandlerFromEndpoint is same as RegisterUserServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterPaymentServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterUserServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -873,23 +873,23 @@ func RegisterPaymentServiceHandlerFromEndpoint(ctx context.Context, mux *runtime
 		}()
 	}()
 
-	return RegisterPaymentServiceHandler(ctx, mux, conn)
+	return RegisterUserServiceHandler(ctx, mux, conn)
 }
 
-// RegisterPaymentServiceHandler registers the http handlers for service PaymentService to "mux".
+// RegisterUserServiceHandler registers the http handlers for service UserService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterPaymentServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterPaymentServiceHandlerClient(ctx, mux, NewPaymentServiceClient(conn))
+func RegisterUserServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterUserServiceHandlerClient(ctx, mux, NewUserServiceClient(conn))
 }
 
-// RegisterPaymentServiceHandlerClient registers the http handlers for service PaymentService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "PaymentServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "PaymentServiceClient"
+// RegisterUserServiceHandlerClient registers the http handlers for service UserService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "UserServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "UserServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "PaymentServiceClient" to call the correct interceptors.
-func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PaymentServiceClient) error {
+// "UserServiceClient" to call the correct interceptors.
+func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client UserServiceClient) error {
 
-	mux.Handle("POST", pattern_PaymentService_Subscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_UserService_Subscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -898,18 +898,18 @@ func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PaymentService_Subscribe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_UserService_Subscribe_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_PaymentService_Subscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_UserService_Subscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_PaymentService_Unsubscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_UserService_Unsubscribe_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -918,14 +918,14 @@ func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_PaymentService_Unsubscribe_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_UserService_Unsubscribe_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_PaymentService_Unsubscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_UserService_Unsubscribe_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -933,20 +933,20 @@ func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_PaymentService_Subscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "subscribe", "to"}, ""))
+	pattern_UserService_Subscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"user", "subscribe", "email"}, ""))
 
-	pattern_PaymentService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "unsubscribe", "to"}, ""))
+	pattern_UserService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"user", "unsubscribe", "email"}, ""))
 )
 
 var (
-	forward_PaymentService_Subscribe_0 = runtime.ForwardResponseMessage
+	forward_UserService_Subscribe_0 = runtime.ForwardResponseMessage
 
-	forward_PaymentService_Unsubscribe_0 = runtime.ForwardResponseMessage
+	forward_UserService_Unsubscribe_0 = runtime.ForwardResponseMessage
 )
 
-// RegisterDashboardServiceHandlerFromEndpoint is same as RegisterDashboardServiceHandler but
+// RegisterAdminServiceHandlerFromEndpoint is same as RegisterAdminServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterDashboardServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterAdminServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -966,23 +966,23 @@ func RegisterDashboardServiceHandlerFromEndpoint(ctx context.Context, mux *runti
 		}()
 	}()
 
-	return RegisterDashboardServiceHandler(ctx, mux, conn)
+	return RegisterAdminServiceHandler(ctx, mux, conn)
 }
 
-// RegisterDashboardServiceHandler registers the http handlers for service DashboardService to "mux".
+// RegisterAdminServiceHandler registers the http handlers for service AdminService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterDashboardServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterDashboardServiceHandlerClient(ctx, mux, NewDashboardServiceClient(conn))
+func RegisterAdminServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterAdminServiceHandlerClient(ctx, mux, NewAdminServiceClient(conn))
 }
 
-// RegisterDashboardServiceHandlerClient registers the http handlers for service DashboardService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "DashboardServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "DashboardServiceClient"
+// RegisterAdminServiceHandlerClient registers the http handlers for service AdminService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "AdminServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "AdminServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "DashboardServiceClient" to call the correct interceptors.
-func RegisterDashboardServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DashboardServiceClient) error {
+// "AdminServiceClient" to call the correct interceptors.
+func RegisterAdminServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AdminServiceClient) error {
 
-	mux.Handle("POST", pattern_DashboardService_GetDashboard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_AdminService_GetDashboard_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -991,14 +991,14 @@ func RegisterDashboardServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_DashboardService_GetDashboard_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_AdminService_GetDashboard_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_DashboardService_GetDashboard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_AdminService_GetDashboard_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1006,9 +1006,9 @@ func RegisterDashboardServiceHandlerClient(ctx context.Context, mux *runtime.Ser
 }
 
 var (
-	pattern_DashboardService_GetDashboard_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"dashboard"}, ""))
+	pattern_AdminService_GetDashboard_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"dashboard"}, ""))
 )
 
 var (
-	forward_DashboardService_GetDashboard_0 = runtime.ForwardResponseMessage
+	forward_AdminService_GetDashboard_0 = runtime.ForwardResponseMessage
 )

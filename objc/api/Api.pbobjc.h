@@ -28,11 +28,17 @@
 CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
+@class Card;
+@class ChargesWidget;
+@class CustomersWidget;
 @class Email;
 @class Identifier;
 @class Message;
+@class PlansWidget;
 @class SMS;
+@class SubscriptionsWidget;
 @class UserMetadata;
+@class UsersWidget;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -51,6 +57,74 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - SubscribeRequest
+
+typedef GPB_ENUM(SubscribeRequest_FieldNumber) {
+  SubscribeRequest_FieldNumber_Email = 1,
+  SubscribeRequest_FieldNumber_Plan = 2,
+  SubscribeRequest_FieldNumber_Card = 3,
+};
+
+@interface SubscribeRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+
+@property(nonatomic, readwrite, strong, null_resettable) Card *card;
+/** Test to see if @c card has been set. */
+@property(nonatomic, readwrite) BOOL hasCard;
+
+@end
+
+#pragma mark - UnSubscribeRequest
+
+typedef GPB_ENUM(UnSubscribeRequest_FieldNumber) {
+  UnSubscribeRequest_FieldNumber_Email = 1,
+  UnSubscribeRequest_FieldNumber_Plan = 2,
+};
+
+@interface UnSubscribeRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+
+@end
+
+#pragma mark - Card
+
+typedef GPB_ENUM(Card_FieldNumber) {
+  Card_FieldNumber_Number = 1,
+  Card_FieldNumber_ExpMonth = 2,
+  Card_FieldNumber_ExpYear = 3,
+  Card_FieldNumber_Cvc = 4,
+};
+
+@interface Card : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *number;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expMonth;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
+
+@end
+
+#pragma mark - Secret
+
+typedef GPB_ENUM(Secret_FieldNumber) {
+  Secret_FieldNumber_Text = 1,
+};
+
+@interface Secret : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@end
+
 #pragma mark - Empty
 
 @interface Empty : GPBMessage
@@ -60,24 +134,100 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Dashboard
 
 typedef GPB_ENUM(Dashboard_FieldNumber) {
-  Dashboard_FieldNumber_TotalUsers = 1,
-  Dashboard_FieldNumber_TotalCustomers = 2,
-  Dashboard_FieldNumber_TotalPlans = 3,
-  Dashboard_FieldNumber_TotalSubscriptions = 4,
-  Dashboard_FieldNumber_TotalCharges = 5,
+  Dashboard_FieldNumber_Users = 1,
+  Dashboard_FieldNumber_Customers = 2,
+  Dashboard_FieldNumber_Plans = 3,
+  Dashboard_FieldNumber_Subscriptions = 4,
+  Dashboard_FieldNumber_Charges = 5,
 };
 
 @interface Dashboard : GPBMessage
 
-@property(nonatomic, readwrite) int64_t totalUsers;
+@property(nonatomic, readwrite, strong, null_resettable) UsersWidget *users;
+/** Test to see if @c users has been set. */
+@property(nonatomic, readwrite) BOOL hasUsers;
 
-@property(nonatomic, readwrite) int64_t totalCustomers;
+@property(nonatomic, readwrite, strong, null_resettable) CustomersWidget *customers;
+/** Test to see if @c customers has been set. */
+@property(nonatomic, readwrite) BOOL hasCustomers;
 
-@property(nonatomic, readwrite) int64_t totalPlans;
+@property(nonatomic, readwrite, strong, null_resettable) PlansWidget *plans;
+/** Test to see if @c plans has been set. */
+@property(nonatomic, readwrite) BOOL hasPlans;
 
-@property(nonatomic, readwrite) int64_t totalSubscriptions;
+@property(nonatomic, readwrite, strong, null_resettable) SubscriptionsWidget *subscriptions;
+/** Test to see if @c subscriptions has been set. */
+@property(nonatomic, readwrite) BOOL hasSubscriptions;
 
-@property(nonatomic, readwrite) int64_t totalCharges;
+@property(nonatomic, readwrite, strong, null_resettable) ChargesWidget *charges;
+/** Test to see if @c charges has been set. */
+@property(nonatomic, readwrite) BOOL hasCharges;
+
+@end
+
+#pragma mark - CustomersWidget
+
+typedef GPB_ENUM(CustomersWidget_FieldNumber) {
+  CustomersWidget_FieldNumber_Count = 1,
+};
+
+@interface CustomersWidget : GPBMessage
+
+@property(nonatomic, readwrite) int64_t count;
+
+@end
+
+#pragma mark - PlansWidget
+
+typedef GPB_ENUM(PlansWidget_FieldNumber) {
+  PlansWidget_FieldNumber_Count = 1,
+};
+
+@interface PlansWidget : GPBMessage
+
+@property(nonatomic, readwrite) int64_t count;
+
+@end
+
+#pragma mark - SubscriptionsWidget
+
+typedef GPB_ENUM(SubscriptionsWidget_FieldNumber) {
+  SubscriptionsWidget_FieldNumber_Count = 1,
+};
+
+@interface SubscriptionsWidget : GPBMessage
+
+@property(nonatomic, readwrite) int64_t count;
+
+@end
+
+#pragma mark - ChargesWidget
+
+typedef GPB_ENUM(ChargesWidget_FieldNumber) {
+  ChargesWidget_FieldNumber_Count = 1,
+  ChargesWidget_FieldNumber_Total = 2,
+  ChargesWidget_FieldNumber_DollarsPerCharge = 3,
+};
+
+@interface ChargesWidget : GPBMessage
+
+@property(nonatomic, readwrite) int64_t count;
+
+@property(nonatomic, readwrite) double total;
+
+@property(nonatomic, readwrite) double dollarsPerCharge;
+
+@end
+
+#pragma mark - UsersWidget
+
+typedef GPB_ENUM(UsersWidget_FieldNumber) {
+  UsersWidget_FieldNumber_Count = 1,
+};
+
+@interface UsersWidget : GPBMessage
+
+@property(nonatomic, readwrite) int64_t count;
 
 @end
 

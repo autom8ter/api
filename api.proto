@@ -95,27 +95,23 @@ service ContactService {
     }
 }
 
-service PaymentService {
-    rpc Subscribe(Call) returns (Identifier) {
-        option (google.api.http) = {
-      post: "/payment/subscribe/{to}"
-      body: "*"
-    };
-    }
-    rpc Unsubscribe(Call) returns (Identifier) {
-        option (google.api.http) = {
-      post: "/payment/unsubscribe/{to}"
-      body: "*"
-    };
-    }
-}
-
 service UserService {
-
+    rpc Subscribe(SubscribeRequest) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/user/subscribe/{email}"
+      body: "*"
+    };
+    }
+    rpc Unsubscribe(UnSubscribeRequest) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/user/unsubscribe/{email}"
+      body: "*"
+    };
+    }
 }
 
-service DashboardService {
-    rpc GetDashboard(Empty) returns (Dashboard) {
+service AdminService {
+    rpc GetDashboard(Secret) returns (Dashboard) {
         option (google.api.http) = {
       post: "/dashboard"
       body: "*"
@@ -123,16 +119,59 @@ service DashboardService {
     }
 }
 
+message SubscribeRequest {
+    string email=1;
+    string plan =2;
+    Card card =3;
+}
+
+message UnSubscribeRequest {
+    string email=1;
+    string plan =2;
+}
+
+message Card {
+    string number=1;
+    string exp_month=2;
+    string exp_year =3;
+    string cvc=4;
+}
+
+message Secret {
+    string text =1;
+}
+
 message Empty {}
 
 message Dashboard {
-    int64 total_users=1;
-    int64 total_customers =2;
-    int64 total_plans=3;
-    int64 total_subscriptions=4;
-    int64 total_charges=5;
+    UsersWidget users=1;
+    CustomersWidget customers =2;
+    PlansWidget plans=3;
+    SubscriptionsWidget subscriptions=4;
+    ChargesWidget charges=5;
 }
 
+message CustomersWidget {
+    int64 count=1;
+}
+
+message PlansWidget {
+    int64 count=1;
+}
+
+message SubscriptionsWidget {
+    int64 count=1;
+}
+
+message ChargesWidget {
+    int64 count=1;
+    double total =2;
+    double dollars_per_charge =3;
+}
+
+message UsersWidget {
+    int64 count=1;
+}
 
 message Identifier {
     string id=1;

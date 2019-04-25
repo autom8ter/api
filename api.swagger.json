@@ -160,16 +160,16 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiEmpty"
+              "$ref": "#/definitions/apiSecret"
             }
           }
         ],
         "tags": [
-          "DashboardService"
+          "AdminService"
         ]
       }
     },
-    "/payment/subscribe/{to}": {
+    "/user/subscribe/{email}": {
       "post": {
         "operationId": "Subscribe",
         "responses": {
@@ -182,7 +182,7 @@
         },
         "parameters": [
           {
-            "name": "to",
+            "name": "email",
             "in": "path",
             "required": true,
             "type": "string"
@@ -192,16 +192,16 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiCall"
+              "$ref": "#/definitions/apiSubscribeRequest"
             }
           }
         ],
         "tags": [
-          "PaymentService"
+          "UserService"
         ]
       }
     },
-    "/payment/unsubscribe/{to}": {
+    "/user/unsubscribe/{email}": {
       "post": {
         "operationId": "Unsubscribe",
         "responses": {
@@ -214,7 +214,7 @@
         },
         "parameters": [
           {
-            "name": "to",
+            "name": "email",
             "in": "path",
             "required": true,
             "type": "string"
@@ -224,12 +224,12 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiCall"
+              "$ref": "#/definitions/apiUnSubscribeRequest"
             }
           }
         ],
         "tags": [
-          "PaymentService"
+          "UserService"
         ]
       }
     },
@@ -492,28 +492,66 @@
         }
       }
     },
+    "apiCard": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "exp_month": {
+          "type": "string"
+        },
+        "exp_year": {
+          "type": "string"
+        },
+        "cvc": {
+          "type": "string"
+        }
+      }
+    },
+    "apiChargesWidget": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total": {
+          "type": "number",
+          "format": "double"
+        },
+        "dollars_per_charge": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "apiCustomersWidget": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "apiDashboard": {
       "type": "object",
       "properties": {
-        "total_users": {
-          "type": "string",
-          "format": "int64"
+        "users": {
+          "$ref": "#/definitions/apiUsersWidget"
         },
-        "total_customers": {
-          "type": "string",
-          "format": "int64"
+        "customers": {
+          "$ref": "#/definitions/apiCustomersWidget"
         },
-        "total_plans": {
-          "type": "string",
-          "format": "int64"
+        "plans": {
+          "$ref": "#/definitions/apiPlansWidget"
         },
-        "total_subscriptions": {
-          "type": "string",
-          "format": "int64"
+        "subscriptions": {
+          "$ref": "#/definitions/apiSubscriptionsWidget"
         },
-        "total_charges": {
-          "type": "string",
-          "format": "int64"
+        "charges": {
+          "$ref": "#/definitions/apiChargesWidget"
         }
       }
     },
@@ -551,9 +589,6 @@
         }
       }
     },
-    "apiEmpty": {
-      "type": "object"
-    },
     "apiIdentifier": {
       "type": "object",
       "properties": {
@@ -567,6 +602,15 @@
       "properties": {
         "value": {
           "type": "string"
+        }
+      }
+    },
+    "apiPlansWidget": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
@@ -610,6 +654,37 @@
         }
       }
     },
+    "apiSecret": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "apiSubscribeRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "plan": {
+          "type": "string"
+        },
+        "card": {
+          "$ref": "#/definitions/apiCard"
+        }
+      }
+    },
+    "apiSubscriptionsWidget": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "apiTemplate": {
       "type": "object",
       "properties": {
@@ -619,6 +694,26 @@
         "data": {
           "type": "string",
           "format": "byte"
+        }
+      }
+    },
+    "apiUnSubscribeRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "plan": {
+          "type": "string"
+        }
+      }
+    },
+    "apiUsersWidget": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "string",
+          "format": "int64"
         }
       }
     }

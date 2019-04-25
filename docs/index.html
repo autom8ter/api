@@ -195,6 +195,18 @@
                 </li>
               
                 <li>
+                  <a href="#api.Card"><span class="badge">M</span>Card</a>
+                </li>
+              
+                <li>
+                  <a href="#api.ChargesWidget"><span class="badge">M</span>ChargesWidget</a>
+                </li>
+              
+                <li>
+                  <a href="#api.CustomersWidget"><span class="badge">M</span>CustomersWidget</a>
+                </li>
+              
+                <li>
                   <a href="#api.Dashboard"><span class="badge">M</span>Dashboard</a>
                 </li>
               
@@ -219,6 +231,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.PlansWidget"><span class="badge">M</span>PlansWidget</a>
+                </li>
+              
+                <li>
                   <a href="#api.SMS"><span class="badge">M</span>SMS</a>
                 </li>
               
@@ -227,7 +243,23 @@
                 </li>
               
                 <li>
+                  <a href="#api.Secret"><span class="badge">M</span>Secret</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SubscribeRequest"><span class="badge">M</span>SubscribeRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SubscriptionsWidget"><span class="badge">M</span>SubscriptionsWidget</a>
+                </li>
+              
+                <li>
                   <a href="#api.Template"><span class="badge">M</span>Template</a>
+                </li>
+              
+                <li>
+                  <a href="#api.UnSubscribeRequest"><span class="badge">M</span>UnSubscribeRequest</a>
                 </li>
               
                 <li>
@@ -238,19 +270,19 @@
                   <a href="#api.UserMetadata"><span class="badge">M</span>UserMetadata</a>
                 </li>
               
+                <li>
+                  <a href="#api.UsersWidget"><span class="badge">M</span>UsersWidget</a>
+                </li>
               
               
+              
+              
+                <li>
+                  <a href="#api.AdminService"><span class="badge">S</span>AdminService</a>
+                </li>
               
                 <li>
                   <a href="#api.ContactService"><span class="badge">S</span>ContactService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.DashboardService"><span class="badge">S</span>DashboardService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.PaymentService"><span class="badge">S</span>PaymentService</a>
                 </li>
               
                 <li>
@@ -438,6 +470,110 @@
 
         
       
+        <h3 id="api.Card">Card</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exp_month</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exp_year</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cvc</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.ChargesWidget">ChargesWidget</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>dollars_per_charge</td>
+                  <td><a href="#double">double</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.CustomersWidget">CustomersWidget</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Dashboard">Dashboard</h3>
         <p></p>
 
@@ -449,36 +585,36 @@
             <tbody>
               
                 <tr>
-                  <td>total_users</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td>users</td>
+                  <td><a href="#api.UsersWidget">UsersWidget</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>total_customers</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td>customers</td>
+                  <td><a href="#api.CustomersWidget">CustomersWidget</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>total_plans</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td>plans</td>
+                  <td><a href="#api.PlansWidget">PlansWidget</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>total_subscriptions</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td>subscriptions</td>
+                  <td><a href="#api.SubscriptionsWidget">SubscriptionsWidget</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>total_charges</td>
-                  <td><a href="#int64">int64</a></td>
+                  <td>charges</td>
+                  <td><a href="#api.ChargesWidget">ChargesWidget</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -630,6 +766,29 @@
 
         
       
+        <h3 id="api.PlansWidget">PlansWidget</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.SMS">SMS</h3>
         <p></p>
 
@@ -732,6 +891,89 @@
 
         
       
+        <h3 id="api.Secret">Secret</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.SubscribeRequest">SubscribeRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plan</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>card</td>
+                  <td><a href="#api.Card">Card</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.SubscriptionsWidget">SubscriptionsWidget</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Template">Template</h3>
         <p></p>
 
@@ -752,6 +994,36 @@
                 <tr>
                   <td>data</td>
                   <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.UnSubscribeRequest">UnSubscribeRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plan</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -885,11 +1157,52 @@
 
         
       
+        <h3 id="api.UsersWidget">UsersWidget</h3>
+        <p></p>
 
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
       
 
       
 
+      
+
+      
+        <h3 id="api.AdminService">AdminService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetDashboard</td>
+                <td><a href="#api.Secret">Secret</a></td>
+                <td><a href="#api.Dashboard">Dashboard</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
       
         <h3 id="api.ContactService">ContactService</h3>
         <p></p>
@@ -930,25 +1243,7 @@
           </tbody>
         </table>
       
-        <h3 id="api.DashboardService">DashboardService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetDashboard</td>
-                <td><a href="#api.Empty">Empty</a></td>
-                <td><a href="#api.Dashboard">Dashboard</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.PaymentService">PaymentService</h3>
+        <h3 id="api.UserService">UserService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -958,28 +1253,17 @@
             
               <tr>
                 <td>Subscribe</td>
-                <td><a href="#api.Call">Call</a></td>
+                <td><a href="#api.SubscribeRequest">SubscribeRequest</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>Unsubscribe</td>
-                <td><a href="#api.Call">Call</a></td>
+                <td><a href="#api.UnSubscribeRequest">UnSubscribeRequest</a></td>
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.UserService">UserService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
             
           </tbody>
         </table>

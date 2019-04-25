@@ -20,11 +20,177 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"\x07\n\x05\x45mpty\"\x82\x01\n\tDashboard\x12\x13\n\x0btotal_users\x18\x01 \x01(\x03\x12\x17\n\x0ftotal_customers\x18\x02 \x01(\x03\x12\x13\n\x0btotal_plans\x18\x03 \x01(\x03\x12\x1b\n\x13total_subscriptions\x18\x04 \x01(\x03\x12\x15\n\rtotal_charges\x18\x05 \x01(\x03\"\x18\n\nIdentifier\x12\n\n\x02id\x18\x01 \x01(\t\"\\\n\tSMSStatus\x12\x1b\n\x02id\x18\x01 \x01(\x0b\x32\x0f.api.Identifier\x12\x15\n\x03sms\x18\x02 \x01(\x0b\x32\x08.api.SMS\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0b\n\x03uri\x18\x04 \x01(\t\"r\n\x03SMS\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\n\n\x02to\x18\x02 \x01(\t\x12\x1d\n\x07message\x18\x03 \x01(\x0b\x32\x0c.api.Message\x12\x10\n\x08mediaURL\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\x0b\n\x03\x61pp\x18\x06 \x01(\t\"P\n\x0c\x45mailRequest\x12\x11\n\tfrom_name\x18\x01 \x01(\t\x12\x12\n\nfrom_email\x18\x02 \x01(\t\x12\x19\n\x05\x65mail\x18\x03 \x01(\x0b\x32\n.api.Email\"T\n\x05\x45mail\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\x12\r\n\x05plain\x18\x04 \x01(\t\x12\x0c\n\x04html\x18\x05 \x01(\t\"-\n\x04\x43\x61ll\x12\x0c\n\x04\x66rom\x18\x01 \x01(\t\x12\n\n\x02to\x18\x02 \x01(\t\x12\x0b\n\x03\x61pp\x18\x03 \x01(\t\"\x18\n\x07Message\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\"&\n\x08Template\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x32\xe8\x05\n\x0eUtilityService\x12<\n\x04\x45\x63ho\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/utility/echo:\x01*\x12K\n\x0b\x45\x63hoSpanish\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/spanish:\x01*\x12K\n\x0b\x45\x63hoChinese\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/chinese:\x01*\x12K\n\x0b\x45\x63hoEnglish\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/english:\x01*\x12G\n\tEchoHindi\x12\x0c.api.Message\x1a\x0c.api.Message\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/utility/echo/hindi:\x01*\x12I\n\nEchoArabic\x12\x0c.api.Message\x1a\x0c.api.Message\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/echo/arabic:\x01*\x12G\n\x0bMarshalJSON\x12\n.api.Bytes\x1a\n.api.Bytes\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/marshal/json:\x01*\x12G\n\x0bMarshalYAML\x12\n.api.Bytes\x1a\n.api.Bytes\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/marshal/yaml:\x01*\x12\x45\n\nMarshalXML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/marshal/xml:\x01*\x12\x44\n\x06Render\x12\r.api.Template\x1a\n.api.Bytes\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/marshal/xml:\x01*2\xbd\x02\n\x0e\x43ontactService\x12\x42\n\x07SendSMS\x12\x08.api.SMS\x1a\x0f.api.Identifier\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/sms/{to}:\x01*\x12G\n\x06GetSMS\x12\x0f.api.Identifier\x1a\x0e.api.SMSStatus\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/sms/{id}:\x01*\x12W\n\tSendEmail\x12\x11.api.EmailRequest\x1a\x0c.api.Message\")\x82\xd3\xe4\x93\x02#\"\x1e/contact/email/{email.address}:\x01*\x12\x45\n\x08SendCall\x12\t.api.Call\x1a\x0f.api.Identifier\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/call/{to}:\x01*2\xae\x01\n\x0ePaymentService\x12K\n\tSubscribe\x12\t.api.Call\x1a\x0f.api.Identifier\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/payment/subscribe/{to}:\x01*\x12O\n\x0bUnsubscribe\x12\t.api.Call\x1a\x0f.api.Identifier\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/payment/unsubscribe/{to}:\x01*2\r\n\x0bUserService2U\n\x10\x44\x61shboardService\x12\x41\n\x0cGetDashboard\x12\n.api.Empty\x1a\x0e.api.Dashboard\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/dashboard:\x01*b\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\"H\n\x10SubscribeRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\x12\x17\n\x04\x63\x61rd\x18\x03 \x01(\x0b\x32\t.api.Card\"1\n\x12UnSubscribeRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0c\n\x04plan\x18\x02 \x01(\t\"H\n\x04\x43\x61rd\x12\x0e\n\x06number\x18\x01 \x01(\t\x12\x11\n\texp_month\x18\x02 \x01(\t\x12\x10\n\x08\x65xp_year\x18\x03 \x01(\t\x12\x0b\n\x03\x63vc\x18\x04 \x01(\t\"\x16\n\x06Secret\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x07\n\x05\x45mpty\"\xcc\x01\n\tDashboard\x12\x1f\n\x05users\x18\x01 \x01(\x0b\x32\x10.api.UsersWidget\x12\'\n\tcustomers\x18\x02 \x01(\x0b\x32\x14.api.CustomersWidget\x12\x1f\n\x05plans\x18\x03 \x01(\x0b\x32\x10.api.PlansWidget\x12/\n\rsubscriptions\x18\x04 \x01(\x0b\x32\x18.api.SubscriptionsWidget\x12#\n\x07\x63harges\x18\x05 \x01(\x0b\x32\x12.api.ChargesWidget\" \n\x0f\x43ustomersWidget\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\"\x1c\n\x0bPlansWidget\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\"$\n\x13SubscriptionsWidget\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\"I\n\rChargesWidget\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\x12\r\n\x05total\x18\x02 \x01(\x01\x12\x1a\n\x12\x64ollars_per_charge\x18\x03 \x01(\x01\"\x1c\n\x0bUsersWidget\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\"\x18\n\nIdentifier\x12\n\n\x02id\x18\x01 \x01(\t\"\\\n\tSMSStatus\x12\x1b\n\x02id\x18\x01 \x01(\x0b\x32\x0f.api.Identifier\x12\x15\n\x03sms\x18\x02 \x01(\x0b\x32\x08.api.SMS\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0b\n\x03uri\x18\x04 \x01(\t\"r\n\x03SMS\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\n\n\x02to\x18\x02 \x01(\t\x12\x1d\n\x07message\x18\x03 \x01(\x0b\x32\x0c.api.Message\x12\x10\n\x08mediaURL\x18\x04 \x01(\t\x12\x10\n\x08\x63\x61llback\x18\x05 \x01(\t\x12\x0b\n\x03\x61pp\x18\x06 \x01(\t\"P\n\x0c\x45mailRequest\x12\x11\n\tfrom_name\x18\x01 \x01(\t\x12\x12\n\nfrom_email\x18\x02 \x01(\t\x12\x19\n\x05\x65mail\x18\x03 \x01(\x0b\x32\n.api.Email\"T\n\x05\x45mail\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07subject\x18\x03 \x01(\t\x12\r\n\x05plain\x18\x04 \x01(\t\x12\x0c\n\x04html\x18\x05 \x01(\t\"-\n\x04\x43\x61ll\x12\x0c\n\x04\x66rom\x18\x01 \x01(\t\x12\n\n\x02to\x18\x02 \x01(\t\x12\x0b\n\x03\x61pp\x18\x03 \x01(\t\"\x18\n\x07Message\x12\r\n\x05value\x18\x01 \x01(\t\"\xd6\x01\n\x08UserInfo\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ngiven_name\x18\x07 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x08 \x01(\t\x12\x0e\n\x06gender\x18\t \x01(\t\x12\x11\n\tbirthdate\x18\n \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x0f\n\x07picture\x18\x0c \x01(\t\x12(\n\ruser_metadata\x18\r \x01(\x0b\x32\x11.api.UserMetadata\x12&\n\x0c\x61pp_metadata\x18\x0e \x01(\x0b\x32\x10.api.AppMetadata\"V\n\x0cUserMetadata\x12\r\n\x05phone\x18\x01 \x01(\t\x12\x19\n\x11preferred_contact\x18\x02 \x01(\t\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"P\n\x0b\x41ppMetadata\x12\x0c\n\x04plan\x18\x01 \x01(\t\x12\x11\n\tpay_token\x18\x02 \x01(\t\x12\x12\n\ndelinquent\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\"t\n\x04\x41uth\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12\x11\n\tclient_id\x18\x02 \x01(\t\x12\x15\n\rclient_secret\x18\x03 \x01(\t\x12\x10\n\x08redirect\x18\x04 \x01(\t\x12\x10\n\x08\x61udience\x18\x05 \x01(\t\x12\x0e\n\x06scopes\x18\x06 \x03(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\"&\n\x08Template\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x02 \x01(\x0c\x32\xe8\x05\n\x0eUtilityService\x12<\n\x04\x45\x63ho\x12\x0c.api.Message\x1a\x0c.api.Message\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/utility/echo:\x01*\x12K\n\x0b\x45\x63hoSpanish\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/spanish:\x01*\x12K\n\x0b\x45\x63hoChinese\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/chinese:\x01*\x12K\n\x0b\x45\x63hoEnglish\x12\x0c.api.Message\x1a\x0c.api.Message\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/english:\x01*\x12G\n\tEchoHindi\x12\x0c.api.Message\x1a\x0c.api.Message\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/utility/echo/hindi:\x01*\x12I\n\nEchoArabic\x12\x0c.api.Message\x1a\x0c.api.Message\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/echo/arabic:\x01*\x12G\n\x0bMarshalJSON\x12\n.api.Bytes\x1a\n.api.Bytes\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/marshal/json:\x01*\x12G\n\x0bMarshalYAML\x12\n.api.Bytes\x1a\n.api.Bytes\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/marshal/yaml:\x01*\x12\x45\n\nMarshalXML\x12\n.api.Bytes\x1a\n.api.Bytes\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/marshal/xml:\x01*\x12\x44\n\x06Render\x12\r.api.Template\x1a\n.api.Bytes\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/marshal/xml:\x01*2\xbd\x02\n\x0e\x43ontactService\x12\x42\n\x07SendSMS\x12\x08.api.SMS\x1a\x0f.api.Identifier\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/sms/{to}:\x01*\x12G\n\x06GetSMS\x12\x0f.api.Identifier\x1a\x0e.api.SMSStatus\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/sms/{id}:\x01*\x12W\n\tSendEmail\x12\x11.api.EmailRequest\x1a\x0c.api.Message\")\x82\xd3\xe4\x93\x02#\"\x1e/contact/email/{email.address}:\x01*\x12\x45\n\x08SendCall\x12\t.api.Call\x1a\x0f.api.Identifier\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/call/{to}:\x01*2\xc5\x01\n\x0bUserService\x12W\n\tSubscribe\x12\x15.api.SubscribeRequest\x1a\x0f.api.Identifier\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/user/subscribe/{email}:\x01*\x12]\n\x0bUnsubscribe\x12\x17.api.UnSubscribeRequest\x1a\x0f.api.Identifier\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/user/unsubscribe/{email}:\x01*2R\n\x0c\x41\x64minService\x12\x42\n\x0cGetDashboard\x12\x0b.api.Secret\x1a\x0e.api.Dashboard\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/dashboard:\x01*b\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
+
+
+_SUBSCRIBEREQUEST = _descriptor.Descriptor(
+  name='SubscribeRequest',
+  full_name='api.SubscribeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='email', full_name='api.SubscribeRequest.email', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='plan', full_name='api.SubscribeRequest.plan', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='card', full_name='api.SubscribeRequest.card', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=48,
+  serialized_end=120,
+)
+
+
+_UNSUBSCRIBEREQUEST = _descriptor.Descriptor(
+  name='UnSubscribeRequest',
+  full_name='api.UnSubscribeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='email', full_name='api.UnSubscribeRequest.email', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='plan', full_name='api.UnSubscribeRequest.plan', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=122,
+  serialized_end=171,
+)
+
+
+_CARD = _descriptor.Descriptor(
+  name='Card',
+  full_name='api.Card',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='number', full_name='api.Card.number', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exp_month', full_name='api.Card.exp_month', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exp_year', full_name='api.Card.exp_year', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cvc', full_name='api.Card.cvc', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=173,
+  serialized_end=245,
+)
+
+
+_SECRET = _descriptor.Descriptor(
+  name='Secret',
+  full_name='api.Secret',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='text', full_name='api.Secret.text', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=247,
+  serialized_end=269,
+)
 
 
 _EMPTY = _descriptor.Descriptor(
@@ -46,8 +212,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=48,
-  serialized_end=55,
+  serialized_start=271,
+  serialized_end=278,
 )
 
 
@@ -59,36 +225,67 @@ _DASHBOARD = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='total_users', full_name='api.Dashboard.total_users', index=0,
+      name='users', full_name='api.Dashboard.users', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='customers', full_name='api.Dashboard.customers', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='plans', full_name='api.Dashboard.plans', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subscriptions', full_name='api.Dashboard.subscriptions', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='charges', full_name='api.Dashboard.charges', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=281,
+  serialized_end=485,
+)
+
+
+_CUSTOMERSWIDGET = _descriptor.Descriptor(
+  name='CustomersWidget',
+  full_name='api.CustomersWidget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='count', full_name='api.CustomersWidget.count', index=0,
       number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='total_customers', full_name='api.Dashboard.total_customers', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='total_plans', full_name='api.Dashboard.total_plans', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='total_subscriptions', full_name='api.Dashboard.total_subscriptions', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='total_charges', full_name='api.Dashboard.total_charges', index=4,
-      number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -105,8 +302,146 @@ _DASHBOARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=58,
-  serialized_end=188,
+  serialized_start=487,
+  serialized_end=519,
+)
+
+
+_PLANSWIDGET = _descriptor.Descriptor(
+  name='PlansWidget',
+  full_name='api.PlansWidget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='count', full_name='api.PlansWidget.count', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=521,
+  serialized_end=549,
+)
+
+
+_SUBSCRIPTIONSWIDGET = _descriptor.Descriptor(
+  name='SubscriptionsWidget',
+  full_name='api.SubscriptionsWidget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='count', full_name='api.SubscriptionsWidget.count', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=551,
+  serialized_end=587,
+)
+
+
+_CHARGESWIDGET = _descriptor.Descriptor(
+  name='ChargesWidget',
+  full_name='api.ChargesWidget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='count', full_name='api.ChargesWidget.count', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='total', full_name='api.ChargesWidget.total', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='dollars_per_charge', full_name='api.ChargesWidget.dollars_per_charge', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=589,
+  serialized_end=662,
+)
+
+
+_USERSWIDGET = _descriptor.Descriptor(
+  name='UsersWidget',
+  full_name='api.UsersWidget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='count', full_name='api.UsersWidget.count', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=664,
+  serialized_end=692,
 )
 
 
@@ -136,8 +471,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=190,
-  serialized_end=214,
+  serialized_start=694,
+  serialized_end=718,
 )
 
 
@@ -188,8 +523,8 @@ _SMSSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=308,
+  serialized_start=720,
+  serialized_end=812,
 )
 
 
@@ -254,8 +589,8 @@ _SMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=310,
-  serialized_end=424,
+  serialized_start=814,
+  serialized_end=928,
 )
 
 
@@ -299,8 +634,8 @@ _EMAILREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=506,
+  serialized_start=930,
+  serialized_end=1010,
 )
 
 
@@ -358,8 +693,8 @@ _EMAIL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=508,
-  serialized_end=592,
+  serialized_start=1012,
+  serialized_end=1096,
 )
 
 
@@ -403,8 +738,8 @@ _CALL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=594,
-  serialized_end=639,
+  serialized_start=1098,
+  serialized_end=1143,
 )
 
 
@@ -434,8 +769,8 @@ _MESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=641,
-  serialized_end=665,
+  serialized_start=1145,
+  serialized_end=1169,
 )
 
 
@@ -521,8 +856,8 @@ _USERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=668,
-  serialized_end=882,
+  serialized_start=1172,
+  serialized_end=1386,
 )
 
 
@@ -573,8 +908,8 @@ _USERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=884,
-  serialized_end=970,
+  serialized_start=1388,
+  serialized_end=1474,
 )
 
 
@@ -625,8 +960,8 @@ _APPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=972,
-  serialized_end=1052,
+  serialized_start=1476,
+  serialized_end=1556,
 )
 
 
@@ -691,8 +1026,8 @@ _AUTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1054,
-  serialized_end=1170,
+  serialized_start=1558,
+  serialized_end=1674,
 )
 
 
@@ -722,8 +1057,8 @@ _BYTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1172,
-  serialized_end=1193,
+  serialized_start=1676,
+  serialized_end=1697,
 )
 
 
@@ -760,18 +1095,33 @@ _TEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1195,
-  serialized_end=1233,
+  serialized_start=1699,
+  serialized_end=1737,
 )
 
+_SUBSCRIBEREQUEST.fields_by_name['card'].message_type = _CARD
+_DASHBOARD.fields_by_name['users'].message_type = _USERSWIDGET
+_DASHBOARD.fields_by_name['customers'].message_type = _CUSTOMERSWIDGET
+_DASHBOARD.fields_by_name['plans'].message_type = _PLANSWIDGET
+_DASHBOARD.fields_by_name['subscriptions'].message_type = _SUBSCRIPTIONSWIDGET
+_DASHBOARD.fields_by_name['charges'].message_type = _CHARGESWIDGET
 _SMSSTATUS.fields_by_name['id'].message_type = _IDENTIFIER
 _SMSSTATUS.fields_by_name['sms'].message_type = _SMS
 _SMS.fields_by_name['message'].message_type = _MESSAGE
 _EMAILREQUEST.fields_by_name['email'].message_type = _EMAIL
 _USERINFO.fields_by_name['user_metadata'].message_type = _USERMETADATA
 _USERINFO.fields_by_name['app_metadata'].message_type = _APPMETADATA
+DESCRIPTOR.message_types_by_name['SubscribeRequest'] = _SUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['UnSubscribeRequest'] = _UNSUBSCRIBEREQUEST
+DESCRIPTOR.message_types_by_name['Card'] = _CARD
+DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['Dashboard'] = _DASHBOARD
+DESCRIPTOR.message_types_by_name['CustomersWidget'] = _CUSTOMERSWIDGET
+DESCRIPTOR.message_types_by_name['PlansWidget'] = _PLANSWIDGET
+DESCRIPTOR.message_types_by_name['SubscriptionsWidget'] = _SUBSCRIPTIONSWIDGET
+DESCRIPTOR.message_types_by_name['ChargesWidget'] = _CHARGESWIDGET
+DESCRIPTOR.message_types_by_name['UsersWidget'] = _USERSWIDGET
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['SMSStatus'] = _SMSSTATUS
 DESCRIPTOR.message_types_by_name['SMS'] = _SMS
@@ -787,6 +1137,34 @@ DESCRIPTOR.message_types_by_name['Bytes'] = _BYTES
 DESCRIPTOR.message_types_by_name['Template'] = _TEMPLATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
+SubscribeRequest = _reflection.GeneratedProtocolMessageType('SubscribeRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SUBSCRIBEREQUEST,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.SubscribeRequest)
+  ))
+_sym_db.RegisterMessage(SubscribeRequest)
+
+UnSubscribeRequest = _reflection.GeneratedProtocolMessageType('UnSubscribeRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UNSUBSCRIBEREQUEST,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.UnSubscribeRequest)
+  ))
+_sym_db.RegisterMessage(UnSubscribeRequest)
+
+Card = _reflection.GeneratedProtocolMessageType('Card', (_message.Message,), dict(
+  DESCRIPTOR = _CARD,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.Card)
+  ))
+_sym_db.RegisterMessage(Card)
+
+Secret = _reflection.GeneratedProtocolMessageType('Secret', (_message.Message,), dict(
+  DESCRIPTOR = _SECRET,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.Secret)
+  ))
+_sym_db.RegisterMessage(Secret)
+
 Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
   DESCRIPTOR = _EMPTY,
   __module__ = 'api_pb2'
@@ -800,6 +1178,41 @@ Dashboard = _reflection.GeneratedProtocolMessageType('Dashboard', (_message.Mess
   # @@protoc_insertion_point(class_scope:api.Dashboard)
   ))
 _sym_db.RegisterMessage(Dashboard)
+
+CustomersWidget = _reflection.GeneratedProtocolMessageType('CustomersWidget', (_message.Message,), dict(
+  DESCRIPTOR = _CUSTOMERSWIDGET,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.CustomersWidget)
+  ))
+_sym_db.RegisterMessage(CustomersWidget)
+
+PlansWidget = _reflection.GeneratedProtocolMessageType('PlansWidget', (_message.Message,), dict(
+  DESCRIPTOR = _PLANSWIDGET,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.PlansWidget)
+  ))
+_sym_db.RegisterMessage(PlansWidget)
+
+SubscriptionsWidget = _reflection.GeneratedProtocolMessageType('SubscriptionsWidget', (_message.Message,), dict(
+  DESCRIPTOR = _SUBSCRIPTIONSWIDGET,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.SubscriptionsWidget)
+  ))
+_sym_db.RegisterMessage(SubscriptionsWidget)
+
+ChargesWidget = _reflection.GeneratedProtocolMessageType('ChargesWidget', (_message.Message,), dict(
+  DESCRIPTOR = _CHARGESWIDGET,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.ChargesWidget)
+  ))
+_sym_db.RegisterMessage(ChargesWidget)
+
+UsersWidget = _reflection.GeneratedProtocolMessageType('UsersWidget', (_message.Message,), dict(
+  DESCRIPTOR = _USERSWIDGET,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.UsersWidget)
+  ))
+_sym_db.RegisterMessage(UsersWidget)
 
 Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Message,), dict(
   DESCRIPTOR = _IDENTIFIER,
@@ -900,8 +1313,8 @@ _UTILITYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1236,
-  serialized_end=1980,
+  serialized_start=1740,
+  serialized_end=2484,
   methods=[
   _descriptor.MethodDescriptor(
     name='Echo',
@@ -1005,8 +1418,8 @@ _CONTACTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1983,
-  serialized_end=2300,
+  serialized_start=2487,
+  serialized_end=2804,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendSMS',
@@ -1050,75 +1463,60 @@ _sym_db.RegisterServiceDescriptor(_CONTACTSERVICE)
 DESCRIPTOR.services_by_name['ContactService'] = _CONTACTSERVICE
 
 
-_PAYMENTSERVICE = _descriptor.ServiceDescriptor(
-  name='PaymentService',
-  full_name='api.PaymentService',
-  file=DESCRIPTOR,
-  index=2,
-  serialized_options=None,
-  serialized_start=2303,
-  serialized_end=2477,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Subscribe',
-    full_name='api.PaymentService.Subscribe',
-    index=0,
-    containing_service=None,
-    input_type=_CALL,
-    output_type=_IDENTIFIER,
-    serialized_options=_b('\202\323\344\223\002\034\"\027/payment/subscribe/{to}:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='Unsubscribe',
-    full_name='api.PaymentService.Unsubscribe',
-    index=1,
-    containing_service=None,
-    input_type=_CALL,
-    output_type=_IDENTIFIER,
-    serialized_options=_b('\202\323\344\223\002\036\"\031/payment/unsubscribe/{to}:\001*'),
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_PAYMENTSERVICE)
-
-DESCRIPTOR.services_by_name['PaymentService'] = _PAYMENTSERVICE
-
-
 _USERSERVICE = _descriptor.ServiceDescriptor(
   name='UserService',
   full_name='api.UserService',
   file=DESCRIPTOR,
-  index=3,
+  index=2,
   serialized_options=None,
-  serialized_start=2479,
-  serialized_end=2492,
+  serialized_start=2807,
+  serialized_end=3004,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='Subscribe',
+    full_name='api.UserService.Subscribe',
+    index=0,
+    containing_service=None,
+    input_type=_SUBSCRIBEREQUEST,
+    output_type=_IDENTIFIER,
+    serialized_options=_b('\202\323\344\223\002\034\"\027/user/subscribe/{email}:\001*'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='Unsubscribe',
+    full_name='api.UserService.Unsubscribe',
+    index=1,
+    containing_service=None,
+    input_type=_UNSUBSCRIBEREQUEST,
+    output_type=_IDENTIFIER,
+    serialized_options=_b('\202\323\344\223\002\036\"\031/user/unsubscribe/{email}:\001*'),
+  ),
 ])
 _sym_db.RegisterServiceDescriptor(_USERSERVICE)
 
 DESCRIPTOR.services_by_name['UserService'] = _USERSERVICE
 
 
-_DASHBOARDSERVICE = _descriptor.ServiceDescriptor(
-  name='DashboardService',
-  full_name='api.DashboardService',
+_ADMINSERVICE = _descriptor.ServiceDescriptor(
+  name='AdminService',
+  full_name='api.AdminService',
   file=DESCRIPTOR,
-  index=4,
+  index=3,
   serialized_options=None,
-  serialized_start=2494,
-  serialized_end=2579,
+  serialized_start=3006,
+  serialized_end=3088,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetDashboard',
-    full_name='api.DashboardService.GetDashboard',
+    full_name='api.AdminService.GetDashboard',
     index=0,
     containing_service=None,
-    input_type=_EMPTY,
+    input_type=_SECRET,
     output_type=_DASHBOARD,
     serialized_options=_b('\202\323\344\223\002\017\"\n/dashboard:\001*'),
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_DASHBOARDSERVICE)
+_sym_db.RegisterServiceDescriptor(_ADMINSERVICE)
 
-DESCRIPTOR.services_by_name['DashboardService'] = _DASHBOARDSERVICE
+DESCRIPTOR.services_by_name['AdminService'] = _ADMINSERVICE
 
 # @@protoc_insertion_point(module_scope)
