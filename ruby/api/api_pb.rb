@@ -80,6 +80,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :to, :string, 2
     optional :app, :string, 3
   end
+  add_message "api.CallBlast" do
+    optional :from, :string, 1
+    repeated :to, :string, 2
+    optional :app, :string, 3
+  end
   add_message "api.Message" do
     optional :value, :string, 1
   end
@@ -196,6 +201,7 @@ module Api
   EmailBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EmailBlast").msgclass
   Email = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Email").msgclass
   Call = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Call").msgclass
+  CallBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallBlast").msgclass
   Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass

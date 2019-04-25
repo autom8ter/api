@@ -1147,6 +1147,71 @@ typedef struct Call__storage_ {
 
 @end
 
+#pragma mark - CallBlast
+
+@implementation CallBlast
+
+@dynamic from;
+@dynamic toArray, toArray_Count;
+@dynamic app;
+
+typedef struct CallBlast__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *from;
+  NSMutableArray *toArray;
+  NSString *app;
+} CallBlast__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "from",
+        .dataTypeSpecific.className = NULL,
+        .number = CallBlast_FieldNumber_From,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(CallBlast__storage_, from),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "toArray",
+        .dataTypeSpecific.className = NULL,
+        .number = CallBlast_FieldNumber_ToArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(CallBlast__storage_, toArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "app",
+        .dataTypeSpecific.className = NULL,
+        .number = CallBlast_FieldNumber_App,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(CallBlast__storage_, app),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[CallBlast class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(CallBlast__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Message
 
 @implementation Message

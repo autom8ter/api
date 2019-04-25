@@ -105,6 +105,12 @@ service ContactService {
       body: "*"
     };
     }
+    rpc SendCallBlast(CallBlast) returns (Bytes) {
+        option (google.api.http) = {
+      post: "/contact/call/blast"
+      body: "*"
+    };
+    }
 }
 service PaymentService {
     rpc Subscribe(SubscribeRequest) returns (Bytes) {
@@ -239,6 +245,12 @@ message Email {
 message Call {
     string from=1;
     string to =2;
+    string app=3;
+}
+
+message CallBlast {
+    string from=1;
+    repeated string to =2;
     string app=3;
 }
 

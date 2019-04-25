@@ -43,7 +43,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[32];
+  static const ::google::protobuf::internal::ParseTable schema[33];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -66,6 +66,9 @@ extern BytesDefaultTypeInternal _Bytes_default_instance_;
 class Call;
 class CallDefaultTypeInternal;
 extern CallDefaultTypeInternal _Call_default_instance_;
+class CallBlast;
+class CallBlastDefaultTypeInternal;
+extern CallBlastDefaultTypeInternal _CallBlast_default_instance_;
 class Card;
 class CardDefaultTypeInternal;
 extern CardDefaultTypeInternal _Card_default_instance_;
@@ -155,6 +158,7 @@ template<> ::api::AppMetadata_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<
 template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
 template<> ::api::Bytes* Arena::CreateMaybeMessage<::api::Bytes>(Arena*);
 template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
+template<> ::api::CallBlast* Arena::CreateMaybeMessage<::api::CallBlast>(Arena*);
 template<> ::api::Card* Arena::CreateMaybeMessage<::api::Card>(Arena*);
 template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailBlast* Arena::CreateMaybeMessage<::api::EmailBlast>(Arena*);
@@ -2368,6 +2372,155 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 };
 // -------------------------------------------------------------------
 
+class CallBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.CallBlast) */ {
+ public:
+  CallBlast();
+  virtual ~CallBlast();
+
+  CallBlast(const CallBlast& from);
+
+  inline CallBlast& operator=(const CallBlast& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CallBlast(CallBlast&& from) noexcept
+    : CallBlast() {
+    *this = ::std::move(from);
+  }
+
+  inline CallBlast& operator=(CallBlast&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CallBlast& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CallBlast* internal_default_instance() {
+    return reinterpret_cast<const CallBlast*>(
+               &_CallBlast_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  void Swap(CallBlast* other);
+  friend void swap(CallBlast& a, CallBlast& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CallBlast* New() const final {
+    return CreateMaybeMessage<CallBlast>(NULL);
+  }
+
+  CallBlast* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CallBlast>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CallBlast& from);
+  void MergeFrom(const CallBlast& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CallBlast* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string to = 2;
+  int to_size() const;
+  void clear_to();
+  static const int kToFieldNumber = 2;
+  const ::std::string& to(int index) const;
+  ::std::string* mutable_to(int index);
+  void set_to(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_to(int index, ::std::string&& value);
+  #endif
+  void set_to(int index, const char* value);
+  void set_to(int index, const char* value, size_t size);
+  ::std::string* add_to();
+  void add_to(const ::std::string& value);
+  #if LANG_CXX11
+  void add_to(::std::string&& value);
+  #endif
+  void add_to(const char* value);
+  void add_to(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& to() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_to();
+
+  // string from = 1;
+  void clear_from();
+  static const int kFromFieldNumber = 1;
+  const ::std::string& from() const;
+  void set_from(const ::std::string& value);
+  #if LANG_CXX11
+  void set_from(::std::string&& value);
+  #endif
+  void set_from(const char* value);
+  void set_from(const char* value, size_t size);
+  ::std::string* mutable_from();
+  ::std::string* release_from();
+  void set_allocated_from(::std::string* from);
+
+  // string app = 3;
+  void clear_app();
+  static const int kAppFieldNumber = 3;
+  const ::std::string& app() const;
+  void set_app(const ::std::string& value);
+  #if LANG_CXX11
+  void set_app(::std::string&& value);
+  #endif
+  void set_app(const char* value);
+  void set_app(const char* value, size_t size);
+  ::std::string* mutable_app();
+  ::std::string* release_app();
+  void set_allocated_app(::std::string* app);
+
+  // @@protoc_insertion_point(class_scope:api.CallBlast)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> to_;
+  ::google::protobuf::internal::ArenaStringPtr from_;
+  ::google::protobuf::internal::ArenaStringPtr app_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Message) */ {
  public:
   Message();
@@ -2403,7 +2556,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Message_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Message* other);
   friend void swap(Message& a, Message& b) {
@@ -2514,7 +2667,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -2881,7 +3034,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(Identity* other);
   friend void swap(Identity& a, Identity& b) {
@@ -3058,7 +3211,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -3191,7 +3344,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -3303,7 +3456,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -3486,7 +3639,7 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Bytes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(Bytes* other);
   friend void swap(Bytes& a, Bytes& b) {
@@ -3597,7 +3750,7 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Template_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(Template* other);
   friend void swap(Template& a, Template& b) {
@@ -3723,7 +3876,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -3917,7 +4070,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -4089,7 +4242,7 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_HTTPRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   void Swap(HTTPRequest* other);
   friend void swap(HTTPRequest& a, HTTPRequest& b) {
@@ -6703,6 +6856,185 @@ inline void Call::set_allocated_app(::std::string* app) {
 
 // -------------------------------------------------------------------
 
+// CallBlast
+
+// string from = 1;
+inline void CallBlast::clear_from() {
+  from_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CallBlast::from() const {
+  // @@protoc_insertion_point(field_get:api.CallBlast.from)
+  return from_.GetNoArena();
+}
+inline void CallBlast::set_from(const ::std::string& value) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CallBlast.from)
+}
+#if LANG_CXX11
+inline void CallBlast::set_from(::std::string&& value) {
+  
+  from_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CallBlast.from)
+}
+#endif
+inline void CallBlast::set_from(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CallBlast.from)
+}
+inline void CallBlast::set_from(const char* value, size_t size) {
+  
+  from_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CallBlast.from)
+}
+inline ::std::string* CallBlast::mutable_from() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CallBlast.from)
+  return from_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CallBlast::release_from() {
+  // @@protoc_insertion_point(field_release:api.CallBlast.from)
+  
+  return from_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CallBlast::set_allocated_from(::std::string* from) {
+  if (from != NULL) {
+    
+  } else {
+    
+  }
+  from_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from);
+  // @@protoc_insertion_point(field_set_allocated:api.CallBlast.from)
+}
+
+// repeated string to = 2;
+inline int CallBlast::to_size() const {
+  return to_.size();
+}
+inline void CallBlast::clear_to() {
+  to_.Clear();
+}
+inline const ::std::string& CallBlast::to(int index) const {
+  // @@protoc_insertion_point(field_get:api.CallBlast.to)
+  return to_.Get(index);
+}
+inline ::std::string* CallBlast::mutable_to(int index) {
+  // @@protoc_insertion_point(field_mutable:api.CallBlast.to)
+  return to_.Mutable(index);
+}
+inline void CallBlast::set_to(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:api.CallBlast.to)
+  to_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void CallBlast::set_to(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:api.CallBlast.to)
+  to_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void CallBlast::set_to(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  to_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:api.CallBlast.to)
+}
+inline void CallBlast::set_to(int index, const char* value, size_t size) {
+  to_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:api.CallBlast.to)
+}
+inline ::std::string* CallBlast::add_to() {
+  // @@protoc_insertion_point(field_add_mutable:api.CallBlast.to)
+  return to_.Add();
+}
+inline void CallBlast::add_to(const ::std::string& value) {
+  to_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:api.CallBlast.to)
+}
+#if LANG_CXX11
+inline void CallBlast::add_to(::std::string&& value) {
+  to_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:api.CallBlast.to)
+}
+#endif
+inline void CallBlast::add_to(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  to_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:api.CallBlast.to)
+}
+inline void CallBlast::add_to(const char* value, size_t size) {
+  to_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:api.CallBlast.to)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+CallBlast::to() const {
+  // @@protoc_insertion_point(field_list:api.CallBlast.to)
+  return to_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+CallBlast::mutable_to() {
+  // @@protoc_insertion_point(field_mutable_list:api.CallBlast.to)
+  return &to_;
+}
+
+// string app = 3;
+inline void CallBlast::clear_app() {
+  app_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& CallBlast::app() const {
+  // @@protoc_insertion_point(field_get:api.CallBlast.app)
+  return app_.GetNoArena();
+}
+inline void CallBlast::set_app(const ::std::string& value) {
+  
+  app_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.CallBlast.app)
+}
+#if LANG_CXX11
+inline void CallBlast::set_app(::std::string&& value) {
+  
+  app_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.CallBlast.app)
+}
+#endif
+inline void CallBlast::set_app(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  app_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.CallBlast.app)
+}
+inline void CallBlast::set_app(const char* value, size_t size) {
+  
+  app_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.CallBlast.app)
+}
+inline ::std::string* CallBlast::mutable_app() {
+  
+  // @@protoc_insertion_point(field_mutable:api.CallBlast.app)
+  return app_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* CallBlast::release_app() {
+  // @@protoc_insertion_point(field_release:api.CallBlast.app)
+  
+  return app_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void CallBlast::set_allocated_app(::std::string* app) {
+  if (app != NULL) {
+    
+  } else {
+    
+  }
+  app_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), app);
+  // @@protoc_insertion_point(field_set_allocated:api.CallBlast.app)
+}
+
+// -------------------------------------------------------------------
+
 // Message
 
 // string value = 1;
@@ -9135,6 +9467,8 @@ inline void HTTPRequest::set_allocated_body(::api::Bytes* body) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/contact/call/blast": {
+      "post": {
+        "operationId": "SendCallBlast",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCallBlast"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
     "/contact/call/{to}": {
       "post": {
         "operationId": "SendCall",
@@ -671,6 +697,23 @@
         },
         "to": {
           "type": "string"
+        },
+        "app": {
+          "type": "string"
+        }
+      }
+    },
+    "apiCallBlast": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "app": {
           "type": "string"

@@ -400,6 +400,26 @@ typedef GPB_ENUM(Call_FieldNumber) {
 
 @end
 
+#pragma mark - CallBlast
+
+typedef GPB_ENUM(CallBlast_FieldNumber) {
+  CallBlast_FieldNumber_From = 1,
+  CallBlast_FieldNumber_ToArray = 2,
+  CallBlast_FieldNumber_App = 3,
+};
+
+@interface CallBlast : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *from;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *toArray;
+/** The number of items in @c toArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger toArray_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *app;
+
+@end
+
 #pragma mark - Message
 
 typedef GPB_ENUM(Message_FieldNumber) {

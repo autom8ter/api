@@ -874,6 +874,92 @@ func (m *Call) XXX_Size() int
 func (m *Call) XXX_Unmarshal(b []byte) error
 ```
 
+#### type CallBlast
+
+```go
+type CallBlast struct {
+	From                 string   `protobuf:"bytes,1,opt,name=from,proto3" json:"from,omitempty"`
+	To                   []string `protobuf:"bytes,2,rep,name=to,proto3" json:"to,omitempty"`
+	App                  string   `protobuf:"bytes,3,opt,name=app,proto3" json:"app,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*CallBlast) Descriptor
+
+```go
+func (*CallBlast) Descriptor() ([]byte, []int)
+```
+
+#### func (*CallBlast) GetApp
+
+```go
+func (m *CallBlast) GetApp() string
+```
+
+#### func (*CallBlast) GetFrom
+
+```go
+func (m *CallBlast) GetFrom() string
+```
+
+#### func (*CallBlast) GetTo
+
+```go
+func (m *CallBlast) GetTo() []string
+```
+
+#### func (*CallBlast) ProtoMessage
+
+```go
+func (*CallBlast) ProtoMessage()
+```
+
+#### func (*CallBlast) Reset
+
+```go
+func (m *CallBlast) Reset()
+```
+
+#### func (*CallBlast) String
+
+```go
+func (m *CallBlast) String() string
+```
+
+#### func (*CallBlast) XXX_DiscardUnknown
+
+```go
+func (m *CallBlast) XXX_DiscardUnknown()
+```
+
+#### func (*CallBlast) XXX_Marshal
+
+```go
+func (m *CallBlast) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*CallBlast) XXX_Merge
+
+```go
+func (m *CallBlast) XXX_Merge(src proto.Message)
+```
+
+#### func (*CallBlast) XXX_Size
+
+```go
+func (m *CallBlast) XXX_Size() int
+```
+
+#### func (*CallBlast) XXX_Unmarshal
+
+```go
+func (m *CallBlast) XXX_Unmarshal(b []byte) error
+```
+
 #### type Card
 
 ```go
@@ -995,6 +1081,7 @@ type ContactServiceClient interface {
 	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*Message, error)
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*Bytes, error)
+	SendCallBlast(ctx context.Context, in *CallBlast, opts ...grpc.CallOption) (*Bytes, error)
 }
 ```
 
@@ -1019,6 +1106,7 @@ type ContactServiceServer interface {
 	SendEmail(context.Context, *EmailRequest) (*Message, error)
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*Bytes, error)
+	SendCallBlast(context.Context, *CallBlast) (*Bytes, error)
 }
 ```
 
