@@ -195,11 +195,19 @@
                 </li>
               
                 <li>
+                  <a href="#api.Dashboard"><span class="badge">M</span>Dashboard</a>
+                </li>
+              
+                <li>
                   <a href="#api.Email"><span class="badge">M</span>Email</a>
                 </li>
               
                 <li>
                   <a href="#api.EmailRequest"><span class="badge">M</span>EmailRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Empty"><span class="badge">M</span>Empty</a>
                 </li>
               
                 <li>
@@ -235,6 +243,18 @@
               
                 <li>
                   <a href="#api.ContactService"><span class="badge">S</span>ContactService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.DashboardService"><span class="badge">S</span>DashboardService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.PaymentService"><span class="badge">S</span>PaymentService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.UserService"><span class="badge">S</span>UserService</a>
                 </li>
               
                 <li>
@@ -418,6 +438,57 @@
 
         
       
+        <h3 id="api.Dashboard">Dashboard</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>total_users</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total_customers</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total_plans</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total_subscriptions</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total_charges</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Email">Email</h3>
         <p></p>
 
@@ -502,6 +573,13 @@
               
             </tbody>
           </table>
+        
+
+        
+      
+        <h3 id="api.Empty">Empty</h3>
+        <p></p>
+
         
 
         
@@ -848,6 +926,60 @@
                 <td><a href="#api.Identifier">Identifier</a></td>
                 <td><p></p></td>
               </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.DashboardService">DashboardService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetDashboard</td>
+                <td><a href="#api.Empty">Empty</a></td>
+                <td><a href="#api.Dashboard">Dashboard</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.PaymentService">PaymentService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Subscribe</td>
+                <td><a href="#api.Call">Call</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Unsubscribe</td>
+                <td><a href="#api.Call">Call</a></td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.UserService">UserService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
             
           </tbody>
         </table>

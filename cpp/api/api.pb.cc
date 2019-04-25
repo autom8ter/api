@@ -28,6 +28,16 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SMS;
 }  // namespace protobuf_api_2eproto
 namespace api {
+class EmptyDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Empty>
+      _instance;
+} _Empty_default_instance_;
+class DashboardDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Dashboard>
+      _instance;
+} _Dashboard_default_instance_;
 class IdentifierDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Identifier>
@@ -95,6 +105,34 @@ class TemplateDefaultTypeInternal {
 } _Template_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
+static void InitDefaultsEmpty() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_Empty_default_instance_;
+    new (ptr) ::api::Empty();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::Empty::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Empty =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmpty}, {}};
+
+static void InitDefaultsDashboard() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_Dashboard_default_instance_;
+    new (ptr) ::api::Dashboard();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::Dashboard::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_Dashboard =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDashboard}, {}};
+
 static void InitDefaultsIdentifier() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -284,6 +322,8 @@ static void InitDefaultsTemplate() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTemplate}, {}};
 
 void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_Empty.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Dashboard.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Identifier.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SMSStatus.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SMS.base);
@@ -299,9 +339,24 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Template.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[13];
+::google::protobuf::Metadata file_level_metadata[15];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Empty, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Dashboard, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Dashboard, total_users_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Dashboard, total_customers_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Dashboard, total_plans_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Dashboard, total_subscriptions_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Dashboard, total_charges_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Identifier, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -418,22 +473,26 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Template, data_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::api::Identifier)},
-  { 6, -1, sizeof(::api::SMSStatus)},
-  { 15, -1, sizeof(::api::SMS)},
-  { 26, -1, sizeof(::api::EmailRequest)},
-  { 34, -1, sizeof(::api::Email)},
-  { 44, -1, sizeof(::api::Call)},
-  { 52, -1, sizeof(::api::Message)},
-  { 58, -1, sizeof(::api::UserInfo)},
-  { 72, -1, sizeof(::api::UserMetadata)},
-  { 81, -1, sizeof(::api::AppMetadata)},
-  { 90, -1, sizeof(::api::Auth)},
-  { 101, -1, sizeof(::api::Bytes)},
-  { 107, -1, sizeof(::api::Template)},
+  { 0, -1, sizeof(::api::Empty)},
+  { 5, -1, sizeof(::api::Dashboard)},
+  { 15, -1, sizeof(::api::Identifier)},
+  { 21, -1, sizeof(::api::SMSStatus)},
+  { 30, -1, sizeof(::api::SMS)},
+  { 41, -1, sizeof(::api::EmailRequest)},
+  { 49, -1, sizeof(::api::Email)},
+  { 59, -1, sizeof(::api::Call)},
+  { 67, -1, sizeof(::api::Message)},
+  { 73, -1, sizeof(::api::UserInfo)},
+  { 87, -1, sizeof(::api::UserMetadata)},
+  { 96, -1, sizeof(::api::AppMetadata)},
+  { 105, -1, sizeof(::api::Auth)},
+  { 116, -1, sizeof(::api::Bytes)},
+  { 122, -1, sizeof(::api::Template)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Empty_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Dashboard_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Identifier_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SMSStatus_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SMS_default_instance_),
@@ -464,70 +523,80 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 15);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations"
-      ".proto\"\030\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"\\\n\tSMSS"
-      "tatus\022\033\n\002id\030\001 \001(\0132\017.api.Identifier\022\025\n\003sm"
-      "s\030\002 \001(\0132\010.api.SMS\022\016\n\006status\030\003 \001(\t\022\013\n\003uri"
-      "\030\004 \001(\t\"r\n\003SMS\022\017\n\007service\030\001 \001(\t\022\n\n\002to\030\002 \001"
-      "(\t\022\035\n\007message\030\003 \001(\0132\014.api.Message\022\020\n\010med"
-      "iaURL\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001"
-      "(\t\"P\n\014EmailRequest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n"
-      "\nfrom_email\030\002 \001(\t\022\031\n\005email\030\003 \001(\0132\n.api.E"
-      "mail\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002"
-      " \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004"
-      "html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002"
-      " \001(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Message\022\r\n\005value\030\001 "
-      "\001(\t\"\326\001\n\010UserInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiven_"
-      "name\030\007 \001(\t\022\023\n\013family_name\030\010 \001(\t\022\016\n\006gende"
-      "r\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005email\030\013 \001("
-      "\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_metadata\030\r \001("
-      "\0132\021.api.UserMetadata\022&\n\014app_metadata\030\016 \001"
-      "(\0132\020.api.AppMetadata\"V\n\014UserMetadata\022\r\n\005"
-      "phone\030\001 \001(\t\022\031\n\021preferred_contact\030\002 \001(\t\022\016"
-      "\n\006status\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"P\n\013AppMetad"
-      "ata\022\014\n\004plan\030\001 \001(\t\022\021\n\tpay_token\030\002 \001(\t\022\022\n\n"
-      "delinquent\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016"
-      "\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rcli"
-      "ent_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010au"
-      "dience\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n"
-      "\004bits\030\001 \001(\014\"&\n\010Template\022\014\n\004text\030\001 \001(\t\022\014\n"
-      "\004data\030\002 \001(\0142\350\005\n\016UtilityService\022<\n\004Echo\022\014"
-      ".api.Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/uti"
-      "lity/echo:\001*\022K\n\013EchoSpanish\022\014.api.Messag"
-      "e\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/echo/s"
-      "panish:\001*\022K\n\013EchoChinese\022\014.api.Message\032\014"
-      ".api.Message\" \202\323\344\223\002\032\"\025/utility/echo/chin"
-      "ese:\001*\022K\n\013EchoEnglish\022\014.api.Message\032\014.ap"
-      "i.Message\" \202\323\344\223\002\032\"\025/utility/echo/english"
-      ":\001*\022G\n\tEchoHindi\022\014.api.Message\032\014.api.Mes"
-      "sage\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I\n\n"
-      "EchoArabic\022\014.api.Message\032\014.api.Message\"\037"
-      "\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*\022G\n\013Marsh"
-      "alJSON\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025"
-      "/utility/marshal/json:\001*\022G\n\013MarshalYAML\022"
-      "\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utilit"
-      "y/marshal/yaml:\001*\022E\n\nMarshalXML\022\n.api.By"
-      "tes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marsha"
-      "l/xml:\001*\022D\n\006Render\022\r.api.Template\032\n.api."
-      "Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:\001*2\275"
-      "\002\n\016ContactService\022B\n\007SendSMS\022\010.api.SMS\032\017"
-      ".api.Identifier\"\034\202\323\344\223\002\026\"\021/contact/sms/{t"
-      "o}:\001*\022G\n\006GetSMS\022\017.api.Identifier\032\016.api.S"
-      "MSStatus\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*\022W"
-      "\n\tSendEmail\022\021.api.EmailRequest\032\014.api.Mes"
-      "sage\")\202\323\344\223\002#\"\036/contact/email/{email.addr"
-      "ess}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.Ide"
-      "ntifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*b\006"
-      "proto3"
+      ".proto\"\007\n\005Empty\"\202\001\n\tDashboard\022\023\n\013total_u"
+      "sers\030\001 \001(\003\022\027\n\017total_customers\030\002 \001(\003\022\023\n\013t"
+      "otal_plans\030\003 \001(\003\022\033\n\023total_subscriptions\030"
+      "\004 \001(\003\022\025\n\rtotal_charges\030\005 \001(\003\"\030\n\nIdentifi"
+      "er\022\n\n\002id\030\001 \001(\t\"\\\n\tSMSStatus\022\033\n\002id\030\001 \001(\0132"
+      "\017.api.Identifier\022\025\n\003sms\030\002 \001(\0132\010.api.SMS\022"
+      "\016\n\006status\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\"r\n\003SMS\022\017\n\007s"
+      "ervice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001("
+      "\0132\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010cal"
+      "lback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest"
+      "\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022"
+      "\031\n\005email\030\003 \001(\0132\n.api.Email\"T\n\005Email\022\014\n\004n"
+      "ame\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007subject\030\003 "
+      "\001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"-\n\004Call"
+      "\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\013\n\003app\030\003 \001(\t\""
+      "\030\n\007Message\022\r\n\005value\030\001 \001(\t\"\326\001\n\010UserInfo\022\014"
+      "\n\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013fami"
+      "ly_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthda"
+      "te\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t"
+      "\022(\n\ruser_metadata\030\r \001(\0132\021.api.UserMetada"
+      "ta\022&\n\014app_metadata\030\016 \001(\0132\020.api.AppMetada"
+      "ta\"V\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021pre"
+      "ferred_contact\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\014\n\004"
+      "tags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022"
+      "\021\n\tpay_token\030\002 \001(\t\022\022\n\ndelinquent\030\003 \001(\t\022\014"
+      "\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\t"
+      "client_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t\022\020"
+      "\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001(\t\022\016\n\006sc"
+      "opes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Tem"
+      "plate\022\014\n\004text\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\350\005\n\016Ut"
+      "ilityService\022<\n\004Echo\022\014.api.Message\032\014.api"
+      ".Message\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013Ec"
+      "hoSpanish\022\014.api.Message\032\014.api.Message\" \202"
+      "\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoC"
+      "hinese\022\014.api.Message\032\014.api.Message\" \202\323\344\223"
+      "\002\032\"\025/utility/echo/chinese:\001*\022K\n\013EchoEngl"
+      "ish\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\""
+      "\025/utility/echo/english:\001*\022G\n\tEchoHindi\022\014"
+      ".api.Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/uti"
+      "lity/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.M"
+      "essage\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/e"
+      "cho/arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes"
+      "\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/j"
+      "son:\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api."
+      "Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022"
+      "E\n\nMarshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202"
+      "\323\344\223\002\031\"\024/utility/marshal/xml:\001*\022D\n\006Render"
+      "\022\r.api.Template\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/ut"
+      "ility/marshal/xml:\001*2\275\002\n\016ContactService\022"
+      "B\n\007SendSMS\022\010.api.SMS\032\017.api.Identifier\"\034\202"
+      "\323\344\223\002\026\"\021/contact/sms/{to}:\001*\022G\n\006GetSMS\022\017."
+      "api.Identifier\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021"
+      "/contact/sms/{id}:\001*\022W\n\tSendEmail\022\021.api."
+      "EmailRequest\032\014.api.Message\")\202\323\344\223\002#\"\036/con"
+      "tact/email/{email.address}:\001*\022E\n\010SendCal"
+      "l\022\t.api.Call\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/"
+      "contact/call/{to}:\001*2\256\001\n\016PaymentService\022"
+      "K\n\tSubscribe\022\t.api.Call\032\017.api.Identifier"
+      "\"\"\202\323\344\223\002\034\"\027/payment/subscribe/{to}:\001*\022O\n\013"
+      "Unsubscribe\022\t.api.Call\032\017.api.Identifier\""
+      "$\202\323\344\223\002\036\"\031/payment/unsubscribe/{to}:\001*2\r\n"
+      "\013UserService2U\n\020DashboardService\022A\n\014GetD"
+      "ashboard\022\n.api.Empty\032\016.api.Dashboard\"\025\202\323"
+      "\344\223\002\017\"\n/dashboard:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2166);
+      descriptor, 2587);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -545,6 +614,558 @@ struct StaticDescriptorInitializer {
 } static_descriptor_initializer;
 }  // namespace protobuf_api_2eproto
 namespace api {
+
+// ===================================================================
+
+void Empty::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Empty::Empty()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_Empty.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.Empty)
+}
+Empty::Empty(const Empty& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:api.Empty)
+}
+
+void Empty::SharedCtor() {
+}
+
+Empty::~Empty() {
+  // @@protoc_insertion_point(destructor:api.Empty)
+  SharedDtor();
+}
+
+void Empty::SharedDtor() {
+}
+
+void Empty::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Empty::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Empty& Empty::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Empty.base);
+  return *internal_default_instance();
+}
+
+
+void Empty::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+bool Empty::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.Empty)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.Empty)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.Empty)
+  return false;
+#undef DO_
+}
+
+void Empty::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.Empty)
+}
+
+::google::protobuf::uint8* Empty::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.Empty)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.Empty)
+  return target;
+}
+
+size_t Empty::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Empty)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Empty::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Empty)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Empty* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Empty>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Empty)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Empty)
+    MergeFrom(*source);
+  }
+}
+
+void Empty::MergeFrom(const Empty& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Empty)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void Empty::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Empty)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Empty::CopyFrom(const Empty& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Empty)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Empty::IsInitialized() const {
+  return true;
+}
+
+void Empty::Swap(Empty* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Empty::InternalSwap(Empty* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Empty::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void Dashboard::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Dashboard::kTotalUsersFieldNumber;
+const int Dashboard::kTotalCustomersFieldNumber;
+const int Dashboard::kTotalPlansFieldNumber;
+const int Dashboard::kTotalSubscriptionsFieldNumber;
+const int Dashboard::kTotalChargesFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Dashboard::Dashboard()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_Dashboard.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.Dashboard)
+}
+Dashboard::Dashboard(const Dashboard& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&total_users_, &from.total_users_,
+    static_cast<size_t>(reinterpret_cast<char*>(&total_charges_) -
+    reinterpret_cast<char*>(&total_users_)) + sizeof(total_charges_));
+  // @@protoc_insertion_point(copy_constructor:api.Dashboard)
+}
+
+void Dashboard::SharedCtor() {
+  ::memset(&total_users_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_charges_) -
+      reinterpret_cast<char*>(&total_users_)) + sizeof(total_charges_));
+}
+
+Dashboard::~Dashboard() {
+  // @@protoc_insertion_point(destructor:api.Dashboard)
+  SharedDtor();
+}
+
+void Dashboard::SharedDtor() {
+}
+
+void Dashboard::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Dashboard::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Dashboard& Dashboard::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Dashboard.base);
+  return *internal_default_instance();
+}
+
+
+void Dashboard::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Dashboard)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&total_users_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_charges_) -
+      reinterpret_cast<char*>(&total_users_)) + sizeof(total_charges_));
+  _internal_metadata_.Clear();
+}
+
+bool Dashboard::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.Dashboard)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 total_users = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &total_users_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 total_customers = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &total_customers_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 total_plans = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &total_plans_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 total_subscriptions = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &total_subscriptions_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 total_charges = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &total_charges_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.Dashboard)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.Dashboard)
+  return false;
+#undef DO_
+}
+
+void Dashboard::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.Dashboard)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 total_users = 1;
+  if (this->total_users() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->total_users(), output);
+  }
+
+  // int64 total_customers = 2;
+  if (this->total_customers() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->total_customers(), output);
+  }
+
+  // int64 total_plans = 3;
+  if (this->total_plans() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->total_plans(), output);
+  }
+
+  // int64 total_subscriptions = 4;
+  if (this->total_subscriptions() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->total_subscriptions(), output);
+  }
+
+  // int64 total_charges = 5;
+  if (this->total_charges() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->total_charges(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.Dashboard)
+}
+
+::google::protobuf::uint8* Dashboard::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.Dashboard)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 total_users = 1;
+  if (this->total_users() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->total_users(), target);
+  }
+
+  // int64 total_customers = 2;
+  if (this->total_customers() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->total_customers(), target);
+  }
+
+  // int64 total_plans = 3;
+  if (this->total_plans() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->total_plans(), target);
+  }
+
+  // int64 total_subscriptions = 4;
+  if (this->total_subscriptions() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->total_subscriptions(), target);
+  }
+
+  // int64 total_charges = 5;
+  if (this->total_charges() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->total_charges(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.Dashboard)
+  return target;
+}
+
+size_t Dashboard::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Dashboard)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // int64 total_users = 1;
+  if (this->total_users() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->total_users());
+  }
+
+  // int64 total_customers = 2;
+  if (this->total_customers() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->total_customers());
+  }
+
+  // int64 total_plans = 3;
+  if (this->total_plans() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->total_plans());
+  }
+
+  // int64 total_subscriptions = 4;
+  if (this->total_subscriptions() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->total_subscriptions());
+  }
+
+  // int64 total_charges = 5;
+  if (this->total_charges() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->total_charges());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Dashboard::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Dashboard)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Dashboard* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Dashboard>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Dashboard)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Dashboard)
+    MergeFrom(*source);
+  }
+}
+
+void Dashboard::MergeFrom(const Dashboard& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Dashboard)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.total_users() != 0) {
+    set_total_users(from.total_users());
+  }
+  if (from.total_customers() != 0) {
+    set_total_customers(from.total_customers());
+  }
+  if (from.total_plans() != 0) {
+    set_total_plans(from.total_plans());
+  }
+  if (from.total_subscriptions() != 0) {
+    set_total_subscriptions(from.total_subscriptions());
+  }
+  if (from.total_charges() != 0) {
+    set_total_charges(from.total_charges());
+  }
+}
+
+void Dashboard::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Dashboard)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Dashboard::CopyFrom(const Dashboard& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Dashboard)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Dashboard::IsInitialized() const {
+  return true;
+}
+
+void Dashboard::Swap(Dashboard* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Dashboard::InternalSwap(Dashboard* other) {
+  using std::swap;
+  swap(total_users_, other->total_users_);
+  swap(total_customers_, other->total_customers_);
+  swap(total_plans_, other->total_plans_);
+  swap(total_subscriptions_, other->total_subscriptions_);
+  swap(total_charges_, other->total_charges_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Dashboard::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
 
 // ===================================================================
 
@@ -5690,6 +6311,12 @@ void Template::InternalSwap(Template* other) {
 }  // namespace api
 namespace google {
 namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Empty* Arena::CreateMaybeMessage< ::api::Empty >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Empty >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Dashboard* Arena::CreateMaybeMessage< ::api::Dashboard >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Dashboard >(arena);
+}
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Identifier* Arena::CreateMaybeMessage< ::api::Identifier >(Arena* arena) {
   return Arena::CreateInternal< ::api::Identifier >(arena);
 }

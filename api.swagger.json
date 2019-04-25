@@ -143,6 +143,96 @@
         ]
       }
     },
+    "/dashboard": {
+      "post": {
+        "operationId": "GetDashboard",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiDashboard"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiEmpty"
+            }
+          }
+        ],
+        "tags": [
+          "DashboardService"
+        ]
+      }
+    },
+    "/payment/subscribe/{to}": {
+      "post": {
+        "operationId": "Subscribe",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "to",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCall"
+            }
+          }
+        ],
+        "tags": [
+          "PaymentService"
+        ]
+      }
+    },
+    "/payment/unsubscribe/{to}": {
+      "post": {
+        "operationId": "Unsubscribe",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "to",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCall"
+            }
+          }
+        ],
+        "tags": [
+          "PaymentService"
+        ]
+      }
+    },
     "/utility/echo": {
       "post": {
         "operationId": "Echo",
@@ -402,6 +492,31 @@
         }
       }
     },
+    "apiDashboard": {
+      "type": "object",
+      "properties": {
+        "total_users": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total_customers": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total_plans": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total_subscriptions": {
+          "type": "string",
+          "format": "int64"
+        },
+        "total_charges": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
     "apiEmail": {
       "type": "object",
       "properties": {
@@ -435,6 +550,9 @@
           "$ref": "#/definitions/apiEmail"
         }
       }
+    },
+    "apiEmpty": {
+      "type": "object"
     },
     "apiIdentifier": {
       "type": "object",

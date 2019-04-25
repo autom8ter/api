@@ -25,57 +25,68 @@ namespace Api {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
-            "byIYCgpJZGVudGlmaWVyEgoKAmlkGAEgASgJIlwKCVNNU1N0YXR1cxIbCgJp",
-            "ZBgBIAEoCzIPLmFwaS5JZGVudGlmaWVyEhUKA3NtcxgCIAEoCzIILmFwaS5T",
-            "TVMSDgoGc3RhdHVzGAMgASgJEgsKA3VyaRgEIAEoCSJyCgNTTVMSDwoHc2Vy",
-            "dmljZRgBIAEoCRIKCgJ0bxgCIAEoCRIdCgdtZXNzYWdlGAMgASgLMgwuYXBp",
-            "Lk1lc3NhZ2USEAoIbWVkaWFVUkwYBCABKAkSEAoIY2FsbGJhY2sYBSABKAkS",
-            "CwoDYXBwGAYgASgJIlAKDEVtYWlsUmVxdWVzdBIRCglmcm9tX25hbWUYASAB",
-            "KAkSEgoKZnJvbV9lbWFpbBgCIAEoCRIZCgVlbWFpbBgDIAEoCzIKLmFwaS5F",
-            "bWFpbCJUCgVFbWFpbBIMCgRuYW1lGAEgASgJEg8KB2FkZHJlc3MYAiABKAkS",
-            "DwoHc3ViamVjdBgDIAEoCRINCgVwbGFpbhgEIAEoCRIMCgRodG1sGAUgASgJ",
-            "Ii0KBENhbGwSDAoEZnJvbRgBIAEoCRIKCgJ0bxgCIAEoCRILCgNhcHAYAyAB",
-            "KAkiGAoHTWVzc2FnZRINCgV2YWx1ZRgBIAEoCSLWAQoIVXNlckluZm8SDAoE",
-            "bmFtZRgGIAEoCRISCgpnaXZlbl9uYW1lGAcgASgJEhMKC2ZhbWlseV9uYW1l",
-            "GAggASgJEg4KBmdlbmRlchgJIAEoCRIRCgliaXJ0aGRhdGUYCiABKAkSDQoF",
-            "ZW1haWwYCyABKAkSDwoHcGljdHVyZRgMIAEoCRIoCg11c2VyX21ldGFkYXRh",
-            "GA0gASgLMhEuYXBpLlVzZXJNZXRhZGF0YRImCgxhcHBfbWV0YWRhdGEYDiAB",
-            "KAsyEC5hcGkuQXBwTWV0YWRhdGEiVgoMVXNlck1ldGFkYXRhEg0KBXBob25l",
-            "GAEgASgJEhkKEXByZWZlcnJlZF9jb250YWN0GAIgASgJEg4KBnN0YXR1cxgD",
-            "IAEoCRIMCgR0YWdzGAQgAygJIlAKC0FwcE1ldGFkYXRhEgwKBHBsYW4YASAB",
-            "KAkSEQoJcGF5X3Rva2VuGAIgASgJEhIKCmRlbGlucXVlbnQYAyABKAkSDAoE",
-            "dGFncxgEIAMoCSJ0CgRBdXRoEg4KBmRvbWFpbhgBIAEoCRIRCgljbGllbnRf",
-            "aWQYAiABKAkSFQoNY2xpZW50X3NlY3JldBgDIAEoCRIQCghyZWRpcmVjdBgE",
-            "IAEoCRIQCghhdWRpZW5jZRgFIAEoCRIOCgZzY29wZXMYBiADKAkiFQoFQnl0",
-            "ZXMSDAoEYml0cxgBIAEoDCImCghUZW1wbGF0ZRIMCgR0ZXh0GAEgASgJEgwK",
-            "BGRhdGEYAiABKAwy6AUKDlV0aWxpdHlTZXJ2aWNlEjwKBEVjaG8SDC5hcGku",
-            "TWVzc2FnZRoMLmFwaS5NZXNzYWdlIhiC0+STAhIiDS91dGlsaXR5L2VjaG86",
-            "ASoSSwoLRWNob1NwYW5pc2gSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdl",
-            "IiCC0+STAhoiFS91dGlsaXR5L2VjaG8vc3BhbmlzaDoBKhJLCgtFY2hvQ2hp",
-            "bmVzZRIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT5JMCGiIVL3V0",
-            "aWxpdHkvZWNoby9jaGluZXNlOgEqEksKC0VjaG9FbmdsaXNoEgwuYXBpLk1l",
-            "c3NhZ2UaDC5hcGkuTWVzc2FnZSIggtPkkwIaIhUvdXRpbGl0eS9lY2hvL2Vu",
-            "Z2xpc2g6ASoSRwoJRWNob0hpbmRpEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVz",
-            "c2FnZSIegtPkkwIYIhMvdXRpbGl0eS9lY2hvL2hpbmRpOgEqEkkKCkVjaG9B",
-            "cmFiaWMSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIh+C0+STAhkiFC91",
-            "dGlsaXR5L2VjaG8vYXJhYmljOgEqEkcKC01hcnNoYWxKU09OEgouYXBpLkJ5",
-            "dGVzGgouYXBpLkJ5dGVzIiCC0+STAhoiFS91dGlsaXR5L21hcnNoYWwvanNv",
-            "bjoBKhJHCgtNYXJzaGFsWUFNTBIKLmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIg",
-            "gtPkkwIaIhUvdXRpbGl0eS9tYXJzaGFsL3lhbWw6ASoSRQoKTWFyc2hhbFhN",
-            "TBIKLmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIfgtPkkwIZIhQvdXRpbGl0eS9t",
-            "YXJzaGFsL3htbDoBKhJECgZSZW5kZXISDS5hcGkuVGVtcGxhdGUaCi5hcGku",
-            "Qnl0ZXMiH4LT5JMCGSIUL3V0aWxpdHkvbWFyc2hhbC94bWw6ASoyvQIKDkNv",
-            "bnRhY3RTZXJ2aWNlEkIKB1NlbmRTTVMSCC5hcGkuU01TGg8uYXBpLklkZW50",
-            "aWZpZXIiHILT5JMCFiIRL2NvbnRhY3Qvc21zL3t0b306ASoSRwoGR2V0U01T",
-            "Eg8uYXBpLklkZW50aWZpZXIaDi5hcGkuU01TU3RhdHVzIhyC0+STAhYiES9j",
-            "b250YWN0L3Ntcy97aWR9OgEqElcKCVNlbmRFbWFpbBIRLmFwaS5FbWFpbFJl",
-            "cXVlc3QaDC5hcGkuTWVzc2FnZSIpgtPkkwIjIh4vY29udGFjdC9lbWFpbC97",
-            "ZW1haWwuYWRkcmVzc306ASoSRQoIU2VuZENhbGwSCS5hcGkuQ2FsbBoPLmFw",
-            "aS5JZGVudGlmaWVyIh2C0+STAhciEi9jb250YWN0L2NhbGwve3RvfToBKmIG",
-            "cHJvdG8z"));
+            "byIHCgVFbXB0eSKCAQoJRGFzaGJvYXJkEhMKC3RvdGFsX3VzZXJzGAEgASgD",
+            "EhcKD3RvdGFsX2N1c3RvbWVycxgCIAEoAxITCgt0b3RhbF9wbGFucxgDIAEo",
+            "AxIbChN0b3RhbF9zdWJzY3JpcHRpb25zGAQgASgDEhUKDXRvdGFsX2NoYXJn",
+            "ZXMYBSABKAMiGAoKSWRlbnRpZmllchIKCgJpZBgBIAEoCSJcCglTTVNTdGF0",
+            "dXMSGwoCaWQYASABKAsyDy5hcGkuSWRlbnRpZmllchIVCgNzbXMYAiABKAsy",
+            "CC5hcGkuU01TEg4KBnN0YXR1cxgDIAEoCRILCgN1cmkYBCABKAkicgoDU01T",
+            "Eg8KB3NlcnZpY2UYASABKAkSCgoCdG8YAiABKAkSHQoHbWVzc2FnZRgDIAEo",
+            "CzIMLmFwaS5NZXNzYWdlEhAKCG1lZGlhVVJMGAQgASgJEhAKCGNhbGxiYWNr",
+            "GAUgASgJEgsKA2FwcBgGIAEoCSJQCgxFbWFpbFJlcXVlc3QSEQoJZnJvbV9u",
+            "YW1lGAEgASgJEhIKCmZyb21fZW1haWwYAiABKAkSGQoFZW1haWwYAyABKAsy",
+            "Ci5hcGkuRW1haWwiVAoFRW1haWwSDAoEbmFtZRgBIAEoCRIPCgdhZGRyZXNz",
+            "GAIgASgJEg8KB3N1YmplY3QYAyABKAkSDQoFcGxhaW4YBCABKAkSDAoEaHRt",
+            "bBgFIAEoCSItCgRDYWxsEgwKBGZyb20YASABKAkSCgoCdG8YAiABKAkSCwoD",
+            "YXBwGAMgASgJIhgKB01lc3NhZ2USDQoFdmFsdWUYASABKAki1gEKCFVzZXJJ",
+            "bmZvEgwKBG5hbWUYBiABKAkSEgoKZ2l2ZW5fbmFtZRgHIAEoCRITCgtmYW1p",
+            "bHlfbmFtZRgIIAEoCRIOCgZnZW5kZXIYCSABKAkSEQoJYmlydGhkYXRlGAog",
+            "ASgJEg0KBWVtYWlsGAsgASgJEg8KB3BpY3R1cmUYDCABKAkSKAoNdXNlcl9t",
+            "ZXRhZGF0YRgNIAEoCzIRLmFwaS5Vc2VyTWV0YWRhdGESJgoMYXBwX21ldGFk",
+            "YXRhGA4gASgLMhAuYXBpLkFwcE1ldGFkYXRhIlYKDFVzZXJNZXRhZGF0YRIN",
+            "CgVwaG9uZRgBIAEoCRIZChFwcmVmZXJyZWRfY29udGFjdBgCIAEoCRIOCgZz",
+            "dGF0dXMYAyABKAkSDAoEdGFncxgEIAMoCSJQCgtBcHBNZXRhZGF0YRIMCgRw",
+            "bGFuGAEgASgJEhEKCXBheV90b2tlbhgCIAEoCRISCgpkZWxpbnF1ZW50GAMg",
+            "ASgJEgwKBHRhZ3MYBCADKAkidAoEQXV0aBIOCgZkb21haW4YASABKAkSEQoJ",
+            "Y2xpZW50X2lkGAIgASgJEhUKDWNsaWVudF9zZWNyZXQYAyABKAkSEAoIcmVk",
+            "aXJlY3QYBCABKAkSEAoIYXVkaWVuY2UYBSABKAkSDgoGc2NvcGVzGAYgAygJ",
+            "IhUKBUJ5dGVzEgwKBGJpdHMYASABKAwiJgoIVGVtcGxhdGUSDAoEdGV4dBgB",
+            "IAEoCRIMCgRkYXRhGAIgASgMMugFCg5VdGlsaXR5U2VydmljZRI8CgRFY2hv",
+            "EgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIYgtPkkwISIg0vdXRpbGl0",
+            "eS9lY2hvOgEqEksKC0VjaG9TcGFuaXNoEgwuYXBpLk1lc3NhZ2UaDC5hcGku",
+            "TWVzc2FnZSIggtPkkwIaIhUvdXRpbGl0eS9lY2hvL3NwYW5pc2g6ASoSSwoL",
+            "RWNob0NoaW5lc2USDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIiCC0+ST",
+            "AhoiFS91dGlsaXR5L2VjaG8vY2hpbmVzZToBKhJLCgtFY2hvRW5nbGlzaBIM",
+            "LmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT5JMCGiIVL3V0aWxpdHkv",
+            "ZWNoby9lbmdsaXNoOgEqEkcKCUVjaG9IaW5kaRIMLmFwaS5NZXNzYWdlGgwu",
+            "YXBpLk1lc3NhZ2UiHoLT5JMCGCITL3V0aWxpdHkvZWNoby9oaW5kaToBKhJJ",
+            "CgpFY2hvQXJhYmljEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIfgtPk",
+            "kwIZIhQvdXRpbGl0eS9lY2hvL2FyYWJpYzoBKhJHCgtNYXJzaGFsSlNPThIK",
+            "LmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIggtPkkwIaIhUvdXRpbGl0eS9tYXJz",
+            "aGFsL2pzb246ASoSRwoLTWFyc2hhbFlBTUwSCi5hcGkuQnl0ZXMaCi5hcGku",
+            "Qnl0ZXMiIILT5JMCGiIVL3V0aWxpdHkvbWFyc2hhbC95YW1sOgEqEkUKCk1h",
+            "cnNoYWxYTUwSCi5hcGkuQnl0ZXMaCi5hcGkuQnl0ZXMiH4LT5JMCGSIUL3V0",
+            "aWxpdHkvbWFyc2hhbC94bWw6ASoSRAoGUmVuZGVyEg0uYXBpLlRlbXBsYXRl",
+            "GgouYXBpLkJ5dGVzIh+C0+STAhkiFC91dGlsaXR5L21hcnNoYWwveG1sOgEq",
+            "Mr0CCg5Db250YWN0U2VydmljZRJCCgdTZW5kU01TEgguYXBpLlNNUxoPLmFw",
+            "aS5JZGVudGlmaWVyIhyC0+STAhYiES9jb250YWN0L3Ntcy97dG99OgEqEkcK",
+            "BkdldFNNUxIPLmFwaS5JZGVudGlmaWVyGg4uYXBpLlNNU1N0YXR1cyIcgtPk",
+            "kwIWIhEvY29udGFjdC9zbXMve2lkfToBKhJXCglTZW5kRW1haWwSES5hcGku",
+            "RW1haWxSZXF1ZXN0GgwuYXBpLk1lc3NhZ2UiKYLT5JMCIyIeL2NvbnRhY3Qv",
+            "ZW1haWwve2VtYWlsLmFkZHJlc3N9OgEqEkUKCFNlbmRDYWxsEgkuYXBpLkNh",
+            "bGwaDy5hcGkuSWRlbnRpZmllciIdgtPkkwIXIhIvY29udGFjdC9jYWxsL3t0",
+            "b306ASoyrgEKDlBheW1lbnRTZXJ2aWNlEksKCVN1YnNjcmliZRIJLmFwaS5D",
+            "YWxsGg8uYXBpLklkZW50aWZpZXIiIoLT5JMCHCIXL3BheW1lbnQvc3Vic2Ny",
+            "aWJlL3t0b306ASoSTwoLVW5zdWJzY3JpYmUSCS5hcGkuQ2FsbBoPLmFwaS5J",
+            "ZGVudGlmaWVyIiSC0+STAh4iGS9wYXltZW50L3Vuc3Vic2NyaWJlL3t0b306",
+            "ASoyDQoLVXNlclNlcnZpY2UyVQoQRGFzaGJvYXJkU2VydmljZRJBCgxHZXRE",
+            "YXNoYm9hcmQSCi5hcGkuRW1wdHkaDi5hcGkuRGFzaGJvYXJkIhWC0+STAg8i",
+            "Ci9kYXNoYm9hcmQ6ASpiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Empty), global::Api.Empty.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Dashboard), global::Api.Dashboard.Parser, new[]{ "TotalUsers", "TotalCustomers", "TotalPlans", "TotalSubscriptions", "TotalCharges" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Identifier), global::Api.Identifier.Parser, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.SMSStatus), global::Api.SMSStatus.Parser, new[]{ "Id", "Sms", "Status", "Uri" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.SMS), global::Api.SMS.Parser, new[]{ "Service", "To", "Message", "MediaURL", "Callback", "App" }, null, null, null),
@@ -95,6 +106,348 @@ namespace Api {
 
   }
   #region Messages
+  public sealed partial class Empty : pb::IMessage<Empty> {
+    private static readonly pb::MessageParser<Empty> _parser = new pb::MessageParser<Empty>(() => new Empty());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Empty> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Empty() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Empty(Empty other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Empty Clone() {
+      return new Empty(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Empty);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Empty other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Empty other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Dashboard : pb::IMessage<Dashboard> {
+    private static readonly pb::MessageParser<Dashboard> _parser = new pb::MessageParser<Dashboard>(() => new Dashboard());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Dashboard> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Dashboard() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Dashboard(Dashboard other) : this() {
+      totalUsers_ = other.totalUsers_;
+      totalCustomers_ = other.totalCustomers_;
+      totalPlans_ = other.totalPlans_;
+      totalSubscriptions_ = other.totalSubscriptions_;
+      totalCharges_ = other.totalCharges_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Dashboard Clone() {
+      return new Dashboard(this);
+    }
+
+    /// <summary>Field number for the "total_users" field.</summary>
+    public const int TotalUsersFieldNumber = 1;
+    private long totalUsers_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TotalUsers {
+      get { return totalUsers_; }
+      set {
+        totalUsers_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_customers" field.</summary>
+    public const int TotalCustomersFieldNumber = 2;
+    private long totalCustomers_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TotalCustomers {
+      get { return totalCustomers_; }
+      set {
+        totalCustomers_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_plans" field.</summary>
+    public const int TotalPlansFieldNumber = 3;
+    private long totalPlans_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TotalPlans {
+      get { return totalPlans_; }
+      set {
+        totalPlans_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_subscriptions" field.</summary>
+    public const int TotalSubscriptionsFieldNumber = 4;
+    private long totalSubscriptions_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TotalSubscriptions {
+      get { return totalSubscriptions_; }
+      set {
+        totalSubscriptions_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_charges" field.</summary>
+    public const int TotalChargesFieldNumber = 5;
+    private long totalCharges_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long TotalCharges {
+      get { return totalCharges_; }
+      set {
+        totalCharges_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Dashboard);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Dashboard other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TotalUsers != other.TotalUsers) return false;
+      if (TotalCustomers != other.TotalCustomers) return false;
+      if (TotalPlans != other.TotalPlans) return false;
+      if (TotalSubscriptions != other.TotalSubscriptions) return false;
+      if (TotalCharges != other.TotalCharges) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TotalUsers != 0L) hash ^= TotalUsers.GetHashCode();
+      if (TotalCustomers != 0L) hash ^= TotalCustomers.GetHashCode();
+      if (TotalPlans != 0L) hash ^= TotalPlans.GetHashCode();
+      if (TotalSubscriptions != 0L) hash ^= TotalSubscriptions.GetHashCode();
+      if (TotalCharges != 0L) hash ^= TotalCharges.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (TotalUsers != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(TotalUsers);
+      }
+      if (TotalCustomers != 0L) {
+        output.WriteRawTag(16);
+        output.WriteInt64(TotalCustomers);
+      }
+      if (TotalPlans != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(TotalPlans);
+      }
+      if (TotalSubscriptions != 0L) {
+        output.WriteRawTag(32);
+        output.WriteInt64(TotalSubscriptions);
+      }
+      if (TotalCharges != 0L) {
+        output.WriteRawTag(40);
+        output.WriteInt64(TotalCharges);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (TotalUsers != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalUsers);
+      }
+      if (TotalCustomers != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalCustomers);
+      }
+      if (TotalPlans != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalPlans);
+      }
+      if (TotalSubscriptions != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalSubscriptions);
+      }
+      if (TotalCharges != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(TotalCharges);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Dashboard other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TotalUsers != 0L) {
+        TotalUsers = other.TotalUsers;
+      }
+      if (other.TotalCustomers != 0L) {
+        TotalCustomers = other.TotalCustomers;
+      }
+      if (other.TotalPlans != 0L) {
+        TotalPlans = other.TotalPlans;
+      }
+      if (other.TotalSubscriptions != 0L) {
+        TotalSubscriptions = other.TotalSubscriptions;
+      }
+      if (other.TotalCharges != 0L) {
+        TotalCharges = other.TotalCharges;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            TotalUsers = input.ReadInt64();
+            break;
+          }
+          case 16: {
+            TotalCustomers = input.ReadInt64();
+            break;
+          }
+          case 24: {
+            TotalPlans = input.ReadInt64();
+            break;
+          }
+          case 32: {
+            TotalSubscriptions = input.ReadInt64();
+            break;
+          }
+          case 40: {
+            TotalCharges = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Identifier : pb::IMessage<Identifier> {
     private static readonly pb::MessageParser<Identifier> _parser = new pb::MessageParser<Identifier>(() => new Identifier());
     private pb::UnknownFieldSet _unknownFields;
@@ -103,7 +456,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -232,7 +585,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -457,7 +810,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -732,7 +1085,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -923,7 +1276,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1164,7 +1517,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1349,7 +1702,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1478,7 +1831,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1843,7 +2196,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2048,7 +2401,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2253,7 +2606,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2514,7 +2867,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2643,7 +2996,7 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Api.ApiReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

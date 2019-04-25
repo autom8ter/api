@@ -5,6 +5,15 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.Empty" do
+  end
+  add_message "api.Dashboard" do
+    optional :total_users, :int64, 1
+    optional :total_customers, :int64, 2
+    optional :total_plans, :int64, 3
+    optional :total_subscriptions, :int64, 4
+    optional :total_charges, :int64, 5
+  end
   add_message "api.Identifier" do
     optional :id, :string, 1
   end
@@ -83,6 +92,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
+  Dashboard = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Dashboard").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
   SMSStatus = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSStatus").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass

@@ -95,6 +95,45 @@ service ContactService {
     }
 }
 
+service PaymentService {
+    rpc Subscribe(Call) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/payment/subscribe/{to}"
+      body: "*"
+    };
+    }
+    rpc Unsubscribe(Call) returns (Identifier) {
+        option (google.api.http) = {
+      post: "/payment/unsubscribe/{to}"
+      body: "*"
+    };
+    }
+}
+
+service UserService {
+
+}
+
+service DashboardService {
+    rpc GetDashboard(Empty) returns (Dashboard) {
+        option (google.api.http) = {
+      post: "/dashboard"
+      body: "*"
+    };
+    }
+}
+
+message Empty {}
+
+message Dashboard {
+    int64 total_users=1;
+    int64 total_customers =2;
+    int64 total_plans=3;
+    int64 total_subscriptions=4;
+    int64 total_charges=5;
+}
+
+
 message Identifier {
     string id=1;
 }

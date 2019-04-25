@@ -39,7 +39,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[13];
+  static const ::google::protobuf::internal::ParseTable schema[15];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -59,12 +59,18 @@ extern BytesDefaultTypeInternal _Bytes_default_instance_;
 class Call;
 class CallDefaultTypeInternal;
 extern CallDefaultTypeInternal _Call_default_instance_;
+class Dashboard;
+class DashboardDefaultTypeInternal;
+extern DashboardDefaultTypeInternal _Dashboard_default_instance_;
 class Email;
 class EmailDefaultTypeInternal;
 extern EmailDefaultTypeInternal _Email_default_instance_;
 class EmailRequest;
 class EmailRequestDefaultTypeInternal;
 extern EmailRequestDefaultTypeInternal _EmailRequest_default_instance_;
+class Empty;
+class EmptyDefaultTypeInternal;
+extern EmptyDefaultTypeInternal _Empty_default_instance_;
 class Identifier;
 class IdentifierDefaultTypeInternal;
 extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
@@ -93,8 +99,10 @@ template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Are
 template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
 template<> ::api::Bytes* Arena::CreateMaybeMessage<::api::Bytes>(Arena*);
 template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
+template<> ::api::Dashboard* Arena::CreateMaybeMessage<::api::Dashboard>(Arena*);
 template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(Arena*);
+template<> ::api::Empty* Arena::CreateMaybeMessage<::api::Empty>(Arena*);
 template<> ::api::Identifier* Arena::CreateMaybeMessage<::api::Identifier>(Arena*);
 template<> ::api::Message* Arena::CreateMaybeMessage<::api::Message>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
@@ -107,6 +115,233 @@ template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(A
 namespace api {
 
 // ===================================================================
+
+class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Empty) */ {
+ public:
+  Empty();
+  virtual ~Empty();
+
+  Empty(const Empty& from);
+
+  inline Empty& operator=(const Empty& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Empty(Empty&& from) noexcept
+    : Empty() {
+    *this = ::std::move(from);
+  }
+
+  inline Empty& operator=(Empty&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Empty& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Empty* internal_default_instance() {
+    return reinterpret_cast<const Empty*>(
+               &_Empty_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(Empty* other);
+  friend void swap(Empty& a, Empty& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Empty* New() const final {
+    return CreateMaybeMessage<Empty>(NULL);
+  }
+
+  Empty* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Empty>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Empty& from);
+  void MergeFrom(const Empty& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Empty* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:api.Empty)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Dashboard : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Dashboard) */ {
+ public:
+  Dashboard();
+  virtual ~Dashboard();
+
+  Dashboard(const Dashboard& from);
+
+  inline Dashboard& operator=(const Dashboard& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Dashboard(Dashboard&& from) noexcept
+    : Dashboard() {
+    *this = ::std::move(from);
+  }
+
+  inline Dashboard& operator=(Dashboard&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Dashboard& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Dashboard* internal_default_instance() {
+    return reinterpret_cast<const Dashboard*>(
+               &_Dashboard_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(Dashboard* other);
+  friend void swap(Dashboard& a, Dashboard& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Dashboard* New() const final {
+    return CreateMaybeMessage<Dashboard>(NULL);
+  }
+
+  Dashboard* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Dashboard>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Dashboard& from);
+  void MergeFrom(const Dashboard& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Dashboard* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int64 total_users = 1;
+  void clear_total_users();
+  static const int kTotalUsersFieldNumber = 1;
+  ::google::protobuf::int64 total_users() const;
+  void set_total_users(::google::protobuf::int64 value);
+
+  // int64 total_customers = 2;
+  void clear_total_customers();
+  static const int kTotalCustomersFieldNumber = 2;
+  ::google::protobuf::int64 total_customers() const;
+  void set_total_customers(::google::protobuf::int64 value);
+
+  // int64 total_plans = 3;
+  void clear_total_plans();
+  static const int kTotalPlansFieldNumber = 3;
+  ::google::protobuf::int64 total_plans() const;
+  void set_total_plans(::google::protobuf::int64 value);
+
+  // int64 total_subscriptions = 4;
+  void clear_total_subscriptions();
+  static const int kTotalSubscriptionsFieldNumber = 4;
+  ::google::protobuf::int64 total_subscriptions() const;
+  void set_total_subscriptions(::google::protobuf::int64 value);
+
+  // int64 total_charges = 5;
+  void clear_total_charges();
+  static const int kTotalChargesFieldNumber = 5;
+  ::google::protobuf::int64 total_charges() const;
+  void set_total_charges(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.Dashboard)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int64 total_users_;
+  ::google::protobuf::int64 total_customers_;
+  ::google::protobuf::int64 total_plans_;
+  ::google::protobuf::int64 total_subscriptions_;
+  ::google::protobuf::int64 total_charges_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Identifier) */ {
  public:
@@ -143,7 +378,7 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Identifier_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(Identifier* other);
   friend void swap(Identifier& a, Identifier& b) {
@@ -254,7 +489,7 @@ class SMSStatus : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_SMSStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(SMSStatus* other);
   friend void swap(SMSStatus& a, SMSStatus& b) {
@@ -406,7 +641,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -590,7 +825,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -729,7 +964,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -900,7 +1135,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -1041,7 +1276,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Message_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(Message* other);
   friend void swap(Message& a, Message& b) {
@@ -1152,7 +1387,7 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_UserInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(UserInfo* other);
   friend void swap(UserInfo& a, UserInfo& b) {
@@ -1379,7 +1614,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -1543,7 +1778,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -1707,7 +1942,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -1901,7 +2136,7 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Bytes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(Bytes* other);
   friend void swap(Bytes& a, Bytes& b) {
@@ -2012,7 +2247,7 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Template_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(Template* other);
   friend void swap(Template& a, Template& b) {
@@ -2110,6 +2345,84 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Empty
+
+// -------------------------------------------------------------------
+
+// Dashboard
+
+// int64 total_users = 1;
+inline void Dashboard::clear_total_users() {
+  total_users_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Dashboard::total_users() const {
+  // @@protoc_insertion_point(field_get:api.Dashboard.total_users)
+  return total_users_;
+}
+inline void Dashboard::set_total_users(::google::protobuf::int64 value) {
+  
+  total_users_ = value;
+  // @@protoc_insertion_point(field_set:api.Dashboard.total_users)
+}
+
+// int64 total_customers = 2;
+inline void Dashboard::clear_total_customers() {
+  total_customers_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Dashboard::total_customers() const {
+  // @@protoc_insertion_point(field_get:api.Dashboard.total_customers)
+  return total_customers_;
+}
+inline void Dashboard::set_total_customers(::google::protobuf::int64 value) {
+  
+  total_customers_ = value;
+  // @@protoc_insertion_point(field_set:api.Dashboard.total_customers)
+}
+
+// int64 total_plans = 3;
+inline void Dashboard::clear_total_plans() {
+  total_plans_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Dashboard::total_plans() const {
+  // @@protoc_insertion_point(field_get:api.Dashboard.total_plans)
+  return total_plans_;
+}
+inline void Dashboard::set_total_plans(::google::protobuf::int64 value) {
+  
+  total_plans_ = value;
+  // @@protoc_insertion_point(field_set:api.Dashboard.total_plans)
+}
+
+// int64 total_subscriptions = 4;
+inline void Dashboard::clear_total_subscriptions() {
+  total_subscriptions_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Dashboard::total_subscriptions() const {
+  // @@protoc_insertion_point(field_get:api.Dashboard.total_subscriptions)
+  return total_subscriptions_;
+}
+inline void Dashboard::set_total_subscriptions(::google::protobuf::int64 value) {
+  
+  total_subscriptions_ = value;
+  // @@protoc_insertion_point(field_set:api.Dashboard.total_subscriptions)
+}
+
+// int64 total_charges = 5;
+inline void Dashboard::clear_total_charges() {
+  total_charges_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 Dashboard::total_charges() const {
+  // @@protoc_insertion_point(field_get:api.Dashboard.total_charges)
+  return total_charges_;
+}
+inline void Dashboard::set_total_charges(::google::protobuf::int64 value) {
+  
+  total_charges_ = value;
+  // @@protoc_insertion_point(field_set:api.Dashboard.total_charges)
+}
+
+// -------------------------------------------------------------------
+
 // Identifier
 
 // string id = 1;
@@ -4814,6 +5127,10 @@ inline void Template::set_allocated_data(::std::string* data) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

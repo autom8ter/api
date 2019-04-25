@@ -53,6 +53,123 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
+#pragma mark - Empty
+
+@implementation Empty
+
+
+typedef struct Empty__storage_ {
+  uint32_t _has_storage_[1];
+} Empty__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Empty class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:NULL
+                                    fieldCount:0
+                                   storageSize:sizeof(Empty__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Dashboard
+
+@implementation Dashboard
+
+@dynamic totalUsers;
+@dynamic totalCustomers;
+@dynamic totalPlans;
+@dynamic totalSubscriptions;
+@dynamic totalCharges;
+
+typedef struct Dashboard__storage_ {
+  uint32_t _has_storage_[1];
+  int64_t totalUsers;
+  int64_t totalCustomers;
+  int64_t totalPlans;
+  int64_t totalSubscriptions;
+  int64_t totalCharges;
+} Dashboard__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "totalUsers",
+        .dataTypeSpecific.className = NULL,
+        .number = Dashboard_FieldNumber_TotalUsers,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Dashboard__storage_, totalUsers),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "totalCustomers",
+        .dataTypeSpecific.className = NULL,
+        .number = Dashboard_FieldNumber_TotalCustomers,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Dashboard__storage_, totalCustomers),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "totalPlans",
+        .dataTypeSpecific.className = NULL,
+        .number = Dashboard_FieldNumber_TotalPlans,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Dashboard__storage_, totalPlans),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "totalSubscriptions",
+        .dataTypeSpecific.className = NULL,
+        .number = Dashboard_FieldNumber_TotalSubscriptions,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Dashboard__storage_, totalSubscriptions),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "totalCharges",
+        .dataTypeSpecific.className = NULL,
+        .number = Dashboard_FieldNumber_TotalCharges,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Dashboard__storage_, totalCharges),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Dashboard class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Dashboard__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Identifier
 
 @implementation Identifier

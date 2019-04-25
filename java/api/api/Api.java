@@ -14,6 +14,1151 @@ public final class Api {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface EmptyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Empty)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code api.Empty}
+   */
+  public  static final class Empty extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.Empty)
+      EmptyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Empty.newBuilder() to construct.
+    private Empty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Empty() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Empty(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_Empty_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_Empty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.Empty.class, api.Api.Empty.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.Empty)) {
+        return super.equals(obj);
+      }
+      api.Api.Empty other = (api.Api.Empty) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.Empty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Empty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Empty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Empty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Empty parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Empty parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Empty parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Empty parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Empty parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.Empty parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.Empty prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.Empty}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.Empty)
+        api.Api.EmptyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_Empty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.Empty.class, api.Api.Empty.Builder.class);
+      }
+
+      // Construct using api.Api.Empty.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.Empty getDefaultInstanceForType() {
+        return api.Api.Empty.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.Empty build() {
+        api.Api.Empty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.Empty buildPartial() {
+        api.Api.Empty result = new api.Api.Empty(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.Empty) {
+          return mergeFrom((api.Api.Empty)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.Empty other) {
+        if (other == api.Api.Empty.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.Empty parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.Empty) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Empty)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Empty)
+    private static final api.Api.Empty DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Empty();
+    }
+
+    public static api.Api.Empty getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Empty>
+        PARSER = new com.google.protobuf.AbstractParser<Empty>() {
+      @java.lang.Override
+      public Empty parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Empty(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Empty> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Empty> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Empty getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DashboardOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Dashboard)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int64 total_users = 1;</code>
+     */
+    long getTotalUsers();
+
+    /**
+     * <code>int64 total_customers = 2;</code>
+     */
+    long getTotalCustomers();
+
+    /**
+     * <code>int64 total_plans = 3;</code>
+     */
+    long getTotalPlans();
+
+    /**
+     * <code>int64 total_subscriptions = 4;</code>
+     */
+    long getTotalSubscriptions();
+
+    /**
+     * <code>int64 total_charges = 5;</code>
+     */
+    long getTotalCharges();
+  }
+  /**
+   * Protobuf type {@code api.Dashboard}
+   */
+  public  static final class Dashboard extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.Dashboard)
+      DashboardOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Dashboard.newBuilder() to construct.
+    private Dashboard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Dashboard() {
+      totalUsers_ = 0L;
+      totalCustomers_ = 0L;
+      totalPlans_ = 0L;
+      totalSubscriptions_ = 0L;
+      totalCharges_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Dashboard(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              totalUsers_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              totalCustomers_ = input.readInt64();
+              break;
+            }
+            case 24: {
+
+              totalPlans_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              totalSubscriptions_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              totalCharges_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_Dashboard_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_Dashboard_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.Dashboard.class, api.Api.Dashboard.Builder.class);
+    }
+
+    public static final int TOTAL_USERS_FIELD_NUMBER = 1;
+    private long totalUsers_;
+    /**
+     * <code>int64 total_users = 1;</code>
+     */
+    public long getTotalUsers() {
+      return totalUsers_;
+    }
+
+    public static final int TOTAL_CUSTOMERS_FIELD_NUMBER = 2;
+    private long totalCustomers_;
+    /**
+     * <code>int64 total_customers = 2;</code>
+     */
+    public long getTotalCustomers() {
+      return totalCustomers_;
+    }
+
+    public static final int TOTAL_PLANS_FIELD_NUMBER = 3;
+    private long totalPlans_;
+    /**
+     * <code>int64 total_plans = 3;</code>
+     */
+    public long getTotalPlans() {
+      return totalPlans_;
+    }
+
+    public static final int TOTAL_SUBSCRIPTIONS_FIELD_NUMBER = 4;
+    private long totalSubscriptions_;
+    /**
+     * <code>int64 total_subscriptions = 4;</code>
+     */
+    public long getTotalSubscriptions() {
+      return totalSubscriptions_;
+    }
+
+    public static final int TOTAL_CHARGES_FIELD_NUMBER = 5;
+    private long totalCharges_;
+    /**
+     * <code>int64 total_charges = 5;</code>
+     */
+    public long getTotalCharges() {
+      return totalCharges_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (totalUsers_ != 0L) {
+        output.writeInt64(1, totalUsers_);
+      }
+      if (totalCustomers_ != 0L) {
+        output.writeInt64(2, totalCustomers_);
+      }
+      if (totalPlans_ != 0L) {
+        output.writeInt64(3, totalPlans_);
+      }
+      if (totalSubscriptions_ != 0L) {
+        output.writeInt64(4, totalSubscriptions_);
+      }
+      if (totalCharges_ != 0L) {
+        output.writeInt64(5, totalCharges_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (totalUsers_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, totalUsers_);
+      }
+      if (totalCustomers_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, totalCustomers_);
+      }
+      if (totalPlans_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, totalPlans_);
+      }
+      if (totalSubscriptions_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, totalSubscriptions_);
+      }
+      if (totalCharges_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, totalCharges_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.Dashboard)) {
+        return super.equals(obj);
+      }
+      api.Api.Dashboard other = (api.Api.Dashboard) obj;
+
+      boolean result = true;
+      result = result && (getTotalUsers()
+          == other.getTotalUsers());
+      result = result && (getTotalCustomers()
+          == other.getTotalCustomers());
+      result = result && (getTotalPlans()
+          == other.getTotalPlans());
+      result = result && (getTotalSubscriptions()
+          == other.getTotalSubscriptions());
+      result = result && (getTotalCharges()
+          == other.getTotalCharges());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOTAL_USERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalUsers());
+      hash = (37 * hash) + TOTAL_CUSTOMERS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalCustomers());
+      hash = (37 * hash) + TOTAL_PLANS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalPlans());
+      hash = (37 * hash) + TOTAL_SUBSCRIPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalSubscriptions());
+      hash = (37 * hash) + TOTAL_CHARGES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalCharges());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.Dashboard parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Dashboard parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Dashboard parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Dashboard parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Dashboard parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Dashboard parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Dashboard parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Dashboard parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Dashboard parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.Dashboard parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Dashboard parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Dashboard parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.Dashboard prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.Dashboard}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.Dashboard)
+        api.Api.DashboardOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_Dashboard_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_Dashboard_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.Dashboard.class, api.Api.Dashboard.Builder.class);
+      }
+
+      // Construct using api.Api.Dashboard.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        totalUsers_ = 0L;
+
+        totalCustomers_ = 0L;
+
+        totalPlans_ = 0L;
+
+        totalSubscriptions_ = 0L;
+
+        totalCharges_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_Dashboard_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.Dashboard getDefaultInstanceForType() {
+        return api.Api.Dashboard.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.Dashboard build() {
+        api.Api.Dashboard result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.Dashboard buildPartial() {
+        api.Api.Dashboard result = new api.Api.Dashboard(this);
+        result.totalUsers_ = totalUsers_;
+        result.totalCustomers_ = totalCustomers_;
+        result.totalPlans_ = totalPlans_;
+        result.totalSubscriptions_ = totalSubscriptions_;
+        result.totalCharges_ = totalCharges_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.Dashboard) {
+          return mergeFrom((api.Api.Dashboard)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.Dashboard other) {
+        if (other == api.Api.Dashboard.getDefaultInstance()) return this;
+        if (other.getTotalUsers() != 0L) {
+          setTotalUsers(other.getTotalUsers());
+        }
+        if (other.getTotalCustomers() != 0L) {
+          setTotalCustomers(other.getTotalCustomers());
+        }
+        if (other.getTotalPlans() != 0L) {
+          setTotalPlans(other.getTotalPlans());
+        }
+        if (other.getTotalSubscriptions() != 0L) {
+          setTotalSubscriptions(other.getTotalSubscriptions());
+        }
+        if (other.getTotalCharges() != 0L) {
+          setTotalCharges(other.getTotalCharges());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.Dashboard parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.Dashboard) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long totalUsers_ ;
+      /**
+       * <code>int64 total_users = 1;</code>
+       */
+      public long getTotalUsers() {
+        return totalUsers_;
+      }
+      /**
+       * <code>int64 total_users = 1;</code>
+       */
+      public Builder setTotalUsers(long value) {
+        
+        totalUsers_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_users = 1;</code>
+       */
+      public Builder clearTotalUsers() {
+        
+        totalUsers_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalCustomers_ ;
+      /**
+       * <code>int64 total_customers = 2;</code>
+       */
+      public long getTotalCustomers() {
+        return totalCustomers_;
+      }
+      /**
+       * <code>int64 total_customers = 2;</code>
+       */
+      public Builder setTotalCustomers(long value) {
+        
+        totalCustomers_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_customers = 2;</code>
+       */
+      public Builder clearTotalCustomers() {
+        
+        totalCustomers_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalPlans_ ;
+      /**
+       * <code>int64 total_plans = 3;</code>
+       */
+      public long getTotalPlans() {
+        return totalPlans_;
+      }
+      /**
+       * <code>int64 total_plans = 3;</code>
+       */
+      public Builder setTotalPlans(long value) {
+        
+        totalPlans_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_plans = 3;</code>
+       */
+      public Builder clearTotalPlans() {
+        
+        totalPlans_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalSubscriptions_ ;
+      /**
+       * <code>int64 total_subscriptions = 4;</code>
+       */
+      public long getTotalSubscriptions() {
+        return totalSubscriptions_;
+      }
+      /**
+       * <code>int64 total_subscriptions = 4;</code>
+       */
+      public Builder setTotalSubscriptions(long value) {
+        
+        totalSubscriptions_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_subscriptions = 4;</code>
+       */
+      public Builder clearTotalSubscriptions() {
+        
+        totalSubscriptions_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long totalCharges_ ;
+      /**
+       * <code>int64 total_charges = 5;</code>
+       */
+      public long getTotalCharges() {
+        return totalCharges_;
+      }
+      /**
+       * <code>int64 total_charges = 5;</code>
+       */
+      public Builder setTotalCharges(long value) {
+        
+        totalCharges_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 total_charges = 5;</code>
+       */
+      public Builder clearTotalCharges() {
+        
+        totalCharges_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Dashboard)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Dashboard)
+    private static final api.Api.Dashboard DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Dashboard();
+    }
+
+    public static api.Api.Dashboard getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Dashboard>
+        PARSER = new com.google.protobuf.AbstractParser<Dashboard>() {
+      @java.lang.Override
+      public Dashboard parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Dashboard(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Dashboard> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Dashboard> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Dashboard getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface IdentifierOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.Identifier)
       com.google.protobuf.MessageOrBuilder {
@@ -12468,6 +13613,16 @@ public final class Api {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_Empty_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_Empty_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_Dashboard_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_Dashboard_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_Identifier_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12542,60 +13697,70 @@ public final class Api {
   static {
     java.lang.String[] descriptorData = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations" +
-      ".proto\"\030\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"\\\n\tSMSS" +
-      "tatus\022\033\n\002id\030\001 \001(\0132\017.api.Identifier\022\025\n\003sm" +
-      "s\030\002 \001(\0132\010.api.SMS\022\016\n\006status\030\003 \001(\t\022\013\n\003uri" +
-      "\030\004 \001(\t\"r\n\003SMS\022\017\n\007service\030\001 \001(\t\022\n\n\002to\030\002 \001" +
-      "(\t\022\035\n\007message\030\003 \001(\0132\014.api.Message\022\020\n\010med" +
-      "iaURL\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006 \001" +
-      "(\t\"P\n\014EmailRequest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n" +
-      "\nfrom_email\030\002 \001(\t\022\031\n\005email\030\003 \001(\0132\n.api.E" +
-      "mail\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002" +
-      " \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004" +
-      "html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002" +
-      " \001(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Message\022\r\n\005value\030\001 " +
-      "\001(\t\"\326\001\n\010UserInfo\022\014\n\004name\030\006 \001(\t\022\022\n\ngiven_" +
-      "name\030\007 \001(\t\022\023\n\013family_name\030\010 \001(\t\022\016\n\006gende" +
-      "r\030\t \001(\t\022\021\n\tbirthdate\030\n \001(\t\022\r\n\005email\030\013 \001(" +
-      "\t\022\017\n\007picture\030\014 \001(\t\022(\n\ruser_metadata\030\r \001(" +
-      "\0132\021.api.UserMetadata\022&\n\014app_metadata\030\016 \001" +
-      "(\0132\020.api.AppMetadata\"V\n\014UserMetadata\022\r\n\005" +
-      "phone\030\001 \001(\t\022\031\n\021preferred_contact\030\002 \001(\t\022\016" +
-      "\n\006status\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"P\n\013AppMetad" +
-      "ata\022\014\n\004plan\030\001 \001(\t\022\021\n\tpay_token\030\002 \001(\t\022\022\n\n" +
-      "delinquent\030\003 \001(\t\022\014\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016" +
-      "\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rcli" +
-      "ent_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010au" +
-      "dience\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022\014\n" +
-      "\004bits\030\001 \001(\014\"&\n\010Template\022\014\n\004text\030\001 \001(\t\022\014\n" +
-      "\004data\030\002 \001(\0142\350\005\n\016UtilityService\022<\n\004Echo\022\014" +
-      ".api.Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/uti" +
-      "lity/echo:\001*\022K\n\013EchoSpanish\022\014.api.Messag" +
-      "e\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/echo/s" +
-      "panish:\001*\022K\n\013EchoChinese\022\014.api.Message\032\014" +
-      ".api.Message\" \202\323\344\223\002\032\"\025/utility/echo/chin" +
-      "ese:\001*\022K\n\013EchoEnglish\022\014.api.Message\032\014.ap" +
-      "i.Message\" \202\323\344\223\002\032\"\025/utility/echo/english" +
-      ":\001*\022G\n\tEchoHindi\022\014.api.Message\032\014.api.Mes" +
-      "sage\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I\n\n" +
-      "EchoArabic\022\014.api.Message\032\014.api.Message\"\037" +
-      "\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*\022G\n\013Marsh" +
-      "alJSON\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025" +
-      "/utility/marshal/json:\001*\022G\n\013MarshalYAML\022" +
-      "\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utilit" +
-      "y/marshal/yaml:\001*\022E\n\nMarshalXML\022\n.api.By" +
-      "tes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marsha" +
-      "l/xml:\001*\022D\n\006Render\022\r.api.Template\032\n.api." +
-      "Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:\001*2\275" +
-      "\002\n\016ContactService\022B\n\007SendSMS\022\010.api.SMS\032\017" +
-      ".api.Identifier\"\034\202\323\344\223\002\026\"\021/contact/sms/{t" +
-      "o}:\001*\022G\n\006GetSMS\022\017.api.Identifier\032\016.api.S" +
-      "MSStatus\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*\022W" +
-      "\n\tSendEmail\022\021.api.EmailRequest\032\014.api.Mes" +
-      "sage\")\202\323\344\223\002#\"\036/contact/email/{email.addr" +
-      "ess}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.Ide" +
-      "ntifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*b\006" +
-      "proto3"
+      ".proto\"\007\n\005Empty\"\202\001\n\tDashboard\022\023\n\013total_u" +
+      "sers\030\001 \001(\003\022\027\n\017total_customers\030\002 \001(\003\022\023\n\013t" +
+      "otal_plans\030\003 \001(\003\022\033\n\023total_subscriptions\030" +
+      "\004 \001(\003\022\025\n\rtotal_charges\030\005 \001(\003\"\030\n\nIdentifi" +
+      "er\022\n\n\002id\030\001 \001(\t\"\\\n\tSMSStatus\022\033\n\002id\030\001 \001(\0132" +
+      "\017.api.Identifier\022\025\n\003sms\030\002 \001(\0132\010.api.SMS\022" +
+      "\016\n\006status\030\003 \001(\t\022\013\n\003uri\030\004 \001(\t\"r\n\003SMS\022\017\n\007s" +
+      "ervice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(" +
+      "\0132\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010cal" +
+      "lback\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest" +
+      "\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022" +
+      "\031\n\005email\030\003 \001(\0132\n.api.Email\"T\n\005Email\022\014\n\004n" +
+      "ame\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007subject\030\003 " +
+      "\001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"-\n\004Call" +
+      "\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\013\n\003app\030\003 \001(\t\"" +
+      "\030\n\007Message\022\r\n\005value\030\001 \001(\t\"\326\001\n\010UserInfo\022\014" +
+      "\n\004name\030\006 \001(\t\022\022\n\ngiven_name\030\007 \001(\t\022\023\n\013fami" +
+      "ly_name\030\010 \001(\t\022\016\n\006gender\030\t \001(\t\022\021\n\tbirthda" +
+      "te\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\017\n\007picture\030\014 \001(\t" +
+      "\022(\n\ruser_metadata\030\r \001(\0132\021.api.UserMetada" +
+      "ta\022&\n\014app_metadata\030\016 \001(\0132\020.api.AppMetada" +
+      "ta\"V\n\014UserMetadata\022\r\n\005phone\030\001 \001(\t\022\031\n\021pre" +
+      "ferred_contact\030\002 \001(\t\022\016\n\006status\030\003 \001(\t\022\014\n\004" +
+      "tags\030\004 \003(\t\"P\n\013AppMetadata\022\014\n\004plan\030\001 \001(\t\022" +
+      "\021\n\tpay_token\030\002 \001(\t\022\022\n\ndelinquent\030\003 \001(\t\022\014" +
+      "\n\004tags\030\004 \003(\t\"t\n\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\t" +
+      "client_id\030\002 \001(\t\022\025\n\rclient_secret\030\003 \001(\t\022\020" +
+      "\n\010redirect\030\004 \001(\t\022\020\n\010audience\030\005 \001(\t\022\016\n\006sc" +
+      "opes\030\006 \003(\t\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Tem" +
+      "plate\022\014\n\004text\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\350\005\n\016Ut" +
+      "ilityService\022<\n\004Echo\022\014.api.Message\032\014.api" +
+      ".Message\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013Ec" +
+      "hoSpanish\022\014.api.Message\032\014.api.Message\" \202" +
+      "\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoC" +
+      "hinese\022\014.api.Message\032\014.api.Message\" \202\323\344\223" +
+      "\002\032\"\025/utility/echo/chinese:\001*\022K\n\013EchoEngl" +
+      "ish\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"" +
+      "\025/utility/echo/english:\001*\022G\n\tEchoHindi\022\014" +
+      ".api.Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/uti" +
+      "lity/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.M" +
+      "essage\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/e" +
+      "cho/arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes" +
+      "\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/j" +
+      "son:\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api." +
+      "Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022" +
+      "E\n\nMarshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202" +
+      "\323\344\223\002\031\"\024/utility/marshal/xml:\001*\022D\n\006Render" +
+      "\022\r.api.Template\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/ut" +
+      "ility/marshal/xml:\001*2\275\002\n\016ContactService\022" +
+      "B\n\007SendSMS\022\010.api.SMS\032\017.api.Identifier\"\034\202" +
+      "\323\344\223\002\026\"\021/contact/sms/{to}:\001*\022G\n\006GetSMS\022\017." +
+      "api.Identifier\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021" +
+      "/contact/sms/{id}:\001*\022W\n\tSendEmail\022\021.api." +
+      "EmailRequest\032\014.api.Message\")\202\323\344\223\002#\"\036/con" +
+      "tact/email/{email.address}:\001*\022E\n\010SendCal" +
+      "l\022\t.api.Call\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/" +
+      "contact/call/{to}:\001*2\256\001\n\016PaymentService\022" +
+      "K\n\tSubscribe\022\t.api.Call\032\017.api.Identifier" +
+      "\"\"\202\323\344\223\002\034\"\027/payment/subscribe/{to}:\001*\022O\n\013" +
+      "Unsubscribe\022\t.api.Call\032\017.api.Identifier\"" +
+      "$\202\323\344\223\002\036\"\031/payment/unsubscribe/{to}:\001*2\r\n" +
+      "\013UserService2U\n\020DashboardService\022A\n\014GetD" +
+      "ashboard\022\n.api.Empty\032\016.api.Dashboard\"\025\202\323" +
+      "\344\223\002\017\"\n/dashboard:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12610,80 +13775,92 @@ public final class Api {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
         }, assigner);
-    internal_static_api_Identifier_descriptor =
+    internal_static_api_Empty_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_Empty_descriptor,
+        new java.lang.String[] { });
+    internal_static_api_Dashboard_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_api_Dashboard_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_Dashboard_descriptor,
+        new java.lang.String[] { "TotalUsers", "TotalCustomers", "TotalPlans", "TotalSubscriptions", "TotalCharges", });
+    internal_static_api_Identifier_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_Identifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Identifier_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_SMSStatus_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_SMSStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMSStatus_descriptor,
         new java.lang.String[] { "Id", "Sms", "Status", "Uri", });
     internal_static_api_SMS_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_SMS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMS_descriptor,
         new java.lang.String[] { "Service", "To", "Message", "MediaURL", "Callback", "App", });
     internal_static_api_EmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailRequest_descriptor,
         new java.lang.String[] { "FromName", "FromEmail", "Email", });
     internal_static_api_Email_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
         new java.lang.String[] { "Name", "Address", "Subject", "Plain", "Html", });
     internal_static_api_Call_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_Call_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Call_descriptor,
         new java.lang.String[] { "From", "To", "App", });
     internal_static_api_Message_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Message_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_api_UserInfo_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserInfo_descriptor,
         new java.lang.String[] { "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "Picture", "UserMetadata", "AppMetadata", });
     internal_static_api_UserMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_UserMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserMetadata_descriptor,
         new java.lang.String[] { "Phone", "PreferredContact", "Status", "Tags", });
     internal_static_api_AppMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_AppMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AppMetadata_descriptor,
         new java.lang.String[] { "Plan", "PayToken", "Delinquent", "Tags", });
     internal_static_api_Auth_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_Auth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Auth_descriptor,
         new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", });
     internal_static_api_Bytes_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_Bytes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Bytes_descriptor,
         new java.lang.String[] { "Bits", });
     internal_static_api_Template_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_Template_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Template_descriptor,

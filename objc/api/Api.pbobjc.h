@@ -51,6 +51,36 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - Empty
+
+@interface Empty : GPBMessage
+
+@end
+
+#pragma mark - Dashboard
+
+typedef GPB_ENUM(Dashboard_FieldNumber) {
+  Dashboard_FieldNumber_TotalUsers = 1,
+  Dashboard_FieldNumber_TotalCustomers = 2,
+  Dashboard_FieldNumber_TotalPlans = 3,
+  Dashboard_FieldNumber_TotalSubscriptions = 4,
+  Dashboard_FieldNumber_TotalCharges = 5,
+};
+
+@interface Dashboard : GPBMessage
+
+@property(nonatomic, readwrite) int64_t totalUsers;
+
+@property(nonatomic, readwrite) int64_t totalCustomers;
+
+@property(nonatomic, readwrite) int64_t totalPlans;
+
+@property(nonatomic, readwrite) int64_t totalSubscriptions;
+
+@property(nonatomic, readwrite) int64_t totalCharges;
+
+@end
+
 #pragma mark - Identifier
 
 typedef GPB_ENUM(Identifier_FieldNumber) {
