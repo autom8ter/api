@@ -304,3 +304,15 @@ message Template {
     bytes data =2;
 }
 
+message JSONWebKeys {
+    string kty =1;
+    string kid =2;
+    string use =3;
+    string n =4;
+    string e =5;
+   repeated string x5c =6;
+}
+
+message Jwks {
+    repeated JSONWebKeys keys=1;
+}

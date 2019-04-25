@@ -25,11 +25,17 @@ var DEFAULT_SCOPES = []string{"openid", "profile", "email"}
 ```
 
 ```go
-var SESSIONS_PATH = os.Getenv("PWD") + "/sessions"
+var HTTPClient *http.Client
 ```
 
 ```go
 var Util = objectify.Default()
+```
+
+#### func  ENVFromContext
+
+```go
+func ENVFromContext() []string
 ```
 
 #### func  FuncMap
@@ -117,41 +123,41 @@ the connection when "ctx" gets done.
 func RegisterContactServiceServer(s *grpc.Server, srv ContactServiceServer)
 ```
 
-#### func  RegisterPaymetServiceHandler
+#### func  RegisterPaymentServiceHandler
 
 ```go
-func RegisterPaymetServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+func RegisterPaymentServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
 ```
-RegisterPaymetServiceHandler registers the http handlers for service
-PaymetService to "mux". The handlers forward requests to the grpc endpoint over
+RegisterPaymentServiceHandler registers the http handlers for service
+PaymentService to "mux". The handlers forward requests to the grpc endpoint over
 "conn".
 
-#### func  RegisterPaymetServiceHandlerClient
+#### func  RegisterPaymentServiceHandlerClient
 
 ```go
-func RegisterPaymetServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PaymetServiceClient) error
+func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PaymentServiceClient) error
 ```
-RegisterPaymetServiceHandlerClient registers the http handlers for service
-PaymetService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "PaymetServiceClient". Note: the gRPC framework
+RegisterPaymentServiceHandlerClient registers the http handlers for service
+PaymentService to "mux". The handlers forward requests to the grpc endpoint over
+the given implementation of "PaymentServiceClient". Note: the gRPC framework
 executes interceptors within the gRPC handler. If the passed in
-"PaymetServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "PaymetServiceClient" to call
+"PaymentServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "PaymentServiceClient" to call
 the correct interceptors.
 
-#### func  RegisterPaymetServiceHandlerFromEndpoint
+#### func  RegisterPaymentServiceHandlerFromEndpoint
 
 ```go
-func RegisterPaymetServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+func RegisterPaymentServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
 ```
-RegisterPaymetServiceHandlerFromEndpoint is same as RegisterPaymetServiceHandler
-but automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
+RegisterPaymentServiceHandlerFromEndpoint is same as
+RegisterPaymentServiceHandler but automatically dials to "endpoint" and closes
+the connection when "ctx" gets done.
 
-#### func  RegisterPaymetServiceServer
+#### func  RegisterPaymentServiceServer
 
 ```go
-func RegisterPaymetServiceServer(s *grpc.Server, srv PaymetServiceServer)
+func RegisterPaymentServiceServer(s *grpc.Server, srv PaymentServiceServer)
 ```
 
 #### func  RegisterUserServiceHandler
@@ -359,10 +365,52 @@ type Auth struct {
 ```
 
 
+#### func (*Auth) AuthURL
+
+```go
+func (c *Auth) AuthURL() string
+```
+
+#### func (*Auth) ClientsURL
+
+```go
+func (c *Auth) ClientsURL() string
+```
+
+#### func (*Auth) ConnectionsURL
+
+```go
+func (c *Auth) ConnectionsURL() string
+```
+
+#### func (*Auth) CustomDomainsURL
+
+```go
+func (c *Auth) CustomDomainsURL() string
+```
+
 #### func (*Auth) Descriptor
 
 ```go
 func (*Auth) Descriptor() ([]byte, []int)
+```
+
+#### func (*Auth) DeviceCredentials
+
+```go
+func (c *Auth) DeviceCredentials(name string) string
+```
+
+#### func (*Auth) EmailTemplateURL
+
+```go
+func (c *Auth) EmailTemplateURL(name string) string
+```
+
+#### func (*Auth) EmailURL
+
+```go
+func (c *Auth) EmailURL() string
 ```
 
 #### func (*Auth) GetAudience
@@ -389,6 +437,12 @@ func (m *Auth) GetClientSecret() string
 func (m *Auth) GetDomain() string
 ```
 
+#### func (*Auth) GetJWKS
+
+```go
+func (c *Auth) GetJWKS(token *jwt.Token) (*Jwks, error)
+```
+
 #### func (*Auth) GetRedirect
 
 ```go
@@ -401,10 +455,28 @@ func (m *Auth) GetRedirect() string
 func (m *Auth) GetScopes() []string
 ```
 
+#### func (*Auth) GrantsURL
+
+```go
+func (c *Auth) GrantsURL() string
+```
+
+#### func (*Auth) JWKSURL
+
+```go
+func (c *Auth) JWKSURL() string
+```
+
 #### func (*Auth) ListenAndServe
 
 ```go
 func (a *Auth) ListenAndServe(addr string, c *RouterPaths, home, loggedIn http.HandlerFunc) error
+```
+
+#### func (*Auth) LogsURL
+
+```go
+func (c *Auth) LogsURL() string
 ```
 
 #### func (*Auth) ProtoMessage
@@ -425,16 +497,64 @@ func (a *Auth) RequireLogin(c *RouterPaths, next http.HandlerFunc) http.HandlerF
 func (m *Auth) Reset()
 ```
 
+#### func (*Auth) RolesURL
+
+```go
+func (c *Auth) RolesURL() string
+```
+
 #### func (*Auth) Router
 
 ```go
 func (a *Auth) Router(c *RouterPaths, home, loggedIn http.HandlerFunc) *mux.Router
 ```
 
+#### func (*Auth) RulesURL
+
+```go
+func (c *Auth) RulesURL() string
+```
+
+#### func (*Auth) SearchUsersURL
+
+```go
+func (c *Auth) SearchUsersURL() string
+```
+
+#### func (*Auth) StatsURL
+
+```go
+func (c *Auth) StatsURL() string
+```
+
 #### func (*Auth) String
 
 ```go
 func (m *Auth) String() string
+```
+
+#### func (*Auth) TenantURL
+
+```go
+func (c *Auth) TenantURL() string
+```
+
+#### func (*Auth) TokenURL
+
+```go
+func (c *Auth) TokenURL() string
+```
+
+#### func (*Auth) UserInfoURL
+
+```go
+func (c *Auth) UserInfoURL() string
+```
+
+#### func (*Auth) UsersURL
+
+```go
+func (c *Auth) UsersURL() string
 ```
 
 #### func (*Auth) XXX_DiscardUnknown
@@ -818,6 +938,7 @@ type ClientSet struct {
 	Contact ContactServiceClient
 	User    UserServiceClient
 	Admin   AdminServiceClient
+	Payment PaymentServiceClient
 }
 ```
 
@@ -862,6 +983,22 @@ type ContactServiceServer interface {
 ```
 
 ContactServiceServer is the server API for ContactService service.
+
+#### type CustomClaims
+
+```go
+type CustomClaims struct {
+	Scope string `json:"scope"`
+	jwt.StandardClaims
+}
+```
+
+
+#### func (*CustomClaims) CheckScope
+
+```go
+func (c *CustomClaims) CheckScope(scope string, tokenString string) bool
+```
 
 #### type CustomersWidget
 
@@ -1451,6 +1588,191 @@ func (m *Identity) XXX_Size() int
 func (m *Identity) XXX_Unmarshal(b []byte) error
 ```
 
+#### type JSONWebKeys
+
+```go
+type JSONWebKeys struct {
+	Kty                  string   `protobuf:"bytes,1,opt,name=kty,proto3" json:"kty,omitempty"`
+	Kid                  string   `protobuf:"bytes,2,opt,name=kid,proto3" json:"kid,omitempty"`
+	Use                  string   `protobuf:"bytes,3,opt,name=use,proto3" json:"use,omitempty"`
+	N                    string   `protobuf:"bytes,4,opt,name=n,proto3" json:"n,omitempty"`
+	E                    string   `protobuf:"bytes,5,opt,name=e,proto3" json:"e,omitempty"`
+	X5C                  []string `protobuf:"bytes,6,rep,name=x5c,proto3" json:"x5c,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*JSONWebKeys) Descriptor
+
+```go
+func (*JSONWebKeys) Descriptor() ([]byte, []int)
+```
+
+#### func (*JSONWebKeys) GetE
+
+```go
+func (m *JSONWebKeys) GetE() string
+```
+
+#### func (*JSONWebKeys) GetKid
+
+```go
+func (m *JSONWebKeys) GetKid() string
+```
+
+#### func (*JSONWebKeys) GetKty
+
+```go
+func (m *JSONWebKeys) GetKty() string
+```
+
+#### func (*JSONWebKeys) GetN
+
+```go
+func (m *JSONWebKeys) GetN() string
+```
+
+#### func (*JSONWebKeys) GetUse
+
+```go
+func (m *JSONWebKeys) GetUse() string
+```
+
+#### func (*JSONWebKeys) GetX5C
+
+```go
+func (m *JSONWebKeys) GetX5C() []string
+```
+
+#### func (*JSONWebKeys) ProtoMessage
+
+```go
+func (*JSONWebKeys) ProtoMessage()
+```
+
+#### func (*JSONWebKeys) Reset
+
+```go
+func (m *JSONWebKeys) Reset()
+```
+
+#### func (*JSONWebKeys) String
+
+```go
+func (m *JSONWebKeys) String() string
+```
+
+#### func (*JSONWebKeys) XXX_DiscardUnknown
+
+```go
+func (m *JSONWebKeys) XXX_DiscardUnknown()
+```
+
+#### func (*JSONWebKeys) XXX_Marshal
+
+```go
+func (m *JSONWebKeys) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*JSONWebKeys) XXX_Merge
+
+```go
+func (m *JSONWebKeys) XXX_Merge(src proto.Message)
+```
+
+#### func (*JSONWebKeys) XXX_Size
+
+```go
+func (m *JSONWebKeys) XXX_Size() int
+```
+
+#### func (*JSONWebKeys) XXX_Unmarshal
+
+```go
+func (m *JSONWebKeys) XXX_Unmarshal(b []byte) error
+```
+
+#### type Jwks
+
+```go
+type Jwks struct {
+	Keys                 []*JSONWebKeys `protobuf:"bytes,1,rep,name=keys,proto3" json:"keys,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+```
+
+
+#### func (*Jwks) Descriptor
+
+```go
+func (*Jwks) Descriptor() ([]byte, []int)
+```
+
+#### func (*Jwks) GetCert
+
+```go
+func (c *Jwks) GetCert(token *jwt.Token) (string, error)
+```
+
+#### func (*Jwks) GetKeys
+
+```go
+func (m *Jwks) GetKeys() []*JSONWebKeys
+```
+
+#### func (*Jwks) ProtoMessage
+
+```go
+func (*Jwks) ProtoMessage()
+```
+
+#### func (*Jwks) Reset
+
+```go
+func (m *Jwks) Reset()
+```
+
+#### func (*Jwks) String
+
+```go
+func (m *Jwks) String() string
+```
+
+#### func (*Jwks) XXX_DiscardUnknown
+
+```go
+func (m *Jwks) XXX_DiscardUnknown()
+```
+
+#### func (*Jwks) XXX_Marshal
+
+```go
+func (m *Jwks) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Jwks) XXX_Merge
+
+```go
+func (m *Jwks) XXX_Merge(src proto.Message)
+```
+
+#### func (*Jwks) XXX_Size
+
+```go
+func (m *Jwks) XXX_Size() int
+```
+
+#### func (*Jwks) XXX_Unmarshal
+
+```go
+func (m *Jwks) XXX_Unmarshal(b []byte) error
+```
+
 #### type Message
 
 ```go
@@ -1523,36 +1845,36 @@ func (m *Message) XXX_Size() int
 func (m *Message) XXX_Unmarshal(b []byte) error
 ```
 
-#### type PaymetServiceClient
+#### type PaymentServiceClient
 
 ```go
-type PaymetServiceClient interface {
+type PaymentServiceClient interface {
 	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
 	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*Identifier, error)
 }
 ```
 
-PaymetServiceClient is the client API for PaymetService service.
+PaymentServiceClient is the client API for PaymentService service.
 
 For semantics around ctx use and closing/ending streaming RPCs, please refer to
 https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 
-#### func  NewPaymetServiceClient
+#### func  NewPaymentServiceClient
 
 ```go
-func NewPaymetServiceClient(cc *grpc.ClientConn) PaymetServiceClient
+func NewPaymentServiceClient(cc *grpc.ClientConn) PaymentServiceClient
 ```
 
-#### type PaymetServiceServer
+#### type PaymentServiceServer
 
 ```go
-type PaymetServiceServer interface {
+type PaymentServiceServer interface {
 	Subscribe(context.Context, *SubscribeRequest) (*Identifier, error)
 	Unsubscribe(context.Context, *UnSubscribeRequest) (*Identifier, error)
 }
 ```
 
-PaymetServiceServer is the server API for PaymetService service.
+PaymentServiceServer is the server API for PaymentService service.
 
 #### type PlansWidget
 
@@ -1838,6 +2160,27 @@ func (m *SMSStatus) XXX_Size() int
 
 ```go
 func (m *SMSStatus) XXX_Unmarshal(b []byte) error
+```
+
+#### type Scope
+
+```go
+type Scope int
+```
+
+
+```go
+const (
+	OPENID Scope = iota
+	PROFILE
+	EMAIL
+)
+```
+
+#### func (Scope) String
+
+```go
+func (s Scope) String() string
 ```
 
 #### type Secret

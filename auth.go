@@ -6,11 +6,13 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/mux"
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	"net/http"
 	"net/url"
+	"strings"
 )
 
 type RouterPaths struct {
@@ -229,4 +231,131 @@ func (a *Auth) Router(c *RouterPaths, home, loggedIn http.HandlerFunc) *mux.Rout
 
 func (a *Auth) ListenAndServe(addr string, c *RouterPaths, home, loggedIn http.HandlerFunc) error {
 	return http.ListenAndServe(addr, a.Router(c, home, loggedIn))
+}
+
+func (c *Auth) AuthURL() string {
+	return "https://" + c.Domain + "/authorize"
+}
+
+func (c *Auth) TokenURL() string {
+	return "https://" + c.Domain + "/oauth/token"
+}
+
+func (c *Auth) UserInfoURL() string {
+	return "https://" + c.Domain + "/userinfo"
+}
+
+func (c *Auth) UsersURL() string {
+	return "https://" + c.Domain + "/api/v2/users"
+}
+
+func (c *Auth) SearchUsersURL() string {
+	return "https://" + c.Domain + "/api/v2/users-by-email"
+}
+
+func (c *Auth) RolesURL() string {
+	return "https://" + c.Domain + "/api/v2/roles"
+}
+
+func (c *Auth) LogsURL() string {
+	return "https://" + c.Domain + "/api/v2/logs"
+}
+
+func (c *Auth) GrantsURL() string {
+	return "https://" + c.Domain + "/api/v2/grants"
+}
+
+func (c *Auth) StatsURL() string {
+	return "https://" + c.Domain + "/api/v2/stats/active-users"
+}
+
+func (c *Auth) ClientsURL() string {
+	return "https://" + c.Domain + "/api/v2/clients"
+}
+
+func (c *Auth) ConnectionsURL() string {
+	return "https://" + c.Domain + "/api/v2/connections"
+}
+
+func (c *Auth) CustomDomainsURL() string {
+	return "https://" + c.Domain + "/api/v2/custom-domains"
+}
+
+func (c *Auth) RulesURL() string {
+	return "https://" + c.Domain + "/api/v2/rules"
+}
+
+func (c *Auth) TenantURL() string {
+	return "https://" + c.Domain + "/api/v2/tenants/settings"
+}
+
+func (c *Auth) EmailURL() string {
+	return "https://" + c.Domain + "/api/v2/emails/provider"
+}
+
+func (c *Auth) EmailTemplateURL(name string) string {
+	return "https://" + c.Domain + "/api/v2/email-templates/" + name
+}
+
+func (c *Auth) DeviceCredentials(name string) string {
+	return "https://" + c.Domain + "/api/v2/device-credentials"
+}
+
+func (c *Auth) JWKSURL() string {
+	return "https://" + c.Domain + "/.well-known/jwks.json"
+}
+
+func (c *Auth) GetJWKS(token *jwt.Token) (*Jwks, error) {
+	resp, err := HTTPClient.Get(c.JWKSURL())
+
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	var jwks = &Jwks{}
+	err = json.NewDecoder(resp.Body).Decode(&jwks)
+
+	if err != nil {
+		return nil, err
+	}
+	return jwks, nil
+
+}
+
+func (c *Jwks) GetCert(token *jwt.Token) (string, error) {
+	var cert string
+	for k, _ := range c.Keys {
+		if token.Header["kid"] == c.Keys[k].Kid {
+			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C[0] + "\n-----END CERTIFICATE-----"
+		}
+	}
+
+	if cert == "" {
+		err := errors.New("Unable to find appropriate key.")
+		return cert, err
+	}
+
+	return cert, nil
+}
+
+type CustomClaims struct {
+	Scope string `json:"scope"`
+	jwt.StandardClaims
+}
+
+func (c *CustomClaims) CheckScope(scope string, tokenString string) bool {
+	token, _ := jwt.ParseWithClaims(tokenString, c, nil)
+
+	claims, _ := token.Claims.(*CustomClaims)
+
+	hasScope := false
+	result := strings.Split(claims.Scope, " ")
+	for i := range result {
+		if result[i] == scope {
+			hasScope = true
+		}
+	}
+
+	return hasScope
 }

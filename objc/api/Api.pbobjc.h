@@ -34,6 +34,7 @@ CF_EXTERN_C_BEGIN
 @class Email;
 @class Identifier;
 @class Identity;
+@class JSONWebKeys;
 @class Message;
 @class PlansWidget;
 @class SMS;
@@ -548,6 +549,49 @@ typedef GPB_ENUM(Template_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *text;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSData *data_p;
+
+@end
+
+#pragma mark - JSONWebKeys
+
+typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
+  JSONWebKeys_FieldNumber_Kty = 1,
+  JSONWebKeys_FieldNumber_Kid = 2,
+  JSONWebKeys_FieldNumber_Use = 3,
+  JSONWebKeys_FieldNumber_N = 4,
+  JSONWebKeys_FieldNumber_E = 5,
+  JSONWebKeys_FieldNumber_X5CArray = 6,
+};
+
+@interface JSONWebKeys : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *kty;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *kid;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *use;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *n;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *e;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *x5CArray;
+/** The number of items in @c x5CArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger x5CArray_Count;
+
+@end
+
+#pragma mark - Jwks
+
+typedef GPB_ENUM(Jwks_FieldNumber) {
+  Jwks_FieldNumber_KeysArray = 1,
+};
+
+@interface Jwks : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<JSONWebKeys*> *keysArray;
+/** The number of items in @c keysArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger keysArray_Count;
 
 @end
 

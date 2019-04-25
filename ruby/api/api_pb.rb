@@ -134,6 +134,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :text, :string, 1
     optional :data, :bytes, 2
   end
+  add_message "api.JSONWebKeys" do
+    optional :kty, :string, 1
+    optional :kid, :string, 2
+    optional :use, :string, 3
+    optional :n, :string, 4
+    optional :e, :string, 5
+    repeated :x5c, :string, 6
+  end
+  add_message "api.Jwks" do
+    repeated :keys, :message, 1, "api.JSONWebKeys"
+  end
 end
 
 module Api
@@ -162,4 +173,6 @@ module Api
   Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
   Bytes = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Bytes").msgclass
   Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
+  JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
+  Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
 end

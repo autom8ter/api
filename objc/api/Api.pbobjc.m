@@ -1728,6 +1728,152 @@ typedef struct Template__storage_ {
 
 @end
 
+#pragma mark - JSONWebKeys
+
+@implementation JSONWebKeys
+
+@dynamic kty;
+@dynamic kid;
+@dynamic use;
+@dynamic n;
+@dynamic e;
+@dynamic x5CArray, x5CArray_Count;
+
+typedef struct JSONWebKeys__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *kty;
+  NSString *kid;
+  NSString *use;
+  NSString *n;
+  NSString *e;
+  NSMutableArray *x5CArray;
+} JSONWebKeys__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "kty",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONWebKeys_FieldNumber_Kty,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(JSONWebKeys__storage_, kty),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "kid",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONWebKeys_FieldNumber_Kid,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(JSONWebKeys__storage_, kid),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "use",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONWebKeys_FieldNumber_Use,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(JSONWebKeys__storage_, use),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "n",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONWebKeys_FieldNumber_N,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(JSONWebKeys__storage_, n),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "e",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONWebKeys_FieldNumber_E,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(JSONWebKeys__storage_, e),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "x5CArray",
+        .dataTypeSpecific.className = NULL,
+        .number = JSONWebKeys_FieldNumber_X5CArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(JSONWebKeys__storage_, x5CArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[JSONWebKeys class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(JSONWebKeys__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\006\000x5c\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Jwks
+
+@implementation Jwks
+
+@dynamic keysArray, keysArray_Count;
+
+typedef struct Jwks__storage_ {
+  uint32_t _has_storage_[1];
+  NSMutableArray *keysArray;
+} Jwks__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "keysArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(JSONWebKeys),
+        .number = Jwks_FieldNumber_KeysArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Jwks__storage_, keysArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Jwks class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Jwks__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

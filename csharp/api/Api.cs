@@ -70,46 +70,49 @@ namespace Api {
             "CRIRCgljbGllbnRfaWQYAiABKAkSFQoNY2xpZW50X3NlY3JldBgDIAEoCRIQ",
             "CghyZWRpcmVjdBgEIAEoCRIQCghhdWRpZW5jZRgFIAEoCRIOCgZzY29wZXMY",
             "BiADKAkiFQoFQnl0ZXMSDAoEYml0cxgBIAEoDCImCghUZW1wbGF0ZRIMCgR0",
-            "ZXh0GAEgASgJEgwKBGRhdGEYAiABKAwy6AUKDlV0aWxpdHlTZXJ2aWNlEjwK",
-            "BEVjaG8SDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIhiC0+STAhIiDS91",
-            "dGlsaXR5L2VjaG86ASoSSwoLRWNob1NwYW5pc2gSDC5hcGkuTWVzc2FnZRoM",
-            "LmFwaS5NZXNzYWdlIiCC0+STAhoiFS91dGlsaXR5L2VjaG8vc3BhbmlzaDoB",
-            "KhJLCgtFY2hvQ2hpbmVzZRIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2Ui",
-            "IILT5JMCGiIVL3V0aWxpdHkvZWNoby9jaGluZXNlOgEqEksKC0VjaG9Fbmds",
-            "aXNoEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIggtPkkwIaIhUvdXRp",
-            "bGl0eS9lY2hvL2VuZ2xpc2g6ASoSRwoJRWNob0hpbmRpEgwuYXBpLk1lc3Nh",
-            "Z2UaDC5hcGkuTWVzc2FnZSIegtPkkwIYIhMvdXRpbGl0eS9lY2hvL2hpbmRp",
-            "OgEqEkkKCkVjaG9BcmFiaWMSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdl",
-            "Ih+C0+STAhkiFC91dGlsaXR5L2VjaG8vYXJhYmljOgEqEkcKC01hcnNoYWxK",
-            "U09OEgouYXBpLkJ5dGVzGgouYXBpLkJ5dGVzIiCC0+STAhoiFS91dGlsaXR5",
-            "L21hcnNoYWwvanNvbjoBKhJHCgtNYXJzaGFsWUFNTBIKLmFwaS5CeXRlcxoK",
-            "LmFwaS5CeXRlcyIggtPkkwIaIhUvdXRpbGl0eS9tYXJzaGFsL3lhbWw6ASoS",
-            "RQoKTWFyc2hhbFhNTBIKLmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIfgtPkkwIZ",
-            "IhQvdXRpbGl0eS9tYXJzaGFsL3htbDoBKhJECgZSZW5kZXISDS5hcGkuVGVt",
-            "cGxhdGUaCi5hcGkuQnl0ZXMiH4LT5JMCGSIUL3V0aWxpdHkvbWFyc2hhbC94",
-            "bWw6ASoyvQIKDkNvbnRhY3RTZXJ2aWNlEkIKB1NlbmRTTVMSCC5hcGkuU01T",
-            "Gg8uYXBpLklkZW50aWZpZXIiHILT5JMCFiIRL2NvbnRhY3Qvc21zL3t0b306",
-            "ASoSRwoGR2V0U01TEg8uYXBpLklkZW50aWZpZXIaDi5hcGkuU01TU3RhdHVz",
-            "IhyC0+STAhYiES9jb250YWN0L3Ntcy97aWR9OgEqElcKCVNlbmRFbWFpbBIR",
-            "LmFwaS5FbWFpbFJlcXVlc3QaDC5hcGkuTWVzc2FnZSIpgtPkkwIjIh4vY29u",
-            "dGFjdC9lbWFpbC97ZW1haWwuYWRkcmVzc306ASoSRQoIU2VuZENhbGwSCS5h",
-            "cGkuQ2FsbBoPLmFwaS5JZGVudGlmaWVyIh2C0+STAhciEi9jb250YWN0L2Nh",
-            "bGwve3RvfToBKjLOAQoOUGF5bWVudFNlcnZpY2USWgoJU3Vic2NyaWJlEhUu",
-            "YXBpLlN1YnNjcmliZVJlcXVlc3QaDy5hcGkuSWRlbnRpZmllciIlgtPkkwIf",
-            "IhovcGF5bWVudC9zdWJzY3JpYmUve2VtYWlsfToBKhJgCgtVbnN1YnNjcmli",
-            "ZRIXLmFwaS5VblN1YnNjcmliZVJlcXVlc3QaDy5hcGkuSWRlbnRpZmllciIn",
-            "gtPkkwIhIhwvcGF5bWVudC91bnN1YnNjcmliZS97ZW1haWx9OgEqMr8CCgtV",
-            "c2VyU2VydmljZRJECgdHZXRVc2VyEg8uYXBpLklkZW50aWZpZXIaDS5hcGku",
-            "VXNlckluZm8iGYLT5JMCEyIOL3VzZXIvZ2V0L3tpZH06ASoSTQoKVXBkYXRl",
-            "VXNlchINLmFwaS5Vc2VySW5mbxoPLmFwaS5JZGVudGlmaWVyIh+C0+STAhki",
-            "FC91c2VyL3VwZGF0ZS97ZW1haWx9OgEqEk0KCkNyZWF0ZVVzZXISDS5hcGku",
-            "VXNlckluZm8aDy5hcGkuSWRlbnRpZmllciIfgtPkkwIZIhQvdXNlci9jcmVh",
-            "dGUve2VtYWlsfToBKhJMCgpEZWxldGVVc2VyEg8uYXBpLklkZW50aWZpZXIa",
-            "Dy5hcGkuSWRlbnRpZmllciIcgtPkkwIWIhEvdXNlci9kZWxldGUve2lkfToB",
-            "KjKiAQoMQWRtaW5TZXJ2aWNlEkgKDEdldERhc2hib2FyZBILLmFwaS5TZWNy",
-            "ZXQaDi5hcGkuRGFzaGJvYXJkIhuC0+STAhUiEC9hZG1pbi9kYXNoYm9hcmQ6",
-            "ASoSSAoJRW1haWxVc2VyEgouYXBpLkVtYWlsGgwuYXBpLk1lc3NhZ2UiIYLT",
-            "5JMCGyIWL2FkbWluL2VtYWlsL3thZGRyZXNzfToBKmIGcHJvdG8z"));
+            "ZXh0GAEgASgJEgwKBGRhdGEYAiABKAwiVwoLSlNPTldlYktleXMSCwoDa3R5",
+            "GAEgASgJEgsKA2tpZBgCIAEoCRILCgN1c2UYAyABKAkSCQoBbhgEIAEoCRIJ",
+            "CgFlGAUgASgJEgsKA3g1YxgGIAMoCSImCgRKd2tzEh4KBGtleXMYASADKAsy",
+            "EC5hcGkuSlNPTldlYktleXMy6AUKDlV0aWxpdHlTZXJ2aWNlEjwKBEVjaG8S",
+            "DC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIhiC0+STAhIiDS91dGlsaXR5",
+            "L2VjaG86ASoSSwoLRWNob1NwYW5pc2gSDC5hcGkuTWVzc2FnZRoMLmFwaS5N",
+            "ZXNzYWdlIiCC0+STAhoiFS91dGlsaXR5L2VjaG8vc3BhbmlzaDoBKhJLCgtF",
+            "Y2hvQ2hpbmVzZRIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT5JMC",
+            "GiIVL3V0aWxpdHkvZWNoby9jaGluZXNlOgEqEksKC0VjaG9FbmdsaXNoEgwu",
+            "YXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIggtPkkwIaIhUvdXRpbGl0eS9l",
+            "Y2hvL2VuZ2xpc2g6ASoSRwoJRWNob0hpbmRpEgwuYXBpLk1lc3NhZ2UaDC5h",
+            "cGkuTWVzc2FnZSIegtPkkwIYIhMvdXRpbGl0eS9lY2hvL2hpbmRpOgEqEkkK",
+            "CkVjaG9BcmFiaWMSDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIh+C0+ST",
+            "AhkiFC91dGlsaXR5L2VjaG8vYXJhYmljOgEqEkcKC01hcnNoYWxKU09OEgou",
+            "YXBpLkJ5dGVzGgouYXBpLkJ5dGVzIiCC0+STAhoiFS91dGlsaXR5L21hcnNo",
+            "YWwvanNvbjoBKhJHCgtNYXJzaGFsWUFNTBIKLmFwaS5CeXRlcxoKLmFwaS5C",
+            "eXRlcyIggtPkkwIaIhUvdXRpbGl0eS9tYXJzaGFsL3lhbWw6ASoSRQoKTWFy",
+            "c2hhbFhNTBIKLmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIfgtPkkwIZIhQvdXRp",
+            "bGl0eS9tYXJzaGFsL3htbDoBKhJECgZSZW5kZXISDS5hcGkuVGVtcGxhdGUa",
+            "Ci5hcGkuQnl0ZXMiH4LT5JMCGSIUL3V0aWxpdHkvbWFyc2hhbC94bWw6ASoy",
+            "vQIKDkNvbnRhY3RTZXJ2aWNlEkIKB1NlbmRTTVMSCC5hcGkuU01TGg8uYXBp",
+            "LklkZW50aWZpZXIiHILT5JMCFiIRL2NvbnRhY3Qvc21zL3t0b306ASoSRwoG",
+            "R2V0U01TEg8uYXBpLklkZW50aWZpZXIaDi5hcGkuU01TU3RhdHVzIhyC0+ST",
+            "AhYiES9jb250YWN0L3Ntcy97aWR9OgEqElcKCVNlbmRFbWFpbBIRLmFwaS5F",
+            "bWFpbFJlcXVlc3QaDC5hcGkuTWVzc2FnZSIpgtPkkwIjIh4vY29udGFjdC9l",
+            "bWFpbC97ZW1haWwuYWRkcmVzc306ASoSRQoIU2VuZENhbGwSCS5hcGkuQ2Fs",
+            "bBoPLmFwaS5JZGVudGlmaWVyIh2C0+STAhciEi9jb250YWN0L2NhbGwve3Rv",
+            "fToBKjLOAQoOUGF5bWVudFNlcnZpY2USWgoJU3Vic2NyaWJlEhUuYXBpLlN1",
+            "YnNjcmliZVJlcXVlc3QaDy5hcGkuSWRlbnRpZmllciIlgtPkkwIfIhovcGF5",
+            "bWVudC9zdWJzY3JpYmUve2VtYWlsfToBKhJgCgtVbnN1YnNjcmliZRIXLmFw",
+            "aS5VblN1YnNjcmliZVJlcXVlc3QaDy5hcGkuSWRlbnRpZmllciIngtPkkwIh",
+            "IhwvcGF5bWVudC91bnN1YnNjcmliZS97ZW1haWx9OgEqMr8CCgtVc2VyU2Vy",
+            "dmljZRJECgdHZXRVc2VyEg8uYXBpLklkZW50aWZpZXIaDS5hcGkuVXNlcklu",
+            "Zm8iGYLT5JMCEyIOL3VzZXIvZ2V0L3tpZH06ASoSTQoKVXBkYXRlVXNlchIN",
+            "LmFwaS5Vc2VySW5mbxoPLmFwaS5JZGVudGlmaWVyIh+C0+STAhkiFC91c2Vy",
+            "L3VwZGF0ZS97ZW1haWx9OgEqEk0KCkNyZWF0ZVVzZXISDS5hcGkuVXNlcklu",
+            "Zm8aDy5hcGkuSWRlbnRpZmllciIfgtPkkwIZIhQvdXNlci9jcmVhdGUve2Vt",
+            "YWlsfToBKhJMCgpEZWxldGVVc2VyEg8uYXBpLklkZW50aWZpZXIaDy5hcGku",
+            "SWRlbnRpZmllciIcgtPkkwIWIhEvdXNlci9kZWxldGUve2lkfToBKjKiAQoM",
+            "QWRtaW5TZXJ2aWNlEkgKDEdldERhc2hib2FyZBILLmFwaS5TZWNyZXQaDi5h",
+            "cGkuRGFzaGJvYXJkIhuC0+STAhUiEC9hZG1pbi9kYXNoYm9hcmQ6ASoSSAoJ",
+            "RW1haWxVc2VyEgouYXBpLkVtYWlsGgwuYXBpLk1lc3NhZ2UiIYLT5JMCGyIW",
+            "L2FkbWluL2VtYWlsL3thZGRyZXNzfToBKmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -137,7 +140,9 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Metadata" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth), global::Api.Auth.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Bytes), global::Api.Bytes.Parser, new[]{ "Bits" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Template), global::Api.Template.Parser, new[]{ "Text", "Data" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Template), global::Api.Template.Parser, new[]{ "Text", "Data" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.JSONWebKeys), global::Api.JSONWebKeys.Parser, new[]{ "Kty", "Kid", "Use", "N", "E", "X5C" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Jwks), global::Api.Jwks.Parser, new[]{ "Keys" }, null, null, null)
           }));
     }
     #endregion
@@ -4905,6 +4910,388 @@ namespace Api {
           }
           case 18: {
             Data = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class JSONWebKeys : pb::IMessage<JSONWebKeys> {
+    private static readonly pb::MessageParser<JSONWebKeys> _parser = new pb::MessageParser<JSONWebKeys>(() => new JSONWebKeys());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<JSONWebKeys> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[25]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JSONWebKeys() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JSONWebKeys(JSONWebKeys other) : this() {
+      kty_ = other.kty_;
+      kid_ = other.kid_;
+      use_ = other.use_;
+      n_ = other.n_;
+      e_ = other.e_;
+      x5C_ = other.x5C_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public JSONWebKeys Clone() {
+      return new JSONWebKeys(this);
+    }
+
+    /// <summary>Field number for the "kty" field.</summary>
+    public const int KtyFieldNumber = 1;
+    private string kty_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Kty {
+      get { return kty_; }
+      set {
+        kty_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "kid" field.</summary>
+    public const int KidFieldNumber = 2;
+    private string kid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Kid {
+      get { return kid_; }
+      set {
+        kid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "use" field.</summary>
+    public const int UseFieldNumber = 3;
+    private string use_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Use {
+      get { return use_; }
+      set {
+        use_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "n" field.</summary>
+    public const int NFieldNumber = 4;
+    private string n_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string N {
+      get { return n_; }
+      set {
+        n_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "e" field.</summary>
+    public const int EFieldNumber = 5;
+    private string e_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string E {
+      get { return e_; }
+      set {
+        e_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "x5c" field.</summary>
+    public const int X5CFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_x5C_codec
+        = pb::FieldCodec.ForString(50);
+    private readonly pbc::RepeatedField<string> x5C_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> X5C {
+      get { return x5C_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as JSONWebKeys);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(JSONWebKeys other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Kty != other.Kty) return false;
+      if (Kid != other.Kid) return false;
+      if (Use != other.Use) return false;
+      if (N != other.N) return false;
+      if (E != other.E) return false;
+      if(!x5C_.Equals(other.x5C_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Kty.Length != 0) hash ^= Kty.GetHashCode();
+      if (Kid.Length != 0) hash ^= Kid.GetHashCode();
+      if (Use.Length != 0) hash ^= Use.GetHashCode();
+      if (N.Length != 0) hash ^= N.GetHashCode();
+      if (E.Length != 0) hash ^= E.GetHashCode();
+      hash ^= x5C_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Kty.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Kty);
+      }
+      if (Kid.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Kid);
+      }
+      if (Use.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Use);
+      }
+      if (N.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(N);
+      }
+      if (E.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(E);
+      }
+      x5C_.WriteTo(output, _repeated_x5C_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Kty.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Kty);
+      }
+      if (Kid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Kid);
+      }
+      if (Use.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Use);
+      }
+      if (N.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(N);
+      }
+      if (E.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(E);
+      }
+      size += x5C_.CalculateSize(_repeated_x5C_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(JSONWebKeys other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Kty.Length != 0) {
+        Kty = other.Kty;
+      }
+      if (other.Kid.Length != 0) {
+        Kid = other.Kid;
+      }
+      if (other.Use.Length != 0) {
+        Use = other.Use;
+      }
+      if (other.N.Length != 0) {
+        N = other.N;
+      }
+      if (other.E.Length != 0) {
+        E = other.E;
+      }
+      x5C_.Add(other.x5C_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Kty = input.ReadString();
+            break;
+          }
+          case 18: {
+            Kid = input.ReadString();
+            break;
+          }
+          case 26: {
+            Use = input.ReadString();
+            break;
+          }
+          case 34: {
+            N = input.ReadString();
+            break;
+          }
+          case 42: {
+            E = input.ReadString();
+            break;
+          }
+          case 50: {
+            x5C_.AddEntriesFrom(input, _repeated_x5C_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Jwks : pb::IMessage<Jwks> {
+    private static readonly pb::MessageParser<Jwks> _parser = new pb::MessageParser<Jwks>(() => new Jwks());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Jwks> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Api.ApiReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Jwks() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Jwks(Jwks other) : this() {
+      keys_ = other.keys_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Jwks Clone() {
+      return new Jwks(this);
+    }
+
+    /// <summary>Field number for the "keys" field.</summary>
+    public const int KeysFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Api.JSONWebKeys> _repeated_keys_codec
+        = pb::FieldCodec.ForMessage(10, global::Api.JSONWebKeys.Parser);
+    private readonly pbc::RepeatedField<global::Api.JSONWebKeys> keys_ = new pbc::RepeatedField<global::Api.JSONWebKeys>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Api.JSONWebKeys> Keys {
+      get { return keys_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Jwks);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Jwks other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!keys_.Equals(other.keys_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= keys_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      keys_.WriteTo(output, _repeated_keys_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += keys_.CalculateSize(_repeated_keys_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Jwks other) {
+      if (other == null) {
+        return;
+      }
+      keys_.Add(other.keys_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            keys_.AddEntriesFrom(input, _repeated_keys_codec);
             break;
           }
         }

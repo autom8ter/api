@@ -7,18 +7,16 @@ import (
 )
 
 var (
-	store *sessions.FilesystemStore
+	store *sessions.CookieStore
 )
 
 var AUTH_SESSION = "auth-session"
-var SESSIONS_PATH = os.Getenv("PWD") + "/sessions"
 
 func InitSessions(secret string) error {
-	_ = os.MkdirAll(SESSIONS_PATH, 0755)
 	if secret == "" {
 		secret = os.Getenv("SECRET")
 	}
-	store = sessions.NewFilesystemStore(SESSIONS_PATH, []byte(secret))
+	store = sessions.NewCookieStore([]byte(secret))
 	gob.Register(map[string]interface{}{})
 	return nil
 }

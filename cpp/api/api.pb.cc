@@ -27,6 +27,7 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Email;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identifier;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identity;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JSONWebKeys;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Message;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PlansWidget;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SubscriptionsWidget;
@@ -172,6 +173,16 @@ class TemplateDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Template>
       _instance;
 } _Template_default_instance_;
+class JSONWebKeysDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<JSONWebKeys>
+      _instance;
+} _JSONWebKeys_default_instance_;
+class JwksDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<Jwks>
+      _instance;
+} _Jwks_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsSubscribeRequest() {
@@ -565,6 +576,35 @@ static void InitDefaultsTemplate() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_Template =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTemplate}, {}};
 
+static void InitDefaultsJSONWebKeys() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_JSONWebKeys_default_instance_;
+    new (ptr) ::api::JSONWebKeys();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::JSONWebKeys::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_JSONWebKeys =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJSONWebKeys}, {}};
+
+static void InitDefaultsJwks() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_Jwks_default_instance_;
+    new (ptr) ::api::Jwks();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::Jwks::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_Jwks =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsJwks}, {
+      &protobuf_api_2eproto::scc_info_JSONWebKeys.base,}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_SubscribeRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UnSubscribeRequest.base);
@@ -593,9 +633,11 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Auth.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Bytes.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Template.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_JSONWebKeys.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Jwks.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[27];
+::google::protobuf::Metadata file_level_metadata[29];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -820,6 +862,23 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Template, text_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Template, data_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, kty_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, kid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, use_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, n_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, e_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JSONWebKeys, x5c_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Jwks, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Jwks, keys_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::SubscribeRequest)},
@@ -849,6 +908,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 198, -1, sizeof(::api::Auth)},
   { 209, -1, sizeof(::api::Bytes)},
   { 215, -1, sizeof(::api::Template)},
+  { 222, -1, sizeof(::api::JSONWebKeys)},
+  { 233, -1, sizeof(::api::Jwks)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -879,6 +940,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Auth_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Bytes_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Template_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JSONWebKeys_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Jwks_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -896,7 +959,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 27);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 29);
 }
 
 void AddDescriptorsImpl() {
@@ -954,54 +1017,57 @@ void AddDescriptorsImpl() {
       "lient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022\020\n\010"
       "audience\030\005 \001(\t\022\016\n\006scopes\030\006 \003(\t\"\025\n\005Bytes\022"
       "\014\n\004bits\030\001 \001(\014\"&\n\010Template\022\014\n\004text\030\001 \001(\t\022"
-      "\014\n\004data\030\002 \001(\0142\350\005\n\016UtilityService\022<\n\004Echo"
-      "\022\014.api.Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/u"
-      "tility/echo:\001*\022K\n\013EchoSpanish\022\014.api.Mess"
-      "age\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/echo"
-      "/spanish:\001*\022K\n\013EchoChinese\022\014.api.Message"
-      "\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/echo/ch"
-      "inese:\001*\022K\n\013EchoEnglish\022\014.api.Message\032\014."
-      "api.Message\" \202\323\344\223\002\032\"\025/utility/echo/engli"
-      "sh:\001*\022G\n\tEchoHindi\022\014.api.Message\032\014.api.M"
-      "essage\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I"
-      "\n\nEchoArabic\022\014.api.Message\032\014.api.Message"
-      "\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*\022G\n\013Mar"
-      "shalJSON\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032"
-      "\"\025/utility/marshal/json:\001*\022G\n\013MarshalYAM"
-      "L\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/util"
-      "ity/marshal/yaml:\001*\022E\n\nMarshalXML\022\n.api."
-      "Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/mars"
-      "hal/xml:\001*\022D\n\006Render\022\r.api.Template\032\n.ap"
-      "i.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:\001*"
-      "2\275\002\n\016ContactService\022B\n\007SendSMS\022\010.api.SMS"
-      "\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/contact/sms/"
-      "{to}:\001*\022G\n\006GetSMS\022\017.api.Identifier\032\016.api"
-      ".SMSStatus\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*"
-      "\022W\n\tSendEmail\022\021.api.EmailRequest\032\014.api.M"
-      "essage\")\202\323\344\223\002#\"\036/contact/email/{email.ad"
-      "dress}:\001*\022E\n\010SendCall\022\t.api.Call\032\017.api.I"
-      "dentifier\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*"
-      "2\316\001\n\016PaymentService\022Z\n\tSubscribe\022\025.api.S"
-      "ubscribeRequest\032\017.api.Identifier\"%\202\323\344\223\002\037"
-      "\"\032/payment/subscribe/{email}:\001*\022`\n\013Unsub"
-      "scribe\022\027.api.UnSubscribeRequest\032\017.api.Id"
-      "entifier\"\'\202\323\344\223\002!\"\034/payment/unsubscribe/{"
-      "email}:\001*2\277\002\n\013UserService\022D\n\007GetUser\022\017.a"
-      "pi.Identifier\032\r.api.UserInfo\"\031\202\323\344\223\002\023\"\016/u"
-      "ser/get/{id}:\001*\022M\n\nUpdateUser\022\r.api.User"
-      "Info\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/upd"
-      "ate/{email}:\001*\022M\n\nCreateUser\022\r.api.UserI"
-      "nfo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/user/crea"
-      "te/{email}:\001*\022L\n\nDeleteUser\022\017.api.Identi"
-      "fier\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/user/del"
-      "ete/{id}:\001*2\242\001\n\014AdminService\022H\n\014GetDashb"
-      "oard\022\013.api.Secret\032\016.api.Dashboard\"\033\202\323\344\223\002"
-      "\025\"\020/admin/dashboard:\001*\022H\n\tEmailUser\022\n.ap"
-      "i.Email\032\014.api.Message\"!\202\323\344\223\002\033\"\026/admin/em"
-      "ail/{address}:\001*b\006proto3"
+      "\014\n\004data\030\002 \001(\014\"W\n\013JSONWebKeys\022\013\n\003kty\030\001 \001("
+      "\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\t\n\001n\030\004 \001(\t\022\t"
+      "\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\"&\n\004Jwks\022\036\n\004keys\030\001"
+      " \003(\0132\020.api.JSONWebKeys2\350\005\n\016UtilityServic"
+      "e\022<\n\004Echo\022\014.api.Message\032\014.api.Message\"\030\202"
+      "\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSpanish\022\014"
+      ".api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/uti"
+      "lity/echo/spanish:\001*\022K\n\013EchoChinese\022\014.ap"
+      "i.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utilit"
+      "y/echo/chinese:\001*\022K\n\013EchoEnglish\022\014.api.M"
+      "essage\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/e"
+      "cho/english:\001*\022G\n\tEchoHindi\022\014.api.Messag"
+      "e\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility/echo/h"
+      "indi:\001*\022I\n\nEchoArabic\022\014.api.Message\032\014.ap"
+      "i.Message\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:"
+      "\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.api.Byte"
+      "s\" \202\323\344\223\002\032\"\025/utility/marshal/json:\001*\022G\n\013M"
+      "arshalYAML\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223"
+      "\002\032\"\025/utility/marshal/yaml:\001*\022E\n\nMarshalX"
+      "ML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/uti"
+      "lity/marshal/xml:\001*\022D\n\006Render\022\r.api.Temp"
+      "late\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marsh"
+      "al/xml:\001*2\275\002\n\016ContactService\022B\n\007SendSMS\022"
+      "\010.api.SMS\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021/con"
+      "tact/sms/{to}:\001*\022G\n\006GetSMS\022\017.api.Identif"
+      "ier\032\016.api.SMSStatus\"\034\202\323\344\223\002\026\"\021/contact/sm"
+      "s/{id}:\001*\022W\n\tSendEmail\022\021.api.EmailReques"
+      "t\032\014.api.Message\")\202\323\344\223\002#\"\036/contact/email/"
+      "{email.address}:\001*\022E\n\010SendCall\022\t.api.Cal"
+      "l\032\017.api.Identifier\"\035\202\323\344\223\002\027\"\022/contact/cal"
+      "l/{to}:\001*2\316\001\n\016PaymentService\022Z\n\tSubscrib"
+      "e\022\025.api.SubscribeRequest\032\017.api.Identifie"
+      "r\"%\202\323\344\223\002\037\"\032/payment/subscribe/{email}:\001*"
+      "\022`\n\013Unsubscribe\022\027.api.UnSubscribeRequest"
+      "\032\017.api.Identifier\"\'\202\323\344\223\002!\"\034/payment/unsu"
+      "bscribe/{email}:\001*2\277\002\n\013UserService\022D\n\007Ge"
+      "tUser\022\017.api.Identifier\032\r.api.UserInfo\"\031\202"
+      "\323\344\223\002\023\"\016/user/get/{id}:\001*\022M\n\nUpdateUser\022\r"
+      ".api.UserInfo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024"
+      "/user/update/{email}:\001*\022M\n\nCreateUser\022\r."
+      "api.UserInfo\032\017.api.Identifier\"\037\202\323\344\223\002\031\"\024/"
+      "user/create/{email}:\001*\022L\n\nDeleteUser\022\017.a"
+      "pi.Identifier\032\017.api.Identifier\"\034\202\323\344\223\002\026\"\021"
+      "/user/delete/{id}:\001*2\242\001\n\014AdminService\022H\n"
+      "\014GetDashboard\022\013.api.Secret\032\016.api.Dashboa"
+      "rd\"\033\202\323\344\223\002\025\"\020/admin/dashboard:\001*\022H\n\tEmail"
+      "User\022\n.api.Email\032\014.api.Message\"!\202\323\344\223\002\033\"\026"
+      "/admin/email/{address}:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3864);
+      descriptor, 3993);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -10099,6 +10165,759 @@ void Template::InternalSwap(Template* other) {
 }
 
 
+// ===================================================================
+
+void JSONWebKeys::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int JSONWebKeys::kKtyFieldNumber;
+const int JSONWebKeys::kKidFieldNumber;
+const int JSONWebKeys::kUseFieldNumber;
+const int JSONWebKeys::kNFieldNumber;
+const int JSONWebKeys::kEFieldNumber;
+const int JSONWebKeys::kX5CFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+JSONWebKeys::JSONWebKeys()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_JSONWebKeys.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.JSONWebKeys)
+}
+JSONWebKeys::JSONWebKeys(const JSONWebKeys& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      x5c_(from.x5c_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  kty_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.kty().size() > 0) {
+    kty_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.kty_);
+  }
+  kid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.kid().size() > 0) {
+    kid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.kid_);
+  }
+  use_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.use().size() > 0) {
+    use_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.use_);
+  }
+  n_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.n().size() > 0) {
+    n_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.n_);
+  }
+  e_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.e().size() > 0) {
+    e_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.e_);
+  }
+  // @@protoc_insertion_point(copy_constructor:api.JSONWebKeys)
+}
+
+void JSONWebKeys::SharedCtor() {
+  kty_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  kid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  use_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  n_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  e_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+JSONWebKeys::~JSONWebKeys() {
+  // @@protoc_insertion_point(destructor:api.JSONWebKeys)
+  SharedDtor();
+}
+
+void JSONWebKeys::SharedDtor() {
+  kty_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  kid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  use_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  n_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  e_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void JSONWebKeys::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* JSONWebKeys::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const JSONWebKeys& JSONWebKeys::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_JSONWebKeys.base);
+  return *internal_default_instance();
+}
+
+
+void JSONWebKeys::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.JSONWebKeys)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  x5c_.Clear();
+  kty_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  kid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  use_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  n_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  e_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool JSONWebKeys::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.JSONWebKeys)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string kty = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_kty()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->kty().data(), static_cast<int>(this->kty().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.JSONWebKeys.kty"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string kid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_kid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->kid().data(), static_cast<int>(this->kid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.JSONWebKeys.kid"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string use = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_use()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->use().data(), static_cast<int>(this->use().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.JSONWebKeys.use"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string n = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_n()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->n().data(), static_cast<int>(this->n().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.JSONWebKeys.n"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string e = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_e()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->e().data(), static_cast<int>(this->e().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.JSONWebKeys.e"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string x5c = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_x5c()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->x5c(this->x5c_size() - 1).data(),
+            static_cast<int>(this->x5c(this->x5c_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.JSONWebKeys.x5c"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.JSONWebKeys)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.JSONWebKeys)
+  return false;
+#undef DO_
+}
+
+void JSONWebKeys::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.JSONWebKeys)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string kty = 1;
+  if (this->kty().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->kty().data(), static_cast<int>(this->kty().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.kty");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->kty(), output);
+  }
+
+  // string kid = 2;
+  if (this->kid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->kid().data(), static_cast<int>(this->kid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.kid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->kid(), output);
+  }
+
+  // string use = 3;
+  if (this->use().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->use().data(), static_cast<int>(this->use().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.use");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->use(), output);
+  }
+
+  // string n = 4;
+  if (this->n().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->n().data(), static_cast<int>(this->n().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.n");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->n(), output);
+  }
+
+  // string e = 5;
+  if (this->e().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->e().data(), static_cast<int>(this->e().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.e");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->e(), output);
+  }
+
+  // repeated string x5c = 6;
+  for (int i = 0, n = this->x5c_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->x5c(i).data(), static_cast<int>(this->x5c(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.x5c");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      6, this->x5c(i), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.JSONWebKeys)
+}
+
+::google::protobuf::uint8* JSONWebKeys::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.JSONWebKeys)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string kty = 1;
+  if (this->kty().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->kty().data(), static_cast<int>(this->kty().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.kty");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->kty(), target);
+  }
+
+  // string kid = 2;
+  if (this->kid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->kid().data(), static_cast<int>(this->kid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.kid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->kid(), target);
+  }
+
+  // string use = 3;
+  if (this->use().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->use().data(), static_cast<int>(this->use().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.use");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->use(), target);
+  }
+
+  // string n = 4;
+  if (this->n().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->n().data(), static_cast<int>(this->n().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.n");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->n(), target);
+  }
+
+  // string e = 5;
+  if (this->e().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->e().data(), static_cast<int>(this->e().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.e");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->e(), target);
+  }
+
+  // repeated string x5c = 6;
+  for (int i = 0, n = this->x5c_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->x5c(i).data(), static_cast<int>(this->x5c(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.JSONWebKeys.x5c");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(6, this->x5c(i), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.JSONWebKeys)
+  return target;
+}
+
+size_t JSONWebKeys::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.JSONWebKeys)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated string x5c = 6;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->x5c_size());
+  for (int i = 0, n = this->x5c_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->x5c(i));
+  }
+
+  // string kty = 1;
+  if (this->kty().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->kty());
+  }
+
+  // string kid = 2;
+  if (this->kid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->kid());
+  }
+
+  // string use = 3;
+  if (this->use().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->use());
+  }
+
+  // string n = 4;
+  if (this->n().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->n());
+  }
+
+  // string e = 5;
+  if (this->e().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->e());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void JSONWebKeys::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.JSONWebKeys)
+  GOOGLE_DCHECK_NE(&from, this);
+  const JSONWebKeys* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const JSONWebKeys>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.JSONWebKeys)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.JSONWebKeys)
+    MergeFrom(*source);
+  }
+}
+
+void JSONWebKeys::MergeFrom(const JSONWebKeys& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.JSONWebKeys)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  x5c_.MergeFrom(from.x5c_);
+  if (from.kty().size() > 0) {
+
+    kty_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.kty_);
+  }
+  if (from.kid().size() > 0) {
+
+    kid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.kid_);
+  }
+  if (from.use().size() > 0) {
+
+    use_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.use_);
+  }
+  if (from.n().size() > 0) {
+
+    n_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.n_);
+  }
+  if (from.e().size() > 0) {
+
+    e_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.e_);
+  }
+}
+
+void JSONWebKeys::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.JSONWebKeys)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void JSONWebKeys::CopyFrom(const JSONWebKeys& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.JSONWebKeys)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool JSONWebKeys::IsInitialized() const {
+  return true;
+}
+
+void JSONWebKeys::Swap(JSONWebKeys* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void JSONWebKeys::InternalSwap(JSONWebKeys* other) {
+  using std::swap;
+  x5c_.InternalSwap(CastToBase(&other->x5c_));
+  kty_.Swap(&other->kty_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  kid_.Swap(&other->kid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  use_.Swap(&other->use_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  n_.Swap(&other->n_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  e_.Swap(&other->e_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata JSONWebKeys::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void Jwks::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Jwks::kKeysFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Jwks::Jwks()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_Jwks.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.Jwks)
+}
+Jwks::Jwks(const Jwks& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      keys_(from.keys_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:api.Jwks)
+}
+
+void Jwks::SharedCtor() {
+}
+
+Jwks::~Jwks() {
+  // @@protoc_insertion_point(destructor:api.Jwks)
+  SharedDtor();
+}
+
+void Jwks::SharedDtor() {
+}
+
+void Jwks::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* Jwks::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const Jwks& Jwks::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_Jwks.base);
+  return *internal_default_instance();
+}
+
+
+void Jwks::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.Jwks)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  keys_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool Jwks::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.Jwks)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .api.JSONWebKeys keys = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_keys()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.Jwks)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.Jwks)
+  return false;
+#undef DO_
+}
+
+void Jwks::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.Jwks)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .api.JSONWebKeys keys = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->keys_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1,
+      this->keys(static_cast<int>(i)),
+      output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.Jwks)
+}
+
+::google::protobuf::uint8* Jwks::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.Jwks)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .api.JSONWebKeys keys = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->keys_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->keys(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.Jwks)
+  return target;
+}
+
+size_t Jwks::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.Jwks)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .api.JSONWebKeys keys = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->keys_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->keys(static_cast<int>(i)));
+    }
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Jwks::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.Jwks)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Jwks* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const Jwks>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.Jwks)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.Jwks)
+    MergeFrom(*source);
+  }
+}
+
+void Jwks::MergeFrom(const Jwks& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.Jwks)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  keys_.MergeFrom(from.keys_);
+}
+
+void Jwks::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.Jwks)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Jwks::CopyFrom(const Jwks& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.Jwks)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Jwks::IsInitialized() const {
+  return true;
+}
+
+void Jwks::Swap(Jwks* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Jwks::InternalSwap(Jwks* other) {
+  using std::swap;
+  CastToBase(&keys_)->InternalSwap(CastToBase(&other->keys_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata Jwks::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -10183,6 +11002,12 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Bytes* Arena::CreateMaybeMe
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Template* Arena::CreateMaybeMessage< ::api::Template >(Arena* arena) {
   return Arena::CreateInternal< ::api::Template >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JSONWebKeys* Arena::CreateMaybeMessage< ::api::JSONWebKeys >(Arena* arena) {
+  return Arena::CreateInternal< ::api::JSONWebKeys >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Jwks* Arena::CreateMaybeMessage< ::api::Jwks >(Arena* arena) {
+  return Arena::CreateInternal< ::api::Jwks >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
