@@ -298,6 +298,10 @@ func (s *String) Replace(oldNew ...string) {
 	s.Text = r.Replace(s.Text)
 }
 
+func (s *String) Matches(this string) bool {
+	return s.Text == this
+}
+
 func (s *String) Println() {
 	fmt.Println(s.Text)
 }
