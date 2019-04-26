@@ -28,7 +28,6 @@
 CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
-@class BearerToken;
 @class Bytes;
 @class Card;
 @class Email;
@@ -39,6 +38,7 @@ CF_EXTERN_C_BEGIN
 @class NumberCapabilities;
 @class PhoneNumber;
 @class Template;
+@class Token;
 @class User;
 @class UserMetadata;
 
@@ -82,6 +82,43 @@ GPBEnumDescriptor *Scope_EnumDescriptor(void);
  **/
 BOOL Scope_IsValidValue(int32_t value);
 
+#pragma mark - Enum URL
+
+typedef GPB_ENUM(URL) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  URL_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  URL_UserInfourl = 0,
+  URL_Tokenurl = 1,
+  URL_Authorizeurl = 2,
+  URL_Usersurl = 3,
+  URL_Clientsurl = 4,
+  URL_Grantsurl = 5,
+  URL_Rulesurl = 6,
+  URL_Rolesurl = 7,
+  URL_Logsurl = 8,
+  URL_Statsurl = 9,
+  URL_Connectionsurl = 10,
+  URL_Tenantsurl = 11,
+  URL_EmailTemplateurl = 12,
+  URL_Emailurl = 13,
+  URL_SearchUsersurl = 14,
+  URL_Deviceurl = 18,
+  URL_Jwksurl = 19,
+  URL_ClientGrantsurl = 20,
+};
+
+GPBEnumDescriptor *URL_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL URL_IsValidValue(int32_t value);
+
 #pragma mark - Enum HTTPMethod
 
 typedef GPB_ENUM(HTTPMethod) {
@@ -117,6 +154,63 @@ BOOL HTTPMethod_IsValidValue(int32_t value);
  **/
 @interface ApiRoot : GPBRootObject
 @end
+
+#pragma mark - ResourceRequest
+
+typedef GPB_ENUM(ResourceRequest_FieldNumber) {
+  ResourceRequest_FieldNumber_Token = 1,
+  ResourceRequest_FieldNumber_Method = 2,
+  ResourceRequest_FieldNumber_Domain = 3,
+  ResourceRequest_FieldNumber_URL = 4,
+  ResourceRequest_FieldNumber_Form = 5,
+  ResourceRequest_FieldNumber_Body = 6,
+};
+
+@interface ResourceRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Token *token;
+/** Test to see if @c token has been set. */
+@property(nonatomic, readwrite) BOOL hasToken;
+
+@property(nonatomic, readwrite) HTTPMethod method;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *domain;
+
+@property(nonatomic, readwrite) URL URL;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
+/** The number of items in @c form without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger form_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
+/** Test to see if @c body has been set. */
+@property(nonatomic, readwrite) BOOL hasBody;
+
+@end
+
+/**
+ * Fetches the raw value of a @c ResourceRequest's @c method property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t ResourceRequest_Method_RawValue(ResourceRequest *message);
+/**
+ * Sets the raw value of an @c ResourceRequest's @c method property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetResourceRequest_Method_RawValue(ResourceRequest *message, int32_t value);
+
+/**
+ * Fetches the raw value of a @c ResourceRequest's @c URL property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t ResourceRequest_URL_RawValue(ResourceRequest *message);
+/**
+ * Sets the raw value of an @c ResourceRequest's @c URL property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetResourceRequest_URL_RawValue(ResourceRequest *message, int32_t value);
 
 #pragma mark - SubscribeRequest
 
@@ -189,7 +283,7 @@ typedef GPB_ENUM(UserRequest_FieldNumber) {
 
 @interface UserRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) BearerToken *string;
+@property(nonatomic, readwrite, strong, null_resettable) Token *string;
 /** Test to see if @c string has been set. */
 @property(nonatomic, readwrite) BOOL hasString;
 
@@ -208,7 +302,7 @@ typedef GPB_ENUM(UserByEmailRequest_FieldNumber) {
 
 @interface UserByEmailRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) BearerToken *token;
+@property(nonatomic, readwrite, strong, null_resettable) Token *token;
 /** Test to see if @c token has been set. */
 @property(nonatomic, readwrite) BOOL hasToken;
 
@@ -555,9 +649,7 @@ typedef GPB_ENUM(Auth_FieldNumber) {
   Auth_FieldNumber_ClientId = 2,
   Auth_FieldNumber_ClientSecret = 3,
   Auth_FieldNumber_Redirect = 4,
-  Auth_FieldNumber_Audience = 5,
-  Auth_FieldNumber_ScopesArray = 6,
-  Auth_FieldNumber_Management = 7,
+  Auth_FieldNumber_ScopesArray = 5,
 };
 
 @interface Auth : GPBMessage
@@ -570,16 +662,10 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *audience;
-
 // |scopesArray| contains |Scope|
 @property(nonatomic, readwrite, strong, null_resettable) GPBEnumArray *scopesArray;
 /** The number of items in @c scopesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
-
-@property(nonatomic, readwrite, strong, null_resettable) BearerToken *management;
-/** Test to see if @c management has been set. */
-@property(nonatomic, readwrite) BOOL hasManagement;
 
 @end
 
@@ -658,14 +744,8 @@ typedef GPB_ENUM(Jwks_FieldNumber) {
 typedef GPB_ENUM(HTTPRequest_FieldNumber) {
   HTTPRequest_FieldNumber_Method = 1,
   HTTPRequest_FieldNumber_URL = 2,
-  HTTPRequest_FieldNumber_Token = 3,
-  HTTPRequest_FieldNumber_User = 4,
-  HTTPRequest_FieldNumber_Password = 5,
-  HTTPRequest_FieldNumber_ContentType = 6,
-  HTTPRequest_FieldNumber_Headers = 7,
-  HTTPRequest_FieldNumber_Form = 8,
-  HTTPRequest_FieldNumber_Cookies = 9,
-  HTTPRequest_FieldNumber_Body = 10,
+  HTTPRequest_FieldNumber_Form = 3,
+  HTTPRequest_FieldNumber_Body = 4,
 };
 
 @interface HTTPRequest : GPBMessage
@@ -674,25 +754,9 @@ typedef GPB_ENUM(HTTPRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *user;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *password;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *contentType;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *headers;
-/** The number of items in @c headers without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger headers_Count;
-
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
 /** The number of items in @c form without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger form_Count;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *cookies;
-/** The number of items in @c cookies without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger cookies_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
 /** Test to see if @c body has been set. */
@@ -812,15 +876,39 @@ typedef GPB_ENUM(PhoneNumberResource_FieldNumber) {
 
 @end
 
-#pragma mark - BearerToken
+#pragma mark - Secret
 
-typedef GPB_ENUM(BearerToken_FieldNumber) {
-  BearerToken_FieldNumber_Token = 1,
+typedef GPB_ENUM(Secret_FieldNumber) {
+  Secret_FieldNumber_Text = 1,
 };
 
-@interface BearerToken : GPBMessage
+@interface Secret : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
+@end
+
+#pragma mark - Token
+
+typedef GPB_ENUM(Token_FieldNumber) {
+  Token_FieldNumber_AccessToken = 1,
+  Token_FieldNumber_TokenType = 2,
+  Token_FieldNumber_RefreshToken = 3,
+  Token_FieldNumber_Expiry = 4,
+  Token_FieldNumber_IdToken = 5,
+};
+
+@interface Token : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *accessToken;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *tokenType;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *refreshToken;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expiry;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *idToken;
 
 @end
 

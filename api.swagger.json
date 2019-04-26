@@ -349,6 +349,110 @@
         ]
       }
     },
+    "/resource/stream/{url}": {
+      "post": {
+        "operationId": "StreamResources",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "USER_INFOURL",
+              "TOKENURL",
+              "AUTHORIZEURL",
+              "USERSURL",
+              "CLIENTSURL",
+              "GRANTSURL",
+              "RULESURL",
+              "ROLESURL",
+              "LOGSURL",
+              "STATSURL",
+              "CONNECTIONSURL",
+              "TENANTSURL",
+              "EMAIL_TEMPLATEURL",
+              "EMAILURL",
+              "SEARCH_USERSURL",
+              "DEVICEURL",
+              "JWKSURL",
+              "CLIENT_GRANTSURL"
+            ]
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiResourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ResourceService"
+        ]
+      }
+    },
+    "/resource/{url}": {
+      "post": {
+        "operationId": "GetResource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "url",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "USER_INFOURL",
+              "TOKENURL",
+              "AUTHORIZEURL",
+              "USERSURL",
+              "CLIENTSURL",
+              "GRANTSURL",
+              "RULESURL",
+              "ROLESURL",
+              "LOGSURL",
+              "STATSURL",
+              "CONNECTIONSURL",
+              "TENANTSURL",
+              "EMAIL_TEMPLATEURL",
+              "EMAILURL",
+              "SEARCH_USERSURL",
+              "DEVICEURL",
+              "JWKSURL",
+              "CLIENT_GRANTSURL"
+            ]
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiResourceRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ResourceService"
+        ]
+      }
+    },
     "/user/create": {
       "post": {
         "operationId": "CreateUser",
@@ -456,7 +560,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiBearerToken"
+              "$ref": "#/definitions/apiToken"
             }
           }
         ],
@@ -770,14 +874,6 @@
         }
       }
     },
-    "apiBearerToken": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "type": "string"
-        }
-      }
-    },
     "apiBytes": {
       "type": "object",
       "properties": {
@@ -903,6 +999,14 @@
         }
       }
     },
+    "apiHTTPMethod": {
+      "type": "string",
+      "enum": [
+        "GET",
+        "POST"
+      ],
+      "default": "GET"
+    },
     "apiIdentifier": {
       "type": "object",
       "properties": {
@@ -991,6 +1095,32 @@
           "$ref": "#/definitions/apiTemplate"
         },
         "data": {
+          "$ref": "#/definitions/apiBytes"
+        }
+      }
+    },
+    "apiResourceRequest": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "method": {
+          "$ref": "#/definitions/apiHTTPMethod"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "url": {
+          "$ref": "#/definitions/apiURL"
+        },
+        "form": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "body": {
           "$ref": "#/definitions/apiBytes"
         }
       }
@@ -1084,6 +1214,50 @@
         }
       }
     },
+    "apiToken": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "token_type": {
+          "type": "string"
+        },
+        "refresh_token": {
+          "type": "string"
+        },
+        "expiry": {
+          "type": "string"
+        },
+        "id_token": {
+          "type": "string"
+        }
+      }
+    },
+    "apiURL": {
+      "type": "string",
+      "enum": [
+        "USER_INFOURL",
+        "TOKENURL",
+        "AUTHORIZEURL",
+        "USERSURL",
+        "CLIENTSURL",
+        "GRANTSURL",
+        "RULESURL",
+        "ROLESURL",
+        "LOGSURL",
+        "STATSURL",
+        "CONNECTIONSURL",
+        "TENANTSURL",
+        "EMAIL_TEMPLATEURL",
+        "EMAILURL",
+        "SEARCH_USERSURL",
+        "DEVICEURL",
+        "JWKSURL",
+        "CLIENT_GRANTSURL"
+      ],
+      "default": "USER_INFOURL"
+    },
     "apiUnSubscribeRequest": {
       "type": "object",
       "properties": {
@@ -1169,7 +1343,7 @@
       "type": "object",
       "properties": {
         "token": {
-          "$ref": "#/definitions/apiBearerToken"
+          "$ref": "#/definitions/apiToken"
         },
         "email": {
           "type": "string"
@@ -1191,7 +1365,7 @@
       "type": "object",
       "properties": {
         "string": {
-          "$ref": "#/definitions/apiBearerToken"
+          "$ref": "#/definitions/apiToken"
         },
         "user": {
           "$ref": "#/definitions/apiUser"

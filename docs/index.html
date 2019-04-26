@@ -191,10 +191,6 @@
                 </li>
               
                 <li>
-                  <a href="#api.BearerToken"><span class="badge">M</span>BearerToken</a>
-                </li>
-              
-                <li>
                   <a href="#api.Bytes"><span class="badge">M</span>Bytes</a>
                 </li>
               
@@ -239,15 +235,7 @@
                 </li>
               
                 <li>
-                  <a href="#api.HTTPRequest.CookiesEntry"><span class="badge">M</span>HTTPRequest.CookiesEntry</a>
-                </li>
-              
-                <li>
                   <a href="#api.HTTPRequest.FormEntry"><span class="badge">M</span>HTTPRequest.FormEntry</a>
-                </li>
-              
-                <li>
-                  <a href="#api.HTTPRequest.HeadersEntry"><span class="badge">M</span>HTTPRequest.HeadersEntry</a>
                 </li>
               
                 <li>
@@ -287,6 +275,14 @@
                 </li>
               
                 <li>
+                  <a href="#api.ResourceRequest"><span class="badge">M</span>ResourceRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#api.ResourceRequest.FormEntry"><span class="badge">M</span>ResourceRequest.FormEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.SMS"><span class="badge">M</span>SMS</a>
                 </li>
               
@@ -299,11 +295,19 @@
                 </li>
               
                 <li>
+                  <a href="#api.Secret"><span class="badge">M</span>Secret</a>
+                </li>
+              
+                <li>
                   <a href="#api.SubscribeRequest"><span class="badge">M</span>SubscribeRequest</a>
                 </li>
               
                 <li>
                   <a href="#api.Template"><span class="badge">M</span>Template</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Token"><span class="badge">M</span>Token</a>
                 </li>
               
                 <li>
@@ -339,6 +343,10 @@
                   <a href="#api.Scope"><span class="badge">E</span>Scope</a>
                 </li>
               
+                <li>
+                  <a href="#api.URL"><span class="badge">E</span>URL</a>
+                </li>
+              
               
               
                 <li>
@@ -347,6 +355,10 @@
               
                 <li>
                   <a href="#api.PaymentService"><span class="badge">S</span>PaymentService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.ResourceService"><span class="badge">S</span>ResourceService</a>
                 </li>
               
                 <li>
@@ -464,46 +476,9 @@
                 </tr>
               
                 <tr>
-                  <td>audience</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>scopes</td>
                   <td><a href="#api.Scope">Scope</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>management</td>
-                  <td><a href="#api.BearerToken">BearerToken</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.BearerToken">BearerToken</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>token</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -885,50 +860,8 @@
                 </tr>
               
                 <tr>
-                  <td>token</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>password</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>contentType</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>headers</td>
-                  <td><a href="#api.HTTPRequest.HeadersEntry">HTTPRequest.HeadersEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>form</td>
                   <td><a href="#api.HTTPRequest.FormEntry">HTTPRequest.FormEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>cookies</td>
-                  <td><a href="#api.HTTPRequest.CookiesEntry">HTTPRequest.CookiesEntry</a></td>
                   <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
@@ -946,67 +879,7 @@
 
         
       
-        <h3 id="api.HTTPRequest.CookiesEntry">HTTPRequest.CookiesEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="api.HTTPRequest.FormEntry">HTTPRequest.FormEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.HTTPRequest.HeadersEntry">HTTPRequest.HeadersEntry</h3>
         <p></p>
 
         
@@ -1355,6 +1228,94 @@
 
         
       
+        <h3 id="api.ResourceRequest">ResourceRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>token</td>
+                  <td><a href="#api.Token">Token</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>method</td>
+                  <td><a href="#api.HTTPMethod">HTTPMethod</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>domain</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#api.URL">URL</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>form</td>
+                  <td><a href="#api.ResourceRequest.FormEntry">ResourceRequest.FormEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>body</td>
+                  <td><a href="#api.Bytes">Bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.ResourceRequest.FormEntry">ResourceRequest.FormEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.SMS">SMS</h3>
         <p></p>
 
@@ -1508,6 +1469,29 @@
 
         
       
+        <h3 id="api.Secret">Secret</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.SubscribeRequest">SubscribeRequest</h3>
         <p></p>
 
@@ -1564,6 +1548,57 @@
               
                 <tr>
                   <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Token">Token</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>access_token</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>token_type</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>refresh_token</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>expiry</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id_token</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1766,7 +1801,7 @@
               
                 <tr>
                   <td>token</td>
-                  <td><a href="#api.BearerToken">BearerToken</a></td>
+                  <td><a href="#api.Token">Token</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1849,7 +1884,7 @@
               
                 <tr>
                   <td>string</td>
-                  <td><a href="#api.BearerToken">BearerToken</a></td>
+                  <td><a href="#api.Token">Token</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2017,6 +2052,125 @@
           </tbody>
         </table>
       
+        <h3 id="api.URL">URL</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>USER_INFOURL</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>TOKENURL</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AUTHORIZEURL</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>USERSURL</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CLIENTSURL</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>GRANTSURL</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>RULESURL</td>
+                <td>6</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ROLESURL</td>
+                <td>7</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>LOGSURL</td>
+                <td>8</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>STATSURL</td>
+                <td>9</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CONNECTIONSURL</td>
+                <td>10</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>TENANTSURL</td>
+                <td>11</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>EMAIL_TEMPLATEURL</td>
+                <td>12</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>EMAILURL</td>
+                <td>13</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>SEARCH_USERSURL</td>
+                <td>14</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DEVICEURL</td>
+                <td>18</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>JWKSURL</td>
+                <td>19</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CLIENT_GRANTSURL</td>
+                <td>20</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
 
       
 
@@ -2120,6 +2274,31 @@
           </tbody>
         </table>
       
+        <h3 id="api.ResourceService">ResourceService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetResource</td>
+                <td><a href="#api.ResourceRequest">ResourceRequest</a></td>
+                <td><a href="#api.Bytes">Bytes</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>StreamResources</td>
+                <td><a href="#api.ResourceRequest">ResourceRequest</a></td>
+                <td><a href="#api.Bytes">Bytes</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
         <h3 id="api.UserService">UserService</h3>
         <p></p>
         <table class="enum-table">
@@ -2158,7 +2337,7 @@
             
               <tr>
                 <td>ListUsers</td>
-                <td><a href="#api.BearerToken">BearerToken</a></td>
+                <td><a href="#api.Token">Token</a></td>
                 <td><a href="#api.User">User</a> stream</td>
                 <td><p></p></td>
               </tr>

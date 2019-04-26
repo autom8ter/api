@@ -129,6 +129,77 @@ BOOL Scope_IsValidValue(int32_t value__) {
   }
 }
 
+#pragma mark - Enum URL
+
+GPBEnumDescriptor *URL_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "UserInfourl\000Tokenurl\000Authorizeurl\000Usersu"
+        "rl\000Clientsurl\000Grantsurl\000Rulesurl\000Rolesur"
+        "l\000Logsurl\000Statsurl\000Connectionsurl\000Tenant"
+        "surl\000EmailTemplateurl\000Emailurl\000SearchUse"
+        "rsurl\000Deviceurl\000Jwksurl\000ClientGrantsurl\000";
+    static const int32_t values[] = {
+        URL_UserInfourl,
+        URL_Tokenurl,
+        URL_Authorizeurl,
+        URL_Usersurl,
+        URL_Clientsurl,
+        URL_Grantsurl,
+        URL_Rulesurl,
+        URL_Rolesurl,
+        URL_Logsurl,
+        URL_Statsurl,
+        URL_Connectionsurl,
+        URL_Tenantsurl,
+        URL_EmailTemplateurl,
+        URL_Emailurl,
+        URL_SearchUsersurl,
+        URL_Deviceurl,
+        URL_Jwksurl,
+        URL_ClientGrantsurl,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(URL)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:URL_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL URL_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case URL_UserInfourl:
+    case URL_Tokenurl:
+    case URL_Authorizeurl:
+    case URL_Usersurl:
+    case URL_Clientsurl:
+    case URL_Grantsurl:
+    case URL_Rulesurl:
+    case URL_Rolesurl:
+    case URL_Logsurl:
+    case URL_Statsurl:
+    case URL_Connectionsurl:
+    case URL_Tenantsurl:
+    case URL_EmailTemplateurl:
+    case URL_Emailurl:
+    case URL_SearchUsersurl:
+    case URL_Deviceurl:
+    case URL_Jwksurl:
+    case URL_ClientGrantsurl:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 #pragma mark - Enum HTTPMethod
 
 GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void) {
@@ -162,6 +233,133 @@ BOOL HTTPMethod_IsValidValue(int32_t value__) {
     default:
       return NO;
   }
+}
+
+#pragma mark - ResourceRequest
+
+@implementation ResourceRequest
+
+@dynamic hasToken, token;
+@dynamic method;
+@dynamic domain;
+@dynamic URL;
+@dynamic form, form_Count;
+@dynamic hasBody, body;
+
+typedef struct ResourceRequest__storage_ {
+  uint32_t _has_storage_[1];
+  HTTPMethod method;
+  URL URL;
+  Token *token;
+  NSString *domain;
+  NSMutableDictionary *form;
+  Bytes *body;
+} ResourceRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "token",
+        .dataTypeSpecific.className = GPBStringifySymbol(Token),
+        .number = ResourceRequest_FieldNumber_Token,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ResourceRequest__storage_, token),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "method",
+        .dataTypeSpecific.enumDescFunc = HTTPMethod_EnumDescriptor,
+        .number = ResourceRequest_FieldNumber_Method,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ResourceRequest__storage_, method),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "domain",
+        .dataTypeSpecific.className = NULL,
+        .number = ResourceRequest_FieldNumber_Domain,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ResourceRequest__storage_, domain),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "URL",
+        .dataTypeSpecific.enumDescFunc = URL_EnumDescriptor,
+        .number = ResourceRequest_FieldNumber_URL,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ResourceRequest__storage_, URL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "form",
+        .dataTypeSpecific.className = NULL,
+        .number = ResourceRequest_FieldNumber_Form,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(ResourceRequest__storage_, form),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "body",
+        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
+        .number = ResourceRequest_FieldNumber_Body,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(ResourceRequest__storage_, body),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ResourceRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ResourceRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\004!!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t ResourceRequest_Method_RawValue(ResourceRequest *message) {
+  GPBDescriptor *descriptor = [ResourceRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ResourceRequest_FieldNumber_Method];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetResourceRequest_Method_RawValue(ResourceRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [ResourceRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ResourceRequest_FieldNumber_Method];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
+
+int32_t ResourceRequest_URL_RawValue(ResourceRequest *message) {
+  GPBDescriptor *descriptor = [ResourceRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ResourceRequest_FieldNumber_URL];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetResourceRequest_URL_RawValue(ResourceRequest *message, int32_t value) {
+  GPBDescriptor *descriptor = [ResourceRequest descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ResourceRequest_FieldNumber_URL];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
 
 #pragma mark - SubscribeRequest
@@ -398,7 +596,7 @@ typedef struct Empty__storage_ {
 
 typedef struct UserRequest__storage_ {
   uint32_t _has_storage_[1];
-  BearerToken *string;
+  Token *string;
   User *user;
 } UserRequest__storage_;
 
@@ -410,7 +608,7 @@ typedef struct UserRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "string",
-        .dataTypeSpecific.className = GPBStringifySymbol(BearerToken),
+        .dataTypeSpecific.className = GPBStringifySymbol(Token),
         .number = UserRequest_FieldNumber_String,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(UserRequest__storage_, string),
@@ -452,7 +650,7 @@ typedef struct UserRequest__storage_ {
 
 typedef struct UserByEmailRequest__storage_ {
   uint32_t _has_storage_[1];
-  BearerToken *token;
+  Token *token;
   NSString *email;
 } UserByEmailRequest__storage_;
 
@@ -464,7 +662,7 @@ typedef struct UserByEmailRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "token",
-        .dataTypeSpecific.className = GPBStringifySymbol(BearerToken),
+        .dataTypeSpecific.className = GPBStringifySymbol(Token),
         .number = UserByEmailRequest_FieldNumber_Token,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(UserByEmailRequest__storage_, token),
@@ -1626,9 +1824,7 @@ typedef struct AppMetadata__storage_ {
 @dynamic clientId;
 @dynamic clientSecret;
 @dynamic redirect;
-@dynamic audience;
 @dynamic scopesArray, scopesArray_Count;
-@dynamic hasManagement, management;
 
 typedef struct Auth__storage_ {
   uint32_t _has_storage_[1];
@@ -1636,9 +1832,7 @@ typedef struct Auth__storage_ {
   NSString *clientId;
   NSString *clientSecret;
   NSString *redirect;
-  NSString *audience;
   GPBEnumArray *scopesArray;
-  BearerToken *management;
 } Auth__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1684,15 +1878,6 @@ typedef struct Auth__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "audience",
-        .dataTypeSpecific.className = NULL,
-        .number = Auth_FieldNumber_Audience,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Auth__storage_, audience),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "scopesArray",
         .dataTypeSpecific.enumDescFunc = Scope_EnumDescriptor,
         .number = Auth_FieldNumber_ScopesArray,
@@ -1700,15 +1885,6 @@ typedef struct Auth__storage_ {
         .offset = (uint32_t)offsetof(Auth__storage_, scopesArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldPacked | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
-      },
-      {
-        .name = "management",
-        .dataTypeSpecific.className = GPBStringifySymbol(BearerToken),
-        .number = Auth_FieldNumber_Management,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(Auth__storage_, management),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1976,26 +2152,14 @@ typedef struct Jwks__storage_ {
 
 @dynamic method;
 @dynamic URL;
-@dynamic token;
-@dynamic user;
-@dynamic password;
-@dynamic contentType;
-@dynamic headers, headers_Count;
 @dynamic form, form_Count;
-@dynamic cookies, cookies_Count;
 @dynamic hasBody, body;
 
 typedef struct HTTPRequest__storage_ {
   uint32_t _has_storage_[1];
   HTTPMethod method;
   NSString *URL;
-  NSString *token;
-  NSString *user;
-  NSString *password;
-  NSString *contentType;
-  NSMutableDictionary *headers;
   NSMutableDictionary *form;
-  NSMutableDictionary *cookies;
   Bytes *body;
 } HTTPRequest__storage_;
 
@@ -2024,51 +2188,6 @@ typedef struct HTTPRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "token",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_Token,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, token),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "user",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_User,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, user),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "password",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_Password,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, password),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "contentType",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_ContentType,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, contentType),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "headers",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_Headers,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, headers),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "form",
         .dataTypeSpecific.className = NULL,
         .number = HTTPRequest_FieldNumber_Form,
@@ -2078,19 +2197,10 @@ typedef struct HTTPRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "cookies",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_Cookies,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, cookies),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "body",
         .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
         .number = HTTPRequest_FieldNumber_Body,
-        .hasIndex = 6,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(HTTPRequest__storage_, body),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2106,7 +2216,7 @@ typedef struct HTTPRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\002!!!\000\006\013\000";
+        "\001\002!!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -2451,16 +2561,16 @@ typedef struct PhoneNumberResource__storage_ {
 
 @end
 
-#pragma mark - BearerToken
+#pragma mark - Secret
 
-@implementation BearerToken
+@implementation Secret
 
-@dynamic token;
+@dynamic text;
 
-typedef struct BearerToken__storage_ {
+typedef struct Secret__storage_ {
   uint32_t _has_storage_[1];
-  NSString *token;
-} BearerToken__storage_;
+  NSString *text;
+} Secret__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -2469,22 +2579,109 @@ typedef struct BearerToken__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "token",
+        .name = "text",
         .dataTypeSpecific.className = NULL,
-        .number = BearerToken_FieldNumber_Token,
+        .number = Secret_FieldNumber_Text,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(BearerToken__storage_, token),
+        .offset = (uint32_t)offsetof(Secret__storage_, text),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[BearerToken class]
+        [GPBDescriptor allocDescriptorForClass:[Secret class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(BearerToken__storage_)
+                                   storageSize:sizeof(Secret__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Token
+
+@implementation Token
+
+@dynamic accessToken;
+@dynamic tokenType;
+@dynamic refreshToken;
+@dynamic expiry;
+@dynamic idToken;
+
+typedef struct Token__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *accessToken;
+  NSString *tokenType;
+  NSString *refreshToken;
+  NSString *expiry;
+  NSString *idToken;
+} Token__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "accessToken",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_AccessToken,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Token__storage_, accessToken),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "tokenType",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_TokenType,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Token__storage_, tokenType),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "refreshToken",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_RefreshToken,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Token__storage_, refreshToken),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "expiry",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_Expiry,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Token__storage_, expiry),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "idToken",
+        .dataTypeSpecific.className = NULL,
+        .number = Token_FieldNumber_IdToken,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Token__storage_, idToken),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Token class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Token__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

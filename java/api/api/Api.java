@@ -266,6 +266,248 @@ public final class Api {
   }
 
   /**
+   * Protobuf enum {@code api.URL}
+   */
+  public enum URL
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>USER_INFOURL = 0;</code>
+     */
+    USER_INFOURL(0),
+    /**
+     * <code>TOKENURL = 1;</code>
+     */
+    TOKENURL(1),
+    /**
+     * <code>AUTHORIZEURL = 2;</code>
+     */
+    AUTHORIZEURL(2),
+    /**
+     * <code>USERSURL = 3;</code>
+     */
+    USERSURL(3),
+    /**
+     * <code>CLIENTSURL = 4;</code>
+     */
+    CLIENTSURL(4),
+    /**
+     * <code>GRANTSURL = 5;</code>
+     */
+    GRANTSURL(5),
+    /**
+     * <code>RULESURL = 6;</code>
+     */
+    RULESURL(6),
+    /**
+     * <code>ROLESURL = 7;</code>
+     */
+    ROLESURL(7),
+    /**
+     * <code>LOGSURL = 8;</code>
+     */
+    LOGSURL(8),
+    /**
+     * <code>STATSURL = 9;</code>
+     */
+    STATSURL(9),
+    /**
+     * <code>CONNECTIONSURL = 10;</code>
+     */
+    CONNECTIONSURL(10),
+    /**
+     * <code>TENANTSURL = 11;</code>
+     */
+    TENANTSURL(11),
+    /**
+     * <code>EMAIL_TEMPLATEURL = 12;</code>
+     */
+    EMAIL_TEMPLATEURL(12),
+    /**
+     * <code>EMAILURL = 13;</code>
+     */
+    EMAILURL(13),
+    /**
+     * <code>SEARCH_USERSURL = 14;</code>
+     */
+    SEARCH_USERSURL(14),
+    /**
+     * <code>DEVICEURL = 18;</code>
+     */
+    DEVICEURL(18),
+    /**
+     * <code>JWKSURL = 19;</code>
+     */
+    JWKSURL(19),
+    /**
+     * <code>CLIENT_GRANTSURL = 20;</code>
+     */
+    CLIENT_GRANTSURL(20),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>USER_INFOURL = 0;</code>
+     */
+    public static final int USER_INFOURL_VALUE = 0;
+    /**
+     * <code>TOKENURL = 1;</code>
+     */
+    public static final int TOKENURL_VALUE = 1;
+    /**
+     * <code>AUTHORIZEURL = 2;</code>
+     */
+    public static final int AUTHORIZEURL_VALUE = 2;
+    /**
+     * <code>USERSURL = 3;</code>
+     */
+    public static final int USERSURL_VALUE = 3;
+    /**
+     * <code>CLIENTSURL = 4;</code>
+     */
+    public static final int CLIENTSURL_VALUE = 4;
+    /**
+     * <code>GRANTSURL = 5;</code>
+     */
+    public static final int GRANTSURL_VALUE = 5;
+    /**
+     * <code>RULESURL = 6;</code>
+     */
+    public static final int RULESURL_VALUE = 6;
+    /**
+     * <code>ROLESURL = 7;</code>
+     */
+    public static final int ROLESURL_VALUE = 7;
+    /**
+     * <code>LOGSURL = 8;</code>
+     */
+    public static final int LOGSURL_VALUE = 8;
+    /**
+     * <code>STATSURL = 9;</code>
+     */
+    public static final int STATSURL_VALUE = 9;
+    /**
+     * <code>CONNECTIONSURL = 10;</code>
+     */
+    public static final int CONNECTIONSURL_VALUE = 10;
+    /**
+     * <code>TENANTSURL = 11;</code>
+     */
+    public static final int TENANTSURL_VALUE = 11;
+    /**
+     * <code>EMAIL_TEMPLATEURL = 12;</code>
+     */
+    public static final int EMAIL_TEMPLATEURL_VALUE = 12;
+    /**
+     * <code>EMAILURL = 13;</code>
+     */
+    public static final int EMAILURL_VALUE = 13;
+    /**
+     * <code>SEARCH_USERSURL = 14;</code>
+     */
+    public static final int SEARCH_USERSURL_VALUE = 14;
+    /**
+     * <code>DEVICEURL = 18;</code>
+     */
+    public static final int DEVICEURL_VALUE = 18;
+    /**
+     * <code>JWKSURL = 19;</code>
+     */
+    public static final int JWKSURL_VALUE = 19;
+    /**
+     * <code>CLIENT_GRANTSURL = 20;</code>
+     */
+    public static final int CLIENT_GRANTSURL_VALUE = 20;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static URL valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static URL forNumber(int value) {
+      switch (value) {
+        case 0: return USER_INFOURL;
+        case 1: return TOKENURL;
+        case 2: return AUTHORIZEURL;
+        case 3: return USERSURL;
+        case 4: return CLIENTSURL;
+        case 5: return GRANTSURL;
+        case 6: return RULESURL;
+        case 7: return ROLESURL;
+        case 8: return LOGSURL;
+        case 9: return STATSURL;
+        case 10: return CONNECTIONSURL;
+        case 11: return TENANTSURL;
+        case 12: return EMAIL_TEMPLATEURL;
+        case 13: return EMAILURL;
+        case 14: return SEARCH_USERSURL;
+        case 18: return DEVICEURL;
+        case 19: return JWKSURL;
+        case 20: return CLIENT_GRANTSURL;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<URL>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        URL> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<URL>() {
+            public URL findValueByNumber(int number) {
+              return URL.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return api.Api.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final URL[] VALUES = values();
+
+    public static URL valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private URL(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.URL)
+  }
+
+  /**
    * Protobuf enum {@code api.HTTPMethod}
    */
   public enum HTTPMethod
@@ -337,7 +579,7 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return api.Api.getDescriptor().getEnumTypes().get(1);
+      return api.Api.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final HTTPMethod[] VALUES = values();
@@ -361,6 +603,1444 @@ public final class Api {
     }
 
     // @@protoc_insertion_point(enum_scope:api.HTTPMethod)
+  }
+
+  public interface ResourceRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.ResourceRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.api.Token token = 1;</code>
+     */
+    boolean hasToken();
+    /**
+     * <code>.api.Token token = 1;</code>
+     */
+    api.Api.Token getToken();
+    /**
+     * <code>.api.Token token = 1;</code>
+     */
+    api.Api.TokenOrBuilder getTokenOrBuilder();
+
+    /**
+     * <code>.api.HTTPMethod method = 2;</code>
+     */
+    int getMethodValue();
+    /**
+     * <code>.api.HTTPMethod method = 2;</code>
+     */
+    api.Api.HTTPMethod getMethod();
+
+    /**
+     * <code>string domain = 3;</code>
+     */
+    java.lang.String getDomain();
+    /**
+     * <code>string domain = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getDomainBytes();
+
+    /**
+     * <code>.api.URL url = 4;</code>
+     */
+    int getUrlValue();
+    /**
+     * <code>.api.URL url = 4;</code>
+     */
+    api.Api.URL getUrl();
+
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+    int getFormCount();
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+    boolean containsForm(
+        java.lang.String key);
+    /**
+     * Use {@link #getFormMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getForm();
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getFormMap();
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+
+    java.lang.String getFormOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+
+    java.lang.String getFormOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>.api.Bytes body = 6;</code>
+     */
+    boolean hasBody();
+    /**
+     * <code>.api.Bytes body = 6;</code>
+     */
+    api.Api.Bytes getBody();
+    /**
+     * <code>.api.Bytes body = 6;</code>
+     */
+    api.Api.BytesOrBuilder getBodyOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.ResourceRequest}
+   */
+  public  static final class ResourceRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.ResourceRequest)
+      ResourceRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ResourceRequest.newBuilder() to construct.
+    private ResourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ResourceRequest() {
+      method_ = 0;
+      domain_ = "";
+      url_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ResourceRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              api.Api.Token.Builder subBuilder = null;
+              if (token_ != null) {
+                subBuilder = token_.toBuilder();
+              }
+              token_ = input.readMessage(api.Api.Token.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(token_);
+                token_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              method_ = rawValue;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              domain_ = s;
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              url_ = rawValue;
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                form_ = com.google.protobuf.MapField.newMapField(
+                    FormDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              form__ = input.readMessage(
+                  FormDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              form_.getMutableMap().put(
+                  form__.getKey(), form__.getValue());
+              break;
+            }
+            case 50: {
+              api.Api.Bytes.Builder subBuilder = null;
+              if (body_ != null) {
+                subBuilder = body_.toBuilder();
+              }
+              body_ = input.readMessage(api.Api.Bytes.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(body_);
+                body_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_ResourceRequest_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetForm();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_ResourceRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.ResourceRequest.class, api.Api.ResourceRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private api.Api.Token token_;
+    /**
+     * <code>.api.Token token = 1;</code>
+     */
+    public boolean hasToken() {
+      return token_ != null;
+    }
+    /**
+     * <code>.api.Token token = 1;</code>
+     */
+    public api.Api.Token getToken() {
+      return token_ == null ? api.Api.Token.getDefaultInstance() : token_;
+    }
+    /**
+     * <code>.api.Token token = 1;</code>
+     */
+    public api.Api.TokenOrBuilder getTokenOrBuilder() {
+      return getToken();
+    }
+
+    public static final int METHOD_FIELD_NUMBER = 2;
+    private int method_;
+    /**
+     * <code>.api.HTTPMethod method = 2;</code>
+     */
+    public int getMethodValue() {
+      return method_;
+    }
+    /**
+     * <code>.api.HTTPMethod method = 2;</code>
+     */
+    public api.Api.HTTPMethod getMethod() {
+      @SuppressWarnings("deprecation")
+      api.Api.HTTPMethod result = api.Api.HTTPMethod.valueOf(method_);
+      return result == null ? api.Api.HTTPMethod.UNRECOGNIZED : result;
+    }
+
+    public static final int DOMAIN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object domain_;
+    /**
+     * <code>string domain = 3;</code>
+     */
+    public java.lang.String getDomain() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        domain_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string domain = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDomainBytes() {
+      java.lang.Object ref = domain_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        domain_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 4;
+    private int url_;
+    /**
+     * <code>.api.URL url = 4;</code>
+     */
+    public int getUrlValue() {
+      return url_;
+    }
+    /**
+     * <code>.api.URL url = 4;</code>
+     */
+    public api.Api.URL getUrl() {
+      @SuppressWarnings("deprecation")
+      api.Api.URL result = api.Api.URL.valueOf(url_);
+      return result == null ? api.Api.URL.UNRECOGNIZED : result;
+    }
+
+    public static final int FORM_FIELD_NUMBER = 5;
+    private static final class FormDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  api.Api.internal_static_api_ResourceRequest_FormEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> form_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetForm() {
+      if (form_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FormDefaultEntryHolder.defaultEntry);
+      }
+      return form_;
+    }
+
+    public int getFormCount() {
+      return internalGetForm().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+
+    public boolean containsForm(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetForm().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getFormMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getForm() {
+      return getFormMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
+      return internalGetForm().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+
+    public java.lang.String getFormOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetForm().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; form = 5;</code>
+     */
+
+    public java.lang.String getFormOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetForm().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int BODY_FIELD_NUMBER = 6;
+    private api.Api.Bytes body_;
+    /**
+     * <code>.api.Bytes body = 6;</code>
+     */
+    public boolean hasBody() {
+      return body_ != null;
+    }
+    /**
+     * <code>.api.Bytes body = 6;</code>
+     */
+    public api.Api.Bytes getBody() {
+      return body_ == null ? api.Api.Bytes.getDefaultInstance() : body_;
+    }
+    /**
+     * <code>.api.Bytes body = 6;</code>
+     */
+    public api.Api.BytesOrBuilder getBodyOrBuilder() {
+      return getBody();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (token_ != null) {
+        output.writeMessage(1, getToken());
+      }
+      if (method_ != api.Api.HTTPMethod.GET.getNumber()) {
+        output.writeEnum(2, method_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, domain_);
+      }
+      if (url_ != api.Api.URL.USER_INFOURL.getNumber()) {
+        output.writeEnum(4, url_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetForm(),
+          FormDefaultEntryHolder.defaultEntry,
+          5);
+      if (body_ != null) {
+        output.writeMessage(6, getBody());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (token_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getToken());
+      }
+      if (method_ != api.Api.HTTPMethod.GET.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, method_);
+      }
+      if (!getDomainBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, domain_);
+      }
+      if (url_ != api.Api.URL.USER_INFOURL.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, url_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetForm().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        form__ = FormDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, form__);
+      }
+      if (body_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getBody());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.ResourceRequest)) {
+        return super.equals(obj);
+      }
+      api.Api.ResourceRequest other = (api.Api.ResourceRequest) obj;
+
+      boolean result = true;
+      result = result && (hasToken() == other.hasToken());
+      if (hasToken()) {
+        result = result && getToken()
+            .equals(other.getToken());
+      }
+      result = result && method_ == other.method_;
+      result = result && getDomain()
+          .equals(other.getDomain());
+      result = result && url_ == other.url_;
+      result = result && internalGetForm().equals(
+          other.internalGetForm());
+      result = result && (hasBody() == other.hasBody());
+      if (hasBody()) {
+        result = result && getBody()
+            .equals(other.getBody());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasToken()) {
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken().hashCode();
+      }
+      hash = (37 * hash) + METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + method_;
+      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
+      hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + url_;
+      if (!internalGetForm().getMap().isEmpty()) {
+        hash = (37 * hash) + FORM_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetForm().hashCode();
+      }
+      if (hasBody()) {
+        hash = (37 * hash) + BODY_FIELD_NUMBER;
+        hash = (53 * hash) + getBody().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.ResourceRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.ResourceRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.ResourceRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.ResourceRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.ResourceRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.ResourceRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.ResourceRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.ResourceRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.ResourceRequest)
+        api.Api.ResourceRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_ResourceRequest_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetForm();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableForm();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_ResourceRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.ResourceRequest.class, api.Api.ResourceRequest.Builder.class);
+      }
+
+      // Construct using api.Api.ResourceRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (tokenBuilder_ == null) {
+          token_ = null;
+        } else {
+          token_ = null;
+          tokenBuilder_ = null;
+        }
+        method_ = 0;
+
+        domain_ = "";
+
+        url_ = 0;
+
+        internalGetMutableForm().clear();
+        if (bodyBuilder_ == null) {
+          body_ = null;
+        } else {
+          body_ = null;
+          bodyBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_ResourceRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.ResourceRequest getDefaultInstanceForType() {
+        return api.Api.ResourceRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.ResourceRequest build() {
+        api.Api.ResourceRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.ResourceRequest buildPartial() {
+        api.Api.ResourceRequest result = new api.Api.ResourceRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (tokenBuilder_ == null) {
+          result.token_ = token_;
+        } else {
+          result.token_ = tokenBuilder_.build();
+        }
+        result.method_ = method_;
+        result.domain_ = domain_;
+        result.url_ = url_;
+        result.form_ = internalGetForm();
+        result.form_.makeImmutable();
+        if (bodyBuilder_ == null) {
+          result.body_ = body_;
+        } else {
+          result.body_ = bodyBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.ResourceRequest) {
+          return mergeFrom((api.Api.ResourceRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.ResourceRequest other) {
+        if (other == api.Api.ResourceRequest.getDefaultInstance()) return this;
+        if (other.hasToken()) {
+          mergeToken(other.getToken());
+        }
+        if (other.method_ != 0) {
+          setMethodValue(other.getMethodValue());
+        }
+        if (!other.getDomain().isEmpty()) {
+          domain_ = other.domain_;
+          onChanged();
+        }
+        if (other.url_ != 0) {
+          setUrlValue(other.getUrlValue());
+        }
+        internalGetMutableForm().mergeFrom(
+            other.internalGetForm());
+        if (other.hasBody()) {
+          mergeBody(other.getBody());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.ResourceRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.ResourceRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private api.Api.Token token_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder> tokenBuilder_;
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public boolean hasToken() {
+        return tokenBuilder_ != null || token_ != null;
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public api.Api.Token getToken() {
+        if (tokenBuilder_ == null) {
+          return token_ == null ? api.Api.Token.getDefaultInstance() : token_;
+        } else {
+          return tokenBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public Builder setToken(api.Api.Token value) {
+        if (tokenBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          token_ = value;
+          onChanged();
+        } else {
+          tokenBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public Builder setToken(
+          api.Api.Token.Builder builderForValue) {
+        if (tokenBuilder_ == null) {
+          token_ = builderForValue.build();
+          onChanged();
+        } else {
+          tokenBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public Builder mergeToken(api.Api.Token value) {
+        if (tokenBuilder_ == null) {
+          if (token_ != null) {
+            token_ =
+              api.Api.Token.newBuilder(token_).mergeFrom(value).buildPartial();
+          } else {
+            token_ = value;
+          }
+          onChanged();
+        } else {
+          tokenBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public Builder clearToken() {
+        if (tokenBuilder_ == null) {
+          token_ = null;
+          onChanged();
+        } else {
+          token_ = null;
+          tokenBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public api.Api.Token.Builder getTokenBuilder() {
+        
+        onChanged();
+        return getTokenFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      public api.Api.TokenOrBuilder getTokenOrBuilder() {
+        if (tokenBuilder_ != null) {
+          return tokenBuilder_.getMessageOrBuilder();
+        } else {
+          return token_ == null ?
+              api.Api.Token.getDefaultInstance() : token_;
+        }
+      }
+      /**
+       * <code>.api.Token token = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder> 
+          getTokenFieldBuilder() {
+        if (tokenBuilder_ == null) {
+          tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder>(
+                  getToken(),
+                  getParentForChildren(),
+                  isClean());
+          token_ = null;
+        }
+        return tokenBuilder_;
+      }
+
+      private int method_ = 0;
+      /**
+       * <code>.api.HTTPMethod method = 2;</code>
+       */
+      public int getMethodValue() {
+        return method_;
+      }
+      /**
+       * <code>.api.HTTPMethod method = 2;</code>
+       */
+      public Builder setMethodValue(int value) {
+        method_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.HTTPMethod method = 2;</code>
+       */
+      public api.Api.HTTPMethod getMethod() {
+        @SuppressWarnings("deprecation")
+        api.Api.HTTPMethod result = api.Api.HTTPMethod.valueOf(method_);
+        return result == null ? api.Api.HTTPMethod.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.HTTPMethod method = 2;</code>
+       */
+      public Builder setMethod(api.Api.HTTPMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        method_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.HTTPMethod method = 2;</code>
+       */
+      public Builder clearMethod() {
+        
+        method_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object domain_ = "";
+      /**
+       * <code>string domain = 3;</code>
+       */
+      public java.lang.String getDomain() {
+        java.lang.Object ref = domain_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          domain_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string domain = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDomainBytes() {
+        java.lang.Object ref = domain_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          domain_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string domain = 3;</code>
+       */
+      public Builder setDomain(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 3;</code>
+       */
+      public Builder clearDomain() {
+        
+        domain_ = getDefaultInstance().getDomain();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string domain = 3;</code>
+       */
+      public Builder setDomainBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        domain_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int url_ = 0;
+      /**
+       * <code>.api.URL url = 4;</code>
+       */
+      public int getUrlValue() {
+        return url_;
+      }
+      /**
+       * <code>.api.URL url = 4;</code>
+       */
+      public Builder setUrlValue(int value) {
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.URL url = 4;</code>
+       */
+      public api.Api.URL getUrl() {
+        @SuppressWarnings("deprecation")
+        api.Api.URL result = api.Api.URL.valueOf(url_);
+        return result == null ? api.Api.URL.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.api.URL url = 4;</code>
+       */
+      public Builder setUrl(api.Api.URL value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        url_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.api.URL url = 4;</code>
+       */
+      public Builder clearUrl() {
+        
+        url_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> form_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetForm() {
+        if (form_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FormDefaultEntryHolder.defaultEntry);
+        }
+        return form_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableForm() {
+        onChanged();;
+        if (form_ == null) {
+          form_ = com.google.protobuf.MapField.newMapField(
+              FormDefaultEntryHolder.defaultEntry);
+        }
+        if (!form_.isMutable()) {
+          form_ = form_.copy();
+        }
+        return form_;
+      }
+
+      public int getFormCount() {
+        return internalGetForm().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+
+      public boolean containsForm(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetForm().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getFormMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getForm() {
+        return getFormMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
+        return internalGetForm().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+
+      public java.lang.String getFormOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetForm().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+
+      public java.lang.String getFormOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetForm().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearForm() {
+        internalGetMutableForm().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+
+      public Builder removeForm(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableForm().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableForm() {
+        return internalGetMutableForm().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+      public Builder putForm(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableForm().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; form = 5;</code>
+       */
+
+      public Builder putAllForm(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableForm().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private api.Api.Bytes body_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder> bodyBuilder_;
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public boolean hasBody() {
+        return bodyBuilder_ != null || body_ != null;
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public api.Api.Bytes getBody() {
+        if (bodyBuilder_ == null) {
+          return body_ == null ? api.Api.Bytes.getDefaultInstance() : body_;
+        } else {
+          return bodyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public Builder setBody(api.Api.Bytes value) {
+        if (bodyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          body_ = value;
+          onChanged();
+        } else {
+          bodyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public Builder setBody(
+          api.Api.Bytes.Builder builderForValue) {
+        if (bodyBuilder_ == null) {
+          body_ = builderForValue.build();
+          onChanged();
+        } else {
+          bodyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public Builder mergeBody(api.Api.Bytes value) {
+        if (bodyBuilder_ == null) {
+          if (body_ != null) {
+            body_ =
+              api.Api.Bytes.newBuilder(body_).mergeFrom(value).buildPartial();
+          } else {
+            body_ = value;
+          }
+          onChanged();
+        } else {
+          bodyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public Builder clearBody() {
+        if (bodyBuilder_ == null) {
+          body_ = null;
+          onChanged();
+        } else {
+          body_ = null;
+          bodyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public api.Api.Bytes.Builder getBodyBuilder() {
+        
+        onChanged();
+        return getBodyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      public api.Api.BytesOrBuilder getBodyOrBuilder() {
+        if (bodyBuilder_ != null) {
+          return bodyBuilder_.getMessageOrBuilder();
+        } else {
+          return body_ == null ?
+              api.Api.Bytes.getDefaultInstance() : body_;
+        }
+      }
+      /**
+       * <code>.api.Bytes body = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder> 
+          getBodyFieldBuilder() {
+        if (bodyBuilder_ == null) {
+          bodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder>(
+                  getBody(),
+                  getParentForChildren(),
+                  isClean());
+          body_ = null;
+        }
+        return bodyBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.ResourceRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.ResourceRequest)
+    private static final api.Api.ResourceRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.ResourceRequest();
+    }
+
+    public static api.Api.ResourceRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ResourceRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ResourceRequest>() {
+      @java.lang.Override
+      public ResourceRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ResourceRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ResourceRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ResourceRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.ResourceRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface SubscribeRequestOrBuilder extends
@@ -3309,17 +4989,17 @@ public final class Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.api.BearerToken string = 1;</code>
+     * <code>.api.Token string = 1;</code>
      */
     boolean hasString();
     /**
-     * <code>.api.BearerToken string = 1;</code>
+     * <code>.api.Token string = 1;</code>
      */
-    api.Api.BearerToken getString();
+    api.Api.Token getString();
     /**
-     * <code>.api.BearerToken string = 1;</code>
+     * <code>.api.Token string = 1;</code>
      */
-    api.Api.BearerTokenOrBuilder getStringOrBuilder();
+    api.Api.TokenOrBuilder getStringOrBuilder();
 
     /**
      * <code>.api.User user = 2;</code>
@@ -3374,11 +5054,11 @@ public final class Api {
               done = true;
               break;
             case 10: {
-              api.Api.BearerToken.Builder subBuilder = null;
+              api.Api.Token.Builder subBuilder = null;
               if (string_ != null) {
                 subBuilder = string_.toBuilder();
               }
-              string_ = input.readMessage(api.Api.BearerToken.parser(), extensionRegistry);
+              string_ = input.readMessage(api.Api.Token.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(string_);
                 string_ = subBuilder.buildPartial();
@@ -3432,23 +5112,23 @@ public final class Api {
     }
 
     public static final int STRING_FIELD_NUMBER = 1;
-    private api.Api.BearerToken string_;
+    private api.Api.Token string_;
     /**
-     * <code>.api.BearerToken string = 1;</code>
+     * <code>.api.Token string = 1;</code>
      */
     public boolean hasString() {
       return string_ != null;
     }
     /**
-     * <code>.api.BearerToken string = 1;</code>
+     * <code>.api.Token string = 1;</code>
      */
-    public api.Api.BearerToken getString() {
-      return string_ == null ? api.Api.BearerToken.getDefaultInstance() : string_;
+    public api.Api.Token getString() {
+      return string_ == null ? api.Api.Token.getDefaultInstance() : string_;
     }
     /**
-     * <code>.api.BearerToken string = 1;</code>
+     * <code>.api.Token string = 1;</code>
      */
-    public api.Api.BearerTokenOrBuilder getStringOrBuilder() {
+    public api.Api.TokenOrBuilder getStringOrBuilder() {
       return getString();
     }
 
@@ -3819,29 +5499,29 @@ public final class Api {
         return this;
       }
 
-      private api.Api.BearerToken string_ = null;
+      private api.Api.Token string_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> stringBuilder_;
+          api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder> stringBuilder_;
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
       public boolean hasString() {
         return stringBuilder_ != null || string_ != null;
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
-      public api.Api.BearerToken getString() {
+      public api.Api.Token getString() {
         if (stringBuilder_ == null) {
-          return string_ == null ? api.Api.BearerToken.getDefaultInstance() : string_;
+          return string_ == null ? api.Api.Token.getDefaultInstance() : string_;
         } else {
           return stringBuilder_.getMessage();
         }
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
-      public Builder setString(api.Api.BearerToken value) {
+      public Builder setString(api.Api.Token value) {
         if (stringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3855,10 +5535,10 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
       public Builder setString(
-          api.Api.BearerToken.Builder builderForValue) {
+          api.Api.Token.Builder builderForValue) {
         if (stringBuilder_ == null) {
           string_ = builderForValue.build();
           onChanged();
@@ -3869,13 +5549,13 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
-      public Builder mergeString(api.Api.BearerToken value) {
+      public Builder mergeString(api.Api.Token value) {
         if (stringBuilder_ == null) {
           if (string_ != null) {
             string_ =
-              api.Api.BearerToken.newBuilder(string_).mergeFrom(value).buildPartial();
+              api.Api.Token.newBuilder(string_).mergeFrom(value).buildPartial();
           } else {
             string_ = value;
           }
@@ -3887,7 +5567,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
       public Builder clearString() {
         if (stringBuilder_ == null) {
@@ -3901,33 +5581,33 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
-      public api.Api.BearerToken.Builder getStringBuilder() {
+      public api.Api.Token.Builder getStringBuilder() {
         
         onChanged();
         return getStringFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
-      public api.Api.BearerTokenOrBuilder getStringOrBuilder() {
+      public api.Api.TokenOrBuilder getStringOrBuilder() {
         if (stringBuilder_ != null) {
           return stringBuilder_.getMessageOrBuilder();
         } else {
           return string_ == null ?
-              api.Api.BearerToken.getDefaultInstance() : string_;
+              api.Api.Token.getDefaultInstance() : string_;
         }
       }
       /**
-       * <code>.api.BearerToken string = 1;</code>
+       * <code>.api.Token string = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> 
+          api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder> 
           getStringFieldBuilder() {
         if (stringBuilder_ == null) {
           stringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder>(
+              api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder>(
                   getString(),
                   getParentForChildren(),
                   isClean());
@@ -4110,17 +5790,17 @@ public final class Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.api.BearerToken token = 1;</code>
+     * <code>.api.Token token = 1;</code>
      */
     boolean hasToken();
     /**
-     * <code>.api.BearerToken token = 1;</code>
+     * <code>.api.Token token = 1;</code>
      */
-    api.Api.BearerToken getToken();
+    api.Api.Token getToken();
     /**
-     * <code>.api.BearerToken token = 1;</code>
+     * <code>.api.Token token = 1;</code>
      */
-    api.Api.BearerTokenOrBuilder getTokenOrBuilder();
+    api.Api.TokenOrBuilder getTokenOrBuilder();
 
     /**
      * <code>string email = 2;</code>
@@ -4173,11 +5853,11 @@ public final class Api {
               done = true;
               break;
             case 10: {
-              api.Api.BearerToken.Builder subBuilder = null;
+              api.Api.Token.Builder subBuilder = null;
               if (token_ != null) {
                 subBuilder = token_.toBuilder();
               }
-              token_ = input.readMessage(api.Api.BearerToken.parser(), extensionRegistry);
+              token_ = input.readMessage(api.Api.Token.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(token_);
                 token_ = subBuilder.buildPartial();
@@ -4224,23 +5904,23 @@ public final class Api {
     }
 
     public static final int TOKEN_FIELD_NUMBER = 1;
-    private api.Api.BearerToken token_;
+    private api.Api.Token token_;
     /**
-     * <code>.api.BearerToken token = 1;</code>
+     * <code>.api.Token token = 1;</code>
      */
     public boolean hasToken() {
       return token_ != null;
     }
     /**
-     * <code>.api.BearerToken token = 1;</code>
+     * <code>.api.Token token = 1;</code>
      */
-    public api.Api.BearerToken getToken() {
-      return token_ == null ? api.Api.BearerToken.getDefaultInstance() : token_;
+    public api.Api.Token getToken() {
+      return token_ == null ? api.Api.Token.getDefaultInstance() : token_;
     }
     /**
-     * <code>.api.BearerToken token = 1;</code>
+     * <code>.api.Token token = 1;</code>
      */
-    public api.Api.BearerTokenOrBuilder getTokenOrBuilder() {
+    public api.Api.TokenOrBuilder getTokenOrBuilder() {
       return getToken();
     }
 
@@ -4611,29 +6291,29 @@ public final class Api {
         return this;
       }
 
-      private api.Api.BearerToken token_ = null;
+      private api.Api.Token token_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> tokenBuilder_;
+          api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder> tokenBuilder_;
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
       public boolean hasToken() {
         return tokenBuilder_ != null || token_ != null;
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
-      public api.Api.BearerToken getToken() {
+      public api.Api.Token getToken() {
         if (tokenBuilder_ == null) {
-          return token_ == null ? api.Api.BearerToken.getDefaultInstance() : token_;
+          return token_ == null ? api.Api.Token.getDefaultInstance() : token_;
         } else {
           return tokenBuilder_.getMessage();
         }
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
-      public Builder setToken(api.Api.BearerToken value) {
+      public Builder setToken(api.Api.Token value) {
         if (tokenBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4647,10 +6327,10 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
       public Builder setToken(
-          api.Api.BearerToken.Builder builderForValue) {
+          api.Api.Token.Builder builderForValue) {
         if (tokenBuilder_ == null) {
           token_ = builderForValue.build();
           onChanged();
@@ -4661,13 +6341,13 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
-      public Builder mergeToken(api.Api.BearerToken value) {
+      public Builder mergeToken(api.Api.Token value) {
         if (tokenBuilder_ == null) {
           if (token_ != null) {
             token_ =
-              api.Api.BearerToken.newBuilder(token_).mergeFrom(value).buildPartial();
+              api.Api.Token.newBuilder(token_).mergeFrom(value).buildPartial();
           } else {
             token_ = value;
           }
@@ -4679,7 +6359,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
       public Builder clearToken() {
         if (tokenBuilder_ == null) {
@@ -4693,33 +6373,33 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
-      public api.Api.BearerToken.Builder getTokenBuilder() {
+      public api.Api.Token.Builder getTokenBuilder() {
         
         onChanged();
         return getTokenFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
-      public api.Api.BearerTokenOrBuilder getTokenOrBuilder() {
+      public api.Api.TokenOrBuilder getTokenOrBuilder() {
         if (tokenBuilder_ != null) {
           return tokenBuilder_.getMessageOrBuilder();
         } else {
           return token_ == null ?
-              api.Api.BearerToken.getDefaultInstance() : token_;
+              api.Api.Token.getDefaultInstance() : token_;
         }
       }
       /**
-       * <code>.api.BearerToken token = 1;</code>
+       * <code>.api.Token token = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> 
+          api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder> 
           getTokenFieldBuilder() {
         if (tokenBuilder_ == null) {
           tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder>(
+              api.Api.Token, api.Api.Token.Builder, api.Api.TokenOrBuilder>(
                   getToken(),
                   getParentForChildren(),
                   isClean());
@@ -20012,49 +21692,26 @@ public final class Api {
         getRedirectBytes();
 
     /**
-     * <code>string audience = 5;</code>
-     */
-    java.lang.String getAudience();
-    /**
-     * <code>string audience = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getAudienceBytes();
-
-    /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     java.util.List<api.Api.Scope> getScopesList();
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     int getScopesCount();
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     api.Api.Scope getScopes(int index);
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     java.util.List<java.lang.Integer>
     getScopesValueList();
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     int getScopesValue(int index);
-
-    /**
-     * <code>.api.BearerToken management = 7;</code>
-     */
-    boolean hasManagement();
-    /**
-     * <code>.api.BearerToken management = 7;</code>
-     */
-    api.Api.BearerToken getManagement();
-    /**
-     * <code>.api.BearerToken management = 7;</code>
-     */
-    api.Api.BearerTokenOrBuilder getManagementOrBuilder();
   }
   /**
    * Protobuf type {@code api.Auth}
@@ -20073,7 +21730,6 @@ public final class Api {
       clientId_ = "";
       clientSecret_ = "";
       redirect_ = "";
-      audience_ = "";
       scopes_ = java.util.Collections.emptyList();
     }
 
@@ -20125,46 +21781,27 @@ public final class Api {
               redirect_ = s;
               break;
             }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              audience_ = s;
-              break;
-            }
-            case 48: {
+            case 40: {
               int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                 scopes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000010;
               }
               scopes_.add(rawValue);
               break;
             }
-            case 50: {
+            case 42: {
               int length = input.readRawVarint32();
               int oldLimit = input.pushLimit(length);
               while(input.getBytesUntilLimit() > 0) {
                 int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
                   scopes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000020;
+                  mutable_bitField0_ |= 0x00000010;
                 }
                 scopes_.add(rawValue);
               }
               input.popLimit(oldLimit);
-              break;
-            }
-            case 58: {
-              api.Api.BearerToken.Builder subBuilder = null;
-              if (management_ != null) {
-                subBuilder = management_.toBuilder();
-              }
-              management_ = input.readMessage(api.Api.BearerToken.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(management_);
-                management_ = subBuilder.buildPartial();
-              }
-
               break;
             }
             default: {
@@ -20182,7 +21819,7 @@ public final class Api {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           scopes_ = java.util.Collections.unmodifiableList(scopes_);
         }
         this.unknownFields = unknownFields.build();
@@ -20339,41 +21976,7 @@ public final class Api {
       }
     }
 
-    public static final int AUDIENCE_FIELD_NUMBER = 5;
-    private volatile java.lang.Object audience_;
-    /**
-     * <code>string audience = 5;</code>
-     */
-    public java.lang.String getAudience() {
-      java.lang.Object ref = audience_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        audience_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string audience = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAudienceBytes() {
-      java.lang.Object ref = audience_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        audience_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SCOPES_FIELD_NUMBER = 6;
+    public static final int SCOPES_FIELD_NUMBER = 5;
     private java.util.List<java.lang.Integer> scopes_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, api.Api.Scope> scopes_converter_ =
@@ -20386,59 +21989,38 @@ public final class Api {
               }
             };
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     public java.util.List<api.Api.Scope> getScopesList() {
       return new com.google.protobuf.Internal.ListAdapter<
           java.lang.Integer, api.Api.Scope>(scopes_, scopes_converter_);
     }
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     public int getScopesCount() {
       return scopes_.size();
     }
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     public api.Api.Scope getScopes(int index) {
       return scopes_converter_.convert(scopes_.get(index));
     }
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     public java.util.List<java.lang.Integer>
     getScopesValueList() {
       return scopes_;
     }
     /**
-     * <code>repeated .api.Scope scopes = 6;</code>
+     * <code>repeated .api.Scope scopes = 5;</code>
      */
     public int getScopesValue(int index) {
       return scopes_.get(index);
     }
     private int scopesMemoizedSerializedSize;
-
-    public static final int MANAGEMENT_FIELD_NUMBER = 7;
-    private api.Api.BearerToken management_;
-    /**
-     * <code>.api.BearerToken management = 7;</code>
-     */
-    public boolean hasManagement() {
-      return management_ != null;
-    }
-    /**
-     * <code>.api.BearerToken management = 7;</code>
-     */
-    public api.Api.BearerToken getManagement() {
-      return management_ == null ? api.Api.BearerToken.getDefaultInstance() : management_;
-    }
-    /**
-     * <code>.api.BearerToken management = 7;</code>
-     */
-    public api.Api.BearerTokenOrBuilder getManagementOrBuilder() {
-      return getManagement();
-    }
 
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
@@ -20467,18 +22049,12 @@ public final class Api {
       if (!getRedirectBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, redirect_);
       }
-      if (!getAudienceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, audience_);
-      }
       if (getScopesList().size() > 0) {
-        output.writeUInt32NoTag(50);
+        output.writeUInt32NoTag(42);
         output.writeUInt32NoTag(scopesMemoizedSerializedSize);
       }
       for (int i = 0; i < scopes_.size(); i++) {
         output.writeEnumNoTag(scopes_.get(i));
-      }
-      if (management_ != null) {
-        output.writeMessage(7, getManagement());
       }
       unknownFields.writeTo(output);
     }
@@ -20501,9 +22077,6 @@ public final class Api {
       if (!getRedirectBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, redirect_);
       }
-      if (!getAudienceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, audience_);
-      }
       {
         int dataSize = 0;
         for (int i = 0; i < scopes_.size(); i++) {
@@ -20515,10 +22088,6 @@ public final class Api {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32SizeNoTag(dataSize);
         }scopesMemoizedSerializedSize = dataSize;
-      }
-      if (management_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getManagement());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -20544,14 +22113,7 @@ public final class Api {
           .equals(other.getClientSecret());
       result = result && getRedirect()
           .equals(other.getRedirect());
-      result = result && getAudience()
-          .equals(other.getAudience());
       result = result && scopes_.equals(other.scopes_);
-      result = result && (hasManagement() == other.hasManagement());
-      if (hasManagement()) {
-        result = result && getManagement()
-            .equals(other.getManagement());
-      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -20571,15 +22133,9 @@ public final class Api {
       hash = (53 * hash) + getClientSecret().hashCode();
       hash = (37 * hash) + REDIRECT_FIELD_NUMBER;
       hash = (53 * hash) + getRedirect().hashCode();
-      hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
-      hash = (53 * hash) + getAudience().hashCode();
       if (getScopesCount() > 0) {
         hash = (37 * hash) + SCOPES_FIELD_NUMBER;
         hash = (53 * hash) + scopes_.hashCode();
-      }
-      if (hasManagement()) {
-        hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
-        hash = (53 * hash) + getManagement().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -20722,16 +22278,8 @@ public final class Api {
 
         redirect_ = "";
 
-        audience_ = "";
-
         scopes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        if (managementBuilder_ == null) {
-          management_ = null;
-        } else {
-          management_ = null;
-          managementBuilder_ = null;
-        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -20764,17 +22312,11 @@ public final class Api {
         result.clientId_ = clientId_;
         result.clientSecret_ = clientSecret_;
         result.redirect_ = redirect_;
-        result.audience_ = audience_;
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
           scopes_ = java.util.Collections.unmodifiableList(scopes_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.scopes_ = scopes_;
-        if (managementBuilder_ == null) {
-          result.management_ = management_;
-        } else {
-          result.management_ = managementBuilder_.build();
-        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -20840,22 +22382,15 @@ public final class Api {
           redirect_ = other.redirect_;
           onChanged();
         }
-        if (!other.getAudience().isEmpty()) {
-          audience_ = other.audience_;
-          onChanged();
-        }
         if (!other.scopes_.isEmpty()) {
           if (scopes_.isEmpty()) {
             scopes_ = other.scopes_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureScopesIsMutable();
             scopes_.addAll(other.scopes_);
           }
           onChanged();
-        }
-        if (other.hasManagement()) {
-          mergeManagement(other.getManagement());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -21163,104 +22698,35 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object audience_ = "";
-      /**
-       * <code>string audience = 5;</code>
-       */
-      public java.lang.String getAudience() {
-        java.lang.Object ref = audience_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          audience_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string audience = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAudienceBytes() {
-        java.lang.Object ref = audience_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          audience_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string audience = 5;</code>
-       */
-      public Builder setAudience(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        audience_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string audience = 5;</code>
-       */
-      public Builder clearAudience() {
-        
-        audience_ = getDefaultInstance().getAudience();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string audience = 5;</code>
-       */
-      public Builder setAudienceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        audience_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<java.lang.Integer> scopes_ =
         java.util.Collections.emptyList();
       private void ensureScopesIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           scopes_ = new java.util.ArrayList<java.lang.Integer>(scopes_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
         }
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public java.util.List<api.Api.Scope> getScopesList() {
         return new com.google.protobuf.Internal.ListAdapter<
             java.lang.Integer, api.Api.Scope>(scopes_, scopes_converter_);
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public int getScopesCount() {
         return scopes_.size();
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public api.Api.Scope getScopes(int index) {
         return scopes_converter_.convert(scopes_.get(index));
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder setScopes(
           int index, api.Api.Scope value) {
@@ -21273,7 +22739,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder addScopes(api.Api.Scope value) {
         if (value == null) {
@@ -21285,7 +22751,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder addAllScopes(
           java.lang.Iterable<? extends api.Api.Scope> values) {
@@ -21297,29 +22763,29 @@ public final class Api {
         return this;
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder clearScopes() {
         scopes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public java.util.List<java.lang.Integer>
       getScopesValueList() {
         return java.util.Collections.unmodifiableList(scopes_);
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public int getScopesValue(int index) {
         return scopes_.get(index);
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder setScopesValue(
           int index, int value) {
@@ -21329,7 +22795,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder addScopesValue(int value) {
         ensureScopesIsMutable();
@@ -21338,7 +22804,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>repeated .api.Scope scopes = 6;</code>
+       * <code>repeated .api.Scope scopes = 5;</code>
        */
       public Builder addAllScopesValue(
           java.lang.Iterable<java.lang.Integer> values) {
@@ -21348,123 +22814,6 @@ public final class Api {
         }
         onChanged();
         return this;
-      }
-
-      private api.Api.BearerToken management_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> managementBuilder_;
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public boolean hasManagement() {
-        return managementBuilder_ != null || management_ != null;
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public api.Api.BearerToken getManagement() {
-        if (managementBuilder_ == null) {
-          return management_ == null ? api.Api.BearerToken.getDefaultInstance() : management_;
-        } else {
-          return managementBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public Builder setManagement(api.Api.BearerToken value) {
-        if (managementBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          management_ = value;
-          onChanged();
-        } else {
-          managementBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public Builder setManagement(
-          api.Api.BearerToken.Builder builderForValue) {
-        if (managementBuilder_ == null) {
-          management_ = builderForValue.build();
-          onChanged();
-        } else {
-          managementBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public Builder mergeManagement(api.Api.BearerToken value) {
-        if (managementBuilder_ == null) {
-          if (management_ != null) {
-            management_ =
-              api.Api.BearerToken.newBuilder(management_).mergeFrom(value).buildPartial();
-          } else {
-            management_ = value;
-          }
-          onChanged();
-        } else {
-          managementBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public Builder clearManagement() {
-        if (managementBuilder_ == null) {
-          management_ = null;
-          onChanged();
-        } else {
-          management_ = null;
-          managementBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public api.Api.BearerToken.Builder getManagementBuilder() {
-        
-        onChanged();
-        return getManagementFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      public api.Api.BearerTokenOrBuilder getManagementOrBuilder() {
-        if (managementBuilder_ != null) {
-          return managementBuilder_.getMessageOrBuilder();
-        } else {
-          return management_ == null ?
-              api.Api.BearerToken.getDefaultInstance() : management_;
-        }
-      }
-      /**
-       * <code>.api.BearerToken management = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> 
-          getManagementFieldBuilder() {
-        if (managementBuilder_ == null) {
-          managementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder>(
-                  getManagement(),
-                  getParentForChildren(),
-                  isClean());
-          management_ = null;
-        }
-        return managementBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -24783,85 +26132,11 @@ public final class Api {
         getUrlBytes();
 
     /**
-     * <code>string token = 3;</code>
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
-
-    /**
-     * <code>string user = 4;</code>
-     */
-    java.lang.String getUser();
-    /**
-     * <code>string user = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getUserBytes();
-
-    /**
-     * <code>string password = 5;</code>
-     */
-    java.lang.String getPassword();
-    /**
-     * <code>string password = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
-
-    /**
-     * <code>string contentType = 6;</code>
-     */
-    java.lang.String getContentType();
-    /**
-     * <code>string contentType = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getContentTypeBytes();
-
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-    int getHeadersCount();
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-    boolean containsHeaders(
-        java.lang.String key);
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeaders();
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getHeadersMap();
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-
-    java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-
-    java.lang.String getHeadersOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
     int getFormCount();
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
     boolean containsForm(
         java.lang.String key);
@@ -24872,68 +26147,34 @@ public final class Api {
     java.util.Map<java.lang.String, java.lang.String>
     getForm();
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getFormMap();
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
 
     java.lang.String getFormOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
 
     java.lang.String getFormOrThrow(
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-    int getCookiesCount();
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-    boolean containsCookies(
-        java.lang.String key);
-    /**
-     * Use {@link #getCookiesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getCookies();
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getCookiesMap();
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-
-    java.lang.String getCookiesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-
-    java.lang.String getCookiesOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>.api.Bytes body = 10;</code>
+     * <code>.api.Bytes body = 4;</code>
      */
     boolean hasBody();
     /**
-     * <code>.api.Bytes body = 10;</code>
+     * <code>.api.Bytes body = 4;</code>
      */
     api.Api.Bytes getBody();
     /**
-     * <code>.api.Bytes body = 10;</code>
+     * <code>.api.Bytes body = 4;</code>
      */
     api.Api.BytesOrBuilder getBodyOrBuilder();
   }
@@ -24952,10 +26193,6 @@ public final class Api {
     private HTTPRequest() {
       method_ = 0;
       url_ = "";
-      token_ = "";
-      user_ = "";
-      password_ = "";
-      contentType_ = "";
     }
 
     @java.lang.Override
@@ -24995,47 +26232,10 @@ public final class Api {
               break;
             }
             case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              user_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              password_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              contentType_ = s;
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                headers_ = com.google.protobuf.MapField.newMapField(
-                    HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              headers__ = input.readMessage(
-                  HeadersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              headers_.getMutableMap().put(
-                  headers__.getKey(), headers__.getValue());
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 form_ = com.google.protobuf.MapField.newMapField(
                     FormDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               form__ = input.readMessage(
@@ -25044,20 +26244,7 @@ public final class Api {
                   form__.getKey(), form__.getValue());
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                cookies_ = com.google.protobuf.MapField.newMapField(
-                    CookiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000100;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              cookies__ = input.readMessage(
-                  CookiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              cookies_.getMutableMap().put(
-                  cookies__.getKey(), cookies__.getValue());
-              break;
-            }
-            case 82: {
+            case 34: {
               api.Api.Bytes.Builder subBuilder = null;
               if (body_ != null) {
                 subBuilder = body_.toBuilder();
@@ -25099,12 +26286,8 @@ public final class Api {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 7:
-          return internalGetHeaders();
-        case 8:
+        case 3:
           return internalGetForm();
-        case 9:
-          return internalGetCookies();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -25170,219 +26353,7 @@ public final class Api {
       }
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 3;
-    private volatile java.lang.Object token_;
-    /**
-     * <code>string token = 3;</code>
-     */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int USER_FIELD_NUMBER = 4;
-    private volatile java.lang.Object user_;
-    /**
-     * <code>string user = 4;</code>
-     */
-    public java.lang.String getUser() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        user_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string user = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUserBytes() {
-      java.lang.Object ref = user_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        user_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 5;
-    private volatile java.lang.Object password_;
-    /**
-     * <code>string password = 5;</code>
-     */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string password = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CONTENTTYPE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object contentType_;
-    /**
-     * <code>string contentType = 6;</code>
-     */
-    public java.lang.String getContentType() {
-      java.lang.Object ref = contentType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        contentType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string contentType = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getContentTypeBytes() {
-      java.lang.Object ref = contentType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        contentType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HEADERS_FIELD_NUMBER = 7;
-    private static final class HeadersDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  api.Api.internal_static_api_HTTPRequest_HeadersEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> headers_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetHeaders() {
-      if (headers_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            HeadersDefaultEntryHolder.defaultEntry);
-      }
-      return headers_;
-    }
-
-    public int getHeadersCount() {
-      return internalGetHeaders().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-
-    public boolean containsHeaders(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetHeaders().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getHeadersMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
-      return getHeadersMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
-      return internalGetHeaders().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-
-    public java.lang.String getHeadersOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; headers = 7;</code>
-     */
-
-    public java.lang.String getHeadersOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetHeaders().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int FORM_FIELD_NUMBER = 8;
+    public static final int FORM_FIELD_NUMBER = 3;
     private static final class FormDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -25409,7 +26380,7 @@ public final class Api {
       return internalGetForm().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
 
     public boolean containsForm(
@@ -25425,14 +26396,14 @@ public final class Api {
       return getFormMap();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
       return internalGetForm().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
 
     public java.lang.String getFormOrDefault(
@@ -25444,7 +26415,7 @@ public final class Api {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; form = 8;</code>
+     * <code>map&lt;string, string&gt; form = 3;</code>
      */
 
     public java.lang.String getFormOrThrow(
@@ -25458,98 +26429,22 @@ public final class Api {
       return map.get(key);
     }
 
-    public static final int COOKIES_FIELD_NUMBER = 9;
-    private static final class CookiesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  api.Api.internal_static_api_HTTPRequest_CookiesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> cookies_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetCookies() {
-      if (cookies_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            CookiesDefaultEntryHolder.defaultEntry);
-      }
-      return cookies_;
-    }
-
-    public int getCookiesCount() {
-      return internalGetCookies().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-
-    public boolean containsCookies(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetCookies().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getCookiesMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getCookies() {
-      return getCookiesMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getCookiesMap() {
-      return internalGetCookies().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-
-    public java.lang.String getCookiesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetCookies().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; cookies = 9;</code>
-     */
-
-    public java.lang.String getCookiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetCookies().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int BODY_FIELD_NUMBER = 10;
+    public static final int BODY_FIELD_NUMBER = 4;
     private api.Api.Bytes body_;
     /**
-     * <code>.api.Bytes body = 10;</code>
+     * <code>.api.Bytes body = 4;</code>
      */
     public boolean hasBody() {
       return body_ != null;
     }
     /**
-     * <code>.api.Bytes body = 10;</code>
+     * <code>.api.Bytes body = 4;</code>
      */
     public api.Api.Bytes getBody() {
       return body_ == null ? api.Api.Bytes.getDefaultInstance() : body_;
     }
     /**
-     * <code>.api.Bytes body = 10;</code>
+     * <code>.api.Bytes body = 4;</code>
      */
     public api.Api.BytesOrBuilder getBodyOrBuilder() {
       return getBody();
@@ -25575,38 +26470,14 @@ public final class Api {
       if (!getUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, url_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
-      }
-      if (!getUserBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, user_);
-      }
-      if (!getPasswordBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
-      }
-      if (!getContentTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, contentType_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetHeaders(),
-          HeadersDefaultEntryHolder.defaultEntry,
-          7);
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetForm(),
           FormDefaultEntryHolder.defaultEntry,
-          8);
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetCookies(),
-          CookiesDefaultEntryHolder.defaultEntry,
-          9);
+          3);
       if (body_ != null) {
-        output.writeMessage(10, getBody());
+        output.writeMessage(4, getBody());
       }
       unknownFields.writeTo(output);
     }
@@ -25624,28 +26495,6 @@ public final class Api {
       if (!getUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, url_);
       }
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
-      }
-      if (!getUserBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, user_);
-      }
-      if (!getPasswordBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
-      }
-      if (!getContentTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, contentType_);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetHeaders().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        headers__ = HeadersDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, headers__);
-      }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetForm().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -25654,21 +26503,11 @@ public final class Api {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(8, form__);
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetCookies().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        cookies__ = CookiesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, cookies__);
+            .computeMessageSize(3, form__);
       }
       if (body_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getBody());
+          .computeMessageSize(4, getBody());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -25689,20 +26528,8 @@ public final class Api {
       result = result && method_ == other.method_;
       result = result && getUrl()
           .equals(other.getUrl());
-      result = result && getToken()
-          .equals(other.getToken());
-      result = result && getUser()
-          .equals(other.getUser());
-      result = result && getPassword()
-          .equals(other.getPassword());
-      result = result && getContentType()
-          .equals(other.getContentType());
-      result = result && internalGetHeaders().equals(
-          other.internalGetHeaders());
       result = result && internalGetForm().equals(
           other.internalGetForm());
-      result = result && internalGetCookies().equals(
-          other.internalGetCookies());
       result = result && (hasBody() == other.hasBody());
       if (hasBody()) {
         result = result && getBody()
@@ -25723,25 +26550,9 @@ public final class Api {
       hash = (53 * hash) + method_;
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + USER_FIELD_NUMBER;
-      hash = (53 * hash) + getUser().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
-      hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getContentType().hashCode();
-      if (!internalGetHeaders().getMap().isEmpty()) {
-        hash = (37 * hash) + HEADERS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetHeaders().hashCode();
-      }
       if (!internalGetForm().getMap().isEmpty()) {
         hash = (37 * hash) + FORM_FIELD_NUMBER;
         hash = (53 * hash) + internalGetForm().hashCode();
-      }
-      if (!internalGetCookies().getMap().isEmpty()) {
-        hash = (37 * hash) + COOKIES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetCookies().hashCode();
       }
       if (hasBody()) {
         hash = (37 * hash) + BODY_FIELD_NUMBER;
@@ -25858,12 +26669,8 @@ public final class Api {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 7:
-            return internalGetHeaders();
-          case 8:
+          case 3:
             return internalGetForm();
-          case 9:
-            return internalGetCookies();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -25873,12 +26680,8 @@ public final class Api {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 7:
-            return internalGetMutableHeaders();
-          case 8:
+          case 3:
             return internalGetMutableForm();
-          case 9:
-            return internalGetMutableCookies();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -25914,17 +26717,7 @@ public final class Api {
 
         url_ = "";
 
-        token_ = "";
-
-        user_ = "";
-
-        password_ = "";
-
-        contentType_ = "";
-
-        internalGetMutableHeaders().clear();
         internalGetMutableForm().clear();
-        internalGetMutableCookies().clear();
         if (bodyBuilder_ == null) {
           body_ = null;
         } else {
@@ -25961,16 +26754,8 @@ public final class Api {
         int to_bitField0_ = 0;
         result.method_ = method_;
         result.url_ = url_;
-        result.token_ = token_;
-        result.user_ = user_;
-        result.password_ = password_;
-        result.contentType_ = contentType_;
-        result.headers_ = internalGetHeaders();
-        result.headers_.makeImmutable();
         result.form_ = internalGetForm();
         result.form_.makeImmutable();
-        result.cookies_ = internalGetCookies();
-        result.cookies_.makeImmutable();
         if (bodyBuilder_ == null) {
           result.body_ = body_;
         } else {
@@ -26032,28 +26817,8 @@ public final class Api {
           url_ = other.url_;
           onChanged();
         }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
-        if (!other.getUser().isEmpty()) {
-          user_ = other.user_;
-          onChanged();
-        }
-        if (!other.getPassword().isEmpty()) {
-          password_ = other.password_;
-          onChanged();
-        }
-        if (!other.getContentType().isEmpty()) {
-          contentType_ = other.contentType_;
-          onChanged();
-        }
-        internalGetMutableHeaders().mergeFrom(
-            other.internalGetHeaders());
         internalGetMutableForm().mergeFrom(
             other.internalGetForm());
-        internalGetMutableCookies().mergeFrom(
-            other.internalGetCookies());
         if (other.hasBody()) {
           mergeBody(other.getBody());
         }
@@ -26201,405 +26966,6 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 3;</code>
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 3;</code>
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 3;</code>
-       */
-      public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 3;</code>
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object user_ = "";
-      /**
-       * <code>string user = 4;</code>
-       */
-      public java.lang.String getUser() {
-        java.lang.Object ref = user_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          user_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string user = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUserBytes() {
-        java.lang.Object ref = user_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          user_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string user = 4;</code>
-       */
-      public Builder setUser(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        user_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user = 4;</code>
-       */
-      public Builder clearUser() {
-        
-        user_ = getDefaultInstance().getUser();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string user = 4;</code>
-       */
-      public Builder setUserBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        user_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <code>string password = 5;</code>
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string password = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string password = 5;</code>
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 5;</code>
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 5;</code>
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object contentType_ = "";
-      /**
-       * <code>string contentType = 6;</code>
-       */
-      public java.lang.String getContentType() {
-        java.lang.Object ref = contentType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          contentType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string contentType = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getContentTypeBytes() {
-        java.lang.Object ref = contentType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          contentType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string contentType = 6;</code>
-       */
-      public Builder setContentType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        contentType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string contentType = 6;</code>
-       */
-      public Builder clearContentType() {
-        
-        contentType_ = getDefaultInstance().getContentType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string contentType = 6;</code>
-       */
-      public Builder setContentTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        contentType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> headers_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetHeaders() {
-        if (headers_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
-        }
-        return headers_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableHeaders() {
-        onChanged();;
-        if (headers_ == null) {
-          headers_ = com.google.protobuf.MapField.newMapField(
-              HeadersDefaultEntryHolder.defaultEntry);
-        }
-        if (!headers_.isMutable()) {
-          headers_ = headers_.copy();
-        }
-        return headers_;
-      }
-
-      public int getHeadersCount() {
-        return internalGetHeaders().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-
-      public boolean containsHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetHeaders().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getHeadersMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getHeaders() {
-        return getHeadersMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
-        return internalGetHeaders().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-
-      public java.lang.String getHeadersOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-
-      public java.lang.String getHeadersOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetHeaders().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearHeaders() {
-        internalGetMutableHeaders().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-
-      public Builder removeHeaders(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableHeaders() {
-        return internalGetMutableHeaders().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-      public Builder putHeaders(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableHeaders().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; headers = 7;</code>
-       */
-
-      public Builder putAllHeaders(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableHeaders().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.String> form_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -26627,7 +26993,7 @@ public final class Api {
         return internalGetForm().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
 
       public boolean containsForm(
@@ -26643,14 +27009,14 @@ public final class Api {
         return getFormMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
         return internalGetForm().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
 
       public java.lang.String getFormOrDefault(
@@ -26662,7 +27028,7 @@ public final class Api {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
 
       public java.lang.String getFormOrThrow(
@@ -26682,7 +27048,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
 
       public Builder removeForm(
@@ -26701,7 +27067,7 @@ public final class Api {
         return internalGetMutableForm().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
       public Builder putForm(
           java.lang.String key,
@@ -26713,7 +27079,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 8;</code>
+       * <code>map&lt;string, string&gt; form = 3;</code>
        */
 
       public Builder putAllForm(
@@ -26723,140 +27089,17 @@ public final class Api {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> cookies_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetCookies() {
-        if (cookies_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              CookiesDefaultEntryHolder.defaultEntry);
-        }
-        return cookies_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableCookies() {
-        onChanged();;
-        if (cookies_ == null) {
-          cookies_ = com.google.protobuf.MapField.newMapField(
-              CookiesDefaultEntryHolder.defaultEntry);
-        }
-        if (!cookies_.isMutable()) {
-          cookies_ = cookies_.copy();
-        }
-        return cookies_;
-      }
-
-      public int getCookiesCount() {
-        return internalGetCookies().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-
-      public boolean containsCookies(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetCookies().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getCookiesMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getCookies() {
-        return getCookiesMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getCookiesMap() {
-        return internalGetCookies().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-
-      public java.lang.String getCookiesOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetCookies().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-
-      public java.lang.String getCookiesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetCookies().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearCookies() {
-        internalGetMutableCookies().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-
-      public Builder removeCookies(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCookies().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableCookies() {
-        return internalGetMutableCookies().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-      public Builder putCookies(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableCookies().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; cookies = 9;</code>
-       */
-
-      public Builder putAllCookies(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableCookies().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
       private api.Api.Bytes body_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder> bodyBuilder_;
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public boolean hasBody() {
         return bodyBuilder_ != null || body_ != null;
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public api.Api.Bytes getBody() {
         if (bodyBuilder_ == null) {
@@ -26866,7 +27109,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public Builder setBody(api.Api.Bytes value) {
         if (bodyBuilder_ == null) {
@@ -26882,7 +27125,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public Builder setBody(
           api.Api.Bytes.Builder builderForValue) {
@@ -26896,7 +27139,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public Builder mergeBody(api.Api.Bytes value) {
         if (bodyBuilder_ == null) {
@@ -26914,7 +27157,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public Builder clearBody() {
         if (bodyBuilder_ == null) {
@@ -26928,7 +27171,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public api.Api.Bytes.Builder getBodyBuilder() {
         
@@ -26936,7 +27179,7 @@ public final class Api {
         return getBodyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       public api.Api.BytesOrBuilder getBodyOrBuilder() {
         if (bodyBuilder_ != null) {
@@ -26947,7 +27190,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.api.Bytes body = 10;</code>
+       * <code>.api.Bytes body = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder> 
@@ -31128,34 +31371,34 @@ public final class Api {
 
   }
 
-  public interface BearerTokenOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.BearerToken)
+  public interface SecretOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Secret)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
+     * <code>string text = 1;</code>
      */
-    java.lang.String getToken();
+    java.lang.String getText();
     /**
-     * <code>string token = 1;</code>
+     * <code>string text = 1;</code>
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getTextBytes();
   }
   /**
-   * Protobuf type {@code api.BearerToken}
+   * Protobuf type {@code api.Secret}
    */
-  public  static final class BearerToken extends
+  public  static final class Secret extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.BearerToken)
-      BearerTokenOrBuilder {
+      // @@protoc_insertion_point(message_implements:api.Secret)
+      SecretOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use BearerToken.newBuilder() to construct.
-    private BearerToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Secret.newBuilder() to construct.
+    private Secret(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private BearerToken() {
-      token_ = "";
+    private Secret() {
+      text_ = "";
     }
 
     @java.lang.Override
@@ -31163,7 +31406,7 @@ public final class Api {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BearerToken(
+    private Secret(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -31185,7 +31428,7 @@ public final class Api {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              text_ = s;
               break;
             }
             default: {
@@ -31209,45 +31452,45 @@ public final class Api {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return api.Api.internal_static_api_BearerToken_descriptor;
+      return api.Api.internal_static_api_Secret_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_BearerToken_fieldAccessorTable
+      return api.Api.internal_static_api_Secret_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              api.Api.BearerToken.class, api.Api.BearerToken.Builder.class);
+              api.Api.Secret.class, api.Api.Secret.Builder.class);
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int TEXT_FIELD_NUMBER = 1;
+    private volatile java.lang.Object text_;
     /**
-     * <code>string token = 1;</code>
+     * <code>string text = 1;</code>
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getText() {
+      java.lang.Object ref = text_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        text_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 1;</code>
+     * <code>string text = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getTextBytes() {
+      java.lang.Object ref = text_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        text_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -31268,8 +31511,8 @@ public final class Api {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (!getTextBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, text_);
       }
       unknownFields.writeTo(output);
     }
@@ -31280,8 +31523,8 @@ public final class Api {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (!getTextBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, text_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -31293,14 +31536,14 @@ public final class Api {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof api.Api.BearerToken)) {
+      if (!(obj instanceof api.Api.Secret)) {
         return super.equals(obj);
       }
-      api.Api.BearerToken other = (api.Api.BearerToken) obj;
+      api.Api.Secret other = (api.Api.Secret) obj;
 
       boolean result = true;
-      result = result && getToken()
-          .equals(other.getToken());
+      result = result && getText()
+          .equals(other.getText());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -31312,76 +31555,76 @@ public final class Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
+      hash = (37 * hash) + TEXT_FIELD_NUMBER;
+      hash = (53 * hash) + getText().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.BearerToken parseFrom(byte[] data)
+    public static api.Api.Secret parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static api.Api.BearerToken parseFrom(java.io.InputStream input)
+    public static api.Api.Secret parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.BearerToken parseDelimitedFrom(java.io.InputStream input)
+    public static api.Api.Secret parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static api.Api.BearerToken parseDelimitedFrom(
+    public static api.Api.Secret parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static api.Api.BearerToken parseFrom(
+    public static api.Api.Secret parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -31394,7 +31637,7 @@ public final class Api {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(api.Api.BearerToken prototype) {
+    public static Builder newBuilder(api.Api.Secret prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -31410,26 +31653,26 @@ public final class Api {
       return builder;
     }
     /**
-     * Protobuf type {@code api.BearerToken}
+     * Protobuf type {@code api.Secret}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.BearerToken)
-        api.Api.BearerTokenOrBuilder {
+        // @@protoc_insertion_point(builder_implements:api.Secret)
+        api.Api.SecretOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return api.Api.internal_static_api_BearerToken_descriptor;
+        return api.Api.internal_static_api_Secret_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_BearerToken_fieldAccessorTable
+        return api.Api.internal_static_api_Secret_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                api.Api.BearerToken.class, api.Api.BearerToken.Builder.class);
+                api.Api.Secret.class, api.Api.Secret.Builder.class);
       }
 
-      // Construct using api.Api.BearerToken.newBuilder()
+      // Construct using api.Api.Secret.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -31447,7 +31690,7 @@ public final class Api {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        text_ = "";
 
         return this;
       }
@@ -31455,17 +31698,17 @@ public final class Api {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return api.Api.internal_static_api_BearerToken_descriptor;
+        return api.Api.internal_static_api_Secret_descriptor;
       }
 
       @java.lang.Override
-      public api.Api.BearerToken getDefaultInstanceForType() {
-        return api.Api.BearerToken.getDefaultInstance();
+      public api.Api.Secret getDefaultInstanceForType() {
+        return api.Api.Secret.getDefaultInstance();
       }
 
       @java.lang.Override
-      public api.Api.BearerToken build() {
-        api.Api.BearerToken result = buildPartial();
+      public api.Api.Secret build() {
+        api.Api.Secret result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -31473,9 +31716,9 @@ public final class Api {
       }
 
       @java.lang.Override
-      public api.Api.BearerToken buildPartial() {
-        api.Api.BearerToken result = new api.Api.BearerToken(this);
-        result.token_ = token_;
+      public api.Api.Secret buildPartial() {
+        api.Api.Secret result = new api.Api.Secret(this);
+        result.text_ = text_;
         onBuilt();
         return result;
       }
@@ -31514,18 +31757,18 @@ public final class Api {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.BearerToken) {
-          return mergeFrom((api.Api.BearerToken)other);
+        if (other instanceof api.Api.Secret) {
+          return mergeFrom((api.Api.Secret)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(api.Api.BearerToken other) {
-        if (other == api.Api.BearerToken.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+      public Builder mergeFrom(api.Api.Secret other) {
+        if (other == api.Api.Secret.getDefaultInstance()) return this;
+        if (!other.getText().isEmpty()) {
+          text_ = other.text_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -31543,11 +31786,11 @@ public final class Api {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        api.Api.BearerToken parsedMessage = null;
+        api.Api.Secret parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.BearerToken) e.getUnfinishedMessage();
+          parsedMessage = (api.Api.Secret) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -31557,71 +31800,71 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object text_ = "";
       /**
-       * <code>string token = 1;</code>
+       * <code>string text = 1;</code>
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getText() {
+        java.lang.Object ref = text_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          text_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string text = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getTextBytes() {
+        java.lang.Object ref = text_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          text_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string text = 1;</code>
        */
-      public Builder setToken(
+      public Builder setText(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        text_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string text = 1;</code>
        */
-      public Builder clearToken() {
+      public Builder clearText() {
         
-        token_ = getDefaultInstance().getToken();
+        text_ = getDefaultInstance().getText();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string text = 1;</code>
        */
-      public Builder setTokenBytes(
+      public Builder setTextBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        text_ = value;
         onChanged();
         return this;
       }
@@ -31638,46 +31881,1154 @@ public final class Api {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:api.BearerToken)
+      // @@protoc_insertion_point(builder_scope:api.Secret)
     }
 
-    // @@protoc_insertion_point(class_scope:api.BearerToken)
-    private static final api.Api.BearerToken DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:api.Secret)
+    private static final api.Api.Secret DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new api.Api.BearerToken();
+      DEFAULT_INSTANCE = new api.Api.Secret();
     }
 
-    public static api.Api.BearerToken getDefaultInstance() {
+    public static api.Api.Secret getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<BearerToken>
-        PARSER = new com.google.protobuf.AbstractParser<BearerToken>() {
+    private static final com.google.protobuf.Parser<Secret>
+        PARSER = new com.google.protobuf.AbstractParser<Secret>() {
       @java.lang.Override
-      public BearerToken parsePartialFrom(
+      public Secret parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BearerToken(input, extensionRegistry);
+        return new Secret(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<BearerToken> parser() {
+    public static com.google.protobuf.Parser<Secret> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<BearerToken> getParserForType() {
+    public com.google.protobuf.Parser<Secret> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public api.Api.BearerToken getDefaultInstanceForType() {
+    public api.Api.Secret getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
+  public interface TokenOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.Token)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string access_token = 1;</code>
+     */
+    java.lang.String getAccessToken();
+    /**
+     * <code>string access_token = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getAccessTokenBytes();
+
+    /**
+     * <code>string token_type = 2;</code>
+     */
+    java.lang.String getTokenType();
+    /**
+     * <code>string token_type = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenTypeBytes();
+
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    java.lang.String getRefreshToken();
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getRefreshTokenBytes();
+
+    /**
+     * <code>string expiry = 4;</code>
+     */
+    java.lang.String getExpiry();
+    /**
+     * <code>string expiry = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getExpiryBytes();
+
+    /**
+     * <code>string id_token = 5;</code>
+     */
+    java.lang.String getIdToken();
+    /**
+     * <code>string id_token = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdTokenBytes();
+  }
+  /**
+   * Protobuf type {@code api.Token}
+   */
+  public  static final class Token extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.Token)
+      TokenOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Token.newBuilder() to construct.
+    private Token(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Token() {
+      accessToken_ = "";
+      tokenType_ = "";
+      refreshToken_ = "";
+      expiry_ = "";
+      idToken_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Token(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              accessToken_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              tokenType_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              refreshToken_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              expiry_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              idToken_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_Token_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_Token_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.Token.class, api.Api.Token.Builder.class);
+    }
+
+    public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object accessToken_;
+    /**
+     * <code>string access_token = 1;</code>
+     */
+    public java.lang.String getAccessToken() {
+      java.lang.Object ref = accessToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accessToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string access_token = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAccessTokenBytes() {
+      java.lang.Object ref = accessToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accessToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tokenType_;
+    /**
+     * <code>string token_type = 2;</code>
+     */
+    public java.lang.String getTokenType() {
+      java.lang.Object ref = tokenType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tokenType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token_type = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenTypeBytes() {
+      java.lang.Object ref = tokenType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tokenType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REFRESH_TOKEN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object refreshToken_;
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    public java.lang.String getRefreshToken() {
+      java.lang.Object ref = refreshToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        refreshToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRefreshTokenBytes() {
+      java.lang.Object ref = refreshToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refreshToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPIRY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object expiry_;
+    /**
+     * <code>string expiry = 4;</code>
+     */
+    public java.lang.String getExpiry() {
+      java.lang.Object ref = expiry_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expiry_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string expiry = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getExpiryBytes() {
+      java.lang.Object ref = expiry_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expiry_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ID_TOKEN_FIELD_NUMBER = 5;
+    private volatile java.lang.Object idToken_;
+    /**
+     * <code>string id_token = 5;</code>
+     */
+    public java.lang.String getIdToken() {
+      java.lang.Object ref = idToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        idToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id_token = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdTokenBytes() {
+      java.lang.Object ref = idToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        idToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getAccessTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessToken_);
+      }
+      if (!getTokenTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tokenType_);
+      }
+      if (!getRefreshTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, refreshToken_);
+      }
+      if (!getExpiryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, expiry_);
+      }
+      if (!getIdTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, idToken_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getAccessTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessToken_);
+      }
+      if (!getTokenTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tokenType_);
+      }
+      if (!getRefreshTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, refreshToken_);
+      }
+      if (!getExpiryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, expiry_);
+      }
+      if (!getIdTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, idToken_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.Token)) {
+        return super.equals(obj);
+      }
+      api.Api.Token other = (api.Api.Token) obj;
+
+      boolean result = true;
+      result = result && getAccessToken()
+          .equals(other.getAccessToken());
+      result = result && getTokenType()
+          .equals(other.getTokenType());
+      result = result && getRefreshToken()
+          .equals(other.getRefreshToken());
+      result = result && getExpiry()
+          .equals(other.getExpiry());
+      result = result && getIdToken()
+          .equals(other.getIdToken());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCESS_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessToken().hashCode();
+      hash = (37 * hash) + TOKEN_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenType().hashCode();
+      hash = (37 * hash) + REFRESH_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getRefreshToken().hashCode();
+      hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiry().hashCode();
+      hash = (37 * hash) + ID_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getIdToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.Token parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Token parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Token parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Token parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Token parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.Token parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.Token parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Token parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Token parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.Token parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.Token parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.Token parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.Token prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.Token}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.Token)
+        api.Api.TokenOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_Token_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_Token_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.Token.class, api.Api.Token.Builder.class);
+      }
+
+      // Construct using api.Api.Token.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        accessToken_ = "";
+
+        tokenType_ = "";
+
+        refreshToken_ = "";
+
+        expiry_ = "";
+
+        idToken_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_Token_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.Token getDefaultInstanceForType() {
+        return api.Api.Token.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.Token build() {
+        api.Api.Token result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.Token buildPartial() {
+        api.Api.Token result = new api.Api.Token(this);
+        result.accessToken_ = accessToken_;
+        result.tokenType_ = tokenType_;
+        result.refreshToken_ = refreshToken_;
+        result.expiry_ = expiry_;
+        result.idToken_ = idToken_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.Token) {
+          return mergeFrom((api.Api.Token)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.Token other) {
+        if (other == api.Api.Token.getDefaultInstance()) return this;
+        if (!other.getAccessToken().isEmpty()) {
+          accessToken_ = other.accessToken_;
+          onChanged();
+        }
+        if (!other.getTokenType().isEmpty()) {
+          tokenType_ = other.tokenType_;
+          onChanged();
+        }
+        if (!other.getRefreshToken().isEmpty()) {
+          refreshToken_ = other.refreshToken_;
+          onChanged();
+        }
+        if (!other.getExpiry().isEmpty()) {
+          expiry_ = other.expiry_;
+          onChanged();
+        }
+        if (!other.getIdToken().isEmpty()) {
+          idToken_ = other.idToken_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.Token parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.Token) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object accessToken_ = "";
+      /**
+       * <code>string access_token = 1;</code>
+       */
+      public java.lang.String getAccessToken() {
+        java.lang.Object ref = accessToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accessToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string access_token = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAccessTokenBytes() {
+        java.lang.Object ref = accessToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accessToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string access_token = 1;</code>
+       */
+      public Builder setAccessToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        accessToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string access_token = 1;</code>
+       */
+      public Builder clearAccessToken() {
+        
+        accessToken_ = getDefaultInstance().getAccessToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string access_token = 1;</code>
+       */
+      public Builder setAccessTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        accessToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tokenType_ = "";
+      /**
+       * <code>string token_type = 2;</code>
+       */
+      public java.lang.String getTokenType() {
+        java.lang.Object ref = tokenType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tokenType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token_type = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenTypeBytes() {
+        java.lang.Object ref = tokenType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tokenType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token_type = 2;</code>
+       */
+      public Builder setTokenType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tokenType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token_type = 2;</code>
+       */
+      public Builder clearTokenType() {
+        
+        tokenType_ = getDefaultInstance().getTokenType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token_type = 2;</code>
+       */
+      public Builder setTokenTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tokenType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object refreshToken_ = "";
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public java.lang.String getRefreshToken() {
+        java.lang.Object ref = refreshToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          refreshToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRefreshTokenBytes() {
+        java.lang.Object ref = refreshToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          refreshToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public Builder setRefreshToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        refreshToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public Builder clearRefreshToken() {
+        
+        refreshToken_ = getDefaultInstance().getRefreshToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public Builder setRefreshTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        refreshToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object expiry_ = "";
+      /**
+       * <code>string expiry = 4;</code>
+       */
+      public java.lang.String getExpiry() {
+        java.lang.Object ref = expiry_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expiry_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string expiry = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getExpiryBytes() {
+        java.lang.Object ref = expiry_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expiry_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string expiry = 4;</code>
+       */
+      public Builder setExpiry(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        expiry_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expiry = 4;</code>
+       */
+      public Builder clearExpiry() {
+        
+        expiry_ = getDefaultInstance().getExpiry();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string expiry = 4;</code>
+       */
+      public Builder setExpiryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        expiry_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object idToken_ = "";
+      /**
+       * <code>string id_token = 5;</code>
+       */
+      public java.lang.String getIdToken() {
+        java.lang.Object ref = idToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          idToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id_token = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdTokenBytes() {
+        java.lang.Object ref = idToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          idToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id_token = 5;</code>
+       */
+      public Builder setIdToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        idToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id_token = 5;</code>
+       */
+      public Builder clearIdToken() {
+        
+        idToken_ = getDefaultInstance().getIdToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id_token = 5;</code>
+       */
+      public Builder setIdTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        idToken_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.Token)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.Token)
+    private static final api.Api.Token DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.Token();
+    }
+
+    public static api.Api.Token getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Token>
+        PARSER = new com.google.protobuf.AbstractParser<Token>() {
+      @java.lang.Override
+      public Token parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Token(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Token> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Token> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.Token getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_ResourceRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_ResourceRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_ResourceRequest_FormEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_ResourceRequest_FormEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_SubscribeRequest_descriptor;
   private static final 
@@ -31824,20 +33175,10 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_HTTPRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_HTTPRequest_HeadersEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_HTTPRequest_HeadersEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_HTTPRequest_FormEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_HTTPRequest_FormEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_HTTPRequest_CookiesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_HTTPRequest_CookiesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_RenderRequest_descriptor;
   private static final 
@@ -31864,10 +33205,15 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_PhoneNumberResource_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_BearerToken_descriptor;
+    internal_static_api_Secret_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_BearerToken_fieldAccessorTable;
+      internal_static_api_Secret_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_Token_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_Token_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -31878,149 +33224,162 @@ public final class Api {
   static {
     java.lang.String[] descriptorData = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations" +
-      ".proto\"H\n\020SubscribeRequest\022\r\n\005email\030\001 \001(" +
-      "\t\022\014\n\004plan\030\002 \001(\t\022\027\n\004card\030\003 \001(\0132\t.api.Card" +
-      "\"1\n\022UnSubscribeRequest\022\r\n\005email\030\001 \001(\t\022\014\n" +
-      "\004plan\030\002 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001(\t\022\021\n\te" +
-      "xp_month\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013\n\003cvc\030" +
-      "\004 \001(\t\"\007\n\005Empty\"H\n\013UserRequest\022 \n\006string\030" +
-      "\001 \001(\0132\020.api.BearerToken\022\027\n\004user\030\002 \001(\0132\t." +
-      "api.User\"D\n\022UserByEmailRequest\022\037\n\005token\030" +
-      "\001 \001(\0132\020.api.BearerToken\022\r\n\005email\030\002 \001(\t\"\030" +
-      "\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"r\n\003SMS\022\017\n\007servi" +
-      "ce\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132\014." +
-      "api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callbac" +
-      "k\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007serv" +
-      "ice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\0132\014" +
-      ".api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callba" +
-      "ck\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022\021\n" +
-      "\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031\n\005" +
-      "email\030\003 \001(\0132\n.api.Email\"Z\n\021EmailBlastReq" +
-      "uest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 " +
-      "\001(\t\022\036\n\005blast\030\003 \001(\0132\017.api.EmailBlast\"\246\001\n\n" +
-      "EmailBlast\0226\n\014name_address\030\001 \003(\0132 .api.E" +
-      "mailBlast.NameAddressEntry\022\017\n\007subject\030\002 " +
-      "\001(\t\022\r\n\005plain\030\003 \001(\t\022\014\n\004html\030\004 \001(\t\0322\n\020Name" +
-      "AddressEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
-      ":\0028\001\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002" +
-      " \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004" +
-      "html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002" +
-      " \001(\t\022\013\n\003app\030\003 \001(\t\"2\n\tCallBlast\022\014\n\004from\030\001" +
-      " \001(\t\022\n\n\002to\030\002 \003(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Message" +
-      "\022\r\n\005value\030\001 \001(\t\"\245\003\n\004User\022\017\n\007user_id\030\001 \001(" +
-      "\t\022\014\n\004name\030\002 \001(\t\022\022\n\ngiven_name\030\003 \001(\t\022\023\n\013f" +
-      "amily_name\030\004 \001(\t\022\016\n\006gender\030\005 \001(\t\022\021\n\tbirt" +
-      "hdate\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\024\n\014phone_numb" +
-      "er\030\010 \001(\t\022\017\n\007picture\030\t \001(\t\022(\n\ruser_metada" +
-      "ta\030\n \001(\0132\021.api.UserMetadata\022&\n\014app_metad" +
-      "ata\030\013 \001(\0132\020.api.AppMetadata\022\017\n\007last_ip\030\014" +
-      " \001(\t\022\017\n\007blocked\030\r \001(\010\022\020\n\010nickname\030\016 \001(\t\022" +
-      "\023\n\013multifactor\030\017 \003(\t\022\022\n\ncreated_at\030\021 \001(\t" +
-      "\022\022\n\nupdated_at\030\022 \001(\t\022\026\n\016phone_verified\030\023" +
-      " \001(\010\022!\n\nidentities\030\024 \003(\0132\r.api.Identity\"" +
-      "S\n\010Identity\022\022\n\nconnection\030\001 \001(\t\022\017\n\007user_" +
-      "id\030\002 \001(\t\022\020\n\010provider\030\003 \001(\t\022\020\n\010isSocial\030\004" +
-      " \001(\t\"r\n\014UserMetadata\0221\n\010metadata\030\001 \003(\0132\037" +
-      ".api.UserMetadata.MetadataEntry\032/\n\rMetad" +
-      "ataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "\"p\n\013AppMetadata\0220\n\010metadata\030\001 \003(\0132\036.api." +
-      "AppMetadata.MetadataEntry\032/\n\rMetadataEnt" +
-      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\246\001\n\004A" +
-      "uth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025" +
-      "\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022" +
-      "\020\n\010audience\030\005 \001(\t\022\032\n\006scopes\030\006 \003(\0162\n.api." +
-      "Scope\022$\n\nmanagement\030\007 \001(\0132\020.api.BearerTo" +
-      "ken\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Template\022\014" +
-      "\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSONWebKey" +
-      "s\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t" +
-      "\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\"&\n\004J" +
-      "wks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKeys\"\260\003\n\013" +
-      "HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api.HTTPMe" +
-      "thod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014\n\004user" +
-      "\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\022\023\n\013contentType\030" +
-      "\006 \001(\t\022.\n\007headers\030\007 \003(\0132\035.api.HTTPRequest" +
-      ".HeadersEntry\022(\n\004form\030\010 \003(\0132\032.api.HTTPRe" +
-      "quest.FormEntry\022.\n\007cookies\030\t \003(\0132\035.api.H" +
-      "TTPRequest.CookiesEntry\022\030\n\004body\030\n \001(\0132\n." +
-      "api.Bytes\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r" +
-      "\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesEntry\022\013" +
-      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\rRender" +
-      "Request\022\037\n\010template\030\001 \001(\0132\r.api.Template" +
-      "\022\030\n\004data\030\002 \001(\0132\n.api.Bytes\"o\n\030SearchPhon" +
-      "eNumberRequest\022\r\n\005state\030\001 \001(\t\022-\n\014capabil" +
-      "ities\030\002 \001(\0132\027.api.NumberCapabilities\022\025\n\r" +
-      "total_results\030\003 \001(\003\"y\n\013PhoneNumber\022\025\n\rfr" +
-      "iendly_name\030\001 \001(\t\022\024\n\014phone_number\030\002 \001(\t\022" +
-      "\016\n\006region\030\003 \001(\t\022-\n\014capabilities\030\004 \001(\0132\027." +
-      "api.NumberCapabilities\"=\n\022NumberCapabili" +
-      "ties\022\r\n\005voice\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013\n\003mms\030" +
-      "\003 \001(\010\"P\n\023PhoneNumberResource\022 \n\006number\030\001" +
-      " \001(\0132\020.api.PhoneNumber\022\n\n\002id\030\002 \001(\t\022\013\n\003ur" +
-      "i\030\003 \001(\t\"\034\n\013BearerToken\022\r\n\005token\030\001 \001(\t*\344\002" +
-      "\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005EMAI" +
-      "L\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP_TOK" +
-      "ENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STATS\020\006\022" +
-      "\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_EMAI" +
-      "L_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLATES\020" +
-      "\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022\020\n\014C" +
-      "REATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nREAD_" +
-      "ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_ROLE" +
-      "S\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022*\037\n\n" +
-      "HTTPMethod\022\007\n\003GET\020\000\022\010\n\004POST\020\0012\350\005\n\016Utilit" +
-      "yService\022<\n\004Echo\022\014.api.Message\032\014.api.Mes" +
-      "sage\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSp" +
-      "anish\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002" +
-      "\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoChine" +
-      "se\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025" +
-      "/utility/echo/chinese:\001*\022K\n\013EchoEnglish\022" +
-      "\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/ut" +
-      "ility/echo/english:\001*\022G\n\tEchoHindi\022\014.api" +
-      ".Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility" +
-      "/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.Messa" +
-      "ge\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/echo/" +
-      "arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.a" +
-      "pi.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/json:" +
-      "\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api.Byte" +
-      "s\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E\n\nM" +
-      "arshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002" +
-      "\031\"\024/utility/marshal/xml:\001*\022D\n\006Render\022\022.a" +
-      "pi.RenderRequest\032\n.api.Bytes\"\032\202\323\344\223\002\024\"\017/u" +
-      "tility/render:\001*2\222\005\n\016ContactService\022=\n\007S" +
-      "endSMS\022\010.api.SMS\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/c" +
-      "ontact/sms/{to}:\001*\022J\n\014SendSMSBlast\022\r.api" +
-      ".SMSBlast\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/" +
-      "sms/blast:\001*0\001\022C\n\006GetSMS\022\017.api.Identifie" +
-      "r\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}" +
-      ":\001*\022W\n\tSendEmail\022\021.api.EmailRequest\032\014.ap" +
-      "i.Message\")\202\323\344\223\002#\"\036/contact/email/{email" +
-      ".address}:\001*\022Y\n\016SendEmailBlast\022\026.api.Ema" +
-      "ilBlastRequest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/c" +
-      "ontact/email/blast:\001*0\001\022@\n\010SendCall\022\t.ap" +
-      "i.Call\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/cal" +
-      "l/{to}:\001*\022M\n\rSendCallBlast\022\016.api.CallBla" +
-      "st\032\n.api.Bytes\"\036\202\323\344\223\002\030\"\023/contact/call/bl" +
-      "ast:\001*0\001\022k\n\021SearchPhoneNumber\022\035.api.Sear" +
-      "chPhoneNumberRequest\032\020.api.PhoneNumber\"#" +
-      "\202\323\344\223\002\035\"\030/contact/numbers/{state}:\001*0\0012\262\002" +
-      "\n\016PaymentService\022U\n\tSubscribe\022\025.api.Subs" +
-      "cribeRequest\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032/payme" +
-      "nt/subscribe/{email}:\001*\022[\n\013Unsubscribe\022\027" +
-      ".api.UnSubscribeRequest\032\n.api.Bytes\"\'\202\323\344" +
-      "\223\002!\"\034/payment/unsubscribe/{email}:\001*\022l\n\023" +
-      "PurchasePhoneNumber\022\020.api.PhoneNumber\032\030." +
-      "api.PhoneNumberResource\")\202\323\344\223\002#\"\036/paymen" +
-      "t/number/{phone_number}:\001*2\210\003\n\013UserServi" +
-      "ce\022K\n\007GetUser\022\027.api.UserByEmailRequest\032\t" +
-      ".api.User\"\034\202\323\344\223\002\026\"\021/user/get/{email}:\001*\022" +
-      "P\n\nUpdateUser\022\020.api.UserRequest\032\n.api.By" +
-      "tes\"$\202\323\344\223\002\036\"\031/user/update/{user.email}:\001" +
-      "*\022C\n\nCreateUser\022\020.api.UserRequest\032\n.api." +
-      "Bytes\"\027\202\323\344\223\002\021\"\014/user/create:\001*\022R\n\nDelete" +
-      "User\022\027.api.UserByEmailRequest\032\n.api.Byte" +
-      "s\"\037\202\323\344\223\002\031\"\024/user/delete/{email}:\001*\022A\n\tLi" +
-      "stUsers\022\020.api.BearerToken\032\t.api.User\"\025\202\323" +
-      "\344\223\002\017\"\n/user/list:\001*0\001b\006proto3"
+      ".proto\"\351\001\n\017ResourceRequest\022\031\n\005token\030\001 \001(" +
+      "\0132\n.api.Token\022\037\n\006method\030\002 \001(\0162\017.api.HTTP" +
+      "Method\022\016\n\006domain\030\003 \001(\t\022\025\n\003url\030\004 \001(\0162\010.ap" +
+      "i.URL\022,\n\004form\030\005 \003(\0132\036.api.ResourceReques" +
+      "t.FormEntry\022\030\n\004body\030\006 \001(\0132\n.api.Bytes\032+\n" +
+      "\tFormEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"H\n\020SubscribeRequest\022\r\n\005email\030\001 \001(\t\022\014\n" +
+      "\004plan\030\002 \001(\t\022\027\n\004card\030\003 \001(\0132\t.api.Card\"1\n\022" +
+      "UnSubscribeRequest\022\r\n\005email\030\001 \001(\t\022\014\n\004pla" +
+      "n\030\002 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001(\t\022\021\n\texp_m" +
+      "onth\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013\n\003cvc\030\004 \001(" +
+      "\t\"\007\n\005Empty\"B\n\013UserRequest\022\032\n\006string\030\001 \001(" +
+      "\0132\n.api.Token\022\027\n\004user\030\002 \001(\0132\t.api.User\">" +
+      "\n\022UserByEmailRequest\022\031\n\005token\030\001 \001(\0132\n.ap" +
+      "i.Token\022\r\n\005email\030\002 \001(\t\"\030\n\nIdentifier\022\n\n\002" +
+      "id\030\001 \001(\t\"r\n\003SMS\022\017\n\007service\030\001 \001(\t\022\n\n\002to\030\002" +
+      " \001(\t\022\035\n\007message\030\003 \001(\0132\014.api.Message\022\020\n\010m" +
+      "ediaURL\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030\006" +
+      " \001(\t\"w\n\010SMSBlast\022\017\n\007service\030\001 \001(\t\022\n\n\002to\030" +
+      "\002 \003(\t\022\035\n\007message\030\003 \001(\0132\014.api.Message\022\020\n\010" +
+      "mediaURL\030\004 \001(\t\022\020\n\010callback\030\005 \001(\t\022\013\n\003app\030" +
+      "\006 \001(\t\"P\n\014EmailRequest\022\021\n\tfrom_name\030\001 \001(\t" +
+      "\022\022\n\nfrom_email\030\002 \001(\t\022\031\n\005email\030\003 \001(\0132\n.ap" +
+      "i.Email\"Z\n\021EmailBlastRequest\022\021\n\tfrom_nam" +
+      "e\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\036\n\005blast\030\003 \001" +
+      "(\0132\017.api.EmailBlast\"\246\001\n\nEmailBlast\0226\n\014na" +
+      "me_address\030\001 \003(\0132 .api.EmailBlast.NameAd" +
+      "dressEntry\022\017\n\007subject\030\002 \001(\t\022\r\n\005plain\030\003 \001" +
+      "(\t\022\014\n\004html\030\004 \001(\t\0322\n\020NameAddressEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\005Email\022\014\n" +
+      "\004name\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007subject\030" +
+      "\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004html\030\005 \001(\t\"-\n\004Ca" +
+      "ll\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\013\n\003app\030\003 \001(" +
+      "\t\"2\n\tCallBlast\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002 \003(\t" +
+      "\022\013\n\003app\030\003 \001(\t\"\030\n\007Message\022\r\n\005value\030\001 \001(\t\"" +
+      "\245\003\n\004User\022\017\n\007user_id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022" +
+      "\022\n\ngiven_name\030\003 \001(\t\022\023\n\013family_name\030\004 \001(\t" +
+      "\022\016\n\006gender\030\005 \001(\t\022\021\n\tbirthdate\030\006 \001(\t\022\r\n\005e" +
+      "mail\030\007 \001(\t\022\024\n\014phone_number\030\010 \001(\t\022\017\n\007pict" +
+      "ure\030\t \001(\t\022(\n\ruser_metadata\030\n \001(\0132\021.api.U" +
+      "serMetadata\022&\n\014app_metadata\030\013 \001(\0132\020.api." +
+      "AppMetadata\022\017\n\007last_ip\030\014 \001(\t\022\017\n\007blocked\030" +
+      "\r \001(\010\022\020\n\010nickname\030\016 \001(\t\022\023\n\013multifactor\030\017" +
+      " \003(\t\022\022\n\ncreated_at\030\021 \001(\t\022\022\n\nupdated_at\030\022" +
+      " \001(\t\022\026\n\016phone_verified\030\023 \001(\010\022!\n\nidentiti" +
+      "es\030\024 \003(\0132\r.api.Identity\"S\n\010Identity\022\022\n\nc" +
+      "onnection\030\001 \001(\t\022\017\n\007user_id\030\002 \001(\t\022\020\n\010prov" +
+      "ider\030\003 \001(\t\022\020\n\010isSocial\030\004 \001(\t\"r\n\014UserMeta" +
+      "data\0221\n\010metadata\030\001 \003(\0132\037.api.UserMetadat" +
+      "a.MetadataEntry\032/\n\rMetadataEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"p\n\013AppMetadata\022" +
+      "0\n\010metadata\030\001 \003(\0132\036.api.AppMetadata.Meta" +
+      "dataEntry\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"n\n\004Auth\022\016\n\006domain\030\001 \001" +
+      "(\t\022\021\n\tclient_id\030\002 \001(\t\022\025\n\rclient_secret\030\003" +
+      " \001(\t\022\020\n\010redirect\030\004 \001(\t\022\032\n\006scopes\030\005 \003(\0162\n" +
+      ".api.Scope\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Tem" +
+      "plate\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSO" +
+      "NWebKeys\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003us" +
+      "e\030\003 \001(\t\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003" +
+      "(\t\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKe" +
+      "ys\"\254\001\n\013HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api" +
+      ".HTTPMethod\022\013\n\003url\030\002 \001(\t\022(\n\004form\030\003 \003(\0132\032" +
+      ".api.HTTPRequest.FormEntry\022\030\n\004body\030\004 \001(\013" +
+      "2\n.api.Bytes\032+\n\tFormEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\"J\n\rRenderRequest\022\037\n\010te" +
+      "mplate\030\001 \001(\0132\r.api.Template\022\030\n\004data\030\002 \001(" +
+      "\0132\n.api.Bytes\"o\n\030SearchPhoneNumberReques" +
+      "t\022\r\n\005state\030\001 \001(\t\022-\n\014capabilities\030\002 \001(\0132\027" +
+      ".api.NumberCapabilities\022\025\n\rtotal_results" +
+      "\030\003 \001(\003\"y\n\013PhoneNumber\022\025\n\rfriendly_name\030\001" +
+      " \001(\t\022\024\n\014phone_number\030\002 \001(\t\022\016\n\006region\030\003 \001" +
+      "(\t\022-\n\014capabilities\030\004 \001(\0132\027.api.NumberCap" +
+      "abilities\"=\n\022NumberCapabilities\022\r\n\005voice" +
+      "\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013\n\003mms\030\003 \001(\010\"P\n\023Phon" +
+      "eNumberResource\022 \n\006number\030\001 \001(\0132\020.api.Ph" +
+      "oneNumber\022\n\n\002id\030\002 \001(\t\022\013\n\003uri\030\003 \001(\t\"\026\n\006Se" +
+      "cret\022\014\n\004text\030\001 \001(\t\"j\n\005Token\022\024\n\014access_to" +
+      "ken\030\001 \001(\t\022\022\n\ntoken_type\030\002 \001(\t\022\025\n\rrefresh" +
+      "_token\030\003 \001(\t\022\016\n\006expiry\030\004 \001(\t\022\020\n\010id_token" +
+      "\030\005 \001(\t*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020" +
+      "\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USE" +
+      "R_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD" +
+      "_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UP" +
+      "DATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_T" +
+      "EMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RUL" +
+      "ES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r" +
+      "\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CR" +
+      "EATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_L" +
+      "OGS\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKEN" +
+      "URL\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n" +
+      "\nCLIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL" +
+      "\020\006\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSUR" +
+      "L\020\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022" +
+      "\025\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017" +
+      "SEARCH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKS" +
+      "URL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*\037\n\nHTTPMetho" +
+      "d\022\007\n\003GET\020\000\022\010\n\004POST\020\0012\350\005\n\016UtilityService\022" +
+      "<\n\004Echo\022\014.api.Message\032\014.api.Message\"\030\202\323\344" +
+      "\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSpanish\022\014.a" +
+      "pi.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utili" +
+      "ty/echo/spanish:\001*\022K\n\013EchoChinese\022\014.api." +
+      "Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/" +
+      "echo/chinese:\001*\022K\n\013EchoEnglish\022\014.api.Mes" +
+      "sage\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility/ech" +
+      "o/english:\001*\022G\n\tEchoHindi\022\014.api.Message\032" +
+      "\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility/echo/hin" +
+      "di:\001*\022I\n\nEchoArabic\022\014.api.Message\032\014.api." +
+      "Message\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*" +
+      "\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.api.Bytes\"" +
+      " \202\323\344\223\002\032\"\025/utility/marshal/json:\001*\022G\n\013Mar" +
+      "shalYAML\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032" +
+      "\"\025/utility/marshal/yaml:\001*\022E\n\nMarshalXML" +
+      "\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utili" +
+      "ty/marshal/xml:\001*\022D\n\006Render\022\022.api.Render" +
+      "Request\032\n.api.Bytes\"\032\202\323\344\223\002\024\"\017/utility/re" +
+      "nder:\001*2\222\005\n\016ContactService\022=\n\007SendSMS\022\010." +
+      "api.SMS\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sm" +
+      "s/{to}:\001*\022J\n\014SendSMSBlast\022\r.api.SMSBlast" +
+      "\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/sms/blast" +
+      ":\001*0\001\022C\n\006GetSMS\022\017.api.Identifier\032\n.api.B" +
+      "ytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*\022W\n\tSe" +
+      "ndEmail\022\021.api.EmailRequest\032\014.api.Message" +
+      "\")\202\323\344\223\002#\"\036/contact/email/{email.address}" +
+      ":\001*\022Y\n\016SendEmailBlast\022\026.api.EmailBlastRe" +
+      "quest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/contact/em" +
+      "ail/blast:\001*0\001\022@\n\010SendCall\022\t.api.Call\032\n." +
+      "api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/call/{to}:\001*" +
+      "\022M\n\rSendCallBlast\022\016.api.CallBlast\032\n.api." +
+      "Bytes\"\036\202\323\344\223\002\030\"\023/contact/call/blast:\001*0\001\022" +
+      "k\n\021SearchPhoneNumber\022\035.api.SearchPhoneNu" +
+      "mberRequest\032\020.api.PhoneNumber\"#\202\323\344\223\002\035\"\030/" +
+      "contact/numbers/{state}:\001*0\0012\262\002\n\016Payment" +
+      "Service\022U\n\tSubscribe\022\025.api.SubscribeRequ" +
+      "est\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032/payment/subscr" +
+      "ibe/{email}:\001*\022[\n\013Unsubscribe\022\027.api.UnSu" +
+      "bscribeRequest\032\n.api.Bytes\"\'\202\323\344\223\002!\"\034/pay" +
+      "ment/unsubscribe/{email}:\001*\022l\n\023PurchaseP" +
+      "honeNumber\022\020.api.PhoneNumber\032\030.api.Phone" +
+      "NumberResource\")\202\323\344\223\002#\"\036/payment/number/" +
+      "{phone_number}:\001*2\202\003\n\013UserService\022K\n\007Get" +
+      "User\022\027.api.UserByEmailRequest\032\t.api.User" +
+      "\"\034\202\323\344\223\002\026\"\021/user/get/{email}:\001*\022P\n\nUpdate" +
+      "User\022\020.api.UserRequest\032\n.api.Bytes\"$\202\323\344\223" +
+      "\002\036\"\031/user/update/{user.email}:\001*\022C\n\nCrea" +
+      "teUser\022\020.api.UserRequest\032\n.api.Bytes\"\027\202\323" +
+      "\344\223\002\021\"\014/user/create:\001*\022R\n\nDeleteUser\022\027.ap" +
+      "i.UserByEmailRequest\032\n.api.Bytes\"\037\202\323\344\223\002\031" +
+      "\"\024/user/delete/{email}:\001*\022;\n\tListUsers\022\n" +
+      ".api.Token\032\t.api.User\"\025\202\323\344\223\002\017\"\n/user/lis" +
+      "t:\001*0\0012\270\001\n\017ResourceService\022K\n\013GetResourc" +
+      "e\022\024.api.ResourceRequest\032\n.api.Bytes\"\032\202\323\344" +
+      "\223\002\024\"\017/resource/{url}:\001*\022X\n\017StreamResourc" +
+      "es\022\024.api.ResourceRequest\032\n.api.Bytes\"!\202\323" +
+      "\344\223\002\033\"\026/resource/stream/{url}:\001*0\001b\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -32035,74 +33394,86 @@ public final class Api {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
         }, assigner);
-    internal_static_api_SubscribeRequest_descriptor =
+    internal_static_api_ResourceRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_ResourceRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_ResourceRequest_descriptor,
+        new java.lang.String[] { "Token", "Method", "Domain", "Url", "Form", "Body", });
+    internal_static_api_ResourceRequest_FormEntry_descriptor =
+      internal_static_api_ResourceRequest_descriptor.getNestedTypes().get(0);
+    internal_static_api_ResourceRequest_FormEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_ResourceRequest_FormEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_api_SubscribeRequest_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_api_SubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SubscribeRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", "Card", });
     internal_static_api_UnSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_UnSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UnSubscribeRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", });
     internal_static_api_Card_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Card_descriptor,
         new java.lang.String[] { "Number", "ExpMonth", "ExpYear", "Cvc", });
     internal_static_api_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Empty_descriptor,
         new java.lang.String[] { });
     internal_static_api_UserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_UserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserRequest_descriptor,
         new java.lang.String[] { "String", "User", });
     internal_static_api_UserByEmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_UserByEmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserByEmailRequest_descriptor,
         new java.lang.String[] { "Token", "Email", });
     internal_static_api_Identifier_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_Identifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Identifier_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_SMS_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_SMS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMS_descriptor,
         new java.lang.String[] { "Service", "To", "Message", "MediaURL", "Callback", "App", });
     internal_static_api_SMSBlast_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_SMSBlast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMSBlast_descriptor,
         new java.lang.String[] { "Service", "To", "Message", "MediaURL", "Callback", "App", });
     internal_static_api_EmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailRequest_descriptor,
         new java.lang.String[] { "FromName", "FromEmail", "Email", });
     internal_static_api_EmailBlastRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_EmailBlastRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailBlastRequest_descriptor,
         new java.lang.String[] { "FromName", "FromEmail", "Blast", });
     internal_static_api_EmailBlast_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_EmailBlast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailBlast_descriptor,
@@ -32114,43 +33485,43 @@ public final class Api {
         internal_static_api_EmailBlast_NameAddressEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_Email_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
         new java.lang.String[] { "Name", "Address", "Subject", "Plain", "Html", });
     internal_static_api_Call_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_Call_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Call_descriptor,
         new java.lang.String[] { "From", "To", "App", });
     internal_static_api_CallBlast_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_CallBlast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CallBlast_descriptor,
         new java.lang.String[] { "From", "To", "App", });
     internal_static_api_Message_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Message_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_api_User_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_User_descriptor,
         new java.lang.String[] { "UserId", "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "PhoneNumber", "Picture", "UserMetadata", "AppMetadata", "LastIp", "Blocked", "Nickname", "Multifactor", "CreatedAt", "UpdatedAt", "PhoneVerified", "Identities", });
     internal_static_api_Identity_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_Identity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Identity_descriptor,
         new java.lang.String[] { "Connection", "UserId", "Provider", "IsSocial", });
     internal_static_api_UserMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_UserMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserMetadata_descriptor,
@@ -32162,7 +33533,7 @@ public final class Api {
         internal_static_api_UserMetadata_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_AppMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_AppMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AppMetadata_descriptor,
@@ -32174,95 +33545,89 @@ public final class Api {
         internal_static_api_AppMetadata_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_Auth_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_Auth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Auth_descriptor,
-        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", "Management", });
+        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Scopes", });
     internal_static_api_Bytes_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_Bytes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Bytes_descriptor,
         new java.lang.String[] { "Bits", });
     internal_static_api_Template_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_Template_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Template_descriptor,
         new java.lang.String[] { "Name", "Text", });
     internal_static_api_JSONWebKeys_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_JSONWebKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JSONWebKeys_descriptor,
         new java.lang.String[] { "Kty", "Kid", "Use", "N", "E", "X5C", });
     internal_static_api_Jwks_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_Jwks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Jwks_descriptor,
         new java.lang.String[] { "Keys", });
     internal_static_api_HTTPRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_HTTPRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_HTTPRequest_descriptor,
-        new java.lang.String[] { "Method", "Url", "Token", "User", "Password", "ContentType", "Headers", "Form", "Cookies", "Body", });
-    internal_static_api_HTTPRequest_HeadersEntry_descriptor =
-      internal_static_api_HTTPRequest_descriptor.getNestedTypes().get(0);
-    internal_static_api_HTTPRequest_HeadersEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_HTTPRequest_HeadersEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "Method", "Url", "Form", "Body", });
     internal_static_api_HTTPRequest_FormEntry_descriptor =
-      internal_static_api_HTTPRequest_descriptor.getNestedTypes().get(1);
+      internal_static_api_HTTPRequest_descriptor.getNestedTypes().get(0);
     internal_static_api_HTTPRequest_FormEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_HTTPRequest_FormEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_api_HTTPRequest_CookiesEntry_descriptor =
-      internal_static_api_HTTPRequest_descriptor.getNestedTypes().get(2);
-    internal_static_api_HTTPRequest_CookiesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_HTTPRequest_CookiesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_api_RenderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_RenderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_RenderRequest_descriptor,
         new java.lang.String[] { "Template", "Data", });
     internal_static_api_SearchPhoneNumberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_api_SearchPhoneNumberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SearchPhoneNumberRequest_descriptor,
         new java.lang.String[] { "State", "Capabilities", "TotalResults", });
     internal_static_api_PhoneNumber_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_api_PhoneNumber_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PhoneNumber_descriptor,
         new java.lang.String[] { "FriendlyName", "PhoneNumber", "Region", "Capabilities", });
     internal_static_api_NumberCapabilities_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_api_NumberCapabilities_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_NumberCapabilities_descriptor,
         new java.lang.String[] { "Voice", "Sms", "Mms", });
     internal_static_api_PhoneNumberResource_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_api_PhoneNumberResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PhoneNumberResource_descriptor,
         new java.lang.String[] { "Number", "Id", "Uri", });
-    internal_static_api_BearerToken_descriptor =
-      getDescriptor().getMessageTypes().get(31);
-    internal_static_api_BearerToken_fieldAccessorTable = new
+    internal_static_api_Secret_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_api_Secret_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_BearerToken_descriptor,
-        new java.lang.String[] { "Token", });
+        internal_static_api_Secret_descriptor,
+        new java.lang.String[] { "Text", });
+    internal_static_api_Token_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_api_Token_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_Token_descriptor,
+        new java.lang.String[] { "AccessToken", "TokenType", "RefreshToken", "Expiry", "IdToken", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

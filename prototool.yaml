@@ -5,7 +5,11 @@ excludes:
   - csharp
   - ruby
   - python
-  - obj
+  - objc
+  - js
+  - java
+  - cpp
+
 protoc:
   version: 3.6.1
   allow_unused_imports: true

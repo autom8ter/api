@@ -1771,7 +1771,7 @@ func (x HTTPMethod) String() string
 type HTTPRequest struct {
 	Method               HTTPMethod        `protobuf:"varint,1,opt,name=method,proto3,enum=api.HTTPMethod" json:"method,omitempty"`
 	Url                  string            `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
-	Token                string            `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
+	Token                *BearerToken      `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
 	User                 string            `protobuf:"bytes,4,opt,name=user,proto3" json:"user,omitempty"`
 	Password             string            `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
 	ContentType          string            `protobuf:"bytes,6,opt,name=contentType,proto3" json:"contentType,omitempty"`
@@ -1843,7 +1843,7 @@ func (m *HTTPRequest) GetPassword() string
 #### func (*HTTPRequest) GetToken
 
 ```go
-func (m *HTTPRequest) GetToken() string
+func (m *HTTPRequest) GetToken() *BearerToken
 ```
 
 #### func (*HTTPRequest) GetUrl
@@ -3066,6 +3066,78 @@ func (m *SearchPhoneNumberRequest) XXX_Size() int
 
 ```go
 func (m *SearchPhoneNumberRequest) XXX_Unmarshal(b []byte) error
+```
+
+#### type Secret
+
+```go
+type Secret struct {
+	Text                 string   `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Secret) Descriptor
+
+```go
+func (*Secret) Descriptor() ([]byte, []int)
+```
+
+#### func (*Secret) GetText
+
+```go
+func (m *Secret) GetText() string
+```
+
+#### func (*Secret) ProtoMessage
+
+```go
+func (*Secret) ProtoMessage()
+```
+
+#### func (*Secret) Reset
+
+```go
+func (m *Secret) Reset()
+```
+
+#### func (*Secret) String
+
+```go
+func (m *Secret) String() string
+```
+
+#### func (*Secret) XXX_DiscardUnknown
+
+```go
+func (m *Secret) XXX_DiscardUnknown()
+```
+
+#### func (*Secret) XXX_Marshal
+
+```go
+func (m *Secret) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Secret) XXX_Merge
+
+```go
+func (m *Secret) XXX_Merge(src proto.Message)
+```
+
+#### func (*Secret) XXX_Size
+
+```go
+func (m *Secret) XXX_Size() int
+```
+
+#### func (*Secret) XXX_Unmarshal
+
+```go
+func (m *Secret) XXX_Unmarshal(b []byte) error
 ```
 
 #### type SubscribeRequest

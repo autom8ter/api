@@ -11,7 +11,7 @@ import (
 )
 
 func Setup(t *testing.T) *httptest.Server {
-	err := api.InitSessions("")
+	err := api.SecretFromEnv().InitSessions()
 	Fail(err, t)
 	a := &api.Auth{
 		Domain:       os.Getenv("AUTH0_DOMAIN"),

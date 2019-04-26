@@ -43,7 +43,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[38];
+  static const ::google::protobuf::internal::ParseTable schema[39];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -60,9 +60,6 @@ extern AppMetadata_MetadataEntry_DoNotUseDefaultTypeInternal _AppMetadata_Metada
 class Auth;
 class AuthDefaultTypeInternal;
 extern AuthDefaultTypeInternal _Auth_default_instance_;
-class BearerToken;
-class BearerTokenDefaultTypeInternal;
-extern BearerTokenDefaultTypeInternal _BearerToken_default_instance_;
 class Bytes;
 class BytesDefaultTypeInternal;
 extern BytesDefaultTypeInternal _Bytes_default_instance_;
@@ -96,15 +93,9 @@ extern EmptyDefaultTypeInternal _Empty_default_instance_;
 class HTTPRequest;
 class HTTPRequestDefaultTypeInternal;
 extern HTTPRequestDefaultTypeInternal _HTTPRequest_default_instance_;
-class HTTPRequest_CookiesEntry_DoNotUse;
-class HTTPRequest_CookiesEntry_DoNotUseDefaultTypeInternal;
-extern HTTPRequest_CookiesEntry_DoNotUseDefaultTypeInternal _HTTPRequest_CookiesEntry_DoNotUse_default_instance_;
 class HTTPRequest_FormEntry_DoNotUse;
 class HTTPRequest_FormEntry_DoNotUseDefaultTypeInternal;
 extern HTTPRequest_FormEntry_DoNotUseDefaultTypeInternal _HTTPRequest_FormEntry_DoNotUse_default_instance_;
-class HTTPRequest_HeadersEntry_DoNotUse;
-class HTTPRequest_HeadersEntry_DoNotUseDefaultTypeInternal;
-extern HTTPRequest_HeadersEntry_DoNotUseDefaultTypeInternal _HTTPRequest_HeadersEntry_DoNotUse_default_instance_;
 class Identifier;
 class IdentifierDefaultTypeInternal;
 extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
@@ -132,6 +123,12 @@ extern PhoneNumberResourceDefaultTypeInternal _PhoneNumberResource_default_insta
 class RenderRequest;
 class RenderRequestDefaultTypeInternal;
 extern RenderRequestDefaultTypeInternal _RenderRequest_default_instance_;
+class ResourceRequest;
+class ResourceRequestDefaultTypeInternal;
+extern ResourceRequestDefaultTypeInternal _ResourceRequest_default_instance_;
+class ResourceRequest_FormEntry_DoNotUse;
+class ResourceRequest_FormEntry_DoNotUseDefaultTypeInternal;
+extern ResourceRequest_FormEntry_DoNotUseDefaultTypeInternal _ResourceRequest_FormEntry_DoNotUse_default_instance_;
 class SMS;
 class SMSDefaultTypeInternal;
 extern SMSDefaultTypeInternal _SMS_default_instance_;
@@ -141,12 +138,18 @@ extern SMSBlastDefaultTypeInternal _SMSBlast_default_instance_;
 class SearchPhoneNumberRequest;
 class SearchPhoneNumberRequestDefaultTypeInternal;
 extern SearchPhoneNumberRequestDefaultTypeInternal _SearchPhoneNumberRequest_default_instance_;
+class Secret;
+class SecretDefaultTypeInternal;
+extern SecretDefaultTypeInternal _Secret_default_instance_;
 class SubscribeRequest;
 class SubscribeRequestDefaultTypeInternal;
 extern SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
 class Template;
 class TemplateDefaultTypeInternal;
 extern TemplateDefaultTypeInternal _Template_default_instance_;
+class Token;
+class TokenDefaultTypeInternal;
+extern TokenDefaultTypeInternal _Token_default_instance_;
 class UnSubscribeRequest;
 class UnSubscribeRequestDefaultTypeInternal;
 extern UnSubscribeRequestDefaultTypeInternal _UnSubscribeRequest_default_instance_;
@@ -171,7 +174,6 @@ namespace protobuf {
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::AppMetadata_MetadataEntry_DoNotUse* Arena::CreateMaybeMessage<::api::AppMetadata_MetadataEntry_DoNotUse>(Arena*);
 template<> ::api::Auth* Arena::CreateMaybeMessage<::api::Auth>(Arena*);
-template<> ::api::BearerToken* Arena::CreateMaybeMessage<::api::BearerToken>(Arena*);
 template<> ::api::Bytes* Arena::CreateMaybeMessage<::api::Bytes>(Arena*);
 template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
 template<> ::api::CallBlast* Arena::CreateMaybeMessage<::api::CallBlast>(Arena*);
@@ -183,9 +185,7 @@ template<> ::api::EmailBlast_NameAddressEntry_DoNotUse* Arena::CreateMaybeMessag
 template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(Arena*);
 template<> ::api::Empty* Arena::CreateMaybeMessage<::api::Empty>(Arena*);
 template<> ::api::HTTPRequest* Arena::CreateMaybeMessage<::api::HTTPRequest>(Arena*);
-template<> ::api::HTTPRequest_CookiesEntry_DoNotUse* Arena::CreateMaybeMessage<::api::HTTPRequest_CookiesEntry_DoNotUse>(Arena*);
 template<> ::api::HTTPRequest_FormEntry_DoNotUse* Arena::CreateMaybeMessage<::api::HTTPRequest_FormEntry_DoNotUse>(Arena*);
-template<> ::api::HTTPRequest_HeadersEntry_DoNotUse* Arena::CreateMaybeMessage<::api::HTTPRequest_HeadersEntry_DoNotUse>(Arena*);
 template<> ::api::Identifier* Arena::CreateMaybeMessage<::api::Identifier>(Arena*);
 template<> ::api::Identity* Arena::CreateMaybeMessage<::api::Identity>(Arena*);
 template<> ::api::JSONWebKeys* Arena::CreateMaybeMessage<::api::JSONWebKeys>(Arena*);
@@ -195,11 +195,15 @@ template<> ::api::NumberCapabilities* Arena::CreateMaybeMessage<::api::NumberCap
 template<> ::api::PhoneNumber* Arena::CreateMaybeMessage<::api::PhoneNumber>(Arena*);
 template<> ::api::PhoneNumberResource* Arena::CreateMaybeMessage<::api::PhoneNumberResource>(Arena*);
 template<> ::api::RenderRequest* Arena::CreateMaybeMessage<::api::RenderRequest>(Arena*);
+template<> ::api::ResourceRequest* Arena::CreateMaybeMessage<::api::ResourceRequest>(Arena*);
+template<> ::api::ResourceRequest_FormEntry_DoNotUse* Arena::CreateMaybeMessage<::api::ResourceRequest_FormEntry_DoNotUse>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSBlast* Arena::CreateMaybeMessage<::api::SMSBlast>(Arena*);
 template<> ::api::SearchPhoneNumberRequest* Arena::CreateMaybeMessage<::api::SearchPhoneNumberRequest>(Arena*);
+template<> ::api::Secret* Arena::CreateMaybeMessage<::api::Secret>(Arena*);
 template<> ::api::SubscribeRequest* Arena::CreateMaybeMessage<::api::SubscribeRequest>(Arena*);
 template<> ::api::Template* Arena::CreateMaybeMessage<::api::Template>(Arena*);
+template<> ::api::Token* Arena::CreateMaybeMessage<::api::Token>(Arena*);
 template<> ::api::UnSubscribeRequest* Arena::CreateMaybeMessage<::api::UnSubscribeRequest>(Arena*);
 template<> ::api::User* Arena::CreateMaybeMessage<::api::User>(Arena*);
 template<> ::api::UserByEmailRequest* Arena::CreateMaybeMessage<::api::UserByEmailRequest>(Arena*);
@@ -248,6 +252,43 @@ inline bool Scope_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<Scope>(
     Scope_descriptor(), name, value);
 }
+enum URL {
+  USER_INFOURL = 0,
+  TOKENURL = 1,
+  AUTHORIZEURL = 2,
+  USERSURL = 3,
+  CLIENTSURL = 4,
+  GRANTSURL = 5,
+  RULESURL = 6,
+  ROLESURL = 7,
+  LOGSURL = 8,
+  STATSURL = 9,
+  CONNECTIONSURL = 10,
+  TENANTSURL = 11,
+  EMAIL_TEMPLATEURL = 12,
+  EMAILURL = 13,
+  SEARCH_USERSURL = 14,
+  DEVICEURL = 18,
+  JWKSURL = 19,
+  CLIENT_GRANTSURL = 20,
+  URL_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  URL_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool URL_IsValid(int value);
+const URL URL_MIN = USER_INFOURL;
+const URL URL_MAX = CLIENT_GRANTSURL;
+const int URL_ARRAYSIZE = URL_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* URL_descriptor();
+inline const ::std::string& URL_Name(URL value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    URL_descriptor(), value);
+}
+inline bool URL_Parse(
+    const ::std::string& name, URL* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<URL>(
+    URL_descriptor(), name, value);
+}
 enum HTTPMethod {
   GET = 0,
   POST = 1,
@@ -270,6 +311,194 @@ inline bool HTTPMethod_Parse(
     HTTPMethod_descriptor(), name, value);
 }
 // ===================================================================
+
+class ResourceRequest_FormEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ResourceRequest_FormEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<ResourceRequest_FormEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  ResourceRequest_FormEntry_DoNotUse();
+  ResourceRequest_FormEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const ResourceRequest_FormEntry_DoNotUse& other);
+  static const ResourceRequest_FormEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ResourceRequest_FormEntry_DoNotUse*>(&_ResourceRequest_FormEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class ResourceRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ResourceRequest) */ {
+ public:
+  ResourceRequest();
+  virtual ~ResourceRequest();
+
+  ResourceRequest(const ResourceRequest& from);
+
+  inline ResourceRequest& operator=(const ResourceRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ResourceRequest(ResourceRequest&& from) noexcept
+    : ResourceRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ResourceRequest& operator=(ResourceRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ResourceRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ResourceRequest* internal_default_instance() {
+    return reinterpret_cast<const ResourceRequest*>(
+               &_ResourceRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(ResourceRequest* other);
+  friend void swap(ResourceRequest& a, ResourceRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ResourceRequest* New() const final {
+    return CreateMaybeMessage<ResourceRequest>(NULL);
+  }
+
+  ResourceRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ResourceRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ResourceRequest& from);
+  void MergeFrom(const ResourceRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ResourceRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> form = 5;
+  int form_size() const;
+  void clear_form();
+  static const int kFormFieldNumber = 5;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      form() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_form();
+
+  // string domain = 3;
+  void clear_domain();
+  static const int kDomainFieldNumber = 3;
+  const ::std::string& domain() const;
+  void set_domain(const ::std::string& value);
+  #if LANG_CXX11
+  void set_domain(::std::string&& value);
+  #endif
+  void set_domain(const char* value);
+  void set_domain(const char* value, size_t size);
+  ::std::string* mutable_domain();
+  ::std::string* release_domain();
+  void set_allocated_domain(::std::string* domain);
+
+  // .api.Token token = 1;
+  bool has_token() const;
+  void clear_token();
+  static const int kTokenFieldNumber = 1;
+  private:
+  const ::api::Token& _internal_token() const;
+  public:
+  const ::api::Token& token() const;
+  ::api::Token* release_token();
+  ::api::Token* mutable_token();
+  void set_allocated_token(::api::Token* token);
+
+  // .api.Bytes body = 6;
+  bool has_body() const;
+  void clear_body();
+  static const int kBodyFieldNumber = 6;
+  private:
+  const ::api::Bytes& _internal_body() const;
+  public:
+  const ::api::Bytes& body() const;
+  ::api::Bytes* release_body();
+  ::api::Bytes* mutable_body();
+  void set_allocated_body(::api::Bytes* body);
+
+  // .api.HTTPMethod method = 2;
+  void clear_method();
+  static const int kMethodFieldNumber = 2;
+  ::api::HTTPMethod method() const;
+  void set_method(::api::HTTPMethod value);
+
+  // .api.URL url = 4;
+  void clear_url();
+  static const int kUrlFieldNumber = 4;
+  ::api::URL url() const;
+  void set_url(::api::URL value);
+
+  // @@protoc_insertion_point(class_scope:api.ResourceRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      ResourceRequest_FormEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > form_;
+  ::google::protobuf::internal::ArenaStringPtr domain_;
+  ::api::Token* token_;
+  ::api::Bytes* body_;
+  int method_;
+  int url_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class SubscribeRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SubscribeRequest) */ {
  public:
@@ -306,7 +535,7 @@ class SubscribeRequest : public ::google::protobuf::Message /* @@protoc_insertio
                &_SubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(SubscribeRequest* other);
   friend void swap(SubscribeRequest& a, SubscribeRequest& b) {
@@ -445,7 +674,7 @@ class UnSubscribeRequest : public ::google::protobuf::Message /* @@protoc_insert
                &_UnSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(UnSubscribeRequest* other);
   friend void swap(UnSubscribeRequest& a, UnSubscribeRequest& b) {
@@ -571,7 +800,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -727,7 +956,7 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(Empty* other);
   friend void swap(Empty& a, Empty& b) {
@@ -823,7 +1052,7 @@ class UserRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_UserRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(UserRequest* other);
   friend void swap(UserRequest& a, UserRequest& b) {
@@ -875,17 +1104,17 @@ class UserRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // .api.BearerToken string = 1;
+  // .api.Token string = 1;
   bool has_string() const;
   void clear_string();
   static const int kStringFieldNumber = 1;
   private:
-  const ::api::BearerToken& _internal_string() const;
+  const ::api::Token& _internal_string() const;
   public:
-  const ::api::BearerToken& string() const;
-  ::api::BearerToken* release_string();
-  ::api::BearerToken* mutable_string();
-  void set_allocated_string(::api::BearerToken* string);
+  const ::api::Token& string() const;
+  ::api::Token* release_string();
+  ::api::Token* mutable_string();
+  void set_allocated_string(::api::Token* string);
 
   // .api.User user = 2;
   bool has_user() const;
@@ -903,7 +1132,7 @@ class UserRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::api::BearerToken* string_;
+  ::api::Token* string_;
   ::api::User* user_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
@@ -945,7 +1174,7 @@ class UserByEmailRequest : public ::google::protobuf::Message /* @@protoc_insert
                &_UserByEmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(UserByEmailRequest* other);
   friend void swap(UserByEmailRequest& a, UserByEmailRequest& b) {
@@ -1011,24 +1240,24 @@ class UserByEmailRequest : public ::google::protobuf::Message /* @@protoc_insert
   ::std::string* release_email();
   void set_allocated_email(::std::string* email);
 
-  // .api.BearerToken token = 1;
+  // .api.Token token = 1;
   bool has_token() const;
   void clear_token();
   static const int kTokenFieldNumber = 1;
   private:
-  const ::api::BearerToken& _internal_token() const;
+  const ::api::Token& _internal_token() const;
   public:
-  const ::api::BearerToken& token() const;
-  ::api::BearerToken* release_token();
-  ::api::BearerToken* mutable_token();
-  void set_allocated_token(::api::BearerToken* token);
+  const ::api::Token& token() const;
+  ::api::Token* release_token();
+  ::api::Token* mutable_token();
+  void set_allocated_token(::api::Token* token);
 
   // @@protoc_insertion_point(class_scope:api.UserByEmailRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr email_;
-  ::api::BearerToken* token_;
+  ::api::Token* token_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -1069,7 +1298,7 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Identifier_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(Identifier* other);
   friend void swap(Identifier& a, Identifier& b) {
@@ -1180,7 +1409,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -1364,7 +1593,7 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_SMSBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(SMSBlast* other);
   friend void swap(SMSBlast& a, SMSBlast& b) {
@@ -1556,7 +1785,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1695,7 +1924,7 @@ class EmailBlastRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_EmailBlastRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(EmailBlastRequest* other);
   friend void swap(EmailBlastRequest& a, EmailBlastRequest& b) {
@@ -1855,7 +2084,7 @@ class EmailBlast : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_EmailBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(EmailBlast* other);
   friend void swap(EmailBlast& a, EmailBlast& b) {
@@ -2012,7 +2241,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -2183,7 +2412,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -2324,7 +2553,7 @@ class CallBlast : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_CallBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(CallBlast* other);
   friend void swap(CallBlast& a, CallBlast& b) {
@@ -2473,7 +2702,7 @@ class Message : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Message_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(Message* other);
   friend void swap(Message& a, Message& b) {
@@ -2584,7 +2813,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -2951,7 +3180,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   void Swap(Identity* other);
   friend void swap(Identity& a, Identity& b) {
@@ -3128,7 +3357,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -3261,7 +3490,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -3373,7 +3602,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -3425,10 +3654,10 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // accessors -------------------------------------------------------
 
-  // repeated .api.Scope scopes = 6;
+  // repeated .api.Scope scopes = 5;
   int scopes_size() const;
   void clear_scopes();
-  static const int kScopesFieldNumber = 6;
+  static const int kScopesFieldNumber = 5;
   ::api::Scope scopes(int index) const;
   void set_scopes(int index, ::api::Scope value);
   void add_scopes(::api::Scope value);
@@ -3491,32 +3720,6 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_redirect();
   void set_allocated_redirect(::std::string* redirect);
 
-  // string audience = 5;
-  void clear_audience();
-  static const int kAudienceFieldNumber = 5;
-  const ::std::string& audience() const;
-  void set_audience(const ::std::string& value);
-  #if LANG_CXX11
-  void set_audience(::std::string&& value);
-  #endif
-  void set_audience(const char* value);
-  void set_audience(const char* value, size_t size);
-  ::std::string* mutable_audience();
-  ::std::string* release_audience();
-  void set_allocated_audience(::std::string* audience);
-
-  // .api.BearerToken management = 7;
-  bool has_management() const;
-  void clear_management();
-  static const int kManagementFieldNumber = 7;
-  private:
-  const ::api::BearerToken& _internal_management() const;
-  public:
-  const ::api::BearerToken& management() const;
-  ::api::BearerToken* release_management();
-  ::api::BearerToken* mutable_management();
-  void set_allocated_management(::api::BearerToken* management);
-
   // @@protoc_insertion_point(class_scope:api.Auth)
  private:
 
@@ -3527,8 +3730,6 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::internal::ArenaStringPtr client_id_;
   ::google::protobuf::internal::ArenaStringPtr client_secret_;
   ::google::protobuf::internal::ArenaStringPtr redirect_;
-  ::google::protobuf::internal::ArenaStringPtr audience_;
-  ::api::BearerToken* management_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -3569,7 +3770,7 @@ class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Bytes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   void Swap(Bytes* other);
   friend void swap(Bytes& a, Bytes& b) {
@@ -3680,7 +3881,7 @@ class Template : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Template_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   void Swap(Template* other);
   friend void swap(Template& a, Template& b) {
@@ -3806,7 +4007,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -4000,7 +4201,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -4074,27 +4275,6 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 };
 // -------------------------------------------------------------------
 
-class HTTPRequest_HeadersEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<HTTPRequest_HeadersEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-  typedef ::google::protobuf::internal::MapEntry<HTTPRequest_HeadersEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  HTTPRequest_HeadersEntry_DoNotUse();
-  HTTPRequest_HeadersEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const HTTPRequest_HeadersEntry_DoNotUse& other);
-  static const HTTPRequest_HeadersEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const HTTPRequest_HeadersEntry_DoNotUse*>(&_HTTPRequest_HeadersEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
 class HTTPRequest_FormEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<HTTPRequest_FormEntry_DoNotUse, 
     ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -4110,27 +4290,6 @@ public:
   HTTPRequest_FormEntry_DoNotUse(::google::protobuf::Arena* arena);
   void MergeFrom(const HTTPRequest_FormEntry_DoNotUse& other);
   static const HTTPRequest_FormEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const HTTPRequest_FormEntry_DoNotUse*>(&_HTTPRequest_FormEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
-class HTTPRequest_CookiesEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<HTTPRequest_CookiesEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > {
-public:
-  typedef ::google::protobuf::internal::MapEntry<HTTPRequest_CookiesEntry_DoNotUse, 
-    ::std::string, ::std::string,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    0 > SuperType;
-  HTTPRequest_CookiesEntry_DoNotUse();
-  HTTPRequest_CookiesEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const HTTPRequest_CookiesEntry_DoNotUse& other);
-  static const HTTPRequest_CookiesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const HTTPRequest_CookiesEntry_DoNotUse*>(&_HTTPRequest_CookiesEntry_DoNotUse_default_instance_); }
   void MergeFrom(const ::google::protobuf::Message& other) final;
   ::google::protobuf::Metadata GetMetadata() const;
 };
@@ -4225,32 +4384,14 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> headers = 7;
-  int headers_size() const;
-  void clear_headers();
-  static const int kHeadersFieldNumber = 7;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      headers() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_headers();
-
-  // map<string, string> form = 8;
+  // map<string, string> form = 3;
   int form_size() const;
   void clear_form();
-  static const int kFormFieldNumber = 8;
+  static const int kFormFieldNumber = 3;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       form() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_form();
-
-  // map<string, string> cookies = 9;
-  int cookies_size() const;
-  void clear_cookies();
-  static const int kCookiesFieldNumber = 9;
-  const ::google::protobuf::Map< ::std::string, ::std::string >&
-      cookies() const;
-  ::google::protobuf::Map< ::std::string, ::std::string >*
-      mutable_cookies();
 
   // string url = 2;
   void clear_url();
@@ -4266,66 +4407,10 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_url();
   void set_allocated_url(::std::string* url);
 
-  // string token = 3;
-  void clear_token();
-  static const int kTokenFieldNumber = 3;
-  const ::std::string& token() const;
-  void set_token(const ::std::string& value);
-  #if LANG_CXX11
-  void set_token(::std::string&& value);
-  #endif
-  void set_token(const char* value);
-  void set_token(const char* value, size_t size);
-  ::std::string* mutable_token();
-  ::std::string* release_token();
-  void set_allocated_token(::std::string* token);
-
-  // string user = 4;
-  void clear_user();
-  static const int kUserFieldNumber = 4;
-  const ::std::string& user() const;
-  void set_user(const ::std::string& value);
-  #if LANG_CXX11
-  void set_user(::std::string&& value);
-  #endif
-  void set_user(const char* value);
-  void set_user(const char* value, size_t size);
-  ::std::string* mutable_user();
-  ::std::string* release_user();
-  void set_allocated_user(::std::string* user);
-
-  // string password = 5;
-  void clear_password();
-  static const int kPasswordFieldNumber = 5;
-  const ::std::string& password() const;
-  void set_password(const ::std::string& value);
-  #if LANG_CXX11
-  void set_password(::std::string&& value);
-  #endif
-  void set_password(const char* value);
-  void set_password(const char* value, size_t size);
-  ::std::string* mutable_password();
-  ::std::string* release_password();
-  void set_allocated_password(::std::string* password);
-
-  // string contentType = 6;
-  void clear_contenttype();
-  static const int kContentTypeFieldNumber = 6;
-  const ::std::string& contenttype() const;
-  void set_contenttype(const ::std::string& value);
-  #if LANG_CXX11
-  void set_contenttype(::std::string&& value);
-  #endif
-  void set_contenttype(const char* value);
-  void set_contenttype(const char* value, size_t size);
-  ::std::string* mutable_contenttype();
-  ::std::string* release_contenttype();
-  void set_allocated_contenttype(::std::string* contenttype);
-
-  // .api.Bytes body = 10;
+  // .api.Bytes body = 4;
   bool has_body() const;
   void clear_body();
-  static const int kBodyFieldNumber = 10;
+  static const int kBodyFieldNumber = 4;
   private:
   const ::api::Bytes& _internal_body() const;
   public:
@@ -4345,28 +4430,12 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::MapField<
-      HTTPRequest_HeadersEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > headers_;
-  ::google::protobuf::internal::MapField<
       HTTPRequest_FormEntry_DoNotUse,
       ::std::string, ::std::string,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > form_;
-  ::google::protobuf::internal::MapField<
-      HTTPRequest_CookiesEntry_DoNotUse,
-      ::std::string, ::std::string,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      0 > cookies_;
   ::google::protobuf::internal::ArenaStringPtr url_;
-  ::google::protobuf::internal::ArenaStringPtr token_;
-  ::google::protobuf::internal::ArenaStringPtr user_;
-  ::google::protobuf::internal::ArenaStringPtr password_;
-  ::google::protobuf::internal::ArenaStringPtr contenttype_;
   ::api::Bytes* body_;
   int method_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -5037,24 +5106,24 @@ class PhoneNumberResource : public ::google::protobuf::Message /* @@protoc_inser
 };
 // -------------------------------------------------------------------
 
-class BearerToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.BearerToken) */ {
+class Secret : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Secret) */ {
  public:
-  BearerToken();
-  virtual ~BearerToken();
+  Secret();
+  virtual ~Secret();
 
-  BearerToken(const BearerToken& from);
+  Secret(const Secret& from);
 
-  inline BearerToken& operator=(const BearerToken& from) {
+  inline Secret& operator=(const Secret& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  BearerToken(BearerToken&& from) noexcept
-    : BearerToken() {
+  Secret(Secret&& from) noexcept
+    : Secret() {
     *this = ::std::move(from);
   }
 
-  inline BearerToken& operator=(BearerToken&& from) noexcept {
+  inline Secret& operator=(Secret&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -5064,34 +5133,34 @@ class BearerToken : public ::google::protobuf::Message /* @@protoc_insertion_poi
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const BearerToken& default_instance();
+  static const Secret& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const BearerToken* internal_default_instance() {
-    return reinterpret_cast<const BearerToken*>(
-               &_BearerToken_default_instance_);
+  static inline const Secret* internal_default_instance() {
+    return reinterpret_cast<const Secret*>(
+               &_Secret_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     37;
 
-  void Swap(BearerToken* other);
-  friend void swap(BearerToken& a, BearerToken& b) {
+  void Swap(Secret* other);
+  friend void swap(Secret& a, Secret& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline BearerToken* New() const final {
-    return CreateMaybeMessage<BearerToken>(NULL);
+  inline Secret* New() const final {
+    return CreateMaybeMessage<Secret>(NULL);
   }
 
-  BearerToken* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<BearerToken>(arena);
+  Secret* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Secret>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const BearerToken& from);
-  void MergeFrom(const BearerToken& from);
+  void CopyFrom(const Secret& from);
+  void MergeFrom(const Secret& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -5108,7 +5177,7 @@ class BearerToken : public ::google::protobuf::Message /* @@protoc_insertion_poi
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(BearerToken* other);
+  void InternalSwap(Secret* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -5124,25 +5193,196 @@ class BearerToken : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // string token = 1;
-  void clear_token();
-  static const int kTokenFieldNumber = 1;
-  const ::std::string& token() const;
-  void set_token(const ::std::string& value);
+  // string text = 1;
+  void clear_text();
+  static const int kTextFieldNumber = 1;
+  const ::std::string& text() const;
+  void set_text(const ::std::string& value);
   #if LANG_CXX11
-  void set_token(::std::string&& value);
+  void set_text(::std::string&& value);
   #endif
-  void set_token(const char* value);
-  void set_token(const char* value, size_t size);
-  ::std::string* mutable_token();
-  ::std::string* release_token();
-  void set_allocated_token(::std::string* token);
+  void set_text(const char* value);
+  void set_text(const char* value, size_t size);
+  ::std::string* mutable_text();
+  ::std::string* release_text();
+  void set_allocated_text(::std::string* text);
 
-  // @@protoc_insertion_point(class_scope:api.BearerToken)
+  // @@protoc_insertion_point(class_scope:api.Secret)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr token_;
+  ::google::protobuf::internal::ArenaStringPtr text_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Token) */ {
+ public:
+  Token();
+  virtual ~Token();
+
+  Token(const Token& from);
+
+  inline Token& operator=(const Token& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Token(Token&& from) noexcept
+    : Token() {
+    *this = ::std::move(from);
+  }
+
+  inline Token& operator=(Token&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Token& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Token* internal_default_instance() {
+    return reinterpret_cast<const Token*>(
+               &_Token_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  void Swap(Token* other);
+  friend void swap(Token& a, Token& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Token* New() const final {
+    return CreateMaybeMessage<Token>(NULL);
+  }
+
+  Token* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Token>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Token& from);
+  void MergeFrom(const Token& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Token* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string access_token = 1;
+  void clear_access_token();
+  static const int kAccessTokenFieldNumber = 1;
+  const ::std::string& access_token() const;
+  void set_access_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_access_token(::std::string&& value);
+  #endif
+  void set_access_token(const char* value);
+  void set_access_token(const char* value, size_t size);
+  ::std::string* mutable_access_token();
+  ::std::string* release_access_token();
+  void set_allocated_access_token(::std::string* access_token);
+
+  // string token_type = 2;
+  void clear_token_type();
+  static const int kTokenTypeFieldNumber = 2;
+  const ::std::string& token_type() const;
+  void set_token_type(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token_type(::std::string&& value);
+  #endif
+  void set_token_type(const char* value);
+  void set_token_type(const char* value, size_t size);
+  ::std::string* mutable_token_type();
+  ::std::string* release_token_type();
+  void set_allocated_token_type(::std::string* token_type);
+
+  // string refresh_token = 3;
+  void clear_refresh_token();
+  static const int kRefreshTokenFieldNumber = 3;
+  const ::std::string& refresh_token() const;
+  void set_refresh_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_refresh_token(::std::string&& value);
+  #endif
+  void set_refresh_token(const char* value);
+  void set_refresh_token(const char* value, size_t size);
+  ::std::string* mutable_refresh_token();
+  ::std::string* release_refresh_token();
+  void set_allocated_refresh_token(::std::string* refresh_token);
+
+  // string expiry = 4;
+  void clear_expiry();
+  static const int kExpiryFieldNumber = 4;
+  const ::std::string& expiry() const;
+  void set_expiry(const ::std::string& value);
+  #if LANG_CXX11
+  void set_expiry(::std::string&& value);
+  #endif
+  void set_expiry(const char* value);
+  void set_expiry(const char* value, size_t size);
+  ::std::string* mutable_expiry();
+  ::std::string* release_expiry();
+  void set_allocated_expiry(::std::string* expiry);
+
+  // string id_token = 5;
+  void clear_id_token();
+  static const int kIdTokenFieldNumber = 5;
+  const ::std::string& id_token() const;
+  void set_id_token(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id_token(::std::string&& value);
+  #endif
+  void set_id_token(const char* value);
+  void set_id_token(const char* value, size_t size);
+  ::std::string* mutable_id_token();
+  ::std::string* release_id_token();
+  void set_allocated_id_token(::std::string* id_token);
+
+  // @@protoc_insertion_point(class_scope:api.Token)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr access_token_;
+  ::google::protobuf::internal::ArenaStringPtr token_type_;
+  ::google::protobuf::internal::ArenaStringPtr refresh_token_;
+  ::google::protobuf::internal::ArenaStringPtr expiry_;
+  ::google::protobuf::internal::ArenaStringPtr id_token_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -5155,6 +5395,219 @@ class BearerToken : public ::google::protobuf::Message /* @@protoc_insertion_poi
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// ResourceRequest
+
+// .api.Token token = 1;
+inline bool ResourceRequest::has_token() const {
+  return this != internal_default_instance() && token_ != NULL;
+}
+inline void ResourceRequest::clear_token() {
+  if (GetArenaNoVirtual() == NULL && token_ != NULL) {
+    delete token_;
+  }
+  token_ = NULL;
+}
+inline const ::api::Token& ResourceRequest::_internal_token() const {
+  return *token_;
+}
+inline const ::api::Token& ResourceRequest::token() const {
+  const ::api::Token* p = token_;
+  // @@protoc_insertion_point(field_get:api.ResourceRequest.token)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Token*>(
+      &::api::_Token_default_instance_);
+}
+inline ::api::Token* ResourceRequest::release_token() {
+  // @@protoc_insertion_point(field_release:api.ResourceRequest.token)
+  
+  ::api::Token* temp = token_;
+  token_ = NULL;
+  return temp;
+}
+inline ::api::Token* ResourceRequest::mutable_token() {
+  
+  if (token_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Token>(GetArenaNoVirtual());
+    token_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ResourceRequest.token)
+  return token_;
+}
+inline void ResourceRequest::set_allocated_token(::api::Token* token) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete token_;
+  }
+  if (token) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      token = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, token, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  token_ = token;
+  // @@protoc_insertion_point(field_set_allocated:api.ResourceRequest.token)
+}
+
+// .api.HTTPMethod method = 2;
+inline void ResourceRequest::clear_method() {
+  method_ = 0;
+}
+inline ::api::HTTPMethod ResourceRequest::method() const {
+  // @@protoc_insertion_point(field_get:api.ResourceRequest.method)
+  return static_cast< ::api::HTTPMethod >(method_);
+}
+inline void ResourceRequest::set_method(::api::HTTPMethod value) {
+  
+  method_ = value;
+  // @@protoc_insertion_point(field_set:api.ResourceRequest.method)
+}
+
+// string domain = 3;
+inline void ResourceRequest::clear_domain() {
+  domain_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ResourceRequest::domain() const {
+  // @@protoc_insertion_point(field_get:api.ResourceRequest.domain)
+  return domain_.GetNoArena();
+}
+inline void ResourceRequest::set_domain(const ::std::string& value) {
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.ResourceRequest.domain)
+}
+#if LANG_CXX11
+inline void ResourceRequest::set_domain(::std::string&& value) {
+  
+  domain_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.ResourceRequest.domain)
+}
+#endif
+inline void ResourceRequest::set_domain(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.ResourceRequest.domain)
+}
+inline void ResourceRequest::set_domain(const char* value, size_t size) {
+  
+  domain_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.ResourceRequest.domain)
+}
+inline ::std::string* ResourceRequest::mutable_domain() {
+  
+  // @@protoc_insertion_point(field_mutable:api.ResourceRequest.domain)
+  return domain_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ResourceRequest::release_domain() {
+  // @@protoc_insertion_point(field_release:api.ResourceRequest.domain)
+  
+  return domain_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ResourceRequest::set_allocated_domain(::std::string* domain) {
+  if (domain != NULL) {
+    
+  } else {
+    
+  }
+  domain_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), domain);
+  // @@protoc_insertion_point(field_set_allocated:api.ResourceRequest.domain)
+}
+
+// .api.URL url = 4;
+inline void ResourceRequest::clear_url() {
+  url_ = 0;
+}
+inline ::api::URL ResourceRequest::url() const {
+  // @@protoc_insertion_point(field_get:api.ResourceRequest.url)
+  return static_cast< ::api::URL >(url_);
+}
+inline void ResourceRequest::set_url(::api::URL value) {
+  
+  url_ = value;
+  // @@protoc_insertion_point(field_set:api.ResourceRequest.url)
+}
+
+// map<string, string> form = 5;
+inline int ResourceRequest::form_size() const {
+  return form_.size();
+}
+inline void ResourceRequest::clear_form() {
+  form_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+ResourceRequest::form() const {
+  // @@protoc_insertion_point(field_map:api.ResourceRequest.form)
+  return form_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+ResourceRequest::mutable_form() {
+  // @@protoc_insertion_point(field_mutable_map:api.ResourceRequest.form)
+  return form_.MutableMap();
+}
+
+// .api.Bytes body = 6;
+inline bool ResourceRequest::has_body() const {
+  return this != internal_default_instance() && body_ != NULL;
+}
+inline void ResourceRequest::clear_body() {
+  if (GetArenaNoVirtual() == NULL && body_ != NULL) {
+    delete body_;
+  }
+  body_ = NULL;
+}
+inline const ::api::Bytes& ResourceRequest::_internal_body() const {
+  return *body_;
+}
+inline const ::api::Bytes& ResourceRequest::body() const {
+  const ::api::Bytes* p = body_;
+  // @@protoc_insertion_point(field_get:api.ResourceRequest.body)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Bytes*>(
+      &::api::_Bytes_default_instance_);
+}
+inline ::api::Bytes* ResourceRequest::release_body() {
+  // @@protoc_insertion_point(field_release:api.ResourceRequest.body)
+  
+  ::api::Bytes* temp = body_;
+  body_ = NULL;
+  return temp;
+}
+inline ::api::Bytes* ResourceRequest::mutable_body() {
+  
+  if (body_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::Bytes>(GetArenaNoVirtual());
+    body_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ResourceRequest.body)
+  return body_;
+}
+inline void ResourceRequest::set_allocated_body(::api::Bytes* body) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete body_;
+  }
+  if (body) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      body = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, body, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  body_ = body;
+  // @@protoc_insertion_point(field_set_allocated:api.ResourceRequest.body)
+}
+
+// -------------------------------------------------------------------
+
 // SubscribeRequest
 
 // string email = 1;
@@ -5651,7 +6104,7 @@ inline void Card::set_allocated_cvc(::std::string* cvc) {
 
 // UserRequest
 
-// .api.BearerToken string = 1;
+// .api.Token string = 1;
 inline bool UserRequest::has_string() const {
   return this != internal_default_instance() && string_ != NULL;
 }
@@ -5661,32 +6114,32 @@ inline void UserRequest::clear_string() {
   }
   string_ = NULL;
 }
-inline const ::api::BearerToken& UserRequest::_internal_string() const {
+inline const ::api::Token& UserRequest::_internal_string() const {
   return *string_;
 }
-inline const ::api::BearerToken& UserRequest::string() const {
-  const ::api::BearerToken* p = string_;
+inline const ::api::Token& UserRequest::string() const {
+  const ::api::Token* p = string_;
   // @@protoc_insertion_point(field_get:api.UserRequest.string)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::BearerToken*>(
-      &::api::_BearerToken_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Token*>(
+      &::api::_Token_default_instance_);
 }
-inline ::api::BearerToken* UserRequest::release_string() {
+inline ::api::Token* UserRequest::release_string() {
   // @@protoc_insertion_point(field_release:api.UserRequest.string)
   
-  ::api::BearerToken* temp = string_;
+  ::api::Token* temp = string_;
   string_ = NULL;
   return temp;
 }
-inline ::api::BearerToken* UserRequest::mutable_string() {
+inline ::api::Token* UserRequest::mutable_string() {
   
   if (string_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::BearerToken>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::api::Token>(GetArenaNoVirtual());
     string_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.UserRequest.string)
   return string_;
 }
-inline void UserRequest::set_allocated_string(::api::BearerToken* string) {
+inline void UserRequest::set_allocated_string(::api::Token* string) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete string_;
@@ -5763,7 +6216,7 @@ inline void UserRequest::set_allocated_user(::api::User* user) {
 
 // UserByEmailRequest
 
-// .api.BearerToken token = 1;
+// .api.Token token = 1;
 inline bool UserByEmailRequest::has_token() const {
   return this != internal_default_instance() && token_ != NULL;
 }
@@ -5773,32 +6226,32 @@ inline void UserByEmailRequest::clear_token() {
   }
   token_ = NULL;
 }
-inline const ::api::BearerToken& UserByEmailRequest::_internal_token() const {
+inline const ::api::Token& UserByEmailRequest::_internal_token() const {
   return *token_;
 }
-inline const ::api::BearerToken& UserByEmailRequest::token() const {
-  const ::api::BearerToken* p = token_;
+inline const ::api::Token& UserByEmailRequest::token() const {
+  const ::api::Token* p = token_;
   // @@protoc_insertion_point(field_get:api.UserByEmailRequest.token)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::BearerToken*>(
-      &::api::_BearerToken_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::api::Token*>(
+      &::api::_Token_default_instance_);
 }
-inline ::api::BearerToken* UserByEmailRequest::release_token() {
+inline ::api::Token* UserByEmailRequest::release_token() {
   // @@protoc_insertion_point(field_release:api.UserByEmailRequest.token)
   
-  ::api::BearerToken* temp = token_;
+  ::api::Token* temp = token_;
   token_ = NULL;
   return temp;
 }
-inline ::api::BearerToken* UserByEmailRequest::mutable_token() {
+inline ::api::Token* UserByEmailRequest::mutable_token() {
   
   if (token_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::BearerToken>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::api::Token>(GetArenaNoVirtual());
     token_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.UserByEmailRequest.token)
   return token_;
 }
-inline void UserByEmailRequest::set_allocated_token(::api::BearerToken* token) {
+inline void UserByEmailRequest::set_allocated_token(::api::Token* token) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete token_;
@@ -9176,60 +9629,7 @@ inline void Auth::set_allocated_redirect(::std::string* redirect) {
   // @@protoc_insertion_point(field_set_allocated:api.Auth.redirect)
 }
 
-// string audience = 5;
-inline void Auth::clear_audience() {
-  audience_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Auth::audience() const {
-  // @@protoc_insertion_point(field_get:api.Auth.audience)
-  return audience_.GetNoArena();
-}
-inline void Auth::set_audience(const ::std::string& value) {
-  
-  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.Auth.audience)
-}
-#if LANG_CXX11
-inline void Auth::set_audience(::std::string&& value) {
-  
-  audience_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.Auth.audience)
-}
-#endif
-inline void Auth::set_audience(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.Auth.audience)
-}
-inline void Auth::set_audience(const char* value, size_t size) {
-  
-  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.Auth.audience)
-}
-inline ::std::string* Auth::mutable_audience() {
-  
-  // @@protoc_insertion_point(field_mutable:api.Auth.audience)
-  return audience_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Auth::release_audience() {
-  // @@protoc_insertion_point(field_release:api.Auth.audience)
-  
-  return audience_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Auth::set_allocated_audience(::std::string* audience) {
-  if (audience != NULL) {
-    
-  } else {
-    
-  }
-  audience_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), audience);
-  // @@protoc_insertion_point(field_set_allocated:api.Auth.audience)
-}
-
-// repeated .api.Scope scopes = 6;
+// repeated .api.Scope scopes = 5;
 inline int Auth::scopes_size() const {
   return scopes_.size();
 }
@@ -9257,60 +9657,6 @@ inline ::google::protobuf::RepeatedField<int>*
 Auth::mutable_scopes() {
   // @@protoc_insertion_point(field_mutable_list:api.Auth.scopes)
   return &scopes_;
-}
-
-// .api.BearerToken management = 7;
-inline bool Auth::has_management() const {
-  return this != internal_default_instance() && management_ != NULL;
-}
-inline void Auth::clear_management() {
-  if (GetArenaNoVirtual() == NULL && management_ != NULL) {
-    delete management_;
-  }
-  management_ = NULL;
-}
-inline const ::api::BearerToken& Auth::_internal_management() const {
-  return *management_;
-}
-inline const ::api::BearerToken& Auth::management() const {
-  const ::api::BearerToken* p = management_;
-  // @@protoc_insertion_point(field_get:api.Auth.management)
-  return p != NULL ? *p : *reinterpret_cast<const ::api::BearerToken*>(
-      &::api::_BearerToken_default_instance_);
-}
-inline ::api::BearerToken* Auth::release_management() {
-  // @@protoc_insertion_point(field_release:api.Auth.management)
-  
-  ::api::BearerToken* temp = management_;
-  management_ = NULL;
-  return temp;
-}
-inline ::api::BearerToken* Auth::mutable_management() {
-  
-  if (management_ == NULL) {
-    auto* p = CreateMaybeMessage<::api::BearerToken>(GetArenaNoVirtual());
-    management_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.Auth.management)
-  return management_;
-}
-inline void Auth::set_allocated_management(::api::BearerToken* management) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete management_;
-  }
-  if (management) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      management = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, management, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  management_ = management;
-  // @@protoc_insertion_point(field_set_allocated:api.Auth.management)
 }
 
 // -------------------------------------------------------------------
@@ -9856,10 +10202,6 @@ Jwks::keys() const {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // HTTPRequest
 
 // .api.HTTPMethod method = 1;
@@ -9929,237 +10271,7 @@ inline void HTTPRequest::set_allocated_url(::std::string* url) {
   // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.url)
 }
 
-// string token = 3;
-inline void HTTPRequest::clear_token() {
-  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& HTTPRequest::token() const {
-  // @@protoc_insertion_point(field_get:api.HTTPRequest.token)
-  return token_.GetNoArena();
-}
-inline void HTTPRequest::set_token(const ::std::string& value) {
-  
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.HTTPRequest.token)
-}
-#if LANG_CXX11
-inline void HTTPRequest::set_token(::std::string&& value) {
-  
-  token_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.token)
-}
-#endif
-inline void HTTPRequest::set_token(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.token)
-}
-inline void HTTPRequest::set_token(const char* value, size_t size) {
-  
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.token)
-}
-inline ::std::string* HTTPRequest::mutable_token() {
-  
-  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.token)
-  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* HTTPRequest::release_token() {
-  // @@protoc_insertion_point(field_release:api.HTTPRequest.token)
-  
-  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void HTTPRequest::set_allocated_token(::std::string* token) {
-  if (token != NULL) {
-    
-  } else {
-    
-  }
-  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.token)
-}
-
-// string user = 4;
-inline void HTTPRequest::clear_user() {
-  user_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& HTTPRequest::user() const {
-  // @@protoc_insertion_point(field_get:api.HTTPRequest.user)
-  return user_.GetNoArena();
-}
-inline void HTTPRequest::set_user(const ::std::string& value) {
-  
-  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.HTTPRequest.user)
-}
-#if LANG_CXX11
-inline void HTTPRequest::set_user(::std::string&& value) {
-  
-  user_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.user)
-}
-#endif
-inline void HTTPRequest::set_user(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.user)
-}
-inline void HTTPRequest::set_user(const char* value, size_t size) {
-  
-  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.user)
-}
-inline ::std::string* HTTPRequest::mutable_user() {
-  
-  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.user)
-  return user_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* HTTPRequest::release_user() {
-  // @@protoc_insertion_point(field_release:api.HTTPRequest.user)
-  
-  return user_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void HTTPRequest::set_allocated_user(::std::string* user) {
-  if (user != NULL) {
-    
-  } else {
-    
-  }
-  user_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user);
-  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.user)
-}
-
-// string password = 5;
-inline void HTTPRequest::clear_password() {
-  password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& HTTPRequest::password() const {
-  // @@protoc_insertion_point(field_get:api.HTTPRequest.password)
-  return password_.GetNoArena();
-}
-inline void HTTPRequest::set_password(const ::std::string& value) {
-  
-  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.HTTPRequest.password)
-}
-#if LANG_CXX11
-inline void HTTPRequest::set_password(::std::string&& value) {
-  
-  password_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.password)
-}
-#endif
-inline void HTTPRequest::set_password(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.password)
-}
-inline void HTTPRequest::set_password(const char* value, size_t size) {
-  
-  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.password)
-}
-inline ::std::string* HTTPRequest::mutable_password() {
-  
-  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.password)
-  return password_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* HTTPRequest::release_password() {
-  // @@protoc_insertion_point(field_release:api.HTTPRequest.password)
-  
-  return password_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void HTTPRequest::set_allocated_password(::std::string* password) {
-  if (password != NULL) {
-    
-  } else {
-    
-  }
-  password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
-  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.password)
-}
-
-// string contentType = 6;
-inline void HTTPRequest::clear_contenttype() {
-  contenttype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& HTTPRequest::contenttype() const {
-  // @@protoc_insertion_point(field_get:api.HTTPRequest.contentType)
-  return contenttype_.GetNoArena();
-}
-inline void HTTPRequest::set_contenttype(const ::std::string& value) {
-  
-  contenttype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.HTTPRequest.contentType)
-}
-#if LANG_CXX11
-inline void HTTPRequest::set_contenttype(::std::string&& value) {
-  
-  contenttype_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.contentType)
-}
-#endif
-inline void HTTPRequest::set_contenttype(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  contenttype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.contentType)
-}
-inline void HTTPRequest::set_contenttype(const char* value, size_t size) {
-  
-  contenttype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.contentType)
-}
-inline ::std::string* HTTPRequest::mutable_contenttype() {
-  
-  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.contentType)
-  return contenttype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* HTTPRequest::release_contenttype() {
-  // @@protoc_insertion_point(field_release:api.HTTPRequest.contentType)
-  
-  return contenttype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void HTTPRequest::set_allocated_contenttype(::std::string* contenttype) {
-  if (contenttype != NULL) {
-    
-  } else {
-    
-  }
-  contenttype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), contenttype);
-  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.contentType)
-}
-
-// map<string, string> headers = 7;
-inline int HTTPRequest::headers_size() const {
-  return headers_.size();
-}
-inline void HTTPRequest::clear_headers() {
-  headers_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-HTTPRequest::headers() const {
-  // @@protoc_insertion_point(field_map:api.HTTPRequest.headers)
-  return headers_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-HTTPRequest::mutable_headers() {
-  // @@protoc_insertion_point(field_mutable_map:api.HTTPRequest.headers)
-  return headers_.MutableMap();
-}
-
-// map<string, string> form = 8;
+// map<string, string> form = 3;
 inline int HTTPRequest::form_size() const {
   return form_.size();
 }
@@ -10177,25 +10289,7 @@ HTTPRequest::mutable_form() {
   return form_.MutableMap();
 }
 
-// map<string, string> cookies = 9;
-inline int HTTPRequest::cookies_size() const {
-  return cookies_.size();
-}
-inline void HTTPRequest::clear_cookies() {
-  cookies_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::std::string >&
-HTTPRequest::cookies() const {
-  // @@protoc_insertion_point(field_map:api.HTTPRequest.cookies)
-  return cookies_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::std::string >*
-HTTPRequest::mutable_cookies() {
-  // @@protoc_insertion_point(field_mutable_map:api.HTTPRequest.cookies)
-  return cookies_.MutableMap();
-}
-
-// .api.Bytes body = 10;
+// .api.Bytes body = 4;
 inline bool HTTPRequest::has_body() const {
   return this != internal_default_instance() && body_ != NULL;
 }
@@ -10915,64 +11009,335 @@ inline void PhoneNumberResource::set_allocated_uri(::std::string* uri) {
 
 // -------------------------------------------------------------------
 
-// BearerToken
+// Secret
 
-// string token = 1;
-inline void BearerToken::clear_token() {
-  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string text = 1;
+inline void Secret::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& BearerToken::token() const {
-  // @@protoc_insertion_point(field_get:api.BearerToken.token)
-  return token_.GetNoArena();
+inline const ::std::string& Secret::text() const {
+  // @@protoc_insertion_point(field_get:api.Secret.text)
+  return text_.GetNoArena();
 }
-inline void BearerToken::set_token(const ::std::string& value) {
+inline void Secret::set_text(const ::std::string& value) {
   
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.BearerToken.token)
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Secret.text)
 }
 #if LANG_CXX11
-inline void BearerToken::set_token(::std::string&& value) {
+inline void Secret::set_text(::std::string&& value) {
   
-  token_.SetNoArena(
+  text_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.BearerToken.token)
+  // @@protoc_insertion_point(field_set_rvalue:api.Secret.text)
 }
 #endif
-inline void BearerToken::set_token(const char* value) {
+inline void Secret::set_text(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.BearerToken.token)
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Secret.text)
 }
-inline void BearerToken::set_token(const char* value, size_t size) {
+inline void Secret::set_text(const char* value, size_t size) {
   
-  token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.BearerToken.token)
+  // @@protoc_insertion_point(field_set_pointer:api.Secret.text)
 }
-inline ::std::string* BearerToken::mutable_token() {
+inline ::std::string* Secret::mutable_text() {
   
-  // @@protoc_insertion_point(field_mutable:api.BearerToken.token)
-  return token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.Secret.text)
+  return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* BearerToken::release_token() {
-  // @@protoc_insertion_point(field_release:api.BearerToken.token)
+inline ::std::string* Secret::release_text() {
+  // @@protoc_insertion_point(field_release:api.Secret.text)
   
-  return token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void BearerToken::set_allocated_token(::std::string* token) {
-  if (token != NULL) {
+inline void Secret::set_allocated_text(::std::string* text) {
+  if (text != NULL) {
     
   } else {
     
   }
-  token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token);
-  // @@protoc_insertion_point(field_set_allocated:api.BearerToken.token)
+  text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
+  // @@protoc_insertion_point(field_set_allocated:api.Secret.text)
+}
+
+// -------------------------------------------------------------------
+
+// Token
+
+// string access_token = 1;
+inline void Token::clear_access_token() {
+  access_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::access_token() const {
+  // @@protoc_insertion_point(field_get:api.Token.access_token)
+  return access_token_.GetNoArena();
+}
+inline void Token::set_access_token(const ::std::string& value) {
+  
+  access_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.access_token)
+}
+#if LANG_CXX11
+inline void Token::set_access_token(::std::string&& value) {
+  
+  access_token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.access_token)
+}
+#endif
+inline void Token::set_access_token(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  access_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.access_token)
+}
+inline void Token::set_access_token(const char* value, size_t size) {
+  
+  access_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.access_token)
+}
+inline ::std::string* Token::mutable_access_token() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.access_token)
+  return access_token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_access_token() {
+  // @@protoc_insertion_point(field_release:api.Token.access_token)
+  
+  return access_token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_access_token(::std::string* access_token) {
+  if (access_token != NULL) {
+    
+  } else {
+    
+  }
+  access_token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), access_token);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.access_token)
+}
+
+// string token_type = 2;
+inline void Token::clear_token_type() {
+  token_type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::token_type() const {
+  // @@protoc_insertion_point(field_get:api.Token.token_type)
+  return token_type_.GetNoArena();
+}
+inline void Token::set_token_type(const ::std::string& value) {
+  
+  token_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.token_type)
+}
+#if LANG_CXX11
+inline void Token::set_token_type(::std::string&& value) {
+  
+  token_type_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.token_type)
+}
+#endif
+inline void Token::set_token_type(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  token_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.token_type)
+}
+inline void Token::set_token_type(const char* value, size_t size) {
+  
+  token_type_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.token_type)
+}
+inline ::std::string* Token::mutable_token_type() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.token_type)
+  return token_type_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_token_type() {
+  // @@protoc_insertion_point(field_release:api.Token.token_type)
+  
+  return token_type_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_token_type(::std::string* token_type) {
+  if (token_type != NULL) {
+    
+  } else {
+    
+  }
+  token_type_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token_type);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.token_type)
+}
+
+// string refresh_token = 3;
+inline void Token::clear_refresh_token() {
+  refresh_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::refresh_token() const {
+  // @@protoc_insertion_point(field_get:api.Token.refresh_token)
+  return refresh_token_.GetNoArena();
+}
+inline void Token::set_refresh_token(const ::std::string& value) {
+  
+  refresh_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.refresh_token)
+}
+#if LANG_CXX11
+inline void Token::set_refresh_token(::std::string&& value) {
+  
+  refresh_token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.refresh_token)
+}
+#endif
+inline void Token::set_refresh_token(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  refresh_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.refresh_token)
+}
+inline void Token::set_refresh_token(const char* value, size_t size) {
+  
+  refresh_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.refresh_token)
+}
+inline ::std::string* Token::mutable_refresh_token() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.refresh_token)
+  return refresh_token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_refresh_token() {
+  // @@protoc_insertion_point(field_release:api.Token.refresh_token)
+  
+  return refresh_token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_refresh_token(::std::string* refresh_token) {
+  if (refresh_token != NULL) {
+    
+  } else {
+    
+  }
+  refresh_token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), refresh_token);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.refresh_token)
+}
+
+// string expiry = 4;
+inline void Token::clear_expiry() {
+  expiry_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::expiry() const {
+  // @@protoc_insertion_point(field_get:api.Token.expiry)
+  return expiry_.GetNoArena();
+}
+inline void Token::set_expiry(const ::std::string& value) {
+  
+  expiry_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.expiry)
+}
+#if LANG_CXX11
+inline void Token::set_expiry(::std::string&& value) {
+  
+  expiry_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.expiry)
+}
+#endif
+inline void Token::set_expiry(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  expiry_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.expiry)
+}
+inline void Token::set_expiry(const char* value, size_t size) {
+  
+  expiry_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.expiry)
+}
+inline ::std::string* Token::mutable_expiry() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.expiry)
+  return expiry_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_expiry() {
+  // @@protoc_insertion_point(field_release:api.Token.expiry)
+  
+  return expiry_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_expiry(::std::string* expiry) {
+  if (expiry != NULL) {
+    
+  } else {
+    
+  }
+  expiry_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), expiry);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.expiry)
+}
+
+// string id_token = 5;
+inline void Token::clear_id_token() {
+  id_token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Token::id_token() const {
+  // @@protoc_insertion_point(field_get:api.Token.id_token)
+  return id_token_.GetNoArena();
+}
+inline void Token::set_id_token(const ::std::string& value) {
+  
+  id_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.Token.id_token)
+}
+#if LANG_CXX11
+inline void Token::set_id_token(::std::string&& value) {
+  
+  id_token_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.Token.id_token)
+}
+#endif
+inline void Token::set_id_token(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.Token.id_token)
+}
+inline void Token::set_id_token(const char* value, size_t size) {
+  
+  id_token_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.Token.id_token)
+}
+inline ::std::string* Token::mutable_id_token() {
+  
+  // @@protoc_insertion_point(field_mutable:api.Token.id_token)
+  return id_token_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Token::release_id_token() {
+  // @@protoc_insertion_point(field_release:api.Token.id_token)
+  
+  return id_token_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Token::set_allocated_id_token(::std::string* id_token) {
+  if (id_token != NULL) {
+    
+  } else {
+    
+  }
+  id_token_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id_token);
+  // @@protoc_insertion_point(field_set_allocated:api.Token.id_token)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -11059,6 +11424,11 @@ template <> struct is_proto_enum< ::api::Scope> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::api::Scope>() {
   return ::api::Scope_descriptor();
+}
+template <> struct is_proto_enum< ::api::URL> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::api::URL>() {
+  return ::api::URL_descriptor();
 }
 template <> struct is_proto_enum< ::api::HTTPMethod> : ::std::true_type {};
 template <>

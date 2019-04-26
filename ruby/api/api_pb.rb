@@ -5,6 +5,14 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.ResourceRequest" do
+    optional :token, :message, 1, "api.Token"
+    optional :method, :enum, 2, "api.HTTPMethod"
+    optional :domain, :string, 3
+    optional :url, :enum, 4, "api.URL"
+    map :form, :string, :string, 5
+    optional :body, :message, 6, "api.Bytes"
+  end
   add_message "api.SubscribeRequest" do
     optional :email, :string, 1
     optional :plan, :string, 2
@@ -23,11 +31,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Empty" do
   end
   add_message "api.UserRequest" do
-    optional :string, :message, 1, "api.BearerToken"
+    optional :string, :message, 1, "api.Token"
     optional :user, :message, 2, "api.User"
   end
   add_message "api.UserByEmailRequest" do
-    optional :token, :message, 1, "api.BearerToken"
+    optional :token, :message, 1, "api.Token"
     optional :email, :string, 2
   end
   add_message "api.Identifier" do
@@ -123,9 +131,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :client_id, :string, 2
     optional :client_secret, :string, 3
     optional :redirect, :string, 4
-    optional :audience, :string, 5
-    repeated :scopes, :enum, 6, "api.Scope"
-    optional :management, :message, 7, "api.BearerToken"
+    repeated :scopes, :enum, 5, "api.Scope"
   end
   add_message "api.Bytes" do
     optional :bits, :bytes, 1
@@ -148,14 +154,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.HTTPRequest" do
     optional :method, :enum, 1, "api.HTTPMethod"
     optional :url, :string, 2
-    optional :token, :string, 3
-    optional :user, :string, 4
-    optional :password, :string, 5
-    optional :contentType, :string, 6
-    map :headers, :string, :string, 7
-    map :form, :string, :string, 8
-    map :cookies, :string, :string, 9
-    optional :body, :message, 10, "api.Bytes"
+    map :form, :string, :string, 3
+    optional :body, :message, 4, "api.Bytes"
   end
   add_message "api.RenderRequest" do
     optional :template, :message, 1, "api.Template"
@@ -182,8 +182,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :id, :string, 2
     optional :uri, :string, 3
   end
-  add_message "api.BearerToken" do
-    optional :token, :string, 1
+  add_message "api.Secret" do
+    optional :text, :string, 1
+  end
+  add_message "api.Token" do
+    optional :access_token, :string, 1
+    optional :token_type, :string, 2
+    optional :refresh_token, :string, 3
+    optional :expiry, :string, 4
+    optional :id_token, :string, 5
   end
   add_enum "api.Scope" do
     value :OPENID, 0
@@ -206,6 +213,26 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :DELETE_ROLES, 17
     value :READ_LOGS, 18
   end
+  add_enum "api.URL" do
+    value :USER_INFOURL, 0
+    value :TOKENURL, 1
+    value :AUTHORIZEURL, 2
+    value :USERSURL, 3
+    value :CLIENTSURL, 4
+    value :GRANTSURL, 5
+    value :RULESURL, 6
+    value :ROLESURL, 7
+    value :LOGSURL, 8
+    value :STATSURL, 9
+    value :CONNECTIONSURL, 10
+    value :TENANTSURL, 11
+    value :EMAIL_TEMPLATEURL, 12
+    value :EMAILURL, 13
+    value :SEARCH_USERSURL, 14
+    value :DEVICEURL, 18
+    value :JWKSURL, 19
+    value :CLIENT_GRANTSURL, 20
+  end
   add_enum "api.HTTPMethod" do
     value :GET, 0
     value :POST, 1
@@ -213,6 +240,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  ResourceRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ResourceRequest").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
@@ -244,7 +272,9 @@ module Api
   PhoneNumber = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumber").msgclass
   NumberCapabilities = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.NumberCapabilities").msgclass
   PhoneNumberResource = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumberResource").msgclass
-  BearerToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BearerToken").msgclass
+  Secret = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Secret").msgclass
+  Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Token").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
+  URL = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.URL").enummodule
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPMethod").enummodule
 end
