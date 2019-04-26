@@ -164,6 +164,27 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :template, :message, 1, "api.Template"
     optional :data, :message, 2, "api.Bytes"
   end
+  add_message "api.SearchPhoneNumberRequest" do
+    optional :state, :string, 1
+    optional :capabilities, :message, 2, "api.NumberCapabilities"
+    optional :total_results, :int64, 3
+  end
+  add_message "api.PhoneNumber" do
+    optional :friendly_name, :string, 1
+    optional :phone_number, :string, 2
+    optional :region, :string, 3
+    optional :capabilities, :message, 4, "api.NumberCapabilities"
+  end
+  add_message "api.NumberCapabilities" do
+    optional :voice, :bool, 1
+    optional :sms, :bool, 2
+    optional :mms, :bool, 3
+  end
+  add_message "api.PhoneNumberResource" do
+    optional :number, :message, 1, "api.PhoneNumber"
+    optional :id, :string, 2
+    optional :uri, :string, 3
+  end
   add_enum "api.Scope" do
     value :OPENID, 0
     value :PROFILE, 1
@@ -220,6 +241,10 @@ module Api
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
   HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPRequest").msgclass
   RenderRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RenderRequest").msgclass
+  SearchPhoneNumberRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SearchPhoneNumberRequest").msgclass
+  PhoneNumber = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumber").msgclass
+  NumberCapabilities = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.NumberCapabilities").msgclass
+  PhoneNumberResource = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumberResource").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPMethod").enummodule
 end

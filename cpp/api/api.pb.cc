@@ -32,10 +32,12 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JSONWebKeys;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ManagementToken;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Message;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NumberCapabilities;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Template;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UserMetadata_MetadataEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_AppMetadata;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_EmailBlast;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_PhoneNumber;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_UserMetadata;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_User;
 }  // namespace protobuf_api_2eproto
@@ -210,6 +212,26 @@ class RenderRequestDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<RenderRequest>
       _instance;
 } _RenderRequest_default_instance_;
+class SearchPhoneNumberRequestDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SearchPhoneNumberRequest>
+      _instance;
+} _SearchPhoneNumberRequest_default_instance_;
+class PhoneNumberDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PhoneNumber>
+      _instance;
+} _PhoneNumber_default_instance_;
+class NumberCapabilitiesDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<NumberCapabilities>
+      _instance;
+} _NumberCapabilities_default_instance_;
+class PhoneNumberResourceDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PhoneNumberResource>
+      _instance;
+} _PhoneNumberResource_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsSubscribeRequest() {
@@ -704,6 +726,65 @@ static void InitDefaultsRenderRequest() {
       &protobuf_api_2eproto::scc_info_Template.base,
       &protobuf_api_2eproto::scc_info_Bytes.base,}};
 
+static void InitDefaultsSearchPhoneNumberRequest() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_SearchPhoneNumberRequest_default_instance_;
+    new (ptr) ::api::SearchPhoneNumberRequest();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::SearchPhoneNumberRequest::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_SearchPhoneNumberRequest =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSearchPhoneNumberRequest}, {
+      &protobuf_api_2eproto::scc_info_NumberCapabilities.base,}};
+
+static void InitDefaultsPhoneNumber() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_PhoneNumber_default_instance_;
+    new (ptr) ::api::PhoneNumber();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::PhoneNumber::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_PhoneNumber =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPhoneNumber}, {
+      &protobuf_api_2eproto::scc_info_NumberCapabilities.base,}};
+
+static void InitDefaultsNumberCapabilities() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_NumberCapabilities_default_instance_;
+    new (ptr) ::api::NumberCapabilities();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::NumberCapabilities::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_NumberCapabilities =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNumberCapabilities}, {}};
+
+static void InitDefaultsPhoneNumberResource() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_PhoneNumberResource_default_instance_;
+    new (ptr) ::api::PhoneNumberResource();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::PhoneNumberResource::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_PhoneNumberResource =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPhoneNumberResource}, {
+      &protobuf_api_2eproto::scc_info_PhoneNumber.base,}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_SubscribeRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UnSubscribeRequest.base);
@@ -739,9 +820,13 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_HTTPRequest_CookiesEntry_DoNotUse.base);
   ::google::protobuf::internal::InitSCC(&scc_info_HTTPRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_RenderRequest.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SearchPhoneNumberRequest.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PhoneNumber.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_NumberCapabilities.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PhoneNumberResource.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[34];
+::google::protobuf::Metadata file_level_metadata[38];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -1042,6 +1127,39 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RenderRequest, template__),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::RenderRequest, data_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SearchPhoneNumberRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SearchPhoneNumberRequest, state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SearchPhoneNumberRequest, capabilities_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SearchPhoneNumberRequest, total_results_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumber, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumber, friendly_name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumber, phone_number_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumber, region_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumber, capabilities_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::NumberCapabilities, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::NumberCapabilities, voice_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::NumberCapabilities, sms_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::NumberCapabilities, mms_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, number_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, uri_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::SubscribeRequest)},
@@ -1078,6 +1196,10 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 266, 273, sizeof(::api::HTTPRequest_CookiesEntry_DoNotUse)},
   { 275, -1, sizeof(::api::HTTPRequest)},
   { 290, -1, sizeof(::api::RenderRequest)},
+  { 297, -1, sizeof(::api::SearchPhoneNumberRequest)},
+  { 305, -1, sizeof(::api::PhoneNumber)},
+  { 314, -1, sizeof(::api::NumberCapabilities)},
+  { 322, -1, sizeof(::api::PhoneNumberResource)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1115,6 +1237,10 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_HTTPRequest_CookiesEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_HTTPRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_RenderRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SearchPhoneNumberRequest_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_PhoneNumber_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_NumberCapabilities_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_PhoneNumberResource_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -1132,7 +1258,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 34);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 38);
 }
 
 void AddDescriptorsImpl() {
@@ -1209,54 +1335,69 @@ void AddDescriptorsImpl() {
       "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesE"
       "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\r"
       "RenderRequest\022\037\n\010template\030\001 \001(\0132\r.api.Te"
-      "mplate\022\030\n\004data\030\002 \001(\0132\n.api.Bytes*\344\002\n\005Sco"
-      "pe\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005EMAIL\020\002\022\016"
-      "\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP_TOKENS\020\004"
-      "\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STATS\020\006\022\030\n\024RE"
-      "AD_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_EMAIL_TEM"
-      "PLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLATES\020\t\022\016\n\n"
-      "READ_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022\020\n\014CREATE"
-      "_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nREAD_ROLES"
-      "\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_ROLES\020\020\022\020"
-      "\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022*\037\n\nHTTPM"
-      "ethod\022\007\n\003GET\020\000\022\010\n\004POST\020\0012\350\005\n\016UtilityServ"
-      "ice\022<\n\004Echo\022\014.api.Message\032\014.api.Message\""
-      "\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSpanish"
-      "\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/u"
-      "tility/echo/spanish:\001*\022K\n\013EchoChinese\022\014."
-      "api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/util"
-      "ity/echo/chinese:\001*\022K\n\013EchoEnglish\022\014.api"
-      ".Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility"
-      "/echo/english:\001*\022G\n\tEchoHindi\022\014.api.Mess"
-      "age\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility/echo"
-      "/hindi:\001*\022I\n\nEchoArabic\022\014.api.Message\032\014."
-      "api.Message\"\037\202\323\344\223\002\031\"\024/utility/echo/arabi"
-      "c:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.api.By"
-      "tes\" \202\323\344\223\002\032\"\025/utility/marshal/json:\001*\022G\n"
-      "\013MarshalYAML\022\n.api.Bytes\032\n.api.Bytes\" \202\323"
-      "\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E\n\nMarsha"
-      "lXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/u"
-      "tility/marshal/xml:\001*\022D\n\006Render\022\022.api.Re"
-      "nderRequest\032\n.api.Bytes\"\032\202\323\344\223\002\024\"\017/utilit"
-      "y/render:\001*2\245\004\n\016ContactService\022=\n\007SendSM"
-      "S\022\010.api.SMS\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contac"
-      "t/sms/{to}:\001*\022J\n\014SendSMSBlast\022\r.api.SMSB"
-      "last\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/sms/b"
-      "last:\001*0\001\022C\n\006GetSMS\022\017.api.Identifier\032\n.a"
-      "pi.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*\022W"
-      "\n\tSendEmail\022\021.api.EmailRequest\032\014.api.Mes"
-      "sage\")\202\323\344\223\002#\"\036/contact/email/{email.addr"
-      "ess}:\001*\022Y\n\016SendEmailBlast\022\026.api.EmailBla"
-      "stRequest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/contac"
-      "t/email/blast:\001*0\001\022@\n\010SendCall\022\t.api.Cal"
-      "l\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/call/{to"
-      "}:\001*\022M\n\rSendCallBlast\022\016.api.CallBlast\032\n."
-      "api.Bytes\"\036\202\323\344\223\002\030\"\023/contact/call/blast:\001"
-      "*0\0012\304\001\n\016PaymentService\022U\n\tSubscribe\022\025.ap"
-      "i.SubscribeRequest\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032"
-      "/payment/subscribe/{email}:\001*\022[\n\013Unsubsc"
-      "ribe\022\027.api.UnSubscribeRequest\032\n.api.Byte"
-      "s\"\'\202\323\344\223\002!\"\034/payment/unsubscribe/{email}:"
+      "mplate\022\030\n\004data\030\002 \001(\0132\n.api.Bytes\"o\n\030Sear"
+      "chPhoneNumberRequest\022\r\n\005state\030\001 \001(\t\022-\n\014c"
+      "apabilities\030\002 \001(\0132\027.api.NumberCapabiliti"
+      "es\022\025\n\rtotal_results\030\003 \001(\003\"y\n\013PhoneNumber"
+      "\022\025\n\rfriendly_name\030\001 \001(\t\022\024\n\014phone_number\030"
+      "\002 \001(\t\022\016\n\006region\030\003 \001(\t\022-\n\014capabilities\030\004 "
+      "\001(\0132\027.api.NumberCapabilities\"=\n\022NumberCa"
+      "pabilities\022\r\n\005voice\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013"
+      "\n\003mms\030\003 \001(\010\"P\n\023PhoneNumberResource\022 \n\006nu"
+      "mber\030\001 \001(\0132\020.api.PhoneNumber\022\n\n\002id\030\002 \001(\t"
+      "\022\013\n\003uri\030\003 \001(\t*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007P"
+      "ROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024R"
+      "EAD_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022"
+      "\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020"
+      "\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_"
+      "EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPD"
+      "ATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_"
+      "RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020"
+      "\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n"
+      "\tREAD_LOGS\020\022*\037\n\nHTTPMethod\022\007\n\003GET\020\000\022\010\n\004P"
+      "OST\020\0012\350\005\n\016UtilityService\022<\n\004Echo\022\014.api.M"
+      "essage\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/utility/e"
+      "cho:\001*\022K\n\013EchoSpanish\022\014.api.Message\032\014.ap"
+      "i.Message\" \202\323\344\223\002\032\"\025/utility/echo/spanish"
+      ":\001*\022K\n\013EchoChinese\022\014.api.Message\032\014.api.M"
+      "essage\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*"
+      "\022K\n\013EchoEnglish\022\014.api.Message\032\014.api.Mess"
+      "age\" \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022G\n"
+      "\tEchoHindi\022\014.api.Message\032\014.api.Message\"\036"
+      "\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I\n\nEchoAr"
+      "abic\022\014.api.Message\032\014.api.Message\"\037\202\323\344\223\002\031"
+      "\"\024/utility/echo/arabic:\001*\022G\n\013MarshalJSON"
+      "\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utili"
+      "ty/marshal/json:\001*\022G\n\013MarshalYAML\022\n.api."
+      "Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/mars"
+      "hal/yaml:\001*\022E\n\nMarshalXML\022\n.api.Bytes\032\n."
+      "api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:"
+      "\001*\022D\n\006Render\022\022.api.RenderRequest\032\n.api.B"
+      "ytes\"\032\202\323\344\223\002\024\"\017/utility/render:\001*2\222\005\n\016Con"
+      "tactService\022=\n\007SendSMS\022\010.api.SMS\032\n.api.B"
+      "ytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{to}:\001*\022J\n\014Se"
+      "ndSMSBlast\022\r.api.SMSBlast\032\n.api.Bytes\"\035\202"
+      "\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022C\n\006GetSMS"
+      "\022\017.api.Identifier\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/"
+      "contact/sms/{id}:\001*\022W\n\tSendEmail\022\021.api.E"
+      "mailRequest\032\014.api.Message\")\202\323\344\223\002#\"\036/cont"
+      "act/email/{email.address}:\001*\022Y\n\016SendEmai"
+      "lBlast\022\026.api.EmailBlastRequest\032\014.api.Mes"
+      "sage\"\037\202\323\344\223\002\031\"\024/contact/email/blast:\001*0\001\022"
+      "@\n\010SendCall\022\t.api.Call\032\n.api.Bytes\"\035\202\323\344\223"
+      "\002\027\"\022/contact/call/{to}:\001*\022M\n\rSendCallBla"
+      "st\022\016.api.CallBlast\032\n.api.Bytes\"\036\202\323\344\223\002\030\"\023"
+      "/contact/call/blast:\001*0\001\022k\n\021SearchPhoneN"
+      "umber\022\035.api.SearchPhoneNumberRequest\032\020.a"
+      "pi.PhoneNumber\"#\202\323\344\223\002\035\"\030/contact/numbers"
+      "/{state}:\001*0\0012\262\002\n\016PaymentService\022U\n\tSubs"
+      "cribe\022\025.api.SubscribeRequest\032\n.api.Bytes"
+      "\"%\202\323\344\223\002\037\"\032/payment/subscribe/{email}:\001*\022"
+      "[\n\013Unsubscribe\022\027.api.UnSubscribeRequest\032"
+      "\n.api.Bytes\"\'\202\323\344\223\002!\"\034/payment/unsubscrib"
+      "e/{email}:\001*\022l\n\023PurchasePhoneNumber\022\020.ap"
+      "i.PhoneNumber\032\030.api.PhoneNumberResource\""
+      ")\202\323\344\223\002#\"\036/payment/number/{phone_number}:"
       "\001*2\214\003\n\013UserService\022K\n\007GetUser\022\027.api.User"
       "ByEmailRequest\032\t.api.User\"\034\202\323\344\223\002\026\"\021/user"
       "/get/{email}:\001*\022P\n\nUpdateUser\022\020.api.User"
@@ -1270,7 +1411,7 @@ void AddDescriptorsImpl() {
       "\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 5169);
+      descriptor, 5769);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -12929,6 +13070,1391 @@ void RenderRequest::InternalSwap(RenderRequest* other) {
 }
 
 
+// ===================================================================
+
+void SearchPhoneNumberRequest::InitAsDefaultInstance() {
+  ::api::_SearchPhoneNumberRequest_default_instance_._instance.get_mutable()->capabilities_ = const_cast< ::api::NumberCapabilities*>(
+      ::api::NumberCapabilities::internal_default_instance());
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SearchPhoneNumberRequest::kStateFieldNumber;
+const int SearchPhoneNumberRequest::kCapabilitiesFieldNumber;
+const int SearchPhoneNumberRequest::kTotalResultsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SearchPhoneNumberRequest::SearchPhoneNumberRequest()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_SearchPhoneNumberRequest.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.SearchPhoneNumberRequest)
+}
+SearchPhoneNumberRequest::SearchPhoneNumberRequest(const SearchPhoneNumberRequest& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.state().size() > 0) {
+    state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.state_);
+  }
+  if (from.has_capabilities()) {
+    capabilities_ = new ::api::NumberCapabilities(*from.capabilities_);
+  } else {
+    capabilities_ = NULL;
+  }
+  total_results_ = from.total_results_;
+  // @@protoc_insertion_point(copy_constructor:api.SearchPhoneNumberRequest)
+}
+
+void SearchPhoneNumberRequest::SharedCtor() {
+  state_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&capabilities_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&total_results_) -
+      reinterpret_cast<char*>(&capabilities_)) + sizeof(total_results_));
+}
+
+SearchPhoneNumberRequest::~SearchPhoneNumberRequest() {
+  // @@protoc_insertion_point(destructor:api.SearchPhoneNumberRequest)
+  SharedDtor();
+}
+
+void SearchPhoneNumberRequest::SharedDtor() {
+  state_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete capabilities_;
+}
+
+void SearchPhoneNumberRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* SearchPhoneNumberRequest::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SearchPhoneNumberRequest& SearchPhoneNumberRequest::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_SearchPhoneNumberRequest.base);
+  return *internal_default_instance();
+}
+
+
+void SearchPhoneNumberRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.SearchPhoneNumberRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && capabilities_ != NULL) {
+    delete capabilities_;
+  }
+  capabilities_ = NULL;
+  total_results_ = GOOGLE_LONGLONG(0);
+  _internal_metadata_.Clear();
+}
+
+bool SearchPhoneNumberRequest::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.SearchPhoneNumberRequest)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string state = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_state()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->state().data(), static_cast<int>(this->state().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.SearchPhoneNumberRequest.state"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .api.NumberCapabilities capabilities = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_capabilities()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 total_results = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &total_results_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.SearchPhoneNumberRequest)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.SearchPhoneNumberRequest)
+  return false;
+#undef DO_
+}
+
+void SearchPhoneNumberRequest::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.SearchPhoneNumberRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string state = 1;
+  if (this->state().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->state().data(), static_cast<int>(this->state().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.SearchPhoneNumberRequest.state");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->state(), output);
+  }
+
+  // .api.NumberCapabilities capabilities = 2;
+  if (this->has_capabilities()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->_internal_capabilities(), output);
+  }
+
+  // int64 total_results = 3;
+  if (this->total_results() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->total_results(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.SearchPhoneNumberRequest)
+}
+
+::google::protobuf::uint8* SearchPhoneNumberRequest::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.SearchPhoneNumberRequest)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string state = 1;
+  if (this->state().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->state().data(), static_cast<int>(this->state().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.SearchPhoneNumberRequest.state");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->state(), target);
+  }
+
+  // .api.NumberCapabilities capabilities = 2;
+  if (this->has_capabilities()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->_internal_capabilities(), deterministic, target);
+  }
+
+  // int64 total_results = 3;
+  if (this->total_results() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->total_results(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.SearchPhoneNumberRequest)
+  return target;
+}
+
+size_t SearchPhoneNumberRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.SearchPhoneNumberRequest)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string state = 1;
+  if (this->state().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->state());
+  }
+
+  // .api.NumberCapabilities capabilities = 2;
+  if (this->has_capabilities()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *capabilities_);
+  }
+
+  // int64 total_results = 3;
+  if (this->total_results() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->total_results());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SearchPhoneNumberRequest::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.SearchPhoneNumberRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SearchPhoneNumberRequest* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SearchPhoneNumberRequest>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.SearchPhoneNumberRequest)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.SearchPhoneNumberRequest)
+    MergeFrom(*source);
+  }
+}
+
+void SearchPhoneNumberRequest::MergeFrom(const SearchPhoneNumberRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.SearchPhoneNumberRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.state().size() > 0) {
+
+    state_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.state_);
+  }
+  if (from.has_capabilities()) {
+    mutable_capabilities()->::api::NumberCapabilities::MergeFrom(from.capabilities());
+  }
+  if (from.total_results() != 0) {
+    set_total_results(from.total_results());
+  }
+}
+
+void SearchPhoneNumberRequest::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.SearchPhoneNumberRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SearchPhoneNumberRequest::CopyFrom(const SearchPhoneNumberRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.SearchPhoneNumberRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SearchPhoneNumberRequest::IsInitialized() const {
+  return true;
+}
+
+void SearchPhoneNumberRequest::Swap(SearchPhoneNumberRequest* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SearchPhoneNumberRequest::InternalSwap(SearchPhoneNumberRequest* other) {
+  using std::swap;
+  state_.Swap(&other->state_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(capabilities_, other->capabilities_);
+  swap(total_results_, other->total_results_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata SearchPhoneNumberRequest::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void PhoneNumber::InitAsDefaultInstance() {
+  ::api::_PhoneNumber_default_instance_._instance.get_mutable()->capabilities_ = const_cast< ::api::NumberCapabilities*>(
+      ::api::NumberCapabilities::internal_default_instance());
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PhoneNumber::kFriendlyNameFieldNumber;
+const int PhoneNumber::kPhoneNumberFieldNumber;
+const int PhoneNumber::kRegionFieldNumber;
+const int PhoneNumber::kCapabilitiesFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+PhoneNumber::PhoneNumber()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_PhoneNumber.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.PhoneNumber)
+}
+PhoneNumber::PhoneNumber(const PhoneNumber& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  friendly_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.friendly_name().size() > 0) {
+    friendly_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.friendly_name_);
+  }
+  phone_number_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.phone_number().size() > 0) {
+    phone_number_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.phone_number_);
+  }
+  region_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.region().size() > 0) {
+    region_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.region_);
+  }
+  if (from.has_capabilities()) {
+    capabilities_ = new ::api::NumberCapabilities(*from.capabilities_);
+  } else {
+    capabilities_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.PhoneNumber)
+}
+
+void PhoneNumber::SharedCtor() {
+  friendly_name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  phone_number_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  region_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  capabilities_ = NULL;
+}
+
+PhoneNumber::~PhoneNumber() {
+  // @@protoc_insertion_point(destructor:api.PhoneNumber)
+  SharedDtor();
+}
+
+void PhoneNumber::SharedDtor() {
+  friendly_name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  phone_number_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  region_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete capabilities_;
+}
+
+void PhoneNumber::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* PhoneNumber::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PhoneNumber& PhoneNumber::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_PhoneNumber.base);
+  return *internal_default_instance();
+}
+
+
+void PhoneNumber::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.PhoneNumber)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  friendly_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  phone_number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  region_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && capabilities_ != NULL) {
+    delete capabilities_;
+  }
+  capabilities_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool PhoneNumber::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.PhoneNumber)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string friendly_name = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_friendly_name()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->friendly_name().data(), static_cast<int>(this->friendly_name().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.PhoneNumber.friendly_name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string phone_number = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_phone_number()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->phone_number().data(), static_cast<int>(this->phone_number().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.PhoneNumber.phone_number"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string region = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_region()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->region().data(), static_cast<int>(this->region().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.PhoneNumber.region"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .api.NumberCapabilities capabilities = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_capabilities()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.PhoneNumber)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.PhoneNumber)
+  return false;
+#undef DO_
+}
+
+void PhoneNumber::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.PhoneNumber)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string friendly_name = 1;
+  if (this->friendly_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->friendly_name().data(), static_cast<int>(this->friendly_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumber.friendly_name");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->friendly_name(), output);
+  }
+
+  // string phone_number = 2;
+  if (this->phone_number().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->phone_number().data(), static_cast<int>(this->phone_number().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumber.phone_number");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->phone_number(), output);
+  }
+
+  // string region = 3;
+  if (this->region().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->region().data(), static_cast<int>(this->region().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumber.region");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->region(), output);
+  }
+
+  // .api.NumberCapabilities capabilities = 4;
+  if (this->has_capabilities()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->_internal_capabilities(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.PhoneNumber)
+}
+
+::google::protobuf::uint8* PhoneNumber::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.PhoneNumber)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string friendly_name = 1;
+  if (this->friendly_name().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->friendly_name().data(), static_cast<int>(this->friendly_name().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumber.friendly_name");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->friendly_name(), target);
+  }
+
+  // string phone_number = 2;
+  if (this->phone_number().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->phone_number().data(), static_cast<int>(this->phone_number().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumber.phone_number");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->phone_number(), target);
+  }
+
+  // string region = 3;
+  if (this->region().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->region().data(), static_cast<int>(this->region().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumber.region");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->region(), target);
+  }
+
+  // .api.NumberCapabilities capabilities = 4;
+  if (this->has_capabilities()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->_internal_capabilities(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.PhoneNumber)
+  return target;
+}
+
+size_t PhoneNumber::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.PhoneNumber)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string friendly_name = 1;
+  if (this->friendly_name().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->friendly_name());
+  }
+
+  // string phone_number = 2;
+  if (this->phone_number().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->phone_number());
+  }
+
+  // string region = 3;
+  if (this->region().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->region());
+  }
+
+  // .api.NumberCapabilities capabilities = 4;
+  if (this->has_capabilities()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *capabilities_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PhoneNumber::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.PhoneNumber)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PhoneNumber* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PhoneNumber>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.PhoneNumber)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.PhoneNumber)
+    MergeFrom(*source);
+  }
+}
+
+void PhoneNumber::MergeFrom(const PhoneNumber& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.PhoneNumber)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.friendly_name().size() > 0) {
+
+    friendly_name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.friendly_name_);
+  }
+  if (from.phone_number().size() > 0) {
+
+    phone_number_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.phone_number_);
+  }
+  if (from.region().size() > 0) {
+
+    region_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.region_);
+  }
+  if (from.has_capabilities()) {
+    mutable_capabilities()->::api::NumberCapabilities::MergeFrom(from.capabilities());
+  }
+}
+
+void PhoneNumber::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.PhoneNumber)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PhoneNumber::CopyFrom(const PhoneNumber& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.PhoneNumber)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PhoneNumber::IsInitialized() const {
+  return true;
+}
+
+void PhoneNumber::Swap(PhoneNumber* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PhoneNumber::InternalSwap(PhoneNumber* other) {
+  using std::swap;
+  friendly_name_.Swap(&other->friendly_name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  phone_number_.Swap(&other->phone_number_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  region_.Swap(&other->region_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(capabilities_, other->capabilities_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata PhoneNumber::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void NumberCapabilities::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int NumberCapabilities::kVoiceFieldNumber;
+const int NumberCapabilities::kSmsFieldNumber;
+const int NumberCapabilities::kMmsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+NumberCapabilities::NumberCapabilities()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_NumberCapabilities.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.NumberCapabilities)
+}
+NumberCapabilities::NumberCapabilities(const NumberCapabilities& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&voice_, &from.voice_,
+    static_cast<size_t>(reinterpret_cast<char*>(&mms_) -
+    reinterpret_cast<char*>(&voice_)) + sizeof(mms_));
+  // @@protoc_insertion_point(copy_constructor:api.NumberCapabilities)
+}
+
+void NumberCapabilities::SharedCtor() {
+  ::memset(&voice_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mms_) -
+      reinterpret_cast<char*>(&voice_)) + sizeof(mms_));
+}
+
+NumberCapabilities::~NumberCapabilities() {
+  // @@protoc_insertion_point(destructor:api.NumberCapabilities)
+  SharedDtor();
+}
+
+void NumberCapabilities::SharedDtor() {
+}
+
+void NumberCapabilities::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* NumberCapabilities::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const NumberCapabilities& NumberCapabilities::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_NumberCapabilities.base);
+  return *internal_default_instance();
+}
+
+
+void NumberCapabilities::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.NumberCapabilities)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&voice_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mms_) -
+      reinterpret_cast<char*>(&voice_)) + sizeof(mms_));
+  _internal_metadata_.Clear();
+}
+
+bool NumberCapabilities::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.NumberCapabilities)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // bool voice = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &voice_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool sms = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &sms_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool mms = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &mms_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.NumberCapabilities)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.NumberCapabilities)
+  return false;
+#undef DO_
+}
+
+void NumberCapabilities::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.NumberCapabilities)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool voice = 1;
+  if (this->voice() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->voice(), output);
+  }
+
+  // bool sms = 2;
+  if (this->sms() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->sms(), output);
+  }
+
+  // bool mms = 3;
+  if (this->mms() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->mms(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.NumberCapabilities)
+}
+
+::google::protobuf::uint8* NumberCapabilities::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.NumberCapabilities)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool voice = 1;
+  if (this->voice() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->voice(), target);
+  }
+
+  // bool sms = 2;
+  if (this->sms() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->sms(), target);
+  }
+
+  // bool mms = 3;
+  if (this->mms() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->mms(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.NumberCapabilities)
+  return target;
+}
+
+size_t NumberCapabilities::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.NumberCapabilities)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // bool voice = 1;
+  if (this->voice() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool sms = 2;
+  if (this->sms() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // bool mms = 3;
+  if (this->mms() != 0) {
+    total_size += 1 + 1;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void NumberCapabilities::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.NumberCapabilities)
+  GOOGLE_DCHECK_NE(&from, this);
+  const NumberCapabilities* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const NumberCapabilities>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.NumberCapabilities)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.NumberCapabilities)
+    MergeFrom(*source);
+  }
+}
+
+void NumberCapabilities::MergeFrom(const NumberCapabilities& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.NumberCapabilities)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.voice() != 0) {
+    set_voice(from.voice());
+  }
+  if (from.sms() != 0) {
+    set_sms(from.sms());
+  }
+  if (from.mms() != 0) {
+    set_mms(from.mms());
+  }
+}
+
+void NumberCapabilities::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.NumberCapabilities)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void NumberCapabilities::CopyFrom(const NumberCapabilities& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.NumberCapabilities)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool NumberCapabilities::IsInitialized() const {
+  return true;
+}
+
+void NumberCapabilities::Swap(NumberCapabilities* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void NumberCapabilities::InternalSwap(NumberCapabilities* other) {
+  using std::swap;
+  swap(voice_, other->voice_);
+  swap(sms_, other->sms_);
+  swap(mms_, other->mms_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata NumberCapabilities::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void PhoneNumberResource::InitAsDefaultInstance() {
+  ::api::_PhoneNumberResource_default_instance_._instance.get_mutable()->number_ = const_cast< ::api::PhoneNumber*>(
+      ::api::PhoneNumber::internal_default_instance());
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PhoneNumberResource::kNumberFieldNumber;
+const int PhoneNumberResource::kIdFieldNumber;
+const int PhoneNumberResource::kUriFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+PhoneNumberResource::PhoneNumberResource()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_PhoneNumberResource.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.PhoneNumberResource)
+}
+PhoneNumberResource::PhoneNumberResource(const PhoneNumberResource& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.id().size() > 0) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.uri().size() > 0) {
+    uri_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.uri_);
+  }
+  if (from.has_number()) {
+    number_ = new ::api::PhoneNumber(*from.number_);
+  } else {
+    number_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.PhoneNumberResource)
+}
+
+void PhoneNumberResource::SharedCtor() {
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  uri_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  number_ = NULL;
+}
+
+PhoneNumberResource::~PhoneNumberResource() {
+  // @@protoc_insertion_point(destructor:api.PhoneNumberResource)
+  SharedDtor();
+}
+
+void PhoneNumberResource::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  uri_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete number_;
+}
+
+void PhoneNumberResource::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* PhoneNumberResource::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PhoneNumberResource& PhoneNumberResource::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_PhoneNumberResource.base);
+  return *internal_default_instance();
+}
+
+
+void PhoneNumberResource::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.PhoneNumberResource)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && number_ != NULL) {
+    delete number_;
+  }
+  number_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool PhoneNumberResource::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.PhoneNumberResource)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .api.PhoneNumber number = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_number()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string id = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->id().data(), static_cast<int>(this->id().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.PhoneNumberResource.id"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string uri = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_uri()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->uri().data(), static_cast<int>(this->uri().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.PhoneNumberResource.uri"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.PhoneNumberResource)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.PhoneNumberResource)
+  return false;
+#undef DO_
+}
+
+void PhoneNumberResource::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.PhoneNumberResource)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .api.PhoneNumber number = 1;
+  if (this->has_number()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_number(), output);
+  }
+
+  // string id = 2;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumberResource.id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->id(), output);
+  }
+
+  // string uri = 3;
+  if (this->uri().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->uri().data(), static_cast<int>(this->uri().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumberResource.uri");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->uri(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.PhoneNumberResource)
+}
+
+::google::protobuf::uint8* PhoneNumberResource::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.PhoneNumberResource)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .api.PhoneNumber number = 1;
+  if (this->has_number()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_number(), deterministic, target);
+  }
+
+  // string id = 2;
+  if (this->id().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumberResource.id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->id(), target);
+  }
+
+  // string uri = 3;
+  if (this->uri().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->uri().data(), static_cast<int>(this->uri().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.PhoneNumberResource.uri");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->uri(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.PhoneNumberResource)
+  return target;
+}
+
+size_t PhoneNumberResource::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.PhoneNumberResource)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string id = 2;
+  if (this->id().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  // string uri = 3;
+  if (this->uri().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->uri());
+  }
+
+  // .api.PhoneNumber number = 1;
+  if (this->has_number()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *number_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PhoneNumberResource::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.PhoneNumberResource)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PhoneNumberResource* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PhoneNumberResource>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.PhoneNumberResource)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.PhoneNumberResource)
+    MergeFrom(*source);
+  }
+}
+
+void PhoneNumberResource::MergeFrom(const PhoneNumberResource& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.PhoneNumberResource)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.id().size() > 0) {
+
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  if (from.uri().size() > 0) {
+
+    uri_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.uri_);
+  }
+  if (from.has_number()) {
+    mutable_number()->::api::PhoneNumber::MergeFrom(from.number());
+  }
+}
+
+void PhoneNumberResource::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.PhoneNumberResource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PhoneNumberResource::CopyFrom(const PhoneNumberResource& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.PhoneNumberResource)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PhoneNumberResource::IsInitialized() const {
+  return true;
+}
+
+void PhoneNumberResource::Swap(PhoneNumberResource* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PhoneNumberResource::InternalSwap(PhoneNumberResource* other) {
+  using std::swap;
+  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  uri_.Swap(&other->uri_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(number_, other->number_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata PhoneNumberResource::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -13034,6 +14560,18 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::HTTPRequest* Arena::CreateM
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::RenderRequest* Arena::CreateMaybeMessage< ::api::RenderRequest >(Arena* arena) {
   return Arena::CreateInternal< ::api::RenderRequest >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::SearchPhoneNumberRequest* Arena::CreateMaybeMessage< ::api::SearchPhoneNumberRequest >(Arena* arena) {
+  return Arena::CreateInternal< ::api::SearchPhoneNumberRequest >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::PhoneNumber* Arena::CreateMaybeMessage< ::api::PhoneNumber >(Arena* arena) {
+  return Arena::CreateInternal< ::api::PhoneNumber >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::NumberCapabilities* Arena::CreateMaybeMessage< ::api::NumberCapabilities >(Arena* arena) {
+  return Arena::CreateInternal< ::api::NumberCapabilities >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::PhoneNumberResource* Arena::CreateMaybeMessage< ::api::PhoneNumberResource >(Arena* arena) {
+  return Arena::CreateInternal< ::api::PhoneNumberResource >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

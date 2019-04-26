@@ -36,6 +36,8 @@ CF_EXTERN_C_BEGIN
 @class JSONWebKeys;
 @class ManagementToken;
 @class Message;
+@class NumberCapabilities;
+@class PhoneNumber;
 @class Template;
 @class User;
 @class UserMetadata;
@@ -738,6 +740,87 @@ typedef GPB_ENUM(RenderRequest_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) Bytes *data_p;
 /** Test to see if @c data_p has been set. */
 @property(nonatomic, readwrite) BOOL hasData_p;
+
+@end
+
+#pragma mark - SearchPhoneNumberRequest
+
+typedef GPB_ENUM(SearchPhoneNumberRequest_FieldNumber) {
+  SearchPhoneNumberRequest_FieldNumber_State = 1,
+  SearchPhoneNumberRequest_FieldNumber_Capabilities = 2,
+  SearchPhoneNumberRequest_FieldNumber_TotalResults = 3,
+};
+
+@interface SearchPhoneNumberRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *state;
+
+@property(nonatomic, readwrite, strong, null_resettable) NumberCapabilities *capabilities;
+/** Test to see if @c capabilities has been set. */
+@property(nonatomic, readwrite) BOOL hasCapabilities;
+
+@property(nonatomic, readwrite) int64_t totalResults;
+
+@end
+
+#pragma mark - PhoneNumber
+
+typedef GPB_ENUM(PhoneNumber_FieldNumber) {
+  PhoneNumber_FieldNumber_FriendlyName = 1,
+  PhoneNumber_FieldNumber_PhoneNumber = 2,
+  PhoneNumber_FieldNumber_Region = 3,
+  PhoneNumber_FieldNumber_Capabilities = 4,
+};
+
+@interface PhoneNumber : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *friendlyName;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phoneNumber;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *region;
+
+@property(nonatomic, readwrite, strong, null_resettable) NumberCapabilities *capabilities;
+/** Test to see if @c capabilities has been set. */
+@property(nonatomic, readwrite) BOOL hasCapabilities;
+
+@end
+
+#pragma mark - NumberCapabilities
+
+typedef GPB_ENUM(NumberCapabilities_FieldNumber) {
+  NumberCapabilities_FieldNumber_Voice = 1,
+  NumberCapabilities_FieldNumber_Sms = 2,
+  NumberCapabilities_FieldNumber_Mms = 3,
+};
+
+@interface NumberCapabilities : GPBMessage
+
+@property(nonatomic, readwrite) BOOL voice;
+
+@property(nonatomic, readwrite) BOOL sms;
+
+@property(nonatomic, readwrite) BOOL mms;
+
+@end
+
+#pragma mark - PhoneNumberResource
+
+typedef GPB_ENUM(PhoneNumberResource_FieldNumber) {
+  PhoneNumberResource_FieldNumber_Number = 1,
+  PhoneNumberResource_FieldNumber_Id_p = 2,
+  PhoneNumberResource_FieldNumber_Uri = 3,
+};
+
+@interface PhoneNumberResource : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) PhoneNumber *number;
+/** Test to see if @c number has been set. */
+@property(nonatomic, readwrite) BOOL hasNumber;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *uri;
 
 @end
 

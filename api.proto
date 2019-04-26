@@ -111,6 +111,13 @@ service ContactService {
       body: "*"
     };
     }
+    rpc SearchPhoneNumber(SearchPhoneNumberRequest) returns (stream PhoneNumber) {
+          option (google.api.http) = {
+      post: "/contact/numbers/{state}"
+      body: "*"
+    };
+    }
+
 }
 
 service PaymentService {
@@ -123,6 +130,12 @@ service PaymentService {
     rpc Unsubscribe(UnSubscribeRequest) returns (Bytes) {
         option (google.api.http) = {
       post: "/payment/unsubscribe/{email}"
+      body: "*"
+    };
+    }
+    rpc PurchasePhoneNumber(PhoneNumber) returns (PhoneNumberResource) {
+        option (google.api.http) = {
+      post: "/payment/number/{phone_number}"
       body: "*"
     };
     }
@@ -371,4 +384,29 @@ message HTTPRequest {
 message RenderRequest {
     Template template=1;
     Bytes data=2;
+}
+
+message SearchPhoneNumberRequest {
+    string state =1;
+    NumberCapabilities capabilities =2;
+    int64 total_results=3;
+}
+
+message PhoneNumber {
+    string friendly_name=1;
+    string phone_number=2;
+    string region=3;
+    NumberCapabilities capabilities =4;
+}
+
+message NumberCapabilities {
+    bool voice =1;
+    bool sms=2;
+    bool mms=3;
+}
+
+message PhoneNumberResource {
+   PhoneNumber number=1;
+   string id =2;
+   string uri=3;
 }

@@ -271,6 +271,18 @@
                 </li>
               
                 <li>
+                  <a href="#api.NumberCapabilities"><span class="badge">M</span>NumberCapabilities</a>
+                </li>
+              
+                <li>
+                  <a href="#api.PhoneNumber"><span class="badge">M</span>PhoneNumber</a>
+                </li>
+              
+                <li>
+                  <a href="#api.PhoneNumberResource"><span class="badge">M</span>PhoneNumberResource</a>
+                </li>
+              
+                <li>
                   <a href="#api.RenderRequest"><span class="badge">M</span>RenderRequest</a>
                 </li>
               
@@ -280,6 +292,10 @@
               
                 <li>
                   <a href="#api.SMSBlast"><span class="badge">M</span>SMSBlast</a>
+                </li>
+              
+                <li>
+                  <a href="#api.SearchPhoneNumberRequest"><span class="badge">M</span>SearchPhoneNumberRequest</a>
                 </li>
               
                 <li>
@@ -1191,6 +1207,124 @@
 
         
       
+        <h3 id="api.NumberCapabilities">NumberCapabilities</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>voice</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>sms</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mms</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.PhoneNumber">PhoneNumber</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>friendly_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>region</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capabilities</td>
+                  <td><a href="#api.NumberCapabilities">NumberCapabilities</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.PhoneNumberResource">PhoneNumberResource</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>number</td>
+                  <td><a href="#api.PhoneNumber">PhoneNumber</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>uri</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.RenderRequest">RenderRequest</h3>
         <p></p>
 
@@ -1327,6 +1461,43 @@
                 <tr>
                   <td>app</td>
                   <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.SearchPhoneNumberRequest">SearchPhoneNumberRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>state</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capabilities</td>
+                  <td><a href="#api.NumberCapabilities">NumberCapabilities</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>total_results</td>
+                  <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1907,6 +2078,13 @@
                 <td><p></p></td>
               </tr>
             
+              <tr>
+                <td>SearchPhoneNumber</td>
+                <td><a href="#api.SearchPhoneNumberRequest">SearchPhoneNumberRequest</a></td>
+                <td><a href="#api.PhoneNumber">PhoneNumber</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
           </tbody>
         </table>
       
@@ -1929,6 +2107,13 @@
                 <td>Unsubscribe</td>
                 <td><a href="#api.UnSubscribeRequest">UnSubscribeRequest</a></td>
                 <td><a href="#api.Bytes">Bytes</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PurchasePhoneNumber</td>
+                <td><a href="#api.PhoneNumber">PhoneNumber</a></td>
+                <td><a href="#api.PhoneNumberResource">PhoneNumberResource</a></td>
                 <td><p></p></td>
               </tr>
             

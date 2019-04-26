@@ -43,7 +43,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[34];
+  static const ::google::protobuf::internal::ParseTable schema[38];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -120,6 +120,15 @@ extern ManagementTokenDefaultTypeInternal _ManagementToken_default_instance_;
 class Message;
 class MessageDefaultTypeInternal;
 extern MessageDefaultTypeInternal _Message_default_instance_;
+class NumberCapabilities;
+class NumberCapabilitiesDefaultTypeInternal;
+extern NumberCapabilitiesDefaultTypeInternal _NumberCapabilities_default_instance_;
+class PhoneNumber;
+class PhoneNumberDefaultTypeInternal;
+extern PhoneNumberDefaultTypeInternal _PhoneNumber_default_instance_;
+class PhoneNumberResource;
+class PhoneNumberResourceDefaultTypeInternal;
+extern PhoneNumberResourceDefaultTypeInternal _PhoneNumberResource_default_instance_;
 class RenderRequest;
 class RenderRequestDefaultTypeInternal;
 extern RenderRequestDefaultTypeInternal _RenderRequest_default_instance_;
@@ -129,6 +138,9 @@ extern SMSDefaultTypeInternal _SMS_default_instance_;
 class SMSBlast;
 class SMSBlastDefaultTypeInternal;
 extern SMSBlastDefaultTypeInternal _SMSBlast_default_instance_;
+class SearchPhoneNumberRequest;
+class SearchPhoneNumberRequestDefaultTypeInternal;
+extern SearchPhoneNumberRequestDefaultTypeInternal _SearchPhoneNumberRequest_default_instance_;
 class SubscribeRequest;
 class SubscribeRequestDefaultTypeInternal;
 extern SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
@@ -179,9 +191,13 @@ template<> ::api::JSONWebKeys* Arena::CreateMaybeMessage<::api::JSONWebKeys>(Are
 template<> ::api::Jwks* Arena::CreateMaybeMessage<::api::Jwks>(Arena*);
 template<> ::api::ManagementToken* Arena::CreateMaybeMessage<::api::ManagementToken>(Arena*);
 template<> ::api::Message* Arena::CreateMaybeMessage<::api::Message>(Arena*);
+template<> ::api::NumberCapabilities* Arena::CreateMaybeMessage<::api::NumberCapabilities>(Arena*);
+template<> ::api::PhoneNumber* Arena::CreateMaybeMessage<::api::PhoneNumber>(Arena*);
+template<> ::api::PhoneNumberResource* Arena::CreateMaybeMessage<::api::PhoneNumberResource>(Arena*);
 template<> ::api::RenderRequest* Arena::CreateMaybeMessage<::api::RenderRequest>(Arena*);
 template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSBlast* Arena::CreateMaybeMessage<::api::SMSBlast>(Arena*);
+template<> ::api::SearchPhoneNumberRequest* Arena::CreateMaybeMessage<::api::SearchPhoneNumberRequest>(Arena*);
 template<> ::api::SubscribeRequest* Arena::CreateMaybeMessage<::api::SubscribeRequest>(Arena*);
 template<> ::api::Template* Arena::CreateMaybeMessage<::api::Template>(Arena*);
 template<> ::api::UnSubscribeRequest* Arena::CreateMaybeMessage<::api::UnSubscribeRequest>(Arena*);
@@ -4586,6 +4602,547 @@ class RenderRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::api::Template* template__;
   ::api::Bytes* data_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SearchPhoneNumberRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.SearchPhoneNumberRequest) */ {
+ public:
+  SearchPhoneNumberRequest();
+  virtual ~SearchPhoneNumberRequest();
+
+  SearchPhoneNumberRequest(const SearchPhoneNumberRequest& from);
+
+  inline SearchPhoneNumberRequest& operator=(const SearchPhoneNumberRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SearchPhoneNumberRequest(SearchPhoneNumberRequest&& from) noexcept
+    : SearchPhoneNumberRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline SearchPhoneNumberRequest& operator=(SearchPhoneNumberRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SearchPhoneNumberRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SearchPhoneNumberRequest* internal_default_instance() {
+    return reinterpret_cast<const SearchPhoneNumberRequest*>(
+               &_SearchPhoneNumberRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    34;
+
+  void Swap(SearchPhoneNumberRequest* other);
+  friend void swap(SearchPhoneNumberRequest& a, SearchPhoneNumberRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SearchPhoneNumberRequest* New() const final {
+    return CreateMaybeMessage<SearchPhoneNumberRequest>(NULL);
+  }
+
+  SearchPhoneNumberRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SearchPhoneNumberRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SearchPhoneNumberRequest& from);
+  void MergeFrom(const SearchPhoneNumberRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SearchPhoneNumberRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string state = 1;
+  void clear_state();
+  static const int kStateFieldNumber = 1;
+  const ::std::string& state() const;
+  void set_state(const ::std::string& value);
+  #if LANG_CXX11
+  void set_state(::std::string&& value);
+  #endif
+  void set_state(const char* value);
+  void set_state(const char* value, size_t size);
+  ::std::string* mutable_state();
+  ::std::string* release_state();
+  void set_allocated_state(::std::string* state);
+
+  // .api.NumberCapabilities capabilities = 2;
+  bool has_capabilities() const;
+  void clear_capabilities();
+  static const int kCapabilitiesFieldNumber = 2;
+  private:
+  const ::api::NumberCapabilities& _internal_capabilities() const;
+  public:
+  const ::api::NumberCapabilities& capabilities() const;
+  ::api::NumberCapabilities* release_capabilities();
+  ::api::NumberCapabilities* mutable_capabilities();
+  void set_allocated_capabilities(::api::NumberCapabilities* capabilities);
+
+  // int64 total_results = 3;
+  void clear_total_results();
+  static const int kTotalResultsFieldNumber = 3;
+  ::google::protobuf::int64 total_results() const;
+  void set_total_results(::google::protobuf::int64 value);
+
+  // @@protoc_insertion_point(class_scope:api.SearchPhoneNumberRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr state_;
+  ::api::NumberCapabilities* capabilities_;
+  ::google::protobuf::int64 total_results_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class PhoneNumber : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PhoneNumber) */ {
+ public:
+  PhoneNumber();
+  virtual ~PhoneNumber();
+
+  PhoneNumber(const PhoneNumber& from);
+
+  inline PhoneNumber& operator=(const PhoneNumber& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PhoneNumber(PhoneNumber&& from) noexcept
+    : PhoneNumber() {
+    *this = ::std::move(from);
+  }
+
+  inline PhoneNumber& operator=(PhoneNumber&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PhoneNumber& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PhoneNumber* internal_default_instance() {
+    return reinterpret_cast<const PhoneNumber*>(
+               &_PhoneNumber_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    35;
+
+  void Swap(PhoneNumber* other);
+  friend void swap(PhoneNumber& a, PhoneNumber& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PhoneNumber* New() const final {
+    return CreateMaybeMessage<PhoneNumber>(NULL);
+  }
+
+  PhoneNumber* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PhoneNumber>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PhoneNumber& from);
+  void MergeFrom(const PhoneNumber& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PhoneNumber* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string friendly_name = 1;
+  void clear_friendly_name();
+  static const int kFriendlyNameFieldNumber = 1;
+  const ::std::string& friendly_name() const;
+  void set_friendly_name(const ::std::string& value);
+  #if LANG_CXX11
+  void set_friendly_name(::std::string&& value);
+  #endif
+  void set_friendly_name(const char* value);
+  void set_friendly_name(const char* value, size_t size);
+  ::std::string* mutable_friendly_name();
+  ::std::string* release_friendly_name();
+  void set_allocated_friendly_name(::std::string* friendly_name);
+
+  // string phone_number = 2;
+  void clear_phone_number();
+  static const int kPhoneNumberFieldNumber = 2;
+  const ::std::string& phone_number() const;
+  void set_phone_number(const ::std::string& value);
+  #if LANG_CXX11
+  void set_phone_number(::std::string&& value);
+  #endif
+  void set_phone_number(const char* value);
+  void set_phone_number(const char* value, size_t size);
+  ::std::string* mutable_phone_number();
+  ::std::string* release_phone_number();
+  void set_allocated_phone_number(::std::string* phone_number);
+
+  // string region = 3;
+  void clear_region();
+  static const int kRegionFieldNumber = 3;
+  const ::std::string& region() const;
+  void set_region(const ::std::string& value);
+  #if LANG_CXX11
+  void set_region(::std::string&& value);
+  #endif
+  void set_region(const char* value);
+  void set_region(const char* value, size_t size);
+  ::std::string* mutable_region();
+  ::std::string* release_region();
+  void set_allocated_region(::std::string* region);
+
+  // .api.NumberCapabilities capabilities = 4;
+  bool has_capabilities() const;
+  void clear_capabilities();
+  static const int kCapabilitiesFieldNumber = 4;
+  private:
+  const ::api::NumberCapabilities& _internal_capabilities() const;
+  public:
+  const ::api::NumberCapabilities& capabilities() const;
+  ::api::NumberCapabilities* release_capabilities();
+  ::api::NumberCapabilities* mutable_capabilities();
+  void set_allocated_capabilities(::api::NumberCapabilities* capabilities);
+
+  // @@protoc_insertion_point(class_scope:api.PhoneNumber)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr friendly_name_;
+  ::google::protobuf::internal::ArenaStringPtr phone_number_;
+  ::google::protobuf::internal::ArenaStringPtr region_;
+  ::api::NumberCapabilities* capabilities_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class NumberCapabilities : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.NumberCapabilities) */ {
+ public:
+  NumberCapabilities();
+  virtual ~NumberCapabilities();
+
+  NumberCapabilities(const NumberCapabilities& from);
+
+  inline NumberCapabilities& operator=(const NumberCapabilities& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  NumberCapabilities(NumberCapabilities&& from) noexcept
+    : NumberCapabilities() {
+    *this = ::std::move(from);
+  }
+
+  inline NumberCapabilities& operator=(NumberCapabilities&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const NumberCapabilities& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const NumberCapabilities* internal_default_instance() {
+    return reinterpret_cast<const NumberCapabilities*>(
+               &_NumberCapabilities_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    36;
+
+  void Swap(NumberCapabilities* other);
+  friend void swap(NumberCapabilities& a, NumberCapabilities& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline NumberCapabilities* New() const final {
+    return CreateMaybeMessage<NumberCapabilities>(NULL);
+  }
+
+  NumberCapabilities* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<NumberCapabilities>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const NumberCapabilities& from);
+  void MergeFrom(const NumberCapabilities& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(NumberCapabilities* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bool voice = 1;
+  void clear_voice();
+  static const int kVoiceFieldNumber = 1;
+  bool voice() const;
+  void set_voice(bool value);
+
+  // bool sms = 2;
+  void clear_sms();
+  static const int kSmsFieldNumber = 2;
+  bool sms() const;
+  void set_sms(bool value);
+
+  // bool mms = 3;
+  void clear_mms();
+  static const int kMmsFieldNumber = 3;
+  bool mms() const;
+  void set_mms(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.NumberCapabilities)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool voice_;
+  bool sms_;
+  bool mms_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class PhoneNumberResource : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.PhoneNumberResource) */ {
+ public:
+  PhoneNumberResource();
+  virtual ~PhoneNumberResource();
+
+  PhoneNumberResource(const PhoneNumberResource& from);
+
+  inline PhoneNumberResource& operator=(const PhoneNumberResource& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PhoneNumberResource(PhoneNumberResource&& from) noexcept
+    : PhoneNumberResource() {
+    *this = ::std::move(from);
+  }
+
+  inline PhoneNumberResource& operator=(PhoneNumberResource&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PhoneNumberResource& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PhoneNumberResource* internal_default_instance() {
+    return reinterpret_cast<const PhoneNumberResource*>(
+               &_PhoneNumberResource_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  void Swap(PhoneNumberResource* other);
+  friend void swap(PhoneNumberResource& a, PhoneNumberResource& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PhoneNumberResource* New() const final {
+    return CreateMaybeMessage<PhoneNumberResource>(NULL);
+  }
+
+  PhoneNumberResource* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PhoneNumberResource>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PhoneNumberResource& from);
+  void MergeFrom(const PhoneNumberResource& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PhoneNumberResource* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string id = 2;
+  void clear_id();
+  static const int kIdFieldNumber = 2;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // string uri = 3;
+  void clear_uri();
+  static const int kUriFieldNumber = 3;
+  const ::std::string& uri() const;
+  void set_uri(const ::std::string& value);
+  #if LANG_CXX11
+  void set_uri(::std::string&& value);
+  #endif
+  void set_uri(const char* value);
+  void set_uri(const char* value, size_t size);
+  ::std::string* mutable_uri();
+  ::std::string* release_uri();
+  void set_allocated_uri(::std::string* uri);
+
+  // .api.PhoneNumber number = 1;
+  bool has_number() const;
+  void clear_number();
+  static const int kNumberFieldNumber = 1;
+  private:
+  const ::api::PhoneNumber& _internal_number() const;
+  public:
+  const ::api::PhoneNumber& number() const;
+  ::api::PhoneNumber* release_number();
+  ::api::PhoneNumber* mutable_number();
+  void set_allocated_number(::api::PhoneNumber* number);
+
+  // @@protoc_insertion_point(class_scope:api.PhoneNumberResource)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr uri_;
+  ::api::PhoneNumber* number_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -9861,9 +10418,569 @@ inline void RenderRequest::set_allocated_data(::api::Bytes* data) {
   // @@protoc_insertion_point(field_set_allocated:api.RenderRequest.data)
 }
 
+// -------------------------------------------------------------------
+
+// SearchPhoneNumberRequest
+
+// string state = 1;
+inline void SearchPhoneNumberRequest::clear_state() {
+  state_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& SearchPhoneNumberRequest::state() const {
+  // @@protoc_insertion_point(field_get:api.SearchPhoneNumberRequest.state)
+  return state_.GetNoArena();
+}
+inline void SearchPhoneNumberRequest::set_state(const ::std::string& value) {
+  
+  state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.SearchPhoneNumberRequest.state)
+}
+#if LANG_CXX11
+inline void SearchPhoneNumberRequest::set_state(::std::string&& value) {
+  
+  state_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.SearchPhoneNumberRequest.state)
+}
+#endif
+inline void SearchPhoneNumberRequest::set_state(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.SearchPhoneNumberRequest.state)
+}
+inline void SearchPhoneNumberRequest::set_state(const char* value, size_t size) {
+  
+  state_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.SearchPhoneNumberRequest.state)
+}
+inline ::std::string* SearchPhoneNumberRequest::mutable_state() {
+  
+  // @@protoc_insertion_point(field_mutable:api.SearchPhoneNumberRequest.state)
+  return state_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SearchPhoneNumberRequest::release_state() {
+  // @@protoc_insertion_point(field_release:api.SearchPhoneNumberRequest.state)
+  
+  return state_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SearchPhoneNumberRequest::set_allocated_state(::std::string* state) {
+  if (state != NULL) {
+    
+  } else {
+    
+  }
+  state_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), state);
+  // @@protoc_insertion_point(field_set_allocated:api.SearchPhoneNumberRequest.state)
+}
+
+// .api.NumberCapabilities capabilities = 2;
+inline bool SearchPhoneNumberRequest::has_capabilities() const {
+  return this != internal_default_instance() && capabilities_ != NULL;
+}
+inline void SearchPhoneNumberRequest::clear_capabilities() {
+  if (GetArenaNoVirtual() == NULL && capabilities_ != NULL) {
+    delete capabilities_;
+  }
+  capabilities_ = NULL;
+}
+inline const ::api::NumberCapabilities& SearchPhoneNumberRequest::_internal_capabilities() const {
+  return *capabilities_;
+}
+inline const ::api::NumberCapabilities& SearchPhoneNumberRequest::capabilities() const {
+  const ::api::NumberCapabilities* p = capabilities_;
+  // @@protoc_insertion_point(field_get:api.SearchPhoneNumberRequest.capabilities)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::NumberCapabilities*>(
+      &::api::_NumberCapabilities_default_instance_);
+}
+inline ::api::NumberCapabilities* SearchPhoneNumberRequest::release_capabilities() {
+  // @@protoc_insertion_point(field_release:api.SearchPhoneNumberRequest.capabilities)
+  
+  ::api::NumberCapabilities* temp = capabilities_;
+  capabilities_ = NULL;
+  return temp;
+}
+inline ::api::NumberCapabilities* SearchPhoneNumberRequest::mutable_capabilities() {
+  
+  if (capabilities_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::NumberCapabilities>(GetArenaNoVirtual());
+    capabilities_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.SearchPhoneNumberRequest.capabilities)
+  return capabilities_;
+}
+inline void SearchPhoneNumberRequest::set_allocated_capabilities(::api::NumberCapabilities* capabilities) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete capabilities_;
+  }
+  if (capabilities) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      capabilities = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, capabilities, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  capabilities_ = capabilities;
+  // @@protoc_insertion_point(field_set_allocated:api.SearchPhoneNumberRequest.capabilities)
+}
+
+// int64 total_results = 3;
+inline void SearchPhoneNumberRequest::clear_total_results() {
+  total_results_ = GOOGLE_LONGLONG(0);
+}
+inline ::google::protobuf::int64 SearchPhoneNumberRequest::total_results() const {
+  // @@protoc_insertion_point(field_get:api.SearchPhoneNumberRequest.total_results)
+  return total_results_;
+}
+inline void SearchPhoneNumberRequest::set_total_results(::google::protobuf::int64 value) {
+  
+  total_results_ = value;
+  // @@protoc_insertion_point(field_set:api.SearchPhoneNumberRequest.total_results)
+}
+
+// -------------------------------------------------------------------
+
+// PhoneNumber
+
+// string friendly_name = 1;
+inline void PhoneNumber::clear_friendly_name() {
+  friendly_name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PhoneNumber::friendly_name() const {
+  // @@protoc_insertion_point(field_get:api.PhoneNumber.friendly_name)
+  return friendly_name_.GetNoArena();
+}
+inline void PhoneNumber::set_friendly_name(const ::std::string& value) {
+  
+  friendly_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PhoneNumber.friendly_name)
+}
+#if LANG_CXX11
+inline void PhoneNumber::set_friendly_name(::std::string&& value) {
+  
+  friendly_name_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PhoneNumber.friendly_name)
+}
+#endif
+inline void PhoneNumber::set_friendly_name(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  friendly_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PhoneNumber.friendly_name)
+}
+inline void PhoneNumber::set_friendly_name(const char* value, size_t size) {
+  
+  friendly_name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PhoneNumber.friendly_name)
+}
+inline ::std::string* PhoneNumber::mutable_friendly_name() {
+  
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumber.friendly_name)
+  return friendly_name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PhoneNumber::release_friendly_name() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumber.friendly_name)
+  
+  return friendly_name_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PhoneNumber::set_allocated_friendly_name(::std::string* friendly_name) {
+  if (friendly_name != NULL) {
+    
+  } else {
+    
+  }
+  friendly_name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), friendly_name);
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumber.friendly_name)
+}
+
+// string phone_number = 2;
+inline void PhoneNumber::clear_phone_number() {
+  phone_number_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PhoneNumber::phone_number() const {
+  // @@protoc_insertion_point(field_get:api.PhoneNumber.phone_number)
+  return phone_number_.GetNoArena();
+}
+inline void PhoneNumber::set_phone_number(const ::std::string& value) {
+  
+  phone_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PhoneNumber.phone_number)
+}
+#if LANG_CXX11
+inline void PhoneNumber::set_phone_number(::std::string&& value) {
+  
+  phone_number_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PhoneNumber.phone_number)
+}
+#endif
+inline void PhoneNumber::set_phone_number(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  phone_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PhoneNumber.phone_number)
+}
+inline void PhoneNumber::set_phone_number(const char* value, size_t size) {
+  
+  phone_number_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PhoneNumber.phone_number)
+}
+inline ::std::string* PhoneNumber::mutable_phone_number() {
+  
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumber.phone_number)
+  return phone_number_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PhoneNumber::release_phone_number() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumber.phone_number)
+  
+  return phone_number_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PhoneNumber::set_allocated_phone_number(::std::string* phone_number) {
+  if (phone_number != NULL) {
+    
+  } else {
+    
+  }
+  phone_number_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), phone_number);
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumber.phone_number)
+}
+
+// string region = 3;
+inline void PhoneNumber::clear_region() {
+  region_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PhoneNumber::region() const {
+  // @@protoc_insertion_point(field_get:api.PhoneNumber.region)
+  return region_.GetNoArena();
+}
+inline void PhoneNumber::set_region(const ::std::string& value) {
+  
+  region_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PhoneNumber.region)
+}
+#if LANG_CXX11
+inline void PhoneNumber::set_region(::std::string&& value) {
+  
+  region_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PhoneNumber.region)
+}
+#endif
+inline void PhoneNumber::set_region(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  region_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PhoneNumber.region)
+}
+inline void PhoneNumber::set_region(const char* value, size_t size) {
+  
+  region_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PhoneNumber.region)
+}
+inline ::std::string* PhoneNumber::mutable_region() {
+  
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumber.region)
+  return region_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PhoneNumber::release_region() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumber.region)
+  
+  return region_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PhoneNumber::set_allocated_region(::std::string* region) {
+  if (region != NULL) {
+    
+  } else {
+    
+  }
+  region_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), region);
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumber.region)
+}
+
+// .api.NumberCapabilities capabilities = 4;
+inline bool PhoneNumber::has_capabilities() const {
+  return this != internal_default_instance() && capabilities_ != NULL;
+}
+inline void PhoneNumber::clear_capabilities() {
+  if (GetArenaNoVirtual() == NULL && capabilities_ != NULL) {
+    delete capabilities_;
+  }
+  capabilities_ = NULL;
+}
+inline const ::api::NumberCapabilities& PhoneNumber::_internal_capabilities() const {
+  return *capabilities_;
+}
+inline const ::api::NumberCapabilities& PhoneNumber::capabilities() const {
+  const ::api::NumberCapabilities* p = capabilities_;
+  // @@protoc_insertion_point(field_get:api.PhoneNumber.capabilities)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::NumberCapabilities*>(
+      &::api::_NumberCapabilities_default_instance_);
+}
+inline ::api::NumberCapabilities* PhoneNumber::release_capabilities() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumber.capabilities)
+  
+  ::api::NumberCapabilities* temp = capabilities_;
+  capabilities_ = NULL;
+  return temp;
+}
+inline ::api::NumberCapabilities* PhoneNumber::mutable_capabilities() {
+  
+  if (capabilities_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::NumberCapabilities>(GetArenaNoVirtual());
+    capabilities_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumber.capabilities)
+  return capabilities_;
+}
+inline void PhoneNumber::set_allocated_capabilities(::api::NumberCapabilities* capabilities) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete capabilities_;
+  }
+  if (capabilities) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      capabilities = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, capabilities, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  capabilities_ = capabilities;
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumber.capabilities)
+}
+
+// -------------------------------------------------------------------
+
+// NumberCapabilities
+
+// bool voice = 1;
+inline void NumberCapabilities::clear_voice() {
+  voice_ = false;
+}
+inline bool NumberCapabilities::voice() const {
+  // @@protoc_insertion_point(field_get:api.NumberCapabilities.voice)
+  return voice_;
+}
+inline void NumberCapabilities::set_voice(bool value) {
+  
+  voice_ = value;
+  // @@protoc_insertion_point(field_set:api.NumberCapabilities.voice)
+}
+
+// bool sms = 2;
+inline void NumberCapabilities::clear_sms() {
+  sms_ = false;
+}
+inline bool NumberCapabilities::sms() const {
+  // @@protoc_insertion_point(field_get:api.NumberCapabilities.sms)
+  return sms_;
+}
+inline void NumberCapabilities::set_sms(bool value) {
+  
+  sms_ = value;
+  // @@protoc_insertion_point(field_set:api.NumberCapabilities.sms)
+}
+
+// bool mms = 3;
+inline void NumberCapabilities::clear_mms() {
+  mms_ = false;
+}
+inline bool NumberCapabilities::mms() const {
+  // @@protoc_insertion_point(field_get:api.NumberCapabilities.mms)
+  return mms_;
+}
+inline void NumberCapabilities::set_mms(bool value) {
+  
+  mms_ = value;
+  // @@protoc_insertion_point(field_set:api.NumberCapabilities.mms)
+}
+
+// -------------------------------------------------------------------
+
+// PhoneNumberResource
+
+// .api.PhoneNumber number = 1;
+inline bool PhoneNumberResource::has_number() const {
+  return this != internal_default_instance() && number_ != NULL;
+}
+inline void PhoneNumberResource::clear_number() {
+  if (GetArenaNoVirtual() == NULL && number_ != NULL) {
+    delete number_;
+  }
+  number_ = NULL;
+}
+inline const ::api::PhoneNumber& PhoneNumberResource::_internal_number() const {
+  return *number_;
+}
+inline const ::api::PhoneNumber& PhoneNumberResource::number() const {
+  const ::api::PhoneNumber* p = number_;
+  // @@protoc_insertion_point(field_get:api.PhoneNumberResource.number)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::PhoneNumber*>(
+      &::api::_PhoneNumber_default_instance_);
+}
+inline ::api::PhoneNumber* PhoneNumberResource::release_number() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumberResource.number)
+  
+  ::api::PhoneNumber* temp = number_;
+  number_ = NULL;
+  return temp;
+}
+inline ::api::PhoneNumber* PhoneNumberResource::mutable_number() {
+  
+  if (number_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::PhoneNumber>(GetArenaNoVirtual());
+    number_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumberResource.number)
+  return number_;
+}
+inline void PhoneNumberResource::set_allocated_number(::api::PhoneNumber* number) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete number_;
+  }
+  if (number) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      number = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, number, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  number_ = number;
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumberResource.number)
+}
+
+// string id = 2;
+inline void PhoneNumberResource::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PhoneNumberResource::id() const {
+  // @@protoc_insertion_point(field_get:api.PhoneNumberResource.id)
+  return id_.GetNoArena();
+}
+inline void PhoneNumberResource::set_id(const ::std::string& value) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PhoneNumberResource.id)
+}
+#if LANG_CXX11
+inline void PhoneNumberResource::set_id(::std::string&& value) {
+  
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PhoneNumberResource.id)
+}
+#endif
+inline void PhoneNumberResource::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PhoneNumberResource.id)
+}
+inline void PhoneNumberResource::set_id(const char* value, size_t size) {
+  
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PhoneNumberResource.id)
+}
+inline ::std::string* PhoneNumberResource::mutable_id() {
+  
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumberResource.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PhoneNumberResource::release_id() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumberResource.id)
+  
+  return id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PhoneNumberResource::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    
+  } else {
+    
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumberResource.id)
+}
+
+// string uri = 3;
+inline void PhoneNumberResource::clear_uri() {
+  uri_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PhoneNumberResource::uri() const {
+  // @@protoc_insertion_point(field_get:api.PhoneNumberResource.uri)
+  return uri_.GetNoArena();
+}
+inline void PhoneNumberResource::set_uri(const ::std::string& value) {
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.PhoneNumberResource.uri)
+}
+#if LANG_CXX11
+inline void PhoneNumberResource::set_uri(::std::string&& value) {
+  
+  uri_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.PhoneNumberResource.uri)
+}
+#endif
+inline void PhoneNumberResource::set_uri(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.PhoneNumberResource.uri)
+}
+inline void PhoneNumberResource::set_uri(const char* value, size_t size) {
+  
+  uri_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.PhoneNumberResource.uri)
+}
+inline ::std::string* PhoneNumberResource::mutable_uri() {
+  
+  // @@protoc_insertion_point(field_mutable:api.PhoneNumberResource.uri)
+  return uri_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* PhoneNumberResource::release_uri() {
+  // @@protoc_insertion_point(field_release:api.PhoneNumberResource.uri)
+  
+  return uri_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void PhoneNumberResource::set_allocated_uri(::std::string* uri) {
+  if (uri != NULL) {
+    
+  } else {
+    
+  }
+  uri_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), uri);
+  // @@protoc_insertion_point(field_set_allocated:api.PhoneNumberResource.uri)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

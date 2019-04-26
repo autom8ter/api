@@ -2226,6 +2226,274 @@ typedef struct RenderRequest__storage_ {
 
 @end
 
+#pragma mark - SearchPhoneNumberRequest
+
+@implementation SearchPhoneNumberRequest
+
+@dynamic state;
+@dynamic hasCapabilities, capabilities;
+@dynamic totalResults;
+
+typedef struct SearchPhoneNumberRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *state;
+  NumberCapabilities *capabilities;
+  int64_t totalResults;
+} SearchPhoneNumberRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "state",
+        .dataTypeSpecific.className = NULL,
+        .number = SearchPhoneNumberRequest_FieldNumber_State,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SearchPhoneNumberRequest__storage_, state),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "capabilities",
+        .dataTypeSpecific.className = GPBStringifySymbol(NumberCapabilities),
+        .number = SearchPhoneNumberRequest_FieldNumber_Capabilities,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SearchPhoneNumberRequest__storage_, capabilities),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "totalResults",
+        .dataTypeSpecific.className = NULL,
+        .number = SearchPhoneNumberRequest_FieldNumber_TotalResults,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SearchPhoneNumberRequest__storage_, totalResults),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SearchPhoneNumberRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SearchPhoneNumberRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - PhoneNumber
+
+@implementation PhoneNumber
+
+@dynamic friendlyName;
+@dynamic phoneNumber;
+@dynamic region;
+@dynamic hasCapabilities, capabilities;
+
+typedef struct PhoneNumber__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *friendlyName;
+  NSString *phoneNumber;
+  NSString *region;
+  NumberCapabilities *capabilities;
+} PhoneNumber__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "friendlyName",
+        .dataTypeSpecific.className = NULL,
+        .number = PhoneNumber_FieldNumber_FriendlyName,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(PhoneNumber__storage_, friendlyName),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "phoneNumber",
+        .dataTypeSpecific.className = NULL,
+        .number = PhoneNumber_FieldNumber_PhoneNumber,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(PhoneNumber__storage_, phoneNumber),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "region",
+        .dataTypeSpecific.className = NULL,
+        .number = PhoneNumber_FieldNumber_Region,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(PhoneNumber__storage_, region),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "capabilities",
+        .dataTypeSpecific.className = GPBStringifySymbol(NumberCapabilities),
+        .number = PhoneNumber_FieldNumber_Capabilities,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(PhoneNumber__storage_, capabilities),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[PhoneNumber class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(PhoneNumber__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - NumberCapabilities
+
+@implementation NumberCapabilities
+
+@dynamic voice;
+@dynamic sms;
+@dynamic mms;
+
+typedef struct NumberCapabilities__storage_ {
+  uint32_t _has_storage_[1];
+} NumberCapabilities__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "voice",
+        .dataTypeSpecific.className = NULL,
+        .number = NumberCapabilities_FieldNumber_Voice,
+        .hasIndex = 0,
+        .offset = 1,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "sms",
+        .dataTypeSpecific.className = NULL,
+        .number = NumberCapabilities_FieldNumber_Sms,
+        .hasIndex = 2,
+        .offset = 3,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "mms",
+        .dataTypeSpecific.className = NULL,
+        .number = NumberCapabilities_FieldNumber_Mms,
+        .hasIndex = 4,
+        .offset = 5,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[NumberCapabilities class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(NumberCapabilities__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - PhoneNumberResource
+
+@implementation PhoneNumberResource
+
+@dynamic hasNumber, number;
+@dynamic id_p;
+@dynamic uri;
+
+typedef struct PhoneNumberResource__storage_ {
+  uint32_t _has_storage_[1];
+  PhoneNumber *number;
+  NSString *id_p;
+  NSString *uri;
+} PhoneNumberResource__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "number",
+        .dataTypeSpecific.className = GPBStringifySymbol(PhoneNumber),
+        .number = PhoneNumberResource_FieldNumber_Number,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(PhoneNumberResource__storage_, number),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "id_p",
+        .dataTypeSpecific.className = NULL,
+        .number = PhoneNumberResource_FieldNumber_Id_p,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(PhoneNumberResource__storage_, id_p),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "uri",
+        .dataTypeSpecific.className = NULL,
+        .number = PhoneNumberResource_FieldNumber_Uri,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(PhoneNumberResource__storage_, uri),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[PhoneNumberResource class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(PhoneNumberResource__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 

@@ -131,6 +131,38 @@
         ]
       }
     },
+    "/contact/numbers/{state}": {
+      "post": {
+        "operationId": "SearchPhoneNumber",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiPhoneNumber"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "state",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSearchPhoneNumberRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
     "/contact/sms/blast": {
       "post": {
         "operationId": "SendSMSBlast",
@@ -218,6 +250,38 @@
         ],
         "tags": [
           "ContactService"
+        ]
+      }
+    },
+    "/payment/number/{phone_number}": {
+      "post": {
+        "operationId": "PurchasePhoneNumber",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiPhoneNumberResource"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "phone_number",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiPhoneNumber"
+            }
+          }
+        ],
+        "tags": [
+          "PaymentService"
         ]
       }
     },
@@ -872,6 +936,54 @@
         }
       }
     },
+    "apiNumberCapabilities": {
+      "type": "object",
+      "properties": {
+        "voice": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "sms": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "mms": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "apiPhoneNumber": {
+      "type": "object",
+      "properties": {
+        "friendly_name": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "capabilities": {
+          "$ref": "#/definitions/apiNumberCapabilities"
+        }
+      }
+    },
+    "apiPhoneNumberResource": {
+      "type": "object",
+      "properties": {
+        "number": {
+          "$ref": "#/definitions/apiPhoneNumber"
+        },
+        "id": {
+          "type": "string"
+        },
+        "uri": {
+          "type": "string"
+        }
+      }
+    },
     "apiRenderRequest": {
       "type": "object",
       "properties": {
@@ -929,6 +1041,21 @@
         },
         "app": {
           "type": "string"
+        }
+      }
+    },
+    "apiSearchPhoneNumberRequest": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string"
+        },
+        "capabilities": {
+          "$ref": "#/definitions/apiNumberCapabilities"
+        },
+        "total_results": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },
