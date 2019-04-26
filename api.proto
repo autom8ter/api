@@ -3,94 +3,64 @@ syntax="proto3";
 package api;
 
 import "google/api/annotations.proto";
-
-
-message Bytes {
-    bytes bits =1;
-}
-
-message Bool {
-    bool answer =1;
-}
-
-message StringArray {
-    repeated string strings=1;
-}
-
-message StringMap {
-    map<string, string> string_map=1;
-}
-
-message Empty {}
-
-message Identifier {
-    string id=1;
-}
-
-message Message {
-    string value = 1;
-}
-
-message Secret {
-    string text =1;
-}
+import "common/common.proto";
 
 service UtilityService {
-    rpc Echo(Message) returns (Message) {
+    rpc Echo(common.Message) returns (common.Message) {
         option (google.api.http) = {
       post: "/utility/echo"
       body: "*"
     };
     }
-    rpc EchoSpanish(Message) returns (Message) {
+    rpc EchoSpanish(common.Message) returns (common.Message) {
         option (google.api.http) = {
       post: "/utility/echo/spanish"
       body: "*"
     };
     }
-    rpc EchoChinese(Message) returns (Message) {
+    rpc EchoChinese(common.Message) returns (common.Message) {
         option (google.api.http) = {
       post: "/utility/echo/chinese"
       body: "*"
     };
     }
-    rpc EchoEnglish(Message) returns (Message) {
+    rpc EchoEnglish(common.Message) returns (common.Message) {
         option (google.api.http) = {
       post: "/utility/echo/english"
       body: "*"
     };
     }
-    rpc EchoHindi(Message) returns (Message) {
+    rpc EchoHindi(common.Message) returns (common.Message) {
         option (google.api.http) = {
       post: "/utility/echo/hindi"
       body: "*"
     };
     }
-    rpc EchoArabic(Message) returns (Message) {
+    rpc EchoArabic(common.Message) returns (common.Message) {
         option (google.api.http) = {
       post: "/utility/echo/arabic"
       body: "*"
     };
     }
-    rpc MarshalJSON(Bytes) returns (Bytes) {
+    rpc MarshalJSON(common.Bytes) returns (common.Bytes) {
         option (google.api.http) = {
       post: "/utility/marshal/json"
       body: "*"
     };
     }
-    rpc MarshalYAML(Bytes) returns (Bytes) {
+    rpc MarshalYAML(common.Bytes) returns (common.Bytes) {
         option (google.api.http) = {
       post: "/utility/marshal/yaml"
       body: "*"
     };
     }
-    rpc MarshalXML(Bytes) returns (Bytes) {
+    rpc MarshalXML(common.Bytes) returns (common.Bytes) {
         option (google.api.http) = {
       post: "/utility/marshal/xml"
       body: "*"
     };
     }
-    rpc Render(RenderRequest) returns (Bytes) {
+    rpc Render(RenderRequest) returns (common.Bytes) {
         option (google.api.http) = {
       post: "/utility/render"
       body: "*"
@@ -100,43 +70,43 @@ service UtilityService {
 }
 
 service ContactService {
-    rpc SendSMS(SMS) returns (Bytes) {
+    rpc SendSMS(SMS) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/contact/sms/{to}"
+      post: "/contact/sms"
       body: "*"
     };
     }
-    rpc SendSMSBlast(SMSBlast) returns (stream Bytes) {
+    rpc SendSMSBlast(SMSBlast) returns (stream common.Bytes) {
         option (google.api.http) = {
       post: "/contact/sms/blast"
       body: "*"
     };
     }
-    rpc GetSMS(Identifier) returns (Bytes) {
+    rpc GetSMS(common.Identifier) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/contact/sms/{id}"
+      post: "/contact/sms/get"
       body: "*"
     };
     }
-    rpc SendEmail(EmailRequest) returns (Message) {
+    rpc SendEmail(EmailRequest) returns (common.Message) {
         option (google.api.http) = {
-      post: "/contact/email/{email.address}"
+      post: "/contact/email"
       body: "*"
     };
     }
-    rpc SendEmailBlast(EmailBlastRequest) returns (stream Message) {
+    rpc SendEmailBlast(EmailBlastRequest) returns (stream common.Message) {
         option (google.api.http) = {
       post: "/contact/email/blast"
       body: "*"
     };
     }
-    rpc SendCall(Call) returns (Bytes) {
+    rpc SendCall(Call) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/contact/call/{to}"
+      post: "/contact/call"
       body: "*"
     };
     }
-    rpc SendCallBlast(CallBlast) returns (stream Bytes) {
+    rpc SendCallBlast(CallBlast) returns (stream common.Bytes) {
         option (google.api.http) = {
       post: "/contact/call/blast"
       body: "*"
@@ -144,7 +114,7 @@ service ContactService {
     }
     rpc SearchPhoneNumber(SearchPhoneNumberRequest) returns (stream PhoneNumber) {
           option (google.api.http) = {
-      post: "/contact/numbers/{state}"
+      post: "/contact/numbers"
       body: "*"
     };
     }
@@ -152,28 +122,28 @@ service ContactService {
 }
 
 service PaymentService {
-    rpc Subscribe(SubscribeRequest) returns (Bytes) {
+    rpc Subscribe(SubscribeRequest) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/payment/subscribe/{email}"
+      post: "/payment/subscribe"
       body: "*"
     };
     }
-    rpc Unsubscribe(UnSubscribeRequest) returns (Bytes) {
+    rpc Unsubscribe(UnSubscribeRequest) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/payment/unsubscribe/{email}"
+      post: "/payment/unsubscribe"
       body: "*"
     };
     }
     rpc PurchasePhoneNumber(PhoneNumber) returns (PhoneNumberResource) {
         option (google.api.http) = {
-      post: "/payment/number/{phone_number}"
+      post: "/payment/number"
       body: "*"
     };
     }
 }
 
 service ResourceService {
-    rpc GetResource(ResourceRequest) returns (Bytes) {
+    rpc GetResource(ResourceRequest) returns (common.Bytes) {
         option (google.api.http) = {
       post: "/resource"
       body: "*"
@@ -188,19 +158,19 @@ service UserService {
       body: "*"
     };
     }
-    rpc CreateUser(Bytes) returns (User) {
+    rpc CreateUser(common.Bytes) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/create"
       body: "*"
     };
     }
-    rpc GetUser(Identifier) returns (User) {
+    rpc GetUser(common.Identifier) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/get"
       body: "*"
     };
     }
-    rpc DeleteUser(Identifier) returns (User) {
+    rpc DeleteUser(common.Identifier) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/get"
       body: "*"
@@ -212,13 +182,13 @@ service UserService {
       body: "*"
     };
     }
-    rpc UserExists(Identifier) returns (Bool) {
+    rpc UserExists(common.Identifier) returns (common.Bool) {
         option (google.api.http) = {
       post: "/resource/user/exists"
       body: "*"
     };
     }
-    rpc UserRoles(Identifier) returns (stream Role) {
+    rpc UserRoles(common.Identifier) returns (stream Role) {
         option (google.api.http) = {
       post: "/resource/user/roles"
       body: "*"
@@ -235,143 +205,138 @@ service UserService {
 }
 
 message ResourceRequest {
-    Token token= 1;
-    HTTPMethod method=2;
-    string domain=3;
+    common.Token token= 1;
+    common.HTTPMethod method=2;
+    common.String domain=3;
     URL url =4;
-    StringMap form =5;
-    Bytes body =6;
+    common.StringMap form =5;
+    common.Bytes body =6;
 }
 
 message SubscribeRequest {
-    string email=1;
+    common.String email=1;
     Plan plan =2;
     Card card =3;
 }
 
 message UnSubscribeRequest {
-    string email=1;
+    common.String email=1;
     Plan plan =2;
 }
 
 message Card {
-    string number=1;
-    string exp_month=2;
-    string exp_year =3;
-    string cvc=4;
+    common.String number=1;
+    common.String exp_month=2;
+    common.String exp_year =3;
+    common.String cvc=4;
 }
 
 
 message SMS {
-    string service =1;
-    string to =2;
-    Message message=3;
-    string mediaURL =4;
-    string callback=5;
-    string app=6;
+    common.String service =1;
+    common.String to =2;
+    common.Message message=3;
+    common.String mediaURL =4;
+    common.String callback=5;
+    common.String app=6;
 }
 
 message SMSBlast {
-    string service =1;
-    StringArray to =2;
-    Message message=3;
-    string mediaURL =4;
-    string callback=5;
-    string app=6;
+    common.String service =1;
+    common.StringArray to =2;
+    common.Message message=3;
+    common.String mediaURL =4;
+    common.String callback=5;
+    common.String app=6;
 }
 
 message EmailRequest {
-    string from_name =1;
-    string from_email =2;
+    common.String from_name =1;
+    common.String from_email =2;
     Email email =3;
 }
 
 message EmailBlastRequest {
-    string from_name =1;
-    string from_email =2;
+    common.String from_name =1;
+    common.String from_email =2;
     EmailBlast blast =3;
 }
 
 message EmailBlast {
-    StringMap name_address =1;
-    string subject =2;
-    string plain=3;
-    string html=4;
+    common.StringMap name_address =1;
+    common.String subject =2;
+    common.String plain=3;
+    common.String html=4;
 }
 
 message Email {
-    string name =1;
-    string address =2;
-    string subject =3;
-    string plain=4;
-    string html=5;
+    common.String name =1;
+    common.String address =2;
+    common.String subject =3;
+    common.String plain=4;
+    common.String html=5;
 }
 
 message Call {
-    string from=1;
-    string to =2;
-    string app=3;
+    common.String from=1;
+    common.String to =2;
+    common.String app=3;
 }
 
 message CallBlast {
-    string from=1;
-    StringArray to =2;
-    string app=3;
+    common.String from=1;
+    common.StringArray to =2;
+    common.String app=3;
 }
 
 
 message User {
-    string user_id=1;
-    string name=2;
-    string given_name=3;
-    string family_name=4;
-    string gender =5;
-    string birthdate=6;
-    string email=7;
-    string phone_number=8;
-    string picture=9;
-    StringMap user_metadata=10;
-    StringMap app_metadata=11;
-    string last_ip =12;
-    bool blocked =13;
-    string nickname =14;
-    StringArray multifactor=15;
-    string created_at=17;
-    string updated_at=18;
-    bool phone_verified=19;
-    bool email_verified=20;
-    string password=21;
+    common.String user_id=1;
+    common.String name=2;
+    common.String given_name=3;
+    common.String family_name=4;
+    common.String gender =5;
+    common.String birthdate=6;
+    common.String email=7;
+    common.String phone_number=8;
+    common.String picture=9;
+    common.StringMap user_metadata=10;
+    common.StringMap app_metadata=11;
+    common.String last_ip =12;
+    common.Bool blocked =13;
+    common.String nickname =14;
+    common.StringArray multifactor=15;
+    common.String created_at=17;
+    common.String updated_at=18;
+    common.Bool phone_verified=19;
+    common.Bool email_verified=20;
+    common.Password password=21;
     repeated Identity identities =22;
 }
 
 message Identity{
-    string connection =1;
-    string user_id=2;
-    string provider=3;
-    string isSocial=4;
+    common.String connection =1;
+    common.String user_id=2;
+    common.String provider=3;
+    common.Bool isSocial=4;
 }
 
 message Auth {
-    string domain =1;
-    string client_id=2;
-    string client_secret=3;
-    string redirect=4;
+    common.String domain =1;
+    common.String client_id=2;
+    common.String client_secret=3;
+    common.String redirect=4;
     repeated Scope scopes=5;
 }
 
 
-message Template {
-    string name =1;
-    string text =2;
-}
-
 message JSONWebKeys {
-    string kty =1;
-    string kid =2;
-    string use =3;
-    string n =4;
-    string e =5;
-    StringArray x5c =6;
+    common.String kty =1;
+    common.String kid =2;
+    common.String use =3;
+    common.String n =4;
+    common.String e =5;
+    common.StringArray x5c =6;
 }
 
 message Jwks {
@@ -421,84 +386,59 @@ enum URL {
     CLIENT_GRANTSURL =20;
 }
 
-enum HTTPMethod {
-    GET =0;
-    POST=1;
-    PATCH=2;
-}
-
 enum Plan {
     FREE =0;
     BASIC=1;
     PREMIUM=2;
 }
 
-message HTTPRequest {
-    HTTPMethod method=1;
-    string url =2;
-    StringMap form =3;
-    Bytes body =4;
-}
-
 message RenderRequest {
-    Template template=1;
-    Bytes data=2;
+    common.Template template=1;
+    common.Bytes data=2;
 }
 
 message SearchPhoneNumberRequest {
-    string state =1;
+    common.String state =1;
     NumberCapabilities capabilities =2;
-    int64 total_results=3;
+    common.Int64 total_results=3;
 }
 
 message PhoneNumber {
-    string friendly_name=1;
-    string phone_number=2;
-    string region=3;
+    common.String friendly_name=1;
+    common.String phone_number=2;
+    common.String region=3;
     NumberCapabilities capabilities =4;
 }
 
 message NumberCapabilities {
-    bool voice =1;
-    bool sms=2;
-    bool mms=3;
+    common.Bool voice =1;
+    common.Bool sms=2;
+    common.Bool mms=3;
 }
 
 message PhoneNumberResource {
    PhoneNumber number=1;
-   string id =2;
-   string uri=3;
-}
-
-message Token {
-    string access_token=1;
-    string token_type=2;
-    string refresh_token =3;
-    string expiry =4;
-    string id_token=5;
-}
-
-message Query {
-    string lucene =1;
+   common.String id =2;
+   common.String uri=3;
 }
 
 message TokenQuery {
-    Token token =1;
-    Query  query =2;
+    common.Token token =1;
+    common.Query  query =2;
 }
 
 message IDBody {
-    Identifier id =1;
-    Bytes  body =2;
+    common.Identifier id =1;
+    common.Bytes  body =2;
 }
 
 message IDStrings {
-    Identifier id =1;
-    StringArray  strings =2;
+    common.Identifier id =1;
+    common.StringArray  strings =2;
 }
 
 message Role {
-    string id=1;
-    string name=2;
-    string description=3;
+    common.String id=1;
+    common.String name=2;
+    common.String description=3;
 }

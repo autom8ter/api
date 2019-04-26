@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/contact/call": {
+      "post": {
+        "operationId": "SendCall",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCall"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
     "/contact/call/blast": {
       "post": {
         "operationId": "SendCallBlast",
@@ -22,7 +48,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -41,30 +67,24 @@
         ]
       }
     },
-    "/contact/call/{to}": {
+    "/contact/email": {
       "post": {
-        "operationId": "SendCall",
+        "operationId": "SendEmail",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
         "parameters": [
           {
-            "name": "to",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiCall"
+              "$ref": "#/definitions/apiEmailRequest"
             }
           }
         ],
@@ -80,7 +100,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -99,39 +119,7 @@
         ]
       }
     },
-    "/contact/email/{email.address}": {
-      "post": {
-        "operationId": "SendEmail",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiMessage"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "email.address",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEmailRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ContactService"
-        ]
-      }
-    },
-    "/contact/numbers/{state}": {
+    "/contact/numbers": {
       "post": {
         "operationId": "SearchPhoneNumber",
         "responses": {
@@ -144,17 +132,37 @@
         },
         "parameters": [
           {
-            "name": "state",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiSearchPhoneNumberRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
+    "/contact/sms": {
+      "post": {
+        "operationId": "SendSMS",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonBytes"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiSMS"
             }
           }
         ],
@@ -170,7 +178,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -189,30 +197,24 @@
         ]
       }
     },
-    "/contact/sms/{id}": {
+    "/contact/sms/get": {
       "post": {
         "operationId": "GetSMS",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/commonIdentifier"
             }
           }
         ],
@@ -221,39 +223,7 @@
         ]
       }
     },
-    "/contact/sms/{to}": {
-      "post": {
-        "operationId": "SendSMS",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "to",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSMS"
-            }
-          }
-        ],
-        "tags": [
-          "ContactService"
-        ]
-      }
-    },
-    "/payment/number/{phone_number}": {
+    "/payment/number": {
       "post": {
         "operationId": "PurchasePhoneNumber",
         "responses": {
@@ -265,12 +235,6 @@
           }
         },
         "parameters": [
-          {
-            "name": "phone_number",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -285,24 +249,18 @@
         ]
       }
     },
-    "/payment/subscribe/{email}": {
+    "/payment/subscribe": {
       "post": {
         "operationId": "Subscribe",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
         "parameters": [
-          {
-            "name": "email",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -317,24 +275,18 @@
         ]
       }
     },
-    "/payment/unsubscribe/{email}": {
+    "/payment/unsubscribe": {
       "post": {
         "operationId": "Unsubscribe",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
         "parameters": [
-          {
-            "name": "email",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
           {
             "name": "body",
             "in": "body",
@@ -356,7 +308,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -392,7 +344,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         ],
@@ -408,7 +360,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBool"
+              "$ref": "#/definitions/commonBool"
             }
           }
         },
@@ -418,7 +370,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/commonIdentifier"
             }
           }
         ],
@@ -444,7 +396,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIdentifier"
+              "$ref": "#/definitions/commonIdentifier"
             }
           }
         ],
@@ -538,7 +490,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -548,7 +500,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         ],
@@ -564,7 +516,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -574,7 +526,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         ],
@@ -590,7 +542,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -600,7 +552,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         ],
@@ -616,7 +568,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -626,7 +578,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         ],
@@ -642,7 +594,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -652,7 +604,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         ],
@@ -668,7 +620,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         },
@@ -678,7 +630,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiMessage"
+              "$ref": "#/definitions/commonMessage"
             }
           }
         ],
@@ -694,7 +646,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -704,7 +656,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         ],
@@ -720,7 +672,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -730,7 +682,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         ],
@@ -746,7 +698,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -756,7 +708,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         ],
@@ -772,7 +724,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiBytes"
+              "$ref": "#/definitions/commonBytes"
             }
           }
         },
@@ -793,35 +745,17 @@
     }
   },
   "definitions": {
-    "apiBool": {
-      "type": "object",
-      "properties": {
-        "answer": {
-          "type": "boolean",
-          "format": "boolean"
-        }
-      }
-    },
-    "apiBytes": {
-      "type": "object",
-      "properties": {
-        "bits": {
-          "type": "string",
-          "format": "byte"
-        }
-      }
-    },
     "apiCall": {
       "type": "object",
       "properties": {
         "from": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "to": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "app": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -829,13 +763,13 @@
       "type": "object",
       "properties": {
         "from": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "to": {
-          "$ref": "#/definitions/apiStringArray"
+          "$ref": "#/definitions/commonStringArray"
         },
         "app": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -843,16 +777,16 @@
       "type": "object",
       "properties": {
         "number": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "exp_month": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "exp_year": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "cvc": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -860,19 +794,19 @@
       "type": "object",
       "properties": {
         "name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "address": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "subject": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "plain": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "html": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -880,16 +814,16 @@
       "type": "object",
       "properties": {
         "name_address": {
-          "$ref": "#/definitions/apiStringMap"
+          "$ref": "#/definitions/commonStringMap"
         },
         "subject": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "plain": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "html": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -897,10 +831,10 @@
       "type": "object",
       "properties": {
         "from_name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "from_email": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "blast": {
           "$ref": "#/definitions/apiEmailBlast"
@@ -911,33 +845,24 @@
       "type": "object",
       "properties": {
         "from_name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "from_email": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "email": {
           "$ref": "#/definitions/apiEmail"
         }
       }
     },
-    "apiHTTPMethod": {
-      "type": "string",
-      "enum": [
-        "GET",
-        "POST",
-        "PATCH"
-      ],
-      "default": "GET"
-    },
     "apiIDBody": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/apiIdentifier"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "body": {
-          "$ref": "#/definitions/apiBytes"
+          "$ref": "#/definitions/commonBytes"
         }
       }
     },
@@ -945,18 +870,10 @@
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/apiIdentifier"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "strings": {
-          "$ref": "#/definitions/apiStringArray"
-        }
-      }
-    },
-    "apiIdentifier": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
+          "$ref": "#/definitions/commonStringArray"
         }
       }
     },
@@ -964,24 +881,16 @@
       "type": "object",
       "properties": {
         "connection": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "user_id": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "provider": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "isSocial": {
-          "type": "string"
-        }
-      }
-    },
-    "apiMessage": {
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "string"
+          "$ref": "#/definitions/commonBool"
         }
       }
     },
@@ -989,16 +898,13 @@
       "type": "object",
       "properties": {
         "voice": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "sms": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "mms": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         }
       }
     },
@@ -1006,13 +912,13 @@
       "type": "object",
       "properties": {
         "friendly_name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "phone_number": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "region": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "capabilities": {
           "$ref": "#/definitions/apiNumberCapabilities"
@@ -1026,10 +932,10 @@
           "$ref": "#/definitions/apiPhoneNumber"
         },
         "id": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "uri": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -1042,22 +948,14 @@
       ],
       "default": "FREE"
     },
-    "apiQuery": {
-      "type": "object",
-      "properties": {
-        "lucene": {
-          "type": "string"
-        }
-      }
-    },
     "apiRenderRequest": {
       "type": "object",
       "properties": {
         "template": {
-          "$ref": "#/definitions/apiTemplate"
+          "$ref": "#/definitions/commonTemplate"
         },
         "data": {
-          "$ref": "#/definitions/apiBytes"
+          "$ref": "#/definitions/commonBytes"
         }
       }
     },
@@ -1065,22 +963,22 @@
       "type": "object",
       "properties": {
         "token": {
-          "$ref": "#/definitions/apiToken"
+          "$ref": "#/definitions/commonToken"
         },
         "method": {
-          "$ref": "#/definitions/apiHTTPMethod"
+          "$ref": "#/definitions/commonHTTPMethod"
         },
         "domain": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "url": {
           "$ref": "#/definitions/apiURL"
         },
         "form": {
-          "$ref": "#/definitions/apiStringMap"
+          "$ref": "#/definitions/commonStringMap"
         },
         "body": {
-          "$ref": "#/definitions/apiBytes"
+          "$ref": "#/definitions/commonBytes"
         }
       }
     },
@@ -1088,13 +986,13 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "description": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -1102,22 +1000,22 @@
       "type": "object",
       "properties": {
         "service": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "to": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "message": {
-          "$ref": "#/definitions/apiMessage"
+          "$ref": "#/definitions/commonMessage"
         },
         "mediaURL": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "callback": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "app": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -1125,22 +1023,22 @@
       "type": "object",
       "properties": {
         "service": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "to": {
-          "$ref": "#/definitions/apiStringArray"
+          "$ref": "#/definitions/commonStringArray"
         },
         "message": {
-          "$ref": "#/definitions/apiMessage"
+          "$ref": "#/definitions/commonMessage"
         },
         "mediaURL": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "callback": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "app": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -1148,36 +1046,13 @@
       "type": "object",
       "properties": {
         "state": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "capabilities": {
           "$ref": "#/definitions/apiNumberCapabilities"
         },
         "total_results": {
-          "type": "string",
-          "format": "int64"
-        }
-      }
-    },
-    "apiStringArray": {
-      "type": "object",
-      "properties": {
-        "strings": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "apiStringMap": {
-      "type": "object",
-      "properties": {
-        "string_map": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/commonInt64"
         }
       }
     },
@@ -1185,7 +1060,7 @@
       "type": "object",
       "properties": {
         "email": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "plan": {
           "$ref": "#/definitions/apiPlan"
@@ -1195,45 +1070,14 @@
         }
       }
     },
-    "apiTemplate": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string"
-        },
-        "text": {
-          "type": "string"
-        }
-      }
-    },
-    "apiToken": {
-      "type": "object",
-      "properties": {
-        "access_token": {
-          "type": "string"
-        },
-        "token_type": {
-          "type": "string"
-        },
-        "refresh_token": {
-          "type": "string"
-        },
-        "expiry": {
-          "type": "string"
-        },
-        "id_token": {
-          "type": "string"
-        }
-      }
-    },
     "apiTokenQuery": {
       "type": "object",
       "properties": {
         "token": {
-          "$ref": "#/definitions/apiToken"
+          "$ref": "#/definitions/commonToken"
         },
         "query": {
-          "$ref": "#/definitions/apiQuery"
+          "$ref": "#/definitions/commonQuery"
         }
       }
     },
@@ -1265,7 +1109,7 @@
       "type": "object",
       "properties": {
         "email": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "plan": {
           "$ref": "#/definitions/apiPlan"
@@ -1276,73 +1120,199 @@
       "type": "object",
       "properties": {
         "user_id": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "given_name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "family_name": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "gender": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "birthdate": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "email": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "phone_number": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "picture": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "user_metadata": {
-          "$ref": "#/definitions/apiStringMap"
+          "$ref": "#/definitions/commonStringMap"
         },
         "app_metadata": {
-          "$ref": "#/definitions/apiStringMap"
+          "$ref": "#/definitions/commonStringMap"
         },
         "last_ip": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "blocked": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "nickname": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "multifactor": {
-          "$ref": "#/definitions/apiStringArray"
+          "$ref": "#/definitions/commonStringArray"
         },
         "created_at": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "updated_at": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "phone_verified": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "email_verified": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "password": {
-          "type": "string"
+          "$ref": "#/definitions/commonPassword"
         },
         "identities": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/apiIdentity"
           }
+        }
+      }
+    },
+    "commonBool": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "commonBytes": {
+      "type": "object",
+      "properties": {
+        "bits": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "commonHTTPMethod": {
+      "type": "string",
+      "enum": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "default": "GET"
+    },
+    "commonIdentifier": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "commonInt64": {
+      "type": "object",
+      "properties": {
+        "num": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "commonMessage": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "commonPassword": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "commonQuery": {
+      "type": "object",
+      "properties": {
+        "lucene": {
+          "type": "string"
+        }
+      }
+    },
+    "commonString": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "commonStringArray": {
+      "type": "object",
+      "properties": {
+        "strings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "commonStringMap": {
+      "type": "object",
+      "properties": {
+        "string_map": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "commonTemplate": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/commonString"
+        },
+        "text": {
+          "$ref": "#/definitions/commonString"
+        }
+      }
+    },
+    "commonToken": {
+      "type": "object",
+      "properties": {
+        "access_token": {
+          "$ref": "#/definitions/commonString"
+        },
+        "token_type": {
+          "$ref": "#/definitions/commonString"
+        },
+        "refresh_token": {
+          "$ref": "#/definitions/commonString"
+        },
+        "expiry": {
+          "$ref": "#/definitions/commonString"
+        },
+        "id_token": {
+          "$ref": "#/definitions/commonString"
         }
       }
     }

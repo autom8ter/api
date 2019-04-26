@@ -17,6 +17,7 @@
 
 #import "Api.pbobjc.h"
 #import "google/api/Annotations.pbobjc.h"
+#import "common/Common.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -200,43 +201,6 @@ BOOL URL_IsValidValue(int32_t value__) {
   }
 }
 
-#pragma mark - Enum HTTPMethod
-
-GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void) {
-  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
-  if (!descriptor) {
-    static const char *valueNames =
-        "Get\000Post\000Patch\000";
-    static const int32_t values[] = {
-        HTTPMethod_Get,
-        HTTPMethod_Post,
-        HTTPMethod_Patch,
-    };
-    GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(HTTPMethod)
-                                       valueNames:valueNames
-                                           values:values
-                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:HTTPMethod_IsValidValue];
-    GPBEnumDescriptor *expected = nil;
-    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
-    }
-  }
-  return descriptor;
-}
-
-BOOL HTTPMethod_IsValidValue(int32_t value__) {
-  switch (value__) {
-    case HTTPMethod_Get:
-    case HTTPMethod_Post:
-    case HTTPMethod_Patch:
-      return YES;
-    default:
-      return NO;
-  }
-}
-
 #pragma mark - Enum Plan
 
 GPBEnumDescriptor *Plan_EnumDescriptor(void) {
@@ -274,343 +238,13 @@ BOOL Plan_IsValidValue(int32_t value__) {
   }
 }
 
-#pragma mark - Bytes
-
-@implementation Bytes
-
-@dynamic bits;
-
-typedef struct Bytes__storage_ {
-  uint32_t _has_storage_[1];
-  NSData *bits;
-} Bytes__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "bits",
-        .dataTypeSpecific.className = NULL,
-        .number = Bytes_FieldNumber_Bits,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Bytes__storage_, bits),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBytes,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Bytes class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Bytes__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Bool
-
-@implementation Bool
-
-@dynamic answer;
-
-typedef struct Bool__storage_ {
-  uint32_t _has_storage_[1];
-} Bool__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "answer",
-        .dataTypeSpecific.className = NULL,
-        .number = Bool_FieldNumber_Answer,
-        .hasIndex = 0,
-        .offset = 1,  // Stored in _has_storage_ to save space.
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Bool class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Bool__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - StringArray
-
-@implementation StringArray
-
-@dynamic stringsArray, stringsArray_Count;
-
-typedef struct StringArray__storage_ {
-  uint32_t _has_storage_[1];
-  NSMutableArray *stringsArray;
-} StringArray__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "stringsArray",
-        .dataTypeSpecific.className = NULL,
-        .number = StringArray_FieldNumber_StringsArray,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(StringArray__storage_, stringsArray),
-        .flags = GPBFieldRepeated,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[StringArray class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(StringArray__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - StringMap
-
-@implementation StringMap
-
-@dynamic stringMap, stringMap_Count;
-
-typedef struct StringMap__storage_ {
-  uint32_t _has_storage_[1];
-  NSMutableDictionary *stringMap;
-} StringMap__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "stringMap",
-        .dataTypeSpecific.className = NULL,
-        .number = StringMap_FieldNumber_StringMap,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(StringMap__storage_, stringMap),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[StringMap class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(StringMap__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Empty
-
-@implementation Empty
-
-
-typedef struct Empty__storage_ {
-  uint32_t _has_storage_[1];
-} Empty__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Empty class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:NULL
-                                    fieldCount:0
-                                   storageSize:sizeof(Empty__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Identifier
-
-@implementation Identifier
-
-@dynamic id_p;
-
-typedef struct Identifier__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *id_p;
-} Identifier__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "id_p",
-        .dataTypeSpecific.className = NULL,
-        .number = Identifier_FieldNumber_Id_p,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Identifier__storage_, id_p),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Identifier class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Identifier__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Message
-
-@implementation Message
-
-@dynamic value;
-
-typedef struct Message__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *value;
-} Message__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "value",
-        .dataTypeSpecific.className = NULL,
-        .number = Message_FieldNumber_Value,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Message__storage_, value),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Message class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Message__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Secret
-
-@implementation Secret
-
-@dynamic text;
-
-typedef struct Secret__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *text;
-} Secret__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "text",
-        .dataTypeSpecific.className = NULL,
-        .number = Secret_FieldNumber_Text,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Secret__storage_, text),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Secret class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Secret__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
 #pragma mark - ResourceRequest
 
 @implementation ResourceRequest
 
 @dynamic hasToken, token;
 @dynamic method;
-@dynamic domain;
+@dynamic hasDomain, domain;
 @dynamic URL;
 @dynamic hasForm, form;
 @dynamic hasBody, body;
@@ -620,7 +254,7 @@ typedef struct ResourceRequest__storage_ {
   HTTPMethod method;
   URL URL;
   Token *token;
-  NSString *domain;
+  String *domain;
   StringMap *form;
   Bytes *body;
 } ResourceRequest__storage_;
@@ -651,12 +285,12 @@ typedef struct ResourceRequest__storage_ {
       },
       {
         .name = "domain",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = ResourceRequest_FieldNumber_Domain,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(ResourceRequest__storage_, domain),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "URL",
@@ -735,14 +369,14 @@ void SetResourceRequest_URL_RawValue(ResourceRequest *message, int32_t value) {
 
 @implementation SubscribeRequest
 
-@dynamic email;
+@dynamic hasEmail, email;
 @dynamic plan;
 @dynamic hasCard, card;
 
 typedef struct SubscribeRequest__storage_ {
   uint32_t _has_storage_[1];
   Plan plan;
-  NSString *email;
+  String *email;
   Card *card;
 } SubscribeRequest__storage_;
 
@@ -754,12 +388,12 @@ typedef struct SubscribeRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "email",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SubscribeRequest_FieldNumber_Email,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(SubscribeRequest__storage_, email),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "plan",
@@ -812,13 +446,13 @@ void SetSubscribeRequest_Plan_RawValue(SubscribeRequest *message, int32_t value)
 
 @implementation UnSubscribeRequest
 
-@dynamic email;
+@dynamic hasEmail, email;
 @dynamic plan;
 
 typedef struct UnSubscribeRequest__storage_ {
   uint32_t _has_storage_[1];
   Plan plan;
-  NSString *email;
+  String *email;
 } UnSubscribeRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -829,12 +463,12 @@ typedef struct UnSubscribeRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "email",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = UnSubscribeRequest_FieldNumber_Email,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(UnSubscribeRequest__storage_, email),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "plan",
@@ -878,17 +512,17 @@ void SetUnSubscribeRequest_Plan_RawValue(UnSubscribeRequest *message, int32_t va
 
 @implementation Card
 
-@dynamic number;
-@dynamic expMonth;
-@dynamic expYear;
-@dynamic cvc;
+@dynamic hasNumber, number;
+@dynamic hasExpMonth, expMonth;
+@dynamic hasExpYear, expYear;
+@dynamic hasCvc, cvc;
 
 typedef struct Card__storage_ {
   uint32_t _has_storage_[1];
-  NSString *number;
-  NSString *expMonth;
-  NSString *expYear;
-  NSString *cvc;
+  String *number;
+  String *expMonth;
+  String *expYear;
+  String *cvc;
 } Card__storage_;
 
 // This method is threadsafe because it is initially called
@@ -899,39 +533,39 @@ typedef struct Card__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "number",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Card_FieldNumber_Number,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Card__storage_, number),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "expMonth",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Card_FieldNumber_ExpMonth,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(Card__storage_, expMonth),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "expYear",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Card_FieldNumber_ExpYear,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(Card__storage_, expYear),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "cvc",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Card_FieldNumber_Cvc,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(Card__storage_, cvc),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -954,21 +588,21 @@ typedef struct Card__storage_ {
 
 @implementation SMS
 
-@dynamic service;
-@dynamic to;
+@dynamic hasService, service;
+@dynamic hasTo, to;
 @dynamic hasMessage, message;
-@dynamic mediaURL;
-@dynamic callback;
-@dynamic app;
+@dynamic hasMediaURL, mediaURL;
+@dynamic hasCallback, callback;
+@dynamic hasApp, app;
 
 typedef struct SMS__storage_ {
   uint32_t _has_storage_[1];
-  NSString *service;
-  NSString *to;
+  String *service;
+  String *to;
   Message *message;
-  NSString *mediaURL;
-  NSString *callback;
-  NSString *app;
+  String *mediaURL;
+  String *callback;
+  String *app;
 } SMS__storage_;
 
 // This method is threadsafe because it is initially called
@@ -979,21 +613,21 @@ typedef struct SMS__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "service",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMS_FieldNumber_Service,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(SMS__storage_, service),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "to",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMS_FieldNumber_To,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(SMS__storage_, to),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "message",
@@ -1006,30 +640,30 @@ typedef struct SMS__storage_ {
       },
       {
         .name = "mediaURL",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMS_FieldNumber_MediaURL,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(SMS__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "callback",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMS_FieldNumber_Callback,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(SMS__storage_, callback),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "app",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMS_FieldNumber_App,
         .hasIndex = 5,
         .offset = (uint32_t)offsetof(SMS__storage_, app),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1057,21 +691,21 @@ typedef struct SMS__storage_ {
 
 @implementation SMSBlast
 
-@dynamic service;
+@dynamic hasService, service;
 @dynamic hasTo, to;
 @dynamic hasMessage, message;
-@dynamic mediaURL;
-@dynamic callback;
-@dynamic app;
+@dynamic hasMediaURL, mediaURL;
+@dynamic hasCallback, callback;
+@dynamic hasApp, app;
 
 typedef struct SMSBlast__storage_ {
   uint32_t _has_storage_[1];
-  NSString *service;
+  String *service;
   StringArray *to;
   Message *message;
-  NSString *mediaURL;
-  NSString *callback;
-  NSString *app;
+  String *mediaURL;
+  String *callback;
+  String *app;
 } SMSBlast__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1082,12 +716,12 @@ typedef struct SMSBlast__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "service",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMSBlast_FieldNumber_Service,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, service),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "to",
@@ -1109,30 +743,30 @@ typedef struct SMSBlast__storage_ {
       },
       {
         .name = "mediaURL",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMSBlast_FieldNumber_MediaURL,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "callback",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMSBlast_FieldNumber_Callback,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, callback),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "app",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMSBlast_FieldNumber_App,
         .hasIndex = 5,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, app),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1160,14 +794,14 @@ typedef struct SMSBlast__storage_ {
 
 @implementation EmailRequest
 
-@dynamic fromName;
-@dynamic fromEmail;
+@dynamic hasFromName, fromName;
+@dynamic hasFromEmail, fromEmail;
 @dynamic hasEmail, email;
 
 typedef struct EmailRequest__storage_ {
   uint32_t _has_storage_[1];
-  NSString *fromName;
-  NSString *fromEmail;
+  String *fromName;
+  String *fromEmail;
   Email *email;
 } EmailRequest__storage_;
 
@@ -1179,21 +813,21 @@ typedef struct EmailRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "fromName",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailRequest_FieldNumber_FromName,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(EmailRequest__storage_, fromName),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "fromEmail",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailRequest_FieldNumber_FromEmail,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(EmailRequest__storage_, fromEmail),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "email",
@@ -1225,14 +859,14 @@ typedef struct EmailRequest__storage_ {
 
 @implementation EmailBlastRequest
 
-@dynamic fromName;
-@dynamic fromEmail;
+@dynamic hasFromName, fromName;
+@dynamic hasFromEmail, fromEmail;
 @dynamic hasBlast, blast;
 
 typedef struct EmailBlastRequest__storage_ {
   uint32_t _has_storage_[1];
-  NSString *fromName;
-  NSString *fromEmail;
+  String *fromName;
+  String *fromEmail;
   EmailBlast *blast;
 } EmailBlastRequest__storage_;
 
@@ -1244,21 +878,21 @@ typedef struct EmailBlastRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "fromName",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailBlastRequest_FieldNumber_FromName,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(EmailBlastRequest__storage_, fromName),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "fromEmail",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailBlastRequest_FieldNumber_FromEmail,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(EmailBlastRequest__storage_, fromEmail),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "blast",
@@ -1291,16 +925,16 @@ typedef struct EmailBlastRequest__storage_ {
 @implementation EmailBlast
 
 @dynamic hasNameAddress, nameAddress;
-@dynamic subject;
-@dynamic plain;
-@dynamic html;
+@dynamic hasSubject, subject;
+@dynamic hasPlain, plain;
+@dynamic hasHtml, html;
 
 typedef struct EmailBlast__storage_ {
   uint32_t _has_storage_[1];
   StringMap *nameAddress;
-  NSString *subject;
-  NSString *plain;
-  NSString *html;
+  String *subject;
+  String *plain;
+  String *html;
 } EmailBlast__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1320,30 +954,30 @@ typedef struct EmailBlast__storage_ {
       },
       {
         .name = "subject",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailBlast_FieldNumber_Subject,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(EmailBlast__storage_, subject),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "plain",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailBlast_FieldNumber_Plain,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(EmailBlast__storage_, plain),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "html",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = EmailBlast_FieldNumber_Html,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(EmailBlast__storage_, html),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1366,19 +1000,19 @@ typedef struct EmailBlast__storage_ {
 
 @implementation Email
 
-@dynamic name;
-@dynamic address;
-@dynamic subject;
-@dynamic plain;
-@dynamic html;
+@dynamic hasName, name;
+@dynamic hasAddress, address;
+@dynamic hasSubject, subject;
+@dynamic hasPlain, plain;
+@dynamic hasHtml, html;
 
 typedef struct Email__storage_ {
   uint32_t _has_storage_[1];
-  NSString *name;
-  NSString *address;
-  NSString *subject;
-  NSString *plain;
-  NSString *html;
+  String *name;
+  String *address;
+  String *subject;
+  String *plain;
+  String *html;
 } Email__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1389,48 +1023,48 @@ typedef struct Email__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "name",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Email_FieldNumber_Name,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Email__storage_, name),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "address",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Email_FieldNumber_Address,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(Email__storage_, address),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "subject",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Email_FieldNumber_Subject,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(Email__storage_, subject),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "plain",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Email_FieldNumber_Plain,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(Email__storage_, plain),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "html",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Email_FieldNumber_Html,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(Email__storage_, html),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1453,15 +1087,15 @@ typedef struct Email__storage_ {
 
 @implementation Call
 
-@dynamic from;
-@dynamic to;
-@dynamic app;
+@dynamic hasFrom, from;
+@dynamic hasTo, to;
+@dynamic hasApp, app;
 
 typedef struct Call__storage_ {
   uint32_t _has_storage_[1];
-  NSString *from;
-  NSString *to;
-  NSString *app;
+  String *from;
+  String *to;
+  String *app;
 } Call__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1472,30 +1106,30 @@ typedef struct Call__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "from",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Call_FieldNumber_From,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Call__storage_, from),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "to",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Call_FieldNumber_To,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(Call__storage_, to),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "app",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Call_FieldNumber_App,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(Call__storage_, app),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1518,15 +1152,15 @@ typedef struct Call__storage_ {
 
 @implementation CallBlast
 
-@dynamic from;
+@dynamic hasFrom, from;
 @dynamic hasTo, to;
-@dynamic app;
+@dynamic hasApp, app;
 
 typedef struct CallBlast__storage_ {
   uint32_t _has_storage_[1];
-  NSString *from;
+  String *from;
   StringArray *to;
-  NSString *app;
+  String *app;
 } CallBlast__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1537,12 +1171,12 @@ typedef struct CallBlast__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "from",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = CallBlast_FieldNumber_From,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(CallBlast__storage_, from),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "to",
@@ -1555,12 +1189,12 @@ typedef struct CallBlast__storage_ {
       },
       {
         .name = "app",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = CallBlast_FieldNumber_App,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(CallBlast__storage_, app),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1583,47 +1217,50 @@ typedef struct CallBlast__storage_ {
 
 @implementation User
 
-@dynamic userId;
-@dynamic name;
-@dynamic givenName;
-@dynamic familyName;
-@dynamic gender;
-@dynamic birthdate;
-@dynamic email;
-@dynamic phoneNumber;
-@dynamic picture;
+@dynamic hasUserId, userId;
+@dynamic hasName, name;
+@dynamic hasGivenName, givenName;
+@dynamic hasFamilyName, familyName;
+@dynamic hasGender, gender;
+@dynamic hasBirthdate, birthdate;
+@dynamic hasEmail, email;
+@dynamic hasPhoneNumber, phoneNumber;
+@dynamic hasPicture, picture;
 @dynamic hasUserMetadata, userMetadata;
 @dynamic hasAppMetadata, appMetadata;
-@dynamic lastIp;
-@dynamic blocked;
-@dynamic nickname;
+@dynamic hasLastIp, lastIp;
+@dynamic hasBlocked, blocked;
+@dynamic hasNickname, nickname;
 @dynamic hasMultifactor, multifactor;
-@dynamic createdAt;
-@dynamic updatedAt;
-@dynamic phoneVerified;
-@dynamic emailVerified;
-@dynamic password;
+@dynamic hasCreatedAt, createdAt;
+@dynamic hasUpdatedAt, updatedAt;
+@dynamic hasPhoneVerified, phoneVerified;
+@dynamic hasEmailVerified, emailVerified;
+@dynamic hasPassword, password;
 @dynamic identitiesArray, identitiesArray_Count;
 
 typedef struct User__storage_ {
   uint32_t _has_storage_[1];
-  NSString *userId;
-  NSString *name;
-  NSString *givenName;
-  NSString *familyName;
-  NSString *gender;
-  NSString *birthdate;
-  NSString *email;
-  NSString *phoneNumber;
-  NSString *picture;
+  String *userId;
+  String *name;
+  String *givenName;
+  String *familyName;
+  String *gender;
+  String *birthdate;
+  String *email;
+  String *phoneNumber;
+  String *picture;
   StringMap *userMetadata;
   StringMap *appMetadata;
-  NSString *lastIp;
-  NSString *nickname;
+  String *lastIp;
+  Bool *blocked;
+  String *nickname;
   StringArray *multifactor;
-  NSString *createdAt;
-  NSString *updatedAt;
-  NSString *password;
+  String *createdAt;
+  String *updatedAt;
+  Bool *phoneVerified;
+  Bool *emailVerified;
+  Password *password;
   NSMutableArray *identitiesArray;
 } User__storage_;
 
@@ -1635,84 +1272,84 @@ typedef struct User__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "userId",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_UserId,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(User__storage_, userId),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "name",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Name,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(User__storage_, name),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "givenName",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_GivenName,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(User__storage_, givenName),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "familyName",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_FamilyName,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(User__storage_, familyName),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "gender",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Gender,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(User__storage_, gender),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "birthdate",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Birthdate,
         .hasIndex = 5,
         .offset = (uint32_t)offsetof(User__storage_, birthdate),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "email",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Email,
         .hasIndex = 6,
         .offset = (uint32_t)offsetof(User__storage_, email),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "phoneNumber",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_PhoneNumber,
         .hasIndex = 7,
         .offset = (uint32_t)offsetof(User__storage_, phoneNumber),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "picture",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Picture,
         .hasIndex = 8,
         .offset = (uint32_t)offsetof(User__storage_, picture),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "userMetadata",
@@ -1734,84 +1371,84 @@ typedef struct User__storage_ {
       },
       {
         .name = "lastIp",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_LastIp,
         .hasIndex = 11,
         .offset = (uint32_t)offsetof(User__storage_, lastIp),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "blocked",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = User_FieldNumber_Blocked,
         .hasIndex = 12,
-        .offset = 13,  // Stored in _has_storage_ to save space.
+        .offset = (uint32_t)offsetof(User__storage_, blocked),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "nickname",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Nickname,
-        .hasIndex = 14,
+        .hasIndex = 13,
         .offset = (uint32_t)offsetof(User__storage_, nickname),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "multifactor",
         .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
         .number = User_FieldNumber_Multifactor,
-        .hasIndex = 15,
+        .hasIndex = 14,
         .offset = (uint32_t)offsetof(User__storage_, multifactor),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "createdAt",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_CreatedAt,
-        .hasIndex = 16,
+        .hasIndex = 15,
         .offset = (uint32_t)offsetof(User__storage_, createdAt),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "updatedAt",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_UpdatedAt,
-        .hasIndex = 17,
+        .hasIndex = 16,
         .offset = (uint32_t)offsetof(User__storage_, updatedAt),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "phoneVerified",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = User_FieldNumber_PhoneVerified,
-        .hasIndex = 18,
-        .offset = 19,  // Stored in _has_storage_ to save space.
+        .hasIndex = 17,
+        .offset = (uint32_t)offsetof(User__storage_, phoneVerified),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "emailVerified",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = User_FieldNumber_EmailVerified,
-        .hasIndex = 20,
-        .offset = 21,  // Stored in _has_storage_ to save space.
+        .hasIndex = 18,
+        .offset = (uint32_t)offsetof(User__storage_, emailVerified),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "password",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Password),
         .number = User_FieldNumber_Password,
-        .hasIndex = 22,
+        .hasIndex = 19,
         .offset = (uint32_t)offsetof(User__storage_, password),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "identitiesArray",
@@ -1843,17 +1480,17 @@ typedef struct User__storage_ {
 
 @implementation Identity
 
-@dynamic connection;
-@dynamic userId;
-@dynamic provider;
-@dynamic isSocial;
+@dynamic hasConnection, connection;
+@dynamic hasUserId, userId;
+@dynamic hasProvider, provider;
+@dynamic hasIsSocial, isSocial;
 
 typedef struct Identity__storage_ {
   uint32_t _has_storage_[1];
-  NSString *connection;
-  NSString *userId;
-  NSString *provider;
-  NSString *isSocial;
+  String *connection;
+  String *userId;
+  String *provider;
+  Bool *isSocial;
 } Identity__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1864,39 +1501,39 @@ typedef struct Identity__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "connection",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Identity_FieldNumber_Connection,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Identity__storage_, connection),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "userId",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Identity_FieldNumber_UserId,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(Identity__storage_, userId),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "provider",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Identity_FieldNumber_Provider,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(Identity__storage_, provider),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "isSocial",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = Identity_FieldNumber_IsSocial,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(Identity__storage_, isSocial),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1924,18 +1561,18 @@ typedef struct Identity__storage_ {
 
 @implementation Auth
 
-@dynamic domain;
-@dynamic clientId;
-@dynamic clientSecret;
-@dynamic redirect;
+@dynamic hasDomain, domain;
+@dynamic hasClientId, clientId;
+@dynamic hasClientSecret, clientSecret;
+@dynamic hasRedirect, redirect;
 @dynamic scopesArray, scopesArray_Count;
 
 typedef struct Auth__storage_ {
   uint32_t _has_storage_[1];
-  NSString *domain;
-  NSString *clientId;
-  NSString *clientSecret;
-  NSString *redirect;
+  String *domain;
+  String *clientId;
+  String *clientSecret;
+  String *redirect;
   GPBEnumArray *scopesArray;
 } Auth__storage_;
 
@@ -1947,39 +1584,39 @@ typedef struct Auth__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "domain",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Auth_FieldNumber_Domain,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Auth__storage_, domain),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "clientId",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Auth_FieldNumber_ClientId,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(Auth__storage_, clientId),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "clientSecret",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Auth_FieldNumber_ClientSecret,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(Auth__storage_, clientSecret),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "redirect",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Auth_FieldNumber_Redirect,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(Auth__storage_, redirect),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "scopesArray",
@@ -2007,78 +1644,24 @@ typedef struct Auth__storage_ {
 
 @end
 
-#pragma mark - Template
-
-@implementation Template
-
-@dynamic name;
-@dynamic text;
-
-typedef struct Template__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *name;
-  NSString *text;
-} Template__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "name",
-        .dataTypeSpecific.className = NULL,
-        .number = Template_FieldNumber_Name,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Template__storage_, name),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "text",
-        .dataTypeSpecific.className = NULL,
-        .number = Template_FieldNumber_Text,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Template__storage_, text),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Template class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Template__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
 #pragma mark - JSONWebKeys
 
 @implementation JSONWebKeys
 
-@dynamic kty;
-@dynamic kid;
-@dynamic use;
-@dynamic n;
-@dynamic e;
+@dynamic hasKty, kty;
+@dynamic hasKid, kid;
+@dynamic hasUse, use;
+@dynamic hasN, n;
+@dynamic hasE, e;
 @dynamic hasX5C, x5C;
 
 typedef struct JSONWebKeys__storage_ {
   uint32_t _has_storage_[1];
-  NSString *kty;
-  NSString *kid;
-  NSString *use;
-  NSString *n;
-  NSString *e;
+  String *kty;
+  String *kid;
+  String *use;
+  String *n;
+  String *e;
   StringArray *x5C;
 } JSONWebKeys__storage_;
 
@@ -2090,48 +1673,48 @@ typedef struct JSONWebKeys__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "kty",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = JSONWebKeys_FieldNumber_Kty,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(JSONWebKeys__storage_, kty),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "kid",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = JSONWebKeys_FieldNumber_Kid,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(JSONWebKeys__storage_, kid),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "use",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = JSONWebKeys_FieldNumber_Use,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(JSONWebKeys__storage_, use),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "n",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = JSONWebKeys_FieldNumber_N,
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(JSONWebKeys__storage_, n),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "e",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = JSONWebKeys_FieldNumber_E,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(JSONWebKeys__storage_, e),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "x5C",
@@ -2207,99 +1790,6 @@ typedef struct Jwks__storage_ {
 
 @end
 
-#pragma mark - HTTPRequest
-
-@implementation HTTPRequest
-
-@dynamic method;
-@dynamic URL;
-@dynamic hasForm, form;
-@dynamic hasBody, body;
-
-typedef struct HTTPRequest__storage_ {
-  uint32_t _has_storage_[1];
-  HTTPMethod method;
-  NSString *URL;
-  StringMap *form;
-  Bytes *body;
-} HTTPRequest__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "method",
-        .dataTypeSpecific.enumDescFunc = HTTPMethod_EnumDescriptor,
-        .number = HTTPRequest_FieldNumber_Method,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, method),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
-      },
-      {
-        .name = "URL",
-        .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_URL,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, URL),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "form",
-        .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
-        .number = HTTPRequest_FieldNumber_Form,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, form),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "body",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
-        .number = HTTPRequest_FieldNumber_Body,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, body),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HTTPRequest class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HTTPRequest__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    static const char *extraTextFormatInfo =
-        "\001\002!!!\000";
-    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
-#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-int32_t HTTPRequest_Method_RawValue(HTTPRequest *message) {
-  GPBDescriptor *descriptor = [HTTPRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
-  return GPBGetMessageInt32Field(message, field);
-}
-
-void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [HTTPRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
-  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
-}
-
 #pragma mark - RenderRequest
 
 @implementation RenderRequest
@@ -2358,15 +1848,15 @@ typedef struct RenderRequest__storage_ {
 
 @implementation SearchPhoneNumberRequest
 
-@dynamic state;
+@dynamic hasState, state;
 @dynamic hasCapabilities, capabilities;
-@dynamic totalResults;
+@dynamic hasTotalResults, totalResults;
 
 typedef struct SearchPhoneNumberRequest__storage_ {
   uint32_t _has_storage_[1];
-  NSString *state;
+  String *state;
   NumberCapabilities *capabilities;
-  int64_t totalResults;
+  Int64 *totalResults;
 } SearchPhoneNumberRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2377,12 +1867,12 @@ typedef struct SearchPhoneNumberRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "state",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SearchPhoneNumberRequest_FieldNumber_State,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(SearchPhoneNumberRequest__storage_, state),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "capabilities",
@@ -2395,12 +1885,12 @@ typedef struct SearchPhoneNumberRequest__storage_ {
       },
       {
         .name = "totalResults",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
         .number = SearchPhoneNumberRequest_FieldNumber_TotalResults,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(SearchPhoneNumberRequest__storage_, totalResults),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt64,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -2423,16 +1913,16 @@ typedef struct SearchPhoneNumberRequest__storage_ {
 
 @implementation PhoneNumber
 
-@dynamic friendlyName;
-@dynamic phoneNumber;
-@dynamic region;
+@dynamic hasFriendlyName, friendlyName;
+@dynamic hasPhoneNumber, phoneNumber;
+@dynamic hasRegion, region;
 @dynamic hasCapabilities, capabilities;
 
 typedef struct PhoneNumber__storage_ {
   uint32_t _has_storage_[1];
-  NSString *friendlyName;
-  NSString *phoneNumber;
-  NSString *region;
+  String *friendlyName;
+  String *phoneNumber;
+  String *region;
   NumberCapabilities *capabilities;
 } PhoneNumber__storage_;
 
@@ -2444,30 +1934,30 @@ typedef struct PhoneNumber__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "friendlyName",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = PhoneNumber_FieldNumber_FriendlyName,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(PhoneNumber__storage_, friendlyName),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "phoneNumber",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = PhoneNumber_FieldNumber_PhoneNumber,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(PhoneNumber__storage_, phoneNumber),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "region",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = PhoneNumber_FieldNumber_Region,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(PhoneNumber__storage_, region),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "capabilities",
@@ -2499,12 +1989,15 @@ typedef struct PhoneNumber__storage_ {
 
 @implementation NumberCapabilities
 
-@dynamic voice;
-@dynamic sms;
-@dynamic mms;
+@dynamic hasVoice, voice;
+@dynamic hasSms, sms;
+@dynamic hasMms, mms;
 
 typedef struct NumberCapabilities__storage_ {
   uint32_t _has_storage_[1];
+  Bool *voice;
+  Bool *sms;
+  Bool *mms;
 } NumberCapabilities__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2515,30 +2008,30 @@ typedef struct NumberCapabilities__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "voice",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = NumberCapabilities_FieldNumber_Voice,
         .hasIndex = 0,
-        .offset = 1,  // Stored in _has_storage_ to save space.
+        .offset = (uint32_t)offsetof(NumberCapabilities__storage_, voice),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "sms",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = NumberCapabilities_FieldNumber_Sms,
-        .hasIndex = 2,
-        .offset = 3,  // Stored in _has_storage_ to save space.
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(NumberCapabilities__storage_, sms),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "mms",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
         .number = NumberCapabilities_FieldNumber_Mms,
-        .hasIndex = 4,
-        .offset = 5,  // Stored in _has_storage_ to save space.
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(NumberCapabilities__storage_, mms),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -2562,14 +2055,14 @@ typedef struct NumberCapabilities__storage_ {
 @implementation PhoneNumberResource
 
 @dynamic hasNumber, number;
-@dynamic id_p;
-@dynamic uri;
+@dynamic hasId_p, id_p;
+@dynamic hasUri, uri;
 
 typedef struct PhoneNumberResource__storage_ {
   uint32_t _has_storage_[1];
   PhoneNumber *number;
-  NSString *id_p;
-  NSString *uri;
+  String *id_p;
+  String *uri;
 } PhoneNumberResource__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2589,21 +2082,21 @@ typedef struct PhoneNumberResource__storage_ {
       },
       {
         .name = "id_p",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = PhoneNumberResource_FieldNumber_Id_p,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(PhoneNumberResource__storage_, id_p),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "uri",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = PhoneNumberResource_FieldNumber_Uri,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(PhoneNumberResource__storage_, uri),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -2613,136 +2106,6 @@ typedef struct PhoneNumberResource__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(PhoneNumberResource__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Token
-
-@implementation Token
-
-@dynamic accessToken;
-@dynamic tokenType;
-@dynamic refreshToken;
-@dynamic expiry;
-@dynamic idToken;
-
-typedef struct Token__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *accessToken;
-  NSString *tokenType;
-  NSString *refreshToken;
-  NSString *expiry;
-  NSString *idToken;
-} Token__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "accessToken",
-        .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_AccessToken,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Token__storage_, accessToken),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "tokenType",
-        .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_TokenType,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Token__storage_, tokenType),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "refreshToken",
-        .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_RefreshToken,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Token__storage_, refreshToken),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "expiry",
-        .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_Expiry,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Token__storage_, expiry),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "idToken",
-        .dataTypeSpecific.className = NULL,
-        .number = Token_FieldNumber_IdToken,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Token__storage_, idToken),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Token class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Token__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Query
-
-@implementation Query
-
-@dynamic lucene;
-
-typedef struct Query__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *lucene;
-} Query__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "lucene",
-        .dataTypeSpecific.className = NULL,
-        .number = Query_FieldNumber_Lucene,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Query__storage_, lucene),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Query class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Query__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -2918,15 +2281,15 @@ typedef struct IDStrings__storage_ {
 
 @implementation Role
 
-@dynamic id_p;
-@dynamic name;
-@dynamic description_p;
+@dynamic hasId_p, id_p;
+@dynamic hasName, name;
+@dynamic hasDescription_p, description_p;
 
 typedef struct Role__storage_ {
   uint32_t _has_storage_[1];
-  NSString *id_p;
-  NSString *name;
-  NSString *description_p;
+  String *id_p;
+  String *name;
+  String *description_p;
 } Role__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2937,30 +2300,30 @@ typedef struct Role__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "id_p",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Role_FieldNumber_Id_p,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Role__storage_, id_p),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "name",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Role_FieldNumber_Name,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(Role__storage_, name),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
       {
         .name = "description_p",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Role_FieldNumber_Description_p,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(Role__storage_, description_p),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =

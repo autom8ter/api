@@ -12,6 +12,7 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/autom8ter/api/common"
 	"github.com/golang/protobuf/proto"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/utilities"
@@ -29,7 +30,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 
 func request_UtilityService_Echo_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Message
+	var protoReq common.Message
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -46,7 +47,7 @@ func request_UtilityService_Echo_0(ctx context.Context, marshaler runtime.Marsha
 }
 
 func request_UtilityService_EchoSpanish_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Message
+	var protoReq common.Message
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -63,7 +64,7 @@ func request_UtilityService_EchoSpanish_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_EchoChinese_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Message
+	var protoReq common.Message
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -80,7 +81,7 @@ func request_UtilityService_EchoChinese_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_EchoEnglish_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Message
+	var protoReq common.Message
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -97,7 +98,7 @@ func request_UtilityService_EchoEnglish_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_EchoHindi_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Message
+	var protoReq common.Message
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -114,7 +115,7 @@ func request_UtilityService_EchoHindi_0(ctx context.Context, marshaler runtime.M
 }
 
 func request_UtilityService_EchoArabic_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Message
+	var protoReq common.Message
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -131,7 +132,7 @@ func request_UtilityService_EchoArabic_0(ctx context.Context, marshaler runtime.
 }
 
 func request_UtilityService_MarshalJSON_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Bytes
+	var protoReq common.Bytes
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -148,7 +149,7 @@ func request_UtilityService_MarshalJSON_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_MarshalYAML_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Bytes
+	var protoReq common.Bytes
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -165,7 +166,7 @@ func request_UtilityService_MarshalYAML_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_MarshalXML_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Bytes
+	var protoReq common.Bytes
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -210,24 +211,6 @@ func request_ContactService_SendSMS_0(ctx context.Context, marshaler runtime.Mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["to"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "to")
-	}
-
-	protoReq.To, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "to", err)
-	}
-
 	msg, err := client.SendSMS(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -259,7 +242,7 @@ func request_ContactService_SendSMSBlast_0(ctx context.Context, marshaler runtim
 }
 
 func request_ContactService_GetSMS_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Identifier
+	var protoReq common.Identifier
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -268,24 +251,6 @@ func request_ContactService_GetSMS_0(ctx context.Context, marshaler runtime.Mars
 	}
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["id"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "id")
-	}
-
-	protoReq.Id, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
 	msg, err := client.GetSMS(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -303,24 +268,6 @@ func request_ContactService_SendEmail_0(ctx context.Context, marshaler runtime.M
 	}
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["email.address"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "email.address")
-	}
-
-	err = runtime.PopulateFieldFromPath(&protoReq, "email.address", val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "email.address", err)
 	}
 
 	msg, err := client.SendEmail(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -365,24 +312,6 @@ func request_ContactService_SendCall_0(ctx context.Context, marshaler runtime.Ma
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["to"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "to")
-	}
-
-	protoReq.To, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "to", err)
-	}
-
 	msg, err := client.SendCall(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -425,24 +354,6 @@ func request_ContactService_SearchPhoneNumber_0(ctx context.Context, marshaler r
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["state"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "state")
-	}
-
-	protoReq.State, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "state", err)
-	}
-
 	stream, err := client.SearchPhoneNumber(ctx, &protoReq)
 	if err != nil {
 		return nil, metadata, err
@@ -468,24 +379,6 @@ func request_PaymentService_Subscribe_0(ctx context.Context, marshaler runtime.M
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["email"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "email")
-	}
-
-	protoReq.Email, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "email", err)
-	}
-
 	msg, err := client.Subscribe(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -503,24 +396,6 @@ func request_PaymentService_Unsubscribe_0(ctx context.Context, marshaler runtime
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["email"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "email")
-	}
-
-	protoReq.Email, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "email", err)
-	}
-
 	msg, err := client.Unsubscribe(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
@@ -536,24 +411,6 @@ func request_PaymentService_PurchasePhoneNumber_0(ctx context.Context, marshaler
 	}
 	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
-	}
-
-	var (
-		val string
-		ok  bool
-		err error
-		_   = err
-	)
-
-	val, ok = pathParams["phone_number"]
-	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "phone_number")
-	}
-
-	protoReq.PhoneNumber, err = runtime.String(val)
-
-	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "phone_number", err)
 	}
 
 	msg, err := client.PurchasePhoneNumber(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
@@ -604,7 +461,7 @@ func request_UserService_QueryUsers_0(ctx context.Context, marshaler runtime.Mar
 }
 
 func request_UserService_CreateUser_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Bytes
+	var protoReq common.Bytes
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -621,7 +478,7 @@ func request_UserService_CreateUser_0(ctx context.Context, marshaler runtime.Mar
 }
 
 func request_UserService_GetUser_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Identifier
+	var protoReq common.Identifier
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -638,7 +495,7 @@ func request_UserService_GetUser_0(ctx context.Context, marshaler runtime.Marsha
 }
 
 func request_UserService_DeleteUser_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Identifier
+	var protoReq common.Identifier
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -672,7 +529,7 @@ func request_UserService_UpdateUser_0(ctx context.Context, marshaler runtime.Mar
 }
 
 func request_UserService_UserExists_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq Identifier
+	var protoReq common.Identifier
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -689,7 +546,7 @@ func request_UserService_UserExists_0(ctx context.Context, marshaler runtime.Mar
 }
 
 func request_UserService_UserRoles_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (UserService_UserRolesClient, runtime.ServerMetadata, error) {
-	var protoReq Identifier
+	var protoReq common.Identifier
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -1225,21 +1082,21 @@ func RegisterContactServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_ContactService_SendSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "sms", "to"}, ""))
+	pattern_ContactService_SendSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "sms"}, ""))
 
 	pattern_ContactService_SendSMSBlast_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "sms", "blast"}, ""))
 
-	pattern_ContactService_GetSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "sms", "id"}, ""))
+	pattern_ContactService_GetSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "sms", "get"}, ""))
 
-	pattern_ContactService_SendEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "email", "email.address"}, ""))
+	pattern_ContactService_SendEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "email"}, ""))
 
 	pattern_ContactService_SendEmailBlast_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "email", "blast"}, ""))
 
-	pattern_ContactService_SendCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "call", "to"}, ""))
+	pattern_ContactService_SendCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "call"}, ""))
 
 	pattern_ContactService_SendCallBlast_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "call", "blast"}, ""))
 
-	pattern_ContactService_SearchPhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"contact", "numbers", "state"}, ""))
+	pattern_ContactService_SearchPhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "numbers"}, ""))
 )
 
 var (
@@ -1362,11 +1219,11 @@ func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_PaymentService_Subscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "subscribe", "email"}, ""))
+	pattern_PaymentService_Subscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"payment", "subscribe"}, ""))
 
-	pattern_PaymentService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "unsubscribe", "email"}, ""))
+	pattern_PaymentService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"payment", "unsubscribe"}, ""))
 
-	pattern_PaymentService_PurchasePhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"payment", "number", "phone_number"}, ""))
+	pattern_PaymentService_PurchasePhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"payment", "number"}, ""))
 )
 
 var (

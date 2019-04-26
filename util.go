@@ -1,42 +1,22 @@
+//go:generate godocdown -o README.md
+
 package api
 
 import (
 	"context"
-	"encoding/base64"
-	"encoding/gob"
 	"encoding/json"
 	"fmt"
-	"github.com/Masterminds/sprig"
-	"github.com/autom8ter/objectify"
+	"github.com/autom8ter/api/common"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/sessions"
 	"golang.org/x/oauth2"
 	"google.golang.org/grpc"
-	"html/template"
 	"io"
-	"io/ioutil"
-	"math/rand"
 	"net/http"
-	"net/url"
-	"os"
-	"strings"
 )
 
-func init() {
-	Context = context.WithValue(context.TODO(), "env", os.Environ())
-	Util = objectify.Default()
-	httpClient = http.DefaultClient
-
-}
-
 var (
-	Util                   *objectify.Handler
-	Context                context.Context
-	httpClient             *http.Client
-	store                  *sessions.CookieStore
-	AUTH_SESSION           = "auth-session"
-	DEFAULT_OAUTH_REDIRECT = "http://localhost:8080/callback"
+	DEFAULT_OAUTH_REDIRECT = common.ToString("http://localhost:8080/callback")
 	DEFAULT_OAUTH_SCOPES   = []Scope{Scope_OPENID, Scope_PROFILE, Scope_EMAIL}
 )
 
@@ -55,454 +35,116 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	}
 }
 
-func ENVFromContext(ctx context.Context) []string {
-	return ctx.Value("env").([]string)
+func SearchUSPhoneNumbersURL(account *common.String) *common.String {
+	return common.ToString(fmt.Sprintf("https://api.twilio.com/2010-04-01/Accounts/%s/AvailablePhoneNumbers/US/Local.json", account.Text))
 }
 
-func SearchUSPhoneNumbersURL(account string) string {
-	return fmt.Sprintf("https://api.twilio.com/2010-04-01/Accounts/%s/AvailablePhoneNumbers/US/Local.json", account)
+func IncomingPhoneNumbersURL(account *common.String) *common.String {
+	return common.ToString(fmt.Sprintf("https://api.twilio.com/2010-04-01/Accounts/%s/IncomingPhoneNumbers.json", account.Text))
 }
 
-func IncomingPhoneNumbersURL(account string) string {
-	return fmt.Sprintf("https://api.twilio.com/2010-04-01/Accounts/%s/IncomingPhoneNumbers.json", account)
+func ChatServiceURL() *common.String {
+	return common.ToString("https://chat.twilio.com/v2/Services")
 }
 
-func ChatServiceURL() string {
-	return "https://chat.twilio.com/v2/Services"
-}
-
-func (s Scope) Normalize() string {
+func (s Scope) Normalize() *common.String {
 	switch s {
 	case Scope_PROFILE:
-		return "profile"
+		return common.ToString("profile")
 	case Scope_EMAIL:
-		return "email"
+		return common.ToString("email")
 	case Scope_OPENID:
-		return "openid"
+		return common.ToString("openid")
 	case Scope_READ_USERS:
-		return "read:users"
+		return common.ToString("read:users")
 	case Scope_READ_USER_IDP_TOKENS:
-		return "read:user_idp_tokens"
+		return common.ToString("read:user_idp_tokens")
 	case Scope_CREATE_USERS:
-		return "create:users"
+		return common.ToString("create:users")
 	case Scope_READ_STATS:
-		return "read:stats"
+		return common.ToString("read:stats")
 	case Scope_CREATE_EMAIL_TEMPLATES:
-		return "create:email_templates"
+		return common.ToString("create:email_templates")
 	case Scope_UPDATE_EMAIL_TEMPLATES:
-		return "update:email_templates"
+		return common.ToString("update:email_templates")
 	case Scope_READ_EMAIL_TEMPLATES:
-		return "read:email_templates"
+		return common.ToString("read:email_templates")
 	case Scope_CREATE_RULES:
-		return "create:rules"
+		return common.ToString("create:rules")
 	case Scope_DELETE_RULES:
-		return "delete:rules"
+		return common.ToString("delete:rules")
 	case Scope_UPDATE_RULES:
-		return "update:rules"
+		return common.ToString("update:rules")
 	case Scope_READ_RULES:
-		return "read:rules"
+		return common.ToString("read:rules")
 	case Scope_CREATE_ROLES:
-		return "create:rules"
+		return common.ToString("create:rules")
 	case Scope_DELETE_ROLES:
-		return "delete:rules"
+		return common.ToString("delete:rules")
 	case Scope_UPDATE_ROLES:
-		return "update:rules"
+		return common.ToString("update:rules")
 	case Scope_READ_ROLES:
-		return "read:rules"
+		return common.ToString("read:rules")
 	case Scope_READ_LOGS:
-		return "read:logs"
+		return common.ToString("read:logs")
 	default:
-		return ""
+		return common.ToString("")
 	}
 }
 
-func NormalizeScopes(scopes ...Scope) []string {
-	s := []string{}
+func NormalizeScopes(scopes ...Scope) *common.StringArray {
+	s := &common.StringArray{}
 	for _, scope := range scopes {
-		s = append(s, scope.Normalize())
+		s.Append(scope.Normalize())
 	}
 	return s
-}
-
-func FuncMap() template.FuncMap {
-	m := make(map[string]interface{})
-	for k, v := range sprig.GenericFuncMap() {
-		m[k] = v
-	}
-	return m
-}
-
-func NewTemplateFromFile(filename string) (*Template, error) {
-	bits, err := ioutil.ReadFile(filename)
-	if err != nil {
-		return nil, err
-	}
-	return &Template{
-		Text: string(bits),
-		Name: filename,
-	}, nil
-}
-
-func (m *Template) IsTemplate() bool {
-	return strings.Contains(m.Text, "{{")
-}
-
-func (m *Template) AsTemplate() (*template.Template, error) {
-	return (template.New(m.Name).Funcs(FuncMap())).Parse(m.Text)
-}
-
-func (m *Template) RenderBytes(w io.Writer, bits *Bytes) error {
-	templ, err := template.New(m.Name).Funcs(FuncMap()).Parse(m.Text)
-	if err != nil {
-		return err
-	}
-	return templ.Execute(w, bits.Bits)
-}
-
-func (m *Template) Render(w io.Writer, data interface{}) error {
-	templ, err := template.New(m.Name).Funcs(FuncMap()).Parse(m.Text)
-	if err != nil {
-		return err
-	}
-	return templ.Execute(w, data)
-}
-
-func (t *Template) RenderUser() http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		session, err := store.Get(r, AUTH_SESSION)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		if t.IsTemplate() {
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			obj := session.Values["user"]
-			bits, err := json.Marshal(obj)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			u := &User{}
-			err = json.Unmarshal(bits, u)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			err = t.RenderBytes(w, AsBytes(u))
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			return
-		}
-		io.WriteString(w, t.Text)
-		return
-	}
-}
-
-func RenderFile(name string, data []byte) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		bits, err := ioutil.ReadFile(name)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		bitstring := string(bits)
-		if strings.Contains(bitstring, "{{") {
-			templ, err := template.New("").Funcs(FuncMap()).Parse(string(bits))
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			err = templ.Execute(w, data)
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			return
-		}
-		_, err = io.WriteString(w, bitstring)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		return
-	}
-
-}
-
-func WriteFile(name string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		bits, err := ioutil.ReadFile(name)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		bitstring := string(bits)
-		_, err = io.WriteString(w, bitstring)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		return
-	}
-
-}
-
-func (h HTTPMethod) Normalize() string {
-	switch h {
-	case HTTPMethod_POST:
-		return "POST"
-	case HTTPMethod_PATCH:
-		return "PATCH"
-	default:
-		return "GET"
-	}
-}
-
-func (h *HTTPRequest) Do(token *Token) (*Bytes, error) {
-	u, err := url.Parse(h.Url)
-	if err != nil {
-		return nil, err
-	}
-	r := &http.Request{
-		Method: h.Method.Normalize(),
-		URL:    u,
-	}
-	if token.TokenType == "" {
-		token.TokenType = "Bearer"
-	}
-	if token.AccessToken != "" {
-		r.Header.Set("Authorization", token.TokenType+" "+token.AccessToken)
-	}
-
-	if len(h.Form.StringMap) != 0 {
-		for k, v := range h.Form.StringMap {
-			r.Form.Set(k, v)
-		}
-	}
-	resp, err := httpClient.Do(r)
-	if err != nil {
-		return nil, Util.WrapErr(err, resp.Status)
-	}
-	bits, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return nil, Util.WrapErr(err, "reading http response body")
-	}
-	return &Bytes{
-		Bits: bits,
-	}, nil
-
-}
-
-func NewBytes() *Bytes {
-	return &Bytes{
-		Bits: []byte{},
-	}
-}
-
-func BytesFromString(str string) *Bytes {
-	return &Bytes{
-		Bits: []byte(str),
-	}
-}
-
-func BytesFromBytes(bits []byte) *Bytes {
-	return &Bytes{
-		Bits: bits,
-	}
-}
-
-func BytesFromReader(r io.Reader) (*Bytes, error) {
-	b := NewBytes()
-	_, err := io.Copy(b, r)
-	if err != nil {
-		return nil, err
-	}
-	return b, nil
-}
-
-func BytesFromFile(fileName string) (*Bytes, error) {
-	bits, err := ioutil.ReadFile(fileName)
-	if err != nil {
-		return nil, err
-	}
-	return &Bytes{
-		Bits: bits,
-	}, nil
-}
-
-func (m *Bytes) Read(p []byte) (n int, err error) {
-	before := len(m.Bits)
-	m.Bits = append(m.Bits, p...)
-	after := len(m.Bits)
-	return after - before, nil
-}
-
-func (m *Bytes) Write(p []byte) (n int, err error) {
-	before := len(m.Bits)
-	m.Bits = append(m.Bits, p...)
-	after := len(m.Bits)
-	return after - before, nil
-}
-
-func (m *Bytes) YAML() []byte {
-	return Util.MarshalYAML(m.Bits)
-}
-
-func (m *Bytes) JSON() []byte {
-	return Util.MarshalJSON(m.Bits)
-}
-
-func (m *Bytes) XML() []byte {
-	return Util.MarshalXML(m.Bits)
-}
-
-func (m *Bytes) Length() int {
-	return len(m.Bits)
-}
-
-func (m *Bytes) Compile(w io.Writer, t *Template) error {
-	return t.Render(w, m)
-}
-
-func (m *Bytes) Contains(str string) bool {
-	return strings.Contains(string(m.Bits), str)
-}
-
-func (m *Bytes) BitString() string {
-	return string(m.Bits)
-}
-
-func (m *Bytes) CompileHTTP(t *Template) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		if err := m.Compile(w, t); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-	}
-}
-
-func (m *Bytes) WriteString() http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		io.WriteString(w, m.BitString())
-		return
-	}
-}
-
-func (m *Bytes) UnMarshalJSON(obj interface{}) error {
-	return json.Unmarshal(m.JSON(), obj)
-}
-
-func (m *Bytes) UnMarshalProto(obj interface{}) error {
-	return proto.Unmarshal(m.Bits, obj.(proto.Message))
-}
-
-func (m *Bytes) Clear() {
-	m.Bits = []byte{}
-}
-
-func AsBytes(obj interface{}) *Bytes {
-	return &Bytes{
-		Bits: Util.MarshalJSON(obj),
-	}
 }
 
 func (a *Auth) DefaultIfEmpty() {
 	if len(a.Scopes) == 0 {
 		a.Scopes = DEFAULT_OAUTH_SCOPES
 	}
-	if a.Redirect == "" {
+	if a.Redirect.IsEmpty() {
 		a.Redirect = DEFAULT_OAUTH_REDIRECT
 	}
 }
 func (a *Auth) Validate() error {
 	if len(a.Scopes) == 0 {
-		return Util.NewError("validation error: empty scope")
+		return common.Util.NewError("validation error: empty scope")
 	}
-	if a.Redirect == "" {
-		return Util.NewError("validation error: empty redirect")
+	if a.Redirect.IsEmpty() {
+		return common.Util.NewError("validation error: empty redirect")
 	}
-	if a.ClientId == "" {
-		return Util.NewError("validation error: empty client id")
+	if a.ClientId.IsEmpty() {
+		return common.Util.NewError("validation error: empty client id")
 	}
-	if a.Domain == "" {
-		return Util.NewError("validation error: empty domain")
+	if a.Domain.IsEmpty() {
+		return common.Util.NewError("validation error: empty domain")
 	}
-	if a.ClientSecret == "" {
-		return Util.NewError("validation error: empty client secret")
+	if a.ClientSecret.IsEmpty() {
+		return common.Util.NewError("validation error: empty client secret")
 	}
 
 	return nil
-}
-
-func AuthSessionValues(session *sessions.Session, key string, data map[string]interface{}) {
-	session.Values[key] = data
-}
-
-func (t *Token) ToSession(session *sessions.Session) {
-	session.Values["access_token"] = t.AccessToken
-	session.Values["token_type"] = t.TokenType
-	session.Values["refresh_token"] = t.RefreshToken
-	session.Values["expiry"] = t.Expiry
-	session.Values["id_token"] = t.IdToken
-
-}
-func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
-	return &Token{
-		AccessToken:  session.Values["access_token"].(string),
-		TokenType:    session.Values["token_type"].(string),
-		RefreshToken: session.Values["refresh_token"].(string),
-		Expiry:       session.Values["expiry"].(string),
-		IdToken:      session.Values["id_token"].(string),
-	}, nil
-
-}
-
-func TokenFromOAuthToken(tok *oauth2.Token) *Token {
-	return &Token{
-		AccessToken:  tok.AccessToken,
-		TokenType:    tok.TokenType,
-		RefreshToken: tok.RefreshToken,
-		Expiry:       tok.Expiry.String(),
-		IdToken:      tok.Extra("id_token").(string),
-	}
-}
-
-func SaveSession(w http.ResponseWriter, r *http.Request) {
-	if err := sessions.Save(r, w); err != nil {
-		http.Error(w, Util.WrapErr(err, "saving session").Error(), http.StatusInternalServerError)
-	}
 }
 
 func UserFromSession(session *sessions.Session) (*User, error) {
 	return session.Values["user"].(*User), nil
 }
 
-func FromSession(key string, session *sessions.Session) interface{} {
-	return session.Values[key]
-}
-
-func GetAuthSession(r *http.Request) (*sessions.Session, error) {
-	return store.Get(r, AUTH_SESSION)
-}
-
-func CreateRandomState() string {
-	b := make([]byte, 32)
-	rand.Read(b)
-	return base64.StdEncoding.EncodeToString(b)
-}
-
-func GetStateSession(r *http.Request) (*sessions.Session, error) {
-	return store.Get(r, "state")
+func CreateResourceRequest(tok *common.Token, domain *common.String, method common.HTTPMethod, u URL, form *common.StringMap, body *common.Bytes) *ResourceRequest {
+	return &ResourceRequest{
+		Token:  tok,
+		Method: method,
+		Domain: domain,
+		Url:    u,
+		Form:   form,
+		Body:   body,
+	}
 }
 
 func (a *Auth) audienceAuthCodeOption(u URL) oauth2.AuthCodeOption {
-	return oauth2.SetAuthURLParam("audience", u.Normalize(a.Domain))
+	return oauth2.SetAuthURLParam("audience", u.Normalize(a.Domain).Text)
 
 }
 
@@ -512,55 +154,55 @@ func (a *Auth) AuthCodeURL(state string, u URL) string {
 
 func (a *Auth) config() *oauth2.Config {
 	return &oauth2.Config{
-		ClientID:     a.ClientId,
-		ClientSecret: a.ClientSecret,
-		RedirectURL:  a.Redirect,
-		Scopes:       NormalizeScopes(a.Scopes...),
+		ClientID:     a.ClientId.Text,
+		ClientSecret: a.ClientSecret.Text,
+		RedirectURL:  a.Redirect.Text,
+		Scopes:       NormalizeScopes(a.Scopes...).Strings,
 		Endpoint: oauth2.Endpoint{
-			AuthURL:  URL_AUTHORIZEURL.Normalize(a.Domain),
-			TokenURL: URL_TOKENURL.Normalize(a.Domain),
+			AuthURL:  URL_AUTHORIZEURL.Normalize(a.Domain).Text,
+			TokenURL: URL_TOKENURL.Normalize(a.Domain).Text,
 		},
 	}
 }
 
-func (u URL) Normalize(domain string) string {
+func (u URL) Normalize(domain *common.String) *common.String {
 	switch u {
 	case URL_TOKENURL:
-		return tokenURL(domain)
+		return common.ToString(tokenURL(domain.Text))
 	case URL_USER_INFOURL:
-		return userInfoURL(domain)
+		return common.ToString(userInfoURL(domain.Text))
 	case URL_USERSURL:
-		return usersURL(domain)
+		return common.ToString(usersURL(domain.Text))
 	case URL_AUTHORIZEURL:
-		return authURL(domain)
+		return common.ToString(authURL(domain.Text))
 	case URL_SEARCH_USERSURL:
-		return searchUsersURL(domain)
+		return common.ToString(searchUsersURL(domain.Text))
 	case URL_ROLESURL:
-		return rolesURL(domain)
+		return common.ToString(rolesURL(domain.Text))
 	case URL_LOGSURL:
-		return logsURL(domain)
+		return common.ToString(logsURL(domain.Text))
 	case URL_GRANTSURL:
-		return grantsURL(domain)
+		return common.ToString(grantsURL(domain.Text))
 	case URL_STATSURL:
-		return statsURL(domain)
+		return common.ToString(statsURL(domain.Text))
 	case URL_CLIENTSURL:
-		return clientsURL(domain)
+		return common.ToString(clientsURL(domain.Text))
 	case URL_CONNECTIONSURL:
-		return connectionsURL(domain)
+		return common.ToString(connectionsURL(domain.Text))
 	case URL_RULESURL:
-		return rulesURL(domain)
+		return common.ToString(rulesURL(domain.Text))
 	case URL_TENANTSURL:
-		return tenantsURL(domain)
+		return common.ToString(tenantsURL(domain.Text))
 	case URL_JWKSURL:
-		return jWKSURL(domain)
+		return common.ToString(jWKSURL(domain.Text))
 	case URL_DEVICEURL:
-		return deviceCredentials(domain)
+		return common.ToString(deviceCredentials(domain.Text))
 	case URL_EMAILURL:
-		return emailURL(domain)
+		return common.ToString(emailURL(domain.Text))
 	case URL_EMAIL_TEMPLATEURL:
-		return emailTemplateURL(domain)
+		return common.ToString(emailTemplateURL(domain.Text))
 	default:
-		return ""
+		return common.ToString("")
 	}
 }
 
@@ -641,14 +283,6 @@ func jWKSURL(domain string) string {
 	return "https://" + domain + "/.well-known/jwks.json"
 }
 
-func (b *Bytes) UnmarshalProto(obj interface{}) error {
-	return proto.Unmarshal(b.Bits, obj.(proto.Message))
-}
-
-func (b *Bytes) UnmarshalJSON(obj interface{}) error {
-	return json.Unmarshal(b.Bits, obj)
-}
-
 func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 	var cert string
 	for k, _ := range c.Keys {
@@ -657,45 +291,22 @@ func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 		}
 	}
 	if cert == "" {
-		err := Util.NewError("Unable to find appropriate key.")
+		err := common.Util.NewError("Unable to find appropriate key.")
 		return cert, err
 	}
 	return cert, nil
 }
 
-func SecretFromEnv() *Secret {
-	return &Secret{
-		Text: os.Getenv("SECRET"),
-	}
-}
-
-func (s *Secret) InitSessions() error {
-	store = sessions.NewCookieStore([]byte(s.Text))
-	gob.Register(map[string]interface{}{})
-	return nil
-}
-
-func (a *Auth) Token(ctx context.Context, code string) (*Token, error) {
+func (a *Auth) Token(ctx context.Context, code string) (*common.Token, error) {
 	token, err := a.config().Exchange(ctx, code)
 	if err != nil {
 		return nil, err
 	}
-	return TokenFromOAuthToken(token), nil
+	return common.TokenFromOAuthToken(token), nil
 }
 
-func (t *Token) ResourceRequest(domain string, method HTTPMethod, u URL, form *StringMap, body *Bytes) *ResourceRequest {
-	return &ResourceRequest{
-		Token:  t,
-		Method: method,
-		Domain: domain,
-		Url:    u,
-		Form:   form,
-		Body:   body,
-	}
-}
-
-func (r *ResourceRequest) Do() (*Bytes, error) {
-	c := &HTTPRequest{
+func (r *ResourceRequest) Do() (*common.Bytes, error) {
+	c := &common.HTTPRequest{
 		Method: r.Method,
 		Url:    r.Url.Normalize(r.Domain),
 		Form:   r.Form,
@@ -704,34 +315,39 @@ func (r *ResourceRequest) Do() (*Bytes, error) {
 	return c.Do(r.Token)
 }
 
-func (s *StringMap) Get(key string) string {
-	return s.StringMap[key]
-}
+func RenderUser(t *common.Template) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		session, err := common.GetAuthSession(r)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
 
-func (s *StringMap) Put(key string, val string) {
-	s.StringMap[key] = val
-}
-
-func (s *StringMap) Clear(key string) {
-	s.StringMap[key] = ""
-}
-
-func (s *StringMap) Keys() []string {
-	kys := []string{}
-	for k, _ := range s.StringMap {
-		kys = append(kys, k)
+		if t.IsTemplate().Answer {
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			obj := session.Values["user"]
+			bits, err := json.Marshal(obj)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			u := &User{}
+			err = json.Unmarshal(bits, u)
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			err = t.RenderBytes(w, common.AsBytes(u))
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			return
+		}
+		io.WriteString(w, t.Text.Text)
+		return
 	}
-	return kys
-}
-
-func (s *StringMap) TotalKeys() int {
-	return len(s.Keys())
-}
-
-func (s *StringMap) Exists(key string) bool {
-	this := s.Get(key)
-	if this == "" {
-		return false
-	}
-	return true
 }

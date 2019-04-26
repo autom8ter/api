@@ -4,210 +4,168 @@
 require 'google/protobuf'
 
 require 'google/api/annotations_pb'
+require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "api.Bytes" do
-    optional :bits, :bytes, 1
-  end
-  add_message "api.Bool" do
-    optional :answer, :bool, 1
-  end
-  add_message "api.StringArray" do
-    repeated :strings, :string, 1
-  end
-  add_message "api.StringMap" do
-    map :string_map, :string, :string, 1
-  end
-  add_message "api.Empty" do
-  end
-  add_message "api.Identifier" do
-    optional :id, :string, 1
-  end
-  add_message "api.Message" do
-    optional :value, :string, 1
-  end
-  add_message "api.Secret" do
-    optional :text, :string, 1
-  end
   add_message "api.ResourceRequest" do
-    optional :token, :message, 1, "api.Token"
-    optional :method, :enum, 2, "api.HTTPMethod"
-    optional :domain, :string, 3
+    optional :token, :message, 1, "common.Token"
+    optional :method, :enum, 2, "common.HTTPMethod"
+    optional :domain, :message, 3, "common.String"
     optional :url, :enum, 4, "api.URL"
-    optional :form, :message, 5, "api.StringMap"
-    optional :body, :message, 6, "api.Bytes"
+    optional :form, :message, 5, "common.StringMap"
+    optional :body, :message, 6, "common.Bytes"
   end
   add_message "api.SubscribeRequest" do
-    optional :email, :string, 1
+    optional :email, :message, 1, "common.String"
     optional :plan, :enum, 2, "api.Plan"
     optional :card, :message, 3, "api.Card"
   end
   add_message "api.UnSubscribeRequest" do
-    optional :email, :string, 1
+    optional :email, :message, 1, "common.String"
     optional :plan, :enum, 2, "api.Plan"
   end
   add_message "api.Card" do
-    optional :number, :string, 1
-    optional :exp_month, :string, 2
-    optional :exp_year, :string, 3
-    optional :cvc, :string, 4
+    optional :number, :message, 1, "common.String"
+    optional :exp_month, :message, 2, "common.String"
+    optional :exp_year, :message, 3, "common.String"
+    optional :cvc, :message, 4, "common.String"
   end
   add_message "api.SMS" do
-    optional :service, :string, 1
-    optional :to, :string, 2
-    optional :message, :message, 3, "api.Message"
-    optional :mediaURL, :string, 4
-    optional :callback, :string, 5
-    optional :app, :string, 6
+    optional :service, :message, 1, "common.String"
+    optional :to, :message, 2, "common.String"
+    optional :message, :message, 3, "common.Message"
+    optional :mediaURL, :message, 4, "common.String"
+    optional :callback, :message, 5, "common.String"
+    optional :app, :message, 6, "common.String"
   end
   add_message "api.SMSBlast" do
-    optional :service, :string, 1
-    optional :to, :message, 2, "api.StringArray"
-    optional :message, :message, 3, "api.Message"
-    optional :mediaURL, :string, 4
-    optional :callback, :string, 5
-    optional :app, :string, 6
+    optional :service, :message, 1, "common.String"
+    optional :to, :message, 2, "common.StringArray"
+    optional :message, :message, 3, "common.Message"
+    optional :mediaURL, :message, 4, "common.String"
+    optional :callback, :message, 5, "common.String"
+    optional :app, :message, 6, "common.String"
   end
   add_message "api.EmailRequest" do
-    optional :from_name, :string, 1
-    optional :from_email, :string, 2
+    optional :from_name, :message, 1, "common.String"
+    optional :from_email, :message, 2, "common.String"
     optional :email, :message, 3, "api.Email"
   end
   add_message "api.EmailBlastRequest" do
-    optional :from_name, :string, 1
-    optional :from_email, :string, 2
+    optional :from_name, :message, 1, "common.String"
+    optional :from_email, :message, 2, "common.String"
     optional :blast, :message, 3, "api.EmailBlast"
   end
   add_message "api.EmailBlast" do
-    optional :name_address, :message, 1, "api.StringMap"
-    optional :subject, :string, 2
-    optional :plain, :string, 3
-    optional :html, :string, 4
+    optional :name_address, :message, 1, "common.StringMap"
+    optional :subject, :message, 2, "common.String"
+    optional :plain, :message, 3, "common.String"
+    optional :html, :message, 4, "common.String"
   end
   add_message "api.Email" do
-    optional :name, :string, 1
-    optional :address, :string, 2
-    optional :subject, :string, 3
-    optional :plain, :string, 4
-    optional :html, :string, 5
+    optional :name, :message, 1, "common.String"
+    optional :address, :message, 2, "common.String"
+    optional :subject, :message, 3, "common.String"
+    optional :plain, :message, 4, "common.String"
+    optional :html, :message, 5, "common.String"
   end
   add_message "api.Call" do
-    optional :from, :string, 1
-    optional :to, :string, 2
-    optional :app, :string, 3
+    optional :from, :message, 1, "common.String"
+    optional :to, :message, 2, "common.String"
+    optional :app, :message, 3, "common.String"
   end
   add_message "api.CallBlast" do
-    optional :from, :string, 1
-    optional :to, :message, 2, "api.StringArray"
-    optional :app, :string, 3
+    optional :from, :message, 1, "common.String"
+    optional :to, :message, 2, "common.StringArray"
+    optional :app, :message, 3, "common.String"
   end
   add_message "api.User" do
-    optional :user_id, :string, 1
-    optional :name, :string, 2
-    optional :given_name, :string, 3
-    optional :family_name, :string, 4
-    optional :gender, :string, 5
-    optional :birthdate, :string, 6
-    optional :email, :string, 7
-    optional :phone_number, :string, 8
-    optional :picture, :string, 9
-    optional :user_metadata, :message, 10, "api.StringMap"
-    optional :app_metadata, :message, 11, "api.StringMap"
-    optional :last_ip, :string, 12
-    optional :blocked, :bool, 13
-    optional :nickname, :string, 14
-    optional :multifactor, :message, 15, "api.StringArray"
-    optional :created_at, :string, 17
-    optional :updated_at, :string, 18
-    optional :phone_verified, :bool, 19
-    optional :email_verified, :bool, 20
-    optional :password, :string, 21
+    optional :user_id, :message, 1, "common.String"
+    optional :name, :message, 2, "common.String"
+    optional :given_name, :message, 3, "common.String"
+    optional :family_name, :message, 4, "common.String"
+    optional :gender, :message, 5, "common.String"
+    optional :birthdate, :message, 6, "common.String"
+    optional :email, :message, 7, "common.String"
+    optional :phone_number, :message, 8, "common.String"
+    optional :picture, :message, 9, "common.String"
+    optional :user_metadata, :message, 10, "common.StringMap"
+    optional :app_metadata, :message, 11, "common.StringMap"
+    optional :last_ip, :message, 12, "common.String"
+    optional :blocked, :message, 13, "common.Bool"
+    optional :nickname, :message, 14, "common.String"
+    optional :multifactor, :message, 15, "common.StringArray"
+    optional :created_at, :message, 17, "common.String"
+    optional :updated_at, :message, 18, "common.String"
+    optional :phone_verified, :message, 19, "common.Bool"
+    optional :email_verified, :message, 20, "common.Bool"
+    optional :password, :message, 21, "common.Password"
     repeated :identities, :message, 22, "api.Identity"
   end
   add_message "api.Identity" do
-    optional :connection, :string, 1
-    optional :user_id, :string, 2
-    optional :provider, :string, 3
-    optional :isSocial, :string, 4
+    optional :connection, :message, 1, "common.String"
+    optional :user_id, :message, 2, "common.String"
+    optional :provider, :message, 3, "common.String"
+    optional :isSocial, :message, 4, "common.Bool"
   end
   add_message "api.Auth" do
-    optional :domain, :string, 1
-    optional :client_id, :string, 2
-    optional :client_secret, :string, 3
-    optional :redirect, :string, 4
+    optional :domain, :message, 1, "common.String"
+    optional :client_id, :message, 2, "common.String"
+    optional :client_secret, :message, 3, "common.String"
+    optional :redirect, :message, 4, "common.String"
     repeated :scopes, :enum, 5, "api.Scope"
   end
-  add_message "api.Template" do
-    optional :name, :string, 1
-    optional :text, :string, 2
-  end
   add_message "api.JSONWebKeys" do
-    optional :kty, :string, 1
-    optional :kid, :string, 2
-    optional :use, :string, 3
-    optional :n, :string, 4
-    optional :e, :string, 5
-    optional :x5c, :message, 6, "api.StringArray"
+    optional :kty, :message, 1, "common.String"
+    optional :kid, :message, 2, "common.String"
+    optional :use, :message, 3, "common.String"
+    optional :n, :message, 4, "common.String"
+    optional :e, :message, 5, "common.String"
+    optional :x5c, :message, 6, "common.StringArray"
   end
   add_message "api.Jwks" do
     repeated :keys, :message, 1, "api.JSONWebKeys"
   end
-  add_message "api.HTTPRequest" do
-    optional :method, :enum, 1, "api.HTTPMethod"
-    optional :url, :string, 2
-    optional :form, :message, 3, "api.StringMap"
-    optional :body, :message, 4, "api.Bytes"
-  end
   add_message "api.RenderRequest" do
-    optional :template, :message, 1, "api.Template"
-    optional :data, :message, 2, "api.Bytes"
+    optional :template, :message, 1, "common.Template"
+    optional :data, :message, 2, "common.Bytes"
   end
   add_message "api.SearchPhoneNumberRequest" do
-    optional :state, :string, 1
+    optional :state, :message, 1, "common.String"
     optional :capabilities, :message, 2, "api.NumberCapabilities"
-    optional :total_results, :int64, 3
+    optional :total_results, :message, 3, "common.Int64"
   end
   add_message "api.PhoneNumber" do
-    optional :friendly_name, :string, 1
-    optional :phone_number, :string, 2
-    optional :region, :string, 3
+    optional :friendly_name, :message, 1, "common.String"
+    optional :phone_number, :message, 2, "common.String"
+    optional :region, :message, 3, "common.String"
     optional :capabilities, :message, 4, "api.NumberCapabilities"
   end
   add_message "api.NumberCapabilities" do
-    optional :voice, :bool, 1
-    optional :sms, :bool, 2
-    optional :mms, :bool, 3
+    optional :voice, :message, 1, "common.Bool"
+    optional :sms, :message, 2, "common.Bool"
+    optional :mms, :message, 3, "common.Bool"
   end
   add_message "api.PhoneNumberResource" do
     optional :number, :message, 1, "api.PhoneNumber"
-    optional :id, :string, 2
-    optional :uri, :string, 3
-  end
-  add_message "api.Token" do
-    optional :access_token, :string, 1
-    optional :token_type, :string, 2
-    optional :refresh_token, :string, 3
-    optional :expiry, :string, 4
-    optional :id_token, :string, 5
-  end
-  add_message "api.Query" do
-    optional :lucene, :string, 1
+    optional :id, :message, 2, "common.String"
+    optional :uri, :message, 3, "common.String"
   end
   add_message "api.TokenQuery" do
-    optional :token, :message, 1, "api.Token"
-    optional :query, :message, 2, "api.Query"
+    optional :token, :message, 1, "common.Token"
+    optional :query, :message, 2, "common.Query"
   end
   add_message "api.IDBody" do
-    optional :id, :message, 1, "api.Identifier"
-    optional :body, :message, 2, "api.Bytes"
+    optional :id, :message, 1, "common.Identifier"
+    optional :body, :message, 2, "common.Bytes"
   end
   add_message "api.IDStrings" do
-    optional :id, :message, 1, "api.Identifier"
-    optional :strings, :message, 2, "api.StringArray"
+    optional :id, :message, 1, "common.Identifier"
+    optional :strings, :message, 2, "common.StringArray"
   end
   add_message "api.Role" do
-    optional :id, :string, 1
-    optional :name, :string, 2
-    optional :description, :string, 3
+    optional :id, :message, 1, "common.String"
+    optional :name, :message, 2, "common.String"
+    optional :description, :message, 3, "common.String"
   end
   add_enum "api.Scope" do
     value :OPENID, 0
@@ -250,11 +208,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :JWKSURL, 19
     value :CLIENT_GRANTSURL, 20
   end
-  add_enum "api.HTTPMethod" do
-    value :GET, 0
-    value :POST, 1
-    value :PATCH, 2
-  end
   add_enum "api.Plan" do
     value :FREE, 0
     value :BASIC, 1
@@ -263,14 +216,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
-  Bytes = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Bytes").msgclass
-  Bool = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Bool").msgclass
-  StringArray = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StringArray").msgclass
-  StringMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StringMap").msgclass
-  Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
-  Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
-  Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Message").msgclass
-  Secret = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Secret").msgclass
   ResourceRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ResourceRequest").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
@@ -286,23 +231,18 @@ module Api
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass
   Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
-  Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Template").msgclass
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
-  HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPRequest").msgclass
   RenderRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RenderRequest").msgclass
   SearchPhoneNumberRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SearchPhoneNumberRequest").msgclass
   PhoneNumber = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumber").msgclass
   NumberCapabilities = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.NumberCapabilities").msgclass
   PhoneNumberResource = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumberResource").msgclass
-  Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Token").msgclass
-  Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Query").msgclass
   TokenQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.TokenQuery").msgclass
   IDBody = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDBody").msgclass
   IDStrings = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDStrings").msgclass
   Role = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Role").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
   URL = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.URL").enummodule
-  HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPMethod").enummodule
   Plan = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Plan").enummodule
 end
