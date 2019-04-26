@@ -702,3 +702,35 @@ func (r *ResourceRequest) Do() (*Bytes, error) {
 	}
 	return c.Do(r.Token)
 }
+
+func (s StringMap) Get(key string) string {
+	return s.StringMap[key]
+}
+
+func (s StringMap) Put(key string, val string) {
+	s.StringMap[key] = val
+}
+
+func (s StringMap) Clear(key string) {
+	s.StringMap[key] = ""
+}
+
+func (s StringMap) Keys() []string {
+	kys := []string{}
+	for k, _ := range s.StringMap {
+		kys = append(kys, k)
+	}
+	return kys
+}
+
+func (s StringMap) TotalKeys() int {
+	return len(s.Keys())
+}
+
+func (s StringMap) Exists(key string) bool {
+	this := s.Get(key)
+	if this == "" {
+		return false
+	}
+	return true
+}
