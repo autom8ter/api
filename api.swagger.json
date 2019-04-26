@@ -349,58 +349,6 @@
         ]
       }
     },
-    "/resource/stream/{url}": {
-      "post": {
-        "operationId": "StreamResources",
-        "responses": {
-          "200": {
-            "description": "A successful response.(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/apiBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "USER_INFOURL",
-              "TOKENURL",
-              "AUTHORIZEURL",
-              "USERSURL",
-              "CLIENTSURL",
-              "GRANTSURL",
-              "RULESURL",
-              "ROLESURL",
-              "LOGSURL",
-              "STATSURL",
-              "CONNECTIONSURL",
-              "TENANTSURL",
-              "EMAIL_TEMPLATEURL",
-              "EMAILURL",
-              "SEARCH_USERSURL",
-              "DEVICEURL",
-              "JWKSURL",
-              "CLIENT_GRANTSURL"
-            ]
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiResourceRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ResourceService"
-        ]
-      }
-    },
     "/resource/{url}": {
       "post": {
         "operationId": "GetResource",

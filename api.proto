@@ -181,12 +181,6 @@ service ResourceService {
       body: "*"
     };
     }
-    rpc StreamResources(ResourceRequest) returns (stream Bytes) {
-        option (google.api.http) = {
-      post: "/resource/stream/{url}"
-      body: "*"
-    };
-    }
 }
 
 message ResourceRequest {

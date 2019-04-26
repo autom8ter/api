@@ -33374,12 +33374,9 @@ public final class Api {
       "i.UserByEmailRequest\032\n.api.Bytes\"\037\202\323\344\223\002\031" +
       "\"\024/user/delete/{email}:\001*\022;\n\tListUsers\022\n" +
       ".api.Token\032\t.api.User\"\025\202\323\344\223\002\017\"\n/user/lis" +
-      "t:\001*0\0012\270\001\n\017ResourceService\022K\n\013GetResourc" +
-      "e\022\024.api.ResourceRequest\032\n.api.Bytes\"\032\202\323\344" +
-      "\223\002\024\"\017/resource/{url}:\001*\022X\n\017StreamResourc" +
-      "es\022\024.api.ResourceRequest\032\n.api.Bytes\"!\202\323" +
-      "\344\223\002\033\"\026/resource/stream/{url}:\001*0\001b\006proto" +
-      "3"
+      "t:\001*0\0012^\n\017ResourceService\022K\n\013GetResource" +
+      "\022\024.api.ResourceRequest\032\n.api.Bytes\"\032\202\323\344\223" +
+      "\002\024\"\017/resource/{url}:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

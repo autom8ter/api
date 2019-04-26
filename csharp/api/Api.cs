@@ -158,11 +158,9 @@ namespace Api {
             "YXRlOgEqElIKCkRlbGV0ZVVzZXISFy5hcGkuVXNlckJ5RW1haWxSZXF1ZXN0",
             "GgouYXBpLkJ5dGVzIh+C0+STAhkiFC91c2VyL2RlbGV0ZS97ZW1haWx9OgEq",
             "EjsKCUxpc3RVc2VycxIKLmFwaS5Ub2tlbhoJLmFwaS5Vc2VyIhWC0+STAg8i",
-            "Ci91c2VyL2xpc3Q6ASowATK4AQoPUmVzb3VyY2VTZXJ2aWNlEksKC0dldFJl",
-            "c291cmNlEhQuYXBpLlJlc291cmNlUmVxdWVzdBoKLmFwaS5CeXRlcyIagtPk",
-            "kwIUIg8vcmVzb3VyY2Uve3VybH06ASoSWAoPU3RyZWFtUmVzb3VyY2VzEhQu",
-            "YXBpLlJlc291cmNlUmVxdWVzdBoKLmFwaS5CeXRlcyIhgtPkkwIbIhYvcmVz",
-            "b3VyY2Uvc3RyZWFtL3t1cmx9OgEqMAFiBnByb3RvMw=="));
+            "Ci91c2VyL2xpc3Q6ASowATJeCg9SZXNvdXJjZVNlcnZpY2USSwoLR2V0UmVz",
+            "b3VyY2USFC5hcGkuUmVzb3VyY2VSZXF1ZXN0GgouYXBpLkJ5dGVzIhqC0+ST",
+            "AhQiDy9yZXNvdXJjZS97dXJsfToBKmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.Scope), typeof(global::Api.URL), typeof(global::Api.HTTPMethod), }, new pbr::GeneratedClrTypeInfo[] {
