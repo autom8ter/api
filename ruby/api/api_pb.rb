@@ -30,14 +30,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Empty" do
   end
-  add_message "api.UserRequest" do
-    optional :string, :message, 1, "api.Token"
-    optional :user, :message, 2, "api.User"
-  end
-  add_message "api.UserByEmailRequest" do
-    optional :token, :message, 1, "api.Token"
-    optional :email, :string, 2
-  end
   add_message "api.Identifier" do
     optional :id, :string, 1
   end
@@ -245,8 +237,6 @@ module Api
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
-  UserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserRequest").msgclass
-  UserByEmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserByEmailRequest").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
   SMS = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMS").msgclass
   SMSBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSBlast").msgclass

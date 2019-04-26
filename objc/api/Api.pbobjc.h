@@ -39,7 +39,6 @@ CF_EXTERN_C_BEGIN
 @class PhoneNumber;
 @class Template;
 @class Token;
-@class User;
 @class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -271,42 +270,6 @@ typedef GPB_ENUM(Card_FieldNumber) {
 #pragma mark - Empty
 
 @interface Empty : GPBMessage
-
-@end
-
-#pragma mark - UserRequest
-
-typedef GPB_ENUM(UserRequest_FieldNumber) {
-  UserRequest_FieldNumber_String = 1,
-  UserRequest_FieldNumber_User = 2,
-};
-
-@interface UserRequest : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Token *string;
-/** Test to see if @c string has been set. */
-@property(nonatomic, readwrite) BOOL hasString;
-
-@property(nonatomic, readwrite, strong, null_resettable) User *user;
-/** Test to see if @c user has been set. */
-@property(nonatomic, readwrite) BOOL hasUser;
-
-@end
-
-#pragma mark - UserByEmailRequest
-
-typedef GPB_ENUM(UserByEmailRequest_FieldNumber) {
-  UserByEmailRequest_FieldNumber_Token = 1,
-  UserByEmailRequest_FieldNumber_Email = 2,
-};
-
-@interface UserByEmailRequest : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Token *token;
-/** Test to see if @c token has been set. */
-@property(nonatomic, readwrite) BOOL hasToken;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
 @end
 

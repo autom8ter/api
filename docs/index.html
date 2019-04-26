@@ -319,19 +319,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.UserByEmailRequest"><span class="badge">M</span>UserByEmailRequest</a>
-                </li>
-              
-                <li>
                   <a href="#api.UserMetadata"><span class="badge">M</span>UserMetadata</a>
                 </li>
               
                 <li>
                   <a href="#api.UserMetadata.MetadataEntry"><span class="badge">M</span>UserMetadata.MetadataEntry</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UserRequest"><span class="badge">M</span>UserRequest</a>
                 </li>
               
               
@@ -359,10 +351,6 @@
               
                 <li>
                   <a href="#api.ResourceService"><span class="badge">S</span>ResourceService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UserService"><span class="badge">S</span>UserService</a>
                 </li>
               
                 <li>
@@ -1789,36 +1777,6 @@
 
         
       
-        <h3 id="api.UserByEmailRequest">UserByEmailRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>token</td>
-                  <td><a href="#api.Token">Token</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
         <h3 id="api.UserMetadata">UserMetadata</h3>
         <p></p>
 
@@ -1862,36 +1820,6 @@
                 <tr>
                   <td>value</td>
                   <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UserRequest">UserRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>string</td>
-                  <td><a href="#api.Token">Token</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user</td>
-                  <td><a href="#api.User">User</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2286,52 +2214,6 @@
                 <td>GetResource</td>
                 <td><a href="#api.ResourceRequest">ResourceRequest</a></td>
                 <td><a href="#api.Bytes">Bytes</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.UserService">UserService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetUser</td>
-                <td><a href="#api.UserByEmailRequest">UserByEmailRequest</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UpdateUser</td>
-                <td><a href="#api.UserRequest">UserRequest</a></td>
-                <td><a href="#api.Bytes">Bytes</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CreateUser</td>
-                <td><a href="#api.UserRequest">UserRequest</a></td>
-                <td><a href="#api.Bytes">Bytes</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DeleteUser</td>
-                <td><a href="#api.UserByEmailRequest">UserByEmailRequest</a></td>
-                <td><a href="#api.Bytes">Bytes</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ListUsers</td>
-                <td><a href="#api.Token">Token</a></td>
-                <td><a href="#api.User">User</a> stream</td>
                 <td><p></p></td>
               </tr>
             

@@ -141,39 +141,6 @@ service PaymentService {
     }
 }
 
-service UserService {
-    rpc GetUser(UserByEmailRequest) returns (User) {
-        option (google.api.http) = {
-      post: "/user/get/{email}"
-      body: "*"
-    };
-    }
-    rpc UpdateUser(UserRequest) returns (Bytes) {
-        option (google.api.http) = {
-      post: "/user/update/{user.email}"
-      body: "*"
-    };
-    }
-    rpc CreateUser(UserRequest) returns (Bytes) {
-        option (google.api.http) = {
-      post: "/user/create"
-      body: "*"
-    };
-    }
-    rpc DeleteUser(UserByEmailRequest) returns (Bytes) {
-        option (google.api.http) = {
-      post: "/user/delete/{email}"
-      body: "*"
-    };
-    }
-    rpc ListUsers(Token) returns (stream User) {
-        option (google.api.http) = {
-      post: "/user/list"
-      body: "*"
-    };
-    }
-}
-
 service ResourceService {
     rpc GetResource(ResourceRequest) returns (Bytes) {
         option (google.api.http) = {
@@ -212,16 +179,6 @@ message Card {
 
 message Empty {}
 
-
-message UserRequest {
-    Token string=1;
-    User user=2;
-}
-
-message UserByEmailRequest {
-    Token token=1;
-    string email =2;
-}
 
 message Identifier {
     string id=1;
