@@ -10,7 +10,6 @@ import (
 	"github.com/autom8ter/objectify"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/golang/protobuf/proto"
-	"github.com/gorilla/mux"
 	"github.com/gorilla/sessions"
 	"golang.org/x/oauth2"
 	"google.golang.org/grpc"
@@ -410,16 +409,7 @@ func AsBytes(obj interface{}) *Bytes {
 	}
 }
 
-type RouterPaths struct {
-	HomePath     string
-	LoggedInPath string
-	LoginPath    string
-	LogoutPath   string
-	CallbackPath string
-	HomeURL      string
-}
-
-func (a *Auth) defaultIfEmpty() {
+func (a *Auth) DefaultIfEmpty() {
 	if len(a.Scopes) == 0 {
 		a.Scopes = DEFAULT_OAUTH_SCOPES
 	}
@@ -427,7 +417,7 @@ func (a *Auth) defaultIfEmpty() {
 		a.Redirect = DEFAULT_OAUTH_REDIRECT
 	}
 }
-func (a *Auth) validate() error {
+func (a *Auth) Validate() error {
 	if len(a.Scopes) == 0 {
 		return Util.NewError("validation error: empty scope")
 	}
@@ -447,77 +437,18 @@ func (a *Auth) validate() error {
 	return nil
 }
 
-func (a *Auth) callbackHandler(c *RouterPaths) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		a.defaultIfEmpty()
-		if err := a.validate(); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		conf := a.OAuth2Config()
-
-		state := r.URL.Query().Get("state")
-		session, err := store.Get(r, "state")
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		if state != session.Values["state"] {
-			http.Error(w, "Invalid state parameter", http.StatusInternalServerError)
-			return
-		}
-
-		code := r.URL.Query().Get("code")
-
-		token, err := conf.Exchange(r.Context(), code)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		// Getting now the userInfo
-		client := conf.Client(r.Context(), token)
-		resp, err := client.Get(URL_USER_INFOURL.Normalize(a.Domain))
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		defer resp.Body.Close()
-
-		var userinfo map[string]interface{}
-		if err = json.NewDecoder(resp.Body).Decode(&userinfo); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		sesh, err := GetAuthSession(r)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		TokenAuthSessionValues(sesh, token)
-		AuthSessionValues(sesh, "user", userinfo)
-		SaveSession(w, r)
-		// Redirect to logged in page
-		http.Redirect(w, r, c.LoggedInPath, http.StatusSeeOther)
-	}
-
-}
-
-func TokenAuthSessionValues(session *sessions.Session, token *oauth2.Token) {
-	session.Values["id_token"] = token.Extra("id_token")
-	session.Values["refresh_token"] = token.RefreshToken
-	session.Values["access_token"] = token.AccessToken
-	session.Values["token_type"] = token.TokenType
-	session.Values["expiry"] = token.Expiry.String()
-}
-
 func AuthSessionValues(session *sessions.Session, key string, data map[string]interface{}) {
 	session.Values[key] = data
 }
 
+func (t *Token) ToSession(session *sessions.Session) {
+	session.Values["access_token"] = t.AccessToken
+	session.Values["token_type"] = t.TokenType
+	session.Values["refresh_token"] = t.RefreshToken
+	session.Values["expiry"] = t.Expiry
+	session.Values["id_token"] = t.IdToken
+
+}
 func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
 	return &Token{
 		AccessToken:  session.Values["access_token"].(string),
@@ -528,6 +459,7 @@ func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
 	}, nil
 
 }
+
 func TokenFromOAuthToken(tok *oauth2.Token) *Token {
 	return &Token{
 		AccessToken:  tok.AccessToken,
@@ -556,88 +488,26 @@ func GetAuthSession(r *http.Request) (*sessions.Session, error) {
 	return store.Get(r, AUTH_SESSION)
 }
 
-func (a *Auth) loginHandler(audience string) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		a.defaultIfEmpty()
-		if err := a.validate(); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		conf := a.OAuth2Config()
-
-		// Generate random state
-		b := make([]byte, 32)
-		rand.Read(b)
-		state := base64.StdEncoding.EncodeToString(b)
-
-		session, err := store.Get(r, "state")
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		session.Values["state"] = state
-		err = session.Save(r, w)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		audience := oauth2.SetAuthURLParam("audience", URL_USER_INFOURL.Normalize(a.Domain))
-		u := conf.AuthCodeURL(state, audience)
-
-		http.Redirect(w, r, u, http.StatusTemporaryRedirect)
-	}
+func CreateRandomState() string {
+	b := make([]byte, 32)
+	rand.Read(b)
+	return base64.StdEncoding.EncodeToString(b)
 }
 
-func (a *Auth) logoutHandler(paths *RouterPaths) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		a.defaultIfEmpty()
-		if err := a.validate(); err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		u, err := a.LogoutURL(paths)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-		http.Redirect(w, r, u, http.StatusTemporaryRedirect)
-	}
+func GetStateSession(r *http.Request) (*sessions.Session, error) {
+	return store.Get(r, "state")
 }
 
-func (a *Auth) ToContext(ctx context.Context) context.Context {
-	return context.WithValue(ctx, "auth", a)
+func (a *Auth) audienceAuthCodeOption(u URL) oauth2.AuthCodeOption {
+	return oauth2.SetAuthURLParam("audience", u.Normalize(a.Domain))
+
 }
 
-func AuthFromContext(ctx context.Context) *Auth {
-	return ctx.Value("auth").(*Auth)
+func (a *Auth) AuthCodeURL(state string, u URL) string {
+	return a.config().AuthCodeURL(state, a.audienceAuthCodeOption(u))
 }
 
-func TokenFromContext(ctx context.Context) *Token {
-	return ctx.Value("token").(*Token)
-}
-
-func (t *Token) ToContext(ctx context.Context) context.Context {
-	return context.WithValue(ctx, "token", t)
-}
-
-func (a *Auth) RequireLogin(paths *RouterPaths, next http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		session, err := store.Get(r, AUTH_SESSION)
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
-
-		if _, ok := session.Values["access_token"]; !ok {
-			http.Redirect(w, r, paths.LoginPath, http.StatusSeeOther)
-		} else {
-			next(w, r)
-		}
-	}
-}
-
-func (a *Auth) OAuth2Config() *oauth2.Config {
+func (a *Auth) config() *oauth2.Config {
 	return &oauth2.Config{
 		ClientID:     a.ClientId,
 		ClientSecret: a.ClientSecret,
@@ -648,36 +518,6 @@ func (a *Auth) OAuth2Config() *oauth2.Config {
 			TokenURL: URL_TOKENURL.Normalize(a.Domain),
 		},
 	}
-}
-
-func (a *Auth) Router(c *RouterPaths, home, loggedIn http.HandlerFunc) *mux.Router {
-	m := mux.NewRouter()
-	m.HandleFunc(c.LogoutPath, a.logoutHandler(c))
-	m.HandleFunc(c.LoginPath, a.loginHandler(URL_USER_INFOURL.Normalize(a.Domain)))
-	m.HandleFunc(c.CallbackPath, a.callbackHandler(c))
-	m.HandleFunc(c.HomePath, home)
-	m.HandleFunc(c.LoggedInPath, a.RequireLogin(c, loggedIn))
-	return m
-}
-
-func (a *Auth) ListenAndServe(addr string, c *RouterPaths, home, loggedIn http.HandlerFunc) error {
-	return http.ListenAndServe(addr, a.Router(c, home, loggedIn))
-}
-
-func (c *Auth) LogoutURL(r *RouterPaths) (string, error) {
-	var Url *url.URL
-	Url, err := url.Parse("https://" + c.Domain)
-	if err != nil {
-		return "", err
-	}
-
-	Url.Path += "/v2/logout"
-	parameters := url.Values{}
-	parameters.Add("returnTo", r.HomeURL)
-	parameters.Add("client_id", c.ClientId)
-	Url.RawQuery = parameters.Encode()
-
-	return Url.String(), nil
 }
 
 func (u URL) Normalize(domain string) string {
@@ -833,7 +673,7 @@ func (s *Secret) InitSessions() error {
 }
 
 func (a *Auth) Token(ctx context.Context, code string) (*Token, error) {
-	token, err := a.OAuth2Config().Exchange(ctx, code)
+	token, err := a.config().Exchange(ctx, code)
 	if err != nil {
 		return nil, err
 	}
