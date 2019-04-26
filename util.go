@@ -254,9 +254,12 @@ func WriteFile(name string) http.HandlerFunc {
 }
 
 func (h HTTPMethod) Normalize() string {
-	if h == HTTPMethod_POST {
+	switch h {
+	case HTTPMethod_POST:
 		return "POST"
-	} else {
+	case HTTPMethod_PATCH:
+		return "PATCH"
+	default:
 		return "GET"
 	}
 }
@@ -680,15 +683,13 @@ func (a *Auth) Token(ctx context.Context, code string) (*Token, error) {
 	return TokenFromOAuthToken(token), nil
 }
 
-func (t *Token) ResourceRequest(domain string, method HTTPMethod, u URL, form map[string]string, body *Bytes) *ResourceRequest {
+func (t *Token) ResourceRequest(domain string, method HTTPMethod, u URL, form *StringMap, body *Bytes) *ResourceRequest {
 	return &ResourceRequest{
 		Token:  t,
 		Method: method,
 		Domain: domain,
 		Url:    u,
-		Form:   &StringMap{
-			StringMap:            form,
-		},
+		Form:   form,
 		Body:   body,
 	}
 }
@@ -703,19 +704,19 @@ func (r *ResourceRequest) Do() (*Bytes, error) {
 	return c.Do(r.Token)
 }
 
-func (s StringMap) Get(key string) string {
+func (s *StringMap) Get(key string) string {
 	return s.StringMap[key]
 }
 
-func (s StringMap) Put(key string, val string) {
+func (s *StringMap) Put(key string, val string) {
 	s.StringMap[key] = val
 }
 
-func (s StringMap) Clear(key string) {
+func (s *StringMap) Clear(key string) {
 	s.StringMap[key] = ""
 }
 
-func (s StringMap) Keys() []string {
+func (s *StringMap) Keys() []string {
 	kys := []string{}
 	for k, _ := range s.StringMap {
 		kys = append(kys, k)
@@ -723,11 +724,11 @@ func (s StringMap) Keys() []string {
 	return kys
 }
 
-func (s StringMap) TotalKeys() int {
+func (s *StringMap) TotalKeys() int {
 	return len(s.Keys())
 }
 
-func (s StringMap) Exists(key string) bool {
+func (s *StringMap) Exists(key string) bool {
 	this := s.Get(key)
 	if this == "" {
 		return false
