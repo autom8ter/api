@@ -22,15 +22,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Empty" do
   end
-  add_message "api.ManagementToken" do
-    optional :token, :string, 1
-  end
   add_message "api.UserRequest" do
-    optional :string, :message, 1, "api.ManagementToken"
+    optional :string, :message, 1, "api.BearerToken"
     optional :user, :message, 2, "api.User"
   end
   add_message "api.UserByEmailRequest" do
-    optional :token, :message, 1, "api.ManagementToken"
+    optional :token, :message, 1, "api.BearerToken"
     optional :email, :string, 2
   end
   add_message "api.Identifier" do
@@ -128,7 +125,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :redirect, :string, 4
     optional :audience, :string, 5
     repeated :scopes, :enum, 6, "api.Scope"
-    optional :management, :message, 7, "api.ManagementToken"
+    optional :management, :message, 7, "api.BearerToken"
   end
   add_message "api.Bytes" do
     optional :bits, :bytes, 1
@@ -185,6 +182,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :id, :string, 2
     optional :uri, :string, 3
   end
+  add_message "api.BearerToken" do
+    optional :token, :string, 1
+  end
   add_enum "api.Scope" do
     value :OPENID, 0
     value :PROFILE, 1
@@ -217,7 +217,6 @@ module Api
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Empty").msgclass
-  ManagementToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ManagementToken").msgclass
   UserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserRequest").msgclass
   UserByEmailRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserByEmailRequest").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identifier").msgclass
@@ -245,6 +244,7 @@ module Api
   PhoneNumber = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumber").msgclass
   NumberCapabilities = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.NumberCapabilities").msgclass
   PhoneNumberResource = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumberResource").msgclass
+  BearerToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BearerToken").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.HTTPMethod").enummodule
 end

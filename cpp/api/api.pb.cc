@@ -21,6 +21,7 @@
 
 namespace protobuf_api_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_AppMetadata_MetadataEntry_DoNotUse;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BearerToken;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Bytes;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Card;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Email;
@@ -30,7 +31,6 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::interna
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_HTTPRequest_HeadersEntry_DoNotUse;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Identity;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JSONWebKeys;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ManagementToken;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Message;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_NumberCapabilities;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_api_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Template;
@@ -62,11 +62,6 @@ class EmptyDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Empty>
       _instance;
 } _Empty_default_instance_;
-class ManagementTokenDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ManagementToken>
-      _instance;
-} _ManagementToken_default_instance_;
 class UserRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<UserRequest>
@@ -232,6 +227,11 @@ class PhoneNumberResourceDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<PhoneNumberResource>
       _instance;
 } _PhoneNumberResource_default_instance_;
+class BearerTokenDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<BearerToken>
+      _instance;
+} _BearerToken_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
 static void InitDefaultsSubscribeRequest() {
@@ -291,20 +291,6 @@ static void InitDefaultsEmpty() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_Empty =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEmpty}, {}};
 
-static void InitDefaultsManagementToken() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::api::_ManagementToken_default_instance_;
-    new (ptr) ::api::ManagementToken();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::api::ManagementToken::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_ManagementToken =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsManagementToken}, {}};
-
 static void InitDefaultsUserRequest() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -318,7 +304,7 @@ static void InitDefaultsUserRequest() {
 
 ::google::protobuf::internal::SCCInfo<2> scc_info_UserRequest =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsUserRequest}, {
-      &protobuf_api_2eproto::scc_info_ManagementToken.base,
+      &protobuf_api_2eproto::scc_info_BearerToken.base,
       &protobuf_api_2eproto::scc_info_User.base,}};
 
 static void InitDefaultsUserByEmailRequest() {
@@ -334,7 +320,7 @@ static void InitDefaultsUserByEmailRequest() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_UserByEmailRequest =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsUserByEmailRequest}, {
-      &protobuf_api_2eproto::scc_info_ManagementToken.base,}};
+      &protobuf_api_2eproto::scc_info_BearerToken.base,}};
 
 static void InitDefaultsIdentifier() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -594,7 +580,7 @@ static void InitDefaultsAuth() {
 
 ::google::protobuf::internal::SCCInfo<1> scc_info_Auth =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsAuth}, {
-      &protobuf_api_2eproto::scc_info_ManagementToken.base,}};
+      &protobuf_api_2eproto::scc_info_BearerToken.base,}};
 
 static void InitDefaultsBytes() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -785,12 +771,25 @@ static void InitDefaultsPhoneNumberResource() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsPhoneNumberResource}, {
       &protobuf_api_2eproto::scc_info_PhoneNumber.base,}};
 
+static void InitDefaultsBearerToken() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_BearerToken_default_instance_;
+    new (ptr) ::api::BearerToken();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::BearerToken::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_BearerToken =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBearerToken}, {}};
+
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_SubscribeRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UnSubscribeRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Card.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Empty.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_ManagementToken.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UserByEmailRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Identifier.base);
@@ -824,6 +823,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_PhoneNumber.base);
   ::google::protobuf::internal::InitSCC(&scc_info_NumberCapabilities.base);
   ::google::protobuf::internal::InitSCC(&scc_info_PhoneNumberResource.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_BearerToken.base);
 }
 
 ::google::protobuf::Metadata file_level_metadata[38];
@@ -859,12 +859,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ManagementToken, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::ManagementToken, token_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::UserRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1160,46 +1154,52 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, number_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::PhoneNumberResource, uri_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::BearerToken, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::BearerToken, token_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::api::SubscribeRequest)},
   { 8, -1, sizeof(::api::UnSubscribeRequest)},
   { 15, -1, sizeof(::api::Card)},
   { 24, -1, sizeof(::api::Empty)},
-  { 29, -1, sizeof(::api::ManagementToken)},
-  { 35, -1, sizeof(::api::UserRequest)},
-  { 42, -1, sizeof(::api::UserByEmailRequest)},
-  { 49, -1, sizeof(::api::Identifier)},
-  { 55, -1, sizeof(::api::SMS)},
-  { 66, -1, sizeof(::api::SMSBlast)},
-  { 77, -1, sizeof(::api::EmailRequest)},
-  { 85, -1, sizeof(::api::EmailBlastRequest)},
-  { 93, 100, sizeof(::api::EmailBlast_NameAddressEntry_DoNotUse)},
-  { 102, -1, sizeof(::api::EmailBlast)},
-  { 111, -1, sizeof(::api::Email)},
-  { 121, -1, sizeof(::api::Call)},
-  { 129, -1, sizeof(::api::CallBlast)},
-  { 137, -1, sizeof(::api::Message)},
-  { 143, -1, sizeof(::api::User)},
-  { 167, -1, sizeof(::api::Identity)},
-  { 176, 183, sizeof(::api::UserMetadata_MetadataEntry_DoNotUse)},
-  { 185, -1, sizeof(::api::UserMetadata)},
-  { 191, 198, sizeof(::api::AppMetadata_MetadataEntry_DoNotUse)},
-  { 200, -1, sizeof(::api::AppMetadata)},
-  { 206, -1, sizeof(::api::Auth)},
-  { 218, -1, sizeof(::api::Bytes)},
-  { 224, -1, sizeof(::api::Template)},
-  { 231, -1, sizeof(::api::JSONWebKeys)},
-  { 242, -1, sizeof(::api::Jwks)},
-  { 248, 255, sizeof(::api::HTTPRequest_HeadersEntry_DoNotUse)},
-  { 257, 264, sizeof(::api::HTTPRequest_FormEntry_DoNotUse)},
-  { 266, 273, sizeof(::api::HTTPRequest_CookiesEntry_DoNotUse)},
-  { 275, -1, sizeof(::api::HTTPRequest)},
-  { 290, -1, sizeof(::api::RenderRequest)},
-  { 297, -1, sizeof(::api::SearchPhoneNumberRequest)},
-  { 305, -1, sizeof(::api::PhoneNumber)},
-  { 314, -1, sizeof(::api::NumberCapabilities)},
-  { 322, -1, sizeof(::api::PhoneNumberResource)},
+  { 29, -1, sizeof(::api::UserRequest)},
+  { 36, -1, sizeof(::api::UserByEmailRequest)},
+  { 43, -1, sizeof(::api::Identifier)},
+  { 49, -1, sizeof(::api::SMS)},
+  { 60, -1, sizeof(::api::SMSBlast)},
+  { 71, -1, sizeof(::api::EmailRequest)},
+  { 79, -1, sizeof(::api::EmailBlastRequest)},
+  { 87, 94, sizeof(::api::EmailBlast_NameAddressEntry_DoNotUse)},
+  { 96, -1, sizeof(::api::EmailBlast)},
+  { 105, -1, sizeof(::api::Email)},
+  { 115, -1, sizeof(::api::Call)},
+  { 123, -1, sizeof(::api::CallBlast)},
+  { 131, -1, sizeof(::api::Message)},
+  { 137, -1, sizeof(::api::User)},
+  { 161, -1, sizeof(::api::Identity)},
+  { 170, 177, sizeof(::api::UserMetadata_MetadataEntry_DoNotUse)},
+  { 179, -1, sizeof(::api::UserMetadata)},
+  { 185, 192, sizeof(::api::AppMetadata_MetadataEntry_DoNotUse)},
+  { 194, -1, sizeof(::api::AppMetadata)},
+  { 200, -1, sizeof(::api::Auth)},
+  { 212, -1, sizeof(::api::Bytes)},
+  { 218, -1, sizeof(::api::Template)},
+  { 225, -1, sizeof(::api::JSONWebKeys)},
+  { 236, -1, sizeof(::api::Jwks)},
+  { 242, 249, sizeof(::api::HTTPRequest_HeadersEntry_DoNotUse)},
+  { 251, 258, sizeof(::api::HTTPRequest_FormEntry_DoNotUse)},
+  { 260, 267, sizeof(::api::HTTPRequest_CookiesEntry_DoNotUse)},
+  { 269, -1, sizeof(::api::HTTPRequest)},
+  { 284, -1, sizeof(::api::RenderRequest)},
+  { 291, -1, sizeof(::api::SearchPhoneNumberRequest)},
+  { 299, -1, sizeof(::api::PhoneNumber)},
+  { 308, -1, sizeof(::api::NumberCapabilities)},
+  { 316, -1, sizeof(::api::PhoneNumberResource)},
+  { 324, -1, sizeof(::api::BearerToken)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1207,7 +1207,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UnSubscribeRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Card_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Empty_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_ManagementToken_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UserRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UserByEmailRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Identifier_default_instance_),
@@ -1241,6 +1240,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_PhoneNumber_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_NumberCapabilities_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_PhoneNumberResource_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_BearerToken_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -1270,148 +1270,147 @@ void AddDescriptorsImpl() {
       "\"1\n\022UnSubscribeRequest\022\r\n\005email\030\001 \001(\t\022\014\n"
       "\004plan\030\002 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001(\t\022\021\n\te"
       "xp_month\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013\n\003cvc\030"
-      "\004 \001(\t\"\007\n\005Empty\" \n\017ManagementToken\022\r\n\005tok"
-      "en\030\001 \001(\t\"L\n\013UserRequest\022$\n\006string\030\001 \001(\0132"
-      "\024.api.ManagementToken\022\027\n\004user\030\002 \001(\0132\t.ap"
-      "i.User\"H\n\022UserByEmailRequest\022#\n\005token\030\001 "
-      "\001(\0132\024.api.ManagementToken\022\r\n\005email\030\002 \001(\t"
-      "\"\030\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"r\n\003SMS\022\017\n\007ser"
-      "vice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132"
-      "\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callb"
-      "ack\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007se"
-      "rvice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\013"
-      "2\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010call"
-      "back\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022"
-      "\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031"
-      "\n\005email\030\003 \001(\0132\n.api.Email\"Z\n\021EmailBlastR"
-      "equest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030"
-      "\002 \001(\t\022\036\n\005blast\030\003 \001(\0132\017.api.EmailBlast\"\246\001"
-      "\n\nEmailBlast\0226\n\014name_address\030\001 \003(\0132 .api"
-      ".EmailBlast.NameAddressEntry\022\017\n\007subject\030"
-      "\002 \001(\t\022\r\n\005plain\030\003 \001(\t\022\014\n\004html\030\004 \001(\t\0322\n\020Na"
-      "meAddressEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-      "(\t:\0028\001\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address"
-      "\030\002 \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014"
-      "\n\004html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to"
-      "\030\002 \001(\t\022\013\n\003app\030\003 \001(\t\"2\n\tCallBlast\022\014\n\004from"
-      "\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Messa"
-      "ge\022\r\n\005value\030\001 \001(\t\"\245\003\n\004User\022\017\n\007user_id\030\001 "
-      "\001(\t\022\014\n\004name\030\002 \001(\t\022\022\n\ngiven_name\030\003 \001(\t\022\023\n"
-      "\013family_name\030\004 \001(\t\022\016\n\006gender\030\005 \001(\t\022\021\n\tbi"
-      "rthdate\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\024\n\014phone_nu"
-      "mber\030\010 \001(\t\022\017\n\007picture\030\t \001(\t\022(\n\ruser_meta"
-      "data\030\n \001(\0132\021.api.UserMetadata\022&\n\014app_met"
-      "adata\030\013 \001(\0132\020.api.AppMetadata\022\017\n\007last_ip"
-      "\030\014 \001(\t\022\017\n\007blocked\030\r \001(\010\022\020\n\010nickname\030\016 \001("
-      "\t\022\023\n\013multifactor\030\017 \003(\t\022\022\n\ncreated_at\030\021 \001"
-      "(\t\022\022\n\nupdated_at\030\022 \001(\t\022\026\n\016phone_verified"
-      "\030\023 \001(\010\022!\n\nidentities\030\024 \003(\0132\r.api.Identit"
-      "y\"S\n\010Identity\022\022\n\nconnection\030\001 \001(\t\022\017\n\007use"
-      "r_id\030\002 \001(\t\022\020\n\010provider\030\003 \001(\t\022\020\n\010isSocial"
-      "\030\004 \001(\t\"r\n\014UserMetadata\0221\n\010metadata\030\001 \003(\013"
-      "2\037.api.UserMetadata.MetadataEntry\032/\n\rMet"
-      "adataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-      "8\001\"p\n\013AppMetadata\0220\n\010metadata\030\001 \003(\0132\036.ap"
-      "i.AppMetadata.MetadataEntry\032/\n\rMetadataE"
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n"
-      "\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t"
-      "\022\025\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001("
-      "\t\022\020\n\010audience\030\005 \001(\t\022\032\n\006scopes\030\006 \003(\0162\n.ap"
-      "i.Scope\022(\n\nmanagement\030\007 \001(\0132\024.api.Manage"
-      "mentToken\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Temp"
-      "late\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSON"
-      "WebKeys\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use"
-      "\030\003 \001(\t\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003("
-      "\t\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKey"
-      "s\"\260\003\n\013HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api."
-      "HTTPMethod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014"
-      "\n\004user\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\022\023\n\013conten"
-      "tType\030\006 \001(\t\022.\n\007headers\030\007 \003(\0132\035.api.HTTPR"
-      "equest.HeadersEntry\022(\n\004form\030\010 \003(\0132\032.api."
-      "HTTPRequest.FormEntry\022.\n\007cookies\030\t \003(\0132\035"
-      ".api.HTTPRequest.CookiesEntry\022\030\n\004body\030\n "
-      "\001(\0132\n.api.Bytes\032.\n\014HeadersEntry\022\013\n\003key\030\001"
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003"
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesE"
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\r"
-      "RenderRequest\022\037\n\010template\030\001 \001(\0132\r.api.Te"
-      "mplate\022\030\n\004data\030\002 \001(\0132\n.api.Bytes\"o\n\030Sear"
-      "chPhoneNumberRequest\022\r\n\005state\030\001 \001(\t\022-\n\014c"
-      "apabilities\030\002 \001(\0132\027.api.NumberCapabiliti"
-      "es\022\025\n\rtotal_results\030\003 \001(\003\"y\n\013PhoneNumber"
-      "\022\025\n\rfriendly_name\030\001 \001(\t\022\024\n\014phone_number\030"
-      "\002 \001(\t\022\016\n\006region\030\003 \001(\t\022-\n\014capabilities\030\004 "
-      "\001(\0132\027.api.NumberCapabilities\"=\n\022NumberCa"
-      "pabilities\022\r\n\005voice\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013"
-      "\n\003mms\030\003 \001(\010\"P\n\023PhoneNumberResource\022 \n\006nu"
-      "mber\030\001 \001(\0132\020.api.PhoneNumber\022\n\n\002id\030\002 \001(\t"
-      "\022\013\n\003uri\030\003 \001(\t*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007P"
-      "ROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024R"
-      "EAD_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022"
-      "\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020"
-      "\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_"
-      "EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPD"
-      "ATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_"
-      "RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020"
-      "\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n"
-      "\tREAD_LOGS\020\022*\037\n\nHTTPMethod\022\007\n\003GET\020\000\022\010\n\004P"
-      "OST\020\0012\350\005\n\016UtilityService\022<\n\004Echo\022\014.api.M"
-      "essage\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/utility/e"
-      "cho:\001*\022K\n\013EchoSpanish\022\014.api.Message\032\014.ap"
-      "i.Message\" \202\323\344\223\002\032\"\025/utility/echo/spanish"
-      ":\001*\022K\n\013EchoChinese\022\014.api.Message\032\014.api.M"
-      "essage\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*"
-      "\022K\n\013EchoEnglish\022\014.api.Message\032\014.api.Mess"
-      "age\" \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022G\n"
-      "\tEchoHindi\022\014.api.Message\032\014.api.Message\"\036"
-      "\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I\n\nEchoAr"
-      "abic\022\014.api.Message\032\014.api.Message\"\037\202\323\344\223\002\031"
-      "\"\024/utility/echo/arabic:\001*\022G\n\013MarshalJSON"
-      "\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utili"
-      "ty/marshal/json:\001*\022G\n\013MarshalYAML\022\n.api."
-      "Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/mars"
-      "hal/yaml:\001*\022E\n\nMarshalXML\022\n.api.Bytes\032\n."
-      "api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:"
-      "\001*\022D\n\006Render\022\022.api.RenderRequest\032\n.api.B"
-      "ytes\"\032\202\323\344\223\002\024\"\017/utility/render:\001*2\222\005\n\016Con"
-      "tactService\022=\n\007SendSMS\022\010.api.SMS\032\n.api.B"
-      "ytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{to}:\001*\022J\n\014Se"
-      "ndSMSBlast\022\r.api.SMSBlast\032\n.api.Bytes\"\035\202"
-      "\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022C\n\006GetSMS"
-      "\022\017.api.Identifier\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/"
-      "contact/sms/{id}:\001*\022W\n\tSendEmail\022\021.api.E"
-      "mailRequest\032\014.api.Message\")\202\323\344\223\002#\"\036/cont"
-      "act/email/{email.address}:\001*\022Y\n\016SendEmai"
-      "lBlast\022\026.api.EmailBlastRequest\032\014.api.Mes"
-      "sage\"\037\202\323\344\223\002\031\"\024/contact/email/blast:\001*0\001\022"
-      "@\n\010SendCall\022\t.api.Call\032\n.api.Bytes\"\035\202\323\344\223"
-      "\002\027\"\022/contact/call/{to}:\001*\022M\n\rSendCallBla"
-      "st\022\016.api.CallBlast\032\n.api.Bytes\"\036\202\323\344\223\002\030\"\023"
-      "/contact/call/blast:\001*0\001\022k\n\021SearchPhoneN"
-      "umber\022\035.api.SearchPhoneNumberRequest\032\020.a"
-      "pi.PhoneNumber\"#\202\323\344\223\002\035\"\030/contact/numbers"
-      "/{state}:\001*0\0012\262\002\n\016PaymentService\022U\n\tSubs"
-      "cribe\022\025.api.SubscribeRequest\032\n.api.Bytes"
-      "\"%\202\323\344\223\002\037\"\032/payment/subscribe/{email}:\001*\022"
-      "[\n\013Unsubscribe\022\027.api.UnSubscribeRequest\032"
-      "\n.api.Bytes\"\'\202\323\344\223\002!\"\034/payment/unsubscrib"
-      "e/{email}:\001*\022l\n\023PurchasePhoneNumber\022\020.ap"
-      "i.PhoneNumber\032\030.api.PhoneNumberResource\""
-      ")\202\323\344\223\002#\"\036/payment/number/{phone_number}:"
-      "\001*2\214\003\n\013UserService\022K\n\007GetUser\022\027.api.User"
-      "ByEmailRequest\032\t.api.User\"\034\202\323\344\223\002\026\"\021/user"
-      "/get/{email}:\001*\022P\n\nUpdateUser\022\020.api.User"
-      "Request\032\n.api.Bytes\"$\202\323\344\223\002\036\"\031/user/updat"
-      "e/{user.email}:\001*\022C\n\nCreateUser\022\020.api.Us"
-      "erRequest\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/user/cre"
-      "ate:\001*\022R\n\nDeleteUser\022\027.api.UserByEmailRe"
-      "quest\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/user/delete/"
-      "{email}:\001*\022E\n\tListUsers\022\024.api.Management"
-      "Token\032\t.api.User\"\025\202\323\344\223\002\017\"\n/user/list:\001*0"
-      "\001b\006proto3"
+      "\004 \001(\t\"\007\n\005Empty\"H\n\013UserRequest\022 \n\006string\030"
+      "\001 \001(\0132\020.api.BearerToken\022\027\n\004user\030\002 \001(\0132\t."
+      "api.User\"D\n\022UserByEmailRequest\022\037\n\005token\030"
+      "\001 \001(\0132\020.api.BearerToken\022\r\n\005email\030\002 \001(\t\"\030"
+      "\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"r\n\003SMS\022\017\n\007servi"
+      "ce\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132\014."
+      "api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callbac"
+      "k\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007serv"
+      "ice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\0132\014"
+      ".api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callba"
+      "ck\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022\021\n"
+      "\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031\n\005"
+      "email\030\003 \001(\0132\n.api.Email\"Z\n\021EmailBlastReq"
+      "uest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 "
+      "\001(\t\022\036\n\005blast\030\003 \001(\0132\017.api.EmailBlast\"\246\001\n\n"
+      "EmailBlast\0226\n\014name_address\030\001 \003(\0132 .api.E"
+      "mailBlast.NameAddressEntry\022\017\n\007subject\030\002 "
+      "\001(\t\022\r\n\005plain\030\003 \001(\t\022\014\n\004html\030\004 \001(\t\0322\n\020Name"
+      "AddressEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t"
+      ":\0028\001\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002"
+      " \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004"
+      "html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002"
+      " \001(\t\022\013\n\003app\030\003 \001(\t\"2\n\tCallBlast\022\014\n\004from\030\001"
+      " \001(\t\022\n\n\002to\030\002 \003(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Message"
+      "\022\r\n\005value\030\001 \001(\t\"\245\003\n\004User\022\017\n\007user_id\030\001 \001("
+      "\t\022\014\n\004name\030\002 \001(\t\022\022\n\ngiven_name\030\003 \001(\t\022\023\n\013f"
+      "amily_name\030\004 \001(\t\022\016\n\006gender\030\005 \001(\t\022\021\n\tbirt"
+      "hdate\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\024\n\014phone_numb"
+      "er\030\010 \001(\t\022\017\n\007picture\030\t \001(\t\022(\n\ruser_metada"
+      "ta\030\n \001(\0132\021.api.UserMetadata\022&\n\014app_metad"
+      "ata\030\013 \001(\0132\020.api.AppMetadata\022\017\n\007last_ip\030\014"
+      " \001(\t\022\017\n\007blocked\030\r \001(\010\022\020\n\010nickname\030\016 \001(\t\022"
+      "\023\n\013multifactor\030\017 \003(\t\022\022\n\ncreated_at\030\021 \001(\t"
+      "\022\022\n\nupdated_at\030\022 \001(\t\022\026\n\016phone_verified\030\023"
+      " \001(\010\022!\n\nidentities\030\024 \003(\0132\r.api.Identity\""
+      "S\n\010Identity\022\022\n\nconnection\030\001 \001(\t\022\017\n\007user_"
+      "id\030\002 \001(\t\022\020\n\010provider\030\003 \001(\t\022\020\n\010isSocial\030\004"
+      " \001(\t\"r\n\014UserMetadata\0221\n\010metadata\030\001 \003(\0132\037"
+      ".api.UserMetadata.MetadataEntry\032/\n\rMetad"
+      "ataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+      "\"p\n\013AppMetadata\0220\n\010metadata\030\001 \003(\0132\036.api."
+      "AppMetadata.MetadataEntry\032/\n\rMetadataEnt"
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\246\001\n\004A"
+      "uth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025"
+      "\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022"
+      "\020\n\010audience\030\005 \001(\t\022\032\n\006scopes\030\006 \003(\0162\n.api."
+      "Scope\022$\n\nmanagement\030\007 \001(\0132\020.api.BearerTo"
+      "ken\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Template\022\014"
+      "\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSONWebKey"
+      "s\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t"
+      "\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\"&\n\004J"
+      "wks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKeys\"\260\003\n\013"
+      "HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api.HTTPMe"
+      "thod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014\n\004user"
+      "\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\022\023\n\013contentType\030"
+      "\006 \001(\t\022.\n\007headers\030\007 \003(\0132\035.api.HTTPRequest"
+      ".HeadersEntry\022(\n\004form\030\010 \003(\0132\032.api.HTTPRe"
+      "quest.FormEntry\022.\n\007cookies\030\t \003(\0132\035.api.H"
+      "TTPRequest.CookiesEntry\022\030\n\004body\030\n \001(\0132\n."
+      "api.Bytes\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r"
+      "\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003key\030\001 "
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesEntry\022\013"
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\rRender"
+      "Request\022\037\n\010template\030\001 \001(\0132\r.api.Template"
+      "\022\030\n\004data\030\002 \001(\0132\n.api.Bytes\"o\n\030SearchPhon"
+      "eNumberRequest\022\r\n\005state\030\001 \001(\t\022-\n\014capabil"
+      "ities\030\002 \001(\0132\027.api.NumberCapabilities\022\025\n\r"
+      "total_results\030\003 \001(\003\"y\n\013PhoneNumber\022\025\n\rfr"
+      "iendly_name\030\001 \001(\t\022\024\n\014phone_number\030\002 \001(\t\022"
+      "\016\n\006region\030\003 \001(\t\022-\n\014capabilities\030\004 \001(\0132\027."
+      "api.NumberCapabilities\"=\n\022NumberCapabili"
+      "ties\022\r\n\005voice\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013\n\003mms\030"
+      "\003 \001(\010\"P\n\023PhoneNumberResource\022 \n\006number\030\001"
+      " \001(\0132\020.api.PhoneNumber\022\n\n\002id\030\002 \001(\t\022\013\n\003ur"
+      "i\030\003 \001(\t\"\034\n\013BearerToken\022\r\n\005token\030\001 \001(\t*\344\002"
+      "\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005EMAI"
+      "L\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP_TOK"
+      "ENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STATS\020\006\022"
+      "\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_EMAI"
+      "L_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLATES\020"
+      "\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022\020\n\014C"
+      "REATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nREAD_"
+      "ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_ROLE"
+      "S\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022*\037\n\n"
+      "HTTPMethod\022\007\n\003GET\020\000\022\010\n\004POST\020\0012\350\005\n\016Utilit"
+      "yService\022<\n\004Echo\022\014.api.Message\032\014.api.Mes"
+      "sage\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSp"
+      "anish\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002"
+      "\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoChine"
+      "se\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025"
+      "/utility/echo/chinese:\001*\022K\n\013EchoEnglish\022"
+      "\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/ut"
+      "ility/echo/english:\001*\022G\n\tEchoHindi\022\014.api"
+      ".Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility"
+      "/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.Messa"
+      "ge\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/echo/"
+      "arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.a"
+      "pi.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/json:"
+      "\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api.Byte"
+      "s\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E\n\nM"
+      "arshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002"
+      "\031\"\024/utility/marshal/xml:\001*\022D\n\006Render\022\022.a"
+      "pi.RenderRequest\032\n.api.Bytes\"\032\202\323\344\223\002\024\"\017/u"
+      "tility/render:\001*2\222\005\n\016ContactService\022=\n\007S"
+      "endSMS\022\010.api.SMS\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/c"
+      "ontact/sms/{to}:\001*\022J\n\014SendSMSBlast\022\r.api"
+      ".SMSBlast\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/"
+      "sms/blast:\001*0\001\022C\n\006GetSMS\022\017.api.Identifie"
+      "r\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}"
+      ":\001*\022W\n\tSendEmail\022\021.api.EmailRequest\032\014.ap"
+      "i.Message\")\202\323\344\223\002#\"\036/contact/email/{email"
+      ".address}:\001*\022Y\n\016SendEmailBlast\022\026.api.Ema"
+      "ilBlastRequest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/c"
+      "ontact/email/blast:\001*0\001\022@\n\010SendCall\022\t.ap"
+      "i.Call\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/cal"
+      "l/{to}:\001*\022M\n\rSendCallBlast\022\016.api.CallBla"
+      "st\032\n.api.Bytes\"\036\202\323\344\223\002\030\"\023/contact/call/bl"
+      "ast:\001*0\001\022k\n\021SearchPhoneNumber\022\035.api.Sear"
+      "chPhoneNumberRequest\032\020.api.PhoneNumber\"#"
+      "\202\323\344\223\002\035\"\030/contact/numbers/{state}:\001*0\0012\262\002"
+      "\n\016PaymentService\022U\n\tSubscribe\022\025.api.Subs"
+      "cribeRequest\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032/payme"
+      "nt/subscribe/{email}:\001*\022[\n\013Unsubscribe\022\027"
+      ".api.UnSubscribeRequest\032\n.api.Bytes\"\'\202\323\344"
+      "\223\002!\"\034/payment/unsubscribe/{email}:\001*\022l\n\023"
+      "PurchasePhoneNumber\022\020.api.PhoneNumber\032\030."
+      "api.PhoneNumberResource\")\202\323\344\223\002#\"\036/paymen"
+      "t/number/{phone_number}:\001*2\210\003\n\013UserServi"
+      "ce\022K\n\007GetUser\022\027.api.UserByEmailRequest\032\t"
+      ".api.User\"\034\202\323\344\223\002\026\"\021/user/get/{email}:\001*\022"
+      "P\n\nUpdateUser\022\020.api.UserRequest\032\n.api.By"
+      "tes\"$\202\323\344\223\002\036\"\031/user/update/{user.email}:\001"
+      "*\022C\n\nCreateUser\022\020.api.UserRequest\032\n.api."
+      "Bytes\"\027\202\323\344\223\002\021\"\014/user/create:\001*\022R\n\nDelete"
+      "User\022\027.api.UserByEmailRequest\032\n.api.Byte"
+      "s\"\037\202\323\344\223\002\031\"\024/user/delete/{email}:\001*\022A\n\tLi"
+      "stUsers\022\020.api.BearerToken\032\t.api.User\"\025\202\323"
+      "\344\223\002\017\"\n/user/list:\001*0\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 5769);
+      descriptor, 5749);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -2722,251 +2721,9 @@ void Empty::InternalSwap(Empty* other) {
 
 // ===================================================================
 
-void ManagementToken::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ManagementToken::kTokenFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-ManagementToken::ManagementToken()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_api_2eproto::scc_info_ManagementToken.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:api.ManagementToken)
-}
-ManagementToken::ManagementToken(const ManagementToken& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.token().size() > 0) {
-    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
-  }
-  // @@protoc_insertion_point(copy_constructor:api.ManagementToken)
-}
-
-void ManagementToken::SharedCtor() {
-  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-ManagementToken::~ManagementToken() {
-  // @@protoc_insertion_point(destructor:api.ManagementToken)
-  SharedDtor();
-}
-
-void ManagementToken::SharedDtor() {
-  token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void ManagementToken::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* ManagementToken::descriptor() {
-  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const ManagementToken& ManagementToken::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_ManagementToken.base);
-  return *internal_default_instance();
-}
-
-
-void ManagementToken::Clear() {
-// @@protoc_insertion_point(message_clear_start:api.ManagementToken)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
-}
-
-bool ManagementToken::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:api.ManagementToken)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string token = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_token()));
-          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->token().data(), static_cast<int>(this->token().length()),
-            ::google::protobuf::internal::WireFormatLite::PARSE,
-            "api.ManagementToken.token"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:api.ManagementToken)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:api.ManagementToken)
-  return false;
-#undef DO_
-}
-
-void ManagementToken::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:api.ManagementToken)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string token = 1;
-  if (this->token().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->token().data(), static_cast<int>(this->token().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ManagementToken.token");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->token(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:api.ManagementToken)
-}
-
-::google::protobuf::uint8* ManagementToken::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:api.ManagementToken)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string token = 1;
-  if (this->token().size() > 0) {
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->token().data(), static_cast<int>(this->token().length()),
-      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "api.ManagementToken.token");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->token(), target);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:api.ManagementToken)
-  return target;
-}
-
-size_t ManagementToken::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:api.ManagementToken)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // string token = 1;
-  if (this->token().size() > 0) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->token());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void ManagementToken::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:api.ManagementToken)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ManagementToken* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ManagementToken>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.ManagementToken)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.ManagementToken)
-    MergeFrom(*source);
-  }
-}
-
-void ManagementToken::MergeFrom(const ManagementToken& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:api.ManagementToken)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.token().size() > 0) {
-
-    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
-  }
-}
-
-void ManagementToken::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:api.ManagementToken)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void ManagementToken::CopyFrom(const ManagementToken& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:api.ManagementToken)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool ManagementToken::IsInitialized() const {
-  return true;
-}
-
-void ManagementToken::Swap(ManagementToken* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void ManagementToken::InternalSwap(ManagementToken* other) {
-  using std::swap;
-  token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata ManagementToken::GetMetadata() const {
-  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void UserRequest::InitAsDefaultInstance() {
-  ::api::_UserRequest_default_instance_._instance.get_mutable()->string_ = const_cast< ::api::ManagementToken*>(
-      ::api::ManagementToken::internal_default_instance());
+  ::api::_UserRequest_default_instance_._instance.get_mutable()->string_ = const_cast< ::api::BearerToken*>(
+      ::api::BearerToken::internal_default_instance());
   ::api::_UserRequest_default_instance_._instance.get_mutable()->user_ = const_cast< ::api::User*>(
       ::api::User::internal_default_instance());
 }
@@ -2987,7 +2744,7 @@ UserRequest::UserRequest(const UserRequest& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_string()) {
-    string_ = new ::api::ManagementToken(*from.string_);
+    string_ = new ::api::BearerToken(*from.string_);
   } else {
     string_ = NULL;
   }
@@ -3056,7 +2813,7 @@ bool UserRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .api.ManagementToken string = 1;
+      // .api.BearerToken string = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
@@ -3106,7 +2863,7 @@ void UserRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .api.ManagementToken string = 1;
+  // .api.BearerToken string = 1;
   if (this->has_string()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->_internal_string(), output);
@@ -3132,7 +2889,7 @@ void UserRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .api.ManagementToken string = 1;
+  // .api.BearerToken string = 1;
   if (this->has_string()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -3163,7 +2920,7 @@ size_t UserRequest::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // .api.ManagementToken string = 1;
+  // .api.BearerToken string = 1;
   if (this->has_string()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -3205,7 +2962,7 @@ void UserRequest::MergeFrom(const UserRequest& from) {
   (void) cached_has_bits;
 
   if (from.has_string()) {
-    mutable_string()->::api::ManagementToken::MergeFrom(from.string());
+    mutable_string()->::api::BearerToken::MergeFrom(from.string());
   }
   if (from.has_user()) {
     mutable_user()->::api::User::MergeFrom(from.user());
@@ -3250,8 +3007,8 @@ void UserRequest::InternalSwap(UserRequest* other) {
 // ===================================================================
 
 void UserByEmailRequest::InitAsDefaultInstance() {
-  ::api::_UserByEmailRequest_default_instance_._instance.get_mutable()->token_ = const_cast< ::api::ManagementToken*>(
-      ::api::ManagementToken::internal_default_instance());
+  ::api::_UserByEmailRequest_default_instance_._instance.get_mutable()->token_ = const_cast< ::api::BearerToken*>(
+      ::api::BearerToken::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int UserByEmailRequest::kTokenFieldNumber;
@@ -3274,7 +3031,7 @@ UserByEmailRequest::UserByEmailRequest(const UserByEmailRequest& from)
     email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
   }
   if (from.has_token()) {
-    token_ = new ::api::ManagementToken(*from.token_);
+    token_ = new ::api::BearerToken(*from.token_);
   } else {
     token_ = NULL;
   }
@@ -3334,7 +3091,7 @@ bool UserByEmailRequest::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .api.ManagementToken token = 1;
+      // .api.BearerToken token = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
@@ -3388,7 +3145,7 @@ void UserByEmailRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .api.ManagementToken token = 1;
+  // .api.BearerToken token = 1;
   if (this->has_token()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       1, this->_internal_token(), output);
@@ -3418,7 +3175,7 @@ void UserByEmailRequest::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .api.ManagementToken token = 1;
+  // .api.BearerToken token = 1;
   if (this->has_token()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -3460,7 +3217,7 @@ size_t UserByEmailRequest::ByteSizeLong() const {
         this->email());
   }
 
-  // .api.ManagementToken token = 1;
+  // .api.BearerToken token = 1;
   if (this->has_token()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -3499,7 +3256,7 @@ void UserByEmailRequest::MergeFrom(const UserByEmailRequest& from) {
     email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
   }
   if (from.has_token()) {
-    mutable_token()->::api::ManagementToken::MergeFrom(from.token());
+    mutable_token()->::api::BearerToken::MergeFrom(from.token());
   }
 }
 
@@ -5530,7 +5287,7 @@ void EmailBlast_NameAddressEntry_DoNotUse::MergeFrom(const EmailBlast_NameAddres
 }
 ::google::protobuf::Metadata EmailBlast_NameAddressEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[12];
+  return ::protobuf_api_2eproto::file_level_metadata[11];
 }
 void EmailBlast_NameAddressEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -9109,7 +8866,7 @@ void UserMetadata_MetadataEntry_DoNotUse::MergeFrom(const UserMetadata_MetadataE
 }
 ::google::protobuf::Metadata UserMetadata_MetadataEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[20];
+  return ::protobuf_api_2eproto::file_level_metadata[19];
 }
 void UserMetadata_MetadataEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -9466,7 +9223,7 @@ void AppMetadata_MetadataEntry_DoNotUse::MergeFrom(const AppMetadata_MetadataEnt
 }
 ::google::protobuf::Metadata AppMetadata_MetadataEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[22];
+  return ::protobuf_api_2eproto::file_level_metadata[21];
 }
 void AppMetadata_MetadataEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -9817,8 +9574,8 @@ void AppMetadata::InternalSwap(AppMetadata* other) {
 // ===================================================================
 
 void Auth::InitAsDefaultInstance() {
-  ::api::_Auth_default_instance_._instance.get_mutable()->management_ = const_cast< ::api::ManagementToken*>(
-      ::api::ManagementToken::internal_default_instance());
+  ::api::_Auth_default_instance_._instance.get_mutable()->management_ = const_cast< ::api::BearerToken*>(
+      ::api::BearerToken::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Auth::kDomainFieldNumber;
@@ -9863,7 +9620,7 @@ Auth::Auth(const Auth& from)
     audience_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.audience_);
   }
   if (from.has_management()) {
-    management_ = new ::api::ManagementToken(*from.management_);
+    management_ = new ::api::BearerToken(*from.management_);
   } else {
     management_ = NULL;
   }
@@ -10045,7 +9802,7 @@ bool Auth::MergePartialFromCodedStream(
         break;
       }
 
-      // .api.ManagementToken management = 7;
+      // .api.BearerToken management = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
@@ -10147,7 +9904,7 @@ void Auth::SerializeWithCachedSizes(
       this->scopes(i), output);
   }
 
-  // .api.ManagementToken management = 7;
+  // .api.BearerToken management = 7;
   if (this->has_management()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->_internal_management(), output);
@@ -10234,7 +9991,7 @@ void Auth::SerializeWithCachedSizes(
       this->scopes_, target);
   }
 
-  // .api.ManagementToken management = 7;
+  // .api.BearerToken management = 7;
   if (this->has_management()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
@@ -10312,7 +10069,7 @@ size_t Auth::ByteSizeLong() const {
         this->audience());
   }
 
-  // .api.ManagementToken management = 7;
+  // .api.BearerToken management = 7;
   if (this->has_management()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -10368,7 +10125,7 @@ void Auth::MergeFrom(const Auth& from) {
     audience_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.audience_);
   }
   if (from.has_management()) {
-    mutable_management()->::api::ManagementToken::MergeFrom(from.management());
+    mutable_management()->::api::BearerToken::MergeFrom(from.management());
   }
 }
 
@@ -11709,7 +11466,7 @@ void HTTPRequest_HeadersEntry_DoNotUse::MergeFrom(const HTTPRequest_HeadersEntry
 }
 ::google::protobuf::Metadata HTTPRequest_HeadersEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[29];
+  return ::protobuf_api_2eproto::file_level_metadata[28];
 }
 void HTTPRequest_HeadersEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -11726,7 +11483,7 @@ void HTTPRequest_FormEntry_DoNotUse::MergeFrom(const HTTPRequest_FormEntry_DoNot
 }
 ::google::protobuf::Metadata HTTPRequest_FormEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[30];
+  return ::protobuf_api_2eproto::file_level_metadata[29];
 }
 void HTTPRequest_FormEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -11743,7 +11500,7 @@ void HTTPRequest_CookiesEntry_DoNotUse::MergeFrom(const HTTPRequest_CookiesEntry
 }
 ::google::protobuf::Metadata HTTPRequest_CookiesEntry_DoNotUse::GetMetadata() const {
   ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_api_2eproto::file_level_metadata[31];
+  return ::protobuf_api_2eproto::file_level_metadata[30];
 }
 void HTTPRequest_CookiesEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -14455,6 +14212,248 @@ void PhoneNumberResource::InternalSwap(PhoneNumberResource* other) {
 }
 
 
+// ===================================================================
+
+void BearerToken::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int BearerToken::kTokenFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+BearerToken::BearerToken()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_BearerToken.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.BearerToken)
+}
+BearerToken::BearerToken(const BearerToken& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.token().size() > 0) {
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
+  // @@protoc_insertion_point(copy_constructor:api.BearerToken)
+}
+
+void BearerToken::SharedCtor() {
+  token_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+BearerToken::~BearerToken() {
+  // @@protoc_insertion_point(destructor:api.BearerToken)
+  SharedDtor();
+}
+
+void BearerToken::SharedDtor() {
+  token_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void BearerToken::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* BearerToken::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const BearerToken& BearerToken::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_BearerToken.base);
+  return *internal_default_instance();
+}
+
+
+void BearerToken::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.BearerToken)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  token_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool BearerToken::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.BearerToken)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string token = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_token()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->token().data(), static_cast<int>(this->token().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "api.BearerToken.token"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.BearerToken)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.BearerToken)
+  return false;
+#undef DO_
+}
+
+void BearerToken::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.BearerToken)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.BearerToken.token");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->token(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.BearerToken)
+}
+
+::google::protobuf::uint8* BearerToken::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.BearerToken)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string token = 1;
+  if (this->token().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->token().data(), static_cast<int>(this->token().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "api.BearerToken.token");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->token(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.BearerToken)
+  return target;
+}
+
+size_t BearerToken::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.BearerToken)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string token = 1;
+  if (this->token().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->token());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BearerToken::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.BearerToken)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BearerToken* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const BearerToken>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.BearerToken)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.BearerToken)
+    MergeFrom(*source);
+  }
+}
+
+void BearerToken::MergeFrom(const BearerToken& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.BearerToken)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.token().size() > 0) {
+
+    token_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.token_);
+  }
+}
+
+void BearerToken::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.BearerToken)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BearerToken::CopyFrom(const BearerToken& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.BearerToken)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BearerToken::IsInitialized() const {
+  return true;
+}
+
+void BearerToken::Swap(BearerToken* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void BearerToken::InternalSwap(BearerToken* other) {
+  using std::swap;
+  token_.Swap(&other->token_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata BearerToken::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace api
 namespace google {
@@ -14470,9 +14469,6 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Card* Arena::CreateMaybeMes
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Empty* Arena::CreateMaybeMessage< ::api::Empty >(Arena* arena) {
   return Arena::CreateInternal< ::api::Empty >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::ManagementToken* Arena::CreateMaybeMessage< ::api::ManagementToken >(Arena* arena) {
-  return Arena::CreateInternal< ::api::ManagementToken >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::UserRequest* Arena::CreateMaybeMessage< ::api::UserRequest >(Arena* arena) {
   return Arena::CreateInternal< ::api::UserRequest >(arena);
@@ -14572,6 +14568,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::NumberCapabilities* Arena::
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::PhoneNumberResource* Arena::CreateMaybeMessage< ::api::PhoneNumberResource >(Arena* arena) {
   return Arena::CreateInternal< ::api::PhoneNumberResource >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::BearerToken* Arena::CreateMaybeMessage< ::api::BearerToken >(Arena* arena) {
+  return Arena::CreateInternal< ::api::BearerToken >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

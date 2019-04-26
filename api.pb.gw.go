@@ -684,7 +684,7 @@ func request_UserService_DeleteUser_0(ctx context.Context, marshaler runtime.Mar
 }
 
 func request_UserService_ListUsers_0(ctx context.Context, marshaler runtime.Marshaler, client UserServiceClient, req *http.Request, pathParams map[string]string) (UserService_ListUsersClient, runtime.ServerMetadata, error) {
-	var protoReq ManagementToken
+	var protoReq BearerToken
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

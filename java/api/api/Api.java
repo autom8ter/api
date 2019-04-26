@@ -3304,572 +3304,22 @@ public final class Api {
 
   }
 
-  public interface ManagementTokenOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:api.ManagementToken)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string token = 1;</code>
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
-  }
-  /**
-   * Protobuf type {@code api.ManagementToken}
-   */
-  public  static final class ManagementToken extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:api.ManagementToken)
-      ManagementTokenOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use ManagementToken.newBuilder() to construct.
-    private ManagementToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private ManagementToken() {
-      token_ = "";
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private ManagementToken(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return api.Api.internal_static_api_ManagementToken_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return api.Api.internal_static_api_ManagementToken_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              api.Api.ManagementToken.class, api.Api.ManagementToken.Builder.class);
-    }
-
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
-    /**
-     * <code>string token = 1;</code>
-     */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof api.Api.ManagementToken)) {
-        return super.equals(obj);
-      }
-      api.Api.ManagementToken other = (api.Api.ManagementToken) obj;
-
-      boolean result = true;
-      result = result && getToken()
-          .equals(other.getToken());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static api.Api.ManagementToken parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.ManagementToken parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static api.Api.ManagementToken parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.ManagementToken parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static api.Api.ManagementToken parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static api.Api.ManagementToken parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(api.Api.ManagementToken prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code api.ManagementToken}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:api.ManagementToken)
-        api.Api.ManagementTokenOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return api.Api.internal_static_api_ManagementToken_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return api.Api.internal_static_api_ManagementToken_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                api.Api.ManagementToken.class, api.Api.ManagementToken.Builder.class);
-      }
-
-      // Construct using api.Api.ManagementToken.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        token_ = "";
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return api.Api.internal_static_api_ManagementToken_descriptor;
-      }
-
-      @java.lang.Override
-      public api.Api.ManagementToken getDefaultInstanceForType() {
-        return api.Api.ManagementToken.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public api.Api.ManagementToken build() {
-        api.Api.ManagementToken result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public api.Api.ManagementToken buildPartial() {
-        api.Api.ManagementToken result = new api.Api.ManagementToken(this);
-        result.token_ = token_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof api.Api.ManagementToken) {
-          return mergeFrom((api.Api.ManagementToken)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(api.Api.ManagementToken other) {
-        if (other == api.Api.ManagementToken.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        api.Api.ManagementToken parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (api.Api.ManagementToken) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 1;</code>
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 1;</code>
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       */
-      public Builder clearToken() {
-        
-        token_ = getDefaultInstance().getToken();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 1;</code>
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        token_ = value;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:api.ManagementToken)
-    }
-
-    // @@protoc_insertion_point(class_scope:api.ManagementToken)
-    private static final api.Api.ManagementToken DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new api.Api.ManagementToken();
-    }
-
-    public static api.Api.ManagementToken getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ManagementToken>
-        PARSER = new com.google.protobuf.AbstractParser<ManagementToken>() {
-      @java.lang.Override
-      public ManagementToken parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ManagementToken(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<ManagementToken> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ManagementToken> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public api.Api.ManagementToken getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface UserRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.UserRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.api.ManagementToken string = 1;</code>
+     * <code>.api.BearerToken string = 1;</code>
      */
     boolean hasString();
     /**
-     * <code>.api.ManagementToken string = 1;</code>
+     * <code>.api.BearerToken string = 1;</code>
      */
-    api.Api.ManagementToken getString();
+    api.Api.BearerToken getString();
     /**
-     * <code>.api.ManagementToken string = 1;</code>
+     * <code>.api.BearerToken string = 1;</code>
      */
-    api.Api.ManagementTokenOrBuilder getStringOrBuilder();
+    api.Api.BearerTokenOrBuilder getStringOrBuilder();
 
     /**
      * <code>.api.User user = 2;</code>
@@ -3924,11 +3374,11 @@ public final class Api {
               done = true;
               break;
             case 10: {
-              api.Api.ManagementToken.Builder subBuilder = null;
+              api.Api.BearerToken.Builder subBuilder = null;
               if (string_ != null) {
                 subBuilder = string_.toBuilder();
               }
-              string_ = input.readMessage(api.Api.ManagementToken.parser(), extensionRegistry);
+              string_ = input.readMessage(api.Api.BearerToken.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(string_);
                 string_ = subBuilder.buildPartial();
@@ -3982,23 +3432,23 @@ public final class Api {
     }
 
     public static final int STRING_FIELD_NUMBER = 1;
-    private api.Api.ManagementToken string_;
+    private api.Api.BearerToken string_;
     /**
-     * <code>.api.ManagementToken string = 1;</code>
+     * <code>.api.BearerToken string = 1;</code>
      */
     public boolean hasString() {
       return string_ != null;
     }
     /**
-     * <code>.api.ManagementToken string = 1;</code>
+     * <code>.api.BearerToken string = 1;</code>
      */
-    public api.Api.ManagementToken getString() {
-      return string_ == null ? api.Api.ManagementToken.getDefaultInstance() : string_;
+    public api.Api.BearerToken getString() {
+      return string_ == null ? api.Api.BearerToken.getDefaultInstance() : string_;
     }
     /**
-     * <code>.api.ManagementToken string = 1;</code>
+     * <code>.api.BearerToken string = 1;</code>
      */
-    public api.Api.ManagementTokenOrBuilder getStringOrBuilder() {
+    public api.Api.BearerTokenOrBuilder getStringOrBuilder() {
       return getString();
     }
 
@@ -4369,29 +3819,29 @@ public final class Api {
         return this;
       }
 
-      private api.Api.ManagementToken string_ = null;
+      private api.Api.BearerToken string_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> stringBuilder_;
+          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> stringBuilder_;
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
       public boolean hasString() {
         return stringBuilder_ != null || string_ != null;
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
-      public api.Api.ManagementToken getString() {
+      public api.Api.BearerToken getString() {
         if (stringBuilder_ == null) {
-          return string_ == null ? api.Api.ManagementToken.getDefaultInstance() : string_;
+          return string_ == null ? api.Api.BearerToken.getDefaultInstance() : string_;
         } else {
           return stringBuilder_.getMessage();
         }
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
-      public Builder setString(api.Api.ManagementToken value) {
+      public Builder setString(api.Api.BearerToken value) {
         if (stringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4405,10 +3855,10 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
       public Builder setString(
-          api.Api.ManagementToken.Builder builderForValue) {
+          api.Api.BearerToken.Builder builderForValue) {
         if (stringBuilder_ == null) {
           string_ = builderForValue.build();
           onChanged();
@@ -4419,13 +3869,13 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
-      public Builder mergeString(api.Api.ManagementToken value) {
+      public Builder mergeString(api.Api.BearerToken value) {
         if (stringBuilder_ == null) {
           if (string_ != null) {
             string_ =
-              api.Api.ManagementToken.newBuilder(string_).mergeFrom(value).buildPartial();
+              api.Api.BearerToken.newBuilder(string_).mergeFrom(value).buildPartial();
           } else {
             string_ = value;
           }
@@ -4437,7 +3887,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
       public Builder clearString() {
         if (stringBuilder_ == null) {
@@ -4451,33 +3901,33 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
-      public api.Api.ManagementToken.Builder getStringBuilder() {
+      public api.Api.BearerToken.Builder getStringBuilder() {
         
         onChanged();
         return getStringFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
-      public api.Api.ManagementTokenOrBuilder getStringOrBuilder() {
+      public api.Api.BearerTokenOrBuilder getStringOrBuilder() {
         if (stringBuilder_ != null) {
           return stringBuilder_.getMessageOrBuilder();
         } else {
           return string_ == null ?
-              api.Api.ManagementToken.getDefaultInstance() : string_;
+              api.Api.BearerToken.getDefaultInstance() : string_;
         }
       }
       /**
-       * <code>.api.ManagementToken string = 1;</code>
+       * <code>.api.BearerToken string = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> 
+          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> 
           getStringFieldBuilder() {
         if (stringBuilder_ == null) {
           stringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder>(
+              api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder>(
                   getString(),
                   getParentForChildren(),
                   isClean());
@@ -4660,17 +4110,17 @@ public final class Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.api.ManagementToken token = 1;</code>
+     * <code>.api.BearerToken token = 1;</code>
      */
     boolean hasToken();
     /**
-     * <code>.api.ManagementToken token = 1;</code>
+     * <code>.api.BearerToken token = 1;</code>
      */
-    api.Api.ManagementToken getToken();
+    api.Api.BearerToken getToken();
     /**
-     * <code>.api.ManagementToken token = 1;</code>
+     * <code>.api.BearerToken token = 1;</code>
      */
-    api.Api.ManagementTokenOrBuilder getTokenOrBuilder();
+    api.Api.BearerTokenOrBuilder getTokenOrBuilder();
 
     /**
      * <code>string email = 2;</code>
@@ -4723,11 +4173,11 @@ public final class Api {
               done = true;
               break;
             case 10: {
-              api.Api.ManagementToken.Builder subBuilder = null;
+              api.Api.BearerToken.Builder subBuilder = null;
               if (token_ != null) {
                 subBuilder = token_.toBuilder();
               }
-              token_ = input.readMessage(api.Api.ManagementToken.parser(), extensionRegistry);
+              token_ = input.readMessage(api.Api.BearerToken.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(token_);
                 token_ = subBuilder.buildPartial();
@@ -4774,23 +4224,23 @@ public final class Api {
     }
 
     public static final int TOKEN_FIELD_NUMBER = 1;
-    private api.Api.ManagementToken token_;
+    private api.Api.BearerToken token_;
     /**
-     * <code>.api.ManagementToken token = 1;</code>
+     * <code>.api.BearerToken token = 1;</code>
      */
     public boolean hasToken() {
       return token_ != null;
     }
     /**
-     * <code>.api.ManagementToken token = 1;</code>
+     * <code>.api.BearerToken token = 1;</code>
      */
-    public api.Api.ManagementToken getToken() {
-      return token_ == null ? api.Api.ManagementToken.getDefaultInstance() : token_;
+    public api.Api.BearerToken getToken() {
+      return token_ == null ? api.Api.BearerToken.getDefaultInstance() : token_;
     }
     /**
-     * <code>.api.ManagementToken token = 1;</code>
+     * <code>.api.BearerToken token = 1;</code>
      */
-    public api.Api.ManagementTokenOrBuilder getTokenOrBuilder() {
+    public api.Api.BearerTokenOrBuilder getTokenOrBuilder() {
       return getToken();
     }
 
@@ -5161,29 +4611,29 @@ public final class Api {
         return this;
       }
 
-      private api.Api.ManagementToken token_ = null;
+      private api.Api.BearerToken token_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> tokenBuilder_;
+          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> tokenBuilder_;
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
       public boolean hasToken() {
         return tokenBuilder_ != null || token_ != null;
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
-      public api.Api.ManagementToken getToken() {
+      public api.Api.BearerToken getToken() {
         if (tokenBuilder_ == null) {
-          return token_ == null ? api.Api.ManagementToken.getDefaultInstance() : token_;
+          return token_ == null ? api.Api.BearerToken.getDefaultInstance() : token_;
         } else {
           return tokenBuilder_.getMessage();
         }
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
-      public Builder setToken(api.Api.ManagementToken value) {
+      public Builder setToken(api.Api.BearerToken value) {
         if (tokenBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -5197,10 +4647,10 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
       public Builder setToken(
-          api.Api.ManagementToken.Builder builderForValue) {
+          api.Api.BearerToken.Builder builderForValue) {
         if (tokenBuilder_ == null) {
           token_ = builderForValue.build();
           onChanged();
@@ -5211,13 +4661,13 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
-      public Builder mergeToken(api.Api.ManagementToken value) {
+      public Builder mergeToken(api.Api.BearerToken value) {
         if (tokenBuilder_ == null) {
           if (token_ != null) {
             token_ =
-              api.Api.ManagementToken.newBuilder(token_).mergeFrom(value).buildPartial();
+              api.Api.BearerToken.newBuilder(token_).mergeFrom(value).buildPartial();
           } else {
             token_ = value;
           }
@@ -5229,7 +4679,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
       public Builder clearToken() {
         if (tokenBuilder_ == null) {
@@ -5243,33 +4693,33 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
-      public api.Api.ManagementToken.Builder getTokenBuilder() {
+      public api.Api.BearerToken.Builder getTokenBuilder() {
         
         onChanged();
         return getTokenFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
-      public api.Api.ManagementTokenOrBuilder getTokenOrBuilder() {
+      public api.Api.BearerTokenOrBuilder getTokenOrBuilder() {
         if (tokenBuilder_ != null) {
           return tokenBuilder_.getMessageOrBuilder();
         } else {
           return token_ == null ?
-              api.Api.ManagementToken.getDefaultInstance() : token_;
+              api.Api.BearerToken.getDefaultInstance() : token_;
         }
       }
       /**
-       * <code>.api.ManagementToken token = 1;</code>
+       * <code>.api.BearerToken token = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> 
+          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> 
           getTokenFieldBuilder() {
         if (tokenBuilder_ == null) {
           tokenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder>(
+              api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder>(
                   getToken(),
                   getParentForChildren(),
                   isClean());
@@ -20594,17 +20044,17 @@ public final class Api {
     int getScopesValue(int index);
 
     /**
-     * <code>.api.ManagementToken management = 7;</code>
+     * <code>.api.BearerToken management = 7;</code>
      */
     boolean hasManagement();
     /**
-     * <code>.api.ManagementToken management = 7;</code>
+     * <code>.api.BearerToken management = 7;</code>
      */
-    api.Api.ManagementToken getManagement();
+    api.Api.BearerToken getManagement();
     /**
-     * <code>.api.ManagementToken management = 7;</code>
+     * <code>.api.BearerToken management = 7;</code>
      */
-    api.Api.ManagementTokenOrBuilder getManagementOrBuilder();
+    api.Api.BearerTokenOrBuilder getManagementOrBuilder();
   }
   /**
    * Protobuf type {@code api.Auth}
@@ -20705,11 +20155,11 @@ public final class Api {
               break;
             }
             case 58: {
-              api.Api.ManagementToken.Builder subBuilder = null;
+              api.Api.BearerToken.Builder subBuilder = null;
               if (management_ != null) {
                 subBuilder = management_.toBuilder();
               }
-              management_ = input.readMessage(api.Api.ManagementToken.parser(), extensionRegistry);
+              management_ = input.readMessage(api.Api.BearerToken.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(management_);
                 management_ = subBuilder.buildPartial();
@@ -20970,23 +20420,23 @@ public final class Api {
     private int scopesMemoizedSerializedSize;
 
     public static final int MANAGEMENT_FIELD_NUMBER = 7;
-    private api.Api.ManagementToken management_;
+    private api.Api.BearerToken management_;
     /**
-     * <code>.api.ManagementToken management = 7;</code>
+     * <code>.api.BearerToken management = 7;</code>
      */
     public boolean hasManagement() {
       return management_ != null;
     }
     /**
-     * <code>.api.ManagementToken management = 7;</code>
+     * <code>.api.BearerToken management = 7;</code>
      */
-    public api.Api.ManagementToken getManagement() {
-      return management_ == null ? api.Api.ManagementToken.getDefaultInstance() : management_;
+    public api.Api.BearerToken getManagement() {
+      return management_ == null ? api.Api.BearerToken.getDefaultInstance() : management_;
     }
     /**
-     * <code>.api.ManagementToken management = 7;</code>
+     * <code>.api.BearerToken management = 7;</code>
      */
-    public api.Api.ManagementTokenOrBuilder getManagementOrBuilder() {
+    public api.Api.BearerTokenOrBuilder getManagementOrBuilder() {
       return getManagement();
     }
 
@@ -21900,29 +21350,29 @@ public final class Api {
         return this;
       }
 
-      private api.Api.ManagementToken management_ = null;
+      private api.Api.BearerToken management_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> managementBuilder_;
+          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> managementBuilder_;
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
       public boolean hasManagement() {
         return managementBuilder_ != null || management_ != null;
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
-      public api.Api.ManagementToken getManagement() {
+      public api.Api.BearerToken getManagement() {
         if (managementBuilder_ == null) {
-          return management_ == null ? api.Api.ManagementToken.getDefaultInstance() : management_;
+          return management_ == null ? api.Api.BearerToken.getDefaultInstance() : management_;
         } else {
           return managementBuilder_.getMessage();
         }
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
-      public Builder setManagement(api.Api.ManagementToken value) {
+      public Builder setManagement(api.Api.BearerToken value) {
         if (managementBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -21936,10 +21386,10 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
       public Builder setManagement(
-          api.Api.ManagementToken.Builder builderForValue) {
+          api.Api.BearerToken.Builder builderForValue) {
         if (managementBuilder_ == null) {
           management_ = builderForValue.build();
           onChanged();
@@ -21950,13 +21400,13 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
-      public Builder mergeManagement(api.Api.ManagementToken value) {
+      public Builder mergeManagement(api.Api.BearerToken value) {
         if (managementBuilder_ == null) {
           if (management_ != null) {
             management_ =
-              api.Api.ManagementToken.newBuilder(management_).mergeFrom(value).buildPartial();
+              api.Api.BearerToken.newBuilder(management_).mergeFrom(value).buildPartial();
           } else {
             management_ = value;
           }
@@ -21968,7 +21418,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
       public Builder clearManagement() {
         if (managementBuilder_ == null) {
@@ -21982,33 +21432,33 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
-      public api.Api.ManagementToken.Builder getManagementBuilder() {
+      public api.Api.BearerToken.Builder getManagementBuilder() {
         
         onChanged();
         return getManagementFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
-      public api.Api.ManagementTokenOrBuilder getManagementOrBuilder() {
+      public api.Api.BearerTokenOrBuilder getManagementOrBuilder() {
         if (managementBuilder_ != null) {
           return managementBuilder_.getMessageOrBuilder();
         } else {
           return management_ == null ?
-              api.Api.ManagementToken.getDefaultInstance() : management_;
+              api.Api.BearerToken.getDefaultInstance() : management_;
         }
       }
       /**
-       * <code>.api.ManagementToken management = 7;</code>
+       * <code>.api.BearerToken management = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> 
+          api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder> 
           getManagementFieldBuilder() {
         if (managementBuilder_ == null) {
           managementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder>(
+              api.Api.BearerToken, api.Api.BearerToken.Builder, api.Api.BearerTokenOrBuilder>(
                   getManagement(),
                   getParentForChildren(),
                   isClean());
@@ -31678,6 +31128,556 @@ public final class Api {
 
   }
 
+  public interface BearerTokenOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.BearerToken)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string token = 1;</code>
+     */
+    java.lang.String getToken();
+    /**
+     * <code>string token = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTokenBytes();
+  }
+  /**
+   * Protobuf type {@code api.BearerToken}
+   */
+  public  static final class BearerToken extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.BearerToken)
+      BearerTokenOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BearerToken.newBuilder() to construct.
+    private BearerToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BearerToken() {
+      token_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BearerToken(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              token_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_BearerToken_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_BearerToken_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.BearerToken.class, api.Api.BearerToken.Builder.class);
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object token_;
+    /**
+     * <code>string token = 1;</code>
+     */
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        token_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string token = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTokenBytes() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        token_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.BearerToken)) {
+        return super.equals(obj);
+      }
+      api.Api.BearerToken other = (api.Api.BearerToken) obj;
+
+      boolean result = true;
+      result = result && getToken()
+          .equals(other.getToken());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getToken().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.BearerToken parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.BearerToken parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.BearerToken parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.BearerToken parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.BearerToken parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.BearerToken parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.BearerToken parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.BearerToken parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.BearerToken parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.BearerToken parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.BearerToken parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.BearerToken parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.BearerToken prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.BearerToken}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.BearerToken)
+        api.Api.BearerTokenOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_BearerToken_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_BearerToken_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.BearerToken.class, api.Api.BearerToken.Builder.class);
+      }
+
+      // Construct using api.Api.BearerToken.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        token_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_BearerToken_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.BearerToken getDefaultInstanceForType() {
+        return api.Api.BearerToken.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.BearerToken build() {
+        api.Api.BearerToken result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.BearerToken buildPartial() {
+        api.Api.BearerToken result = new api.Api.BearerToken(this);
+        result.token_ = token_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.BearerToken) {
+          return mergeFrom((api.Api.BearerToken)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.BearerToken other) {
+        if (other == api.Api.BearerToken.getDefaultInstance()) return this;
+        if (!other.getToken().isEmpty()) {
+          token_ = other.token_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.BearerToken parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.BearerToken) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object token_ = "";
+      /**
+       * <code>string token = 1;</code>
+       */
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          token_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTokenBytes() {
+        java.lang.Object ref = token_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          token_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public Builder setToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public Builder clearToken() {
+        
+        token_ = getDefaultInstance().getToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string token = 1;</code>
+       */
+      public Builder setTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        token_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.BearerToken)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.BearerToken)
+    private static final api.Api.BearerToken DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.BearerToken();
+    }
+
+    public static api.Api.BearerToken getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BearerToken>
+        PARSER = new com.google.protobuf.AbstractParser<BearerToken>() {
+      @java.lang.Override
+      public BearerToken parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BearerToken(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BearerToken> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BearerToken> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.BearerToken getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_SubscribeRequest_descriptor;
   private static final 
@@ -31698,11 +31698,6 @@ public final class Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_Empty_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_api_ManagementToken_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_api_ManagementToken_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_UserRequest_descriptor;
   private static final 
@@ -31868,6 +31863,11 @@ public final class Api {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_PhoneNumberResource_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_BearerToken_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_BearerToken_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -31883,145 +31883,144 @@ public final class Api {
       "\"1\n\022UnSubscribeRequest\022\r\n\005email\030\001 \001(\t\022\014\n" +
       "\004plan\030\002 \001(\t\"H\n\004Card\022\016\n\006number\030\001 \001(\t\022\021\n\te" +
       "xp_month\030\002 \001(\t\022\020\n\010exp_year\030\003 \001(\t\022\013\n\003cvc\030" +
-      "\004 \001(\t\"\007\n\005Empty\" \n\017ManagementToken\022\r\n\005tok" +
-      "en\030\001 \001(\t\"L\n\013UserRequest\022$\n\006string\030\001 \001(\0132" +
-      "\024.api.ManagementToken\022\027\n\004user\030\002 \001(\0132\t.ap" +
-      "i.User\"H\n\022UserByEmailRequest\022#\n\005token\030\001 " +
-      "\001(\0132\024.api.ManagementToken\022\r\n\005email\030\002 \001(\t" +
-      "\"\030\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"r\n\003SMS\022\017\n\007ser" +
-      "vice\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132" +
-      "\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callb" +
-      "ack\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007se" +
-      "rvice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\013" +
-      "2\014.api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010call" +
-      "back\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022" +
-      "\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031" +
-      "\n\005email\030\003 \001(\0132\n.api.Email\"Z\n\021EmailBlastR" +
-      "equest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030" +
-      "\002 \001(\t\022\036\n\005blast\030\003 \001(\0132\017.api.EmailBlast\"\246\001" +
-      "\n\nEmailBlast\0226\n\014name_address\030\001 \003(\0132 .api" +
-      ".EmailBlast.NameAddressEntry\022\017\n\007subject\030" +
-      "\002 \001(\t\022\r\n\005plain\030\003 \001(\t\022\014\n\004html\030\004 \001(\t\0322\n\020Na" +
-      "meAddressEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address" +
-      "\030\002 \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014" +
-      "\n\004html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to" +
-      "\030\002 \001(\t\022\013\n\003app\030\003 \001(\t\"2\n\tCallBlast\022\014\n\004from" +
-      "\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Messa" +
-      "ge\022\r\n\005value\030\001 \001(\t\"\245\003\n\004User\022\017\n\007user_id\030\001 " +
-      "\001(\t\022\014\n\004name\030\002 \001(\t\022\022\n\ngiven_name\030\003 \001(\t\022\023\n" +
-      "\013family_name\030\004 \001(\t\022\016\n\006gender\030\005 \001(\t\022\021\n\tbi" +
-      "rthdate\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\024\n\014phone_nu" +
-      "mber\030\010 \001(\t\022\017\n\007picture\030\t \001(\t\022(\n\ruser_meta" +
-      "data\030\n \001(\0132\021.api.UserMetadata\022&\n\014app_met" +
-      "adata\030\013 \001(\0132\020.api.AppMetadata\022\017\n\007last_ip" +
-      "\030\014 \001(\t\022\017\n\007blocked\030\r \001(\010\022\020\n\010nickname\030\016 \001(" +
-      "\t\022\023\n\013multifactor\030\017 \003(\t\022\022\n\ncreated_at\030\021 \001" +
-      "(\t\022\022\n\nupdated_at\030\022 \001(\t\022\026\n\016phone_verified" +
-      "\030\023 \001(\010\022!\n\nidentities\030\024 \003(\0132\r.api.Identit" +
-      "y\"S\n\010Identity\022\022\n\nconnection\030\001 \001(\t\022\017\n\007use" +
-      "r_id\030\002 \001(\t\022\020\n\010provider\030\003 \001(\t\022\020\n\010isSocial" +
-      "\030\004 \001(\t\"r\n\014UserMetadata\0221\n\010metadata\030\001 \003(\013" +
-      "2\037.api.UserMetadata.MetadataEntry\032/\n\rMet" +
-      "adataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\"p\n\013AppMetadata\0220\n\010metadata\030\001 \003(\0132\036.ap" +
-      "i.AppMetadata.MetadataEntry\032/\n\rMetadataE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n" +
-      "\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t" +
-      "\022\025\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(" +
-      "\t\022\020\n\010audience\030\005 \001(\t\022\032\n\006scopes\030\006 \003(\0162\n.ap" +
-      "i.Scope\022(\n\nmanagement\030\007 \001(\0132\024.api.Manage" +
-      "mentToken\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Temp" +
-      "late\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSON" +
-      "WebKeys\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use" +
-      "\030\003 \001(\t\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(" +
-      "\t\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKey" +
-      "s\"\260\003\n\013HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api." +
-      "HTTPMethod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014" +
-      "\n\004user\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\022\023\n\013conten" +
-      "tType\030\006 \001(\t\022.\n\007headers\030\007 \003(\0132\035.api.HTTPR" +
-      "equest.HeadersEntry\022(\n\004form\030\010 \003(\0132\032.api." +
-      "HTTPRequest.FormEntry\022.\n\007cookies\030\t \003(\0132\035" +
-      ".api.HTTPRequest.CookiesEntry\022\030\n\004body\030\n " +
-      "\001(\0132\n.api.Bytes\032.\n\014HeadersEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\r" +
-      "RenderRequest\022\037\n\010template\030\001 \001(\0132\r.api.Te" +
-      "mplate\022\030\n\004data\030\002 \001(\0132\n.api.Bytes\"o\n\030Sear" +
-      "chPhoneNumberRequest\022\r\n\005state\030\001 \001(\t\022-\n\014c" +
-      "apabilities\030\002 \001(\0132\027.api.NumberCapabiliti" +
-      "es\022\025\n\rtotal_results\030\003 \001(\003\"y\n\013PhoneNumber" +
-      "\022\025\n\rfriendly_name\030\001 \001(\t\022\024\n\014phone_number\030" +
-      "\002 \001(\t\022\016\n\006region\030\003 \001(\t\022-\n\014capabilities\030\004 " +
-      "\001(\0132\027.api.NumberCapabilities\"=\n\022NumberCa" +
-      "pabilities\022\r\n\005voice\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013" +
-      "\n\003mms\030\003 \001(\010\"P\n\023PhoneNumberResource\022 \n\006nu" +
-      "mber\030\001 \001(\0132\020.api.PhoneNumber\022\n\n\002id\030\002 \001(\t" +
-      "\022\013\n\003uri\030\003 \001(\t*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007P" +
-      "ROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024R" +
-      "EAD_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022" +
-      "\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020" +
-      "\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_" +
-      "EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPD" +
-      "ATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_" +
-      "RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020" +
-      "\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n" +
-      "\tREAD_LOGS\020\022*\037\n\nHTTPMethod\022\007\n\003GET\020\000\022\010\n\004P" +
-      "OST\020\0012\350\005\n\016UtilityService\022<\n\004Echo\022\014.api.M" +
-      "essage\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/utility/e" +
-      "cho:\001*\022K\n\013EchoSpanish\022\014.api.Message\032\014.ap" +
-      "i.Message\" \202\323\344\223\002\032\"\025/utility/echo/spanish" +
-      ":\001*\022K\n\013EchoChinese\022\014.api.Message\032\014.api.M" +
-      "essage\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*" +
-      "\022K\n\013EchoEnglish\022\014.api.Message\032\014.api.Mess" +
-      "age\" \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022G\n" +
-      "\tEchoHindi\022\014.api.Message\032\014.api.Message\"\036" +
-      "\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I\n\nEchoAr" +
-      "abic\022\014.api.Message\032\014.api.Message\"\037\202\323\344\223\002\031" +
-      "\"\024/utility/echo/arabic:\001*\022G\n\013MarshalJSON" +
-      "\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utili" +
-      "ty/marshal/json:\001*\022G\n\013MarshalYAML\022\n.api." +
-      "Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/mars" +
-      "hal/yaml:\001*\022E\n\nMarshalXML\022\n.api.Bytes\032\n." +
-      "api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xml:" +
-      "\001*\022D\n\006Render\022\022.api.RenderRequest\032\n.api.B" +
-      "ytes\"\032\202\323\344\223\002\024\"\017/utility/render:\001*2\222\005\n\016Con" +
-      "tactService\022=\n\007SendSMS\022\010.api.SMS\032\n.api.B" +
-      "ytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{to}:\001*\022J\n\014Se" +
-      "ndSMSBlast\022\r.api.SMSBlast\032\n.api.Bytes\"\035\202" +
-      "\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022C\n\006GetSMS" +
-      "\022\017.api.Identifier\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/" +
-      "contact/sms/{id}:\001*\022W\n\tSendEmail\022\021.api.E" +
-      "mailRequest\032\014.api.Message\")\202\323\344\223\002#\"\036/cont" +
-      "act/email/{email.address}:\001*\022Y\n\016SendEmai" +
-      "lBlast\022\026.api.EmailBlastRequest\032\014.api.Mes" +
-      "sage\"\037\202\323\344\223\002\031\"\024/contact/email/blast:\001*0\001\022" +
-      "@\n\010SendCall\022\t.api.Call\032\n.api.Bytes\"\035\202\323\344\223" +
-      "\002\027\"\022/contact/call/{to}:\001*\022M\n\rSendCallBla" +
-      "st\022\016.api.CallBlast\032\n.api.Bytes\"\036\202\323\344\223\002\030\"\023" +
-      "/contact/call/blast:\001*0\001\022k\n\021SearchPhoneN" +
-      "umber\022\035.api.SearchPhoneNumberRequest\032\020.a" +
-      "pi.PhoneNumber\"#\202\323\344\223\002\035\"\030/contact/numbers" +
-      "/{state}:\001*0\0012\262\002\n\016PaymentService\022U\n\tSubs" +
-      "cribe\022\025.api.SubscribeRequest\032\n.api.Bytes" +
-      "\"%\202\323\344\223\002\037\"\032/payment/subscribe/{email}:\001*\022" +
-      "[\n\013Unsubscribe\022\027.api.UnSubscribeRequest\032" +
-      "\n.api.Bytes\"\'\202\323\344\223\002!\"\034/payment/unsubscrib" +
-      "e/{email}:\001*\022l\n\023PurchasePhoneNumber\022\020.ap" +
-      "i.PhoneNumber\032\030.api.PhoneNumberResource\"" +
-      ")\202\323\344\223\002#\"\036/payment/number/{phone_number}:" +
-      "\001*2\214\003\n\013UserService\022K\n\007GetUser\022\027.api.User" +
-      "ByEmailRequest\032\t.api.User\"\034\202\323\344\223\002\026\"\021/user" +
-      "/get/{email}:\001*\022P\n\nUpdateUser\022\020.api.User" +
-      "Request\032\n.api.Bytes\"$\202\323\344\223\002\036\"\031/user/updat" +
-      "e/{user.email}:\001*\022C\n\nCreateUser\022\020.api.Us" +
-      "erRequest\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/user/cre" +
-      "ate:\001*\022R\n\nDeleteUser\022\027.api.UserByEmailRe" +
-      "quest\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/user/delete/" +
-      "{email}:\001*\022E\n\tListUsers\022\024.api.Management" +
-      "Token\032\t.api.User\"\025\202\323\344\223\002\017\"\n/user/list:\001*0" +
-      "\001b\006proto3"
+      "\004 \001(\t\"\007\n\005Empty\"H\n\013UserRequest\022 \n\006string\030" +
+      "\001 \001(\0132\020.api.BearerToken\022\027\n\004user\030\002 \001(\0132\t." +
+      "api.User\"D\n\022UserByEmailRequest\022\037\n\005token\030" +
+      "\001 \001(\0132\020.api.BearerToken\022\r\n\005email\030\002 \001(\t\"\030" +
+      "\n\nIdentifier\022\n\n\002id\030\001 \001(\t\"r\n\003SMS\022\017\n\007servi" +
+      "ce\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\035\n\007message\030\003 \001(\0132\014." +
+      "api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callbac" +
+      "k\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"w\n\010SMSBlast\022\017\n\007serv" +
+      "ice\030\001 \001(\t\022\n\n\002to\030\002 \003(\t\022\035\n\007message\030\003 \001(\0132\014" +
+      ".api.Message\022\020\n\010mediaURL\030\004 \001(\t\022\020\n\010callba" +
+      "ck\030\005 \001(\t\022\013\n\003app\030\006 \001(\t\"P\n\014EmailRequest\022\021\n" +
+      "\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 \001(\t\022\031\n\005" +
+      "email\030\003 \001(\0132\n.api.Email\"Z\n\021EmailBlastReq" +
+      "uest\022\021\n\tfrom_name\030\001 \001(\t\022\022\n\nfrom_email\030\002 " +
+      "\001(\t\022\036\n\005blast\030\003 \001(\0132\017.api.EmailBlast\"\246\001\n\n" +
+      "EmailBlast\0226\n\014name_address\030\001 \003(\0132 .api.E" +
+      "mailBlast.NameAddressEntry\022\017\n\007subject\030\002 " +
+      "\001(\t\022\r\n\005plain\030\003 \001(\t\022\014\n\004html\030\004 \001(\t\0322\n\020Name" +
+      "AddressEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"T\n\005Email\022\014\n\004name\030\001 \001(\t\022\017\n\007address\030\002" +
+      " \001(\t\022\017\n\007subject\030\003 \001(\t\022\r\n\005plain\030\004 \001(\t\022\014\n\004" +
+      "html\030\005 \001(\t\"-\n\004Call\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002" +
+      " \001(\t\022\013\n\003app\030\003 \001(\t\"2\n\tCallBlast\022\014\n\004from\030\001" +
+      " \001(\t\022\n\n\002to\030\002 \003(\t\022\013\n\003app\030\003 \001(\t\"\030\n\007Message" +
+      "\022\r\n\005value\030\001 \001(\t\"\245\003\n\004User\022\017\n\007user_id\030\001 \001(" +
+      "\t\022\014\n\004name\030\002 \001(\t\022\022\n\ngiven_name\030\003 \001(\t\022\023\n\013f" +
+      "amily_name\030\004 \001(\t\022\016\n\006gender\030\005 \001(\t\022\021\n\tbirt" +
+      "hdate\030\006 \001(\t\022\r\n\005email\030\007 \001(\t\022\024\n\014phone_numb" +
+      "er\030\010 \001(\t\022\017\n\007picture\030\t \001(\t\022(\n\ruser_metada" +
+      "ta\030\n \001(\0132\021.api.UserMetadata\022&\n\014app_metad" +
+      "ata\030\013 \001(\0132\020.api.AppMetadata\022\017\n\007last_ip\030\014" +
+      " \001(\t\022\017\n\007blocked\030\r \001(\010\022\020\n\010nickname\030\016 \001(\t\022" +
+      "\023\n\013multifactor\030\017 \003(\t\022\022\n\ncreated_at\030\021 \001(\t" +
+      "\022\022\n\nupdated_at\030\022 \001(\t\022\026\n\016phone_verified\030\023" +
+      " \001(\010\022!\n\nidentities\030\024 \003(\0132\r.api.Identity\"" +
+      "S\n\010Identity\022\022\n\nconnection\030\001 \001(\t\022\017\n\007user_" +
+      "id\030\002 \001(\t\022\020\n\010provider\030\003 \001(\t\022\020\n\010isSocial\030\004" +
+      " \001(\t\"r\n\014UserMetadata\0221\n\010metadata\030\001 \003(\0132\037" +
+      ".api.UserMetadata.MetadataEntry\032/\n\rMetad" +
+      "ataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"p\n\013AppMetadata\0220\n\010metadata\030\001 \003(\0132\036.api." +
+      "AppMetadata.MetadataEntry\032/\n\rMetadataEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\246\001\n\004A" +
+      "uth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t\022\025" +
+      "\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(\t\022" +
+      "\020\n\010audience\030\005 \001(\t\022\032\n\006scopes\030\006 \003(\0162\n.api." +
+      "Scope\022$\n\nmanagement\030\007 \001(\0132\020.api.BearerTo" +
+      "ken\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Template\022\014" +
+      "\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSONWebKey" +
+      "s\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t" +
+      "\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\"&\n\004J" +
+      "wks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKeys\"\260\003\n\013" +
+      "HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api.HTTPMe" +
+      "thod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014\n\004user" +
+      "\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\022\023\n\013contentType\030" +
+      "\006 \001(\t\022.\n\007headers\030\007 \003(\0132\035.api.HTTPRequest" +
+      ".HeadersEntry\022(\n\004form\030\010 \003(\0132\032.api.HTTPRe" +
+      "quest.FormEntry\022.\n\007cookies\030\t \003(\0132\035.api.H" +
+      "TTPRequest.CookiesEntry\022\030\n\004body\030\n \001(\0132\n." +
+      "api.Bytes\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\rRender" +
+      "Request\022\037\n\010template\030\001 \001(\0132\r.api.Template" +
+      "\022\030\n\004data\030\002 \001(\0132\n.api.Bytes\"o\n\030SearchPhon" +
+      "eNumberRequest\022\r\n\005state\030\001 \001(\t\022-\n\014capabil" +
+      "ities\030\002 \001(\0132\027.api.NumberCapabilities\022\025\n\r" +
+      "total_results\030\003 \001(\003\"y\n\013PhoneNumber\022\025\n\rfr" +
+      "iendly_name\030\001 \001(\t\022\024\n\014phone_number\030\002 \001(\t\022" +
+      "\016\n\006region\030\003 \001(\t\022-\n\014capabilities\030\004 \001(\0132\027." +
+      "api.NumberCapabilities\"=\n\022NumberCapabili" +
+      "ties\022\r\n\005voice\030\001 \001(\010\022\013\n\003sms\030\002 \001(\010\022\013\n\003mms\030" +
+      "\003 \001(\010\"P\n\023PhoneNumberResource\022 \n\006number\030\001" +
+      " \001(\0132\020.api.PhoneNumber\022\n\n\002id\030\002 \001(\t\022\013\n\003ur" +
+      "i\030\003 \001(\t\"\034\n\013BearerToken\022\r\n\005token\030\001 \001(\t*\344\002" +
+      "\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005EMAI" +
+      "L\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP_TOK" +
+      "ENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STATS\020\006\022" +
+      "\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_EMAI" +
+      "L_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLATES\020" +
+      "\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022\020\n\014C" +
+      "REATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nREAD_" +
+      "ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_ROLE" +
+      "S\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022*\037\n\n" +
+      "HTTPMethod\022\007\n\003GET\020\000\022\010\n\004POST\020\0012\350\005\n\016Utilit" +
+      "yService\022<\n\004Echo\022\014.api.Message\032\014.api.Mes" +
+      "sage\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSp" +
+      "anish\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002" +
+      "\032\"\025/utility/echo/spanish:\001*\022K\n\013EchoChine" +
+      "se\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025" +
+      "/utility/echo/chinese:\001*\022K\n\013EchoEnglish\022" +
+      "\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/ut" +
+      "ility/echo/english:\001*\022G\n\tEchoHindi\022\014.api" +
+      ".Message\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility" +
+      "/echo/hindi:\001*\022I\n\nEchoArabic\022\014.api.Messa" +
+      "ge\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/utility/echo/" +
+      "arabic:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.a" +
+      "pi.Bytes\" \202\323\344\223\002\032\"\025/utility/marshal/json:" +
+      "\001*\022G\n\013MarshalYAML\022\n.api.Bytes\032\n.api.Byte" +
+      "s\" \202\323\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E\n\nM" +
+      "arshalXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002" +
+      "\031\"\024/utility/marshal/xml:\001*\022D\n\006Render\022\022.a" +
+      "pi.RenderRequest\032\n.api.Bytes\"\032\202\323\344\223\002\024\"\017/u" +
+      "tility/render:\001*2\222\005\n\016ContactService\022=\n\007S" +
+      "endSMS\022\010.api.SMS\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/c" +
+      "ontact/sms/{to}:\001*\022J\n\014SendSMSBlast\022\r.api" +
+      ".SMSBlast\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/" +
+      "sms/blast:\001*0\001\022C\n\006GetSMS\022\017.api.Identifie" +
+      "r\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}" +
+      ":\001*\022W\n\tSendEmail\022\021.api.EmailRequest\032\014.ap" +
+      "i.Message\")\202\323\344\223\002#\"\036/contact/email/{email" +
+      ".address}:\001*\022Y\n\016SendEmailBlast\022\026.api.Ema" +
+      "ilBlastRequest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/c" +
+      "ontact/email/blast:\001*0\001\022@\n\010SendCall\022\t.ap" +
+      "i.Call\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/cal" +
+      "l/{to}:\001*\022M\n\rSendCallBlast\022\016.api.CallBla" +
+      "st\032\n.api.Bytes\"\036\202\323\344\223\002\030\"\023/contact/call/bl" +
+      "ast:\001*0\001\022k\n\021SearchPhoneNumber\022\035.api.Sear" +
+      "chPhoneNumberRequest\032\020.api.PhoneNumber\"#" +
+      "\202\323\344\223\002\035\"\030/contact/numbers/{state}:\001*0\0012\262\002" +
+      "\n\016PaymentService\022U\n\tSubscribe\022\025.api.Subs" +
+      "cribeRequest\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032/payme" +
+      "nt/subscribe/{email}:\001*\022[\n\013Unsubscribe\022\027" +
+      ".api.UnSubscribeRequest\032\n.api.Bytes\"\'\202\323\344" +
+      "\223\002!\"\034/payment/unsubscribe/{email}:\001*\022l\n\023" +
+      "PurchasePhoneNumber\022\020.api.PhoneNumber\032\030." +
+      "api.PhoneNumberResource\")\202\323\344\223\002#\"\036/paymen" +
+      "t/number/{phone_number}:\001*2\210\003\n\013UserServi" +
+      "ce\022K\n\007GetUser\022\027.api.UserByEmailRequest\032\t" +
+      ".api.User\"\034\202\323\344\223\002\026\"\021/user/get/{email}:\001*\022" +
+      "P\n\nUpdateUser\022\020.api.UserRequest\032\n.api.By" +
+      "tes\"$\202\323\344\223\002\036\"\031/user/update/{user.email}:\001" +
+      "*\022C\n\nCreateUser\022\020.api.UserRequest\032\n.api." +
+      "Bytes\"\027\202\323\344\223\002\021\"\014/user/create:\001*\022R\n\nDelete" +
+      "User\022\027.api.UserByEmailRequest\032\n.api.Byte" +
+      "s\"\037\202\323\344\223\002\031\"\024/user/delete/{email}:\001*\022A\n\tLi" +
+      "stUsers\022\020.api.BearerToken\032\t.api.User\"\025\202\323" +
+      "\344\223\002\017\"\n/user/list:\001*0\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -32060,56 +32059,50 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Empty_descriptor,
         new java.lang.String[] { });
-    internal_static_api_ManagementToken_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_api_ManagementToken_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_api_ManagementToken_descriptor,
-        new java.lang.String[] { "Token", });
     internal_static_api_UserRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_UserRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserRequest_descriptor,
         new java.lang.String[] { "String", "User", });
     internal_static_api_UserByEmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_UserByEmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserByEmailRequest_descriptor,
         new java.lang.String[] { "Token", "Email", });
     internal_static_api_Identifier_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_Identifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Identifier_descriptor,
         new java.lang.String[] { "Id", });
     internal_static_api_SMS_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_SMS_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMS_descriptor,
         new java.lang.String[] { "Service", "To", "Message", "MediaURL", "Callback", "App", });
     internal_static_api_SMSBlast_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_SMSBlast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SMSBlast_descriptor,
         new java.lang.String[] { "Service", "To", "Message", "MediaURL", "Callback", "App", });
     internal_static_api_EmailRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailRequest_descriptor,
         new java.lang.String[] { "FromName", "FromEmail", "Email", });
     internal_static_api_EmailBlastRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_EmailBlastRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailBlastRequest_descriptor,
         new java.lang.String[] { "FromName", "FromEmail", "Blast", });
     internal_static_api_EmailBlast_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_EmailBlast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EmailBlast_descriptor,
@@ -32121,43 +32114,43 @@ public final class Api {
         internal_static_api_EmailBlast_NameAddressEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_Email_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_Email_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Email_descriptor,
         new java.lang.String[] { "Name", "Address", "Subject", "Plain", "Html", });
     internal_static_api_Call_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_Call_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Call_descriptor,
         new java.lang.String[] { "From", "To", "App", });
     internal_static_api_CallBlast_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_CallBlast_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CallBlast_descriptor,
         new java.lang.String[] { "From", "To", "App", });
     internal_static_api_Message_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_Message_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Message_descriptor,
         new java.lang.String[] { "Value", });
     internal_static_api_User_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_User_descriptor,
         new java.lang.String[] { "UserId", "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "PhoneNumber", "Picture", "UserMetadata", "AppMetadata", "LastIp", "Blocked", "Nickname", "Multifactor", "CreatedAt", "UpdatedAt", "PhoneVerified", "Identities", });
     internal_static_api_Identity_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_Identity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Identity_descriptor,
         new java.lang.String[] { "Connection", "UserId", "Provider", "IsSocial", });
     internal_static_api_UserMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_UserMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserMetadata_descriptor,
@@ -32169,7 +32162,7 @@ public final class Api {
         internal_static_api_UserMetadata_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_AppMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_AppMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AppMetadata_descriptor,
@@ -32181,37 +32174,37 @@ public final class Api {
         internal_static_api_AppMetadata_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_Auth_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_Auth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Auth_descriptor,
         new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", "Management", });
     internal_static_api_Bytes_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_Bytes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Bytes_descriptor,
         new java.lang.String[] { "Bits", });
     internal_static_api_Template_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_Template_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Template_descriptor,
         new java.lang.String[] { "Name", "Text", });
     internal_static_api_JSONWebKeys_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_JSONWebKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JSONWebKeys_descriptor,
         new java.lang.String[] { "Kty", "Kid", "Use", "N", "E", "X5C", });
     internal_static_api_Jwks_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_api_Jwks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Jwks_descriptor,
         new java.lang.String[] { "Keys", });
     internal_static_api_HTTPRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_api_HTTPRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_HTTPRequest_descriptor,
@@ -32235,35 +32228,41 @@ public final class Api {
         internal_static_api_HTTPRequest_CookiesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_api_RenderRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_api_RenderRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_RenderRequest_descriptor,
         new java.lang.String[] { "Template", "Data", });
     internal_static_api_SearchPhoneNumberRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_api_SearchPhoneNumberRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SearchPhoneNumberRequest_descriptor,
         new java.lang.String[] { "State", "Capabilities", "TotalResults", });
     internal_static_api_PhoneNumber_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_api_PhoneNumber_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PhoneNumber_descriptor,
         new java.lang.String[] { "FriendlyName", "PhoneNumber", "Region", "Capabilities", });
     internal_static_api_NumberCapabilities_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_api_NumberCapabilities_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_NumberCapabilities_descriptor,
         new java.lang.String[] { "Voice", "Sms", "Mms", });
     internal_static_api_PhoneNumberResource_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_api_PhoneNumberResource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_PhoneNumberResource_descriptor,
         new java.lang.String[] { "Number", "Id", "Uri", });
+    internal_static_api_BearerToken_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_api_BearerToken_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_BearerToken_descriptor,
+        new java.lang.String[] { "Token", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.AnnotationsProto.http);

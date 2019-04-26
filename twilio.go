@@ -13,4 +13,3 @@ func IncomingPhoneNumbersURL(account string) string {
 func ChatServiceURL() string {
 	return "https://chat.twilio.com/v2/Services"
 }
-

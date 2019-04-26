@@ -28,13 +28,13 @@
 CF_EXTERN_C_BEGIN
 
 @class AppMetadata;
+@class BearerToken;
 @class Bytes;
 @class Card;
 @class Email;
 @class EmailBlast;
 @class Identity;
 @class JSONWebKeys;
-@class ManagementToken;
 @class Message;
 @class NumberCapabilities;
 @class PhoneNumber;
@@ -180,18 +180,6 @@ typedef GPB_ENUM(Card_FieldNumber) {
 
 @end
 
-#pragma mark - ManagementToken
-
-typedef GPB_ENUM(ManagementToken_FieldNumber) {
-  ManagementToken_FieldNumber_Token = 1,
-};
-
-@interface ManagementToken : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
-
-@end
-
 #pragma mark - UserRequest
 
 typedef GPB_ENUM(UserRequest_FieldNumber) {
@@ -201,7 +189,7 @@ typedef GPB_ENUM(UserRequest_FieldNumber) {
 
 @interface UserRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) ManagementToken *string;
+@property(nonatomic, readwrite, strong, null_resettable) BearerToken *string;
 /** Test to see if @c string has been set. */
 @property(nonatomic, readwrite) BOOL hasString;
 
@@ -220,7 +208,7 @@ typedef GPB_ENUM(UserByEmailRequest_FieldNumber) {
 
 @interface UserByEmailRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) ManagementToken *token;
+@property(nonatomic, readwrite, strong, null_resettable) BearerToken *token;
 /** Test to see if @c token has been set. */
 @property(nonatomic, readwrite) BOOL hasToken;
 
@@ -589,7 +577,7 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 /** The number of items in @c scopesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
 
-@property(nonatomic, readwrite, strong, null_resettable) ManagementToken *management;
+@property(nonatomic, readwrite, strong, null_resettable) BearerToken *management;
 /** Test to see if @c management has been set. */
 @property(nonatomic, readwrite) BOOL hasManagement;
 
@@ -821,6 +809,18 @@ typedef GPB_ENUM(PhoneNumberResource_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uri;
+
+@end
+
+#pragma mark - BearerToken
+
+typedef GPB_ENUM(BearerToken_FieldNumber) {
+  BearerToken_FieldNumber_Token = 1,
+};
+
+@interface BearerToken : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
 @end
 

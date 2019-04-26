@@ -14,6 +14,7 @@ var global = Function('return this')();
 var google_api_annotations_pb = require('./google/api/annotations_pb.js');
 goog.exportSymbol('proto.api.AppMetadata', null, global);
 goog.exportSymbol('proto.api.Auth', null, global);
+goog.exportSymbol('proto.api.BearerToken', null, global);
 goog.exportSymbol('proto.api.Bytes', null, global);
 goog.exportSymbol('proto.api.Call', null, global);
 goog.exportSymbol('proto.api.CallBlast', null, global);
@@ -29,7 +30,6 @@ goog.exportSymbol('proto.api.Identifier', null, global);
 goog.exportSymbol('proto.api.Identity', null, global);
 goog.exportSymbol('proto.api.JSONWebKeys', null, global);
 goog.exportSymbol('proto.api.Jwks', null, global);
-goog.exportSymbol('proto.api.ManagementToken', null, global);
 goog.exportSymbol('proto.api.Message', null, global);
 goog.exportSymbol('proto.api.NumberCapabilities', null, global);
 goog.exportSymbol('proto.api.PhoneNumber', null, global);
@@ -778,148 +778,6 @@ proto.api.Empty.serializeBinaryToWriter = function(message, writer) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.ManagementToken = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.api.ManagementToken, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.api.ManagementToken.displayName = 'proto.api.ManagementToken';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.ManagementToken.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ManagementToken.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.ManagementToken} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.ManagementToken.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    token: jspb.Message.getFieldWithDefault(msg, 1, "")
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ManagementToken}
- */
-proto.api.ManagementToken.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ManagementToken;
-  return proto.api.ManagementToken.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.ManagementToken} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ManagementToken}
- */
-proto.api.ManagementToken.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setToken(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.ManagementToken.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.ManagementToken.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.ManagementToken} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.ManagementToken.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getToken();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string token = 1;
- * @return {string}
- */
-proto.api.ManagementToken.prototype.getToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.api.ManagementToken.prototype.setToken = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.api.UserRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -956,7 +814,7 @@ proto.api.UserRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.UserRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    string: (f = msg.getString()) && proto.api.ManagementToken.toObject(includeInstance, f),
+    string: (f = msg.getString()) && proto.api.BearerToken.toObject(includeInstance, f),
     user: (f = msg.getUser()) && proto.api.User.toObject(includeInstance, f)
   };
 
@@ -995,8 +853,8 @@ proto.api.UserRequest.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.ManagementToken;
-      reader.readMessage(value,proto.api.ManagementToken.deserializeBinaryFromReader);
+      var value = new proto.api.BearerToken;
+      reader.readMessage(value,proto.api.BearerToken.deserializeBinaryFromReader);
       msg.setString(value);
       break;
     case 2:
@@ -1038,7 +896,7 @@ proto.api.UserRequest.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       1,
       f,
-      proto.api.ManagementToken.serializeBinaryToWriter
+      proto.api.BearerToken.serializeBinaryToWriter
     );
   }
   f = message.getUser();
@@ -1053,16 +911,16 @@ proto.api.UserRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional ManagementToken string = 1;
- * @return {?proto.api.ManagementToken}
+ * optional BearerToken string = 1;
+ * @return {?proto.api.BearerToken}
  */
 proto.api.UserRequest.prototype.getString = function() {
-  return /** @type{?proto.api.ManagementToken} */ (
-    jspb.Message.getWrapperField(this, proto.api.ManagementToken, 1));
+  return /** @type{?proto.api.BearerToken} */ (
+    jspb.Message.getWrapperField(this, proto.api.BearerToken, 1));
 };
 
 
-/** @param {?proto.api.ManagementToken|undefined} value */
+/** @param {?proto.api.BearerToken|undefined} value */
 proto.api.UserRequest.prototype.setString = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1159,7 +1017,7 @@ proto.api.UserByEmailRequest.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.UserByEmailRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: (f = msg.getToken()) && proto.api.ManagementToken.toObject(includeInstance, f),
+    token: (f = msg.getToken()) && proto.api.BearerToken.toObject(includeInstance, f),
     email: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1198,8 +1056,8 @@ proto.api.UserByEmailRequest.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.api.ManagementToken;
-      reader.readMessage(value,proto.api.ManagementToken.deserializeBinaryFromReader);
+      var value = new proto.api.BearerToken;
+      reader.readMessage(value,proto.api.BearerToken.deserializeBinaryFromReader);
       msg.setToken(value);
       break;
     case 2:
@@ -1240,7 +1098,7 @@ proto.api.UserByEmailRequest.serializeBinaryToWriter = function(message, writer)
     writer.writeMessage(
       1,
       f,
-      proto.api.ManagementToken.serializeBinaryToWriter
+      proto.api.BearerToken.serializeBinaryToWriter
     );
   }
   f = message.getEmail();
@@ -1254,16 +1112,16 @@ proto.api.UserByEmailRequest.serializeBinaryToWriter = function(message, writer)
 
 
 /**
- * optional ManagementToken token = 1;
- * @return {?proto.api.ManagementToken}
+ * optional BearerToken token = 1;
+ * @return {?proto.api.BearerToken}
  */
 proto.api.UserByEmailRequest.prototype.getToken = function() {
-  return /** @type{?proto.api.ManagementToken} */ (
-    jspb.Message.getWrapperField(this, proto.api.ManagementToken, 1));
+  return /** @type{?proto.api.BearerToken} */ (
+    jspb.Message.getWrapperField(this, proto.api.BearerToken, 1));
 };
 
 
-/** @param {?proto.api.ManagementToken|undefined} value */
+/** @param {?proto.api.BearerToken|undefined} value */
 proto.api.UserByEmailRequest.prototype.setToken = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -4782,7 +4640,7 @@ proto.api.Auth.toObject = function(includeInstance, msg) {
     redirect: jspb.Message.getFieldWithDefault(msg, 4, ""),
     audience: jspb.Message.getFieldWithDefault(msg, 5, ""),
     scopesList: jspb.Message.getRepeatedField(msg, 6),
-    management: (f = msg.getManagement()) && proto.api.ManagementToken.toObject(includeInstance, f)
+    management: (f = msg.getManagement()) && proto.api.BearerToken.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4844,8 +4702,8 @@ proto.api.Auth.deserializeBinaryFromReader = function(msg, reader) {
       msg.setScopesList(value);
       break;
     case 7:
-      var value = new proto.api.ManagementToken;
-      reader.readMessage(value,proto.api.ManagementToken.deserializeBinaryFromReader);
+      var value = new proto.api.BearerToken;
+      reader.readMessage(value,proto.api.BearerToken.deserializeBinaryFromReader);
       msg.setManagement(value);
       break;
     default:
@@ -4924,7 +4782,7 @@ proto.api.Auth.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       7,
       f,
-      proto.api.ManagementToken.serializeBinaryToWriter
+      proto.api.BearerToken.serializeBinaryToWriter
     );
   }
 };
@@ -5035,16 +4893,16 @@ proto.api.Auth.prototype.clearScopesList = function() {
 
 
 /**
- * optional ManagementToken management = 7;
- * @return {?proto.api.ManagementToken}
+ * optional BearerToken management = 7;
+ * @return {?proto.api.BearerToken}
  */
 proto.api.Auth.prototype.getManagement = function() {
-  return /** @type{?proto.api.ManagementToken} */ (
-    jspb.Message.getWrapperField(this, proto.api.ManagementToken, 7));
+  return /** @type{?proto.api.BearerToken} */ (
+    jspb.Message.getWrapperField(this, proto.api.BearerToken, 7));
 };
 
 
-/** @param {?proto.api.ManagementToken|undefined} value */
+/** @param {?proto.api.BearerToken|undefined} value */
 proto.api.Auth.prototype.setManagement = function(value) {
   jspb.Message.setWrapperField(this, 7, value);
 };
@@ -7341,6 +7199,148 @@ proto.api.PhoneNumberResource.prototype.getUri = function() {
 /** @param {string} value */
 proto.api.PhoneNumberResource.prototype.setUri = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.BearerToken = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.BearerToken, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.api.BearerToken.displayName = 'proto.api.BearerToken';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.BearerToken.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.BearerToken.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.BearerToken} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.BearerToken.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    token: jspb.Message.getFieldWithDefault(msg, 1, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.BearerToken}
+ */
+proto.api.BearerToken.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.BearerToken;
+  return proto.api.BearerToken.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.BearerToken} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.BearerToken}
+ */
+proto.api.BearerToken.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setToken(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.BearerToken.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.BearerToken.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.BearerToken} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.BearerToken.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getToken();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string token = 1;
+ * @return {string}
+ */
+proto.api.BearerToken.prototype.getToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.api.BearerToken.prototype.setToken = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

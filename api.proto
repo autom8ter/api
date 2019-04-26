@@ -166,7 +166,7 @@ service UserService {
       body: "*"
     };
     }
-    rpc ListUsers(ManagementToken) returns (stream User) {
+    rpc ListUsers(BearerToken) returns (stream User) {
         option (google.api.http) = {
       post: "/user/list"
       body: "*"
@@ -194,17 +194,14 @@ message Card {
 
 message Empty {}
 
-message ManagementToken {
-    string token=1;
-}
 
 message UserRequest {
-    ManagementToken string=1;
+    BearerToken string=1;
     User user=2;
 }
 
 message UserByEmailRequest {
-    ManagementToken token=1;
+    BearerToken token=1;
     string email =2;
 }
 message Identifier {
@@ -316,7 +313,7 @@ message Auth {
     string redirect=4;
     string audience=5;
     repeated Scope scopes=6;
-    ManagementToken management =7;
+    BearerToken management =7;
 }
 
 message Bytes {
@@ -371,7 +368,7 @@ enum HTTPMethod {
 message HTTPRequest {
     HTTPMethod method=1;
     string url =2;
-    string token =3;
+    BearerToken token =3;
     string user =4;
     string password=5;
     string contentType =6;
@@ -409,4 +406,8 @@ message PhoneNumberResource {
    PhoneNumber number=1;
    string id =2;
    string uri=3;
+}
+
+message BearerToken {
+    string token =1;
 }

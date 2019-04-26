@@ -367,16 +367,16 @@ func (m *AppMetadata) XXX_Unmarshal(b []byte) error
 
 ```go
 type Auth struct {
-	Domain               string           `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain,omitempty"`
-	ClientId             string           `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientSecret         string           `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
-	Redirect             string           `protobuf:"bytes,4,opt,name=redirect,proto3" json:"redirect,omitempty"`
-	Audience             string           `protobuf:"bytes,5,opt,name=audience,proto3" json:"audience,omitempty"`
-	Scopes               []Scope          `protobuf:"varint,6,rep,packed,name=scopes,proto3,enum=api.Scope" json:"scopes,omitempty"`
-	Management           *ManagementToken `protobuf:"bytes,7,opt,name=management,proto3" json:"management,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	Domain               string       `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain,omitempty"`
+	ClientId             string       `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientSecret         string       `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
+	Redirect             string       `protobuf:"bytes,4,opt,name=redirect,proto3" json:"redirect,omitempty"`
+	Audience             string       `protobuf:"bytes,5,opt,name=audience,proto3" json:"audience,omitempty"`
+	Scopes               []Scope      `protobuf:"varint,6,rep,packed,name=scopes,proto3,enum=api.Scope" json:"scopes,omitempty"`
+	Management           *BearerToken `protobuf:"bytes,7,opt,name=management,proto3" json:"management,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 ```
 
@@ -474,7 +474,7 @@ func (c *Auth) GetJWKS() (*Jwks, error)
 #### func (*Auth) GetManagement
 
 ```go
-func (m *Auth) GetManagement() *ManagementToken
+func (m *Auth) GetManagement() *BearerToken
 ```
 
 #### func (*Auth) GetRedirect
@@ -631,6 +631,78 @@ func (m *Auth) XXX_Size() int
 
 ```go
 func (m *Auth) XXX_Unmarshal(b []byte) error
+```
+
+#### type BearerToken
+
+```go
+type BearerToken struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*BearerToken) Descriptor
+
+```go
+func (*BearerToken) Descriptor() ([]byte, []int)
+```
+
+#### func (*BearerToken) GetToken
+
+```go
+func (m *BearerToken) GetToken() string
+```
+
+#### func (*BearerToken) ProtoMessage
+
+```go
+func (*BearerToken) ProtoMessage()
+```
+
+#### func (*BearerToken) Reset
+
+```go
+func (m *BearerToken) Reset()
+```
+
+#### func (*BearerToken) String
+
+```go
+func (m *BearerToken) String() string
+```
+
+#### func (*BearerToken) XXX_DiscardUnknown
+
+```go
+func (m *BearerToken) XXX_DiscardUnknown()
+```
+
+#### func (*BearerToken) XXX_Marshal
+
+```go
+func (m *BearerToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*BearerToken) XXX_Merge
+
+```go
+func (m *BearerToken) XXX_Merge(src proto.Message)
+```
+
+#### func (*BearerToken) XXX_Size
+
+```go
+func (m *BearerToken) XXX_Size() int
+```
+
+#### func (*BearerToken) XXX_Unmarshal
+
+```go
+func (m *BearerToken) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Bytes
@@ -2184,78 +2256,6 @@ func (m *Jwks) XXX_Size() int
 func (m *Jwks) XXX_Unmarshal(b []byte) error
 ```
 
-#### type ManagementToken
-
-```go
-type ManagementToken struct {
-	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*ManagementToken) Descriptor
-
-```go
-func (*ManagementToken) Descriptor() ([]byte, []int)
-```
-
-#### func (*ManagementToken) GetToken
-
-```go
-func (m *ManagementToken) GetToken() string
-```
-
-#### func (*ManagementToken) ProtoMessage
-
-```go
-func (*ManagementToken) ProtoMessage()
-```
-
-#### func (*ManagementToken) Reset
-
-```go
-func (m *ManagementToken) Reset()
-```
-
-#### func (*ManagementToken) String
-
-```go
-func (m *ManagementToken) String() string
-```
-
-#### func (*ManagementToken) XXX_DiscardUnknown
-
-```go
-func (m *ManagementToken) XXX_DiscardUnknown()
-```
-
-#### func (*ManagementToken) XXX_Marshal
-
-```go
-func (m *ManagementToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*ManagementToken) XXX_Merge
-
-```go
-func (m *ManagementToken) XXX_Merge(src proto.Message)
-```
-
-#### func (*ManagementToken) XXX_Size
-
-```go
-func (m *ManagementToken) XXX_Size() int
-```
-
-#### func (*ManagementToken) XXX_Unmarshal
-
-```go
-func (m *ManagementToken) XXX_Unmarshal(b []byte) error
-```
-
 #### type Message
 
 ```go
@@ -3550,11 +3550,11 @@ func (m *User) XXX_Unmarshal(b []byte) error
 
 ```go
 type UserByEmailRequest struct {
-	Token                *ManagementToken `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	Email                string           `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	Token                *BearerToken `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Email                string       `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 ```
 
@@ -3574,7 +3574,7 @@ func (m *UserByEmailRequest) GetEmail() string
 #### func (*UserByEmailRequest) GetToken
 
 ```go
-func (m *UserByEmailRequest) GetToken() *ManagementToken
+func (m *UserByEmailRequest) GetToken() *BearerToken
 ```
 
 #### func (*UserByEmailRequest) ProtoMessage
@@ -3701,11 +3701,11 @@ func (m *UserMetadata) XXX_Unmarshal(b []byte) error
 
 ```go
 type UserRequest struct {
-	String_              *ManagementToken `protobuf:"bytes,1,opt,name=string,proto3" json:"string,omitempty"`
-	User                 *User            `protobuf:"bytes,2,opt,name=user,proto3" json:"user,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	String_              *BearerToken `protobuf:"bytes,1,opt,name=string,proto3" json:"string,omitempty"`
+	User                 *User        `protobuf:"bytes,2,opt,name=user,proto3" json:"user,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 ```
 
@@ -3719,7 +3719,7 @@ func (*UserRequest) Descriptor() ([]byte, []int)
 #### func (*UserRequest) GetString_
 
 ```go
-func (m *UserRequest) GetString_() *ManagementToken
+func (m *UserRequest) GetString_() *BearerToken
 ```
 
 #### func (*UserRequest) GetUser
@@ -3784,7 +3784,7 @@ type UserServiceClient interface {
 	UpdateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Bytes, error)
 	CreateUser(ctx context.Context, in *UserRequest, opts ...grpc.CallOption) (*Bytes, error)
 	DeleteUser(ctx context.Context, in *UserByEmailRequest, opts ...grpc.CallOption) (*Bytes, error)
-	ListUsers(ctx context.Context, in *ManagementToken, opts ...grpc.CallOption) (UserService_ListUsersClient, error)
+	ListUsers(ctx context.Context, in *BearerToken, opts ...grpc.CallOption) (UserService_ListUsersClient, error)
 }
 ```
 
@@ -3807,7 +3807,7 @@ type UserServiceServer interface {
 	UpdateUser(context.Context, *UserRequest) (*Bytes, error)
 	CreateUser(context.Context, *UserRequest) (*Bytes, error)
 	DeleteUser(context.Context, *UserByEmailRequest) (*Bytes, error)
-	ListUsers(*ManagementToken, UserService_ListUsersServer) error
+	ListUsers(*BearerToken, UserService_ListUsersServer) error
 }
 ```
 

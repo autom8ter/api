@@ -456,7 +456,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiManagementToken"
+              "$ref": "#/definitions/apiBearerToken"
             }
           }
         ],
@@ -770,6 +770,14 @@
         }
       }
     },
+    "apiBearerToken": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      }
+    },
     "apiBytes": {
       "type": "object",
       "properties": {
@@ -916,14 +924,6 @@
           "type": "string"
         },
         "isSocial": {
-          "type": "string"
-        }
-      }
-    },
-    "apiManagementToken": {
-      "type": "object",
-      "properties": {
-        "token": {
           "type": "string"
         }
       }
@@ -1169,7 +1169,7 @@
       "type": "object",
       "properties": {
         "token": {
-          "$ref": "#/definitions/apiManagementToken"
+          "$ref": "#/definitions/apiBearerToken"
         },
         "email": {
           "type": "string"
@@ -1191,7 +1191,7 @@
       "type": "object",
       "properties": {
         "string": {
-          "$ref": "#/definitions/apiManagementToken"
+          "$ref": "#/definitions/apiBearerToken"
         },
         "user": {
           "$ref": "#/definitions/apiUser"
