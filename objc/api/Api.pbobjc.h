@@ -27,19 +27,21 @@
 
 CF_EXTERN_C_BEGIN
 
-@class AppMetadata;
 @class Bytes;
 @class Card;
 @class Email;
 @class EmailBlast;
+@class Identifier;
 @class Identity;
 @class JSONWebKeys;
 @class Message;
 @class NumberCapabilities;
 @class PhoneNumber;
+@class Query;
+@class StringArray;
+@class StringMap;
 @class Template;
 @class Token;
-@class UserMetadata;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -129,6 +131,7 @@ typedef GPB_ENUM(HTTPMethod) {
   HTTPMethod_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
   HTTPMethod_Get = 0,
   HTTPMethod_Post = 1,
+  HTTPMethod_Patch = 2,
 };
 
 GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void);
@@ -138,6 +141,28 @@ GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void);
  * the time this source was generated.
  **/
 BOOL HTTPMethod_IsValidValue(int32_t value);
+
+#pragma mark - Enum Plan
+
+typedef GPB_ENUM(Plan) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  Plan_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  Plan_Free = 0,
+  Plan_Basic = 1,
+  Plan_Premium = 2,
+};
+
+GPBEnumDescriptor *Plan_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL Plan_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -152,6 +177,100 @@ BOOL HTTPMethod_IsValidValue(int32_t value);
  * this file and all files that it depends on.
  **/
 @interface ApiRoot : GPBRootObject
+@end
+
+#pragma mark - Bytes
+
+typedef GPB_ENUM(Bytes_FieldNumber) {
+  Bytes_FieldNumber_Bits = 1,
+};
+
+@interface Bytes : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *bits;
+
+@end
+
+#pragma mark - Bool
+
+typedef GPB_ENUM(Bool_FieldNumber) {
+  Bool_FieldNumber_Answer = 1,
+};
+
+@interface Bool : GPBMessage
+
+@property(nonatomic, readwrite) BOOL answer;
+
+@end
+
+#pragma mark - StringArray
+
+typedef GPB_ENUM(StringArray_FieldNumber) {
+  StringArray_FieldNumber_StringsArray = 1,
+};
+
+@interface StringArray : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *stringsArray;
+/** The number of items in @c stringsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger stringsArray_Count;
+
+@end
+
+#pragma mark - StringMap
+
+typedef GPB_ENUM(StringMap_FieldNumber) {
+  StringMap_FieldNumber_StringMap = 1,
+};
+
+@interface StringMap : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *stringMap;
+/** The number of items in @c stringMap without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger stringMap_Count;
+
+@end
+
+#pragma mark - Empty
+
+@interface Empty : GPBMessage
+
+@end
+
+#pragma mark - Identifier
+
+typedef GPB_ENUM(Identifier_FieldNumber) {
+  Identifier_FieldNumber_Id_p = 1,
+};
+
+@interface Identifier : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@end
+
+#pragma mark - Message
+
+typedef GPB_ENUM(Message_FieldNumber) {
+  Message_FieldNumber_Value = 1,
+};
+
+@interface Message : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *value;
+
+@end
+
+#pragma mark - Secret
+
+typedef GPB_ENUM(Secret_FieldNumber) {
+  Secret_FieldNumber_Text = 1,
+};
+
+@interface Secret : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+
 @end
 
 #pragma mark - ResourceRequest
@@ -177,9 +296,9 @@ typedef GPB_ENUM(ResourceRequest_FieldNumber) {
 
 @property(nonatomic, readwrite) URL URL;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
-/** The number of items in @c form without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger form_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *form;
+/** Test to see if @c form has been set. */
+@property(nonatomic, readwrite) BOOL hasForm;
 
 @property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
 /** Test to see if @c body has been set. */
@@ -223,13 +342,25 @@ typedef GPB_ENUM(SubscribeRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+@property(nonatomic, readwrite) Plan plan;
 
 @property(nonatomic, readwrite, strong, null_resettable) Card *card;
 /** Test to see if @c card has been set. */
 @property(nonatomic, readwrite) BOOL hasCard;
 
 @end
+
+/**
+ * Fetches the raw value of a @c SubscribeRequest's @c plan property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t SubscribeRequest_Plan_RawValue(SubscribeRequest *message);
+/**
+ * Sets the raw value of an @c SubscribeRequest's @c plan property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetSubscribeRequest_Plan_RawValue(SubscribeRequest *message, int32_t value);
 
 #pragma mark - UnSubscribeRequest
 
@@ -242,9 +373,21 @@ typedef GPB_ENUM(UnSubscribeRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *plan;
+@property(nonatomic, readwrite) Plan plan;
 
 @end
+
+/**
+ * Fetches the raw value of a @c UnSubscribeRequest's @c plan property, even
+ * if the value was not defined by the enum at the time the code was generated.
+ **/
+int32_t UnSubscribeRequest_Plan_RawValue(UnSubscribeRequest *message);
+/**
+ * Sets the raw value of an @c UnSubscribeRequest's @c plan property, allowing
+ * it to be set to a value that was not defined by the enum at the time the code
+ * was generated.
+ **/
+void SetUnSubscribeRequest_Plan_RawValue(UnSubscribeRequest *message, int32_t value);
 
 #pragma mark - Card
 
@@ -264,24 +407,6 @@ typedef GPB_ENUM(Card_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
-
-@end
-
-#pragma mark - Empty
-
-@interface Empty : GPBMessage
-
-@end
-
-#pragma mark - Identifier
-
-typedef GPB_ENUM(Identifier_FieldNumber) {
-  Identifier_FieldNumber_Id_p = 1,
-};
-
-@interface Identifier : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
 @end
 
@@ -318,7 +443,7 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 
 typedef GPB_ENUM(SMSBlast_FieldNumber) {
   SMSBlast_FieldNumber_Service = 1,
-  SMSBlast_FieldNumber_ToArray = 2,
+  SMSBlast_FieldNumber_To = 2,
   SMSBlast_FieldNumber_Message = 3,
   SMSBlast_FieldNumber_MediaURL = 4,
   SMSBlast_FieldNumber_Callback = 5,
@@ -329,9 +454,9 @@ typedef GPB_ENUM(SMSBlast_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *service;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *toArray;
-/** The number of items in @c toArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger toArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *to;
+/** Test to see if @c to has been set. */
+@property(nonatomic, readwrite) BOOL hasTo;
 
 @property(nonatomic, readwrite, strong, null_resettable) Message *message;
 /** Test to see if @c message has been set. */
@@ -396,9 +521,9 @@ typedef GPB_ENUM(EmailBlast_FieldNumber) {
 
 @interface EmailBlast : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *nameAddress;
-/** The number of items in @c nameAddress without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger nameAddress_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *nameAddress;
+/** Test to see if @c nameAddress has been set. */
+@property(nonatomic, readwrite) BOOL hasNameAddress;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
 
@@ -454,7 +579,7 @@ typedef GPB_ENUM(Call_FieldNumber) {
 
 typedef GPB_ENUM(CallBlast_FieldNumber) {
   CallBlast_FieldNumber_From = 1,
-  CallBlast_FieldNumber_ToArray = 2,
+  CallBlast_FieldNumber_To = 2,
   CallBlast_FieldNumber_App = 3,
 };
 
@@ -462,23 +587,11 @@ typedef GPB_ENUM(CallBlast_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *from;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *toArray;
-/** The number of items in @c toArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger toArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *to;
+/** Test to see if @c to has been set. */
+@property(nonatomic, readwrite) BOOL hasTo;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *app;
-
-@end
-
-#pragma mark - Message
-
-typedef GPB_ENUM(Message_FieldNumber) {
-  Message_FieldNumber_Value = 1,
-};
-
-@interface Message : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *value;
 
 @end
 
@@ -499,11 +612,13 @@ typedef GPB_ENUM(User_FieldNumber) {
   User_FieldNumber_LastIp = 12,
   User_FieldNumber_Blocked = 13,
   User_FieldNumber_Nickname = 14,
-  User_FieldNumber_MultifactorArray = 15,
+  User_FieldNumber_Multifactor = 15,
   User_FieldNumber_CreatedAt = 17,
   User_FieldNumber_UpdatedAt = 18,
   User_FieldNumber_PhoneVerified = 19,
-  User_FieldNumber_IdentitiesArray = 20,
+  User_FieldNumber_EmailVerified = 20,
+  User_FieldNumber_Password = 21,
+  User_FieldNumber_IdentitiesArray = 22,
 };
 
 @interface User : GPBMessage
@@ -526,11 +641,11 @@ typedef GPB_ENUM(User_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *picture;
 
-@property(nonatomic, readwrite, strong, null_resettable) UserMetadata *userMetadata;
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *userMetadata;
 /** Test to see if @c userMetadata has been set. */
 @property(nonatomic, readwrite) BOOL hasUserMetadata;
 
-@property(nonatomic, readwrite, strong, null_resettable) AppMetadata *appMetadata;
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *appMetadata;
 /** Test to see if @c appMetadata has been set. */
 @property(nonatomic, readwrite) BOOL hasAppMetadata;
 
@@ -540,15 +655,19 @@ typedef GPB_ENUM(User_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *nickname;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *multifactorArray;
-/** The number of items in @c multifactorArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger multifactorArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *multifactor;
+/** Test to see if @c multifactor has been set. */
+@property(nonatomic, readwrite) BOOL hasMultifactor;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *createdAt;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *updatedAt;
 
 @property(nonatomic, readwrite) BOOL phoneVerified;
+
+@property(nonatomic, readwrite) BOOL emailVerified;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *password;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Identity*> *identitiesArray;
 /** The number of items in @c identitiesArray without causing the array to be created. */
@@ -574,34 +693,6 @@ typedef GPB_ENUM(Identity_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *provider;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *isSocial;
-
-@end
-
-#pragma mark - UserMetadata
-
-typedef GPB_ENUM(UserMetadata_FieldNumber) {
-  UserMetadata_FieldNumber_Metadata = 1,
-};
-
-@interface UserMetadata : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *metadata;
-/** The number of items in @c metadata without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger metadata_Count;
-
-@end
-
-#pragma mark - AppMetadata
-
-typedef GPB_ENUM(AppMetadata_FieldNumber) {
-  AppMetadata_FieldNumber_Metadata = 1,
-};
-
-@interface AppMetadata : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *metadata;
-/** The number of items in @c metadata without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger metadata_Count;
 
 @end
 
@@ -632,18 +723,6 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 
 @end
 
-#pragma mark - Bytes
-
-typedef GPB_ENUM(Bytes_FieldNumber) {
-  Bytes_FieldNumber_Bits = 1,
-};
-
-@interface Bytes : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSData *bits;
-
-@end
-
 #pragma mark - Template
 
 typedef GPB_ENUM(Template_FieldNumber) {
@@ -667,7 +746,7 @@ typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
   JSONWebKeys_FieldNumber_Use = 3,
   JSONWebKeys_FieldNumber_N = 4,
   JSONWebKeys_FieldNumber_E = 5,
-  JSONWebKeys_FieldNumber_X5CArray = 6,
+  JSONWebKeys_FieldNumber_X5C = 6,
 };
 
 @interface JSONWebKeys : GPBMessage
@@ -682,9 +761,9 @@ typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *e;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *x5CArray;
-/** The number of items in @c x5CArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger x5CArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *x5C;
+/** Test to see if @c x5C has been set. */
+@property(nonatomic, readwrite) BOOL hasX5C;
 
 @end
 
@@ -717,9 +796,9 @@ typedef GPB_ENUM(HTTPRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
-/** The number of items in @c form without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger form_Count;
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *form;
+/** Test to see if @c form has been set. */
+@property(nonatomic, readwrite) BOOL hasForm;
 
 @property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
 /** Test to see if @c body has been set. */
@@ -839,18 +918,6 @@ typedef GPB_ENUM(PhoneNumberResource_FieldNumber) {
 
 @end
 
-#pragma mark - Secret
-
-typedef GPB_ENUM(Secret_FieldNumber) {
-  Secret_FieldNumber_Text = 1,
-};
-
-@interface Secret : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
-
-@end
-
 #pragma mark - Token
 
 typedef GPB_ENUM(Token_FieldNumber) {
@@ -872,6 +939,93 @@ typedef GPB_ENUM(Token_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *expiry;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *idToken;
+
+@end
+
+#pragma mark - Query
+
+typedef GPB_ENUM(Query_FieldNumber) {
+  Query_FieldNumber_Lucene = 1,
+};
+
+@interface Query : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *lucene;
+
+@end
+
+#pragma mark - TokenQuery
+
+typedef GPB_ENUM(TokenQuery_FieldNumber) {
+  TokenQuery_FieldNumber_Token = 1,
+  TokenQuery_FieldNumber_Query = 2,
+};
+
+@interface TokenQuery : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Token *token;
+/** Test to see if @c token has been set. */
+@property(nonatomic, readwrite) BOOL hasToken;
+
+@property(nonatomic, readwrite, strong, null_resettable) Query *query;
+/** Test to see if @c query has been set. */
+@property(nonatomic, readwrite) BOOL hasQuery;
+
+@end
+
+#pragma mark - IDBody
+
+typedef GPB_ENUM(IDBody_FieldNumber) {
+  IDBody_FieldNumber_Id_p = 1,
+  IDBody_FieldNumber_Body = 2,
+};
+
+@interface IDBody : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
+/** Test to see if @c id_p has been set. */
+@property(nonatomic, readwrite) BOOL hasId_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
+/** Test to see if @c body has been set. */
+@property(nonatomic, readwrite) BOOL hasBody;
+
+@end
+
+#pragma mark - IDStrings
+
+typedef GPB_ENUM(IDStrings_FieldNumber) {
+  IDStrings_FieldNumber_Id_p = 1,
+  IDStrings_FieldNumber_Strings = 2,
+};
+
+@interface IDStrings : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
+/** Test to see if @c id_p has been set. */
+@property(nonatomic, readwrite) BOOL hasId_p;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *strings;
+/** Test to see if @c strings has been set. */
+@property(nonatomic, readwrite) BOOL hasStrings;
+
+@end
+
+#pragma mark - Role
+
+typedef GPB_ENUM(Role_FieldNumber) {
+  Role_FieldNumber_Id_p = 1,
+  Role_FieldNumber_Name = 2,
+  Role_FieldNumber_Description_p = 3,
+};
+
+@interface Role : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
 
 @end
 

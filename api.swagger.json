@@ -349,7 +349,7 @@
         ]
       }
     },
-    "/resource/{url}": {
+    "/resource": {
       "post": {
         "operationId": "GetResource",
         "responses": {
@@ -362,32 +362,6 @@
         },
         "parameters": [
           {
-            "name": "url",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "USER_INFOURL",
-              "TOKENURL",
-              "AUTHORIZEURL",
-              "USERSURL",
-              "CLIENTSURL",
-              "GRANTSURL",
-              "RULESURL",
-              "ROLESURL",
-              "LOGSURL",
-              "STATSURL",
-              "CONNECTIONSURL",
-              "TENANTSURL",
-              "EMAIL_TEMPLATEURL",
-              "EMAILURL",
-              "SEARCH_USERSURL",
-              "DEVICEURL",
-              "JWKSURL",
-              "CLIENT_GRANTSURL"
-            ]
-          },
-          {
             "name": "body",
             "in": "body",
             "required": true,
@@ -398,6 +372,162 @@
         ],
         "tags": [
           "ResourceService"
+        ]
+      }
+    },
+    "/resource/user/create": {
+      "post": {
+        "operationId": "CreateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiBytes"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/resource/user/exists": {
+      "post": {
+        "operationId": "UserExists",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiBool"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/resource/user/get": {
+      "post": {
+        "operationId": "DeleteUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIdentifier"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/resource/user/query": {
+      "post": {
+        "operationId": "QueryUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiTokenQuery"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/resource/user/roles": {
+      "post": {
+        "operationId": "AssignRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiRole"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIDStrings"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
+        ]
+      }
+    },
+    "/resource/user/update": {
+      "post": {
+        "operationId": "UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiIDBody"
+            }
+          }
+        ],
+        "tags": [
+          "UserService"
         ]
       }
     },
@@ -663,6 +793,15 @@
     }
   },
   "definitions": {
+    "apiBool": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
     "apiBytes": {
       "type": "object",
       "properties": {
@@ -693,10 +832,7 @@
           "type": "string"
         },
         "to": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/apiStringArray"
         },
         "app": {
           "type": "string"
@@ -744,10 +880,7 @@
       "type": "object",
       "properties": {
         "name_address": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/apiStringMap"
         },
         "subject": {
           "type": "string"
@@ -792,14 +925,54 @@
       "type": "string",
       "enum": [
         "GET",
-        "POST"
+        "POST",
+        "PATCH"
       ],
       "default": "GET"
+    },
+    "apiIDBody": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/apiIdentifier"
+        },
+        "body": {
+          "$ref": "#/definitions/apiBytes"
+        }
+      }
+    },
+    "apiIDStrings": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/apiIdentifier"
+        },
+        "strings": {
+          "$ref": "#/definitions/apiStringArray"
+        }
+      }
     },
     "apiIdentifier": {
       "type": "object",
       "properties": {
         "id": {
+          "type": "string"
+        }
+      }
+    },
+    "apiIdentity": {
+      "type": "object",
+      "properties": {
+        "connection": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "isSocial": {
           "type": "string"
         }
       }
@@ -860,6 +1033,23 @@
         }
       }
     },
+    "apiPlan": {
+      "type": "string",
+      "enum": [
+        "FREE",
+        "BASIC",
+        "PREMIUM"
+      ],
+      "default": "FREE"
+    },
+    "apiQuery": {
+      "type": "object",
+      "properties": {
+        "lucene": {
+          "type": "string"
+        }
+      }
+    },
     "apiRenderRequest": {
       "type": "object",
       "properties": {
@@ -887,13 +1077,24 @@
           "$ref": "#/definitions/apiURL"
         },
         "form": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/apiStringMap"
         },
         "body": {
           "$ref": "#/definitions/apiBytes"
+        }
+      }
+    },
+    "apiRole": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
         }
       }
     },
@@ -927,10 +1128,7 @@
           "type": "string"
         },
         "to": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "$ref": "#/definitions/apiStringArray"
         },
         "message": {
           "$ref": "#/definitions/apiMessage"
@@ -961,6 +1159,28 @@
         }
       }
     },
+    "apiStringArray": {
+      "type": "object",
+      "properties": {
+        "strings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "apiStringMap": {
+      "type": "object",
+      "properties": {
+        "string_map": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
     "apiSubscribeRequest": {
       "type": "object",
       "properties": {
@@ -968,7 +1188,7 @@
           "type": "string"
         },
         "plan": {
-          "type": "string"
+          "$ref": "#/definitions/apiPlan"
         },
         "card": {
           "$ref": "#/definitions/apiCard"
@@ -1006,6 +1226,17 @@
         }
       }
     },
+    "apiTokenQuery": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/apiToken"
+        },
+        "query": {
+          "$ref": "#/definitions/apiQuery"
+        }
+      }
+    },
     "apiURL": {
       "type": "string",
       "enum": [
@@ -1037,7 +1268,81 @@
           "type": "string"
         },
         "plan": {
+          "$ref": "#/definitions/apiPlan"
+        }
+      }
+    },
+    "apiUser": {
+      "type": "object",
+      "properties": {
+        "user_id": {
           "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "given_name": {
+          "type": "string"
+        },
+        "family_name": {
+          "type": "string"
+        },
+        "gender": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "picture": {
+          "type": "string"
+        },
+        "user_metadata": {
+          "$ref": "#/definitions/apiStringMap"
+        },
+        "app_metadata": {
+          "$ref": "#/definitions/apiStringMap"
+        },
+        "last_ip": {
+          "type": "string"
+        },
+        "blocked": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "multifactor": {
+          "$ref": "#/definitions/apiStringArray"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "phone_verified": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "email_verified": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "password": {
+          "type": "string"
+        },
+        "identities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiIdentity"
+          }
         }
       }
     }

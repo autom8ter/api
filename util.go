@@ -277,8 +277,8 @@ func (h *HTTPRequest) Do(token *Token) (*Bytes, error) {
 		r.Header.Set("Authorization", token.TokenType+" "+token.AccessToken)
 	}
 
-	if len(h.Form) != 0 {
-		for k, v := range h.Form {
+	if len(h.Form.StringMap) != 0 {
+		for k, v := range h.Form.StringMap {
 			r.Form.Set(k, v)
 		}
 	}
@@ -650,7 +650,7 @@ func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 	var cert string
 	for k, _ := range c.Keys {
 		if token.Header["kid"] == c.Keys[k].Kid {
-			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C[0] + "\n-----END CERTIFICATE-----"
+			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C.Strings[0] + "\n-----END CERTIFICATE-----"
 		}
 	}
 	if cert == "" {
@@ -686,7 +686,9 @@ func (t *Token) ResourceRequest(domain string, method HTTPMethod, u URL, form ma
 		Method: method,
 		Domain: domain,
 		Url:    u,
-		Form:   form,
+		Form:   &StringMap{
+			StringMap:            form,
+		},
 		Body:   body,
 	}
 }

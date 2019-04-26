@@ -179,15 +179,11 @@
             <ul>
               
                 <li>
-                  <a href="#api.AppMetadata"><span class="badge">M</span>AppMetadata</a>
-                </li>
-              
-                <li>
-                  <a href="#api.AppMetadata.MetadataEntry"><span class="badge">M</span>AppMetadata.MetadataEntry</a>
-                </li>
-              
-                <li>
                   <a href="#api.Auth"><span class="badge">M</span>Auth</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Bool"><span class="badge">M</span>Bool</a>
                 </li>
               
                 <li>
@@ -215,10 +211,6 @@
                 </li>
               
                 <li>
-                  <a href="#api.EmailBlast.NameAddressEntry"><span class="badge">M</span>EmailBlast.NameAddressEntry</a>
-                </li>
-              
-                <li>
                   <a href="#api.EmailBlastRequest"><span class="badge">M</span>EmailBlastRequest</a>
                 </li>
               
@@ -235,7 +227,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.HTTPRequest.FormEntry"><span class="badge">M</span>HTTPRequest.FormEntry</a>
+                  <a href="#api.IDBody"><span class="badge">M</span>IDBody</a>
+                </li>
+              
+                <li>
+                  <a href="#api.IDStrings"><span class="badge">M</span>IDStrings</a>
                 </li>
               
                 <li>
@@ -271,6 +267,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.Query"><span class="badge">M</span>Query</a>
+                </li>
+              
+                <li>
                   <a href="#api.RenderRequest"><span class="badge">M</span>RenderRequest</a>
                 </li>
               
@@ -279,7 +279,7 @@
                 </li>
               
                 <li>
-                  <a href="#api.ResourceRequest.FormEntry"><span class="badge">M</span>ResourceRequest.FormEntry</a>
+                  <a href="#api.Role"><span class="badge">M</span>Role</a>
                 </li>
               
                 <li>
@@ -299,6 +299,18 @@
                 </li>
               
                 <li>
+                  <a href="#api.StringArray"><span class="badge">M</span>StringArray</a>
+                </li>
+              
+                <li>
+                  <a href="#api.StringMap"><span class="badge">M</span>StringMap</a>
+                </li>
+              
+                <li>
+                  <a href="#api.StringMap.StringMapEntry"><span class="badge">M</span>StringMap.StringMapEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.SubscribeRequest"><span class="badge">M</span>SubscribeRequest</a>
                 </li>
               
@@ -311,6 +323,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.TokenQuery"><span class="badge">M</span>TokenQuery</a>
+                </li>
+              
+                <li>
                   <a href="#api.UnSubscribeRequest"><span class="badge">M</span>UnSubscribeRequest</a>
                 </li>
               
@@ -318,17 +334,13 @@
                   <a href="#api.User"><span class="badge">M</span>User</a>
                 </li>
               
-                <li>
-                  <a href="#api.UserMetadata"><span class="badge">M</span>UserMetadata</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UserMetadata.MetadataEntry"><span class="badge">M</span>UserMetadata.MetadataEntry</a>
-                </li>
-              
               
                 <li>
                   <a href="#api.HTTPMethod"><span class="badge">E</span>HTTPMethod</a>
+                </li>
+              
+                <li>
+                  <a href="#api.Plan"><span class="badge">E</span>Plan</a>
                 </li>
               
                 <li>
@@ -354,6 +366,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.UserService"><span class="badge">S</span>UserService</a>
+                </li>
+              
+                <li>
                   <a href="#api.UtilityService"><span class="badge">S</span>UtilityService</a>
                 </li>
               
@@ -371,59 +387,6 @@
       </div>
       <p></p>
 
-      
-        <h3 id="api.AppMetadata">AppMetadata</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>metadata</td>
-                  <td><a href="#api.AppMetadata.MetadataEntry">AppMetadata.MetadataEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.AppMetadata.MetadataEntry">AppMetadata.MetadataEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
       
         <h3 id="api.Auth">Auth</h3>
         <p></p>
@@ -467,6 +430,29 @@
                   <td>scopes</td>
                   <td><a href="#api.Scope">Scope</a></td>
                   <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Bool">Bool</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>answer</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -555,8 +541,8 @@
               
                 <tr>
                   <td>to</td>
-                  <td><a href="#string">string</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringArray">StringArray</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -680,8 +666,8 @@
               
                 <tr>
                   <td>name_address</td>
-                  <td><a href="#api.EmailBlast.NameAddressEntry">EmailBlast.NameAddressEntry</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringMap">StringMap</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -701,36 +687,6 @@
               
                 <tr>
                   <td>html</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.EmailBlast.NameAddressEntry">EmailBlast.NameAddressEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -849,8 +805,8 @@
               
                 <tr>
                   <td>form</td>
-                  <td><a href="#api.HTTPRequest.FormEntry">HTTPRequest.FormEntry</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringMap">StringMap</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -867,7 +823,7 @@
 
         
       
-        <h3 id="api.HTTPRequest.FormEntry">HTTPRequest.FormEntry</h3>
+        <h3 id="api.IDBody">IDBody</h3>
         <p></p>
 
         
@@ -878,15 +834,45 @@
             <tbody>
               
                 <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
+                  <td>id</td>
+                  <td><a href="#api.Identifier">Identifier</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
+                  <td>body</td>
+                  <td><a href="#api.Bytes">Bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.IDStrings">IDStrings</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#api.Identifier">Identifier</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>strings</td>
+                  <td><a href="#api.StringArray">StringArray</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1011,8 +997,8 @@
               
                 <tr>
                   <td>x5c</td>
-                  <td><a href="#string">string</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringArray">StringArray</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1186,6 +1172,29 @@
 
         
       
+        <h3 id="api.Query">Query</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>lucene</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.RenderRequest">RenderRequest</h3>
         <p></p>
 
@@ -1256,8 +1265,8 @@
               
                 <tr>
                   <td>form</td>
-                  <td><a href="#api.ResourceRequest.FormEntry">ResourceRequest.FormEntry</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringMap">StringMap</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1274,7 +1283,7 @@
 
         
       
-        <h3 id="api.ResourceRequest.FormEntry">ResourceRequest.FormEntry</h3>
+        <h3 id="api.Role">Role</h3>
         <p></p>
 
         
@@ -1285,14 +1294,21 @@
             <tbody>
               
                 <tr>
-                  <td>key</td>
+                  <td>id</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>value</td>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
                   <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -1381,8 +1397,8 @@
               
                 <tr>
                   <td>to</td>
-                  <td><a href="#string">string</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringArray">StringArray</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1480,6 +1496,82 @@
 
         
       
+        <h3 id="api.StringArray">StringArray</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>strings</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.StringMap">StringMap</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>string_map</td>
+                  <td><a href="#api.StringMap.StringMapEntry">StringMap.StringMapEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.StringMap.StringMapEntry">StringMap.StringMapEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.SubscribeRequest">SubscribeRequest</h3>
         <p></p>
 
@@ -1499,7 +1591,7 @@
               
                 <tr>
                   <td>plan</td>
-                  <td><a href="#string">string</a></td>
+                  <td><a href="#api.Plan">Plan</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1598,6 +1690,36 @@
 
         
       
+        <h3 id="api.TokenQuery">TokenQuery</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>token</td>
+                  <td><a href="#api.Token">Token</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>query</td>
+                  <td><a href="#api.Query">Query</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.UnSubscribeRequest">UnSubscribeRequest</h3>
         <p></p>
 
@@ -1617,7 +1739,7 @@
               
                 <tr>
                   <td>plan</td>
-                  <td><a href="#string">string</a></td>
+                  <td><a href="#api.Plan">Plan</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1703,14 +1825,14 @@
               
                 <tr>
                   <td>user_metadata</td>
-                  <td><a href="#api.UserMetadata">UserMetadata</a></td>
+                  <td><a href="#api.StringMap">StringMap</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>app_metadata</td>
-                  <td><a href="#api.AppMetadata">AppMetadata</a></td>
+                  <td><a href="#api.StringMap">StringMap</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1738,8 +1860,8 @@
               
                 <tr>
                   <td>multifactor</td>
-                  <td><a href="#string">string</a></td>
-                  <td>repeated</td>
+                  <td><a href="#api.StringArray">StringArray</a></td>
+                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1765,62 +1887,23 @@
                 </tr>
               
                 <tr>
+                  <td>email_verified</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>password</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
                   <td>identities</td>
                   <td><a href="#api.Identity">Identity</a></td>
                   <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UserMetadata">UserMetadata</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>metadata</td>
-                  <td><a href="#api.UserMetadata.MetadataEntry">UserMetadata.MetadataEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UserMetadata.MetadataEntry">UserMetadata.MetadataEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1849,6 +1932,41 @@
               <tr>
                 <td>POST</td>
                 <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PATCH</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.Plan">Plan</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>FREE</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>BASIC</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>PREMIUM</td>
+                <td>2</td>
                 <td><p></p></td>
               </tr>
             
@@ -2214,6 +2332,73 @@
                 <td>GetResource</td>
                 <td><a href="#api.ResourceRequest">ResourceRequest</a></td>
                 <td><a href="#api.Bytes">Bytes</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.UserService">UserService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>QueryUsers</td>
+                <td><a href="#api.TokenQuery">TokenQuery</a></td>
+                <td><a href="#api.User">User</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CreateUser</td>
+                <td><a href="#api.Bytes">Bytes</a></td>
+                <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>GetUser</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteUser</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateUser</td>
+                <td><a href="#api.IDBody">IDBody</a></td>
+                <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UserExists</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.Bool">Bool</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UserRoles</td>
+                <td><a href="#api.Identifier">Identifier</a></td>
+                <td><a href="#api.Role">Role</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>AssignRole</td>
+                <td><a href="#api.IDStrings">IDStrings</a></td>
+                <td><a href="#api.Role">Role</a> stream</td>
                 <td><p></p></td>
               </tr>
             

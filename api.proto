@@ -4,6 +4,37 @@ package api;
 
 import "google/api/annotations.proto";
 
+
+message Bytes {
+    bytes bits =1;
+}
+
+message Bool {
+    bool answer =1;
+}
+
+message StringArray {
+    repeated string strings=1;
+}
+
+message StringMap {
+    map<string, string> string_map=1;
+}
+
+message Empty {}
+
+message Identifier {
+    string id=1;
+}
+
+message Message {
+    string value = 1;
+}
+
+message Secret {
+    string text =1;
+}
+
 service UtilityService {
     rpc Echo(Message) returns (Message) {
         option (google.api.http) = {
@@ -144,10 +175,62 @@ service PaymentService {
 service ResourceService {
     rpc GetResource(ResourceRequest) returns (Bytes) {
         option (google.api.http) = {
-      post: "/resource/{url}"
+      post: "/resource"
       body: "*"
     };
     }
+}
+
+service UserService {
+    rpc QueryUsers(TokenQuery) returns (stream User) {
+        option (google.api.http) = {
+      post: "/resource/user/query"
+      body: "*"
+    };
+    }
+    rpc CreateUser(Bytes) returns (User) {
+        option (google.api.http) = {
+      post: "/resource/user/create"
+      body: "*"
+    };
+    }
+    rpc GetUser(Identifier) returns (User) {
+        option (google.api.http) = {
+      post: "/resource/user/get"
+      body: "*"
+    };
+    }
+    rpc DeleteUser(Identifier) returns (User) {
+        option (google.api.http) = {
+      post: "/resource/user/get"
+      body: "*"
+    };
+    }
+    rpc UpdateUser(IDBody) returns (User) {
+        option (google.api.http) = {
+      post: "/resource/user/update"
+      body: "*"
+    };
+    }
+    rpc UserExists(Identifier) returns (Bool) {
+        option (google.api.http) = {
+      post: "/resource/user/exists"
+      body: "*"
+    };
+    }
+    rpc UserRoles(Identifier) returns (stream Role) {
+        option (google.api.http) = {
+      post: "/resource/user/roles"
+      body: "*"
+    };
+    }
+    rpc AssignRole(IDStrings) returns (stream Role) {
+        option (google.api.http) = {
+      post: "/resource/user/roles"
+      body: "*"
+    };
+    }
+
 }
 
 message ResourceRequest {
@@ -155,19 +238,19 @@ message ResourceRequest {
     HTTPMethod method=2;
     string domain=3;
     URL url =4;
-    map<string, string> form =5;
+    StringMap form =5;
     Bytes body =6;
 }
 
 message SubscribeRequest {
     string email=1;
-    string plan =2;
+    Plan plan =2;
     Card card =3;
 }
 
 message UnSubscribeRequest {
     string email=1;
-    string plan =2;
+    Plan plan =2;
 }
 
 message Card {
@@ -177,12 +260,6 @@ message Card {
     string cvc=4;
 }
 
-message Empty {}
-
-
-message Identifier {
-    string id=1;
-}
 
 message SMS {
     string service =1;
@@ -195,7 +272,7 @@ message SMS {
 
 message SMSBlast {
     string service =1;
-    repeated string to =2;
+    StringArray to =2;
     Message message=3;
     string mediaURL =4;
     string callback=5;
@@ -215,7 +292,7 @@ message EmailBlastRequest {
 }
 
 message EmailBlast {
-    map<string,string> name_address =1;
+    StringMap name_address =1;
     string subject =2;
     string plain=3;
     string html=4;
@@ -237,13 +314,10 @@ message Call {
 
 message CallBlast {
     string from=1;
-    repeated string to =2;
+    StringArray to =2;
     string app=3;
 }
 
-message Message {
-    string value = 1;
-}
 
 message User {
     string user_id=1;
@@ -255,16 +329,18 @@ message User {
     string email=7;
     string phone_number=8;
     string picture=9;
-    UserMetadata user_metadata=10;
-    AppMetadata app_metadata=11;
+    StringMap user_metadata=10;
+    StringMap app_metadata=11;
     string last_ip =12;
     bool blocked =13;
     string nickname =14;
-    repeated string multifactor=15;
+    StringArray multifactor=15;
     string created_at=17;
     string updated_at=18;
     bool phone_verified=19;
-    repeated Identity identities =20;
+    bool email_verified=20;
+    string password=21;
+    repeated Identity identities =22;
 }
 
 message Identity{
@@ -272,14 +348,6 @@ message Identity{
     string user_id=2;
     string provider=3;
     string isSocial=4;
-}
-
-message UserMetadata {
-    map<string,string> metadata =1;
-}
-
-message AppMetadata {
-    map<string,string> metadata =1;
 }
 
 message Auth {
@@ -290,9 +358,6 @@ message Auth {
     repeated Scope scopes=5;
 }
 
-message Bytes {
-    bytes bits =1;
-}
 
 message Template {
     string name =1;
@@ -305,7 +370,7 @@ message JSONWebKeys {
     string use =3;
     string n =4;
     string e =5;
-   repeated string x5c =6;
+    StringArray x5c =6;
 }
 
 message Jwks {
@@ -358,12 +423,19 @@ enum URL {
 enum HTTPMethod {
     GET =0;
     POST=1;
+    PATCH=2;
+}
+
+enum Plan {
+    FREE =0;
+    BASIC=1;
+    PREMIUM=2;
 }
 
 message HTTPRequest {
     HTTPMethod method=1;
     string url =2;
-    map<string, string> form =3;
+    StringMap form =3;
     Bytes body =4;
 }
 
@@ -397,14 +469,35 @@ message PhoneNumberResource {
    string uri=3;
 }
 
-message Secret {
-    string text =1;
-}
-
 message Token {
     string access_token=1;
     string token_type=2;
     string refresh_token =3;
     string expiry =4;
     string id_token=5;
+}
+
+message Query {
+    string lucene =1;
+}
+
+message TokenQuery {
+    Token token =1;
+    Query  query =2;
+}
+
+message IDBody {
+    Identifier id =1;
+    Bytes  body =2;
+}
+
+message IDStrings {
+    Identifier id =1;
+    StringArray  strings =2;
+}
+
+message Role {
+    string id=1;
+    string name=2;
+    string description=3;
 }
