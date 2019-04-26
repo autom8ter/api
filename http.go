@@ -26,18 +26,27 @@ func (h *HTTPRequest) Do() (*Bytes, error) {
 	if h.Token != "" {
 		r.Header.Set("Authorization", "Bearer "+h.Token)
 	}
+	if len(h.Headers) != 0 {
+	}
 	for k, v := range h.Headers {
 		r.Header.Set(k, v)
 	}
-	for k, v := range h.Form {
-		r.Form.Set(k, v)
+
+	if len(h.Headers) != 0 {
+		for k, v := range h.Form {
+			r.Form.Set(k, v)
+		}
 	}
-	for k, v := range h.Cookies {
-		r.AddCookie(&http.Cookie{
-			Name:  k,
-			Value: v,
-		})
+
+	if len(h.Cookies) != 0 {
+		for k, v := range h.Cookies {
+			r.AddCookie(&http.Cookie{
+				Name:  k,
+				Value: v,
+			})
+		}
 	}
+
 	resp, err := httpClient.Do(r)
 	if err != nil {
 		return nil, Util.WrapErr(err, resp.Status)

@@ -68,76 +68,77 @@ namespace Api {
             "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJwCgtBcHBN",
             "ZXRhZGF0YRIwCghtZXRhZGF0YRgBIAMoCzIeLmFwaS5BcHBNZXRhZGF0YS5N",
             "ZXRhZGF0YUVudHJ5Gi8KDU1ldGFkYXRhRW50cnkSCwoDa2V5GAEgASgJEg0K",
-            "BXZhbHVlGAIgASgJOgI4ASKAAQoEQXV0aBIOCgZkb21haW4YASABKAkSEQoJ",
+            "BXZhbHVlGAIgASgJOgI4ASKqAQoEQXV0aBIOCgZkb21haW4YASABKAkSEQoJ",
             "Y2xpZW50X2lkGAIgASgJEhUKDWNsaWVudF9zZWNyZXQYAyABKAkSEAoIcmVk",
             "aXJlY3QYBCABKAkSEAoIYXVkaWVuY2UYBSABKAkSGgoGc2NvcGVzGAYgAygO",
-            "MgouYXBpLlNjb3BlIhUKBUJ5dGVzEgwKBGJpdHMYASABKAwiJgoIVGVtcGxh",
-            "dGUSDAoEbmFtZRgBIAEoCRIMCgR0ZXh0GAIgASgJIlcKC0pTT05XZWJLZXlz",
-            "EgsKA2t0eRgBIAEoCRILCgNraWQYAiABKAkSCwoDdXNlGAMgASgJEgkKAW4Y",
-            "BCABKAkSCQoBZRgFIAEoCRILCgN4NWMYBiADKAkiJgoESndrcxIeCgRrZXlz",
-            "GAEgAygLMhAuYXBpLkpTT05XZWJLZXlzIqEDCgtIVFRQUmVxdWVzdBIfCgZt",
-            "ZXRob2QYASABKA4yDy5hcGkuSFRUUE1ldGhvZBILCgN1cmwYAiABKAkSDQoF",
-            "dG9rZW4YAyABKAkSDwoHYWNjb3VudBgEIAEoCRITCgtjb250ZW50VHlwZRgF",
-            "IAEoCRIuCgdoZWFkZXJzGAYgAygLMh0uYXBpLkhUVFBSZXF1ZXN0LkhlYWRl",
-            "cnNFbnRyeRIoCgRmb3JtGAcgAygLMhouYXBpLkhUVFBSZXF1ZXN0LkZvcm1F",
-            "bnRyeRIuCgdjb29raWVzGAggAygLMh0uYXBpLkhUVFBSZXF1ZXN0LkNvb2tp",
-            "ZXNFbnRyeRIYCgRib2R5GAkgASgLMgouYXBpLkJ5dGVzGi4KDEhlYWRlcnNF",
-            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBGisKCUZvcm1F",
-            "bnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBGi4KDENvb2tp",
-            "ZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIkoKDVJl",
-            "bmRlclJlcXVlc3QSHwoIdGVtcGxhdGUYASABKAsyDS5hcGkuVGVtcGxhdGUS",
-            "GAoEZGF0YRgCIAEoCzIKLmFwaS5CeXRlcyrkAgoFU2NvcGUSCgoGT1BFTklE",
-            "EAASCwoHUFJPRklMRRABEgkKBUVNQUlMEAISDgoKUkVBRF9VU0VSUxADEhgK",
-            "FFJFQURfVVNFUl9JRFBfVE9LRU5TEAQSEAoMQ1JFQVRFX1VTRVJTEAUSDgoK",
-            "UkVBRF9TVEFUUxAGEhgKFFJFQURfRU1BSUxfVEVNUExBVEVTEAcSGgoWVVBE",
-            "QVRFX0VNQUlMX1RFTVBMQVRFUxAIEhoKFkNSRUFURV9FTUFJTF9URU1QTEFU",
-            "RVMQCRIOCgpSRUFEX1JVTEVTEAoSEAoMVVBEQVRFX1JVTEVTEAsSEAoMQ1JF",
-            "QVRFX1JVTEVTEAwSEAoMREVMRVRFX1JVTEVTEA0SDgoKUkVBRF9ST0xFUxAO",
-            "EhAKDFVQREFURV9ST0xFUxAPEhAKDENSRUFURV9ST0xFUxAQEhAKDERFTEVU",
-            "RV9ST0xFUxAREg0KCVJFQURfTE9HUxASKh8KCkhUVFBNZXRob2QSBwoDR0VU",
-            "EAASCAoEUE9TVBABMugFCg5VdGlsaXR5U2VydmljZRI8CgRFY2hvEgwuYXBp",
-            "Lk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIYgtPkkwISIg0vdXRpbGl0eS9lY2hv",
-            "OgEqEksKC0VjaG9TcGFuaXNoEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2Fn",
-            "ZSIggtPkkwIaIhUvdXRpbGl0eS9lY2hvL3NwYW5pc2g6ASoSSwoLRWNob0No",
-            "aW5lc2USDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdlIiCC0+STAhoiFS91",
-            "dGlsaXR5L2VjaG8vY2hpbmVzZToBKhJLCgtFY2hvRW5nbGlzaBIMLmFwaS5N",
-            "ZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT5JMCGiIVL3V0aWxpdHkvZWNoby9l",
-            "bmdsaXNoOgEqEkcKCUVjaG9IaW5kaRIMLmFwaS5NZXNzYWdlGgwuYXBpLk1l",
-            "c3NhZ2UiHoLT5JMCGCITL3V0aWxpdHkvZWNoby9oaW5kaToBKhJJCgpFY2hv",
-            "QXJhYmljEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIfgtPkkwIZIhQv",
-            "dXRpbGl0eS9lY2hvL2FyYWJpYzoBKhJHCgtNYXJzaGFsSlNPThIKLmFwaS5C",
-            "eXRlcxoKLmFwaS5CeXRlcyIggtPkkwIaIhUvdXRpbGl0eS9tYXJzaGFsL2pz",
-            "b246ASoSRwoLTWFyc2hhbFlBTUwSCi5hcGkuQnl0ZXMaCi5hcGkuQnl0ZXMi",
-            "IILT5JMCGiIVL3V0aWxpdHkvbWFyc2hhbC95YW1sOgEqEkUKCk1hcnNoYWxY",
-            "TUwSCi5hcGkuQnl0ZXMaCi5hcGkuQnl0ZXMiH4LT5JMCGSIUL3V0aWxpdHkv",
-            "bWFyc2hhbC94bWw6ASoSRAoGUmVuZGVyEhIuYXBpLlJlbmRlclJlcXVlc3Qa",
-            "Ci5hcGkuQnl0ZXMiGoLT5JMCFCIPL3V0aWxpdHkvcmVuZGVyOgEqMqUECg5D",
-            "b250YWN0U2VydmljZRI9CgdTZW5kU01TEgguYXBpLlNNUxoKLmFwaS5CeXRl",
-            "cyIcgtPkkwIWIhEvY29udGFjdC9zbXMve3RvfToBKhJKCgxTZW5kU01TQmxh",
-            "c3QSDS5hcGkuU01TQmxhc3QaCi5hcGkuQnl0ZXMiHYLT5JMCFyISL2NvbnRh",
-            "Y3Qvc21zL2JsYXN0OgEqMAESQwoGR2V0U01TEg8uYXBpLklkZW50aWZpZXIa",
-            "Ci5hcGkuQnl0ZXMiHILT5JMCFiIRL2NvbnRhY3Qvc21zL3tpZH06ASoSVwoJ",
-            "U2VuZEVtYWlsEhEuYXBpLkVtYWlsUmVxdWVzdBoMLmFwaS5NZXNzYWdlIimC",
-            "0+STAiMiHi9jb250YWN0L2VtYWlsL3tlbWFpbC5hZGRyZXNzfToBKhJZCg5T",
-            "ZW5kRW1haWxCbGFzdBIWLmFwaS5FbWFpbEJsYXN0UmVxdWVzdBoMLmFwaS5N",
-            "ZXNzYWdlIh+C0+STAhkiFC9jb250YWN0L2VtYWlsL2JsYXN0OgEqMAESQAoI",
-            "U2VuZENhbGwSCS5hcGkuQ2FsbBoKLmFwaS5CeXRlcyIdgtPkkwIXIhIvY29u",
-            "dGFjdC9jYWxsL3t0b306ASoSTQoNU2VuZENhbGxCbGFzdBIOLmFwaS5DYWxs",
-            "Qmxhc3QaCi5hcGkuQnl0ZXMiHoLT5JMCGCITL2NvbnRhY3QvY2FsbC9ibGFz",
-            "dDoBKjABMsQBCg5QYXltZW50U2VydmljZRJVCglTdWJzY3JpYmUSFS5hcGku",
-            "U3Vic2NyaWJlUmVxdWVzdBoKLmFwaS5CeXRlcyIlgtPkkwIfIhovcGF5bWVu",
-            "dC9zdWJzY3JpYmUve2VtYWlsfToBKhJbCgtVbnN1YnNjcmliZRIXLmFwaS5V",
-            "blN1YnNjcmliZVJlcXVlc3QaCi5hcGkuQnl0ZXMiJ4LT5JMCISIcL3BheW1l",
-            "bnQvdW5zdWJzY3JpYmUve2VtYWlsfToBKjKMAwoLVXNlclNlcnZpY2USSwoH",
-            "R2V0VXNlchIXLmFwaS5Vc2VyQnlFbWFpbFJlcXVlc3QaCS5hcGkuVXNlciIc",
-            "gtPkkwIWIhEvdXNlci9nZXQve2VtYWlsfToBKhJQCgpVcGRhdGVVc2VyEhAu",
-            "YXBpLlVzZXJSZXF1ZXN0GgouYXBpLkJ5dGVzIiSC0+STAh4iGS91c2VyL3Vw",
-            "ZGF0ZS97dXNlci5lbWFpbH06ASoSQwoKQ3JlYXRlVXNlchIQLmFwaS5Vc2Vy",
-            "UmVxdWVzdBoKLmFwaS5CeXRlcyIXgtPkkwIRIgwvdXNlci9jcmVhdGU6ASoS",
-            "UgoKRGVsZXRlVXNlchIXLmFwaS5Vc2VyQnlFbWFpbFJlcXVlc3QaCi5hcGku",
-            "Qnl0ZXMiH4LT5JMCGSIUL3VzZXIvZGVsZXRlL3tlbWFpbH06ASoSRQoJTGlz",
-            "dFVzZXJzEhQuYXBpLk1hbmFnZW1lbnRUb2tlbhoJLmFwaS5Vc2VyIhWC0+ST",
-            "Ag8iCi91c2VyL2xpc3Q6ASowAWIGcHJvdG8z"));
+            "MgouYXBpLlNjb3BlEigKCm1hbmFnZW1lbnQYByABKAsyFC5hcGkuTWFuYWdl",
+            "bWVudFRva2VuIhUKBUJ5dGVzEgwKBGJpdHMYASABKAwiJgoIVGVtcGxhdGUS",
+            "DAoEbmFtZRgBIAEoCRIMCgR0ZXh0GAIgASgJIlcKC0pTT05XZWJLZXlzEgsK",
+            "A2t0eRgBIAEoCRILCgNraWQYAiABKAkSCwoDdXNlGAMgASgJEgkKAW4YBCAB",
+            "KAkSCQoBZRgFIAEoCRILCgN4NWMYBiADKAkiJgoESndrcxIeCgRrZXlzGAEg",
+            "AygLMhAuYXBpLkpTT05XZWJLZXlzIrADCgtIVFRQUmVxdWVzdBIfCgZtZXRo",
+            "b2QYASABKA4yDy5hcGkuSFRUUE1ldGhvZBILCgN1cmwYAiABKAkSDQoFdG9r",
+            "ZW4YAyABKAkSDAoEdXNlchgEIAEoCRIQCghwYXNzd29yZBgFIAEoCRITCgtj",
+            "b250ZW50VHlwZRgGIAEoCRIuCgdoZWFkZXJzGAcgAygLMh0uYXBpLkhUVFBS",
+            "ZXF1ZXN0LkhlYWRlcnNFbnRyeRIoCgRmb3JtGAggAygLMhouYXBpLkhUVFBS",
+            "ZXF1ZXN0LkZvcm1FbnRyeRIuCgdjb29raWVzGAkgAygLMh0uYXBpLkhUVFBS",
+            "ZXF1ZXN0LkNvb2tpZXNFbnRyeRIYCgRib2R5GAogASgLMgouYXBpLkJ5dGVz",
+            "Gi4KDEhlYWRlcnNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6",
+            "AjgBGisKCUZvcm1FbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6",
+            "AjgBGi4KDENvb2tpZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiAB",
+            "KAk6AjgBIkoKDVJlbmRlclJlcXVlc3QSHwoIdGVtcGxhdGUYASABKAsyDS5h",
+            "cGkuVGVtcGxhdGUSGAoEZGF0YRgCIAEoCzIKLmFwaS5CeXRlcyrkAgoFU2Nv",
+            "cGUSCgoGT1BFTklEEAASCwoHUFJPRklMRRABEgkKBUVNQUlMEAISDgoKUkVB",
+            "RF9VU0VSUxADEhgKFFJFQURfVVNFUl9JRFBfVE9LRU5TEAQSEAoMQ1JFQVRF",
+            "X1VTRVJTEAUSDgoKUkVBRF9TVEFUUxAGEhgKFFJFQURfRU1BSUxfVEVNUExB",
+            "VEVTEAcSGgoWVVBEQVRFX0VNQUlMX1RFTVBMQVRFUxAIEhoKFkNSRUFURV9F",
+            "TUFJTF9URU1QTEFURVMQCRIOCgpSRUFEX1JVTEVTEAoSEAoMVVBEQVRFX1JV",
+            "TEVTEAsSEAoMQ1JFQVRFX1JVTEVTEAwSEAoMREVMRVRFX1JVTEVTEA0SDgoK",
+            "UkVBRF9ST0xFUxAOEhAKDFVQREFURV9ST0xFUxAPEhAKDENSRUFURV9ST0xF",
+            "UxAQEhAKDERFTEVURV9ST0xFUxAREg0KCVJFQURfTE9HUxASKh8KCkhUVFBN",
+            "ZXRob2QSBwoDR0VUEAASCAoEUE9TVBABMugFCg5VdGlsaXR5U2VydmljZRI8",
+            "CgRFY2hvEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2FnZSIYgtPkkwISIg0v",
+            "dXRpbGl0eS9lY2hvOgEqEksKC0VjaG9TcGFuaXNoEgwuYXBpLk1lc3NhZ2Ua",
+            "DC5hcGkuTWVzc2FnZSIggtPkkwIaIhUvdXRpbGl0eS9lY2hvL3NwYW5pc2g6",
+            "ASoSSwoLRWNob0NoaW5lc2USDC5hcGkuTWVzc2FnZRoMLmFwaS5NZXNzYWdl",
+            "IiCC0+STAhoiFS91dGlsaXR5L2VjaG8vY2hpbmVzZToBKhJLCgtFY2hvRW5n",
+            "bGlzaBIMLmFwaS5NZXNzYWdlGgwuYXBpLk1lc3NhZ2UiIILT5JMCGiIVL3V0",
+            "aWxpdHkvZWNoby9lbmdsaXNoOgEqEkcKCUVjaG9IaW5kaRIMLmFwaS5NZXNz",
+            "YWdlGgwuYXBpLk1lc3NhZ2UiHoLT5JMCGCITL3V0aWxpdHkvZWNoby9oaW5k",
+            "aToBKhJJCgpFY2hvQXJhYmljEgwuYXBpLk1lc3NhZ2UaDC5hcGkuTWVzc2Fn",
+            "ZSIfgtPkkwIZIhQvdXRpbGl0eS9lY2hvL2FyYWJpYzoBKhJHCgtNYXJzaGFs",
+            "SlNPThIKLmFwaS5CeXRlcxoKLmFwaS5CeXRlcyIggtPkkwIaIhUvdXRpbGl0",
+            "eS9tYXJzaGFsL2pzb246ASoSRwoLTWFyc2hhbFlBTUwSCi5hcGkuQnl0ZXMa",
+            "Ci5hcGkuQnl0ZXMiIILT5JMCGiIVL3V0aWxpdHkvbWFyc2hhbC95YW1sOgEq",
+            "EkUKCk1hcnNoYWxYTUwSCi5hcGkuQnl0ZXMaCi5hcGkuQnl0ZXMiH4LT5JMC",
+            "GSIUL3V0aWxpdHkvbWFyc2hhbC94bWw6ASoSRAoGUmVuZGVyEhIuYXBpLlJl",
+            "bmRlclJlcXVlc3QaCi5hcGkuQnl0ZXMiGoLT5JMCFCIPL3V0aWxpdHkvcmVu",
+            "ZGVyOgEqMqUECg5Db250YWN0U2VydmljZRI9CgdTZW5kU01TEgguYXBpLlNN",
+            "UxoKLmFwaS5CeXRlcyIcgtPkkwIWIhEvY29udGFjdC9zbXMve3RvfToBKhJK",
+            "CgxTZW5kU01TQmxhc3QSDS5hcGkuU01TQmxhc3QaCi5hcGkuQnl0ZXMiHYLT",
+            "5JMCFyISL2NvbnRhY3Qvc21zL2JsYXN0OgEqMAESQwoGR2V0U01TEg8uYXBp",
+            "LklkZW50aWZpZXIaCi5hcGkuQnl0ZXMiHILT5JMCFiIRL2NvbnRhY3Qvc21z",
+            "L3tpZH06ASoSVwoJU2VuZEVtYWlsEhEuYXBpLkVtYWlsUmVxdWVzdBoMLmFw",
+            "aS5NZXNzYWdlIimC0+STAiMiHi9jb250YWN0L2VtYWlsL3tlbWFpbC5hZGRy",
+            "ZXNzfToBKhJZCg5TZW5kRW1haWxCbGFzdBIWLmFwaS5FbWFpbEJsYXN0UmVx",
+            "dWVzdBoMLmFwaS5NZXNzYWdlIh+C0+STAhkiFC9jb250YWN0L2VtYWlsL2Js",
+            "YXN0OgEqMAESQAoIU2VuZENhbGwSCS5hcGkuQ2FsbBoKLmFwaS5CeXRlcyId",
+            "gtPkkwIXIhIvY29udGFjdC9jYWxsL3t0b306ASoSTQoNU2VuZENhbGxCbGFz",
+            "dBIOLmFwaS5DYWxsQmxhc3QaCi5hcGkuQnl0ZXMiHoLT5JMCGCITL2NvbnRh",
+            "Y3QvY2FsbC9ibGFzdDoBKjABMsQBCg5QYXltZW50U2VydmljZRJVCglTdWJz",
+            "Y3JpYmUSFS5hcGkuU3Vic2NyaWJlUmVxdWVzdBoKLmFwaS5CeXRlcyIlgtPk",
+            "kwIfIhovcGF5bWVudC9zdWJzY3JpYmUve2VtYWlsfToBKhJbCgtVbnN1YnNj",
+            "cmliZRIXLmFwaS5VblN1YnNjcmliZVJlcXVlc3QaCi5hcGkuQnl0ZXMiJ4LT",
+            "5JMCISIcL3BheW1lbnQvdW5zdWJzY3JpYmUve2VtYWlsfToBKjKMAwoLVXNl",
+            "clNlcnZpY2USSwoHR2V0VXNlchIXLmFwaS5Vc2VyQnlFbWFpbFJlcXVlc3Qa",
+            "CS5hcGkuVXNlciIcgtPkkwIWIhEvdXNlci9nZXQve2VtYWlsfToBKhJQCgpV",
+            "cGRhdGVVc2VyEhAuYXBpLlVzZXJSZXF1ZXN0GgouYXBpLkJ5dGVzIiSC0+ST",
+            "Ah4iGS91c2VyL3VwZGF0ZS97dXNlci5lbWFpbH06ASoSQwoKQ3JlYXRlVXNl",
+            "chIQLmFwaS5Vc2VyUmVxdWVzdBoKLmFwaS5CeXRlcyIXgtPkkwIRIgwvdXNl",
+            "ci9jcmVhdGU6ASoSUgoKRGVsZXRlVXNlchIXLmFwaS5Vc2VyQnlFbWFpbFJl",
+            "cXVlc3QaCi5hcGkuQnl0ZXMiH4LT5JMCGSIUL3VzZXIvZGVsZXRlL3tlbWFp",
+            "bH06ASoSRQoJTGlzdFVzZXJzEhQuYXBpLk1hbmFnZW1lbnRUb2tlbhoJLmFw",
+            "aS5Vc2VyIhWC0+STAg8iCi91c2VyL2xpc3Q6ASowAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.Scope), typeof(global::Api.HTTPMethod), }, new pbr::GeneratedClrTypeInfo[] {
@@ -162,12 +163,12 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Identity), global::Api.Identity.Parser, new[]{ "Connection", "UserId", "Provider", "IsSocial" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UserMetadata), global::Api.UserMetadata.Parser, new[]{ "Metadata" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AppMetadata), global::Api.AppMetadata.Parser, new[]{ "Metadata" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth), global::Api.Auth.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Auth), global::Api.Auth.Parser, new[]{ "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", "Management" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Bytes), global::Api.Bytes.Parser, new[]{ "Bits" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Template), global::Api.Template.Parser, new[]{ "Name", "Text" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.JSONWebKeys), global::Api.JSONWebKeys.Parser, new[]{ "Kty", "Kid", "Use", "N", "E", "X5C" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Jwks), global::Api.Jwks.Parser, new[]{ "Keys" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.HTTPRequest), global::Api.HTTPRequest.Parser, new[]{ "Method", "Url", "Token", "Account", "ContentType", "Headers", "Form", "Cookies", "Body" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.HTTPRequest), global::Api.HTTPRequest.Parser, new[]{ "Method", "Url", "Token", "User", "Password", "ContentType", "Headers", "Form", "Cookies", "Body" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.RenderRequest), global::Api.RenderRequest.Parser, new[]{ "Template", "Data" }, null, null, null)
           }));
     }
@@ -4433,6 +4434,7 @@ namespace Api {
       redirect_ = other.redirect_;
       audience_ = other.audience_;
       scopes_ = other.scopes_.Clone();
+      management_ = other.management_ != null ? other.management_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4506,6 +4508,17 @@ namespace Api {
       get { return scopes_; }
     }
 
+    /// <summary>Field number for the "management" field.</summary>
+    public const int ManagementFieldNumber = 7;
+    private global::Api.ManagementToken management_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Api.ManagementToken Management {
+      get { return management_; }
+      set {
+        management_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Auth);
@@ -4525,6 +4538,7 @@ namespace Api {
       if (Redirect != other.Redirect) return false;
       if (Audience != other.Audience) return false;
       if(!scopes_.Equals(other.scopes_)) return false;
+      if (!object.Equals(Management, other.Management)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4537,6 +4551,7 @@ namespace Api {
       if (Redirect.Length != 0) hash ^= Redirect.GetHashCode();
       if (Audience.Length != 0) hash ^= Audience.GetHashCode();
       hash ^= scopes_.GetHashCode();
+      if (management_ != null) hash ^= Management.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4571,6 +4586,10 @@ namespace Api {
         output.WriteString(Audience);
       }
       scopes_.WriteTo(output, _repeated_scopes_codec);
+      if (management_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Management);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4595,6 +4614,9 @@ namespace Api {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Audience);
       }
       size += scopes_.CalculateSize(_repeated_scopes_codec);
+      if (management_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Management);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4622,6 +4644,12 @@ namespace Api {
         Audience = other.Audience;
       }
       scopes_.Add(other.scopes_);
+      if (other.management_ != null) {
+        if (management_ == null) {
+          management_ = new global::Api.ManagementToken();
+        }
+        Management.MergeFrom(other.Management);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4656,6 +4684,13 @@ namespace Api {
           case 50:
           case 48: {
             scopes_.AddEntriesFrom(input, _repeated_scopes_codec);
+            break;
+          }
+          case 58: {
+            if (management_ == null) {
+              management_ = new global::Api.ManagementToken();
+            }
+            input.ReadMessage(management_);
             break;
           }
         }
@@ -5360,7 +5395,8 @@ namespace Api {
       method_ = other.method_;
       url_ = other.url_;
       token_ = other.token_;
-      account_ = other.account_;
+      user_ = other.user_;
+      password_ = other.password_;
       contentType_ = other.contentType_;
       headers_ = other.headers_.Clone();
       form_ = other.form_.Clone();
@@ -5407,19 +5443,30 @@ namespace Api {
       }
     }
 
-    /// <summary>Field number for the "account" field.</summary>
-    public const int AccountFieldNumber = 4;
-    private string account_ = "";
+    /// <summary>Field number for the "user" field.</summary>
+    public const int UserFieldNumber = 4;
+    private string user_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Account {
-      get { return account_; }
+    public string User {
+      get { return user_; }
       set {
-        account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        user_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 5;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     /// <summary>Field number for the "contentType" field.</summary>
-    public const int ContentTypeFieldNumber = 5;
+    public const int ContentTypeFieldNumber = 6;
     private string contentType_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ContentType {
@@ -5430,9 +5477,9 @@ namespace Api {
     }
 
     /// <summary>Field number for the "headers" field.</summary>
-    public const int HeadersFieldNumber = 6;
+    public const int HeadersFieldNumber = 7;
     private static readonly pbc::MapField<string, string>.Codec _map_headers_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 50);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 58);
     private readonly pbc::MapField<string, string> headers_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> Headers {
@@ -5440,9 +5487,9 @@ namespace Api {
     }
 
     /// <summary>Field number for the "form" field.</summary>
-    public const int FormFieldNumber = 7;
+    public const int FormFieldNumber = 8;
     private static readonly pbc::MapField<string, string>.Codec _map_form_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 58);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 66);
     private readonly pbc::MapField<string, string> form_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> Form {
@@ -5450,9 +5497,9 @@ namespace Api {
     }
 
     /// <summary>Field number for the "cookies" field.</summary>
-    public const int CookiesFieldNumber = 8;
+    public const int CookiesFieldNumber = 9;
     private static readonly pbc::MapField<string, string>.Codec _map_cookies_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 66);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 74);
     private readonly pbc::MapField<string, string> cookies_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> Cookies {
@@ -5460,7 +5507,7 @@ namespace Api {
     }
 
     /// <summary>Field number for the "body" field.</summary>
-    public const int BodyFieldNumber = 9;
+    public const int BodyFieldNumber = 10;
     private global::Api.Bytes body_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Api.Bytes Body {
@@ -5486,7 +5533,8 @@ namespace Api {
       if (Method != other.Method) return false;
       if (Url != other.Url) return false;
       if (Token != other.Token) return false;
-      if (Account != other.Account) return false;
+      if (User != other.User) return false;
+      if (Password != other.Password) return false;
       if (ContentType != other.ContentType) return false;
       if (!Headers.Equals(other.Headers)) return false;
       if (!Form.Equals(other.Form)) return false;
@@ -5501,7 +5549,8 @@ namespace Api {
       if (Method != 0) hash ^= Method.GetHashCode();
       if (Url.Length != 0) hash ^= Url.GetHashCode();
       if (Token.Length != 0) hash ^= Token.GetHashCode();
-      if (Account.Length != 0) hash ^= Account.GetHashCode();
+      if (User.Length != 0) hash ^= User.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
       if (ContentType.Length != 0) hash ^= ContentType.GetHashCode();
       hash ^= Headers.GetHashCode();
       hash ^= Form.GetHashCode();
@@ -5532,19 +5581,23 @@ namespace Api {
         output.WriteRawTag(26);
         output.WriteString(Token);
       }
-      if (Account.Length != 0) {
+      if (User.Length != 0) {
         output.WriteRawTag(34);
-        output.WriteString(Account);
+        output.WriteString(User);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Password);
       }
       if (ContentType.Length != 0) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(50);
         output.WriteString(ContentType);
       }
       headers_.WriteTo(output, _map_headers_codec);
       form_.WriteTo(output, _map_form_codec);
       cookies_.WriteTo(output, _map_cookies_codec);
       if (body_ != null) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(82);
         output.WriteMessage(Body);
       }
       if (_unknownFields != null) {
@@ -5564,8 +5617,11 @@ namespace Api {
       if (Token.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
       }
-      if (Account.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+      if (User.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(User);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
       }
       if (ContentType.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ContentType);
@@ -5596,8 +5652,11 @@ namespace Api {
       if (other.Token.Length != 0) {
         Token = other.Token;
       }
-      if (other.Account.Length != 0) {
-        Account = other.Account;
+      if (other.User.Length != 0) {
+        User = other.User;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
       }
       if (other.ContentType.Length != 0) {
         ContentType = other.ContentType;
@@ -5635,26 +5694,30 @@ namespace Api {
             break;
           }
           case 34: {
-            Account = input.ReadString();
+            User = input.ReadString();
             break;
           }
           case 42: {
-            ContentType = input.ReadString();
+            Password = input.ReadString();
             break;
           }
           case 50: {
-            headers_.AddEntriesFrom(input, _map_headers_codec);
+            ContentType = input.ReadString();
             break;
           }
           case 58: {
-            form_.AddEntriesFrom(input, _map_form_codec);
+            headers_.AddEntriesFrom(input, _map_headers_codec);
             break;
           }
           case 66: {
-            cookies_.AddEntriesFrom(input, _map_cookies_codec);
+            form_.AddEntriesFrom(input, _map_form_codec);
             break;
           }
           case 74: {
+            cookies_.AddEntriesFrom(input, _map_cookies_codec);
+            break;
+          }
+          case 82: {
             if (body_ == null) {
               body_ = new global::Api.Bytes();
             }

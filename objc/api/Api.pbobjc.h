@@ -567,6 +567,7 @@ typedef GPB_ENUM(Auth_FieldNumber) {
   Auth_FieldNumber_Redirect = 4,
   Auth_FieldNumber_Audience = 5,
   Auth_FieldNumber_ScopesArray = 6,
+  Auth_FieldNumber_Management = 7,
 };
 
 @interface Auth : GPBMessage
@@ -585,6 +586,10 @@ typedef GPB_ENUM(Auth_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) GPBEnumArray *scopesArray;
 /** The number of items in @c scopesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger scopesArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) ManagementToken *management;
+/** Test to see if @c management has been set. */
+@property(nonatomic, readwrite) BOOL hasManagement;
 
 @end
 
@@ -664,12 +669,13 @@ typedef GPB_ENUM(HTTPRequest_FieldNumber) {
   HTTPRequest_FieldNumber_Method = 1,
   HTTPRequest_FieldNumber_URL = 2,
   HTTPRequest_FieldNumber_Token = 3,
-  HTTPRequest_FieldNumber_Account = 4,
-  HTTPRequest_FieldNumber_ContentType = 5,
-  HTTPRequest_FieldNumber_Headers = 6,
-  HTTPRequest_FieldNumber_Form = 7,
-  HTTPRequest_FieldNumber_Cookies = 8,
-  HTTPRequest_FieldNumber_Body = 9,
+  HTTPRequest_FieldNumber_User = 4,
+  HTTPRequest_FieldNumber_Password = 5,
+  HTTPRequest_FieldNumber_ContentType = 6,
+  HTTPRequest_FieldNumber_Headers = 7,
+  HTTPRequest_FieldNumber_Form = 8,
+  HTTPRequest_FieldNumber_Cookies = 9,
+  HTTPRequest_FieldNumber_Body = 10,
 };
 
 @interface HTTPRequest : GPBMessage
@@ -680,7 +686,9 @@ typedef GPB_ENUM(HTTPRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *account;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *user;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *password;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *contentType;
 

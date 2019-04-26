@@ -4777,7 +4777,8 @@ proto.api.Auth.toObject = function(includeInstance, msg) {
     clientSecret: jspb.Message.getFieldWithDefault(msg, 3, ""),
     redirect: jspb.Message.getFieldWithDefault(msg, 4, ""),
     audience: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    scopesList: jspb.Message.getRepeatedField(msg, 6)
+    scopesList: jspb.Message.getRepeatedField(msg, 6),
+    management: (f = msg.getManagement()) && proto.api.ManagementToken.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4837,6 +4838,11 @@ proto.api.Auth.deserializeBinaryFromReader = function(msg, reader) {
     case 6:
       var value = /** @type {!Array<!proto.api.Scope>} */ (reader.readPackedEnum());
       msg.setScopesList(value);
+      break;
+    case 7:
+      var value = new proto.api.ManagementToken;
+      reader.readMessage(value,proto.api.ManagementToken.deserializeBinaryFromReader);
+      msg.setManagement(value);
       break;
     default:
       reader.skipField();
@@ -4907,6 +4913,14 @@ proto.api.Auth.serializeBinaryToWriter = function(message, writer) {
     writer.writePackedEnum(
       6,
       f
+    );
+  }
+  f = message.getManagement();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.api.ManagementToken.serializeBinaryToWriter
     );
   }
 };
@@ -5013,6 +5027,36 @@ proto.api.Auth.prototype.addScopes = function(value, opt_index) {
 
 proto.api.Auth.prototype.clearScopesList = function() {
   this.setScopesList([]);
+};
+
+
+/**
+ * optional ManagementToken management = 7;
+ * @return {?proto.api.ManagementToken}
+ */
+proto.api.Auth.prototype.getManagement = function() {
+  return /** @type{?proto.api.ManagementToken} */ (
+    jspb.Message.getWrapperField(this, proto.api.ManagementToken, 7));
+};
+
+
+/** @param {?proto.api.ManagementToken|undefined} value */
+proto.api.Auth.prototype.setManagement = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+proto.api.Auth.prototype.clearManagement = function() {
+  this.setManagement(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.Auth.prototype.hasManagement = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -5867,8 +5911,9 @@ proto.api.HTTPRequest.toObject = function(includeInstance, msg) {
     method: jspb.Message.getFieldWithDefault(msg, 1, 0),
     url: jspb.Message.getFieldWithDefault(msg, 2, ""),
     token: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    account: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    contenttype: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    user: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    contenttype: jspb.Message.getFieldWithDefault(msg, 6, ""),
     headersMap: (f = msg.getHeadersMap()) ? f.toObject(includeInstance, undefined) : [],
     formMap: (f = msg.getFormMap()) ? f.toObject(includeInstance, undefined) : [],
     cookiesMap: (f = msg.getCookiesMap()) ? f.toObject(includeInstance, undefined) : [],
@@ -5923,31 +5968,35 @@ proto.api.HTTPRequest.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccount(value);
+      msg.setUser(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setContenttype(value);
+      msg.setPassword(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setContenttype(value);
+      break;
+    case 7:
       var value = msg.getHeadersMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
-    case 7:
+    case 8:
       var value = msg.getFormMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
-    case 8:
+    case 9:
       var value = msg.getCookiesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
-    case 9:
+    case 10:
       var value = new proto.api.Bytes;
       reader.readMessage(value,proto.api.Bytes.deserializeBinaryFromReader);
       msg.setBody(value);
@@ -6002,36 +6051,43 @@ proto.api.HTTPRequest.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getAccount();
+  f = message.getUser();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getContenttype();
+  f = message.getPassword();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getHeadersMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getContenttype();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
   }
-  f = message.getFormMap(true);
+  f = message.getHeadersMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getCookiesMap(true);
+  f = message.getFormMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getCookiesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getBody();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       proto.api.Bytes.serializeBinaryToWriter
     );
@@ -6085,44 +6141,59 @@ proto.api.HTTPRequest.prototype.setToken = function(value) {
 
 
 /**
- * optional string account = 4;
+ * optional string user = 4;
  * @return {string}
  */
-proto.api.HTTPRequest.prototype.getAccount = function() {
+proto.api.HTTPRequest.prototype.getUser = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
-proto.api.HTTPRequest.prototype.setAccount = function(value) {
+proto.api.HTTPRequest.prototype.setUser = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string contentType = 5;
+ * optional string password = 5;
  * @return {string}
  */
-proto.api.HTTPRequest.prototype.getContenttype = function() {
+proto.api.HTTPRequest.prototype.getPassword = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /** @param {string} value */
-proto.api.HTTPRequest.prototype.setContenttype = function(value) {
+proto.api.HTTPRequest.prototype.setPassword = function(value) {
   jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * map<string, string> headers = 6;
+ * optional string contentType = 6;
+ * @return {string}
+ */
+proto.api.HTTPRequest.prototype.getContenttype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.api.HTTPRequest.prototype.setContenttype = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * map<string, string> headers = 7;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.api.HTTPRequest.prototype.getHeadersMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
       null));
 };
 
@@ -6133,14 +6204,14 @@ proto.api.HTTPRequest.prototype.clearHeadersMap = function() {
 
 
 /**
- * map<string, string> form = 7;
+ * map<string, string> form = 8;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.api.HTTPRequest.prototype.getFormMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
       null));
 };
 
@@ -6151,14 +6222,14 @@ proto.api.HTTPRequest.prototype.clearFormMap = function() {
 
 
 /**
- * map<string, string> cookies = 8;
+ * map<string, string> cookies = 9;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.api.HTTPRequest.prototype.getCookiesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
       null));
 };
 
@@ -6169,18 +6240,18 @@ proto.api.HTTPRequest.prototype.clearCookiesMap = function() {
 
 
 /**
- * optional Bytes body = 9;
+ * optional Bytes body = 10;
  * @return {?proto.api.Bytes}
  */
 proto.api.HTTPRequest.prototype.getBody = function() {
   return /** @type{?proto.api.Bytes} */ (
-    jspb.Message.getWrapperField(this, proto.api.Bytes, 9));
+    jspb.Message.getWrapperField(this, proto.api.Bytes, 10));
 };
 
 
 /** @param {?proto.api.Bytes|undefined} value */
 proto.api.HTTPRequest.prototype.setBody = function(value) {
-  jspb.Message.setWrapperField(this, 9, value);
+  jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -6194,7 +6265,7 @@ proto.api.HTTPRequest.prototype.clearBody = function() {
  * @return {!boolean}
  */
 proto.api.HTTPRequest.prototype.hasBody = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 

@@ -303,6 +303,7 @@ message Auth {
     string redirect=4;
     string audience=5;
     repeated Scope scopes=6;
+    ManagementToken management =7;
 }
 
 message Bytes {
@@ -358,12 +359,13 @@ message HTTPRequest {
     HTTPMethod method=1;
     string url =2;
     string token =3;
-    string account =4;
-    string contentType =5;
-    map<string, string> headers =6;
-    map<string, string> form =7;
-    map<string, string> cookies =8;
-    Bytes body =9;
+    string user =4;
+    string password=5;
+    string contentType =6;
+    map<string, string> headers =7;
+    map<string, string> form =8;
+    map<string, string> cookies =9;
+    Bytes body =10;
 }
 
 message RenderRequest {

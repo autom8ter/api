@@ -1671,6 +1671,7 @@ typedef struct AppMetadata__storage_ {
 @dynamic redirect;
 @dynamic audience;
 @dynamic scopesArray, scopesArray_Count;
+@dynamic hasManagement, management;
 
 typedef struct Auth__storage_ {
   uint32_t _has_storage_[1];
@@ -1680,6 +1681,7 @@ typedef struct Auth__storage_ {
   NSString *redirect;
   NSString *audience;
   GPBEnumArray *scopesArray;
+  ManagementToken *management;
 } Auth__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1741,6 +1743,15 @@ typedef struct Auth__storage_ {
         .offset = (uint32_t)offsetof(Auth__storage_, scopesArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldPacked | GPBFieldHasEnumDescriptor),
         .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "management",
+        .dataTypeSpecific.className = GPBStringifySymbol(ManagementToken),
+        .number = Auth_FieldNumber_Management,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(Auth__storage_, management),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -2009,7 +2020,8 @@ typedef struct Jwks__storage_ {
 @dynamic method;
 @dynamic URL;
 @dynamic token;
-@dynamic account;
+@dynamic user;
+@dynamic password;
 @dynamic contentType;
 @dynamic headers, headers_Count;
 @dynamic form, form_Count;
@@ -2021,7 +2033,8 @@ typedef struct HTTPRequest__storage_ {
   HTTPMethod method;
   NSString *URL;
   NSString *token;
-  NSString *account;
+  NSString *user;
+  NSString *password;
   NSString *contentType;
   NSMutableDictionary *headers;
   NSMutableDictionary *form;
@@ -2063,11 +2076,20 @@ typedef struct HTTPRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "account",
+        .name = "user",
         .dataTypeSpecific.className = NULL,
-        .number = HTTPRequest_FieldNumber_Account,
+        .number = HTTPRequest_FieldNumber_User,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, account),
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, user),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "password",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPRequest_FieldNumber_Password,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(HTTPRequest__storage_, password),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
@@ -2075,7 +2097,7 @@ typedef struct HTTPRequest__storage_ {
         .name = "contentType",
         .dataTypeSpecific.className = NULL,
         .number = HTTPRequest_FieldNumber_ContentType,
-        .hasIndex = 4,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(HTTPRequest__storage_, contentType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -2111,7 +2133,7 @@ typedef struct HTTPRequest__storage_ {
         .name = "body",
         .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
         .number = HTTPRequest_FieldNumber_Body,
-        .hasIndex = 5,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(HTTPRequest__storage_, body),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2127,7 +2149,7 @@ typedef struct HTTPRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\002!!!\000\005\013\000";
+        "\002\002!!!\000\006\013\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

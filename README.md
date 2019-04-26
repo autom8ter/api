@@ -349,18 +349,25 @@ func (m *AppMetadata) XXX_Unmarshal(b []byte) error
 
 ```go
 type Auth struct {
-	Domain               string   `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain,omitempty"`
-	ClientId             string   `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientSecret         string   `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
-	Redirect             string   `protobuf:"bytes,4,opt,name=redirect,proto3" json:"redirect,omitempty"`
-	Audience             string   `protobuf:"bytes,5,opt,name=audience,proto3" json:"audience,omitempty"`
-	Scopes               []Scope  `protobuf:"varint,6,rep,packed,name=scopes,proto3,enum=api.Scope" json:"scopes,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Domain               string           `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain,omitempty"`
+	ClientId             string           `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientSecret         string           `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
+	Redirect             string           `protobuf:"bytes,4,opt,name=redirect,proto3" json:"redirect,omitempty"`
+	Audience             string           `protobuf:"bytes,5,opt,name=audience,proto3" json:"audience,omitempty"`
+	Scopes               []Scope          `protobuf:"varint,6,rep,packed,name=scopes,proto3,enum=api.Scope" json:"scopes,omitempty"`
+	Management           *ManagementToken `protobuf:"bytes,7,opt,name=management,proto3" json:"management,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
 }
 ```
 
+
+#### func  AuthFromContext
+
+```go
+func AuthFromContext(ctx context.Context) *Auth
+```
 
 #### func (*Auth) AuthURL
 
@@ -444,6 +451,12 @@ func (m *Auth) GetDomain() string
 
 ```go
 func (c *Auth) GetJWKS() (*Jwks, error)
+```
+
+#### func (*Auth) GetManagement
+
+```go
+func (m *Auth) GetManagement() *ManagementToken
 ```
 
 #### func (*Auth) GetRedirect
@@ -546,6 +559,12 @@ func (m *Auth) String() string
 
 ```go
 func (c *Auth) TenantURL() string
+```
+
+#### func (*Auth) ToContext
+
+```go
+func (a *Auth) ToContext(ctx context.Context) context.Context
 ```
 
 #### func (*Auth) TokenURL
@@ -1641,12 +1660,13 @@ type HTTPRequest struct {
 	Method               HTTPMethod        `protobuf:"varint,1,opt,name=method,proto3,enum=api.HTTPMethod" json:"method,omitempty"`
 	Url                  string            `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
 	Token                string            `protobuf:"bytes,3,opt,name=token,proto3" json:"token,omitempty"`
-	Account              string            `protobuf:"bytes,4,opt,name=account,proto3" json:"account,omitempty"`
-	ContentType          string            `protobuf:"bytes,5,opt,name=contentType,proto3" json:"contentType,omitempty"`
-	Headers              map[string]string `protobuf:"bytes,6,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Form                 map[string]string `protobuf:"bytes,7,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Cookies              map[string]string `protobuf:"bytes,8,rep,name=cookies,proto3" json:"cookies,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Body                 *Bytes            `protobuf:"bytes,9,opt,name=body,proto3" json:"body,omitempty"`
+	User                 string            `protobuf:"bytes,4,opt,name=user,proto3" json:"user,omitempty"`
+	Password             string            `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
+	ContentType          string            `protobuf:"bytes,6,opt,name=contentType,proto3" json:"contentType,omitempty"`
+	Headers              map[string]string `protobuf:"bytes,7,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Form                 map[string]string `protobuf:"bytes,8,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Cookies              map[string]string `protobuf:"bytes,9,rep,name=cookies,proto3" json:"cookies,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Body                 *Bytes            `protobuf:"bytes,10,opt,name=body,proto3" json:"body,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -1664,12 +1684,6 @@ func (*HTTPRequest) Descriptor() ([]byte, []int)
 
 ```go
 func (h *HTTPRequest) Do() (*Bytes, error)
-```
-
-#### func (*HTTPRequest) GetAccount
-
-```go
-func (m *HTTPRequest) GetAccount() string
 ```
 
 #### func (*HTTPRequest) GetBody
@@ -1708,6 +1722,12 @@ func (m *HTTPRequest) GetHeaders() map[string]string
 func (m *HTTPRequest) GetMethod() HTTPMethod
 ```
 
+#### func (*HTTPRequest) GetPassword
+
+```go
+func (m *HTTPRequest) GetPassword() string
+```
+
 #### func (*HTTPRequest) GetToken
 
 ```go
@@ -1718,6 +1738,12 @@ func (m *HTTPRequest) GetToken() string
 
 ```go
 func (m *HTTPRequest) GetUrl() string
+```
+
+#### func (*HTTPRequest) GetUser
+
+```go
+func (m *HTTPRequest) GetUser() string
 ```
 
 #### func (*HTTPRequest) ProtoMessage

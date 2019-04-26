@@ -128,6 +128,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :redirect, :string, 4
     optional :audience, :string, 5
     repeated :scopes, :enum, 6, "api.Scope"
+    optional :management, :message, 7, "api.ManagementToken"
   end
   add_message "api.Bytes" do
     optional :bits, :bytes, 1
@@ -151,12 +152,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :method, :enum, 1, "api.HTTPMethod"
     optional :url, :string, 2
     optional :token, :string, 3
-    optional :account, :string, 4
-    optional :contentType, :string, 5
-    map :headers, :string, :string, 6
-    map :form, :string, :string, 7
-    map :cookies, :string, :string, 8
-    optional :body, :message, 9, "api.Bytes"
+    optional :user, :string, 4
+    optional :password, :string, 5
+    optional :contentType, :string, 6
+    map :headers, :string, :string, 7
+    map :form, :string, :string, 8
+    map :cookies, :string, :string, 9
+    optional :body, :message, 10, "api.Bytes"
   end
   add_message "api.RenderRequest" do
     optional :template, :message, 1, "api.Template"

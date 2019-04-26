@@ -20592,6 +20592,19 @@ public final class Api {
      * <code>repeated .api.Scope scopes = 6;</code>
      */
     int getScopesValue(int index);
+
+    /**
+     * <code>.api.ManagementToken management = 7;</code>
+     */
+    boolean hasManagement();
+    /**
+     * <code>.api.ManagementToken management = 7;</code>
+     */
+    api.Api.ManagementToken getManagement();
+    /**
+     * <code>.api.ManagementToken management = 7;</code>
+     */
+    api.Api.ManagementTokenOrBuilder getManagementOrBuilder();
   }
   /**
    * Protobuf type {@code api.Auth}
@@ -20689,6 +20702,19 @@ public final class Api {
                 scopes_.add(rawValue);
               }
               input.popLimit(oldLimit);
+              break;
+            }
+            case 58: {
+              api.Api.ManagementToken.Builder subBuilder = null;
+              if (management_ != null) {
+                subBuilder = management_.toBuilder();
+              }
+              management_ = input.readMessage(api.Api.ManagementToken.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(management_);
+                management_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -20943,6 +20969,27 @@ public final class Api {
     }
     private int scopesMemoizedSerializedSize;
 
+    public static final int MANAGEMENT_FIELD_NUMBER = 7;
+    private api.Api.ManagementToken management_;
+    /**
+     * <code>.api.ManagementToken management = 7;</code>
+     */
+    public boolean hasManagement() {
+      return management_ != null;
+    }
+    /**
+     * <code>.api.ManagementToken management = 7;</code>
+     */
+    public api.Api.ManagementToken getManagement() {
+      return management_ == null ? api.Api.ManagementToken.getDefaultInstance() : management_;
+    }
+    /**
+     * <code>.api.ManagementToken management = 7;</code>
+     */
+    public api.Api.ManagementTokenOrBuilder getManagementOrBuilder() {
+      return getManagement();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -20980,6 +21027,9 @@ public final class Api {
       for (int i = 0; i < scopes_.size(); i++) {
         output.writeEnumNoTag(scopes_.get(i));
       }
+      if (management_ != null) {
+        output.writeMessage(7, getManagement());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -21016,6 +21066,10 @@ public final class Api {
             .computeUInt32SizeNoTag(dataSize);
         }scopesMemoizedSerializedSize = dataSize;
       }
+      if (management_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getManagement());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -21043,6 +21097,11 @@ public final class Api {
       result = result && getAudience()
           .equals(other.getAudience());
       result = result && scopes_.equals(other.scopes_);
+      result = result && (hasManagement() == other.hasManagement());
+      if (hasManagement()) {
+        result = result && getManagement()
+            .equals(other.getManagement());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -21067,6 +21126,10 @@ public final class Api {
       if (getScopesCount() > 0) {
         hash = (37 * hash) + SCOPES_FIELD_NUMBER;
         hash = (53 * hash) + scopes_.hashCode();
+      }
+      if (hasManagement()) {
+        hash = (37 * hash) + MANAGEMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getManagement().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -21213,6 +21276,12 @@ public final class Api {
 
         scopes_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000020);
+        if (managementBuilder_ == null) {
+          management_ = null;
+        } else {
+          management_ = null;
+          managementBuilder_ = null;
+        }
         return this;
       }
 
@@ -21251,6 +21320,11 @@ public final class Api {
           bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.scopes_ = scopes_;
+        if (managementBuilder_ == null) {
+          result.management_ = management_;
+        } else {
+          result.management_ = managementBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -21329,6 +21403,9 @@ public final class Api {
             scopes_.addAll(other.scopes_);
           }
           onChanged();
+        }
+        if (other.hasManagement()) {
+          mergeManagement(other.getManagement());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -21821,6 +21898,123 @@ public final class Api {
         }
         onChanged();
         return this;
+      }
+
+      private api.Api.ManagementToken management_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> managementBuilder_;
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public boolean hasManagement() {
+        return managementBuilder_ != null || management_ != null;
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public api.Api.ManagementToken getManagement() {
+        if (managementBuilder_ == null) {
+          return management_ == null ? api.Api.ManagementToken.getDefaultInstance() : management_;
+        } else {
+          return managementBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public Builder setManagement(api.Api.ManagementToken value) {
+        if (managementBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          management_ = value;
+          onChanged();
+        } else {
+          managementBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public Builder setManagement(
+          api.Api.ManagementToken.Builder builderForValue) {
+        if (managementBuilder_ == null) {
+          management_ = builderForValue.build();
+          onChanged();
+        } else {
+          managementBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public Builder mergeManagement(api.Api.ManagementToken value) {
+        if (managementBuilder_ == null) {
+          if (management_ != null) {
+            management_ =
+              api.Api.ManagementToken.newBuilder(management_).mergeFrom(value).buildPartial();
+          } else {
+            management_ = value;
+          }
+          onChanged();
+        } else {
+          managementBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public Builder clearManagement() {
+        if (managementBuilder_ == null) {
+          management_ = null;
+          onChanged();
+        } else {
+          management_ = null;
+          managementBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public api.Api.ManagementToken.Builder getManagementBuilder() {
+        
+        onChanged();
+        return getManagementFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      public api.Api.ManagementTokenOrBuilder getManagementOrBuilder() {
+        if (managementBuilder_ != null) {
+          return managementBuilder_.getMessageOrBuilder();
+        } else {
+          return management_ == null ?
+              api.Api.ManagementToken.getDefaultInstance() : management_;
+        }
+      }
+      /**
+       * <code>.api.ManagementToken management = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder> 
+          getManagementFieldBuilder() {
+        if (managementBuilder_ == null) {
+          managementBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              api.Api.ManagementToken, api.Api.ManagementToken.Builder, api.Api.ManagementTokenOrBuilder>(
+                  getManagement(),
+                  getParentForChildren(),
+                  isClean());
+          management_ = null;
+        }
+        return managementBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -25149,31 +25343,41 @@ public final class Api {
         getTokenBytes();
 
     /**
-     * <code>string account = 4;</code>
+     * <code>string user = 4;</code>
      */
-    java.lang.String getAccount();
+    java.lang.String getUser();
     /**
-     * <code>string account = 4;</code>
+     * <code>string user = 4;</code>
      */
     com.google.protobuf.ByteString
-        getAccountBytes();
+        getUserBytes();
 
     /**
-     * <code>string contentType = 5;</code>
+     * <code>string password = 5;</code>
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>string contentType = 6;</code>
      */
     java.lang.String getContentType();
     /**
-     * <code>string contentType = 5;</code>
+     * <code>string contentType = 6;</code>
      */
     com.google.protobuf.ByteString
         getContentTypeBytes();
 
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
     int getHeadersCount();
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
     boolean containsHeaders(
         java.lang.String key);
@@ -25184,30 +25388,30 @@ public final class Api {
     java.util.Map<java.lang.String, java.lang.String>
     getHeaders();
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getHeadersMap();
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
 
     java.lang.String getHeadersOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
 
     java.lang.String getHeadersOrThrow(
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
     int getFormCount();
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
     boolean containsForm(
         java.lang.String key);
@@ -25218,30 +25422,30 @@ public final class Api {
     java.util.Map<java.lang.String, java.lang.String>
     getForm();
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getFormMap();
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
 
     java.lang.String getFormOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
 
     java.lang.String getFormOrThrow(
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
     int getCookiesCount();
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
     boolean containsCookies(
         java.lang.String key);
@@ -25252,34 +25456,34 @@ public final class Api {
     java.util.Map<java.lang.String, java.lang.String>
     getCookies();
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getCookiesMap();
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
 
     java.lang.String getCookiesOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
 
     java.lang.String getCookiesOrThrow(
         java.lang.String key);
 
     /**
-     * <code>.api.Bytes body = 9;</code>
+     * <code>.api.Bytes body = 10;</code>
      */
     boolean hasBody();
     /**
-     * <code>.api.Bytes body = 9;</code>
+     * <code>.api.Bytes body = 10;</code>
      */
     api.Api.Bytes getBody();
     /**
-     * <code>.api.Bytes body = 9;</code>
+     * <code>.api.Bytes body = 10;</code>
      */
     api.Api.BytesOrBuilder getBodyOrBuilder();
   }
@@ -25299,7 +25503,8 @@ public final class Api {
       method_ = 0;
       url_ = "";
       token_ = "";
-      account_ = "";
+      user_ = "";
+      password_ = "";
       contentType_ = "";
     }
 
@@ -25348,20 +25553,26 @@ public final class Api {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              account_ = s;
+              user_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              contentType_ = s;
+              password_ = s;
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentType_ = s;
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                 headers_ = com.google.protobuf.MapField.newMapField(
                     HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               headers__ = input.readMessage(
@@ -25370,11 +25581,11 @@ public final class Api {
                   headers__.getKey(), headers__.getValue());
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
                 form_ = com.google.protobuf.MapField.newMapField(
                     FormDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               form__ = input.readMessage(
@@ -25383,11 +25594,11 @@ public final class Api {
                   form__.getKey(), form__.getValue());
               break;
             }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
                 cookies_ = com.google.protobuf.MapField.newMapField(
                     CookiesDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               cookies__ = input.readMessage(
@@ -25396,7 +25607,7 @@ public final class Api {
                   cookies__.getKey(), cookies__.getValue());
               break;
             }
-            case 74: {
+            case 82: {
               api.Api.Bytes.Builder subBuilder = null;
               if (body_ != null) {
                 subBuilder = body_.toBuilder();
@@ -25438,11 +25649,11 @@ public final class Api {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 6:
-          return internalGetHeaders();
         case 7:
-          return internalGetForm();
+          return internalGetHeaders();
         case 8:
+          return internalGetForm();
+        case 9:
           return internalGetCookies();
         default:
           throw new RuntimeException(
@@ -25543,44 +25754,78 @@ public final class Api {
       }
     }
 
-    public static final int ACCOUNT_FIELD_NUMBER = 4;
-    private volatile java.lang.Object account_;
+    public static final int USER_FIELD_NUMBER = 4;
+    private volatile java.lang.Object user_;
     /**
-     * <code>string account = 4;</code>
+     * <code>string user = 4;</code>
      */
-    public java.lang.String getAccount() {
-      java.lang.Object ref = account_;
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        account_ = s;
+        user_ = s;
         return s;
       }
     }
     /**
-     * <code>string account = 4;</code>
+     * <code>string user = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getAccountBytes() {
-      java.lang.Object ref = account_;
+        getUserBytes() {
+      java.lang.Object ref = user_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        account_ = b;
+        user_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int CONTENTTYPE_FIELD_NUMBER = 5;
+    public static final int PASSWORD_FIELD_NUMBER = 5;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 5;</code>
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENTTYPE_FIELD_NUMBER = 6;
     private volatile java.lang.Object contentType_;
     /**
-     * <code>string contentType = 5;</code>
+     * <code>string contentType = 6;</code>
      */
     public java.lang.String getContentType() {
       java.lang.Object ref = contentType_;
@@ -25595,7 +25840,7 @@ public final class Api {
       }
     }
     /**
-     * <code>string contentType = 5;</code>
+     * <code>string contentType = 6;</code>
      */
     public com.google.protobuf.ByteString
         getContentTypeBytes() {
@@ -25611,7 +25856,7 @@ public final class Api {
       }
     }
 
-    public static final int HEADERS_FIELD_NUMBER = 6;
+    public static final int HEADERS_FIELD_NUMBER = 7;
     private static final class HeadersDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -25638,7 +25883,7 @@ public final class Api {
       return internalGetHeaders().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
 
     public boolean containsHeaders(
@@ -25654,14 +25899,14 @@ public final class Api {
       return getHeadersMap();
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
 
     public java.lang.String getHeadersOrDefault(
@@ -25673,7 +25918,7 @@ public final class Api {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 6;</code>
+     * <code>map&lt;string, string&gt; headers = 7;</code>
      */
 
     public java.lang.String getHeadersOrThrow(
@@ -25687,7 +25932,7 @@ public final class Api {
       return map.get(key);
     }
 
-    public static final int FORM_FIELD_NUMBER = 7;
+    public static final int FORM_FIELD_NUMBER = 8;
     private static final class FormDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -25714,7 +25959,7 @@ public final class Api {
       return internalGetForm().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
 
     public boolean containsForm(
@@ -25730,14 +25975,14 @@ public final class Api {
       return getFormMap();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
       return internalGetForm().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
 
     public java.lang.String getFormOrDefault(
@@ -25749,7 +25994,7 @@ public final class Api {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; form = 7;</code>
+     * <code>map&lt;string, string&gt; form = 8;</code>
      */
 
     public java.lang.String getFormOrThrow(
@@ -25763,7 +26008,7 @@ public final class Api {
       return map.get(key);
     }
 
-    public static final int COOKIES_FIELD_NUMBER = 8;
+    public static final int COOKIES_FIELD_NUMBER = 9;
     private static final class CookiesDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -25790,7 +26035,7 @@ public final class Api {
       return internalGetCookies().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
 
     public boolean containsCookies(
@@ -25806,14 +26051,14 @@ public final class Api {
       return getCookiesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getCookiesMap() {
       return internalGetCookies().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
 
     public java.lang.String getCookiesOrDefault(
@@ -25825,7 +26070,7 @@ public final class Api {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; cookies = 8;</code>
+     * <code>map&lt;string, string&gt; cookies = 9;</code>
      */
 
     public java.lang.String getCookiesOrThrow(
@@ -25839,22 +26084,22 @@ public final class Api {
       return map.get(key);
     }
 
-    public static final int BODY_FIELD_NUMBER = 9;
+    public static final int BODY_FIELD_NUMBER = 10;
     private api.Api.Bytes body_;
     /**
-     * <code>.api.Bytes body = 9;</code>
+     * <code>.api.Bytes body = 10;</code>
      */
     public boolean hasBody() {
       return body_ != null;
     }
     /**
-     * <code>.api.Bytes body = 9;</code>
+     * <code>.api.Bytes body = 10;</code>
      */
     public api.Api.Bytes getBody() {
       return body_ == null ? api.Api.Bytes.getDefaultInstance() : body_;
     }
     /**
-     * <code>.api.Bytes body = 9;</code>
+     * <code>.api.Bytes body = 10;</code>
      */
     public api.Api.BytesOrBuilder getBodyOrBuilder() {
       return getBody();
@@ -25883,32 +26128,35 @@ public final class Api {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, token_);
       }
-      if (!getAccountBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, account_);
+      if (!getUserBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, user_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, password_);
       }
       if (!getContentTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, contentType_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, contentType_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetHeaders(),
           HeadersDefaultEntryHolder.defaultEntry,
-          6);
+          7);
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetForm(),
           FormDefaultEntryHolder.defaultEntry,
-          7);
+          8);
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetCookies(),
           CookiesDefaultEntryHolder.defaultEntry,
-          8);
+          9);
       if (body_ != null) {
-        output.writeMessage(9, getBody());
+        output.writeMessage(10, getBody());
       }
       unknownFields.writeTo(output);
     }
@@ -25929,11 +26177,14 @@ public final class Api {
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, token_);
       }
-      if (!getAccountBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, account_);
+      if (!getUserBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, user_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, password_);
       }
       if (!getContentTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, contentType_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, contentType_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetHeaders().getMap().entrySet()) {
@@ -25943,7 +26194,7 @@ public final class Api {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, headers__);
+            .computeMessageSize(7, headers__);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetForm().getMap().entrySet()) {
@@ -25953,7 +26204,7 @@ public final class Api {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, form__);
+            .computeMessageSize(8, form__);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetCookies().getMap().entrySet()) {
@@ -25963,11 +26214,11 @@ public final class Api {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(8, cookies__);
+            .computeMessageSize(9, cookies__);
       }
       if (body_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getBody());
+          .computeMessageSize(10, getBody());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -25990,8 +26241,10 @@ public final class Api {
           .equals(other.getUrl());
       result = result && getToken()
           .equals(other.getToken());
-      result = result && getAccount()
-          .equals(other.getAccount());
+      result = result && getUser()
+          .equals(other.getUser());
+      result = result && getPassword()
+          .equals(other.getPassword());
       result = result && getContentType()
           .equals(other.getContentType());
       result = result && internalGetHeaders().equals(
@@ -26022,8 +26275,10 @@ public final class Api {
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
-      hash = (53 * hash) + getAccount().hashCode();
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getContentType().hashCode();
       if (!internalGetHeaders().getMap().isEmpty()) {
@@ -26153,11 +26408,11 @@ public final class Api {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 6:
-            return internalGetHeaders();
           case 7:
-            return internalGetForm();
+            return internalGetHeaders();
           case 8:
+            return internalGetForm();
+          case 9:
             return internalGetCookies();
           default:
             throw new RuntimeException(
@@ -26168,11 +26423,11 @@ public final class Api {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 6:
-            return internalGetMutableHeaders();
           case 7:
-            return internalGetMutableForm();
+            return internalGetMutableHeaders();
           case 8:
+            return internalGetMutableForm();
+          case 9:
             return internalGetMutableCookies();
           default:
             throw new RuntimeException(
@@ -26211,7 +26466,9 @@ public final class Api {
 
         token_ = "";
 
-        account_ = "";
+        user_ = "";
+
+        password_ = "";
 
         contentType_ = "";
 
@@ -26255,7 +26512,8 @@ public final class Api {
         result.method_ = method_;
         result.url_ = url_;
         result.token_ = token_;
-        result.account_ = account_;
+        result.user_ = user_;
+        result.password_ = password_;
         result.contentType_ = contentType_;
         result.headers_ = internalGetHeaders();
         result.headers_.makeImmutable();
@@ -26328,8 +26586,12 @@ public final class Api {
           token_ = other.token_;
           onChanged();
         }
-        if (!other.getAccount().isEmpty()) {
-          account_ = other.account_;
+        if (!other.getUser().isEmpty()) {
+          user_ = other.user_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
           onChanged();
         }
         if (!other.getContentType().isEmpty()) {
@@ -26558,78 +26820,147 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object account_ = "";
+      private java.lang.Object user_ = "";
       /**
-       * <code>string account = 4;</code>
+       * <code>string user = 4;</code>
        */
-      public java.lang.String getAccount() {
-        java.lang.Object ref = account_;
+      public java.lang.String getUser() {
+        java.lang.Object ref = user_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          account_ = s;
+          user_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string account = 4;</code>
+       * <code>string user = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getAccountBytes() {
-        java.lang.Object ref = account_;
+          getUserBytes() {
+        java.lang.Object ref = user_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          account_ = b;
+          user_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string account = 4;</code>
+       * <code>string user = 4;</code>
        */
-      public Builder setAccount(
+      public Builder setUser(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        account_ = value;
+        user_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string account = 4;</code>
+       * <code>string user = 4;</code>
        */
-      public Builder clearAccount() {
+      public Builder clearUser() {
         
-        account_ = getDefaultInstance().getAccount();
+        user_ = getDefaultInstance().getUser();
         onChanged();
         return this;
       }
       /**
-       * <code>string account = 4;</code>
+       * <code>string user = 4;</code>
        */
-      public Builder setAccountBytes(
+      public Builder setUserBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        account_ = value;
+        user_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 5;</code>
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 5;</code>
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 5;</code>
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 5;</code>
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object contentType_ = "";
       /**
-       * <code>string contentType = 5;</code>
+       * <code>string contentType = 6;</code>
        */
       public java.lang.String getContentType() {
         java.lang.Object ref = contentType_;
@@ -26644,7 +26975,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string contentType = 5;</code>
+       * <code>string contentType = 6;</code>
        */
       public com.google.protobuf.ByteString
           getContentTypeBytes() {
@@ -26660,7 +26991,7 @@ public final class Api {
         }
       }
       /**
-       * <code>string contentType = 5;</code>
+       * <code>string contentType = 6;</code>
        */
       public Builder setContentType(
           java.lang.String value) {
@@ -26673,7 +27004,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string contentType = 5;</code>
+       * <code>string contentType = 6;</code>
        */
       public Builder clearContentType() {
         
@@ -26682,7 +27013,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>string contentType = 5;</code>
+       * <code>string contentType = 6;</code>
        */
       public Builder setContentTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -26723,7 +27054,7 @@ public final class Api {
         return internalGetHeaders().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
 
       public boolean containsHeaders(
@@ -26739,14 +27070,14 @@ public final class Api {
         return getHeadersMap();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
 
       public java.lang.String getHeadersOrDefault(
@@ -26758,7 +27089,7 @@ public final class Api {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
 
       public java.lang.String getHeadersOrThrow(
@@ -26778,7 +27109,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
 
       public Builder removeHeaders(
@@ -26797,7 +27128,7 @@ public final class Api {
         return internalGetMutableHeaders().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
       public Builder putHeaders(
           java.lang.String key,
@@ -26809,7 +27140,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 6;</code>
+       * <code>map&lt;string, string&gt; headers = 7;</code>
        */
 
       public Builder putAllHeaders(
@@ -26846,7 +27177,7 @@ public final class Api {
         return internalGetForm().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
 
       public boolean containsForm(
@@ -26862,14 +27193,14 @@ public final class Api {
         return getFormMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
         return internalGetForm().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
 
       public java.lang.String getFormOrDefault(
@@ -26881,7 +27212,7 @@ public final class Api {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
 
       public java.lang.String getFormOrThrow(
@@ -26901,7 +27232,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
 
       public Builder removeForm(
@@ -26920,7 +27251,7 @@ public final class Api {
         return internalGetMutableForm().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
       public Builder putForm(
           java.lang.String key,
@@ -26932,7 +27263,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 7;</code>
+       * <code>map&lt;string, string&gt; form = 8;</code>
        */
 
       public Builder putAllForm(
@@ -26969,7 +27300,7 @@ public final class Api {
         return internalGetCookies().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
 
       public boolean containsCookies(
@@ -26985,14 +27316,14 @@ public final class Api {
         return getCookiesMap();
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getCookiesMap() {
         return internalGetCookies().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
 
       public java.lang.String getCookiesOrDefault(
@@ -27004,7 +27335,7 @@ public final class Api {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
 
       public java.lang.String getCookiesOrThrow(
@@ -27024,7 +27355,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
 
       public Builder removeCookies(
@@ -27043,7 +27374,7 @@ public final class Api {
         return internalGetMutableCookies().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
       public Builder putCookies(
           java.lang.String key,
@@ -27055,7 +27386,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; cookies = 8;</code>
+       * <code>map&lt;string, string&gt; cookies = 9;</code>
        */
 
       public Builder putAllCookies(
@@ -27069,13 +27400,13 @@ public final class Api {
       private com.google.protobuf.SingleFieldBuilderV3<
           api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder> bodyBuilder_;
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public boolean hasBody() {
         return bodyBuilder_ != null || body_ != null;
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public api.Api.Bytes getBody() {
         if (bodyBuilder_ == null) {
@@ -27085,7 +27416,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public Builder setBody(api.Api.Bytes value) {
         if (bodyBuilder_ == null) {
@@ -27101,7 +27432,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public Builder setBody(
           api.Api.Bytes.Builder builderForValue) {
@@ -27115,7 +27446,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public Builder mergeBody(api.Api.Bytes value) {
         if (bodyBuilder_ == null) {
@@ -27133,7 +27464,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public Builder clearBody() {
         if (bodyBuilder_ == null) {
@@ -27147,7 +27478,7 @@ public final class Api {
         return this;
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public api.Api.Bytes.Builder getBodyBuilder() {
         
@@ -27155,7 +27486,7 @@ public final class Api {
         return getBodyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       public api.Api.BytesOrBuilder getBodyOrBuilder() {
         if (bodyBuilder_ != null) {
@@ -27166,7 +27497,7 @@ public final class Api {
         }
       }
       /**
-       * <code>.api.Bytes body = 9;</code>
+       * <code>.api.Bytes body = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           api.Api.Bytes, api.Api.Bytes.Builder, api.Api.BytesOrBuilder> 
@@ -28263,85 +28594,87 @@ public final class Api {
       "adataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
       "8\001\"p\n\013AppMetadata\0220\n\010metadata\030\001 \003(\0132\036.ap" +
       "i.AppMetadata.MetadataEntry\032/\n\rMetadataE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\200\001\n" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\252\001\n" +
       "\004Auth\022\016\n\006domain\030\001 \001(\t\022\021\n\tclient_id\030\002 \001(\t" +
       "\022\025\n\rclient_secret\030\003 \001(\t\022\020\n\010redirect\030\004 \001(" +
       "\t\022\020\n\010audience\030\005 \001(\t\022\032\n\006scopes\030\006 \003(\0162\n.ap" +
-      "i.Scope\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Templa" +
-      "te\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSONWe" +
-      "bKeys\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003" +
-      " \001(\t\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\"" +
-      "&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKeys\"" +
-      "\241\003\n\013HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api.HT" +
-      "TPMethod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\017\n\007" +
-      "account\030\004 \001(\t\022\023\n\013contentType\030\005 \001(\t\022.\n\007he" +
-      "aders\030\006 \003(\0132\035.api.HTTPRequest.HeadersEnt" +
-      "ry\022(\n\004form\030\007 \003(\0132\032.api.HTTPRequest.FormE" +
-      "ntry\022.\n\007cookies\030\010 \003(\0132\035.api.HTTPRequest." +
-      "CookiesEntry\022\030\n\004body\030\t \001(\0132\n.api.Bytes\032." +
-      "\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\032+\n\tFormEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\032.\n\014CookiesEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\rRenderRequest\022\037\n\010" +
-      "template\030\001 \001(\0132\r.api.Template\022\030\n\004data\030\002 " +
-      "\001(\0132\n.api.Bytes*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n" +
-      "\007PROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n" +
-      "\024READ_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020" +
-      "\005\022\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATE" +
-      "S\020\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREAT" +
-      "E_EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014U" +
-      "PDATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELET" +
-      "E_RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLE" +
-      "S\020\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022" +
-      "\r\n\tREAD_LOGS\020\022*\037\n\nHTTPMethod\022\007\n\003GET\020\000\022\010\n" +
-      "\004POST\020\0012\350\005\n\016UtilityService\022<\n\004Echo\022\014.api" +
-      ".Message\032\014.api.Message\"\030\202\323\344\223\002\022\"\r/utility" +
-      "/echo:\001*\022K\n\013EchoSpanish\022\014.api.Message\032\014." +
-      "api.Message\" \202\323\344\223\002\032\"\025/utility/echo/spani" +
-      "sh:\001*\022K\n\013EchoChinese\022\014.api.Message\032\014.api" +
-      ".Message\" \202\323\344\223\002\032\"\025/utility/echo/chinese:" +
-      "\001*\022K\n\013EchoEnglish\022\014.api.Message\032\014.api.Me" +
-      "ssage\" \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022" +
-      "G\n\tEchoHindi\022\014.api.Message\032\014.api.Message" +
-      "\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022I\n\nEcho" +
-      "Arabic\022\014.api.Message\032\014.api.Message\"\037\202\323\344\223" +
-      "\002\031\"\024/utility/echo/arabic:\001*\022G\n\013MarshalJS" +
-      "ON\022\n.api.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/uti" +
-      "lity/marshal/json:\001*\022G\n\013MarshalYAML\022\n.ap" +
-      "i.Bytes\032\n.api.Bytes\" \202\323\344\223\002\032\"\025/utility/ma" +
-      "rshal/yaml:\001*\022E\n\nMarshalXML\022\n.api.Bytes\032" +
-      "\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/utility/marshal/xm" +
-      "l:\001*\022D\n\006Render\022\022.api.RenderRequest\032\n.api" +
-      ".Bytes\"\032\202\323\344\223\002\024\"\017/utility/render:\001*2\245\004\n\016C" +
-      "ontactService\022=\n\007SendSMS\022\010.api.SMS\032\n.api" +
-      ".Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{to}:\001*\022J\n\014" +
-      "SendSMSBlast\022\r.api.SMSBlast\032\n.api.Bytes\"" +
-      "\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022C\n\006GetS" +
-      "MS\022\017.api.Identifier\032\n.api.Bytes\"\034\202\323\344\223\002\026\"" +
-      "\021/contact/sms/{id}:\001*\022W\n\tSendEmail\022\021.api" +
-      ".EmailRequest\032\014.api.Message\")\202\323\344\223\002#\"\036/co" +
-      "ntact/email/{email.address}:\001*\022Y\n\016SendEm" +
-      "ailBlast\022\026.api.EmailBlastRequest\032\014.api.M" +
-      "essage\"\037\202\323\344\223\002\031\"\024/contact/email/blast:\001*0" +
-      "\001\022@\n\010SendCall\022\t.api.Call\032\n.api.Bytes\"\035\202\323" +
-      "\344\223\002\027\"\022/contact/call/{to}:\001*\022M\n\rSendCallB" +
-      "last\022\016.api.CallBlast\032\n.api.Bytes\"\036\202\323\344\223\002\030" +
-      "\"\023/contact/call/blast:\001*0\0012\304\001\n\016PaymentSe" +
-      "rvice\022U\n\tSubscribe\022\025.api.SubscribeReques" +
-      "t\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032/payment/subscrib" +
-      "e/{email}:\001*\022[\n\013Unsubscribe\022\027.api.UnSubs" +
-      "cribeRequest\032\n.api.Bytes\"\'\202\323\344\223\002!\"\034/payme" +
-      "nt/unsubscribe/{email}:\001*2\214\003\n\013UserServic" +
-      "e\022K\n\007GetUser\022\027.api.UserByEmailRequest\032\t." +
-      "api.User\"\034\202\323\344\223\002\026\"\021/user/get/{email}:\001*\022P" +
-      "\n\nUpdateUser\022\020.api.UserRequest\032\n.api.Byt" +
-      "es\"$\202\323\344\223\002\036\"\031/user/update/{user.email}:\001*" +
-      "\022C\n\nCreateUser\022\020.api.UserRequest\032\n.api.B" +
-      "ytes\"\027\202\323\344\223\002\021\"\014/user/create:\001*\022R\n\nDeleteU" +
-      "ser\022\027.api.UserByEmailRequest\032\n.api.Bytes" +
-      "\"\037\202\323\344\223\002\031\"\024/user/delete/{email}:\001*\022E\n\tLis" +
-      "tUsers\022\024.api.ManagementToken\032\t.api.User\"" +
-      "\025\202\323\344\223\002\017\"\n/user/list:\001*0\001b\006proto3"
+      "i.Scope\022(\n\nmanagement\030\007 \001(\0132\024.api.Manage" +
+      "mentToken\"\025\n\005Bytes\022\014\n\004bits\030\001 \001(\014\"&\n\010Temp" +
+      "late\022\014\n\004name\030\001 \001(\t\022\014\n\004text\030\002 \001(\t\"W\n\013JSON" +
+      "WebKeys\022\013\n\003kty\030\001 \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use" +
+      "\030\003 \001(\t\022\t\n\001n\030\004 \001(\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(" +
+      "\t\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKey" +
+      "s\"\260\003\n\013HTTPRequest\022\037\n\006method\030\001 \001(\0162\017.api." +
+      "HTTPMethod\022\013\n\003url\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\014" +
+      "\n\004user\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\022\023\n\013conten" +
+      "tType\030\006 \001(\t\022.\n\007headers\030\007 \003(\0132\035.api.HTTPR" +
+      "equest.HeadersEntry\022(\n\004form\030\010 \003(\0132\032.api." +
+      "HTTPRequest.FormEntry\022.\n\007cookies\030\t \003(\0132\035" +
+      ".api.HTTPRequest.CookiesEntry\022\030\n\004body\030\n " +
+      "\001(\0132\n.api.Bytes\032.\n\014HeadersEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032.\n\014CookiesE" +
+      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\r" +
+      "RenderRequest\022\037\n\010template\030\001 \001(\0132\r.api.Te" +
+      "mplate\022\030\n\004data\030\002 \001(\0132\n.api.Bytes*\344\002\n\005Sco" +
+      "pe\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005EMAIL\020\002\022\016" +
+      "\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP_TOKENS\020\004" +
+      "\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STATS\020\006\022\030\n\024RE" +
+      "AD_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_EMAIL_TEM" +
+      "PLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLATES\020\t\022\016\n\n" +
+      "READ_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022\020\n\014CREATE" +
+      "_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nREAD_ROLES" +
+      "\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_ROLES\020\020\022\020" +
+      "\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022*\037\n\nHTTPM" +
+      "ethod\022\007\n\003GET\020\000\022\010\n\004POST\020\0012\350\005\n\016UtilityServ" +
+      "ice\022<\n\004Echo\022\014.api.Message\032\014.api.Message\"" +
+      "\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022K\n\013EchoSpanish" +
+      "\022\014.api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/u" +
+      "tility/echo/spanish:\001*\022K\n\013EchoChinese\022\014." +
+      "api.Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/util" +
+      "ity/echo/chinese:\001*\022K\n\013EchoEnglish\022\014.api" +
+      ".Message\032\014.api.Message\" \202\323\344\223\002\032\"\025/utility" +
+      "/echo/english:\001*\022G\n\tEchoHindi\022\014.api.Mess" +
+      "age\032\014.api.Message\"\036\202\323\344\223\002\030\"\023/utility/echo" +
+      "/hindi:\001*\022I\n\nEchoArabic\022\014.api.Message\032\014." +
+      "api.Message\"\037\202\323\344\223\002\031\"\024/utility/echo/arabi" +
+      "c:\001*\022G\n\013MarshalJSON\022\n.api.Bytes\032\n.api.By" +
+      "tes\" \202\323\344\223\002\032\"\025/utility/marshal/json:\001*\022G\n" +
+      "\013MarshalYAML\022\n.api.Bytes\032\n.api.Bytes\" \202\323" +
+      "\344\223\002\032\"\025/utility/marshal/yaml:\001*\022E\n\nMarsha" +
+      "lXML\022\n.api.Bytes\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/u" +
+      "tility/marshal/xml:\001*\022D\n\006Render\022\022.api.Re" +
+      "nderRequest\032\n.api.Bytes\"\032\202\323\344\223\002\024\"\017/utilit" +
+      "y/render:\001*2\245\004\n\016ContactService\022=\n\007SendSM" +
+      "S\022\010.api.SMS\032\n.api.Bytes\"\034\202\323\344\223\002\026\"\021/contac" +
+      "t/sms/{to}:\001*\022J\n\014SendSMSBlast\022\r.api.SMSB" +
+      "last\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/sms/b" +
+      "last:\001*0\001\022C\n\006GetSMS\022\017.api.Identifier\032\n.a" +
+      "pi.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/{id}:\001*\022W" +
+      "\n\tSendEmail\022\021.api.EmailRequest\032\014.api.Mes" +
+      "sage\")\202\323\344\223\002#\"\036/contact/email/{email.addr" +
+      "ess}:\001*\022Y\n\016SendEmailBlast\022\026.api.EmailBla" +
+      "stRequest\032\014.api.Message\"\037\202\323\344\223\002\031\"\024/contac" +
+      "t/email/blast:\001*0\001\022@\n\010SendCall\022\t.api.Cal" +
+      "l\032\n.api.Bytes\"\035\202\323\344\223\002\027\"\022/contact/call/{to" +
+      "}:\001*\022M\n\rSendCallBlast\022\016.api.CallBlast\032\n." +
+      "api.Bytes\"\036\202\323\344\223\002\030\"\023/contact/call/blast:\001" +
+      "*0\0012\304\001\n\016PaymentService\022U\n\tSubscribe\022\025.ap" +
+      "i.SubscribeRequest\032\n.api.Bytes\"%\202\323\344\223\002\037\"\032" +
+      "/payment/subscribe/{email}:\001*\022[\n\013Unsubsc" +
+      "ribe\022\027.api.UnSubscribeRequest\032\n.api.Byte" +
+      "s\"\'\202\323\344\223\002!\"\034/payment/unsubscribe/{email}:" +
+      "\001*2\214\003\n\013UserService\022K\n\007GetUser\022\027.api.User" +
+      "ByEmailRequest\032\t.api.User\"\034\202\323\344\223\002\026\"\021/user" +
+      "/get/{email}:\001*\022P\n\nUpdateUser\022\020.api.User" +
+      "Request\032\n.api.Bytes\"$\202\323\344\223\002\036\"\031/user/updat" +
+      "e/{user.email}:\001*\022C\n\nCreateUser\022\020.api.Us" +
+      "erRequest\032\n.api.Bytes\"\027\202\323\344\223\002\021\"\014/user/cre" +
+      "ate:\001*\022R\n\nDeleteUser\022\027.api.UserByEmailRe" +
+      "quest\032\n.api.Bytes\"\037\202\323\344\223\002\031\"\024/user/delete/" +
+      "{email}:\001*\022E\n\tListUsers\022\024.api.Management" +
+      "Token\032\t.api.User\"\025\202\323\344\223\002\017\"\n/user/list:\001*0" +
+      "\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -28505,7 +28838,7 @@ public final class Api {
     internal_static_api_Auth_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Auth_descriptor,
-        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", });
+        new java.lang.String[] { "Domain", "ClientId", "ClientSecret", "Redirect", "Audience", "Scopes", "Management", });
     internal_static_api_Bytes_descriptor =
       getDescriptor().getMessageTypes().get(22);
     internal_static_api_Bytes_fieldAccessorTable = new
@@ -28535,7 +28868,7 @@ public final class Api {
     internal_static_api_HTTPRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_HTTPRequest_descriptor,
-        new java.lang.String[] { "Method", "Url", "Token", "Account", "ContentType", "Headers", "Form", "Cookies", "Body", });
+        new java.lang.String[] { "Method", "Url", "Token", "User", "Password", "ContentType", "Headers", "Form", "Cookies", "Body", });
     internal_static_api_HTTPRequest_HeadersEntry_descriptor =
       internal_static_api_HTTPRequest_descriptor.getNestedTypes().get(0);
     internal_static_api_HTTPRequest_HeadersEntry_fieldAccessorTable = new

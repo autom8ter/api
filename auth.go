@@ -3,6 +3,7 @@
 package api
 
 import (
+	"context"
 	"crypto/rand"
 	"encoding/base64"
 	"encoding/json"
@@ -192,6 +193,14 @@ func (a *Auth) logoutHandler(paths *RouterPaths) http.HandlerFunc {
 		}
 		http.Redirect(w, r, u, http.StatusTemporaryRedirect)
 	}
+}
+
+func (a *Auth) ToContext(ctx context.Context) context.Context {
+	return context.WithValue(ctx, "auth", a)
+}
+
+func AuthFromContext(ctx context.Context) *Auth {
+	return ctx.Value("auth").(*Auth)
 }
 
 func (a *Auth) RequireLogin(paths *RouterPaths, next http.HandlerFunc) http.HandlerFunc {

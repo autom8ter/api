@@ -3600,6 +3600,18 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::std::string* release_audience();
   void set_allocated_audience(::std::string* audience);
 
+  // .api.ManagementToken management = 7;
+  bool has_management() const;
+  void clear_management();
+  static const int kManagementFieldNumber = 7;
+  private:
+  const ::api::ManagementToken& _internal_management() const;
+  public:
+  const ::api::ManagementToken& management() const;
+  ::api::ManagementToken* release_management();
+  ::api::ManagementToken* mutable_management();
+  void set_allocated_management(::api::ManagementToken* management);
+
   // @@protoc_insertion_point(class_scope:api.Auth)
  private:
 
@@ -3611,6 +3623,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::internal::ArenaStringPtr client_secret_;
   ::google::protobuf::internal::ArenaStringPtr redirect_;
   ::google::protobuf::internal::ArenaStringPtr audience_;
+  ::api::ManagementToken* management_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -4307,28 +4320,28 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> headers = 6;
+  // map<string, string> headers = 7;
   int headers_size() const;
   void clear_headers();
-  static const int kHeadersFieldNumber = 6;
+  static const int kHeadersFieldNumber = 7;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       headers() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_headers();
 
-  // map<string, string> form = 7;
+  // map<string, string> form = 8;
   int form_size() const;
   void clear_form();
-  static const int kFormFieldNumber = 7;
+  static const int kFormFieldNumber = 8;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       form() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_form();
 
-  // map<string, string> cookies = 8;
+  // map<string, string> cookies = 9;
   int cookies_size() const;
   void clear_cookies();
-  static const int kCookiesFieldNumber = 8;
+  static const int kCookiesFieldNumber = 9;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       cookies() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
@@ -4362,23 +4375,37 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_token();
   void set_allocated_token(::std::string* token);
 
-  // string account = 4;
-  void clear_account();
-  static const int kAccountFieldNumber = 4;
-  const ::std::string& account() const;
-  void set_account(const ::std::string& value);
+  // string user = 4;
+  void clear_user();
+  static const int kUserFieldNumber = 4;
+  const ::std::string& user() const;
+  void set_user(const ::std::string& value);
   #if LANG_CXX11
-  void set_account(::std::string&& value);
+  void set_user(::std::string&& value);
   #endif
-  void set_account(const char* value);
-  void set_account(const char* value, size_t size);
-  ::std::string* mutable_account();
-  ::std::string* release_account();
-  void set_allocated_account(::std::string* account);
+  void set_user(const char* value);
+  void set_user(const char* value, size_t size);
+  ::std::string* mutable_user();
+  ::std::string* release_user();
+  void set_allocated_user(::std::string* user);
 
-  // string contentType = 5;
+  // string password = 5;
+  void clear_password();
+  static const int kPasswordFieldNumber = 5;
+  const ::std::string& password() const;
+  void set_password(const ::std::string& value);
+  #if LANG_CXX11
+  void set_password(::std::string&& value);
+  #endif
+  void set_password(const char* value);
+  void set_password(const char* value, size_t size);
+  ::std::string* mutable_password();
+  ::std::string* release_password();
+  void set_allocated_password(::std::string* password);
+
+  // string contentType = 6;
   void clear_contenttype();
-  static const int kContentTypeFieldNumber = 5;
+  static const int kContentTypeFieldNumber = 6;
   const ::std::string& contenttype() const;
   void set_contenttype(const ::std::string& value);
   #if LANG_CXX11
@@ -4390,10 +4417,10 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::std::string* release_contenttype();
   void set_allocated_contenttype(::std::string* contenttype);
 
-  // .api.Bytes body = 9;
+  // .api.Bytes body = 10;
   bool has_body() const;
   void clear_body();
-  static const int kBodyFieldNumber = 9;
+  static const int kBodyFieldNumber = 10;
   private:
   const ::api::Bytes& _internal_body() const;
   public:
@@ -4432,7 +4459,8 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
       0 > cookies_;
   ::google::protobuf::internal::ArenaStringPtr url_;
   ::google::protobuf::internal::ArenaStringPtr token_;
-  ::google::protobuf::internal::ArenaStringPtr account_;
+  ::google::protobuf::internal::ArenaStringPtr user_;
+  ::google::protobuf::internal::ArenaStringPtr password_;
   ::google::protobuf::internal::ArenaStringPtr contenttype_;
   ::api::Bytes* body_;
   int method_;
@@ -8731,6 +8759,60 @@ Auth::mutable_scopes() {
   return &scopes_;
 }
 
+// .api.ManagementToken management = 7;
+inline bool Auth::has_management() const {
+  return this != internal_default_instance() && management_ != NULL;
+}
+inline void Auth::clear_management() {
+  if (GetArenaNoVirtual() == NULL && management_ != NULL) {
+    delete management_;
+  }
+  management_ = NULL;
+}
+inline const ::api::ManagementToken& Auth::_internal_management() const {
+  return *management_;
+}
+inline const ::api::ManagementToken& Auth::management() const {
+  const ::api::ManagementToken* p = management_;
+  // @@protoc_insertion_point(field_get:api.Auth.management)
+  return p != NULL ? *p : *reinterpret_cast<const ::api::ManagementToken*>(
+      &::api::_ManagementToken_default_instance_);
+}
+inline ::api::ManagementToken* Auth::release_management() {
+  // @@protoc_insertion_point(field_release:api.Auth.management)
+  
+  ::api::ManagementToken* temp = management_;
+  management_ = NULL;
+  return temp;
+}
+inline ::api::ManagementToken* Auth::mutable_management() {
+  
+  if (management_ == NULL) {
+    auto* p = CreateMaybeMessage<::api::ManagementToken>(GetArenaNoVirtual());
+    management_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Auth.management)
+  return management_;
+}
+inline void Auth::set_allocated_management(::api::ManagementToken* management) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete management_;
+  }
+  if (management) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      management = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, management, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  management_ = management;
+  // @@protoc_insertion_point(field_set_allocated:api.Auth.management)
+}
+
 // -------------------------------------------------------------------
 
 // Bytes
@@ -9400,60 +9482,113 @@ inline void HTTPRequest::set_allocated_token(::std::string* token) {
   // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.token)
 }
 
-// string account = 4;
-inline void HTTPRequest::clear_account() {
-  account_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string user = 4;
+inline void HTTPRequest::clear_user() {
+  user_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& HTTPRequest::account() const {
-  // @@protoc_insertion_point(field_get:api.HTTPRequest.account)
-  return account_.GetNoArena();
+inline const ::std::string& HTTPRequest::user() const {
+  // @@protoc_insertion_point(field_get:api.HTTPRequest.user)
+  return user_.GetNoArena();
 }
-inline void HTTPRequest::set_account(const ::std::string& value) {
+inline void HTTPRequest::set_user(const ::std::string& value) {
   
-  account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.HTTPRequest.account)
+  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.HTTPRequest.user)
 }
 #if LANG_CXX11
-inline void HTTPRequest::set_account(::std::string&& value) {
+inline void HTTPRequest::set_user(::std::string&& value) {
   
-  account_.SetNoArena(
+  user_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.account)
+  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.user)
 }
 #endif
-inline void HTTPRequest::set_account(const char* value) {
+inline void HTTPRequest::set_user(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.account)
+  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.user)
 }
-inline void HTTPRequest::set_account(const char* value, size_t size) {
+inline void HTTPRequest::set_user(const char* value, size_t size) {
   
-  account_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  user_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.account)
+  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.user)
 }
-inline ::std::string* HTTPRequest::mutable_account() {
+inline ::std::string* HTTPRequest::mutable_user() {
   
-  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.account)
-  return account_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.user)
+  return user_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* HTTPRequest::release_account() {
-  // @@protoc_insertion_point(field_release:api.HTTPRequest.account)
+inline ::std::string* HTTPRequest::release_user() {
+  // @@protoc_insertion_point(field_release:api.HTTPRequest.user)
   
-  return account_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return user_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void HTTPRequest::set_allocated_account(::std::string* account) {
-  if (account != NULL) {
+inline void HTTPRequest::set_allocated_user(::std::string* user) {
+  if (user != NULL) {
     
   } else {
     
   }
-  account_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), account);
-  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.account)
+  user_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), user);
+  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.user)
 }
 
-// string contentType = 5;
+// string password = 5;
+inline void HTTPRequest::clear_password() {
+  password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HTTPRequest::password() const {
+  // @@protoc_insertion_point(field_get:api.HTTPRequest.password)
+  return password_.GetNoArena();
+}
+inline void HTTPRequest::set_password(const ::std::string& value) {
+  
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.HTTPRequest.password)
+}
+#if LANG_CXX11
+inline void HTTPRequest::set_password(::std::string&& value) {
+  
+  password_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.HTTPRequest.password)
+}
+#endif
+inline void HTTPRequest::set_password(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.HTTPRequest.password)
+}
+inline void HTTPRequest::set_password(const char* value, size_t size) {
+  
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.HTTPRequest.password)
+}
+inline ::std::string* HTTPRequest::mutable_password() {
+  
+  // @@protoc_insertion_point(field_mutable:api.HTTPRequest.password)
+  return password_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HTTPRequest::release_password() {
+  // @@protoc_insertion_point(field_release:api.HTTPRequest.password)
+  
+  return password_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HTTPRequest::set_allocated_password(::std::string* password) {
+  if (password != NULL) {
+    
+  } else {
+    
+  }
+  password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
+  // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.password)
+}
+
+// string contentType = 6;
 inline void HTTPRequest::clear_contenttype() {
   contenttype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -9506,7 +9641,7 @@ inline void HTTPRequest::set_allocated_contenttype(::std::string* contenttype) {
   // @@protoc_insertion_point(field_set_allocated:api.HTTPRequest.contentType)
 }
 
-// map<string, string> headers = 6;
+// map<string, string> headers = 7;
 inline int HTTPRequest::headers_size() const {
   return headers_.size();
 }
@@ -9524,7 +9659,7 @@ HTTPRequest::mutable_headers() {
   return headers_.MutableMap();
 }
 
-// map<string, string> form = 7;
+// map<string, string> form = 8;
 inline int HTTPRequest::form_size() const {
   return form_.size();
 }
@@ -9542,7 +9677,7 @@ HTTPRequest::mutable_form() {
   return form_.MutableMap();
 }
 
-// map<string, string> cookies = 8;
+// map<string, string> cookies = 9;
 inline int HTTPRequest::cookies_size() const {
   return cookies_.size();
 }
@@ -9560,7 +9695,7 @@ HTTPRequest::mutable_cookies() {
   return cookies_.MutableMap();
 }
 
-// .api.Bytes body = 9;
+// .api.Bytes body = 10;
 inline bool HTTPRequest::has_body() const {
   return this != internal_default_instance() && body_ != NULL;
 }
