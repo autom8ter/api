@@ -456,16 +456,61 @@ type Float64 struct {
 func ToFloat64(i float64) *Float64
 ```
 
+#### func (*Float64) Abs
+
+```go
+func (m *Float64) Abs() *Float64
+```
+Abs returns the absolute value of Float64.
+
+#### func (*Float64) Ceiling
+
+```go
+func (m *Float64) Ceiling() *Float64
+```
+Ceil returns the least integer value greater than or equal to x.
+
+#### func (*Float64) CubeRoot
+
+```go
+func (m *Float64) CubeRoot() *Float64
+```
+CubeRoot returns the cube root of x.
+
+#### func (*Float64) Debugln
+
+```go
+func (s *Float64) Debugln()
+```
+
 #### func (*Float64) Descriptor
 
 ```go
 func (*Float64) Descriptor() ([]byte, []int)
 ```
 
+#### func (*Float64) DividedBy
+
+```go
+func (m *Float64) DividedBy(n *Float64) *Float64
+```
+
 #### func (*Float64) GetNum
 
 ```go
 func (m *Float64) GetNum() float64
+```
+
+#### func (*Float64) Minus
+
+```go
+func (m *Float64) Minus(n *Float64) *Float64
+```
+
+#### func (*Float64) Plus
+
+```go
+func (m *Float64) Plus(n *Float64) *Float64
 ```
 
 #### func (*Float64) Pointer
@@ -490,6 +535,18 @@ func (m *Float64) Reset()
 
 ```go
 func (m *Float64) String() string
+```
+
+#### func (*Float64) Times
+
+```go
+func (m *Float64) Times(n *Float64) *Float64
+```
+
+#### func (*Float64) ToString
+
+```go
+func (s *Float64) ToString() *String
 ```
 
 #### func (*Float64) XXX_DiscardUnknown
@@ -744,16 +801,40 @@ type Int64 struct {
 func ToInt64(i int) *Int64
 ```
 
+#### func (*Int64) Debugln
+
+```go
+func (s *Int64) Debugln()
+```
+
 #### func (*Int64) Descriptor
 
 ```go
 func (*Int64) Descriptor() ([]byte, []int)
 ```
 
+#### func (*Int64) DividedBy
+
+```go
+func (m *Int64) DividedBy(n *Int64) *Int64
+```
+
 #### func (*Int64) GetNum
 
 ```go
 func (m *Int64) GetNum() int64
+```
+
+#### func (*Int64) Minus
+
+```go
+func (m *Int64) Minus(n *Int64) *Int64
+```
+
+#### func (*Int64) Plus
+
+```go
+func (m *Int64) Plus(n *Int64) *Int64
 ```
 
 #### func (*Int64) Pointer
@@ -768,6 +849,12 @@ func (s *Int64) Pointer() *int64
 func (*Int64) ProtoMessage()
 ```
 
+#### func (*Int64) Remainder
+
+```go
+func (m *Int64) Remainder(n *Int64) *Int64
+```
+
 #### func (*Int64) Reset
 
 ```go
@@ -778,6 +865,18 @@ func (m *Int64) Reset()
 
 ```go
 func (m *Int64) String() string
+```
+
+#### func (*Int64) Times
+
+```go
+func (m *Int64) Times(n *Int64) *Int64
+```
+
+#### func (*Int64) ToString
+
+```go
+func (s *Int64) ToString() *String
 ```
 
 #### func (*Int64) XXX_DiscardUnknown
