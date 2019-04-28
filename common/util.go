@@ -32,7 +32,7 @@ import (
 )
 
 func init() {
-	Context = context.WithValue(context.TODO(), "env", ToStringArray(os.Environ()))
+	ClientContext = StringArrayFromEnv().ToContext(context.TODO(), "env")
 	util = objectify.Default()
 	httpClient = http.DefaultClient
 	store = sessions.NewCookieStore([]byte(os.Getenv(SESSION_SECRET_ENV_KEY)))
@@ -41,12 +41,20 @@ func init() {
 
 var (
 	util                   *objectify.Handler
-	Context                context.Context
+	ClientContext          context.Context
 	httpClient             *http.Client
 	store                  *sessions.CookieStore
 	AUTH_SESSION           = "auth-session"
 	SESSION_SECRET_ENV_KEY = "SECRET"
 )
+
+func Fatalln(err error) {
+	util.Entry().Fatalln(err.Error())
+}
+
+func Warnln(err error) {
+	util.Entry().Warnln(err.Error())
+}
 
 func GetAuthSession(r *http.Request) (*sessions.Session, error) {
 	return store.Get(r, AUTH_SESSION)
@@ -1008,6 +1016,10 @@ func (s *String) Validate(fn func(s *String) error) error {
 	return fn(s)
 }
 
+func (s *String) StartArray() *StringArray {
+	return ToStringArray([]string{s.Text})
+}
+
 func (s *Bytes) Validate(fn func(s *Bytes) error) error {
 	return fn(s)
 }
@@ -1100,4 +1112,40 @@ func (s *Token) TypeMatches(src interface{}) bool {
 
 func (s *Error) TypeMatches(src interface{}) bool {
 	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *String) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *StringArray) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Int64) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Float64) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *StringMap) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Bool) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Error) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Token) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *HTTPRequest) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
 }
