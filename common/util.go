@@ -25,6 +25,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"reflect"
 	"strconv"
 	"strings"
 	"time"
@@ -1036,4 +1037,67 @@ func (s *Float64) Validate(fn func(s *Float64) error) error {
 
 func (s *Int64) Validate(fn func(s *Int64) error) error {
 	return fn(s)
+}
+
+func (s *Int64) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *Float64) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *Token) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *HTTPRequest) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *Bool) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *Bytes) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *StringArray) Equals(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *StringArray) StringMap(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *StringArray) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+func (s *String) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *StringMap) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *Bool) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *Int64) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *Float64) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *Token) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
+}
+
+func (s *Error) TypeMatches(src interface{}) bool {
+	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
 }
