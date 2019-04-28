@@ -19,6 +19,7 @@ import (
 	"html/template"
 	"io"
 	"io/ioutil"
+	"math"
 	mathrand "math/rand"
 	"net/http"
 	"net/url"
@@ -754,10 +755,77 @@ func (s *StringMap) ToString() *String {
 	return ToString(string(Util.MarshalJSON(s.StringMap)))
 }
 
+func (s *Float64) Debugln() {
+	s.ToString().Debugln()
+}
+
+func (s *Int64) Debugln() {
+	s.ToString().Debugln()
+}
+
+func (s *Int64) ToString() *String {
+	return ToString(strconv.Itoa(int(s.Num)))
+}
+
+func (s *Float64) ToString() *String {
+	return ToString(fmt.Sprintf("%v", s.Num))
+}
+
 func (s *StringArray) Array() []string {
 	out := make([]string, len(s.Strings))
 	for i := range s.Strings {
 		out[i] = s.Strings[i].Text
 	}
 	return out
+}
+
+//Abs returns the absolute value of Float64.
+func (m *Float64) Abs() *Float64 {
+	return ToFloat64(math.Abs(m.Num))
+}
+
+//CubeRoot returns the cube root of x.
+func (m *Float64) CubeRoot() *Float64 {
+	return ToFloat64(math.Cbrt(m.Num))
+}
+
+//Ceil returns the least integer value greater than or equal to x.
+func (m *Float64) Ceiling() *Float64 {
+	return ToFloat64(math.Ceil(m.Num))
+}
+
+func (m *Float64) Minus(n *Float64) *Float64 {
+	return ToFloat64(m.Num - n.Num)
+}
+
+func (m *Float64) Plus(n *Float64) *Float64 {
+	return ToFloat64(m.Num + n.Num)
+}
+
+func (m *Float64) Times(n *Float64) *Float64 {
+	return ToFloat64(m.Num * n.Num)
+}
+
+func (m *Float64) DividedBy(n *Float64) *Float64 {
+	return ToFloat64(m.Num / n.Num)
+}
+
+func (m *Int64) Minus(n *Int64) *Int64 {
+	return ToInt64(int(m.Num - n.Num))
+}
+
+func (m *Int64) Plus(n *Int64) *Int64 {
+	return ToInt64(int(m.Num + n.Num))
+}
+
+func (m *Int64) Times(n *Int64) *Int64 {
+	return ToInt64(int(m.Num * n.Num))
+}
+
+func (m *Int64) DividedBy(n *Int64) *Int64 {
+	return ToInt64(int(m.Num / n.Num))
+}
+
+func (m *Int64) Remainder(n *Int64) *Int64 {
+	return ToInt64(int(m.Num % n.Num))
 }
