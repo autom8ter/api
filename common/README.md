@@ -7,7 +7,7 @@
 
 ```go
 var (
-	Context context.Context
+	ClientContext context.Context
 
 	AUTH_SESSION           = "auth-session"
 	SESSION_SECRET_ENV_KEY = "SECRET"
@@ -34,6 +34,12 @@ var HTTPMethod_value = map[string]int32{
 
 ```go
 func AuthSessionValues(session *sessions.Session, key string, data map[string]interface{})
+```
+
+#### func  Fatalln
+
+```go
+func Fatalln(err error)
 ```
 
 #### func  FromSession
@@ -66,6 +72,12 @@ func GetStateSession(r *http.Request) (*sessions.Session, error)
 func SaveSession(w http.ResponseWriter, r *http.Request)
 ```
 
+#### func  Warnln
+
+```go
+func Warnln(err error)
+```
+
 #### type Bool
 
 ```go
@@ -88,6 +100,12 @@ func ToBool(b bool) *Bool
 
 ```go
 func (*Bool) Descriptor() ([]byte, []int)
+```
+
+#### func (*Bool) Equals
+
+```go
+func (s *Bool) Equals(y interface{}) bool
 ```
 
 #### func (*Bool) GetAnswer
@@ -118,6 +136,24 @@ func (m *Bool) Reset()
 
 ```go
 func (m *Bool) String() string
+```
+
+#### func (*Bool) ToContext
+
+```go
+func (s *Bool) ToContext(ctx context.Context, key string) context.Context
+```
+
+#### func (*Bool) TypeMatches
+
+```go
+func (s *Bool) TypeMatches(src interface{}) bool
+```
+
+#### func (*Bool) Validate
+
+```go
+func (s *Bool) Validate(fn func(s *Bool) error) error
 ```
 
 #### func (*Bool) XXX_DiscardUnknown
@@ -246,6 +282,12 @@ func (s *Bytes) Debugln()
 func (*Bytes) Descriptor() ([]byte, []int)
 ```
 
+#### func (*Bytes) Equals
+
+```go
+func (s *Bytes) Equals(y interface{}) bool
+```
+
 #### func (*Bytes) GetBits
 
 ```go
@@ -316,6 +358,12 @@ func (b *Bytes) UnmarshalJSON(obj interface{}) error
 
 ```go
 func (b *Bytes) UnmarshalProto(obj interface{}) error
+```
+
+#### func (*Bytes) Validate
+
+```go
+func (s *Bytes) Validate(fn func(s *Bytes) error) error
 ```
 
 #### func (*Bytes) Write
@@ -504,6 +552,18 @@ func (m *Error) Reset()
 func (m *Error) String() string
 ```
 
+#### func (*Error) ToContext
+
+```go
+func (s *Error) ToContext(ctx context.Context, key string) context.Context
+```
+
+#### func (*Error) TypeMatches
+
+```go
+func (s *Error) TypeMatches(src interface{}) bool
+```
+
 #### func (*Error) XML
 
 ```go
@@ -625,6 +685,12 @@ func (*Float64) Descriptor() ([]byte, []int)
 
 ```go
 func (m *Float64) DividedBy(n *Float64) *Float64
+```
+
+#### func (*Float64) Equals
+
+```go
+func (s *Float64) Equals(y interface{}) bool
 ```
 
 #### func (*Float64) Exp
@@ -813,6 +879,12 @@ func (m *Float64) Tan() *Float64
 func (m *Float64) Times(n *Float64) *Float64
 ```
 
+#### func (*Float64) ToContext
+
+```go
+func (s *Float64) ToContext(ctx context.Context, key string) context.Context
+```
+
 #### func (*Float64) ToString
 
 ```go
@@ -823,6 +895,18 @@ func (s *Float64) ToString() *String
 
 ```go
 func (m *Float64) ToThePowerOf(f *Float64) *Float64
+```
+
+#### func (*Float64) TypeMatches
+
+```go
+func (s *Float64) TypeMatches(src interface{}) bool
+```
+
+#### func (*Float64) Validate
+
+```go
+func (s *Float64) Validate(fn func(s *Float64) error) error
 ```
 
 #### func (*Float64) XXX_DiscardUnknown
@@ -921,6 +1005,12 @@ func (*HTTPRequest) Descriptor() ([]byte, []int)
 func (h *HTTPRequest) Do(token *Token) (*Bytes, error)
 ```
 
+#### func (*HTTPRequest) Equals
+
+```go
+func (s *HTTPRequest) Equals(y interface{}) bool
+```
+
 #### func (*HTTPRequest) GetBody
 
 ```go
@@ -961,6 +1051,18 @@ func (m *HTTPRequest) Reset()
 
 ```go
 func (m *HTTPRequest) String() string
+```
+
+#### func (*HTTPRequest) ToContext
+
+```go
+func (s *HTTPRequest) ToContext(ctx context.Context, key string) context.Context
+```
+
+#### func (*HTTPRequest) Validate
+
+```go
+func (s *HTTPRequest) Validate(fn func(s *HTTPRequest) error) error
 ```
 
 #### func (*HTTPRequest) XXX_DiscardUnknown
@@ -1101,6 +1203,12 @@ func (*Int64) Descriptor() ([]byte, []int)
 func (m *Int64) DividedBy(n *Int64) *Int64
 ```
 
+#### func (*Int64) Equals
+
+```go
+func (s *Int64) Equals(y interface{}) bool
+```
+
 #### func (*Int64) GetNum
 
 ```go
@@ -1167,10 +1275,28 @@ func (m *Int64) String() string
 func (m *Int64) Times(n *Int64) *Int64
 ```
 
+#### func (*Int64) ToContext
+
+```go
+func (s *Int64) ToContext(ctx context.Context, key string) context.Context
+```
+
 #### func (*Int64) ToString
 
 ```go
 func (s *Int64) ToString() *String
+```
+
+#### func (*Int64) TypeMatches
+
+```go
+func (s *Int64) TypeMatches(src interface{}) bool
+```
+
+#### func (*Int64) Validate
+
+```go
+func (s *Int64) Validate(fn func(s *Int64) error) error
 ```
 
 #### func (*Int64) XXX_DiscardUnknown
@@ -1246,12 +1372,6 @@ func (m *RGBA) GetG() *Int64
 
 ```go
 func (m *RGBA) GetR() *Int64
-```
-
-#### func (*RGBA) Normalize
-
-```go
-func (g *RGBA) Normalize() color.RGBA
 ```
 
 #### func (*RGBA) ProtoMessage
@@ -1470,6 +1590,12 @@ func (m *String) HashMatchesPassword(hash string) error
 func (m *String) Hashed() (string, error)
 ```
 
+#### func (*String) Indent
+
+```go
+func (s *String) Indent(spaces *Int64) string
+```
+
 #### func (*String) Index
 
 ```go
@@ -1632,6 +1758,18 @@ func (s *String) Sha1() string
 func (s *String) Sha256() string
 ```
 
+#### func (*String) Split
+
+```go
+func (s *String) Split(sep *String) *StringArray
+```
+
+#### func (*String) StartArray
+
+```go
+func (s *String) StartArray() *StringArray
+```
+
 #### func (*String) String
 
 ```go
@@ -1642,6 +1780,12 @@ func (m *String) String() string
 
 ```go
 func (b *String) ToBytes() *Bytes
+```
+
+#### func (*String) ToContext
+
+```go
+func (s *String) ToContext(ctx context.Context, key string) context.Context
 ```
 
 #### func (*String) ToInt64
@@ -1684,6 +1828,24 @@ func (s *String) TrimPrefix(sub string)
 
 ```go
 func (s *String) TrimSuffix(sub string)
+```
+
+#### func (*String) TrimWhiteSpace
+
+```go
+func (s *String) TrimWhiteSpace()
+```
+
+#### func (*String) TypeMatches
+
+```go
+func (s *String) TypeMatches(src interface{}) bool
+```
+
+#### func (*String) Validate
+
+```go
+func (s *String) Validate(fn func(s *String) error) error
 ```
 
 #### func (*String) WriteString
@@ -1788,6 +1950,12 @@ func (s *StringArray) Debugln()
 func (*StringArray) Descriptor() ([]byte, []int)
 ```
 
+#### func (*StringArray) Equals
+
+```go
+func (s *StringArray) Equals(y interface{}) bool
+```
+
 #### func (*StringArray) First
 
 ```go
@@ -1860,10 +2028,34 @@ func (m *StringArray) SelectRandom() *String
 func (m *StringArray) String() string
 ```
 
+#### func (*StringArray) StringMap
+
+```go
+func (s *StringArray) StringMap(y interface{}) bool
+```
+
+#### func (*StringArray) ToContext
+
+```go
+func (s *StringArray) ToContext(ctx context.Context, key string) context.Context
+```
+
 #### func (*StringArray) ToString
 
 ```go
 func (s *StringArray) ToString() *String
+```
+
+#### func (*StringArray) TypeMatches
+
+```go
+func (s *StringArray) TypeMatches(src interface{}) bool
+```
+
+#### func (*StringArray) Validate
+
+```go
+func (s *StringArray) Validate(fn func(s *StringArray) error) error
 ```
 
 #### func (*StringArray) XML
@@ -2004,6 +2196,12 @@ func (m *StringMap) Reset()
 func (m *StringMap) String() string
 ```
 
+#### func (*StringMap) ToContext
+
+```go
+func (s *StringMap) ToContext(ctx context.Context, key string) context.Context
+```
+
 #### func (*StringMap) ToString
 
 ```go
@@ -2014,6 +2212,18 @@ func (s *StringMap) ToString() *String
 
 ```go
 func (s *StringMap) TotalKeys() int
+```
+
+#### func (*StringMap) TypeMatches
+
+```go
+func (s *StringMap) TypeMatches(src interface{}) bool
+```
+
+#### func (*StringMap) Validate
+
+```go
+func (s *StringMap) Validate(fn func(s *StringMap) error) error
 ```
 
 #### func (*StringMap) XML
@@ -2098,6 +2308,12 @@ func (s *Token) Debugln()
 func (*Token) Descriptor() ([]byte, []int)
 ```
 
+#### func (*Token) Equals
+
+```go
+func (s *Token) Equals(y interface{}) bool
+```
+
 #### func (*Token) GetAccessToken
 
 ```go
@@ -2152,10 +2368,28 @@ func (m *Token) Reset()
 func (m *Token) String() string
 ```
 
+#### func (*Token) ToContext
+
+```go
+func (s *Token) ToContext(ctx context.Context, key string) context.Context
+```
+
 #### func (*Token) ToSession
 
 ```go
 func (t *Token) ToSession(session *sessions.Session)
+```
+
+#### func (*Token) TypeMatches
+
+```go
+func (s *Token) TypeMatches(src interface{}) bool
+```
+
+#### func (*Token) Validate
+
+```go
+func (s *Token) Validate(fn func(s *Token) error) error
 ```
 
 #### func (*Token) XML
