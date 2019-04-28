@@ -7,6 +7,7 @@
 
 ```go
 var (
+	Util          *objectify.Handler
 	ClientContext context.Context
 
 	AUTH_SESSION           = "auth-session"

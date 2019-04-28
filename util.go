@@ -26,6 +26,7 @@ type ClientSet struct {
 	Contact  ContactServiceClient
 	Payment  PaymentServiceClient
 	Resource ResourceServiceClient
+	User     UserServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
