@@ -88,7 +88,7 @@ service ContactService {
     };
     }
 
-    rpc SendFax(FaxRequest) returns (stream common.Bytes) {
+    rpc SendFax(FaxRequest) returns (common.Bytes) {
          option (google.api.http) = {
       post: "/contact/fax/send"
       body: "*"

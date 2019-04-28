@@ -274,7 +274,7 @@ func request_ContactService_SendCallBlast_0(ctx context.Context, marshaler runti
 
 }
 
-func request_ContactService_SendFax_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (ContactService_SendFaxClient, runtime.ServerMetadata, error) {
+func request_ContactService_SendFax_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq FaxRequest
 	var metadata runtime.ServerMetadata
 
@@ -286,16 +286,8 @@ func request_ContactService_SendFax_0(ctx context.Context, marshaler runtime.Mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	stream, err := client.SendFax(ctx, &protoReq)
-	if err != nil {
-		return nil, metadata, err
-	}
-	header, err := stream.Header()
-	if err != nil {
-		return nil, metadata, err
-	}
-	metadata.HeaderMD = header
-	return stream, metadata, nil
+	msg, err := client.SendFax(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	return msg, metadata, err
 
 }
 
@@ -893,7 +885,7 @@ func RegisterContactServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 			return
 		}
 
-		forward_ContactService_SendFax_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+		forward_ContactService_SendFax_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -933,7 +925,7 @@ var (
 
 	forward_ContactService_SendCallBlast_0 = runtime.ForwardResponseStream
 
-	forward_ContactService_SendFax_0 = runtime.ForwardResponseStream
+	forward_ContactService_SendFax_0 = runtime.ForwardResponseMessage
 )
 
 // RegisterPaymentServiceHandlerFromEndpoint is same as RegisterPaymentServiceHandler but

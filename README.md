@@ -757,7 +757,7 @@ type ContactServiceClient interface {
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*common.Bytes, error)
 	SendCallBlast(ctx context.Context, in *CallBlast, opts ...grpc.CallOption) (ContactService_SendCallBlastClient, error)
-	SendFax(ctx context.Context, in *FaxRequest, opts ...grpc.CallOption) (ContactService_SendFaxClient, error)
+	SendFax(ctx context.Context, in *FaxRequest, opts ...grpc.CallOption) (*common.Bytes, error)
 }
 ```
 
@@ -783,7 +783,7 @@ type ContactServiceServer interface {
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*common.Bytes, error)
 	SendCallBlast(*CallBlast, ContactService_SendCallBlastServer) error
-	SendFax(*FaxRequest, ContactService_SendFaxServer) error
+	SendFax(context.Context, *FaxRequest) (*common.Bytes, error)
 }
 ```
 
@@ -824,26 +824,6 @@ type ContactService_SendEmailBlastClient interface {
 ```go
 type ContactService_SendEmailBlastServer interface {
 	Send(*common.String) error
-	grpc.ServerStream
-}
-```
-
-
-#### type ContactService_SendFaxClient
-
-```go
-type ContactService_SendFaxClient interface {
-	Recv() (*common.Bytes, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type ContactService_SendFaxServer
-
-```go
-type ContactService_SendFaxServer interface {
-	Send(*common.Bytes) error
 	grpc.ServerStream
 }
 ```
@@ -2116,6 +2096,12 @@ const (
 
 ```go
 func (Plan) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (Plan) Normalize
+
+```go
+func (p Plan) Normalize() *common.String
 ```
 
 #### func (Plan) String
