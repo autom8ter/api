@@ -12,6 +12,7 @@ import (
 	"github.com/Masterminds/sprig"
 	"github.com/autom8ter/objectify"
 	human "github.com/dustin/go-humanize"
+	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/sessions"
 	"github.com/pkg/errors"
@@ -46,6 +47,13 @@ var (
 	store                  *sessions.CookieStore
 	AUTH_SESSION           = "auth-session"
 	SESSION_SECRET_ENV_KEY = "SECRET"
+	JSONMarshaler          = &jsonpb.Marshaler{
+		Indent: "  ",
+	}
+	JSONUnmarshaler = &jsonpb.Unmarshaler{
+		AllowUnknownFields: false,
+		AnyResolver:        nil,
+	}
 )
 
 func Fatalln(err error) {
@@ -136,11 +144,35 @@ func ToFloat64(i float64) *Float64 {
 	}
 }
 
-func ObjToBytes(b interface{}) *Bytes {
+func MessageToJSONString(msg proto.Message) (*String, error) {
+	s, err := JSONMarshaler.MarshalToString(msg)
+	if err != nil {
+		return nil, err
+	}
+	return ToString(s), nil
+}
+
+func MessageToJSONBytes(msg proto.Message) (*Bytes, error) {
+	s, err := JSONMarshaler.MarshalToString(msg)
+	if err != nil {
+		return nil, err
+	}
+	return ToBytes([]byte(s)), nil
+}
+
+func (s *String) DecodeJSON(decoder *json.Decoder) error {
+	return JSONUnmarshaler.UnmarshalNext(decoder, s)
+}
+
+func (s *Bytes) DecodeJSON(decoder *json.Decoder) error {
+	return JSONUnmarshaler.UnmarshalNext(decoder, s)
+}
+
+func JSONObjToBytes(b interface{}) *Bytes {
 	return ToBytes(util.MarshalJSON(b))
 }
 
-func ObjToString(b interface{}) *String {
+func JSONObjToString(b interface{}) *String {
 	return ToString(string(util.MarshalJSON(b)))
 }
 
@@ -243,18 +275,6 @@ func (m *Bytes) Write(p []byte) (n int, err error) {
 	return after - before, nil
 }
 
-func (m *Bytes) YAML() []byte {
-	return util.MarshalYAML(m.Bits)
-}
-
-func (m *Bytes) JSON() []byte {
-	return util.MarshalJSON(m.Bits)
-}
-
-func (m *Bytes) XML() []byte {
-	return util.MarshalXML(m.Bits)
-}
-
 func (m *Bytes) Length() int {
 	return len(m.Bits)
 }
@@ -271,14 +291,6 @@ func (m *Bytes) BitString() string {
 	return string(m.Bits)
 }
 
-func (b *Bytes) UnmarshalProto(obj interface{}) error {
-	return proto.Unmarshal(b.Bits, obj.(proto.Message))
-}
-
-func (b *Bytes) UnmarshalJSON(obj interface{}) error {
-	return json.Unmarshal(b.Bits, obj)
-}
-
 func (m *Bytes) CompileHTTP(name string, t *String) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if err := m.Compile(name, w, t); err != nil {
@@ -293,14 +305,6 @@ func (m *Bytes) WriteString() http.HandlerFunc {
 		io.WriteString(w, m.BitString())
 		return
 	}
-}
-
-func (m *Bytes) UnMarshalJSON(obj interface{}) error {
-	return json.Unmarshal(m.JSON(), obj)
-}
-
-func (m *Bytes) UnMarshalProto(obj interface{}) error {
-	return proto.Unmarshal(m.Bits, obj.(proto.Message))
 }
 
 func (m *Bytes) Clear() {
@@ -325,24 +329,24 @@ func (s *StringMap) Clear(key string) {
 	s.StringMap[key] = nil
 }
 
-func (s *StringMap) Keys() []string {
+func (s *StringMap) Keys() *StringArray {
 	kys := []string{}
 	for k, _ := range s.StringMap {
 		kys = append(kys, k)
 	}
-	return kys
+	return ToStringArray(kys)
 }
 
-func (s *StringMap) TotalKeys() int {
-	return len(s.Keys())
+func (s *StringMap) TotalKeys() *Int64 {
+	return ToInt64(s.Keys().Length())
 }
 
-func (s *StringMap) Exists(key string) bool {
+func (s *StringMap) Exists(key string) *Bool {
 	this := s.Get(key)
 	if this.Text == "" {
-		return false
+		return ToBool(false)
 	}
-	return true
+	return ToBool(true)
 }
 
 func (s *String) Contains(sub string) *Bool {
@@ -416,57 +420,29 @@ func (t *Token) ToSession(session *sessions.Session) {
 	session.Values["id_token"] = t.IdToken
 
 }
+func (s *Int64) Debugln() {
+	str, _ := MessageToJSONString(s)
+	str.Debugln()
+}
 
 func (s *Token) Debugln() {
-	ObjToString(s).Debugln()
-}
-
-func (t *Token) JSON() []byte {
-	return util.MarshalJSON(t)
-}
-
-func (t *Token) YAML() []byte {
-	return util.MarshalYAML(t)
-}
-
-func (t *Token) XML() []byte {
-	return util.MarshalXML(t)
+	str, _ := MessageToJSONString(s)
+	str.Debugln()
 }
 
 func (s *StringMap) Debugln() {
-	ObjToString(s).Debugln()
+	str, _ := MessageToJSONString(s)
+	str.Debugln()
 }
 
 func (s *Bytes) Debugln() {
-	ObjToString(s).Debugln()
+	str, _ := MessageToJSONString(s)
+	str.Debugln()
 }
 
 func (s *StringArray) Debugln() {
-	ObjToString(s).Debugln()
-}
-
-func (t *StringMap) JSON() []byte {
-	return util.MarshalJSON(t)
-}
-
-func (t *StringMap) YAML() []byte {
-	return util.MarshalYAML(t)
-}
-
-func (t *StringMap) XML() []byte {
-	return util.MarshalXML(t)
-}
-
-func (t *StringArray) JSON() []byte {
-	return util.MarshalJSON(t)
-}
-
-func (t *StringArray) YAML() []byte {
-	return util.MarshalYAML(t)
-}
-
-func (t *StringArray) XML() []byte {
-	return util.MarshalXML(t)
+	str, _ := MessageToJSONString(s)
+	str.Debugln()
 }
 
 func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
@@ -567,18 +543,6 @@ func (m *String) WriteString() http.HandlerFunc {
 		io.WriteString(w, m.Text)
 		return
 	}
-}
-
-func (m *String) JSON() []byte {
-	return util.MarshalJSON(m.Text)
-}
-
-func (m *String) YAML() []byte {
-	return util.MarshalYAML(m.Text)
-}
-
-func (m *String) XML() []byte {
-	return util.MarshalXML(m.Text)
 }
 
 func (m *String) ExecuteAsShellCMD() *Bytes {
@@ -746,11 +710,23 @@ func (s *StringArray) Pointer() []*string {
 	return out
 }
 
-func (s *StringArray) ToString() *String {
-	return ToString(string(util.MarshalJSON(s.Strings)))
+func (s *StringArray) ToString() (*String, error) {
+	this, err := JSONMarshaler.MarshalToString(s)
+	if err != nil {
+		return nil, err
+	}
+	return ToString(this), nil
 }
 
-func StructToMap(obj interface{}) *StringMap {
+func (s *StringArray) ToBytes() (*Bytes, error) {
+	this, err := JSONMarshaler.MarshalToString(s)
+	if err != nil {
+		return nil, err
+	}
+	return ToBytes([]byte(this)), nil
+}
+
+func ToMap(obj interface{}) *StringMap {
 	m := util.ToMap(obj)
 	newMap := make(map[string]*String)
 	for k, v := range m {
@@ -759,10 +735,6 @@ func StructToMap(obj interface{}) *StringMap {
 	return &StringMap{
 		StringMap: newMap,
 	}
-}
-
-func (s *StringMap) ToString() *String {
-	return ToString(string(util.MarshalJSON(s.StringMap)))
 }
 
 func (s *Float64) Debugln() {
@@ -775,10 +747,6 @@ func (s *Float64) Squared() *Float64 {
 
 func (s *Float64) Cubed() *Float64 {
 	return s.Times(s).Times(s)
-}
-
-func (s *Int64) Debugln() {
-	s.ToString().Debugln()
 }
 
 func (s *Int64) ToString() *String {
@@ -968,20 +936,8 @@ func (s *String) ParseScientificUnits() (*Float64, *String, error) {
 	return ToFloat64(i), ToString(t), nil
 }
 
-func (e *Error) JSON() []byte {
-	return util.MarshalJSON(e)
-}
-
-func (e *Error) YAML() []byte {
-	return util.MarshalYAML(e)
-}
-
 func (e *Error) Error() string {
-	return fmt.Sprintf("❌ %s", e.JSON())
-}
-
-func (e *Error) XML() []byte {
-	return util.MarshalXML(e)
+	return fmt.Sprintf("❌ %s", e.String())
 }
 
 func ToError(err error, msg string) *Error {
@@ -1146,6 +1102,169 @@ func (s *Token) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
-func (s *HTTPRequest) ToContext(ctx context.Context, key string) context.Context {
-	return context.WithValue(ctx, key, s)
+func (s *String) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling string")
+	}
+	return nil
+}
+
+func (s *StringMap) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling stringmap")
+	}
+	return nil
+}
+
+func (s *Bool) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling bool")
+	}
+	return nil
+}
+
+func (s *StringArray) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling stringarray")
+	}
+	return nil
+}
+
+func (s *Bytes) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling bytes")
+	}
+	return nil
+}
+
+func (s *Float64) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling float64")
+	}
+	return nil
+}
+
+func (s *Int64) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling int64")
+	}
+	return nil
+}
+
+func (s *Token) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling token")
+	}
+	return nil
+}
+
+func (s *HTTPRequest) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling httprequest")
+	}
+	return nil
+}
+func (s *RGBA) UnmarshalJSON(r io.Reader) *Error {
+	err := JSONUnmarshaler.Unmarshal(r, s)
+	if err != nil {
+		return ToError(err, "unmarshaling rgba")
+	}
+	return nil
+}
+
+func (s *RGBA) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling rgba")
+	}
+	return nil
+}
+
+func (s *String) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling string")
+	}
+	return nil
+}
+
+func (s *StringArray) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling stringarray")
+	}
+	return nil
+}
+
+func (s *StringMap) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling stringmap")
+	}
+	return nil
+}
+
+func (s *Bool) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling bool")
+	}
+	return nil
+}
+
+func (s *Float64) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling float64")
+	}
+	return nil
+}
+
+func (s *Int64) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling int64")
+	}
+	return nil
+}
+
+func (s *Int64) Token(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling token")
+	}
+	return nil
+}
+
+func (s *HTTPRequest) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling httprequest")
+	}
+	return nil
+}
+
+func (s *Error) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling error")
+	}
+	return nil
+}
+
+func (s *Bytes) MarshalJSON(w io.Writer) *Error {
+	err := JSONMarshaler.Marshal(w, s)
+	if err != nil {
+		return ToError(err, "marshalling bytes")
+	}
+	return nil
 }
