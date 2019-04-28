@@ -379,32 +379,6 @@
         ]
       }
     },
-    "/resource/user/exists": {
-      "post": {
-        "operationId": "UserExists",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonBool"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonIdentifier"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
     "/resource/user/get": {
       "post": {
         "operationId": "DeleteUser",
@@ -459,7 +433,7 @@
     },
     "/resource/user/roles": {
       "post": {
-        "operationId": "AssignRole",
+        "operationId": "UserRoles",
         "responses": {
           "200": {
             "description": "A successful response.(streaming responses)",
@@ -474,7 +448,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIDStrings"
+              "$ref": "#/definitions/commonIdentifier"
             }
           }
         ],
@@ -664,110 +638,6 @@
           "UtilityService"
         ]
       }
-    },
-    "/utility/marshal/json": {
-      "post": {
-        "operationId": "MarshalJSON",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        ],
-        "tags": [
-          "UtilityService"
-        ]
-      }
-    },
-    "/utility/marshal/xml": {
-      "post": {
-        "operationId": "MarshalXML",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        ],
-        "tags": [
-          "UtilityService"
-        ]
-      }
-    },
-    "/utility/marshal/yaml": {
-      "post": {
-        "operationId": "MarshalYAML",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        ],
-        "tags": [
-          "UtilityService"
-        ]
-      }
-    },
-    "/utility/render": {
-      "post": {
-        "operationId": "Render",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiRenderRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UtilityService"
-        ]
-      }
     }
   },
   "definitions": {
@@ -915,17 +785,6 @@
         }
       }
     },
-    "apiIDStrings": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/commonIdentifier"
-        },
-        "strings": {
-          "$ref": "#/definitions/commonStringArray"
-        }
-      }
-    },
     "apiIdentity": {
       "type": "object",
       "properties": {
@@ -996,20 +855,6 @@
         "PREMIUM"
       ],
       "default": "FREE"
-    },
-    "apiRenderRequest": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "$ref": "#/definitions/commonString"
-        },
-        "text": {
-          "$ref": "#/definitions/commonString"
-        },
-        "data": {
-          "$ref": "#/definitions/commonBytes"
-        }
-      }
     },
     "apiResourceRequest": {
       "type": "object",

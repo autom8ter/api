@@ -42,31 +42,6 @@ service UtilityService {
       body: "*"
     };
     }
-    rpc MarshalJSON(common.Bytes) returns (common.Bytes) {
-        option (google.api.http) = {
-      post: "/utility/marshal/json"
-      body: "*"
-    };
-    }
-    rpc MarshalYAML(common.Bytes) returns (common.Bytes) {
-        option (google.api.http) = {
-      post: "/utility/marshal/yaml"
-      body: "*"
-    };
-    }
-    rpc MarshalXML(common.Bytes) returns (common.Bytes) {
-        option (google.api.http) = {
-      post: "/utility/marshal/xml"
-      body: "*"
-    };
-    }
-    rpc Render(RenderRequest) returns (common.Bytes) {
-        option (google.api.http) = {
-      post: "/utility/render"
-      body: "*"
-    };
-    }
-
 }
 
 service ContactService {
@@ -190,26 +165,12 @@ service UserService {
       body: "*"
     };
     }
-    rpc UserExists(common.Identifier) returns (common.Bool) {
-        option (google.api.http) = {
-      post: "/resource/user/exists"
-      body: "*"
-    };
-    }
     rpc UserRoles(common.Identifier) returns (stream Role) {
         option (google.api.http) = {
       post: "/resource/user/roles"
       body: "*"
     };
     }
-    rpc AssignRole(IDStrings) returns (stream Role) {
-        option (google.api.http) = {
-      post: "/resource/user/roles"
-      body: "*"
-    };
-    }
-
-
 }
 
 message FaxRequest {

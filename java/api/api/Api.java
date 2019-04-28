@@ -34555,7 +34555,7 @@ public final class Api {
       "\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017S" +
       "EARCH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSU" +
       "RL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FR" +
-      "EE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\225\006\n\016Utility" +
+      "EE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016Utility" +
       "Service\022@\n\004Echo\022\016.common.String\032\016.common" +
       ".String\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013Ech" +
       "oSpanish\022\016.common.String\032\016.common.String" +
@@ -34567,59 +34567,47 @@ public final class Api {
       "EchoHindi\022\016.common.String\032\016.common.Strin" +
       "g\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEch" +
       "oArabic\022\016.common.String\032\016.common.String\"" +
-      "\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*\022M\n\013Mars" +
-      "halJSON\022\r.common.Bytes\032\r.common.Bytes\" \202" +
-      "\323\344\223\002\032\"\025/utility/marshal/json:\001*\022M\n\013Marsh" +
-      "alYAML\022\r.common.Bytes\032\r.common.Bytes\" \202\323" +
-      "\344\223\002\032\"\025/utility/marshal/yaml:\001*\022K\n\nMarsha" +
-      "lXML\022\r.common.Bytes\032\r.common.Bytes\"\037\202\323\344\223" +
-      "\002\031\"\024/utility/marshal/xml:\001*\022G\n\006Render\022\022." +
-      "api.RenderRequest\032\r.common.Bytes\"\032\202\323\344\223\002\024" +
-      "\"\017/utility/render:\001*2\372\004\n\016ContactService\022" +
-      "@\n\007SendSMS\022\010.api.SMS\032\r.common.Bytes\"\034\202\323\344" +
-      "\223\002\026\"\021/contact/sms/send:\001*\022M\n\014SendSMSBlas" +
-      "t\022\r.api.SMSBlast\032\r.common.Bytes\"\035\202\323\344\223\002\027\"" +
-      "\022/contact/sms/blast:\001*0\001\022H\n\006GetSMS\022\022.com" +
-      "mon.Identifier\032\r.common.Bytes\"\033\202\323\344\223\002\025\"\020/" +
-      "contact/sms/get:\001*\022N\n\tSendEmail\022\021.api.Em" +
-      "ailRequest\032\016.common.String\"\036\202\323\344\223\002\030\"\023/con" +
-      "tact/email/send:\001*\022[\n\016SendEmailBlast\022\026.a" +
-      "pi.EmailBlastRequest\032\016.common.String\"\037\202\323" +
-      "\344\223\002\031\"\024/contact/email/blast:\001*0\001\022C\n\010SendC" +
-      "all\022\t.api.Call\032\r.common.Bytes\"\035\202\323\344\223\002\027\"\022/" +
-      "contact/call/send:\001*\022P\n\rSendCallBlast\022\016." +
-      "api.CallBlast\032\r.common.Bytes\"\036\202\323\344\223\002\030\"\023/c" +
-      "ontact/call/blast:\001*0\001\022I\n\007SendFax\022\017.api." +
-      "FaxRequest\032\r.common.Bytes\"\034\202\323\344\223\002\026\"\021/cont" +
-      "act/fax/send:\001*0\0012\205\003\n\016PaymentService\022P\n\t" +
-      "Subscribe\022\025.api.SubscribeRequest\032\r.commo" +
-      "n.Bytes\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022V" +
-      "\n\013Unsubscribe\022\027.api.UnSubscribeRequest\032\r" +
-      ".common.Bytes\"\037\202\323\344\223\002\031\"\024/payment/unsubscr" +
-      "ibe:\001*\022]\n\023PurchasePhoneNumber\022\020.api.Phon" +
-      "eNumber\032\030.api.PhoneNumberResource\"\032\202\323\344\223\002" +
-      "\024\"\017/payment/number:\001*\022j\n\021SearchPhoneNumb" +
-      "er\022\035.api.SearchPhoneNumberRequest\032\020.api." +
-      "PhoneNumber\"\"\202\323\344\223\002\034\"\027/payment/numbers/se" +
-      "arch:\001*0\0012[\n\017ResourceService\022H\n\013GetResou" +
-      "rce\022\024.api.ResourceRequest\032\r.common.Bytes" +
-      "\"\024\202\323\344\223\002\016\"\t/resource:\001*2\356\004\n\013UserService\022K" +
-      "\n\nQueryUsers\022\017.api.TokenQuery\032\t.api.User" +
-      "\"\037\202\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nC" +
-      "reateUser\022\r.common.Bytes\032\t.api.User\" \202\323\344" +
-      "\223\002\032\"\025/resource/user/create:\001*\022G\n\007GetUser" +
-      "\022\022.common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"" +
-      "\022/resource/user/get:\001*\022J\n\nDeleteUser\022\022.c" +
-      "ommon.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/re" +
-      "source/user/get:\001*\022F\n\nUpdateUser\022\013.api.I" +
-      "DBody\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user" +
-      "/update:\001*\022P\n\nUserExists\022\022.common.Identi" +
-      "fier\032\014.common.Bool\" \202\323\344\223\002\032\"\025/resource/us" +
-      "er/exists:\001*\022M\n\tUserRoles\022\022.common.Ident" +
-      "ifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user" +
-      "/roles:\001*0\001\022J\n\nAssignRole\022\016.api.IDString" +
-      "s\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/rol" +
-      "es:\001*0\001b\006proto3"
+      "\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*2\372\004\n\016Con" +
+      "tactService\022@\n\007SendSMS\022\010.api.SMS\032\r.commo" +
+      "n.Bytes\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022M\n" +
+      "\014SendSMSBlast\022\r.api.SMSBlast\032\r.common.By" +
+      "tes\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022H\n\006" +
+      "GetSMS\022\022.common.Identifier\032\r.common.Byte" +
+      "s\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N\n\tSendEm" +
+      "ail\022\021.api.EmailRequest\032\016.common.String\"\036" +
+      "\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[\n\016SendEm" +
+      "ailBlast\022\026.api.EmailBlastRequest\032\016.commo" +
+      "n.String\"\037\202\323\344\223\002\031\"\024/contact/email/blast:\001" +
+      "*0\001\022C\n\010SendCall\022\t.api.Call\032\r.common.Byte" +
+      "s\"\035\202\323\344\223\002\027\"\022/contact/call/send:\001*\022P\n\rSend" +
+      "CallBlast\022\016.api.CallBlast\032\r.common.Bytes" +
+      "\"\036\202\323\344\223\002\030\"\023/contact/call/blast:\001*0\001\022I\n\007Se" +
+      "ndFax\022\017.api.FaxRequest\032\r.common.Bytes\"\034\202" +
+      "\323\344\223\002\026\"\021/contact/fax/send:\001*0\0012\205\003\n\016Paymen" +
+      "tService\022P\n\tSubscribe\022\025.api.SubscribeReq" +
+      "uest\032\r.common.Bytes\"\035\202\323\344\223\002\027\"\022/payment/su" +
+      "bscribe:\001*\022V\n\013Unsubscribe\022\027.api.UnSubscr" +
+      "ibeRequest\032\r.common.Bytes\"\037\202\323\344\223\002\031\"\024/paym" +
+      "ent/unsubscribe:\001*\022]\n\023PurchasePhoneNumbe" +
+      "r\022\020.api.PhoneNumber\032\030.api.PhoneNumberRes" +
+      "ource\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Sea" +
+      "rchPhoneNumber\022\035.api.SearchPhoneNumberRe" +
+      "quest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/paymen" +
+      "t/numbers/search:\001*0\0012[\n\017ResourceService" +
+      "\022H\n\013GetResource\022\024.api.ResourceRequest\032\r." +
+      "common.Bytes\"\024\202\323\344\223\002\016\"\t/resource:\001*2\320\003\n\013U" +
+      "serService\022K\n\nQueryUsers\022\017.api.TokenQuer" +
+      "y\032\t.api.User\"\037\202\323\344\223\002\031\"\024/resource/user/que" +
+      "ry:\001*0\001\022H\n\nCreateUser\022\r.common.Bytes\032\t.a" +
+      "pi.User\" \202\323\344\223\002\032\"\025/resource/user/create:\001" +
+      "*\022G\n\007GetUser\022\022.common.Identifier\032\t.api.U" +
+      "ser\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022J\n\nDe" +
+      "leteUser\022\022.common.Identifier\032\t.api.User\"" +
+      "\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022F\n\nUpdate" +
+      "User\022\013.api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025/r" +
+      "esource/user/update:\001*\022M\n\tUserRoles\022\022.co" +
+      "mmon.Identifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/res" +
+      "ource/user/roles:\001*0\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

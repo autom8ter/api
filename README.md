@@ -3312,9 +3312,7 @@ type UserServiceClient interface {
 	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
 	DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
 	UpdateUser(ctx context.Context, in *IDBody, opts ...grpc.CallOption) (*User, error)
-	UserExists(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Bool, error)
 	UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error)
-	AssignRole(ctx context.Context, in *IDStrings, opts ...grpc.CallOption) (UserService_AssignRoleClient, error)
 }
 ```
 
@@ -3338,33 +3336,11 @@ type UserServiceServer interface {
 	GetUser(context.Context, *common.Identifier) (*User, error)
 	DeleteUser(context.Context, *common.Identifier) (*User, error)
 	UpdateUser(context.Context, *IDBody) (*User, error)
-	UserExists(context.Context, *common.Identifier) (*common.Bool, error)
 	UserRoles(*common.Identifier, UserService_UserRolesServer) error
-	AssignRole(*IDStrings, UserService_AssignRoleServer) error
 }
 ```
 
 UserServiceServer is the server API for UserService service.
-
-#### type UserService_AssignRoleClient
-
-```go
-type UserService_AssignRoleClient interface {
-	Recv() (*Role, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type UserService_AssignRoleServer
-
-```go
-type UserService_AssignRoleServer interface {
-	Send(*Role) error
-	grpc.ServerStream
-}
-```
-
 
 #### type UserService_QueryUsersClient
 
@@ -3416,10 +3392,6 @@ type UtilityServiceClient interface {
 	EchoEnglish(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
 	EchoHindi(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
 	EchoArabic(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
-	MarshalJSON(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*common.Bytes, error)
-	MarshalYAML(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*common.Bytes, error)
-	MarshalXML(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*common.Bytes, error)
-	Render(ctx context.Context, in *RenderRequest, opts ...grpc.CallOption) (*common.Bytes, error)
 }
 ```
 
@@ -3444,10 +3416,6 @@ type UtilityServiceServer interface {
 	EchoEnglish(context.Context, *common.String) (*common.String, error)
 	EchoHindi(context.Context, *common.String) (*common.String, error)
 	EchoArabic(context.Context, *common.String) (*common.String, error)
-	MarshalJSON(context.Context, *common.Bytes) (*common.Bytes, error)
-	MarshalYAML(context.Context, *common.Bytes) (*common.Bytes, error)
-	MarshalXML(context.Context, *common.Bytes) (*common.Bytes, error)
-	Render(context.Context, *RenderRequest) (*common.Bytes, error)
 }
 ```
 
