@@ -177,7 +177,7 @@ message FaxRequest {
     common.String media_url =3;
     common.String quality=4;
     common.String callback=5;
-    common.Bool store_media=6;
+    bool store_media=6;
 }
 
 message ResourceRequest {
@@ -279,13 +279,13 @@ message User {
     common.StringMap user_metadata=10;
     common.StringMap app_metadata=11;
     common.String last_ip =12;
-    common.Bool blocked =13;
+    bool blocked =13;
     common.String nickname =14;
     common.StringArray multifactor=15;
     common.String created_at=17;
     common.String updated_at=18;
-    common.Bool phone_verified=19;
-    common.Bool email_verified=20;
+    bool phone_verified=19;
+    bool email_verified=20;
     common.String password=21;
     repeated Identity identities =22;
 }
@@ -294,7 +294,7 @@ message Identity{
     common.String connection =1;
     common.String user_id=2;
     common.String provider=3;
-    common.Bool isSocial=4;
+    bool isSocial=4;
 }
 
 message Auth {
@@ -388,9 +388,9 @@ message PhoneNumber {
 }
 
 message NumberCapabilities {
-    common.Bool voice =1;
-    common.Bool sms=2;
-    common.Bool mms=3;
+    bool voice =1;
+    bool sms=2;
+    bool mms=3;
 }
 
 message PhoneNumberResource {

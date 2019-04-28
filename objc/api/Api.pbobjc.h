@@ -27,7 +27,6 @@
 
 CF_EXTERN_C_BEGIN
 
-@class Bool;
 @class Bytes;
 @class Card;
 @class Email;
@@ -191,9 +190,7 @@ typedef GPB_ENUM(FaxRequest_FieldNumber) {
 /** Test to see if @c callback has been set. */
 @property(nonatomic, readwrite) BOOL hasCallback;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *storeMedia;
-/** Test to see if @c storeMedia has been set. */
-@property(nonatomic, readwrite) BOOL hasStoreMedia;
+@property(nonatomic, readwrite) BOOL storeMedia;
 
 @end
 
@@ -661,9 +658,7 @@ typedef GPB_ENUM(User_FieldNumber) {
 /** Test to see if @c lastIp has been set. */
 @property(nonatomic, readwrite) BOOL hasLastIp;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *blocked;
-/** Test to see if @c blocked has been set. */
-@property(nonatomic, readwrite) BOOL hasBlocked;
+@property(nonatomic, readwrite) BOOL blocked;
 
 @property(nonatomic, readwrite, strong, null_resettable) String *nickname;
 /** Test to see if @c nickname has been set. */
@@ -681,13 +676,9 @@ typedef GPB_ENUM(User_FieldNumber) {
 /** Test to see if @c updatedAt has been set. */
 @property(nonatomic, readwrite) BOOL hasUpdatedAt;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *phoneVerified;
-/** Test to see if @c phoneVerified has been set. */
-@property(nonatomic, readwrite) BOOL hasPhoneVerified;
+@property(nonatomic, readwrite) BOOL phoneVerified;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *emailVerified;
-/** Test to see if @c emailVerified has been set. */
-@property(nonatomic, readwrite) BOOL hasEmailVerified;
+@property(nonatomic, readwrite) BOOL emailVerified;
 
 @property(nonatomic, readwrite, strong, null_resettable) String *password;
 /** Test to see if @c password has been set. */
@@ -722,9 +713,7 @@ typedef GPB_ENUM(Identity_FieldNumber) {
 /** Test to see if @c provider has been set. */
 @property(nonatomic, readwrite) BOOL hasProvider;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *isSocial;
-/** Test to see if @c isSocial has been set. */
-@property(nonatomic, readwrite) BOOL hasIsSocial;
+@property(nonatomic, readwrite) BOOL isSocial;
 
 @end
 
@@ -903,17 +892,11 @@ typedef GPB_ENUM(NumberCapabilities_FieldNumber) {
 
 @interface NumberCapabilities : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *voice;
-/** Test to see if @c voice has been set. */
-@property(nonatomic, readwrite) BOOL hasVoice;
+@property(nonatomic, readwrite) BOOL voice;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *sms;
-/** Test to see if @c sms has been set. */
-@property(nonatomic, readwrite) BOOL hasSms;
+@property(nonatomic, readwrite) BOOL sms;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *mms;
-/** Test to see if @c mms has been set. */
-@property(nonatomic, readwrite) BOOL hasMms;
+@property(nonatomic, readwrite) BOOL mms;
 
 @end
 

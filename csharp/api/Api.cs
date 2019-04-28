@@ -25,162 +25,159 @@ namespace Api {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CglhcGkucHJvdG8SA2FwaRocZ29vZ2xlL2FwaS9hbm5vdGF0aW9ucy5wcm90",
-            "bxoTY29tbW9uL2NvbW1vbi5wcm90byLPAQoKRmF4UmVxdWVzdBIaCgJ0bxgB",
+            "bxoTY29tbW9uL2NvbW1vbi5wcm90byLBAQoKRmF4UmVxdWVzdBIaCgJ0bxgB",
             "IAEoCzIOLmNvbW1vbi5TdHJpbmcSHAoEZnJvbRgCIAEoCzIOLmNvbW1vbi5T",
             "dHJpbmcSIQoJbWVkaWFfdXJsGAMgASgLMg4uY29tbW9uLlN0cmluZxIfCgdx",
             "dWFsaXR5GAQgASgLMg4uY29tbW9uLlN0cmluZxIgCghjYWxsYmFjaxgFIAEo",
-            "CzIOLmNvbW1vbi5TdHJpbmcSIQoLc3RvcmVfbWVkaWEYBiABKAsyDC5jb21t",
-            "b24uQm9vbCLIAQoPUmVzb3VyY2VSZXF1ZXN0EhwKBXRva2VuGAEgASgLMg0u",
-            "Y29tbW9uLlRva2VuEiIKBm1ldGhvZBgCIAEoDjISLmNvbW1vbi5IVFRQTWV0",
-            "aG9kEh4KBmRvbWFpbhgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSFQoDdXJsGAQg",
-            "ASgOMgguYXBpLlVSTBIfCgRmb3JtGAUgASgLMhEuY29tbW9uLlN0cmluZ01h",
-            "cBIbCgRib2R5GAYgASgLMg0uY29tbW9uLkJ5dGVzImMKEFN1YnNjcmliZVJl",
-            "cXVlc3QSHQoFZW1haWwYASABKAsyDi5jb21tb24uU3RyaW5nEhcKBHBsYW4Y",
-            "AiABKA4yCS5hcGkuUGxhbhIXCgRjYXJkGAMgASgLMgkuYXBpLkNhcmQiTAoS",
-            "VW5TdWJzY3JpYmVSZXF1ZXN0Eh0KBWVtYWlsGAEgASgLMg4uY29tbW9uLlN0",
-            "cmluZxIXCgRwbGFuGAIgASgOMgkuYXBpLlBsYW4iiAEKBENhcmQSHgoGbnVt",
-            "YmVyGAEgASgLMg4uY29tbW9uLlN0cmluZxIhCglleHBfbW9udGgYAiABKAsy",
-            "Di5jb21tb24uU3RyaW5nEiAKCGV4cF95ZWFyGAMgASgLMg4uY29tbW9uLlN0",
-            "cmluZxIbCgNjdmMYBCABKAsyDi5jb21tb24uU3RyaW5nIsQBCgNTTVMSHwoH",
-            "c2VydmljZRgBIAEoCzIOLmNvbW1vbi5TdHJpbmcSGgoCdG8YAiABKAsyDi5j",
-            "b21tb24uU3RyaW5nEh8KB21lc3NhZ2UYAyABKAsyDi5jb21tb24uU3RyaW5n",
-            "EiAKCG1lZGlhVVJMGAQgASgLMg4uY29tbW9uLlN0cmluZxIgCghjYWxsYmFj",
-            "axgFIAEoCzIOLmNvbW1vbi5TdHJpbmcSGwoDYXBwGAYgASgLMg4uY29tbW9u",
-            "LlN0cmluZyLOAQoIU01TQmxhc3QSHwoHc2VydmljZRgBIAEoCzIOLmNvbW1v",
-            "bi5TdHJpbmcSHwoCdG8YAiABKAsyEy5jb21tb24uU3RyaW5nQXJyYXkSHwoH",
-            "bWVzc2FnZRgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSIAoIbWVkaWFVUkwYBCAB",
-            "KAsyDi5jb21tb24uU3RyaW5nEiAKCGNhbGxiYWNrGAUgASgLMg4uY29tbW9u",
-            "LlN0cmluZxIbCgNhcHAYBiABKAsyDi5jb21tb24uU3RyaW5nInAKDEVtYWls",
-            "UmVxdWVzdBIhCglmcm9tX25hbWUYASABKAsyDi5jb21tb24uU3RyaW5nEiIK",
-            "CmZyb21fZW1haWwYAiABKAsyDi5jb21tb24uU3RyaW5nEhkKBWVtYWlsGAMg",
-            "ASgLMgouYXBpLkVtYWlsInoKEUVtYWlsQmxhc3RSZXF1ZXN0EiEKCWZyb21f",
-            "bmFtZRgBIAEoCzIOLmNvbW1vbi5TdHJpbmcSIgoKZnJvbV9lbWFpbBgCIAEo",
-            "CzIOLmNvbW1vbi5TdHJpbmcSHgoFYmxhc3QYAyABKAsyDy5hcGkuRW1haWxC",
-            "bGFzdCKTAQoKRW1haWxCbGFzdBInCgxuYW1lX2FkZHJlc3MYASABKAsyES5j",
-            "b21tb24uU3RyaW5nTWFwEh8KB3N1YmplY3QYAiABKAsyDi5jb21tb24uU3Ry",
-            "aW5nEh0KBXBsYWluGAMgASgLMg4uY29tbW9uLlN0cmluZxIcCgRodG1sGAQg",
-            "ASgLMg4uY29tbW9uLlN0cmluZyKkAQoFRW1haWwSHAoEbmFtZRgBIAEoCzIO",
-            "LmNvbW1vbi5TdHJpbmcSHwoHYWRkcmVzcxgCIAEoCzIOLmNvbW1vbi5TdHJp",
-            "bmcSHwoHc3ViamVjdBgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSHQoFcGxhaW4Y",
-            "BCABKAsyDi5jb21tb24uU3RyaW5nEhwKBGh0bWwYBSABKAsyDi5jb21tb24u",
-            "U3RyaW5nIl0KBENhbGwSHAoEZnJvbRgBIAEoCzIOLmNvbW1vbi5TdHJpbmcS",
-            "GgoCdG8YAiABKAsyDi5jb21tb24uU3RyaW5nEhsKA2FwcBgDIAEoCzIOLmNv",
-            "bW1vbi5TdHJpbmciZwoJQ2FsbEJsYXN0EhwKBGZyb20YASABKAsyDi5jb21t",
-            "b24uU3RyaW5nEh8KAnRvGAIgASgLMhMuY29tbW9uLlN0cmluZ0FycmF5EhsK",
-            "A2FwcBgDIAEoCzIOLmNvbW1vbi5TdHJpbmci7wUKBFVzZXISHwoHdXNlcl9p",
-            "ZBgBIAEoCzIOLmNvbW1vbi5TdHJpbmcSHAoEbmFtZRgCIAEoCzIOLmNvbW1v",
-            "bi5TdHJpbmcSIgoKZ2l2ZW5fbmFtZRgDIAEoCzIOLmNvbW1vbi5TdHJpbmcS",
-            "IwoLZmFtaWx5X25hbWUYBCABKAsyDi5jb21tb24uU3RyaW5nEh4KBmdlbmRl",
-            "chgFIAEoCzIOLmNvbW1vbi5TdHJpbmcSIQoJYmlydGhkYXRlGAYgASgLMg4u",
-            "Y29tbW9uLlN0cmluZxIdCgVlbWFpbBgHIAEoCzIOLmNvbW1vbi5TdHJpbmcS",
-            "JAoMcGhvbmVfbnVtYmVyGAggASgLMg4uY29tbW9uLlN0cmluZxIfCgdwaWN0",
-            "dXJlGAkgASgLMg4uY29tbW9uLlN0cmluZxIoCg11c2VyX21ldGFkYXRhGAog",
-            "ASgLMhEuY29tbW9uLlN0cmluZ01hcBInCgxhcHBfbWV0YWRhdGEYCyABKAsy",
-            "ES5jb21tb24uU3RyaW5nTWFwEh8KB2xhc3RfaXAYDCABKAsyDi5jb21tb24u",
-            "U3RyaW5nEh0KB2Jsb2NrZWQYDSABKAsyDC5jb21tb24uQm9vbBIgCghuaWNr",
-            "bmFtZRgOIAEoCzIOLmNvbW1vbi5TdHJpbmcSKAoLbXVsdGlmYWN0b3IYDyAB",
-            "KAsyEy5jb21tb24uU3RyaW5nQXJyYXkSIgoKY3JlYXRlZF9hdBgRIAEoCzIO",
-            "LmNvbW1vbi5TdHJpbmcSIgoKdXBkYXRlZF9hdBgSIAEoCzIOLmNvbW1vbi5T",
-            "dHJpbmcSJAoOcGhvbmVfdmVyaWZpZWQYEyABKAsyDC5jb21tb24uQm9vbBIk",
-            "Cg5lbWFpbF92ZXJpZmllZBgUIAEoCzIMLmNvbW1vbi5Cb29sEiAKCHBhc3N3",
-            "b3JkGBUgASgLMg4uY29tbW9uLlN0cmluZxIhCgppZGVudGl0aWVzGBYgAygL",
-            "Mg0uYXBpLklkZW50aXR5IpEBCghJZGVudGl0eRIiCgpjb25uZWN0aW9uGAEg",
-            "ASgLMg4uY29tbW9uLlN0cmluZxIfCgd1c2VyX2lkGAIgASgLMg4uY29tbW9u",
-            "LlN0cmluZxIgCghwcm92aWRlchgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSHgoI",
-            "aXNTb2NpYWwYBCABKAsyDC5jb21tb24uQm9vbCKuAQoEQXV0aBIeCgZkb21h",
-            "aW4YASABKAsyDi5jb21tb24uU3RyaW5nEiEKCWNsaWVudF9pZBgCIAEoCzIO",
-            "LmNvbW1vbi5TdHJpbmcSJQoNY2xpZW50X3NlY3JldBgDIAEoCzIOLmNvbW1v",
-            "bi5TdHJpbmcSIAoIcmVkaXJlY3QYBCABKAsyDi5jb21tb24uU3RyaW5nEhoK",
-            "BnNjb3BlcxgFIAMoDjIKLmFwaS5TY29wZSK8AQoLSlNPTldlYktleXMSGwoD",
-            "a3R5GAEgASgLMg4uY29tbW9uLlN0cmluZxIbCgNraWQYAiABKAsyDi5jb21t",
-            "b24uU3RyaW5nEhsKA3VzZRgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSGQoBbhgE",
-            "IAEoCzIOLmNvbW1vbi5TdHJpbmcSGQoBZRgFIAEoCzIOLmNvbW1vbi5TdHJp",
-            "bmcSIAoDeDVjGAYgASgLMhMuY29tbW9uLlN0cmluZ0FycmF5IiYKBEp3a3MS",
-            "HgoEa2V5cxgBIAMoCzIQLmFwaS5KU09OV2ViS2V5cyJoCg1SZW5kZXJSZXF1",
-            "ZXN0EhwKBG5hbWUYASABKAsyDi5jb21tb24uU3RyaW5nEhwKBHRleHQYAiAB",
-            "KAsyDi5jb21tb24uU3RyaW5nEhsKBGRhdGEYAyABKAsyDS5jb21tb24uQnl0",
-            "ZXMijgEKGFNlYXJjaFBob25lTnVtYmVyUmVxdWVzdBIdCgVzdGF0ZRgBIAEo",
-            "CzIOLmNvbW1vbi5TdHJpbmcSLQoMY2FwYWJpbGl0aWVzGAIgASgLMhcuYXBp",
-            "Lk51bWJlckNhcGFiaWxpdGllcxIkCg10b3RhbF9yZXN1bHRzGAMgASgLMg0u",
-            "Y29tbW9uLkludDY0IqkBCgtQaG9uZU51bWJlchIlCg1mcmllbmRseV9uYW1l",
-            "GAEgASgLMg4uY29tbW9uLlN0cmluZxIkCgxwaG9uZV9udW1iZXIYAiABKAsy",
-            "Di5jb21tb24uU3RyaW5nEh4KBnJlZ2lvbhgDIAEoCzIOLmNvbW1vbi5TdHJp",
-            "bmcSLQoMY2FwYWJpbGl0aWVzGAQgASgLMhcuYXBpLk51bWJlckNhcGFiaWxp",
-            "dGllcyJnChJOdW1iZXJDYXBhYmlsaXRpZXMSGwoFdm9pY2UYASABKAsyDC5j",
-            "b21tb24uQm9vbBIZCgNzbXMYAiABKAsyDC5jb21tb24uQm9vbBIZCgNtbXMY",
-            "AyABKAsyDC5jb21tb24uQm9vbCJwChNQaG9uZU51bWJlclJlc291cmNlEiAK",
-            "Bm51bWJlchgBIAEoCzIQLmFwaS5QaG9uZU51bWJlchIaCgJpZBgCIAEoCzIO",
-            "LmNvbW1vbi5TdHJpbmcSGwoDdXJpGAMgASgLMg4uY29tbW9uLlN0cmluZyJJ",
-            "CgpUb2tlblF1ZXJ5EhwKBXRva2VuGAEgASgLMg0uY29tbW9uLlRva2VuEh0K",
-            "BXF1ZXJ5GAIgASgLMg4uY29tbW9uLlN0cmluZyJFCgZJREJvZHkSHgoCaWQY",
-            "ASABKAsyEi5jb21tb24uSWRlbnRpZmllchIbCgRib2R5GAIgASgLMg0uY29t",
-            "bW9uLkJ5dGVzIlEKCUlEU3RyaW5ncxIeCgJpZBgBIAEoCzISLmNvbW1vbi5J",
-            "ZGVudGlmaWVyEiQKB3N0cmluZ3MYAiABKAsyEy5jb21tb24uU3RyaW5nQXJy",
-            "YXkiZQoEUm9sZRIaCgJpZBgBIAEoCzIOLmNvbW1vbi5TdHJpbmcSHAoEbmFt",
-            "ZRgCIAEoCzIOLmNvbW1vbi5TdHJpbmcSIwoLZGVzY3JpcHRpb24YAyABKAsy",
-            "Di5jb21tb24uU3RyaW5nKuQCCgVTY29wZRIKCgZPUEVOSUQQABILCgdQUk9G",
-            "SUxFEAESCQoFRU1BSUwQAhIOCgpSRUFEX1VTRVJTEAMSGAoUUkVBRF9VU0VS",
-            "X0lEUF9UT0tFTlMQBBIQCgxDUkVBVEVfVVNFUlMQBRIOCgpSRUFEX1NUQVRT",
-            "EAYSGAoUUkVBRF9FTUFJTF9URU1QTEFURVMQBxIaChZVUERBVEVfRU1BSUxf",
-            "VEVNUExBVEVTEAgSGgoWQ1JFQVRFX0VNQUlMX1RFTVBMQVRFUxAJEg4KClJF",
-            "QURfUlVMRVMQChIQCgxVUERBVEVfUlVMRVMQCxIQCgxDUkVBVEVfUlVMRVMQ",
-            "DBIQCgxERUxFVEVfUlVMRVMQDRIOCgpSRUFEX1JPTEVTEA4SEAoMVVBEQVRF",
-            "X1JPTEVTEA8SEAoMQ1JFQVRFX1JPTEVTEBASEAoMREVMRVRFX1JPTEVTEBES",
-            "DQoJUkVBRF9MT0dTEBIqqwIKA1VSTBIQCgxVU0VSX0lORk9VUkwQABIMCghU",
-            "T0tFTlVSTBABEhAKDEFVVEhPUklaRVVSTBACEgwKCFVTRVJTVVJMEAMSDgoK",
-            "Q0xJRU5UU1VSTBAEEg0KCUdSQU5UU1VSTBAFEgwKCFJVTEVTVVJMEAYSDAoI",
-            "Uk9MRVNVUkwQBxILCgdMT0dTVVJMEAgSDAoIU1RBVFNVUkwQCRISCg5DT05O",
-            "RUNUSU9OU1VSTBAKEg4KClRFTkFOVFNVUkwQCxIVChFFTUFJTF9URU1QTEFU",
-            "RVVSTBAMEgwKCEVNQUlMVVJMEA0SEwoPU0VBUkNIX1VTRVJTVVJMEA4SDQoJ",
-            "REVWSUNFVVJMEBISCwoHSldLU1VSTBATEhQKEENMSUVOVF9HUkFOVFNVUkwQ",
-            "FCooCgRQbGFuEggKBEZSRUUQABIJCgVCQVNJQxABEgsKB1BSRU1JVU0QAjLh",
-            "AwoOVXRpbGl0eVNlcnZpY2USQAoERWNobxIOLmNvbW1vbi5TdHJpbmcaDi5j",
-            "b21tb24uU3RyaW5nIhiC0+STAhIiDS91dGlsaXR5L2VjaG86ASoSTwoLRWNo",
-            "b1NwYW5pc2gSDi5jb21tb24uU3RyaW5nGg4uY29tbW9uLlN0cmluZyIggtPk",
-            "kwIaIhUvdXRpbGl0eS9lY2hvL3NwYW5pc2g6ASoSTwoLRWNob0NoaW5lc2US",
-            "Di5jb21tb24uU3RyaW5nGg4uY29tbW9uLlN0cmluZyIggtPkkwIaIhUvdXRp",
-            "bGl0eS9lY2hvL2NoaW5lc2U6ASoSTwoLRWNob0VuZ2xpc2gSDi5jb21tb24u",
-            "U3RyaW5nGg4uY29tbW9uLlN0cmluZyIggtPkkwIaIhUvdXRpbGl0eS9lY2hv",
-            "L2VuZ2xpc2g6ASoSSwoJRWNob0hpbmRpEg4uY29tbW9uLlN0cmluZxoOLmNv",
-            "bW1vbi5TdHJpbmciHoLT5JMCGCITL3V0aWxpdHkvZWNoby9oaW5kaToBKhJN",
-            "CgpFY2hvQXJhYmljEg4uY29tbW9uLlN0cmluZxoOLmNvbW1vbi5TdHJpbmci",
-            "H4LT5JMCGSIUL3V0aWxpdHkvZWNoby9hcmFiaWM6ASoy+AQKDkNvbnRhY3RT",
-            "ZXJ2aWNlEkAKB1NlbmRTTVMSCC5hcGkuU01TGg0uY29tbW9uLkJ5dGVzIhyC",
-            "0+STAhYiES9jb250YWN0L3Ntcy9zZW5kOgEqEk0KDFNlbmRTTVNCbGFzdBIN",
-            "LmFwaS5TTVNCbGFzdBoNLmNvbW1vbi5CeXRlcyIdgtPkkwIXIhIvY29udGFj",
-            "dC9zbXMvYmxhc3Q6ASowARJICgZHZXRTTVMSEi5jb21tb24uSWRlbnRpZmll",
-            "choNLmNvbW1vbi5CeXRlcyIbgtPkkwIVIhAvY29udGFjdC9zbXMvZ2V0OgEq",
-            "Ek4KCVNlbmRFbWFpbBIRLmFwaS5FbWFpbFJlcXVlc3QaDi5jb21tb24uU3Ry",
-            "aW5nIh6C0+STAhgiEy9jb250YWN0L2VtYWlsL3NlbmQ6ASoSWwoOU2VuZEVt",
-            "YWlsQmxhc3QSFi5hcGkuRW1haWxCbGFzdFJlcXVlc3QaDi5jb21tb24uU3Ry",
-            "aW5nIh+C0+STAhkiFC9jb250YWN0L2VtYWlsL2JsYXN0OgEqMAESQwoIU2Vu",
-            "ZENhbGwSCS5hcGkuQ2FsbBoNLmNvbW1vbi5CeXRlcyIdgtPkkwIXIhIvY29u",
-            "dGFjdC9jYWxsL3NlbmQ6ASoSUAoNU2VuZENhbGxCbGFzdBIOLmFwaS5DYWxs",
-            "Qmxhc3QaDS5jb21tb24uQnl0ZXMiHoLT5JMCGCITL2NvbnRhY3QvY2FsbC9i",
-            "bGFzdDoBKjABEkcKB1NlbmRGYXgSDy5hcGkuRmF4UmVxdWVzdBoNLmNvbW1v",
-            "bi5CeXRlcyIcgtPkkwIWIhEvY29udGFjdC9mYXgvc2VuZDoBKjKFAwoOUGF5",
-            "bWVudFNlcnZpY2USUAoJU3Vic2NyaWJlEhUuYXBpLlN1YnNjcmliZVJlcXVl",
-            "c3QaDS5jb21tb24uQnl0ZXMiHYLT5JMCFyISL3BheW1lbnQvc3Vic2NyaWJl",
-            "OgEqElYKC1Vuc3Vic2NyaWJlEhcuYXBpLlVuU3Vic2NyaWJlUmVxdWVzdBoN",
-            "LmNvbW1vbi5CeXRlcyIfgtPkkwIZIhQvcGF5bWVudC91bnN1YnNjcmliZToB",
-            "KhJdChNQdXJjaGFzZVBob25lTnVtYmVyEhAuYXBpLlBob25lTnVtYmVyGhgu",
-            "YXBpLlBob25lTnVtYmVyUmVzb3VyY2UiGoLT5JMCFCIPL3BheW1lbnQvbnVt",
-            "YmVyOgEqEmoKEVNlYXJjaFBob25lTnVtYmVyEh0uYXBpLlNlYXJjaFBob25l",
-            "TnVtYmVyUmVxdWVzdBoQLmFwaS5QaG9uZU51bWJlciIigtPkkwIcIhcvcGF5",
-            "bWVudC9udW1iZXJzL3NlYXJjaDoBKjABMlsKD1Jlc291cmNlU2VydmljZRJI",
-            "CgtHZXRSZXNvdXJjZRIULmFwaS5SZXNvdXJjZVJlcXVlc3QaDS5jb21tb24u",
-            "Qnl0ZXMiFILT5JMCDiIJL3Jlc291cmNlOgEqMtADCgtVc2VyU2VydmljZRJL",
-            "CgpRdWVyeVVzZXJzEg8uYXBpLlRva2VuUXVlcnkaCS5hcGkuVXNlciIfgtPk",
-            "kwIZIhQvcmVzb3VyY2UvdXNlci9xdWVyeToBKjABEkgKCkNyZWF0ZVVzZXIS",
-            "DS5jb21tb24uQnl0ZXMaCS5hcGkuVXNlciIggtPkkwIaIhUvcmVzb3VyY2Uv",
-            "dXNlci9jcmVhdGU6ASoSRwoHR2V0VXNlchISLmNvbW1vbi5JZGVudGlmaWVy",
-            "GgkuYXBpLlVzZXIiHYLT5JMCFyISL3Jlc291cmNlL3VzZXIvZ2V0OgEqEkoK",
-            "CkRlbGV0ZVVzZXISEi5jb21tb24uSWRlbnRpZmllchoJLmFwaS5Vc2VyIh2C",
-            "0+STAhciEi9yZXNvdXJjZS91c2VyL2dldDoBKhJGCgpVcGRhdGVVc2VyEgsu",
-            "YXBpLklEQm9keRoJLmFwaS5Vc2VyIiCC0+STAhoiFS9yZXNvdXJjZS91c2Vy",
-            "L3VwZGF0ZToBKhJNCglVc2VyUm9sZXMSEi5jb21tb24uSWRlbnRpZmllchoJ",
-            "LmFwaS5Sb2xlIh+C0+STAhkiFC9yZXNvdXJjZS91c2VyL3JvbGVzOgEqMAFi",
-            "BnByb3RvMw=="));
+            "CzIOLmNvbW1vbi5TdHJpbmcSEwoLc3RvcmVfbWVkaWEYBiABKAgiyAEKD1Jl",
+            "c291cmNlUmVxdWVzdBIcCgV0b2tlbhgBIAEoCzINLmNvbW1vbi5Ub2tlbhIi",
+            "CgZtZXRob2QYAiABKA4yEi5jb21tb24uSFRUUE1ldGhvZBIeCgZkb21haW4Y",
+            "AyABKAsyDi5jb21tb24uU3RyaW5nEhUKA3VybBgEIAEoDjIILmFwaS5VUkwS",
+            "HwoEZm9ybRgFIAEoCzIRLmNvbW1vbi5TdHJpbmdNYXASGwoEYm9keRgGIAEo",
+            "CzINLmNvbW1vbi5CeXRlcyJjChBTdWJzY3JpYmVSZXF1ZXN0Eh0KBWVtYWls",
+            "GAEgASgLMg4uY29tbW9uLlN0cmluZxIXCgRwbGFuGAIgASgOMgkuYXBpLlBs",
+            "YW4SFwoEY2FyZBgDIAEoCzIJLmFwaS5DYXJkIkwKElVuU3Vic2NyaWJlUmVx",
+            "dWVzdBIdCgVlbWFpbBgBIAEoCzIOLmNvbW1vbi5TdHJpbmcSFwoEcGxhbhgC",
+            "IAEoDjIJLmFwaS5QbGFuIogBCgRDYXJkEh4KBm51bWJlchgBIAEoCzIOLmNv",
+            "bW1vbi5TdHJpbmcSIQoJZXhwX21vbnRoGAIgASgLMg4uY29tbW9uLlN0cmlu",
+            "ZxIgCghleHBfeWVhchgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSGwoDY3ZjGAQg",
+            "ASgLMg4uY29tbW9uLlN0cmluZyLEAQoDU01TEh8KB3NlcnZpY2UYASABKAsy",
+            "Di5jb21tb24uU3RyaW5nEhoKAnRvGAIgASgLMg4uY29tbW9uLlN0cmluZxIf",
+            "CgdtZXNzYWdlGAMgASgLMg4uY29tbW9uLlN0cmluZxIgCghtZWRpYVVSTBgE",
+            "IAEoCzIOLmNvbW1vbi5TdHJpbmcSIAoIY2FsbGJhY2sYBSABKAsyDi5jb21t",
+            "b24uU3RyaW5nEhsKA2FwcBgGIAEoCzIOLmNvbW1vbi5TdHJpbmcizgEKCFNN",
+            "U0JsYXN0Eh8KB3NlcnZpY2UYASABKAsyDi5jb21tb24uU3RyaW5nEh8KAnRv",
+            "GAIgASgLMhMuY29tbW9uLlN0cmluZ0FycmF5Eh8KB21lc3NhZ2UYAyABKAsy",
+            "Di5jb21tb24uU3RyaW5nEiAKCG1lZGlhVVJMGAQgASgLMg4uY29tbW9uLlN0",
+            "cmluZxIgCghjYWxsYmFjaxgFIAEoCzIOLmNvbW1vbi5TdHJpbmcSGwoDYXBw",
+            "GAYgASgLMg4uY29tbW9uLlN0cmluZyJwCgxFbWFpbFJlcXVlc3QSIQoJZnJv",
+            "bV9uYW1lGAEgASgLMg4uY29tbW9uLlN0cmluZxIiCgpmcm9tX2VtYWlsGAIg",
+            "ASgLMg4uY29tbW9uLlN0cmluZxIZCgVlbWFpbBgDIAEoCzIKLmFwaS5FbWFp",
+            "bCJ6ChFFbWFpbEJsYXN0UmVxdWVzdBIhCglmcm9tX25hbWUYASABKAsyDi5j",
+            "b21tb24uU3RyaW5nEiIKCmZyb21fZW1haWwYAiABKAsyDi5jb21tb24uU3Ry",
+            "aW5nEh4KBWJsYXN0GAMgASgLMg8uYXBpLkVtYWlsQmxhc3QikwEKCkVtYWls",
+            "Qmxhc3QSJwoMbmFtZV9hZGRyZXNzGAEgASgLMhEuY29tbW9uLlN0cmluZ01h",
+            "cBIfCgdzdWJqZWN0GAIgASgLMg4uY29tbW9uLlN0cmluZxIdCgVwbGFpbhgD",
+            "IAEoCzIOLmNvbW1vbi5TdHJpbmcSHAoEaHRtbBgEIAEoCzIOLmNvbW1vbi5T",
+            "dHJpbmcipAEKBUVtYWlsEhwKBG5hbWUYASABKAsyDi5jb21tb24uU3RyaW5n",
+            "Eh8KB2FkZHJlc3MYAiABKAsyDi5jb21tb24uU3RyaW5nEh8KB3N1YmplY3QY",
+            "AyABKAsyDi5jb21tb24uU3RyaW5nEh0KBXBsYWluGAQgASgLMg4uY29tbW9u",
+            "LlN0cmluZxIcCgRodG1sGAUgASgLMg4uY29tbW9uLlN0cmluZyJdCgRDYWxs",
+            "EhwKBGZyb20YASABKAsyDi5jb21tb24uU3RyaW5nEhoKAnRvGAIgASgLMg4u",
+            "Y29tbW9uLlN0cmluZxIbCgNhcHAYAyABKAsyDi5jb21tb24uU3RyaW5nImcK",
+            "CUNhbGxCbGFzdBIcCgRmcm9tGAEgASgLMg4uY29tbW9uLlN0cmluZxIfCgJ0",
+            "bxgCIAEoCzITLmNvbW1vbi5TdHJpbmdBcnJheRIbCgNhcHAYAyABKAsyDi5j",
+            "b21tb24uU3RyaW5nIsUFCgRVc2VyEh8KB3VzZXJfaWQYASABKAsyDi5jb21t",
+            "b24uU3RyaW5nEhwKBG5hbWUYAiABKAsyDi5jb21tb24uU3RyaW5nEiIKCmdp",
+            "dmVuX25hbWUYAyABKAsyDi5jb21tb24uU3RyaW5nEiMKC2ZhbWlseV9uYW1l",
+            "GAQgASgLMg4uY29tbW9uLlN0cmluZxIeCgZnZW5kZXIYBSABKAsyDi5jb21t",
+            "b24uU3RyaW5nEiEKCWJpcnRoZGF0ZRgGIAEoCzIOLmNvbW1vbi5TdHJpbmcS",
+            "HQoFZW1haWwYByABKAsyDi5jb21tb24uU3RyaW5nEiQKDHBob25lX251bWJl",
+            "chgIIAEoCzIOLmNvbW1vbi5TdHJpbmcSHwoHcGljdHVyZRgJIAEoCzIOLmNv",
+            "bW1vbi5TdHJpbmcSKAoNdXNlcl9tZXRhZGF0YRgKIAEoCzIRLmNvbW1vbi5T",
+            "dHJpbmdNYXASJwoMYXBwX21ldGFkYXRhGAsgASgLMhEuY29tbW9uLlN0cmlu",
+            "Z01hcBIfCgdsYXN0X2lwGAwgASgLMg4uY29tbW9uLlN0cmluZxIPCgdibG9j",
+            "a2VkGA0gASgIEiAKCG5pY2tuYW1lGA4gASgLMg4uY29tbW9uLlN0cmluZxIo",
+            "CgttdWx0aWZhY3RvchgPIAEoCzITLmNvbW1vbi5TdHJpbmdBcnJheRIiCgpj",
+            "cmVhdGVkX2F0GBEgASgLMg4uY29tbW9uLlN0cmluZxIiCgp1cGRhdGVkX2F0",
+            "GBIgASgLMg4uY29tbW9uLlN0cmluZxIWCg5waG9uZV92ZXJpZmllZBgTIAEo",
+            "CBIWCg5lbWFpbF92ZXJpZmllZBgUIAEoCBIgCghwYXNzd29yZBgVIAEoCzIO",
+            "LmNvbW1vbi5TdHJpbmcSIQoKaWRlbnRpdGllcxgWIAMoCzINLmFwaS5JZGVu",
+            "dGl0eSKDAQoISWRlbnRpdHkSIgoKY29ubmVjdGlvbhgBIAEoCzIOLmNvbW1v",
+            "bi5TdHJpbmcSHwoHdXNlcl9pZBgCIAEoCzIOLmNvbW1vbi5TdHJpbmcSIAoI",
+            "cHJvdmlkZXIYAyABKAsyDi5jb21tb24uU3RyaW5nEhAKCGlzU29jaWFsGAQg",
+            "ASgIIq4BCgRBdXRoEh4KBmRvbWFpbhgBIAEoCzIOLmNvbW1vbi5TdHJpbmcS",
+            "IQoJY2xpZW50X2lkGAIgASgLMg4uY29tbW9uLlN0cmluZxIlCg1jbGllbnRf",
+            "c2VjcmV0GAMgASgLMg4uY29tbW9uLlN0cmluZxIgCghyZWRpcmVjdBgEIAEo",
+            "CzIOLmNvbW1vbi5TdHJpbmcSGgoGc2NvcGVzGAUgAygOMgouYXBpLlNjb3Bl",
+            "IrwBCgtKU09OV2ViS2V5cxIbCgNrdHkYASABKAsyDi5jb21tb24uU3RyaW5n",
+            "EhsKA2tpZBgCIAEoCzIOLmNvbW1vbi5TdHJpbmcSGwoDdXNlGAMgASgLMg4u",
+            "Y29tbW9uLlN0cmluZxIZCgFuGAQgASgLMg4uY29tbW9uLlN0cmluZxIZCgFl",
+            "GAUgASgLMg4uY29tbW9uLlN0cmluZxIgCgN4NWMYBiABKAsyEy5jb21tb24u",
+            "U3RyaW5nQXJyYXkiJgoESndrcxIeCgRrZXlzGAEgAygLMhAuYXBpLkpTT05X",
+            "ZWJLZXlzImgKDVJlbmRlclJlcXVlc3QSHAoEbmFtZRgBIAEoCzIOLmNvbW1v",
+            "bi5TdHJpbmcSHAoEdGV4dBgCIAEoCzIOLmNvbW1vbi5TdHJpbmcSGwoEZGF0",
+            "YRgDIAEoCzINLmNvbW1vbi5CeXRlcyKOAQoYU2VhcmNoUGhvbmVOdW1iZXJS",
+            "ZXF1ZXN0Eh0KBXN0YXRlGAEgASgLMg4uY29tbW9uLlN0cmluZxItCgxjYXBh",
+            "YmlsaXRpZXMYAiABKAsyFy5hcGkuTnVtYmVyQ2FwYWJpbGl0aWVzEiQKDXRv",
+            "dGFsX3Jlc3VsdHMYAyABKAsyDS5jb21tb24uSW50NjQiqQEKC1Bob25lTnVt",
+            "YmVyEiUKDWZyaWVuZGx5X25hbWUYASABKAsyDi5jb21tb24uU3RyaW5nEiQK",
+            "DHBob25lX251bWJlchgCIAEoCzIOLmNvbW1vbi5TdHJpbmcSHgoGcmVnaW9u",
+            "GAMgASgLMg4uY29tbW9uLlN0cmluZxItCgxjYXBhYmlsaXRpZXMYBCABKAsy",
+            "Fy5hcGkuTnVtYmVyQ2FwYWJpbGl0aWVzIj0KEk51bWJlckNhcGFiaWxpdGll",
+            "cxINCgV2b2ljZRgBIAEoCBILCgNzbXMYAiABKAgSCwoDbW1zGAMgASgIInAK",
+            "E1Bob25lTnVtYmVyUmVzb3VyY2USIAoGbnVtYmVyGAEgASgLMhAuYXBpLlBo",
+            "b25lTnVtYmVyEhoKAmlkGAIgASgLMg4uY29tbW9uLlN0cmluZxIbCgN1cmkY",
+            "AyABKAsyDi5jb21tb24uU3RyaW5nIkkKClRva2VuUXVlcnkSHAoFdG9rZW4Y",
+            "ASABKAsyDS5jb21tb24uVG9rZW4SHQoFcXVlcnkYAiABKAsyDi5jb21tb24u",
+            "U3RyaW5nIkUKBklEQm9keRIeCgJpZBgBIAEoCzISLmNvbW1vbi5JZGVudGlm",
+            "aWVyEhsKBGJvZHkYAiABKAsyDS5jb21tb24uQnl0ZXMiUQoJSURTdHJpbmdz",
+            "Eh4KAmlkGAEgASgLMhIuY29tbW9uLklkZW50aWZpZXISJAoHc3RyaW5ncxgC",
+            "IAEoCzITLmNvbW1vbi5TdHJpbmdBcnJheSJlCgRSb2xlEhoKAmlkGAEgASgL",
+            "Mg4uY29tbW9uLlN0cmluZxIcCgRuYW1lGAIgASgLMg4uY29tbW9uLlN0cmlu",
+            "ZxIjCgtkZXNjcmlwdGlvbhgDIAEoCzIOLmNvbW1vbi5TdHJpbmcq5AIKBVNj",
+            "b3BlEgoKBk9QRU5JRBAAEgsKB1BST0ZJTEUQARIJCgVFTUFJTBACEg4KClJF",
+            "QURfVVNFUlMQAxIYChRSRUFEX1VTRVJfSURQX1RPS0VOUxAEEhAKDENSRUFU",
+            "RV9VU0VSUxAFEg4KClJFQURfU1RBVFMQBhIYChRSRUFEX0VNQUlMX1RFTVBM",
+            "QVRFUxAHEhoKFlVQREFURV9FTUFJTF9URU1QTEFURVMQCBIaChZDUkVBVEVf",
+            "RU1BSUxfVEVNUExBVEVTEAkSDgoKUkVBRF9SVUxFUxAKEhAKDFVQREFURV9S",
+            "VUxFUxALEhAKDENSRUFURV9SVUxFUxAMEhAKDERFTEVURV9SVUxFUxANEg4K",
+            "ClJFQURfUk9MRVMQDhIQCgxVUERBVEVfUk9MRVMQDxIQCgxDUkVBVEVfUk9M",
+            "RVMQEBIQCgxERUxFVEVfUk9MRVMQERINCglSRUFEX0xPR1MQEiqrAgoDVVJM",
+            "EhAKDFVTRVJfSU5GT1VSTBAAEgwKCFRPS0VOVVJMEAESEAoMQVVUSE9SSVpF",
+            "VVJMEAISDAoIVVNFUlNVUkwQAxIOCgpDTElFTlRTVVJMEAQSDQoJR1JBTlRT",
+            "VVJMEAUSDAoIUlVMRVNVUkwQBhIMCghST0xFU1VSTBAHEgsKB0xPR1NVUkwQ",
+            "CBIMCghTVEFUU1VSTBAJEhIKDkNPTk5FQ1RJT05TVVJMEAoSDgoKVEVOQU5U",
+            "U1VSTBALEhUKEUVNQUlMX1RFTVBMQVRFVVJMEAwSDAoIRU1BSUxVUkwQDRIT",
+            "Cg9TRUFSQ0hfVVNFUlNVUkwQDhINCglERVZJQ0VVUkwQEhILCgdKV0tTVVJM",
+            "EBMSFAoQQ0xJRU5UX0dSQU5UU1VSTBAUKigKBFBsYW4SCAoERlJFRRAAEgkK",
+            "BUJBU0lDEAESCwoHUFJFTUlVTRACMuEDCg5VdGlsaXR5U2VydmljZRJACgRF",
+            "Y2hvEg4uY29tbW9uLlN0cmluZxoOLmNvbW1vbi5TdHJpbmciGILT5JMCEiIN",
+            "L3V0aWxpdHkvZWNobzoBKhJPCgtFY2hvU3BhbmlzaBIOLmNvbW1vbi5TdHJp",
+            "bmcaDi5jb21tb24uU3RyaW5nIiCC0+STAhoiFS91dGlsaXR5L2VjaG8vc3Bh",
+            "bmlzaDoBKhJPCgtFY2hvQ2hpbmVzZRIOLmNvbW1vbi5TdHJpbmcaDi5jb21t",
+            "b24uU3RyaW5nIiCC0+STAhoiFS91dGlsaXR5L2VjaG8vY2hpbmVzZToBKhJP",
+            "CgtFY2hvRW5nbGlzaBIOLmNvbW1vbi5TdHJpbmcaDi5jb21tb24uU3RyaW5n",
+            "IiCC0+STAhoiFS91dGlsaXR5L2VjaG8vZW5nbGlzaDoBKhJLCglFY2hvSGlu",
+            "ZGkSDi5jb21tb24uU3RyaW5nGg4uY29tbW9uLlN0cmluZyIegtPkkwIYIhMv",
+            "dXRpbGl0eS9lY2hvL2hpbmRpOgEqEk0KCkVjaG9BcmFiaWMSDi5jb21tb24u",
+            "U3RyaW5nGg4uY29tbW9uLlN0cmluZyIfgtPkkwIZIhQvdXRpbGl0eS9lY2hv",
+            "L2FyYWJpYzoBKjL4BAoOQ29udGFjdFNlcnZpY2USQAoHU2VuZFNNUxIILmFw",
+            "aS5TTVMaDS5jb21tb24uQnl0ZXMiHILT5JMCFiIRL2NvbnRhY3Qvc21zL3Nl",
+            "bmQ6ASoSTQoMU2VuZFNNU0JsYXN0Eg0uYXBpLlNNU0JsYXN0Gg0uY29tbW9u",
+            "LkJ5dGVzIh2C0+STAhciEi9jb250YWN0L3Ntcy9ibGFzdDoBKjABEkgKBkdl",
+            "dFNNUxISLmNvbW1vbi5JZGVudGlmaWVyGg0uY29tbW9uLkJ5dGVzIhuC0+ST",
+            "AhUiEC9jb250YWN0L3Ntcy9nZXQ6ASoSTgoJU2VuZEVtYWlsEhEuYXBpLkVt",
+            "YWlsUmVxdWVzdBoOLmNvbW1vbi5TdHJpbmciHoLT5JMCGCITL2NvbnRhY3Qv",
+            "ZW1haWwvc2VuZDoBKhJbCg5TZW5kRW1haWxCbGFzdBIWLmFwaS5FbWFpbEJs",
+            "YXN0UmVxdWVzdBoOLmNvbW1vbi5TdHJpbmciH4LT5JMCGSIUL2NvbnRhY3Qv",
+            "ZW1haWwvYmxhc3Q6ASowARJDCghTZW5kQ2FsbBIJLmFwaS5DYWxsGg0uY29t",
+            "bW9uLkJ5dGVzIh2C0+STAhciEi9jb250YWN0L2NhbGwvc2VuZDoBKhJQCg1T",
+            "ZW5kQ2FsbEJsYXN0Eg4uYXBpLkNhbGxCbGFzdBoNLmNvbW1vbi5CeXRlcyIe",
+            "gtPkkwIYIhMvY29udGFjdC9jYWxsL2JsYXN0OgEqMAESRwoHU2VuZEZheBIP",
+            "LmFwaS5GYXhSZXF1ZXN0Gg0uY29tbW9uLkJ5dGVzIhyC0+STAhYiES9jb250",
+            "YWN0L2ZheC9zZW5kOgEqMoUDCg5QYXltZW50U2VydmljZRJQCglTdWJzY3Jp",
+            "YmUSFS5hcGkuU3Vic2NyaWJlUmVxdWVzdBoNLmNvbW1vbi5CeXRlcyIdgtPk",
+            "kwIXIhIvcGF5bWVudC9zdWJzY3JpYmU6ASoSVgoLVW5zdWJzY3JpYmUSFy5h",
+            "cGkuVW5TdWJzY3JpYmVSZXF1ZXN0Gg0uY29tbW9uLkJ5dGVzIh+C0+STAhki",
+            "FC9wYXltZW50L3Vuc3Vic2NyaWJlOgEqEl0KE1B1cmNoYXNlUGhvbmVOdW1i",
+            "ZXISEC5hcGkuUGhvbmVOdW1iZXIaGC5hcGkuUGhvbmVOdW1iZXJSZXNvdXJj",
+            "ZSIagtPkkwIUIg8vcGF5bWVudC9udW1iZXI6ASoSagoRU2VhcmNoUGhvbmVO",
+            "dW1iZXISHS5hcGkuU2VhcmNoUGhvbmVOdW1iZXJSZXF1ZXN0GhAuYXBpLlBo",
+            "b25lTnVtYmVyIiKC0+STAhwiFy9wYXltZW50L251bWJlcnMvc2VhcmNoOgEq",
+            "MAEyWwoPUmVzb3VyY2VTZXJ2aWNlEkgKC0dldFJlc291cmNlEhQuYXBpLlJl",
+            "c291cmNlUmVxdWVzdBoNLmNvbW1vbi5CeXRlcyIUgtPkkwIOIgkvcmVzb3Vy",
+            "Y2U6ASoy0AMKC1VzZXJTZXJ2aWNlEksKClF1ZXJ5VXNlcnMSDy5hcGkuVG9r",
+            "ZW5RdWVyeRoJLmFwaS5Vc2VyIh+C0+STAhkiFC9yZXNvdXJjZS91c2VyL3F1",
+            "ZXJ5OgEqMAESSAoKQ3JlYXRlVXNlchINLmNvbW1vbi5CeXRlcxoJLmFwaS5V",
+            "c2VyIiCC0+STAhoiFS9yZXNvdXJjZS91c2VyL2NyZWF0ZToBKhJHCgdHZXRV",
+            "c2VyEhIuY29tbW9uLklkZW50aWZpZXIaCS5hcGkuVXNlciIdgtPkkwIXIhIv",
+            "cmVzb3VyY2UvdXNlci9nZXQ6ASoSSgoKRGVsZXRlVXNlchISLmNvbW1vbi5J",
+            "ZGVudGlmaWVyGgkuYXBpLlVzZXIiHYLT5JMCFyISL3Jlc291cmNlL3VzZXIv",
+            "Z2V0OgEqEkYKClVwZGF0ZVVzZXISCy5hcGkuSURCb2R5GgkuYXBpLlVzZXIi",
+            "IILT5JMCGiIVL3Jlc291cmNlL3VzZXIvdXBkYXRlOgEqEk0KCVVzZXJSb2xl",
+            "cxISLmNvbW1vbi5JZGVudGlmaWVyGgkuYXBpLlJvbGUiH4LT5JMCGSIUL3Jl",
+            "c291cmNlL3VzZXIvcm9sZXM6ASowAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Common.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.Scope), typeof(global::Api.URL), typeof(global::Api.Plan), }, new pbr::GeneratedClrTypeInfo[] {
@@ -299,7 +296,7 @@ namespace Api {
       mediaUrl_ = other.mediaUrl_ != null ? other.mediaUrl_.Clone() : null;
       quality_ = other.quality_ != null ? other.quality_.Clone() : null;
       callback_ = other.callback_ != null ? other.callback_.Clone() : null;
-      storeMedia_ = other.storeMedia_ != null ? other.storeMedia_.Clone() : null;
+      storeMedia_ = other.storeMedia_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -365,9 +362,9 @@ namespace Api {
 
     /// <summary>Field number for the "store_media" field.</summary>
     public const int StoreMediaFieldNumber = 6;
-    private global::Common.Bool storeMedia_;
+    private bool storeMedia_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool StoreMedia {
+    public bool StoreMedia {
       get { return storeMedia_; }
       set {
         storeMedia_ = value;
@@ -392,7 +389,7 @@ namespace Api {
       if (!object.Equals(MediaUrl, other.MediaUrl)) return false;
       if (!object.Equals(Quality, other.Quality)) return false;
       if (!object.Equals(Callback, other.Callback)) return false;
-      if (!object.Equals(StoreMedia, other.StoreMedia)) return false;
+      if (StoreMedia != other.StoreMedia) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -404,7 +401,7 @@ namespace Api {
       if (mediaUrl_ != null) hash ^= MediaUrl.GetHashCode();
       if (quality_ != null) hash ^= Quality.GetHashCode();
       if (callback_ != null) hash ^= Callback.GetHashCode();
-      if (storeMedia_ != null) hash ^= StoreMedia.GetHashCode();
+      if (StoreMedia != false) hash ^= StoreMedia.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -438,9 +435,9 @@ namespace Api {
         output.WriteRawTag(42);
         output.WriteMessage(Callback);
       }
-      if (storeMedia_ != null) {
-        output.WriteRawTag(50);
-        output.WriteMessage(StoreMedia);
+      if (StoreMedia != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(StoreMedia);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -465,8 +462,8 @@ namespace Api {
       if (callback_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Callback);
       }
-      if (storeMedia_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(StoreMedia);
+      if (StoreMedia != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -509,11 +506,8 @@ namespace Api {
         }
         Callback.MergeFrom(other.Callback);
       }
-      if (other.storeMedia_ != null) {
-        if (storeMedia_ == null) {
-          storeMedia_ = new global::Common.Bool();
-        }
-        StoreMedia.MergeFrom(other.StoreMedia);
+      if (other.StoreMedia != false) {
+        StoreMedia = other.StoreMedia;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -561,11 +555,8 @@ namespace Api {
             input.ReadMessage(callback_);
             break;
           }
-          case 50: {
-            if (storeMedia_ == null) {
-              storeMedia_ = new global::Common.Bool();
-            }
-            input.ReadMessage(storeMedia_);
+          case 48: {
+            StoreMedia = input.ReadBool();
             break;
           }
         }
@@ -3431,13 +3422,13 @@ namespace Api {
       userMetadata_ = other.userMetadata_ != null ? other.userMetadata_.Clone() : null;
       appMetadata_ = other.appMetadata_ != null ? other.appMetadata_.Clone() : null;
       lastIp_ = other.lastIp_ != null ? other.lastIp_.Clone() : null;
-      blocked_ = other.blocked_ != null ? other.blocked_.Clone() : null;
+      blocked_ = other.blocked_;
       nickname_ = other.nickname_ != null ? other.nickname_.Clone() : null;
       multifactor_ = other.multifactor_ != null ? other.multifactor_.Clone() : null;
       createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
       updatedAt_ = other.updatedAt_ != null ? other.updatedAt_.Clone() : null;
-      phoneVerified_ = other.phoneVerified_ != null ? other.phoneVerified_.Clone() : null;
-      emailVerified_ = other.emailVerified_ != null ? other.emailVerified_.Clone() : null;
+      phoneVerified_ = other.phoneVerified_;
+      emailVerified_ = other.emailVerified_;
       password_ = other.password_ != null ? other.password_.Clone() : null;
       identities_ = other.identities_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3582,9 +3573,9 @@ namespace Api {
 
     /// <summary>Field number for the "blocked" field.</summary>
     public const int BlockedFieldNumber = 13;
-    private global::Common.Bool blocked_;
+    private bool blocked_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool Blocked {
+    public bool Blocked {
       get { return blocked_; }
       set {
         blocked_ = value;
@@ -3637,9 +3628,9 @@ namespace Api {
 
     /// <summary>Field number for the "phone_verified" field.</summary>
     public const int PhoneVerifiedFieldNumber = 19;
-    private global::Common.Bool phoneVerified_;
+    private bool phoneVerified_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool PhoneVerified {
+    public bool PhoneVerified {
       get { return phoneVerified_; }
       set {
         phoneVerified_ = value;
@@ -3648,9 +3639,9 @@ namespace Api {
 
     /// <summary>Field number for the "email_verified" field.</summary>
     public const int EmailVerifiedFieldNumber = 20;
-    private global::Common.Bool emailVerified_;
+    private bool emailVerified_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool EmailVerified {
+    public bool EmailVerified {
       get { return emailVerified_; }
       set {
         emailVerified_ = value;
@@ -3703,13 +3694,13 @@ namespace Api {
       if (!object.Equals(UserMetadata, other.UserMetadata)) return false;
       if (!object.Equals(AppMetadata, other.AppMetadata)) return false;
       if (!object.Equals(LastIp, other.LastIp)) return false;
-      if (!object.Equals(Blocked, other.Blocked)) return false;
+      if (Blocked != other.Blocked) return false;
       if (!object.Equals(Nickname, other.Nickname)) return false;
       if (!object.Equals(Multifactor, other.Multifactor)) return false;
       if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
       if (!object.Equals(UpdatedAt, other.UpdatedAt)) return false;
-      if (!object.Equals(PhoneVerified, other.PhoneVerified)) return false;
-      if (!object.Equals(EmailVerified, other.EmailVerified)) return false;
+      if (PhoneVerified != other.PhoneVerified) return false;
+      if (EmailVerified != other.EmailVerified) return false;
       if (!object.Equals(Password, other.Password)) return false;
       if(!identities_.Equals(other.identities_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -3730,13 +3721,13 @@ namespace Api {
       if (userMetadata_ != null) hash ^= UserMetadata.GetHashCode();
       if (appMetadata_ != null) hash ^= AppMetadata.GetHashCode();
       if (lastIp_ != null) hash ^= LastIp.GetHashCode();
-      if (blocked_ != null) hash ^= Blocked.GetHashCode();
+      if (Blocked != false) hash ^= Blocked.GetHashCode();
       if (nickname_ != null) hash ^= Nickname.GetHashCode();
       if (multifactor_ != null) hash ^= Multifactor.GetHashCode();
       if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
       if (updatedAt_ != null) hash ^= UpdatedAt.GetHashCode();
-      if (phoneVerified_ != null) hash ^= PhoneVerified.GetHashCode();
-      if (emailVerified_ != null) hash ^= EmailVerified.GetHashCode();
+      if (PhoneVerified != false) hash ^= PhoneVerified.GetHashCode();
+      if (EmailVerified != false) hash ^= EmailVerified.GetHashCode();
       if (password_ != null) hash ^= Password.GetHashCode();
       hash ^= identities_.GetHashCode();
       if (_unknownFields != null) {
@@ -3800,9 +3791,9 @@ namespace Api {
         output.WriteRawTag(98);
         output.WriteMessage(LastIp);
       }
-      if (blocked_ != null) {
-        output.WriteRawTag(106);
-        output.WriteMessage(Blocked);
+      if (Blocked != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(Blocked);
       }
       if (nickname_ != null) {
         output.WriteRawTag(114);
@@ -3820,13 +3811,13 @@ namespace Api {
         output.WriteRawTag(146, 1);
         output.WriteMessage(UpdatedAt);
       }
-      if (phoneVerified_ != null) {
-        output.WriteRawTag(154, 1);
-        output.WriteMessage(PhoneVerified);
+      if (PhoneVerified != false) {
+        output.WriteRawTag(152, 1);
+        output.WriteBool(PhoneVerified);
       }
-      if (emailVerified_ != null) {
-        output.WriteRawTag(162, 1);
-        output.WriteMessage(EmailVerified);
+      if (EmailVerified != false) {
+        output.WriteRawTag(160, 1);
+        output.WriteBool(EmailVerified);
       }
       if (password_ != null) {
         output.WriteRawTag(170, 1);
@@ -3877,8 +3868,8 @@ namespace Api {
       if (lastIp_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(LastIp);
       }
-      if (blocked_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Blocked);
+      if (Blocked != false) {
+        size += 1 + 1;
       }
       if (nickname_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Nickname);
@@ -3892,11 +3883,11 @@ namespace Api {
       if (updatedAt_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(UpdatedAt);
       }
-      if (phoneVerified_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PhoneVerified);
+      if (PhoneVerified != false) {
+        size += 2 + 1;
       }
-      if (emailVerified_ != null) {
-        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EmailVerified);
+      if (EmailVerified != false) {
+        size += 2 + 1;
       }
       if (password_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Password);
@@ -3985,11 +3976,8 @@ namespace Api {
         }
         LastIp.MergeFrom(other.LastIp);
       }
-      if (other.blocked_ != null) {
-        if (blocked_ == null) {
-          blocked_ = new global::Common.Bool();
-        }
-        Blocked.MergeFrom(other.Blocked);
+      if (other.Blocked != false) {
+        Blocked = other.Blocked;
       }
       if (other.nickname_ != null) {
         if (nickname_ == null) {
@@ -4015,17 +4003,11 @@ namespace Api {
         }
         UpdatedAt.MergeFrom(other.UpdatedAt);
       }
-      if (other.phoneVerified_ != null) {
-        if (phoneVerified_ == null) {
-          phoneVerified_ = new global::Common.Bool();
-        }
-        PhoneVerified.MergeFrom(other.PhoneVerified);
+      if (other.PhoneVerified != false) {
+        PhoneVerified = other.PhoneVerified;
       }
-      if (other.emailVerified_ != null) {
-        if (emailVerified_ == null) {
-          emailVerified_ = new global::Common.Bool();
-        }
-        EmailVerified.MergeFrom(other.EmailVerified);
+      if (other.EmailVerified != false) {
+        EmailVerified = other.EmailVerified;
       }
       if (other.password_ != null) {
         if (password_ == null) {
@@ -4129,11 +4111,8 @@ namespace Api {
             input.ReadMessage(lastIp_);
             break;
           }
-          case 106: {
-            if (blocked_ == null) {
-              blocked_ = new global::Common.Bool();
-            }
-            input.ReadMessage(blocked_);
+          case 104: {
+            Blocked = input.ReadBool();
             break;
           }
           case 114: {
@@ -4164,18 +4143,12 @@ namespace Api {
             input.ReadMessage(updatedAt_);
             break;
           }
-          case 154: {
-            if (phoneVerified_ == null) {
-              phoneVerified_ = new global::Common.Bool();
-            }
-            input.ReadMessage(phoneVerified_);
+          case 152: {
+            PhoneVerified = input.ReadBool();
             break;
           }
-          case 162: {
-            if (emailVerified_ == null) {
-              emailVerified_ = new global::Common.Bool();
-            }
-            input.ReadMessage(emailVerified_);
+          case 160: {
+            EmailVerified = input.ReadBool();
             break;
           }
           case 170: {
@@ -4223,7 +4196,7 @@ namespace Api {
       connection_ = other.connection_ != null ? other.connection_.Clone() : null;
       userId_ = other.userId_ != null ? other.userId_.Clone() : null;
       provider_ = other.provider_ != null ? other.provider_.Clone() : null;
-      isSocial_ = other.isSocial_ != null ? other.isSocial_.Clone() : null;
+      isSocial_ = other.isSocial_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4267,9 +4240,9 @@ namespace Api {
 
     /// <summary>Field number for the "isSocial" field.</summary>
     public const int IsSocialFieldNumber = 4;
-    private global::Common.Bool isSocial_;
+    private bool isSocial_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool IsSocial {
+    public bool IsSocial {
       get { return isSocial_; }
       set {
         isSocial_ = value;
@@ -4292,7 +4265,7 @@ namespace Api {
       if (!object.Equals(Connection, other.Connection)) return false;
       if (!object.Equals(UserId, other.UserId)) return false;
       if (!object.Equals(Provider, other.Provider)) return false;
-      if (!object.Equals(IsSocial, other.IsSocial)) return false;
+      if (IsSocial != other.IsSocial) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4302,7 +4275,7 @@ namespace Api {
       if (connection_ != null) hash ^= Connection.GetHashCode();
       if (userId_ != null) hash ^= UserId.GetHashCode();
       if (provider_ != null) hash ^= Provider.GetHashCode();
-      if (isSocial_ != null) hash ^= IsSocial.GetHashCode();
+      if (IsSocial != false) hash ^= IsSocial.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4328,9 +4301,9 @@ namespace Api {
         output.WriteRawTag(26);
         output.WriteMessage(Provider);
       }
-      if (isSocial_ != null) {
-        output.WriteRawTag(34);
-        output.WriteMessage(IsSocial);
+      if (IsSocial != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsSocial);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4349,8 +4322,8 @@ namespace Api {
       if (provider_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Provider);
       }
-      if (isSocial_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(IsSocial);
+      if (IsSocial != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4381,11 +4354,8 @@ namespace Api {
         }
         Provider.MergeFrom(other.Provider);
       }
-      if (other.isSocial_ != null) {
-        if (isSocial_ == null) {
-          isSocial_ = new global::Common.Bool();
-        }
-        IsSocial.MergeFrom(other.IsSocial);
+      if (other.IsSocial != false) {
+        IsSocial = other.IsSocial;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4419,11 +4389,8 @@ namespace Api {
             input.ReadMessage(provider_);
             break;
           }
-          case 34: {
-            if (isSocial_ == null) {
-              isSocial_ = new global::Common.Bool();
-            }
-            input.ReadMessage(isSocial_);
+          case 32: {
+            IsSocial = input.ReadBool();
             break;
           }
         }
@@ -5784,9 +5751,9 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public NumberCapabilities(NumberCapabilities other) : this() {
-      voice_ = other.voice_ != null ? other.voice_.Clone() : null;
-      sms_ = other.sms_ != null ? other.sms_.Clone() : null;
-      mms_ = other.mms_ != null ? other.mms_.Clone() : null;
+      voice_ = other.voice_;
+      sms_ = other.sms_;
+      mms_ = other.mms_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5797,9 +5764,9 @@ namespace Api {
 
     /// <summary>Field number for the "voice" field.</summary>
     public const int VoiceFieldNumber = 1;
-    private global::Common.Bool voice_;
+    private bool voice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool Voice {
+    public bool Voice {
       get { return voice_; }
       set {
         voice_ = value;
@@ -5808,9 +5775,9 @@ namespace Api {
 
     /// <summary>Field number for the "sms" field.</summary>
     public const int SmsFieldNumber = 2;
-    private global::Common.Bool sms_;
+    private bool sms_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool Sms {
+    public bool Sms {
       get { return sms_; }
       set {
         sms_ = value;
@@ -5819,9 +5786,9 @@ namespace Api {
 
     /// <summary>Field number for the "mms" field.</summary>
     public const int MmsFieldNumber = 3;
-    private global::Common.Bool mms_;
+    private bool mms_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Common.Bool Mms {
+    public bool Mms {
       get { return mms_; }
       set {
         mms_ = value;
@@ -5841,18 +5808,18 @@ namespace Api {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Voice, other.Voice)) return false;
-      if (!object.Equals(Sms, other.Sms)) return false;
-      if (!object.Equals(Mms, other.Mms)) return false;
+      if (Voice != other.Voice) return false;
+      if (Sms != other.Sms) return false;
+      if (Mms != other.Mms) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (voice_ != null) hash ^= Voice.GetHashCode();
-      if (sms_ != null) hash ^= Sms.GetHashCode();
-      if (mms_ != null) hash ^= Mms.GetHashCode();
+      if (Voice != false) hash ^= Voice.GetHashCode();
+      if (Sms != false) hash ^= Sms.GetHashCode();
+      if (Mms != false) hash ^= Mms.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5866,17 +5833,17 @@ namespace Api {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (voice_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Voice);
+      if (Voice != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Voice);
       }
-      if (sms_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Sms);
+      if (Sms != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Sms);
       }
-      if (mms_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Mms);
+      if (Mms != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(Mms);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -5886,14 +5853,14 @@ namespace Api {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (voice_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Voice);
+      if (Voice != false) {
+        size += 1 + 1;
       }
-      if (sms_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Sms);
+      if (Sms != false) {
+        size += 1 + 1;
       }
-      if (mms_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mms);
+      if (Mms != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5906,23 +5873,14 @@ namespace Api {
       if (other == null) {
         return;
       }
-      if (other.voice_ != null) {
-        if (voice_ == null) {
-          voice_ = new global::Common.Bool();
-        }
-        Voice.MergeFrom(other.Voice);
+      if (other.Voice != false) {
+        Voice = other.Voice;
       }
-      if (other.sms_ != null) {
-        if (sms_ == null) {
-          sms_ = new global::Common.Bool();
-        }
-        Sms.MergeFrom(other.Sms);
+      if (other.Sms != false) {
+        Sms = other.Sms;
       }
-      if (other.mms_ != null) {
-        if (mms_ == null) {
-          mms_ = new global::Common.Bool();
-        }
-        Mms.MergeFrom(other.Mms);
+      if (other.Mms != false) {
+        Mms = other.Mms;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5935,25 +5893,16 @@ namespace Api {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 10: {
-            if (voice_ == null) {
-              voice_ = new global::Common.Bool();
-            }
-            input.ReadMessage(voice_);
+          case 8: {
+            Voice = input.ReadBool();
             break;
           }
-          case 18: {
-            if (sms_ == null) {
-              sms_ = new global::Common.Bool();
-            }
-            input.ReadMessage(sms_);
+          case 16: {
+            Sms = input.ReadBool();
             break;
           }
-          case 26: {
-            if (mms_ == null) {
-              mms_ = new global::Common.Bool();
-            }
-            input.ReadMessage(mms_);
+          case 24: {
+            Mms = input.ReadBool();
             break;
           }
         }

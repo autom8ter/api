@@ -167,48 +167,6 @@ typedef struct Bytes__storage_ {
 
 @end
 
-#pragma mark - Bool
-
-@implementation Bool
-
-@dynamic answer;
-
-typedef struct Bool__storage_ {
-  uint32_t _has_storage_[1];
-} Bool__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "answer",
-        .dataTypeSpecific.className = NULL,
-        .number = Bool_FieldNumber_Answer,
-        .hasIndex = 0,
-        .offset = 1,  // Stored in _has_storage_ to save space.
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBool,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Bool class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Bool__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
 #pragma mark - StringArray
 
 @implementation StringArray
@@ -521,60 +479,6 @@ typedef struct RGBA__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(RGBA__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Error
-
-@implementation Error
-
-@dynamic hasErrorMsg, errorMsg;
-@dynamic hasInfo, info;
-
-typedef struct Error__storage_ {
-  uint32_t _has_storage_[1];
-  String *errorMsg;
-  String *info;
-} Error__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "errorMsg",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Error_FieldNumber_ErrorMsg,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Error__storage_, errorMsg),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "info",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Error_FieldNumber_Info,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Error__storage_, info),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Error class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Error__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

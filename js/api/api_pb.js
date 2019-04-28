@@ -95,7 +95,7 @@ proto.api.FaxRequest.toObject = function(includeInstance, msg) {
     mediaUrl: (f = msg.getMediaUrl()) && common_common_pb.String.toObject(includeInstance, f),
     quality: (f = msg.getQuality()) && common_common_pb.String.toObject(includeInstance, f),
     callback: (f = msg.getCallback()) && common_common_pb.String.toObject(includeInstance, f),
-    storeMedia: (f = msg.getStoreMedia()) && common_common_pb.Bool.toObject(includeInstance, f)
+    storeMedia: jspb.Message.getFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -158,8 +158,7 @@ proto.api.FaxRequest.deserializeBinaryFromReader = function(msg, reader) {
       msg.setCallback(value);
       break;
     case 6:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setStoreMedia(value);
       break;
     default:
@@ -232,11 +231,10 @@ proto.api.FaxRequest.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getStoreMedia();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       6,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -393,32 +391,19 @@ proto.api.FaxRequest.prototype.hasCallback = function() {
 
 
 /**
- * optional common.Bool store_media = 6;
- * @return {?proto.common.Bool}
+ * optional bool store_media = 6;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.FaxRequest.prototype.getStoreMedia = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 6));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.FaxRequest.prototype.setStoreMedia = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-proto.api.FaxRequest.prototype.clearStoreMedia = function() {
-  this.setStoreMedia(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.FaxRequest.prototype.hasStoreMedia = function() {
-  return jspb.Message.getField(this, 6) != null;
+  jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 
@@ -3912,13 +3897,13 @@ proto.api.User.toObject = function(includeInstance, msg) {
     userMetadata: (f = msg.getUserMetadata()) && common_common_pb.StringMap.toObject(includeInstance, f),
     appMetadata: (f = msg.getAppMetadata()) && common_common_pb.StringMap.toObject(includeInstance, f),
     lastIp: (f = msg.getLastIp()) && common_common_pb.String.toObject(includeInstance, f),
-    blocked: (f = msg.getBlocked()) && common_common_pb.Bool.toObject(includeInstance, f),
+    blocked: jspb.Message.getFieldWithDefault(msg, 13, false),
     nickname: (f = msg.getNickname()) && common_common_pb.String.toObject(includeInstance, f),
     multifactor: (f = msg.getMultifactor()) && common_common_pb.StringArray.toObject(includeInstance, f),
     createdAt: (f = msg.getCreatedAt()) && common_common_pb.String.toObject(includeInstance, f),
     updatedAt: (f = msg.getUpdatedAt()) && common_common_pb.String.toObject(includeInstance, f),
-    phoneVerified: (f = msg.getPhoneVerified()) && common_common_pb.Bool.toObject(includeInstance, f),
-    emailVerified: (f = msg.getEmailVerified()) && common_common_pb.Bool.toObject(includeInstance, f),
+    phoneVerified: jspb.Message.getFieldWithDefault(msg, 19, false),
+    emailVerified: jspb.Message.getFieldWithDefault(msg, 20, false),
     password: (f = msg.getPassword()) && common_common_pb.String.toObject(includeInstance, f),
     identitiesList: jspb.Message.toObjectList(msg.getIdentitiesList(),
     proto.api.Identity.toObject, includeInstance)
@@ -4019,8 +4004,7 @@ proto.api.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLastIp(value);
       break;
     case 13:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setBlocked(value);
       break;
     case 14:
@@ -4044,13 +4028,11 @@ proto.api.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setUpdatedAt(value);
       break;
     case 19:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setPhoneVerified(value);
       break;
     case 20:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setEmailVerified(value);
       break;
     case 21:
@@ -4189,11 +4171,10 @@ proto.api.User.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getBlocked();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       13,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
   f = message.getNickname();
@@ -4229,19 +4210,17 @@ proto.api.User.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPhoneVerified();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       19,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
   f = message.getEmailVerified();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       20,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
   f = message.getPassword();
@@ -4624,32 +4603,19 @@ proto.api.User.prototype.hasLastIp = function() {
 
 
 /**
- * optional common.Bool blocked = 13;
- * @return {?proto.common.Bool}
+ * optional bool blocked = 13;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.User.prototype.getBlocked = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 13));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 13, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.User.prototype.setBlocked = function(value) {
-  jspb.Message.setWrapperField(this, 13, value);
-};
-
-
-proto.api.User.prototype.clearBlocked = function() {
-  this.setBlocked(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.User.prototype.hasBlocked = function() {
-  return jspb.Message.getField(this, 13) != null;
+  jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -4774,62 +4740,36 @@ proto.api.User.prototype.hasUpdatedAt = function() {
 
 
 /**
- * optional common.Bool phone_verified = 19;
- * @return {?proto.common.Bool}
+ * optional bool phone_verified = 19;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.User.prototype.getPhoneVerified = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 19));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 19, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.User.prototype.setPhoneVerified = function(value) {
-  jspb.Message.setWrapperField(this, 19, value);
-};
-
-
-proto.api.User.prototype.clearPhoneVerified = function() {
-  this.setPhoneVerified(undefined);
+  jspb.Message.setProto3BooleanField(this, 19, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.User.prototype.hasPhoneVerified = function() {
-  return jspb.Message.getField(this, 19) != null;
-};
-
-
-/**
- * optional common.Bool email_verified = 20;
- * @return {?proto.common.Bool}
+ * optional bool email_verified = 20;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.User.prototype.getEmailVerified = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 20));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 20, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.User.prototype.setEmailVerified = function(value) {
-  jspb.Message.setWrapperField(this, 20, value);
-};
-
-
-proto.api.User.prototype.clearEmailVerified = function() {
-  this.setEmailVerified(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.User.prototype.hasEmailVerified = function() {
-  return jspb.Message.getField(this, 20) != null;
+  jspb.Message.setProto3BooleanField(this, 20, value);
 };
 
 
@@ -4944,7 +4884,7 @@ proto.api.Identity.toObject = function(includeInstance, msg) {
     connection: (f = msg.getConnection()) && common_common_pb.String.toObject(includeInstance, f),
     userId: (f = msg.getUserId()) && common_common_pb.String.toObject(includeInstance, f),
     provider: (f = msg.getProvider()) && common_common_pb.String.toObject(includeInstance, f),
-    issocial: (f = msg.getIssocial()) && common_common_pb.Bool.toObject(includeInstance, f)
+    issocial: jspb.Message.getFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -4997,8 +4937,7 @@ proto.api.Identity.deserializeBinaryFromReader = function(msg, reader) {
       msg.setProvider(value);
       break;
     case 4:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setIssocial(value);
       break;
     default:
@@ -5055,11 +4994,10 @@ proto.api.Identity.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getIssocial();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       4,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -5156,32 +5094,19 @@ proto.api.Identity.prototype.hasProvider = function() {
 
 
 /**
- * optional common.Bool isSocial = 4;
- * @return {?proto.common.Bool}
+ * optional bool isSocial = 4;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.Identity.prototype.getIssocial = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 4));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.Identity.prototype.setIssocial = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-proto.api.Identity.prototype.clearIssocial = function() {
-  this.setIssocial(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.Identity.prototype.hasIssocial = function() {
-  return jspb.Message.getField(this, 4) != null;
+  jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
@@ -6903,9 +6828,9 @@ proto.api.NumberCapabilities.prototype.toObject = function(opt_includeInstance) 
  */
 proto.api.NumberCapabilities.toObject = function(includeInstance, msg) {
   var f, obj = {
-    voice: (f = msg.getVoice()) && common_common_pb.Bool.toObject(includeInstance, f),
-    sms: (f = msg.getSms()) && common_common_pb.Bool.toObject(includeInstance, f),
-    mms: (f = msg.getMms()) && common_common_pb.Bool.toObject(includeInstance, f)
+    voice: jspb.Message.getFieldWithDefault(msg, 1, false),
+    sms: jspb.Message.getFieldWithDefault(msg, 2, false),
+    mms: jspb.Message.getFieldWithDefault(msg, 3, false)
   };
 
   if (includeInstance) {
@@ -6943,18 +6868,15 @@ proto.api.NumberCapabilities.deserializeBinaryFromReader = function(msg, reader)
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setVoice(value);
       break;
     case 2:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setSms(value);
       break;
     case 3:
-      var value = new common_common_pb.Bool;
-      reader.readMessage(value,common_common_pb.Bool.deserializeBinaryFromReader);
+      var value = /** @type {boolean} */ (reader.readBool());
       msg.setMms(value);
       break;
     default:
@@ -6987,119 +6909,77 @@ proto.api.NumberCapabilities.prototype.serializeBinary = function() {
 proto.api.NumberCapabilities.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getVoice();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       1,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
   f = message.getSms();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       2,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
   f = message.getMms();
-  if (f != null) {
-    writer.writeMessage(
+  if (f) {
+    writer.writeBool(
       3,
-      f,
-      common_common_pb.Bool.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional common.Bool voice = 1;
- * @return {?proto.common.Bool}
+ * optional bool voice = 1;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.NumberCapabilities.prototype.getVoice = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 1));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.NumberCapabilities.prototype.setVoice = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.api.NumberCapabilities.prototype.clearVoice = function() {
-  this.setVoice(undefined);
+  jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.NumberCapabilities.prototype.hasVoice = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional common.Bool sms = 2;
- * @return {?proto.common.Bool}
+ * optional bool sms = 2;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.NumberCapabilities.prototype.getSms = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 2));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.NumberCapabilities.prototype.setSms = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.api.NumberCapabilities.prototype.clearSms = function() {
-  this.setSms(undefined);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.NumberCapabilities.prototype.hasSms = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional common.Bool mms = 3;
- * @return {?proto.common.Bool}
+ * optional bool mms = 3;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
  */
 proto.api.NumberCapabilities.prototype.getMms = function() {
-  return /** @type{?proto.common.Bool} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.Bool, 3));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
 };
 
 
-/** @param {?proto.common.Bool|undefined} value */
+/** @param {boolean} value */
 proto.api.NumberCapabilities.prototype.setMms = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-proto.api.NumberCapabilities.prototype.clearMms = function() {
-  this.setMms(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.NumberCapabilities.prototype.hasMms = function() {
-  return jspb.Message.getField(this, 3) != null;
+  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 

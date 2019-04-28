@@ -325,7 +325,7 @@ func RenderUserFunc(t *common.String) http.HandlerFunc {
 			return
 		}
 
-		if t.IsTemplate().Answer {
+		if t.IsTemplate() {
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return

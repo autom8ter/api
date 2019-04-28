@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='common',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\"\x16\n\x04\x42ool\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\x08\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\"n\n\x04RGBA\x12\x18\n\x01r\x18\x01 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01g\x18\x02 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x62\x18\x03 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x61\x18\x04 \x01(\x0b\x32\r.common.Int64\"H\n\x05\x45rror\x12!\n\terror_msg\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04info\x18\x03 \x01(\x0b\x32\x0e.common.String\"\x8c\x01\n\x0bHTTPRequest\x12\"\n\x06method\x18\x01 \x01(\x0e\x32\x12.common.HTTPMethod\x12\x1b\n\x03url\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x04\x66orm\x18\x03 \x01(\x0b\x32\x11.common.StringMap\x12\x1b\n\x04\x62ody\x18\x04 \x01(\x0b\x32\r.common.Bytes\"\xba\x01\n\x05Token\x12$\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\ntoken_type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12%\n\rrefresh_token\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08id_token\x18\x05 \x01(\x0b\x32\x0e.common.String**\n\nHTTPMethod\x12\x07\n\x03GET\x10\x00\x12\x08\n\x04POST\x10\x01\x12\t\n\x05PATCH\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\"n\n\x04RGBA\x12\x18\n\x01r\x18\x01 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01g\x18\x02 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x62\x18\x03 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x61\x18\x04 \x01(\x0b\x32\r.common.Int64\"\x8c\x01\n\x0bHTTPRequest\x12\"\n\x06method\x18\x01 \x01(\x0e\x32\x12.common.HTTPMethod\x12\x1b\n\x03url\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x04\x66orm\x18\x03 \x01(\x0b\x32\x11.common.StringMap\x12\x1b\n\x04\x62ody\x18\x04 \x01(\x0b\x32\r.common.Bytes\"\xba\x01\n\x05Token\x12$\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\ntoken_type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12%\n\rrefresh_token\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08id_token\x18\x05 \x01(\x0b\x32\x0e.common.String**\n\nHTTPMethod\x12\x07\n\x03GET\x10\x00\x12\x08\n\x04POST\x10\x01\x12\t\n\x05PATCH\x10\x02\x62\x06proto3')
 )
 
 _HTTPMETHOD = _descriptor.EnumDescriptor(
@@ -44,8 +44,8 @@ _HTTPMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=899,
-  serialized_end=941,
+  serialized_start=801,
+  serialized_end=843,
 )
 _sym_db.RegisterEnumDescriptor(_HTTPMETHOD)
 
@@ -118,37 +118,6 @@ _BYTES = _descriptor.Descriptor(
 )
 
 
-_BOOL = _descriptor.Descriptor(
-  name='Bool',
-  full_name='common.Bool',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='answer', full_name='common.Bool.answer', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=78,
-  serialized_end=100,
-)
-
-
 _STRINGARRAY = _descriptor.Descriptor(
   name='StringArray',
   full_name='common.StringArray',
@@ -175,8 +144,8 @@ _STRINGARRAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=102,
-  serialized_end=148,
+  serialized_start=78,
+  serialized_end=124,
 )
 
 
@@ -213,8 +182,8 @@ _STRINGMAP_STRINGMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=218,
-  serialized_end=282,
+  serialized_start=194,
+  serialized_end=258,
 )
 
 _STRINGMAP = _descriptor.Descriptor(
@@ -243,8 +212,8 @@ _STRINGMAP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=151,
-  serialized_end=282,
+  serialized_start=127,
+  serialized_end=258,
 )
 
 
@@ -267,8 +236,8 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=284,
-  serialized_end=291,
+  serialized_start=260,
+  serialized_end=267,
 )
 
 
@@ -298,8 +267,8 @@ _IDENTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=293,
-  serialized_end=333,
+  serialized_start=269,
+  serialized_end=309,
 )
 
 
@@ -329,8 +298,8 @@ _INT64 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=335,
-  serialized_end=355,
+  serialized_start=311,
+  serialized_end=331,
 )
 
 
@@ -360,8 +329,8 @@ _FLOAT64 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=357,
-  serialized_end=379,
+  serialized_start=333,
+  serialized_end=355,
 )
 
 
@@ -412,46 +381,8 @@ _RGBA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=381,
-  serialized_end=491,
-)
-
-
-_ERROR = _descriptor.Descriptor(
-  name='Error',
-  full_name='common.Error',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='error_msg', full_name='common.Error.error_msg', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='info', full_name='common.Error.info', index=1,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=493,
-  serialized_end=565,
+  serialized_start=357,
+  serialized_end=467,
 )
 
 
@@ -502,8 +433,8 @@ _HTTPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=568,
-  serialized_end=708,
+  serialized_start=470,
+  serialized_end=610,
 )
 
 
@@ -561,8 +492,8 @@ _TOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=711,
-  serialized_end=897,
+  serialized_start=613,
+  serialized_end=799,
 )
 
 _STRINGARRAY.fields_by_name['strings'].message_type = _STRING
@@ -574,8 +505,6 @@ _RGBA.fields_by_name['r'].message_type = _INT64
 _RGBA.fields_by_name['g'].message_type = _INT64
 _RGBA.fields_by_name['b'].message_type = _INT64
 _RGBA.fields_by_name['a'].message_type = _INT64
-_ERROR.fields_by_name['error_msg'].message_type = _STRING
-_ERROR.fields_by_name['info'].message_type = _STRING
 _HTTPREQUEST.fields_by_name['method'].enum_type = _HTTPMETHOD
 _HTTPREQUEST.fields_by_name['url'].message_type = _STRING
 _HTTPREQUEST.fields_by_name['form'].message_type = _STRINGMAP
@@ -587,7 +516,6 @@ _TOKEN.fields_by_name['expiry'].message_type = _STRING
 _TOKEN.fields_by_name['id_token'].message_type = _STRING
 DESCRIPTOR.message_types_by_name['String'] = _STRING
 DESCRIPTOR.message_types_by_name['Bytes'] = _BYTES
-DESCRIPTOR.message_types_by_name['Bool'] = _BOOL
 DESCRIPTOR.message_types_by_name['StringArray'] = _STRINGARRAY
 DESCRIPTOR.message_types_by_name['StringMap'] = _STRINGMAP
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
@@ -595,7 +523,6 @@ DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['Int64'] = _INT64
 DESCRIPTOR.message_types_by_name['Float64'] = _FLOAT64
 DESCRIPTOR.message_types_by_name['RGBA'] = _RGBA
-DESCRIPTOR.message_types_by_name['Error'] = _ERROR
 DESCRIPTOR.message_types_by_name['HTTPRequest'] = _HTTPREQUEST
 DESCRIPTOR.message_types_by_name['Token'] = _TOKEN
 DESCRIPTOR.enum_types_by_name['HTTPMethod'] = _HTTPMETHOD
@@ -614,13 +541,6 @@ Bytes = _reflection.GeneratedProtocolMessageType('Bytes', (_message.Message,), d
   # @@protoc_insertion_point(class_scope:common.Bytes)
   ))
 _sym_db.RegisterMessage(Bytes)
-
-Bool = _reflection.GeneratedProtocolMessageType('Bool', (_message.Message,), dict(
-  DESCRIPTOR = _BOOL,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Bool)
-  ))
-_sym_db.RegisterMessage(Bool)
 
 StringArray = _reflection.GeneratedProtocolMessageType('StringArray', (_message.Message,), dict(
   DESCRIPTOR = _STRINGARRAY,
@@ -678,13 +598,6 @@ RGBA = _reflection.GeneratedProtocolMessageType('RGBA', (_message.Message,), dic
   # @@protoc_insertion_point(class_scope:common.RGBA)
   ))
 _sym_db.RegisterMessage(RGBA)
-
-Error = _reflection.GeneratedProtocolMessageType('Error', (_message.Message,), dict(
-  DESCRIPTOR = _ERROR,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Error)
-  ))
-_sym_db.RegisterMessage(Error)
 
 HTTPRequest = _reflection.GeneratedProtocolMessageType('HTTPRequest', (_message.Message,), dict(
   DESCRIPTOR = _HTTPREQUEST,

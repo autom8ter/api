@@ -95,18 +95,6 @@ typedef GPB_ENUM(Bytes_FieldNumber) {
 
 @end
 
-#pragma mark - Bool
-
-typedef GPB_ENUM(Bool_FieldNumber) {
-  Bool_FieldNumber_Answer = 1,
-};
-
-@interface Bool : GPBMessage
-
-@property(nonatomic, readwrite) BOOL answer;
-
-@end
-
 #pragma mark - StringArray
 
 typedef GPB_ENUM(StringArray_FieldNumber) {
@@ -205,25 +193,6 @@ typedef GPB_ENUM(RGBA_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) Int64 *a;
 /** Test to see if @c a has been set. */
 @property(nonatomic, readwrite) BOOL hasA;
-
-@end
-
-#pragma mark - Error
-
-typedef GPB_ENUM(Error_FieldNumber) {
-  Error_FieldNumber_ErrorMsg = 1,
-  Error_FieldNumber_Info = 3,
-};
-
-@interface Error : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *errorMsg;
-/** Test to see if @c errorMsg has been set. */
-@property(nonatomic, readwrite) BOOL hasErrorMsg;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *info;
-/** Test to see if @c info has been set. */
-@property(nonatomic, readwrite) BOOL hasInfo;
 
 @end
 

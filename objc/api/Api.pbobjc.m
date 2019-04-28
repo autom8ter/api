@@ -247,7 +247,7 @@ BOOL Plan_IsValidValue(int32_t value__) {
 @dynamic hasMediaURL, mediaURL;
 @dynamic hasQuality, quality;
 @dynamic hasCallback, callback;
-@dynamic hasStoreMedia, storeMedia;
+@dynamic storeMedia;
 
 typedef struct FaxRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -256,7 +256,6 @@ typedef struct FaxRequest__storage_ {
   String *mediaURL;
   String *quality;
   String *callback;
-  Bool *storeMedia;
 } FaxRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -312,12 +311,12 @@ typedef struct FaxRequest__storage_ {
       },
       {
         .name = "storeMedia",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = FaxRequest_FieldNumber_StoreMedia,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(FaxRequest__storage_, storeMedia),
+        .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1332,13 +1331,13 @@ typedef struct CallBlast__storage_ {
 @dynamic hasUserMetadata, userMetadata;
 @dynamic hasAppMetadata, appMetadata;
 @dynamic hasLastIp, lastIp;
-@dynamic hasBlocked, blocked;
+@dynamic blocked;
 @dynamic hasNickname, nickname;
 @dynamic hasMultifactor, multifactor;
 @dynamic hasCreatedAt, createdAt;
 @dynamic hasUpdatedAt, updatedAt;
-@dynamic hasPhoneVerified, phoneVerified;
-@dynamic hasEmailVerified, emailVerified;
+@dynamic phoneVerified;
+@dynamic emailVerified;
 @dynamic hasPassword, password;
 @dynamic identitiesArray, identitiesArray_Count;
 
@@ -1356,13 +1355,10 @@ typedef struct User__storage_ {
   StringMap *userMetadata;
   StringMap *appMetadata;
   String *lastIp;
-  Bool *blocked;
   String *nickname;
   StringArray *multifactor;
   String *createdAt;
   String *updatedAt;
-  Bool *phoneVerified;
-  Bool *emailVerified;
   String *password;
   NSMutableArray *identitiesArray;
 } User__storage_;
@@ -1483,18 +1479,18 @@ typedef struct User__storage_ {
       },
       {
         .name = "blocked",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_Blocked,
         .hasIndex = 12,
-        .offset = (uint32_t)offsetof(User__storage_, blocked),
+        .offset = 13,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
       {
         .name = "nickname",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Nickname,
-        .hasIndex = 13,
+        .hasIndex = 14,
         .offset = (uint32_t)offsetof(User__storage_, nickname),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -1503,7 +1499,7 @@ typedef struct User__storage_ {
         .name = "multifactor",
         .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
         .number = User_FieldNumber_Multifactor,
-        .hasIndex = 14,
+        .hasIndex = 15,
         .offset = (uint32_t)offsetof(User__storage_, multifactor),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -1512,7 +1508,7 @@ typedef struct User__storage_ {
         .name = "createdAt",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_CreatedAt,
-        .hasIndex = 15,
+        .hasIndex = 16,
         .offset = (uint32_t)offsetof(User__storage_, createdAt),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -1521,34 +1517,34 @@ typedef struct User__storage_ {
         .name = "updatedAt",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_UpdatedAt,
-        .hasIndex = 16,
+        .hasIndex = 17,
         .offset = (uint32_t)offsetof(User__storage_, updatedAt),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "phoneVerified",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_PhoneVerified,
-        .hasIndex = 17,
-        .offset = (uint32_t)offsetof(User__storage_, phoneVerified),
+        .hasIndex = 18,
+        .offset = 19,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
       {
         .name = "emailVerified",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = User_FieldNumber_EmailVerified,
-        .hasIndex = 18,
-        .offset = (uint32_t)offsetof(User__storage_, emailVerified),
+        .hasIndex = 20,
+        .offset = 21,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
       {
         .name = "password",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Password,
-        .hasIndex = 19,
+        .hasIndex = 22,
         .offset = (uint32_t)offsetof(User__storage_, password),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -1586,14 +1582,13 @@ typedef struct User__storage_ {
 @dynamic hasConnection, connection;
 @dynamic hasUserId, userId;
 @dynamic hasProvider, provider;
-@dynamic hasIsSocial, isSocial;
+@dynamic isSocial;
 
 typedef struct Identity__storage_ {
   uint32_t _has_storage_[1];
   String *connection;
   String *userId;
   String *provider;
-  Bool *isSocial;
 } Identity__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1631,12 +1626,12 @@ typedef struct Identity__storage_ {
       },
       {
         .name = "isSocial",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = Identity_FieldNumber_IsSocial,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Identity__storage_, isSocial),
+        .offset = 4,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -2103,15 +2098,12 @@ typedef struct PhoneNumber__storage_ {
 
 @implementation NumberCapabilities
 
-@dynamic hasVoice, voice;
-@dynamic hasSms, sms;
-@dynamic hasMms, mms;
+@dynamic voice;
+@dynamic sms;
+@dynamic mms;
 
 typedef struct NumberCapabilities__storage_ {
   uint32_t _has_storage_[1];
-  Bool *voice;
-  Bool *sms;
-  Bool *mms;
 } NumberCapabilities__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2122,30 +2114,30 @@ typedef struct NumberCapabilities__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "voice",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = NumberCapabilities_FieldNumber_Voice,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(NumberCapabilities__storage_, voice),
+        .offset = 1,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
       {
         .name = "sms",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = NumberCapabilities_FieldNumber_Sms,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(NumberCapabilities__storage_, sms),
+        .hasIndex = 2,
+        .offset = 3,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
       {
         .name = "mms",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .dataTypeSpecific.className = NULL,
         .number = NumberCapabilities_FieldNumber_Mms,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(NumberCapabilities__storage_, mms),
+        .hasIndex = 4,
+        .offset = 5,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
+        .dataType = GPBDataTypeBool,
       },
     };
     GPBDescriptor *localDescriptor =

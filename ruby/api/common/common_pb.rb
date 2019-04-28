@@ -10,9 +10,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "common.Bytes" do
     optional :bits, :bytes, 1
   end
-  add_message "common.Bool" do
-    optional :answer, :bool, 1
-  end
   add_message "common.StringArray" do
     repeated :strings, :message, 1, "common.String"
   end
@@ -35,10 +32,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :g, :message, 2, "common.Int64"
     optional :b, :message, 3, "common.Int64"
     optional :a, :message, 4, "common.Int64"
-  end
-  add_message "common.Error" do
-    optional :error_msg, :message, 1, "common.String"
-    optional :info, :message, 3, "common.String"
   end
   add_message "common.HTTPRequest" do
     optional :method, :enum, 1, "common.HTTPMethod"
@@ -63,7 +56,6 @@ end
 module Common
   String = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.String").msgclass
   Bytes = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Bytes").msgclass
-  Bool = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Bool").msgclass
   StringArray = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringArray").msgclass
   StringMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringMap").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Empty").msgclass
@@ -71,7 +63,6 @@ module Common
   Int64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int64").msgclass
   Float64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Float64").msgclass
   RGBA = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.RGBA").msgclass
-  Error = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Error").msgclass
   HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPRequest").msgclass
   Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Token").msgclass
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPMethod").enummodule

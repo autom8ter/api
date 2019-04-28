@@ -410,17 +410,11 @@ class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::common::String* mutable_callback();
   void set_allocated_callback(::common::String* callback);
 
-  // .common.Bool store_media = 6;
-  bool has_store_media() const;
+  // bool store_media = 6;
   void clear_store_media();
   static const int kStoreMediaFieldNumber = 6;
-  private:
-  const ::common::Bool& _internal_store_media() const;
-  public:
-  const ::common::Bool& store_media() const;
-  ::common::Bool* release_store_media();
-  ::common::Bool* mutable_store_media();
-  void set_allocated_store_media(::common::Bool* store_media);
+  bool store_media() const;
+  void set_store_media(bool value);
 
   // @@protoc_insertion_point(class_scope:api.FaxRequest)
  private:
@@ -431,7 +425,7 @@ class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::common::String* media_url_;
   ::common::String* quality_;
   ::common::String* callback_;
-  ::common::Bool* store_media_;
+  bool store_media_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -2432,18 +2426,6 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::common::String* mutable_last_ip();
   void set_allocated_last_ip(::common::String* last_ip);
 
-  // .common.Bool blocked = 13;
-  bool has_blocked() const;
-  void clear_blocked();
-  static const int kBlockedFieldNumber = 13;
-  private:
-  const ::common::Bool& _internal_blocked() const;
-  public:
-  const ::common::Bool& blocked() const;
-  ::common::Bool* release_blocked();
-  ::common::Bool* mutable_blocked();
-  void set_allocated_blocked(::common::Bool* blocked);
-
   // .common.String nickname = 14;
   bool has_nickname() const;
   void clear_nickname();
@@ -2492,30 +2474,6 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::common::String* mutable_updated_at();
   void set_allocated_updated_at(::common::String* updated_at);
 
-  // .common.Bool phone_verified = 19;
-  bool has_phone_verified() const;
-  void clear_phone_verified();
-  static const int kPhoneVerifiedFieldNumber = 19;
-  private:
-  const ::common::Bool& _internal_phone_verified() const;
-  public:
-  const ::common::Bool& phone_verified() const;
-  ::common::Bool* release_phone_verified();
-  ::common::Bool* mutable_phone_verified();
-  void set_allocated_phone_verified(::common::Bool* phone_verified);
-
-  // .common.Bool email_verified = 20;
-  bool has_email_verified() const;
-  void clear_email_verified();
-  static const int kEmailVerifiedFieldNumber = 20;
-  private:
-  const ::common::Bool& _internal_email_verified() const;
-  public:
-  const ::common::Bool& email_verified() const;
-  ::common::Bool* release_email_verified();
-  ::common::Bool* mutable_email_verified();
-  void set_allocated_email_verified(::common::Bool* email_verified);
-
   // .common.String password = 21;
   bool has_password() const;
   void clear_password();
@@ -2527,6 +2485,24 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::common::String* release_password();
   ::common::String* mutable_password();
   void set_allocated_password(::common::String* password);
+
+  // bool blocked = 13;
+  void clear_blocked();
+  static const int kBlockedFieldNumber = 13;
+  bool blocked() const;
+  void set_blocked(bool value);
+
+  // bool phone_verified = 19;
+  void clear_phone_verified();
+  static const int kPhoneVerifiedFieldNumber = 19;
+  bool phone_verified() const;
+  void set_phone_verified(bool value);
+
+  // bool email_verified = 20;
+  void clear_email_verified();
+  static const int kEmailVerifiedFieldNumber = 20;
+  bool email_verified() const;
+  void set_email_verified(bool value);
 
   // @@protoc_insertion_point(class_scope:api.User)
  private:
@@ -2545,14 +2521,14 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::common::StringMap* user_metadata_;
   ::common::StringMap* app_metadata_;
   ::common::String* last_ip_;
-  ::common::Bool* blocked_;
   ::common::String* nickname_;
   ::common::StringArray* multifactor_;
   ::common::String* created_at_;
   ::common::String* updated_at_;
-  ::common::Bool* phone_verified_;
-  ::common::Bool* email_verified_;
   ::common::String* password_;
+  bool blocked_;
+  bool phone_verified_;
+  bool email_verified_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -2681,17 +2657,11 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::common::String* mutable_provider();
   void set_allocated_provider(::common::String* provider);
 
-  // .common.Bool isSocial = 4;
-  bool has_issocial() const;
+  // bool isSocial = 4;
   void clear_issocial();
   static const int kIsSocialFieldNumber = 4;
-  private:
-  const ::common::Bool& _internal_issocial() const;
-  public:
-  const ::common::Bool& issocial() const;
-  ::common::Bool* release_issocial();
-  ::common::Bool* mutable_issocial();
-  void set_allocated_issocial(::common::Bool* issocial);
+  bool issocial() const;
+  void set_issocial(bool value);
 
   // @@protoc_insertion_point(class_scope:api.Identity)
  private:
@@ -2700,7 +2670,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::common::String* connection_;
   ::common::String* user_id_;
   ::common::String* provider_;
-  ::common::Bool* issocial_;
+  bool issocial_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -3654,49 +3624,31 @@ class NumberCapabilities : public ::google::protobuf::Message /* @@protoc_insert
 
   // accessors -------------------------------------------------------
 
-  // .common.Bool voice = 1;
-  bool has_voice() const;
+  // bool voice = 1;
   void clear_voice();
   static const int kVoiceFieldNumber = 1;
-  private:
-  const ::common::Bool& _internal_voice() const;
-  public:
-  const ::common::Bool& voice() const;
-  ::common::Bool* release_voice();
-  ::common::Bool* mutable_voice();
-  void set_allocated_voice(::common::Bool* voice);
+  bool voice() const;
+  void set_voice(bool value);
 
-  // .common.Bool sms = 2;
-  bool has_sms() const;
+  // bool sms = 2;
   void clear_sms();
   static const int kSmsFieldNumber = 2;
-  private:
-  const ::common::Bool& _internal_sms() const;
-  public:
-  const ::common::Bool& sms() const;
-  ::common::Bool* release_sms();
-  ::common::Bool* mutable_sms();
-  void set_allocated_sms(::common::Bool* sms);
+  bool sms() const;
+  void set_sms(bool value);
 
-  // .common.Bool mms = 3;
-  bool has_mms() const;
+  // bool mms = 3;
   void clear_mms();
   static const int kMmsFieldNumber = 3;
-  private:
-  const ::common::Bool& _internal_mms() const;
-  public:
-  const ::common::Bool& mms() const;
-  ::common::Bool* release_mms();
-  ::common::Bool* mutable_mms();
-  void set_allocated_mms(::common::Bool* mms);
+  bool mms() const;
+  void set_mms(bool value);
 
   // @@protoc_insertion_point(class_scope:api.NumberCapabilities)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::Bool* voice_;
-  ::common::Bool* sms_;
-  ::common::Bool* mms_;
+  bool voice_;
+  bool sms_;
+  bool mms_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -4587,52 +4539,18 @@ inline void FaxRequest::set_allocated_callback(::common::String* callback) {
   // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.callback)
 }
 
-// .common.Bool store_media = 6;
-inline bool FaxRequest::has_store_media() const {
-  return this != internal_default_instance() && store_media_ != NULL;
+// bool store_media = 6;
+inline void FaxRequest::clear_store_media() {
+  store_media_ = false;
 }
-inline const ::common::Bool& FaxRequest::_internal_store_media() const {
-  return *store_media_;
-}
-inline const ::common::Bool& FaxRequest::store_media() const {
-  const ::common::Bool* p = store_media_;
+inline bool FaxRequest::store_media() const {
   // @@protoc_insertion_point(field_get:api.FaxRequest.store_media)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* FaxRequest::release_store_media() {
-  // @@protoc_insertion_point(field_release:api.FaxRequest.store_media)
-  
-  ::common::Bool* temp = store_media_;
-  store_media_ = NULL;
-  return temp;
-}
-inline ::common::Bool* FaxRequest::mutable_store_media() {
-  
-  if (store_media_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    store_media_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.FaxRequest.store_media)
   return store_media_;
 }
-inline void FaxRequest::set_allocated_store_media(::common::Bool* store_media) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(store_media_);
-  }
-  if (store_media) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      store_media = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, store_media, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  store_media_ = store_media;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.store_media)
+inline void FaxRequest::set_store_media(bool value) {
+  
+  store_media_ = value;
+  // @@protoc_insertion_point(field_set:api.FaxRequest.store_media)
 }
 
 // -------------------------------------------------------------------
@@ -7449,52 +7367,18 @@ inline void User::set_allocated_last_ip(::common::String* last_ip) {
   // @@protoc_insertion_point(field_set_allocated:api.User.last_ip)
 }
 
-// .common.Bool blocked = 13;
-inline bool User::has_blocked() const {
-  return this != internal_default_instance() && blocked_ != NULL;
+// bool blocked = 13;
+inline void User::clear_blocked() {
+  blocked_ = false;
 }
-inline const ::common::Bool& User::_internal_blocked() const {
-  return *blocked_;
-}
-inline const ::common::Bool& User::blocked() const {
-  const ::common::Bool* p = blocked_;
+inline bool User::blocked() const {
   // @@protoc_insertion_point(field_get:api.User.blocked)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* User::release_blocked() {
-  // @@protoc_insertion_point(field_release:api.User.blocked)
-  
-  ::common::Bool* temp = blocked_;
-  blocked_ = NULL;
-  return temp;
-}
-inline ::common::Bool* User::mutable_blocked() {
-  
-  if (blocked_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    blocked_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.User.blocked)
   return blocked_;
 }
-inline void User::set_allocated_blocked(::common::Bool* blocked) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(blocked_);
-  }
-  if (blocked) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      blocked = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, blocked, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  blocked_ = blocked;
-  // @@protoc_insertion_point(field_set_allocated:api.User.blocked)
+inline void User::set_blocked(bool value) {
+  
+  blocked_ = value;
+  // @@protoc_insertion_point(field_set:api.User.blocked)
 }
 
 // .common.String nickname = 14;
@@ -7689,100 +7573,32 @@ inline void User::set_allocated_updated_at(::common::String* updated_at) {
   // @@protoc_insertion_point(field_set_allocated:api.User.updated_at)
 }
 
-// .common.Bool phone_verified = 19;
-inline bool User::has_phone_verified() const {
-  return this != internal_default_instance() && phone_verified_ != NULL;
+// bool phone_verified = 19;
+inline void User::clear_phone_verified() {
+  phone_verified_ = false;
 }
-inline const ::common::Bool& User::_internal_phone_verified() const {
-  return *phone_verified_;
-}
-inline const ::common::Bool& User::phone_verified() const {
-  const ::common::Bool* p = phone_verified_;
+inline bool User::phone_verified() const {
   // @@protoc_insertion_point(field_get:api.User.phone_verified)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* User::release_phone_verified() {
-  // @@protoc_insertion_point(field_release:api.User.phone_verified)
-  
-  ::common::Bool* temp = phone_verified_;
-  phone_verified_ = NULL;
-  return temp;
-}
-inline ::common::Bool* User::mutable_phone_verified() {
-  
-  if (phone_verified_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    phone_verified_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.User.phone_verified)
   return phone_verified_;
 }
-inline void User::set_allocated_phone_verified(::common::Bool* phone_verified) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(phone_verified_);
-  }
-  if (phone_verified) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      phone_verified = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, phone_verified, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  phone_verified_ = phone_verified;
-  // @@protoc_insertion_point(field_set_allocated:api.User.phone_verified)
+inline void User::set_phone_verified(bool value) {
+  
+  phone_verified_ = value;
+  // @@protoc_insertion_point(field_set:api.User.phone_verified)
 }
 
-// .common.Bool email_verified = 20;
-inline bool User::has_email_verified() const {
-  return this != internal_default_instance() && email_verified_ != NULL;
+// bool email_verified = 20;
+inline void User::clear_email_verified() {
+  email_verified_ = false;
 }
-inline const ::common::Bool& User::_internal_email_verified() const {
-  return *email_verified_;
-}
-inline const ::common::Bool& User::email_verified() const {
-  const ::common::Bool* p = email_verified_;
+inline bool User::email_verified() const {
   // @@protoc_insertion_point(field_get:api.User.email_verified)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* User::release_email_verified() {
-  // @@protoc_insertion_point(field_release:api.User.email_verified)
-  
-  ::common::Bool* temp = email_verified_;
-  email_verified_ = NULL;
-  return temp;
-}
-inline ::common::Bool* User::mutable_email_verified() {
-  
-  if (email_verified_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    email_verified_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.User.email_verified)
   return email_verified_;
 }
-inline void User::set_allocated_email_verified(::common::Bool* email_verified) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(email_verified_);
-  }
-  if (email_verified) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      email_verified = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, email_verified, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  email_verified_ = email_verified;
-  // @@protoc_insertion_point(field_set_allocated:api.User.email_verified)
+inline void User::set_email_verified(bool value) {
+  
+  email_verified_ = value;
+  // @@protoc_insertion_point(field_set:api.User.email_verified)
 }
 
 // .common.String password = 21;
@@ -8011,52 +7827,18 @@ inline void Identity::set_allocated_provider(::common::String* provider) {
   // @@protoc_insertion_point(field_set_allocated:api.Identity.provider)
 }
 
-// .common.Bool isSocial = 4;
-inline bool Identity::has_issocial() const {
-  return this != internal_default_instance() && issocial_ != NULL;
+// bool isSocial = 4;
+inline void Identity::clear_issocial() {
+  issocial_ = false;
 }
-inline const ::common::Bool& Identity::_internal_issocial() const {
-  return *issocial_;
-}
-inline const ::common::Bool& Identity::issocial() const {
-  const ::common::Bool* p = issocial_;
+inline bool Identity::issocial() const {
   // @@protoc_insertion_point(field_get:api.Identity.isSocial)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* Identity::release_issocial() {
-  // @@protoc_insertion_point(field_release:api.Identity.isSocial)
-  
-  ::common::Bool* temp = issocial_;
-  issocial_ = NULL;
-  return temp;
-}
-inline ::common::Bool* Identity::mutable_issocial() {
-  
-  if (issocial_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    issocial_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.Identity.isSocial)
   return issocial_;
 }
-inline void Identity::set_allocated_issocial(::common::Bool* issocial) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(issocial_);
-  }
-  if (issocial) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      issocial = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, issocial, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  issocial_ = issocial;
-  // @@protoc_insertion_point(field_set_allocated:api.Identity.isSocial)
+inline void Identity::set_issocial(bool value) {
+  
+  issocial_ = value;
+  // @@protoc_insertion_point(field_set:api.Identity.isSocial)
 }
 
 // -------------------------------------------------------------------
@@ -9119,148 +8901,46 @@ inline void PhoneNumber::set_allocated_capabilities(::api::NumberCapabilities* c
 
 // NumberCapabilities
 
-// .common.Bool voice = 1;
-inline bool NumberCapabilities::has_voice() const {
-  return this != internal_default_instance() && voice_ != NULL;
+// bool voice = 1;
+inline void NumberCapabilities::clear_voice() {
+  voice_ = false;
 }
-inline const ::common::Bool& NumberCapabilities::_internal_voice() const {
-  return *voice_;
-}
-inline const ::common::Bool& NumberCapabilities::voice() const {
-  const ::common::Bool* p = voice_;
+inline bool NumberCapabilities::voice() const {
   // @@protoc_insertion_point(field_get:api.NumberCapabilities.voice)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* NumberCapabilities::release_voice() {
-  // @@protoc_insertion_point(field_release:api.NumberCapabilities.voice)
-  
-  ::common::Bool* temp = voice_;
-  voice_ = NULL;
-  return temp;
-}
-inline ::common::Bool* NumberCapabilities::mutable_voice() {
-  
-  if (voice_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    voice_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.NumberCapabilities.voice)
   return voice_;
 }
-inline void NumberCapabilities::set_allocated_voice(::common::Bool* voice) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(voice_);
-  }
-  if (voice) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      voice = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, voice, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  voice_ = voice;
-  // @@protoc_insertion_point(field_set_allocated:api.NumberCapabilities.voice)
+inline void NumberCapabilities::set_voice(bool value) {
+  
+  voice_ = value;
+  // @@protoc_insertion_point(field_set:api.NumberCapabilities.voice)
 }
 
-// .common.Bool sms = 2;
-inline bool NumberCapabilities::has_sms() const {
-  return this != internal_default_instance() && sms_ != NULL;
+// bool sms = 2;
+inline void NumberCapabilities::clear_sms() {
+  sms_ = false;
 }
-inline const ::common::Bool& NumberCapabilities::_internal_sms() const {
-  return *sms_;
-}
-inline const ::common::Bool& NumberCapabilities::sms() const {
-  const ::common::Bool* p = sms_;
+inline bool NumberCapabilities::sms() const {
   // @@protoc_insertion_point(field_get:api.NumberCapabilities.sms)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* NumberCapabilities::release_sms() {
-  // @@protoc_insertion_point(field_release:api.NumberCapabilities.sms)
-  
-  ::common::Bool* temp = sms_;
-  sms_ = NULL;
-  return temp;
-}
-inline ::common::Bool* NumberCapabilities::mutable_sms() {
-  
-  if (sms_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    sms_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.NumberCapabilities.sms)
   return sms_;
 }
-inline void NumberCapabilities::set_allocated_sms(::common::Bool* sms) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(sms_);
-  }
-  if (sms) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      sms = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, sms, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  sms_ = sms;
-  // @@protoc_insertion_point(field_set_allocated:api.NumberCapabilities.sms)
+inline void NumberCapabilities::set_sms(bool value) {
+  
+  sms_ = value;
+  // @@protoc_insertion_point(field_set:api.NumberCapabilities.sms)
 }
 
-// .common.Bool mms = 3;
-inline bool NumberCapabilities::has_mms() const {
-  return this != internal_default_instance() && mms_ != NULL;
+// bool mms = 3;
+inline void NumberCapabilities::clear_mms() {
+  mms_ = false;
 }
-inline const ::common::Bool& NumberCapabilities::_internal_mms() const {
-  return *mms_;
-}
-inline const ::common::Bool& NumberCapabilities::mms() const {
-  const ::common::Bool* p = mms_;
+inline bool NumberCapabilities::mms() const {
   // @@protoc_insertion_point(field_get:api.NumberCapabilities.mms)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
-      &::common::_Bool_default_instance_);
-}
-inline ::common::Bool* NumberCapabilities::release_mms() {
-  // @@protoc_insertion_point(field_release:api.NumberCapabilities.mms)
-  
-  ::common::Bool* temp = mms_;
-  mms_ = NULL;
-  return temp;
-}
-inline ::common::Bool* NumberCapabilities::mutable_mms() {
-  
-  if (mms_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
-    mms_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.NumberCapabilities.mms)
   return mms_;
 }
-inline void NumberCapabilities::set_allocated_mms(::common::Bool* mms) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(mms_);
-  }
-  if (mms) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      mms = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, mms, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  mms_ = mms;
-  // @@protoc_insertion_point(field_set_allocated:api.NumberCapabilities.mms)
+inline void NumberCapabilities::set_mms(bool value) {
+  
+  mms_ = value;
+  // @@protoc_insertion_point(field_set:api.NumberCapabilities.mms)
 }
 
 // -------------------------------------------------------------------

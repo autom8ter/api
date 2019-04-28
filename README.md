@@ -1224,7 +1224,7 @@ type FaxRequest struct {
 	MediaUrl             *common.String `protobuf:"bytes,3,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
 	Quality              *common.String `protobuf:"bytes,4,opt,name=quality,proto3" json:"quality,omitempty"`
 	Callback             *common.String `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
-	StoreMedia           *common.Bool   `protobuf:"bytes,6,opt,name=store_media,json=storeMedia,proto3" json:"store_media,omitempty"`
+	StoreMedia           bool           `protobuf:"varint,6,opt,name=store_media,json=storeMedia,proto3" json:"store_media,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -1265,7 +1265,7 @@ func (m *FaxRequest) GetQuality() *common.String
 #### func (*FaxRequest) GetStoreMedia
 
 ```go
-func (m *FaxRequest) GetStoreMedia() *common.Bool
+func (m *FaxRequest) GetStoreMedia() bool
 ```
 
 #### func (*FaxRequest) GetTo
@@ -1487,7 +1487,7 @@ type Identity struct {
 	Connection           *common.String `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
 	UserId               *common.String `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Provider             *common.String `protobuf:"bytes,3,opt,name=provider,proto3" json:"provider,omitempty"`
-	IsSocial             *common.Bool   `protobuf:"bytes,4,opt,name=isSocial,proto3" json:"isSocial,omitempty"`
+	IsSocial             bool           `protobuf:"varint,4,opt,name=isSocial,proto3" json:"isSocial,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -1510,7 +1510,7 @@ func (m *Identity) GetConnection() *common.String
 #### func (*Identity) GetIsSocial
 
 ```go
-func (m *Identity) GetIsSocial() *common.Bool
+func (m *Identity) GetIsSocial() bool
 ```
 
 #### func (*Identity) GetProvider
@@ -1762,12 +1762,12 @@ func (m *Jwks) XXX_Unmarshal(b []byte) error
 
 ```go
 type NumberCapabilities struct {
-	Voice                *common.Bool `protobuf:"bytes,1,opt,name=voice,proto3" json:"voice,omitempty"`
-	Sms                  *common.Bool `protobuf:"bytes,2,opt,name=sms,proto3" json:"sms,omitempty"`
-	Mms                  *common.Bool `protobuf:"bytes,3,opt,name=mms,proto3" json:"mms,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
-	XXX_unrecognized     []byte       `json:"-"`
-	XXX_sizecache        int32        `json:"-"`
+	Voice                bool     `protobuf:"varint,1,opt,name=voice,proto3" json:"voice,omitempty"`
+	Sms                  bool     `protobuf:"varint,2,opt,name=sms,proto3" json:"sms,omitempty"`
+	Mms                  bool     `protobuf:"varint,3,opt,name=mms,proto3" json:"mms,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 ```
 
@@ -1781,19 +1781,19 @@ func (*NumberCapabilities) Descriptor() ([]byte, []int)
 #### func (*NumberCapabilities) GetMms
 
 ```go
-func (m *NumberCapabilities) GetMms() *common.Bool
+func (m *NumberCapabilities) GetMms() bool
 ```
 
 #### func (*NumberCapabilities) GetSms
 
 ```go
-func (m *NumberCapabilities) GetSms() *common.Bool
+func (m *NumberCapabilities) GetSms() bool
 ```
 
 #### func (*NumberCapabilities) GetVoice
 
 ```go
-func (m *NumberCapabilities) GetVoice() *common.Bool
+func (m *NumberCapabilities) GetVoice() bool
 ```
 
 #### func (*NumberCapabilities) ProtoMessage
@@ -3088,13 +3088,13 @@ type User struct {
 	UserMetadata         *common.StringMap   `protobuf:"bytes,10,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
 	AppMetadata          *common.StringMap   `protobuf:"bytes,11,opt,name=app_metadata,json=appMetadata,proto3" json:"app_metadata,omitempty"`
 	LastIp               *common.String      `protobuf:"bytes,12,opt,name=last_ip,json=lastIp,proto3" json:"last_ip,omitempty"`
-	Blocked              *common.Bool        `protobuf:"bytes,13,opt,name=blocked,proto3" json:"blocked,omitempty"`
+	Blocked              bool                `protobuf:"varint,13,opt,name=blocked,proto3" json:"blocked,omitempty"`
 	Nickname             *common.String      `protobuf:"bytes,14,opt,name=nickname,proto3" json:"nickname,omitempty"`
 	Multifactor          *common.StringArray `protobuf:"bytes,15,opt,name=multifactor,proto3" json:"multifactor,omitempty"`
 	CreatedAt            *common.String      `protobuf:"bytes,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt            *common.String      `protobuf:"bytes,18,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	PhoneVerified        *common.Bool        `protobuf:"bytes,19,opt,name=phone_verified,json=phoneVerified,proto3" json:"phone_verified,omitempty"`
-	EmailVerified        *common.Bool        `protobuf:"bytes,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
+	PhoneVerified        bool                `protobuf:"varint,19,opt,name=phone_verified,json=phoneVerified,proto3" json:"phone_verified,omitempty"`
+	EmailVerified        bool                `protobuf:"varint,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
 	Password             *common.String      `protobuf:"bytes,21,opt,name=password,proto3" json:"password,omitempty"`
 	Identities           []*Identity         `protobuf:"bytes,22,rep,name=identities,proto3" json:"identities,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
@@ -3131,7 +3131,7 @@ func (m *User) GetBirthdate() *common.String
 #### func (*User) GetBlocked
 
 ```go
-func (m *User) GetBlocked() *common.Bool
+func (m *User) GetBlocked() bool
 ```
 
 #### func (*User) GetCreatedAt
@@ -3149,7 +3149,7 @@ func (m *User) GetEmail() *common.String
 #### func (*User) GetEmailVerified
 
 ```go
-func (m *User) GetEmailVerified() *common.Bool
+func (m *User) GetEmailVerified() bool
 ```
 
 #### func (*User) GetFamilyName
@@ -3215,7 +3215,7 @@ func (m *User) GetPhoneNumber() *common.String
 #### func (*User) GetPhoneVerified
 
 ```go
-func (m *User) GetPhoneVerified() *common.Bool
+func (m *User) GetPhoneVerified() bool
 ```
 
 #### func (*User) GetPicture

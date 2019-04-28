@@ -770,7 +770,8 @@
           "$ref": "#/definitions/commonString"
         },
         "store_media": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         }
       }
     },
@@ -798,7 +799,8 @@
           "$ref": "#/definitions/commonString"
         },
         "isSocial": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         }
       }
     },
@@ -806,13 +808,16 @@
       "type": "object",
       "properties": {
         "voice": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         },
         "sms": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         },
         "mms": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         }
       }
     },
@@ -1053,7 +1058,8 @@
           "$ref": "#/definitions/commonString"
         },
         "blocked": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         },
         "nickname": {
           "$ref": "#/definitions/commonString"
@@ -1068,10 +1074,12 @@
           "$ref": "#/definitions/commonString"
         },
         "phone_verified": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         },
         "email_verified": {
-          "$ref": "#/definitions/commonBool"
+          "type": "boolean",
+          "format": "boolean"
         },
         "password": {
           "$ref": "#/definitions/commonString"
@@ -1081,15 +1089,6 @@
           "items": {
             "$ref": "#/definitions/apiIdentity"
           }
-        }
-      }
-    },
-    "commonBool": {
-      "type": "object",
-      "properties": {
-        "answer": {
-          "type": "boolean",
-          "format": "boolean"
         }
       }
     },

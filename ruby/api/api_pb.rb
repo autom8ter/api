@@ -12,7 +12,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :media_url, :message, 3, "common.String"
     optional :quality, :message, 4, "common.String"
     optional :callback, :message, 5, "common.String"
-    optional :store_media, :message, 6, "common.Bool"
+    optional :store_media, :bool, 6
   end
   add_message "api.ResourceRequest" do
     optional :token, :message, 1, "common.Token"
@@ -99,13 +99,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :user_metadata, :message, 10, "common.StringMap"
     optional :app_metadata, :message, 11, "common.StringMap"
     optional :last_ip, :message, 12, "common.String"
-    optional :blocked, :message, 13, "common.Bool"
+    optional :blocked, :bool, 13
     optional :nickname, :message, 14, "common.String"
     optional :multifactor, :message, 15, "common.StringArray"
     optional :created_at, :message, 17, "common.String"
     optional :updated_at, :message, 18, "common.String"
-    optional :phone_verified, :message, 19, "common.Bool"
-    optional :email_verified, :message, 20, "common.Bool"
+    optional :phone_verified, :bool, 19
+    optional :email_verified, :bool, 20
     optional :password, :message, 21, "common.String"
     repeated :identities, :message, 22, "api.Identity"
   end
@@ -113,7 +113,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :connection, :message, 1, "common.String"
     optional :user_id, :message, 2, "common.String"
     optional :provider, :message, 3, "common.String"
-    optional :isSocial, :message, 4, "common.Bool"
+    optional :isSocial, :bool, 4
   end
   add_message "api.Auth" do
     optional :domain, :message, 1, "common.String"
@@ -150,9 +150,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :capabilities, :message, 4, "api.NumberCapabilities"
   end
   add_message "api.NumberCapabilities" do
-    optional :voice, :message, 1, "common.Bool"
-    optional :sms, :message, 2, "common.Bool"
-    optional :mms, :message, 3, "common.Bool"
+    optional :voice, :bool, 1
+    optional :sms, :bool, 2
+    optional :mms, :bool, 3
   end
   add_message "api.PhoneNumberResource" do
     optional :number, :message, 1, "api.PhoneNumber"

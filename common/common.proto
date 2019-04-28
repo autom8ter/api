@@ -10,10 +10,6 @@ message Bytes {
     bytes bits =1;
 }
 
-message Bool {
-    bool answer =1;
-}
-
 message StringArray {
     repeated String strings=1;
 }
@@ -42,12 +38,6 @@ message RGBA {
     Int64 b =3;
     Int64 a =4;
 }
-
-message Error {
-    String error_msg =1;
-    String info =3;
-}
-
 
 enum HTTPMethod {
     GET =0;

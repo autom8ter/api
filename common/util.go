@@ -100,12 +100,6 @@ func StringFromPrompt(prompt string) *String {
 	}
 }
 
-func ToBool(b bool) *Bool {
-	return &Bool{
-		Answer: b,
-	}
-}
-
 func ToStringArray(s []string) *StringArray {
 	news := []*String{}
 	for _, v := range s {
@@ -341,16 +335,16 @@ func (s *StringMap) TotalKeys() *Int64 {
 	return ToInt64(s.Keys().Length())
 }
 
-func (s *StringMap) Exists(key string) *Bool {
+func (s *StringMap) Exists(key string) bool {
 	this := s.Get(key)
 	if this.Text == "" {
-		return ToBool(false)
+		return false
 	}
-	return ToBool(true)
+	return true
 }
 
-func (s *String) Contains(sub string) *Bool {
-	return ToBool(strings.Contains(s.Text, sub))
+func (s *String) Contains(sub string) bool {
+	return strings.Contains(s.Text, sub)
 }
 
 func (s *String) TrimPrefix(sub string) {
@@ -472,12 +466,12 @@ func TokenFromOAuthToken(tok *oauth2.Token) *Token {
 	}
 }
 
-func (m *String) IsTemplate() *Bool {
-	return ToBool(strings.Contains(m.Text, "{{"))
+func (m *String) IsTemplate() bool {
+	return strings.Contains(m.Text, "{{")
 }
 
 func (m *String) AsTemplate(name string) (*template.Template, error) {
-	if m.IsTemplate().Answer {
+	if m.IsTemplate() {
 		return template.New(name).Funcs(FuncMap()).Parse(m.Text)
 	}
 	return nil, errors.New("not a template- doesnt contain {{")
@@ -610,8 +604,8 @@ func (s *String) RegexFindAll(reg string, num int) *StringArray {
 	return ToStringArray(Util.RegexFindAll(reg, s.Text, num))
 }
 
-func (s *String) RegexMatches(reg string) *Bool {
-	return ToBool(Util.RegexMatch(reg, s.Text))
+func (s *String) RegexMatches(reg string) bool {
+	return Util.RegexMatch(reg, s.Text)
 }
 
 func (s *String) RegExReplaceAll(reg string, replaceWith string) *String {
@@ -682,10 +676,6 @@ func (s *String) Pointer() *string {
 	return &s.Text
 }
 
-func (s *Bool) Pointer() *bool {
-	return &s.Answer
-}
-
 func (s *Int64) Pointer() *int64 {
 	return &s.Num
 }
@@ -710,7 +700,7 @@ func (s *StringArray) Pointer() []*string {
 	return out
 }
 
-func (s *StringArray) ToString() (*String, error) {
+func (s *StringArray) ToJSONString() (*String, error) {
 	this, err := JSONMarshaler.MarshalToString(s)
 	if err != nil {
 		return nil, err
@@ -718,7 +708,7 @@ func (s *StringArray) ToString() (*String, error) {
 	return ToString(this), nil
 }
 
-func (s *StringArray) ToBytes() (*Bytes, error) {
+func (s *StringArray) ToJSONBytes() (*Bytes, error) {
 	this, err := JSONMarshaler.MarshalToString(s)
 	if err != nil {
 		return nil, err
@@ -808,8 +798,8 @@ func (m *Float64) BinaryExponent() *Int64 {
 	return ToInt64(math.Ilogb(m.Num))
 }
 
-func (m *Float64) NotANumber() *Bool {
-	return ToBool(math.IsNaN(m.Num))
+func (m *Float64) NotANumber() bool {
+	return math.IsNaN(m.Num)
 }
 
 func (m *Float64) Log() *Float64 {
@@ -936,15 +926,8 @@ func (s *String) ParseScientificUnits() (*Float64, *String, error) {
 	return ToFloat64(i), ToString(t), nil
 }
 
-func (e *Error) Error() string {
-	return fmt.Sprintf("❌ %s", e.String())
-}
-
-func ToError(err error, msg string) *Error {
-	return &Error{
-		ErrorMsg: ToString(err.Error()),
-		Info:     ToString(msg),
-	}
+func ToError(err error, msg string) error {
+	return Util.WrapErr(err, msg)
 }
 
 func ToFloats(floats ...float64) []*Float64 {
@@ -987,10 +970,6 @@ func (s *StringArray) Validate(fn func(s *StringArray) error) error {
 	return fn(s)
 }
 
-func (s *Bool) Validate(fn func(s *Bool) error) error {
-	return fn(s)
-}
-
 func (s *HTTPRequest) Validate(fn func(s *HTTPRequest) error) error {
 	return fn(s)
 }
@@ -1023,10 +1002,6 @@ func (s *HTTPRequest) Equals(y interface{}) bool {
 	return reflect.DeepEqual(s, y)
 }
 
-func (s *Bool) Equals(y interface{}) bool {
-	return reflect.DeepEqual(s, y)
-}
-
 func (s *Bytes) Equals(y interface{}) bool {
 	return reflect.DeepEqual(s, y)
 }
@@ -1050,10 +1025,6 @@ func (s *StringMap) TypeMatches(src interface{}) bool {
 	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
 }
 
-func (s *Bool) TypeMatches(src interface{}) bool {
-	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
-}
-
 func (s *Int64) TypeMatches(src interface{}) bool {
 	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
 }
@@ -1063,10 +1034,6 @@ func (s *Float64) TypeMatches(src interface{}) bool {
 }
 
 func (s *Token) TypeMatches(src interface{}) bool {
-	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
-}
-
-func (s *Error) TypeMatches(src interface{}) bool {
 	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
 }
 
@@ -1090,19 +1057,11 @@ func (s *StringMap) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
-func (s *Bool) ToContext(ctx context.Context, key string) context.Context {
-	return context.WithValue(ctx, key, s)
-}
-
-func (s *Error) ToContext(ctx context.Context, key string) context.Context {
-	return context.WithValue(ctx, key, s)
-}
-
 func (s *Token) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
-func (s *String) UnmarshalJSON(r io.Reader) *Error {
+func (s *String) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling string")
@@ -1110,7 +1069,7 @@ func (s *String) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *StringMap) UnmarshalJSON(r io.Reader) *Error {
+func (s *StringMap) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling stringmap")
@@ -1118,15 +1077,7 @@ func (s *StringMap) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *Bool) UnmarshalJSON(r io.Reader) *Error {
-	err := JSONUnmarshaler.Unmarshal(r, s)
-	if err != nil {
-		return ToError(err, "unmarshaling bool")
-	}
-	return nil
-}
-
-func (s *StringArray) UnmarshalJSON(r io.Reader) *Error {
+func (s *StringArray) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling stringarray")
@@ -1134,7 +1085,7 @@ func (s *StringArray) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *Bytes) UnmarshalJSON(r io.Reader) *Error {
+func (s *Bytes) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling bytes")
@@ -1142,7 +1093,7 @@ func (s *Bytes) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *Float64) UnmarshalJSON(r io.Reader) *Error {
+func (s *Float64) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling float64")
@@ -1150,7 +1101,7 @@ func (s *Float64) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *Int64) UnmarshalJSON(r io.Reader) *Error {
+func (s *Int64) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling int64")
@@ -1158,7 +1109,7 @@ func (s *Int64) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *Token) UnmarshalJSON(r io.Reader) *Error {
+func (s *Token) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling token")
@@ -1166,22 +1117,15 @@ func (s *Token) UnmarshalJSON(r io.Reader) *Error {
 	return nil
 }
 
-func (s *HTTPRequest) UnmarshalJSON(r io.Reader) *Error {
+func (s *HTTPRequest) UnmarshalJSON(r io.Reader) error {
 	err := JSONUnmarshaler.Unmarshal(r, s)
 	if err != nil {
 		return ToError(err, "unmarshaling httprequest")
 	}
 	return nil
 }
-func (s *RGBA) UnmarshalJSON(r io.Reader) *Error {
-	err := JSONUnmarshaler.Unmarshal(r, s)
-	if err != nil {
-		return ToError(err, "unmarshaling rgba")
-	}
-	return nil
-}
 
-func (s *RGBA) MarshalJSON(w io.Writer) *Error {
+func (s *RGBA) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling rgba")
@@ -1189,7 +1133,7 @@ func (s *RGBA) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *String) MarshalJSON(w io.Writer) *Error {
+func (s *String) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling string")
@@ -1197,7 +1141,7 @@ func (s *String) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *StringArray) MarshalJSON(w io.Writer) *Error {
+func (s *StringArray) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling stringarray")
@@ -1205,7 +1149,7 @@ func (s *StringArray) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *StringMap) MarshalJSON(w io.Writer) *Error {
+func (s *StringMap) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling stringmap")
@@ -1213,15 +1157,7 @@ func (s *StringMap) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *Bool) MarshalJSON(w io.Writer) *Error {
-	err := JSONMarshaler.Marshal(w, s)
-	if err != nil {
-		return ToError(err, "marshalling bool")
-	}
-	return nil
-}
-
-func (s *Float64) MarshalJSON(w io.Writer) *Error {
+func (s *Float64) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling float64")
@@ -1229,7 +1165,7 @@ func (s *Float64) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *Int64) MarshalJSON(w io.Writer) *Error {
+func (s *Int64) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling int64")
@@ -1237,7 +1173,7 @@ func (s *Int64) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *Int64) Token(w io.Writer) *Error {
+func (s *Int64) Token(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling token")
@@ -1245,7 +1181,7 @@ func (s *Int64) Token(w io.Writer) *Error {
 	return nil
 }
 
-func (s *HTTPRequest) MarshalJSON(w io.Writer) *Error {
+func (s *HTTPRequest) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling httprequest")
@@ -1253,15 +1189,7 @@ func (s *HTTPRequest) MarshalJSON(w io.Writer) *Error {
 	return nil
 }
 
-func (s *Error) MarshalJSON(w io.Writer) *Error {
-	err := JSONMarshaler.Marshal(w, s)
-	if err != nil {
-		return ToError(err, "marshalling error")
-	}
-	return nil
-}
-
-func (s *Bytes) MarshalJSON(w io.Writer) *Error {
+func (s *Bytes) MarshalJSON(w io.Writer) error {
 	err := JSONMarshaler.Marshal(w, s)
 	if err != nil {
 		return ToError(err, "marshalling bytes")
