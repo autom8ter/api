@@ -34,14 +34,14 @@ import (
 
 func init() {
 	ClientContext = StringArrayFromEnv().ToContext(context.TODO(), "env")
-	util = objectify.Default()
+	Util = objectify.Default()
 	httpClient = http.DefaultClient
 	store = sessions.NewCookieStore([]byte(os.Getenv(SESSION_SECRET_ENV_KEY)))
 	gob.Register(map[string]interface{}{})
 }
 
 var (
-	util                   *objectify.Handler
+	Util                   *objectify.Handler
 	ClientContext          context.Context
 	httpClient             *http.Client
 	store                  *sessions.CookieStore
@@ -57,11 +57,11 @@ var (
 )
 
 func Fatalln(err error) {
-	util.Entry().Fatalln(err.Error())
+	Util.Entry().Fatalln(err.Error())
 }
 
 func Warnln(err error) {
-	util.Entry().Warnln(err.Error())
+	Util.Entry().Warnln(err.Error())
 }
 
 func GetAuthSession(r *http.Request) (*sessions.Session, error) {
@@ -96,7 +96,7 @@ func ToString(s string) *String {
 
 func StringFromPrompt(prompt string) *String {
 	return &String{
-		Text: util.Prompt(prompt),
+		Text: Util.Prompt(prompt),
 	}
 }
 
@@ -169,11 +169,11 @@ func (s *Bytes) DecodeJSON(decoder *json.Decoder) error {
 }
 
 func JSONObjToBytes(b interface{}) *Bytes {
-	return ToBytes(util.MarshalJSON(b))
+	return ToBytes(Util.MarshalJSON(b))
 }
 
 func JSONObjToString(b interface{}) *String {
-	return ToString(string(util.MarshalJSON(b)))
+	return ToString(string(Util.MarshalJSON(b)))
 }
 
 func (b *Bytes) ToString() *String {
@@ -218,11 +218,11 @@ func (h *HTTPRequest) Do(token *Token) (*Bytes, error) {
 	}
 	resp, err := httpClient.Do(r)
 	if err != nil {
-		return nil, util.WrapErr(err, resp.Status)
+		return nil, Util.WrapErr(err, resp.Status)
 	}
 	bits, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, util.WrapErr(err, "reading http response body")
+		return nil, Util.WrapErr(err, "reading http response body")
 	}
 	return &Bytes{
 		Bits: bits,
@@ -313,7 +313,7 @@ func (m *Bytes) Clear() {
 
 func AsBytes(obj interface{}) *Bytes {
 	return &Bytes{
-		Bits: util.MarshalJSON(obj),
+		Bits: Util.MarshalJSON(obj),
 	}
 }
 
@@ -391,7 +391,7 @@ func (s *String) Println() {
 }
 
 func (s *String) Debugln() {
-	util.Entry().Debugln(s.Text)
+	Util.Entry().Debugln(s.Text)
 }
 
 func (s *String) IsEmpty() bool {
@@ -458,7 +458,7 @@ func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
 
 func SaveSession(w http.ResponseWriter, r *http.Request) {
 	if err := sessions.Save(r, w); err != nil {
-		http.Error(w, util.WrapErr(err, "saving session").Error(), http.StatusInternalServerError)
+		http.Error(w, Util.WrapErr(err, "saving session").Error(), http.StatusInternalServerError)
 	}
 }
 
@@ -546,23 +546,23 @@ func (m *String) WriteString() http.HandlerFunc {
 }
 
 func (m *String) ExecuteAsShellCMD() *Bytes {
-	return ToBytes([]byte(util.Shell(m.Text)))
+	return ToBytes([]byte(Util.Shell(m.Text)))
 }
 
 func (m *String) ExecuteAsBashCMD() *Bytes {
-	return ToBytes([]byte(util.Bash(m.Text)))
+	return ToBytes([]byte(Util.Bash(m.Text)))
 }
 
 func (m *String) ExecuteAsPython3() *Bytes {
-	return ToBytes([]byte(util.Python3(m.Text)))
+	return ToBytes([]byte(Util.Python3(m.Text)))
 }
 
 func (m *String) Hashed() (string, error) {
-	return util.HashPassword(m.Text)
+	return Util.HashPassword(m.Text)
 }
 
 func (m *String) AsHash() error {
-	text, err := util.HashPassword(m.Text)
+	text, err := Util.HashPassword(m.Text)
 	if err != nil {
 		return err
 	}
@@ -571,23 +571,23 @@ func (m *String) AsHash() error {
 }
 
 func (m *String) PasswordMatchesHashed(pass string) error {
-	return util.ComparePasswordToHash(m.Text, pass)
+	return Util.ComparePasswordToHash(m.Text, pass)
 }
 
 func (m *String) HashMatchesPassword(hash string) error {
-	return util.ComparePasswordToHash(hash, m.Text)
+	return Util.ComparePasswordToHash(hash, m.Text)
 }
 
 func (m *String) Base64Encode() string {
-	return util.Base64EncodeRaw([]byte(m.Text))
+	return Util.Base64EncodeRaw([]byte(m.Text))
 }
 
 func (m *String) AsBase64Encoded() {
-	m.Text = util.Base64Encode(m.Text)
+	m.Text = Util.Base64Encode(m.Text)
 }
 
 func (m *String) AsBase64Decode() {
-	m.Text = util.Base64Decode(m.Text)
+	m.Text = Util.Base64Decode(m.Text)
 }
 
 func StringFromEnv(key string) *String {
@@ -595,55 +595,55 @@ func StringFromEnv(key string) *String {
 }
 
 func (s *String) ParseLanguage() (language.Tag, error) {
-	return util.ParseLang(s.Text)
+	return Util.ParseLang(s.Text)
 }
 
 func (s *String) ParseRegion() (language.Region, error) {
-	return util.ParseRegion(s.Text)
+	return Util.ParseRegion(s.Text)
 }
 
 func (s *String) RegexFind(reg string) *String {
-	return ToString(util.RegexFind(reg, s.Text))
+	return ToString(Util.RegexFind(reg, s.Text))
 }
 
 func (s *String) RegexFindAll(reg string, num int) *StringArray {
-	return ToStringArray(util.RegexFindAll(reg, s.Text, num))
+	return ToStringArray(Util.RegexFindAll(reg, s.Text, num))
 }
 
 func (s *String) RegexMatches(reg string) *Bool {
-	return ToBool(util.RegexMatch(reg, s.Text))
+	return ToBool(Util.RegexMatch(reg, s.Text))
 }
 
 func (s *String) RegExReplaceAll(reg string, replaceWith string) *String {
-	return ToString(util.RegexReplaceAll(reg, s.Text, replaceWith))
+	return ToString(Util.RegexReplaceAll(reg, s.Text, replaceWith))
 }
 
 func (s *String) RegExReplaceAllLiteral(reg string, replaceWith string) *String {
-	return ToString(util.RegexReplaceAllLiteral(reg, s.Text, replaceWith))
+	return ToString(Util.RegexReplaceAllLiteral(reg, s.Text, replaceWith))
 }
 
 func (s *String) RegExSplit(reg string, num int) *StringArray {
-	return ToStringArray(util.RegexSplit(reg, s.Text, num))
+	return ToStringArray(Util.RegexSplit(reg, s.Text, num))
 }
 
 func (s *String) AsSha256() {
-	s.Text = util.Sha256sum(s.Text)
+	s.Text = Util.Sha256sum(s.Text)
 }
 
 func (s *String) Sha256() string {
-	return util.Sha256sum(s.Text)
+	return Util.Sha256sum(s.Text)
 }
 
 func (s *String) AsSha1() {
-	s.Text = util.Sha1sum(s.Text)
+	s.Text = Util.Sha1sum(s.Text)
 }
 
 func (s *String) Sha1() string {
-	return util.Sha1sum(s.Text)
+	return Util.Sha1sum(s.Text)
 }
 
 func (s *String) Adler32() string {
-	return util.Adler32sum(s.Text)
+	return Util.Adler32sum(s.Text)
 }
 
 func (s *String) ParseURL() (*url.URL, error) {
@@ -667,7 +667,7 @@ func (s *String) SetEnv(key string) error {
 }
 
 func (s *String) AsAdler32() {
-	s.Text = util.Adler32sum(s.Text)
+	s.Text = Util.Adler32sum(s.Text)
 }
 
 func (s *String) ToInt64() (*Int64, error) {
@@ -695,7 +695,7 @@ func (s *Float64) Pointer() *float64 {
 }
 
 func (s *String) ToStringArray() (*StringArray, error) {
-	vals, err := util.ReadAsCSV(s.Text)
+	vals, err := Util.ReadAsCSV(s.Text)
 	if err != nil {
 		return nil, err
 	}
@@ -727,10 +727,10 @@ func (s *StringArray) ToBytes() (*Bytes, error) {
 }
 
 func ToMap(obj interface{}) *StringMap {
-	m := util.ToMap(obj)
+	m := Util.ToMap(obj)
 	newMap := make(map[string]*String)
 	for k, v := range m {
-		newMap[k] = ToString(string(util.MarshalJSON(v)))
+		newMap[k] = ToString(string(Util.MarshalJSON(v)))
 	}
 	return &StringMap{
 		StringMap: newMap,

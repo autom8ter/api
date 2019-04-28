@@ -94,8 +94,6 @@ service ContactService {
       body: "*"
     };
     }
-
-
 }
 
 service PaymentService {
