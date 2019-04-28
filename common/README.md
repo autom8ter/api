@@ -11,6 +11,13 @@ var (
 
 	AUTH_SESSION           = "auth-session"
 	SESSION_SECRET_ENV_KEY = "SECRET"
+	JSONMarshaler          = &jsonpb.Marshaler{
+		Indent: "  ",
+	}
+	JSONUnmarshaler = &jsonpb.Unmarshaler{
+		AllowUnknownFields: false,
+		AnyResolver:        nil,
+	}
 )
 ```
 
@@ -114,6 +121,12 @@ func (s *Bool) Equals(y interface{}) bool
 func (m *Bool) GetAnswer() bool
 ```
 
+#### func (*Bool) MarshalJSON
+
+```go
+func (s *Bool) MarshalJSON(w io.Writer) *Error
+```
+
 #### func (*Bool) Pointer
 
 ```go
@@ -148,6 +161,12 @@ func (s *Bool) ToContext(ctx context.Context, key string) context.Context
 
 ```go
 func (s *Bool) TypeMatches(src interface{}) bool
+```
+
+#### func (*Bool) UnmarshalJSON
+
+```go
+func (s *Bool) UnmarshalJSON(r io.Reader) *Error
 ```
 
 #### func (*Bool) Validate
@@ -222,16 +241,22 @@ func BytesFromReader(r io.Reader) (*Bytes, error)
 func BytesFromString(str string) *Bytes
 ```
 
+#### func  JSONObjToBytes
+
+```go
+func JSONObjToBytes(b interface{}) *Bytes
+```
+
+#### func  MessageToJSONBytes
+
+```go
+func MessageToJSONBytes(msg proto.Message) (*Bytes, error)
+```
+
 #### func  NewBytes
 
 ```go
 func NewBytes() *Bytes
-```
-
-#### func  ObjToBytes
-
-```go
-func ObjToBytes(b interface{}) *Bytes
 ```
 
 #### func  ToBytes
@@ -276,6 +301,12 @@ func (m *Bytes) Contains(str string) bool
 func (s *Bytes) Debugln()
 ```
 
+#### func (*Bytes) DecodeJSON
+
+```go
+func (s *Bytes) DecodeJSON(decoder *json.Decoder) error
+```
+
 #### func (*Bytes) Descriptor
 
 ```go
@@ -294,16 +325,16 @@ func (s *Bytes) Equals(y interface{}) bool
 func (m *Bytes) GetBits() []byte
 ```
 
-#### func (*Bytes) JSON
-
-```go
-func (m *Bytes) JSON() []byte
-```
-
 #### func (*Bytes) Length
 
 ```go
 func (m *Bytes) Length() int
+```
+
+#### func (*Bytes) MarshalJSON
+
+```go
+func (s *Bytes) MarshalJSON(w io.Writer) *Error
 ```
 
 #### func (*Bytes) ProtoMessage
@@ -336,28 +367,10 @@ func (m *Bytes) String() string
 func (b *Bytes) ToString() *String
 ```
 
-#### func (*Bytes) UnMarshalJSON
-
-```go
-func (m *Bytes) UnMarshalJSON(obj interface{}) error
-```
-
-#### func (*Bytes) UnMarshalProto
-
-```go
-func (m *Bytes) UnMarshalProto(obj interface{}) error
-```
-
 #### func (*Bytes) UnmarshalJSON
 
 ```go
-func (b *Bytes) UnmarshalJSON(obj interface{}) error
-```
-
-#### func (*Bytes) UnmarshalProto
-
-```go
-func (b *Bytes) UnmarshalProto(obj interface{}) error
+func (s *Bytes) UnmarshalJSON(r io.Reader) *Error
 ```
 
 #### func (*Bytes) Validate
@@ -376,12 +389,6 @@ func (m *Bytes) Write(p []byte) (n int, err error)
 
 ```go
 func (m *Bytes) WriteString() http.HandlerFunc
-```
-
-#### func (*Bytes) XML
-
-```go
-func (m *Bytes) XML() []byte
 ```
 
 #### func (*Bytes) XXX_DiscardUnknown
@@ -412,12 +419,6 @@ func (m *Bytes) XXX_Size() int
 
 ```go
 func (m *Bytes) XXX_Unmarshal(b []byte) error
-```
-
-#### func (*Bytes) YAML
-
-```go
-func (m *Bytes) YAML() []byte
 ```
 
 #### type Empty
@@ -528,10 +529,10 @@ func (m *Error) GetErrorMsg() *String
 func (m *Error) GetInfo() *String
 ```
 
-#### func (*Error) JSON
+#### func (*Error) MarshalJSON
 
 ```go
-func (e *Error) JSON() []byte
+func (s *Error) MarshalJSON(w io.Writer) *Error
 ```
 
 #### func (*Error) ProtoMessage
@@ -564,12 +565,6 @@ func (s *Error) ToContext(ctx context.Context, key string) context.Context
 func (s *Error) TypeMatches(src interface{}) bool
 ```
 
-#### func (*Error) XML
-
-```go
-func (e *Error) XML() []byte
-```
-
 #### func (*Error) XXX_DiscardUnknown
 
 ```go
@@ -598,12 +593,6 @@ func (m *Error) XXX_Size() int
 
 ```go
 func (m *Error) XXX_Unmarshal(b []byte) error
-```
-
-#### func (*Error) YAML
-
-```go
-func (e *Error) YAML() []byte
 ```
 
 #### type Float64
@@ -759,6 +748,12 @@ func (m *Float64) Log2() *Float64
 func (m *Float64) Logb() *Float64
 ```
 
+#### func (*Float64) MarshalJSON
+
+```go
+func (s *Float64) MarshalJSON(w io.Writer) *Error
+```
+
 #### func (*Float64) Max
 
 ```go
@@ -903,6 +898,12 @@ func (m *Float64) ToThePowerOf(f *Float64) *Float64
 func (s *Float64) TypeMatches(src interface{}) bool
 ```
 
+#### func (*Float64) UnmarshalJSON
+
+```go
+func (s *Float64) UnmarshalJSON(r io.Reader) *Error
+```
+
 #### func (*Float64) Validate
 
 ```go
@@ -1035,6 +1036,12 @@ func (m *HTTPRequest) GetMethod() HTTPMethod
 func (m *HTTPRequest) GetUrl() *String
 ```
 
+#### func (*HTTPRequest) MarshalJSON
+
+```go
+func (s *HTTPRequest) MarshalJSON(w io.Writer) *Error
+```
+
 #### func (*HTTPRequest) ProtoMessage
 
 ```go
@@ -1053,10 +1060,10 @@ func (m *HTTPRequest) Reset()
 func (m *HTTPRequest) String() string
 ```
 
-#### func (*HTTPRequest) ToContext
+#### func (*HTTPRequest) UnmarshalJSON
 
 ```go
-func (s *HTTPRequest) ToContext(ctx context.Context, key string) context.Context
+func (s *HTTPRequest) UnmarshalJSON(r io.Reader) *Error
 ```
 
 #### func (*HTTPRequest) Validate
@@ -1227,6 +1234,12 @@ func (m *Int64) Humanized() *String
 func (i *Int64) Int() int
 ```
 
+#### func (*Int64) MarshalJSON
+
+```go
+func (s *Int64) MarshalJSON(w io.Writer) *Error
+```
+
 #### func (*Int64) Minus
 
 ```go
@@ -1287,10 +1300,22 @@ func (s *Int64) ToContext(ctx context.Context, key string) context.Context
 func (s *Int64) ToString() *String
 ```
 
+#### func (*Int64) Token
+
+```go
+func (s *Int64) Token(w io.Writer) *Error
+```
+
 #### func (*Int64) TypeMatches
 
 ```go
 func (s *Int64) TypeMatches(src interface{}) bool
+```
+
+#### func (*Int64) UnmarshalJSON
+
+```go
+func (s *Int64) UnmarshalJSON(r io.Reader) *Error
 ```
 
 #### func (*Int64) Validate
@@ -1374,6 +1399,12 @@ func (m *RGBA) GetG() *Int64
 func (m *RGBA) GetR() *Int64
 ```
 
+#### func (*RGBA) MarshalJSON
+
+```go
+func (s *RGBA) MarshalJSON(w io.Writer) *Error
+```
+
 #### func (*RGBA) ProtoMessage
 
 ```go
@@ -1390,6 +1421,12 @@ func (m *RGBA) Reset()
 
 ```go
 func (m *RGBA) String() string
+```
+
+#### func (*RGBA) UnmarshalJSON
+
+```go
+func (s *RGBA) UnmarshalJSON(r io.Reader) *Error
 ```
 
 #### func (*RGBA) XXX_DiscardUnknown
@@ -1434,10 +1471,16 @@ type String struct {
 ```
 
 
-#### func  ObjToString
+#### func  JSONObjToString
 
 ```go
-func ObjToString(b interface{}) *String
+func JSONObjToString(b interface{}) *String
+```
+
+#### func  MessageToJSONString
+
+```go
+func MessageToJSONString(msg proto.Message) (*String, error)
 ```
 
 #### func  RandomString
@@ -1548,6 +1591,12 @@ func (s *String) Contains(sub string) *Bool
 func (s *String) Debugln()
 ```
 
+#### func (*String) DecodeJSON
+
+```go
+func (s *String) DecodeJSON(decoder *json.Decoder) error
+```
+
 #### func (*String) Descriptor
 
 ```go
@@ -1614,10 +1663,10 @@ func (s *String) IsEmpty() bool
 func (m *String) IsTemplate() *Bool
 ```
 
-#### func (*String) JSON
+#### func (*String) MarshalJSON
 
 ```go
-func (m *String) JSON() []byte
+func (s *String) MarshalJSON(w io.Writer) *Error
 ```
 
 #### func (*String) Matches
@@ -1842,6 +1891,12 @@ func (s *String) TrimWhiteSpace()
 func (s *String) TypeMatches(src interface{}) bool
 ```
 
+#### func (*String) UnmarshalJSON
+
+```go
+func (s *String) UnmarshalJSON(r io.Reader) *Error
+```
+
 #### func (*String) Validate
 
 ```go
@@ -1852,12 +1907,6 @@ func (s *String) Validate(fn func(s *String) error) error
 
 ```go
 func (m *String) WriteString() http.HandlerFunc
-```
-
-#### func (*String) XML
-
-```go
-func (m *String) XML() []byte
 ```
 
 #### func (*String) XXX_DiscardUnknown
@@ -1888,12 +1937,6 @@ func (m *String) XXX_Size() int
 
 ```go
 func (m *String) XXX_Unmarshal(b []byte) error
-```
-
-#### func (*String) YAML
-
-```go
-func (m *String) YAML() []byte
 ```
 
 #### type StringArray
@@ -1980,12 +2023,6 @@ func (m *StringArray) GetStrings() []*String
 func (m *StringArray) IsEmpty() bool
 ```
 
-#### func (*StringArray) JSON
-
-```go
-func (t *StringArray) JSON() []byte
-```
-
 #### func (*StringArray) Last
 
 ```go
@@ -1996,6 +2033,12 @@ func (m *StringArray) Last() *String
 
 ```go
 func (m *StringArray) Length() int
+```
+
+#### func (*StringArray) MarshalJSON
+
+```go
+func (s *StringArray) MarshalJSON(w io.Writer) *Error
 ```
 
 #### func (*StringArray) Pointer
@@ -2034,6 +2077,12 @@ func (m *StringArray) String() string
 func (s *StringArray) StringMap(y interface{}) bool
 ```
 
+#### func (*StringArray) ToBytes
+
+```go
+func (s *StringArray) ToBytes() (*Bytes, error)
+```
+
 #### func (*StringArray) ToContext
 
 ```go
@@ -2043,7 +2092,7 @@ func (s *StringArray) ToContext(ctx context.Context, key string) context.Context
 #### func (*StringArray) ToString
 
 ```go
-func (s *StringArray) ToString() *String
+func (s *StringArray) ToString() (*String, error)
 ```
 
 #### func (*StringArray) TypeMatches
@@ -2052,16 +2101,16 @@ func (s *StringArray) ToString() *String
 func (s *StringArray) TypeMatches(src interface{}) bool
 ```
 
+#### func (*StringArray) UnmarshalJSON
+
+```go
+func (s *StringArray) UnmarshalJSON(r io.Reader) *Error
+```
+
 #### func (*StringArray) Validate
 
 ```go
 func (s *StringArray) Validate(fn func(s *StringArray) error) error
-```
-
-#### func (*StringArray) XML
-
-```go
-func (t *StringArray) XML() []byte
 ```
 
 #### func (*StringArray) XXX_DiscardUnknown
@@ -2094,12 +2143,6 @@ func (m *StringArray) XXX_Size() int
 func (m *StringArray) XXX_Unmarshal(b []byte) error
 ```
 
-#### func (*StringArray) YAML
-
-```go
-func (t *StringArray) YAML() []byte
-```
-
 #### type StringMap
 
 ```go
@@ -2112,10 +2155,10 @@ type StringMap struct {
 ```
 
 
-#### func  StructToMap
+#### func  ToMap
 
 ```go
-func StructToMap(obj interface{}) *StringMap
+func ToMap(obj interface{}) *StringMap
 ```
 
 #### func  ToStringMap
@@ -2145,7 +2188,7 @@ func (*StringMap) Descriptor() ([]byte, []int)
 #### func (*StringMap) Exists
 
 ```go
-func (s *StringMap) Exists(key string) bool
+func (s *StringMap) Exists(key string) *Bool
 ```
 
 #### func (*StringMap) Get
@@ -2160,16 +2203,16 @@ func (s *StringMap) Get(key string) *String
 func (m *StringMap) GetStringMap() map[string]*String
 ```
 
-#### func (*StringMap) JSON
-
-```go
-func (t *StringMap) JSON() []byte
-```
-
 #### func (*StringMap) Keys
 
 ```go
-func (s *StringMap) Keys() []string
+func (s *StringMap) Keys() *StringArray
+```
+
+#### func (*StringMap) MarshalJSON
+
+```go
+func (s *StringMap) MarshalJSON(w io.Writer) *Error
 ```
 
 #### func (*StringMap) ProtoMessage
@@ -2202,16 +2245,10 @@ func (m *StringMap) String() string
 func (s *StringMap) ToContext(ctx context.Context, key string) context.Context
 ```
 
-#### func (*StringMap) ToString
-
-```go
-func (s *StringMap) ToString() *String
-```
-
 #### func (*StringMap) TotalKeys
 
 ```go
-func (s *StringMap) TotalKeys() int
+func (s *StringMap) TotalKeys() *Int64
 ```
 
 #### func (*StringMap) TypeMatches
@@ -2220,16 +2257,16 @@ func (s *StringMap) TotalKeys() int
 func (s *StringMap) TypeMatches(src interface{}) bool
 ```
 
+#### func (*StringMap) UnmarshalJSON
+
+```go
+func (s *StringMap) UnmarshalJSON(r io.Reader) *Error
+```
+
 #### func (*StringMap) Validate
 
 ```go
 func (s *StringMap) Validate(fn func(s *StringMap) error) error
-```
-
-#### func (*StringMap) XML
-
-```go
-func (t *StringMap) XML() []byte
 ```
 
 #### func (*StringMap) XXX_DiscardUnknown
@@ -2260,12 +2297,6 @@ func (m *StringMap) XXX_Size() int
 
 ```go
 func (m *StringMap) XXX_Unmarshal(b []byte) error
-```
-
-#### func (*StringMap) YAML
-
-```go
-func (t *StringMap) YAML() []byte
 ```
 
 #### type Token
@@ -2344,12 +2375,6 @@ func (m *Token) GetRefreshToken() *String
 func (m *Token) GetTokenType() *String
 ```
 
-#### func (*Token) JSON
-
-```go
-func (t *Token) JSON() []byte
-```
-
 #### func (*Token) ProtoMessage
 
 ```go
@@ -2386,16 +2411,16 @@ func (t *Token) ToSession(session *sessions.Session)
 func (s *Token) TypeMatches(src interface{}) bool
 ```
 
+#### func (*Token) UnmarshalJSON
+
+```go
+func (s *Token) UnmarshalJSON(r io.Reader) *Error
+```
+
 #### func (*Token) Validate
 
 ```go
 func (s *Token) Validate(fn func(s *Token) error) error
-```
-
-#### func (*Token) XML
-
-```go
-func (t *Token) XML() []byte
 ```
 
 #### func (*Token) XXX_DiscardUnknown
@@ -2426,10 +2451,4 @@ func (m *Token) XXX_Size() int
 
 ```go
 func (m *Token) XXX_Unmarshal(b []byte) error
-```
-
-#### func (*Token) YAML
-
-```go
-func (t *Token) YAML() []byte
 ```
