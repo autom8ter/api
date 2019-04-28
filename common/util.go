@@ -765,6 +765,14 @@ func (s *Float64) Debugln() {
 	s.ToString().Debugln()
 }
 
+func (s *Float64) Squared() *Float64 {
+	return s.Times(s)
+}
+
+func (s *Float64) Cubed() *Float64 {
+	return s.Times(s).Times(s)
+}
+
 func (s *Int64) Debugln() {
 	s.ToString().Debugln()
 }
@@ -818,6 +826,10 @@ func (m *Float64) Gamma() *Float64 {
 
 func (m *Float64) SqrtofCombinedSquared(f *Float64) *Float64 {
 	return ToFloat64(math.Hypot(m.Num, f.Num))
+}
+
+func (m *Float64) Zero() {
+	m.Num = 0
 }
 
 func (m *Float64) BinaryExponent() *Int64 {
@@ -914,6 +926,10 @@ func (m *Float64) Times(n *Float64) *Float64 {
 
 func (m *Float64) DividedBy(n *Float64) *Float64 {
 	return ToFloat64(m.Num / n.Num)
+}
+
+func (m *Float64) Negative() *Float64 {
+	return ToFloat64(-(m.Num))
 }
 
 func (m *Int64) Minus(n *Int64) *Int64 {
@@ -1067,4 +1083,54 @@ func ToError(err error, msg string) *Error {
 		ErrorMsg: ToString(err.Error()),
 		Info:     ToString(msg),
 	}
+}
+
+// LinearRegression runs the requested number of iterations of gradient
+// descent and returns the latest approximated coefficients.
+func (g *Graph) LinearRegression(iterations *Int64, alpha *Float64) (m *Float64, c *Float64) {
+	m.Zero()
+	c.Zero()
+	for i := 0; i < iterations.Int(); i++ {
+		cost, dm, dc := g.Gradient(m, c)
+		m = m.Plus(dm.Negative().Times(alpha))
+		c = c.Plus(dc.Negative().Times(alpha))
+		if (10 * i % iterations.Int()) == 0 {
+			fmt.Printf("cost(%.2f, %.2f) = %.2f\n", m.Num, c.Num, cost.Num)
+		}
+	}
+	return m, c
+}
+
+// Gradient computes the cost function and its gradients.
+func (g *Graph) Gradient(m, c *Float64) (cost *Float64, dm *Float64, dc *Float64) {
+	cost.Zero()
+	dm.Zero()
+	dc.Zero()
+	for i := range g.Xs {
+		d := g.YMinusX(i)
+		cost = cost.Plus(d.Squared())
+		dm = dm.Plus(g.GetY(i).Times(d).Negative())
+		dc = dc.Plus(d.Negative())
+	}
+	return cost.DividedBy(g.TotalXs()), ToFloat64(2).DividedBy(g.TotalXs()).Times(dm), ToFloat64(2).DividedBy(g.TotalXs()).Times(dc)
+}
+
+func (g *Graph) TotalXs() *Float64 {
+	return ToFloat64(float64(len(g.Xs)))
+}
+
+func (g *Graph) TotalYs() *Float64 {
+	return ToFloat64(float64(len(g.Ys)))
+}
+
+func (g *Graph) GetY(index int) *Float64 {
+	return g.Ys[index]
+}
+
+func (g *Graph) GetX(index int) *Float64 {
+	return g.Xs[index]
+}
+
+func (g *Graph) YMinusX(index int) *Float64 {
+	return g.GetY(index).Minus(g.GetX(index))
 }

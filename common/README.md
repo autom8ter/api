@@ -7,12 +7,35 @@
 
 ```go
 var (
-	Util    *objectify.Handler
 	Context context.Context
 
 	AUTH_SESSION           = "auth-session"
 	SESSION_SECRET_ENV_KEY = "SECRET"
 )
+```
+
+```go
+var GraphMedia_name = map[int32]string{
+	0: "PNG",
+}
+```
+
+```go
+var GraphMedia_value = map[string]int32{
+	"PNG": 0,
+}
+```
+
+```go
+var GraphShape_name = map[int32]string{
+	0: "CIRCLE",
+}
+```
+
+```go
+var GraphShape_value = map[string]int32{
+	"CIRCLE": 0,
+}
 ```
 
 ```go
@@ -438,6 +461,115 @@ func (m *Empty) XXX_Size() int
 func (m *Empty) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Error
+
+```go
+type Error struct {
+	ErrorMsg             *String  `protobuf:"bytes,1,opt,name=error_msg,json=errorMsg,proto3" json:"error_msg,omitempty"`
+	Info                 *String  `protobuf:"bytes,3,opt,name=info,proto3" json:"info,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func  ToError
+
+```go
+func ToError(err error, msg string) *Error
+```
+
+#### func (*Error) Descriptor
+
+```go
+func (*Error) Descriptor() ([]byte, []int)
+```
+
+#### func (*Error) Error
+
+```go
+func (e *Error) Error() string
+```
+
+#### func (*Error) GetErrorMsg
+
+```go
+func (m *Error) GetErrorMsg() *String
+```
+
+#### func (*Error) GetInfo
+
+```go
+func (m *Error) GetInfo() *String
+```
+
+#### func (*Error) JSON
+
+```go
+func (e *Error) JSON() []byte
+```
+
+#### func (*Error) ProtoMessage
+
+```go
+func (*Error) ProtoMessage()
+```
+
+#### func (*Error) Reset
+
+```go
+func (m *Error) Reset()
+```
+
+#### func (*Error) String
+
+```go
+func (m *Error) String() string
+```
+
+#### func (*Error) XML
+
+```go
+func (e *Error) XML() []byte
+```
+
+#### func (*Error) XXX_DiscardUnknown
+
+```go
+func (m *Error) XXX_DiscardUnknown()
+```
+
+#### func (*Error) XXX_Marshal
+
+```go
+func (m *Error) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Error) XXX_Merge
+
+```go
+func (m *Error) XXX_Merge(src proto.Message)
+```
+
+#### func (*Error) XXX_Size
+
+```go
+func (m *Error) XXX_Size() int
+```
+
+#### func (*Error) XXX_Unmarshal
+
+```go
+func (m *Error) XXX_Unmarshal(b []byte) error
+```
+
+#### func (*Error) YAML
+
+```go
+func (e *Error) YAML() []byte
+```
+
 #### type Float64
 
 ```go
@@ -488,6 +620,12 @@ Ceil returns the least integer value greater than or equal to x.
 func (m *Float64) CubeRoot() *Float64
 ```
 CubeRoot returns the cube root of x.
+
+#### func (*Float64) Cubed
+
+```go
+func (s *Float64) Cubed() *Float64
+```
 
 #### func (*Float64) Debugln
 
@@ -585,6 +723,12 @@ func (m *Float64) Max(f *Float64) *Float64
 func (m *Float64) Minus(n *Float64) *Float64
 ```
 
+#### func (*Float64) Negative
+
+```go
+func (m *Float64) Negative() *Float64
+```
+
 #### func (*Float64) NotANumber
 
 ```go
@@ -657,6 +801,12 @@ func (m *Float64) SqrtofCombinedSquared(f *Float64) *Float64
 func (m *Float64) SquareRoot() *Float64
 ```
 
+#### func (*Float64) Squared
+
+```go
+func (s *Float64) Squared() *Float64
+```
+
 #### func (*Float64) String
 
 ```go
@@ -721,6 +871,222 @@ func (m *Float64) XXX_Size() int
 
 ```go
 func (m *Float64) XXX_Unmarshal(b []byte) error
+```
+
+#### func (*Float64) Zero
+
+```go
+func (m *Float64) Zero()
+```
+
+#### type Graph
+
+```go
+type Graph struct {
+	Xs                   []*Float64 `protobuf:"bytes,1,rep,name=xs,proto3" json:"xs,omitempty"`
+	Ys                   []*Float64 `protobuf:"bytes,2,rep,name=ys,proto3" json:"ys,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+```
+
+
+#### func  ToGraph
+
+```go
+func ToGraph(xs []float64, ys []float64) *Graph
+```
+
+#### func (*Graph) Descriptor
+
+```go
+func (*Graph) Descriptor() ([]byte, []int)
+```
+
+#### func (*Graph) GetX
+
+```go
+func (g *Graph) GetX(index int) *Float64
+```
+
+#### func (*Graph) GetXs
+
+```go
+func (m *Graph) GetXs() []*Float64
+```
+
+#### func (*Graph) GetY
+
+```go
+func (g *Graph) GetY(index int) *Float64
+```
+
+#### func (*Graph) GetYs
+
+```go
+func (m *Graph) GetYs() []*Float64
+```
+
+#### func (*Graph) Gradient
+
+```go
+func (g *Graph) Gradient(m, c *Float64) (cost *Float64, dm *Float64, dc *Float64)
+```
+Gradient computes the cost function and its gradients.
+
+#### func (Graph) Len
+
+```go
+func (x Graph) Len() int
+```
+
+#### func (*Graph) LinearRegression
+
+```go
+func (g *Graph) LinearRegression(iterations *Int64, alpha *Float64) (m *Float64, c *Float64)
+```
+LinearRegression runs the requested number of iterations of gradient descent and
+returns the latest approximated coefficients.
+
+#### func (*Graph) ProtoMessage
+
+```go
+func (*Graph) ProtoMessage()
+```
+
+#### func (*Graph) Reset
+
+```go
+func (m *Graph) Reset()
+```
+
+#### func (*Graph) String
+
+```go
+func (m *Graph) String() string
+```
+
+#### func (*Graph) TotalXs
+
+```go
+func (g *Graph) TotalXs() *Float64
+```
+
+#### func (*Graph) TotalYs
+
+```go
+func (g *Graph) TotalYs() *Float64
+```
+
+#### func (*Graph) XXX_DiscardUnknown
+
+```go
+func (m *Graph) XXX_DiscardUnknown()
+```
+
+#### func (*Graph) XXX_Marshal
+
+```go
+func (m *Graph) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Graph) XXX_Merge
+
+```go
+func (m *Graph) XXX_Merge(src proto.Message)
+```
+
+#### func (*Graph) XXX_Size
+
+```go
+func (m *Graph) XXX_Size() int
+```
+
+#### func (*Graph) XXX_Unmarshal
+
+```go
+func (m *Graph) XXX_Unmarshal(b []byte) error
+```
+
+#### func (Graph) XY
+
+```go
+func (x Graph) XY(i int) (float64, float64)
+```
+
+#### func (*Graph) XsAndYs
+
+```go
+func (g *Graph) XsAndYs() ([]float64, []float64)
+```
+
+#### func (*Graph) YMinusX
+
+```go
+func (g *Graph) YMinusX(index int) *Float64
+```
+
+#### type GraphMedia
+
+```go
+type GraphMedia int32
+```
+
+
+```go
+const (
+	GraphMedia_PNG GraphMedia = 0
+)
+```
+
+#### func (GraphMedia) EnumDescriptor
+
+```go
+func (GraphMedia) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (GraphMedia) Normalize
+
+```go
+func (g GraphMedia) Normalize() *String
+```
+
+#### func (GraphMedia) String
+
+```go
+func (x GraphMedia) String() string
+```
+
+#### type GraphShape
+
+```go
+type GraphShape int32
+```
+
+
+```go
+const (
+	GraphShape_CIRCLE GraphShape = 0
+)
+```
+
+#### func (GraphShape) EnumDescriptor
+
+```go
+func (GraphShape) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (GraphShape) Normalize
+
+```go
+func (g GraphShape) Normalize() draw.GlyphDrawer
+```
+
+#### func (GraphShape) String
+
+```go
+func (x GraphShape) String() string
 ```
 
 #### type HTTPMethod
@@ -1063,6 +1429,230 @@ func (m *Int64) XXX_Size() int
 
 ```go
 func (m *Int64) XXX_Unmarshal(b []byte) error
+```
+
+#### type RGBA
+
+```go
+type RGBA struct {
+	R                    *Int64   `protobuf:"bytes,1,opt,name=r,proto3" json:"r,omitempty"`
+	G                    *Int64   `protobuf:"bytes,2,opt,name=g,proto3" json:"g,omitempty"`
+	B                    *Int64   `protobuf:"bytes,3,opt,name=b,proto3" json:"b,omitempty"`
+	A                    *Int64   `protobuf:"bytes,4,opt,name=a,proto3" json:"a,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*RGBA) Descriptor
+
+```go
+func (*RGBA) Descriptor() ([]byte, []int)
+```
+
+#### func (*RGBA) GetA
+
+```go
+func (m *RGBA) GetA() *Int64
+```
+
+#### func (*RGBA) GetB
+
+```go
+func (m *RGBA) GetB() *Int64
+```
+
+#### func (*RGBA) GetG
+
+```go
+func (m *RGBA) GetG() *Int64
+```
+
+#### func (*RGBA) GetR
+
+```go
+func (m *RGBA) GetR() *Int64
+```
+
+#### func (*RGBA) Normalize
+
+```go
+func (g *RGBA) Normalize() color.RGBA
+```
+
+#### func (*RGBA) ProtoMessage
+
+```go
+func (*RGBA) ProtoMessage()
+```
+
+#### func (*RGBA) Reset
+
+```go
+func (m *RGBA) Reset()
+```
+
+#### func (*RGBA) String
+
+```go
+func (m *RGBA) String() string
+```
+
+#### func (*RGBA) XXX_DiscardUnknown
+
+```go
+func (m *RGBA) XXX_DiscardUnknown()
+```
+
+#### func (*RGBA) XXX_Marshal
+
+```go
+func (m *RGBA) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*RGBA) XXX_Merge
+
+```go
+func (m *RGBA) XXX_Merge(src proto.Message)
+```
+
+#### func (*RGBA) XXX_Size
+
+```go
+func (m *RGBA) XXX_Size() int
+```
+
+#### func (*RGBA) XXX_Unmarshal
+
+```go
+func (m *RGBA) XXX_Unmarshal(b []byte) error
+```
+
+#### type ScatterPlot
+
+```go
+type ScatterPlot struct {
+	Graph                *Graph     `protobuf:"bytes,1,opt,name=graph,proto3" json:"graph,omitempty"`
+	Shape                GraphShape `protobuf:"varint,2,opt,name=shape,proto3,enum=common.GraphShape" json:"shape,omitempty"`
+	Media                GraphMedia `protobuf:"varint,3,opt,name=media,proto3,enum=common.GraphMedia" json:"media,omitempty"`
+	Color                *RGBA      `protobuf:"bytes,4,opt,name=color,proto3" json:"color,omitempty"`
+	Width                *Int64     `protobuf:"bytes,5,opt,name=Width,proto3" json:"Width,omitempty"`
+	Hieght               *Int64     `protobuf:"bytes,6,opt,name=Hieght,proto3" json:"Hieght,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+```
+
+
+#### func (*ScatterPlot) Descriptor
+
+```go
+func (*ScatterPlot) Descriptor() ([]byte, []int)
+```
+
+#### func (*ScatterPlot) GetColor
+
+```go
+func (m *ScatterPlot) GetColor() *RGBA
+```
+
+#### func (*ScatterPlot) GetGraph
+
+```go
+func (m *ScatterPlot) GetGraph() *Graph
+```
+
+#### func (*ScatterPlot) GetHieght
+
+```go
+func (m *ScatterPlot) GetHieght() *Int64
+```
+
+#### func (*ScatterPlot) GetMedia
+
+```go
+func (m *ScatterPlot) GetMedia() GraphMedia
+```
+
+#### func (*ScatterPlot) GetShape
+
+```go
+func (m *ScatterPlot) GetShape() GraphShape
+```
+
+#### func (*ScatterPlot) GetWidth
+
+```go
+func (m *ScatterPlot) GetWidth() *Int64
+```
+
+#### func (*ScatterPlot) Plot
+
+```go
+func (g *ScatterPlot) Plot() (*plot.Plot, error)
+```
+
+#### func (*ScatterPlot) ProtoMessage
+
+```go
+func (*ScatterPlot) ProtoMessage()
+```
+
+#### func (*ScatterPlot) Reset
+
+```go
+func (m *ScatterPlot) Reset()
+```
+
+#### func (*ScatterPlot) ScatterPlot
+
+```go
+func (s *ScatterPlot) ScatterPlot() (*plotter.Scatter, error)
+```
+
+#### func (*ScatterPlot) String
+
+```go
+func (m *ScatterPlot) String() string
+```
+
+#### func (*ScatterPlot) WritePlot
+
+```go
+func (s *ScatterPlot) WritePlot(w io.Writer) error
+```
+
+#### func (*ScatterPlot) XXX_DiscardUnknown
+
+```go
+func (m *ScatterPlot) XXX_DiscardUnknown()
+```
+
+#### func (*ScatterPlot) XXX_Marshal
+
+```go
+func (m *ScatterPlot) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*ScatterPlot) XXX_Merge
+
+```go
+func (m *ScatterPlot) XXX_Merge(src proto.Message)
+```
+
+#### func (*ScatterPlot) XXX_Size
+
+```go
+func (m *ScatterPlot) XXX_Size() int
+```
+
+#### func (*ScatterPlot) XXX_Unmarshal
+
+```go
+func (m *ScatterPlot) XXX_Unmarshal(b []byte) error
 ```
 
 #### type String
