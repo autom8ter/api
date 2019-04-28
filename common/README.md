@@ -450,6 +450,12 @@ type Float64 struct {
 ```
 
 
+#### func  FloatFromThePowerOf10
+
+```go
+func FloatFromThePowerOf10(i *Int64) *Float64
+```
+
 #### func  ToFloat64
 
 ```go
@@ -462,6 +468,12 @@ func ToFloat64(i float64) *Float64
 func (m *Float64) Abs() *Float64
 ```
 Abs returns the absolute value of Float64.
+
+#### func (*Float64) BinaryExponent
+
+```go
+func (m *Float64) BinaryExponent() *Int64
+```
 
 #### func (*Float64) Ceiling
 
@@ -495,16 +507,88 @@ func (*Float64) Descriptor() ([]byte, []int)
 func (m *Float64) DividedBy(n *Float64) *Float64
 ```
 
+#### func (*Float64) Exp
+
+```go
+func (m *Float64) Exp() *Float64
+```
+
+#### func (*Float64) Exp2
+
+```go
+func (m *Float64) Exp2() *Float64
+```
+
+#### func (*Float64) Expm1
+
+```go
+func (m *Float64) Expm1() *Float64
+```
+
+#### func (*Float64) Gamma
+
+```go
+func (m *Float64) Gamma() *Float64
+```
+
 #### func (*Float64) GetNum
 
 ```go
 func (m *Float64) GetNum() float64
 ```
 
+#### func (*Float64) Humanized
+
+```go
+func (m *Float64) Humanized() *String
+```
+
+#### func (*Float64) Log
+
+```go
+func (m *Float64) Log() *Float64
+```
+
+#### func (*Float64) Log10
+
+```go
+func (m *Float64) Log10() *Float64
+```
+
+#### func (*Float64) Log1p
+
+```go
+func (m *Float64) Log1p() *Float64
+```
+
+#### func (*Float64) Log2
+
+```go
+func (m *Float64) Log2() *Float64
+```
+
+#### func (*Float64) Logb
+
+```go
+func (m *Float64) Logb() *Float64
+```
+
+#### func (*Float64) Max
+
+```go
+func (m *Float64) Max(f *Float64) *Float64
+```
+
 #### func (*Float64) Minus
 
 ```go
 func (m *Float64) Minus(n *Float64) *Float64
+```
+
+#### func (*Float64) NotANumber
+
+```go
+func (m *Float64) NotANumber() *Bool
 ```
 
 #### func (*Float64) Plus
@@ -525,16 +609,70 @@ func (s *Float64) Pointer() *float64
 func (*Float64) ProtoMessage()
 ```
 
+#### func (*Float64) Remainder
+
+```go
+func (m *Float64) Remainder(f *Float64) *Float64
+```
+
 #### func (*Float64) Reset
 
 ```go
 func (m *Float64) Reset()
 ```
 
+#### func (*Float64) Round
+
+```go
+func (m *Float64) Round() *Float64
+```
+
+#### func (*Float64) RoundToEven
+
+```go
+func (m *Float64) RoundToEven() *Float64
+```
+
+#### func (*Float64) Sin
+
+```go
+func (m *Float64) Sin() *Float64
+```
+
+#### func (*Float64) SinCos
+
+```go
+func (m *Float64) SinCos() (*Float64, *Float64)
+```
+
+#### func (*Float64) SqrtofCombinedSquared
+
+```go
+func (m *Float64) SqrtofCombinedSquared(f *Float64) *Float64
+```
+
+#### func (*Float64) SquareRoot
+
+```go
+func (m *Float64) SquareRoot() *Float64
+```
+
 #### func (*Float64) String
 
 ```go
 func (m *Float64) String() string
+```
+
+#### func (*Float64) StringWithUnit
+
+```go
+func (s *Float64) StringWithUnit(unit *String) *String
+```
+
+#### func (*Float64) Tan
+
+```go
+func (m *Float64) Tan() *Float64
 ```
 
 #### func (*Float64) Times
@@ -547,6 +685,12 @@ func (m *Float64) Times(n *Float64) *Float64
 
 ```go
 func (s *Float64) ToString() *String
+```
+
+#### func (*Float64) ToThePowerOf
+
+```go
+func (m *Float64) ToThePowerOf(f *Float64) *Float64
 ```
 
 #### func (*Float64) XXX_DiscardUnknown
@@ -823,6 +967,18 @@ func (m *Int64) DividedBy(n *Int64) *Int64
 
 ```go
 func (m *Int64) GetNum() int64
+```
+
+#### func (*Int64) Humanized
+
+```go
+func (m *Int64) Humanized() *String
+```
+
+#### func (*Int64) Int
+
+```go
+func (i *Int64) Int() int
 ```
 
 #### func (*Int64) Minus
@@ -1117,6 +1273,12 @@ func (s *String) ParseLanguage() (language.Tag, error)
 
 ```go
 func (s *String) ParseRegion() (language.Region, error)
+```
+
+#### func (*String) ParseScientificUnits
+
+```go
+func (s *String) ParseScientificUnits() (*Float64, *String, error)
 ```
 
 #### func (*String) ParseURL

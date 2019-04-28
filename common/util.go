@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"github.com/Masterminds/sprig"
 	"github.com/autom8ter/objectify"
+	human "github.com/dustin/go-humanize"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/sessions"
 	"github.com/pkg/errors"
@@ -794,6 +795,106 @@ func (m *Float64) Ceiling() *Float64 {
 	return ToFloat64(math.Ceil(m.Num))
 }
 
+func (m *Float64) Exp() *Float64 {
+	return ToFloat64(math.Exp(m.Num))
+}
+
+func (m *Float64) Exp2() *Float64 {
+	return ToFloat64(math.Exp2(m.Num))
+}
+
+func (m *Float64) Expm1() *Float64 {
+	return ToFloat64(math.Expm1(m.Num))
+}
+
+func (m *Float64) Gamma() *Float64 {
+	return ToFloat64(math.Gamma(m.Num))
+}
+
+func (m *Float64) SqrtofCombinedSquared(f *Float64) *Float64 {
+	return ToFloat64(math.Hypot(m.Num, f.Num))
+}
+
+func (m *Float64) BinaryExponent() *Int64 {
+	return ToInt64(math.Ilogb(m.Num))
+}
+
+func (m *Float64) NotANumber() *Bool {
+	return ToBool(math.IsNaN(m.Num))
+}
+
+func (m *Float64) Log() *Float64 {
+	return ToFloat64(math.Log(m.Num))
+}
+
+func (m *Float64) Log10() *Float64 {
+	return ToFloat64(math.Log10(m.Num))
+}
+
+func (m *Float64) Log1p() *Float64 {
+	return ToFloat64(math.Log1p(m.Num))
+}
+
+func (m *Float64) Log2() *Float64 {
+	return ToFloat64(math.Log2(m.Num))
+}
+
+func (m *Float64) Logb() *Float64 {
+	return ToFloat64(math.Logb(m.Num))
+}
+
+func (m *Float64) Max(f *Float64) *Float64 {
+	return ToFloat64(math.Max(m.Num, f.Num))
+}
+
+func (m *Float64) Remainder(f *Float64) *Float64 {
+	return ToFloat64(math.Mod(m.Num, f.Num))
+}
+
+func (m *Float64) Round() *Float64 {
+	return ToFloat64(math.Round(m.Num))
+}
+
+func (m *Float64) RoundToEven() *Float64 {
+	return ToFloat64(math.RoundToEven(m.Num))
+}
+
+func (m *Float64) Sin() *Float64 {
+	return ToFloat64(math.Sin(m.Num))
+}
+
+func (m *Float64) SinCos() (*Float64, *Float64) {
+	x, y := math.Sincos(m.Num)
+	return ToFloat64(x), ToFloat64(y)
+}
+
+func (m *Float64) SquareRoot() *Float64 {
+	return ToFloat64(math.Sqrt(m.Num))
+}
+
+func (m *Float64) Tan() *Float64 {
+	return ToFloat64(math.Tan(m.Num))
+}
+
+func (m *Float64) Humanized() *String {
+	return ToString(human.Commaf(m.Num))
+}
+
+func (m *Int64) Humanized() *String {
+	return ToString(human.Comma(m.Num))
+}
+
+func (m *Float64) ToThePowerOf(f *Float64) *Float64 {
+	return ToFloat64(math.Pow(m.Num, f.Num))
+}
+func (i *Int64) Int() int {
+	return int(i.Num)
+}
+
+func FloatFromThePowerOf10(i *Int64) *Float64 {
+	return ToFloat64(math.Pow10(i.Int()))
+}
+
 func (m *Float64) Minus(n *Float64) *Float64 {
 	return ToFloat64(m.Num - n.Num)
 }
@@ -828,4 +929,16 @@ func (m *Int64) DividedBy(n *Int64) *Int64 {
 
 func (m *Int64) Remainder(n *Int64) *Int64 {
 	return ToInt64(int(m.Num % n.Num))
+}
+
+func (s *Float64) StringWithUnit(unit *String) *String {
+	return ToString(human.SI(s.Num, unit.Text))
+}
+
+func (s *String) ParseScientificUnits() (*Float64, *String, error) {
+	i, t, err := human.ParseSI(s.Text)
+	if err != nil {
+		return nil, nil, err
+	}
+	return ToFloat64(i), ToString(t), nil
 }
