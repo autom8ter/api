@@ -28,54 +28,11 @@
 CF_EXTERN_C_BEGIN
 
 @class Bytes;
-@class Float64;
-@class Graph;
 @class Int64;
-@class RGBA;
 @class String;
 @class StringMap;
 
 NS_ASSUME_NONNULL_BEGIN
-
-#pragma mark - Enum GraphShape
-
-typedef GPB_ENUM(GraphShape) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  GraphShape_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  GraphShape_Circle = 0,
-};
-
-GPBEnumDescriptor *GraphShape_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL GraphShape_IsValidValue(int32_t value);
-
-#pragma mark - Enum GraphMedia
-
-typedef GPB_ENUM(GraphMedia) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  GraphMedia_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  GraphMedia_Png = 0,
-};
-
-GPBEnumDescriptor *GraphMedia_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL GraphMedia_IsValidValue(int32_t value);
 
 #pragma mark - Enum HTTPMethod
 
@@ -221,84 +178,6 @@ typedef GPB_ENUM(Float64_FieldNumber) {
 @property(nonatomic, readwrite) double num;
 
 @end
-
-#pragma mark - Graph
-
-typedef GPB_ENUM(Graph_FieldNumber) {
-  Graph_FieldNumber_XsArray = 1,
-  Graph_FieldNumber_YsArray = 2,
-};
-
-@interface Graph : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Float64*> *xsArray;
-/** The number of items in @c xsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger xsArray_Count;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Float64*> *ysArray;
-/** The number of items in @c ysArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger ysArray_Count;
-
-@end
-
-#pragma mark - ScatterPlot
-
-typedef GPB_ENUM(ScatterPlot_FieldNumber) {
-  ScatterPlot_FieldNumber_Graph = 1,
-  ScatterPlot_FieldNumber_Shape = 2,
-  ScatterPlot_FieldNumber_Media = 3,
-  ScatterPlot_FieldNumber_Color = 4,
-  ScatterPlot_FieldNumber_Width = 5,
-  ScatterPlot_FieldNumber_Hieght = 6,
-};
-
-@interface ScatterPlot : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Graph *graph;
-/** Test to see if @c graph has been set. */
-@property(nonatomic, readwrite) BOOL hasGraph;
-
-@property(nonatomic, readwrite) GraphShape shape;
-
-@property(nonatomic, readwrite) GraphMedia media;
-
-@property(nonatomic, readwrite, strong, null_resettable) RGBA *color;
-/** Test to see if @c color has been set. */
-@property(nonatomic, readwrite) BOOL hasColor;
-
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *width;
-/** Test to see if @c width has been set. */
-@property(nonatomic, readwrite) BOOL hasWidth;
-
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *hieght;
-/** Test to see if @c hieght has been set. */
-@property(nonatomic, readwrite) BOOL hasHieght;
-
-@end
-
-/**
- * Fetches the raw value of a @c ScatterPlot's @c shape property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t ScatterPlot_Shape_RawValue(ScatterPlot *message);
-/**
- * Sets the raw value of an @c ScatterPlot's @c shape property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetScatterPlot_Shape_RawValue(ScatterPlot *message, int32_t value);
-
-/**
- * Fetches the raw value of a @c ScatterPlot's @c media property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t ScatterPlot_Media_RawValue(ScatterPlot *message);
-/**
- * Sets the raw value of an @c ScatterPlot's @c media property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetScatterPlot_Media_RawValue(ScatterPlot *message, int32_t value);
 
 #pragma mark - RGBA
 

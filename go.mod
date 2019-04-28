@@ -7,6 +7,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/dustin/go-humanize v1.0.0
 	github.com/golang/protobuf v1.3.1
+	github.com/google/go-cmp v0.2.0
 	github.com/gopherjs/vecty v0.0.0-20190121081546-d00da0c86b42 // indirect
 	github.com/gorilla/mux v1.7.1 // indirect
 	github.com/gorilla/sessions v1.1.3

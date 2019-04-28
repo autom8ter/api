@@ -17,12 +17,7 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	"golang.org/x/text/language"
-	"gonum.org/v1/plot"
-	"gonum.org/v1/plot/plotter"
-	"gonum.org/v1/plot/vg"
-	"gonum.org/v1/plot/vg/draw"
 	"html/template"
-	"image/color"
 	"io"
 	"io/ioutil"
 	"math"
@@ -964,104 +959,6 @@ func (s *String) ParseScientificUnits() (*Float64, *String, error) {
 	return ToFloat64(i), ToString(t), nil
 }
 
-func ToGraph(xs []float64, ys []float64) *Graph {
-	newxs := []*Float64{}
-	newys := []*Float64{}
-	for _, v := range xs {
-		newxs = append(newxs, ToFloat64(v))
-	}
-	for _, v := range ys {
-		newys = append(newys, ToFloat64(v))
-	}
-	return &Graph{
-		Xs: newxs,
-		Ys: newys,
-	}
-}
-
-func (s *ScatterPlot) ScatterPlot() (*plotter.Scatter, error) {
-	scat, err := plotter.NewScatter(s.Graph)
-	if err != nil {
-		return nil, ToError(err, "creating scatterplot")
-	}
-	scat.GlyphStyle.Shape = draw.CrossGlyph{}
-	scat.Color = s.Color.Normalize()
-	return scat, nil
-}
-
-func (g *Graph) XsAndYs() ([]float64, []float64) {
-	newxs := []float64{}
-	newys := []float64{}
-	for _, v := range g.Xs {
-		newxs = append(newxs, v.Num)
-	}
-	for _, v := range g.Ys {
-		newys = append(newys, v.Num)
-	}
-	return newxs, newys
-}
-
-func (x Graph) Len() int                    { return len(x.Xs) }
-func (x Graph) XY(i int) (float64, float64) { return x.Xs[i].Num, x.Ys[i].Num }
-
-func (g *ScatterPlot) Plot() (*plot.Plot, error) {
-	p, err := plot.New()
-	if err != nil {
-		return nil, ToError(err, "creating plot plot")
-	}
-	s, err := g.ScatterPlot()
-	if err != nil {
-		return nil, err
-	}
-
-	p.Add(s)
-	line, err := plotter.NewLine(g.Graph)
-	if err != nil {
-		return nil, fmt.Errorf("could not create line: %v", err)
-	}
-	p.Add(line)
-	return p, nil
-}
-
-func (g GraphMedia) Normalize() *String {
-	switch g {
-	default:
-		return ToString("png")
-	}
-}
-
-func (g GraphShape) Normalize() draw.GlyphDrawer {
-	switch g {
-	default:
-		return draw.CrossGlyph{}
-	}
-}
-func (g *RGBA) Normalize() color.RGBA {
-	return color.RGBA{
-		R: uint8(g.R.Num),
-		G: uint8(g.G.Num),
-		B: uint8(g.B.Num),
-		A: uint8(g.A.Num),
-	}
-}
-
-func (s *ScatterPlot) WritePlot(w io.Writer) error {
-	p, err := s.Plot()
-	if err != nil {
-		return err
-	}
-	wt, err := p.WriterTo(vg.Length(s.Width.Num), vg.Length(s.Hieght.Num), s.Media.Normalize().Text)
-	if err != nil {
-		return ToError(err, "failed to create writer for plot")
-	}
-
-	_, err = wt.WriteTo(w)
-	if err != nil {
-		return ToError(err, "could not write plot to writer")
-	}
-	return nil
-}
-
 func (e *Error) JSON() []byte {
 	return util.MarshalJSON(e)
 }
@@ -1085,52 +982,58 @@ func ToError(err error, msg string) *Error {
 	}
 }
 
-// LinearRegression runs the requested number of iterations of gradient
-// descent and returns the latest approximated coefficients.
-func (g *Graph) LinearRegression(iterations *Int64, alpha *Float64) (m *Float64, c *Float64) {
-	m.Zero()
-	c.Zero()
-	for i := 0; i < iterations.Int(); i++ {
-		cost, dm, dc := g.Gradient(m, c)
-		m = m.Plus(dm.Negative().Times(alpha))
-		c = c.Plus(dc.Negative().Times(alpha))
-		if (10 * i % iterations.Int()) == 0 {
-			fmt.Printf("cost(%.2f, %.2f) = %.2f\n", m.Num, c.Num, cost.Num)
-		}
+func ToFloats(floats ...float64) []*Float64 {
+	d := []*Float64{}
+	for _, f := range floats {
+		d = append(d, ToFloat64(f))
 	}
-	return m, c
+	return d
 }
 
-// Gradient computes the cost function and its gradients.
-func (g *Graph) Gradient(m, c *Float64) (cost *Float64, dm *Float64, dc *Float64) {
-	cost.Zero()
-	dm.Zero()
-	dc.Zero()
-	for i := range g.Xs {
-		d := g.YMinusX(i)
-		cost = cost.Plus(d.Squared())
-		dm = dm.Plus(g.GetY(i).Times(d).Negative())
-		dc = dc.Plus(d.Negative())
-	}
-	return cost.DividedBy(g.TotalXs()), ToFloat64(2).DividedBy(g.TotalXs()).Times(dm), ToFloat64(2).DividedBy(g.TotalXs()).Times(dc)
+func (s *String) Indent(spaces *Int64) string {
+	pad := strings.Repeat(" ", spaces.Int())
+	return pad + strings.Replace(s.Text, "\n", "\n"+pad, -1)
 }
 
-func (g *Graph) TotalXs() *Float64 {
-	return ToFloat64(float64(len(g.Xs)))
+func (s *String) TrimWhiteSpace() {
+	s.Text = strings.TrimSpace(s.Text)
 }
 
-func (g *Graph) TotalYs() *Float64 {
-	return ToFloat64(float64(len(g.Ys)))
+func (s *String) Split(sep *String) *StringArray {
+	return ToStringArray(strings.Split(s.Text, sep.Text))
 }
 
-func (g *Graph) GetY(index int) *Float64 {
-	return g.Ys[index]
+func (s *String) Validate(fn func(s *String) error) error {
+	return fn(s)
 }
 
-func (g *Graph) GetX(index int) *Float64 {
-	return g.Xs[index]
+func (s *Bytes) Validate(fn func(s *Bytes) error) error {
+	return fn(s)
 }
 
-func (g *Graph) YMinusX(index int) *Float64 {
-	return g.GetY(index).Minus(g.GetX(index))
+func (s *StringMap) Validate(fn func(s *StringMap) error) error {
+	return fn(s)
+}
+func (s *StringArray) Validate(fn func(s *StringArray) error) error {
+	return fn(s)
+}
+
+func (s *Bool) Validate(fn func(s *Bool) error) error {
+	return fn(s)
+}
+
+func (s *HTTPRequest) Validate(fn func(s *HTTPRequest) error) error {
+	return fn(s)
+}
+
+func (s *Token) Validate(fn func(s *Token) error) error {
+	return fn(s)
+}
+
+func (s *Float64) Validate(fn func(s *Float64) error) error {
+	return fn(s)
+}
+
+func (s *Int64) Validate(fn func(s *Int64) error) error {
+	return fn(s)
 }

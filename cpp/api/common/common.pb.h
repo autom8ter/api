@@ -42,7 +42,7 @@ namespace protobuf_common_2fcommon_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[16];
+  static const ::google::protobuf::internal::ParseTable schema[14];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -65,9 +65,6 @@ extern ErrorDefaultTypeInternal _Error_default_instance_;
 class Float64;
 class Float64DefaultTypeInternal;
 extern Float64DefaultTypeInternal _Float64_default_instance_;
-class Graph;
-class GraphDefaultTypeInternal;
-extern GraphDefaultTypeInternal _Graph_default_instance_;
 class HTTPRequest;
 class HTTPRequestDefaultTypeInternal;
 extern HTTPRequestDefaultTypeInternal _HTTPRequest_default_instance_;
@@ -80,9 +77,6 @@ extern Int64DefaultTypeInternal _Int64_default_instance_;
 class RGBA;
 class RGBADefaultTypeInternal;
 extern RGBADefaultTypeInternal _RGBA_default_instance_;
-class ScatterPlot;
-class ScatterPlotDefaultTypeInternal;
-extern ScatterPlotDefaultTypeInternal _ScatterPlot_default_instance_;
 class String;
 class StringDefaultTypeInternal;
 extern StringDefaultTypeInternal _String_default_instance_;
@@ -106,12 +100,10 @@ template<> ::common::Bytes* Arena::CreateMaybeMessage<::common::Bytes>(Arena*);
 template<> ::common::Empty* Arena::CreateMaybeMessage<::common::Empty>(Arena*);
 template<> ::common::Error* Arena::CreateMaybeMessage<::common::Error>(Arena*);
 template<> ::common::Float64* Arena::CreateMaybeMessage<::common::Float64>(Arena*);
-template<> ::common::Graph* Arena::CreateMaybeMessage<::common::Graph>(Arena*);
 template<> ::common::HTTPRequest* Arena::CreateMaybeMessage<::common::HTTPRequest>(Arena*);
 template<> ::common::Identifier* Arena::CreateMaybeMessage<::common::Identifier>(Arena*);
 template<> ::common::Int64* Arena::CreateMaybeMessage<::common::Int64>(Arena*);
 template<> ::common::RGBA* Arena::CreateMaybeMessage<::common::RGBA>(Arena*);
-template<> ::common::ScatterPlot* Arena::CreateMaybeMessage<::common::ScatterPlot>(Arena*);
 template<> ::common::String* Arena::CreateMaybeMessage<::common::String>(Arena*);
 template<> ::common::StringArray* Arena::CreateMaybeMessage<::common::StringArray>(Arena*);
 template<> ::common::StringMap* Arena::CreateMaybeMessage<::common::StringMap>(Arena*);
@@ -121,46 +113,6 @@ template<> ::common::Token* Arena::CreateMaybeMessage<::common::Token>(Arena*);
 }  // namespace google
 namespace common {
 
-enum GraphShape {
-  CIRCLE = 0,
-  GraphShape_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  GraphShape_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
-};
-bool GraphShape_IsValid(int value);
-const GraphShape GraphShape_MIN = CIRCLE;
-const GraphShape GraphShape_MAX = CIRCLE;
-const int GraphShape_ARRAYSIZE = GraphShape_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* GraphShape_descriptor();
-inline const ::std::string& GraphShape_Name(GraphShape value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    GraphShape_descriptor(), value);
-}
-inline bool GraphShape_Parse(
-    const ::std::string& name, GraphShape* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<GraphShape>(
-    GraphShape_descriptor(), name, value);
-}
-enum GraphMedia {
-  PNG = 0,
-  GraphMedia_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  GraphMedia_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
-};
-bool GraphMedia_IsValid(int value);
-const GraphMedia GraphMedia_MIN = PNG;
-const GraphMedia GraphMedia_MAX = PNG;
-const int GraphMedia_ARRAYSIZE = GraphMedia_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* GraphMedia_descriptor();
-inline const ::std::string& GraphMedia_Name(GraphMedia value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    GraphMedia_descriptor(), value);
-}
-inline bool GraphMedia_Parse(
-    const ::std::string& name, GraphMedia* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<GraphMedia>(
-    GraphMedia_descriptor(), name, value);
-}
 enum HTTPMethod {
   GET = 0,
   POST = 1,
@@ -1163,290 +1115,6 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 };
 // -------------------------------------------------------------------
 
-class Graph : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Graph) */ {
- public:
-  Graph();
-  virtual ~Graph();
-
-  Graph(const Graph& from);
-
-  inline Graph& operator=(const Graph& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Graph(Graph&& from) noexcept
-    : Graph() {
-    *this = ::std::move(from);
-  }
-
-  inline Graph& operator=(Graph&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Graph& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Graph* internal_default_instance() {
-    return reinterpret_cast<const Graph*>(
-               &_Graph_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  void Swap(Graph* other);
-  friend void swap(Graph& a, Graph& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Graph* New() const final {
-    return CreateMaybeMessage<Graph>(NULL);
-  }
-
-  Graph* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Graph>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Graph& from);
-  void MergeFrom(const Graph& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Graph* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // repeated .common.Float64 xs = 1;
-  int xs_size() const;
-  void clear_xs();
-  static const int kXsFieldNumber = 1;
-  ::common::Float64* mutable_xs(int index);
-  ::google::protobuf::RepeatedPtrField< ::common::Float64 >*
-      mutable_xs();
-  const ::common::Float64& xs(int index) const;
-  ::common::Float64* add_xs();
-  const ::google::protobuf::RepeatedPtrField< ::common::Float64 >&
-      xs() const;
-
-  // repeated .common.Float64 ys = 2;
-  int ys_size() const;
-  void clear_ys();
-  static const int kYsFieldNumber = 2;
-  ::common::Float64* mutable_ys(int index);
-  ::google::protobuf::RepeatedPtrField< ::common::Float64 >*
-      mutable_ys();
-  const ::common::Float64& ys(int index) const;
-  ::common::Float64* add_ys();
-  const ::google::protobuf::RepeatedPtrField< ::common::Float64 >&
-      ys() const;
-
-  // @@protoc_insertion_point(class_scope:common.Graph)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::common::Float64 > xs_;
-  ::google::protobuf::RepeatedPtrField< ::common::Float64 > ys_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class ScatterPlot : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.ScatterPlot) */ {
- public:
-  ScatterPlot();
-  virtual ~ScatterPlot();
-
-  ScatterPlot(const ScatterPlot& from);
-
-  inline ScatterPlot& operator=(const ScatterPlot& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  ScatterPlot(ScatterPlot&& from) noexcept
-    : ScatterPlot() {
-    *this = ::std::move(from);
-  }
-
-  inline ScatterPlot& operator=(ScatterPlot&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const ScatterPlot& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ScatterPlot* internal_default_instance() {
-    return reinterpret_cast<const ScatterPlot*>(
-               &_ScatterPlot_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    11;
-
-  void Swap(ScatterPlot* other);
-  friend void swap(ScatterPlot& a, ScatterPlot& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ScatterPlot* New() const final {
-    return CreateMaybeMessage<ScatterPlot>(NULL);
-  }
-
-  ScatterPlot* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ScatterPlot>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ScatterPlot& from);
-  void MergeFrom(const ScatterPlot& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ScatterPlot* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.Graph graph = 1;
-  bool has_graph() const;
-  void clear_graph();
-  static const int kGraphFieldNumber = 1;
-  private:
-  const ::common::Graph& _internal_graph() const;
-  public:
-  const ::common::Graph& graph() const;
-  ::common::Graph* release_graph();
-  ::common::Graph* mutable_graph();
-  void set_allocated_graph(::common::Graph* graph);
-
-  // .common.RGBA color = 4;
-  bool has_color() const;
-  void clear_color();
-  static const int kColorFieldNumber = 4;
-  private:
-  const ::common::RGBA& _internal_color() const;
-  public:
-  const ::common::RGBA& color() const;
-  ::common::RGBA* release_color();
-  ::common::RGBA* mutable_color();
-  void set_allocated_color(::common::RGBA* color);
-
-  // .common.Int64 Width = 5;
-  bool has_width() const;
-  void clear_width();
-  static const int kWidthFieldNumber = 5;
-  private:
-  const ::common::Int64& _internal_width() const;
-  public:
-  const ::common::Int64& width() const;
-  ::common::Int64* release_width();
-  ::common::Int64* mutable_width();
-  void set_allocated_width(::common::Int64* width);
-
-  // .common.Int64 Hieght = 6;
-  bool has_hieght() const;
-  void clear_hieght();
-  static const int kHieghtFieldNumber = 6;
-  private:
-  const ::common::Int64& _internal_hieght() const;
-  public:
-  const ::common::Int64& hieght() const;
-  ::common::Int64* release_hieght();
-  ::common::Int64* mutable_hieght();
-  void set_allocated_hieght(::common::Int64* hieght);
-
-  // .common.GraphShape shape = 2;
-  void clear_shape();
-  static const int kShapeFieldNumber = 2;
-  ::common::GraphShape shape() const;
-  void set_shape(::common::GraphShape value);
-
-  // .common.GraphMedia media = 3;
-  void clear_media();
-  static const int kMediaFieldNumber = 3;
-  ::common::GraphMedia media() const;
-  void set_media(::common::GraphMedia value);
-
-  // @@protoc_insertion_point(class_scope:common.ScatterPlot)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::Graph* graph_;
-  ::common::RGBA* color_;
-  ::common::Int64* width_;
-  ::common::Int64* hieght_;
-  int shape_;
-  int media_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class RGBA : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.RGBA) */ {
  public:
   RGBA();
@@ -1482,7 +1150,7 @@ class RGBA : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_RGBA_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    10;
 
   void Swap(RGBA* other);
   friend void swap(RGBA& a, RGBA& b) {
@@ -1630,7 +1298,7 @@ class Error : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Error_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    11;
 
   void Swap(Error* other);
   friend void swap(Error& a, Error& b) {
@@ -1752,7 +1420,7 @@ class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_HTTPRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    12;
 
   void Swap(HTTPRequest* other);
   friend void swap(HTTPRequest& a, HTTPRequest& b) {
@@ -1894,7 +1562,7 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Token_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    13;
 
   void Swap(Token* other);
   friend void swap(Token& a, Token& b) {
@@ -2311,318 +1979,6 @@ inline void Float64::set_num(double value) {
   
   num_ = value;
   // @@protoc_insertion_point(field_set:common.Float64.num)
-}
-
-// -------------------------------------------------------------------
-
-// Graph
-
-// repeated .common.Float64 xs = 1;
-inline int Graph::xs_size() const {
-  return xs_.size();
-}
-inline void Graph::clear_xs() {
-  xs_.Clear();
-}
-inline ::common::Float64* Graph::mutable_xs(int index) {
-  // @@protoc_insertion_point(field_mutable:common.Graph.xs)
-  return xs_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::common::Float64 >*
-Graph::mutable_xs() {
-  // @@protoc_insertion_point(field_mutable_list:common.Graph.xs)
-  return &xs_;
-}
-inline const ::common::Float64& Graph::xs(int index) const {
-  // @@protoc_insertion_point(field_get:common.Graph.xs)
-  return xs_.Get(index);
-}
-inline ::common::Float64* Graph::add_xs() {
-  // @@protoc_insertion_point(field_add:common.Graph.xs)
-  return xs_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::common::Float64 >&
-Graph::xs() const {
-  // @@protoc_insertion_point(field_list:common.Graph.xs)
-  return xs_;
-}
-
-// repeated .common.Float64 ys = 2;
-inline int Graph::ys_size() const {
-  return ys_.size();
-}
-inline void Graph::clear_ys() {
-  ys_.Clear();
-}
-inline ::common::Float64* Graph::mutable_ys(int index) {
-  // @@protoc_insertion_point(field_mutable:common.Graph.ys)
-  return ys_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::common::Float64 >*
-Graph::mutable_ys() {
-  // @@protoc_insertion_point(field_mutable_list:common.Graph.ys)
-  return &ys_;
-}
-inline const ::common::Float64& Graph::ys(int index) const {
-  // @@protoc_insertion_point(field_get:common.Graph.ys)
-  return ys_.Get(index);
-}
-inline ::common::Float64* Graph::add_ys() {
-  // @@protoc_insertion_point(field_add:common.Graph.ys)
-  return ys_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::common::Float64 >&
-Graph::ys() const {
-  // @@protoc_insertion_point(field_list:common.Graph.ys)
-  return ys_;
-}
-
-// -------------------------------------------------------------------
-
-// ScatterPlot
-
-// .common.Graph graph = 1;
-inline bool ScatterPlot::has_graph() const {
-  return this != internal_default_instance() && graph_ != NULL;
-}
-inline void ScatterPlot::clear_graph() {
-  if (GetArenaNoVirtual() == NULL && graph_ != NULL) {
-    delete graph_;
-  }
-  graph_ = NULL;
-}
-inline const ::common::Graph& ScatterPlot::_internal_graph() const {
-  return *graph_;
-}
-inline const ::common::Graph& ScatterPlot::graph() const {
-  const ::common::Graph* p = graph_;
-  // @@protoc_insertion_point(field_get:common.ScatterPlot.graph)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Graph*>(
-      &::common::_Graph_default_instance_);
-}
-inline ::common::Graph* ScatterPlot::release_graph() {
-  // @@protoc_insertion_point(field_release:common.ScatterPlot.graph)
-  
-  ::common::Graph* temp = graph_;
-  graph_ = NULL;
-  return temp;
-}
-inline ::common::Graph* ScatterPlot::mutable_graph() {
-  
-  if (graph_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Graph>(GetArenaNoVirtual());
-    graph_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.ScatterPlot.graph)
-  return graph_;
-}
-inline void ScatterPlot::set_allocated_graph(::common::Graph* graph) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete graph_;
-  }
-  if (graph) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      graph = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, graph, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  graph_ = graph;
-  // @@protoc_insertion_point(field_set_allocated:common.ScatterPlot.graph)
-}
-
-// .common.GraphShape shape = 2;
-inline void ScatterPlot::clear_shape() {
-  shape_ = 0;
-}
-inline ::common::GraphShape ScatterPlot::shape() const {
-  // @@protoc_insertion_point(field_get:common.ScatterPlot.shape)
-  return static_cast< ::common::GraphShape >(shape_);
-}
-inline void ScatterPlot::set_shape(::common::GraphShape value) {
-  
-  shape_ = value;
-  // @@protoc_insertion_point(field_set:common.ScatterPlot.shape)
-}
-
-// .common.GraphMedia media = 3;
-inline void ScatterPlot::clear_media() {
-  media_ = 0;
-}
-inline ::common::GraphMedia ScatterPlot::media() const {
-  // @@protoc_insertion_point(field_get:common.ScatterPlot.media)
-  return static_cast< ::common::GraphMedia >(media_);
-}
-inline void ScatterPlot::set_media(::common::GraphMedia value) {
-  
-  media_ = value;
-  // @@protoc_insertion_point(field_set:common.ScatterPlot.media)
-}
-
-// .common.RGBA color = 4;
-inline bool ScatterPlot::has_color() const {
-  return this != internal_default_instance() && color_ != NULL;
-}
-inline void ScatterPlot::clear_color() {
-  if (GetArenaNoVirtual() == NULL && color_ != NULL) {
-    delete color_;
-  }
-  color_ = NULL;
-}
-inline const ::common::RGBA& ScatterPlot::_internal_color() const {
-  return *color_;
-}
-inline const ::common::RGBA& ScatterPlot::color() const {
-  const ::common::RGBA* p = color_;
-  // @@protoc_insertion_point(field_get:common.ScatterPlot.color)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::RGBA*>(
-      &::common::_RGBA_default_instance_);
-}
-inline ::common::RGBA* ScatterPlot::release_color() {
-  // @@protoc_insertion_point(field_release:common.ScatterPlot.color)
-  
-  ::common::RGBA* temp = color_;
-  color_ = NULL;
-  return temp;
-}
-inline ::common::RGBA* ScatterPlot::mutable_color() {
-  
-  if (color_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::RGBA>(GetArenaNoVirtual());
-    color_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.ScatterPlot.color)
-  return color_;
-}
-inline void ScatterPlot::set_allocated_color(::common::RGBA* color) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete color_;
-  }
-  if (color) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      color = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, color, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  color_ = color;
-  // @@protoc_insertion_point(field_set_allocated:common.ScatterPlot.color)
-}
-
-// .common.Int64 Width = 5;
-inline bool ScatterPlot::has_width() const {
-  return this != internal_default_instance() && width_ != NULL;
-}
-inline void ScatterPlot::clear_width() {
-  if (GetArenaNoVirtual() == NULL && width_ != NULL) {
-    delete width_;
-  }
-  width_ = NULL;
-}
-inline const ::common::Int64& ScatterPlot::_internal_width() const {
-  return *width_;
-}
-inline const ::common::Int64& ScatterPlot::width() const {
-  const ::common::Int64* p = width_;
-  // @@protoc_insertion_point(field_get:common.ScatterPlot.Width)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
-      &::common::_Int64_default_instance_);
-}
-inline ::common::Int64* ScatterPlot::release_width() {
-  // @@protoc_insertion_point(field_release:common.ScatterPlot.Width)
-  
-  ::common::Int64* temp = width_;
-  width_ = NULL;
-  return temp;
-}
-inline ::common::Int64* ScatterPlot::mutable_width() {
-  
-  if (width_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    width_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.ScatterPlot.Width)
-  return width_;
-}
-inline void ScatterPlot::set_allocated_width(::common::Int64* width) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete width_;
-  }
-  if (width) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      width = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, width, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  width_ = width;
-  // @@protoc_insertion_point(field_set_allocated:common.ScatterPlot.Width)
-}
-
-// .common.Int64 Hieght = 6;
-inline bool ScatterPlot::has_hieght() const {
-  return this != internal_default_instance() && hieght_ != NULL;
-}
-inline void ScatterPlot::clear_hieght() {
-  if (GetArenaNoVirtual() == NULL && hieght_ != NULL) {
-    delete hieght_;
-  }
-  hieght_ = NULL;
-}
-inline const ::common::Int64& ScatterPlot::_internal_hieght() const {
-  return *hieght_;
-}
-inline const ::common::Int64& ScatterPlot::hieght() const {
-  const ::common::Int64* p = hieght_;
-  // @@protoc_insertion_point(field_get:common.ScatterPlot.Hieght)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
-      &::common::_Int64_default_instance_);
-}
-inline ::common::Int64* ScatterPlot::release_hieght() {
-  // @@protoc_insertion_point(field_release:common.ScatterPlot.Hieght)
-  
-  ::common::Int64* temp = hieght_;
-  hieght_ = NULL;
-  return temp;
-}
-inline ::common::Int64* ScatterPlot::mutable_hieght() {
-  
-  if (hieght_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    hieght_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.ScatterPlot.Hieght)
-  return hieght_;
-}
-inline void ScatterPlot::set_allocated_hieght(::common::Int64* hieght) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete hieght_;
-  }
-  if (hieght) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      hieght = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, hieght, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  hieght_ = hieght;
-  // @@protoc_insertion_point(field_set_allocated:common.ScatterPlot.Hieght)
 }
 
 // -------------------------------------------------------------------
@@ -3440,10 +2796,6 @@ inline void Token::set_allocated_id_token(::common::String* id_token) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -3452,16 +2804,6 @@ inline void Token::set_allocated_id_token(::common::String* id_token) {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::common::GraphShape> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::common::GraphShape>() {
-  return ::common::GraphShape_descriptor();
-}
-template <> struct is_proto_enum< ::common::GraphMedia> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::common::GraphMedia>() {
-  return ::common::GraphMedia_descriptor();
-}
 template <> struct is_proto_enum< ::common::HTTPMethod> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::common::HTTPMethod>() {

@@ -20,47 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='common',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\"\x16\n\x04\x42ool\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\x08\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\"A\n\x05Graph\x12\x1b\n\x02xs\x18\x01 \x03(\x0b\x32\x0f.common.Float64\x12\x1b\n\x02ys\x18\x02 \x03(\x0b\x32\x0f.common.Float64\"\xcb\x01\n\x0bScatterPlot\x12\x1c\n\x05graph\x18\x01 \x01(\x0b\x32\r.common.Graph\x12!\n\x05shape\x18\x02 \x01(\x0e\x32\x12.common.GraphShape\x12!\n\x05media\x18\x03 \x01(\x0e\x32\x12.common.GraphMedia\x12\x1b\n\x05\x63olor\x18\x04 \x01(\x0b\x32\x0c.common.RGBA\x12\x1c\n\x05Width\x18\x05 \x01(\x0b\x32\r.common.Int64\x12\x1d\n\x06Hieght\x18\x06 \x01(\x0b\x32\r.common.Int64\"n\n\x04RGBA\x12\x18\n\x01r\x18\x01 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01g\x18\x02 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x62\x18\x03 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x61\x18\x04 \x01(\x0b\x32\r.common.Int64\"H\n\x05\x45rror\x12!\n\terror_msg\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04info\x18\x03 \x01(\x0b\x32\x0e.common.String\"\x8c\x01\n\x0bHTTPRequest\x12\"\n\x06method\x18\x01 \x01(\x0e\x32\x12.common.HTTPMethod\x12\x1b\n\x03url\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x04\x66orm\x18\x03 \x01(\x0b\x32\x11.common.StringMap\x12\x1b\n\x04\x62ody\x18\x04 \x01(\x0b\x32\r.common.Bytes\"\xba\x01\n\x05Token\x12$\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\ntoken_type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12%\n\rrefresh_token\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08id_token\x18\x05 \x01(\x0b\x32\x0e.common.String*\x18\n\nGraphShape\x12\n\n\x06\x43IRCLE\x10\x00*\x15\n\nGraphMedia\x12\x07\n\x03PNG\x10\x00**\n\nHTTPMethod\x12\x07\n\x03GET\x10\x00\x12\x08\n\x04POST\x10\x01\x12\t\n\x05PATCH\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x15\n\x05\x42ytes\x12\x0c\n\x04\x62its\x18\x01 \x01(\x0c\"\x16\n\x04\x42ool\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\x08\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\"n\n\x04RGBA\x12\x18\n\x01r\x18\x01 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01g\x18\x02 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x62\x18\x03 \x01(\x0b\x32\r.common.Int64\x12\x18\n\x01\x61\x18\x04 \x01(\x0b\x32\r.common.Int64\"H\n\x05\x45rror\x12!\n\terror_msg\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04info\x18\x03 \x01(\x0b\x32\x0e.common.String\"\x8c\x01\n\x0bHTTPRequest\x12\"\n\x06method\x18\x01 \x01(\x0e\x32\x12.common.HTTPMethod\x12\x1b\n\x03url\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x04\x66orm\x18\x03 \x01(\x0b\x32\x11.common.StringMap\x12\x1b\n\x04\x62ody\x18\x04 \x01(\x0b\x32\r.common.Bytes\"\xba\x01\n\x05Token\x12$\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\ntoken_type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12%\n\rrefresh_token\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08id_token\x18\x05 \x01(\x0b\x32\x0e.common.String**\n\nHTTPMethod\x12\x07\n\x03GET\x10\x00\x12\x08\n\x04POST\x10\x01\x12\t\n\x05PATCH\x10\x02\x62\x06proto3')
 )
 
-_GRAPHSHAPE = _descriptor.EnumDescriptor(
-  name='GraphShape',
-  full_name='common.GraphShape',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='CIRCLE', index=0, number=0,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=1172,
-  serialized_end=1196,
-)
-_sym_db.RegisterEnumDescriptor(_GRAPHSHAPE)
-
-GraphShape = enum_type_wrapper.EnumTypeWrapper(_GRAPHSHAPE)
-_GRAPHMEDIA = _descriptor.EnumDescriptor(
-  name='GraphMedia',
-  full_name='common.GraphMedia',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='PNG', index=0, number=0,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=1198,
-  serialized_end=1219,
-)
-_sym_db.RegisterEnumDescriptor(_GRAPHMEDIA)
-
-GraphMedia = enum_type_wrapper.EnumTypeWrapper(_GRAPHMEDIA)
 _HTTPMETHOD = _descriptor.EnumDescriptor(
   name='HTTPMethod',
   full_name='common.HTTPMethod',
@@ -82,14 +44,12 @@ _HTTPMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1221,
-  serialized_end=1263,
+  serialized_start=899,
+  serialized_end=941,
 )
 _sym_db.RegisterEnumDescriptor(_HTTPMETHOD)
 
 HTTPMethod = enum_type_wrapper.EnumTypeWrapper(_HTTPMETHOD)
-CIRCLE = 0
-PNG = 0
 GET = 0
 POST = 1
 PATCH = 2
@@ -405,110 +365,6 @@ _FLOAT64 = _descriptor.Descriptor(
 )
 
 
-_GRAPH = _descriptor.Descriptor(
-  name='Graph',
-  full_name='common.Graph',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='xs', full_name='common.Graph.xs', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ys', full_name='common.Graph.ys', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=381,
-  serialized_end=446,
-)
-
-
-_SCATTERPLOT = _descriptor.Descriptor(
-  name='ScatterPlot',
-  full_name='common.ScatterPlot',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='graph', full_name='common.ScatterPlot.graph', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='shape', full_name='common.ScatterPlot.shape', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='media', full_name='common.ScatterPlot.media', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='color', full_name='common.ScatterPlot.color', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='Width', full_name='common.ScatterPlot.Width', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='Hieght', full_name='common.ScatterPlot.Hieght', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=449,
-  serialized_end=652,
-)
-
-
 _RGBA = _descriptor.Descriptor(
   name='RGBA',
   full_name='common.RGBA',
@@ -556,8 +412,8 @@ _RGBA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=654,
-  serialized_end=764,
+  serialized_start=381,
+  serialized_end=491,
 )
 
 
@@ -594,8 +450,8 @@ _ERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=766,
-  serialized_end=838,
+  serialized_start=493,
+  serialized_end=565,
 )
 
 
@@ -646,8 +502,8 @@ _HTTPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=841,
-  serialized_end=981,
+  serialized_start=568,
+  serialized_end=708,
 )
 
 
@@ -705,8 +561,8 @@ _TOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=984,
-  serialized_end=1170,
+  serialized_start=711,
+  serialized_end=897,
 )
 
 _STRINGARRAY.fields_by_name['strings'].message_type = _STRING
@@ -714,14 +570,6 @@ _STRINGMAP_STRINGMAPENTRY.fields_by_name['value'].message_type = _STRING
 _STRINGMAP_STRINGMAPENTRY.containing_type = _STRINGMAP
 _STRINGMAP.fields_by_name['string_map'].message_type = _STRINGMAP_STRINGMAPENTRY
 _IDENTIFIER.fields_by_name['id'].message_type = _STRING
-_GRAPH.fields_by_name['xs'].message_type = _FLOAT64
-_GRAPH.fields_by_name['ys'].message_type = _FLOAT64
-_SCATTERPLOT.fields_by_name['graph'].message_type = _GRAPH
-_SCATTERPLOT.fields_by_name['shape'].enum_type = _GRAPHSHAPE
-_SCATTERPLOT.fields_by_name['media'].enum_type = _GRAPHMEDIA
-_SCATTERPLOT.fields_by_name['color'].message_type = _RGBA
-_SCATTERPLOT.fields_by_name['Width'].message_type = _INT64
-_SCATTERPLOT.fields_by_name['Hieght'].message_type = _INT64
 _RGBA.fields_by_name['r'].message_type = _INT64
 _RGBA.fields_by_name['g'].message_type = _INT64
 _RGBA.fields_by_name['b'].message_type = _INT64
@@ -746,14 +594,10 @@ DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
 DESCRIPTOR.message_types_by_name['Int64'] = _INT64
 DESCRIPTOR.message_types_by_name['Float64'] = _FLOAT64
-DESCRIPTOR.message_types_by_name['Graph'] = _GRAPH
-DESCRIPTOR.message_types_by_name['ScatterPlot'] = _SCATTERPLOT
 DESCRIPTOR.message_types_by_name['RGBA'] = _RGBA
 DESCRIPTOR.message_types_by_name['Error'] = _ERROR
 DESCRIPTOR.message_types_by_name['HTTPRequest'] = _HTTPREQUEST
 DESCRIPTOR.message_types_by_name['Token'] = _TOKEN
-DESCRIPTOR.enum_types_by_name['GraphShape'] = _GRAPHSHAPE
-DESCRIPTOR.enum_types_by_name['GraphMedia'] = _GRAPHMEDIA
 DESCRIPTOR.enum_types_by_name['HTTPMethod'] = _HTTPMETHOD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -827,20 +671,6 @@ Float64 = _reflection.GeneratedProtocolMessageType('Float64', (_message.Message,
   # @@protoc_insertion_point(class_scope:common.Float64)
   ))
 _sym_db.RegisterMessage(Float64)
-
-Graph = _reflection.GeneratedProtocolMessageType('Graph', (_message.Message,), dict(
-  DESCRIPTOR = _GRAPH,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Graph)
-  ))
-_sym_db.RegisterMessage(Graph)
-
-ScatterPlot = _reflection.GeneratedProtocolMessageType('ScatterPlot', (_message.Message,), dict(
-  DESCRIPTOR = _SCATTERPLOT,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.ScatterPlot)
-  ))
-_sym_db.RegisterMessage(ScatterPlot)
 
 RGBA = _reflection.GeneratedProtocolMessageType('RGBA', (_message.Message,), dict(
   DESCRIPTOR = _RGBA,
