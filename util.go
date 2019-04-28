@@ -157,7 +157,7 @@ func (a *Auth) config() *oauth2.Config {
 		ClientID:     a.ClientId.Text,
 		ClientSecret: a.ClientSecret.Text,
 		RedirectURL:  a.Redirect.Text,
-		Scopes:       NormalizeScopes(a.Scopes...).Strings,
+		Scopes:       NormalizeScopes(a.Scopes...).Array(),
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  URL_AUTHORIZEURL.Normalize(a.Domain).Text,
 			TokenURL: URL_TOKENURL.Normalize(a.Domain).Text,
@@ -287,7 +287,7 @@ func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 	var cert string
 	for k, _ := range c.Keys {
 		if token.Header["kid"] == c.Keys[k].Kid {
-			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C.Strings[0] + "\n-----END CERTIFICATE-----"
+			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C.Strings[0].Text + "\n-----END CERTIFICATE-----"
 		}
 	}
 	if cert == "" {
@@ -315,7 +315,7 @@ func (r *ResourceRequest) Do() (*common.Bytes, error) {
 	return c.Do(r.Token)
 }
 
-func RenderUser(t *common.Template) http.HandlerFunc {
+func RenderUserFunc(t *common.String) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		session, err := common.GetAuthSession(r)
 		if err != nil {
@@ -340,14 +340,14 @@ func RenderUser(t *common.Template) http.HandlerFunc {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
-			err = t.RenderBytes(w, common.AsBytes(u))
+			err = t.RenderBytes("", w, common.AsBytes(u))
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
 				return
 			}
 			return
 		}
-		io.WriteString(w, t.Text.Text)
+		io.WriteString(w, t.Text)
 		return
 	}
 }

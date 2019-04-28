@@ -41,7 +41,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[26];
+  static const ::google::protobuf::internal::ParseTable schema[27];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -73,6 +73,9 @@ extern EmailBlastRequestDefaultTypeInternal _EmailBlastRequest_default_instance_
 class EmailRequest;
 class EmailRequestDefaultTypeInternal;
 extern EmailRequestDefaultTypeInternal _EmailRequest_default_instance_;
+class FaxRequest;
+class FaxRequestDefaultTypeInternal;
+extern FaxRequestDefaultTypeInternal _FaxRequest_default_instance_;
 class IDBody;
 class IDBodyDefaultTypeInternal;
 extern IDBodyDefaultTypeInternal _IDBody_default_instance_;
@@ -138,6 +141,7 @@ template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailBlast* Arena::CreateMaybeMessage<::api::EmailBlast>(Arena*);
 template<> ::api::EmailBlastRequest* Arena::CreateMaybeMessage<::api::EmailBlastRequest>(Arena*);
 template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(Arena*);
+template<> ::api::FaxRequest* Arena::CreateMaybeMessage<::api::FaxRequest>(Arena*);
 template<> ::api::IDBody* Arena::CreateMaybeMessage<::api::IDBody>(Arena*);
 template<> ::api::IDStrings* Arena::CreateMaybeMessage<::api::IDStrings>(Arena*);
 template<> ::api::Identity* Arena::CreateMaybeMessage<::api::Identity>(Arena*);
@@ -259,6 +263,180 @@ inline bool Plan_Parse(
 }
 // ===================================================================
 
+class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.FaxRequest) */ {
+ public:
+  FaxRequest();
+  virtual ~FaxRequest();
+
+  FaxRequest(const FaxRequest& from);
+
+  inline FaxRequest& operator=(const FaxRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  FaxRequest(FaxRequest&& from) noexcept
+    : FaxRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline FaxRequest& operator=(FaxRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const FaxRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FaxRequest* internal_default_instance() {
+    return reinterpret_cast<const FaxRequest*>(
+               &_FaxRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(FaxRequest* other);
+  friend void swap(FaxRequest& a, FaxRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FaxRequest* New() const final {
+    return CreateMaybeMessage<FaxRequest>(NULL);
+  }
+
+  FaxRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<FaxRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const FaxRequest& from);
+  void MergeFrom(const FaxRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FaxRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String to = 1;
+  bool has_to() const;
+  void clear_to();
+  static const int kToFieldNumber = 1;
+  private:
+  const ::common::String& _internal_to() const;
+  public:
+  const ::common::String& to() const;
+  ::common::String* release_to();
+  ::common::String* mutable_to();
+  void set_allocated_to(::common::String* to);
+
+  // .common.String from = 2;
+  bool has_from() const;
+  void clear_from();
+  static const int kFromFieldNumber = 2;
+  private:
+  const ::common::String& _internal_from() const;
+  public:
+  const ::common::String& from() const;
+  ::common::String* release_from();
+  ::common::String* mutable_from();
+  void set_allocated_from(::common::String* from);
+
+  // .common.String media_url = 3;
+  bool has_media_url() const;
+  void clear_media_url();
+  static const int kMediaUrlFieldNumber = 3;
+  private:
+  const ::common::String& _internal_media_url() const;
+  public:
+  const ::common::String& media_url() const;
+  ::common::String* release_media_url();
+  ::common::String* mutable_media_url();
+  void set_allocated_media_url(::common::String* media_url);
+
+  // .common.String quality = 4;
+  bool has_quality() const;
+  void clear_quality();
+  static const int kQualityFieldNumber = 4;
+  private:
+  const ::common::String& _internal_quality() const;
+  public:
+  const ::common::String& quality() const;
+  ::common::String* release_quality();
+  ::common::String* mutable_quality();
+  void set_allocated_quality(::common::String* quality);
+
+  // .common.String callback = 5;
+  bool has_callback() const;
+  void clear_callback();
+  static const int kCallbackFieldNumber = 5;
+  private:
+  const ::common::String& _internal_callback() const;
+  public:
+  const ::common::String& callback() const;
+  ::common::String* release_callback();
+  ::common::String* mutable_callback();
+  void set_allocated_callback(::common::String* callback);
+
+  // .common.Bool store_media = 6;
+  bool has_store_media() const;
+  void clear_store_media();
+  static const int kStoreMediaFieldNumber = 6;
+  private:
+  const ::common::Bool& _internal_store_media() const;
+  public:
+  const ::common::Bool& store_media() const;
+  ::common::Bool* release_store_media();
+  ::common::Bool* mutable_store_media();
+  void set_allocated_store_media(::common::Bool* store_media);
+
+  // @@protoc_insertion_point(class_scope:api.FaxRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* to_;
+  ::common::String* from_;
+  ::common::String* media_url_;
+  ::common::String* quality_;
+  ::common::String* callback_;
+  ::common::Bool* store_media_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class ResourceRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ResourceRequest) */ {
  public:
   ResourceRequest();
@@ -294,7 +472,7 @@ class ResourceRequest : public ::google::protobuf::Message /* @@protoc_insertion
                &_ResourceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(ResourceRequest* other);
   friend void swap(ResourceRequest& a, ResourceRequest& b) {
@@ -456,7 +634,7 @@ class SubscribeRequest : public ::google::protobuf::Message /* @@protoc_insertio
                &_SubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(SubscribeRequest* other);
   friend void swap(SubscribeRequest& a, SubscribeRequest& b) {
@@ -585,7 +763,7 @@ class UnSubscribeRequest : public ::google::protobuf::Message /* @@protoc_insert
                &_UnSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(UnSubscribeRequest* other);
   friend void swap(UnSubscribeRequest& a, UnSubscribeRequest& b) {
@@ -701,7 +879,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -849,7 +1027,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -925,17 +1103,17 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
   ::common::String* mutable_to();
   void set_allocated_to(::common::String* to);
 
-  // .common.Message message = 3;
+  // .common.String message = 3;
   bool has_message() const;
   void clear_message();
   static const int kMessageFieldNumber = 3;
   private:
-  const ::common::Message& _internal_message() const;
+  const ::common::String& _internal_message() const;
   public:
-  const ::common::Message& message() const;
-  ::common::Message* release_message();
-  ::common::Message* mutable_message();
-  void set_allocated_message(::common::Message* message);
+  const ::common::String& message() const;
+  ::common::String* release_message();
+  ::common::String* mutable_message();
+  void set_allocated_message(::common::String* message);
 
   // .common.String mediaURL = 4;
   bool has_mediaurl() const;
@@ -979,7 +1157,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::String* service_;
   ::common::String* to_;
-  ::common::Message* message_;
+  ::common::String* message_;
   ::common::String* mediaurl_;
   ::common::String* callback_;
   ::common::String* app_;
@@ -1023,7 +1201,7 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_SMSBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(SMSBlast* other);
   friend void swap(SMSBlast& a, SMSBlast& b) {
@@ -1099,17 +1277,17 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::common::StringArray* mutable_to();
   void set_allocated_to(::common::StringArray* to);
 
-  // .common.Message message = 3;
+  // .common.String message = 3;
   bool has_message() const;
   void clear_message();
   static const int kMessageFieldNumber = 3;
   private:
-  const ::common::Message& _internal_message() const;
+  const ::common::String& _internal_message() const;
   public:
-  const ::common::Message& message() const;
-  ::common::Message* release_message();
-  ::common::Message* mutable_message();
-  void set_allocated_message(::common::Message* message);
+  const ::common::String& message() const;
+  ::common::String* release_message();
+  ::common::String* mutable_message();
+  void set_allocated_message(::common::String* message);
 
   // .common.String mediaURL = 4;
   bool has_mediaurl() const;
@@ -1153,7 +1331,7 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::String* service_;
   ::common::StringArray* to_;
-  ::common::Message* message_;
+  ::common::String* message_;
   ::common::String* mediaurl_;
   ::common::String* callback_;
   ::common::String* app_;
@@ -1197,7 +1375,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1332,7 +1510,7 @@ class EmailBlastRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_EmailBlastRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(EmailBlastRequest* other);
   friend void swap(EmailBlastRequest& a, EmailBlastRequest& b) {
@@ -1467,7 +1645,7 @@ class EmailBlast : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_EmailBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(EmailBlast* other);
   friend void swap(EmailBlast& a, EmailBlast& b) {
@@ -1615,7 +1793,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -1776,7 +1954,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -1911,7 +2089,7 @@ class CallBlast : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_CallBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(CallBlast* other);
   friend void swap(CallBlast& a, CallBlast& b) {
@@ -2046,7 +2224,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -2338,17 +2516,17 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::common::Bool* mutable_email_verified();
   void set_allocated_email_verified(::common::Bool* email_verified);
 
-  // .common.Password password = 21;
+  // .common.String password = 21;
   bool has_password() const;
   void clear_password();
   static const int kPasswordFieldNumber = 21;
   private:
-  const ::common::Password& _internal_password() const;
+  const ::common::String& _internal_password() const;
   public:
-  const ::common::Password& password() const;
-  ::common::Password* release_password();
-  ::common::Password* mutable_password();
-  void set_allocated_password(::common::Password* password);
+  const ::common::String& password() const;
+  ::common::String* release_password();
+  ::common::String* mutable_password();
+  void set_allocated_password(::common::String* password);
 
   // @@protoc_insertion_point(class_scope:api.User)
  private:
@@ -2374,7 +2552,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::common::String* updated_at_;
   ::common::Bool* phone_verified_;
   ::common::Bool* email_verified_;
-  ::common::Password* password_;
+  ::common::String* password_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -2415,7 +2593,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(Identity* other);
   friend void swap(Identity& a, Identity& b) {
@@ -2563,7 +2741,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -2723,7 +2901,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -2897,7 +3075,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -3006,7 +3184,7 @@ class RenderRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_RenderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(RenderRequest* other);
   friend void swap(RenderRequest& a, RenderRequest& b) {
@@ -3058,22 +3236,34 @@ class RenderRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // .common.Template template = 1;
-  bool has_template_() const;
-  void clear_template_();
-  static const int kTemplateFieldNumber = 1;
+  // .common.String name = 1;
+  bool has_name() const;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
   private:
-  const ::common::Template& _internal_template_() const;
+  const ::common::String& _internal_name() const;
   public:
-  const ::common::Template& template_() const;
-  ::common::Template* release_template_();
-  ::common::Template* mutable_template_();
-  void set_allocated_template_(::common::Template* template_);
+  const ::common::String& name() const;
+  ::common::String* release_name();
+  ::common::String* mutable_name();
+  void set_allocated_name(::common::String* name);
 
-  // .common.Bytes data = 2;
+  // .common.String text = 2;
+  bool has_text() const;
+  void clear_text();
+  static const int kTextFieldNumber = 2;
+  private:
+  const ::common::String& _internal_text() const;
+  public:
+  const ::common::String& text() const;
+  ::common::String* release_text();
+  ::common::String* mutable_text();
+  void set_allocated_text(::common::String* text);
+
+  // .common.Bytes data = 3;
   bool has_data() const;
   void clear_data();
-  static const int kDataFieldNumber = 2;
+  static const int kDataFieldNumber = 3;
   private:
   const ::common::Bytes& _internal_data() const;
   public:
@@ -3086,7 +3276,8 @@ class RenderRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::Template* template__;
+  ::common::String* name_;
+  ::common::String* text_;
   ::common::Bytes* data_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
@@ -3128,7 +3319,7 @@ class SearchPhoneNumberRequest : public ::google::protobuf::Message /* @@protoc_
                &_SearchPhoneNumberRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(SearchPhoneNumberRequest* other);
   friend void swap(SearchPhoneNumberRequest& a, SearchPhoneNumberRequest& b) {
@@ -3263,7 +3454,7 @@ class PhoneNumber : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_PhoneNumber_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(PhoneNumber* other);
   friend void swap(PhoneNumber& a, PhoneNumber& b) {
@@ -3411,7 +3602,7 @@ class NumberCapabilities : public ::google::protobuf::Message /* @@protoc_insert
                &_NumberCapabilities_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(NumberCapabilities* other);
   friend void swap(NumberCapabilities& a, NumberCapabilities& b) {
@@ -3546,7 +3737,7 @@ class PhoneNumberResource : public ::google::protobuf::Message /* @@protoc_inser
                &_PhoneNumberResource_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(PhoneNumberResource* other);
   friend void swap(PhoneNumberResource& a, PhoneNumberResource& b) {
@@ -3681,7 +3872,7 @@ class TokenQuery : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_TokenQuery_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(TokenQuery* other);
   friend void swap(TokenQuery& a, TokenQuery& b) {
@@ -3745,24 +3936,24 @@ class TokenQuery : public ::google::protobuf::Message /* @@protoc_insertion_poin
   ::common::Token* mutable_token();
   void set_allocated_token(::common::Token* token);
 
-  // .common.Query query = 2;
+  // .common.String query = 2;
   bool has_query() const;
   void clear_query();
   static const int kQueryFieldNumber = 2;
   private:
-  const ::common::Query& _internal_query() const;
+  const ::common::String& _internal_query() const;
   public:
-  const ::common::Query& query() const;
-  ::common::Query* release_query();
-  ::common::Query* mutable_query();
-  void set_allocated_query(::common::Query* query);
+  const ::common::String& query() const;
+  ::common::String* release_query();
+  ::common::String* mutable_query();
+  void set_allocated_query(::common::String* query);
 
   // @@protoc_insertion_point(class_scope:api.TokenQuery)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::Token* token_;
-  ::common::Query* query_;
+  ::common::String* query_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -3803,7 +3994,7 @@ class IDBody : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_IDBody_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(IDBody* other);
   friend void swap(IDBody& a, IDBody& b) {
@@ -3925,7 +4116,7 @@ class IDStrings : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_IDStrings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(IDStrings* other);
   friend void swap(IDStrings& a, IDStrings& b) {
@@ -4047,7 +4238,7 @@ class Role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Role_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(Role* other);
   friend void swap(Role& a, Role& b) {
@@ -4154,6 +4345,298 @@ class Role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// FaxRequest
+
+// .common.String to = 1;
+inline bool FaxRequest::has_to() const {
+  return this != internal_default_instance() && to_ != NULL;
+}
+inline const ::common::String& FaxRequest::_internal_to() const {
+  return *to_;
+}
+inline const ::common::String& FaxRequest::to() const {
+  const ::common::String* p = to_;
+  // @@protoc_insertion_point(field_get:api.FaxRequest.to)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxRequest::release_to() {
+  // @@protoc_insertion_point(field_release:api.FaxRequest.to)
+  
+  ::common::String* temp = to_;
+  to_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxRequest::mutable_to() {
+  
+  if (to_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    to_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxRequest.to)
+  return to_;
+}
+inline void FaxRequest::set_allocated_to(::common::String* to) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(to_);
+  }
+  if (to) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      to = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, to, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  to_ = to;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.to)
+}
+
+// .common.String from = 2;
+inline bool FaxRequest::has_from() const {
+  return this != internal_default_instance() && from_ != NULL;
+}
+inline const ::common::String& FaxRequest::_internal_from() const {
+  return *from_;
+}
+inline const ::common::String& FaxRequest::from() const {
+  const ::common::String* p = from_;
+  // @@protoc_insertion_point(field_get:api.FaxRequest.from)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxRequest::release_from() {
+  // @@protoc_insertion_point(field_release:api.FaxRequest.from)
+  
+  ::common::String* temp = from_;
+  from_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxRequest::mutable_from() {
+  
+  if (from_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    from_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxRequest.from)
+  return from_;
+}
+inline void FaxRequest::set_allocated_from(::common::String* from) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(from_);
+  }
+  if (from) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      from = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, from, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  from_ = from;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.from)
+}
+
+// .common.String media_url = 3;
+inline bool FaxRequest::has_media_url() const {
+  return this != internal_default_instance() && media_url_ != NULL;
+}
+inline const ::common::String& FaxRequest::_internal_media_url() const {
+  return *media_url_;
+}
+inline const ::common::String& FaxRequest::media_url() const {
+  const ::common::String* p = media_url_;
+  // @@protoc_insertion_point(field_get:api.FaxRequest.media_url)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxRequest::release_media_url() {
+  // @@protoc_insertion_point(field_release:api.FaxRequest.media_url)
+  
+  ::common::String* temp = media_url_;
+  media_url_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxRequest::mutable_media_url() {
+  
+  if (media_url_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    media_url_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxRequest.media_url)
+  return media_url_;
+}
+inline void FaxRequest::set_allocated_media_url(::common::String* media_url) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(media_url_);
+  }
+  if (media_url) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      media_url = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, media_url, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  media_url_ = media_url;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.media_url)
+}
+
+// .common.String quality = 4;
+inline bool FaxRequest::has_quality() const {
+  return this != internal_default_instance() && quality_ != NULL;
+}
+inline const ::common::String& FaxRequest::_internal_quality() const {
+  return *quality_;
+}
+inline const ::common::String& FaxRequest::quality() const {
+  const ::common::String* p = quality_;
+  // @@protoc_insertion_point(field_get:api.FaxRequest.quality)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxRequest::release_quality() {
+  // @@protoc_insertion_point(field_release:api.FaxRequest.quality)
+  
+  ::common::String* temp = quality_;
+  quality_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxRequest::mutable_quality() {
+  
+  if (quality_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    quality_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxRequest.quality)
+  return quality_;
+}
+inline void FaxRequest::set_allocated_quality(::common::String* quality) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(quality_);
+  }
+  if (quality) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      quality = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, quality, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  quality_ = quality;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.quality)
+}
+
+// .common.String callback = 5;
+inline bool FaxRequest::has_callback() const {
+  return this != internal_default_instance() && callback_ != NULL;
+}
+inline const ::common::String& FaxRequest::_internal_callback() const {
+  return *callback_;
+}
+inline const ::common::String& FaxRequest::callback() const {
+  const ::common::String* p = callback_;
+  // @@protoc_insertion_point(field_get:api.FaxRequest.callback)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxRequest::release_callback() {
+  // @@protoc_insertion_point(field_release:api.FaxRequest.callback)
+  
+  ::common::String* temp = callback_;
+  callback_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxRequest::mutable_callback() {
+  
+  if (callback_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    callback_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxRequest.callback)
+  return callback_;
+}
+inline void FaxRequest::set_allocated_callback(::common::String* callback) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(callback_);
+  }
+  if (callback) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      callback = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, callback, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  callback_ = callback;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.callback)
+}
+
+// .common.Bool store_media = 6;
+inline bool FaxRequest::has_store_media() const {
+  return this != internal_default_instance() && store_media_ != NULL;
+}
+inline const ::common::Bool& FaxRequest::_internal_store_media() const {
+  return *store_media_;
+}
+inline const ::common::Bool& FaxRequest::store_media() const {
+  const ::common::Bool* p = store_media_;
+  // @@protoc_insertion_point(field_get:api.FaxRequest.store_media)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::Bool*>(
+      &::common::_Bool_default_instance_);
+}
+inline ::common::Bool* FaxRequest::release_store_media() {
+  // @@protoc_insertion_point(field_release:api.FaxRequest.store_media)
+  
+  ::common::Bool* temp = store_media_;
+  store_media_ = NULL;
+  return temp;
+}
+inline ::common::Bool* FaxRequest::mutable_store_media() {
+  
+  if (store_media_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::Bool>(GetArenaNoVirtual());
+    store_media_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxRequest.store_media)
+  return store_media_;
+}
+inline void FaxRequest::set_allocated_store_media(::common::Bool* store_media) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(store_media_);
+  }
+  if (store_media) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      store_media = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, store_media, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  store_media_ = store_media;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.store_media)
+}
+
+// -------------------------------------------------------------------
+
 // ResourceRequest
 
 // .common.Token token = 1;
@@ -4858,36 +5341,36 @@ inline void SMS::set_allocated_to(::common::String* to) {
   // @@protoc_insertion_point(field_set_allocated:api.SMS.to)
 }
 
-// .common.Message message = 3;
+// .common.String message = 3;
 inline bool SMS::has_message() const {
   return this != internal_default_instance() && message_ != NULL;
 }
-inline const ::common::Message& SMS::_internal_message() const {
+inline const ::common::String& SMS::_internal_message() const {
   return *message_;
 }
-inline const ::common::Message& SMS::message() const {
-  const ::common::Message* p = message_;
+inline const ::common::String& SMS::message() const {
+  const ::common::String* p = message_;
   // @@protoc_insertion_point(field_get:api.SMS.message)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Message*>(
-      &::common::_Message_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
 }
-inline ::common::Message* SMS::release_message() {
+inline ::common::String* SMS::release_message() {
   // @@protoc_insertion_point(field_release:api.SMS.message)
   
-  ::common::Message* temp = message_;
+  ::common::String* temp = message_;
   message_ = NULL;
   return temp;
 }
-inline ::common::Message* SMS::mutable_message() {
+inline ::common::String* SMS::mutable_message() {
   
   if (message_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Message>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     message_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.SMS.message)
   return message_;
 }
-inline void SMS::set_allocated_message(::common::Message* message) {
+inline void SMS::set_allocated_message(::common::String* message) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(message_);
@@ -5150,36 +5633,36 @@ inline void SMSBlast::set_allocated_to(::common::StringArray* to) {
   // @@protoc_insertion_point(field_set_allocated:api.SMSBlast.to)
 }
 
-// .common.Message message = 3;
+// .common.String message = 3;
 inline bool SMSBlast::has_message() const {
   return this != internal_default_instance() && message_ != NULL;
 }
-inline const ::common::Message& SMSBlast::_internal_message() const {
+inline const ::common::String& SMSBlast::_internal_message() const {
   return *message_;
 }
-inline const ::common::Message& SMSBlast::message() const {
-  const ::common::Message* p = message_;
+inline const ::common::String& SMSBlast::message() const {
+  const ::common::String* p = message_;
   // @@protoc_insertion_point(field_get:api.SMSBlast.message)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Message*>(
-      &::common::_Message_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
 }
-inline ::common::Message* SMSBlast::release_message() {
+inline ::common::String* SMSBlast::release_message() {
   // @@protoc_insertion_point(field_release:api.SMSBlast.message)
   
-  ::common::Message* temp = message_;
+  ::common::String* temp = message_;
   message_ = NULL;
   return temp;
 }
-inline ::common::Message* SMSBlast::mutable_message() {
+inline ::common::String* SMSBlast::mutable_message() {
   
   if (message_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Message>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     message_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.SMSBlast.message)
   return message_;
 }
-inline void SMSBlast::set_allocated_message(::common::Message* message) {
+inline void SMSBlast::set_allocated_message(::common::String* message) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(message_);
@@ -7302,36 +7785,36 @@ inline void User::set_allocated_email_verified(::common::Bool* email_verified) {
   // @@protoc_insertion_point(field_set_allocated:api.User.email_verified)
 }
 
-// .common.Password password = 21;
+// .common.String password = 21;
 inline bool User::has_password() const {
   return this != internal_default_instance() && password_ != NULL;
 }
-inline const ::common::Password& User::_internal_password() const {
+inline const ::common::String& User::_internal_password() const {
   return *password_;
 }
-inline const ::common::Password& User::password() const {
-  const ::common::Password* p = password_;
+inline const ::common::String& User::password() const {
+  const ::common::String* p = password_;
   // @@protoc_insertion_point(field_get:api.User.password)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Password*>(
-      &::common::_Password_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
 }
-inline ::common::Password* User::release_password() {
+inline ::common::String* User::release_password() {
   // @@protoc_insertion_point(field_release:api.User.password)
   
-  ::common::Password* temp = password_;
+  ::common::String* temp = password_;
   password_ = NULL;
   return temp;
 }
-inline ::common::Password* User::mutable_password() {
+inline ::common::String* User::mutable_password() {
   
   if (password_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Password>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     password_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.User.password)
   return password_;
 }
-inline void User::set_allocated_password(::common::Password* password) {
+inline void User::set_allocated_password(::common::String* password) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(password_);
@@ -8132,55 +8615,103 @@ Jwks::keys() const {
 
 // RenderRequest
 
-// .common.Template template = 1;
-inline bool RenderRequest::has_template_() const {
-  return this != internal_default_instance() && template__ != NULL;
+// .common.String name = 1;
+inline bool RenderRequest::has_name() const {
+  return this != internal_default_instance() && name_ != NULL;
 }
-inline const ::common::Template& RenderRequest::_internal_template_() const {
-  return *template__;
+inline const ::common::String& RenderRequest::_internal_name() const {
+  return *name_;
 }
-inline const ::common::Template& RenderRequest::template_() const {
-  const ::common::Template* p = template__;
-  // @@protoc_insertion_point(field_get:api.RenderRequest.template)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Template*>(
-      &::common::_Template_default_instance_);
+inline const ::common::String& RenderRequest::name() const {
+  const ::common::String* p = name_;
+  // @@protoc_insertion_point(field_get:api.RenderRequest.name)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
 }
-inline ::common::Template* RenderRequest::release_template_() {
-  // @@protoc_insertion_point(field_release:api.RenderRequest.template)
+inline ::common::String* RenderRequest::release_name() {
+  // @@protoc_insertion_point(field_release:api.RenderRequest.name)
   
-  ::common::Template* temp = template__;
-  template__ = NULL;
+  ::common::String* temp = name_;
+  name_ = NULL;
   return temp;
 }
-inline ::common::Template* RenderRequest::mutable_template_() {
+inline ::common::String* RenderRequest::mutable_name() {
   
-  if (template__ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Template>(GetArenaNoVirtual());
-    template__ = p;
+  if (name_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    name_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.RenderRequest.template)
-  return template__;
+  // @@protoc_insertion_point(field_mutable:api.RenderRequest.name)
+  return name_;
 }
-inline void RenderRequest::set_allocated_template_(::common::Template* template_) {
+inline void RenderRequest::set_allocated_name(::common::String* name) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(template__);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(name_);
   }
-  if (template_) {
+  if (name) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      template_ = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, template_, submessage_arena);
+      name = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, name, submessage_arena);
     }
     
   } else {
     
   }
-  template__ = template_;
-  // @@protoc_insertion_point(field_set_allocated:api.RenderRequest.template)
+  name_ = name;
+  // @@protoc_insertion_point(field_set_allocated:api.RenderRequest.name)
 }
 
-// .common.Bytes data = 2;
+// .common.String text = 2;
+inline bool RenderRequest::has_text() const {
+  return this != internal_default_instance() && text_ != NULL;
+}
+inline const ::common::String& RenderRequest::_internal_text() const {
+  return *text_;
+}
+inline const ::common::String& RenderRequest::text() const {
+  const ::common::String* p = text_;
+  // @@protoc_insertion_point(field_get:api.RenderRequest.text)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* RenderRequest::release_text() {
+  // @@protoc_insertion_point(field_release:api.RenderRequest.text)
+  
+  ::common::String* temp = text_;
+  text_ = NULL;
+  return temp;
+}
+inline ::common::String* RenderRequest::mutable_text() {
+  
+  if (text_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    text_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.RenderRequest.text)
+  return text_;
+}
+inline void RenderRequest::set_allocated_text(::common::String* text) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(text_);
+  }
+  if (text) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      text = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, text, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  text_ = text;
+  // @@protoc_insertion_point(field_set_allocated:api.RenderRequest.text)
+}
+
+// .common.Bytes data = 3;
 inline bool RenderRequest::has_data() const {
   return this != internal_default_instance() && data_ != NULL;
 }
@@ -8938,36 +9469,36 @@ inline void TokenQuery::set_allocated_token(::common::Token* token) {
   // @@protoc_insertion_point(field_set_allocated:api.TokenQuery.token)
 }
 
-// .common.Query query = 2;
+// .common.String query = 2;
 inline bool TokenQuery::has_query() const {
   return this != internal_default_instance() && query_ != NULL;
 }
-inline const ::common::Query& TokenQuery::_internal_query() const {
+inline const ::common::String& TokenQuery::_internal_query() const {
   return *query_;
 }
-inline const ::common::Query& TokenQuery::query() const {
-  const ::common::Query* p = query_;
+inline const ::common::String& TokenQuery::query() const {
+  const ::common::String* p = query_;
   // @@protoc_insertion_point(field_get:api.TokenQuery.query)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Query*>(
-      &::common::_Query_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
 }
-inline ::common::Query* TokenQuery::release_query() {
+inline ::common::String* TokenQuery::release_query() {
   // @@protoc_insertion_point(field_release:api.TokenQuery.query)
   
-  ::common::Query* temp = query_;
+  ::common::String* temp = query_;
   query_ = NULL;
   return temp;
 }
-inline ::common::Query* TokenQuery::mutable_query() {
+inline ::common::String* TokenQuery::mutable_query() {
   
   if (query_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Query>(GetArenaNoVirtual());
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     query_ = p;
   }
   // @@protoc_insertion_point(field_mutable:api.TokenQuery.query)
   return query_;
 }
-inline void TokenQuery::set_allocated_query(::common::Query* query) {
+inline void TokenQuery::set_allocated_query(::common::String* query) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(query_);
@@ -9337,6 +9868,8 @@ inline void Role::set_allocated_description(::common::String* description) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

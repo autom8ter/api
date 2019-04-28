@@ -327,10 +327,10 @@ the connection when "ctx" gets done.
 func RegisterUtilityServiceServer(s *grpc.Server, srv UtilityServiceServer)
 ```
 
-#### func  RenderUser
+#### func  RenderUserFunc
 
 ```go
-func RenderUser(t *common.Template) http.HandlerFunc
+func RenderUserFunc(t *common.String) http.HandlerFunc
 ```
 
 #### func  SearchUSPhoneNumbersURL
@@ -753,11 +753,11 @@ type ContactServiceClient interface {
 	SendSMS(ctx context.Context, in *SMS, opts ...grpc.CallOption) (*common.Bytes, error)
 	SendSMSBlast(ctx context.Context, in *SMSBlast, opts ...grpc.CallOption) (ContactService_SendSMSBlastClient, error)
 	GetSMS(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Bytes, error)
-	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*common.Message, error)
+	SendEmail(ctx context.Context, in *EmailRequest, opts ...grpc.CallOption) (*common.String, error)
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*common.Bytes, error)
 	SendCallBlast(ctx context.Context, in *CallBlast, opts ...grpc.CallOption) (ContactService_SendCallBlastClient, error)
-	SearchPhoneNumber(ctx context.Context, in *SearchPhoneNumberRequest, opts ...grpc.CallOption) (ContactService_SearchPhoneNumberClient, error)
+	SendFax(ctx context.Context, in *FaxRequest, opts ...grpc.CallOption) (ContactService_SendFaxClient, error)
 }
 ```
 
@@ -779,35 +779,15 @@ type ContactServiceServer interface {
 	SendSMS(context.Context, *SMS) (*common.Bytes, error)
 	SendSMSBlast(*SMSBlast, ContactService_SendSMSBlastServer) error
 	GetSMS(context.Context, *common.Identifier) (*common.Bytes, error)
-	SendEmail(context.Context, *EmailRequest) (*common.Message, error)
+	SendEmail(context.Context, *EmailRequest) (*common.String, error)
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*common.Bytes, error)
 	SendCallBlast(*CallBlast, ContactService_SendCallBlastServer) error
-	SearchPhoneNumber(*SearchPhoneNumberRequest, ContactService_SearchPhoneNumberServer) error
+	SendFax(*FaxRequest, ContactService_SendFaxServer) error
 }
 ```
 
 ContactServiceServer is the server API for ContactService service.
-
-#### type ContactService_SearchPhoneNumberClient
-
-```go
-type ContactService_SearchPhoneNumberClient interface {
-	Recv() (*PhoneNumber, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type ContactService_SearchPhoneNumberServer
-
-```go
-type ContactService_SearchPhoneNumberServer interface {
-	Send(*PhoneNumber) error
-	grpc.ServerStream
-}
-```
-
 
 #### type ContactService_SendCallBlastClient
 
@@ -833,7 +813,7 @@ type ContactService_SendCallBlastServer interface {
 
 ```go
 type ContactService_SendEmailBlastClient interface {
-	Recv() (*common.Message, error)
+	Recv() (*common.String, error)
 	grpc.ClientStream
 }
 ```
@@ -843,7 +823,27 @@ type ContactService_SendEmailBlastClient interface {
 
 ```go
 type ContactService_SendEmailBlastServer interface {
-	Send(*common.Message) error
+	Send(*common.String) error
+	grpc.ServerStream
+}
+```
+
+
+#### type ContactService_SendFaxClient
+
+```go
+type ContactService_SendFaxClient interface {
+	Recv() (*common.Bytes, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type ContactService_SendFaxServer
+
+```go
+type ContactService_SendFaxServer interface {
+	Send(*common.Bytes) error
 	grpc.ServerStream
 }
 ```
@@ -1232,6 +1232,113 @@ func (m *EmailRequest) XXX_Size() int
 
 ```go
 func (m *EmailRequest) XXX_Unmarshal(b []byte) error
+```
+
+#### type FaxRequest
+
+```go
+type FaxRequest struct {
+	To                   *common.String `protobuf:"bytes,1,opt,name=to,proto3" json:"to,omitempty"`
+	From                 *common.String `protobuf:"bytes,2,opt,name=from,proto3" json:"from,omitempty"`
+	MediaUrl             *common.String `protobuf:"bytes,3,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
+	Quality              *common.String `protobuf:"bytes,4,opt,name=quality,proto3" json:"quality,omitempty"`
+	Callback             *common.String `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
+	StoreMedia           *common.Bool   `protobuf:"bytes,6,opt,name=store_media,json=storeMedia,proto3" json:"store_media,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+```
+
+
+#### func (*FaxRequest) Descriptor
+
+```go
+func (*FaxRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*FaxRequest) GetCallback
+
+```go
+func (m *FaxRequest) GetCallback() *common.String
+```
+
+#### func (*FaxRequest) GetFrom
+
+```go
+func (m *FaxRequest) GetFrom() *common.String
+```
+
+#### func (*FaxRequest) GetMediaUrl
+
+```go
+func (m *FaxRequest) GetMediaUrl() *common.String
+```
+
+#### func (*FaxRequest) GetQuality
+
+```go
+func (m *FaxRequest) GetQuality() *common.String
+```
+
+#### func (*FaxRequest) GetStoreMedia
+
+```go
+func (m *FaxRequest) GetStoreMedia() *common.Bool
+```
+
+#### func (*FaxRequest) GetTo
+
+```go
+func (m *FaxRequest) GetTo() *common.String
+```
+
+#### func (*FaxRequest) ProtoMessage
+
+```go
+func (*FaxRequest) ProtoMessage()
+```
+
+#### func (*FaxRequest) Reset
+
+```go
+func (m *FaxRequest) Reset()
+```
+
+#### func (*FaxRequest) String
+
+```go
+func (m *FaxRequest) String() string
+```
+
+#### func (*FaxRequest) XXX_DiscardUnknown
+
+```go
+func (m *FaxRequest) XXX_DiscardUnknown()
+```
+
+#### func (*FaxRequest) XXX_Marshal
+
+```go
+func (m *FaxRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*FaxRequest) XXX_Merge
+
+```go
+func (m *FaxRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*FaxRequest) XXX_Size
+
+```go
+func (m *FaxRequest) XXX_Size() int
+```
+
+#### func (*FaxRequest) XXX_Unmarshal
+
+```go
+func (m *FaxRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type IDBody
@@ -1763,6 +1870,7 @@ type PaymentServiceClient interface {
 	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*common.Bytes, error)
 	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*common.Bytes, error)
 	PurchasePhoneNumber(ctx context.Context, in *PhoneNumber, opts ...grpc.CallOption) (*PhoneNumberResource, error)
+	SearchPhoneNumber(ctx context.Context, in *SearchPhoneNumberRequest, opts ...grpc.CallOption) (PaymentService_SearchPhoneNumberClient, error)
 }
 ```
 
@@ -1784,10 +1892,31 @@ type PaymentServiceServer interface {
 	Subscribe(context.Context, *SubscribeRequest) (*common.Bytes, error)
 	Unsubscribe(context.Context, *UnSubscribeRequest) (*common.Bytes, error)
 	PurchasePhoneNumber(context.Context, *PhoneNumber) (*PhoneNumberResource, error)
+	SearchPhoneNumber(*SearchPhoneNumberRequest, PaymentService_SearchPhoneNumberServer) error
 }
 ```
 
 PaymentServiceServer is the server API for PaymentService service.
+
+#### type PaymentService_SearchPhoneNumberClient
+
+```go
+type PaymentService_SearchPhoneNumberClient interface {
+	Recv() (*PhoneNumber, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type PaymentService_SearchPhoneNumberServer
+
+```go
+type PaymentService_SearchPhoneNumberServer interface {
+	Send(*PhoneNumber) error
+	grpc.ServerStream
+}
+```
+
 
 #### type PhoneNumber
 
@@ -1999,11 +2128,12 @@ func (x Plan) String() string
 
 ```go
 type RenderRequest struct {
-	Template             *common.Template `protobuf:"bytes,1,opt,name=template,proto3" json:"template,omitempty"`
-	Data                 *common.Bytes    `protobuf:"bytes,2,opt,name=data,proto3" json:"data,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	Name                 *common.String `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Text                 *common.String `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
+	Data                 *common.Bytes  `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 ```
 
@@ -2020,10 +2150,16 @@ func (*RenderRequest) Descriptor() ([]byte, []int)
 func (m *RenderRequest) GetData() *common.Bytes
 ```
 
-#### func (*RenderRequest) GetTemplate
+#### func (*RenderRequest) GetName
 
 ```go
-func (m *RenderRequest) GetTemplate() *common.Template
+func (m *RenderRequest) GetName() *common.String
+```
+
+#### func (*RenderRequest) GetText
+
+```go
+func (m *RenderRequest) GetText() *common.String
 ```
 
 #### func (*RenderRequest) ProtoMessage
@@ -2312,15 +2448,15 @@ func (m *Role) XXX_Unmarshal(b []byte) error
 
 ```go
 type SMS struct {
-	Service              *common.String  `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
-	To                   *common.String  `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
-	Message              *common.Message `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
-	MediaURL             *common.String  `protobuf:"bytes,4,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
-	Callback             *common.String  `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
-	App                  *common.String  `protobuf:"bytes,6,opt,name=app,proto3" json:"app,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}        `json:"-"`
-	XXX_unrecognized     []byte          `json:"-"`
-	XXX_sizecache        int32           `json:"-"`
+	Service              *common.String `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
+	To                   *common.String `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
+	Message              *common.String `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	MediaURL             *common.String `protobuf:"bytes,4,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
+	Callback             *common.String `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
+	App                  *common.String `protobuf:"bytes,6,opt,name=app,proto3" json:"app,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 ```
 
@@ -2352,7 +2488,7 @@ func (m *SMS) GetMediaURL() *common.String
 #### func (*SMS) GetMessage
 
 ```go
-func (m *SMS) GetMessage() *common.Message
+func (m *SMS) GetMessage() *common.String
 ```
 
 #### func (*SMS) GetService
@@ -2421,7 +2557,7 @@ func (m *SMS) XXX_Unmarshal(b []byte) error
 type SMSBlast struct {
 	Service              *common.String      `protobuf:"bytes,1,opt,name=service,proto3" json:"service,omitempty"`
 	To                   *common.StringArray `protobuf:"bytes,2,opt,name=to,proto3" json:"to,omitempty"`
-	Message              *common.Message     `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	Message              *common.String      `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	MediaURL             *common.String      `protobuf:"bytes,4,opt,name=mediaURL,proto3" json:"mediaURL,omitempty"`
 	Callback             *common.String      `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
 	App                  *common.String      `protobuf:"bytes,6,opt,name=app,proto3" json:"app,omitempty"`
@@ -2459,7 +2595,7 @@ func (m *SMSBlast) GetMediaURL() *common.String
 #### func (*SMSBlast) GetMessage
 
 ```go
-func (m *SMSBlast) GetMessage() *common.Message
+func (m *SMSBlast) GetMessage() *common.String
 ```
 
 #### func (*SMSBlast) GetService
@@ -2747,11 +2883,11 @@ func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error
 
 ```go
 type TokenQuery struct {
-	Token                *common.Token `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	Query                *common.Query `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
-	XXX_unrecognized     []byte        `json:"-"`
-	XXX_sizecache        int32         `json:"-"`
+	Token                *common.Token  `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	Query                *common.String `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 ```
 
@@ -2765,7 +2901,7 @@ func (*TokenQuery) Descriptor() ([]byte, []int)
 #### func (*TokenQuery) GetQuery
 
 ```go
-func (m *TokenQuery) GetQuery() *common.Query
+func (m *TokenQuery) GetQuery() *common.String
 ```
 
 #### func (*TokenQuery) GetToken
@@ -2972,7 +3108,7 @@ type User struct {
 	UpdatedAt            *common.String      `protobuf:"bytes,18,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	PhoneVerified        *common.Bool        `protobuf:"bytes,19,opt,name=phone_verified,json=phoneVerified,proto3" json:"phone_verified,omitempty"`
 	EmailVerified        *common.Bool        `protobuf:"bytes,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
-	Password             *common.Password    `protobuf:"bytes,21,opt,name=password,proto3" json:"password,omitempty"`
+	Password             *common.String      `protobuf:"bytes,21,opt,name=password,proto3" json:"password,omitempty"`
 	Identities           []*Identity         `protobuf:"bytes,22,rep,name=identities,proto3" json:"identities,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_unrecognized     []byte              `json:"-"`
@@ -3080,7 +3216,7 @@ func (m *User) GetNickname() *common.String
 #### func (*User) GetPassword
 
 ```go
-func (m *User) GetPassword() *common.Password
+func (m *User) GetPassword() *common.String
 ```
 
 #### func (*User) GetPhoneNumber
@@ -3274,12 +3410,12 @@ type UserService_UserRolesServer interface {
 
 ```go
 type UtilityServiceClient interface {
-	Echo(ctx context.Context, in *common.Message, opts ...grpc.CallOption) (*common.Message, error)
-	EchoSpanish(ctx context.Context, in *common.Message, opts ...grpc.CallOption) (*common.Message, error)
-	EchoChinese(ctx context.Context, in *common.Message, opts ...grpc.CallOption) (*common.Message, error)
-	EchoEnglish(ctx context.Context, in *common.Message, opts ...grpc.CallOption) (*common.Message, error)
-	EchoHindi(ctx context.Context, in *common.Message, opts ...grpc.CallOption) (*common.Message, error)
-	EchoArabic(ctx context.Context, in *common.Message, opts ...grpc.CallOption) (*common.Message, error)
+	Echo(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
+	EchoSpanish(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
+	EchoChinese(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
+	EchoEnglish(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
+	EchoHindi(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
+	EchoArabic(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
 	MarshalJSON(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*common.Bytes, error)
 	MarshalYAML(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*common.Bytes, error)
 	MarshalXML(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*common.Bytes, error)
@@ -3302,12 +3438,12 @@ func NewUtilityServiceClient(cc *grpc.ClientConn) UtilityServiceClient
 
 ```go
 type UtilityServiceServer interface {
-	Echo(context.Context, *common.Message) (*common.Message, error)
-	EchoSpanish(context.Context, *common.Message) (*common.Message, error)
-	EchoChinese(context.Context, *common.Message) (*common.Message, error)
-	EchoEnglish(context.Context, *common.Message) (*common.Message, error)
-	EchoHindi(context.Context, *common.Message) (*common.Message, error)
-	EchoArabic(context.Context, *common.Message) (*common.Message, error)
+	Echo(context.Context, *common.String) (*common.String, error)
+	EchoSpanish(context.Context, *common.String) (*common.String, error)
+	EchoChinese(context.Context, *common.String) (*common.String, error)
+	EchoEnglish(context.Context, *common.String) (*common.String, error)
+	EchoHindi(context.Context, *common.String) (*common.String, error)
+	EchoArabic(context.Context, *common.String) (*common.String, error)
 	MarshalJSON(context.Context, *common.Bytes) (*common.Bytes, error)
 	MarshalYAML(context.Context, *common.Bytes) (*common.Bytes, error)
 	MarshalXML(context.Context, *common.Bytes) (*common.Bytes, error)

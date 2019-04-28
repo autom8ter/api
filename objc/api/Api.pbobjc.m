@@ -238,6 +238,109 @@ BOOL Plan_IsValidValue(int32_t value__) {
   }
 }
 
+#pragma mark - FaxRequest
+
+@implementation FaxRequest
+
+@dynamic hasTo, to;
+@dynamic hasFrom, from;
+@dynamic hasMediaURL, mediaURL;
+@dynamic hasQuality, quality;
+@dynamic hasCallback, callback;
+@dynamic hasStoreMedia, storeMedia;
+
+typedef struct FaxRequest__storage_ {
+  uint32_t _has_storage_[1];
+  String *to;
+  String *from;
+  String *mediaURL;
+  String *quality;
+  String *callback;
+  Bool *storeMedia;
+} FaxRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxRequest_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(FaxRequest__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "from",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxRequest_FieldNumber_From,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(FaxRequest__storage_, from),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "mediaURL",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxRequest_FieldNumber_MediaURL,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(FaxRequest__storage_, mediaURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "quality",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxRequest_FieldNumber_Quality,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(FaxRequest__storage_, quality),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxRequest_FieldNumber_Callback,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(FaxRequest__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "storeMedia",
+        .dataTypeSpecific.className = GPBStringifySymbol(Bool),
+        .number = FaxRequest_FieldNumber_StoreMedia,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(FaxRequest__storage_, storeMedia),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[FaxRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(FaxRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\003\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - ResourceRequest
 
 @implementation ResourceRequest
@@ -599,7 +702,7 @@ typedef struct SMS__storage_ {
   uint32_t _has_storage_[1];
   String *service;
   String *to;
-  Message *message;
+  String *message;
   String *mediaURL;
   String *callback;
   String *app;
@@ -631,7 +734,7 @@ typedef struct SMS__storage_ {
       },
       {
         .name = "message",
-        .dataTypeSpecific.className = GPBStringifySymbol(Message),
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMS_FieldNumber_Message,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(SMS__storage_, message),
@@ -702,7 +805,7 @@ typedef struct SMSBlast__storage_ {
   uint32_t _has_storage_[1];
   String *service;
   StringArray *to;
-  Message *message;
+  String *message;
   String *mediaURL;
   String *callback;
   String *app;
@@ -734,7 +837,7 @@ typedef struct SMSBlast__storage_ {
       },
       {
         .name = "message",
-        .dataTypeSpecific.className = GPBStringifySymbol(Message),
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = SMSBlast_FieldNumber_Message,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(SMSBlast__storage_, message),
@@ -1260,7 +1363,7 @@ typedef struct User__storage_ {
   String *updatedAt;
   Bool *phoneVerified;
   Bool *emailVerified;
-  Password *password;
+  String *password;
   NSMutableArray *identitiesArray;
 } User__storage_;
 
@@ -1443,7 +1546,7 @@ typedef struct User__storage_ {
       },
       {
         .name = "password",
-        .dataTypeSpecific.className = GPBStringifySymbol(Password),
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = User_FieldNumber_Password,
         .hasIndex = 19,
         .offset = (uint32_t)offsetof(User__storage_, password),
@@ -1794,12 +1897,14 @@ typedef struct Jwks__storage_ {
 
 @implementation RenderRequest
 
-@dynamic hasTemplate_p, template_p;
+@dynamic hasName, name;
+@dynamic hasText, text;
 @dynamic hasData_p, data_p;
 
 typedef struct RenderRequest__storage_ {
   uint32_t _has_storage_[1];
-  Template *template_p;
+  String *name;
+  String *text;
   Bytes *data_p;
 } RenderRequest__storage_;
 
@@ -1810,11 +1915,20 @@ typedef struct RenderRequest__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "template_p",
-        .dataTypeSpecific.className = GPBStringifySymbol(Template),
-        .number = RenderRequest_FieldNumber_Template_p,
+        .name = "name",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = RenderRequest_FieldNumber_Name,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(RenderRequest__storage_, template_p),
+        .offset = (uint32_t)offsetof(RenderRequest__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "text",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = RenderRequest_FieldNumber_Text,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(RenderRequest__storage_, text),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
@@ -1822,7 +1936,7 @@ typedef struct RenderRequest__storage_ {
         .name = "data_p",
         .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
         .number = RenderRequest_FieldNumber_Data_p,
-        .hasIndex = 1,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(RenderRequest__storage_, data_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2125,7 +2239,7 @@ typedef struct PhoneNumberResource__storage_ {
 typedef struct TokenQuery__storage_ {
   uint32_t _has_storage_[1];
   Token *token;
-  Query *query;
+  String *query;
 } TokenQuery__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2145,7 +2259,7 @@ typedef struct TokenQuery__storage_ {
       },
       {
         .name = "query",
-        .dataTypeSpecific.className = GPBStringifySymbol(Query),
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = TokenQuery_FieldNumber_Query,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(TokenQuery__storage_, query),

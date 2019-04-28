@@ -114,7 +114,7 @@ typedef GPB_ENUM(StringArray_FieldNumber) {
 
 @interface StringArray : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *stringsArray;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<String*> *stringsArray;
 /** The number of items in @c stringsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger stringsArray_Count;
 
@@ -128,7 +128,7 @@ typedef GPB_ENUM(StringMap_FieldNumber) {
 
 @interface StringMap : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *stringMap;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, String*> *stringMap;
 /** The number of items in @c stringMap without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger stringMap_Count;
 
@@ -148,55 +148,9 @@ typedef GPB_ENUM(Identifier_FieldNumber) {
 
 @interface Identifier : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
-
-@end
-
-#pragma mark - Message
-
-typedef GPB_ENUM(Message_FieldNumber) {
-  Message_FieldNumber_Value = 1,
-};
-
-@interface Message : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *value;
-
-@end
-
-#pragma mark - Secret
-
-typedef GPB_ENUM(Secret_FieldNumber) {
-  Secret_FieldNumber_Text = 1,
-};
-
-@interface Secret : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
-
-@end
-
-#pragma mark - Query
-
-typedef GPB_ENUM(Query_FieldNumber) {
-  Query_FieldNumber_Lucene = 1,
-};
-
-@interface Query : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *lucene;
-
-@end
-
-#pragma mark - Password
-
-typedef GPB_ENUM(Password_FieldNumber) {
-  Password_FieldNumber_Text = 1,
-};
-
-@interface Password : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *text;
+@property(nonatomic, readwrite, strong, null_resettable) String *id_p;
+/** Test to see if @c id_p has been set. */
+@property(nonatomic, readwrite) BOOL hasId_p;
 
 @end
 
@@ -209,18 +163,6 @@ typedef GPB_ENUM(Int64_FieldNumber) {
 @interface Int64 : GPBMessage
 
 @property(nonatomic, readwrite) int64_t num;
-
-@end
-
-#pragma mark - Int32
-
-typedef GPB_ENUM(Int32_FieldNumber) {
-  Int32_FieldNumber_Num = 1,
-};
-
-@interface Int32 : GPBMessage
-
-@property(nonatomic, readwrite) int32_t num;
 
 @end
 
@@ -274,25 +216,6 @@ int32_t HTTPRequest_Method_RawValue(HTTPRequest *message);
  * was generated.
  **/
 void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value);
-
-#pragma mark - Template
-
-typedef GPB_ENUM(Template_FieldNumber) {
-  Template_FieldNumber_Name = 1,
-  Template_FieldNumber_Text = 2,
-};
-
-@interface Template : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *name;
-/** Test to see if @c name has been set. */
-@property(nonatomic, readwrite) BOOL hasName;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *text;
-/** Test to see if @c text has been set. */
-@property(nonatomic, readwrite) BOOL hasText;
-
-@end
 
 #pragma mark - Token
 

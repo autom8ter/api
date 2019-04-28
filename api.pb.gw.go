@@ -30,7 +30,7 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 
 func request_UtilityService_Echo_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Message
+	var protoReq common.String
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -47,7 +47,7 @@ func request_UtilityService_Echo_0(ctx context.Context, marshaler runtime.Marsha
 }
 
 func request_UtilityService_EchoSpanish_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Message
+	var protoReq common.String
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -64,7 +64,7 @@ func request_UtilityService_EchoSpanish_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_EchoChinese_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Message
+	var protoReq common.String
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -81,7 +81,7 @@ func request_UtilityService_EchoChinese_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_EchoEnglish_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Message
+	var protoReq common.String
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -98,7 +98,7 @@ func request_UtilityService_EchoEnglish_0(ctx context.Context, marshaler runtime
 }
 
 func request_UtilityService_EchoHindi_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Message
+	var protoReq common.String
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -115,7 +115,7 @@ func request_UtilityService_EchoHindi_0(ctx context.Context, marshaler runtime.M
 }
 
 func request_UtilityService_EchoArabic_0(ctx context.Context, marshaler runtime.Marshaler, client UtilityServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Message
+	var protoReq common.String
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -342,8 +342,8 @@ func request_ContactService_SendCallBlast_0(ctx context.Context, marshaler runti
 
 }
 
-func request_ContactService_SearchPhoneNumber_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (ContactService_SearchPhoneNumberClient, runtime.ServerMetadata, error) {
-	var protoReq SearchPhoneNumberRequest
+func request_ContactService_SendFax_0(ctx context.Context, marshaler runtime.Marshaler, client ContactServiceClient, req *http.Request, pathParams map[string]string) (ContactService_SendFaxClient, runtime.ServerMetadata, error) {
+	var protoReq FaxRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)
@@ -354,7 +354,7 @@ func request_ContactService_SearchPhoneNumber_0(ctx context.Context, marshaler r
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	stream, err := client.SearchPhoneNumber(ctx, &protoReq)
+	stream, err := client.SendFax(ctx, &protoReq)
 	if err != nil {
 		return nil, metadata, err
 	}
@@ -415,6 +415,31 @@ func request_PaymentService_PurchasePhoneNumber_0(ctx context.Context, marshaler
 
 	msg, err := client.PurchasePhoneNumber(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
+
+}
+
+func request_PaymentService_SearchPhoneNumber_0(ctx context.Context, marshaler runtime.Marshaler, client PaymentServiceClient, req *http.Request, pathParams map[string]string) (PaymentService_SearchPhoneNumberClient, runtime.ServerMetadata, error) {
+	var protoReq SearchPhoneNumberRequest
+	var metadata runtime.ServerMetadata
+
+	newReader, berr := utilities.IOReaderFactory(req.Body)
+	if berr != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", berr)
+	}
+	if err := marshaler.NewDecoder(newReader()).Decode(&protoReq); err != nil && err != io.EOF {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	}
+
+	stream, err := client.SearchPhoneNumber(ctx, &protoReq)
+	if err != nil {
+		return nil, metadata, err
+	}
+	header, err := stream.Header()
+	if err != nil {
+		return nil, metadata, err
+	}
+	metadata.HeaderMD = header
+	return stream, metadata, nil
 
 }
 
@@ -1058,7 +1083,7 @@ func RegisterContactServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 
 	})
 
-	mux.Handle("POST", pattern_ContactService_SearchPhoneNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_ContactService_SendFax_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -1067,14 +1092,14 @@ func RegisterContactServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_ContactService_SearchPhoneNumber_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_ContactService_SendFax_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_ContactService_SearchPhoneNumber_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+		forward_ContactService_SendFax_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -1082,21 +1107,21 @@ func RegisterContactServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 }
 
 var (
-	pattern_ContactService_SendSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "sms"}, ""))
+	pattern_ContactService_SendSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "sms", "send"}, ""))
 
 	pattern_ContactService_SendSMSBlast_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "sms", "blast"}, ""))
 
 	pattern_ContactService_GetSMS_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "sms", "get"}, ""))
 
-	pattern_ContactService_SendEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "email"}, ""))
+	pattern_ContactService_SendEmail_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "email", "send"}, ""))
 
 	pattern_ContactService_SendEmailBlast_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "email", "blast"}, ""))
 
-	pattern_ContactService_SendCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "call"}, ""))
+	pattern_ContactService_SendCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "call", "send"}, ""))
 
 	pattern_ContactService_SendCallBlast_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "call", "blast"}, ""))
 
-	pattern_ContactService_SearchPhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"contact", "numbers"}, ""))
+	pattern_ContactService_SendFax_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"contact", "fax", "send"}, ""))
 )
 
 var (
@@ -1114,7 +1139,7 @@ var (
 
 	forward_ContactService_SendCallBlast_0 = runtime.ForwardResponseStream
 
-	forward_ContactService_SearchPhoneNumber_0 = runtime.ForwardResponseStream
+	forward_ContactService_SendFax_0 = runtime.ForwardResponseStream
 )
 
 // RegisterPaymentServiceHandlerFromEndpoint is same as RegisterPaymentServiceHandler but
@@ -1215,6 +1240,26 @@ func RegisterPaymentServiceHandlerClient(ctx context.Context, mux *runtime.Serve
 
 	})
 
+	mux.Handle("POST", pattern_PaymentService_SearchPhoneNumber_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_PaymentService_SearchPhoneNumber_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_PaymentService_SearchPhoneNumber_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+
+	})
+
 	return nil
 }
 
@@ -1224,6 +1269,8 @@ var (
 	pattern_PaymentService_Unsubscribe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"payment", "unsubscribe"}, ""))
 
 	pattern_PaymentService_PurchasePhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"payment", "number"}, ""))
+
+	pattern_PaymentService_SearchPhoneNumber_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"payment", "numbers", "search"}, ""))
 )
 
 var (
@@ -1232,6 +1279,8 @@ var (
 	forward_PaymentService_Unsubscribe_0 = runtime.ForwardResponseMessage
 
 	forward_PaymentService_PurchasePhoneNumber_0 = runtime.ForwardResponseMessage
+
+	forward_PaymentService_SearchPhoneNumber_0 = runtime.ForwardResponseStream
 )
 
 // RegisterResourceServiceHandlerFromEndpoint is same as RegisterResourceServiceHandler but

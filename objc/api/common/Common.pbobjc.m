@@ -228,12 +228,12 @@ typedef struct StringArray__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "stringsArray",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = StringArray_FieldNumber_StringsArray,
         .hasIndex = GPBNoHasBit,
         .offset = (uint32_t)offsetof(StringArray__storage_, stringsArray),
         .flags = GPBFieldRepeated,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -271,12 +271,12 @@ typedef struct StringMap__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "stringMap",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = StringMap_FieldNumber_StringMap,
         .hasIndex = GPBNoHasBit,
         .offset = (uint32_t)offsetof(StringMap__storage_, stringMap),
         .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -329,11 +329,11 @@ typedef struct Empty__storage_ {
 
 @implementation Identifier
 
-@dynamic id_p;
+@dynamic hasId_p, id_p;
 
 typedef struct Identifier__storage_ {
   uint32_t _has_storage_[1];
-  NSString *id_p;
+  String *id_p;
 } Identifier__storage_;
 
 // This method is threadsafe because it is initially called
@@ -344,12 +344,12 @@ typedef struct Identifier__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "id_p",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = Identifier_FieldNumber_Id_p,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(Identifier__storage_, id_p),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -359,178 +359,6 @@ typedef struct Identifier__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Identifier__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Message
-
-@implementation Message
-
-@dynamic value;
-
-typedef struct Message__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *value;
-} Message__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "value",
-        .dataTypeSpecific.className = NULL,
-        .number = Message_FieldNumber_Value,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Message__storage_, value),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Message class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Message__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Secret
-
-@implementation Secret
-
-@dynamic text;
-
-typedef struct Secret__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *text;
-} Secret__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "text",
-        .dataTypeSpecific.className = NULL,
-        .number = Secret_FieldNumber_Text,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Secret__storage_, text),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Secret class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Secret__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Query
-
-@implementation Query
-
-@dynamic lucene;
-
-typedef struct Query__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *lucene;
-} Query__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "lucene",
-        .dataTypeSpecific.className = NULL,
-        .number = Query_FieldNumber_Lucene,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Query__storage_, lucene),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Query class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Query__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Password
-
-@implementation Password
-
-@dynamic text;
-
-typedef struct Password__storage_ {
-  uint32_t _has_storage_[1];
-  NSString *text;
-} Password__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "text",
-        .dataTypeSpecific.className = NULL,
-        .number = Password_FieldNumber_Text,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Password__storage_, text),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Password class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Password__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -574,49 +402,6 @@ typedef struct Int64__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Int64__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Int32
-
-@implementation Int32
-
-@dynamic num;
-
-typedef struct Int32__storage_ {
-  uint32_t _has_storage_[1];
-  int32_t num;
-} Int32__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "num",
-        .dataTypeSpecific.className = NULL,
-        .number = Int32_FieldNumber_Num,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Int32__storage_, num),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt32,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Int32 class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Int32__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -761,60 +546,6 @@ void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value) {
   GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
   GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
 }
-
-#pragma mark - Template
-
-@implementation Template
-
-@dynamic hasName, name;
-@dynamic hasText, text;
-
-typedef struct Template__storage_ {
-  uint32_t _has_storage_[1];
-  String *name;
-  String *text;
-} Template__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "name",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Template_FieldNumber_Name,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Template__storage_, name),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "text",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Template_FieldNumber_Text,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Template__storage_, text),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Template class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Template__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
 
 #pragma mark - Token
 

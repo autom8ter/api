@@ -36,15 +36,11 @@ CF_EXTERN_C_BEGIN
 @class Identity;
 @class Int64;
 @class JSONWebKeys;
-@class Message;
 @class NumberCapabilities;
-@class Password;
 @class PhoneNumber;
-@class Query;
 @class String;
 @class StringArray;
 @class StringMap;
-@class Template;
 @class Token;
 GPB_ENUM_FWD_DECLARE(HTTPMethod);
 
@@ -160,6 +156,45 @@ BOOL Plan_IsValidValue(int32_t value);
  * this file and all files that it depends on.
  **/
 @interface ApiRoot : GPBRootObject
+@end
+
+#pragma mark - FaxRequest
+
+typedef GPB_ENUM(FaxRequest_FieldNumber) {
+  FaxRequest_FieldNumber_To = 1,
+  FaxRequest_FieldNumber_From = 2,
+  FaxRequest_FieldNumber_MediaURL = 3,
+  FaxRequest_FieldNumber_Quality = 4,
+  FaxRequest_FieldNumber_Callback = 5,
+  FaxRequest_FieldNumber_StoreMedia = 6,
+};
+
+@interface FaxRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *to;
+/** Test to see if @c to has been set. */
+@property(nonatomic, readwrite) BOOL hasTo;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *from;
+/** Test to see if @c from has been set. */
+@property(nonatomic, readwrite) BOOL hasFrom;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *mediaURL;
+/** Test to see if @c mediaURL has been set. */
+@property(nonatomic, readwrite) BOOL hasMediaURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *quality;
+/** Test to see if @c quality has been set. */
+@property(nonatomic, readwrite) BOOL hasQuality;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *callback;
+/** Test to see if @c callback has been set. */
+@property(nonatomic, readwrite) BOOL hasCallback;
+
+@property(nonatomic, readwrite, strong, null_resettable) Bool *storeMedia;
+/** Test to see if @c storeMedia has been set. */
+@property(nonatomic, readwrite) BOOL hasStoreMedia;
+
 @end
 
 #pragma mark - ResourceRequest
@@ -334,7 +369,7 @@ typedef GPB_ENUM(SMS_FieldNumber) {
 /** Test to see if @c to has been set. */
 @property(nonatomic, readwrite) BOOL hasTo;
 
-@property(nonatomic, readwrite, strong, null_resettable) Message *message;
+@property(nonatomic, readwrite, strong, null_resettable) String *message;
 /** Test to see if @c message has been set. */
 @property(nonatomic, readwrite) BOOL hasMessage;
 
@@ -373,7 +408,7 @@ typedef GPB_ENUM(SMSBlast_FieldNumber) {
 /** Test to see if @c to has been set. */
 @property(nonatomic, readwrite) BOOL hasTo;
 
-@property(nonatomic, readwrite, strong, null_resettable) Message *message;
+@property(nonatomic, readwrite, strong, null_resettable) String *message;
 /** Test to see if @c message has been set. */
 @property(nonatomic, readwrite) BOOL hasMessage;
 
@@ -654,7 +689,7 @@ typedef GPB_ENUM(User_FieldNumber) {
 /** Test to see if @c emailVerified has been set. */
 @property(nonatomic, readwrite) BOOL hasEmailVerified;
 
-@property(nonatomic, readwrite, strong, null_resettable) Password *password;
+@property(nonatomic, readwrite, strong, null_resettable) String *password;
 /** Test to see if @c password has been set. */
 @property(nonatomic, readwrite) BOOL hasPassword;
 
@@ -784,15 +819,20 @@ typedef GPB_ENUM(Jwks_FieldNumber) {
 #pragma mark - RenderRequest
 
 typedef GPB_ENUM(RenderRequest_FieldNumber) {
-  RenderRequest_FieldNumber_Template_p = 1,
-  RenderRequest_FieldNumber_Data_p = 2,
+  RenderRequest_FieldNumber_Name = 1,
+  RenderRequest_FieldNumber_Text = 2,
+  RenderRequest_FieldNumber_Data_p = 3,
 };
 
 @interface RenderRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Template *template_p;
-/** Test to see if @c template_p has been set. */
-@property(nonatomic, readwrite) BOOL hasTemplate_p;
+@property(nonatomic, readwrite, strong, null_resettable) String *name;
+/** Test to see if @c name has been set. */
+@property(nonatomic, readwrite) BOOL hasName;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *text;
+/** Test to see if @c text has been set. */
+@property(nonatomic, readwrite) BOOL hasText;
 
 @property(nonatomic, readwrite, strong, null_resettable) Bytes *data_p;
 /** Test to see if @c data_p has been set. */
@@ -914,7 +954,7 @@ typedef GPB_ENUM(TokenQuery_FieldNumber) {
 /** Test to see if @c token has been set. */
 @property(nonatomic, readwrite) BOOL hasToken;
 
-@property(nonatomic, readwrite, strong, null_resettable) Query *query;
+@property(nonatomic, readwrite, strong, null_resettable) String *query;
 /** Test to see if @c query has been set. */
 @property(nonatomic, readwrite) BOOL hasQuery;
 

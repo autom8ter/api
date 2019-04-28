@@ -6,6 +6,14 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.FaxRequest" do
+    optional :to, :message, 1, "common.String"
+    optional :from, :message, 2, "common.String"
+    optional :media_url, :message, 3, "common.String"
+    optional :quality, :message, 4, "common.String"
+    optional :callback, :message, 5, "common.String"
+    optional :store_media, :message, 6, "common.Bool"
+  end
   add_message "api.ResourceRequest" do
     optional :token, :message, 1, "common.Token"
     optional :method, :enum, 2, "common.HTTPMethod"
@@ -32,7 +40,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.SMS" do
     optional :service, :message, 1, "common.String"
     optional :to, :message, 2, "common.String"
-    optional :message, :message, 3, "common.Message"
+    optional :message, :message, 3, "common.String"
     optional :mediaURL, :message, 4, "common.String"
     optional :callback, :message, 5, "common.String"
     optional :app, :message, 6, "common.String"
@@ -40,7 +48,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.SMSBlast" do
     optional :service, :message, 1, "common.String"
     optional :to, :message, 2, "common.StringArray"
-    optional :message, :message, 3, "common.Message"
+    optional :message, :message, 3, "common.String"
     optional :mediaURL, :message, 4, "common.String"
     optional :callback, :message, 5, "common.String"
     optional :app, :message, 6, "common.String"
@@ -98,7 +106,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :updated_at, :message, 18, "common.String"
     optional :phone_verified, :message, 19, "common.Bool"
     optional :email_verified, :message, 20, "common.Bool"
-    optional :password, :message, 21, "common.Password"
+    optional :password, :message, 21, "common.String"
     repeated :identities, :message, 22, "api.Identity"
   end
   add_message "api.Identity" do
@@ -126,8 +134,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     repeated :keys, :message, 1, "api.JSONWebKeys"
   end
   add_message "api.RenderRequest" do
-    optional :template, :message, 1, "common.Template"
-    optional :data, :message, 2, "common.Bytes"
+    optional :name, :message, 1, "common.String"
+    optional :text, :message, 2, "common.String"
+    optional :data, :message, 3, "common.Bytes"
   end
   add_message "api.SearchPhoneNumberRequest" do
     optional :state, :message, 1, "common.String"
@@ -152,7 +161,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.TokenQuery" do
     optional :token, :message, 1, "common.Token"
-    optional :query, :message, 2, "common.Query"
+    optional :query, :message, 2, "common.String"
   end
   add_message "api.IDBody" do
     optional :id, :message, 1, "common.Identifier"
@@ -216,6 +225,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  FaxRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxRequest").msgclass
   ResourceRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ResourceRequest").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass

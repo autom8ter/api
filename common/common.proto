@@ -15,41 +15,21 @@ message Bool {
 }
 
 message StringArray {
-    repeated string strings=1;
+    repeated String strings=1;
 }
 
 message StringMap {
-    map<string, string> string_map=1;
+    map<string, String> string_map=1;
 }
 
 message Empty {}
 
 message Identifier {
-    string id=1;
-}
-
-message Message {
-    string value = 1;
-}
-
-message Secret {
-    string text =1;
-}
-
-message Query {
-    string lucene =1;
-}
-
-message Password {
-    string text =1;
+    String id=1;
 }
 
 message Int64 {
     int64 num = 1;
-}
-
-message Int32 {
-    int32 num = 1;
 }
 
 message Float64 {
@@ -67,11 +47,6 @@ message HTTPRequest {
     common.String url =2;
     common.StringMap form =3;
     common.Bytes body =4;
-}
-
-message Template {
-    common.String name =1;
-    common.String text =2;
 }
 
 message Token {

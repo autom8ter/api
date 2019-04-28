@@ -14,33 +14,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :answer, :bool, 1
   end
   add_message "common.StringArray" do
-    repeated :strings, :string, 1
+    repeated :strings, :message, 1, "common.String"
   end
   add_message "common.StringMap" do
-    map :string_map, :string, :string, 1
+    map :string_map, :string, :message, 1, "common.String"
   end
   add_message "common.Empty" do
   end
   add_message "common.Identifier" do
-    optional :id, :string, 1
-  end
-  add_message "common.Message" do
-    optional :value, :string, 1
-  end
-  add_message "common.Secret" do
-    optional :text, :string, 1
-  end
-  add_message "common.Query" do
-    optional :lucene, :string, 1
-  end
-  add_message "common.Password" do
-    optional :text, :string, 1
+    optional :id, :message, 1, "common.String"
   end
   add_message "common.Int64" do
     optional :num, :int64, 1
-  end
-  add_message "common.Int32" do
-    optional :num, :int32, 1
   end
   add_message "common.Float64" do
     optional :num, :double, 1
@@ -50,10 +35,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :url, :message, 2, "common.String"
     optional :form, :message, 3, "common.StringMap"
     optional :body, :message, 4, "common.Bytes"
-  end
-  add_message "common.Template" do
-    optional :name, :message, 1, "common.String"
-    optional :text, :message, 2, "common.String"
   end
   add_message "common.Token" do
     optional :access_token, :message, 1, "common.String"
@@ -77,15 +58,9 @@ module Common
   StringMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringMap").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Empty").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Identifier").msgclass
-  Message = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Message").msgclass
-  Secret = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Secret").msgclass
-  Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Query").msgclass
-  Password = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Password").msgclass
   Int64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int64").msgclass
-  Int32 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int32").msgclass
   Float64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Float64").msgclass
   HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPRequest").msgclass
-  Template = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Template").msgclass
   Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Token").msgclass
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPMethod").enummodule
 end

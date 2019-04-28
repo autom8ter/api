@@ -6,37 +6,37 @@ import "google/api/annotations.proto";
 import "common/common.proto";
 
 service UtilityService {
-    rpc Echo(common.Message) returns (common.Message) {
+    rpc Echo(common.String) returns (common.String) {
         option (google.api.http) = {
       post: "/utility/echo"
       body: "*"
     };
     }
-    rpc EchoSpanish(common.Message) returns (common.Message) {
+    rpc EchoSpanish(common.String) returns (common.String) {
         option (google.api.http) = {
       post: "/utility/echo/spanish"
       body: "*"
     };
     }
-    rpc EchoChinese(common.Message) returns (common.Message) {
+    rpc EchoChinese(common.String) returns (common.String) {
         option (google.api.http) = {
       post: "/utility/echo/chinese"
       body: "*"
     };
     }
-    rpc EchoEnglish(common.Message) returns (common.Message) {
+    rpc EchoEnglish(common.String) returns (common.String) {
         option (google.api.http) = {
       post: "/utility/echo/english"
       body: "*"
     };
     }
-    rpc EchoHindi(common.Message) returns (common.Message) {
+    rpc EchoHindi(common.String) returns (common.String) {
         option (google.api.http) = {
       post: "/utility/echo/hindi"
       body: "*"
     };
     }
-    rpc EchoArabic(common.Message) returns (common.Message) {
+    rpc EchoArabic(common.String) returns (common.String) {
         option (google.api.http) = {
       post: "/utility/echo/arabic"
       body: "*"
@@ -72,7 +72,7 @@ service UtilityService {
 service ContactService {
     rpc SendSMS(SMS) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/contact/sms"
+      post: "/contact/sms/send"
       body: "*"
     };
     }
@@ -88,13 +88,13 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SendEmail(EmailRequest) returns (common.Message) {
+    rpc SendEmail(EmailRequest) returns (common.String) {
         option (google.api.http) = {
-      post: "/contact/email"
+      post: "/contact/email/send"
       body: "*"
     };
     }
-    rpc SendEmailBlast(EmailBlastRequest) returns (stream common.Message) {
+    rpc SendEmailBlast(EmailBlastRequest) returns (stream common.String) {
         option (google.api.http) = {
       post: "/contact/email/blast"
       body: "*"
@@ -102,7 +102,7 @@ service ContactService {
     }
     rpc SendCall(Call) returns (common.Bytes) {
         option (google.api.http) = {
-      post: "/contact/call"
+      post: "/contact/call/send"
       body: "*"
     };
     }
@@ -112,12 +112,14 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SearchPhoneNumber(SearchPhoneNumberRequest) returns (stream PhoneNumber) {
-          option (google.api.http) = {
-      post: "/contact/numbers"
+
+    rpc SendFax(FaxRequest) returns (stream common.Bytes) {
+         option (google.api.http) = {
+      post: "/contact/fax/send"
       body: "*"
     };
     }
+
 
 }
 
@@ -137,6 +139,12 @@ service PaymentService {
     rpc PurchasePhoneNumber(PhoneNumber) returns (PhoneNumberResource) {
         option (google.api.http) = {
       post: "/payment/number"
+      body: "*"
+    };
+    }
+    rpc SearchPhoneNumber(SearchPhoneNumberRequest) returns (stream PhoneNumber) {
+        option (google.api.http) = {
+      post: "/payment/numbers/search"
       body: "*"
     };
     }
@@ -204,6 +212,15 @@ service UserService {
 
 }
 
+message FaxRequest {
+    common.String to =1;
+    common.String from=2;
+    common.String media_url =3;
+    common.String quality=4;
+    common.String callback=5;
+    common.Bool store_media=6;
+}
+
 message ResourceRequest {
     common.Token token= 1;
     common.HTTPMethod method=2;
@@ -235,7 +252,7 @@ message Card {
 message SMS {
     common.String service =1;
     common.String to =2;
-    common.Message message=3;
+    common.String message=3;
     common.String mediaURL =4;
     common.String callback=5;
     common.String app=6;
@@ -244,7 +261,7 @@ message SMS {
 message SMSBlast {
     common.String service =1;
     common.StringArray to =2;
-    common.Message message=3;
+    common.String message=3;
     common.String mediaURL =4;
     common.String callback=5;
     common.String app=6;
@@ -310,7 +327,7 @@ message User {
     common.String updated_at=18;
     common.Bool phone_verified=19;
     common.Bool email_verified=20;
-    common.Password password=21;
+    common.String password=21;
     repeated Identity identities =22;
 }
 
@@ -393,8 +410,9 @@ enum Plan {
 }
 
 message RenderRequest {
-    common.Template template=1;
-    common.Bytes data=2;
+    common.String name=1;
+    common.String text=2;
+    common.Bytes data=3;
 }
 
 message SearchPhoneNumberRequest {
@@ -424,7 +442,7 @@ message PhoneNumberResource {
 
 message TokenQuery {
     common.Token token =1;
-    common.Query  query =2;
+    common.String  query =2;
 }
 
 message IDBody {
