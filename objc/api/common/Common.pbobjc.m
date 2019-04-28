@@ -44,6 +44,72 @@ static GPBFileDescriptor *CommonRoot_FileDescriptor(void) {
   return descriptor;
 }
 
+#pragma mark - Enum GraphShape
+
+GPBEnumDescriptor *GraphShape_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Circle\000";
+    static const int32_t values[] = {
+        GraphShape_Circle,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(GraphShape)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:GraphShape_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL GraphShape_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case GraphShape_Circle:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
+#pragma mark - Enum GraphMedia
+
+GPBEnumDescriptor *GraphMedia_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "Png\000";
+    static const int32_t values[] = {
+        GraphMedia_Png,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(GraphMedia)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:GraphMedia_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL GraphMedia_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case GraphMedia_Png:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 #pragma mark - Enum HTTPMethod
 
 GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void) {
@@ -445,6 +511,317 @@ typedef struct Float64__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Float64__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Graph
+
+@implementation Graph
+
+@dynamic xsArray, xsArray_Count;
+@dynamic ysArray, ysArray_Count;
+
+typedef struct Graph__storage_ {
+  uint32_t _has_storage_[1];
+  NSMutableArray *xsArray;
+  NSMutableArray *ysArray;
+} Graph__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "xsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(Float64),
+        .number = Graph_FieldNumber_XsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Graph__storage_, xsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "ysArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(Float64),
+        .number = Graph_FieldNumber_YsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(Graph__storage_, ysArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Graph class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Graph__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ScatterPlot
+
+@implementation ScatterPlot
+
+@dynamic hasGraph, graph;
+@dynamic shape;
+@dynamic media;
+@dynamic hasColor, color;
+@dynamic hasWidth, width;
+@dynamic hasHieght, hieght;
+
+typedef struct ScatterPlot__storage_ {
+  uint32_t _has_storage_[1];
+  GraphShape shape;
+  GraphMedia media;
+  Graph *graph;
+  RGBA *color;
+  Int64 *width;
+  Int64 *hieght;
+} ScatterPlot__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "graph",
+        .dataTypeSpecific.className = GPBStringifySymbol(Graph),
+        .number = ScatterPlot_FieldNumber_Graph,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ScatterPlot__storage_, graph),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "shape",
+        .dataTypeSpecific.enumDescFunc = GraphShape_EnumDescriptor,
+        .number = ScatterPlot_FieldNumber_Shape,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ScatterPlot__storage_, shape),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "media",
+        .dataTypeSpecific.enumDescFunc = GraphMedia_EnumDescriptor,
+        .number = ScatterPlot_FieldNumber_Media,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ScatterPlot__storage_, media),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "color",
+        .dataTypeSpecific.className = GPBStringifySymbol(RGBA),
+        .number = ScatterPlot_FieldNumber_Color,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ScatterPlot__storage_, color),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "width",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = ScatterPlot_FieldNumber_Width,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(ScatterPlot__storage_, width),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "hieght",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = ScatterPlot_FieldNumber_Hieght,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(ScatterPlot__storage_, hieght),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ScatterPlot class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ScatterPlot__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\005E\000\006F\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t ScatterPlot_Shape_RawValue(ScatterPlot *message) {
+  GPBDescriptor *descriptor = [ScatterPlot descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ScatterPlot_FieldNumber_Shape];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetScatterPlot_Shape_RawValue(ScatterPlot *message, int32_t value) {
+  GPBDescriptor *descriptor = [ScatterPlot descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ScatterPlot_FieldNumber_Shape];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
+
+int32_t ScatterPlot_Media_RawValue(ScatterPlot *message) {
+  GPBDescriptor *descriptor = [ScatterPlot descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ScatterPlot_FieldNumber_Media];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetScatterPlot_Media_RawValue(ScatterPlot *message, int32_t value) {
+  GPBDescriptor *descriptor = [ScatterPlot descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:ScatterPlot_FieldNumber_Media];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
+
+#pragma mark - RGBA
+
+@implementation RGBA
+
+@dynamic hasR, r;
+@dynamic hasG, g;
+@dynamic hasB, b;
+@dynamic hasA, a;
+
+typedef struct RGBA__storage_ {
+  uint32_t _has_storage_[1];
+  Int64 *r;
+  Int64 *g;
+  Int64 *b;
+  Int64 *a;
+} RGBA__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "r",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = RGBA_FieldNumber_R,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(RGBA__storage_, r),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "g",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = RGBA_FieldNumber_G,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(RGBA__storage_, g),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "b",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = RGBA_FieldNumber_B,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(RGBA__storage_, b),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "a",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = RGBA_FieldNumber_A,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(RGBA__storage_, a),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[RGBA class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(RGBA__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Error
+
+@implementation Error
+
+@dynamic hasErrorMsg, errorMsg;
+@dynamic hasInfo, info;
+
+typedef struct Error__storage_ {
+  uint32_t _has_storage_[1];
+  String *errorMsg;
+  String *info;
+} Error__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "errorMsg",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Error_FieldNumber_ErrorMsg,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Error__storage_, errorMsg),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "info",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Error_FieldNumber_Info,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Error__storage_, info),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Error class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Error__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

@@ -30,6 +30,28 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "common.Float64" do
     optional :num, :double, 1
   end
+  add_message "common.Graph" do
+    repeated :xs, :message, 1, "common.Float64"
+    repeated :ys, :message, 2, "common.Float64"
+  end
+  add_message "common.ScatterPlot" do
+    optional :graph, :message, 1, "common.Graph"
+    optional :shape, :enum, 2, "common.GraphShape"
+    optional :media, :enum, 3, "common.GraphMedia"
+    optional :color, :message, 4, "common.RGBA"
+    optional :Width, :message, 5, "common.Int64"
+    optional :Hieght, :message, 6, "common.Int64"
+  end
+  add_message "common.RGBA" do
+    optional :r, :message, 1, "common.Int64"
+    optional :g, :message, 2, "common.Int64"
+    optional :b, :message, 3, "common.Int64"
+    optional :a, :message, 4, "common.Int64"
+  end
+  add_message "common.Error" do
+    optional :error_msg, :message, 1, "common.String"
+    optional :info, :message, 3, "common.String"
+  end
   add_message "common.HTTPRequest" do
     optional :method, :enum, 1, "common.HTTPMethod"
     optional :url, :message, 2, "common.String"
@@ -42,6 +64,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :refresh_token, :message, 3, "common.String"
     optional :expiry, :message, 4, "common.String"
     optional :id_token, :message, 5, "common.String"
+  end
+  add_enum "common.GraphShape" do
+    value :CIRCLE, 0
+  end
+  add_enum "common.GraphMedia" do
+    value :PNG, 0
   end
   add_enum "common.HTTPMethod" do
     value :GET, 0
@@ -60,7 +88,13 @@ module Common
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Identifier").msgclass
   Int64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int64").msgclass
   Float64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Float64").msgclass
+  Graph = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Graph").msgclass
+  ScatterPlot = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.ScatterPlot").msgclass
+  RGBA = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.RGBA").msgclass
+  Error = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Error").msgclass
   HTTPRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPRequest").msgclass
   Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Token").msgclass
+  GraphShape = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.GraphShape").enummodule
+  GraphMedia = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.GraphMedia").enummodule
   HTTPMethod = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPMethod").enummodule
 end

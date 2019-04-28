@@ -9,6 +9,7 @@ import (
 	"github.com/autom8ter/api/common"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/sessions"
+	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	"google.golang.org/grpc"
 	"io"
@@ -110,19 +111,19 @@ func (a *Auth) DefaultIfEmpty() {
 }
 func (a *Auth) Validate() error {
 	if len(a.Scopes) == 0 {
-		return common.Util.NewError("validation error: empty scope")
+		return common.ToError(errors.New("validation error: empty scope"), "")
 	}
 	if a.Redirect.IsEmpty() {
-		return common.Util.NewError("validation error: empty redirect")
+		return common.ToError(errors.New("validation error: empty redirect"), "")
 	}
 	if a.ClientId.IsEmpty() {
-		return common.Util.NewError("validation error: empty client id")
+		return common.ToError(errors.New("validation error: empty clientid"), "")
 	}
 	if a.Domain.IsEmpty() {
-		return common.Util.NewError("validation error: empty domain")
+		return common.ToError(errors.New("validation error: empty domain"), "")
 	}
 	if a.ClientSecret.IsEmpty() {
-		return common.Util.NewError("validation error: empty client secret")
+		return common.ToError(errors.New("validation error: empty secret"), "")
 	}
 
 	return nil
@@ -291,7 +292,7 @@ func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 		}
 	}
 	if cert == "" {
-		err := common.Util.NewError("Unable to find appropriate key.")
+		err := common.ToError(errors.New("creating certificate"), "Unable to find appropriate key.")
 		return cert, err
 	}
 	return cert, nil

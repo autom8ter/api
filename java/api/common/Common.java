@@ -15,6 +15,184 @@ public final class Common {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
+   * Protobuf enum {@code common.GraphShape}
+   */
+  public enum GraphShape
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CIRCLE = 0;</code>
+     */
+    CIRCLE(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>CIRCLE = 0;</code>
+     */
+    public static final int CIRCLE_VALUE = 0;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static GraphShape valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static GraphShape forNumber(int value) {
+      switch (value) {
+        case 0: return CIRCLE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<GraphShape>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        GraphShape> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<GraphShape>() {
+            public GraphShape findValueByNumber(int number) {
+              return GraphShape.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return common.Common.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final GraphShape[] VALUES = values();
+
+    public static GraphShape valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private GraphShape(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:common.GraphShape)
+  }
+
+  /**
+   * Protobuf enum {@code common.GraphMedia}
+   */
+  public enum GraphMedia
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>PNG = 0;</code>
+     */
+    PNG(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>PNG = 0;</code>
+     */
+    public static final int PNG_VALUE = 0;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static GraphMedia valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static GraphMedia forNumber(int value) {
+      switch (value) {
+        case 0: return PNG;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<GraphMedia>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        GraphMedia> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<GraphMedia>() {
+            public GraphMedia findValueByNumber(int number) {
+              return GraphMedia.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return common.Common.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final GraphMedia[] VALUES = values();
+
+    public static GraphMedia valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private GraphMedia(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:common.GraphMedia)
+  }
+
+  /**
    * Protobuf enum {@code common.HTTPMethod}
    */
   public enum HTTPMethod
@@ -95,7 +273,7 @@ public final class Common {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return common.Common.getDescriptor().getEnumTypes().get(0);
+      return common.Common.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final HTTPMethod[] VALUES = values();
@@ -5106,6 +5284,4522 @@ public final class Common {
 
   }
 
+  public interface GraphOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.Graph)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    java.util.List<common.Common.Float64> 
+        getXsList();
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    common.Common.Float64 getXs(int index);
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    int getXsCount();
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    java.util.List<? extends common.Common.Float64OrBuilder> 
+        getXsOrBuilderList();
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    common.Common.Float64OrBuilder getXsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    java.util.List<common.Common.Float64> 
+        getYsList();
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    common.Common.Float64 getYs(int index);
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    int getYsCount();
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    java.util.List<? extends common.Common.Float64OrBuilder> 
+        getYsOrBuilderList();
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    common.Common.Float64OrBuilder getYsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code common.Graph}
+   */
+  public  static final class Graph extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.Graph)
+      GraphOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Graph.newBuilder() to construct.
+    private Graph(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Graph() {
+      xs_ = java.util.Collections.emptyList();
+      ys_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Graph(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                xs_ = new java.util.ArrayList<common.Common.Float64>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              xs_.add(
+                  input.readMessage(common.Common.Float64.parser(), extensionRegistry));
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                ys_ = new java.util.ArrayList<common.Common.Float64>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              ys_.add(
+                  input.readMessage(common.Common.Float64.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          xs_ = java.util.Collections.unmodifiableList(xs_);
+        }
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          ys_ = java.util.Collections.unmodifiableList(ys_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.Common.internal_static_common_Graph_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.Common.internal_static_common_Graph_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.Common.Graph.class, common.Common.Graph.Builder.class);
+    }
+
+    public static final int XS_FIELD_NUMBER = 1;
+    private java.util.List<common.Common.Float64> xs_;
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    public java.util.List<common.Common.Float64> getXsList() {
+      return xs_;
+    }
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    public java.util.List<? extends common.Common.Float64OrBuilder> 
+        getXsOrBuilderList() {
+      return xs_;
+    }
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    public int getXsCount() {
+      return xs_.size();
+    }
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    public common.Common.Float64 getXs(int index) {
+      return xs_.get(index);
+    }
+    /**
+     * <code>repeated .common.Float64 xs = 1;</code>
+     */
+    public common.Common.Float64OrBuilder getXsOrBuilder(
+        int index) {
+      return xs_.get(index);
+    }
+
+    public static final int YS_FIELD_NUMBER = 2;
+    private java.util.List<common.Common.Float64> ys_;
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    public java.util.List<common.Common.Float64> getYsList() {
+      return ys_;
+    }
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    public java.util.List<? extends common.Common.Float64OrBuilder> 
+        getYsOrBuilderList() {
+      return ys_;
+    }
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    public int getYsCount() {
+      return ys_.size();
+    }
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    public common.Common.Float64 getYs(int index) {
+      return ys_.get(index);
+    }
+    /**
+     * <code>repeated .common.Float64 ys = 2;</code>
+     */
+    public common.Common.Float64OrBuilder getYsOrBuilder(
+        int index) {
+      return ys_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < xs_.size(); i++) {
+        output.writeMessage(1, xs_.get(i));
+      }
+      for (int i = 0; i < ys_.size(); i++) {
+        output.writeMessage(2, ys_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < xs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, xs_.get(i));
+      }
+      for (int i = 0; i < ys_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, ys_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof common.Common.Graph)) {
+        return super.equals(obj);
+      }
+      common.Common.Graph other = (common.Common.Graph) obj;
+
+      boolean result = true;
+      result = result && getXsList()
+          .equals(other.getXsList());
+      result = result && getYsList()
+          .equals(other.getYsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getXsCount() > 0) {
+        hash = (37 * hash) + XS_FIELD_NUMBER;
+        hash = (53 * hash) + getXsList().hashCode();
+      }
+      if (getYsCount() > 0) {
+        hash = (37 * hash) + YS_FIELD_NUMBER;
+        hash = (53 * hash) + getYsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static common.Common.Graph parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Graph parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Graph parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Graph parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Graph parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Graph parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Graph parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.Graph parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.Graph parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static common.Common.Graph parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.Graph parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.Graph parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(common.Common.Graph prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.Graph}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.Graph)
+        common.Common.GraphOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.Common.internal_static_common_Graph_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.Common.internal_static_common_Graph_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.Common.Graph.class, common.Common.Graph.Builder.class);
+      }
+
+      // Construct using common.Common.Graph.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getXsFieldBuilder();
+          getYsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (xsBuilder_ == null) {
+          xs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          xsBuilder_.clear();
+        }
+        if (ysBuilder_ == null) {
+          ys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ysBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.Common.internal_static_common_Graph_descriptor;
+      }
+
+      @java.lang.Override
+      public common.Common.Graph getDefaultInstanceForType() {
+        return common.Common.Graph.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public common.Common.Graph build() {
+        common.Common.Graph result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public common.Common.Graph buildPartial() {
+        common.Common.Graph result = new common.Common.Graph(this);
+        int from_bitField0_ = bitField0_;
+        if (xsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            xs_ = java.util.Collections.unmodifiableList(xs_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.xs_ = xs_;
+        } else {
+          result.xs_ = xsBuilder_.build();
+        }
+        if (ysBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            ys_ = java.util.Collections.unmodifiableList(ys_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.ys_ = ys_;
+        } else {
+          result.ys_ = ysBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.Common.Graph) {
+          return mergeFrom((common.Common.Graph)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.Common.Graph other) {
+        if (other == common.Common.Graph.getDefaultInstance()) return this;
+        if (xsBuilder_ == null) {
+          if (!other.xs_.isEmpty()) {
+            if (xs_.isEmpty()) {
+              xs_ = other.xs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureXsIsMutable();
+              xs_.addAll(other.xs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.xs_.isEmpty()) {
+            if (xsBuilder_.isEmpty()) {
+              xsBuilder_.dispose();
+              xsBuilder_ = null;
+              xs_ = other.xs_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              xsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getXsFieldBuilder() : null;
+            } else {
+              xsBuilder_.addAllMessages(other.xs_);
+            }
+          }
+        }
+        if (ysBuilder_ == null) {
+          if (!other.ys_.isEmpty()) {
+            if (ys_.isEmpty()) {
+              ys_ = other.ys_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureYsIsMutable();
+              ys_.addAll(other.ys_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.ys_.isEmpty()) {
+            if (ysBuilder_.isEmpty()) {
+              ysBuilder_.dispose();
+              ysBuilder_ = null;
+              ys_ = other.ys_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              ysBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getYsFieldBuilder() : null;
+            } else {
+              ysBuilder_.addAllMessages(other.ys_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.Common.Graph parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.Common.Graph) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<common.Common.Float64> xs_ =
+        java.util.Collections.emptyList();
+      private void ensureXsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          xs_ = new java.util.ArrayList<common.Common.Float64>(xs_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          common.Common.Float64, common.Common.Float64.Builder, common.Common.Float64OrBuilder> xsBuilder_;
+
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public java.util.List<common.Common.Float64> getXsList() {
+        if (xsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(xs_);
+        } else {
+          return xsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public int getXsCount() {
+        if (xsBuilder_ == null) {
+          return xs_.size();
+        } else {
+          return xsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public common.Common.Float64 getXs(int index) {
+        if (xsBuilder_ == null) {
+          return xs_.get(index);
+        } else {
+          return xsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder setXs(
+          int index, common.Common.Float64 value) {
+        if (xsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureXsIsMutable();
+          xs_.set(index, value);
+          onChanged();
+        } else {
+          xsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder setXs(
+          int index, common.Common.Float64.Builder builderForValue) {
+        if (xsBuilder_ == null) {
+          ensureXsIsMutable();
+          xs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          xsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder addXs(common.Common.Float64 value) {
+        if (xsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureXsIsMutable();
+          xs_.add(value);
+          onChanged();
+        } else {
+          xsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder addXs(
+          int index, common.Common.Float64 value) {
+        if (xsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureXsIsMutable();
+          xs_.add(index, value);
+          onChanged();
+        } else {
+          xsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder addXs(
+          common.Common.Float64.Builder builderForValue) {
+        if (xsBuilder_ == null) {
+          ensureXsIsMutable();
+          xs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          xsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder addXs(
+          int index, common.Common.Float64.Builder builderForValue) {
+        if (xsBuilder_ == null) {
+          ensureXsIsMutable();
+          xs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          xsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder addAllXs(
+          java.lang.Iterable<? extends common.Common.Float64> values) {
+        if (xsBuilder_ == null) {
+          ensureXsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, xs_);
+          onChanged();
+        } else {
+          xsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder clearXs() {
+        if (xsBuilder_ == null) {
+          xs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          xsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public Builder removeXs(int index) {
+        if (xsBuilder_ == null) {
+          ensureXsIsMutable();
+          xs_.remove(index);
+          onChanged();
+        } else {
+          xsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public common.Common.Float64.Builder getXsBuilder(
+          int index) {
+        return getXsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public common.Common.Float64OrBuilder getXsOrBuilder(
+          int index) {
+        if (xsBuilder_ == null) {
+          return xs_.get(index);  } else {
+          return xsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public java.util.List<? extends common.Common.Float64OrBuilder> 
+           getXsOrBuilderList() {
+        if (xsBuilder_ != null) {
+          return xsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(xs_);
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public common.Common.Float64.Builder addXsBuilder() {
+        return getXsFieldBuilder().addBuilder(
+            common.Common.Float64.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public common.Common.Float64.Builder addXsBuilder(
+          int index) {
+        return getXsFieldBuilder().addBuilder(
+            index, common.Common.Float64.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .common.Float64 xs = 1;</code>
+       */
+      public java.util.List<common.Common.Float64.Builder> 
+           getXsBuilderList() {
+        return getXsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          common.Common.Float64, common.Common.Float64.Builder, common.Common.Float64OrBuilder> 
+          getXsFieldBuilder() {
+        if (xsBuilder_ == null) {
+          xsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              common.Common.Float64, common.Common.Float64.Builder, common.Common.Float64OrBuilder>(
+                  xs_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          xs_ = null;
+        }
+        return xsBuilder_;
+      }
+
+      private java.util.List<common.Common.Float64> ys_ =
+        java.util.Collections.emptyList();
+      private void ensureYsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          ys_ = new java.util.ArrayList<common.Common.Float64>(ys_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          common.Common.Float64, common.Common.Float64.Builder, common.Common.Float64OrBuilder> ysBuilder_;
+
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public java.util.List<common.Common.Float64> getYsList() {
+        if (ysBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(ys_);
+        } else {
+          return ysBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public int getYsCount() {
+        if (ysBuilder_ == null) {
+          return ys_.size();
+        } else {
+          return ysBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public common.Common.Float64 getYs(int index) {
+        if (ysBuilder_ == null) {
+          return ys_.get(index);
+        } else {
+          return ysBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder setYs(
+          int index, common.Common.Float64 value) {
+        if (ysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureYsIsMutable();
+          ys_.set(index, value);
+          onChanged();
+        } else {
+          ysBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder setYs(
+          int index, common.Common.Float64.Builder builderForValue) {
+        if (ysBuilder_ == null) {
+          ensureYsIsMutable();
+          ys_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          ysBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder addYs(common.Common.Float64 value) {
+        if (ysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureYsIsMutable();
+          ys_.add(value);
+          onChanged();
+        } else {
+          ysBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder addYs(
+          int index, common.Common.Float64 value) {
+        if (ysBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureYsIsMutable();
+          ys_.add(index, value);
+          onChanged();
+        } else {
+          ysBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder addYs(
+          common.Common.Float64.Builder builderForValue) {
+        if (ysBuilder_ == null) {
+          ensureYsIsMutable();
+          ys_.add(builderForValue.build());
+          onChanged();
+        } else {
+          ysBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder addYs(
+          int index, common.Common.Float64.Builder builderForValue) {
+        if (ysBuilder_ == null) {
+          ensureYsIsMutable();
+          ys_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          ysBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder addAllYs(
+          java.lang.Iterable<? extends common.Common.Float64> values) {
+        if (ysBuilder_ == null) {
+          ensureYsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, ys_);
+          onChanged();
+        } else {
+          ysBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder clearYs() {
+        if (ysBuilder_ == null) {
+          ys_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          ysBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public Builder removeYs(int index) {
+        if (ysBuilder_ == null) {
+          ensureYsIsMutable();
+          ys_.remove(index);
+          onChanged();
+        } else {
+          ysBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public common.Common.Float64.Builder getYsBuilder(
+          int index) {
+        return getYsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public common.Common.Float64OrBuilder getYsOrBuilder(
+          int index) {
+        if (ysBuilder_ == null) {
+          return ys_.get(index);  } else {
+          return ysBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public java.util.List<? extends common.Common.Float64OrBuilder> 
+           getYsOrBuilderList() {
+        if (ysBuilder_ != null) {
+          return ysBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(ys_);
+        }
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public common.Common.Float64.Builder addYsBuilder() {
+        return getYsFieldBuilder().addBuilder(
+            common.Common.Float64.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public common.Common.Float64.Builder addYsBuilder(
+          int index) {
+        return getYsFieldBuilder().addBuilder(
+            index, common.Common.Float64.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .common.Float64 ys = 2;</code>
+       */
+      public java.util.List<common.Common.Float64.Builder> 
+           getYsBuilderList() {
+        return getYsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          common.Common.Float64, common.Common.Float64.Builder, common.Common.Float64OrBuilder> 
+          getYsFieldBuilder() {
+        if (ysBuilder_ == null) {
+          ysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              common.Common.Float64, common.Common.Float64.Builder, common.Common.Float64OrBuilder>(
+                  ys_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          ys_ = null;
+        }
+        return ysBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.Graph)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.Graph)
+    private static final common.Common.Graph DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new common.Common.Graph();
+    }
+
+    public static common.Common.Graph getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Graph>
+        PARSER = new com.google.protobuf.AbstractParser<Graph>() {
+      @java.lang.Override
+      public Graph parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Graph(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Graph> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Graph> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public common.Common.Graph getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ScatterPlotOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.ScatterPlot)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.Graph graph = 1;</code>
+     */
+    boolean hasGraph();
+    /**
+     * <code>.common.Graph graph = 1;</code>
+     */
+    common.Common.Graph getGraph();
+    /**
+     * <code>.common.Graph graph = 1;</code>
+     */
+    common.Common.GraphOrBuilder getGraphOrBuilder();
+
+    /**
+     * <code>.common.GraphShape shape = 2;</code>
+     */
+    int getShapeValue();
+    /**
+     * <code>.common.GraphShape shape = 2;</code>
+     */
+    common.Common.GraphShape getShape();
+
+    /**
+     * <code>.common.GraphMedia media = 3;</code>
+     */
+    int getMediaValue();
+    /**
+     * <code>.common.GraphMedia media = 3;</code>
+     */
+    common.Common.GraphMedia getMedia();
+
+    /**
+     * <code>.common.RGBA color = 4;</code>
+     */
+    boolean hasColor();
+    /**
+     * <code>.common.RGBA color = 4;</code>
+     */
+    common.Common.RGBA getColor();
+    /**
+     * <code>.common.RGBA color = 4;</code>
+     */
+    common.Common.RGBAOrBuilder getColorOrBuilder();
+
+    /**
+     * <code>.common.Int64 Width = 5;</code>
+     */
+    boolean hasWidth();
+    /**
+     * <code>.common.Int64 Width = 5;</code>
+     */
+    common.Common.Int64 getWidth();
+    /**
+     * <code>.common.Int64 Width = 5;</code>
+     */
+    common.Common.Int64OrBuilder getWidthOrBuilder();
+
+    /**
+     * <code>.common.Int64 Hieght = 6;</code>
+     */
+    boolean hasHieght();
+    /**
+     * <code>.common.Int64 Hieght = 6;</code>
+     */
+    common.Common.Int64 getHieght();
+    /**
+     * <code>.common.Int64 Hieght = 6;</code>
+     */
+    common.Common.Int64OrBuilder getHieghtOrBuilder();
+  }
+  /**
+   * Protobuf type {@code common.ScatterPlot}
+   */
+  public  static final class ScatterPlot extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.ScatterPlot)
+      ScatterPlotOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ScatterPlot.newBuilder() to construct.
+    private ScatterPlot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ScatterPlot() {
+      shape_ = 0;
+      media_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ScatterPlot(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.Graph.Builder subBuilder = null;
+              if (graph_ != null) {
+                subBuilder = graph_.toBuilder();
+              }
+              graph_ = input.readMessage(common.Common.Graph.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(graph_);
+                graph_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              shape_ = rawValue;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              media_ = rawValue;
+              break;
+            }
+            case 34: {
+              common.Common.RGBA.Builder subBuilder = null;
+              if (color_ != null) {
+                subBuilder = color_.toBuilder();
+              }
+              color_ = input.readMessage(common.Common.RGBA.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(color_);
+                color_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              common.Common.Int64.Builder subBuilder = null;
+              if (width_ != null) {
+                subBuilder = width_.toBuilder();
+              }
+              width_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(width_);
+                width_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              common.Common.Int64.Builder subBuilder = null;
+              if (hieght_ != null) {
+                subBuilder = hieght_.toBuilder();
+              }
+              hieght_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hieght_);
+                hieght_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.Common.internal_static_common_ScatterPlot_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.Common.internal_static_common_ScatterPlot_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.Common.ScatterPlot.class, common.Common.ScatterPlot.Builder.class);
+    }
+
+    public static final int GRAPH_FIELD_NUMBER = 1;
+    private common.Common.Graph graph_;
+    /**
+     * <code>.common.Graph graph = 1;</code>
+     */
+    public boolean hasGraph() {
+      return graph_ != null;
+    }
+    /**
+     * <code>.common.Graph graph = 1;</code>
+     */
+    public common.Common.Graph getGraph() {
+      return graph_ == null ? common.Common.Graph.getDefaultInstance() : graph_;
+    }
+    /**
+     * <code>.common.Graph graph = 1;</code>
+     */
+    public common.Common.GraphOrBuilder getGraphOrBuilder() {
+      return getGraph();
+    }
+
+    public static final int SHAPE_FIELD_NUMBER = 2;
+    private int shape_;
+    /**
+     * <code>.common.GraphShape shape = 2;</code>
+     */
+    public int getShapeValue() {
+      return shape_;
+    }
+    /**
+     * <code>.common.GraphShape shape = 2;</code>
+     */
+    public common.Common.GraphShape getShape() {
+      @SuppressWarnings("deprecation")
+      common.Common.GraphShape result = common.Common.GraphShape.valueOf(shape_);
+      return result == null ? common.Common.GraphShape.UNRECOGNIZED : result;
+    }
+
+    public static final int MEDIA_FIELD_NUMBER = 3;
+    private int media_;
+    /**
+     * <code>.common.GraphMedia media = 3;</code>
+     */
+    public int getMediaValue() {
+      return media_;
+    }
+    /**
+     * <code>.common.GraphMedia media = 3;</code>
+     */
+    public common.Common.GraphMedia getMedia() {
+      @SuppressWarnings("deprecation")
+      common.Common.GraphMedia result = common.Common.GraphMedia.valueOf(media_);
+      return result == null ? common.Common.GraphMedia.UNRECOGNIZED : result;
+    }
+
+    public static final int COLOR_FIELD_NUMBER = 4;
+    private common.Common.RGBA color_;
+    /**
+     * <code>.common.RGBA color = 4;</code>
+     */
+    public boolean hasColor() {
+      return color_ != null;
+    }
+    /**
+     * <code>.common.RGBA color = 4;</code>
+     */
+    public common.Common.RGBA getColor() {
+      return color_ == null ? common.Common.RGBA.getDefaultInstance() : color_;
+    }
+    /**
+     * <code>.common.RGBA color = 4;</code>
+     */
+    public common.Common.RGBAOrBuilder getColorOrBuilder() {
+      return getColor();
+    }
+
+    public static final int WIDTH_FIELD_NUMBER = 5;
+    private common.Common.Int64 width_;
+    /**
+     * <code>.common.Int64 Width = 5;</code>
+     */
+    public boolean hasWidth() {
+      return width_ != null;
+    }
+    /**
+     * <code>.common.Int64 Width = 5;</code>
+     */
+    public common.Common.Int64 getWidth() {
+      return width_ == null ? common.Common.Int64.getDefaultInstance() : width_;
+    }
+    /**
+     * <code>.common.Int64 Width = 5;</code>
+     */
+    public common.Common.Int64OrBuilder getWidthOrBuilder() {
+      return getWidth();
+    }
+
+    public static final int HIEGHT_FIELD_NUMBER = 6;
+    private common.Common.Int64 hieght_;
+    /**
+     * <code>.common.Int64 Hieght = 6;</code>
+     */
+    public boolean hasHieght() {
+      return hieght_ != null;
+    }
+    /**
+     * <code>.common.Int64 Hieght = 6;</code>
+     */
+    public common.Common.Int64 getHieght() {
+      return hieght_ == null ? common.Common.Int64.getDefaultInstance() : hieght_;
+    }
+    /**
+     * <code>.common.Int64 Hieght = 6;</code>
+     */
+    public common.Common.Int64OrBuilder getHieghtOrBuilder() {
+      return getHieght();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (graph_ != null) {
+        output.writeMessage(1, getGraph());
+      }
+      if (shape_ != common.Common.GraphShape.CIRCLE.getNumber()) {
+        output.writeEnum(2, shape_);
+      }
+      if (media_ != common.Common.GraphMedia.PNG.getNumber()) {
+        output.writeEnum(3, media_);
+      }
+      if (color_ != null) {
+        output.writeMessage(4, getColor());
+      }
+      if (width_ != null) {
+        output.writeMessage(5, getWidth());
+      }
+      if (hieght_ != null) {
+        output.writeMessage(6, getHieght());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (graph_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getGraph());
+      }
+      if (shape_ != common.Common.GraphShape.CIRCLE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, shape_);
+      }
+      if (media_ != common.Common.GraphMedia.PNG.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, media_);
+      }
+      if (color_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getColor());
+      }
+      if (width_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getWidth());
+      }
+      if (hieght_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getHieght());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof common.Common.ScatterPlot)) {
+        return super.equals(obj);
+      }
+      common.Common.ScatterPlot other = (common.Common.ScatterPlot) obj;
+
+      boolean result = true;
+      result = result && (hasGraph() == other.hasGraph());
+      if (hasGraph()) {
+        result = result && getGraph()
+            .equals(other.getGraph());
+      }
+      result = result && shape_ == other.shape_;
+      result = result && media_ == other.media_;
+      result = result && (hasColor() == other.hasColor());
+      if (hasColor()) {
+        result = result && getColor()
+            .equals(other.getColor());
+      }
+      result = result && (hasWidth() == other.hasWidth());
+      if (hasWidth()) {
+        result = result && getWidth()
+            .equals(other.getWidth());
+      }
+      result = result && (hasHieght() == other.hasHieght());
+      if (hasHieght()) {
+        result = result && getHieght()
+            .equals(other.getHieght());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasGraph()) {
+        hash = (37 * hash) + GRAPH_FIELD_NUMBER;
+        hash = (53 * hash) + getGraph().hashCode();
+      }
+      hash = (37 * hash) + SHAPE_FIELD_NUMBER;
+      hash = (53 * hash) + shape_;
+      hash = (37 * hash) + MEDIA_FIELD_NUMBER;
+      hash = (53 * hash) + media_;
+      if (hasColor()) {
+        hash = (37 * hash) + COLOR_FIELD_NUMBER;
+        hash = (53 * hash) + getColor().hashCode();
+      }
+      if (hasWidth()) {
+        hash = (37 * hash) + WIDTH_FIELD_NUMBER;
+        hash = (53 * hash) + getWidth().hashCode();
+      }
+      if (hasHieght()) {
+        hash = (37 * hash) + HIEGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getHieght().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static common.Common.ScatterPlot parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.ScatterPlot parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.ScatterPlot parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.ScatterPlot parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static common.Common.ScatterPlot parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.ScatterPlot parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(common.Common.ScatterPlot prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.ScatterPlot}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.ScatterPlot)
+        common.Common.ScatterPlotOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.Common.internal_static_common_ScatterPlot_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.Common.internal_static_common_ScatterPlot_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.Common.ScatterPlot.class, common.Common.ScatterPlot.Builder.class);
+      }
+
+      // Construct using common.Common.ScatterPlot.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (graphBuilder_ == null) {
+          graph_ = null;
+        } else {
+          graph_ = null;
+          graphBuilder_ = null;
+        }
+        shape_ = 0;
+
+        media_ = 0;
+
+        if (colorBuilder_ == null) {
+          color_ = null;
+        } else {
+          color_ = null;
+          colorBuilder_ = null;
+        }
+        if (widthBuilder_ == null) {
+          width_ = null;
+        } else {
+          width_ = null;
+          widthBuilder_ = null;
+        }
+        if (hieghtBuilder_ == null) {
+          hieght_ = null;
+        } else {
+          hieght_ = null;
+          hieghtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.Common.internal_static_common_ScatterPlot_descriptor;
+      }
+
+      @java.lang.Override
+      public common.Common.ScatterPlot getDefaultInstanceForType() {
+        return common.Common.ScatterPlot.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public common.Common.ScatterPlot build() {
+        common.Common.ScatterPlot result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public common.Common.ScatterPlot buildPartial() {
+        common.Common.ScatterPlot result = new common.Common.ScatterPlot(this);
+        if (graphBuilder_ == null) {
+          result.graph_ = graph_;
+        } else {
+          result.graph_ = graphBuilder_.build();
+        }
+        result.shape_ = shape_;
+        result.media_ = media_;
+        if (colorBuilder_ == null) {
+          result.color_ = color_;
+        } else {
+          result.color_ = colorBuilder_.build();
+        }
+        if (widthBuilder_ == null) {
+          result.width_ = width_;
+        } else {
+          result.width_ = widthBuilder_.build();
+        }
+        if (hieghtBuilder_ == null) {
+          result.hieght_ = hieght_;
+        } else {
+          result.hieght_ = hieghtBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.Common.ScatterPlot) {
+          return mergeFrom((common.Common.ScatterPlot)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.Common.ScatterPlot other) {
+        if (other == common.Common.ScatterPlot.getDefaultInstance()) return this;
+        if (other.hasGraph()) {
+          mergeGraph(other.getGraph());
+        }
+        if (other.shape_ != 0) {
+          setShapeValue(other.getShapeValue());
+        }
+        if (other.media_ != 0) {
+          setMediaValue(other.getMediaValue());
+        }
+        if (other.hasColor()) {
+          mergeColor(other.getColor());
+        }
+        if (other.hasWidth()) {
+          mergeWidth(other.getWidth());
+        }
+        if (other.hasHieght()) {
+          mergeHieght(other.getHieght());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.Common.ScatterPlot parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.Common.ScatterPlot) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.Graph graph_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Graph, common.Common.Graph.Builder, common.Common.GraphOrBuilder> graphBuilder_;
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public boolean hasGraph() {
+        return graphBuilder_ != null || graph_ != null;
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public common.Common.Graph getGraph() {
+        if (graphBuilder_ == null) {
+          return graph_ == null ? common.Common.Graph.getDefaultInstance() : graph_;
+        } else {
+          return graphBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public Builder setGraph(common.Common.Graph value) {
+        if (graphBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          graph_ = value;
+          onChanged();
+        } else {
+          graphBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public Builder setGraph(
+          common.Common.Graph.Builder builderForValue) {
+        if (graphBuilder_ == null) {
+          graph_ = builderForValue.build();
+          onChanged();
+        } else {
+          graphBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public Builder mergeGraph(common.Common.Graph value) {
+        if (graphBuilder_ == null) {
+          if (graph_ != null) {
+            graph_ =
+              common.Common.Graph.newBuilder(graph_).mergeFrom(value).buildPartial();
+          } else {
+            graph_ = value;
+          }
+          onChanged();
+        } else {
+          graphBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public Builder clearGraph() {
+        if (graphBuilder_ == null) {
+          graph_ = null;
+          onChanged();
+        } else {
+          graph_ = null;
+          graphBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public common.Common.Graph.Builder getGraphBuilder() {
+        
+        onChanged();
+        return getGraphFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      public common.Common.GraphOrBuilder getGraphOrBuilder() {
+        if (graphBuilder_ != null) {
+          return graphBuilder_.getMessageOrBuilder();
+        } else {
+          return graph_ == null ?
+              common.Common.Graph.getDefaultInstance() : graph_;
+        }
+      }
+      /**
+       * <code>.common.Graph graph = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Graph, common.Common.Graph.Builder, common.Common.GraphOrBuilder> 
+          getGraphFieldBuilder() {
+        if (graphBuilder_ == null) {
+          graphBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Graph, common.Common.Graph.Builder, common.Common.GraphOrBuilder>(
+                  getGraph(),
+                  getParentForChildren(),
+                  isClean());
+          graph_ = null;
+        }
+        return graphBuilder_;
+      }
+
+      private int shape_ = 0;
+      /**
+       * <code>.common.GraphShape shape = 2;</code>
+       */
+      public int getShapeValue() {
+        return shape_;
+      }
+      /**
+       * <code>.common.GraphShape shape = 2;</code>
+       */
+      public Builder setShapeValue(int value) {
+        shape_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.GraphShape shape = 2;</code>
+       */
+      public common.Common.GraphShape getShape() {
+        @SuppressWarnings("deprecation")
+        common.Common.GraphShape result = common.Common.GraphShape.valueOf(shape_);
+        return result == null ? common.Common.GraphShape.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.common.GraphShape shape = 2;</code>
+       */
+      public Builder setShape(common.Common.GraphShape value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        shape_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.GraphShape shape = 2;</code>
+       */
+      public Builder clearShape() {
+        
+        shape_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int media_ = 0;
+      /**
+       * <code>.common.GraphMedia media = 3;</code>
+       */
+      public int getMediaValue() {
+        return media_;
+      }
+      /**
+       * <code>.common.GraphMedia media = 3;</code>
+       */
+      public Builder setMediaValue(int value) {
+        media_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.GraphMedia media = 3;</code>
+       */
+      public common.Common.GraphMedia getMedia() {
+        @SuppressWarnings("deprecation")
+        common.Common.GraphMedia result = common.Common.GraphMedia.valueOf(media_);
+        return result == null ? common.Common.GraphMedia.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.common.GraphMedia media = 3;</code>
+       */
+      public Builder setMedia(common.Common.GraphMedia value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        media_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.GraphMedia media = 3;</code>
+       */
+      public Builder clearMedia() {
+        
+        media_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private common.Common.RGBA color_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.RGBA, common.Common.RGBA.Builder, common.Common.RGBAOrBuilder> colorBuilder_;
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public boolean hasColor() {
+        return colorBuilder_ != null || color_ != null;
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public common.Common.RGBA getColor() {
+        if (colorBuilder_ == null) {
+          return color_ == null ? common.Common.RGBA.getDefaultInstance() : color_;
+        } else {
+          return colorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public Builder setColor(common.Common.RGBA value) {
+        if (colorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          color_ = value;
+          onChanged();
+        } else {
+          colorBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public Builder setColor(
+          common.Common.RGBA.Builder builderForValue) {
+        if (colorBuilder_ == null) {
+          color_ = builderForValue.build();
+          onChanged();
+        } else {
+          colorBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public Builder mergeColor(common.Common.RGBA value) {
+        if (colorBuilder_ == null) {
+          if (color_ != null) {
+            color_ =
+              common.Common.RGBA.newBuilder(color_).mergeFrom(value).buildPartial();
+          } else {
+            color_ = value;
+          }
+          onChanged();
+        } else {
+          colorBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public Builder clearColor() {
+        if (colorBuilder_ == null) {
+          color_ = null;
+          onChanged();
+        } else {
+          color_ = null;
+          colorBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public common.Common.RGBA.Builder getColorBuilder() {
+        
+        onChanged();
+        return getColorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      public common.Common.RGBAOrBuilder getColorOrBuilder() {
+        if (colorBuilder_ != null) {
+          return colorBuilder_.getMessageOrBuilder();
+        } else {
+          return color_ == null ?
+              common.Common.RGBA.getDefaultInstance() : color_;
+        }
+      }
+      /**
+       * <code>.common.RGBA color = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.RGBA, common.Common.RGBA.Builder, common.Common.RGBAOrBuilder> 
+          getColorFieldBuilder() {
+        if (colorBuilder_ == null) {
+          colorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.RGBA, common.Common.RGBA.Builder, common.Common.RGBAOrBuilder>(
+                  getColor(),
+                  getParentForChildren(),
+                  isClean());
+          color_ = null;
+        }
+        return colorBuilder_;
+      }
+
+      private common.Common.Int64 width_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> widthBuilder_;
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public boolean hasWidth() {
+        return widthBuilder_ != null || width_ != null;
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public common.Common.Int64 getWidth() {
+        if (widthBuilder_ == null) {
+          return width_ == null ? common.Common.Int64.getDefaultInstance() : width_;
+        } else {
+          return widthBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public Builder setWidth(common.Common.Int64 value) {
+        if (widthBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          width_ = value;
+          onChanged();
+        } else {
+          widthBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public Builder setWidth(
+          common.Common.Int64.Builder builderForValue) {
+        if (widthBuilder_ == null) {
+          width_ = builderForValue.build();
+          onChanged();
+        } else {
+          widthBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public Builder mergeWidth(common.Common.Int64 value) {
+        if (widthBuilder_ == null) {
+          if (width_ != null) {
+            width_ =
+              common.Common.Int64.newBuilder(width_).mergeFrom(value).buildPartial();
+          } else {
+            width_ = value;
+          }
+          onChanged();
+        } else {
+          widthBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public Builder clearWidth() {
+        if (widthBuilder_ == null) {
+          width_ = null;
+          onChanged();
+        } else {
+          width_ = null;
+          widthBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public common.Common.Int64.Builder getWidthBuilder() {
+        
+        onChanged();
+        return getWidthFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      public common.Common.Int64OrBuilder getWidthOrBuilder() {
+        if (widthBuilder_ != null) {
+          return widthBuilder_.getMessageOrBuilder();
+        } else {
+          return width_ == null ?
+              common.Common.Int64.getDefaultInstance() : width_;
+        }
+      }
+      /**
+       * <code>.common.Int64 Width = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getWidthFieldBuilder() {
+        if (widthBuilder_ == null) {
+          widthBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getWidth(),
+                  getParentForChildren(),
+                  isClean());
+          width_ = null;
+        }
+        return widthBuilder_;
+      }
+
+      private common.Common.Int64 hieght_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> hieghtBuilder_;
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public boolean hasHieght() {
+        return hieghtBuilder_ != null || hieght_ != null;
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public common.Common.Int64 getHieght() {
+        if (hieghtBuilder_ == null) {
+          return hieght_ == null ? common.Common.Int64.getDefaultInstance() : hieght_;
+        } else {
+          return hieghtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public Builder setHieght(common.Common.Int64 value) {
+        if (hieghtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hieght_ = value;
+          onChanged();
+        } else {
+          hieghtBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public Builder setHieght(
+          common.Common.Int64.Builder builderForValue) {
+        if (hieghtBuilder_ == null) {
+          hieght_ = builderForValue.build();
+          onChanged();
+        } else {
+          hieghtBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public Builder mergeHieght(common.Common.Int64 value) {
+        if (hieghtBuilder_ == null) {
+          if (hieght_ != null) {
+            hieght_ =
+              common.Common.Int64.newBuilder(hieght_).mergeFrom(value).buildPartial();
+          } else {
+            hieght_ = value;
+          }
+          onChanged();
+        } else {
+          hieghtBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public Builder clearHieght() {
+        if (hieghtBuilder_ == null) {
+          hieght_ = null;
+          onChanged();
+        } else {
+          hieght_ = null;
+          hieghtBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public common.Common.Int64.Builder getHieghtBuilder() {
+        
+        onChanged();
+        return getHieghtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      public common.Common.Int64OrBuilder getHieghtOrBuilder() {
+        if (hieghtBuilder_ != null) {
+          return hieghtBuilder_.getMessageOrBuilder();
+        } else {
+          return hieght_ == null ?
+              common.Common.Int64.getDefaultInstance() : hieght_;
+        }
+      }
+      /**
+       * <code>.common.Int64 Hieght = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getHieghtFieldBuilder() {
+        if (hieghtBuilder_ == null) {
+          hieghtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getHieght(),
+                  getParentForChildren(),
+                  isClean());
+          hieght_ = null;
+        }
+        return hieghtBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.ScatterPlot)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.ScatterPlot)
+    private static final common.Common.ScatterPlot DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new common.Common.ScatterPlot();
+    }
+
+    public static common.Common.ScatterPlot getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ScatterPlot>
+        PARSER = new com.google.protobuf.AbstractParser<ScatterPlot>() {
+      @java.lang.Override
+      public ScatterPlot parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ScatterPlot(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ScatterPlot> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ScatterPlot> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public common.Common.ScatterPlot getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RGBAOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.RGBA)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.Int64 r = 1;</code>
+     */
+    boolean hasR();
+    /**
+     * <code>.common.Int64 r = 1;</code>
+     */
+    common.Common.Int64 getR();
+    /**
+     * <code>.common.Int64 r = 1;</code>
+     */
+    common.Common.Int64OrBuilder getROrBuilder();
+
+    /**
+     * <code>.common.Int64 g = 2;</code>
+     */
+    boolean hasG();
+    /**
+     * <code>.common.Int64 g = 2;</code>
+     */
+    common.Common.Int64 getG();
+    /**
+     * <code>.common.Int64 g = 2;</code>
+     */
+    common.Common.Int64OrBuilder getGOrBuilder();
+
+    /**
+     * <code>.common.Int64 b = 3;</code>
+     */
+    boolean hasB();
+    /**
+     * <code>.common.Int64 b = 3;</code>
+     */
+    common.Common.Int64 getB();
+    /**
+     * <code>.common.Int64 b = 3;</code>
+     */
+    common.Common.Int64OrBuilder getBOrBuilder();
+
+    /**
+     * <code>.common.Int64 a = 4;</code>
+     */
+    boolean hasA();
+    /**
+     * <code>.common.Int64 a = 4;</code>
+     */
+    common.Common.Int64 getA();
+    /**
+     * <code>.common.Int64 a = 4;</code>
+     */
+    common.Common.Int64OrBuilder getAOrBuilder();
+  }
+  /**
+   * Protobuf type {@code common.RGBA}
+   */
+  public  static final class RGBA extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.RGBA)
+      RGBAOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RGBA.newBuilder() to construct.
+    private RGBA(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RGBA() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RGBA(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.Int64.Builder subBuilder = null;
+              if (r_ != null) {
+                subBuilder = r_.toBuilder();
+              }
+              r_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(r_);
+                r_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              common.Common.Int64.Builder subBuilder = null;
+              if (g_ != null) {
+                subBuilder = g_.toBuilder();
+              }
+              g_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(g_);
+                g_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              common.Common.Int64.Builder subBuilder = null;
+              if (b_ != null) {
+                subBuilder = b_.toBuilder();
+              }
+              b_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(b_);
+                b_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              common.Common.Int64.Builder subBuilder = null;
+              if (a_ != null) {
+                subBuilder = a_.toBuilder();
+              }
+              a_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(a_);
+                a_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.Common.internal_static_common_RGBA_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.Common.internal_static_common_RGBA_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.Common.RGBA.class, common.Common.RGBA.Builder.class);
+    }
+
+    public static final int R_FIELD_NUMBER = 1;
+    private common.Common.Int64 r_;
+    /**
+     * <code>.common.Int64 r = 1;</code>
+     */
+    public boolean hasR() {
+      return r_ != null;
+    }
+    /**
+     * <code>.common.Int64 r = 1;</code>
+     */
+    public common.Common.Int64 getR() {
+      return r_ == null ? common.Common.Int64.getDefaultInstance() : r_;
+    }
+    /**
+     * <code>.common.Int64 r = 1;</code>
+     */
+    public common.Common.Int64OrBuilder getROrBuilder() {
+      return getR();
+    }
+
+    public static final int G_FIELD_NUMBER = 2;
+    private common.Common.Int64 g_;
+    /**
+     * <code>.common.Int64 g = 2;</code>
+     */
+    public boolean hasG() {
+      return g_ != null;
+    }
+    /**
+     * <code>.common.Int64 g = 2;</code>
+     */
+    public common.Common.Int64 getG() {
+      return g_ == null ? common.Common.Int64.getDefaultInstance() : g_;
+    }
+    /**
+     * <code>.common.Int64 g = 2;</code>
+     */
+    public common.Common.Int64OrBuilder getGOrBuilder() {
+      return getG();
+    }
+
+    public static final int B_FIELD_NUMBER = 3;
+    private common.Common.Int64 b_;
+    /**
+     * <code>.common.Int64 b = 3;</code>
+     */
+    public boolean hasB() {
+      return b_ != null;
+    }
+    /**
+     * <code>.common.Int64 b = 3;</code>
+     */
+    public common.Common.Int64 getB() {
+      return b_ == null ? common.Common.Int64.getDefaultInstance() : b_;
+    }
+    /**
+     * <code>.common.Int64 b = 3;</code>
+     */
+    public common.Common.Int64OrBuilder getBOrBuilder() {
+      return getB();
+    }
+
+    public static final int A_FIELD_NUMBER = 4;
+    private common.Common.Int64 a_;
+    /**
+     * <code>.common.Int64 a = 4;</code>
+     */
+    public boolean hasA() {
+      return a_ != null;
+    }
+    /**
+     * <code>.common.Int64 a = 4;</code>
+     */
+    public common.Common.Int64 getA() {
+      return a_ == null ? common.Common.Int64.getDefaultInstance() : a_;
+    }
+    /**
+     * <code>.common.Int64 a = 4;</code>
+     */
+    public common.Common.Int64OrBuilder getAOrBuilder() {
+      return getA();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (r_ != null) {
+        output.writeMessage(1, getR());
+      }
+      if (g_ != null) {
+        output.writeMessage(2, getG());
+      }
+      if (b_ != null) {
+        output.writeMessage(3, getB());
+      }
+      if (a_ != null) {
+        output.writeMessage(4, getA());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (r_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getR());
+      }
+      if (g_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getG());
+      }
+      if (b_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getB());
+      }
+      if (a_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getA());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof common.Common.RGBA)) {
+        return super.equals(obj);
+      }
+      common.Common.RGBA other = (common.Common.RGBA) obj;
+
+      boolean result = true;
+      result = result && (hasR() == other.hasR());
+      if (hasR()) {
+        result = result && getR()
+            .equals(other.getR());
+      }
+      result = result && (hasG() == other.hasG());
+      if (hasG()) {
+        result = result && getG()
+            .equals(other.getG());
+      }
+      result = result && (hasB() == other.hasB());
+      if (hasB()) {
+        result = result && getB()
+            .equals(other.getB());
+      }
+      result = result && (hasA() == other.hasA());
+      if (hasA()) {
+        result = result && getA()
+            .equals(other.getA());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasR()) {
+        hash = (37 * hash) + R_FIELD_NUMBER;
+        hash = (53 * hash) + getR().hashCode();
+      }
+      if (hasG()) {
+        hash = (37 * hash) + G_FIELD_NUMBER;
+        hash = (53 * hash) + getG().hashCode();
+      }
+      if (hasB()) {
+        hash = (37 * hash) + B_FIELD_NUMBER;
+        hash = (53 * hash) + getB().hashCode();
+      }
+      if (hasA()) {
+        hash = (37 * hash) + A_FIELD_NUMBER;
+        hash = (53 * hash) + getA().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static common.Common.RGBA parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.RGBA parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.RGBA parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.RGBA parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.RGBA parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.RGBA parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.RGBA parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.RGBA parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.RGBA parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static common.Common.RGBA parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.RGBA parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.RGBA parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(common.Common.RGBA prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.RGBA}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.RGBA)
+        common.Common.RGBAOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.Common.internal_static_common_RGBA_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.Common.internal_static_common_RGBA_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.Common.RGBA.class, common.Common.RGBA.Builder.class);
+      }
+
+      // Construct using common.Common.RGBA.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (rBuilder_ == null) {
+          r_ = null;
+        } else {
+          r_ = null;
+          rBuilder_ = null;
+        }
+        if (gBuilder_ == null) {
+          g_ = null;
+        } else {
+          g_ = null;
+          gBuilder_ = null;
+        }
+        if (bBuilder_ == null) {
+          b_ = null;
+        } else {
+          b_ = null;
+          bBuilder_ = null;
+        }
+        if (aBuilder_ == null) {
+          a_ = null;
+        } else {
+          a_ = null;
+          aBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.Common.internal_static_common_RGBA_descriptor;
+      }
+
+      @java.lang.Override
+      public common.Common.RGBA getDefaultInstanceForType() {
+        return common.Common.RGBA.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public common.Common.RGBA build() {
+        common.Common.RGBA result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public common.Common.RGBA buildPartial() {
+        common.Common.RGBA result = new common.Common.RGBA(this);
+        if (rBuilder_ == null) {
+          result.r_ = r_;
+        } else {
+          result.r_ = rBuilder_.build();
+        }
+        if (gBuilder_ == null) {
+          result.g_ = g_;
+        } else {
+          result.g_ = gBuilder_.build();
+        }
+        if (bBuilder_ == null) {
+          result.b_ = b_;
+        } else {
+          result.b_ = bBuilder_.build();
+        }
+        if (aBuilder_ == null) {
+          result.a_ = a_;
+        } else {
+          result.a_ = aBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.Common.RGBA) {
+          return mergeFrom((common.Common.RGBA)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.Common.RGBA other) {
+        if (other == common.Common.RGBA.getDefaultInstance()) return this;
+        if (other.hasR()) {
+          mergeR(other.getR());
+        }
+        if (other.hasG()) {
+          mergeG(other.getG());
+        }
+        if (other.hasB()) {
+          mergeB(other.getB());
+        }
+        if (other.hasA()) {
+          mergeA(other.getA());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.Common.RGBA parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.Common.RGBA) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.Int64 r_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> rBuilder_;
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public boolean hasR() {
+        return rBuilder_ != null || r_ != null;
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public common.Common.Int64 getR() {
+        if (rBuilder_ == null) {
+          return r_ == null ? common.Common.Int64.getDefaultInstance() : r_;
+        } else {
+          return rBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public Builder setR(common.Common.Int64 value) {
+        if (rBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          r_ = value;
+          onChanged();
+        } else {
+          rBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public Builder setR(
+          common.Common.Int64.Builder builderForValue) {
+        if (rBuilder_ == null) {
+          r_ = builderForValue.build();
+          onChanged();
+        } else {
+          rBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public Builder mergeR(common.Common.Int64 value) {
+        if (rBuilder_ == null) {
+          if (r_ != null) {
+            r_ =
+              common.Common.Int64.newBuilder(r_).mergeFrom(value).buildPartial();
+          } else {
+            r_ = value;
+          }
+          onChanged();
+        } else {
+          rBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public Builder clearR() {
+        if (rBuilder_ == null) {
+          r_ = null;
+          onChanged();
+        } else {
+          r_ = null;
+          rBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public common.Common.Int64.Builder getRBuilder() {
+        
+        onChanged();
+        return getRFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      public common.Common.Int64OrBuilder getROrBuilder() {
+        if (rBuilder_ != null) {
+          return rBuilder_.getMessageOrBuilder();
+        } else {
+          return r_ == null ?
+              common.Common.Int64.getDefaultInstance() : r_;
+        }
+      }
+      /**
+       * <code>.common.Int64 r = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getRFieldBuilder() {
+        if (rBuilder_ == null) {
+          rBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getR(),
+                  getParentForChildren(),
+                  isClean());
+          r_ = null;
+        }
+        return rBuilder_;
+      }
+
+      private common.Common.Int64 g_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> gBuilder_;
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public boolean hasG() {
+        return gBuilder_ != null || g_ != null;
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public common.Common.Int64 getG() {
+        if (gBuilder_ == null) {
+          return g_ == null ? common.Common.Int64.getDefaultInstance() : g_;
+        } else {
+          return gBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public Builder setG(common.Common.Int64 value) {
+        if (gBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          g_ = value;
+          onChanged();
+        } else {
+          gBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public Builder setG(
+          common.Common.Int64.Builder builderForValue) {
+        if (gBuilder_ == null) {
+          g_ = builderForValue.build();
+          onChanged();
+        } else {
+          gBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public Builder mergeG(common.Common.Int64 value) {
+        if (gBuilder_ == null) {
+          if (g_ != null) {
+            g_ =
+              common.Common.Int64.newBuilder(g_).mergeFrom(value).buildPartial();
+          } else {
+            g_ = value;
+          }
+          onChanged();
+        } else {
+          gBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public Builder clearG() {
+        if (gBuilder_ == null) {
+          g_ = null;
+          onChanged();
+        } else {
+          g_ = null;
+          gBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public common.Common.Int64.Builder getGBuilder() {
+        
+        onChanged();
+        return getGFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      public common.Common.Int64OrBuilder getGOrBuilder() {
+        if (gBuilder_ != null) {
+          return gBuilder_.getMessageOrBuilder();
+        } else {
+          return g_ == null ?
+              common.Common.Int64.getDefaultInstance() : g_;
+        }
+      }
+      /**
+       * <code>.common.Int64 g = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getGFieldBuilder() {
+        if (gBuilder_ == null) {
+          gBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getG(),
+                  getParentForChildren(),
+                  isClean());
+          g_ = null;
+        }
+        return gBuilder_;
+      }
+
+      private common.Common.Int64 b_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> bBuilder_;
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public boolean hasB() {
+        return bBuilder_ != null || b_ != null;
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public common.Common.Int64 getB() {
+        if (bBuilder_ == null) {
+          return b_ == null ? common.Common.Int64.getDefaultInstance() : b_;
+        } else {
+          return bBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public Builder setB(common.Common.Int64 value) {
+        if (bBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          b_ = value;
+          onChanged();
+        } else {
+          bBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public Builder setB(
+          common.Common.Int64.Builder builderForValue) {
+        if (bBuilder_ == null) {
+          b_ = builderForValue.build();
+          onChanged();
+        } else {
+          bBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public Builder mergeB(common.Common.Int64 value) {
+        if (bBuilder_ == null) {
+          if (b_ != null) {
+            b_ =
+              common.Common.Int64.newBuilder(b_).mergeFrom(value).buildPartial();
+          } else {
+            b_ = value;
+          }
+          onChanged();
+        } else {
+          bBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public Builder clearB() {
+        if (bBuilder_ == null) {
+          b_ = null;
+          onChanged();
+        } else {
+          b_ = null;
+          bBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public common.Common.Int64.Builder getBBuilder() {
+        
+        onChanged();
+        return getBFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      public common.Common.Int64OrBuilder getBOrBuilder() {
+        if (bBuilder_ != null) {
+          return bBuilder_.getMessageOrBuilder();
+        } else {
+          return b_ == null ?
+              common.Common.Int64.getDefaultInstance() : b_;
+        }
+      }
+      /**
+       * <code>.common.Int64 b = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getBFieldBuilder() {
+        if (bBuilder_ == null) {
+          bBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getB(),
+                  getParentForChildren(),
+                  isClean());
+          b_ = null;
+        }
+        return bBuilder_;
+      }
+
+      private common.Common.Int64 a_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> aBuilder_;
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public boolean hasA() {
+        return aBuilder_ != null || a_ != null;
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public common.Common.Int64 getA() {
+        if (aBuilder_ == null) {
+          return a_ == null ? common.Common.Int64.getDefaultInstance() : a_;
+        } else {
+          return aBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public Builder setA(common.Common.Int64 value) {
+        if (aBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          a_ = value;
+          onChanged();
+        } else {
+          aBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public Builder setA(
+          common.Common.Int64.Builder builderForValue) {
+        if (aBuilder_ == null) {
+          a_ = builderForValue.build();
+          onChanged();
+        } else {
+          aBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public Builder mergeA(common.Common.Int64 value) {
+        if (aBuilder_ == null) {
+          if (a_ != null) {
+            a_ =
+              common.Common.Int64.newBuilder(a_).mergeFrom(value).buildPartial();
+          } else {
+            a_ = value;
+          }
+          onChanged();
+        } else {
+          aBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public Builder clearA() {
+        if (aBuilder_ == null) {
+          a_ = null;
+          onChanged();
+        } else {
+          a_ = null;
+          aBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public common.Common.Int64.Builder getABuilder() {
+        
+        onChanged();
+        return getAFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      public common.Common.Int64OrBuilder getAOrBuilder() {
+        if (aBuilder_ != null) {
+          return aBuilder_.getMessageOrBuilder();
+        } else {
+          return a_ == null ?
+              common.Common.Int64.getDefaultInstance() : a_;
+        }
+      }
+      /**
+       * <code>.common.Int64 a = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getAFieldBuilder() {
+        if (aBuilder_ == null) {
+          aBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getA(),
+                  getParentForChildren(),
+                  isClean());
+          a_ = null;
+        }
+        return aBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.RGBA)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.RGBA)
+    private static final common.Common.RGBA DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new common.Common.RGBA();
+    }
+
+    public static common.Common.RGBA getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RGBA>
+        PARSER = new com.google.protobuf.AbstractParser<RGBA>() {
+      @java.lang.Override
+      public RGBA parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RGBA(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RGBA> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RGBA> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public common.Common.RGBA getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ErrorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.Error)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.String error_msg = 1;</code>
+     */
+    boolean hasErrorMsg();
+    /**
+     * <code>.common.String error_msg = 1;</code>
+     */
+    common.Common.String getErrorMsg();
+    /**
+     * <code>.common.String error_msg = 1;</code>
+     */
+    common.Common.StringOrBuilder getErrorMsgOrBuilder();
+
+    /**
+     * <code>.common.String info = 3;</code>
+     */
+    boolean hasInfo();
+    /**
+     * <code>.common.String info = 3;</code>
+     */
+    common.Common.String getInfo();
+    /**
+     * <code>.common.String info = 3;</code>
+     */
+    common.Common.StringOrBuilder getInfoOrBuilder();
+  }
+  /**
+   * Protobuf type {@code common.Error}
+   */
+  public  static final class Error extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.Error)
+      ErrorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Error.newBuilder() to construct.
+    private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Error() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Error(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.String.Builder subBuilder = null;
+              if (errorMsg_ != null) {
+                subBuilder = errorMsg_.toBuilder();
+              }
+              errorMsg_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(errorMsg_);
+                errorMsg_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              common.Common.String.Builder subBuilder = null;
+              if (info_ != null) {
+                subBuilder = info_.toBuilder();
+              }
+              info_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(info_);
+                info_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.Common.internal_static_common_Error_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.Common.internal_static_common_Error_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.Common.Error.class, common.Common.Error.Builder.class);
+    }
+
+    public static final int ERROR_MSG_FIELD_NUMBER = 1;
+    private common.Common.String errorMsg_;
+    /**
+     * <code>.common.String error_msg = 1;</code>
+     */
+    public boolean hasErrorMsg() {
+      return errorMsg_ != null;
+    }
+    /**
+     * <code>.common.String error_msg = 1;</code>
+     */
+    public common.Common.String getErrorMsg() {
+      return errorMsg_ == null ? common.Common.String.getDefaultInstance() : errorMsg_;
+    }
+    /**
+     * <code>.common.String error_msg = 1;</code>
+     */
+    public common.Common.StringOrBuilder getErrorMsgOrBuilder() {
+      return getErrorMsg();
+    }
+
+    public static final int INFO_FIELD_NUMBER = 3;
+    private common.Common.String info_;
+    /**
+     * <code>.common.String info = 3;</code>
+     */
+    public boolean hasInfo() {
+      return info_ != null;
+    }
+    /**
+     * <code>.common.String info = 3;</code>
+     */
+    public common.Common.String getInfo() {
+      return info_ == null ? common.Common.String.getDefaultInstance() : info_;
+    }
+    /**
+     * <code>.common.String info = 3;</code>
+     */
+    public common.Common.StringOrBuilder getInfoOrBuilder() {
+      return getInfo();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (errorMsg_ != null) {
+        output.writeMessage(1, getErrorMsg());
+      }
+      if (info_ != null) {
+        output.writeMessage(3, getInfo());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (errorMsg_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getErrorMsg());
+      }
+      if (info_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getInfo());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof common.Common.Error)) {
+        return super.equals(obj);
+      }
+      common.Common.Error other = (common.Common.Error) obj;
+
+      boolean result = true;
+      result = result && (hasErrorMsg() == other.hasErrorMsg());
+      if (hasErrorMsg()) {
+        result = result && getErrorMsg()
+            .equals(other.getErrorMsg());
+      }
+      result = result && (hasInfo() == other.hasInfo());
+      if (hasInfo()) {
+        result = result && getInfo()
+            .equals(other.getInfo());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasErrorMsg()) {
+        hash = (37 * hash) + ERROR_MSG_FIELD_NUMBER;
+        hash = (53 * hash) + getErrorMsg().hashCode();
+      }
+      if (hasInfo()) {
+        hash = (37 * hash) + INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getInfo().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static common.Common.Error parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Error parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Error parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Error parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Error parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Error parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Error parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.Error parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.Error parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static common.Common.Error parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.Error parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.Error parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(common.Common.Error prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.Error}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.Error)
+        common.Common.ErrorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.Common.internal_static_common_Error_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.Common.internal_static_common_Error_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.Common.Error.class, common.Common.Error.Builder.class);
+      }
+
+      // Construct using common.Common.Error.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (errorMsgBuilder_ == null) {
+          errorMsg_ = null;
+        } else {
+          errorMsg_ = null;
+          errorMsgBuilder_ = null;
+        }
+        if (infoBuilder_ == null) {
+          info_ = null;
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.Common.internal_static_common_Error_descriptor;
+      }
+
+      @java.lang.Override
+      public common.Common.Error getDefaultInstanceForType() {
+        return common.Common.Error.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public common.Common.Error build() {
+        common.Common.Error result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public common.Common.Error buildPartial() {
+        common.Common.Error result = new common.Common.Error(this);
+        if (errorMsgBuilder_ == null) {
+          result.errorMsg_ = errorMsg_;
+        } else {
+          result.errorMsg_ = errorMsgBuilder_.build();
+        }
+        if (infoBuilder_ == null) {
+          result.info_ = info_;
+        } else {
+          result.info_ = infoBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.Common.Error) {
+          return mergeFrom((common.Common.Error)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.Common.Error other) {
+        if (other == common.Common.Error.getDefaultInstance()) return this;
+        if (other.hasErrorMsg()) {
+          mergeErrorMsg(other.getErrorMsg());
+        }
+        if (other.hasInfo()) {
+          mergeInfo(other.getInfo());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.Common.Error parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.Common.Error) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.String errorMsg_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> errorMsgBuilder_;
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public boolean hasErrorMsg() {
+        return errorMsgBuilder_ != null || errorMsg_ != null;
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public common.Common.String getErrorMsg() {
+        if (errorMsgBuilder_ == null) {
+          return errorMsg_ == null ? common.Common.String.getDefaultInstance() : errorMsg_;
+        } else {
+          return errorMsgBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public Builder setErrorMsg(common.Common.String value) {
+        if (errorMsgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          errorMsg_ = value;
+          onChanged();
+        } else {
+          errorMsgBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public Builder setErrorMsg(
+          common.Common.String.Builder builderForValue) {
+        if (errorMsgBuilder_ == null) {
+          errorMsg_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorMsgBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public Builder mergeErrorMsg(common.Common.String value) {
+        if (errorMsgBuilder_ == null) {
+          if (errorMsg_ != null) {
+            errorMsg_ =
+              common.Common.String.newBuilder(errorMsg_).mergeFrom(value).buildPartial();
+          } else {
+            errorMsg_ = value;
+          }
+          onChanged();
+        } else {
+          errorMsgBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public Builder clearErrorMsg() {
+        if (errorMsgBuilder_ == null) {
+          errorMsg_ = null;
+          onChanged();
+        } else {
+          errorMsg_ = null;
+          errorMsgBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public common.Common.String.Builder getErrorMsgBuilder() {
+        
+        onChanged();
+        return getErrorMsgFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      public common.Common.StringOrBuilder getErrorMsgOrBuilder() {
+        if (errorMsgBuilder_ != null) {
+          return errorMsgBuilder_.getMessageOrBuilder();
+        } else {
+          return errorMsg_ == null ?
+              common.Common.String.getDefaultInstance() : errorMsg_;
+        }
+      }
+      /**
+       * <code>.common.String error_msg = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getErrorMsgFieldBuilder() {
+        if (errorMsgBuilder_ == null) {
+          errorMsgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getErrorMsg(),
+                  getParentForChildren(),
+                  isClean());
+          errorMsg_ = null;
+        }
+        return errorMsgBuilder_;
+      }
+
+      private common.Common.String info_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> infoBuilder_;
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public boolean hasInfo() {
+        return infoBuilder_ != null || info_ != null;
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public common.Common.String getInfo() {
+        if (infoBuilder_ == null) {
+          return info_ == null ? common.Common.String.getDefaultInstance() : info_;
+        } else {
+          return infoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public Builder setInfo(common.Common.String value) {
+        if (infoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          info_ = value;
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public Builder setInfo(
+          common.Common.String.Builder builderForValue) {
+        if (infoBuilder_ == null) {
+          info_ = builderForValue.build();
+          onChanged();
+        } else {
+          infoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public Builder mergeInfo(common.Common.String value) {
+        if (infoBuilder_ == null) {
+          if (info_ != null) {
+            info_ =
+              common.Common.String.newBuilder(info_).mergeFrom(value).buildPartial();
+          } else {
+            info_ = value;
+          }
+          onChanged();
+        } else {
+          infoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public Builder clearInfo() {
+        if (infoBuilder_ == null) {
+          info_ = null;
+          onChanged();
+        } else {
+          info_ = null;
+          infoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public common.Common.String.Builder getInfoBuilder() {
+        
+        onChanged();
+        return getInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      public common.Common.StringOrBuilder getInfoOrBuilder() {
+        if (infoBuilder_ != null) {
+          return infoBuilder_.getMessageOrBuilder();
+        } else {
+          return info_ == null ?
+              common.Common.String.getDefaultInstance() : info_;
+        }
+      }
+      /**
+       * <code>.common.String info = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getInfoFieldBuilder() {
+        if (infoBuilder_ == null) {
+          infoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getInfo(),
+                  getParentForChildren(),
+                  isClean());
+          info_ = null;
+        }
+        return infoBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.Error)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.Error)
+    private static final common.Common.Error DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new common.Common.Error();
+    }
+
+    public static common.Common.Error getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Error>
+        PARSER = new com.google.protobuf.AbstractParser<Error>() {
+      @java.lang.Override
+      public Error parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Error(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Error> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Error> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public common.Common.Error getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface HTTPRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.HTTPRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -7629,6 +12323,26 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_Float64_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_Graph_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_Graph_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_ScatterPlot_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_ScatterPlot_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_RGBA_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_RGBA_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_Error_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_Error_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_HTTPRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -7656,17 +12370,29 @@ public final class Common {
       "y\030\001 \001(\t\022\035\n\005value\030\002 \001(\0132\016.common.String:\002" +
       "8\001\"\007\n\005Empty\"(\n\nIdentifier\022\032\n\002id\030\001 \001(\0132\016." +
       "common.String\"\024\n\005Int64\022\013\n\003num\030\001 \001(\003\"\026\n\007F" +
-      "loat64\022\013\n\003num\030\001 \001(\001\"\214\001\n\013HTTPRequest\022\"\n\006m" +
-      "ethod\030\001 \001(\0162\022.common.HTTPMethod\022\033\n\003url\030\002" +
-      " \001(\0132\016.common.String\022\037\n\004form\030\003 \001(\0132\021.com" +
-      "mon.StringMap\022\033\n\004body\030\004 \001(\0132\r.common.Byt" +
-      "es\"\272\001\n\005Token\022$\n\014access_token\030\001 \001(\0132\016.com" +
-      "mon.String\022\"\n\ntoken_type\030\002 \001(\0132\016.common." +
-      "String\022%\n\rrefresh_token\030\003 \001(\0132\016.common.S" +
-      "tring\022\036\n\006expiry\030\004 \001(\0132\016.common.String\022 \n" +
-      "\010id_token\030\005 \001(\0132\016.common.String**\n\nHTTPM" +
-      "ethod\022\007\n\003GET\020\000\022\010\n\004POST\020\001\022\t\n\005PATCH\020\002b\006pro" +
-      "to3"
+      "loat64\022\013\n\003num\030\001 \001(\001\"A\n\005Graph\022\033\n\002xs\030\001 \003(\013" +
+      "2\017.common.Float64\022\033\n\002ys\030\002 \003(\0132\017.common.F" +
+      "loat64\"\313\001\n\013ScatterPlot\022\034\n\005graph\030\001 \001(\0132\r." +
+      "common.Graph\022!\n\005shape\030\002 \001(\0162\022.common.Gra" +
+      "phShape\022!\n\005media\030\003 \001(\0162\022.common.GraphMed" +
+      "ia\022\033\n\005color\030\004 \001(\0132\014.common.RGBA\022\034\n\005Width" +
+      "\030\005 \001(\0132\r.common.Int64\022\035\n\006Hieght\030\006 \001(\0132\r." +
+      "common.Int64\"n\n\004RGBA\022\030\n\001r\030\001 \001(\0132\r.common" +
+      ".Int64\022\030\n\001g\030\002 \001(\0132\r.common.Int64\022\030\n\001b\030\003 " +
+      "\001(\0132\r.common.Int64\022\030\n\001a\030\004 \001(\0132\r.common.I" +
+      "nt64\"H\n\005Error\022!\n\terror_msg\030\001 \001(\0132\016.commo" +
+      "n.String\022\034\n\004info\030\003 \001(\0132\016.common.String\"\214" +
+      "\001\n\013HTTPRequest\022\"\n\006method\030\001 \001(\0162\022.common." +
+      "HTTPMethod\022\033\n\003url\030\002 \001(\0132\016.common.String\022" +
+      "\037\n\004form\030\003 \001(\0132\021.common.StringMap\022\033\n\004body" +
+      "\030\004 \001(\0132\r.common.Bytes\"\272\001\n\005Token\022$\n\014acces" +
+      "s_token\030\001 \001(\0132\016.common.String\022\"\n\ntoken_t" +
+      "ype\030\002 \001(\0132\016.common.String\022%\n\rrefresh_tok" +
+      "en\030\003 \001(\0132\016.common.String\022\036\n\006expiry\030\004 \001(\013" +
+      "2\016.common.String\022 \n\010id_token\030\005 \001(\0132\016.com" +
+      "mon.String*\030\n\nGraphShape\022\n\n\006CIRCLE\020\000*\025\n\n" +
+      "GraphMedia\022\007\n\003PNG\020\000**\n\nHTTPMethod\022\007\n\003GET" +
+      "\020\000\022\010\n\004POST\020\001\022\t\n\005PATCH\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7740,14 +12466,38 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_Float64_descriptor,
         new java.lang.String[] { "Num", });
-    internal_static_common_HTTPRequest_descriptor =
+    internal_static_common_Graph_descriptor =
       getDescriptor().getMessageTypes().get(9);
+    internal_static_common_Graph_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_Graph_descriptor,
+        new java.lang.String[] { "Xs", "Ys", });
+    internal_static_common_ScatterPlot_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_common_ScatterPlot_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_ScatterPlot_descriptor,
+        new java.lang.String[] { "Graph", "Shape", "Media", "Color", "Width", "Hieght", });
+    internal_static_common_RGBA_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_common_RGBA_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_RGBA_descriptor,
+        new java.lang.String[] { "R", "G", "B", "A", });
+    internal_static_common_Error_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_common_Error_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_Error_descriptor,
+        new java.lang.String[] { "ErrorMsg", "Info", });
+    internal_static_common_HTTPRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
     internal_static_common_HTTPRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_HTTPRequest_descriptor,
         new java.lang.String[] { "Method", "Url", "Form", "Body", });
     internal_static_common_Token_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_common_Token_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_Token_descriptor,

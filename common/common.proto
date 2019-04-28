@@ -36,6 +36,41 @@ message Float64 {
     double num = 1;
 }
 
+message Graph {
+    repeated Float64 xs = 1;
+   repeated  Float64 ys=2;
+}
+
+
+message ScatterPlot {
+    Graph graph=1;
+    GraphShape shape=2;
+    GraphMedia media=3;
+    RGBA color =4;
+    Int64 Width =5;
+    Int64 Hieght =6;
+}
+
+message RGBA {
+    Int64 r =1;
+    Int64 g =2;
+    Int64 b =3;
+    Int64 a =4;
+}
+
+message Error {
+    String error_msg =1;
+    String info =3;
+}
+
+enum GraphShape {
+    CIRCLE=0;
+}
+
+enum GraphMedia {
+    PNG =0;
+}
+
 enum HTTPMethod {
     GET =0;
     POST=1;

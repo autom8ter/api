@@ -17,7 +17,12 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
 	"golang.org/x/text/language"
+	"gonum.org/v1/plot"
+	"gonum.org/v1/plot/plotter"
+	"gonum.org/v1/plot/vg"
+	"gonum.org/v1/plot/vg/draw"
 	"html/template"
+	"image/color"
 	"io"
 	"io/ioutil"
 	"math"
@@ -32,14 +37,14 @@ import (
 
 func init() {
 	Context = context.WithValue(context.TODO(), "env", ToStringArray(os.Environ()))
-	Util = objectify.Default()
+	util = objectify.Default()
 	httpClient = http.DefaultClient
 	store = sessions.NewCookieStore([]byte(os.Getenv(SESSION_SECRET_ENV_KEY)))
 	gob.Register(map[string]interface{}{})
 }
 
 var (
-	Util                   *objectify.Handler
+	util                   *objectify.Handler
 	Context                context.Context
 	httpClient             *http.Client
 	store                  *sessions.CookieStore
@@ -79,7 +84,7 @@ func ToString(s string) *String {
 
 func StringFromPrompt(prompt string) *String {
 	return &String{
-		Text: Util.Prompt(prompt),
+		Text: util.Prompt(prompt),
 	}
 }
 
@@ -128,11 +133,11 @@ func ToFloat64(i float64) *Float64 {
 }
 
 func ObjToBytes(b interface{}) *Bytes {
-	return ToBytes(Util.MarshalJSON(b))
+	return ToBytes(util.MarshalJSON(b))
 }
 
 func ObjToString(b interface{}) *String {
-	return ToString(string(Util.MarshalJSON(b)))
+	return ToString(string(util.MarshalJSON(b)))
 }
 
 func (b *Bytes) ToString() *String {
@@ -177,11 +182,11 @@ func (h *HTTPRequest) Do(token *Token) (*Bytes, error) {
 	}
 	resp, err := httpClient.Do(r)
 	if err != nil {
-		return nil, Util.WrapErr(err, resp.Status)
+		return nil, util.WrapErr(err, resp.Status)
 	}
 	bits, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		return nil, Util.WrapErr(err, "reading http response body")
+		return nil, util.WrapErr(err, "reading http response body")
 	}
 	return &Bytes{
 		Bits: bits,
@@ -235,15 +240,15 @@ func (m *Bytes) Write(p []byte) (n int, err error) {
 }
 
 func (m *Bytes) YAML() []byte {
-	return Util.MarshalYAML(m.Bits)
+	return util.MarshalYAML(m.Bits)
 }
 
 func (m *Bytes) JSON() []byte {
-	return Util.MarshalJSON(m.Bits)
+	return util.MarshalJSON(m.Bits)
 }
 
 func (m *Bytes) XML() []byte {
-	return Util.MarshalXML(m.Bits)
+	return util.MarshalXML(m.Bits)
 }
 
 func (m *Bytes) Length() int {
@@ -300,7 +305,7 @@ func (m *Bytes) Clear() {
 
 func AsBytes(obj interface{}) *Bytes {
 	return &Bytes{
-		Bits: Util.MarshalJSON(obj),
+		Bits: util.MarshalJSON(obj),
 	}
 }
 
@@ -378,7 +383,7 @@ func (s *String) Println() {
 }
 
 func (s *String) Debugln() {
-	Util.Entry().Debugln(s.Text)
+	util.Entry().Debugln(s.Text)
 }
 
 func (s *String) IsEmpty() bool {
@@ -413,15 +418,15 @@ func (s *Token) Debugln() {
 }
 
 func (t *Token) JSON() []byte {
-	return Util.MarshalJSON(t)
+	return util.MarshalJSON(t)
 }
 
 func (t *Token) YAML() []byte {
-	return Util.MarshalYAML(t)
+	return util.MarshalYAML(t)
 }
 
 func (t *Token) XML() []byte {
-	return Util.MarshalXML(t)
+	return util.MarshalXML(t)
 }
 
 func (s *StringMap) Debugln() {
@@ -437,27 +442,27 @@ func (s *StringArray) Debugln() {
 }
 
 func (t *StringMap) JSON() []byte {
-	return Util.MarshalJSON(t)
+	return util.MarshalJSON(t)
 }
 
 func (t *StringMap) YAML() []byte {
-	return Util.MarshalYAML(t)
+	return util.MarshalYAML(t)
 }
 
 func (t *StringMap) XML() []byte {
-	return Util.MarshalXML(t)
+	return util.MarshalXML(t)
 }
 
 func (t *StringArray) JSON() []byte {
-	return Util.MarshalJSON(t)
+	return util.MarshalJSON(t)
 }
 
 func (t *StringArray) YAML() []byte {
-	return Util.MarshalYAML(t)
+	return util.MarshalYAML(t)
 }
 
 func (t *StringArray) XML() []byte {
-	return Util.MarshalXML(t)
+	return util.MarshalXML(t)
 }
 
 func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
@@ -473,7 +478,7 @@ func TokenFromAuthSession(session *sessions.Session) (*Token, error) {
 
 func SaveSession(w http.ResponseWriter, r *http.Request) {
 	if err := sessions.Save(r, w); err != nil {
-		http.Error(w, Util.WrapErr(err, "saving session").Error(), http.StatusInternalServerError)
+		http.Error(w, util.WrapErr(err, "saving session").Error(), http.StatusInternalServerError)
 	}
 }
 
@@ -561,35 +566,35 @@ func (m *String) WriteString() http.HandlerFunc {
 }
 
 func (m *String) JSON() []byte {
-	return Util.MarshalJSON(m.Text)
+	return util.MarshalJSON(m.Text)
 }
 
 func (m *String) YAML() []byte {
-	return Util.MarshalYAML(m.Text)
+	return util.MarshalYAML(m.Text)
 }
 
 func (m *String) XML() []byte {
-	return Util.MarshalXML(m.Text)
+	return util.MarshalXML(m.Text)
 }
 
 func (m *String) ExecuteAsShellCMD() *Bytes {
-	return ToBytes([]byte(Util.Shell(m.Text)))
+	return ToBytes([]byte(util.Shell(m.Text)))
 }
 
 func (m *String) ExecuteAsBashCMD() *Bytes {
-	return ToBytes([]byte(Util.Bash(m.Text)))
+	return ToBytes([]byte(util.Bash(m.Text)))
 }
 
 func (m *String) ExecuteAsPython3() *Bytes {
-	return ToBytes([]byte(Util.Python3(m.Text)))
+	return ToBytes([]byte(util.Python3(m.Text)))
 }
 
 func (m *String) Hashed() (string, error) {
-	return Util.HashPassword(m.Text)
+	return util.HashPassword(m.Text)
 }
 
 func (m *String) AsHash() error {
-	text, err := Util.HashPassword(m.Text)
+	text, err := util.HashPassword(m.Text)
 	if err != nil {
 		return err
 	}
@@ -598,23 +603,23 @@ func (m *String) AsHash() error {
 }
 
 func (m *String) PasswordMatchesHashed(pass string) error {
-	return Util.ComparePasswordToHash(m.Text, pass)
+	return util.ComparePasswordToHash(m.Text, pass)
 }
 
 func (m *String) HashMatchesPassword(hash string) error {
-	return Util.ComparePasswordToHash(hash, m.Text)
+	return util.ComparePasswordToHash(hash, m.Text)
 }
 
 func (m *String) Base64Encode() string {
-	return Util.Base64EncodeRaw([]byte(m.Text))
+	return util.Base64EncodeRaw([]byte(m.Text))
 }
 
 func (m *String) AsBase64Encoded() {
-	m.Text = Util.Base64Encode(m.Text)
+	m.Text = util.Base64Encode(m.Text)
 }
 
 func (m *String) AsBase64Decode() {
-	m.Text = Util.Base64Decode(m.Text)
+	m.Text = util.Base64Decode(m.Text)
 }
 
 func StringFromEnv(key string) *String {
@@ -622,55 +627,55 @@ func StringFromEnv(key string) *String {
 }
 
 func (s *String) ParseLanguage() (language.Tag, error) {
-	return Util.ParseLang(s.Text)
+	return util.ParseLang(s.Text)
 }
 
 func (s *String) ParseRegion() (language.Region, error) {
-	return Util.ParseRegion(s.Text)
+	return util.ParseRegion(s.Text)
 }
 
 func (s *String) RegexFind(reg string) *String {
-	return ToString(Util.RegexFind(reg, s.Text))
+	return ToString(util.RegexFind(reg, s.Text))
 }
 
 func (s *String) RegexFindAll(reg string, num int) *StringArray {
-	return ToStringArray(Util.RegexFindAll(reg, s.Text, num))
+	return ToStringArray(util.RegexFindAll(reg, s.Text, num))
 }
 
 func (s *String) RegexMatches(reg string) *Bool {
-	return ToBool(Util.RegexMatch(reg, s.Text))
+	return ToBool(util.RegexMatch(reg, s.Text))
 }
 
 func (s *String) RegExReplaceAll(reg string, replaceWith string) *String {
-	return ToString(Util.RegexReplaceAll(reg, s.Text, replaceWith))
+	return ToString(util.RegexReplaceAll(reg, s.Text, replaceWith))
 }
 
 func (s *String) RegExReplaceAllLiteral(reg string, replaceWith string) *String {
-	return ToString(Util.RegexReplaceAllLiteral(reg, s.Text, replaceWith))
+	return ToString(util.RegexReplaceAllLiteral(reg, s.Text, replaceWith))
 }
 
 func (s *String) RegExSplit(reg string, num int) *StringArray {
-	return ToStringArray(Util.RegexSplit(reg, s.Text, num))
+	return ToStringArray(util.RegexSplit(reg, s.Text, num))
 }
 
 func (s *String) AsSha256() {
-	s.Text = Util.Sha256sum(s.Text)
+	s.Text = util.Sha256sum(s.Text)
 }
 
 func (s *String) Sha256() string {
-	return Util.Sha256sum(s.Text)
+	return util.Sha256sum(s.Text)
 }
 
 func (s *String) AsSha1() {
-	s.Text = Util.Sha1sum(s.Text)
+	s.Text = util.Sha1sum(s.Text)
 }
 
 func (s *String) Sha1() string {
-	return Util.Sha1sum(s.Text)
+	return util.Sha1sum(s.Text)
 }
 
 func (s *String) Adler32() string {
-	return Util.Adler32sum(s.Text)
+	return util.Adler32sum(s.Text)
 }
 
 func (s *String) ParseURL() (*url.URL, error) {
@@ -694,7 +699,7 @@ func (s *String) SetEnv(key string) error {
 }
 
 func (s *String) AsAdler32() {
-	s.Text = Util.Adler32sum(s.Text)
+	s.Text = util.Adler32sum(s.Text)
 }
 
 func (s *String) ToInt64() (*Int64, error) {
@@ -722,7 +727,7 @@ func (s *Float64) Pointer() *float64 {
 }
 
 func (s *String) ToStringArray() (*StringArray, error) {
-	vals, err := Util.ReadAsCSV(s.Text)
+	vals, err := util.ReadAsCSV(s.Text)
 	if err != nil {
 		return nil, err
 	}
@@ -738,14 +743,14 @@ func (s *StringArray) Pointer() []*string {
 }
 
 func (s *StringArray) ToString() *String {
-	return ToString(string(Util.MarshalJSON(s.Strings)))
+	return ToString(string(util.MarshalJSON(s.Strings)))
 }
 
 func StructToMap(obj interface{}) *StringMap {
-	m := Util.ToMap(obj)
+	m := util.ToMap(obj)
 	newMap := make(map[string]*String)
 	for k, v := range m {
-		newMap[k] = ToString(string(Util.MarshalJSON(v)))
+		newMap[k] = ToString(string(util.MarshalJSON(v)))
 	}
 	return &StringMap{
 		StringMap: newMap,
@@ -753,7 +758,7 @@ func StructToMap(obj interface{}) *StringMap {
 }
 
 func (s *StringMap) ToString() *String {
-	return ToString(string(Util.MarshalJSON(s.StringMap)))
+	return ToString(string(util.MarshalJSON(s.StringMap)))
 }
 
 func (s *Float64) Debugln() {
@@ -941,4 +946,125 @@ func (s *String) ParseScientificUnits() (*Float64, *String, error) {
 		return nil, nil, err
 	}
 	return ToFloat64(i), ToString(t), nil
+}
+
+func ToGraph(xs []float64, ys []float64) *Graph {
+	newxs := []*Float64{}
+	newys := []*Float64{}
+	for _, v := range xs {
+		newxs = append(newxs, ToFloat64(v))
+	}
+	for _, v := range ys {
+		newys = append(newys, ToFloat64(v))
+	}
+	return &Graph{
+		Xs: newxs,
+		Ys: newys,
+	}
+}
+
+func (s *ScatterPlot) ScatterPlot() (*plotter.Scatter, error) {
+	scat, err := plotter.NewScatter(s.Graph)
+	if err != nil {
+		return nil, ToError(err, "creating scatterplot")
+	}
+	scat.GlyphStyle.Shape = draw.CrossGlyph{}
+	scat.Color = s.Color.Normalize()
+	return scat, nil
+}
+
+func (g *Graph) XsAndYs() ([]float64, []float64) {
+	newxs := []float64{}
+	newys := []float64{}
+	for _, v := range g.Xs {
+		newxs = append(newxs, v.Num)
+	}
+	for _, v := range g.Ys {
+		newys = append(newys, v.Num)
+	}
+	return newxs, newys
+}
+
+func (x Graph) Len() int                    { return len(x.Xs) }
+func (x Graph) XY(i int) (float64, float64) { return x.Xs[i].Num, x.Ys[i].Num }
+
+func (g *ScatterPlot) Plot() (*plot.Plot, error) {
+	p, err := plot.New()
+	if err != nil {
+		return nil, ToError(err, "creating plot plot")
+	}
+	s, err := g.ScatterPlot()
+	if err != nil {
+		return nil, err
+	}
+
+	p.Add(s)
+	line, err := plotter.NewLine(g.Graph)
+	if err != nil {
+		return nil, fmt.Errorf("could not create line: %v", err)
+	}
+	p.Add(line)
+	return p, nil
+}
+
+func (g GraphMedia) Normalize() *String {
+	switch g {
+	default:
+		return ToString("png")
+	}
+}
+
+func (g GraphShape) Normalize() draw.GlyphDrawer {
+	switch g {
+	default:
+		return draw.CrossGlyph{}
+	}
+}
+func (g *RGBA) Normalize() color.RGBA {
+	return color.RGBA{
+		R: uint8(g.R.Num),
+		G: uint8(g.G.Num),
+		B: uint8(g.B.Num),
+		A: uint8(g.A.Num),
+	}
+}
+
+func (s *ScatterPlot) WritePlot(w io.Writer) error {
+	p, err := s.Plot()
+	if err != nil {
+		return err
+	}
+	wt, err := p.WriterTo(vg.Length(s.Width.Num), vg.Length(s.Hieght.Num), s.Media.Normalize().Text)
+	if err != nil {
+		return ToError(err, "failed to create writer for plot")
+	}
+
+	_, err = wt.WriteTo(w)
+	if err != nil {
+		return ToError(err, "could not write plot to writer")
+	}
+	return nil
+}
+
+func (e *Error) JSON() []byte {
+	return util.MarshalJSON(e)
+}
+
+func (e *Error) YAML() []byte {
+	return util.MarshalYAML(e)
+}
+
+func (e *Error) Error() string {
+	return fmt.Sprintf("❌ %s", e.JSON())
+}
+
+func (e *Error) XML() []byte {
+	return util.MarshalXML(e)
+}
+
+func ToError(err error, msg string) *Error {
+	return &Error{
+		ErrorMsg: ToString(err.Error()),
+		Info:     ToString(msg),
+	}
 }
