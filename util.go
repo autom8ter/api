@@ -352,3 +352,14 @@ func RenderUserFunc(t *common.String) http.HandlerFunc {
 		return
 	}
 }
+
+func (p Plan) Normalize() *common.String {
+	switch p {
+	case Plan_BASIC:
+		return common.ToString("basic")
+	case Plan_PREMIUM:
+		return common.ToString("premium")
+	default:
+		return common.ToString("free")
+	}
+}
