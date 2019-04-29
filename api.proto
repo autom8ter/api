@@ -444,7 +444,6 @@ message SubscriptionResponse {
 
 message FaxResponse {
     common.Identifier id =1;
-    common.String content_type=2;
     common.String media_url=3;
     common.String to=4;
     common.String from=5;
