@@ -986,6 +986,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, annotations_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, plan_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, user_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, status_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::FaxResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1028,7 +1029,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 240, -1, sizeof(::api::CallResponse)},
   { 253, -1, sizeof(::api::SMSResponse)},
   { 265, -1, sizeof(::api::SubscriptionResponse)},
-  { 276, -1, sizeof(::api::FaxResponse)},
+  { 277, -1, sizeof(::api::FaxResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1197,91 +1198,92 @@ void AddDescriptorsImpl() {
       "\tmedia_url\030\007 \001(\0132\016.common.String\022\034\n\004body"
       "\030\010 \001(\0132\016.common.String\022\036\n\006status\030\t \001(\0132\016"
       ".common.String\022&\n\013annotations\030\n \001(\0132\021.co"
-      "mmon.StringMap\"\334\001\n\024SubscriptionResponse\022"
+      "mmon.StringMap\"\374\001\n\024SubscriptionResponse\022"
       "\036\n\002id\030\001 \001(\0132\022.common.Identifier\022%\n\016month"
       "ly_charge\030\002 \001(\0132\r.common.Int64\022#\n\013next_c"
       "harge\030\003 \001(\0132\016.common.String\022&\n\013annotatio"
       "ns\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 \001("
-      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\"\322\001"
-      "\n\013FaxResponse\022\036\n\002id\030\001 \001(\0132\022.common.Ident"
-      "ifier\022!\n\tmedia_url\030\003 \001(\0132\016.common.String"
-      "\022\032\n\002to\030\004 \001(\0132\016.common.String\022\034\n\004from\030\005 \001"
-      "(\0132\016.common.String\022\036\n\006status\030\006 \001(\0132\016.com"
-      "mon.String\022&\n\013annotations\030\n \001(\0132\021.common"
-      ".StringMap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROF"
-      "ILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ"
-      "_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\n"
-      "READ_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032"
-      "\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMA"
-      "IL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE"
-      "_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RUL"
-      "ES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020"
-      "\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tRE"
-      "AD_LOGS\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010T"
-      "OKENURL\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020"
-      "\003\022\016\n\nCLIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULE"
-      "SURL\020\006\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STA"
-      "TSURL\020\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSUR"
-      "L\020\013\022\025\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r"
-      "\022\023\n\017SEARCH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007"
-      "JWKSURL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022"
-      "\010\n\004FREE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016Ut"
-      "ilityService\022@\n\004Echo\022\016.common.String\032\016.c"
-      "ommon.String\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O"
-      "\n\013EchoSpanish\022\016.common.String\032\016.common.S"
-      "tring\" \202\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022"
-      "O\n\013EchoChinese\022\016.common.String\032\016.common."
-      "String\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*"
-      "\022O\n\013EchoEnglish\022\016.common.String\032\016.common"
-      ".String\" \202\323\344\223\002\032\"\025/utility/echo/english:\001"
-      "*\022K\n\tEchoHindi\022\016.common.String\032\016.common."
-      "String\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M"
-      "\n\nEchoArabic\022\016.common.String\032\016.common.St"
-      "ring\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*2\214\005"
-      "\n\016ContactService\022C\n\007SendSMS\022\010.api.SMS\032\020."
-      "api.SMSResponse\"\034\202\323\344\223\002\026\"\021/contact/sms/se"
-      "nd:\001*\022P\n\014SendSMSBlast\022\r.api.SMSBlast\032\020.a"
-      "pi.SMSResponse\"\035\202\323\344\223\002\027\"\022/contact/sms/bla"
-      "st:\001*0\001\022K\n\006GetSMS\022\022.common.Identifier\032\020."
-      "api.SMSResponse\"\033\202\323\344\223\002\025\"\020/contact/sms/ge"
-      "t:\001*\022N\n\tSendEmail\022\021.api.EmailRequest\032\016.c"
-      "ommon.String\"\036\202\323\344\223\002\030\"\023/contact/email/sen"
-      "d:\001*\022[\n\016SendEmailBlast\022\026.api.EmailBlastR"
-      "equest\032\016.common.String\"\037\202\323\344\223\002\031\"\024/contact"
-      "/email/blast:\001*0\001\022G\n\010SendCall\022\t.api.Call"
-      "\032\021.api.CallResponse\"\035\202\323\344\223\002\027\"\022/contact/ca"
-      "ll/send:\001*\022T\n\rSendCallBlast\022\016.api.CallBl"
-      "ast\032\021.api.CallResponse\"\036\202\323\344\223\002\030\"\023/contact"
-      "/call/blast:\001*0\001\022J\n\007SendFax\022\017.api.FaxReq"
-      "uest\032\020.api.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact"
-      "/fax/send:\001*2\235\003\n\016PaymentService\022\\\n\tSubsc"
-      "ribe\022\025.api.SubscribeRequest\032\031.api.Subscr"
-      "iptionResponse\"\035\202\323\344\223\002\027\"\022/payment/subscri"
-      "be:\001*\022b\n\013Unsubscribe\022\027.api.UnSubscribeRe"
-      "quest\032\031.api.SubscriptionResponse\"\037\202\323\344\223\002\031"
-      "\"\024/payment/unsubscribe:\001*\022]\n\023PurchasePho"
-      "neNumber\022\020.api.PhoneNumber\032\030.api.PhoneNu"
-      "mberResource\"\032\202\323\344\223\002\024\"\017/payment/number:\001*"
-      "\022j\n\021SearchPhoneNumber\022\035.api.SearchPhoneN"
-      "umberRequest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027"
-      "/payment/numbers/search:\001*0\0012\320\003\n\013UserSer"
-      "vice\022K\n\nQueryUsers\022\017.api.TokenQuery\032\t.ap"
-      "i.User\"\037\202\323\344\223\002\031\"\024/resource/user/query:\001*0"
-      "\001\022H\n\nCreateUser\022\r.common.Bytes\032\t.api.Use"
-      "r\" \202\323\344\223\002\032\"\025/resource/user/create:\001*\022G\n\007G"
-      "etUser\022\022.common.Identifier\032\t.api.User\"\035\202"
-      "\323\344\223\002\027\"\022/resource/user/get:\001*\022J\n\nDeleteUs"
-      "er\022\022.common.Identifier\032\t.api.User\"\035\202\323\344\223\002"
-      "\027\"\022/resource/user/get:\001*\022F\n\nUpdateUser\022\013"
-      ".api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025/resourc"
-      "e/user/update:\001*\022M\n\tUserRoles\022\022.common.I"
-      "dentifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/"
-      "user/roles:\001*0\0012S\n\014AdminService\022C\n\nStart"
-      "Cache\022\r.common.Empty\032\r.common.Empty\"\027\202\323\344"
-      "\223\002\021\"\014/admin/start:\001*b\006proto3"
+      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\022\036\n"
+      "\006status\030\006 \001(\0132\016.common.String\"\322\001\n\013FaxRes"
+      "ponse\022\036\n\002id\030\001 \001(\0132\022.common.Identifier\022!\n"
+      "\tmedia_url\030\003 \001(\0132\016.common.String\022\032\n\002to\030\004"
+      " \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\0132\016.com"
+      "mon.String\022\036\n\006status\030\006 \001(\0132\016.common.Stri"
+      "ng\022&\n\013annotations\030\n \001(\0132\021.common.StringM"
+      "ap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n"
+      "\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_ID"
+      "P_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STA"
+      "TS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE"
+      "_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPL"
+      "ATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013"
+      "\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\n"
+      "READ_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE"
+      "_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020"
+      "\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENURL\020"
+      "\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nCLI"
+      "ENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006\022\014"
+      "\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020\t\022"
+      "\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n\021E"
+      "MAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SEAR"
+      "CH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSURL\020"
+      "\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FREE\020"
+      "\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilitySer"
+      "vice\022@\n\004Echo\022\016.common.String\032\016.common.St"
+      "ring\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013EchoSp"
+      "anish\022\016.common.String\032\016.common.String\" \202"
+      "\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022O\n\013EchoC"
+      "hinese\022\016.common.String\032\016.common.String\" "
+      "\202\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022O\n\013Echo"
+      "English\022\016.common.String\032\016.common.String\""
+      " \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022K\n\tEch"
+      "oHindi\022\016.common.String\032\016.common.String\"\036"
+      "\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEchoAr"
+      "abic\022\016.common.String\032\016.common.String\"\037\202\323"
+      "\344\223\002\031\"\024/utility/echo/arabic:\001*2\214\005\n\016Contac"
+      "tService\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SMSR"
+      "esponse\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022P\n"
+      "\014SendSMSBlast\022\r.api.SMSBlast\032\020.api.SMSRe"
+      "sponse\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022"
+      "K\n\006GetSMS\022\022.common.Identifier\032\020.api.SMSR"
+      "esponse\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N\n\t"
+      "SendEmail\022\021.api.EmailRequest\032\016.common.St"
+      "ring\"\036\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[\n\016"
+      "SendEmailBlast\022\026.api.EmailBlastRequest\032\016"
+      ".common.String\"\037\202\323\344\223\002\031\"\024/contact/email/b"
+      "last:\001*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api.C"
+      "allResponse\"\035\202\323\344\223\002\027\"\022/contact/call/send:"
+      "\001*\022T\n\rSendCallBlast\022\016.api.CallBlast\032\021.ap"
+      "i.CallResponse\"\036\202\323\344\223\002\030\"\023/contact/call/bl"
+      "ast:\001*0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020.a"
+      "pi.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact/fax/sen"
+      "d:\001*2\235\003\n\016PaymentService\022\\\n\tSubscribe\022\025.a"
+      "pi.SubscribeRequest\032\031.api.SubscriptionRe"
+      "sponse\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022b\n"
+      "\013Unsubscribe\022\027.api.UnSubscribeRequest\032\031."
+      "api.SubscriptionResponse\"\037\202\323\344\223\002\031\"\024/payme"
+      "nt/unsubscribe:\001*\022]\n\023PurchasePhoneNumber"
+      "\022\020.api.PhoneNumber\032\030.api.PhoneNumberReso"
+      "urce\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Sear"
+      "chPhoneNumber\022\035.api.SearchPhoneNumberReq"
+      "uest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payment"
+      "/numbers/search:\001*0\0012\320\003\n\013UserService\022K\n\n"
+      "QueryUsers\022\017.api.TokenQuery\032\t.api.User\"\037"
+      "\202\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nCre"
+      "ateUser\022\r.common.Bytes\032\t.api.User\" \202\323\344\223\002"
+      "\032\"\025/resource/user/create:\001*\022G\n\007GetUser\022\022"
+      ".common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/"
+      "resource/user/get:\001*\022J\n\nDeleteUser\022\022.com"
+      "mon.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/reso"
+      "urce/user/get:\001*\022F\n\nUpdateUser\022\013.api.IDB"
+      "ody\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user/u"
+      "pdate:\001*\022M\n\tUserRoles\022\022.common.Identifie"
+      "r\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/rol"
+      "es:\001*0\0012S\n\014AdminService\022C\n\nStartCache\022\r."
+      "common.Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/ad"
+      "min/start:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 7748);
+      descriptor, 7780);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -13284,6 +13286,8 @@ void SubscriptionResponse::InitAsDefaultInstance() {
       ::common::StringMap::internal_default_instance());
   ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->user_ = const_cast< ::api::User*>(
       ::api::User::internal_default_instance());
+  ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->status_ = const_cast< ::common::String*>(
+      ::common::String::internal_default_instance());
 }
 void SubscriptionResponse::clear_id() {
   if (GetArenaNoVirtual() == NULL && id_ != NULL) {
@@ -13309,6 +13313,12 @@ void SubscriptionResponse::clear_annotations() {
   }
   annotations_ = NULL;
 }
+void SubscriptionResponse::clear_status() {
+  if (GetArenaNoVirtual() == NULL && status_ != NULL) {
+    delete status_;
+  }
+  status_ = NULL;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SubscriptionResponse::kIdFieldNumber;
 const int SubscriptionResponse::kMonthlyChargeFieldNumber;
@@ -13316,6 +13326,7 @@ const int SubscriptionResponse::kNextChargeFieldNumber;
 const int SubscriptionResponse::kAnnotationsFieldNumber;
 const int SubscriptionResponse::kPlanFieldNumber;
 const int SubscriptionResponse::kUserFieldNumber;
+const int SubscriptionResponse::kStatusFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SubscriptionResponse::SubscriptionResponse()
@@ -13349,6 +13360,11 @@ SubscriptionResponse::SubscriptionResponse(const SubscriptionResponse& from)
   } else {
     user_ = NULL;
   }
+  if (from.has_status()) {
+    status_ = new ::common::String(*from.status_);
+  } else {
+    status_ = NULL;
+  }
   if (from.has_annotations()) {
     annotations_ = new ::common::StringMap(*from.annotations_);
   } else {
@@ -13374,6 +13390,7 @@ void SubscriptionResponse::SharedDtor() {
   if (this != internal_default_instance()) delete monthly_charge_;
   if (this != internal_default_instance()) delete next_charge_;
   if (this != internal_default_instance()) delete user_;
+  if (this != internal_default_instance()) delete status_;
   if (this != internal_default_instance()) delete annotations_;
 }
 
@@ -13413,6 +13430,10 @@ void SubscriptionResponse::Clear() {
     delete user_;
   }
   user_ = NULL;
+  if (GetArenaNoVirtual() == NULL && status_ != NULL) {
+    delete status_;
+  }
+  status_ = NULL;
   if (GetArenaNoVirtual() == NULL && annotations_ != NULL) {
     delete annotations_;
   }
@@ -13494,6 +13515,18 @@ bool SubscriptionResponse::MergePartialFromCodedStream(
         break;
       }
 
+      // .common.String status = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_status()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       // .common.StringMap annotations = 10;
       case 10: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
@@ -13562,6 +13595,12 @@ void SubscriptionResponse::SerializeWithCachedSizes(
       5, this->_internal_user(), output);
   }
 
+  // .common.String status = 6;
+  if (this->has_status()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->_internal_status(), output);
+  }
+
   // .common.StringMap annotations = 10;
   if (this->has_annotations()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -13616,6 +13655,13 @@ void SubscriptionResponse::SerializeWithCachedSizes(
         5, this->_internal_user(), deterministic, target);
   }
 
+  // .common.String status = 6;
+  if (this->has_status()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, this->_internal_status(), deterministic, target);
+  }
+
   // .common.StringMap annotations = 10;
   if (this->has_annotations()) {
     target = ::google::protobuf::internal::WireFormatLite::
@@ -13666,6 +13712,13 @@ size_t SubscriptionResponse::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *user_);
+  }
+
+  // .common.String status = 6;
+  if (this->has_status()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *status_);
   }
 
   // .common.StringMap annotations = 10;
@@ -13720,6 +13773,9 @@ void SubscriptionResponse::MergeFrom(const SubscriptionResponse& from) {
   if (from.has_user()) {
     mutable_user()->::api::User::MergeFrom(from.user());
   }
+  if (from.has_status()) {
+    mutable_status()->::common::String::MergeFrom(from.status());
+  }
   if (from.has_annotations()) {
     mutable_annotations()->::common::StringMap::MergeFrom(from.annotations());
   }
@@ -13756,6 +13812,7 @@ void SubscriptionResponse::InternalSwap(SubscriptionResponse* other) {
   swap(monthly_charge_, other->monthly_charge_);
   swap(next_charge_, other->next_charge_);
   swap(user_, other->user_);
+  swap(status_, other->status_);
   swap(annotations_, other->annotations_);
   swap(plan_, other->plan_);
   _internal_metadata_.Swap(&other->_internal_metadata_);

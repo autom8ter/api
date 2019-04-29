@@ -1047,6 +1047,9 @@
         },
         "user": {
           "$ref": "#/definitions/apiUser"
+        },
+        "status": {
+          "$ref": "#/definitions/commonString"
         }
       }
     },

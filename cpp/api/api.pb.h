@@ -4662,6 +4662,18 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
   ::api::User* mutable_user();
   void set_allocated_user(::api::User* user);
 
+  // .common.String status = 6;
+  bool has_status() const;
+  void clear_status();
+  static const int kStatusFieldNumber = 6;
+  private:
+  const ::common::String& _internal_status() const;
+  public:
+  const ::common::String& status() const;
+  ::common::String* release_status();
+  ::common::String* mutable_status();
+  void set_allocated_status(::common::String* status);
+
   // .common.StringMap annotations = 10;
   bool has_annotations() const;
   void clear_annotations();
@@ -4688,6 +4700,7 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
   ::common::Int64* monthly_charge_;
   ::common::String* next_charge_;
   ::api::User* user_;
+  ::common::String* status_;
   ::common::StringMap* annotations_;
   int plan_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
@@ -10890,6 +10903,54 @@ inline void SubscriptionResponse::set_allocated_user(::api::User* user) {
   }
   user_ = user;
   // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.user)
+}
+
+// .common.String status = 6;
+inline bool SubscriptionResponse::has_status() const {
+  return this != internal_default_instance() && status_ != NULL;
+}
+inline const ::common::String& SubscriptionResponse::_internal_status() const {
+  return *status_;
+}
+inline const ::common::String& SubscriptionResponse::status() const {
+  const ::common::String* p = status_;
+  // @@protoc_insertion_point(field_get:api.SubscriptionResponse.status)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* SubscriptionResponse::release_status() {
+  // @@protoc_insertion_point(field_release:api.SubscriptionResponse.status)
+  
+  ::common::String* temp = status_;
+  status_ = NULL;
+  return temp;
+}
+inline ::common::String* SubscriptionResponse::mutable_status() {
+  
+  if (status_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    status_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.SubscriptionResponse.status)
+  return status_;
+}
+inline void SubscriptionResponse::set_allocated_status(::common::String* status) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(status_);
+  }
+  if (status) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      status = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, status, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  status_ = status;
+  // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.status)
 }
 
 // -------------------------------------------------------------------

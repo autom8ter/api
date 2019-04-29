@@ -3098,6 +3098,7 @@ type SubscriptionResponse struct {
 	Annotations          *common.StringMap  `protobuf:"bytes,10,opt,name=annotations,proto3" json:"annotations,omitempty"`
 	Plan                 Plan               `protobuf:"varint,4,opt,name=plan,proto3,enum=api.Plan" json:"plan,omitempty"`
 	User                 *User              `protobuf:"bytes,5,opt,name=user,proto3" json:"user,omitempty"`
+	Status               *common.String     `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -3139,6 +3140,12 @@ func (m *SubscriptionResponse) GetNextCharge() *common.String
 
 ```go
 func (m *SubscriptionResponse) GetPlan() Plan
+```
+
+#### func (*SubscriptionResponse) GetStatus
+
+```go
+func (m *SubscriptionResponse) GetStatus() *common.String
 ```
 
 #### func (*SubscriptionResponse) GetUser

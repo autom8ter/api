@@ -345,3 +345,49 @@ func (p Plan) Normalize() *common.String {
 		return common.ToString("free")
 	}
 }
+
+func (p *SubscriptionResponse) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *SMSResponse) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *CallResponse) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *User) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *PhoneNumberResource) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *PhoneNumber) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *JSONWebKeys) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *TokenQuery) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+func (p *Identity) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+func (p *Auth) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *Card) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}
+
+func (p *Jwks) JSONString() (*common.String, error) {
+	return common.MessageToJSONString(p)
+}

@@ -194,6 +194,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :annotations, :message, 10, "common.StringMap"
     optional :plan, :enum, 4, "api.Plan"
     optional :user, :message, 5, "api.User"
+    optional :status, :message, 6, "common.String"
   end
   add_message "api.FaxResponse" do
     optional :id, :message, 1, "common.Identifier"

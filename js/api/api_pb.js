@@ -8686,7 +8686,8 @@ proto.api.SubscriptionResponse.toObject = function(includeInstance, msg) {
     nextCharge: (f = msg.getNextCharge()) && common_common_pb.String.toObject(includeInstance, f),
     annotations: (f = msg.getAnnotations()) && common_common_pb.StringMap.toObject(includeInstance, f),
     plan: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    user: (f = msg.getUser()) && proto.api.User.toObject(includeInstance, f)
+    user: (f = msg.getUser()) && proto.api.User.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && common_common_pb.String.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8751,6 +8752,11 @@ proto.api.SubscriptionResponse.deserializeBinaryFromReader = function(msg, reade
       var value = new proto.api.User;
       reader.readMessage(value,proto.api.User.deserializeBinaryFromReader);
       msg.setUser(value);
+      break;
+    case 6:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setStatus(value);
       break;
     default:
       reader.skipField();
@@ -8826,6 +8832,14 @@ proto.api.SubscriptionResponse.serializeBinaryToWriter = function(message, write
       5,
       f,
       proto.api.User.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
     );
   }
 };
@@ -8993,6 +9007,36 @@ proto.api.SubscriptionResponse.prototype.clearUser = function() {
  */
 proto.api.SubscriptionResponse.prototype.hasUser = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional common.String status = 6;
+ * @return {?proto.common.String}
+ */
+proto.api.SubscriptionResponse.prototype.getStatus = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 6));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.SubscriptionResponse.prototype.setStatus = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.api.SubscriptionResponse.prototype.clearStatus = function() {
+  this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.SubscriptionResponse.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

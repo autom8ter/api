@@ -1047,6 +1047,7 @@ typedef GPB_ENUM(SubscriptionResponse_FieldNumber) {
   SubscriptionResponse_FieldNumber_NextCharge = 3,
   SubscriptionResponse_FieldNumber_Plan = 4,
   SubscriptionResponse_FieldNumber_User = 5,
+  SubscriptionResponse_FieldNumber_Status = 6,
   SubscriptionResponse_FieldNumber_Annotations = 10,
 };
 
@@ -1073,6 +1074,10 @@ typedef GPB_ENUM(SubscriptionResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) User *user;
 /** Test to see if @c user has been set. */
 @property(nonatomic, readwrite) BOOL hasUser;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *status;
+/** Test to see if @c status has been set. */
+@property(nonatomic, readwrite) BOOL hasStatus;
 
 @end
 

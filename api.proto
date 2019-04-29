@@ -437,8 +437,10 @@ message SubscriptionResponse {
     common.Int64 monthly_charge=2;
     common.String next_charge=3;
     common.StringMap annotations=10;
+
     Plan plan=4;
     User user=5;
+    common.String status=6;
 
 }
 
