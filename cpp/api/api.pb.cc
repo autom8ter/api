@@ -992,7 +992,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::FaxResponse, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::FaxResponse, content_type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::FaxResponse, media_url_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::FaxResponse, to_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::FaxResponse, from_),
@@ -1202,86 +1201,85 @@ void AddDescriptorsImpl() {
       "ly_charge\030\002 \001(\0132\r.common.Int64\022#\n\013next_c"
       "harge\030\003 \001(\0132\016.common.String\022&\n\013annotatio"
       "ns\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 \001("
-      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\"\330\001"
+      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\"\262\001"
       "\n\013FaxResponse\022\036\n\002id\030\001 \001(\0132\022.common.Ident"
-      "ifier\022$\n\014content_type\030\002 \001(\0132\016.common.Str"
-      "ing\022!\n\tmedia_url\030\003 \001(\0132\016.common.String\022\032"
-      "\n\002to\030\004 \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\013"
-      "2\016.common.String\022&\n\013annotations\030\n \001(\0132\021."
-      "common.StringMap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013"
-      "\n\007PROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030"
-      "\n\024READ_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS"
-      "\020\005\022\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLAT"
-      "ES\020\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREA"
-      "TE_EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014"
-      "UPDATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELE"
-      "TE_RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROL"
-      "ES\020\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021"
-      "\022\r\n\tREAD_LOGS\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020"
-      "\000\022\014\n\010TOKENURL\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USE"
-      "RSURL\020\003\022\016\n\nCLIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014"
-      "\n\010RULESURL\020\006\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022"
-      "\014\n\010STATSURL\020\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTEN"
-      "ANTSURL\020\013\022\025\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAI"
-      "LURL\020\r\022\023\n\017SEARCH_USERSURL\020\016\022\r\n\tDEVICEURL"
-      "\020\022\022\013\n\007JWKSURL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n"
-      "\004Plan\022\010\n\004FREE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022"
-      "\341\003\n\016UtilityService\022@\n\004Echo\022\016.common.Stri"
-      "ng\032\016.common.String\"\030\202\323\344\223\002\022\"\r/utility/ech"
-      "o:\001*\022O\n\013EchoSpanish\022\016.common.String\032\016.co"
-      "mmon.String\" \202\323\344\223\002\032\"\025/utility/echo/spani"
-      "sh:\001*\022O\n\013EchoChinese\022\016.common.String\032\016.c"
-      "ommon.String\" \202\323\344\223\002\032\"\025/utility/echo/chin"
-      "ese:\001*\022O\n\013EchoEnglish\022\016.common.String\032\016."
-      "common.String\" \202\323\344\223\002\032\"\025/utility/echo/eng"
-      "lish:\001*\022K\n\tEchoHindi\022\016.common.String\032\016.c"
-      "ommon.String\"\036\202\323\344\223\002\030\"\023/utility/echo/hind"
-      "i:\001*\022M\n\nEchoArabic\022\016.common.String\032\016.com"
-      "mon.String\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic"
-      ":\001*2\214\005\n\016ContactService\022C\n\007SendSMS\022\010.api."
-      "SMS\032\020.api.SMSResponse\"\034\202\323\344\223\002\026\"\021/contact/"
-      "sms/send:\001*\022P\n\014SendSMSBlast\022\r.api.SMSBla"
-      "st\032\020.api.SMSResponse\"\035\202\323\344\223\002\027\"\022/contact/s"
-      "ms/blast:\001*0\001\022K\n\006GetSMS\022\022.common.Identif"
-      "ier\032\020.api.SMSResponse\"\033\202\323\344\223\002\025\"\020/contact/"
-      "sms/get:\001*\022N\n\tSendEmail\022\021.api.EmailReque"
-      "st\032\016.common.String\"\036\202\323\344\223\002\030\"\023/contact/ema"
-      "il/send:\001*\022[\n\016SendEmailBlast\022\026.api.Email"
-      "BlastRequest\032\016.common.String\"\037\202\323\344\223\002\031\"\024/c"
-      "ontact/email/blast:\001*0\001\022G\n\010SendCall\022\t.ap"
-      "i.Call\032\021.api.CallResponse\"\035\202\323\344\223\002\027\"\022/cont"
-      "act/call/send:\001*\022T\n\rSendCallBlast\022\016.api."
-      "CallBlast\032\021.api.CallResponse\"\036\202\323\344\223\002\030\"\023/c"
-      "ontact/call/blast:\001*0\001\022J\n\007SendFax\022\017.api."
-      "FaxRequest\032\020.api.FaxResponse\"\034\202\323\344\223\002\026\"\021/c"
-      "ontact/fax/send:\001*2\235\003\n\016PaymentService\022\\\n"
-      "\tSubscribe\022\025.api.SubscribeRequest\032\031.api."
-      "SubscriptionResponse\"\035\202\323\344\223\002\027\"\022/payment/s"
-      "ubscribe:\001*\022b\n\013Unsubscribe\022\027.api.UnSubsc"
-      "ribeRequest\032\031.api.SubscriptionResponse\"\037"
-      "\202\323\344\223\002\031\"\024/payment/unsubscribe:\001*\022]\n\023Purch"
-      "asePhoneNumber\022\020.api.PhoneNumber\032\030.api.P"
-      "honeNumberResource\"\032\202\323\344\223\002\024\"\017/payment/num"
-      "ber:\001*\022j\n\021SearchPhoneNumber\022\035.api.Search"
-      "PhoneNumberRequest\032\020.api.PhoneNumber\"\"\202\323"
-      "\344\223\002\034\"\027/payment/numbers/search:\001*0\0012\320\003\n\013U"
-      "serService\022K\n\nQueryUsers\022\017.api.TokenQuer"
-      "y\032\t.api.User\"\037\202\323\344\223\002\031\"\024/resource/user/que"
-      "ry:\001*0\001\022H\n\nCreateUser\022\r.common.Bytes\032\t.a"
-      "pi.User\" \202\323\344\223\002\032\"\025/resource/user/create:\001"
-      "*\022G\n\007GetUser\022\022.common.Identifier\032\t.api.U"
-      "ser\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022J\n\nDe"
-      "leteUser\022\022.common.Identifier\032\t.api.User\""
-      "\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022F\n\nUpdate"
-      "User\022\013.api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025/r"
-      "esource/user/update:\001*\022M\n\tUserRoles\022\022.co"
-      "mmon.Identifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/res"
-      "ource/user/roles:\001*0\0012S\n\014AdminService\022C\n"
-      "\nStartCache\022\r.common.Empty\032\r.common.Empt"
-      "y\"\027\202\323\344\223\002\021\"\014/admin/start:\001*b\006proto3"
+      "ifier\022!\n\tmedia_url\030\003 \001(\0132\016.common.String"
+      "\022\032\n\002to\030\004 \001(\0132\016.common.String\022\034\n\004from\030\005 \001"
+      "(\0132\016.common.String\022&\n\013annotations\030\n \001(\0132"
+      "\021.common.StringMap*\344\002\n\005Scope\022\n\n\006OPENID\020\000"
+      "\022\013\n\007PROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003"
+      "\022\030\n\024READ_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USE"
+      "RS\020\005\022\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPL"
+      "ATES\020\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CR"
+      "EATE_EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020"
+      "\n\014UPDATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DE"
+      "LETE_RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_R"
+      "OLES\020\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES"
+      "\020\021\022\r\n\tREAD_LOGS\020\022*\253\002\n\003URL\022\020\n\014USER_INFOUR"
+      "L\020\000\022\014\n\010TOKENURL\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010U"
+      "SERSURL\020\003\022\016\n\nCLIENTSURL\020\004\022\r\n\tGRANTSURL\020\005"
+      "\022\014\n\010RULESURL\020\006\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020"
+      "\010\022\014\n\010STATSURL\020\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nT"
+      "ENANTSURL\020\013\022\025\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EM"
+      "AILURL\020\r\022\023\n\017SEARCH_USERSURL\020\016\022\r\n\tDEVICEU"
+      "RL\020\022\022\013\n\007JWKSURL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*"
+      "(\n\004Plan\022\010\n\004FREE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020"
+      "\0022\341\003\n\016UtilityService\022@\n\004Echo\022\016.common.St"
+      "ring\032\016.common.String\"\030\202\323\344\223\002\022\"\r/utility/e"
+      "cho:\001*\022O\n\013EchoSpanish\022\016.common.String\032\016."
+      "common.String\" \202\323\344\223\002\032\"\025/utility/echo/spa"
+      "nish:\001*\022O\n\013EchoChinese\022\016.common.String\032\016"
+      ".common.String\" \202\323\344\223\002\032\"\025/utility/echo/ch"
+      "inese:\001*\022O\n\013EchoEnglish\022\016.common.String\032"
+      "\016.common.String\" \202\323\344\223\002\032\"\025/utility/echo/e"
+      "nglish:\001*\022K\n\tEchoHindi\022\016.common.String\032\016"
+      ".common.String\"\036\202\323\344\223\002\030\"\023/utility/echo/hi"
+      "ndi:\001*\022M\n\nEchoArabic\022\016.common.String\032\016.c"
+      "ommon.String\"\037\202\323\344\223\002\031\"\024/utility/echo/arab"
+      "ic:\001*2\214\005\n\016ContactService\022C\n\007SendSMS\022\010.ap"
+      "i.SMS\032\020.api.SMSResponse\"\034\202\323\344\223\002\026\"\021/contac"
+      "t/sms/send:\001*\022P\n\014SendSMSBlast\022\r.api.SMSB"
+      "last\032\020.api.SMSResponse\"\035\202\323\344\223\002\027\"\022/contact"
+      "/sms/blast:\001*0\001\022K\n\006GetSMS\022\022.common.Ident"
+      "ifier\032\020.api.SMSResponse\"\033\202\323\344\223\002\025\"\020/contac"
+      "t/sms/get:\001*\022N\n\tSendEmail\022\021.api.EmailReq"
+      "uest\032\016.common.String\"\036\202\323\344\223\002\030\"\023/contact/e"
+      "mail/send:\001*\022[\n\016SendEmailBlast\022\026.api.Ema"
+      "ilBlastRequest\032\016.common.String\"\037\202\323\344\223\002\031\"\024"
+      "/contact/email/blast:\001*0\001\022G\n\010SendCall\022\t."
+      "api.Call\032\021.api.CallResponse\"\035\202\323\344\223\002\027\"\022/co"
+      "ntact/call/send:\001*\022T\n\rSendCallBlast\022\016.ap"
+      "i.CallBlast\032\021.api.CallResponse\"\036\202\323\344\223\002\030\"\023"
+      "/contact/call/blast:\001*0\001\022J\n\007SendFax\022\017.ap"
+      "i.FaxRequest\032\020.api.FaxResponse\"\034\202\323\344\223\002\026\"\021"
+      "/contact/fax/send:\001*2\235\003\n\016PaymentService\022"
+      "\\\n\tSubscribe\022\025.api.SubscribeRequest\032\031.ap"
+      "i.SubscriptionResponse\"\035\202\323\344\223\002\027\"\022/payment"
+      "/subscribe:\001*\022b\n\013Unsubscribe\022\027.api.UnSub"
+      "scribeRequest\032\031.api.SubscriptionResponse"
+      "\"\037\202\323\344\223\002\031\"\024/payment/unsubscribe:\001*\022]\n\023Pur"
+      "chasePhoneNumber\022\020.api.PhoneNumber\032\030.api"
+      ".PhoneNumberResource\"\032\202\323\344\223\002\024\"\017/payment/n"
+      "umber:\001*\022j\n\021SearchPhoneNumber\022\035.api.Sear"
+      "chPhoneNumberRequest\032\020.api.PhoneNumber\"\""
+      "\202\323\344\223\002\034\"\027/payment/numbers/search:\001*0\0012\320\003\n"
+      "\013UserService\022K\n\nQueryUsers\022\017.api.TokenQu"
+      "ery\032\t.api.User\"\037\202\323\344\223\002\031\"\024/resource/user/q"
+      "uery:\001*0\001\022H\n\nCreateUser\022\r.common.Bytes\032\t"
+      ".api.User\" \202\323\344\223\002\032\"\025/resource/user/create"
+      ":\001*\022G\n\007GetUser\022\022.common.Identifier\032\t.api"
+      ".User\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022J\n\n"
+      "DeleteUser\022\022.common.Identifier\032\t.api.Use"
+      "r\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022F\n\nUpda"
+      "teUser\022\013.api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025"
+      "/resource/user/update:\001*\022M\n\tUserRoles\022\022."
+      "common.Identifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/r"
+      "esource/user/roles:\001*0\0012S\n\014AdminService\022"
+      "C\n\nStartCache\022\r.common.Empty\032\r.common.Em"
+      "pty\"\027\202\323\344\223\002\021\"\014/admin/start:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 7754);
+      descriptor, 7716);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -13772,8 +13770,6 @@ void SubscriptionResponse::InternalSwap(SubscriptionResponse* other) {
 void FaxResponse::InitAsDefaultInstance() {
   ::api::_FaxResponse_default_instance_._instance.get_mutable()->id_ = const_cast< ::common::Identifier*>(
       ::common::Identifier::internal_default_instance());
-  ::api::_FaxResponse_default_instance_._instance.get_mutable()->content_type_ = const_cast< ::common::String*>(
-      ::common::String::internal_default_instance());
   ::api::_FaxResponse_default_instance_._instance.get_mutable()->media_url_ = const_cast< ::common::String*>(
       ::common::String::internal_default_instance());
   ::api::_FaxResponse_default_instance_._instance.get_mutable()->to_ = const_cast< ::common::String*>(
@@ -13788,12 +13784,6 @@ void FaxResponse::clear_id() {
     delete id_;
   }
   id_ = NULL;
-}
-void FaxResponse::clear_content_type() {
-  if (GetArenaNoVirtual() == NULL && content_type_ != NULL) {
-    delete content_type_;
-  }
-  content_type_ = NULL;
 }
 void FaxResponse::clear_media_url() {
   if (GetArenaNoVirtual() == NULL && media_url_ != NULL) {
@@ -13821,7 +13811,6 @@ void FaxResponse::clear_annotations() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FaxResponse::kIdFieldNumber;
-const int FaxResponse::kContentTypeFieldNumber;
 const int FaxResponse::kMediaUrlFieldNumber;
 const int FaxResponse::kToFieldNumber;
 const int FaxResponse::kFromFieldNumber;
@@ -13843,11 +13832,6 @@ FaxResponse::FaxResponse(const FaxResponse& from)
     id_ = new ::common::Identifier(*from.id_);
   } else {
     id_ = NULL;
-  }
-  if (from.has_content_type()) {
-    content_type_ = new ::common::String(*from.content_type_);
-  } else {
-    content_type_ = NULL;
   }
   if (from.has_media_url()) {
     media_url_ = new ::common::String(*from.media_url_);
@@ -13885,7 +13869,6 @@ FaxResponse::~FaxResponse() {
 
 void FaxResponse::SharedDtor() {
   if (this != internal_default_instance()) delete id_;
-  if (this != internal_default_instance()) delete content_type_;
   if (this != internal_default_instance()) delete media_url_;
   if (this != internal_default_instance()) delete to_;
   if (this != internal_default_instance()) delete from_;
@@ -13916,10 +13899,6 @@ void FaxResponse::Clear() {
     delete id_;
   }
   id_ = NULL;
-  if (GetArenaNoVirtual() == NULL && content_type_ != NULL) {
-    delete content_type_;
-  }
-  content_type_ = NULL;
   if (GetArenaNoVirtual() == NULL && media_url_ != NULL) {
     delete media_url_;
   }
@@ -13955,18 +13934,6 @@ bool FaxResponse::MergePartialFromCodedStream(
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_id()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // .common.String content_type = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_content_type()));
         } else {
           goto handle_unusual;
         }
@@ -14053,12 +14020,6 @@ void FaxResponse::SerializeWithCachedSizes(
       1, this->_internal_id(), output);
   }
 
-  // .common.String content_type = 2;
-  if (this->has_content_type()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_content_type(), output);
-  }
-
   // .common.String media_url = 3;
   if (this->has_media_url()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
@@ -14102,13 +14063,6 @@ void FaxResponse::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         1, this->_internal_id(), deterministic, target);
-  }
-
-  // .common.String content_type = 2;
-  if (this->has_content_type()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_content_type(), deterministic, target);
   }
 
   // .common.String media_url = 3;
@@ -14161,13 +14115,6 @@ size_t FaxResponse::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *id_);
-  }
-
-  // .common.String content_type = 2;
-  if (this->has_content_type()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *content_type_);
   }
 
   // .common.String media_url = 3;
@@ -14228,9 +14175,6 @@ void FaxResponse::MergeFrom(const FaxResponse& from) {
   if (from.has_id()) {
     mutable_id()->::common::Identifier::MergeFrom(from.id());
   }
-  if (from.has_content_type()) {
-    mutable_content_type()->::common::String::MergeFrom(from.content_type());
-  }
   if (from.has_media_url()) {
     mutable_media_url()->::common::String::MergeFrom(from.media_url());
   }
@@ -14270,7 +14214,6 @@ void FaxResponse::Swap(FaxResponse* other) {
 void FaxResponse::InternalSwap(FaxResponse* other) {
   using std::swap;
   swap(id_, other->id_);
-  swap(content_type_, other->content_type_);
   swap(media_url_, other->media_url_);
   swap(to_, other->to_);
   swap(from_, other->from_);

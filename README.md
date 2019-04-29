@@ -670,8 +670,6 @@ type CallResponse struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	To                   *common.String     `protobuf:"bytes,5,opt,name=to,proto3" json:"to,omitempty"`
 	From                 *common.String     `protobuf:"bytes,6,opt,name=from,proto3" json:"from,omitempty"`
-	MediaUrl             *common.String     `protobuf:"bytes,7,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
-	Body                 *common.String     `protobuf:"bytes,8,opt,name=body,proto3" json:"body,omitempty"`
 	Status               *common.String     `protobuf:"bytes,9,opt,name=status,proto3" json:"status,omitempty"`
 	AnsweredBy           *common.String     `protobuf:"bytes,10,opt,name=answered_by,json=answeredBy,proto3" json:"answered_by,omitempty"`
 	ForwardedFrom        *common.String     `protobuf:"bytes,11,opt,name=forwarded_from,json=forwardedFrom,proto3" json:"forwarded_from,omitempty"`
@@ -702,12 +700,6 @@ func (m *CallResponse) GetAnnotations() *common.StringMap
 func (m *CallResponse) GetAnsweredBy() *common.String
 ```
 
-#### func (*CallResponse) GetBody
-
-```go
-func (m *CallResponse) GetBody() *common.String
-```
-
 #### func (*CallResponse) GetCallerName
 
 ```go
@@ -730,12 +722,6 @@ func (m *CallResponse) GetFrom() *common.String
 
 ```go
 func (m *CallResponse) GetId() *common.Identifier
-```
-
-#### func (*CallResponse) GetMediaUrl
-
-```go
-func (m *CallResponse) GetMediaUrl() *common.String
 ```
 
 #### func (*CallResponse) GetStatus
@@ -1490,7 +1476,6 @@ func (m *FaxRequest) XXX_Unmarshal(b []byte) error
 ```go
 type FaxResponse struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	ContentType          *common.String     `protobuf:"bytes,2,opt,name=content_type,json=contentType,proto3" json:"content_type,omitempty"`
 	MediaUrl             *common.String     `protobuf:"bytes,3,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
 	To                   *common.String     `protobuf:"bytes,4,opt,name=to,proto3" json:"to,omitempty"`
 	From                 *common.String     `protobuf:"bytes,5,opt,name=from,proto3" json:"from,omitempty"`
@@ -1512,12 +1497,6 @@ func (*FaxResponse) Descriptor() ([]byte, []int)
 
 ```go
 func (m *FaxResponse) GetAnnotations() *common.StringMap
-```
-
-#### func (*FaxResponse) GetContentType
-
-```go
-func (m *FaxResponse) GetContentType() *common.String
 ```
 
 #### func (*FaxResponse) GetFrom

@@ -1092,7 +1092,6 @@ void SetSubscriptionResponse_Plan_RawValue(SubscriptionResponse *message, int32_
 
 typedef GPB_ENUM(FaxResponse_FieldNumber) {
   FaxResponse_FieldNumber_Id_p = 1,
-  FaxResponse_FieldNumber_ContentType = 2,
   FaxResponse_FieldNumber_MediaURL = 3,
   FaxResponse_FieldNumber_To = 4,
   FaxResponse_FieldNumber_From = 5,
@@ -1104,10 +1103,6 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
 /** Test to see if @c id_p has been set. */
 @property(nonatomic, readwrite) BOOL hasId_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *contentType;
-/** Test to see if @c contentType has been set. */
-@property(nonatomic, readwrite) BOOL hasContentType;
 
 @property(nonatomic, readwrite, strong, null_resettable) String *mediaURL;
 /** Test to see if @c mediaURL has been set. */

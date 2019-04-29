@@ -4794,18 +4794,6 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::common::Identifier* mutable_id();
   void set_allocated_id(::common::Identifier* id);
 
-  // .common.String content_type = 2;
-  bool has_content_type() const;
-  void clear_content_type();
-  static const int kContentTypeFieldNumber = 2;
-  private:
-  const ::common::String& _internal_content_type() const;
-  public:
-  const ::common::String& content_type() const;
-  ::common::String* release_content_type();
-  ::common::String* mutable_content_type();
-  void set_allocated_content_type(::common::String* content_type);
-
   // .common.String media_url = 3;
   bool has_media_url() const;
   void clear_media_url();
@@ -4859,7 +4847,6 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::Identifier* id_;
-  ::common::String* content_type_;
   ::common::String* media_url_;
   ::common::String* to_;
   ::common::String* from_;
@@ -10942,54 +10929,6 @@ inline void FaxResponse::set_allocated_id(::common::Identifier* id) {
   }
   id_ = id;
   // @@protoc_insertion_point(field_set_allocated:api.FaxResponse.id)
-}
-
-// .common.String content_type = 2;
-inline bool FaxResponse::has_content_type() const {
-  return this != internal_default_instance() && content_type_ != NULL;
-}
-inline const ::common::String& FaxResponse::_internal_content_type() const {
-  return *content_type_;
-}
-inline const ::common::String& FaxResponse::content_type() const {
-  const ::common::String* p = content_type_;
-  // @@protoc_insertion_point(field_get:api.FaxResponse.content_type)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* FaxResponse::release_content_type() {
-  // @@protoc_insertion_point(field_release:api.FaxResponse.content_type)
-  
-  ::common::String* temp = content_type_;
-  content_type_ = NULL;
-  return temp;
-}
-inline ::common::String* FaxResponse::mutable_content_type() {
-  
-  if (content_type_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    content_type_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.FaxResponse.content_type)
-  return content_type_;
-}
-inline void FaxResponse::set_allocated_content_type(::common::String* content_type) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(content_type_);
-  }
-  if (content_type) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      content_type = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, content_type, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  content_type_ = content_type;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxResponse.content_type)
 }
 
 // .common.String media_url = 3;

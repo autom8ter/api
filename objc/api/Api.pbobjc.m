@@ -2670,7 +2670,6 @@ void SetSubscriptionResponse_Plan_RawValue(SubscriptionResponse *message, int32_
 @implementation FaxResponse
 
 @dynamic hasId_p, id_p;
-@dynamic hasContentType, contentType;
 @dynamic hasMediaURL, mediaURL;
 @dynamic hasTo, to;
 @dynamic hasFrom, from;
@@ -2679,7 +2678,6 @@ void SetSubscriptionResponse_Plan_RawValue(SubscriptionResponse *message, int32_
 typedef struct FaxResponse__storage_ {
   uint32_t _has_storage_[1];
   Identifier *id_p;
-  String *contentType;
   String *mediaURL;
   String *to;
   String *from;
@@ -2702,19 +2700,10 @@ typedef struct FaxResponse__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "contentType",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = FaxResponse_FieldNumber_ContentType,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(FaxResponse__storage_, contentType),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
         .name = "mediaURL",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = FaxResponse_FieldNumber_MediaURL,
-        .hasIndex = 2,
+        .hasIndex = 1,
         .offset = (uint32_t)offsetof(FaxResponse__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
@@ -2723,7 +2712,7 @@ typedef struct FaxResponse__storage_ {
         .name = "to",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = FaxResponse_FieldNumber_To,
-        .hasIndex = 3,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(FaxResponse__storage_, to),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2732,7 +2721,7 @@ typedef struct FaxResponse__storage_ {
         .name = "from",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = FaxResponse_FieldNumber_From,
-        .hasIndex = 4,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(FaxResponse__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2741,7 +2730,7 @@ typedef struct FaxResponse__storage_ {
         .name = "annotations",
         .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
         .number = FaxResponse_FieldNumber_Annotations,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(FaxResponse__storage_, annotations),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,

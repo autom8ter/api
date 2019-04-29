@@ -9044,7 +9044,6 @@ proto.api.FaxResponse.prototype.toObject = function(opt_includeInstance) {
 proto.api.FaxResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && common_common_pb.Identifier.toObject(includeInstance, f),
-    contentType: (f = msg.getContentType()) && common_common_pb.String.toObject(includeInstance, f),
     mediaUrl: (f = msg.getMediaUrl()) && common_common_pb.String.toObject(includeInstance, f),
     to: (f = msg.getTo()) && common_common_pb.String.toObject(includeInstance, f),
     from: (f = msg.getFrom()) && common_common_pb.String.toObject(includeInstance, f),
@@ -9089,11 +9088,6 @@ proto.api.FaxResponse.deserializeBinaryFromReader = function(msg, reader) {
       var value = new common_common_pb.Identifier;
       reader.readMessage(value,common_common_pb.Identifier.deserializeBinaryFromReader);
       msg.setId(value);
-      break;
-    case 2:
-      var value = new common_common_pb.String;
-      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
-      msg.setContentType(value);
       break;
     case 3:
       var value = new common_common_pb.String;
@@ -9150,14 +9144,6 @@ proto.api.FaxResponse.serializeBinaryToWriter = function(message, writer) {
       1,
       f,
       common_common_pb.Identifier.serializeBinaryToWriter
-    );
-  }
-  f = message.getContentType();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      common_common_pb.String.serializeBinaryToWriter
     );
   }
   f = message.getMediaUrl();
@@ -9222,36 +9208,6 @@ proto.api.FaxResponse.prototype.clearId = function() {
  */
 proto.api.FaxResponse.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional common.String content_type = 2;
- * @return {?proto.common.String}
- */
-proto.api.FaxResponse.prototype.getContentType = function() {
-  return /** @type{?proto.common.String} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.String, 2));
-};
-
-
-/** @param {?proto.common.String|undefined} value */
-proto.api.FaxResponse.prototype.setContentType = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.api.FaxResponse.prototype.clearContentType = function() {
-  this.setContentType(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.FaxResponse.prototype.hasContentType = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 

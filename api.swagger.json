@@ -810,9 +810,6 @@
         "id": {
           "$ref": "#/definitions/commonIdentifier"
         },
-        "content_type": {
-          "$ref": "#/definitions/commonString"
-        },
         "media_url": {
           "$ref": "#/definitions/commonString"
         },

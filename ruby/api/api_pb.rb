@@ -197,7 +197,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.FaxResponse" do
     optional :id, :message, 1, "common.Identifier"
-    optional :content_type, :message, 2, "common.String"
     optional :media_url, :message, 3, "common.String"
     optional :to, :message, 4, "common.String"
     optional :from, :message, 5, "common.String"
