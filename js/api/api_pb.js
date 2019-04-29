@@ -7794,8 +7794,6 @@ proto.api.CallResponse.toObject = function(includeInstance, msg) {
     id: (f = msg.getId()) && common_common_pb.Identifier.toObject(includeInstance, f),
     to: (f = msg.getTo()) && common_common_pb.String.toObject(includeInstance, f),
     from: (f = msg.getFrom()) && common_common_pb.String.toObject(includeInstance, f),
-    mediaUrl: (f = msg.getMediaUrl()) && common_common_pb.String.toObject(includeInstance, f),
-    body: (f = msg.getBody()) && common_common_pb.String.toObject(includeInstance, f),
     status: (f = msg.getStatus()) && common_common_pb.String.toObject(includeInstance, f),
     answeredBy: (f = msg.getAnsweredBy()) && common_common_pb.String.toObject(includeInstance, f),
     forwardedFrom: (f = msg.getForwardedFrom()) && common_common_pb.String.toObject(includeInstance, f),
@@ -7851,16 +7849,6 @@ proto.api.CallResponse.deserializeBinaryFromReader = function(msg, reader) {
       var value = new common_common_pb.String;
       reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
       msg.setFrom(value);
-      break;
-    case 7:
-      var value = new common_common_pb.String;
-      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
-      msg.setMediaUrl(value);
-      break;
-    case 8:
-      var value = new common_common_pb.String;
-      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
-      msg.setBody(value);
       break;
     case 9:
       var value = new common_common_pb.String;
@@ -7936,22 +7924,6 @@ proto.api.CallResponse.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       6,
-      f,
-      common_common_pb.String.serializeBinaryToWriter
-    );
-  }
-  f = message.getMediaUrl();
-  if (f != null) {
-    writer.writeMessage(
-      7,
-      f,
-      common_common_pb.String.serializeBinaryToWriter
-    );
-  }
-  f = message.getBody();
-  if (f != null) {
-    writer.writeMessage(
-      8,
       f,
       common_common_pb.String.serializeBinaryToWriter
     );
@@ -8086,66 +8058,6 @@ proto.api.CallResponse.prototype.clearFrom = function() {
  */
 proto.api.CallResponse.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional common.String media_url = 7;
- * @return {?proto.common.String}
- */
-proto.api.CallResponse.prototype.getMediaUrl = function() {
-  return /** @type{?proto.common.String} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.String, 7));
-};
-
-
-/** @param {?proto.common.String|undefined} value */
-proto.api.CallResponse.prototype.setMediaUrl = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
-};
-
-
-proto.api.CallResponse.prototype.clearMediaUrl = function() {
-  this.setMediaUrl(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.CallResponse.prototype.hasMediaUrl = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional common.String body = 8;
- * @return {?proto.common.String}
- */
-proto.api.CallResponse.prototype.getBody = function() {
-  return /** @type{?proto.common.String} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.String, 8));
-};
-
-
-/** @param {?proto.common.String|undefined} value */
-proto.api.CallResponse.prototype.setBody = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-proto.api.CallResponse.prototype.clearBody = function() {
-  this.setBody(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.CallResponse.prototype.hasBody = function() {
-  return jspb.Message.getField(this, 8) != null;
 };
 
 

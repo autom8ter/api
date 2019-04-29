@@ -172,8 +172,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :id, :message, 1, "common.Identifier"
     optional :to, :message, 5, "common.String"
     optional :from, :message, 6, "common.String"
-    optional :media_url, :message, 7, "common.String"
-    optional :body, :message, 8, "common.String"
     optional :status, :message, 9, "common.String"
     optional :answered_by, :message, 10, "common.String"
     optional :forwarded_from, :message, 11, "common.String"

@@ -952,8 +952,6 @@ typedef GPB_ENUM(CallResponse_FieldNumber) {
   CallResponse_FieldNumber_Id_p = 1,
   CallResponse_FieldNumber_To = 5,
   CallResponse_FieldNumber_From = 6,
-  CallResponse_FieldNumber_MediaURL = 7,
-  CallResponse_FieldNumber_Body = 8,
   CallResponse_FieldNumber_Status = 9,
   CallResponse_FieldNumber_AnsweredBy = 10,
   CallResponse_FieldNumber_ForwardedFrom = 11,
@@ -974,14 +972,6 @@ typedef GPB_ENUM(CallResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *from;
 /** Test to see if @c from has been set. */
 @property(nonatomic, readwrite) BOOL hasFrom;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *mediaURL;
-/** Test to see if @c mediaURL has been set. */
-@property(nonatomic, readwrite) BOOL hasMediaURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *body;
-/** Test to see if @c body has been set. */
-@property(nonatomic, readwrite) BOOL hasBody;
 
 @property(nonatomic, readwrite, strong, null_resettable) String *status;
 /** Test to see if @c status has been set. */

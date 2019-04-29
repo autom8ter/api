@@ -4263,30 +4263,6 @@ class CallResponse : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::common::String* mutable_from();
   void set_allocated_from(::common::String* from);
 
-  // .common.String media_url = 7;
-  bool has_media_url() const;
-  void clear_media_url();
-  static const int kMediaUrlFieldNumber = 7;
-  private:
-  const ::common::String& _internal_media_url() const;
-  public:
-  const ::common::String& media_url() const;
-  ::common::String* release_media_url();
-  ::common::String* mutable_media_url();
-  void set_allocated_media_url(::common::String* media_url);
-
-  // .common.String body = 8;
-  bool has_body() const;
-  void clear_body();
-  static const int kBodyFieldNumber = 8;
-  private:
-  const ::common::String& _internal_body() const;
-  public:
-  const ::common::String& body() const;
-  ::common::String* release_body();
-  ::common::String* mutable_body();
-  void set_allocated_body(::common::String* body);
-
   // .common.String status = 9;
   bool has_status() const;
   void clear_status();
@@ -4354,8 +4330,6 @@ class CallResponse : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::common::Identifier* id_;
   ::common::String* to_;
   ::common::String* from_;
-  ::common::String* media_url_;
-  ::common::String* body_;
   ::common::String* status_;
   ::common::String* answered_by_;
   ::common::String* forwarded_from_;
@@ -10072,102 +10046,6 @@ inline void CallResponse::set_allocated_from(::common::String* from) {
   }
   from_ = from;
   // @@protoc_insertion_point(field_set_allocated:api.CallResponse.from)
-}
-
-// .common.String media_url = 7;
-inline bool CallResponse::has_media_url() const {
-  return this != internal_default_instance() && media_url_ != NULL;
-}
-inline const ::common::String& CallResponse::_internal_media_url() const {
-  return *media_url_;
-}
-inline const ::common::String& CallResponse::media_url() const {
-  const ::common::String* p = media_url_;
-  // @@protoc_insertion_point(field_get:api.CallResponse.media_url)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* CallResponse::release_media_url() {
-  // @@protoc_insertion_point(field_release:api.CallResponse.media_url)
-  
-  ::common::String* temp = media_url_;
-  media_url_ = NULL;
-  return temp;
-}
-inline ::common::String* CallResponse::mutable_media_url() {
-  
-  if (media_url_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    media_url_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.CallResponse.media_url)
-  return media_url_;
-}
-inline void CallResponse::set_allocated_media_url(::common::String* media_url) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(media_url_);
-  }
-  if (media_url) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      media_url = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, media_url, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  media_url_ = media_url;
-  // @@protoc_insertion_point(field_set_allocated:api.CallResponse.media_url)
-}
-
-// .common.String body = 8;
-inline bool CallResponse::has_body() const {
-  return this != internal_default_instance() && body_ != NULL;
-}
-inline const ::common::String& CallResponse::_internal_body() const {
-  return *body_;
-}
-inline const ::common::String& CallResponse::body() const {
-  const ::common::String* p = body_;
-  // @@protoc_insertion_point(field_get:api.CallResponse.body)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* CallResponse::release_body() {
-  // @@protoc_insertion_point(field_release:api.CallResponse.body)
-  
-  ::common::String* temp = body_;
-  body_ = NULL;
-  return temp;
-}
-inline ::common::String* CallResponse::mutable_body() {
-  
-  if (body_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    body_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.CallResponse.body)
-  return body_;
-}
-inline void CallResponse::set_allocated_body(::common::String* body) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(body_);
-  }
-  if (body) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      body = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, body, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  body_ = body;
-  // @@protoc_insertion_point(field_set_allocated:api.CallResponse.body)
 }
 
 // .common.String status = 9;

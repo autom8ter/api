@@ -31915,32 +31915,6 @@ public final class Api {
     common.Common.StringOrBuilder getFromOrBuilder();
 
     /**
-     * <code>.common.String media_url = 7;</code>
-     */
-    boolean hasMediaUrl();
-    /**
-     * <code>.common.String media_url = 7;</code>
-     */
-    common.Common.String getMediaUrl();
-    /**
-     * <code>.common.String media_url = 7;</code>
-     */
-    common.Common.StringOrBuilder getMediaUrlOrBuilder();
-
-    /**
-     * <code>.common.String body = 8;</code>
-     */
-    boolean hasBody();
-    /**
-     * <code>.common.String body = 8;</code>
-     */
-    common.Common.String getBody();
-    /**
-     * <code>.common.String body = 8;</code>
-     */
-    common.Common.StringOrBuilder getBodyOrBuilder();
-
-    /**
      * <code>.common.String status = 9;</code>
      */
     boolean hasStatus();
@@ -32079,32 +32053,6 @@ public final class Api {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(from_);
                 from_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              common.Common.String.Builder subBuilder = null;
-              if (mediaUrl_ != null) {
-                subBuilder = mediaUrl_.toBuilder();
-              }
-              mediaUrl_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mediaUrl_);
-                mediaUrl_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              common.Common.String.Builder subBuilder = null;
-              if (body_ != null) {
-                subBuilder = body_.toBuilder();
-              }
-              body_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(body_);
-                body_ = subBuilder.buildPartial();
               }
 
               break;
@@ -32269,48 +32217,6 @@ public final class Api {
       return getFrom();
     }
 
-    public static final int MEDIA_URL_FIELD_NUMBER = 7;
-    private common.Common.String mediaUrl_;
-    /**
-     * <code>.common.String media_url = 7;</code>
-     */
-    public boolean hasMediaUrl() {
-      return mediaUrl_ != null;
-    }
-    /**
-     * <code>.common.String media_url = 7;</code>
-     */
-    public common.Common.String getMediaUrl() {
-      return mediaUrl_ == null ? common.Common.String.getDefaultInstance() : mediaUrl_;
-    }
-    /**
-     * <code>.common.String media_url = 7;</code>
-     */
-    public common.Common.StringOrBuilder getMediaUrlOrBuilder() {
-      return getMediaUrl();
-    }
-
-    public static final int BODY_FIELD_NUMBER = 8;
-    private common.Common.String body_;
-    /**
-     * <code>.common.String body = 8;</code>
-     */
-    public boolean hasBody() {
-      return body_ != null;
-    }
-    /**
-     * <code>.common.String body = 8;</code>
-     */
-    public common.Common.String getBody() {
-      return body_ == null ? common.Common.String.getDefaultInstance() : body_;
-    }
-    /**
-     * <code>.common.String body = 8;</code>
-     */
-    public common.Common.StringOrBuilder getBodyOrBuilder() {
-      return getBody();
-    }
-
     public static final int STATUS_FIELD_NUMBER = 9;
     private common.Common.String status_;
     /**
@@ -32439,12 +32345,6 @@ public final class Api {
       if (from_ != null) {
         output.writeMessage(6, getFrom());
       }
-      if (mediaUrl_ != null) {
-        output.writeMessage(7, getMediaUrl());
-      }
-      if (body_ != null) {
-        output.writeMessage(8, getBody());
-      }
       if (status_ != null) {
         output.writeMessage(9, getStatus());
       }
@@ -32480,14 +32380,6 @@ public final class Api {
       if (from_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getFrom());
-      }
-      if (mediaUrl_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getMediaUrl());
-      }
-      if (body_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getBody());
       }
       if (status_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -32540,16 +32432,6 @@ public final class Api {
         result = result && getFrom()
             .equals(other.getFrom());
       }
-      result = result && (hasMediaUrl() == other.hasMediaUrl());
-      if (hasMediaUrl()) {
-        result = result && getMediaUrl()
-            .equals(other.getMediaUrl());
-      }
-      result = result && (hasBody() == other.hasBody());
-      if (hasBody()) {
-        result = result && getBody()
-            .equals(other.getBody());
-      }
       result = result && (hasStatus() == other.hasStatus());
       if (hasStatus()) {
         result = result && getStatus()
@@ -32597,14 +32479,6 @@ public final class Api {
       if (hasFrom()) {
         hash = (37 * hash) + FROM_FIELD_NUMBER;
         hash = (53 * hash) + getFrom().hashCode();
-      }
-      if (hasMediaUrl()) {
-        hash = (37 * hash) + MEDIA_URL_FIELD_NUMBER;
-        hash = (53 * hash) + getMediaUrl().hashCode();
-      }
-      if (hasBody()) {
-        hash = (37 * hash) + BODY_FIELD_NUMBER;
-        hash = (53 * hash) + getBody().hashCode();
       }
       if (hasStatus()) {
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -32777,18 +32651,6 @@ public final class Api {
           from_ = null;
           fromBuilder_ = null;
         }
-        if (mediaUrlBuilder_ == null) {
-          mediaUrl_ = null;
-        } else {
-          mediaUrl_ = null;
-          mediaUrlBuilder_ = null;
-        }
-        if (bodyBuilder_ == null) {
-          body_ = null;
-        } else {
-          body_ = null;
-          bodyBuilder_ = null;
-        }
         if (statusBuilder_ == null) {
           status_ = null;
         } else {
@@ -32859,16 +32721,6 @@ public final class Api {
           result.from_ = from_;
         } else {
           result.from_ = fromBuilder_.build();
-        }
-        if (mediaUrlBuilder_ == null) {
-          result.mediaUrl_ = mediaUrl_;
-        } else {
-          result.mediaUrl_ = mediaUrlBuilder_.build();
-        }
-        if (bodyBuilder_ == null) {
-          result.body_ = body_;
-        } else {
-          result.body_ = bodyBuilder_.build();
         }
         if (statusBuilder_ == null) {
           result.status_ = status_;
@@ -32951,12 +32803,6 @@ public final class Api {
         }
         if (other.hasFrom()) {
           mergeFrom(other.getFrom());
-        }
-        if (other.hasMediaUrl()) {
-          mergeMediaUrl(other.getMediaUrl());
-        }
-        if (other.hasBody()) {
-          mergeBody(other.getBody());
         }
         if (other.hasStatus()) {
           mergeStatus(other.getStatus());
@@ -33351,240 +33197,6 @@ public final class Api {
           from_ = null;
         }
         return fromBuilder_;
-      }
-
-      private common.Common.String mediaUrl_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> mediaUrlBuilder_;
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public boolean hasMediaUrl() {
-        return mediaUrlBuilder_ != null || mediaUrl_ != null;
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public common.Common.String getMediaUrl() {
-        if (mediaUrlBuilder_ == null) {
-          return mediaUrl_ == null ? common.Common.String.getDefaultInstance() : mediaUrl_;
-        } else {
-          return mediaUrlBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public Builder setMediaUrl(common.Common.String value) {
-        if (mediaUrlBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          mediaUrl_ = value;
-          onChanged();
-        } else {
-          mediaUrlBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public Builder setMediaUrl(
-          common.Common.String.Builder builderForValue) {
-        if (mediaUrlBuilder_ == null) {
-          mediaUrl_ = builderForValue.build();
-          onChanged();
-        } else {
-          mediaUrlBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public Builder mergeMediaUrl(common.Common.String value) {
-        if (mediaUrlBuilder_ == null) {
-          if (mediaUrl_ != null) {
-            mediaUrl_ =
-              common.Common.String.newBuilder(mediaUrl_).mergeFrom(value).buildPartial();
-          } else {
-            mediaUrl_ = value;
-          }
-          onChanged();
-        } else {
-          mediaUrlBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public Builder clearMediaUrl() {
-        if (mediaUrlBuilder_ == null) {
-          mediaUrl_ = null;
-          onChanged();
-        } else {
-          mediaUrl_ = null;
-          mediaUrlBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public common.Common.String.Builder getMediaUrlBuilder() {
-        
-        onChanged();
-        return getMediaUrlFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      public common.Common.StringOrBuilder getMediaUrlOrBuilder() {
-        if (mediaUrlBuilder_ != null) {
-          return mediaUrlBuilder_.getMessageOrBuilder();
-        } else {
-          return mediaUrl_ == null ?
-              common.Common.String.getDefaultInstance() : mediaUrl_;
-        }
-      }
-      /**
-       * <code>.common.String media_url = 7;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
-          getMediaUrlFieldBuilder() {
-        if (mediaUrlBuilder_ == null) {
-          mediaUrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
-                  getMediaUrl(),
-                  getParentForChildren(),
-                  isClean());
-          mediaUrl_ = null;
-        }
-        return mediaUrlBuilder_;
-      }
-
-      private common.Common.String body_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> bodyBuilder_;
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public boolean hasBody() {
-        return bodyBuilder_ != null || body_ != null;
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public common.Common.String getBody() {
-        if (bodyBuilder_ == null) {
-          return body_ == null ? common.Common.String.getDefaultInstance() : body_;
-        } else {
-          return bodyBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public Builder setBody(common.Common.String value) {
-        if (bodyBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          body_ = value;
-          onChanged();
-        } else {
-          bodyBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public Builder setBody(
-          common.Common.String.Builder builderForValue) {
-        if (bodyBuilder_ == null) {
-          body_ = builderForValue.build();
-          onChanged();
-        } else {
-          bodyBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public Builder mergeBody(common.Common.String value) {
-        if (bodyBuilder_ == null) {
-          if (body_ != null) {
-            body_ =
-              common.Common.String.newBuilder(body_).mergeFrom(value).buildPartial();
-          } else {
-            body_ = value;
-          }
-          onChanged();
-        } else {
-          bodyBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public Builder clearBody() {
-        if (bodyBuilder_ == null) {
-          body_ = null;
-          onChanged();
-        } else {
-          body_ = null;
-          bodyBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public common.Common.String.Builder getBodyBuilder() {
-        
-        onChanged();
-        return getBodyFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      public common.Common.StringOrBuilder getBodyOrBuilder() {
-        if (bodyBuilder_ != null) {
-          return bodyBuilder_.getMessageOrBuilder();
-        } else {
-          return body_ == null ?
-              common.Common.String.getDefaultInstance() : body_;
-        }
-      }
-      /**
-       * <code>.common.String body = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
-          getBodyFieldBuilder() {
-        if (bodyBuilder_ == null) {
-          bodyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
-                  getBody(),
-                  getParentForChildren(),
-                  isClean());
-          body_ = null;
-        }
-        return bodyBuilder_;
       }
 
       private common.Common.String status_ = null;
@@ -39306,104 +38918,102 @@ public final class Api {
       "on.Identifier\022$\n\007strings\030\002 \001(\0132\023.common." +
       "StringArray\"i\n\004Role\022\036\n\002id\030\001 \001(\0132\022.common" +
       ".Identifier\022\034\n\004name\030\002 \001(\0132\016.common.Strin" +
-      "g\022#\n\013description\030\003 \001(\0132\016.common.String\"\343" +
+      "g\022#\n\013description\030\003 \001(\0132\016.common.String\"\242" +
       "\002\n\014CallResponse\022\036\n\002id\030\001 \001(\0132\022.common.Ide" +
       "ntifier\022\032\n\002to\030\005 \001(\0132\016.common.String\022\034\n\004f" +
-      "rom\030\006 \001(\0132\016.common.String\022!\n\tmedia_url\030\007" +
-      " \001(\0132\016.common.String\022\034\n\004body\030\010 \001(\0132\016.com" +
-      "mon.String\022\036\n\006status\030\t \001(\0132\016.common.Stri" +
-      "ng\022#\n\013answered_by\030\n \001(\0132\016.common.String\022" +
-      "&\n\016forwarded_from\030\013 \001(\0132\016.common.String\022" +
-      "#\n\013caller_name\030\014 \001(\0132\016.common.String\022&\n\013" +
-      "annotations\030\r \001(\0132\021.common.StringMap\"\360\001\n" +
-      "\013SMSResponse\022\036\n\002id\030\001 \001(\0132\022.common.Identi" +
-      "fier\022\032\n\002to\030\005 \001(\0132\016.common.String\022\034\n\004from" +
-      "\030\006 \001(\0132\016.common.String\022!\n\tmedia_url\030\007 \001(" +
-      "\0132\016.common.String\022\034\n\004body\030\010 \001(\0132\016.common" +
-      ".String\022\036\n\006status\030\t \001(\0132\016.common.String\022" +
-      "&\n\013annotations\030\n \001(\0132\021.common.StringMap\"" +
-      "\334\001\n\024SubscriptionResponse\022\036\n\002id\030\001 \001(\0132\022.c" +
-      "ommon.Identifier\022%\n\016monthly_charge\030\002 \001(\013" +
-      "2\r.common.Int64\022#\n\013next_charge\030\003 \001(\0132\016.c" +
-      "ommon.String\022&\n\013annotations\030\n \001(\0132\021.comm" +
-      "on.StringMap\022\027\n\004plan\030\004 \001(\0162\t.api.Plan\022\027\n" +
-      "\004user\030\005 \001(\0132\t.api.User\"\330\001\n\013FaxResponse\022\036" +
-      "\n\002id\030\001 \001(\0132\022.common.Identifier\022$\n\014conten" +
-      "t_type\030\002 \001(\0132\016.common.String\022!\n\tmedia_ur" +
-      "l\030\003 \001(\0132\016.common.String\022\032\n\002to\030\004 \001(\0132\016.co" +
-      "mmon.String\022\034\n\004from\030\005 \001(\0132\016.common.Strin" +
-      "g\022&\n\013annotations\030\n \001(\0132\021.common.StringMa" +
-      "p*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005" +
-      "EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP" +
-      "_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STAT" +
-      "S\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_" +
-      "EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLA" +
-      "TES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022" +
-      "\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nR" +
-      "EAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_" +
-      "ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022" +
-      "*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENURL\020\001" +
-      "\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nCLIE" +
-      "NTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006\022\014\n" +
-      "\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020\t\022\022" +
-      "\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n\021EM" +
-      "AIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SEARC" +
-      "H_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSURL\020\023" +
-      "\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FREE\020\000" +
-      "\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilityServ" +
-      "ice\022@\n\004Echo\022\016.common.String\032\016.common.Str" +
-      "ing\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013EchoSpa" +
-      "nish\022\016.common.String\032\016.common.String\" \202\323" +
-      "\344\223\002\032\"\025/utility/echo/spanish:\001*\022O\n\013EchoCh" +
-      "inese\022\016.common.String\032\016.common.String\" \202" +
-      "\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022O\n\013EchoE" +
-      "nglish\022\016.common.String\032\016.common.String\" " +
-      "\202\323\344\223\002\032\"\025/utility/echo/english:\001*\022K\n\tEcho" +
-      "Hindi\022\016.common.String\032\016.common.String\"\036\202" +
-      "\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEchoAra" +
-      "bic\022\016.common.String\032\016.common.String\"\037\202\323\344" +
-      "\223\002\031\"\024/utility/echo/arabic:\001*2\214\005\n\016Contact" +
-      "Service\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SMSRe" +
-      "sponse\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022P\n\014" +
-      "SendSMSBlast\022\r.api.SMSBlast\032\020.api.SMSRes" +
-      "ponse\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022K" +
-      "\n\006GetSMS\022\022.common.Identifier\032\020.api.SMSRe" +
-      "sponse\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N\n\tS" +
-      "endEmail\022\021.api.EmailRequest\032\016.common.Str" +
-      "ing\"\036\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[\n\016S" +
-      "endEmailBlast\022\026.api.EmailBlastRequest\032\016." +
-      "common.String\"\037\202\323\344\223\002\031\"\024/contact/email/bl" +
-      "ast:\001*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api.Ca" +
-      "llResponse\"\035\202\323\344\223\002\027\"\022/contact/call/send:\001" +
-      "*\022T\n\rSendCallBlast\022\016.api.CallBlast\032\021.api" +
-      ".CallResponse\"\036\202\323\344\223\002\030\"\023/contact/call/bla" +
-      "st:\001*0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020.ap" +
-      "i.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact/fax/send" +
-      ":\001*2\235\003\n\016PaymentService\022\\\n\tSubscribe\022\025.ap" +
-      "i.SubscribeRequest\032\031.api.SubscriptionRes" +
-      "ponse\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022b\n\013" +
-      "Unsubscribe\022\027.api.UnSubscribeRequest\032\031.a" +
-      "pi.SubscriptionResponse\"\037\202\323\344\223\002\031\"\024/paymen" +
-      "t/unsubscribe:\001*\022]\n\023PurchasePhoneNumber\022" +
-      "\020.api.PhoneNumber\032\030.api.PhoneNumberResou" +
-      "rce\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Searc" +
-      "hPhoneNumber\022\035.api.SearchPhoneNumberRequ" +
-      "est\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payment/" +
-      "numbers/search:\001*0\0012\320\003\n\013UserService\022K\n\nQ" +
-      "ueryUsers\022\017.api.TokenQuery\032\t.api.User\"\037\202" +
-      "\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nCrea" +
-      "teUser\022\r.common.Bytes\032\t.api.User\" \202\323\344\223\002\032" +
-      "\"\025/resource/user/create:\001*\022G\n\007GetUser\022\022." +
-      "common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/r" +
-      "esource/user/get:\001*\022J\n\nDeleteUser\022\022.comm" +
-      "on.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/resou" +
-      "rce/user/get:\001*\022F\n\nUpdateUser\022\013.api.IDBo" +
-      "dy\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user/up" +
-      "date:\001*\022M\n\tUserRoles\022\022.common.Identifier" +
-      "\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/role" +
-      "s:\001*0\0012S\n\014AdminService\022C\n\nStartCache\022\r.c" +
-      "ommon.Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/adm" +
-      "in/start:\001*b\006proto3"
+      "rom\030\006 \001(\0132\016.common.String\022\036\n\006status\030\t \001(" +
+      "\0132\016.common.String\022#\n\013answered_by\030\n \001(\0132\016" +
+      ".common.String\022&\n\016forwarded_from\030\013 \001(\0132\016" +
+      ".common.String\022#\n\013caller_name\030\014 \001(\0132\016.co" +
+      "mmon.String\022&\n\013annotations\030\r \001(\0132\021.commo" +
+      "n.StringMap\"\360\001\n\013SMSResponse\022\036\n\002id\030\001 \001(\0132" +
+      "\022.common.Identifier\022\032\n\002to\030\005 \001(\0132\016.common" +
+      ".String\022\034\n\004from\030\006 \001(\0132\016.common.String\022!\n" +
+      "\tmedia_url\030\007 \001(\0132\016.common.String\022\034\n\004body" +
+      "\030\010 \001(\0132\016.common.String\022\036\n\006status\030\t \001(\0132\016" +
+      ".common.String\022&\n\013annotations\030\n \001(\0132\021.co" +
+      "mmon.StringMap\"\334\001\n\024SubscriptionResponse\022" +
+      "\036\n\002id\030\001 \001(\0132\022.common.Identifier\022%\n\016month" +
+      "ly_charge\030\002 \001(\0132\r.common.Int64\022#\n\013next_c" +
+      "harge\030\003 \001(\0132\016.common.String\022&\n\013annotatio" +
+      "ns\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 \001(" +
+      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\"\330\001" +
+      "\n\013FaxResponse\022\036\n\002id\030\001 \001(\0132\022.common.Ident" +
+      "ifier\022$\n\014content_type\030\002 \001(\0132\016.common.Str" +
+      "ing\022!\n\tmedia_url\030\003 \001(\0132\016.common.String\022\032" +
+      "\n\002to\030\004 \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\013" +
+      "2\016.common.String\022&\n\013annotations\030\n \001(\0132\021." +
+      "common.StringMap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013" +
+      "\n\007PROFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030" +
+      "\n\024READ_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS" +
+      "\020\005\022\016\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLAT" +
+      "ES\020\007\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREA" +
+      "TE_EMAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014" +
+      "UPDATE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELE" +
+      "TE_RULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROL" +
+      "ES\020\017\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021" +
+      "\022\r\n\tREAD_LOGS\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020" +
+      "\000\022\014\n\010TOKENURL\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USE" +
+      "RSURL\020\003\022\016\n\nCLIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014" +
+      "\n\010RULESURL\020\006\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022" +
+      "\014\n\010STATSURL\020\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTEN" +
+      "ANTSURL\020\013\022\025\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAI" +
+      "LURL\020\r\022\023\n\017SEARCH_USERSURL\020\016\022\r\n\tDEVICEURL" +
+      "\020\022\022\013\n\007JWKSURL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n" +
+      "\004Plan\022\010\n\004FREE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022" +
+      "\341\003\n\016UtilityService\022@\n\004Echo\022\016.common.Stri" +
+      "ng\032\016.common.String\"\030\202\323\344\223\002\022\"\r/utility/ech" +
+      "o:\001*\022O\n\013EchoSpanish\022\016.common.String\032\016.co" +
+      "mmon.String\" \202\323\344\223\002\032\"\025/utility/echo/spani" +
+      "sh:\001*\022O\n\013EchoChinese\022\016.common.String\032\016.c" +
+      "ommon.String\" \202\323\344\223\002\032\"\025/utility/echo/chin" +
+      "ese:\001*\022O\n\013EchoEnglish\022\016.common.String\032\016." +
+      "common.String\" \202\323\344\223\002\032\"\025/utility/echo/eng" +
+      "lish:\001*\022K\n\tEchoHindi\022\016.common.String\032\016.c" +
+      "ommon.String\"\036\202\323\344\223\002\030\"\023/utility/echo/hind" +
+      "i:\001*\022M\n\nEchoArabic\022\016.common.String\032\016.com" +
+      "mon.String\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic" +
+      ":\001*2\214\005\n\016ContactService\022C\n\007SendSMS\022\010.api." +
+      "SMS\032\020.api.SMSResponse\"\034\202\323\344\223\002\026\"\021/contact/" +
+      "sms/send:\001*\022P\n\014SendSMSBlast\022\r.api.SMSBla" +
+      "st\032\020.api.SMSResponse\"\035\202\323\344\223\002\027\"\022/contact/s" +
+      "ms/blast:\001*0\001\022K\n\006GetSMS\022\022.common.Identif" +
+      "ier\032\020.api.SMSResponse\"\033\202\323\344\223\002\025\"\020/contact/" +
+      "sms/get:\001*\022N\n\tSendEmail\022\021.api.EmailReque" +
+      "st\032\016.common.String\"\036\202\323\344\223\002\030\"\023/contact/ema" +
+      "il/send:\001*\022[\n\016SendEmailBlast\022\026.api.Email" +
+      "BlastRequest\032\016.common.String\"\037\202\323\344\223\002\031\"\024/c" +
+      "ontact/email/blast:\001*0\001\022G\n\010SendCall\022\t.ap" +
+      "i.Call\032\021.api.CallResponse\"\035\202\323\344\223\002\027\"\022/cont" +
+      "act/call/send:\001*\022T\n\rSendCallBlast\022\016.api." +
+      "CallBlast\032\021.api.CallResponse\"\036\202\323\344\223\002\030\"\023/c" +
+      "ontact/call/blast:\001*0\001\022J\n\007SendFax\022\017.api." +
+      "FaxRequest\032\020.api.FaxResponse\"\034\202\323\344\223\002\026\"\021/c" +
+      "ontact/fax/send:\001*2\235\003\n\016PaymentService\022\\\n" +
+      "\tSubscribe\022\025.api.SubscribeRequest\032\031.api." +
+      "SubscriptionResponse\"\035\202\323\344\223\002\027\"\022/payment/s" +
+      "ubscribe:\001*\022b\n\013Unsubscribe\022\027.api.UnSubsc" +
+      "ribeRequest\032\031.api.SubscriptionResponse\"\037" +
+      "\202\323\344\223\002\031\"\024/payment/unsubscribe:\001*\022]\n\023Purch" +
+      "asePhoneNumber\022\020.api.PhoneNumber\032\030.api.P" +
+      "honeNumberResource\"\032\202\323\344\223\002\024\"\017/payment/num" +
+      "ber:\001*\022j\n\021SearchPhoneNumber\022\035.api.Search" +
+      "PhoneNumberRequest\032\020.api.PhoneNumber\"\"\202\323" +
+      "\344\223\002\034\"\027/payment/numbers/search:\001*0\0012\320\003\n\013U" +
+      "serService\022K\n\nQueryUsers\022\017.api.TokenQuer" +
+      "y\032\t.api.User\"\037\202\323\344\223\002\031\"\024/resource/user/que" +
+      "ry:\001*0\001\022H\n\nCreateUser\022\r.common.Bytes\032\t.a" +
+      "pi.User\" \202\323\344\223\002\032\"\025/resource/user/create:\001" +
+      "*\022G\n\007GetUser\022\022.common.Identifier\032\t.api.U" +
+      "ser\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022J\n\nDe" +
+      "leteUser\022\022.common.Identifier\032\t.api.User\"" +
+      "\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022F\n\nUpdate" +
+      "User\022\013.api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025/r" +
+      "esource/user/update:\001*\022M\n\tUserRoles\022\022.co" +
+      "mmon.Identifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/res" +
+      "ource/user/roles:\001*0\0012S\n\014AdminService\022C\n" +
+      "\nStartCache\022\r.common.Empty\032\r.common.Empt" +
+      "y\"\027\202\323\344\223\002\021\"\014/admin/start:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -39580,7 +39190,7 @@ public final class Api {
     internal_static_api_CallResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_CallResponse_descriptor,
-        new java.lang.String[] { "Id", "To", "From", "MediaUrl", "Body", "Status", "AnsweredBy", "ForwardedFrom", "CallerName", "Annotations", });
+        new java.lang.String[] { "Id", "To", "From", "Status", "AnsweredBy", "ForwardedFrom", "CallerName", "Annotations", });
     internal_static_api_SMSResponse_descriptor =
       getDescriptor().getMessageTypes().get(27);
     internal_static_api_SMSResponse_fieldAccessorTable = new

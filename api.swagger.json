@@ -681,12 +681,6 @@
         "from": {
           "$ref": "#/definitions/commonString"
         },
-        "media_url": {
-          "$ref": "#/definitions/commonString"
-        },
-        "body": {
-          "$ref": "#/definitions/commonString"
-        },
         "status": {
           "$ref": "#/definitions/commonString"
         },

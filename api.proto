@@ -415,8 +415,6 @@ message CallResponse {
     common.Identifier   id=1;
     common.String  to =5;
     common.String  from =6;
-    common.String  media_url = 7;
-    common.String  body =8;
     common.String  status =9;
     common.String  answered_by =10;
     common.String  forwarded_from =11;

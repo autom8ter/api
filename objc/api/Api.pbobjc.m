@@ -2328,8 +2328,6 @@ typedef struct Role__storage_ {
 @dynamic hasId_p, id_p;
 @dynamic hasTo, to;
 @dynamic hasFrom, from;
-@dynamic hasMediaURL, mediaURL;
-@dynamic hasBody, body;
 @dynamic hasStatus, status;
 @dynamic hasAnsweredBy, answeredBy;
 @dynamic hasForwardedFrom, forwardedFrom;
@@ -2341,8 +2339,6 @@ typedef struct CallResponse__storage_ {
   Identifier *id_p;
   String *to;
   String *from;
-  String *mediaURL;
-  String *body;
   String *status;
   String *answeredBy;
   String *forwardedFrom;
@@ -2384,28 +2380,10 @@ typedef struct CallResponse__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "mediaURL",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = CallResponse_FieldNumber_MediaURL,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(CallResponse__storage_, mediaURL),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "body",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = CallResponse_FieldNumber_Body,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(CallResponse__storage_, body),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
         .name = "status",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = CallResponse_FieldNumber_Status,
-        .hasIndex = 5,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(CallResponse__storage_, status),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2414,7 +2392,7 @@ typedef struct CallResponse__storage_ {
         .name = "answeredBy",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = CallResponse_FieldNumber_AnsweredBy,
-        .hasIndex = 6,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(CallResponse__storage_, answeredBy),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2423,7 +2401,7 @@ typedef struct CallResponse__storage_ {
         .name = "forwardedFrom",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = CallResponse_FieldNumber_ForwardedFrom,
-        .hasIndex = 7,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(CallResponse__storage_, forwardedFrom),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2432,7 +2410,7 @@ typedef struct CallResponse__storage_ {
         .name = "callerName",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = CallResponse_FieldNumber_CallerName,
-        .hasIndex = 8,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(CallResponse__storage_, callerName),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2441,7 +2419,7 @@ typedef struct CallResponse__storage_ {
         .name = "annotations",
         .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
         .number = CallResponse_FieldNumber_Annotations,
-        .hasIndex = 9,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(CallResponse__storage_, annotations),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -2455,11 +2433,6 @@ typedef struct CallResponse__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(CallResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
-#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    static const char *extraTextFormatInfo =
-        "\001\007\005\241!!\000";
-    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
-#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }
