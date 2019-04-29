@@ -1044,7 +1044,7 @@ typedef GPB_ENUM(SMSResponse_FieldNumber) {
 typedef GPB_ENUM(SubscriptionResponse_FieldNumber) {
   SubscriptionResponse_FieldNumber_Id_p = 1,
   SubscriptionResponse_FieldNumber_MonthlyCharge = 2,
-  SubscriptionResponse_FieldNumber_NextCharge = 3,
+  SubscriptionResponse_FieldNumber_DaysUntilDue = 3,
   SubscriptionResponse_FieldNumber_Plan = 4,
   SubscriptionResponse_FieldNumber_User = 5,
   SubscriptionResponse_FieldNumber_Status = 6,
@@ -1061,9 +1061,9 @@ typedef GPB_ENUM(SubscriptionResponse_FieldNumber) {
 /** Test to see if @c monthlyCharge has been set. */
 @property(nonatomic, readwrite) BOOL hasMonthlyCharge;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *nextCharge;
-/** Test to see if @c nextCharge has been set. */
-@property(nonatomic, readwrite) BOOL hasNextCharge;
+@property(nonatomic, readwrite, strong, null_resettable) Int64 *daysUntilDue;
+/** Test to see if @c daysUntilDue has been set. */
+@property(nonatomic, readwrite) BOOL hasDaysUntilDue;
 
 @property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
 /** Test to see if @c annotations has been set. */

@@ -3148,7 +3148,7 @@ func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error
 type SubscriptionResponse struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	MonthlyCharge        *common.Int64      `protobuf:"bytes,2,opt,name=monthly_charge,json=monthlyCharge,proto3" json:"monthly_charge,omitempty"`
-	NextCharge           *common.String     `protobuf:"bytes,3,opt,name=next_charge,json=nextCharge,proto3" json:"next_charge,omitempty"`
+	DaysUntilDue         *common.Int64      `protobuf:"bytes,3,opt,name=days_until_due,json=daysUntilDue,proto3" json:"days_until_due,omitempty"`
 	Annotations          *common.StringMap  `protobuf:"bytes,10,opt,name=annotations,proto3" json:"annotations,omitempty"`
 	Plan                 Plan               `protobuf:"varint,4,opt,name=plan,proto3,enum=api.Plan" json:"plan,omitempty"`
 	User                 *User              `protobuf:"bytes,5,opt,name=user,proto3" json:"user,omitempty"`
@@ -3172,6 +3172,12 @@ func (*SubscriptionResponse) Descriptor() ([]byte, []int)
 func (m *SubscriptionResponse) GetAnnotations() *common.StringMap
 ```
 
+#### func (*SubscriptionResponse) GetDaysUntilDue
+
+```go
+func (m *SubscriptionResponse) GetDaysUntilDue() *common.Int64
+```
+
 #### func (*SubscriptionResponse) GetId
 
 ```go
@@ -3182,12 +3188,6 @@ func (m *SubscriptionResponse) GetId() *common.Identifier
 
 ```go
 func (m *SubscriptionResponse) GetMonthlyCharge() *common.Int64
-```
-
-#### func (*SubscriptionResponse) GetNextCharge
-
-```go
-func (m *SubscriptionResponse) GetNextCharge() *common.String
 ```
 
 #### func (*SubscriptionResponse) GetPlan

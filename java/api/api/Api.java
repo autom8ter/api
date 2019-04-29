@@ -35638,17 +35638,17 @@ public final class Api {
     common.Common.Int64OrBuilder getMonthlyChargeOrBuilder();
 
     /**
-     * <code>.common.String next_charge = 3;</code>
+     * <code>.common.Int64 days_until_due = 3;</code>
      */
-    boolean hasNextCharge();
+    boolean hasDaysUntilDue();
     /**
-     * <code>.common.String next_charge = 3;</code>
+     * <code>.common.Int64 days_until_due = 3;</code>
      */
-    common.Common.String getNextCharge();
+    common.Common.Int64 getDaysUntilDue();
     /**
-     * <code>.common.String next_charge = 3;</code>
+     * <code>.common.Int64 days_until_due = 3;</code>
      */
-    common.Common.StringOrBuilder getNextChargeOrBuilder();
+    common.Common.Int64OrBuilder getDaysUntilDueOrBuilder();
 
     /**
      * <code>.common.StringMap annotations = 10;</code>
@@ -35765,14 +35765,14 @@ public final class Api {
               break;
             }
             case 26: {
-              common.Common.String.Builder subBuilder = null;
-              if (nextCharge_ != null) {
-                subBuilder = nextCharge_.toBuilder();
+              common.Common.Int64.Builder subBuilder = null;
+              if (daysUntilDue_ != null) {
+                subBuilder = daysUntilDue_.toBuilder();
               }
-              nextCharge_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              daysUntilDue_ = input.readMessage(common.Common.Int64.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(nextCharge_);
-                nextCharge_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(daysUntilDue_);
+                daysUntilDue_ = subBuilder.buildPartial();
               }
 
               break;
@@ -35896,25 +35896,25 @@ public final class Api {
       return getMonthlyCharge();
     }
 
-    public static final int NEXT_CHARGE_FIELD_NUMBER = 3;
-    private common.Common.String nextCharge_;
+    public static final int DAYS_UNTIL_DUE_FIELD_NUMBER = 3;
+    private common.Common.Int64 daysUntilDue_;
     /**
-     * <code>.common.String next_charge = 3;</code>
+     * <code>.common.Int64 days_until_due = 3;</code>
      */
-    public boolean hasNextCharge() {
-      return nextCharge_ != null;
+    public boolean hasDaysUntilDue() {
+      return daysUntilDue_ != null;
     }
     /**
-     * <code>.common.String next_charge = 3;</code>
+     * <code>.common.Int64 days_until_due = 3;</code>
      */
-    public common.Common.String getNextCharge() {
-      return nextCharge_ == null ? common.Common.String.getDefaultInstance() : nextCharge_;
+    public common.Common.Int64 getDaysUntilDue() {
+      return daysUntilDue_ == null ? common.Common.Int64.getDefaultInstance() : daysUntilDue_;
     }
     /**
-     * <code>.common.String next_charge = 3;</code>
+     * <code>.common.Int64 days_until_due = 3;</code>
      */
-    public common.Common.StringOrBuilder getNextChargeOrBuilder() {
-      return getNextCharge();
+    public common.Common.Int64OrBuilder getDaysUntilDueOrBuilder() {
+      return getDaysUntilDue();
     }
 
     public static final int ANNOTATIONS_FIELD_NUMBER = 10;
@@ -36017,8 +36017,8 @@ public final class Api {
       if (monthlyCharge_ != null) {
         output.writeMessage(2, getMonthlyCharge());
       }
-      if (nextCharge_ != null) {
-        output.writeMessage(3, getNextCharge());
+      if (daysUntilDue_ != null) {
+        output.writeMessage(3, getDaysUntilDue());
       }
       if (plan_ != api.Api.Plan.FREE.getNumber()) {
         output.writeEnum(4, plan_);
@@ -36049,9 +36049,9 @@ public final class Api {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getMonthlyCharge());
       }
-      if (nextCharge_ != null) {
+      if (daysUntilDue_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getNextCharge());
+          .computeMessageSize(3, getDaysUntilDue());
       }
       if (plan_ != api.Api.Plan.FREE.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -36095,10 +36095,10 @@ public final class Api {
         result = result && getMonthlyCharge()
             .equals(other.getMonthlyCharge());
       }
-      result = result && (hasNextCharge() == other.hasNextCharge());
-      if (hasNextCharge()) {
-        result = result && getNextCharge()
-            .equals(other.getNextCharge());
+      result = result && (hasDaysUntilDue() == other.hasDaysUntilDue());
+      if (hasDaysUntilDue()) {
+        result = result && getDaysUntilDue()
+            .equals(other.getDaysUntilDue());
       }
       result = result && (hasAnnotations() == other.hasAnnotations());
       if (hasAnnotations()) {
@@ -36135,9 +36135,9 @@ public final class Api {
         hash = (37 * hash) + MONTHLY_CHARGE_FIELD_NUMBER;
         hash = (53 * hash) + getMonthlyCharge().hashCode();
       }
-      if (hasNextCharge()) {
-        hash = (37 * hash) + NEXT_CHARGE_FIELD_NUMBER;
-        hash = (53 * hash) + getNextCharge().hashCode();
+      if (hasDaysUntilDue()) {
+        hash = (37 * hash) + DAYS_UNTIL_DUE_FIELD_NUMBER;
+        hash = (53 * hash) + getDaysUntilDue().hashCode();
       }
       if (hasAnnotations()) {
         hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
@@ -36298,11 +36298,11 @@ public final class Api {
           monthlyCharge_ = null;
           monthlyChargeBuilder_ = null;
         }
-        if (nextChargeBuilder_ == null) {
-          nextCharge_ = null;
+        if (daysUntilDueBuilder_ == null) {
+          daysUntilDue_ = null;
         } else {
-          nextCharge_ = null;
-          nextChargeBuilder_ = null;
+          daysUntilDue_ = null;
+          daysUntilDueBuilder_ = null;
         }
         if (annotationsBuilder_ == null) {
           annotations_ = null;
@@ -36360,10 +36360,10 @@ public final class Api {
         } else {
           result.monthlyCharge_ = monthlyChargeBuilder_.build();
         }
-        if (nextChargeBuilder_ == null) {
-          result.nextCharge_ = nextCharge_;
+        if (daysUntilDueBuilder_ == null) {
+          result.daysUntilDue_ = daysUntilDue_;
         } else {
-          result.nextCharge_ = nextChargeBuilder_.build();
+          result.daysUntilDue_ = daysUntilDueBuilder_.build();
         }
         if (annotationsBuilder_ == null) {
           result.annotations_ = annotations_;
@@ -36435,8 +36435,8 @@ public final class Api {
         if (other.hasMonthlyCharge()) {
           mergeMonthlyCharge(other.getMonthlyCharge());
         }
-        if (other.hasNextCharge()) {
-          mergeNextCharge(other.getNextCharge());
+        if (other.hasDaysUntilDue()) {
+          mergeDaysUntilDue(other.getDaysUntilDue());
         }
         if (other.hasAnnotations()) {
           mergeAnnotations(other.getAnnotations());
@@ -36713,121 +36713,121 @@ public final class Api {
         return monthlyChargeBuilder_;
       }
 
-      private common.Common.String nextCharge_ = null;
+      private common.Common.Int64 daysUntilDue_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> nextChargeBuilder_;
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> daysUntilDueBuilder_;
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public boolean hasNextCharge() {
-        return nextChargeBuilder_ != null || nextCharge_ != null;
+      public boolean hasDaysUntilDue() {
+        return daysUntilDueBuilder_ != null || daysUntilDue_ != null;
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public common.Common.String getNextCharge() {
-        if (nextChargeBuilder_ == null) {
-          return nextCharge_ == null ? common.Common.String.getDefaultInstance() : nextCharge_;
+      public common.Common.Int64 getDaysUntilDue() {
+        if (daysUntilDueBuilder_ == null) {
+          return daysUntilDue_ == null ? common.Common.Int64.getDefaultInstance() : daysUntilDue_;
         } else {
-          return nextChargeBuilder_.getMessage();
+          return daysUntilDueBuilder_.getMessage();
         }
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public Builder setNextCharge(common.Common.String value) {
-        if (nextChargeBuilder_ == null) {
+      public Builder setDaysUntilDue(common.Common.Int64 value) {
+        if (daysUntilDueBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          nextCharge_ = value;
+          daysUntilDue_ = value;
           onChanged();
         } else {
-          nextChargeBuilder_.setMessage(value);
+          daysUntilDueBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public Builder setNextCharge(
-          common.Common.String.Builder builderForValue) {
-        if (nextChargeBuilder_ == null) {
-          nextCharge_ = builderForValue.build();
+      public Builder setDaysUntilDue(
+          common.Common.Int64.Builder builderForValue) {
+        if (daysUntilDueBuilder_ == null) {
+          daysUntilDue_ = builderForValue.build();
           onChanged();
         } else {
-          nextChargeBuilder_.setMessage(builderForValue.build());
+          daysUntilDueBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public Builder mergeNextCharge(common.Common.String value) {
-        if (nextChargeBuilder_ == null) {
-          if (nextCharge_ != null) {
-            nextCharge_ =
-              common.Common.String.newBuilder(nextCharge_).mergeFrom(value).buildPartial();
+      public Builder mergeDaysUntilDue(common.Common.Int64 value) {
+        if (daysUntilDueBuilder_ == null) {
+          if (daysUntilDue_ != null) {
+            daysUntilDue_ =
+              common.Common.Int64.newBuilder(daysUntilDue_).mergeFrom(value).buildPartial();
           } else {
-            nextCharge_ = value;
+            daysUntilDue_ = value;
           }
           onChanged();
         } else {
-          nextChargeBuilder_.mergeFrom(value);
+          daysUntilDueBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public Builder clearNextCharge() {
-        if (nextChargeBuilder_ == null) {
-          nextCharge_ = null;
+      public Builder clearDaysUntilDue() {
+        if (daysUntilDueBuilder_ == null) {
+          daysUntilDue_ = null;
           onChanged();
         } else {
-          nextCharge_ = null;
-          nextChargeBuilder_ = null;
+          daysUntilDue_ = null;
+          daysUntilDueBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public common.Common.String.Builder getNextChargeBuilder() {
+      public common.Common.Int64.Builder getDaysUntilDueBuilder() {
         
         onChanged();
-        return getNextChargeFieldBuilder().getBuilder();
+        return getDaysUntilDueFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
-      public common.Common.StringOrBuilder getNextChargeOrBuilder() {
-        if (nextChargeBuilder_ != null) {
-          return nextChargeBuilder_.getMessageOrBuilder();
+      public common.Common.Int64OrBuilder getDaysUntilDueOrBuilder() {
+        if (daysUntilDueBuilder_ != null) {
+          return daysUntilDueBuilder_.getMessageOrBuilder();
         } else {
-          return nextCharge_ == null ?
-              common.Common.String.getDefaultInstance() : nextCharge_;
+          return daysUntilDue_ == null ?
+              common.Common.Int64.getDefaultInstance() : daysUntilDue_;
         }
       }
       /**
-       * <code>.common.String next_charge = 3;</code>
+       * <code>.common.Int64 days_until_due = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
-          getNextChargeFieldBuilder() {
-        if (nextChargeBuilder_ == null) {
-          nextChargeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
-                  getNextCharge(),
+          common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder> 
+          getDaysUntilDueFieldBuilder() {
+        if (daysUntilDueBuilder_ == null) {
+          daysUntilDueBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Int64, common.Common.Int64.Builder, common.Common.Int64OrBuilder>(
+                  getDaysUntilDue(),
                   getParentForChildren(),
                   isClean());
-          nextCharge_ = null;
+          daysUntilDue_ = null;
         }
-        return nextChargeBuilder_;
+        return daysUntilDueBuilder_;
       }
 
       private common.Common.StringMap annotations_ = null;
@@ -39126,89 +39126,89 @@ public final class Api {
       "\tmedia_url\030\007 \001(\0132\016.common.String\022\034\n\004body" +
       "\030\010 \001(\0132\016.common.String\022\036\n\006status\030\t \001(\0132\016" +
       ".common.String\022&\n\013annotations\030\n \001(\0132\021.co" +
-      "mmon.StringMap\"\374\001\n\024SubscriptionResponse\022" +
+      "mmon.StringMap\"\376\001\n\024SubscriptionResponse\022" +
       "\036\n\002id\030\001 \001(\0132\022.common.Identifier\022%\n\016month" +
-      "ly_charge\030\002 \001(\0132\r.common.Int64\022#\n\013next_c" +
-      "harge\030\003 \001(\0132\016.common.String\022&\n\013annotatio" +
-      "ns\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 \001(" +
-      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\022\036\n" +
-      "\006status\030\006 \001(\0132\016.common.String\"\322\001\n\013FaxRes" +
-      "ponse\022\036\n\002id\030\001 \001(\0132\022.common.Identifier\022!\n" +
-      "\tmedia_url\030\003 \001(\0132\016.common.String\022\032\n\002to\030\004" +
-      " \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\0132\016.com" +
-      "mon.String\022\036\n\006status\030\006 \001(\0132\016.common.Stri" +
-      "ng\022&\n\013annotations\030\n \001(\0132\021.common.StringM" +
-      "ap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n" +
-      "\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_ID" +
-      "P_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STA" +
-      "TS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE" +
-      "_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPL" +
-      "ATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013" +
-      "\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\n" +
-      "READ_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE" +
-      "_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020" +
-      "\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENURL\020" +
-      "\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nCLI" +
-      "ENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006\022\014" +
-      "\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020\t\022" +
-      "\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n\021E" +
-      "MAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SEAR" +
-      "CH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSURL\020" +
-      "\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FREE\020" +
-      "\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilitySer" +
-      "vice\022@\n\004Echo\022\016.common.String\032\016.common.St" +
-      "ring\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013EchoSp" +
-      "anish\022\016.common.String\032\016.common.String\" \202" +
-      "\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022O\n\013EchoC" +
-      "hinese\022\016.common.String\032\016.common.String\" " +
-      "\202\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022O\n\013Echo" +
-      "English\022\016.common.String\032\016.common.String\"" +
-      " \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022K\n\tEch" +
-      "oHindi\022\016.common.String\032\016.common.String\"\036" +
-      "\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEchoAr" +
-      "abic\022\016.common.String\032\016.common.String\"\037\202\323" +
-      "\344\223\002\031\"\024/utility/echo/arabic:\001*2\214\005\n\016Contac" +
-      "tService\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SMSR" +
-      "esponse\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022P\n" +
-      "\014SendSMSBlast\022\r.api.SMSBlast\032\020.api.SMSRe" +
-      "sponse\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022" +
-      "K\n\006GetSMS\022\022.common.Identifier\032\020.api.SMSR" +
-      "esponse\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N\n\t" +
-      "SendEmail\022\021.api.EmailRequest\032\016.common.St" +
-      "ring\"\036\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[\n\016" +
-      "SendEmailBlast\022\026.api.EmailBlastRequest\032\016" +
-      ".common.String\"\037\202\323\344\223\002\031\"\024/contact/email/b" +
-      "last:\001*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api.C" +
-      "allResponse\"\035\202\323\344\223\002\027\"\022/contact/call/send:" +
-      "\001*\022T\n\rSendCallBlast\022\016.api.CallBlast\032\021.ap" +
-      "i.CallResponse\"\036\202\323\344\223\002\030\"\023/contact/call/bl" +
-      "ast:\001*0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020.a" +
-      "pi.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact/fax/sen" +
-      "d:\001*2\235\003\n\016PaymentService\022\\\n\tSubscribe\022\025.a" +
-      "pi.SubscribeRequest\032\031.api.SubscriptionRe" +
-      "sponse\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022b\n" +
-      "\013Unsubscribe\022\027.api.UnSubscribeRequest\032\031." +
-      "api.SubscriptionResponse\"\037\202\323\344\223\002\031\"\024/payme" +
-      "nt/unsubscribe:\001*\022]\n\023PurchasePhoneNumber" +
-      "\022\020.api.PhoneNumber\032\030.api.PhoneNumberReso" +
-      "urce\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Sear" +
-      "chPhoneNumber\022\035.api.SearchPhoneNumberReq" +
-      "uest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payment" +
-      "/numbers/search:\001*0\0012\320\003\n\013UserService\022K\n\n" +
-      "QueryUsers\022\017.api.TokenQuery\032\t.api.User\"\037" +
-      "\202\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nCre" +
-      "ateUser\022\r.common.Bytes\032\t.api.User\" \202\323\344\223\002" +
-      "\032\"\025/resource/user/create:\001*\022G\n\007GetUser\022\022" +
-      ".common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/" +
-      "resource/user/get:\001*\022J\n\nDeleteUser\022\022.com" +
-      "mon.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/reso" +
-      "urce/user/get:\001*\022F\n\nUpdateUser\022\013.api.IDB" +
-      "ody\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user/u" +
-      "pdate:\001*\022M\n\tUserRoles\022\022.common.Identifie" +
-      "r\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/rol" +
-      "es:\001*0\0012S\n\014AdminService\022C\n\nStartCache\022\r." +
-      "common.Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/ad" +
-      "min/start:\001*b\006proto3"
+      "ly_charge\030\002 \001(\0132\r.common.Int64\022%\n\016days_u" +
+      "ntil_due\030\003 \001(\0132\r.common.Int64\022&\n\013annotat" +
+      "ions\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 " +
+      "\001(\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\022" +
+      "\036\n\006status\030\006 \001(\0132\016.common.String\"\322\001\n\013FaxR" +
+      "esponse\022\036\n\002id\030\001 \001(\0132\022.common.Identifier\022" +
+      "!\n\tmedia_url\030\003 \001(\0132\016.common.String\022\032\n\002to" +
+      "\030\004 \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\0132\016.c" +
+      "ommon.String\022\036\n\006status\030\006 \001(\0132\016.common.St" +
+      "ring\022&\n\013annotations\030\n \001(\0132\021.common.Strin" +
+      "gMap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022" +
+      "\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_" +
+      "IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_S" +
+      "TATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDA" +
+      "TE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEM" +
+      "PLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES" +
+      "\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016" +
+      "\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREA" +
+      "TE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOG" +
+      "S\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENUR" +
+      "L\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nC" +
+      "LIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006" +
+      "\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020" +
+      "\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n" +
+      "\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SE" +
+      "ARCH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSUR" +
+      "L\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FRE" +
+      "E\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilityS" +
+      "ervice\022@\n\004Echo\022\016.common.String\032\016.common." +
+      "String\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013Echo" +
+      "Spanish\022\016.common.String\032\016.common.String\"" +
+      " \202\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022O\n\013Ech" +
+      "oChinese\022\016.common.String\032\016.common.String" +
+      "\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022O\n\013Ec" +
+      "hoEnglish\022\016.common.String\032\016.common.Strin" +
+      "g\" \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022K\n\tE" +
+      "choHindi\022\016.common.String\032\016.common.String" +
+      "\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEcho" +
+      "Arabic\022\016.common.String\032\016.common.String\"\037" +
+      "\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*2\214\005\n\016Cont" +
+      "actService\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SM" +
+      "SResponse\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022" +
+      "P\n\014SendSMSBlast\022\r.api.SMSBlast\032\020.api.SMS" +
+      "Response\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0" +
+      "\001\022K\n\006GetSMS\022\022.common.Identifier\032\020.api.SM" +
+      "SResponse\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N" +
+      "\n\tSendEmail\022\021.api.EmailRequest\032\016.common." +
+      "String\"\036\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[" +
+      "\n\016SendEmailBlast\022\026.api.EmailBlastRequest" +
+      "\032\016.common.String\"\037\202\323\344\223\002\031\"\024/contact/email" +
+      "/blast:\001*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api" +
+      ".CallResponse\"\035\202\323\344\223\002\027\"\022/contact/call/sen" +
+      "d:\001*\022T\n\rSendCallBlast\022\016.api.CallBlast\032\021." +
+      "api.CallResponse\"\036\202\323\344\223\002\030\"\023/contact/call/" +
+      "blast:\001*0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020" +
+      ".api.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact/fax/s" +
+      "end:\001*2\235\003\n\016PaymentService\022\\\n\tSubscribe\022\025" +
+      ".api.SubscribeRequest\032\031.api.Subscription" +
+      "Response\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022" +
+      "b\n\013Unsubscribe\022\027.api.UnSubscribeRequest\032" +
+      "\031.api.SubscriptionResponse\"\037\202\323\344\223\002\031\"\024/pay" +
+      "ment/unsubscribe:\001*\022]\n\023PurchasePhoneNumb" +
+      "er\022\020.api.PhoneNumber\032\030.api.PhoneNumberRe" +
+      "source\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Se" +
+      "archPhoneNumber\022\035.api.SearchPhoneNumberR" +
+      "equest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payme" +
+      "nt/numbers/search:\001*0\0012\320\003\n\013UserService\022K" +
+      "\n\nQueryUsers\022\017.api.TokenQuery\032\t.api.User" +
+      "\"\037\202\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nC" +
+      "reateUser\022\r.common.Bytes\032\t.api.User\" \202\323\344" +
+      "\223\002\032\"\025/resource/user/create:\001*\022G\n\007GetUser" +
+      "\022\022.common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"" +
+      "\022/resource/user/get:\001*\022J\n\nDeleteUser\022\022.c" +
+      "ommon.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/re" +
+      "source/user/get:\001*\022F\n\nUpdateUser\022\013.api.I" +
+      "DBody\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user" +
+      "/update:\001*\022M\n\tUserRoles\022\022.common.Identif" +
+      "ier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/r" +
+      "oles:\001*0\0012S\n\014AdminService\022C\n\nStartCache\022" +
+      "\r.common.Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/" +
+      "admin/start:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -39397,7 +39397,7 @@ public final class Api {
     internal_static_api_SubscriptionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SubscriptionResponse_descriptor,
-        new java.lang.String[] { "Id", "MonthlyCharge", "NextCharge", "Annotations", "Plan", "User", "Status", });
+        new java.lang.String[] { "Id", "MonthlyCharge", "DaysUntilDue", "Annotations", "Plan", "User", "Status", });
     internal_static_api_FaxResponse_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_api_FaxResponse_fieldAccessorTable = new

@@ -4638,17 +4638,17 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
   ::common::Int64* mutable_monthly_charge();
   void set_allocated_monthly_charge(::common::Int64* monthly_charge);
 
-  // .common.String next_charge = 3;
-  bool has_next_charge() const;
-  void clear_next_charge();
-  static const int kNextChargeFieldNumber = 3;
+  // .common.Int64 days_until_due = 3;
+  bool has_days_until_due() const;
+  void clear_days_until_due();
+  static const int kDaysUntilDueFieldNumber = 3;
   private:
-  const ::common::String& _internal_next_charge() const;
+  const ::common::Int64& _internal_days_until_due() const;
   public:
-  const ::common::String& next_charge() const;
-  ::common::String* release_next_charge();
-  ::common::String* mutable_next_charge();
-  void set_allocated_next_charge(::common::String* next_charge);
+  const ::common::Int64& days_until_due() const;
+  ::common::Int64* release_days_until_due();
+  ::common::Int64* mutable_days_until_due();
+  void set_allocated_days_until_due(::common::Int64* days_until_due);
 
   // .api.User user = 5;
   bool has_user() const;
@@ -4698,7 +4698,7 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::Identifier* id_;
   ::common::Int64* monthly_charge_;
-  ::common::String* next_charge_;
+  ::common::Int64* days_until_due_;
   ::api::User* user_;
   ::common::String* status_;
   ::common::StringMap* annotations_;
@@ -10741,52 +10741,52 @@ inline void SubscriptionResponse::set_allocated_monthly_charge(::common::Int64* 
   // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.monthly_charge)
 }
 
-// .common.String next_charge = 3;
-inline bool SubscriptionResponse::has_next_charge() const {
-  return this != internal_default_instance() && next_charge_ != NULL;
+// .common.Int64 days_until_due = 3;
+inline bool SubscriptionResponse::has_days_until_due() const {
+  return this != internal_default_instance() && days_until_due_ != NULL;
 }
-inline const ::common::String& SubscriptionResponse::_internal_next_charge() const {
-  return *next_charge_;
+inline const ::common::Int64& SubscriptionResponse::_internal_days_until_due() const {
+  return *days_until_due_;
 }
-inline const ::common::String& SubscriptionResponse::next_charge() const {
-  const ::common::String* p = next_charge_;
-  // @@protoc_insertion_point(field_get:api.SubscriptionResponse.next_charge)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
+inline const ::common::Int64& SubscriptionResponse::days_until_due() const {
+  const ::common::Int64* p = days_until_due_;
+  // @@protoc_insertion_point(field_get:api.SubscriptionResponse.days_until_due)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
+      &::common::_Int64_default_instance_);
 }
-inline ::common::String* SubscriptionResponse::release_next_charge() {
-  // @@protoc_insertion_point(field_release:api.SubscriptionResponse.next_charge)
+inline ::common::Int64* SubscriptionResponse::release_days_until_due() {
+  // @@protoc_insertion_point(field_release:api.SubscriptionResponse.days_until_due)
   
-  ::common::String* temp = next_charge_;
-  next_charge_ = NULL;
+  ::common::Int64* temp = days_until_due_;
+  days_until_due_ = NULL;
   return temp;
 }
-inline ::common::String* SubscriptionResponse::mutable_next_charge() {
+inline ::common::Int64* SubscriptionResponse::mutable_days_until_due() {
   
-  if (next_charge_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    next_charge_ = p;
+  if (days_until_due_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
+    days_until_due_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.SubscriptionResponse.next_charge)
-  return next_charge_;
+  // @@protoc_insertion_point(field_mutable:api.SubscriptionResponse.days_until_due)
+  return days_until_due_;
 }
-inline void SubscriptionResponse::set_allocated_next_charge(::common::String* next_charge) {
+inline void SubscriptionResponse::set_allocated_days_until_due(::common::Int64* days_until_due) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(next_charge_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(days_until_due_);
   }
-  if (next_charge) {
+  if (days_until_due) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      next_charge = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, next_charge, submessage_arena);
+      days_until_due = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, days_until_due, submessage_arena);
     }
     
   } else {
     
   }
-  next_charge_ = next_charge;
-  // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.next_charge)
+  days_until_due_ = days_until_due;
+  // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.days_until_due)
 }
 
 // .common.StringMap annotations = 10;

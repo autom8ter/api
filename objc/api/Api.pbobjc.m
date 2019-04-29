@@ -2561,7 +2561,7 @@ typedef struct SMSResponse__storage_ {
 
 @dynamic hasId_p, id_p;
 @dynamic hasMonthlyCharge, monthlyCharge;
-@dynamic hasNextCharge, nextCharge;
+@dynamic hasDaysUntilDue, daysUntilDue;
 @dynamic hasAnnotations, annotations;
 @dynamic plan;
 @dynamic hasUser, user;
@@ -2572,7 +2572,7 @@ typedef struct SubscriptionResponse__storage_ {
   Plan plan;
   Identifier *id_p;
   Int64 *monthlyCharge;
-  String *nextCharge;
+  Int64 *daysUntilDue;
   User *user;
   String *status;
   StringMap *annotations;
@@ -2603,11 +2603,11 @@ typedef struct SubscriptionResponse__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "nextCharge",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = SubscriptionResponse_FieldNumber_NextCharge,
+        .name = "daysUntilDue",
+        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
+        .number = SubscriptionResponse_FieldNumber_DaysUntilDue,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(SubscriptionResponse__storage_, nextCharge),
+        .offset = (uint32_t)offsetof(SubscriptionResponse__storage_, daysUntilDue),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },

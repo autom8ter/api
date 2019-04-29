@@ -435,7 +435,7 @@ message SMSResponse {
 message SubscriptionResponse {
     common.Identifier  id=1;
     common.Int64 monthly_charge=2;
-    common.String next_charge=3;
+    common.Int64 days_until_due=3;
     common.StringMap annotations=10;
 
     Plan plan=4;

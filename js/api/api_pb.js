@@ -8683,7 +8683,7 @@ proto.api.SubscriptionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && common_common_pb.Identifier.toObject(includeInstance, f),
     monthlyCharge: (f = msg.getMonthlyCharge()) && common_common_pb.Int64.toObject(includeInstance, f),
-    nextCharge: (f = msg.getNextCharge()) && common_common_pb.String.toObject(includeInstance, f),
+    daysUntilDue: (f = msg.getDaysUntilDue()) && common_common_pb.Int64.toObject(includeInstance, f),
     annotations: (f = msg.getAnnotations()) && common_common_pb.StringMap.toObject(includeInstance, f),
     plan: jspb.Message.getFieldWithDefault(msg, 4, 0),
     user: (f = msg.getUser()) && proto.api.User.toObject(includeInstance, f),
@@ -8735,9 +8735,9 @@ proto.api.SubscriptionResponse.deserializeBinaryFromReader = function(msg, reade
       msg.setMonthlyCharge(value);
       break;
     case 3:
-      var value = new common_common_pb.String;
-      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
-      msg.setNextCharge(value);
+      var value = new common_common_pb.Int64;
+      reader.readMessage(value,common_common_pb.Int64.deserializeBinaryFromReader);
+      msg.setDaysUntilDue(value);
       break;
     case 10:
       var value = new common_common_pb.StringMap;
@@ -8803,12 +8803,12 @@ proto.api.SubscriptionResponse.serializeBinaryToWriter = function(message, write
       common_common_pb.Int64.serializeBinaryToWriter
     );
   }
-  f = message.getNextCharge();
+  f = message.getDaysUntilDue();
   if (f != null) {
     writer.writeMessage(
       3,
       f,
-      common_common_pb.String.serializeBinaryToWriter
+      common_common_pb.Int64.serializeBinaryToWriter
     );
   }
   f = message.getAnnotations();
@@ -8906,23 +8906,23 @@ proto.api.SubscriptionResponse.prototype.hasMonthlyCharge = function() {
 
 
 /**
- * optional common.String next_charge = 3;
- * @return {?proto.common.String}
+ * optional common.Int64 days_until_due = 3;
+ * @return {?proto.common.Int64}
  */
-proto.api.SubscriptionResponse.prototype.getNextCharge = function() {
-  return /** @type{?proto.common.String} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.String, 3));
+proto.api.SubscriptionResponse.prototype.getDaysUntilDue = function() {
+  return /** @type{?proto.common.Int64} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.Int64, 3));
 };
 
 
-/** @param {?proto.common.String|undefined} value */
-proto.api.SubscriptionResponse.prototype.setNextCharge = function(value) {
+/** @param {?proto.common.Int64|undefined} value */
+proto.api.SubscriptionResponse.prototype.setDaysUntilDue = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
 
 
-proto.api.SubscriptionResponse.prototype.clearNextCharge = function() {
-  this.setNextCharge(undefined);
+proto.api.SubscriptionResponse.prototype.clearDaysUntilDue = function() {
+  this.setDaysUntilDue(undefined);
 };
 
 
@@ -8930,7 +8930,7 @@ proto.api.SubscriptionResponse.prototype.clearNextCharge = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.SubscriptionResponse.prototype.hasNextCharge = function() {
+proto.api.SubscriptionResponse.prototype.hasDaysUntilDue = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

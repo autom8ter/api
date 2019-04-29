@@ -652,9 +652,9 @@ static void InitDefaultsSubscriptionResponse() {
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsSubscriptionResponse}, {
       &protobuf_common_2fcommon_2eproto::scc_info_Identifier.base,
       &protobuf_common_2fcommon_2eproto::scc_info_Int64.base,
-      &protobuf_common_2fcommon_2eproto::scc_info_String.base,
       &protobuf_common_2fcommon_2eproto::scc_info_StringMap.base,
-      &protobuf_api_2eproto::scc_info_User.base,}};
+      &protobuf_api_2eproto::scc_info_User.base,
+      &protobuf_common_2fcommon_2eproto::scc_info_String.base,}};
 
 static void InitDefaultsFaxResponse() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -982,7 +982,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, monthly_charge_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, next_charge_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, days_until_due_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, annotations_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, plan_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::SubscriptionResponse, user_),
@@ -1198,92 +1198,92 @@ void AddDescriptorsImpl() {
       "\tmedia_url\030\007 \001(\0132\016.common.String\022\034\n\004body"
       "\030\010 \001(\0132\016.common.String\022\036\n\006status\030\t \001(\0132\016"
       ".common.String\022&\n\013annotations\030\n \001(\0132\021.co"
-      "mmon.StringMap\"\374\001\n\024SubscriptionResponse\022"
+      "mmon.StringMap\"\376\001\n\024SubscriptionResponse\022"
       "\036\n\002id\030\001 \001(\0132\022.common.Identifier\022%\n\016month"
-      "ly_charge\030\002 \001(\0132\r.common.Int64\022#\n\013next_c"
-      "harge\030\003 \001(\0132\016.common.String\022&\n\013annotatio"
-      "ns\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 \001("
-      "\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\022\036\n"
-      "\006status\030\006 \001(\0132\016.common.String\"\322\001\n\013FaxRes"
-      "ponse\022\036\n\002id\030\001 \001(\0132\022.common.Identifier\022!\n"
-      "\tmedia_url\030\003 \001(\0132\016.common.String\022\032\n\002to\030\004"
-      " \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\0132\016.com"
-      "mon.String\022\036\n\006status\030\006 \001(\0132\016.common.Stri"
-      "ng\022&\n\013annotations\030\n \001(\0132\021.common.StringM"
-      "ap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n"
-      "\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_ID"
-      "P_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STA"
-      "TS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE"
-      "_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPL"
-      "ATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013"
-      "\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\n"
-      "READ_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE"
-      "_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020"
-      "\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENURL\020"
-      "\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nCLI"
-      "ENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006\022\014"
-      "\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020\t\022"
-      "\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n\021E"
-      "MAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SEAR"
-      "CH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSURL\020"
-      "\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FREE\020"
-      "\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilitySer"
-      "vice\022@\n\004Echo\022\016.common.String\032\016.common.St"
-      "ring\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013EchoSp"
-      "anish\022\016.common.String\032\016.common.String\" \202"
-      "\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022O\n\013EchoC"
-      "hinese\022\016.common.String\032\016.common.String\" "
-      "\202\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022O\n\013Echo"
-      "English\022\016.common.String\032\016.common.String\""
-      " \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022K\n\tEch"
-      "oHindi\022\016.common.String\032\016.common.String\"\036"
-      "\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEchoAr"
-      "abic\022\016.common.String\032\016.common.String\"\037\202\323"
-      "\344\223\002\031\"\024/utility/echo/arabic:\001*2\214\005\n\016Contac"
-      "tService\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SMSR"
-      "esponse\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022P\n"
-      "\014SendSMSBlast\022\r.api.SMSBlast\032\020.api.SMSRe"
-      "sponse\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022"
-      "K\n\006GetSMS\022\022.common.Identifier\032\020.api.SMSR"
-      "esponse\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N\n\t"
-      "SendEmail\022\021.api.EmailRequest\032\016.common.St"
-      "ring\"\036\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[\n\016"
-      "SendEmailBlast\022\026.api.EmailBlastRequest\032\016"
-      ".common.String\"\037\202\323\344\223\002\031\"\024/contact/email/b"
-      "last:\001*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api.C"
-      "allResponse\"\035\202\323\344\223\002\027\"\022/contact/call/send:"
-      "\001*\022T\n\rSendCallBlast\022\016.api.CallBlast\032\021.ap"
-      "i.CallResponse\"\036\202\323\344\223\002\030\"\023/contact/call/bl"
-      "ast:\001*0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020.a"
-      "pi.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact/fax/sen"
-      "d:\001*2\235\003\n\016PaymentService\022\\\n\tSubscribe\022\025.a"
-      "pi.SubscribeRequest\032\031.api.SubscriptionRe"
-      "sponse\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022b\n"
-      "\013Unsubscribe\022\027.api.UnSubscribeRequest\032\031."
-      "api.SubscriptionResponse\"\037\202\323\344\223\002\031\"\024/payme"
-      "nt/unsubscribe:\001*\022]\n\023PurchasePhoneNumber"
-      "\022\020.api.PhoneNumber\032\030.api.PhoneNumberReso"
-      "urce\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Sear"
-      "chPhoneNumber\022\035.api.SearchPhoneNumberReq"
-      "uest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payment"
-      "/numbers/search:\001*0\0012\320\003\n\013UserService\022K\n\n"
-      "QueryUsers\022\017.api.TokenQuery\032\t.api.User\"\037"
-      "\202\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nCre"
-      "ateUser\022\r.common.Bytes\032\t.api.User\" \202\323\344\223\002"
-      "\032\"\025/resource/user/create:\001*\022G\n\007GetUser\022\022"
-      ".common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/"
-      "resource/user/get:\001*\022J\n\nDeleteUser\022\022.com"
-      "mon.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/reso"
-      "urce/user/get:\001*\022F\n\nUpdateUser\022\013.api.IDB"
-      "ody\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user/u"
-      "pdate:\001*\022M\n\tUserRoles\022\022.common.Identifie"
-      "r\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/rol"
-      "es:\001*0\0012S\n\014AdminService\022C\n\nStartCache\022\r."
-      "common.Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/ad"
-      "min/start:\001*b\006proto3"
+      "ly_charge\030\002 \001(\0132\r.common.Int64\022%\n\016days_u"
+      "ntil_due\030\003 \001(\0132\r.common.Int64\022&\n\013annotat"
+      "ions\030\n \001(\0132\021.common.StringMap\022\027\n\004plan\030\004 "
+      "\001(\0162\t.api.Plan\022\027\n\004user\030\005 \001(\0132\t.api.User\022"
+      "\036\n\006status\030\006 \001(\0132\016.common.String\"\322\001\n\013FaxR"
+      "esponse\022\036\n\002id\030\001 \001(\0132\022.common.Identifier\022"
+      "!\n\tmedia_url\030\003 \001(\0132\016.common.String\022\032\n\002to"
+      "\030\004 \001(\0132\016.common.String\022\034\n\004from\030\005 \001(\0132\016.c"
+      "ommon.String\022\036\n\006status\030\006 \001(\0132\016.common.St"
+      "ring\022&\n\013annotations\030\n \001(\0132\021.common.Strin"
+      "gMap*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022"
+      "\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_"
+      "IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_S"
+      "TATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDA"
+      "TE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEM"
+      "PLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES"
+      "\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016"
+      "\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREA"
+      "TE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOG"
+      "S\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENUR"
+      "L\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nC"
+      "LIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006"
+      "\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020"
+      "\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n"
+      "\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SE"
+      "ARCH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSUR"
+      "L\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FRE"
+      "E\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilityS"
+      "ervice\022@\n\004Echo\022\016.common.String\032\016.common."
+      "String\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013Echo"
+      "Spanish\022\016.common.String\032\016.common.String\""
+      " \202\323\344\223\002\032\"\025/utility/echo/spanish:\001*\022O\n\013Ech"
+      "oChinese\022\016.common.String\032\016.common.String"
+      "\" \202\323\344\223\002\032\"\025/utility/echo/chinese:\001*\022O\n\013Ec"
+      "hoEnglish\022\016.common.String\032\016.common.Strin"
+      "g\" \202\323\344\223\002\032\"\025/utility/echo/english:\001*\022K\n\tE"
+      "choHindi\022\016.common.String\032\016.common.String"
+      "\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*\022M\n\nEcho"
+      "Arabic\022\016.common.String\032\016.common.String\"\037"
+      "\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*2\214\005\n\016Cont"
+      "actService\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SM"
+      "SResponse\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022"
+      "P\n\014SendSMSBlast\022\r.api.SMSBlast\032\020.api.SMS"
+      "Response\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0"
+      "\001\022K\n\006GetSMS\022\022.common.Identifier\032\020.api.SM"
+      "SResponse\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N"
+      "\n\tSendEmail\022\021.api.EmailRequest\032\016.common."
+      "String\"\036\202\323\344\223\002\030\"\023/contact/email/send:\001*\022["
+      "\n\016SendEmailBlast\022\026.api.EmailBlastRequest"
+      "\032\016.common.String\"\037\202\323\344\223\002\031\"\024/contact/email"
+      "/blast:\001*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api"
+      ".CallResponse\"\035\202\323\344\223\002\027\"\022/contact/call/sen"
+      "d:\001*\022T\n\rSendCallBlast\022\016.api.CallBlast\032\021."
+      "api.CallResponse\"\036\202\323\344\223\002\030\"\023/contact/call/"
+      "blast:\001*0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020"
+      ".api.FaxResponse\"\034\202\323\344\223\002\026\"\021/contact/fax/s"
+      "end:\001*2\235\003\n\016PaymentService\022\\\n\tSubscribe\022\025"
+      ".api.SubscribeRequest\032\031.api.Subscription"
+      "Response\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022"
+      "b\n\013Unsubscribe\022\027.api.UnSubscribeRequest\032"
+      "\031.api.SubscriptionResponse\"\037\202\323\344\223\002\031\"\024/pay"
+      "ment/unsubscribe:\001*\022]\n\023PurchasePhoneNumb"
+      "er\022\020.api.PhoneNumber\032\030.api.PhoneNumberRe"
+      "source\"\032\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021Se"
+      "archPhoneNumber\022\035.api.SearchPhoneNumberR"
+      "equest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payme"
+      "nt/numbers/search:\001*0\0012\320\003\n\013UserService\022K"
+      "\n\nQueryUsers\022\017.api.TokenQuery\032\t.api.User"
+      "\"\037\202\323\344\223\002\031\"\024/resource/user/query:\001*0\001\022H\n\nC"
+      "reateUser\022\r.common.Bytes\032\t.api.User\" \202\323\344"
+      "\223\002\032\"\025/resource/user/create:\001*\022G\n\007GetUser"
+      "\022\022.common.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\""
+      "\022/resource/user/get:\001*\022J\n\nDeleteUser\022\022.c"
+      "ommon.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/re"
+      "source/user/get:\001*\022F\n\nUpdateUser\022\013.api.I"
+      "DBody\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user"
+      "/update:\001*\022M\n\tUserRoles\022\022.common.Identif"
+      "ier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resource/user/r"
+      "oles:\001*0\0012S\n\014AdminService\022C\n\nStartCache\022"
+      "\r.common.Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/"
+      "admin/start:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 7780);
+      descriptor, 7782);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -13280,8 +13280,8 @@ void SubscriptionResponse::InitAsDefaultInstance() {
       ::common::Identifier::internal_default_instance());
   ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->monthly_charge_ = const_cast< ::common::Int64*>(
       ::common::Int64::internal_default_instance());
-  ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->next_charge_ = const_cast< ::common::String*>(
-      ::common::String::internal_default_instance());
+  ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->days_until_due_ = const_cast< ::common::Int64*>(
+      ::common::Int64::internal_default_instance());
   ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->annotations_ = const_cast< ::common::StringMap*>(
       ::common::StringMap::internal_default_instance());
   ::api::_SubscriptionResponse_default_instance_._instance.get_mutable()->user_ = const_cast< ::api::User*>(
@@ -13301,11 +13301,11 @@ void SubscriptionResponse::clear_monthly_charge() {
   }
   monthly_charge_ = NULL;
 }
-void SubscriptionResponse::clear_next_charge() {
-  if (GetArenaNoVirtual() == NULL && next_charge_ != NULL) {
-    delete next_charge_;
+void SubscriptionResponse::clear_days_until_due() {
+  if (GetArenaNoVirtual() == NULL && days_until_due_ != NULL) {
+    delete days_until_due_;
   }
-  next_charge_ = NULL;
+  days_until_due_ = NULL;
 }
 void SubscriptionResponse::clear_annotations() {
   if (GetArenaNoVirtual() == NULL && annotations_ != NULL) {
@@ -13322,7 +13322,7 @@ void SubscriptionResponse::clear_status() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SubscriptionResponse::kIdFieldNumber;
 const int SubscriptionResponse::kMonthlyChargeFieldNumber;
-const int SubscriptionResponse::kNextChargeFieldNumber;
+const int SubscriptionResponse::kDaysUntilDueFieldNumber;
 const int SubscriptionResponse::kAnnotationsFieldNumber;
 const int SubscriptionResponse::kPlanFieldNumber;
 const int SubscriptionResponse::kUserFieldNumber;
@@ -13350,10 +13350,10 @@ SubscriptionResponse::SubscriptionResponse(const SubscriptionResponse& from)
   } else {
     monthly_charge_ = NULL;
   }
-  if (from.has_next_charge()) {
-    next_charge_ = new ::common::String(*from.next_charge_);
+  if (from.has_days_until_due()) {
+    days_until_due_ = new ::common::Int64(*from.days_until_due_);
   } else {
-    next_charge_ = NULL;
+    days_until_due_ = NULL;
   }
   if (from.has_user()) {
     user_ = new ::api::User(*from.user_);
@@ -13388,7 +13388,7 @@ SubscriptionResponse::~SubscriptionResponse() {
 void SubscriptionResponse::SharedDtor() {
   if (this != internal_default_instance()) delete id_;
   if (this != internal_default_instance()) delete monthly_charge_;
-  if (this != internal_default_instance()) delete next_charge_;
+  if (this != internal_default_instance()) delete days_until_due_;
   if (this != internal_default_instance()) delete user_;
   if (this != internal_default_instance()) delete status_;
   if (this != internal_default_instance()) delete annotations_;
@@ -13422,10 +13422,10 @@ void SubscriptionResponse::Clear() {
     delete monthly_charge_;
   }
   monthly_charge_ = NULL;
-  if (GetArenaNoVirtual() == NULL && next_charge_ != NULL) {
-    delete next_charge_;
+  if (GetArenaNoVirtual() == NULL && days_until_due_ != NULL) {
+    delete days_until_due_;
   }
-  next_charge_ = NULL;
+  days_until_due_ = NULL;
   if (GetArenaNoVirtual() == NULL && user_ != NULL) {
     delete user_;
   }
@@ -13476,12 +13476,12 @@ bool SubscriptionResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // .common.String next_charge = 3;
+      // .common.Int64 days_until_due = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_next_charge()));
+               input, mutable_days_until_due()));
         } else {
           goto handle_unusual;
         }
@@ -13577,10 +13577,10 @@ void SubscriptionResponse::SerializeWithCachedSizes(
       2, this->_internal_monthly_charge(), output);
   }
 
-  // .common.String next_charge = 3;
-  if (this->has_next_charge()) {
+  // .common.Int64 days_until_due = 3;
+  if (this->has_days_until_due()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_next_charge(), output);
+      3, this->_internal_days_until_due(), output);
   }
 
   // .api.Plan plan = 4;
@@ -13635,11 +13635,11 @@ void SubscriptionResponse::SerializeWithCachedSizes(
         2, this->_internal_monthly_charge(), deterministic, target);
   }
 
-  // .common.String next_charge = 3;
-  if (this->has_next_charge()) {
+  // .common.Int64 days_until_due = 3;
+  if (this->has_days_until_due()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        3, this->_internal_next_charge(), deterministic, target);
+        3, this->_internal_days_until_due(), deterministic, target);
   }
 
   // .api.Plan plan = 4;
@@ -13700,11 +13700,11 @@ size_t SubscriptionResponse::ByteSizeLong() const {
         *monthly_charge_);
   }
 
-  // .common.String next_charge = 3;
-  if (this->has_next_charge()) {
+  // .common.Int64 days_until_due = 3;
+  if (this->has_days_until_due()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *next_charge_);
+        *days_until_due_);
   }
 
   // .api.User user = 5;
@@ -13767,8 +13767,8 @@ void SubscriptionResponse::MergeFrom(const SubscriptionResponse& from) {
   if (from.has_monthly_charge()) {
     mutable_monthly_charge()->::common::Int64::MergeFrom(from.monthly_charge());
   }
-  if (from.has_next_charge()) {
-    mutable_next_charge()->::common::String::MergeFrom(from.next_charge());
+  if (from.has_days_until_due()) {
+    mutable_days_until_due()->::common::Int64::MergeFrom(from.days_until_due());
   }
   if (from.has_user()) {
     mutable_user()->::api::User::MergeFrom(from.user());
@@ -13810,7 +13810,7 @@ void SubscriptionResponse::InternalSwap(SubscriptionResponse* other) {
   using std::swap;
   swap(id_, other->id_);
   swap(monthly_charge_, other->monthly_charge_);
-  swap(next_charge_, other->next_charge_);
+  swap(days_until_due_, other->days_until_due_);
   swap(user_, other->user_);
   swap(status_, other->status_);
   swap(annotations_, other->annotations_);

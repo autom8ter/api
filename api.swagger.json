@@ -1036,8 +1036,8 @@
         "monthly_charge": {
           "$ref": "#/definitions/commonInt64"
         },
-        "next_charge": {
-          "$ref": "#/definitions/commonString"
+        "days_until_due": {
+          "$ref": "#/definitions/commonInt64"
         },
         "annotations": {
           "$ref": "#/definitions/commonStringMap"
