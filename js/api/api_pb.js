@@ -8682,7 +8682,7 @@ proto.api.SubscriptionResponse.prototype.toObject = function(opt_includeInstance
 proto.api.SubscriptionResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: (f = msg.getId()) && common_common_pb.Identifier.toObject(includeInstance, f),
-    monthlyCharge: (f = msg.getMonthlyCharge()) && common_common_pb.Int64.toObject(includeInstance, f),
+    amount: (f = msg.getAmount()) && common_common_pb.Int64.toObject(includeInstance, f),
     daysUntilDue: (f = msg.getDaysUntilDue()) && common_common_pb.Int64.toObject(includeInstance, f),
     annotations: (f = msg.getAnnotations()) && common_common_pb.StringMap.toObject(includeInstance, f),
     plan: jspb.Message.getFieldWithDefault(msg, 4, 0),
@@ -8732,7 +8732,7 @@ proto.api.SubscriptionResponse.deserializeBinaryFromReader = function(msg, reade
     case 2:
       var value = new common_common_pb.Int64;
       reader.readMessage(value,common_common_pb.Int64.deserializeBinaryFromReader);
-      msg.setMonthlyCharge(value);
+      msg.setAmount(value);
       break;
     case 3:
       var value = new common_common_pb.Int64;
@@ -8795,7 +8795,7 @@ proto.api.SubscriptionResponse.serializeBinaryToWriter = function(message, write
       common_common_pb.Identifier.serializeBinaryToWriter
     );
   }
-  f = message.getMonthlyCharge();
+  f = message.getAmount();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -8876,23 +8876,23 @@ proto.api.SubscriptionResponse.prototype.hasId = function() {
 
 
 /**
- * optional common.Int64 monthly_charge = 2;
+ * optional common.Int64 amount = 2;
  * @return {?proto.common.Int64}
  */
-proto.api.SubscriptionResponse.prototype.getMonthlyCharge = function() {
+proto.api.SubscriptionResponse.prototype.getAmount = function() {
   return /** @type{?proto.common.Int64} */ (
     jspb.Message.getWrapperField(this, common_common_pb.Int64, 2));
 };
 
 
 /** @param {?proto.common.Int64|undefined} value */
-proto.api.SubscriptionResponse.prototype.setMonthlyCharge = function(value) {
+proto.api.SubscriptionResponse.prototype.setAmount = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
 
-proto.api.SubscriptionResponse.prototype.clearMonthlyCharge = function() {
-  this.setMonthlyCharge(undefined);
+proto.api.SubscriptionResponse.prototype.clearAmount = function() {
+  this.setAmount(undefined);
 };
 
 
@@ -8900,7 +8900,7 @@ proto.api.SubscriptionResponse.prototype.clearMonthlyCharge = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.SubscriptionResponse.prototype.hasMonthlyCharge = function() {
+proto.api.SubscriptionResponse.prototype.hasAmount = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

@@ -189,7 +189,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.SubscriptionResponse" do
     optional :id, :message, 1, "common.Identifier"
-    optional :monthly_charge, :message, 2, "common.Int64"
+    optional :amount, :message, 2, "common.Int64"
     optional :days_until_due, :message, 3, "common.Int64"
     optional :annotations, :message, 10, "common.StringMap"
     optional :plan, :enum, 4, "api.Plan"

@@ -4626,17 +4626,17 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
   ::common::Identifier* mutable_id();
   void set_allocated_id(::common::Identifier* id);
 
-  // .common.Int64 monthly_charge = 2;
-  bool has_monthly_charge() const;
-  void clear_monthly_charge();
-  static const int kMonthlyChargeFieldNumber = 2;
+  // .common.Int64 amount = 2;
+  bool has_amount() const;
+  void clear_amount();
+  static const int kAmountFieldNumber = 2;
   private:
-  const ::common::Int64& _internal_monthly_charge() const;
+  const ::common::Int64& _internal_amount() const;
   public:
-  const ::common::Int64& monthly_charge() const;
-  ::common::Int64* release_monthly_charge();
-  ::common::Int64* mutable_monthly_charge();
-  void set_allocated_monthly_charge(::common::Int64* monthly_charge);
+  const ::common::Int64& amount() const;
+  ::common::Int64* release_amount();
+  ::common::Int64* mutable_amount();
+  void set_allocated_amount(::common::Int64* amount);
 
   // .common.Int64 days_until_due = 3;
   bool has_days_until_due() const;
@@ -4697,7 +4697,7 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::Identifier* id_;
-  ::common::Int64* monthly_charge_;
+  ::common::Int64* amount_;
   ::common::Int64* days_until_due_;
   ::api::User* user_;
   ::common::String* status_;
@@ -10693,52 +10693,52 @@ inline void SubscriptionResponse::set_allocated_id(::common::Identifier* id) {
   // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.id)
 }
 
-// .common.Int64 monthly_charge = 2;
-inline bool SubscriptionResponse::has_monthly_charge() const {
-  return this != internal_default_instance() && monthly_charge_ != NULL;
+// .common.Int64 amount = 2;
+inline bool SubscriptionResponse::has_amount() const {
+  return this != internal_default_instance() && amount_ != NULL;
 }
-inline const ::common::Int64& SubscriptionResponse::_internal_monthly_charge() const {
-  return *monthly_charge_;
+inline const ::common::Int64& SubscriptionResponse::_internal_amount() const {
+  return *amount_;
 }
-inline const ::common::Int64& SubscriptionResponse::monthly_charge() const {
-  const ::common::Int64* p = monthly_charge_;
-  // @@protoc_insertion_point(field_get:api.SubscriptionResponse.monthly_charge)
+inline const ::common::Int64& SubscriptionResponse::amount() const {
+  const ::common::Int64* p = amount_;
+  // @@protoc_insertion_point(field_get:api.SubscriptionResponse.amount)
   return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
       &::common::_Int64_default_instance_);
 }
-inline ::common::Int64* SubscriptionResponse::release_monthly_charge() {
-  // @@protoc_insertion_point(field_release:api.SubscriptionResponse.monthly_charge)
+inline ::common::Int64* SubscriptionResponse::release_amount() {
+  // @@protoc_insertion_point(field_release:api.SubscriptionResponse.amount)
   
-  ::common::Int64* temp = monthly_charge_;
-  monthly_charge_ = NULL;
+  ::common::Int64* temp = amount_;
+  amount_ = NULL;
   return temp;
 }
-inline ::common::Int64* SubscriptionResponse::mutable_monthly_charge() {
+inline ::common::Int64* SubscriptionResponse::mutable_amount() {
   
-  if (monthly_charge_ == NULL) {
+  if (amount_ == NULL) {
     auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    monthly_charge_ = p;
+    amount_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.SubscriptionResponse.monthly_charge)
-  return monthly_charge_;
+  // @@protoc_insertion_point(field_mutable:api.SubscriptionResponse.amount)
+  return amount_;
 }
-inline void SubscriptionResponse::set_allocated_monthly_charge(::common::Int64* monthly_charge) {
+inline void SubscriptionResponse::set_allocated_amount(::common::Int64* amount) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(monthly_charge_);
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(amount_);
   }
-  if (monthly_charge) {
+  if (amount) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      monthly_charge = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, monthly_charge, submessage_arena);
+      amount = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, amount, submessage_arena);
     }
     
   } else {
     
   }
-  monthly_charge_ = monthly_charge;
-  // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.monthly_charge)
+  amount_ = amount;
+  // @@protoc_insertion_point(field_set_allocated:api.SubscriptionResponse.amount)
 }
 
 // .common.Int64 days_until_due = 3;

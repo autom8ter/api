@@ -1033,7 +1033,7 @@
         "id": {
           "$ref": "#/definitions/commonIdentifier"
         },
-        "monthly_charge": {
+        "amount": {
           "$ref": "#/definitions/commonInt64"
         },
         "days_until_due": {
