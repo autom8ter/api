@@ -17,7 +17,6 @@ var (
 	}
 	JSONUnmarshaler = &jsonpb.Unmarshaler{
 		AllowUnknownFields: false,
-		AnyResolver:        nil,
 	}
 )
 ```

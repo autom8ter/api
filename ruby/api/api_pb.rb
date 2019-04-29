@@ -14,14 +14,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :callback, :message, 5, "common.String"
     optional :store_media, :bool, 6
   end
-  add_message "api.ResourceRequest" do
-    optional :token, :message, 1, "common.Token"
-    optional :method, :enum, 2, "common.HTTPMethod"
-    optional :domain, :message, 3, "common.String"
-    optional :url, :enum, 4, "api.URL"
-    optional :form, :message, 5, "common.StringMap"
-    optional :body, :message, 6, "common.Bytes"
-  end
   add_message "api.SubscribeRequest" do
     optional :email, :message, 1, "common.String"
     optional :plan, :enum, 2, "api.Plan"
@@ -87,14 +79,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :app, :message, 3, "common.String"
   end
   add_message "api.User" do
-    optional :user_id, :message, 1, "common.String"
+    optional :user_id, :message, 1, "common.Identifier"
     optional :name, :message, 2, "common.String"
     optional :given_name, :message, 3, "common.String"
     optional :family_name, :message, 4, "common.String"
     optional :gender, :message, 5, "common.String"
     optional :birthdate, :message, 6, "common.String"
-    optional :email, :message, 7, "common.String"
-    optional :phone_number, :message, 8, "common.String"
+    optional :email, :message, 7, "common.Identifier"
+    optional :phone_number, :message, 8, "common.Identifier"
     optional :picture, :message, 9, "common.String"
     optional :user_metadata, :message, 10, "common.StringMap"
     optional :app_metadata, :message, 11, "common.StringMap"
@@ -111,7 +103,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Identity" do
     optional :connection, :message, 1, "common.String"
-    optional :user_id, :message, 2, "common.String"
+    optional :user_id, :message, 2, "common.Identifier"
     optional :provider, :message, 3, "common.String"
     optional :isSocial, :bool, 4
   end
@@ -124,7 +116,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.JSONWebKeys" do
     optional :kty, :message, 1, "common.String"
-    optional :kid, :message, 2, "common.String"
+    optional :kid, :message, 2, "common.Identifier"
     optional :use, :message, 3, "common.String"
     optional :n, :message, 4, "common.String"
     optional :e, :message, 5, "common.String"
@@ -156,7 +148,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.PhoneNumberResource" do
     optional :number, :message, 1, "api.PhoneNumber"
-    optional :id, :message, 2, "common.String"
+    optional :id, :message, 2, "common.Identifier"
     optional :uri, :message, 3, "common.String"
   end
   add_message "api.TokenQuery" do
@@ -172,9 +164,46 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :strings, :message, 2, "common.StringArray"
   end
   add_message "api.Role" do
-    optional :id, :message, 1, "common.String"
+    optional :id, :message, 1, "common.Identifier"
     optional :name, :message, 2, "common.String"
     optional :description, :message, 3, "common.String"
+  end
+  add_message "api.CallResponse" do
+    optional :id, :message, 1, "common.Identifier"
+    optional :to, :message, 5, "common.String"
+    optional :from, :message, 6, "common.String"
+    optional :media_url, :message, 7, "common.String"
+    optional :body, :message, 8, "common.String"
+    optional :status, :message, 9, "common.String"
+    optional :answered_by, :message, 10, "common.String"
+    optional :forwarded_from, :message, 11, "common.String"
+    optional :caller_name, :message, 12, "common.String"
+    optional :annotations, :message, 13, "common.StringMap"
+  end
+  add_message "api.SMSResponse" do
+    optional :id, :message, 1, "common.Identifier"
+    optional :to, :message, 5, "common.String"
+    optional :from, :message, 6, "common.String"
+    optional :media_url, :message, 7, "common.String"
+    optional :body, :message, 8, "common.String"
+    optional :status, :message, 9, "common.String"
+    optional :annotations, :message, 10, "common.StringMap"
+  end
+  add_message "api.SubscriptionResponse" do
+    optional :id, :message, 1, "common.Identifier"
+    optional :monthly_charge, :message, 2, "common.Int64"
+    optional :next_charge, :message, 3, "common.String"
+    optional :annotations, :message, 10, "common.StringMap"
+    optional :plan, :enum, 4, "api.Plan"
+    optional :user, :message, 5, "api.User"
+  end
+  add_message "api.FaxResponse" do
+    optional :id, :message, 1, "common.Identifier"
+    optional :content_type, :message, 2, "common.String"
+    optional :media_url, :message, 3, "common.String"
+    optional :to, :message, 4, "common.String"
+    optional :from, :message, 5, "common.String"
+    optional :annotations, :message, 10, "common.StringMap"
   end
   add_enum "api.Scope" do
     value :OPENID, 0
@@ -226,7 +255,6 @@ end
 
 module Api
   FaxRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxRequest").msgclass
-  ResourceRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ResourceRequest").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
@@ -252,6 +280,10 @@ module Api
   IDBody = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDBody").msgclass
   IDStrings = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDStrings").msgclass
   Role = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Role").msgclass
+  CallResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallResponse").msgclass
+  SMSResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSResponse").msgclass
+  SubscriptionResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionResponse").msgclass
+  FaxResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxResponse").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
   URL = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.URL").enummodule
   Plan = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Plan").enummodule

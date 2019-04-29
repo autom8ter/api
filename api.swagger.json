@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/admin/start": {
+      "post": {
+        "operationId": "StartCache",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
     "/contact/call/blast": {
       "post": {
         "operationId": "SendCallBlast",
@@ -22,7 +48,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiCallResponse"
             }
           }
         },
@@ -48,7 +74,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiCallResponse"
             }
           }
         },
@@ -126,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiFaxResponse"
             }
           }
         },
@@ -152,7 +178,7 @@
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiSMSResponse"
             }
           }
         },
@@ -178,7 +204,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiSMSResponse"
             }
           }
         },
@@ -204,7 +230,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiSMSResponse"
             }
           }
         },
@@ -282,7 +308,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiSubscriptionResponse"
             }
           }
         },
@@ -308,7 +334,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiSubscriptionResponse"
             }
           }
         },
@@ -324,32 +350,6 @@
         ],
         "tags": [
           "PaymentService"
-        ]
-      }
-    },
-    "/resource": {
-      "post": {
-        "operationId": "GetResource",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonBytes"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiResourceRequest"
-            }
-          }
-        ],
-        "tags": [
-          "ResourceService"
         ]
       }
     },
@@ -669,6 +669,41 @@
         }
       }
     },
+    "apiCallResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/commonIdentifier"
+        },
+        "to": {
+          "$ref": "#/definitions/commonString"
+        },
+        "from": {
+          "$ref": "#/definitions/commonString"
+        },
+        "media_url": {
+          "$ref": "#/definitions/commonString"
+        },
+        "body": {
+          "$ref": "#/definitions/commonString"
+        },
+        "status": {
+          "$ref": "#/definitions/commonString"
+        },
+        "answered_by": {
+          "$ref": "#/definitions/commonString"
+        },
+        "forwarded_from": {
+          "$ref": "#/definitions/commonString"
+        },
+        "caller_name": {
+          "$ref": "#/definitions/commonString"
+        },
+        "annotations": {
+          "$ref": "#/definitions/commonStringMap"
+        }
+      }
+    },
     "apiCard": {
       "type": "object",
       "properties": {
@@ -775,6 +810,29 @@
         }
       }
     },
+    "apiFaxResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/commonIdentifier"
+        },
+        "content_type": {
+          "$ref": "#/definitions/commonString"
+        },
+        "media_url": {
+          "$ref": "#/definitions/commonString"
+        },
+        "to": {
+          "$ref": "#/definitions/commonString"
+        },
+        "from": {
+          "$ref": "#/definitions/commonString"
+        },
+        "annotations": {
+          "$ref": "#/definitions/commonStringMap"
+        }
+      }
+    },
     "apiIDBody": {
       "type": "object",
       "properties": {
@@ -793,7 +851,7 @@
           "$ref": "#/definitions/commonString"
         },
         "user_id": {
-          "$ref": "#/definitions/commonString"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "provider": {
           "$ref": "#/definitions/commonString"
@@ -845,7 +903,7 @@
           "$ref": "#/definitions/apiPhoneNumber"
         },
         "id": {
-          "$ref": "#/definitions/commonString"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "uri": {
           "$ref": "#/definitions/commonString"
@@ -861,34 +919,11 @@
       ],
       "default": "FREE"
     },
-    "apiResourceRequest": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "$ref": "#/definitions/commonToken"
-        },
-        "method": {
-          "$ref": "#/definitions/commonHTTPMethod"
-        },
-        "domain": {
-          "$ref": "#/definitions/commonString"
-        },
-        "url": {
-          "$ref": "#/definitions/apiURL"
-        },
-        "form": {
-          "$ref": "#/definitions/commonStringMap"
-        },
-        "body": {
-          "$ref": "#/definitions/commonBytes"
-        }
-      }
-    },
     "apiRole": {
       "type": "object",
       "properties": {
         "id": {
-          "$ref": "#/definitions/commonString"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "name": {
           "$ref": "#/definitions/commonString"
@@ -944,6 +979,32 @@
         }
       }
     },
+    "apiSMSResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/commonIdentifier"
+        },
+        "to": {
+          "$ref": "#/definitions/commonString"
+        },
+        "from": {
+          "$ref": "#/definitions/commonString"
+        },
+        "media_url": {
+          "$ref": "#/definitions/commonString"
+        },
+        "body": {
+          "$ref": "#/definitions/commonString"
+        },
+        "status": {
+          "$ref": "#/definitions/commonString"
+        },
+        "annotations": {
+          "$ref": "#/definitions/commonStringMap"
+        }
+      }
+    },
     "apiSearchPhoneNumberRequest": {
       "type": "object",
       "properties": {
@@ -972,6 +1033,29 @@
         }
       }
     },
+    "apiSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/commonIdentifier"
+        },
+        "monthly_charge": {
+          "$ref": "#/definitions/commonInt64"
+        },
+        "next_charge": {
+          "$ref": "#/definitions/commonString"
+        },
+        "annotations": {
+          "$ref": "#/definitions/commonStringMap"
+        },
+        "plan": {
+          "$ref": "#/definitions/apiPlan"
+        },
+        "user": {
+          "$ref": "#/definitions/apiUser"
+        }
+      }
+    },
     "apiTokenQuery": {
       "type": "object",
       "properties": {
@@ -982,30 +1066,6 @@
           "$ref": "#/definitions/commonString"
         }
       }
-    },
-    "apiURL": {
-      "type": "string",
-      "enum": [
-        "USER_INFOURL",
-        "TOKENURL",
-        "AUTHORIZEURL",
-        "USERSURL",
-        "CLIENTSURL",
-        "GRANTSURL",
-        "RULESURL",
-        "ROLESURL",
-        "LOGSURL",
-        "STATSURL",
-        "CONNECTIONSURL",
-        "TENANTSURL",
-        "EMAIL_TEMPLATEURL",
-        "EMAILURL",
-        "SEARCH_USERSURL",
-        "DEVICEURL",
-        "JWKSURL",
-        "CLIENT_GRANTSURL"
-      ],
-      "default": "USER_INFOURL"
     },
     "apiUnSubscribeRequest": {
       "type": "object",
@@ -1022,7 +1082,7 @@
       "type": "object",
       "properties": {
         "user_id": {
-          "$ref": "#/definitions/commonString"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "name": {
           "$ref": "#/definitions/commonString"
@@ -1040,10 +1100,10 @@
           "$ref": "#/definitions/commonString"
         },
         "email": {
-          "$ref": "#/definitions/commonString"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "phone_number": {
-          "$ref": "#/definitions/commonString"
+          "$ref": "#/definitions/commonIdentifier"
         },
         "picture": {
           "$ref": "#/definitions/commonString"
@@ -1101,14 +1161,8 @@
         }
       }
     },
-    "commonHTTPMethod": {
-      "type": "string",
-      "enum": [
-        "GET",
-        "POST",
-        "PATCH"
-      ],
-      "default": "GET"
+    "commonEmpty": {
+      "type": "object"
     },
     "commonIdentifier": {
       "type": "object",

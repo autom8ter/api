@@ -45,19 +45,19 @@ service UtilityService {
 }
 
 service ContactService {
-    rpc SendSMS(SMS) returns (common.Bytes) {
+    rpc SendSMS(SMS) returns (SMSResponse) {
         option (google.api.http) = {
       post: "/contact/sms/send"
       body: "*"
     };
     }
-    rpc SendSMSBlast(SMSBlast) returns (stream common.Bytes) {
+    rpc SendSMSBlast(SMSBlast) returns (stream SMSResponse) {
         option (google.api.http) = {
       post: "/contact/sms/blast"
       body: "*"
     };
     }
-    rpc GetSMS(common.Identifier) returns (common.Bytes) {
+    rpc GetSMS(common.Identifier) returns (SMSResponse) {
         option (google.api.http) = {
       post: "/contact/sms/get"
       body: "*"
@@ -75,20 +75,20 @@ service ContactService {
       body: "*"
     };
     }
-    rpc SendCall(Call) returns (common.Bytes) {
+    rpc SendCall(Call) returns (CallResponse) {
         option (google.api.http) = {
       post: "/contact/call/send"
       body: "*"
     };
     }
-    rpc SendCallBlast(CallBlast) returns (stream common.Bytes) {
+    rpc SendCallBlast(CallBlast) returns (stream CallResponse) {
         option (google.api.http) = {
       post: "/contact/call/blast"
       body: "*"
     };
     }
 
-    rpc SendFax(FaxRequest) returns (common.Bytes) {
+    rpc SendFax(FaxRequest) returns (FaxResponse) {
          option (google.api.http) = {
       post: "/contact/fax/send"
       body: "*"
@@ -97,13 +97,13 @@ service ContactService {
 }
 
 service PaymentService {
-    rpc Subscribe(SubscribeRequest) returns (common.Bytes) {
+    rpc Subscribe(SubscribeRequest) returns (SubscriptionResponse) {
         option (google.api.http) = {
       post: "/payment/subscribe"
       body: "*"
     };
     }
-    rpc Unsubscribe(UnSubscribeRequest) returns (common.Bytes) {
+    rpc Unsubscribe(UnSubscribeRequest) returns (SubscriptionResponse) {
         option (google.api.http) = {
       post: "/payment/unsubscribe"
       body: "*"
@@ -118,15 +118,6 @@ service PaymentService {
     rpc SearchPhoneNumber(SearchPhoneNumberRequest) returns (stream PhoneNumber) {
         option (google.api.http) = {
       post: "/payment/numbers/search"
-      body: "*"
-    };
-    }
-}
-
-service ResourceService {
-    rpc GetResource(ResourceRequest) returns (common.Bytes) {
-        option (google.api.http) = {
-      post: "/resource"
       body: "*"
     };
     }
@@ -171,6 +162,15 @@ service UserService {
     }
 }
 
+service AdminService {
+    rpc StartCache(common.Empty) returns (common.Empty) {
+    option (google.api.http) = {
+      post: "/admin/start"
+      body: "*"
+    };
+}
+}
+
 message FaxRequest {
     common.String to =1;
     common.String from=2;
@@ -178,15 +178,6 @@ message FaxRequest {
     common.String quality=4;
     common.String callback=5;
     bool store_media=6;
-}
-
-message ResourceRequest {
-    common.Token token= 1;
-    common.HTTPMethod method=2;
-    common.String domain=3;
-    URL url =4;
-    common.StringMap form =5;
-    common.Bytes body =6;
 }
 
 message SubscribeRequest {
@@ -267,14 +258,14 @@ message CallBlast {
 
 
 message User {
-    common.String user_id=1;
+    common.Identifier user_id=1;
     common.String name=2;
     common.String given_name=3;
     common.String family_name=4;
     common.String gender =5;
     common.String birthdate=6;
-    common.String email=7;
-    common.String phone_number=8;
+    common.Identifier email=7;
+    common.Identifier phone_number=8;
     common.String picture=9;
     common.StringMap user_metadata=10;
     common.StringMap app_metadata=11;
@@ -292,7 +283,7 @@ message User {
 
 message Identity{
     common.String connection =1;
-    common.String user_id=2;
+    common.Identifier user_id=2;
     common.String provider=3;
     bool isSocial=4;
 }
@@ -308,7 +299,7 @@ message Auth {
 
 message JSONWebKeys {
     common.String kty =1;
-    common.String kid =2;
+    common.Identifier kid =2;
     common.String use =3;
     common.String n =4;
     common.String e =5;
@@ -395,7 +386,7 @@ message NumberCapabilities {
 
 message PhoneNumberResource {
    PhoneNumber number=1;
-   common.String id =2;
+   common.Identifier id =2;
    common.String uri=3;
 }
 
@@ -415,7 +406,49 @@ message IDStrings {
 }
 
 message Role {
-    common.String id=1;
+    common.Identifier id=1;
     common.String name=2;
     common.String description=3;
+}
+
+message CallResponse {
+    common.Identifier   id=1;
+    common.String  to =5;
+    common.String  from =6;
+    common.String  media_url = 7;
+    common.String  body =8;
+    common.String  status =9;
+    common.String  answered_by =10;
+    common.String  forwarded_from =11;
+    common.String  caller_name =12;
+    common.StringMap annotations=13;
+}
+
+message SMSResponse {
+    common.Identifier  id=1;
+    common.String  to =5;
+    common.String  from =6;
+    common.String  media_url = 7;
+    common.String  body =8;
+    common.String  status =9;
+    common.StringMap annotations=10;
+}
+
+message SubscriptionResponse {
+    common.Identifier  id=1;
+    common.Int64 monthly_charge=2;
+    common.String next_charge=3;
+    common.StringMap annotations=10;
+    Plan plan=4;
+    User user=5;
+
+}
+
+message FaxResponse {
+    common.Identifier id =1;
+    common.String content_type=2;
+    common.String media_url=3;
+    common.String to=4;
+    common.String from=5;
+    common.StringMap annotations=10;
 }

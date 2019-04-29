@@ -22,18 +22,20 @@ var (
 )
 
 type ClientSet struct {
-	Utility  UtilityServiceClient
-	Contact  ContactServiceClient
-	Payment  PaymentServiceClient
-	Resource ResourceServiceClient
-	User     UserServiceClient
+	Utility UtilityServiceClient
+	Contact ContactServiceClient
+	Payment PaymentServiceClient
+	User    UserServiceClient
+	Admin   AdminServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	return &ClientSet{
-		Utility:  NewUtilityServiceClient(conn),
-		Contact:  NewContactServiceClient(conn),
-		Resource: NewResourceServiceClient(conn),
+		Utility: NewUtilityServiceClient(conn),
+		Contact: NewContactServiceClient(conn),
+		Payment: NewPaymentServiceClient(conn),
+		User:    NewUserServiceClient(conn),
+		Admin:   NewAdminServiceClient(conn),
 	}
 }
 
@@ -132,17 +134,6 @@ func (a *Auth) Validate() error {
 
 func UserFromSession(session *sessions.Session) (*User, error) {
 	return session.Values["user"].(*User), nil
-}
-
-func CreateResourceRequest(tok *common.Token, domain *common.String, method common.HTTPMethod, u URL, form *common.StringMap, body *common.Bytes) *ResourceRequest {
-	return &ResourceRequest{
-		Token:  tok,
-		Method: method,
-		Domain: domain,
-		Url:    u,
-		Form:   form,
-		Body:   body,
-	}
 }
 
 func (a *Auth) audienceAuthCodeOption(u URL) oauth2.AuthCodeOption {
@@ -305,16 +296,6 @@ func (a *Auth) Token(ctx context.Context, code string) (*common.Token, error) {
 		return nil, err
 	}
 	return common.TokenFromOAuthToken(token), nil
-}
-
-func (r *ResourceRequest) Do() (*common.Bytes, error) {
-	c := &common.HTTPRequest{
-		Method: r.Method,
-		Url:    r.Url.Normalize(r.Domain),
-		Form:   r.Form,
-		Body:   r.Body,
-	}
-	return c.Do(r.Token)
 }
 
 func RenderUserFunc(t *common.String) http.HandlerFunc {
