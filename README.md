@@ -431,6 +431,12 @@ func (m *Auth) GetRedirect() *common.String
 func (m *Auth) GetScopes() []Scope
 ```
 
+#### func (*Auth) JSONString
+
+```go
+func (p *Auth) JSONString() (*common.String, error)
+```
+
 #### func (*Auth) ProtoMessage
 
 ```go
@@ -736,6 +742,12 @@ func (m *CallResponse) GetStatus() *common.String
 func (m *CallResponse) GetTo() *common.String
 ```
 
+#### func (*CallResponse) JSONString
+
+```go
+func (p *CallResponse) JSONString() (*common.String, error)
+```
+
 #### func (*CallResponse) ProtoMessage
 
 ```go
@@ -827,6 +839,12 @@ func (m *Card) GetExpYear() *common.String
 
 ```go
 func (m *Card) GetNumber() *common.String
+```
+
+#### func (*Card) JSONString
+
+```go
+func (p *Card) JSONString() (*common.String, error)
 ```
 
 #### func (*Card) ProtoMessage
@@ -1781,6 +1799,12 @@ func (m *Identity) GetProvider() *common.String
 func (m *Identity) GetUserId() *common.Identifier
 ```
 
+#### func (*Identity) JSONString
+
+```go
+func (p *Identity) JSONString() (*common.String, error)
+```
+
 #### func (*Identity) ProtoMessage
 
 ```go
@@ -1888,6 +1912,12 @@ func (m *JSONWebKeys) GetUse() *common.String
 func (m *JSONWebKeys) GetX5C() *common.StringArray
 ```
 
+#### func (*JSONWebKeys) JSONString
+
+```go
+func (p *JSONWebKeys) JSONString() (*common.String, error)
+```
+
 #### func (*JSONWebKeys) ProtoMessage
 
 ```go
@@ -1958,6 +1988,12 @@ func (*Jwks) Descriptor() ([]byte, []int)
 
 ```go
 func (m *Jwks) GetKeys() []*JSONWebKeys
+```
+
+#### func (*Jwks) JSONString
+
+```go
+func (p *Jwks) JSONString() (*common.String, error)
 ```
 
 #### func (*Jwks) ProtoMessage
@@ -2200,6 +2236,12 @@ func (m *PhoneNumber) GetPhoneNumber() *common.String
 func (m *PhoneNumber) GetRegion() *common.String
 ```
 
+#### func (*PhoneNumber) JSONString
+
+```go
+func (p *PhoneNumber) JSONString() (*common.String, error)
+```
+
 #### func (*PhoneNumber) ProtoMessage
 
 ```go
@@ -2284,6 +2326,12 @@ func (m *PhoneNumberResource) GetNumber() *PhoneNumber
 
 ```go
 func (m *PhoneNumberResource) GetUri() *common.String
+```
+
+#### func (*PhoneNumberResource) JSONString
+
+```go
+func (p *PhoneNumberResource) JSONString() (*common.String, error)
 ```
 
 #### func (*PhoneNumberResource) ProtoMessage
@@ -2819,6 +2867,12 @@ func (m *SMSResponse) GetStatus() *common.String
 func (m *SMSResponse) GetTo() *common.String
 ```
 
+#### func (*SMSResponse) JSONString
+
+```go
+func (p *SMSResponse) JSONString() (*common.String, error)
+```
+
 #### func (*SMSResponse) ProtoMessage
 
 ```go
@@ -3154,6 +3208,12 @@ func (m *SubscriptionResponse) GetStatus() *common.String
 func (m *SubscriptionResponse) GetUser() *User
 ```
 
+#### func (*SubscriptionResponse) JSONString
+
+```go
+func (p *SubscriptionResponse) JSONString() (*common.String, error)
+```
+
 #### func (*SubscriptionResponse) ProtoMessage
 
 ```go
@@ -3231,6 +3291,12 @@ func (m *TokenQuery) GetQuery() *common.String
 
 ```go
 func (m *TokenQuery) GetToken() *common.Token
+```
+
+#### func (*TokenQuery) JSONString
+
+```go
+func (p *TokenQuery) JSONString() (*common.String, error)
 ```
 
 #### func (*TokenQuery) ProtoMessage
@@ -3576,6 +3642,12 @@ func (m *User) GetUserId() *common.Identifier
 
 ```go
 func (m *User) GetUserMetadata() *common.StringMap
+```
+
+#### func (*User) JSONString
+
+```go
+func (p *User) JSONString() (*common.String, error)
 ```
 
 #### func (*User) ProtoMessage
