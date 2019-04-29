@@ -4830,6 +4830,18 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::common::String* mutable_from();
   void set_allocated_from(::common::String* from);
 
+  // .common.String status = 6;
+  bool has_status() const;
+  void clear_status();
+  static const int kStatusFieldNumber = 6;
+  private:
+  const ::common::String& _internal_status() const;
+  public:
+  const ::common::String& status() const;
+  ::common::String* release_status();
+  ::common::String* mutable_status();
+  void set_allocated_status(::common::String* status);
+
   // .common.StringMap annotations = 10;
   bool has_annotations() const;
   void clear_annotations();
@@ -4850,6 +4862,7 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::common::String* media_url_;
   ::common::String* to_;
   ::common::String* from_;
+  ::common::String* status_;
   ::common::StringMap* annotations_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
@@ -11073,6 +11086,54 @@ inline void FaxResponse::set_allocated_from(::common::String* from) {
   }
   from_ = from;
   // @@protoc_insertion_point(field_set_allocated:api.FaxResponse.from)
+}
+
+// .common.String status = 6;
+inline bool FaxResponse::has_status() const {
+  return this != internal_default_instance() && status_ != NULL;
+}
+inline const ::common::String& FaxResponse::_internal_status() const {
+  return *status_;
+}
+inline const ::common::String& FaxResponse::status() const {
+  const ::common::String* p = status_;
+  // @@protoc_insertion_point(field_get:api.FaxResponse.status)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxResponse::release_status() {
+  // @@protoc_insertion_point(field_release:api.FaxResponse.status)
+  
+  ::common::String* temp = status_;
+  status_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxResponse::mutable_status() {
+  
+  if (status_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    status_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxResponse.status)
+  return status_;
+}
+inline void FaxResponse::set_allocated_status(::common::String* status) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(status_);
+  }
+  if (status) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      status = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, status, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  status_ = status;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxResponse.status)
 }
 
 // .common.StringMap annotations = 10;

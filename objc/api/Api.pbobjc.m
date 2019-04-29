@@ -2673,6 +2673,7 @@ void SetSubscriptionResponse_Plan_RawValue(SubscriptionResponse *message, int32_
 @dynamic hasMediaURL, mediaURL;
 @dynamic hasTo, to;
 @dynamic hasFrom, from;
+@dynamic hasStatus, status;
 @dynamic hasAnnotations, annotations;
 
 typedef struct FaxResponse__storage_ {
@@ -2681,6 +2682,7 @@ typedef struct FaxResponse__storage_ {
   String *mediaURL;
   String *to;
   String *from;
+  String *status;
   StringMap *annotations;
 } FaxResponse__storage_;
 
@@ -2727,10 +2729,19 @@ typedef struct FaxResponse__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
+        .name = "status",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxResponse_FieldNumber_Status,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(FaxResponse__storage_, status),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
         .name = "annotations",
         .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
         .number = FaxResponse_FieldNumber_Annotations,
-        .hasIndex = 4,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(FaxResponse__storage_, annotations),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,

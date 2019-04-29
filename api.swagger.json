@@ -819,6 +819,9 @@
         "from": {
           "$ref": "#/definitions/commonString"
         },
+        "status": {
+          "$ref": "#/definitions/commonString"
+        },
         "annotations": {
           "$ref": "#/definitions/commonStringMap"
         }

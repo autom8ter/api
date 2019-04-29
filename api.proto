@@ -447,5 +447,7 @@ message FaxResponse {
     common.String media_url=3;
     common.String to=4;
     common.String from=5;
+    common.String  status =6;
+
     common.StringMap annotations=10;
 }

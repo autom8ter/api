@@ -200,6 +200,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :media_url, :message, 3, "common.String"
     optional :to, :message, 4, "common.String"
     optional :from, :message, 5, "common.String"
+    optional :status, :message, 6, "common.String"
     optional :annotations, :message, 10, "common.StringMap"
   end
   add_enum "api.Scope" do

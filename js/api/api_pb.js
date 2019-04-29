@@ -9047,6 +9047,7 @@ proto.api.FaxResponse.toObject = function(includeInstance, msg) {
     mediaUrl: (f = msg.getMediaUrl()) && common_common_pb.String.toObject(includeInstance, f),
     to: (f = msg.getTo()) && common_common_pb.String.toObject(includeInstance, f),
     from: (f = msg.getFrom()) && common_common_pb.String.toObject(includeInstance, f),
+    status: (f = msg.getStatus()) && common_common_pb.String.toObject(includeInstance, f),
     annotations: (f = msg.getAnnotations()) && common_common_pb.StringMap.toObject(includeInstance, f)
   };
 
@@ -9103,6 +9104,11 @@ proto.api.FaxResponse.deserializeBinaryFromReader = function(msg, reader) {
       var value = new common_common_pb.String;
       reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
       msg.setFrom(value);
+      break;
+    case 6:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setStatus(value);
       break;
     case 10:
       var value = new common_common_pb.StringMap;
@@ -9166,6 +9172,14 @@ proto.api.FaxResponse.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatus();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       common_common_pb.String.serializeBinaryToWriter
     );
@@ -9298,6 +9312,36 @@ proto.api.FaxResponse.prototype.clearFrom = function() {
  */
 proto.api.FaxResponse.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional common.String status = 6;
+ * @return {?proto.common.String}
+ */
+proto.api.FaxResponse.prototype.getStatus = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 6));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.FaxResponse.prototype.setStatus = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.api.FaxResponse.prototype.clearStatus = function() {
+  this.setStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.FaxResponse.prototype.hasStatus = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

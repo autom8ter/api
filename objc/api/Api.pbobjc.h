@@ -1095,6 +1095,7 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
   FaxResponse_FieldNumber_MediaURL = 3,
   FaxResponse_FieldNumber_To = 4,
   FaxResponse_FieldNumber_From = 5,
+  FaxResponse_FieldNumber_Status = 6,
   FaxResponse_FieldNumber_Annotations = 10,
 };
 
@@ -1115,6 +1116,10 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *from;
 /** Test to see if @c from has been set. */
 @property(nonatomic, readwrite) BOOL hasFrom;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *status;
+/** Test to see if @c status has been set. */
+@property(nonatomic, readwrite) BOOL hasStatus;
 
 @property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
 /** Test to see if @c annotations has been set. */
