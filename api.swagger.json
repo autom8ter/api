@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/admin/start": {
+    "/admin/cache/start": {
       "post": {
         "operationId": "StartCache",
         "responses": {
@@ -33,6 +33,32 @@
             "required": true,
             "schema": {
               "$ref": "#/definitions/apiStartCacheRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AdminService"
+        ]
+      }
+    },
+    "/admin/cache/stop": {
+      "post": {
+        "operationId": "StopCache",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
             }
           }
         ],

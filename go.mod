@@ -12,7 +12,6 @@ require (
 	github.com/gorilla/mux v1.7.1 // indirect
 	github.com/gorilla/sessions v1.1.3
 	github.com/grpc-ecosystem/grpc-gateway v1.8.5
-	github.com/huandu/xstrings v1.2.0
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
 	github.com/pkg/errors v0.8.1
 	golang.org/x/net v0.0.0-20190311183353-d8887717615a
@@ -21,5 +20,5 @@ require (
 	gonum.org/v1/plot v0.0.0-20190410204940-3a5f52653745 // indirect
 	google.golang.org/genproto v0.0.0-20190418145605-e7d98fc518a7
 	google.golang.org/grpc v1.20.1
-	moul.io/protoc-gen-gotemplate v1.7.0
+	moul.io/protoc-gen-gotemplate v1.7.0 // indirect
 )

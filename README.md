@@ -343,6 +343,7 @@ func SearchUSPhoneNumbersURL(account *common.String) *common.String
 ```go
 type AdminServiceClient interface {
 	StartCache(ctx context.Context, in *StartCacheRequest, opts ...grpc.CallOption) (*common.Empty, error)
+	StopCache(ctx context.Context, in *common.Empty, opts ...grpc.CallOption) (*common.Empty, error)
 }
 ```
 
@@ -362,6 +363,7 @@ func NewAdminServiceClient(cc *grpc.ClientConn) AdminServiceClient
 ```go
 type AdminServiceServer interface {
 	StartCache(context.Context, *StartCacheRequest) (*common.Empty, error)
+	StopCache(context.Context, *common.Empty) (*common.Empty, error)
 }
 ```
 

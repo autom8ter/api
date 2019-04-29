@@ -1308,12 +1308,14 @@ void AddDescriptorsImpl() {
       "\022\013.api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025/resou"
       "rce/user/update:\001*\022M\n\tUserRoles\022\022.common"
       ".Identifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resourc"
-      "e/user/roles:\001*0\0012\\\n\014AdminService\022L\n\nSta"
-      "rtCache\022\026.api.StartCacheRequest\032\r.common"
-      ".Empty\"\027\202\323\344\223\002\021\"\014/admin/start:\001*b\006proto3"
+      "e/user/roles:\001*0\0012\253\001\n\014AdminService\022R\n\nSt"
+      "artCache\022\026.api.StartCacheRequest\032\r.commo"
+      "n.Empty\"\035\202\323\344\223\002\027\"\022/admin/cache/start:\001*\022G"
+      "\n\tStopCache\022\r.common.Empty\032\r.common.Empt"
+      "y\"\034\202\323\344\223\002\026\"\021/admin/cache/stop:\001*b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 7839);
+      descriptor, 7919);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();

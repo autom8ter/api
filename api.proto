@@ -165,10 +165,16 @@ service UserService {
 service AdminService {
     rpc StartCache(StartCacheRequest) returns (common.Empty) {
     option (google.api.http) = {
-      post: "/admin/start"
+      post: "/admin/cache/start"
       body: "*"
     };
 }
+    rpc StopCache(common.Empty) returns (common.Empty) {
+        option (google.api.http) = {
+      post: "/admin/cache/stop"
+      body: "*"
+    };
+    }
 }
 
 message FaxRequest {
