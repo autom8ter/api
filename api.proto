@@ -163,7 +163,7 @@ service UserService {
 }
 
 service AdminService {
-    rpc StartCache(common.Empty) returns (common.Empty) {
+    rpc StartCache(StartCacheRequest) returns (common.Empty) {
     option (google.api.http) = {
       post: "/admin/start"
       body: "*"
@@ -455,5 +455,5 @@ message FaxResponse {
 }
 
 message StartCacheRequest {
-    string frequency =1;
+    common.String frequency =1;
 }

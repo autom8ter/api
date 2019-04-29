@@ -38860,14 +38860,17 @@ public final class Api {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string frequency = 1;</code>
+     * <code>.common.String frequency = 1;</code>
      */
-    java.lang.String getFrequency();
+    boolean hasFrequency();
     /**
-     * <code>string frequency = 1;</code>
+     * <code>.common.String frequency = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getFrequencyBytes();
+    common.Common.String getFrequency();
+    /**
+     * <code>.common.String frequency = 1;</code>
+     */
+    common.Common.StringOrBuilder getFrequencyOrBuilder();
   }
   /**
    * Protobuf type {@code api.StartCacheRequest}
@@ -38882,7 +38885,6 @@ public final class Api {
       super(builder);
     }
     private StartCacheRequest() {
-      frequency_ = "";
     }
 
     @java.lang.Override
@@ -38910,9 +38912,16 @@ public final class Api {
               done = true;
               break;
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              common.Common.String.Builder subBuilder = null;
+              if (frequency_ != null) {
+                subBuilder = frequency_.toBuilder();
+              }
+              frequency_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(frequency_);
+                frequency_ = subBuilder.buildPartial();
+              }
 
-              frequency_ = s;
               break;
             }
             default: {
@@ -38948,37 +38957,24 @@ public final class Api {
     }
 
     public static final int FREQUENCY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object frequency_;
+    private common.Common.String frequency_;
     /**
-     * <code>string frequency = 1;</code>
+     * <code>.common.String frequency = 1;</code>
      */
-    public java.lang.String getFrequency() {
-      java.lang.Object ref = frequency_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        frequency_ = s;
-        return s;
-      }
+    public boolean hasFrequency() {
+      return frequency_ != null;
     }
     /**
-     * <code>string frequency = 1;</code>
+     * <code>.common.String frequency = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getFrequencyBytes() {
-      java.lang.Object ref = frequency_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        frequency_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public common.Common.String getFrequency() {
+      return frequency_ == null ? common.Common.String.getDefaultInstance() : frequency_;
+    }
+    /**
+     * <code>.common.String frequency = 1;</code>
+     */
+    public common.Common.StringOrBuilder getFrequencyOrBuilder() {
+      return getFrequency();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -38995,8 +38991,8 @@ public final class Api {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getFrequencyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, frequency_);
+      if (frequency_ != null) {
+        output.writeMessage(1, getFrequency());
       }
       unknownFields.writeTo(output);
     }
@@ -39007,8 +39003,9 @@ public final class Api {
       if (size != -1) return size;
 
       size = 0;
-      if (!getFrequencyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, frequency_);
+      if (frequency_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getFrequency());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -39026,8 +39023,11 @@ public final class Api {
       api.Api.StartCacheRequest other = (api.Api.StartCacheRequest) obj;
 
       boolean result = true;
-      result = result && getFrequency()
-          .equals(other.getFrequency());
+      result = result && (hasFrequency() == other.hasFrequency());
+      if (hasFrequency()) {
+        result = result && getFrequency()
+            .equals(other.getFrequency());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -39039,8 +39039,10 @@ public final class Api {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
-      hash = (53 * hash) + getFrequency().hashCode();
+      if (hasFrequency()) {
+        hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getFrequency().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -39174,8 +39176,12 @@ public final class Api {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        frequency_ = "";
-
+        if (frequencyBuilder_ == null) {
+          frequency_ = null;
+        } else {
+          frequency_ = null;
+          frequencyBuilder_ = null;
+        }
         return this;
       }
 
@@ -39202,7 +39208,11 @@ public final class Api {
       @java.lang.Override
       public api.Api.StartCacheRequest buildPartial() {
         api.Api.StartCacheRequest result = new api.Api.StartCacheRequest(this);
-        result.frequency_ = frequency_;
+        if (frequencyBuilder_ == null) {
+          result.frequency_ = frequency_;
+        } else {
+          result.frequency_ = frequencyBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -39251,9 +39261,8 @@ public final class Api {
 
       public Builder mergeFrom(api.Api.StartCacheRequest other) {
         if (other == api.Api.StartCacheRequest.getDefaultInstance()) return this;
-        if (!other.getFrequency().isEmpty()) {
-          frequency_ = other.frequency_;
-          onChanged();
+        if (other.hasFrequency()) {
+          mergeFrequency(other.getFrequency());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -39284,73 +39293,121 @@ public final class Api {
         return this;
       }
 
-      private java.lang.Object frequency_ = "";
+      private common.Common.String frequency_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> frequencyBuilder_;
       /**
-       * <code>string frequency = 1;</code>
+       * <code>.common.String frequency = 1;</code>
        */
-      public java.lang.String getFrequency() {
-        java.lang.Object ref = frequency_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          frequency_ = s;
-          return s;
+      public boolean hasFrequency() {
+        return frequencyBuilder_ != null || frequency_ != null;
+      }
+      /**
+       * <code>.common.String frequency = 1;</code>
+       */
+      public common.Common.String getFrequency() {
+        if (frequencyBuilder_ == null) {
+          return frequency_ == null ? common.Common.String.getDefaultInstance() : frequency_;
         } else {
-          return (java.lang.String) ref;
+          return frequencyBuilder_.getMessage();
         }
       }
       /**
-       * <code>string frequency = 1;</code>
+       * <code>.common.String frequency = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getFrequencyBytes() {
-        java.lang.Object ref = frequency_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          frequency_ = b;
-          return b;
+      public Builder setFrequency(common.Common.String value) {
+        if (frequencyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          frequency_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          frequencyBuilder_.setMessage(value);
         }
+
+        return this;
       }
       /**
-       * <code>string frequency = 1;</code>
+       * <code>.common.String frequency = 1;</code>
        */
       public Builder setFrequency(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        frequency_ = value;
-        onChanged();
+          common.Common.String.Builder builderForValue) {
+        if (frequencyBuilder_ == null) {
+          frequency_ = builderForValue.build();
+          onChanged();
+        } else {
+          frequencyBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
       }
       /**
-       * <code>string frequency = 1;</code>
+       * <code>.common.String frequency = 1;</code>
+       */
+      public Builder mergeFrequency(common.Common.String value) {
+        if (frequencyBuilder_ == null) {
+          if (frequency_ != null) {
+            frequency_ =
+              common.Common.String.newBuilder(frequency_).mergeFrom(value).buildPartial();
+          } else {
+            frequency_ = value;
+          }
+          onChanged();
+        } else {
+          frequencyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String frequency = 1;</code>
        */
       public Builder clearFrequency() {
-        
-        frequency_ = getDefaultInstance().getFrequency();
-        onChanged();
+        if (frequencyBuilder_ == null) {
+          frequency_ = null;
+          onChanged();
+        } else {
+          frequency_ = null;
+          frequencyBuilder_ = null;
+        }
+
         return this;
       }
       /**
-       * <code>string frequency = 1;</code>
+       * <code>.common.String frequency = 1;</code>
        */
-      public Builder setFrequencyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public common.Common.String.Builder getFrequencyBuilder() {
         
-        frequency_ = value;
         onChanged();
-        return this;
+        return getFrequencyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String frequency = 1;</code>
+       */
+      public common.Common.StringOrBuilder getFrequencyOrBuilder() {
+        if (frequencyBuilder_ != null) {
+          return frequencyBuilder_.getMessageOrBuilder();
+        } else {
+          return frequency_ == null ?
+              common.Common.String.getDefaultInstance() : frequency_;
+        }
+      }
+      /**
+       * <code>.common.String frequency = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getFrequencyFieldBuilder() {
+        if (frequencyBuilder_ == null) {
+          frequencyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getFrequency(),
+                  getParentForChildren(),
+                  isClean());
+          frequency_ = null;
+        }
+        return frequencyBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -39692,79 +39749,79 @@ public final class Api {
       "_url\030\003 \001(\0132\016.common.String\022\032\n\002to\030\004 \001(\0132\016" +
       ".common.String\022\034\n\004from\030\005 \001(\0132\016.common.St" +
       "ring\022\036\n\006status\030\006 \001(\0132\016.common.String\022&\n\013" +
-      "annotations\030\n \001(\0132\021.common.StringMap\"&\n\021" +
-      "StartCacheRequest\022\021\n\tfrequency\030\001 \001(\t*\344\002\n" +
-      "\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PROFILE\020\001\022\t\n\005EMAIL" +
-      "\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024READ_USER_IDP_TOKE" +
-      "NS\020\004\022\020\n\014CREATE_USERS\020\005\022\016\n\nREAD_STATS\020\006\022\030" +
-      "\n\024READ_EMAIL_TEMPLATES\020\007\022\032\n\026UPDATE_EMAIL" +
-      "_TEMPLATES\020\010\022\032\n\026CREATE_EMAIL_TEMPLATES\020\t" +
-      "\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDATE_RULES\020\013\022\020\n\014CR" +
-      "EATE_RULES\020\014\022\020\n\014DELETE_RULES\020\r\022\016\n\nREAD_R" +
-      "OLES\020\016\022\020\n\014UPDATE_ROLES\020\017\022\020\n\014CREATE_ROLES" +
-      "\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\tREAD_LOGS\020\022*\253\002\n\003" +
-      "URL\022\020\n\014USER_INFOURL\020\000\022\014\n\010TOKENURL\020\001\022\020\n\014A" +
-      "UTHORIZEURL\020\002\022\014\n\010USERSURL\020\003\022\016\n\nCLIENTSUR" +
-      "L\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RULESURL\020\006\022\014\n\010ROLE" +
-      "SURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010STATSURL\020\t\022\022\n\016CON" +
-      "NECTIONSURL\020\n\022\016\n\nTENANTSURL\020\013\022\025\n\021EMAIL_T" +
-      "EMPLATEURL\020\014\022\014\n\010EMAILURL\020\r\022\023\n\017SEARCH_USE" +
-      "RSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013\n\007JWKSURL\020\023\022\024\n\020C" +
-      "LIENT_GRANTSURL\020\024*(\n\004Plan\022\010\n\004FREE\020\000\022\t\n\005B" +
-      "ASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016UtilityService\022@" +
-      "\n\004Echo\022\016.common.String\032\016.common.String\"\030" +
-      "\202\323\344\223\002\022\"\r/utility/echo:\001*\022O\n\013EchoSpanish\022" +
-      "\016.common.String\032\016.common.String\" \202\323\344\223\002\032\"" +
-      "\025/utility/echo/spanish:\001*\022O\n\013EchoChinese" +
-      "\022\016.common.String\032\016.common.String\" \202\323\344\223\002\032" +
-      "\"\025/utility/echo/chinese:\001*\022O\n\013EchoEnglis" +
-      "h\022\016.common.String\032\016.common.String\" \202\323\344\223\002" +
-      "\032\"\025/utility/echo/english:\001*\022K\n\tEchoHindi" +
-      "\022\016.common.String\032\016.common.String\"\036\202\323\344\223\002\030" +
-      "\"\023/utility/echo/hindi:\001*\022M\n\nEchoArabic\022\016" +
-      ".common.String\032\016.common.String\"\037\202\323\344\223\002\031\"\024" +
-      "/utility/echo/arabic:\001*2\214\005\n\016ContactServi" +
-      "ce\022C\n\007SendSMS\022\010.api.SMS\032\020.api.SMSRespons" +
-      "e\"\034\202\323\344\223\002\026\"\021/contact/sms/send:\001*\022P\n\014SendS" +
-      "MSBlast\022\r.api.SMSBlast\032\020.api.SMSResponse" +
-      "\"\035\202\323\344\223\002\027\"\022/contact/sms/blast:\001*0\001\022K\n\006Get" +
-      "SMS\022\022.common.Identifier\032\020.api.SMSRespons" +
-      "e\"\033\202\323\344\223\002\025\"\020/contact/sms/get:\001*\022N\n\tSendEm" +
-      "ail\022\021.api.EmailRequest\032\016.common.String\"\036" +
-      "\202\323\344\223\002\030\"\023/contact/email/send:\001*\022[\n\016SendEm" +
-      "ailBlast\022\026.api.EmailBlastRequest\032\016.commo" +
-      "n.String\"\037\202\323\344\223\002\031\"\024/contact/email/blast:\001" +
-      "*0\001\022G\n\010SendCall\022\t.api.Call\032\021.api.CallRes" +
-      "ponse\"\035\202\323\344\223\002\027\"\022/contact/call/send:\001*\022T\n\r" +
-      "SendCallBlast\022\016.api.CallBlast\032\021.api.Call" +
-      "Response\"\036\202\323\344\223\002\030\"\023/contact/call/blast:\001*" +
-      "0\001\022J\n\007SendFax\022\017.api.FaxRequest\032\020.api.Fax" +
-      "Response\"\034\202\323\344\223\002\026\"\021/contact/fax/send:\001*2\235" +
-      "\003\n\016PaymentService\022\\\n\tSubscribe\022\025.api.Sub" +
-      "scribeRequest\032\031.api.SubscriptionResponse" +
-      "\"\035\202\323\344\223\002\027\"\022/payment/subscribe:\001*\022b\n\013Unsub" +
-      "scribe\022\027.api.UnSubscribeRequest\032\031.api.Su" +
-      "bscriptionResponse\"\037\202\323\344\223\002\031\"\024/payment/uns" +
-      "ubscribe:\001*\022]\n\023PurchasePhoneNumber\022\020.api" +
-      ".PhoneNumber\032\030.api.PhoneNumberResource\"\032" +
-      "\202\323\344\223\002\024\"\017/payment/number:\001*\022j\n\021SearchPhon" +
-      "eNumber\022\035.api.SearchPhoneNumberRequest\032\020" +
-      ".api.PhoneNumber\"\"\202\323\344\223\002\034\"\027/payment/numbe" +
-      "rs/search:\001*0\0012\320\003\n\013UserService\022K\n\nQueryU" +
-      "sers\022\017.api.TokenQuery\032\t.api.User\"\037\202\323\344\223\002\031" +
-      "\"\024/resource/user/query:\001*0\001\022H\n\nCreateUse" +
-      "r\022\r.common.Bytes\032\t.api.User\" \202\323\344\223\002\032\"\025/re" +
-      "source/user/create:\001*\022G\n\007GetUser\022\022.commo" +
-      "n.Identifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/resour" +
-      "ce/user/get:\001*\022J\n\nDeleteUser\022\022.common.Id" +
-      "entifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/resource/u" +
-      "ser/get:\001*\022F\n\nUpdateUser\022\013.api.IDBody\032\t." +
-      "api.User\" \202\323\344\223\002\032\"\025/resource/user/update:" +
-      "\001*\022M\n\tUserRoles\022\022.common.Identifier\032\t.ap" +
-      "i.Role\"\037\202\323\344\223\002\031\"\024/resource/user/roles:\001*0" +
-      "\0012S\n\014AdminService\022C\n\nStartCache\022\r.common" +
-      ".Empty\032\r.common.Empty\"\027\202\323\344\223\002\021\"\014/admin/st" +
-      "art:\001*b\006proto3"
+      "annotations\030\n \001(\0132\021.common.StringMap\"6\n\021" +
+      "StartCacheRequest\022!\n\tfrequency\030\001 \001(\0132\016.c" +
+      "ommon.String*\344\002\n\005Scope\022\n\n\006OPENID\020\000\022\013\n\007PR" +
+      "OFILE\020\001\022\t\n\005EMAIL\020\002\022\016\n\nREAD_USERS\020\003\022\030\n\024RE" +
+      "AD_USER_IDP_TOKENS\020\004\022\020\n\014CREATE_USERS\020\005\022\016" +
+      "\n\nREAD_STATS\020\006\022\030\n\024READ_EMAIL_TEMPLATES\020\007" +
+      "\022\032\n\026UPDATE_EMAIL_TEMPLATES\020\010\022\032\n\026CREATE_E" +
+      "MAIL_TEMPLATES\020\t\022\016\n\nREAD_RULES\020\n\022\020\n\014UPDA" +
+      "TE_RULES\020\013\022\020\n\014CREATE_RULES\020\014\022\020\n\014DELETE_R" +
+      "ULES\020\r\022\016\n\nREAD_ROLES\020\016\022\020\n\014UPDATE_ROLES\020\017" +
+      "\022\020\n\014CREATE_ROLES\020\020\022\020\n\014DELETE_ROLES\020\021\022\r\n\t" +
+      "READ_LOGS\020\022*\253\002\n\003URL\022\020\n\014USER_INFOURL\020\000\022\014\n" +
+      "\010TOKENURL\020\001\022\020\n\014AUTHORIZEURL\020\002\022\014\n\010USERSUR" +
+      "L\020\003\022\016\n\nCLIENTSURL\020\004\022\r\n\tGRANTSURL\020\005\022\014\n\010RU" +
+      "LESURL\020\006\022\014\n\010ROLESURL\020\007\022\013\n\007LOGSURL\020\010\022\014\n\010S" +
+      "TATSURL\020\t\022\022\n\016CONNECTIONSURL\020\n\022\016\n\nTENANTS" +
+      "URL\020\013\022\025\n\021EMAIL_TEMPLATEURL\020\014\022\014\n\010EMAILURL" +
+      "\020\r\022\023\n\017SEARCH_USERSURL\020\016\022\r\n\tDEVICEURL\020\022\022\013" +
+      "\n\007JWKSURL\020\023\022\024\n\020CLIENT_GRANTSURL\020\024*(\n\004Pla" +
+      "n\022\010\n\004FREE\020\000\022\t\n\005BASIC\020\001\022\013\n\007PREMIUM\020\0022\341\003\n\016" +
+      "UtilityService\022@\n\004Echo\022\016.common.String\032\016" +
+      ".common.String\"\030\202\323\344\223\002\022\"\r/utility/echo:\001*" +
+      "\022O\n\013EchoSpanish\022\016.common.String\032\016.common" +
+      ".String\" \202\323\344\223\002\032\"\025/utility/echo/spanish:\001" +
+      "*\022O\n\013EchoChinese\022\016.common.String\032\016.commo" +
+      "n.String\" \202\323\344\223\002\032\"\025/utility/echo/chinese:" +
+      "\001*\022O\n\013EchoEnglish\022\016.common.String\032\016.comm" +
+      "on.String\" \202\323\344\223\002\032\"\025/utility/echo/english" +
+      ":\001*\022K\n\tEchoHindi\022\016.common.String\032\016.commo" +
+      "n.String\"\036\202\323\344\223\002\030\"\023/utility/echo/hindi:\001*" +
+      "\022M\n\nEchoArabic\022\016.common.String\032\016.common." +
+      "String\"\037\202\323\344\223\002\031\"\024/utility/echo/arabic:\001*2" +
+      "\214\005\n\016ContactService\022C\n\007SendSMS\022\010.api.SMS\032" +
+      "\020.api.SMSResponse\"\034\202\323\344\223\002\026\"\021/contact/sms/" +
+      "send:\001*\022P\n\014SendSMSBlast\022\r.api.SMSBlast\032\020" +
+      ".api.SMSResponse\"\035\202\323\344\223\002\027\"\022/contact/sms/b" +
+      "last:\001*0\001\022K\n\006GetSMS\022\022.common.Identifier\032" +
+      "\020.api.SMSResponse\"\033\202\323\344\223\002\025\"\020/contact/sms/" +
+      "get:\001*\022N\n\tSendEmail\022\021.api.EmailRequest\032\016" +
+      ".common.String\"\036\202\323\344\223\002\030\"\023/contact/email/s" +
+      "end:\001*\022[\n\016SendEmailBlast\022\026.api.EmailBlas" +
+      "tRequest\032\016.common.String\"\037\202\323\344\223\002\031\"\024/conta" +
+      "ct/email/blast:\001*0\001\022G\n\010SendCall\022\t.api.Ca" +
+      "ll\032\021.api.CallResponse\"\035\202\323\344\223\002\027\"\022/contact/" +
+      "call/send:\001*\022T\n\rSendCallBlast\022\016.api.Call" +
+      "Blast\032\021.api.CallResponse\"\036\202\323\344\223\002\030\"\023/conta" +
+      "ct/call/blast:\001*0\001\022J\n\007SendFax\022\017.api.FaxR" +
+      "equest\032\020.api.FaxResponse\"\034\202\323\344\223\002\026\"\021/conta" +
+      "ct/fax/send:\001*2\235\003\n\016PaymentService\022\\\n\tSub" +
+      "scribe\022\025.api.SubscribeRequest\032\031.api.Subs" +
+      "criptionResponse\"\035\202\323\344\223\002\027\"\022/payment/subsc" +
+      "ribe:\001*\022b\n\013Unsubscribe\022\027.api.UnSubscribe" +
+      "Request\032\031.api.SubscriptionResponse\"\037\202\323\344\223" +
+      "\002\031\"\024/payment/unsubscribe:\001*\022]\n\023PurchaseP" +
+      "honeNumber\022\020.api.PhoneNumber\032\030.api.Phone" +
+      "NumberResource\"\032\202\323\344\223\002\024\"\017/payment/number:" +
+      "\001*\022j\n\021SearchPhoneNumber\022\035.api.SearchPhon" +
+      "eNumberRequest\032\020.api.PhoneNumber\"\"\202\323\344\223\002\034" +
+      "\"\027/payment/numbers/search:\001*0\0012\320\003\n\013UserS" +
+      "ervice\022K\n\nQueryUsers\022\017.api.TokenQuery\032\t." +
+      "api.User\"\037\202\323\344\223\002\031\"\024/resource/user/query:\001" +
+      "*0\001\022H\n\nCreateUser\022\r.common.Bytes\032\t.api.U" +
+      "ser\" \202\323\344\223\002\032\"\025/resource/user/create:\001*\022G\n" +
+      "\007GetUser\022\022.common.Identifier\032\t.api.User\"" +
+      "\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022J\n\nDelete" +
+      "User\022\022.common.Identifier\032\t.api.User\"\035\202\323\344" +
+      "\223\002\027\"\022/resource/user/get:\001*\022F\n\nUpdateUser" +
+      "\022\013.api.IDBody\032\t.api.User\" \202\323\344\223\002\032\"\025/resou" +
+      "rce/user/update:\001*\022M\n\tUserRoles\022\022.common" +
+      ".Identifier\032\t.api.Role\"\037\202\323\344\223\002\031\"\024/resourc" +
+      "e/user/roles:\001*0\0012\\\n\014AdminService\022L\n\nSta" +
+      "rtCache\022\026.api.StartCacheRequest\032\r.common" +
+      ".Empty\"\027\202\323\344\223\002\021\"\014/admin/start:\001*b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

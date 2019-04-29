@@ -486,7 +486,7 @@ func request_UserService_UserRoles_0(ctx context.Context, marshaler runtime.Mars
 }
 
 func request_AdminService_StartCache_0(ctx context.Context, marshaler runtime.Marshaler, client AdminServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq common.Empty
+	var protoReq StartCacheRequest
 	var metadata runtime.ServerMetadata
 
 	newReader, berr := utilities.IOReaderFactory(req.Body)

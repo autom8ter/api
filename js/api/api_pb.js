@@ -9467,7 +9467,7 @@ proto.api.StartCacheRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.api.StartCacheRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    frequency: jspb.Message.getFieldWithDefault(msg, 1, "")
+    frequency: (f = msg.getFrequency()) && common_common_pb.String.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9505,7 +9505,8 @@ proto.api.StartCacheRequest.deserializeBinaryFromReader = function(msg, reader) 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
       msg.setFrequency(value);
       break;
     default:
@@ -9538,27 +9539,43 @@ proto.api.StartCacheRequest.prototype.serializeBinary = function() {
 proto.api.StartCacheRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFrequency();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      common_common_pb.String.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string frequency = 1;
- * @return {string}
+ * optional common.String frequency = 1;
+ * @return {?proto.common.String}
  */
 proto.api.StartCacheRequest.prototype.getFrequency = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 1));
 };
 
 
-/** @param {string} value */
+/** @param {?proto.common.String|undefined} value */
 proto.api.StartCacheRequest.prototype.setFrequency = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.api.StartCacheRequest.prototype.clearFrequency = function() {
+  this.setFrequency(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.StartCacheRequest.prototype.hasFrequency = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

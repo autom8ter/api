@@ -205,7 +205,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :annotations, :message, 10, "common.StringMap"
   end
   add_message "api.StartCacheRequest" do
-    optional :frequency, :string, 1
+    optional :frequency, :message, 1, "common.String"
   end
   add_enum "api.Scope" do
     value :OPENID, 0

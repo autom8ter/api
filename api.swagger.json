@@ -32,7 +32,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/commonEmpty"
+              "$ref": "#/definitions/apiStartCacheRequest"
             }
           }
         ],
@@ -1010,6 +1010,14 @@
         },
         "total_results": {
           "$ref": "#/definitions/commonInt64"
+        }
+      }
+    },
+    "apiStartCacheRequest": {
+      "type": "object",
+      "properties": {
+        "frequency": {
+          "$ref": "#/definitions/commonString"
         }
       }
     },

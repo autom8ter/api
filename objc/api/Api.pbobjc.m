@@ -2783,11 +2783,11 @@ typedef struct FaxResponse__storage_ {
 
 @implementation StartCacheRequest
 
-@dynamic frequency;
+@dynamic hasFrequency, frequency;
 
 typedef struct StartCacheRequest__storage_ {
   uint32_t _has_storage_[1];
-  NSString *frequency;
+  String *frequency;
 } StartCacheRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2798,12 +2798,12 @@ typedef struct StartCacheRequest__storage_ {
     static GPBMessageFieldDescription fields[] = {
       {
         .name = "frequency",
-        .dataTypeSpecific.className = NULL,
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = StartCacheRequest_FieldNumber_Frequency,
         .hasIndex = 0,
         .offset = (uint32_t)offsetof(StartCacheRequest__storage_, frequency),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =

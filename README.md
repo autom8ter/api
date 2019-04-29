@@ -342,7 +342,7 @@ func SearchUSPhoneNumbersURL(account *common.String) *common.String
 
 ```go
 type AdminServiceClient interface {
-	StartCache(ctx context.Context, in *common.Empty, opts ...grpc.CallOption) (*common.Empty, error)
+	StartCache(ctx context.Context, in *StartCacheRequest, opts ...grpc.CallOption) (*common.Empty, error)
 }
 ```
 
@@ -361,7 +361,7 @@ func NewAdminServiceClient(cc *grpc.ClientConn) AdminServiceClient
 
 ```go
 type AdminServiceServer interface {
-	StartCache(context.Context, *common.Empty) (*common.Empty, error)
+	StartCache(context.Context, *StartCacheRequest) (*common.Empty, error)
 }
 ```
 
@@ -3060,10 +3060,10 @@ func (m *SearchPhoneNumberRequest) XXX_Unmarshal(b []byte) error
 
 ```go
 type StartCacheRequest struct {
-	Frequency            string   `protobuf:"bytes,1,opt,name=frequency,proto3" json:"frequency,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Frequency            *common.String `protobuf:"bytes,1,opt,name=frequency,proto3" json:"frequency,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 ```
 
@@ -3077,7 +3077,7 @@ func (*StartCacheRequest) Descriptor() ([]byte, []int)
 #### func (*StartCacheRequest) GetFrequency
 
 ```go
-func (m *StartCacheRequest) GetFrequency() string
+func (m *StartCacheRequest) GetFrequency() *common.String
 ```
 
 #### func (*StartCacheRequest) ProtoMessage

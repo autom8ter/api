@@ -4973,25 +4973,23 @@ class StartCacheRequest : public ::google::protobuf::Message /* @@protoc_inserti
 
   // accessors -------------------------------------------------------
 
-  // string frequency = 1;
+  // .common.String frequency = 1;
+  bool has_frequency() const;
   void clear_frequency();
   static const int kFrequencyFieldNumber = 1;
-  const ::std::string& frequency() const;
-  void set_frequency(const ::std::string& value);
-  #if LANG_CXX11
-  void set_frequency(::std::string&& value);
-  #endif
-  void set_frequency(const char* value);
-  void set_frequency(const char* value, size_t size);
-  ::std::string* mutable_frequency();
-  ::std::string* release_frequency();
-  void set_allocated_frequency(::std::string* frequency);
+  private:
+  const ::common::String& _internal_frequency() const;
+  public:
+  const ::common::String& frequency() const;
+  ::common::String* release_frequency();
+  ::common::String* mutable_frequency();
+  void set_allocated_frequency(::common::String* frequency);
 
   // @@protoc_insertion_point(class_scope:api.StartCacheRequest)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr frequency_;
+  ::common::String* frequency_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -11364,56 +11362,51 @@ inline void FaxResponse::set_allocated_annotations(::common::StringMap* annotati
 
 // StartCacheRequest
 
-// string frequency = 1;
-inline void StartCacheRequest::clear_frequency() {
-  frequency_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// .common.String frequency = 1;
+inline bool StartCacheRequest::has_frequency() const {
+  return this != internal_default_instance() && frequency_ != NULL;
 }
-inline const ::std::string& StartCacheRequest::frequency() const {
+inline const ::common::String& StartCacheRequest::_internal_frequency() const {
+  return *frequency_;
+}
+inline const ::common::String& StartCacheRequest::frequency() const {
+  const ::common::String* p = frequency_;
   // @@protoc_insertion_point(field_get:api.StartCacheRequest.frequency)
-  return frequency_.GetNoArena();
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
 }
-inline void StartCacheRequest::set_frequency(const ::std::string& value) {
-  
-  frequency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:api.StartCacheRequest.frequency)
-}
-#if LANG_CXX11
-inline void StartCacheRequest::set_frequency(::std::string&& value) {
-  
-  frequency_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:api.StartCacheRequest.frequency)
-}
-#endif
-inline void StartCacheRequest::set_frequency(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  frequency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:api.StartCacheRequest.frequency)
-}
-inline void StartCacheRequest::set_frequency(const char* value, size_t size) {
-  
-  frequency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:api.StartCacheRequest.frequency)
-}
-inline ::std::string* StartCacheRequest::mutable_frequency() {
-  
-  // @@protoc_insertion_point(field_mutable:api.StartCacheRequest.frequency)
-  return frequency_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* StartCacheRequest::release_frequency() {
+inline ::common::String* StartCacheRequest::release_frequency() {
   // @@protoc_insertion_point(field_release:api.StartCacheRequest.frequency)
   
-  return frequency_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::common::String* temp = frequency_;
+  frequency_ = NULL;
+  return temp;
 }
-inline void StartCacheRequest::set_allocated_frequency(::std::string* frequency) {
-  if (frequency != NULL) {
+inline ::common::String* StartCacheRequest::mutable_frequency() {
+  
+  if (frequency_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    frequency_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.StartCacheRequest.frequency)
+  return frequency_;
+}
+inline void StartCacheRequest::set_allocated_frequency(::common::String* frequency) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(frequency_);
+  }
+  if (frequency) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      frequency = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, frequency, submessage_arena);
+    }
     
   } else {
     
   }
-  frequency_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), frequency);
+  frequency_ = frequency;
   // @@protoc_insertion_point(field_set_allocated:api.StartCacheRequest.frequency)
 }
 

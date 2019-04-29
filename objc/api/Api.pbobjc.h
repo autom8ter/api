@@ -1140,7 +1140,9 @@ typedef GPB_ENUM(StartCacheRequest_FieldNumber) {
 
 @interface StartCacheRequest : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *frequency;
+@property(nonatomic, readwrite, strong, null_resettable) String *frequency;
+/** Test to see if @c frequency has been set. */
+@property(nonatomic, readwrite) BOOL hasFrequency;
 
 @end
 
