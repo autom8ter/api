@@ -1479,6 +1479,7 @@ type FaxResponse struct {
 	MediaUrl             *common.String     `protobuf:"bytes,3,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
 	To                   *common.String     `protobuf:"bytes,4,opt,name=to,proto3" json:"to,omitempty"`
 	From                 *common.String     `protobuf:"bytes,5,opt,name=from,proto3" json:"from,omitempty"`
+	Status               *common.String     `protobuf:"bytes,6,opt,name=status,proto3" json:"status,omitempty"`
 	Annotations          *common.StringMap  `protobuf:"bytes,10,opt,name=annotations,proto3" json:"annotations,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
@@ -1515,6 +1516,12 @@ func (m *FaxResponse) GetId() *common.Identifier
 
 ```go
 func (m *FaxResponse) GetMediaUrl() *common.String
+```
+
+#### func (*FaxResponse) GetStatus
+
+```go
+func (m *FaxResponse) GetStatus() *common.String
 ```
 
 #### func (*FaxResponse) GetTo
