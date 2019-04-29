@@ -204,6 +204,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :status, :message, 6, "common.String"
     optional :annotations, :message, 10, "common.StringMap"
   end
+  add_message "api.StartCacheRequest" do
+    optional :frequency, :string, 1
+  end
   add_enum "api.Scope" do
     value :OPENID, 0
     value :PROFILE, 1
@@ -283,6 +286,7 @@ module Api
   SMSResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSResponse").msgclass
   SubscriptionResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionResponse").msgclass
   FaxResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxResponse").msgclass
+  StartCacheRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StartCacheRequest").msgclass
   Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
   URL = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.URL").enummodule
   Plan = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Plan").enummodule

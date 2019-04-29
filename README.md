@@ -3056,6 +3056,78 @@ func (m *SearchPhoneNumberRequest) XXX_Size() int
 func (m *SearchPhoneNumberRequest) XXX_Unmarshal(b []byte) error
 ```
 
+#### type StartCacheRequest
+
+```go
+type StartCacheRequest struct {
+	Frequency            string   `protobuf:"bytes,1,opt,name=frequency,proto3" json:"frequency,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*StartCacheRequest) Descriptor
+
+```go
+func (*StartCacheRequest) Descriptor() ([]byte, []int)
+```
+
+#### func (*StartCacheRequest) GetFrequency
+
+```go
+func (m *StartCacheRequest) GetFrequency() string
+```
+
+#### func (*StartCacheRequest) ProtoMessage
+
+```go
+func (*StartCacheRequest) ProtoMessage()
+```
+
+#### func (*StartCacheRequest) Reset
+
+```go
+func (m *StartCacheRequest) Reset()
+```
+
+#### func (*StartCacheRequest) String
+
+```go
+func (m *StartCacheRequest) String() string
+```
+
+#### func (*StartCacheRequest) XXX_DiscardUnknown
+
+```go
+func (m *StartCacheRequest) XXX_DiscardUnknown()
+```
+
+#### func (*StartCacheRequest) XXX_Marshal
+
+```go
+func (m *StartCacheRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*StartCacheRequest) XXX_Merge
+
+```go
+func (m *StartCacheRequest) XXX_Merge(src proto.Message)
+```
+
+#### func (*StartCacheRequest) XXX_Size
+
+```go
+func (m *StartCacheRequest) XXX_Size() int
+```
+
+#### func (*StartCacheRequest) XXX_Unmarshal
+
+```go
+func (m *StartCacheRequest) XXX_Unmarshal(b []byte) error
+```
+
 #### type SubscribeRequest
 
 ```go

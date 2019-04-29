@@ -1132,6 +1132,18 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
 
 @end
 
+#pragma mark - StartCacheRequest
+
+typedef GPB_ENUM(StartCacheRequest_FieldNumber) {
+  StartCacheRequest_FieldNumber_Frequency = 1,
+};
+
+@interface StartCacheRequest : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *frequency;
+
+@end
+
 NS_ASSUME_NONNULL_END
 
 CF_EXTERN_C_END

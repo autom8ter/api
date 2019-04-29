@@ -453,3 +453,7 @@ message FaxResponse {
 
     common.StringMap annotations=10;
 }
+
+message StartCacheRequest {
+    string frequency =1;
+}

@@ -177,6 +177,15 @@ func (b *String) ToBytes() *Bytes {
 	return ToBytes([]byte(b.Text))
 }
 
+func (b *String) ParseDuration() time.Duration {
+	d, _ := time.ParseDuration(b.Text)
+	return d
+}
+
+func (b *String) ParseTime(str *String) time.Time {
+	d, _ := time.Parse(str.Text, b.Text)
+	return d
+}
 func (h HTTPMethod) Normalize() *String {
 	switch h {
 	case HTTPMethod_POST:

@@ -1446,6 +1446,12 @@ func (s *String) MarshalJSON(w io.Writer) error
 func (s *String) Matches(this string) bool
 ```
 
+#### func (*String) ParseDuration
+
+```go
+func (b *String) ParseDuration() time.Duration
+```
+
 #### func (*String) ParseLanguage
 
 ```go
@@ -1462,6 +1468,12 @@ func (s *String) ParseRegion() (language.Region, error)
 
 ```go
 func (s *String) ParseScientificUnits() (*Float64, *String, error)
+```
+
+#### func (*String) ParseTime
+
+```go
+func (b *String) ParseTime(str *String) time.Time
 ```
 
 #### func (*String) ParseURL

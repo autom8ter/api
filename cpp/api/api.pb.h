@@ -41,7 +41,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[30];
+  static const ::google::protobuf::internal::ParseTable schema[31];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -124,6 +124,9 @@ extern SMSResponseDefaultTypeInternal _SMSResponse_default_instance_;
 class SearchPhoneNumberRequest;
 class SearchPhoneNumberRequestDefaultTypeInternal;
 extern SearchPhoneNumberRequestDefaultTypeInternal _SearchPhoneNumberRequest_default_instance_;
+class StartCacheRequest;
+class StartCacheRequestDefaultTypeInternal;
+extern StartCacheRequestDefaultTypeInternal _StartCacheRequest_default_instance_;
 class SubscribeRequest;
 class SubscribeRequestDefaultTypeInternal;
 extern SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
@@ -167,6 +170,7 @@ template<> ::api::SMS* Arena::CreateMaybeMessage<::api::SMS>(Arena*);
 template<> ::api::SMSBlast* Arena::CreateMaybeMessage<::api::SMSBlast>(Arena*);
 template<> ::api::SMSResponse* Arena::CreateMaybeMessage<::api::SMSResponse>(Arena*);
 template<> ::api::SearchPhoneNumberRequest* Arena::CreateMaybeMessage<::api::SearchPhoneNumberRequest>(Arena*);
+template<> ::api::StartCacheRequest* Arena::CreateMaybeMessage<::api::StartCacheRequest>(Arena*);
 template<> ::api::SubscribeRequest* Arena::CreateMaybeMessage<::api::SubscribeRequest>(Arena*);
 template<> ::api::SubscriptionResponse* Arena::CreateMaybeMessage<::api::SubscriptionResponse>(Arena*);
 template<> ::api::TokenQuery* Arena::CreateMaybeMessage<::api::TokenQuery>(Arena*);
@@ -4877,6 +4881,117 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::common::String* from_;
   ::common::String* status_;
   ::common::StringMap* annotations_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class StartCacheRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.StartCacheRequest) */ {
+ public:
+  StartCacheRequest();
+  virtual ~StartCacheRequest();
+
+  StartCacheRequest(const StartCacheRequest& from);
+
+  inline StartCacheRequest& operator=(const StartCacheRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  StartCacheRequest(StartCacheRequest&& from) noexcept
+    : StartCacheRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline StartCacheRequest& operator=(StartCacheRequest&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const StartCacheRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const StartCacheRequest* internal_default_instance() {
+    return reinterpret_cast<const StartCacheRequest*>(
+               &_StartCacheRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    30;
+
+  void Swap(StartCacheRequest* other);
+  friend void swap(StartCacheRequest& a, StartCacheRequest& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline StartCacheRequest* New() const final {
+    return CreateMaybeMessage<StartCacheRequest>(NULL);
+  }
+
+  StartCacheRequest* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StartCacheRequest>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const StartCacheRequest& from);
+  void MergeFrom(const StartCacheRequest& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(StartCacheRequest* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string frequency = 1;
+  void clear_frequency();
+  static const int kFrequencyFieldNumber = 1;
+  const ::std::string& frequency() const;
+  void set_frequency(const ::std::string& value);
+  #if LANG_CXX11
+  void set_frequency(::std::string&& value);
+  #endif
+  void set_frequency(const char* value);
+  void set_frequency(const char* value, size_t size);
+  ::std::string* mutable_frequency();
+  ::std::string* release_frequency();
+  void set_allocated_frequency(::std::string* frequency);
+
+  // @@protoc_insertion_point(class_scope:api.StartCacheRequest)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr frequency_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -11245,9 +11360,68 @@ inline void FaxResponse::set_allocated_annotations(::common::StringMap* annotati
   // @@protoc_insertion_point(field_set_allocated:api.FaxResponse.annotations)
 }
 
+// -------------------------------------------------------------------
+
+// StartCacheRequest
+
+// string frequency = 1;
+inline void StartCacheRequest::clear_frequency() {
+  frequency_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& StartCacheRequest::frequency() const {
+  // @@protoc_insertion_point(field_get:api.StartCacheRequest.frequency)
+  return frequency_.GetNoArena();
+}
+inline void StartCacheRequest::set_frequency(const ::std::string& value) {
+  
+  frequency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.StartCacheRequest.frequency)
+}
+#if LANG_CXX11
+inline void StartCacheRequest::set_frequency(::std::string&& value) {
+  
+  frequency_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.StartCacheRequest.frequency)
+}
+#endif
+inline void StartCacheRequest::set_frequency(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  frequency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.StartCacheRequest.frequency)
+}
+inline void StartCacheRequest::set_frequency(const char* value, size_t size) {
+  
+  frequency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.StartCacheRequest.frequency)
+}
+inline ::std::string* StartCacheRequest::mutable_frequency() {
+  
+  // @@protoc_insertion_point(field_mutable:api.StartCacheRequest.frequency)
+  return frequency_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* StartCacheRequest::release_frequency() {
+  // @@protoc_insertion_point(field_release:api.StartCacheRequest.frequency)
+  
+  return frequency_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void StartCacheRequest::set_allocated_frequency(::std::string* frequency) {
+  if (frequency != NULL) {
+    
+  } else {
+    
+  }
+  frequency_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), frequency);
+  // @@protoc_insertion_point(field_set_allocated:api.StartCacheRequest.frequency)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

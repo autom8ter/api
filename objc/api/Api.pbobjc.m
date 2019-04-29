@@ -2779,6 +2779,49 @@ typedef struct FaxResponse__storage_ {
 
 @end
 
+#pragma mark - StartCacheRequest
+
+@implementation StartCacheRequest
+
+@dynamic frequency;
+
+typedef struct StartCacheRequest__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *frequency;
+} StartCacheRequest__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "frequency",
+        .dataTypeSpecific.className = NULL,
+        .number = StartCacheRequest_FieldNumber_Frequency,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(StartCacheRequest__storage_, frequency),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[StartCacheRequest class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(StartCacheRequest__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 
 #pragma clang diagnostic pop
 
