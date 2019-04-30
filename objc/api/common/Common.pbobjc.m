@@ -509,49 +509,6 @@ typedef struct Config__storage_ {
 
 @end
 
-#pragma mark - Event
-
-@implementation Event
-
-@dynamic hasAnnotations, annotations;
-
-typedef struct Event__storage_ {
-  uint32_t _has_storage_[1];
-  StringMap *annotations;
-} Event__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "annotations",
-        .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
-        .number = Event_FieldNumber_Annotations,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Event__storage_, annotations),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Event class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Event__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
 #pragma mark - Query
 
 @implementation Query

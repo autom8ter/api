@@ -845,6 +845,31 @@ func (s *TokenSet) UnmarshalJSONFrom(b []byte) error {
 	return util.UnmarshalJSON(b, s)
 }
 
+func (s *StringMap) UnmarshalProtoFrom(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+
+}
+
+func (s *StringArray) UnmarshalProtoFrom(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+
+}
+
+func (s *Float64) UnmarshalProto(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+}
+
+func (s *Int64) UnmarshalProto(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+}
+
+func (s *Token) UnmarshalProto(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+}
+
+func (s *TokenSet) UnmarshalProto(b []byte) error {
+	return util.UnmarshalProto(b, s)
+}
 func (s *String) JSONString() *String {
 	return MessageToJSONString(s)
 }
@@ -887,4 +912,20 @@ func (s *TokenSet) Exists(key string) bool {
 
 func (s *TokenSet) Length() int {
 	return len(s.Tokens)
+}
+
+func EmailIdentifier(email string) *Identifier {
+	return &Identifier{Id: ToString(email)}
+}
+
+func PhoneIdentifier(phone string) *Identifier {
+	return &Identifier{Id: ToString(phone)}
+}
+
+func GenericIdentifier(id string) *Identifier {
+	return &Identifier{Id: ToString(id)}
+}
+
+func NickNameIdentifier(id string) *Identifier {
+	return &Identifier{Id: ToString(id)}
 }

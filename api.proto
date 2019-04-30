@@ -88,9 +88,15 @@ service ContactService {
     };
     }
 
-    rpc SendFax(FaxRequest) returns (FaxResponse) {
+    rpc SendFax(Fax) returns (FaxResponse) {
          option (google.api.http) = {
       post: "/contact/fax/send"
+      body: "*"
+    };
+    }
+    rpc SendFaxBlast(FaxBlast) returns (stream FaxResponse) {
+        option (google.api.http) = {
+      post: "/contact/fax/blast"
       body: "*"
     };
     }
@@ -162,8 +168,17 @@ service UserService {
     }
 }
 
-message FaxRequest {
+message Fax {
     common.String to =1;
+    common.String from=2;
+    common.String media_url =3;
+    common.String quality=4;
+    common.String callback=5;
+    bool store_media=6;
+}
+
+message FaxBlast {
+    common.StringArray to =1;
     common.String from=2;
     common.String media_url =3;
     common.String quality=4;

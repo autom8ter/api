@@ -41,7 +41,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[30];
+  static const ::google::protobuf::internal::ParseTable schema[31];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -76,9 +76,12 @@ extern EmailBlastRequestDefaultTypeInternal _EmailBlastRequest_default_instance_
 class EmailRequest;
 class EmailRequestDefaultTypeInternal;
 extern EmailRequestDefaultTypeInternal _EmailRequest_default_instance_;
-class FaxRequest;
-class FaxRequestDefaultTypeInternal;
-extern FaxRequestDefaultTypeInternal _FaxRequest_default_instance_;
+class Fax;
+class FaxDefaultTypeInternal;
+extern FaxDefaultTypeInternal _Fax_default_instance_;
+class FaxBlast;
+class FaxBlastDefaultTypeInternal;
+extern FaxBlastDefaultTypeInternal _FaxBlast_default_instance_;
 class FaxResponse;
 class FaxResponseDefaultTypeInternal;
 extern FaxResponseDefaultTypeInternal _FaxResponse_default_instance_;
@@ -151,7 +154,8 @@ template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailBlast* Arena::CreateMaybeMessage<::api::EmailBlast>(Arena*);
 template<> ::api::EmailBlastRequest* Arena::CreateMaybeMessage<::api::EmailBlastRequest>(Arena*);
 template<> ::api::EmailRequest* Arena::CreateMaybeMessage<::api::EmailRequest>(Arena*);
-template<> ::api::FaxRequest* Arena::CreateMaybeMessage<::api::FaxRequest>(Arena*);
+template<> ::api::Fax* Arena::CreateMaybeMessage<::api::Fax>(Arena*);
+template<> ::api::FaxBlast* Arena::CreateMaybeMessage<::api::FaxBlast>(Arena*);
 template<> ::api::FaxResponse* Arena::CreateMaybeMessage<::api::FaxResponse>(Arena*);
 template<> ::api::IDBody* Arena::CreateMaybeMessage<::api::IDBody>(Arena*);
 template<> ::api::IDStrings* Arena::CreateMaybeMessage<::api::IDStrings>(Arena*);
@@ -200,24 +204,24 @@ inline bool Plan_Parse(
 }
 // ===================================================================
 
-class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.FaxRequest) */ {
+class Fax : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Fax) */ {
  public:
-  FaxRequest();
-  virtual ~FaxRequest();
+  Fax();
+  virtual ~Fax();
 
-  FaxRequest(const FaxRequest& from);
+  Fax(const Fax& from);
 
-  inline FaxRequest& operator=(const FaxRequest& from) {
+  inline Fax& operator=(const Fax& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  FaxRequest(FaxRequest&& from) noexcept
-    : FaxRequest() {
+  Fax(Fax&& from) noexcept
+    : Fax() {
     *this = ::std::move(from);
   }
 
-  inline FaxRequest& operator=(FaxRequest&& from) noexcept {
+  inline Fax& operator=(Fax&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -227,34 +231,34 @@ class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const FaxRequest& default_instance();
+  static const Fax& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const FaxRequest* internal_default_instance() {
-    return reinterpret_cast<const FaxRequest*>(
-               &_FaxRequest_default_instance_);
+  static inline const Fax* internal_default_instance() {
+    return reinterpret_cast<const Fax*>(
+               &_Fax_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  void Swap(FaxRequest* other);
-  friend void swap(FaxRequest& a, FaxRequest& b) {
+  void Swap(Fax* other);
+  friend void swap(Fax& a, Fax& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline FaxRequest* New() const final {
-    return CreateMaybeMessage<FaxRequest>(NULL);
+  inline Fax* New() const final {
+    return CreateMaybeMessage<Fax>(NULL);
   }
 
-  FaxRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<FaxRequest>(arena);
+  Fax* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Fax>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const FaxRequest& from);
-  void MergeFrom(const FaxRequest& from);
+  void CopyFrom(const Fax& from);
+  void MergeFrom(const Fax& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -271,7 +275,7 @@ class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(FaxRequest* other);
+  void InternalSwap(Fax* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -353,11 +357,179 @@ class FaxRequest : public ::google::protobuf::Message /* @@protoc_insertion_poin
   bool store_media() const;
   void set_store_media(bool value);
 
-  // @@protoc_insertion_point(class_scope:api.FaxRequest)
+  // @@protoc_insertion_point(class_scope:api.Fax)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::common::String* to_;
+  ::common::String* from_;
+  ::common::String* media_url_;
+  ::common::String* quality_;
+  ::common::String* callback_;
+  bool store_media_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class FaxBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.FaxBlast) */ {
+ public:
+  FaxBlast();
+  virtual ~FaxBlast();
+
+  FaxBlast(const FaxBlast& from);
+
+  inline FaxBlast& operator=(const FaxBlast& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  FaxBlast(FaxBlast&& from) noexcept
+    : FaxBlast() {
+    *this = ::std::move(from);
+  }
+
+  inline FaxBlast& operator=(FaxBlast&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const FaxBlast& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FaxBlast* internal_default_instance() {
+    return reinterpret_cast<const FaxBlast*>(
+               &_FaxBlast_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(FaxBlast* other);
+  friend void swap(FaxBlast& a, FaxBlast& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FaxBlast* New() const final {
+    return CreateMaybeMessage<FaxBlast>(NULL);
+  }
+
+  FaxBlast* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<FaxBlast>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const FaxBlast& from);
+  void MergeFrom(const FaxBlast& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FaxBlast* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.StringArray to = 1;
+  bool has_to() const;
+  void clear_to();
+  static const int kToFieldNumber = 1;
+  private:
+  const ::common::StringArray& _internal_to() const;
+  public:
+  const ::common::StringArray& to() const;
+  ::common::StringArray* release_to();
+  ::common::StringArray* mutable_to();
+  void set_allocated_to(::common::StringArray* to);
+
+  // .common.String from = 2;
+  bool has_from() const;
+  void clear_from();
+  static const int kFromFieldNumber = 2;
+  private:
+  const ::common::String& _internal_from() const;
+  public:
+  const ::common::String& from() const;
+  ::common::String* release_from();
+  ::common::String* mutable_from();
+  void set_allocated_from(::common::String* from);
+
+  // .common.String media_url = 3;
+  bool has_media_url() const;
+  void clear_media_url();
+  static const int kMediaUrlFieldNumber = 3;
+  private:
+  const ::common::String& _internal_media_url() const;
+  public:
+  const ::common::String& media_url() const;
+  ::common::String* release_media_url();
+  ::common::String* mutable_media_url();
+  void set_allocated_media_url(::common::String* media_url);
+
+  // .common.String quality = 4;
+  bool has_quality() const;
+  void clear_quality();
+  static const int kQualityFieldNumber = 4;
+  private:
+  const ::common::String& _internal_quality() const;
+  public:
+  const ::common::String& quality() const;
+  ::common::String* release_quality();
+  ::common::String* mutable_quality();
+  void set_allocated_quality(::common::String* quality);
+
+  // .common.String callback = 5;
+  bool has_callback() const;
+  void clear_callback();
+  static const int kCallbackFieldNumber = 5;
+  private:
+  const ::common::String& _internal_callback() const;
+  public:
+  const ::common::String& callback() const;
+  ::common::String* release_callback();
+  ::common::String* mutable_callback();
+  void set_allocated_callback(::common::String* callback);
+
+  // bool store_media = 6;
+  void clear_store_media();
+  static const int kStoreMediaFieldNumber = 6;
+  bool store_media() const;
+  void set_store_media(bool value);
+
+  // @@protoc_insertion_point(class_scope:api.FaxBlast)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::StringArray* to_;
   ::common::String* from_;
   ::common::String* media_url_;
   ::common::String* quality_;
@@ -403,7 +575,7 @@ class SubscribeRequest : public ::google::protobuf::Message /* @@protoc_insertio
                &_SubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(SubscribeRequest* other);
   friend void swap(SubscribeRequest& a, SubscribeRequest& b) {
@@ -532,7 +704,7 @@ class UnSubscribeRequest : public ::google::protobuf::Message /* @@protoc_insert
                &_UnSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(UnSubscribeRequest* other);
   friend void swap(UnSubscribeRequest& a, UnSubscribeRequest& b) {
@@ -648,7 +820,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -796,7 +968,7 @@ class SMS : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_SMS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(SMS* other);
   friend void swap(SMS& a, SMS& b) {
@@ -970,7 +1142,7 @@ class SMSBlast : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_SMSBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(SMSBlast* other);
   friend void swap(SMSBlast& a, SMSBlast& b) {
@@ -1144,7 +1316,7 @@ class EmailRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_EmailRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(EmailRequest* other);
   friend void swap(EmailRequest& a, EmailRequest& b) {
@@ -1279,7 +1451,7 @@ class EmailBlastRequest : public ::google::protobuf::Message /* @@protoc_inserti
                &_EmailBlastRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(EmailBlastRequest* other);
   friend void swap(EmailBlastRequest& a, EmailBlastRequest& b) {
@@ -1414,7 +1586,7 @@ class EmailBlast : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_EmailBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(EmailBlast* other);
   friend void swap(EmailBlast& a, EmailBlast& b) {
@@ -1562,7 +1734,7 @@ class Email : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Email_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   void Swap(Email* other);
   friend void swap(Email& a, Email& b) {
@@ -1723,7 +1895,7 @@ class Call : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Call_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Call* other);
   friend void swap(Call& a, Call& b) {
@@ -1858,7 +2030,7 @@ class CallBlast : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_CallBlast_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(CallBlast* other);
   friend void swap(CallBlast& a, CallBlast& b) {
@@ -1993,7 +2165,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -2344,7 +2516,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(Identity* other);
   friend void swap(Identity& a, Identity& b) {
@@ -2486,7 +2658,7 @@ class Auth : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Auth_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(Auth* other);
   friend void swap(Auth& a, Auth& b) {
@@ -2608,7 +2780,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -2782,7 +2954,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -2891,7 +3063,7 @@ class RenderRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_RenderRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(RenderRequest* other);
   friend void swap(RenderRequest& a, RenderRequest& b) {
@@ -3026,7 +3198,7 @@ class SearchPhoneNumberRequest : public ::google::protobuf::Message /* @@protoc_
                &_SearchPhoneNumberRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(SearchPhoneNumberRequest* other);
   friend void swap(SearchPhoneNumberRequest& a, SearchPhoneNumberRequest& b) {
@@ -3161,7 +3333,7 @@ class PhoneNumber : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_PhoneNumber_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(PhoneNumber* other);
   friend void swap(PhoneNumber& a, PhoneNumber& b) {
@@ -3309,7 +3481,7 @@ class NumberCapabilities : public ::google::protobuf::Message /* @@protoc_insert
                &_NumberCapabilities_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(NumberCapabilities* other);
   friend void swap(NumberCapabilities& a, NumberCapabilities& b) {
@@ -3426,7 +3598,7 @@ class PhoneNumberResource : public ::google::protobuf::Message /* @@protoc_inser
                &_PhoneNumberResource_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(PhoneNumberResource* other);
   friend void swap(PhoneNumberResource& a, PhoneNumberResource& b) {
@@ -3561,7 +3733,7 @@ class TokenQuery : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_TokenQuery_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(TokenQuery* other);
   friend void swap(TokenQuery& a, TokenQuery& b) {
@@ -3683,7 +3855,7 @@ class IDBody : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_IDBody_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(IDBody* other);
   friend void swap(IDBody& a, IDBody& b) {
@@ -3805,7 +3977,7 @@ class IDStrings : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_IDStrings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(IDStrings* other);
   friend void swap(IDStrings& a, IDStrings& b) {
@@ -3927,7 +4099,7 @@ class Role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Role_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(Role* other);
   friend void swap(Role& a, Role& b) {
@@ -4062,7 +4234,7 @@ class CallResponse : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_CallResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(CallResponse* other);
   friend void swap(CallResponse& a, CallResponse& b) {
@@ -4262,7 +4434,7 @@ class SMSResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_SMSResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(SMSResponse* other);
   friend void swap(SMSResponse& a, SMSResponse& b) {
@@ -4449,7 +4621,7 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
                &_SubscriptionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   void Swap(SubscriptionResponse* other);
   friend void swap(SubscriptionResponse& a, SubscriptionResponse& b) {
@@ -4630,7 +4802,7 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_FaxResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   void Swap(FaxResponse* other);
   friend void swap(FaxResponse& a, FaxResponse& b) {
@@ -4776,38 +4948,38 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// FaxRequest
+// Fax
 
 // .common.String to = 1;
-inline bool FaxRequest::has_to() const {
+inline bool Fax::has_to() const {
   return this != internal_default_instance() && to_ != NULL;
 }
-inline const ::common::String& FaxRequest::_internal_to() const {
+inline const ::common::String& Fax::_internal_to() const {
   return *to_;
 }
-inline const ::common::String& FaxRequest::to() const {
+inline const ::common::String& Fax::to() const {
   const ::common::String* p = to_;
-  // @@protoc_insertion_point(field_get:api.FaxRequest.to)
+  // @@protoc_insertion_point(field_get:api.Fax.to)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* FaxRequest::release_to() {
-  // @@protoc_insertion_point(field_release:api.FaxRequest.to)
+inline ::common::String* Fax::release_to() {
+  // @@protoc_insertion_point(field_release:api.Fax.to)
   
   ::common::String* temp = to_;
   to_ = NULL;
   return temp;
 }
-inline ::common::String* FaxRequest::mutable_to() {
+inline ::common::String* Fax::mutable_to() {
   
   if (to_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     to_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.FaxRequest.to)
+  // @@protoc_insertion_point(field_mutable:api.Fax.to)
   return to_;
 }
-inline void FaxRequest::set_allocated_to(::common::String* to) {
+inline void Fax::set_allocated_to(::common::String* to) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(to_);
@@ -4823,39 +4995,39 @@ inline void FaxRequest::set_allocated_to(::common::String* to) {
     
   }
   to_ = to;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.to)
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.to)
 }
 
 // .common.String from = 2;
-inline bool FaxRequest::has_from() const {
+inline bool Fax::has_from() const {
   return this != internal_default_instance() && from_ != NULL;
 }
-inline const ::common::String& FaxRequest::_internal_from() const {
+inline const ::common::String& Fax::_internal_from() const {
   return *from_;
 }
-inline const ::common::String& FaxRequest::from() const {
+inline const ::common::String& Fax::from() const {
   const ::common::String* p = from_;
-  // @@protoc_insertion_point(field_get:api.FaxRequest.from)
+  // @@protoc_insertion_point(field_get:api.Fax.from)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* FaxRequest::release_from() {
-  // @@protoc_insertion_point(field_release:api.FaxRequest.from)
+inline ::common::String* Fax::release_from() {
+  // @@protoc_insertion_point(field_release:api.Fax.from)
   
   ::common::String* temp = from_;
   from_ = NULL;
   return temp;
 }
-inline ::common::String* FaxRequest::mutable_from() {
+inline ::common::String* Fax::mutable_from() {
   
   if (from_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     from_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.FaxRequest.from)
+  // @@protoc_insertion_point(field_mutable:api.Fax.from)
   return from_;
 }
-inline void FaxRequest::set_allocated_from(::common::String* from) {
+inline void Fax::set_allocated_from(::common::String* from) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(from_);
@@ -4871,39 +5043,39 @@ inline void FaxRequest::set_allocated_from(::common::String* from) {
     
   }
   from_ = from;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.from)
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.from)
 }
 
 // .common.String media_url = 3;
-inline bool FaxRequest::has_media_url() const {
+inline bool Fax::has_media_url() const {
   return this != internal_default_instance() && media_url_ != NULL;
 }
-inline const ::common::String& FaxRequest::_internal_media_url() const {
+inline const ::common::String& Fax::_internal_media_url() const {
   return *media_url_;
 }
-inline const ::common::String& FaxRequest::media_url() const {
+inline const ::common::String& Fax::media_url() const {
   const ::common::String* p = media_url_;
-  // @@protoc_insertion_point(field_get:api.FaxRequest.media_url)
+  // @@protoc_insertion_point(field_get:api.Fax.media_url)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* FaxRequest::release_media_url() {
-  // @@protoc_insertion_point(field_release:api.FaxRequest.media_url)
+inline ::common::String* Fax::release_media_url() {
+  // @@protoc_insertion_point(field_release:api.Fax.media_url)
   
   ::common::String* temp = media_url_;
   media_url_ = NULL;
   return temp;
 }
-inline ::common::String* FaxRequest::mutable_media_url() {
+inline ::common::String* Fax::mutable_media_url() {
   
   if (media_url_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     media_url_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.FaxRequest.media_url)
+  // @@protoc_insertion_point(field_mutable:api.Fax.media_url)
   return media_url_;
 }
-inline void FaxRequest::set_allocated_media_url(::common::String* media_url) {
+inline void Fax::set_allocated_media_url(::common::String* media_url) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(media_url_);
@@ -4919,39 +5091,39 @@ inline void FaxRequest::set_allocated_media_url(::common::String* media_url) {
     
   }
   media_url_ = media_url;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.media_url)
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.media_url)
 }
 
 // .common.String quality = 4;
-inline bool FaxRequest::has_quality() const {
+inline bool Fax::has_quality() const {
   return this != internal_default_instance() && quality_ != NULL;
 }
-inline const ::common::String& FaxRequest::_internal_quality() const {
+inline const ::common::String& Fax::_internal_quality() const {
   return *quality_;
 }
-inline const ::common::String& FaxRequest::quality() const {
+inline const ::common::String& Fax::quality() const {
   const ::common::String* p = quality_;
-  // @@protoc_insertion_point(field_get:api.FaxRequest.quality)
+  // @@protoc_insertion_point(field_get:api.Fax.quality)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* FaxRequest::release_quality() {
-  // @@protoc_insertion_point(field_release:api.FaxRequest.quality)
+inline ::common::String* Fax::release_quality() {
+  // @@protoc_insertion_point(field_release:api.Fax.quality)
   
   ::common::String* temp = quality_;
   quality_ = NULL;
   return temp;
 }
-inline ::common::String* FaxRequest::mutable_quality() {
+inline ::common::String* Fax::mutable_quality() {
   
   if (quality_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     quality_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.FaxRequest.quality)
+  // @@protoc_insertion_point(field_mutable:api.Fax.quality)
   return quality_;
 }
-inline void FaxRequest::set_allocated_quality(::common::String* quality) {
+inline void Fax::set_allocated_quality(::common::String* quality) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(quality_);
@@ -4967,39 +5139,39 @@ inline void FaxRequest::set_allocated_quality(::common::String* quality) {
     
   }
   quality_ = quality;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.quality)
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.quality)
 }
 
 // .common.String callback = 5;
-inline bool FaxRequest::has_callback() const {
+inline bool Fax::has_callback() const {
   return this != internal_default_instance() && callback_ != NULL;
 }
-inline const ::common::String& FaxRequest::_internal_callback() const {
+inline const ::common::String& Fax::_internal_callback() const {
   return *callback_;
 }
-inline const ::common::String& FaxRequest::callback() const {
+inline const ::common::String& Fax::callback() const {
   const ::common::String* p = callback_;
-  // @@protoc_insertion_point(field_get:api.FaxRequest.callback)
+  // @@protoc_insertion_point(field_get:api.Fax.callback)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* FaxRequest::release_callback() {
-  // @@protoc_insertion_point(field_release:api.FaxRequest.callback)
+inline ::common::String* Fax::release_callback() {
+  // @@protoc_insertion_point(field_release:api.Fax.callback)
   
   ::common::String* temp = callback_;
   callback_ = NULL;
   return temp;
 }
-inline ::common::String* FaxRequest::mutable_callback() {
+inline ::common::String* Fax::mutable_callback() {
   
   if (callback_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     callback_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.FaxRequest.callback)
+  // @@protoc_insertion_point(field_mutable:api.Fax.callback)
   return callback_;
 }
-inline void FaxRequest::set_allocated_callback(::common::String* callback) {
+inline void Fax::set_allocated_callback(::common::String* callback) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(callback_);
@@ -5015,21 +5187,279 @@ inline void FaxRequest::set_allocated_callback(::common::String* callback) {
     
   }
   callback_ = callback;
-  // @@protoc_insertion_point(field_set_allocated:api.FaxRequest.callback)
+  // @@protoc_insertion_point(field_set_allocated:api.Fax.callback)
 }
 
 // bool store_media = 6;
-inline void FaxRequest::clear_store_media() {
+inline void Fax::clear_store_media() {
   store_media_ = false;
 }
-inline bool FaxRequest::store_media() const {
-  // @@protoc_insertion_point(field_get:api.FaxRequest.store_media)
+inline bool Fax::store_media() const {
+  // @@protoc_insertion_point(field_get:api.Fax.store_media)
   return store_media_;
 }
-inline void FaxRequest::set_store_media(bool value) {
+inline void Fax::set_store_media(bool value) {
   
   store_media_ = value;
-  // @@protoc_insertion_point(field_set:api.FaxRequest.store_media)
+  // @@protoc_insertion_point(field_set:api.Fax.store_media)
+}
+
+// -------------------------------------------------------------------
+
+// FaxBlast
+
+// .common.StringArray to = 1;
+inline bool FaxBlast::has_to() const {
+  return this != internal_default_instance() && to_ != NULL;
+}
+inline const ::common::StringArray& FaxBlast::_internal_to() const {
+  return *to_;
+}
+inline const ::common::StringArray& FaxBlast::to() const {
+  const ::common::StringArray* p = to_;
+  // @@protoc_insertion_point(field_get:api.FaxBlast.to)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
+      &::common::_StringArray_default_instance_);
+}
+inline ::common::StringArray* FaxBlast::release_to() {
+  // @@protoc_insertion_point(field_release:api.FaxBlast.to)
+  
+  ::common::StringArray* temp = to_;
+  to_ = NULL;
+  return temp;
+}
+inline ::common::StringArray* FaxBlast::mutable_to() {
+  
+  if (to_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
+    to_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxBlast.to)
+  return to_;
+}
+inline void FaxBlast::set_allocated_to(::common::StringArray* to) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(to_);
+  }
+  if (to) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      to = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, to, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  to_ = to;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxBlast.to)
+}
+
+// .common.String from = 2;
+inline bool FaxBlast::has_from() const {
+  return this != internal_default_instance() && from_ != NULL;
+}
+inline const ::common::String& FaxBlast::_internal_from() const {
+  return *from_;
+}
+inline const ::common::String& FaxBlast::from() const {
+  const ::common::String* p = from_;
+  // @@protoc_insertion_point(field_get:api.FaxBlast.from)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxBlast::release_from() {
+  // @@protoc_insertion_point(field_release:api.FaxBlast.from)
+  
+  ::common::String* temp = from_;
+  from_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxBlast::mutable_from() {
+  
+  if (from_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    from_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxBlast.from)
+  return from_;
+}
+inline void FaxBlast::set_allocated_from(::common::String* from) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(from_);
+  }
+  if (from) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      from = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, from, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  from_ = from;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxBlast.from)
+}
+
+// .common.String media_url = 3;
+inline bool FaxBlast::has_media_url() const {
+  return this != internal_default_instance() && media_url_ != NULL;
+}
+inline const ::common::String& FaxBlast::_internal_media_url() const {
+  return *media_url_;
+}
+inline const ::common::String& FaxBlast::media_url() const {
+  const ::common::String* p = media_url_;
+  // @@protoc_insertion_point(field_get:api.FaxBlast.media_url)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxBlast::release_media_url() {
+  // @@protoc_insertion_point(field_release:api.FaxBlast.media_url)
+  
+  ::common::String* temp = media_url_;
+  media_url_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxBlast::mutable_media_url() {
+  
+  if (media_url_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    media_url_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxBlast.media_url)
+  return media_url_;
+}
+inline void FaxBlast::set_allocated_media_url(::common::String* media_url) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(media_url_);
+  }
+  if (media_url) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      media_url = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, media_url, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  media_url_ = media_url;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxBlast.media_url)
+}
+
+// .common.String quality = 4;
+inline bool FaxBlast::has_quality() const {
+  return this != internal_default_instance() && quality_ != NULL;
+}
+inline const ::common::String& FaxBlast::_internal_quality() const {
+  return *quality_;
+}
+inline const ::common::String& FaxBlast::quality() const {
+  const ::common::String* p = quality_;
+  // @@protoc_insertion_point(field_get:api.FaxBlast.quality)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxBlast::release_quality() {
+  // @@protoc_insertion_point(field_release:api.FaxBlast.quality)
+  
+  ::common::String* temp = quality_;
+  quality_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxBlast::mutable_quality() {
+  
+  if (quality_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    quality_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxBlast.quality)
+  return quality_;
+}
+inline void FaxBlast::set_allocated_quality(::common::String* quality) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(quality_);
+  }
+  if (quality) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      quality = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, quality, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  quality_ = quality;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxBlast.quality)
+}
+
+// .common.String callback = 5;
+inline bool FaxBlast::has_callback() const {
+  return this != internal_default_instance() && callback_ != NULL;
+}
+inline const ::common::String& FaxBlast::_internal_callback() const {
+  return *callback_;
+}
+inline const ::common::String& FaxBlast::callback() const {
+  const ::common::String* p = callback_;
+  // @@protoc_insertion_point(field_get:api.FaxBlast.callback)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* FaxBlast::release_callback() {
+  // @@protoc_insertion_point(field_release:api.FaxBlast.callback)
+  
+  ::common::String* temp = callback_;
+  callback_ = NULL;
+  return temp;
+}
+inline ::common::String* FaxBlast::mutable_callback() {
+  
+  if (callback_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    callback_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.FaxBlast.callback)
+  return callback_;
+}
+inline void FaxBlast::set_allocated_callback(::common::String* callback) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(callback_);
+  }
+  if (callback) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      callback = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, callback, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  callback_ = callback;
+  // @@protoc_insertion_point(field_set_allocated:api.FaxBlast.callback)
+}
+
+// bool store_media = 6;
+inline void FaxBlast::clear_store_media() {
+  store_media_ = false;
+}
+inline bool FaxBlast::store_media() const {
+  // @@protoc_insertion_point(field_get:api.FaxBlast.store_media)
+  return store_media_;
+}
+inline void FaxBlast::set_store_media(bool value) {
+  
+  store_media_ = value;
+  // @@protoc_insertion_point(field_set:api.FaxBlast.store_media)
 }
 
 // -------------------------------------------------------------------
@@ -11009,6 +11439,8 @@ inline void FaxResponse::set_allocated_annotations(::common::StringMap* annotati
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

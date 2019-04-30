@@ -38,9 +38,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :scopes, :message, 4, "common.StringArray"
     optional :endpoint_params, :message, 5, "common.StringMap"
   end
-  add_message "common.Event" do
-    optional :annotations, :message, 10, "common.StringMap"
-  end
   add_message "common.Query" do
     optional :query, :message, 4, "common.String"
     optional :fields, :message, 5, "common.String"
@@ -60,7 +57,6 @@ module Common
   Float64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Float64").msgclass
   Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Token").msgclass
   Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Config").msgclass
-  Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Event").msgclass
   Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Query").msgclass
   TokenSet = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.TokenSet").msgclass
 end

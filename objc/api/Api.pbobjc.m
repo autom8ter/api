@@ -93,9 +93,9 @@ BOOL Plan_IsValidValue(int32_t value__) {
   }
 }
 
-#pragma mark - FaxRequest
+#pragma mark - Fax
 
-@implementation FaxRequest
+@implementation Fax
 
 @dynamic hasTo, to;
 @dynamic hasFrom, from;
@@ -104,14 +104,14 @@ BOOL Plan_IsValidValue(int32_t value__) {
 @dynamic hasCallback, callback;
 @dynamic storeMedia;
 
-typedef struct FaxRequest__storage_ {
+typedef struct Fax__storage_ {
   uint32_t _has_storage_[1];
   String *to;
   String *from;
   String *mediaURL;
   String *quality;
   String *callback;
-} FaxRequest__storage_;
+} Fax__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -122,52 +122,52 @@ typedef struct FaxRequest__storage_ {
       {
         .name = "to",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = FaxRequest_FieldNumber_To,
+        .number = Fax_FieldNumber_To,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(FaxRequest__storage_, to),
+        .offset = (uint32_t)offsetof(Fax__storage_, to),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "from",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = FaxRequest_FieldNumber_From,
+        .number = Fax_FieldNumber_From,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(FaxRequest__storage_, from),
+        .offset = (uint32_t)offsetof(Fax__storage_, from),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "mediaURL",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = FaxRequest_FieldNumber_MediaURL,
+        .number = Fax_FieldNumber_MediaURL,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(FaxRequest__storage_, mediaURL),
+        .offset = (uint32_t)offsetof(Fax__storage_, mediaURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "quality",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = FaxRequest_FieldNumber_Quality,
+        .number = Fax_FieldNumber_Quality,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(FaxRequest__storage_, quality),
+        .offset = (uint32_t)offsetof(Fax__storage_, quality),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "callback",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = FaxRequest_FieldNumber_Callback,
+        .number = Fax_FieldNumber_Callback,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(FaxRequest__storage_, callback),
+        .offset = (uint32_t)offsetof(Fax__storage_, callback),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "storeMedia",
         .dataTypeSpecific.className = NULL,
-        .number = FaxRequest_FieldNumber_StoreMedia,
+        .number = Fax_FieldNumber_StoreMedia,
         .hasIndex = 5,
         .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = GPBFieldOptional,
@@ -175,12 +175,114 @@ typedef struct FaxRequest__storage_ {
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[FaxRequest class]
+        [GPBDescriptor allocDescriptorForClass:[Fax class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(FaxRequest__storage_)
+                                   storageSize:sizeof(Fax__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\003\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - FaxBlast
+
+@implementation FaxBlast
+
+@dynamic hasTo, to;
+@dynamic hasFrom, from;
+@dynamic hasMediaURL, mediaURL;
+@dynamic hasQuality, quality;
+@dynamic hasCallback, callback;
+@dynamic storeMedia;
+
+typedef struct FaxBlast__storage_ {
+  uint32_t _has_storage_[1];
+  StringArray *to;
+  String *from;
+  String *mediaURL;
+  String *quality;
+  String *callback;
+} FaxBlast__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "to",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
+        .number = FaxBlast_FieldNumber_To,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(FaxBlast__storage_, to),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "from",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxBlast_FieldNumber_From,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(FaxBlast__storage_, from),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "mediaURL",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxBlast_FieldNumber_MediaURL,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(FaxBlast__storage_, mediaURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "quality",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxBlast_FieldNumber_Quality,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(FaxBlast__storage_, quality),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "callback",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = FaxBlast_FieldNumber_Callback,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(FaxBlast__storage_, callback),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "storeMedia",
+        .dataTypeSpecific.className = NULL,
+        .number = FaxBlast_FieldNumber_StoreMedia,
+        .hasIndex = 5,
+        .offset = 6,  // Stored in _has_storage_ to save space.
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBool,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[FaxBlast class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(FaxBlast__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =

@@ -9,13 +9,6 @@ It translates gRPC into RESTful JSON APIs.
 ## Usage
 
 ```go
-var (
-	DEFAULT_OAUTH_REDIRECT = common.ToString("http://localhost:8080/callback")
-	DEFAULT_OAUTH_SCOPES   = []Scope{Scope_OPENID, Scope_PROFILE, Scope_EMAIL}
-)
-```
-
-```go
 var Plan_name = map[int32]string{
 	0: "FREE",
 	1: "BASIC",
@@ -212,7 +205,7 @@ func (m *Auth) GetTokenSet() *common.TokenSet
 #### func (*Auth) JSONString
 
 ```go
-func (p *Auth) JSONString() (*common.String, error)
+func (p *Auth) JSONString() *common.String
 ```
 
 #### func (*Auth) ProtoMessage
@@ -231,6 +224,18 @@ func (m *Auth) Reset()
 
 ```go
 func (m *Auth) String() string
+```
+
+#### func (*Auth) UnmarshalJSONFrom
+
+```go
+func (p *Auth) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*Auth) UnmarshalProtoFrom
+
+```go
+func (p *Auth) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Auth) XXX_DiscardUnknown
@@ -301,6 +306,12 @@ func (m *Call) GetFrom() *common.String
 func (m *Call) GetTo() *common.String
 ```
 
+#### func (*Call) JSONString
+
+```go
+func (p *Call) JSONString(bits []byte) *common.String
+```
+
 #### func (*Call) ProtoMessage
 
 ```go
@@ -317,6 +328,12 @@ func (m *Call) Reset()
 
 ```go
 func (m *Call) String() string
+```
+
+#### func (*Call) UnmarshalProtoFrom
+
+```go
+func (p *Call) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Call) XXX_DiscardUnknown
@@ -511,7 +528,7 @@ func (m *CallResponse) GetTo() *common.String
 #### func (*CallResponse) JSONString
 
 ```go
-func (p *CallResponse) JSONString() (*common.String, error)
+func (p *CallResponse) JSONString() *common.String
 ```
 
 #### func (*CallResponse) ProtoMessage
@@ -530,6 +547,18 @@ func (m *CallResponse) Reset()
 
 ```go
 func (m *CallResponse) String() string
+```
+
+#### func (*CallResponse) UnmarshalJSONFrom
+
+```go
+func (p *CallResponse) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*CallResponse) UnmarshalProtoFrom
+
+```go
+func (p *CallResponse) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*CallResponse) XXX_DiscardUnknown
@@ -610,7 +639,7 @@ func (m *Card) GetNumber() *common.String
 #### func (*Card) JSONString
 
 ```go
-func (p *Card) JSONString() (*common.String, error)
+func (p *Card) JSONString() *common.String
 ```
 
 #### func (*Card) ProtoMessage
@@ -629,6 +658,12 @@ func (m *Card) Reset()
 
 ```go
 func (m *Card) String() string
+```
+
+#### func (*Card) UnmarshalJSONFrom
+
+```go
+func (p *Card) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*Card) XXX_DiscardUnknown
@@ -690,7 +725,8 @@ type ContactServiceClient interface {
 	SendEmailBlast(ctx context.Context, in *EmailBlastRequest, opts ...grpc.CallOption) (ContactService_SendEmailBlastClient, error)
 	SendCall(ctx context.Context, in *Call, opts ...grpc.CallOption) (*CallResponse, error)
 	SendCallBlast(ctx context.Context, in *CallBlast, opts ...grpc.CallOption) (ContactService_SendCallBlastClient, error)
-	SendFax(ctx context.Context, in *FaxRequest, opts ...grpc.CallOption) (*FaxResponse, error)
+	SendFax(ctx context.Context, in *Fax, opts ...grpc.CallOption) (*FaxResponse, error)
+	SendFaxBlast(ctx context.Context, in *FaxBlast, opts ...grpc.CallOption) (ContactService_SendFaxBlastClient, error)
 }
 ```
 
@@ -716,7 +752,8 @@ type ContactServiceServer interface {
 	SendEmailBlast(*EmailBlastRequest, ContactService_SendEmailBlastServer) error
 	SendCall(context.Context, *Call) (*CallResponse, error)
 	SendCallBlast(*CallBlast, ContactService_SendCallBlastServer) error
-	SendFax(context.Context, *FaxRequest) (*FaxResponse, error)
+	SendFax(context.Context, *Fax) (*FaxResponse, error)
+	SendFaxBlast(*FaxBlast, ContactService_SendFaxBlastServer) error
 }
 ```
 
@@ -757,6 +794,26 @@ type ContactService_SendEmailBlastClient interface {
 ```go
 type ContactService_SendEmailBlastServer interface {
 	Send(*common.String) error
+	grpc.ServerStream
+}
+```
+
+
+#### type ContactService_SendFaxBlastClient
+
+```go
+type ContactService_SendFaxBlastClient interface {
+	Recv() (*FaxResponse, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type ContactService_SendFaxBlastServer
+
+```go
+type ContactService_SendFaxBlastServer interface {
+	Send(*FaxResponse) error
 	grpc.ServerStream
 }
 ```
@@ -834,6 +891,12 @@ func (m *Email) GetPlain() *common.String
 func (m *Email) GetSubject() *common.String
 ```
 
+#### func (*Email) JSONString
+
+```go
+func (p *Email) JSONString(bits []byte) *common.String
+```
+
 #### func (*Email) ProtoMessage
 
 ```go
@@ -850,6 +913,12 @@ func (m *Email) Reset()
 
 ```go
 func (m *Email) String() string
+```
+
+#### func (*Email) UnmarshalProtoFrom
+
+```go
+func (p *Email) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Email) XXX_DiscardUnknown
@@ -1013,6 +1082,12 @@ func (m *EmailBlastRequest) GetFromEmail() *common.String
 func (m *EmailBlastRequest) GetFromName() *common.String
 ```
 
+#### func (*EmailBlastRequest) JSONString
+
+```go
+func (p *EmailBlastRequest) JSONString(bits []byte) *common.String
+```
+
 #### func (*EmailBlastRequest) ProtoMessage
 
 ```go
@@ -1029,6 +1104,12 @@ func (m *EmailBlastRequest) Reset()
 
 ```go
 func (m *EmailBlastRequest) String() string
+```
+
+#### func (*EmailBlastRequest) UnmarshalProtoFrom
+
+```go
+func (p *EmailBlastRequest) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*EmailBlastRequest) XXX_DiscardUnknown
@@ -1099,6 +1180,12 @@ func (m *EmailRequest) GetFromEmail() *common.String
 func (m *EmailRequest) GetFromName() *common.String
 ```
 
+#### func (*EmailRequest) JSONString
+
+```go
+func (p *EmailRequest) JSONString(bits []byte) *common.String
+```
+
 #### func (*EmailRequest) ProtoMessage
 
 ```go
@@ -1115,6 +1202,12 @@ func (m *EmailRequest) Reset()
 
 ```go
 func (m *EmailRequest) String() string
+```
+
+#### func (*EmailRequest) UnmarshalProtoFrom
+
+```go
+func (p *EmailRequest) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*EmailRequest) XXX_DiscardUnknown
@@ -1147,10 +1240,10 @@ func (m *EmailRequest) XXX_Size() int
 func (m *EmailRequest) XXX_Unmarshal(b []byte) error
 ```
 
-#### type FaxRequest
+#### type Fax
 
 ```go
-type FaxRequest struct {
+type Fax struct {
 	To                   *common.String `protobuf:"bytes,1,opt,name=to,proto3" json:"to,omitempty"`
 	From                 *common.String `protobuf:"bytes,2,opt,name=from,proto3" json:"from,omitempty"`
 	MediaUrl             *common.String `protobuf:"bytes,3,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
@@ -1164,94 +1257,225 @@ type FaxRequest struct {
 ```
 
 
-#### func (*FaxRequest) Descriptor
+#### func (*Fax) Descriptor
 
 ```go
-func (*FaxRequest) Descriptor() ([]byte, []int)
+func (*Fax) Descriptor() ([]byte, []int)
 ```
 
-#### func (*FaxRequest) GetCallback
+#### func (*Fax) GetCallback
 
 ```go
-func (m *FaxRequest) GetCallback() *common.String
+func (m *Fax) GetCallback() *common.String
 ```
 
-#### func (*FaxRequest) GetFrom
+#### func (*Fax) GetFrom
 
 ```go
-func (m *FaxRequest) GetFrom() *common.String
+func (m *Fax) GetFrom() *common.String
 ```
 
-#### func (*FaxRequest) GetMediaUrl
+#### func (*Fax) GetMediaUrl
 
 ```go
-func (m *FaxRequest) GetMediaUrl() *common.String
+func (m *Fax) GetMediaUrl() *common.String
 ```
 
-#### func (*FaxRequest) GetQuality
+#### func (*Fax) GetQuality
 
 ```go
-func (m *FaxRequest) GetQuality() *common.String
+func (m *Fax) GetQuality() *common.String
 ```
 
-#### func (*FaxRequest) GetStoreMedia
+#### func (*Fax) GetStoreMedia
 
 ```go
-func (m *FaxRequest) GetStoreMedia() bool
+func (m *Fax) GetStoreMedia() bool
 ```
 
-#### func (*FaxRequest) GetTo
+#### func (*Fax) GetTo
 
 ```go
-func (m *FaxRequest) GetTo() *common.String
+func (m *Fax) GetTo() *common.String
 ```
 
-#### func (*FaxRequest) ProtoMessage
+#### func (*Fax) JSONString
 
 ```go
-func (*FaxRequest) ProtoMessage()
+func (p *Fax) JSONString(bits []byte) *common.String
 ```
 
-#### func (*FaxRequest) Reset
+#### func (*Fax) ProtoMessage
 
 ```go
-func (m *FaxRequest) Reset()
+func (*Fax) ProtoMessage()
 ```
 
-#### func (*FaxRequest) String
+#### func (*Fax) Reset
 
 ```go
-func (m *FaxRequest) String() string
+func (m *Fax) Reset()
 ```
 
-#### func (*FaxRequest) XXX_DiscardUnknown
+#### func (*Fax) String
 
 ```go
-func (m *FaxRequest) XXX_DiscardUnknown()
+func (m *Fax) String() string
 ```
 
-#### func (*FaxRequest) XXX_Marshal
+#### func (*Fax) UnmarshalProtoFrom
 
 ```go
-func (m *FaxRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+func (p *Fax) UnmarshalProtoFrom(bits []byte) error
 ```
 
-#### func (*FaxRequest) XXX_Merge
+#### func (*Fax) XXX_DiscardUnknown
 
 ```go
-func (m *FaxRequest) XXX_Merge(src proto.Message)
+func (m *Fax) XXX_DiscardUnknown()
 ```
 
-#### func (*FaxRequest) XXX_Size
+#### func (*Fax) XXX_Marshal
 
 ```go
-func (m *FaxRequest) XXX_Size() int
+func (m *Fax) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*FaxRequest) XXX_Unmarshal
+#### func (*Fax) XXX_Merge
 
 ```go
-func (m *FaxRequest) XXX_Unmarshal(b []byte) error
+func (m *Fax) XXX_Merge(src proto.Message)
+```
+
+#### func (*Fax) XXX_Size
+
+```go
+func (m *Fax) XXX_Size() int
+```
+
+#### func (*Fax) XXX_Unmarshal
+
+```go
+func (m *Fax) XXX_Unmarshal(b []byte) error
+```
+
+#### type FaxBlast
+
+```go
+type FaxBlast struct {
+	To                   *common.StringArray `protobuf:"bytes,1,opt,name=to,proto3" json:"to,omitempty"`
+	From                 *common.String      `protobuf:"bytes,2,opt,name=from,proto3" json:"from,omitempty"`
+	MediaUrl             *common.String      `protobuf:"bytes,3,opt,name=media_url,json=mediaUrl,proto3" json:"media_url,omitempty"`
+	Quality              *common.String      `protobuf:"bytes,4,opt,name=quality,proto3" json:"quality,omitempty"`
+	Callback             *common.String      `protobuf:"bytes,5,opt,name=callback,proto3" json:"callback,omitempty"`
+	StoreMedia           bool                `protobuf:"varint,6,opt,name=store_media,json=storeMedia,proto3" json:"store_media,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
+}
+```
+
+
+#### func (*FaxBlast) Descriptor
+
+```go
+func (*FaxBlast) Descriptor() ([]byte, []int)
+```
+
+#### func (*FaxBlast) GetCallback
+
+```go
+func (m *FaxBlast) GetCallback() *common.String
+```
+
+#### func (*FaxBlast) GetFrom
+
+```go
+func (m *FaxBlast) GetFrom() *common.String
+```
+
+#### func (*FaxBlast) GetMediaUrl
+
+```go
+func (m *FaxBlast) GetMediaUrl() *common.String
+```
+
+#### func (*FaxBlast) GetQuality
+
+```go
+func (m *FaxBlast) GetQuality() *common.String
+```
+
+#### func (*FaxBlast) GetStoreMedia
+
+```go
+func (m *FaxBlast) GetStoreMedia() bool
+```
+
+#### func (*FaxBlast) GetTo
+
+```go
+func (m *FaxBlast) GetTo() *common.StringArray
+```
+
+#### func (*FaxBlast) JSONString
+
+```go
+func (p *FaxBlast) JSONString(bits []byte) *common.String
+```
+
+#### func (*FaxBlast) ProtoMessage
+
+```go
+func (*FaxBlast) ProtoMessage()
+```
+
+#### func (*FaxBlast) Reset
+
+```go
+func (m *FaxBlast) Reset()
+```
+
+#### func (*FaxBlast) String
+
+```go
+func (m *FaxBlast) String() string
+```
+
+#### func (*FaxBlast) UnmarshalProtoFrom
+
+```go
+func (p *FaxBlast) UnmarshalProtoFrom(bits []byte) error
+```
+
+#### func (*FaxBlast) XXX_DiscardUnknown
+
+```go
+func (m *FaxBlast) XXX_DiscardUnknown()
+```
+
+#### func (*FaxBlast) XXX_Marshal
+
+```go
+func (m *FaxBlast) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*FaxBlast) XXX_Merge
+
+```go
+func (m *FaxBlast) XXX_Merge(src proto.Message)
+```
+
+#### func (*FaxBlast) XXX_Size
+
+```go
+func (m *FaxBlast) XXX_Size() int
+```
+
+#### func (*FaxBlast) XXX_Unmarshal
+
+```go
+func (m *FaxBlast) XXX_Unmarshal(b []byte) error
 ```
 
 #### type FaxResponse
@@ -1313,6 +1537,12 @@ func (m *FaxResponse) GetStatus() *common.String
 func (m *FaxResponse) GetTo() *common.String
 ```
 
+#### func (*FaxResponse) JSONString
+
+```go
+func (p *FaxResponse) JSONString(bits []byte) *common.String
+```
+
 #### func (*FaxResponse) ProtoMessage
 
 ```go
@@ -1329,6 +1559,18 @@ func (m *FaxResponse) Reset()
 
 ```go
 func (m *FaxResponse) String() string
+```
+
+#### func (*FaxResponse) UnmarshalJSONFrom
+
+```go
+func (p *FaxResponse) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*FaxResponse) UnmarshalProtoFrom
+
+```go
+func (p *FaxResponse) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*FaxResponse) XXX_DiscardUnknown
@@ -1567,7 +1809,7 @@ func (m *Identity) GetUserId() *common.Identifier
 #### func (*Identity) JSONString
 
 ```go
-func (p *Identity) JSONString() (*common.String, error)
+func (p *Identity) JSONString() *common.String
 ```
 
 #### func (*Identity) ProtoMessage
@@ -1586,6 +1828,12 @@ func (m *Identity) Reset()
 
 ```go
 func (m *Identity) String() string
+```
+
+#### func (*Identity) UnmarshalJSONFrom
+
+```go
+func (p *Identity) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*Identity) XXX_DiscardUnknown
@@ -1680,7 +1928,7 @@ func (m *JSONWebKeys) GetX5C() *common.StringArray
 #### func (*JSONWebKeys) JSONString
 
 ```go
-func (p *JSONWebKeys) JSONString() (*common.String, error)
+func (p *JSONWebKeys) JSONString() *common.String
 ```
 
 #### func (*JSONWebKeys) ProtoMessage
@@ -1699,6 +1947,18 @@ func (m *JSONWebKeys) Reset()
 
 ```go
 func (m *JSONWebKeys) String() string
+```
+
+#### func (*JSONWebKeys) UnmarshalJSONFrom
+
+```go
+func (p *JSONWebKeys) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*JSONWebKeys) UnmarshalProtoFrom
+
+```go
+func (p *JSONWebKeys) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*JSONWebKeys) XXX_DiscardUnknown
@@ -1758,7 +2018,7 @@ func (m *Jwks) GetKeys() []*JSONWebKeys
 #### func (*Jwks) JSONString
 
 ```go
-func (p *Jwks) JSONString() (*common.String, error)
+func (p *Jwks) JSONString() *common.String
 ```
 
 #### func (*Jwks) ProtoMessage
@@ -1777,6 +2037,18 @@ func (m *Jwks) Reset()
 
 ```go
 func (m *Jwks) String() string
+```
+
+#### func (*Jwks) UnmarshalJSONFrom
+
+```go
+func (p *Jwks) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*Jwks) UnmarshalProtoFrom
+
+```go
+func (p *Jwks) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Jwks) XXX_DiscardUnknown
@@ -1998,7 +2270,7 @@ func (m *PhoneNumber) GetRegion() *common.String
 #### func (*PhoneNumber) JSONString
 
 ```go
-func (p *PhoneNumber) JSONString() (*common.String, error)
+func (p *PhoneNumber) JSONString() *common.String
 ```
 
 #### func (*PhoneNumber) ProtoMessage
@@ -2017,6 +2289,12 @@ func (m *PhoneNumber) Reset()
 
 ```go
 func (m *PhoneNumber) String() string
+```
+
+#### func (*PhoneNumber) UnmarshalJSONFrom
+
+```go
+func (p *PhoneNumber) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*PhoneNumber) XXX_DiscardUnknown
@@ -2090,7 +2368,7 @@ func (m *PhoneNumberResource) GetUri() *common.String
 #### func (*PhoneNumberResource) JSONString
 
 ```go
-func (p *PhoneNumberResource) JSONString() (*common.String, error)
+func (p *PhoneNumberResource) JSONString() *common.String
 ```
 
 #### func (*PhoneNumberResource) ProtoMessage
@@ -2109,6 +2387,12 @@ func (m *PhoneNumberResource) Reset()
 
 ```go
 func (m *PhoneNumberResource) String() string
+```
+
+#### func (*PhoneNumberResource) UnmarshalJSONFrom
+
+```go
+func (p *PhoneNumberResource) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*PhoneNumberResource) XXX_DiscardUnknown
@@ -2399,6 +2683,12 @@ func (m *SMS) GetService() *common.String
 func (m *SMS) GetTo() *common.String
 ```
 
+#### func (*SMS) JSONString
+
+```go
+func (p *SMS) JSONString(bits []byte) *common.String
+```
+
 #### func (*SMS) ProtoMessage
 
 ```go
@@ -2415,6 +2705,12 @@ func (m *SMS) Reset()
 
 ```go
 func (m *SMS) String() string
+```
+
+#### func (*SMS) UnmarshalProtoFrom
+
+```go
+func (p *SMS) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*SMS) XXX_DiscardUnknown
@@ -2623,7 +2919,7 @@ func (m *SMSResponse) GetTo() *common.String
 #### func (*SMSResponse) JSONString
 
 ```go
-func (p *SMSResponse) JSONString() (*common.String, error)
+func (p *SMSResponse) JSONString() *common.String
 ```
 
 #### func (*SMSResponse) ProtoMessage
@@ -2642,6 +2938,12 @@ func (m *SMSResponse) Reset()
 
 ```go
 func (m *SMSResponse) String() string
+```
+
+#### func (*SMSResponse) UnmarshalJSONFrom
+
+```go
+func (p *SMSResponse) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*SMSResponse) XXX_DiscardUnknown
@@ -2915,7 +3217,7 @@ func (m *SubscriptionResponse) GetUser() *User
 #### func (*SubscriptionResponse) JSONString
 
 ```go
-func (p *SubscriptionResponse) JSONString() (*common.String, error)
+func (p *SubscriptionResponse) JSONString() *common.String
 ```
 
 #### func (*SubscriptionResponse) ProtoMessage
@@ -2934,6 +3236,12 @@ func (m *SubscriptionResponse) Reset()
 
 ```go
 func (m *SubscriptionResponse) String() string
+```
+
+#### func (*SubscriptionResponse) UnmarshalJSONFrom
+
+```go
+func (p *SubscriptionResponse) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*SubscriptionResponse) XXX_DiscardUnknown
@@ -3000,7 +3308,7 @@ func (m *TokenQuery) GetToken() *common.Token
 #### func (*TokenQuery) JSONString
 
 ```go
-func (p *TokenQuery) JSONString() (*common.String, error)
+func (p *TokenQuery) JSONString() *common.String
 ```
 
 #### func (*TokenQuery) ProtoMessage
@@ -3019,6 +3327,18 @@ func (m *TokenQuery) Reset()
 
 ```go
 func (m *TokenQuery) String() string
+```
+
+#### func (*TokenQuery) UnmarshalJSONFrom
+
+```go
+func (p *TokenQuery) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*TokenQuery) UnmarshalProtoFrom
+
+```go
+func (p *TokenQuery) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*TokenQuery) XXX_DiscardUnknown
@@ -3297,7 +3617,7 @@ func (m *User) GetUserMetadata() *common.StringMap
 #### func (*User) JSONString
 
 ```go
-func (p *User) JSONString() (*common.String, error)
+func (p *User) JSONString() *common.String
 ```
 
 #### func (*User) ProtoMessage
@@ -3316,6 +3636,12 @@ func (m *User) Reset()
 
 ```go
 func (m *User) String() string
+```
+
+#### func (*User) UnmarshalJSONFrom
+
+```go
+func (p *User) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*User) XXX_DiscardUnknown

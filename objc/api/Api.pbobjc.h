@@ -83,20 +83,57 @@ BOOL Plan_IsValidValue(int32_t value);
 @interface ApiRoot : GPBRootObject
 @end
 
-#pragma mark - FaxRequest
+#pragma mark - Fax
 
-typedef GPB_ENUM(FaxRequest_FieldNumber) {
-  FaxRequest_FieldNumber_To = 1,
-  FaxRequest_FieldNumber_From = 2,
-  FaxRequest_FieldNumber_MediaURL = 3,
-  FaxRequest_FieldNumber_Quality = 4,
-  FaxRequest_FieldNumber_Callback = 5,
-  FaxRequest_FieldNumber_StoreMedia = 6,
+typedef GPB_ENUM(Fax_FieldNumber) {
+  Fax_FieldNumber_To = 1,
+  Fax_FieldNumber_From = 2,
+  Fax_FieldNumber_MediaURL = 3,
+  Fax_FieldNumber_Quality = 4,
+  Fax_FieldNumber_Callback = 5,
+  Fax_FieldNumber_StoreMedia = 6,
 };
 
-@interface FaxRequest : GPBMessage
+@interface Fax : GPBMessage
 
 @property(nonatomic, readwrite, strong, null_resettable) String *to;
+/** Test to see if @c to has been set. */
+@property(nonatomic, readwrite) BOOL hasTo;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *from;
+/** Test to see if @c from has been set. */
+@property(nonatomic, readwrite) BOOL hasFrom;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *mediaURL;
+/** Test to see if @c mediaURL has been set. */
+@property(nonatomic, readwrite) BOOL hasMediaURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *quality;
+/** Test to see if @c quality has been set. */
+@property(nonatomic, readwrite) BOOL hasQuality;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *callback;
+/** Test to see if @c callback has been set. */
+@property(nonatomic, readwrite) BOOL hasCallback;
+
+@property(nonatomic, readwrite) BOOL storeMedia;
+
+@end
+
+#pragma mark - FaxBlast
+
+typedef GPB_ENUM(FaxBlast_FieldNumber) {
+  FaxBlast_FieldNumber_To = 1,
+  FaxBlast_FieldNumber_From = 2,
+  FaxBlast_FieldNumber_MediaURL = 3,
+  FaxBlast_FieldNumber_Quality = 4,
+  FaxBlast_FieldNumber_Callback = 5,
+  FaxBlast_FieldNumber_StoreMedia = 6,
+};
+
+@interface FaxBlast : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *to;
 /** Test to see if @c to has been set. */
 @property(nonatomic, readwrite) BOOL hasTo;
 

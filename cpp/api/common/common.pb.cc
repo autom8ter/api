@@ -78,11 +78,6 @@ class ConfigDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<Config>
       _instance;
 } _Config_default_instance_;
-class EventDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Event>
-      _instance;
-} _Event_default_instance_;
 class QueryDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Query>
@@ -247,21 +242,6 @@ static void InitDefaultsConfig() {
       &protobuf_common_2fcommon_2eproto::scc_info_StringArray.base,
       &protobuf_common_2fcommon_2eproto::scc_info_StringMap.base,}};
 
-static void InitDefaultsEvent() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::common::_Event_default_instance_;
-    new (ptr) ::common::Event();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::common::Event::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_Event =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEvent}, {
-      &protobuf_common_2fcommon_2eproto::scc_info_StringMap.base,}};
-
 static void InitDefaultsQuery() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -317,13 +297,12 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Float64.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Token.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Config.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Event.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Query.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TokenSet_TokensEntry_DoNotUse.base);
   ::google::protobuf::internal::InitSCC(&scc_info_TokenSet.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[14];
+::google::protobuf::Metadata file_level_metadata[13];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -397,12 +376,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, scopes_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, endpoint_params_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Event, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Event, annotations_),
-  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Query, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -436,10 +409,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 44, -1, sizeof(::common::Float64)},
   { 50, -1, sizeof(::common::Token)},
   { 60, -1, sizeof(::common::Config)},
-  { 70, -1, sizeof(::common::Event)},
-  { 76, -1, sizeof(::common::Query)},
-  { 83, 90, sizeof(::common::TokenSet_TokensEntry_DoNotUse)},
-  { 92, -1, sizeof(::common::TokenSet)},
+  { 70, -1, sizeof(::common::Query)},
+  { 77, 84, sizeof(::common::TokenSet_TokensEntry_DoNotUse)},
+  { 86, -1, sizeof(::common::TokenSet)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -453,7 +425,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::common::_Float64_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::common::_Token_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::common::_Config_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::common::_Event_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::common::_Query_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::common::_TokenSet_TokensEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::common::_TokenSet_default_instance_),
@@ -474,7 +445,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 14);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
 }
 
 void AddDescriptorsImpl() {
@@ -498,16 +469,15 @@ void AddDescriptorsImpl() {
       "String\022!\n\ttoken_url\030\003 \001(\0132\016.common.Strin"
       "g\022#\n\006scopes\030\004 \001(\0132\023.common.StringArray\022*"
       "\n\017endpoint_params\030\005 \001(\0132\021.common.StringM"
-      "ap\"/\n\005Event\022&\n\013annotations\030\n \001(\0132\021.commo"
-      "n.StringMap\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.co"
-      "mmon.String\022\036\n\006fields\030\005 \001(\0132\016.common.Str"
-      "ing\"v\n\010TokenSet\022,\n\006tokens\030\001 \003(\0132\034.common"
-      ".TokenSet.TokensEntry\032<\n\013TokensEntry\022\013\n\003"
-      "key\030\001 \001(\t\022\034\n\005value\030\002 \001(\0132\r.common.Token:"
-      "\0028\001b\006proto3"
+      "ap\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.common.Stri"
+      "ng\022\036\n\006fields\030\005 \001(\0132\016.common.String\"v\n\010To"
+      "kenSet\022,\n\006tokens\030\001 \003(\0132\034.common.TokenSet"
+      ".TokensEntry\032<\n\013TokensEntry\022\013\n\003key\030\001 \001(\t"
+      "\022\034\n\005value\030\002 \001(\0132\r.common.Token:\0028\001b\006prot"
+      "o3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 971);
+      descriptor, 922);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "common/common.proto", &protobuf_RegisterTypes);
 }
@@ -3064,240 +3034,6 @@ void Config::InternalSwap(Config* other) {
 
 // ===================================================================
 
-void Event::InitAsDefaultInstance() {
-  ::common::_Event_default_instance_._instance.get_mutable()->annotations_ = const_cast< ::common::StringMap*>(
-      ::common::StringMap::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Event::kAnnotationsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Event::Event()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_common_2fcommon_2eproto::scc_info_Event.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:common.Event)
-}
-Event::Event(const Event& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_annotations()) {
-    annotations_ = new ::common::StringMap(*from.annotations_);
-  } else {
-    annotations_ = NULL;
-  }
-  // @@protoc_insertion_point(copy_constructor:common.Event)
-}
-
-void Event::SharedCtor() {
-  annotations_ = NULL;
-}
-
-Event::~Event() {
-  // @@protoc_insertion_point(destructor:common.Event)
-  SharedDtor();
-}
-
-void Event::SharedDtor() {
-  if (this != internal_default_instance()) delete annotations_;
-}
-
-void Event::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Event::descriptor() {
-  ::protobuf_common_2fcommon_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_common_2fcommon_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const Event& Event::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_common_2fcommon_2eproto::scc_info_Event.base);
-  return *internal_default_instance();
-}
-
-
-void Event::Clear() {
-// @@protoc_insertion_point(message_clear_start:common.Event)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (GetArenaNoVirtual() == NULL && annotations_ != NULL) {
-    delete annotations_;
-  }
-  annotations_ = NULL;
-  _internal_metadata_.Clear();
-}
-
-bool Event::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:common.Event)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .common.StringMap annotations = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_annotations()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:common.Event)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:common.Event)
-  return false;
-#undef DO_
-}
-
-void Event::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:common.Event)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .common.StringMap annotations = 10;
-  if (this->has_annotations()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      10, this->_internal_annotations(), output);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:common.Event)
-}
-
-::google::protobuf::uint8* Event::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:common.Event)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .common.StringMap annotations = 10;
-  if (this->has_annotations()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        10, this->_internal_annotations(), deterministic, target);
-  }
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:common.Event)
-  return target;
-}
-
-size_t Event::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:common.Event)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  // .common.StringMap annotations = 10;
-  if (this->has_annotations()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *annotations_);
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Event::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:common.Event)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Event* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Event>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:common.Event)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:common.Event)
-    MergeFrom(*source);
-  }
-}
-
-void Event::MergeFrom(const Event& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:common.Event)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from.has_annotations()) {
-    mutable_annotations()->::common::StringMap::MergeFrom(from.annotations());
-  }
-}
-
-void Event::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:common.Event)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Event::CopyFrom(const Event& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:common.Event)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Event::IsInitialized() const {
-  return true;
-}
-
-void Event::Swap(Event* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Event::InternalSwap(Event* other) {
-  using std::swap;
-  swap(annotations_, other->annotations_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata Event::GetMetadata() const {
-  protobuf_common_2fcommon_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_common_2fcommon_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void Query::InitAsDefaultInstance() {
   ::common::_Query_default_instance_._instance.get_mutable()->query_ = const_cast< ::common::String*>(
       ::common::String::internal_default_instance());
@@ -3590,7 +3326,7 @@ void TokenSet_TokensEntry_DoNotUse::MergeFrom(const TokenSet_TokensEntry_DoNotUs
 }
 ::google::protobuf::Metadata TokenSet_TokensEntry_DoNotUse::GetMetadata() const {
   ::protobuf_common_2fcommon_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_common_2fcommon_2eproto::file_level_metadata[12];
+  return ::protobuf_common_2fcommon_2eproto::file_level_metadata[11];
 }
 void TokenSet_TokensEntry_DoNotUse::MergeFrom(
     const ::google::protobuf::Message& other) {
@@ -3959,9 +3695,6 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::common::Token* Arena::CreateMayb
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::common::Config* Arena::CreateMaybeMessage< ::common::Config >(Arena* arena) {
   return Arena::CreateInternal< ::common::Config >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::common::Event* Arena::CreateMaybeMessage< ::common::Event >(Arena* arena) {
-  return Arena::CreateInternal< ::common::Event >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::common::Query* Arena::CreateMaybeMessage< ::common::Query >(Arena* arena) {
   return Arena::CreateInternal< ::common::Query >(arena);

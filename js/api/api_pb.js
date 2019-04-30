@@ -22,7 +22,8 @@ goog.exportSymbol('proto.api.Email', null, global);
 goog.exportSymbol('proto.api.EmailBlast', null, global);
 goog.exportSymbol('proto.api.EmailBlastRequest', null, global);
 goog.exportSymbol('proto.api.EmailRequest', null, global);
-goog.exportSymbol('proto.api.FaxRequest', null, global);
+goog.exportSymbol('proto.api.Fax', null, global);
+goog.exportSymbol('proto.api.FaxBlast', null, global);
 goog.exportSymbol('proto.api.FaxResponse', null, global);
 goog.exportSymbol('proto.api.IDBody', null, global);
 goog.exportSymbol('proto.api.IDStrings', null, global);
@@ -55,12 +56,12 @@ goog.exportSymbol('proto.api.User', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.FaxRequest = function(opt_data) {
+proto.api.Fax = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.FaxRequest, jspb.Message);
+goog.inherits(proto.api.Fax, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.FaxRequest.displayName = 'proto.api.FaxRequest';
+  proto.api.Fax.displayName = 'proto.api.Fax';
 }
 
 
@@ -75,8 +76,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.FaxRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.FaxRequest.toObject(opt_includeInstance, this);
+proto.api.Fax.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.Fax.toObject(opt_includeInstance, this);
 };
 
 
@@ -85,11 +86,11 @@ proto.api.FaxRequest.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.FaxRequest} msg The msg instance to transform.
+ * @param {!proto.api.Fax} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.FaxRequest.toObject = function(includeInstance, msg) {
+proto.api.Fax.toObject = function(includeInstance, msg) {
   var f, obj = {
     to: (f = msg.getTo()) && common_common_pb.String.toObject(includeInstance, f),
     from: (f = msg.getFrom()) && common_common_pb.String.toObject(includeInstance, f),
@@ -110,23 +111,23 @@ proto.api.FaxRequest.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.FaxRequest}
+ * @return {!proto.api.Fax}
  */
-proto.api.FaxRequest.deserializeBinary = function(bytes) {
+proto.api.Fax.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.FaxRequest;
-  return proto.api.FaxRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.Fax;
+  return proto.api.Fax.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.FaxRequest} msg The message object to deserialize into.
+ * @param {!proto.api.Fax} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.FaxRequest}
+ * @return {!proto.api.Fax}
  */
-proto.api.FaxRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.Fax.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -175,9 +176,9 @@ proto.api.FaxRequest.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.FaxRequest.prototype.serializeBinary = function() {
+proto.api.Fax.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.FaxRequest.serializeBinaryToWriter(this, writer);
+  proto.api.Fax.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -185,11 +186,11 @@ proto.api.FaxRequest.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.FaxRequest} message
+ * @param {!proto.api.Fax} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.FaxRequest.serializeBinaryToWriter = function(message, writer) {
+proto.api.Fax.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getTo();
   if (f != null) {
@@ -245,19 +246,19 @@ proto.api.FaxRequest.serializeBinaryToWriter = function(message, writer) {
  * optional common.String to = 1;
  * @return {?proto.common.String}
  */
-proto.api.FaxRequest.prototype.getTo = function() {
+proto.api.Fax.prototype.getTo = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 1));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.FaxRequest.prototype.setTo = function(value) {
+proto.api.Fax.prototype.setTo = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-proto.api.FaxRequest.prototype.clearTo = function() {
+proto.api.Fax.prototype.clearTo = function() {
   this.setTo(undefined);
 };
 
@@ -266,7 +267,7 @@ proto.api.FaxRequest.prototype.clearTo = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.FaxRequest.prototype.hasTo = function() {
+proto.api.Fax.prototype.hasTo = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -275,19 +276,19 @@ proto.api.FaxRequest.prototype.hasTo = function() {
  * optional common.String from = 2;
  * @return {?proto.common.String}
  */
-proto.api.FaxRequest.prototype.getFrom = function() {
+proto.api.Fax.prototype.getFrom = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 2));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.FaxRequest.prototype.setFrom = function(value) {
+proto.api.Fax.prototype.setFrom = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
 
-proto.api.FaxRequest.prototype.clearFrom = function() {
+proto.api.Fax.prototype.clearFrom = function() {
   this.setFrom(undefined);
 };
 
@@ -296,7 +297,7 @@ proto.api.FaxRequest.prototype.clearFrom = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.FaxRequest.prototype.hasFrom = function() {
+proto.api.Fax.prototype.hasFrom = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -305,19 +306,19 @@ proto.api.FaxRequest.prototype.hasFrom = function() {
  * optional common.String media_url = 3;
  * @return {?proto.common.String}
  */
-proto.api.FaxRequest.prototype.getMediaUrl = function() {
+proto.api.Fax.prototype.getMediaUrl = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 3));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.FaxRequest.prototype.setMediaUrl = function(value) {
+proto.api.Fax.prototype.setMediaUrl = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
 
 
-proto.api.FaxRequest.prototype.clearMediaUrl = function() {
+proto.api.Fax.prototype.clearMediaUrl = function() {
   this.setMediaUrl(undefined);
 };
 
@@ -326,7 +327,7 @@ proto.api.FaxRequest.prototype.clearMediaUrl = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.FaxRequest.prototype.hasMediaUrl = function() {
+proto.api.Fax.prototype.hasMediaUrl = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -335,19 +336,19 @@ proto.api.FaxRequest.prototype.hasMediaUrl = function() {
  * optional common.String quality = 4;
  * @return {?proto.common.String}
  */
-proto.api.FaxRequest.prototype.getQuality = function() {
+proto.api.Fax.prototype.getQuality = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 4));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.FaxRequest.prototype.setQuality = function(value) {
+proto.api.Fax.prototype.setQuality = function(value) {
   jspb.Message.setWrapperField(this, 4, value);
 };
 
 
-proto.api.FaxRequest.prototype.clearQuality = function() {
+proto.api.Fax.prototype.clearQuality = function() {
   this.setQuality(undefined);
 };
 
@@ -356,7 +357,7 @@ proto.api.FaxRequest.prototype.clearQuality = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.FaxRequest.prototype.hasQuality = function() {
+proto.api.Fax.prototype.hasQuality = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -365,19 +366,19 @@ proto.api.FaxRequest.prototype.hasQuality = function() {
  * optional common.String callback = 5;
  * @return {?proto.common.String}
  */
-proto.api.FaxRequest.prototype.getCallback = function() {
+proto.api.Fax.prototype.getCallback = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 5));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.FaxRequest.prototype.setCallback = function(value) {
+proto.api.Fax.prototype.setCallback = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
 
 
-proto.api.FaxRequest.prototype.clearCallback = function() {
+proto.api.Fax.prototype.clearCallback = function() {
   this.setCallback(undefined);
 };
 
@@ -386,7 +387,7 @@ proto.api.FaxRequest.prototype.clearCallback = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.FaxRequest.prototype.hasCallback = function() {
+proto.api.Fax.prototype.hasCallback = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -397,13 +398,377 @@ proto.api.FaxRequest.prototype.hasCallback = function() {
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
-proto.api.FaxRequest.prototype.getStoreMedia = function() {
+proto.api.Fax.prototype.getStoreMedia = function() {
   return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
 };
 
 
 /** @param {boolean} value */
-proto.api.FaxRequest.prototype.setStoreMedia = function(value) {
+proto.api.Fax.prototype.setStoreMedia = function(value) {
+  jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.FaxBlast = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.FaxBlast, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.api.FaxBlast.displayName = 'proto.api.FaxBlast';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.FaxBlast.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.FaxBlast.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.FaxBlast} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.FaxBlast.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    to: (f = msg.getTo()) && common_common_pb.StringArray.toObject(includeInstance, f),
+    from: (f = msg.getFrom()) && common_common_pb.String.toObject(includeInstance, f),
+    mediaUrl: (f = msg.getMediaUrl()) && common_common_pb.String.toObject(includeInstance, f),
+    quality: (f = msg.getQuality()) && common_common_pb.String.toObject(includeInstance, f),
+    callback: (f = msg.getCallback()) && common_common_pb.String.toObject(includeInstance, f),
+    storeMedia: jspb.Message.getFieldWithDefault(msg, 6, false)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.FaxBlast}
+ */
+proto.api.FaxBlast.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.FaxBlast;
+  return proto.api.FaxBlast.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.FaxBlast} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.FaxBlast}
+ */
+proto.api.FaxBlast.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_common_pb.StringArray;
+      reader.readMessage(value,common_common_pb.StringArray.deserializeBinaryFromReader);
+      msg.setTo(value);
+      break;
+    case 2:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setFrom(value);
+      break;
+    case 3:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setMediaUrl(value);
+      break;
+    case 4:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setQuality(value);
+      break;
+    case 5:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setCallback(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setStoreMedia(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.FaxBlast.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.FaxBlast.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.FaxBlast} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.FaxBlast.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTo();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      common_common_pb.StringArray.serializeBinaryToWriter
+    );
+  }
+  f = message.getFrom();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getMediaUrl();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getQuality();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getCallback();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getStoreMedia();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional common.StringArray to = 1;
+ * @return {?proto.common.StringArray}
+ */
+proto.api.FaxBlast.prototype.getTo = function() {
+  return /** @type{?proto.common.StringArray} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.StringArray, 1));
+};
+
+
+/** @param {?proto.common.StringArray|undefined} value */
+proto.api.FaxBlast.prototype.setTo = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.api.FaxBlast.prototype.clearTo = function() {
+  this.setTo(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.FaxBlast.prototype.hasTo = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional common.String from = 2;
+ * @return {?proto.common.String}
+ */
+proto.api.FaxBlast.prototype.getFrom = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 2));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.FaxBlast.prototype.setFrom = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.api.FaxBlast.prototype.clearFrom = function() {
+  this.setFrom(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.FaxBlast.prototype.hasFrom = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional common.String media_url = 3;
+ * @return {?proto.common.String}
+ */
+proto.api.FaxBlast.prototype.getMediaUrl = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 3));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.FaxBlast.prototype.setMediaUrl = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.api.FaxBlast.prototype.clearMediaUrl = function() {
+  this.setMediaUrl(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.FaxBlast.prototype.hasMediaUrl = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional common.String quality = 4;
+ * @return {?proto.common.String}
+ */
+proto.api.FaxBlast.prototype.getQuality = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 4));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.FaxBlast.prototype.setQuality = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.api.FaxBlast.prototype.clearQuality = function() {
+  this.setQuality(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.FaxBlast.prototype.hasQuality = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional common.String callback = 5;
+ * @return {?proto.common.String}
+ */
+proto.api.FaxBlast.prototype.getCallback = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 5));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.FaxBlast.prototype.setCallback = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.api.FaxBlast.prototype.clearCallback = function() {
+  this.setCallback(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.FaxBlast.prototype.hasCallback = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool store_media = 6;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.api.FaxBlast.prototype.getStoreMedia = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 6, false));
+};
+
+
+/** @param {boolean} value */
+proto.api.FaxBlast.prototype.setStoreMedia = function(value) {
   jspb.Message.setProto3BooleanField(this, 6, value);
 };
 

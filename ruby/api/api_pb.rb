@@ -6,8 +6,16 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "api.FaxRequest" do
+  add_message "api.Fax" do
     optional :to, :message, 1, "common.String"
+    optional :from, :message, 2, "common.String"
+    optional :media_url, :message, 3, "common.String"
+    optional :quality, :message, 4, "common.String"
+    optional :callback, :message, 5, "common.String"
+    optional :store_media, :bool, 6
+  end
+  add_message "api.FaxBlast" do
+    optional :to, :message, 1, "common.StringArray"
     optional :from, :message, 2, "common.String"
     optional :media_url, :message, 3, "common.String"
     optional :quality, :message, 4, "common.String"
@@ -209,7 +217,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
-  FaxRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxRequest").msgclass
+  Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
+  FaxBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxBlast").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass

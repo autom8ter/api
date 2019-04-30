@@ -201,20 +201,6 @@ typedef GPB_ENUM(Config_FieldNumber) {
 
 @end
 
-#pragma mark - Event
-
-typedef GPB_ENUM(Event_FieldNumber) {
-  Event_FieldNumber_Annotations = 10,
-};
-
-@interface Event : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
-/** Test to see if @c annotations has been set. */
-@property(nonatomic, readwrite) BOOL hasAnnotations;
-
-@end
-
 #pragma mark - Query
 
 typedef GPB_ENUM(Query_FieldNumber) {

@@ -41,7 +41,7 @@ namespace protobuf_common_2fcommon_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[14];
+  static const ::google::protobuf::internal::ParseTable schema[13];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -55,9 +55,6 @@ extern ConfigDefaultTypeInternal _Config_default_instance_;
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
-class Event;
-class EventDefaultTypeInternal;
-extern EventDefaultTypeInternal _Event_default_instance_;
 class Float64;
 class Float64DefaultTypeInternal;
 extern Float64DefaultTypeInternal _Float64_default_instance_;
@@ -96,7 +93,6 @@ namespace google {
 namespace protobuf {
 template<> ::common::Config* Arena::CreateMaybeMessage<::common::Config>(Arena*);
 template<> ::common::Empty* Arena::CreateMaybeMessage<::common::Empty>(Arena*);
-template<> ::common::Event* Arena::CreateMaybeMessage<::common::Event>(Arena*);
 template<> ::common::Float64* Arena::CreateMaybeMessage<::common::Float64>(Arena*);
 template<> ::common::Identifier* Arena::CreateMaybeMessage<::common::Identifier>(Arena*);
 template<> ::common::Int64* Arena::CreateMaybeMessage<::common::Int64>(Arena*);
@@ -1200,115 +1196,6 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 };
 // -------------------------------------------------------------------
 
-class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Event) */ {
- public:
-  Event();
-  virtual ~Event();
-
-  Event(const Event& from);
-
-  inline Event& operator=(const Event& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Event(Event&& from) noexcept
-    : Event() {
-    *this = ::std::move(from);
-  }
-
-  inline Event& operator=(Event&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Event& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Event* internal_default_instance() {
-    return reinterpret_cast<const Event*>(
-               &_Event_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  void Swap(Event* other);
-  friend void swap(Event& a, Event& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Event* New() const final {
-    return CreateMaybeMessage<Event>(NULL);
-  }
-
-  Event* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Event>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Event& from);
-  void MergeFrom(const Event& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Event* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.StringMap annotations = 10;
-  bool has_annotations() const;
-  void clear_annotations();
-  static const int kAnnotationsFieldNumber = 10;
-  private:
-  const ::common::StringMap& _internal_annotations() const;
-  public:
-  const ::common::StringMap& annotations() const;
-  ::common::StringMap* release_annotations();
-  ::common::StringMap* mutable_annotations();
-  void set_allocated_annotations(::common::StringMap* annotations);
-
-  // @@protoc_insertion_point(class_scope:common.Event)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::StringMap* annotations_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Query) */ {
  public:
   Query();
@@ -1344,7 +1231,7 @@ class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Query_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(Query* other);
   friend void swap(Query& a, Query& b) {
@@ -1487,7 +1374,7 @@ class TokenSet : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_TokenSet_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   void Swap(TokenSet* other);
   friend void swap(TokenSet& a, TokenSet& b) {
@@ -2332,64 +2219,6 @@ inline void Config::set_allocated_endpoint_params(::common::StringMap* endpoint_
 
 // -------------------------------------------------------------------
 
-// Event
-
-// .common.StringMap annotations = 10;
-inline bool Event::has_annotations() const {
-  return this != internal_default_instance() && annotations_ != NULL;
-}
-inline void Event::clear_annotations() {
-  if (GetArenaNoVirtual() == NULL && annotations_ != NULL) {
-    delete annotations_;
-  }
-  annotations_ = NULL;
-}
-inline const ::common::StringMap& Event::_internal_annotations() const {
-  return *annotations_;
-}
-inline const ::common::StringMap& Event::annotations() const {
-  const ::common::StringMap* p = annotations_;
-  // @@protoc_insertion_point(field_get:common.Event.annotations)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
-      &::common::_StringMap_default_instance_);
-}
-inline ::common::StringMap* Event::release_annotations() {
-  // @@protoc_insertion_point(field_release:common.Event.annotations)
-  
-  ::common::StringMap* temp = annotations_;
-  annotations_ = NULL;
-  return temp;
-}
-inline ::common::StringMap* Event::mutable_annotations() {
-  
-  if (annotations_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
-    annotations_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.annotations)
-  return annotations_;
-}
-inline void Event::set_allocated_annotations(::common::StringMap* annotations) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete annotations_;
-  }
-  if (annotations) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      annotations = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, annotations, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  annotations_ = annotations;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.annotations)
-}
-
-// -------------------------------------------------------------------
-
 // Query
 
 // .common.String query = 4;
@@ -2527,8 +2356,6 @@ TokenSet::mutable_tokens() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

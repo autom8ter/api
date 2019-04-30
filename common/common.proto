@@ -44,10 +44,6 @@ message Config {
     common.StringMap endpoint_params=5;
 }
 
-message Event {
-    common.StringMap annotations=10;
-}
-
 message Query {
     common.String query=4;
     common.String fields=5;

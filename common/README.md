@@ -188,78 +188,6 @@ func (m *Empty) XXX_Size() int
 func (m *Empty) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Event
-
-```go
-type Event struct {
-	Annotations          *StringMap `protobuf:"bytes,10,opt,name=annotations,proto3" json:"annotations,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
-	XXX_unrecognized     []byte     `json:"-"`
-	XXX_sizecache        int32      `json:"-"`
-}
-```
-
-
-#### func (*Event) Descriptor
-
-```go
-func (*Event) Descriptor() ([]byte, []int)
-```
-
-#### func (*Event) GetAnnotations
-
-```go
-func (m *Event) GetAnnotations() *StringMap
-```
-
-#### func (*Event) ProtoMessage
-
-```go
-func (*Event) ProtoMessage()
-```
-
-#### func (*Event) Reset
-
-```go
-func (m *Event) Reset()
-```
-
-#### func (*Event) String
-
-```go
-func (m *Event) String() string
-```
-
-#### func (*Event) XXX_DiscardUnknown
-
-```go
-func (m *Event) XXX_DiscardUnknown()
-```
-
-#### func (*Event) XXX_Marshal
-
-```go
-func (m *Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Event) XXX_Merge
-
-```go
-func (m *Event) XXX_Merge(src proto.Message)
-```
-
-#### func (*Event) XXX_Size
-
-```go
-func (m *Event) XXX_Size() int
-```
-
-#### func (*Event) XXX_Unmarshal
-
-```go
-func (m *Event) XXX_Unmarshal(b []byte) error
-```
-
 #### type Float64
 
 ```go
@@ -383,6 +311,12 @@ func (m *Float64) GetNum() float64
 func (m *Float64) Humanized() *String
 ```
 
+#### func (*Float64) JSONString
+
+```go
+func (s *Float64) JSONString() *String
+```
+
 #### func (*Float64) Log
 
 ```go
@@ -411,12 +345,6 @@ func (m *Float64) Log2() *Float64
 
 ```go
 func (m *Float64) Logb() *Float64
-```
-
-#### func (*Float64) MarshalJSON
-
-```go
-func (s *Float64) MarshalJSON() []byte
 ```
 
 #### func (*Float64) Max
@@ -563,10 +491,16 @@ func (m *Float64) ToThePowerOf(f *Float64) *Float64
 func (s *Float64) TypeMatches(src interface{}) bool
 ```
 
-#### func (*Float64) UnmarshalJSON
+#### func (*Float64) UnmarshalJSONFrom
 
 ```go
-func (s *Float64) UnmarshalJSON(bits []byte) error
+func (s *Float64) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*Float64) UnmarshalProto
+
+```go
+func (s *Float64) UnmarshalProto(bits []byte) error
 ```
 
 #### func (*Float64) Validate
@@ -622,6 +556,30 @@ type Identifier struct {
 }
 ```
 
+
+#### func  EmailIdentifier
+
+```go
+func EmailIdentifier(email string) *Identifier
+```
+
+#### func  GenericIdentifier
+
+```go
+func GenericIdentifier(id string) *Identifier
+```
+
+#### func  NickNameIdentifier
+
+```go
+func NickNameIdentifier(id string) *Identifier
+```
+
+#### func  PhoneIdentifier
+
+```go
+func PhoneIdentifier(phone string) *Identifier
+```
 
 #### func (*Identifier) Descriptor
 
@@ -743,10 +701,10 @@ func (m *Int64) Humanized() *String
 func (i *Int64) Int() int
 ```
 
-#### func (*Int64) MarshalJSON
+#### func (*Int64) JSONString
 
 ```go
-func (s *Int64) MarshalJSON() []byte
+func (s *Int64) JSONString() *String
 ```
 
 #### func (*Int64) Minus
@@ -815,10 +773,16 @@ func (s *Int64) ToString() *String
 func (s *Int64) TypeMatches(src interface{}) bool
 ```
 
-#### func (*Int64) UnmarshalJSON
+#### func (*Int64) UnmarshalJSONFrom
 
 ```go
-func (s *Int64) UnmarshalJSON(bits []byte) error
+func (s *Int64) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*Int64) UnmarshalProto
+
+```go
+func (s *Int64) UnmarshalProto(bits []byte) error
 ```
 
 #### func (*Int64) Validate
@@ -1152,10 +1116,10 @@ func (s *String) IsEmpty() bool
 func (m *String) IsTemplate() bool
 ```
 
-#### func (*String) MarshalJSON
+#### func (*String) JSONString
 
 ```go
-func (s *String) MarshalJSON() []byte
+func (s *String) JSONString() *String
 ```
 
 #### func (*String) Matches
@@ -1386,10 +1350,10 @@ func (s *String) TrimWhiteSpace()
 func (s *String) TypeMatches(src interface{}) bool
 ```
 
-#### func (*String) UnmarshalJSON
+#### func (*String) UnmarshalJSONFrom
 
 ```go
-func (s *String) UnmarshalJSON(bits []byte) error
+func (s *String) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*String) Validate
@@ -1518,6 +1482,12 @@ func (m *StringArray) GetStrings() []*String
 func (m *StringArray) IsEmpty() bool
 ```
 
+#### func (*StringArray) JSONString
+
+```go
+func (s *StringArray) JSONString() *String
+```
+
 #### func (*StringArray) Last
 
 ```go
@@ -1528,12 +1498,6 @@ func (m *StringArray) Last() *String
 
 ```go
 func (m *StringArray) Length() int
-```
-
-#### func (*StringArray) MarshalJSON
-
-```go
-func (s *StringArray) MarshalJSON() []byte
 ```
 
 #### func (*StringArray) Pointer
@@ -1584,10 +1548,16 @@ func (s *StringArray) ToContext(ctx context.Context, key string) context.Context
 func (s *StringArray) TypeMatches(src interface{}) bool
 ```
 
-#### func (*StringArray) UnmarshalJSON
+#### func (*StringArray) UnmarshalJSONFrom
 
 ```go
-func (s *StringArray) UnmarshalJSON(bits []byte) error
+func (s *StringArray) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*StringArray) UnmarshalProtoFrom
+
+```go
+func (s *StringArray) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*StringArray) Validate
@@ -1686,16 +1656,16 @@ func (s *StringMap) Get(key string) *String
 func (m *StringMap) GetStringMap() map[string]*String
 ```
 
+#### func (*StringMap) JSONString
+
+```go
+func (s *StringMap) JSONString() *String
+```
+
 #### func (*StringMap) Keys
 
 ```go
 func (s *StringMap) Keys() *StringArray
-```
-
-#### func (*StringMap) MarshalJSON
-
-```go
-func (s *StringMap) MarshalJSON() []byte
 ```
 
 #### func (*StringMap) ProtoMessage
@@ -1740,10 +1710,16 @@ func (s *StringMap) TotalKeys() *Int64
 func (s *StringMap) TypeMatches(src interface{}) bool
 ```
 
-#### func (*StringMap) UnmarshalJSON
+#### func (*StringMap) UnmarshalJSONFrom
 
 ```go
-func (s *StringMap) UnmarshalJSON(bits []byte) error
+func (s *StringMap) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*StringMap) UnmarshalProtoFrom
+
+```go
+func (s *StringMap) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*StringMap) Validate
@@ -1882,10 +1858,16 @@ func (s *Token) ToContext(ctx context.Context, key string) context.Context
 func (s *Token) TypeMatches(src interface{}) bool
 ```
 
-#### func (*Token) UnmarshalJSON
+#### func (*Token) UnmarshalJSONFrom
 
 ```go
-func (s *Token) UnmarshalJSON(bits []byte) error
+func (s *Token) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*Token) UnmarshalProto
+
+```go
+func (s *Token) UnmarshalProto(bits []byte) error
 ```
 
 #### func (*Token) Validate
@@ -1966,16 +1948,16 @@ func (s *TokenSet) Get(key string) *Token
 func (m *TokenSet) GetTokens() map[string]*Token
 ```
 
+#### func (*TokenSet) JSONString
+
+```go
+func (s *TokenSet) JSONString() *String
+```
+
 #### func (*TokenSet) Length
 
 ```go
 func (s *TokenSet) Length() int
-```
-
-#### func (*TokenSet) MarshalJSON
-
-```go
-func (s *TokenSet) MarshalJSON() []byte
 ```
 
 #### func (*TokenSet) ProtoMessage
@@ -2002,10 +1984,16 @@ func (m *TokenSet) Reset()
 func (m *TokenSet) String() string
 ```
 
-#### func (*TokenSet) Unmrashal
+#### func (*TokenSet) UnmarshalJSONFrom
 
 ```go
-func (s *TokenSet) Unmrashal(b []byte) error
+func (s *TokenSet) UnmarshalJSONFrom(b []byte) error
+```
+
+#### func (*TokenSet) UnmarshalProto
+
+```go
+func (s *TokenSet) UnmarshalProto(b []byte) error
 ```
 
 #### func (*TokenSet) Validate

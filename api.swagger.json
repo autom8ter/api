@@ -119,6 +119,32 @@
         ]
       }
     },
+    "/contact/fax/blast": {
+      "post": {
+        "operationId": "SendFaxBlast",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiFaxResponse"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiFaxBlast"
+            }
+          }
+        ],
+        "tags": [
+          "ContactService"
+        ]
+      }
+    },
     "/contact/fax/send": {
       "post": {
         "operationId": "SendFax",
@@ -136,7 +162,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiFaxRequest"
+              "$ref": "#/definitions/apiFax"
             }
           }
         ],
@@ -754,11 +780,35 @@
         }
       }
     },
-    "apiFaxRequest": {
+    "apiFax": {
       "type": "object",
       "properties": {
         "to": {
           "$ref": "#/definitions/commonString"
+        },
+        "from": {
+          "$ref": "#/definitions/commonString"
+        },
+        "media_url": {
+          "$ref": "#/definitions/commonString"
+        },
+        "quality": {
+          "$ref": "#/definitions/commonString"
+        },
+        "callback": {
+          "$ref": "#/definitions/commonString"
+        },
+        "store_media": {
+          "type": "boolean",
+          "format": "boolean"
+        }
+      }
+    },
+    "apiFaxBlast": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "$ref": "#/definitions/commonStringArray"
         },
         "from": {
           "$ref": "#/definitions/commonString"
