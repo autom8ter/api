@@ -14,6 +14,7 @@ github.com/ajstarks/svgo v0.0.0-20180226025133-644b8db467af/go.mod h1:K08gAheRH3
 github.com/aokoli/goutils v0.0.0-20170502144750-e57d01ace047/go.mod h1:SijmP0QR8LtwsmDs8Yii5Z/S4trXFGFC2oO5g9DP+DQ=
 github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7 h1:irR1cO6eek3n5uquIVaRAsQmZnlsfPuHNz31cXo4eyk=
 github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7/go.mod h1:LWMyo4iOLWXHGdBki7NIht1kHru/0wM179h+d3g8ATM=
+github.com/autom8ter/gosaas v0.0.0-20190428070141-228ef91d5619 h1:ouqQ8BW9Byg+shNLTUL+EHw06x6MAeOVjIlgANvwpEk=
 github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668 h1:3+PxBykj/5xhhsKoaruZaBmV8Ljwt8TeZwheiRZwQK0=
 github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668/go.mod h1:QDG89tQ5IMIgKbHUWQRkvNU6es07XTThYY0QGY3w5as=
 github.com/autom8ter/objectify v0.0.0-20190422234248-2629fc698124 h1:07J3AV7/be8wcUM5KlDKjAa1Mk7fr2vWwnzQHAKeYLw=

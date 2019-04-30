@@ -41,6 +41,12 @@ type Config struct {
 ```
 
 
+#### func (*Config) ClientCredentials
+
+```go
+func (c *Config) ClientCredentials() *clientcredentials.Config
+```
+
 #### func (*Config) Debugf
 
 ```go
@@ -129,6 +135,12 @@ func (m *Config) String() string
 
 ```go
 func (s *Config) ToContext(ctx context.Context, key string) context.Context
+```
+
+#### func (*Config) Token
+
+```go
+func (c *Config) Token(code string) (*Token, error)
 ```
 
 #### func (*Config) UnmarshalJSONFrom

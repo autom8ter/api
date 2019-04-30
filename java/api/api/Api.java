@@ -39493,18 +39493,15 @@ public final class Api {
       "ment/number:\001*\022j\n\021SearchPhoneNumber\022\035.ap" +
       "i.SearchPhoneNumberRequest\032\020.api.PhoneNu" +
       "mber\"\"\202\323\344\223\002\034\"\027/payment/numbers/search:\001*" +
-      "0\0012\316\003\n\013UserService\022K\n\nQueryUsers\022\017.api.T" +
+      "0\0012\270\002\n\013UserService\022K\n\nQueryUsers\022\017.api.T" +
       "okenQuery\032\t.api.User\"\037\202\323\344\223\002\031\"\024/resource/" +
-      "user/query:\001*0\001\022D\n\nCreateUser\022\t.api.User" +
-      "\032\t.api.User\" \202\323\344\223\002\032\"\025/resource/user/crea" +
-      "te:\001*\022G\n\007GetUser\022\022.common.Identifier\032\t.a" +
-      "pi.User\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022N" +
-      "\n\nDeleteUser\022\022.common.Identifier\032\r.commo" +
-      "n.Empty\"\035\202\323\344\223\002\027\"\022/resource/user/get:\001*\022D" +
-      "\n\nUpdateUser\022\t.api.User\032\t.api.User\" \202\323\344\223" +
-      "\002\032\"\025/resource/user/update:\001*\022M\n\tUserRole" +
-      "s\022\022.common.Identifier\032\t.api.Role\"\037\202\323\344\223\002\031" +
-      "\"\024/resource/user/roles:\001*0\001b\006proto3"
+      "user/query:\001*0\001\022G\n\007GetUser\022\022.common.Iden" +
+      "tifier\032\t.api.User\"\035\202\323\344\223\002\027\"\022/resource/use" +
+      "r/get:\001*\022D\n\nUpdateUser\022\t.api.User\032\t.api." +
+      "User\" \202\323\344\223\002\032\"\025/resource/user/update:\001*\022M" +
+      "\n\tUserRoles\022\022.common.Identifier\032\t.api.Ro" +
+      "le\"\037\202\323\344\223\002\031\"\024/resource/user/roles:\001*0\001b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

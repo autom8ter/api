@@ -15,6 +15,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
 	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/clientcredentials"
 	"golang.org/x/text/language"
 	"html/template"
 	"io"
@@ -262,16 +263,36 @@ func TokenFromOAuthToken(tok *oauth2.Token) *Token {
 	}
 }
 
-func (c *Config) oauth(redirect string) *oauth2.Config {
-	return &oauth2.Config{
+func (c *Config) Token(code string) (*Token, error) {
+	a := &oauth2.Config{
 		ClientID:     c.ClientId.Text,
 		ClientSecret: c.ClientSecret.Text,
 		Endpoint: oauth2.Endpoint{
 			AuthURL:  c.AuthUrl.Text,
 			TokenURL: c.TokenUrl.Text,
 		},
-		RedirectURL: "",
-		Scopes:      nil,
+		RedirectURL: c.Redirect.Text,
+		Scopes:      c.Scopes.Array(),
+	}
+	tok, err := a.Exchange(context.TODO(), code)
+	if err != nil {
+		return nil, err
+	}
+	return TokenFromOAuthToken(tok), nil
+}
+
+func (c *Config) ClientCredentials() *clientcredentials.Config {
+	rl := url.Values{}
+	for k, v := range c.EndpointParams.StringMap {
+		rl.Set(k, v.Text)
+	}
+
+	return &clientcredentials.Config{
+		ClientID:       c.ClientId.Text,
+		ClientSecret:   c.ClientSecret.Text,
+		TokenURL:       c.TokenUrl.Text,
+		Scopes:         c.Scopes.Array(),
+		EndpointParams: rl,
 	}
 }
 

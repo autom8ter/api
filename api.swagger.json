@@ -353,40 +353,14 @@
         ]
       }
     },
-    "/resource/user/create": {
-      "post": {
-        "operationId": "CreateUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
     "/resource/user/get": {
       "post": {
-        "operationId": "DeleteUser",
+        "operationId": "GetUser",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/commonEmpty"
+              "$ref": "#/definitions/apiUser"
             }
           }
         },
@@ -1161,9 +1135,6 @@
           }
         }
       }
-    },
-    "commonEmpty": {
-      "type": "object"
     },
     "commonIdentifier": {
       "type": "object",

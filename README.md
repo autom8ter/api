@@ -2039,6 +2039,12 @@ func (m *Jwks) Reset()
 func (m *Jwks) String() string
 ```
 
+#### func (*Jwks) TokenCert
+
+```go
+func (c *Jwks) TokenCert(token *jwt.Token) (string, error)
+```
+
 #### func (*Jwks) UnmarshalJSONFrom
 
 ```go
@@ -3679,9 +3685,7 @@ func (m *User) XXX_Unmarshal(b []byte) error
 ```go
 type UserServiceClient interface {
 	QueryUsers(ctx context.Context, in *TokenQuery, opts ...grpc.CallOption) (UserService_QueryUsersClient, error)
-	CreateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
-	DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Empty, error)
 	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error)
 }
@@ -3703,9 +3707,7 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 ```go
 type UserServiceServer interface {
 	QueryUsers(*TokenQuery, UserService_QueryUsersServer) error
-	CreateUser(context.Context, *User) (*User, error)
 	GetUser(context.Context, *common.Identifier) (*User, error)
-	DeleteUser(context.Context, *common.Identifier) (*common.Empty, error)
 	UpdateUser(context.Context, *User) (*User, error)
 	UserRoles(*common.Identifier, UserService_UserRolesServer) error
 }

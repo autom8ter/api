@@ -4,7 +4,9 @@ package api
 
 import (
 	"encoding/json"
+	"errors"
 	"github.com/autom8ter/api/common"
+	"github.com/dgrijalva/jwt-go"
 	"github.com/golang/protobuf/proto"
 	"google.golang.org/grpc"
 )
@@ -204,4 +206,18 @@ func (p *EmailBlastRequest) UnmarshalProtoFrom(bits []byte) error {
 
 func (p *EmailRequest) UnmarshalProtoFrom(bits []byte) error {
 	return proto.Unmarshal(bits, p)
+}
+
+func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
+	var cert string
+	for k, _ := range c.Keys {
+		if token.Header["kid"] == c.Keys[k].Kid {
+			cert = "-----BEGIN CERTIFICATE-----\n" + c.Keys[k].X5C.Strings[0].Text + "\n-----END CERTIFICATE-----"
+		}
+	}
+	if cert == "" {
+		err := errors.New("Unable to find appropriate key.")
+		return cert, err
+	}
+	return cert, nil
 }

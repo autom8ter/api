@@ -136,24 +136,14 @@ service UserService {
       body: "*"
     };
     }
-    rpc CreateUser(User) returns (User) {
-        option (google.api.http) = {
-      post: "/resource/user/create"
-      body: "*"
-    };
-    }
+
     rpc GetUser(common.Identifier) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/get"
       body: "*"
     };
     }
-    rpc DeleteUser(common.Identifier) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/resource/user/get"
-      body: "*"
-    };
-    }
+
     rpc UpdateUser(User) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/update"

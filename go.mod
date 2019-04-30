@@ -4,6 +4,7 @@ require (
 	github.com/Masterminds/sprig v2.18.0+incompatible
 	github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668 // indirect
 	github.com/autom8ter/objectify v0.0.0-20190430052014-ea17e2f77231
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/dustin/go-humanize v1.0.0
 	github.com/go-redis/cache v6.3.5+incompatible // indirect
 	github.com/go-redis/redis v6.15.2+incompatible // indirect
