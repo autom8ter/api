@@ -413,51 +413,6 @@ func (c *OAuth2) PerRPCCredentials() (credentials.PerRPCCredentials, error) {
 	return oauth.NewOauthAccess(tok), nil
 }
 
-func (c *OAuth2) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
-	src := &oauth.TokenSource{
-		TokenSource: c,
-	}
-	m, err := src.GetRequestMetadata(ctx, uri...)
-	if err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *ClientCredentials) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
-	src := &oauth.TokenSource{
-		TokenSource: c,
-	}
-	m, err := src.GetRequestMetadata(ctx, uri...)
-	if err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *JWT) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error) {
-	src := &oauth.TokenSource{
-		TokenSource: c,
-	}
-	m, err := src.GetRequestMetadata(ctx, uri...)
-	if err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *JWT) RequireTransportSecurity() bool {
-	return true
-}
-
-func (c *ClientCredentials) RequireTransportSecurity() bool {
-	return true
-}
-
-func (c *OAuth2) RequireTransportSecurity() bool {
-	return true
-}
-
 func (c *ClientCredentials) Client(ctx context.Context) *http.Client {
 	return oauth2.NewClient(ctx, c)
 }
@@ -478,7 +433,11 @@ func (c *OAuth2) AuthCodeURL(state string, audience string) string {
 }
 
 func (c *JWT) NewAPIClientSet(addr string) (*ClientSet, error) {
-	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(c))
+	creds, err := c.PerRPCCredentials()
+	if err != nil {
+		return nil, err
+	}
+	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(creds))
 	if err != nil {
 		return nil, err
 	}
@@ -492,7 +451,11 @@ func (c *JWT) NewAPIClientSet(addr string) (*ClientSet, error) {
 }
 
 func (c *OAuth2) NewAPIClientSet(addr string) (*ClientSet, error) {
-	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(c))
+	creds, err := c.PerRPCCredentials()
+	if err != nil {
+		return nil, err
+	}
+	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(creds))
 	if err != nil {
 		return nil, err
 	}
@@ -506,10 +469,11 @@ func (c *OAuth2) NewAPIClientSet(addr string) (*ClientSet, error) {
 }
 
 func (c *ClientCredentials) NewAPIClientSet(addr string) (*ClientSet, error) {
-	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(c))
+	creds, err := c.PerRPCCredentials()
 	if err != nil {
 		return nil, err
 	}
+	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(creds))
 	return &ClientSet{
 		Utility:    NewUtilityServiceClient(conn),
 		Contact:    NewContactServiceClient(conn),
