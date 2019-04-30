@@ -504,3 +504,21 @@ func (s *User) DocName() string {
 func (s *User) DocData() map[string]interface{} {
 	return util.ToMap(s)
 }
+
+func (s *User) Update(data map[string]interface{}) (*User, error) {
+	d := s.DocData()
+	for k, v := range d {
+		for k2, v2 := range data {
+			if k == k2 {
+				d[k] = v2
+			} else {
+				d[k] = v
+			}
+
+		}
+
+	}
+	newUser := &User{}
+	err := s.UnmarshalJSONFrom(util.MarshalJSON(newUser))
+	return newUser, err
+}
