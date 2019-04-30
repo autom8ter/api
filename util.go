@@ -529,6 +529,10 @@ type ListUsersFunc func(e *common.Empty, stream DBService_ListUsersServer) error
 
 type DebugFunc func(ctx context.Context, s *common.String) (*common.String, error)
 
+func (d DebugFunc) RegisterWithServer(s *grpc.Server) {
+	RegisterDebugServiceServer(s, d)
+}
+
 func NewDebugFunc(fn func(ctx context.Context, s *common.String) (*common.String, error)) DebugFunc {
 	return fn
 }
@@ -568,5 +572,5 @@ func (d *Database) ListUsers(e *common.Empty, stream DBService_ListUsersServer) 
 
 
 func Serve(addr string, d *Database, e DebugFunc) error {
-	engine.Serve(addr, true, d, e)
+	return engine.Serve(addr, true, d, e)
 }
