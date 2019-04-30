@@ -18,6 +18,8 @@ github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7 h1:irR1cO6
 github.com/auth0/go-jwt-middleware v0.0.0-20170425171159-5493cabe49f7/go.mod h1:LWMyo4iOLWXHGdBki7NIht1kHru/0wM179h+d3g8ATM=
 github.com/autom8ter/engine v0.0.0-20190421032226-fadad0594395 h1:R35OfZLJfz27wMqnQ93mjpgbEfhIB/j49DczY5ap0Wc=
 github.com/autom8ter/engine v0.0.0-20190421032226-fadad0594395/go.mod h1:Ls37Jrvtcem1Or5jMi4xcj3Pnb89iYq3aojRyau96ng=
+github.com/autom8ter/engine v0.0.0-20190430234925-4b7713eeec35 h1:jgEGqHmuR0/S1b4uTqBMYkJ+AvYi3htKdmYd5hOSHjU=
+github.com/autom8ter/engine v0.0.0-20190430234925-4b7713eeec35/go.mod h1:qvY+IVapL3OaKlon9dBea65SIMuVLSHxp+Wk5xFwXrc=
 github.com/autom8ter/gosaas v0.0.0-20190428070141-228ef91d5619 h1:ouqQ8BW9Byg+shNLTUL+EHw06x6MAeOVjIlgANvwpEk=
 github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668 h1:3+PxBykj/5xhhsKoaruZaBmV8Ljwt8TeZwheiRZwQK0=
 github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668/go.mod h1:QDG89tQ5IMIgKbHUWQRkvNU6es07XTThYY0QGY3w5as=
