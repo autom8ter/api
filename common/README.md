@@ -30,8 +30,10 @@ type Config struct {
 	ClientId             *String      `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
 	ClientSecret         *String      `protobuf:"bytes,2,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
 	TokenUrl             *String      `protobuf:"bytes,3,opt,name=token_url,json=tokenUrl,proto3" json:"token_url,omitempty"`
-	Scopes               *StringArray `protobuf:"bytes,4,opt,name=scopes,proto3" json:"scopes,omitempty"`
-	EndpointParams       *StringMap   `protobuf:"bytes,5,opt,name=endpoint_params,json=endpointParams,proto3" json:"endpoint_params,omitempty"`
+	AuthUrl              *String      `protobuf:"bytes,4,opt,name=auth_url,json=authUrl,proto3" json:"auth_url,omitempty"`
+	Scopes               *StringArray `protobuf:"bytes,5,opt,name=scopes,proto3" json:"scopes,omitempty"`
+	Redirect             *String      `protobuf:"bytes,6,opt,name=redirect,proto3" json:"redirect,omitempty"`
+	EndpointParams       *StringMap   `protobuf:"bytes,7,opt,name=endpoint_params,json=endpointParams,proto3" json:"endpoint_params,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
 	XXX_unrecognized     []byte       `json:"-"`
 	XXX_sizecache        int32        `json:"-"`
@@ -39,10 +41,22 @@ type Config struct {
 ```
 
 
+#### func (*Config) Debugf
+
+```go
+func (s *Config) Debugf(format string)
+```
+
 #### func (*Config) Descriptor
 
 ```go
 func (*Config) Descriptor() ([]byte, []int)
+```
+
+#### func (*Config) GetAuthUrl
+
+```go
+func (m *Config) GetAuthUrl() *String
 ```
 
 #### func (*Config) GetClientId
@@ -63,10 +77,22 @@ func (m *Config) GetClientSecret() *String
 func (m *Config) GetEndpointParams() *StringMap
 ```
 
+#### func (*Config) GetRedirect
+
+```go
+func (m *Config) GetRedirect() *String
+```
+
 #### func (*Config) GetScopes
 
 ```go
 func (m *Config) GetScopes() *StringArray
+```
+
+#### func (*Config) GetToken
+
+```go
+func (c *Config) GetToken(tok *oauth2.Token) *Token
 ```
 
 #### func (*Config) GetTokenUrl
@@ -1941,6 +1967,12 @@ type TokenSet struct {
 }
 ```
 
+
+#### func (*TokenSet) Debugf
+
+```go
+func (s *TokenSet) Debugf(format string)
+```
 
 #### func (*TokenSet) DeepEqual
 
