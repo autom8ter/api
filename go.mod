@@ -2,6 +2,7 @@ module github.com/autom8ter/api
 
 require (
 	github.com/Masterminds/sprig v2.18.0+incompatible
+	github.com/autom8ter/engine v0.0.0-20190421032226-fadad0594395
 	github.com/autom8ter/oauth2 v0.0.0-20190423235527-47c4b4d63668 // indirect
 	github.com/autom8ter/objectify v0.0.0-20190430194927-911c01629753
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -15,7 +16,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway v1.8.5
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
 	github.com/pkg/errors v0.8.1
-	golang.org/x/net v0.0.0-20190311183353-d8887717615a
+	golang.org/x/net v0.0.0-20190324223953-e3b2ff56ed87
 	golang.org/x/oauth2 v0.0.0-20190402181905-9f3314589c9a
 	golang.org/x/text v0.3.2
 	gonum.org/v1/plot v0.0.0-20190410204940-3a5f52653745 // indirect

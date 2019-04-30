@@ -4,6 +4,8 @@ package api
 
 import (
 	"context"
+	"github.com/autom8ter/engine"
+	"github.com/autom8ter/engine/driver"
 	"encoding/json"
 	"errors"
 	"github.com/autom8ter/api/common"
@@ -527,6 +529,10 @@ type ListUsersFunc func(e *common.Empty, stream DBService_ListUsersServer) error
 
 type DebugFunc func(ctx context.Context, s *common.String) (*common.String, error)
 
+func NewDebugFunc(fn func(ctx context.Context, s *common.String) (*common.String, error)) DebugFunc {
+	return fn
+}
+
 func (d DebugFunc) Echo(ctx context.Context, s *common.String) (*common.String, error) {
 	return d.Echo(ctx, s)
 }
@@ -537,6 +543,7 @@ type Database struct {
 	UpdateUserFunc UpdateUserFunc
 	CreateUserFunc CreateUserFunc
 	ListUsersFunc  ListUsersFunc
+	driver.PluginFunc
 }
 
 func (d *Database) GetUser(ctx context.Context, email *common.Identifier) (*User, error) {
@@ -557,4 +564,9 @@ func (d *Database) CreateUser(ctx context.Context, u *User) (*User, error) {
 
 func (d *Database) ListUsers(e *common.Empty, stream DBService_ListUsersServer) error {
 	return d.ListUsersFunc(e, stream)
+}
+
+
+func Serve(addr string, d *Database, e DebugFunc) error {
+	engine.Serve(addr, true, d, e)
 }
