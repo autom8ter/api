@@ -5,12 +5,6 @@
 
 ## Usage
 
-```go
-var (
-	EnvContext context.Context
-)
-```
-
 #### func  FuncMap
 
 ```go
@@ -23,166 +17,76 @@ func FuncMap() template.FuncMap
 func ToError(err error, msg string) error
 ```
 
-#### type Config
+#### type AuthToken
 
 ```go
-type Config struct {
-	ClientId             *String      `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientSecret         *String      `protobuf:"bytes,2,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
-	TokenUrl             *String      `protobuf:"bytes,3,opt,name=token_url,json=tokenUrl,proto3" json:"token_url,omitempty"`
-	AuthUrl              *String      `protobuf:"bytes,4,opt,name=auth_url,json=authUrl,proto3" json:"auth_url,omitempty"`
-	Scopes               *StringArray `protobuf:"bytes,5,opt,name=scopes,proto3" json:"scopes,omitempty"`
-	Redirect             *String      `protobuf:"bytes,6,opt,name=redirect,proto3" json:"redirect,omitempty"`
-	EndpointParams       *StringMap   `protobuf:"bytes,7,opt,name=endpoint_params,json=endpointParams,proto3" json:"endpoint_params,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
-	XXX_unrecognized     []byte       `json:"-"`
-	XXX_sizecache        int32        `json:"-"`
+type AuthToken struct {
+	Token                *String  `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 ```
 
 
-#### func (*Config) ClientCredentials
+#### func (*AuthToken) Descriptor
 
 ```go
-func (c *Config) ClientCredentials() *clientcredentials.Config
+func (*AuthToken) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Config) Debugf
+#### func (*AuthToken) GetToken
 
 ```go
-func (s *Config) Debugf(format string)
+func (m *AuthToken) GetToken() *String
 ```
 
-#### func (*Config) Descriptor
+#### func (*AuthToken) ProtoMessage
 
 ```go
-func (*Config) Descriptor() ([]byte, []int)
+func (*AuthToken) ProtoMessage()
 ```
 
-#### func (*Config) GetAuthUrl
+#### func (*AuthToken) Reset
 
 ```go
-func (m *Config) GetAuthUrl() *String
+func (m *AuthToken) Reset()
 ```
 
-#### func (*Config) GetClientId
+#### func (*AuthToken) String
 
 ```go
-func (m *Config) GetClientId() *String
+func (m *AuthToken) String() string
 ```
 
-#### func (*Config) GetClientSecret
+#### func (*AuthToken) XXX_DiscardUnknown
 
 ```go
-func (m *Config) GetClientSecret() *String
+func (m *AuthToken) XXX_DiscardUnknown()
 ```
 
-#### func (*Config) GetEndpointParams
+#### func (*AuthToken) XXX_Marshal
 
 ```go
-func (m *Config) GetEndpointParams() *StringMap
+func (m *AuthToken) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*Config) GetRedirect
+#### func (*AuthToken) XXX_Merge
 
 ```go
-func (m *Config) GetRedirect() *String
+func (m *AuthToken) XXX_Merge(src proto.Message)
 ```
 
-#### func (*Config) GetScopes
+#### func (*AuthToken) XXX_Size
 
 ```go
-func (m *Config) GetScopes() *StringArray
+func (m *AuthToken) XXX_Size() int
 ```
 
-#### func (*Config) GetToken
+#### func (*AuthToken) XXX_Unmarshal
 
 ```go
-func (c *Config) GetToken(tok *oauth2.Token) *Token
-```
-
-#### func (*Config) GetTokenUrl
-
-```go
-func (m *Config) GetTokenUrl() *String
-```
-
-#### func (*Config) JSONString
-
-```go
-func (s *Config) JSONString() *String
-```
-
-#### func (*Config) ProtoMessage
-
-```go
-func (*Config) ProtoMessage()
-```
-
-#### func (*Config) Reset
-
-```go
-func (m *Config) Reset()
-```
-
-#### func (*Config) String
-
-```go
-func (m *Config) String() string
-```
-
-#### func (*Config) ToContext
-
-```go
-func (s *Config) ToContext(ctx context.Context, key string) context.Context
-```
-
-#### func (*Config) Token
-
-```go
-func (c *Config) Token(code string) (*Token, error)
-```
-
-#### func (*Config) UnmarshalJSONFrom
-
-```go
-func (s *Config) UnmarshalJSONFrom(b []byte) error
-```
-
-#### func (*Config) UnmarshalProtoFrom
-
-```go
-func (s *Config) UnmarshalProtoFrom(b []byte) error
-```
-
-#### func (*Config) XXX_DiscardUnknown
-
-```go
-func (m *Config) XXX_DiscardUnknown()
-```
-
-#### func (*Config) XXX_Marshal
-
-```go
-func (m *Config) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Config) XXX_Merge
-
-```go
-func (m *Config) XXX_Merge(src proto.Message)
-```
-
-#### func (*Config) XXX_Size
-
-```go
-func (m *Config) XXX_Size() int
-```
-
-#### func (*Config) XXX_Unmarshal
-
-```go
-func (m *Config) XXX_Unmarshal(b []byte) error
+func (m *AuthToken) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Empty
@@ -248,145 +152,6 @@ func (m *Empty) XXX_Size() int
 
 ```go
 func (m *Empty) XXX_Unmarshal(b []byte) error
-```
-
-#### type Event
-
-```go
-type Event struct {
-	Date                 *String  `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 *String  `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             *String  `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientName           *String  `protobuf:"bytes,4,opt,name=client_name,json=clientName,proto3" json:"client_name,omitempty"`
-	Ip                   *String  `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`
-	LocationInfo         *String  `protobuf:"bytes,6,opt,name=location_info,json=locationInfo,proto3" json:"location_info,omitempty"`
-	Details              *String  `protobuf:"bytes,7,opt,name=details,proto3" json:"details,omitempty"`
-	UserId               *String  `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*Event) Descriptor
-
-```go
-func (*Event) Descriptor() ([]byte, []int)
-```
-
-#### func (*Event) GetClientId
-
-```go
-func (m *Event) GetClientId() *String
-```
-
-#### func (*Event) GetClientName
-
-```go
-func (m *Event) GetClientName() *String
-```
-
-#### func (*Event) GetDate
-
-```go
-func (m *Event) GetDate() *String
-```
-
-#### func (*Event) GetDetails
-
-```go
-func (m *Event) GetDetails() *String
-```
-
-#### func (*Event) GetIp
-
-```go
-func (m *Event) GetIp() *String
-```
-
-#### func (*Event) GetLocationInfo
-
-```go
-func (m *Event) GetLocationInfo() *String
-```
-
-#### func (*Event) GetType
-
-```go
-func (m *Event) GetType() *String
-```
-
-#### func (*Event) GetUserId
-
-```go
-func (m *Event) GetUserId() *String
-```
-
-#### func (*Event) JSONString
-
-```go
-func (s *Event) JSONString() *String
-```
-
-#### func (*Event) ProtoMessage
-
-```go
-func (*Event) ProtoMessage()
-```
-
-#### func (*Event) Reset
-
-```go
-func (m *Event) Reset()
-```
-
-#### func (*Event) String
-
-```go
-func (m *Event) String() string
-```
-
-#### func (*Event) UnmarshalJSONfrom
-
-```go
-func (s *Event) UnmarshalJSONfrom(bits []byte) error
-```
-
-#### func (*Event) UnmarshalProtofrom
-
-```go
-func (s *Event) UnmarshalProtofrom(bits []byte) error
-```
-
-#### func (*Event) XXX_DiscardUnknown
-
-```go
-func (m *Event) XXX_DiscardUnknown()
-```
-
-#### func (*Event) XXX_Marshal
-
-```go
-func (m *Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Event) XXX_Merge
-
-```go
-func (m *Event) XXX_Merge(src proto.Message)
-```
-
-#### func (*Event) XXX_Size
-
-```go
-func (m *Event) XXX_Size() int
-```
-
-#### func (*Event) XXX_Unmarshal
-
-```go
-func (m *Event) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Float64
@@ -1020,85 +785,6 @@ func (m *Int64) XXX_Size() int
 
 ```go
 func (m *Int64) XXX_Unmarshal(b []byte) error
-```
-
-#### type Query
-
-```go
-type Query struct {
-	Query                *String  `protobuf:"bytes,4,opt,name=query,proto3" json:"query,omitempty"`
-	Fields               *String  `protobuf:"bytes,5,opt,name=fields,proto3" json:"fields,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func (*Query) Descriptor
-
-```go
-func (*Query) Descriptor() ([]byte, []int)
-```
-
-#### func (*Query) GetFields
-
-```go
-func (m *Query) GetFields() *String
-```
-
-#### func (*Query) GetQuery
-
-```go
-func (m *Query) GetQuery() *String
-```
-
-#### func (*Query) ProtoMessage
-
-```go
-func (*Query) ProtoMessage()
-```
-
-#### func (*Query) Reset
-
-```go
-func (m *Query) Reset()
-```
-
-#### func (*Query) String
-
-```go
-func (m *Query) String() string
-```
-
-#### func (*Query) XXX_DiscardUnknown
-
-```go
-func (m *Query) XXX_DiscardUnknown()
-```
-
-#### func (*Query) XXX_Marshal
-
-```go
-func (m *Query) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Query) XXX_Merge
-
-```go
-func (m *Query) XXX_Merge(src proto.Message)
-```
-
-#### func (*Query) XXX_Size
-
-```go
-func (m *Query) XXX_Size() int
-```
-
-#### func (*Query) XXX_Unmarshal
-
-```go
-func (m *Query) XXX_Unmarshal(b []byte) error
 ```
 
 #### type String
@@ -1957,290 +1643,4 @@ func (m *StringMap) XXX_Size() int
 
 ```go
 func (m *StringMap) XXX_Unmarshal(b []byte) error
-```
-
-#### type Token
-
-```go
-type Token struct {
-	AccessToken          *String  `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	TokenType            *String  `protobuf:"bytes,2,opt,name=token_type,json=tokenType,proto3" json:"token_type,omitempty"`
-	RefreshToken         *String  `protobuf:"bytes,3,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
-	Expiry               *String  `protobuf:"bytes,4,opt,name=expiry,proto3" json:"expiry,omitempty"`
-	IdToken              *String  `protobuf:"bytes,5,opt,name=id_token,json=idToken,proto3" json:"id_token,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-```
-
-
-#### func  TokenFromOAuthToken
-
-```go
-func TokenFromOAuthToken(tok *oauth2.Token) *Token
-```
-
-#### func (*Token) Debugf
-
-```go
-func (s *Token) Debugf(format string)
-```
-
-#### func (*Token) DeepEqual
-
-```go
-func (s *Token) DeepEqual(y interface{}) bool
-```
-
-#### func (*Token) Descriptor
-
-```go
-func (*Token) Descriptor() ([]byte, []int)
-```
-
-#### func (*Token) GetAccessToken
-
-```go
-func (m *Token) GetAccessToken() *String
-```
-
-#### func (*Token) GetExpiry
-
-```go
-func (m *Token) GetExpiry() *String
-```
-
-#### func (*Token) GetIdToken
-
-```go
-func (m *Token) GetIdToken() *String
-```
-
-#### func (*Token) GetRefreshToken
-
-```go
-func (m *Token) GetRefreshToken() *String
-```
-
-#### func (*Token) GetTokenType
-
-```go
-func (m *Token) GetTokenType() *String
-```
-
-#### func (*Token) ProtoMessage
-
-```go
-func (*Token) ProtoMessage()
-```
-
-#### func (*Token) Reset
-
-```go
-func (m *Token) Reset()
-```
-
-#### func (*Token) String
-
-```go
-func (m *Token) String() string
-```
-
-#### func (*Token) ToContext
-
-```go
-func (s *Token) ToContext(ctx context.Context, key string) context.Context
-```
-
-#### func (*Token) TypeMatches
-
-```go
-func (s *Token) TypeMatches(src interface{}) bool
-```
-
-#### func (*Token) UnmarshalJSONFrom
-
-```go
-func (s *Token) UnmarshalJSONFrom(bits []byte) error
-```
-
-#### func (*Token) UnmarshalProtoFrom
-
-```go
-func (s *Token) UnmarshalProtoFrom(bits []byte) error
-```
-
-#### func (*Token) Validate
-
-```go
-func (s *Token) Validate(fn func(s *Token) error) error
-```
-
-#### func (*Token) XXX_DiscardUnknown
-
-```go
-func (m *Token) XXX_DiscardUnknown()
-```
-
-#### func (*Token) XXX_Marshal
-
-```go
-func (m *Token) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Token) XXX_Merge
-
-```go
-func (m *Token) XXX_Merge(src proto.Message)
-```
-
-#### func (*Token) XXX_Size
-
-```go
-func (m *Token) XXX_Size() int
-```
-
-#### func (*Token) XXX_Unmarshal
-
-```go
-func (m *Token) XXX_Unmarshal(b []byte) error
-```
-
-#### type TokenSet
-
-```go
-type TokenSet struct {
-	Tokens               map[string]*Token `protobuf:"bytes,1,rep,name=tokens,proto3" json:"tokens,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-```
-
-
-#### func (*TokenSet) Debugf
-
-```go
-func (s *TokenSet) Debugf(format string)
-```
-
-#### func (*TokenSet) DeepEqual
-
-```go
-func (s *TokenSet) DeepEqual(y interface{}) bool
-```
-
-#### func (*TokenSet) Descriptor
-
-```go
-func (*TokenSet) Descriptor() ([]byte, []int)
-```
-
-#### func (*TokenSet) Exists
-
-```go
-func (s *TokenSet) Exists(key string) bool
-```
-
-#### func (*TokenSet) Get
-
-```go
-func (s *TokenSet) Get(key string) *Token
-```
-
-#### func (*TokenSet) GetTokens
-
-```go
-func (m *TokenSet) GetTokens() map[string]*Token
-```
-
-#### func (*TokenSet) JSONString
-
-```go
-func (s *TokenSet) JSONString() *String
-```
-
-#### func (*TokenSet) Length
-
-```go
-func (s *TokenSet) Length() int
-```
-
-#### func (*TokenSet) ProtoMessage
-
-```go
-func (*TokenSet) ProtoMessage()
-```
-
-#### func (*TokenSet) Put
-
-```go
-func (s *TokenSet) Put(key string, tok *Token)
-```
-
-#### func (*TokenSet) Reset
-
-```go
-func (m *TokenSet) Reset()
-```
-
-#### func (*TokenSet) String
-
-```go
-func (m *TokenSet) String() string
-```
-
-#### func (*TokenSet) ToContext
-
-```go
-func (s *TokenSet) ToContext(ctx context.Context, key string) context.Context
-```
-
-#### func (*TokenSet) UnmarshalJSONFrom
-
-```go
-func (s *TokenSet) UnmarshalJSONFrom(b []byte) error
-```
-
-#### func (*TokenSet) UnmarshalProtoFrom
-
-```go
-func (s *TokenSet) UnmarshalProtoFrom(b []byte) error
-```
-
-#### func (*TokenSet) Validate
-
-```go
-func (s *TokenSet) Validate(fn func(set *TokenSet) error) error
-```
-
-#### func (*TokenSet) XXX_DiscardUnknown
-
-```go
-func (m *TokenSet) XXX_DiscardUnknown()
-```
-
-#### func (*TokenSet) XXX_Marshal
-
-```go
-func (m *TokenSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*TokenSet) XXX_Merge
-
-```go
-func (m *TokenSet) XXX_Merge(src proto.Message)
-```
-
-#### func (*TokenSet) XXX_Size
-
-```go
-func (m *TokenSet) XXX_Size() int
-```
-
-#### func (*TokenSet) XXX_Unmarshal
-
-```go
-func (m *TokenSet) XXX_Unmarshal(b []byte) error
 ```

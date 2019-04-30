@@ -41,7 +41,7 @@ namespace protobuf_common_2fcommon_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[14];
+  static const ::google::protobuf::internal::ParseTable schema[9];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -49,15 +49,12 @@ struct TableStruct {
 void AddDescriptors();
 }  // namespace protobuf_common_2fcommon_2eproto
 namespace common {
-class Config;
-class ConfigDefaultTypeInternal;
-extern ConfigDefaultTypeInternal _Config_default_instance_;
+class AuthToken;
+class AuthTokenDefaultTypeInternal;
+extern AuthTokenDefaultTypeInternal _AuthToken_default_instance_;
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
-class Event;
-class EventDefaultTypeInternal;
-extern EventDefaultTypeInternal _Event_default_instance_;
 class Float64;
 class Float64DefaultTypeInternal;
 extern Float64DefaultTypeInternal _Float64_default_instance_;
@@ -67,9 +64,6 @@ extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
 class Int64;
 class Int64DefaultTypeInternal;
 extern Int64DefaultTypeInternal _Int64_default_instance_;
-class Query;
-class QueryDefaultTypeInternal;
-extern QueryDefaultTypeInternal _Query_default_instance_;
 class String;
 class StringDefaultTypeInternal;
 extern StringDefaultTypeInternal _String_default_instance_;
@@ -82,32 +76,18 @@ extern StringMapDefaultTypeInternal _StringMap_default_instance_;
 class StringMap_StringMapEntry_DoNotUse;
 class StringMap_StringMapEntry_DoNotUseDefaultTypeInternal;
 extern StringMap_StringMapEntry_DoNotUseDefaultTypeInternal _StringMap_StringMapEntry_DoNotUse_default_instance_;
-class Token;
-class TokenDefaultTypeInternal;
-extern TokenDefaultTypeInternal _Token_default_instance_;
-class TokenSet;
-class TokenSetDefaultTypeInternal;
-extern TokenSetDefaultTypeInternal _TokenSet_default_instance_;
-class TokenSet_TokensEntry_DoNotUse;
-class TokenSet_TokensEntry_DoNotUseDefaultTypeInternal;
-extern TokenSet_TokensEntry_DoNotUseDefaultTypeInternal _TokenSet_TokensEntry_DoNotUse_default_instance_;
 }  // namespace common
 namespace google {
 namespace protobuf {
-template<> ::common::Config* Arena::CreateMaybeMessage<::common::Config>(Arena*);
+template<> ::common::AuthToken* Arena::CreateMaybeMessage<::common::AuthToken>(Arena*);
 template<> ::common::Empty* Arena::CreateMaybeMessage<::common::Empty>(Arena*);
-template<> ::common::Event* Arena::CreateMaybeMessage<::common::Event>(Arena*);
 template<> ::common::Float64* Arena::CreateMaybeMessage<::common::Float64>(Arena*);
 template<> ::common::Identifier* Arena::CreateMaybeMessage<::common::Identifier>(Arena*);
 template<> ::common::Int64* Arena::CreateMaybeMessage<::common::Int64>(Arena*);
-template<> ::common::Query* Arena::CreateMaybeMessage<::common::Query>(Arena*);
 template<> ::common::String* Arena::CreateMaybeMessage<::common::String>(Arena*);
 template<> ::common::StringArray* Arena::CreateMaybeMessage<::common::StringArray>(Arena*);
 template<> ::common::StringMap* Arena::CreateMaybeMessage<::common::StringMap>(Arena*);
 template<> ::common::StringMap_StringMapEntry_DoNotUse* Arena::CreateMaybeMessage<::common::StringMap_StringMapEntry_DoNotUse>(Arena*);
-template<> ::common::Token* Arena::CreateMaybeMessage<::common::Token>(Arena*);
-template<> ::common::TokenSet* Arena::CreateMaybeMessage<::common::TokenSet>(Arena*);
-template<> ::common::TokenSet_TokensEntry_DoNotUse* Arena::CreateMaybeMessage<::common::TokenSet_TokensEntry_DoNotUse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace common {
@@ -672,6 +652,115 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
 };
 // -------------------------------------------------------------------
 
+class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.AuthToken) */ {
+ public:
+  AuthToken();
+  virtual ~AuthToken();
+
+  AuthToken(const AuthToken& from);
+
+  inline AuthToken& operator=(const AuthToken& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  AuthToken(AuthToken&& from) noexcept
+    : AuthToken() {
+    *this = ::std::move(from);
+  }
+
+  inline AuthToken& operator=(AuthToken&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const AuthToken& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const AuthToken* internal_default_instance() {
+    return reinterpret_cast<const AuthToken*>(
+               &_AuthToken_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(AuthToken* other);
+  friend void swap(AuthToken& a, AuthToken& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline AuthToken* New() const final {
+    return CreateMaybeMessage<AuthToken>(NULL);
+  }
+
+  AuthToken* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<AuthToken>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const AuthToken& from);
+  void MergeFrom(const AuthToken& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(AuthToken* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String token = 1;
+  bool has_token() const;
+  void clear_token();
+  static const int kTokenFieldNumber = 1;
+  private:
+  const ::common::String& _internal_token() const;
+  public:
+  const ::common::String& token() const;
+  ::common::String* release_token();
+  ::common::String* mutable_token();
+  void set_allocated_token(::common::String* token);
+
+  // @@protoc_insertion_point(class_scope:common.AuthToken)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* token_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Int64) */ {
  public:
   Int64();
@@ -707,7 +796,7 @@ class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Int64_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(Int64* other);
   friend void swap(Int64& a, Int64& b) {
@@ -810,7 +899,7 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Float64_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(Float64* other);
   friend void swap(Float64& a, Float64& b) {
@@ -873,809 +962,6 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   double num_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Token) */ {
- public:
-  Token();
-  virtual ~Token();
-
-  Token(const Token& from);
-
-  inline Token& operator=(const Token& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Token(Token&& from) noexcept
-    : Token() {
-    *this = ::std::move(from);
-  }
-
-  inline Token& operator=(Token&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Token& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Token* internal_default_instance() {
-    return reinterpret_cast<const Token*>(
-               &_Token_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  void Swap(Token* other);
-  friend void swap(Token& a, Token& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Token* New() const final {
-    return CreateMaybeMessage<Token>(NULL);
-  }
-
-  Token* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Token>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Token& from);
-  void MergeFrom(const Token& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Token* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.String access_token = 1;
-  bool has_access_token() const;
-  void clear_access_token();
-  static const int kAccessTokenFieldNumber = 1;
-  private:
-  const ::common::String& _internal_access_token() const;
-  public:
-  const ::common::String& access_token() const;
-  ::common::String* release_access_token();
-  ::common::String* mutable_access_token();
-  void set_allocated_access_token(::common::String* access_token);
-
-  // .common.String token_type = 2;
-  bool has_token_type() const;
-  void clear_token_type();
-  static const int kTokenTypeFieldNumber = 2;
-  private:
-  const ::common::String& _internal_token_type() const;
-  public:
-  const ::common::String& token_type() const;
-  ::common::String* release_token_type();
-  ::common::String* mutable_token_type();
-  void set_allocated_token_type(::common::String* token_type);
-
-  // .common.String refresh_token = 3;
-  bool has_refresh_token() const;
-  void clear_refresh_token();
-  static const int kRefreshTokenFieldNumber = 3;
-  private:
-  const ::common::String& _internal_refresh_token() const;
-  public:
-  const ::common::String& refresh_token() const;
-  ::common::String* release_refresh_token();
-  ::common::String* mutable_refresh_token();
-  void set_allocated_refresh_token(::common::String* refresh_token);
-
-  // .common.String expiry = 4;
-  bool has_expiry() const;
-  void clear_expiry();
-  static const int kExpiryFieldNumber = 4;
-  private:
-  const ::common::String& _internal_expiry() const;
-  public:
-  const ::common::String& expiry() const;
-  ::common::String* release_expiry();
-  ::common::String* mutable_expiry();
-  void set_allocated_expiry(::common::String* expiry);
-
-  // .common.String id_token = 5;
-  bool has_id_token() const;
-  void clear_id_token();
-  static const int kIdTokenFieldNumber = 5;
-  private:
-  const ::common::String& _internal_id_token() const;
-  public:
-  const ::common::String& id_token() const;
-  ::common::String* release_id_token();
-  ::common::String* mutable_id_token();
-  void set_allocated_id_token(::common::String* id_token);
-
-  // @@protoc_insertion_point(class_scope:common.Token)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* access_token_;
-  ::common::String* token_type_;
-  ::common::String* refresh_token_;
-  ::common::String* expiry_;
-  ::common::String* id_token_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Config) */ {
- public:
-  Config();
-  virtual ~Config();
-
-  Config(const Config& from);
-
-  inline Config& operator=(const Config& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Config(Config&& from) noexcept
-    : Config() {
-    *this = ::std::move(from);
-  }
-
-  inline Config& operator=(Config&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Config& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Config* internal_default_instance() {
-    return reinterpret_cast<const Config*>(
-               &_Config_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    9;
-
-  void Swap(Config* other);
-  friend void swap(Config& a, Config& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Config* New() const final {
-    return CreateMaybeMessage<Config>(NULL);
-  }
-
-  Config* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Config>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Config& from);
-  void MergeFrom(const Config& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Config* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.String client_id = 1;
-  bool has_client_id() const;
-  void clear_client_id();
-  static const int kClientIdFieldNumber = 1;
-  private:
-  const ::common::String& _internal_client_id() const;
-  public:
-  const ::common::String& client_id() const;
-  ::common::String* release_client_id();
-  ::common::String* mutable_client_id();
-  void set_allocated_client_id(::common::String* client_id);
-
-  // .common.String client_secret = 2;
-  bool has_client_secret() const;
-  void clear_client_secret();
-  static const int kClientSecretFieldNumber = 2;
-  private:
-  const ::common::String& _internal_client_secret() const;
-  public:
-  const ::common::String& client_secret() const;
-  ::common::String* release_client_secret();
-  ::common::String* mutable_client_secret();
-  void set_allocated_client_secret(::common::String* client_secret);
-
-  // .common.String token_url = 3;
-  bool has_token_url() const;
-  void clear_token_url();
-  static const int kTokenUrlFieldNumber = 3;
-  private:
-  const ::common::String& _internal_token_url() const;
-  public:
-  const ::common::String& token_url() const;
-  ::common::String* release_token_url();
-  ::common::String* mutable_token_url();
-  void set_allocated_token_url(::common::String* token_url);
-
-  // .common.String auth_url = 4;
-  bool has_auth_url() const;
-  void clear_auth_url();
-  static const int kAuthUrlFieldNumber = 4;
-  private:
-  const ::common::String& _internal_auth_url() const;
-  public:
-  const ::common::String& auth_url() const;
-  ::common::String* release_auth_url();
-  ::common::String* mutable_auth_url();
-  void set_allocated_auth_url(::common::String* auth_url);
-
-  // .common.StringArray scopes = 5;
-  bool has_scopes() const;
-  void clear_scopes();
-  static const int kScopesFieldNumber = 5;
-  private:
-  const ::common::StringArray& _internal_scopes() const;
-  public:
-  const ::common::StringArray& scopes() const;
-  ::common::StringArray* release_scopes();
-  ::common::StringArray* mutable_scopes();
-  void set_allocated_scopes(::common::StringArray* scopes);
-
-  // .common.String redirect = 6;
-  bool has_redirect() const;
-  void clear_redirect();
-  static const int kRedirectFieldNumber = 6;
-  private:
-  const ::common::String& _internal_redirect() const;
-  public:
-  const ::common::String& redirect() const;
-  ::common::String* release_redirect();
-  ::common::String* mutable_redirect();
-  void set_allocated_redirect(::common::String* redirect);
-
-  // .common.StringMap endpoint_params = 7;
-  bool has_endpoint_params() const;
-  void clear_endpoint_params();
-  static const int kEndpointParamsFieldNumber = 7;
-  private:
-  const ::common::StringMap& _internal_endpoint_params() const;
-  public:
-  const ::common::StringMap& endpoint_params() const;
-  ::common::StringMap* release_endpoint_params();
-  ::common::StringMap* mutable_endpoint_params();
-  void set_allocated_endpoint_params(::common::StringMap* endpoint_params);
-
-  // @@protoc_insertion_point(class_scope:common.Config)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* client_id_;
-  ::common::String* client_secret_;
-  ::common::String* token_url_;
-  ::common::String* auth_url_;
-  ::common::StringArray* scopes_;
-  ::common::String* redirect_;
-  ::common::StringMap* endpoint_params_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Query) */ {
- public:
-  Query();
-  virtual ~Query();
-
-  Query(const Query& from);
-
-  inline Query& operator=(const Query& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Query(Query&& from) noexcept
-    : Query() {
-    *this = ::std::move(from);
-  }
-
-  inline Query& operator=(Query&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Query& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Query* internal_default_instance() {
-    return reinterpret_cast<const Query*>(
-               &_Query_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  void Swap(Query* other);
-  friend void swap(Query& a, Query& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Query* New() const final {
-    return CreateMaybeMessage<Query>(NULL);
-  }
-
-  Query* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Query>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Query& from);
-  void MergeFrom(const Query& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Query* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.String query = 4;
-  bool has_query() const;
-  void clear_query();
-  static const int kQueryFieldNumber = 4;
-  private:
-  const ::common::String& _internal_query() const;
-  public:
-  const ::common::String& query() const;
-  ::common::String* release_query();
-  ::common::String* mutable_query();
-  void set_allocated_query(::common::String* query);
-
-  // .common.String fields = 5;
-  bool has_fields() const;
-  void clear_fields();
-  static const int kFieldsFieldNumber = 5;
-  private:
-  const ::common::String& _internal_fields() const;
-  public:
-  const ::common::String& fields() const;
-  ::common::String* release_fields();
-  ::common::String* mutable_fields();
-  void set_allocated_fields(::common::String* fields);
-
-  // @@protoc_insertion_point(class_scope:common.Query)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* query_;
-  ::common::String* fields_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Event) */ {
- public:
-  Event();
-  virtual ~Event();
-
-  Event(const Event& from);
-
-  inline Event& operator=(const Event& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Event(Event&& from) noexcept
-    : Event() {
-    *this = ::std::move(from);
-  }
-
-  inline Event& operator=(Event&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Event& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Event* internal_default_instance() {
-    return reinterpret_cast<const Event*>(
-               &_Event_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    11;
-
-  void Swap(Event* other);
-  friend void swap(Event& a, Event& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Event* New() const final {
-    return CreateMaybeMessage<Event>(NULL);
-  }
-
-  Event* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Event>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Event& from);
-  void MergeFrom(const Event& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Event* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.String date = 1;
-  bool has_date() const;
-  void clear_date();
-  static const int kDateFieldNumber = 1;
-  private:
-  const ::common::String& _internal_date() const;
-  public:
-  const ::common::String& date() const;
-  ::common::String* release_date();
-  ::common::String* mutable_date();
-  void set_allocated_date(::common::String* date);
-
-  // .common.String type = 2;
-  bool has_type() const;
-  void clear_type();
-  static const int kTypeFieldNumber = 2;
-  private:
-  const ::common::String& _internal_type() const;
-  public:
-  const ::common::String& type() const;
-  ::common::String* release_type();
-  ::common::String* mutable_type();
-  void set_allocated_type(::common::String* type);
-
-  // .common.String client_id = 3;
-  bool has_client_id() const;
-  void clear_client_id();
-  static const int kClientIdFieldNumber = 3;
-  private:
-  const ::common::String& _internal_client_id() const;
-  public:
-  const ::common::String& client_id() const;
-  ::common::String* release_client_id();
-  ::common::String* mutable_client_id();
-  void set_allocated_client_id(::common::String* client_id);
-
-  // .common.String client_name = 4;
-  bool has_client_name() const;
-  void clear_client_name();
-  static const int kClientNameFieldNumber = 4;
-  private:
-  const ::common::String& _internal_client_name() const;
-  public:
-  const ::common::String& client_name() const;
-  ::common::String* release_client_name();
-  ::common::String* mutable_client_name();
-  void set_allocated_client_name(::common::String* client_name);
-
-  // .common.String ip = 5;
-  bool has_ip() const;
-  void clear_ip();
-  static const int kIpFieldNumber = 5;
-  private:
-  const ::common::String& _internal_ip() const;
-  public:
-  const ::common::String& ip() const;
-  ::common::String* release_ip();
-  ::common::String* mutable_ip();
-  void set_allocated_ip(::common::String* ip);
-
-  // .common.String location_info = 6;
-  bool has_location_info() const;
-  void clear_location_info();
-  static const int kLocationInfoFieldNumber = 6;
-  private:
-  const ::common::String& _internal_location_info() const;
-  public:
-  const ::common::String& location_info() const;
-  ::common::String* release_location_info();
-  ::common::String* mutable_location_info();
-  void set_allocated_location_info(::common::String* location_info);
-
-  // .common.String details = 7;
-  bool has_details() const;
-  void clear_details();
-  static const int kDetailsFieldNumber = 7;
-  private:
-  const ::common::String& _internal_details() const;
-  public:
-  const ::common::String& details() const;
-  ::common::String* release_details();
-  ::common::String* mutable_details();
-  void set_allocated_details(::common::String* details);
-
-  // .common.String user_id = 8;
-  bool has_user_id() const;
-  void clear_user_id();
-  static const int kUserIdFieldNumber = 8;
-  private:
-  const ::common::String& _internal_user_id() const;
-  public:
-  const ::common::String& user_id() const;
-  ::common::String* release_user_id();
-  ::common::String* mutable_user_id();
-  void set_allocated_user_id(::common::String* user_id);
-
-  // @@protoc_insertion_point(class_scope:common.Event)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* date_;
-  ::common::String* type_;
-  ::common::String* client_id_;
-  ::common::String* client_name_;
-  ::common::String* ip_;
-  ::common::String* location_info_;
-  ::common::String* details_;
-  ::common::String* user_id_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class TokenSet_TokensEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TokenSet_TokensEntry_DoNotUse, 
-    ::std::string, ::common::Token,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > {
-public:
-  typedef ::google::protobuf::internal::MapEntry<TokenSet_TokensEntry_DoNotUse, 
-    ::std::string, ::common::Token,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > SuperType;
-  TokenSet_TokensEntry_DoNotUse();
-  TokenSet_TokensEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const TokenSet_TokensEntry_DoNotUse& other);
-  static const TokenSet_TokensEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TokenSet_TokensEntry_DoNotUse*>(&_TokenSet_TokensEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
-class TokenSet : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.TokenSet) */ {
- public:
-  TokenSet();
-  virtual ~TokenSet();
-
-  TokenSet(const TokenSet& from);
-
-  inline TokenSet& operator=(const TokenSet& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  TokenSet(TokenSet&& from) noexcept
-    : TokenSet() {
-    *this = ::std::move(from);
-  }
-
-  inline TokenSet& operator=(TokenSet&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const TokenSet& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TokenSet* internal_default_instance() {
-    return reinterpret_cast<const TokenSet*>(
-               &_TokenSet_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    13;
-
-  void Swap(TokenSet* other);
-  friend void swap(TokenSet& a, TokenSet& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TokenSet* New() const final {
-    return CreateMaybeMessage<TokenSet>(NULL);
-  }
-
-  TokenSet* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<TokenSet>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const TokenSet& from);
-  void MergeFrom(const TokenSet& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TokenSet* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  // map<string, .common.Token> tokens = 1;
-  int tokens_size() const;
-  void clear_tokens();
-  static const int kTokensFieldNumber = 1;
-  const ::google::protobuf::Map< ::std::string, ::common::Token >&
-      tokens() const;
-  ::google::protobuf::Map< ::std::string, ::common::Token >*
-      mutable_tokens();
-
-  // @@protoc_insertion_point(class_scope:common.TokenSet)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      TokenSet_TokensEntry_DoNotUse,
-      ::std::string, ::common::Token,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > tokens_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
@@ -1865,6 +1151,64 @@ inline void Identifier::set_allocated_id(::common::String* id) {
 
 // -------------------------------------------------------------------
 
+// AuthToken
+
+// .common.String token = 1;
+inline bool AuthToken::has_token() const {
+  return this != internal_default_instance() && token_ != NULL;
+}
+inline void AuthToken::clear_token() {
+  if (GetArenaNoVirtual() == NULL && token_ != NULL) {
+    delete token_;
+  }
+  token_ = NULL;
+}
+inline const ::common::String& AuthToken::_internal_token() const {
+  return *token_;
+}
+inline const ::common::String& AuthToken::token() const {
+  const ::common::String* p = token_;
+  // @@protoc_insertion_point(field_get:common.AuthToken.token)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* AuthToken::release_token() {
+  // @@protoc_insertion_point(field_release:common.AuthToken.token)
+  
+  ::common::String* temp = token_;
+  token_ = NULL;
+  return temp;
+}
+inline ::common::String* AuthToken::mutable_token() {
+  
+  if (token_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    token_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.AuthToken.token)
+  return token_;
+}
+inline void AuthToken::set_allocated_token(::common::String* token) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete token_;
+  }
+  if (token) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      token = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, token, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  token_ = token;
+  // @@protoc_insertion_point(field_set_allocated:common.AuthToken.token)
+}
+
+// -------------------------------------------------------------------
+
 // Int64
 
 // int64 num = 1;
@@ -1899,1247 +1243,9 @@ inline void Float64::set_num(double value) {
   // @@protoc_insertion_point(field_set:common.Float64.num)
 }
 
-// -------------------------------------------------------------------
-
-// Token
-
-// .common.String access_token = 1;
-inline bool Token::has_access_token() const {
-  return this != internal_default_instance() && access_token_ != NULL;
-}
-inline void Token::clear_access_token() {
-  if (GetArenaNoVirtual() == NULL && access_token_ != NULL) {
-    delete access_token_;
-  }
-  access_token_ = NULL;
-}
-inline const ::common::String& Token::_internal_access_token() const {
-  return *access_token_;
-}
-inline const ::common::String& Token::access_token() const {
-  const ::common::String* p = access_token_;
-  // @@protoc_insertion_point(field_get:common.Token.access_token)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Token::release_access_token() {
-  // @@protoc_insertion_point(field_release:common.Token.access_token)
-  
-  ::common::String* temp = access_token_;
-  access_token_ = NULL;
-  return temp;
-}
-inline ::common::String* Token::mutable_access_token() {
-  
-  if (access_token_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    access_token_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Token.access_token)
-  return access_token_;
-}
-inline void Token::set_allocated_access_token(::common::String* access_token) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete access_token_;
-  }
-  if (access_token) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      access_token = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, access_token, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  access_token_ = access_token;
-  // @@protoc_insertion_point(field_set_allocated:common.Token.access_token)
-}
-
-// .common.String token_type = 2;
-inline bool Token::has_token_type() const {
-  return this != internal_default_instance() && token_type_ != NULL;
-}
-inline void Token::clear_token_type() {
-  if (GetArenaNoVirtual() == NULL && token_type_ != NULL) {
-    delete token_type_;
-  }
-  token_type_ = NULL;
-}
-inline const ::common::String& Token::_internal_token_type() const {
-  return *token_type_;
-}
-inline const ::common::String& Token::token_type() const {
-  const ::common::String* p = token_type_;
-  // @@protoc_insertion_point(field_get:common.Token.token_type)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Token::release_token_type() {
-  // @@protoc_insertion_point(field_release:common.Token.token_type)
-  
-  ::common::String* temp = token_type_;
-  token_type_ = NULL;
-  return temp;
-}
-inline ::common::String* Token::mutable_token_type() {
-  
-  if (token_type_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    token_type_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Token.token_type)
-  return token_type_;
-}
-inline void Token::set_allocated_token_type(::common::String* token_type) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete token_type_;
-  }
-  if (token_type) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      token_type = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, token_type, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  token_type_ = token_type;
-  // @@protoc_insertion_point(field_set_allocated:common.Token.token_type)
-}
-
-// .common.String refresh_token = 3;
-inline bool Token::has_refresh_token() const {
-  return this != internal_default_instance() && refresh_token_ != NULL;
-}
-inline void Token::clear_refresh_token() {
-  if (GetArenaNoVirtual() == NULL && refresh_token_ != NULL) {
-    delete refresh_token_;
-  }
-  refresh_token_ = NULL;
-}
-inline const ::common::String& Token::_internal_refresh_token() const {
-  return *refresh_token_;
-}
-inline const ::common::String& Token::refresh_token() const {
-  const ::common::String* p = refresh_token_;
-  // @@protoc_insertion_point(field_get:common.Token.refresh_token)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Token::release_refresh_token() {
-  // @@protoc_insertion_point(field_release:common.Token.refresh_token)
-  
-  ::common::String* temp = refresh_token_;
-  refresh_token_ = NULL;
-  return temp;
-}
-inline ::common::String* Token::mutable_refresh_token() {
-  
-  if (refresh_token_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    refresh_token_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Token.refresh_token)
-  return refresh_token_;
-}
-inline void Token::set_allocated_refresh_token(::common::String* refresh_token) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete refresh_token_;
-  }
-  if (refresh_token) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      refresh_token = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, refresh_token, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  refresh_token_ = refresh_token;
-  // @@protoc_insertion_point(field_set_allocated:common.Token.refresh_token)
-}
-
-// .common.String expiry = 4;
-inline bool Token::has_expiry() const {
-  return this != internal_default_instance() && expiry_ != NULL;
-}
-inline void Token::clear_expiry() {
-  if (GetArenaNoVirtual() == NULL && expiry_ != NULL) {
-    delete expiry_;
-  }
-  expiry_ = NULL;
-}
-inline const ::common::String& Token::_internal_expiry() const {
-  return *expiry_;
-}
-inline const ::common::String& Token::expiry() const {
-  const ::common::String* p = expiry_;
-  // @@protoc_insertion_point(field_get:common.Token.expiry)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Token::release_expiry() {
-  // @@protoc_insertion_point(field_release:common.Token.expiry)
-  
-  ::common::String* temp = expiry_;
-  expiry_ = NULL;
-  return temp;
-}
-inline ::common::String* Token::mutable_expiry() {
-  
-  if (expiry_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    expiry_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Token.expiry)
-  return expiry_;
-}
-inline void Token::set_allocated_expiry(::common::String* expiry) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete expiry_;
-  }
-  if (expiry) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      expiry = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, expiry, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  expiry_ = expiry;
-  // @@protoc_insertion_point(field_set_allocated:common.Token.expiry)
-}
-
-// .common.String id_token = 5;
-inline bool Token::has_id_token() const {
-  return this != internal_default_instance() && id_token_ != NULL;
-}
-inline void Token::clear_id_token() {
-  if (GetArenaNoVirtual() == NULL && id_token_ != NULL) {
-    delete id_token_;
-  }
-  id_token_ = NULL;
-}
-inline const ::common::String& Token::_internal_id_token() const {
-  return *id_token_;
-}
-inline const ::common::String& Token::id_token() const {
-  const ::common::String* p = id_token_;
-  // @@protoc_insertion_point(field_get:common.Token.id_token)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Token::release_id_token() {
-  // @@protoc_insertion_point(field_release:common.Token.id_token)
-  
-  ::common::String* temp = id_token_;
-  id_token_ = NULL;
-  return temp;
-}
-inline ::common::String* Token::mutable_id_token() {
-  
-  if (id_token_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    id_token_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Token.id_token)
-  return id_token_;
-}
-inline void Token::set_allocated_id_token(::common::String* id_token) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete id_token_;
-  }
-  if (id_token) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      id_token = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, id_token, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  id_token_ = id_token;
-  // @@protoc_insertion_point(field_set_allocated:common.Token.id_token)
-}
-
-// -------------------------------------------------------------------
-
-// Config
-
-// .common.String client_id = 1;
-inline bool Config::has_client_id() const {
-  return this != internal_default_instance() && client_id_ != NULL;
-}
-inline void Config::clear_client_id() {
-  if (GetArenaNoVirtual() == NULL && client_id_ != NULL) {
-    delete client_id_;
-  }
-  client_id_ = NULL;
-}
-inline const ::common::String& Config::_internal_client_id() const {
-  return *client_id_;
-}
-inline const ::common::String& Config::client_id() const {
-  const ::common::String* p = client_id_;
-  // @@protoc_insertion_point(field_get:common.Config.client_id)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Config::release_client_id() {
-  // @@protoc_insertion_point(field_release:common.Config.client_id)
-  
-  ::common::String* temp = client_id_;
-  client_id_ = NULL;
-  return temp;
-}
-inline ::common::String* Config::mutable_client_id() {
-  
-  if (client_id_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    client_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.client_id)
-  return client_id_;
-}
-inline void Config::set_allocated_client_id(::common::String* client_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete client_id_;
-  }
-  if (client_id) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      client_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, client_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  client_id_ = client_id;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.client_id)
-}
-
-// .common.String client_secret = 2;
-inline bool Config::has_client_secret() const {
-  return this != internal_default_instance() && client_secret_ != NULL;
-}
-inline void Config::clear_client_secret() {
-  if (GetArenaNoVirtual() == NULL && client_secret_ != NULL) {
-    delete client_secret_;
-  }
-  client_secret_ = NULL;
-}
-inline const ::common::String& Config::_internal_client_secret() const {
-  return *client_secret_;
-}
-inline const ::common::String& Config::client_secret() const {
-  const ::common::String* p = client_secret_;
-  // @@protoc_insertion_point(field_get:common.Config.client_secret)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Config::release_client_secret() {
-  // @@protoc_insertion_point(field_release:common.Config.client_secret)
-  
-  ::common::String* temp = client_secret_;
-  client_secret_ = NULL;
-  return temp;
-}
-inline ::common::String* Config::mutable_client_secret() {
-  
-  if (client_secret_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    client_secret_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.client_secret)
-  return client_secret_;
-}
-inline void Config::set_allocated_client_secret(::common::String* client_secret) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete client_secret_;
-  }
-  if (client_secret) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      client_secret = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, client_secret, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  client_secret_ = client_secret;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.client_secret)
-}
-
-// .common.String token_url = 3;
-inline bool Config::has_token_url() const {
-  return this != internal_default_instance() && token_url_ != NULL;
-}
-inline void Config::clear_token_url() {
-  if (GetArenaNoVirtual() == NULL && token_url_ != NULL) {
-    delete token_url_;
-  }
-  token_url_ = NULL;
-}
-inline const ::common::String& Config::_internal_token_url() const {
-  return *token_url_;
-}
-inline const ::common::String& Config::token_url() const {
-  const ::common::String* p = token_url_;
-  // @@protoc_insertion_point(field_get:common.Config.token_url)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Config::release_token_url() {
-  // @@protoc_insertion_point(field_release:common.Config.token_url)
-  
-  ::common::String* temp = token_url_;
-  token_url_ = NULL;
-  return temp;
-}
-inline ::common::String* Config::mutable_token_url() {
-  
-  if (token_url_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    token_url_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.token_url)
-  return token_url_;
-}
-inline void Config::set_allocated_token_url(::common::String* token_url) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete token_url_;
-  }
-  if (token_url) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      token_url = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, token_url, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  token_url_ = token_url;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.token_url)
-}
-
-// .common.String auth_url = 4;
-inline bool Config::has_auth_url() const {
-  return this != internal_default_instance() && auth_url_ != NULL;
-}
-inline void Config::clear_auth_url() {
-  if (GetArenaNoVirtual() == NULL && auth_url_ != NULL) {
-    delete auth_url_;
-  }
-  auth_url_ = NULL;
-}
-inline const ::common::String& Config::_internal_auth_url() const {
-  return *auth_url_;
-}
-inline const ::common::String& Config::auth_url() const {
-  const ::common::String* p = auth_url_;
-  // @@protoc_insertion_point(field_get:common.Config.auth_url)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Config::release_auth_url() {
-  // @@protoc_insertion_point(field_release:common.Config.auth_url)
-  
-  ::common::String* temp = auth_url_;
-  auth_url_ = NULL;
-  return temp;
-}
-inline ::common::String* Config::mutable_auth_url() {
-  
-  if (auth_url_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    auth_url_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.auth_url)
-  return auth_url_;
-}
-inline void Config::set_allocated_auth_url(::common::String* auth_url) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete auth_url_;
-  }
-  if (auth_url) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      auth_url = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, auth_url, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  auth_url_ = auth_url;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.auth_url)
-}
-
-// .common.StringArray scopes = 5;
-inline bool Config::has_scopes() const {
-  return this != internal_default_instance() && scopes_ != NULL;
-}
-inline void Config::clear_scopes() {
-  if (GetArenaNoVirtual() == NULL && scopes_ != NULL) {
-    delete scopes_;
-  }
-  scopes_ = NULL;
-}
-inline const ::common::StringArray& Config::_internal_scopes() const {
-  return *scopes_;
-}
-inline const ::common::StringArray& Config::scopes() const {
-  const ::common::StringArray* p = scopes_;
-  // @@protoc_insertion_point(field_get:common.Config.scopes)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
-      &::common::_StringArray_default_instance_);
-}
-inline ::common::StringArray* Config::release_scopes() {
-  // @@protoc_insertion_point(field_release:common.Config.scopes)
-  
-  ::common::StringArray* temp = scopes_;
-  scopes_ = NULL;
-  return temp;
-}
-inline ::common::StringArray* Config::mutable_scopes() {
-  
-  if (scopes_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
-    scopes_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.scopes)
-  return scopes_;
-}
-inline void Config::set_allocated_scopes(::common::StringArray* scopes) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete scopes_;
-  }
-  if (scopes) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      scopes = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, scopes, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  scopes_ = scopes;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.scopes)
-}
-
-// .common.String redirect = 6;
-inline bool Config::has_redirect() const {
-  return this != internal_default_instance() && redirect_ != NULL;
-}
-inline void Config::clear_redirect() {
-  if (GetArenaNoVirtual() == NULL && redirect_ != NULL) {
-    delete redirect_;
-  }
-  redirect_ = NULL;
-}
-inline const ::common::String& Config::_internal_redirect() const {
-  return *redirect_;
-}
-inline const ::common::String& Config::redirect() const {
-  const ::common::String* p = redirect_;
-  // @@protoc_insertion_point(field_get:common.Config.redirect)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Config::release_redirect() {
-  // @@protoc_insertion_point(field_release:common.Config.redirect)
-  
-  ::common::String* temp = redirect_;
-  redirect_ = NULL;
-  return temp;
-}
-inline ::common::String* Config::mutable_redirect() {
-  
-  if (redirect_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    redirect_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.redirect)
-  return redirect_;
-}
-inline void Config::set_allocated_redirect(::common::String* redirect) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete redirect_;
-  }
-  if (redirect) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      redirect = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, redirect, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  redirect_ = redirect;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.redirect)
-}
-
-// .common.StringMap endpoint_params = 7;
-inline bool Config::has_endpoint_params() const {
-  return this != internal_default_instance() && endpoint_params_ != NULL;
-}
-inline void Config::clear_endpoint_params() {
-  if (GetArenaNoVirtual() == NULL && endpoint_params_ != NULL) {
-    delete endpoint_params_;
-  }
-  endpoint_params_ = NULL;
-}
-inline const ::common::StringMap& Config::_internal_endpoint_params() const {
-  return *endpoint_params_;
-}
-inline const ::common::StringMap& Config::endpoint_params() const {
-  const ::common::StringMap* p = endpoint_params_;
-  // @@protoc_insertion_point(field_get:common.Config.endpoint_params)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
-      &::common::_StringMap_default_instance_);
-}
-inline ::common::StringMap* Config::release_endpoint_params() {
-  // @@protoc_insertion_point(field_release:common.Config.endpoint_params)
-  
-  ::common::StringMap* temp = endpoint_params_;
-  endpoint_params_ = NULL;
-  return temp;
-}
-inline ::common::StringMap* Config::mutable_endpoint_params() {
-  
-  if (endpoint_params_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
-    endpoint_params_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Config.endpoint_params)
-  return endpoint_params_;
-}
-inline void Config::set_allocated_endpoint_params(::common::StringMap* endpoint_params) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete endpoint_params_;
-  }
-  if (endpoint_params) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      endpoint_params = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, endpoint_params, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  endpoint_params_ = endpoint_params;
-  // @@protoc_insertion_point(field_set_allocated:common.Config.endpoint_params)
-}
-
-// -------------------------------------------------------------------
-
-// Query
-
-// .common.String query = 4;
-inline bool Query::has_query() const {
-  return this != internal_default_instance() && query_ != NULL;
-}
-inline void Query::clear_query() {
-  if (GetArenaNoVirtual() == NULL && query_ != NULL) {
-    delete query_;
-  }
-  query_ = NULL;
-}
-inline const ::common::String& Query::_internal_query() const {
-  return *query_;
-}
-inline const ::common::String& Query::query() const {
-  const ::common::String* p = query_;
-  // @@protoc_insertion_point(field_get:common.Query.query)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Query::release_query() {
-  // @@protoc_insertion_point(field_release:common.Query.query)
-  
-  ::common::String* temp = query_;
-  query_ = NULL;
-  return temp;
-}
-inline ::common::String* Query::mutable_query() {
-  
-  if (query_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    query_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Query.query)
-  return query_;
-}
-inline void Query::set_allocated_query(::common::String* query) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete query_;
-  }
-  if (query) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      query = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, query, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  query_ = query;
-  // @@protoc_insertion_point(field_set_allocated:common.Query.query)
-}
-
-// .common.String fields = 5;
-inline bool Query::has_fields() const {
-  return this != internal_default_instance() && fields_ != NULL;
-}
-inline void Query::clear_fields() {
-  if (GetArenaNoVirtual() == NULL && fields_ != NULL) {
-    delete fields_;
-  }
-  fields_ = NULL;
-}
-inline const ::common::String& Query::_internal_fields() const {
-  return *fields_;
-}
-inline const ::common::String& Query::fields() const {
-  const ::common::String* p = fields_;
-  // @@protoc_insertion_point(field_get:common.Query.fields)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Query::release_fields() {
-  // @@protoc_insertion_point(field_release:common.Query.fields)
-  
-  ::common::String* temp = fields_;
-  fields_ = NULL;
-  return temp;
-}
-inline ::common::String* Query::mutable_fields() {
-  
-  if (fields_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    fields_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Query.fields)
-  return fields_;
-}
-inline void Query::set_allocated_fields(::common::String* fields) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete fields_;
-  }
-  if (fields) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      fields = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, fields, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  fields_ = fields;
-  // @@protoc_insertion_point(field_set_allocated:common.Query.fields)
-}
-
-// -------------------------------------------------------------------
-
-// Event
-
-// .common.String date = 1;
-inline bool Event::has_date() const {
-  return this != internal_default_instance() && date_ != NULL;
-}
-inline void Event::clear_date() {
-  if (GetArenaNoVirtual() == NULL && date_ != NULL) {
-    delete date_;
-  }
-  date_ = NULL;
-}
-inline const ::common::String& Event::_internal_date() const {
-  return *date_;
-}
-inline const ::common::String& Event::date() const {
-  const ::common::String* p = date_;
-  // @@protoc_insertion_point(field_get:common.Event.date)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_date() {
-  // @@protoc_insertion_point(field_release:common.Event.date)
-  
-  ::common::String* temp = date_;
-  date_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_date() {
-  
-  if (date_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    date_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.date)
-  return date_;
-}
-inline void Event::set_allocated_date(::common::String* date) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete date_;
-  }
-  if (date) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      date = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, date, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  date_ = date;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.date)
-}
-
-// .common.String type = 2;
-inline bool Event::has_type() const {
-  return this != internal_default_instance() && type_ != NULL;
-}
-inline void Event::clear_type() {
-  if (GetArenaNoVirtual() == NULL && type_ != NULL) {
-    delete type_;
-  }
-  type_ = NULL;
-}
-inline const ::common::String& Event::_internal_type() const {
-  return *type_;
-}
-inline const ::common::String& Event::type() const {
-  const ::common::String* p = type_;
-  // @@protoc_insertion_point(field_get:common.Event.type)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_type() {
-  // @@protoc_insertion_point(field_release:common.Event.type)
-  
-  ::common::String* temp = type_;
-  type_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_type() {
-  
-  if (type_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    type_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.type)
-  return type_;
-}
-inline void Event::set_allocated_type(::common::String* type) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete type_;
-  }
-  if (type) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      type = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, type, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  type_ = type;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.type)
-}
-
-// .common.String client_id = 3;
-inline bool Event::has_client_id() const {
-  return this != internal_default_instance() && client_id_ != NULL;
-}
-inline void Event::clear_client_id() {
-  if (GetArenaNoVirtual() == NULL && client_id_ != NULL) {
-    delete client_id_;
-  }
-  client_id_ = NULL;
-}
-inline const ::common::String& Event::_internal_client_id() const {
-  return *client_id_;
-}
-inline const ::common::String& Event::client_id() const {
-  const ::common::String* p = client_id_;
-  // @@protoc_insertion_point(field_get:common.Event.client_id)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_client_id() {
-  // @@protoc_insertion_point(field_release:common.Event.client_id)
-  
-  ::common::String* temp = client_id_;
-  client_id_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_client_id() {
-  
-  if (client_id_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    client_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.client_id)
-  return client_id_;
-}
-inline void Event::set_allocated_client_id(::common::String* client_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete client_id_;
-  }
-  if (client_id) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      client_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, client_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  client_id_ = client_id;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.client_id)
-}
-
-// .common.String client_name = 4;
-inline bool Event::has_client_name() const {
-  return this != internal_default_instance() && client_name_ != NULL;
-}
-inline void Event::clear_client_name() {
-  if (GetArenaNoVirtual() == NULL && client_name_ != NULL) {
-    delete client_name_;
-  }
-  client_name_ = NULL;
-}
-inline const ::common::String& Event::_internal_client_name() const {
-  return *client_name_;
-}
-inline const ::common::String& Event::client_name() const {
-  const ::common::String* p = client_name_;
-  // @@protoc_insertion_point(field_get:common.Event.client_name)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_client_name() {
-  // @@protoc_insertion_point(field_release:common.Event.client_name)
-  
-  ::common::String* temp = client_name_;
-  client_name_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_client_name() {
-  
-  if (client_name_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    client_name_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.client_name)
-  return client_name_;
-}
-inline void Event::set_allocated_client_name(::common::String* client_name) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete client_name_;
-  }
-  if (client_name) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      client_name = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, client_name, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  client_name_ = client_name;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.client_name)
-}
-
-// .common.String ip = 5;
-inline bool Event::has_ip() const {
-  return this != internal_default_instance() && ip_ != NULL;
-}
-inline void Event::clear_ip() {
-  if (GetArenaNoVirtual() == NULL && ip_ != NULL) {
-    delete ip_;
-  }
-  ip_ = NULL;
-}
-inline const ::common::String& Event::_internal_ip() const {
-  return *ip_;
-}
-inline const ::common::String& Event::ip() const {
-  const ::common::String* p = ip_;
-  // @@protoc_insertion_point(field_get:common.Event.ip)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_ip() {
-  // @@protoc_insertion_point(field_release:common.Event.ip)
-  
-  ::common::String* temp = ip_;
-  ip_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_ip() {
-  
-  if (ip_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    ip_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.ip)
-  return ip_;
-}
-inline void Event::set_allocated_ip(::common::String* ip) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete ip_;
-  }
-  if (ip) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      ip = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, ip, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  ip_ = ip;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.ip)
-}
-
-// .common.String location_info = 6;
-inline bool Event::has_location_info() const {
-  return this != internal_default_instance() && location_info_ != NULL;
-}
-inline void Event::clear_location_info() {
-  if (GetArenaNoVirtual() == NULL && location_info_ != NULL) {
-    delete location_info_;
-  }
-  location_info_ = NULL;
-}
-inline const ::common::String& Event::_internal_location_info() const {
-  return *location_info_;
-}
-inline const ::common::String& Event::location_info() const {
-  const ::common::String* p = location_info_;
-  // @@protoc_insertion_point(field_get:common.Event.location_info)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_location_info() {
-  // @@protoc_insertion_point(field_release:common.Event.location_info)
-  
-  ::common::String* temp = location_info_;
-  location_info_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_location_info() {
-  
-  if (location_info_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    location_info_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.location_info)
-  return location_info_;
-}
-inline void Event::set_allocated_location_info(::common::String* location_info) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete location_info_;
-  }
-  if (location_info) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      location_info = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, location_info, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  location_info_ = location_info;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.location_info)
-}
-
-// .common.String details = 7;
-inline bool Event::has_details() const {
-  return this != internal_default_instance() && details_ != NULL;
-}
-inline void Event::clear_details() {
-  if (GetArenaNoVirtual() == NULL && details_ != NULL) {
-    delete details_;
-  }
-  details_ = NULL;
-}
-inline const ::common::String& Event::_internal_details() const {
-  return *details_;
-}
-inline const ::common::String& Event::details() const {
-  const ::common::String* p = details_;
-  // @@protoc_insertion_point(field_get:common.Event.details)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_details() {
-  // @@protoc_insertion_point(field_release:common.Event.details)
-  
-  ::common::String* temp = details_;
-  details_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_details() {
-  
-  if (details_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    details_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.details)
-  return details_;
-}
-inline void Event::set_allocated_details(::common::String* details) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete details_;
-  }
-  if (details) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      details = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, details, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  details_ = details;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.details)
-}
-
-// .common.String user_id = 8;
-inline bool Event::has_user_id() const {
-  return this != internal_default_instance() && user_id_ != NULL;
-}
-inline void Event::clear_user_id() {
-  if (GetArenaNoVirtual() == NULL && user_id_ != NULL) {
-    delete user_id_;
-  }
-  user_id_ = NULL;
-}
-inline const ::common::String& Event::_internal_user_id() const {
-  return *user_id_;
-}
-inline const ::common::String& Event::user_id() const {
-  const ::common::String* p = user_id_;
-  // @@protoc_insertion_point(field_get:common.Event.user_id)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* Event::release_user_id() {
-  // @@protoc_insertion_point(field_release:common.Event.user_id)
-  
-  ::common::String* temp = user_id_;
-  user_id_ = NULL;
-  return temp;
-}
-inline ::common::String* Event::mutable_user_id() {
-  
-  if (user_id_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    user_id_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.Event.user_id)
-  return user_id_;
-}
-inline void Event::set_allocated_user_id(::common::String* user_id) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete user_id_;
-  }
-  if (user_id) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      user_id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, user_id, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  user_id_ = user_id;
-  // @@protoc_insertion_point(field_set_allocated:common.Event.user_id)
-}
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// TokenSet
-
-// map<string, .common.Token> tokens = 1;
-inline int TokenSet::tokens_size() const {
-  return tokens_.size();
-}
-inline void TokenSet::clear_tokens() {
-  tokens_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::common::Token >&
-TokenSet::tokens() const {
-  // @@protoc_insertion_point(field_map:common.TokenSet.tokens)
-  return tokens_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::common::Token >*
-TokenSet::mutable_tokens() {
-  // @@protoc_insertion_point(field_mutable_map:common.TokenSet.tokens)
-  return tokens_.MutableMap();
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -37,10 +37,10 @@ CF_EXTERN_C_BEGIN
 @class JSONWebKeys;
 @class NumberCapabilities;
 @class PhoneNumber;
+@class Role;
 @class String;
 @class StringArray;
 @class StringMap;
-@class TokenSet;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -80,6 +80,25 @@ BOOL Plan_IsValidValue(int32_t value);
  * this file and all files that it depends on.
  **/
 @interface ApiRoot : GPBRootObject
+@end
+
+#pragma mark - AddUserRolesRequest
+
+typedef GPB_ENUM(AddUserRolesRequest_FieldNumber) {
+  AddUserRolesRequest_FieldNumber_Email = 1,
+  AddUserRolesRequest_FieldNumber_RolesArray = 2,
+};
+
+@interface AddUserRolesRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) Identifier *email;
+/** Test to see if @c email has been set. */
+@property(nonatomic, readwrite) BOOL hasEmail;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Role*> *rolesArray;
+/** The number of items in @c rolesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger rolesArray_Count;
+
 @end
 
 #pragma mark - Fax
@@ -620,78 +639,6 @@ typedef GPB_ENUM(Identity_FieldNumber) {
 
 @end
 
-#pragma mark - Auth
-
-typedef GPB_ENUM(Auth_FieldNumber) {
-  Auth_FieldNumber_Config = 1,
-  Auth_FieldNumber_TokenSet = 3,
-};
-
-@interface Auth : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Config *config;
-/** Test to see if @c config has been set. */
-@property(nonatomic, readwrite) BOOL hasConfig;
-
-@property(nonatomic, readwrite, strong, null_resettable) TokenSet *tokenSet;
-/** Test to see if @c tokenSet has been set. */
-@property(nonatomic, readwrite) BOOL hasTokenSet;
-
-@end
-
-#pragma mark - JSONWebKeys
-
-typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
-  JSONWebKeys_FieldNumber_Kty = 1,
-  JSONWebKeys_FieldNumber_Kid = 2,
-  JSONWebKeys_FieldNumber_Use = 3,
-  JSONWebKeys_FieldNumber_N = 4,
-  JSONWebKeys_FieldNumber_E = 5,
-  JSONWebKeys_FieldNumber_X5C = 6,
-};
-
-@interface JSONWebKeys : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *kty;
-/** Test to see if @c kty has been set. */
-@property(nonatomic, readwrite) BOOL hasKty;
-
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *kid;
-/** Test to see if @c kid has been set. */
-@property(nonatomic, readwrite) BOOL hasKid;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *use;
-/** Test to see if @c use has been set. */
-@property(nonatomic, readwrite) BOOL hasUse;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *n;
-/** Test to see if @c n has been set. */
-@property(nonatomic, readwrite) BOOL hasN;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *e;
-/** Test to see if @c e has been set. */
-@property(nonatomic, readwrite) BOOL hasE;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *x5C;
-/** Test to see if @c x5C has been set. */
-@property(nonatomic, readwrite) BOOL hasX5C;
-
-@end
-
-#pragma mark - Jwks
-
-typedef GPB_ENUM(Jwks_FieldNumber) {
-  Jwks_FieldNumber_KeysArray = 1,
-};
-
-@interface Jwks : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<JSONWebKeys*> *keysArray;
-/** The number of items in @c keysArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger keysArray_Count;
-
-@end
-
 #pragma mark - RenderRequest
 
 typedef GPB_ENUM(RenderRequest_FieldNumber) {
@@ -808,44 +755,6 @@ typedef GPB_ENUM(PhoneNumberResource_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *uri;
 /** Test to see if @c uri has been set. */
 @property(nonatomic, readwrite) BOOL hasUri;
-
-@end
-
-#pragma mark - IDBody
-
-typedef GPB_ENUM(IDBody_FieldNumber) {
-  IDBody_FieldNumber_Id_p = 1,
-  IDBody_FieldNumber_Body = 2,
-};
-
-@interface IDBody : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *body;
-/** Test to see if @c body has been set. */
-@property(nonatomic, readwrite) BOOL hasBody;
-
-@end
-
-#pragma mark - IDStrings
-
-typedef GPB_ENUM(IDStrings_FieldNumber) {
-  IDStrings_FieldNumber_Id_p = 1,
-  IDStrings_FieldNumber_Strings = 2,
-};
-
-@interface IDStrings : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *strings;
-/** Test to see if @c strings has been set. */
-@property(nonatomic, readwrite) BOOL hasStrings;
 
 @end
 
@@ -1056,6 +965,185 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
 /** Test to see if @c annotations has been set. */
 @property(nonatomic, readwrite) BOOL hasAnnotations;
+
+@end
+
+#pragma mark - Config
+
+typedef GPB_ENUM(Config_FieldNumber) {
+  Config_FieldNumber_ClientId = 1,
+  Config_FieldNumber_ClientSecret = 2,
+  Config_FieldNumber_TokenURL = 3,
+  Config_FieldNumber_AuthURL = 4,
+  Config_FieldNumber_Scopes = 5,
+  Config_FieldNumber_Redirect = 6,
+  Config_FieldNumber_EndpointParams = 7,
+};
+
+@interface Config : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
+/** Test to see if @c clientId has been set. */
+@property(nonatomic, readwrite) BOOL hasClientId;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
+/** Test to see if @c clientSecret has been set. */
+@property(nonatomic, readwrite) BOOL hasClientSecret;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
+/** Test to see if @c tokenURL has been set. */
+@property(nonatomic, readwrite) BOOL hasTokenURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *authURL;
+/** Test to see if @c authURL has been set. */
+@property(nonatomic, readwrite) BOOL hasAuthURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
+/** Test to see if @c scopes has been set. */
+@property(nonatomic, readwrite) BOOL hasScopes;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *redirect;
+/** Test to see if @c redirect has been set. */
+@property(nonatomic, readwrite) BOOL hasRedirect;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *endpointParams;
+/** Test to see if @c endpointParams has been set. */
+@property(nonatomic, readwrite) BOOL hasEndpointParams;
+
+@end
+
+#pragma mark - Query
+
+typedef GPB_ENUM(Query_FieldNumber) {
+  Query_FieldNumber_Query = 4,
+  Query_FieldNumber_Fields = 5,
+};
+
+@interface Query : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *query;
+/** Test to see if @c query has been set. */
+@property(nonatomic, readwrite) BOOL hasQuery;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *fields;
+/** Test to see if @c fields has been set. */
+@property(nonatomic, readwrite) BOOL hasFields;
+
+@end
+
+#pragma mark - Event
+
+typedef GPB_ENUM(Event_FieldNumber) {
+  Event_FieldNumber_Date = 1,
+  Event_FieldNumber_Type = 2,
+  Event_FieldNumber_ClientId = 3,
+  Event_FieldNumber_ClientName = 4,
+  Event_FieldNumber_Ip = 5,
+  Event_FieldNumber_LocationInfo = 6,
+  Event_FieldNumber_Details = 7,
+  Event_FieldNumber_UserId = 8,
+};
+
+@interface Event : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *date;
+/** Test to see if @c date has been set. */
+@property(nonatomic, readwrite) BOOL hasDate;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *type;
+/** Test to see if @c type has been set. */
+@property(nonatomic, readwrite) BOOL hasType;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
+/** Test to see if @c clientId has been set. */
+@property(nonatomic, readwrite) BOOL hasClientId;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientName;
+/** Test to see if @c clientName has been set. */
+@property(nonatomic, readwrite) BOOL hasClientName;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *ip;
+/** Test to see if @c ip has been set. */
+@property(nonatomic, readwrite) BOOL hasIp;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *locationInfo;
+/** Test to see if @c locationInfo has been set. */
+@property(nonatomic, readwrite) BOOL hasLocationInfo;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *details;
+/** Test to see if @c details has been set. */
+@property(nonatomic, readwrite) BOOL hasDetails;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *userId;
+/** Test to see if @c userId has been set. */
+@property(nonatomic, readwrite) BOOL hasUserId;
+
+@end
+
+#pragma mark - ConfigSet
+
+typedef GPB_ENUM(ConfigSet_FieldNumber) {
+  ConfigSet_FieldNumber_Configs = 1,
+};
+
+@interface ConfigSet : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, Config*> *configs;
+/** The number of items in @c configs without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger configs_Count;
+
+@end
+
+#pragma mark - JSONWebKeys
+
+typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
+  JSONWebKeys_FieldNumber_Kty = 1,
+  JSONWebKeys_FieldNumber_Kid = 2,
+  JSONWebKeys_FieldNumber_Use = 3,
+  JSONWebKeys_FieldNumber_N = 4,
+  JSONWebKeys_FieldNumber_E = 5,
+  JSONWebKeys_FieldNumber_X5C = 6,
+};
+
+@interface JSONWebKeys : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *kty;
+/** Test to see if @c kty has been set. */
+@property(nonatomic, readwrite) BOOL hasKty;
+
+@property(nonatomic, readwrite, strong, null_resettable) Identifier *kid;
+/** Test to see if @c kid has been set. */
+@property(nonatomic, readwrite) BOOL hasKid;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *use;
+/** Test to see if @c use has been set. */
+@property(nonatomic, readwrite) BOOL hasUse;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *n;
+/** Test to see if @c n has been set. */
+@property(nonatomic, readwrite) BOOL hasN;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *e;
+/** Test to see if @c e has been set. */
+@property(nonatomic, readwrite) BOOL hasE;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *x5C;
+/** Test to see if @c x5C has been set. */
+@property(nonatomic, readwrite) BOOL hasX5C;
+
+@end
+
+#pragma mark - Jwks
+
+typedef GPB_ENUM(Jwks_FieldNumber) {
+  Jwks_FieldNumber_KeysArray = 1,
+};
+
+@interface Jwks : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<JSONWebKeys*> *keysArray;
+/** The number of items in @c keysArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger keysArray_Count;
 
 @end
 

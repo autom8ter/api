@@ -6,6 +6,10 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.AddUserRolesRequest" do
+    optional :email, :message, 1, "common.Identifier"
+    repeated :roles, :message, 2, "api.Role"
+  end
   add_message "api.Fax" do
     optional :to, :message, 1, "common.String"
     optional :from, :message, 2, "common.String"
@@ -115,21 +119,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :provider, :message, 3, "common.String"
     optional :isSocial, :bool, 4
   end
-  add_message "api.Auth" do
-    optional :config, :message, 1, "common.Config"
-    optional :token_set, :message, 3, "common.TokenSet"
-  end
-  add_message "api.JSONWebKeys" do
-    optional :kty, :message, 1, "common.String"
-    optional :kid, :message, 2, "common.Identifier"
-    optional :use, :message, 3, "common.String"
-    optional :n, :message, 4, "common.String"
-    optional :e, :message, 5, "common.String"
-    optional :x5c, :message, 6, "common.StringArray"
-  end
-  add_message "api.Jwks" do
-    repeated :keys, :message, 1, "api.JSONWebKeys"
-  end
   add_message "api.RenderRequest" do
     optional :name, :message, 1, "common.String"
     optional :text, :message, 2, "common.String"
@@ -155,14 +144,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :number, :message, 1, "api.PhoneNumber"
     optional :id, :message, 2, "common.Identifier"
     optional :uri, :message, 3, "common.String"
-  end
-  add_message "api.IDBody" do
-    optional :id, :message, 1, "common.Identifier"
-    optional :body, :message, 2, "common.String"
-  end
-  add_message "api.IDStrings" do
-    optional :id, :message, 1, "common.Identifier"
-    optional :strings, :message, 2, "common.StringArray"
   end
   add_message "api.Role" do
     optional :id, :message, 1, "common.Identifier"
@@ -205,6 +186,43 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :status, :message, 6, "common.String"
     optional :annotations, :message, 10, "common.StringMap"
   end
+  add_message "api.Config" do
+    optional :client_id, :message, 1, "common.String"
+    optional :client_secret, :message, 2, "common.String"
+    optional :token_url, :message, 3, "common.String"
+    optional :auth_url, :message, 4, "common.String"
+    optional :scopes, :message, 5, "common.StringArray"
+    optional :redirect, :message, 6, "common.String"
+    optional :endpoint_params, :message, 7, "common.StringMap"
+  end
+  add_message "api.Query" do
+    optional :query, :message, 4, "common.String"
+    optional :fields, :message, 5, "common.String"
+  end
+  add_message "api.Event" do
+    optional :date, :message, 1, "common.String"
+    optional :type, :message, 2, "common.String"
+    optional :client_id, :message, 3, "common.String"
+    optional :client_name, :message, 4, "common.String"
+    optional :ip, :message, 5, "common.String"
+    optional :location_info, :message, 6, "common.String"
+    optional :details, :message, 7, "common.String"
+    optional :user_id, :message, 8, "common.String"
+  end
+  add_message "api.ConfigSet" do
+    map :configs, :string, :message, 1, "api.Config"
+  end
+  add_message "api.JSONWebKeys" do
+    optional :kty, :message, 1, "common.String"
+    optional :kid, :message, 2, "common.Identifier"
+    optional :use, :message, 3, "common.String"
+    optional :n, :message, 4, "common.String"
+    optional :e, :message, 5, "common.String"
+    optional :x5c, :message, 6, "common.StringArray"
+  end
+  add_message "api.Jwks" do
+    repeated :keys, :message, 1, "api.JSONWebKeys"
+  end
   add_enum "api.Plan" do
     value :FREE, 0
     value :BASIC, 1
@@ -213,6 +231,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  AddUserRolesRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddUserRolesRequest").msgclass
   Fax = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Fax").msgclass
   FaxBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxBlast").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
@@ -228,20 +247,21 @@ module Api
   CallBlast = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallBlast").msgclass
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass
-  Auth = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Auth").msgclass
-  JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
-  Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
   RenderRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.RenderRequest").msgclass
   SearchPhoneNumberRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SearchPhoneNumberRequest").msgclass
   PhoneNumber = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumber").msgclass
   NumberCapabilities = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.NumberCapabilities").msgclass
   PhoneNumberResource = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumberResource").msgclass
-  IDBody = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDBody").msgclass
-  IDStrings = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDStrings").msgclass
   Role = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Role").msgclass
   CallResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CallResponse").msgclass
   SMSResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSResponse").msgclass
   SubscriptionResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionResponse").msgclass
   FaxResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxResponse").msgclass
+  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
+  Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Query").msgclass
+  Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Event").msgclass
+  ConfigSet = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ConfigSet").msgclass
+  JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
+  Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
   Plan = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Plan").enummodule
 end

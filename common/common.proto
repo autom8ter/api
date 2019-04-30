@@ -20,48 +20,14 @@ message Identifier {
     String id=1;
 }
 
+message AuthToken {
+    String token=1;
+}
+
 message Int64 {
     int64 num = 1;
 }
 
 message Float64 {
     double num = 1;
-}
-
-message Token {
-    common.String access_token=1;
-    common.String token_type=2;
-    common.String refresh_token =3;
-    common.String expiry =4;
-    common.String id_token=5;
-}
-
-message Config {
-    common.String client_id=1;
-    common.String client_secret=2;
-    common.String token_url =3;
-    common.String auth_url =4;
-    common.StringArray scopes =5;
-    common.String redirect =6;
-    common.StringMap endpoint_params=7;
-}
-
-message Query {
-    common.String query=4;
-    common.String fields=5;
-}
-
-message Event {
-    common.String date=1;
-    common.String type=2;
-    common.String client_id=3;
-    common.String client_name=4;
-    common.String ip=5;
-    common.String location_info=6;
-    common.String details=7;
-    common.String user_id=8;
-}
-
-message TokenSet {
-    map<string, common.Token> tokens =1;
 }

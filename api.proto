@@ -129,8 +129,8 @@ service PaymentService {
     }
 }
 
-service UserService {
-    rpc QueryUsers(common.Query) returns (stream User) {
+service AuthenticationService {
+    rpc QueryUsers(Query) returns (stream User) {
         option (google.api.http) = {
       post: "/resource/user/query"
       body: "*"
@@ -156,12 +156,63 @@ service UserService {
       body: "*"
     };
     }
-    rpc QueryUserLogs(common.Query) returns (stream common.Event) {
+    rpc AddUserRoles(common.Identifier) returns (stream Role) {
+        option (google.api.http) = {
+      post: "/resource/user/roles"
+      body: "*"
+    };
+    }
+    rpc QueryUserEvents(Query) returns (stream Event) {
         option (google.api.http) = {
       post: "/resource/user/query"
       body: "*"
     };
     }
+}
+
+service ManagementService {
+    rpc QueryUsers(Query) returns (stream User) {
+        option (google.api.http) = {
+      post: "/resource/user/query"
+      body: "*"
+    };
+    }
+
+    rpc GetUser(common.Identifier) returns (User) {
+        option (google.api.http) = {
+      post: "/resource/user/get"
+      body: "*"
+    };
+    }
+
+    rpc UpdateUser(User) returns (User) {
+        option (google.api.http) = {
+      post: "/resource/user/update"
+      body: "*"
+    };
+    }
+    rpc UserRoles(common.Identifier) returns (stream Role) {
+        option (google.api.http) = {
+      post: "/resource/user/roles"
+      body: "*"
+    };
+    }
+    rpc AddUserRoles(common.Identifier) returns (stream Role) {
+        option (google.api.http) = {
+      post: "/resource/user/roles"
+      body: "*"
+    };
+    }
+    rpc QueryUserEvents(Query) returns (stream Event) {
+        option (google.api.http) = {
+      post: "/resource/user/query"
+      body: "*"
+    };
+    }
+}
+message AddUserRolesRequest {
+    common.Identifier email =1;
+    repeated Role roles=2;
 }
 
 message Fax {
@@ -290,25 +341,6 @@ message Identity{
     bool isSocial=4;
 }
 
-message Auth {
-    common.Config config =1;
-    common.TokenSet token_set=3;
-}
-
-
-message JSONWebKeys {
-    common.String kty =1;
-    common.Identifier kid =2;
-    common.String use =3;
-    common.String n =4;
-    common.String e =5;
-    common.StringArray x5c =6;
-}
-
-message Jwks {
-    repeated JSONWebKeys keys=1;
-}
-
 enum Plan {
     FREE =0;
     BASIC=1;
@@ -344,16 +376,6 @@ message PhoneNumberResource {
    PhoneNumber number=1;
    common.Identifier id =2;
    common.String uri=3;
-}
-
-message IDBody {
-    common.Identifier id =1;
-    common.String  body =2;
-}
-
-message IDStrings {
-    common.Identifier id =1;
-    common.StringArray  strings =2;
 }
 
 message Role {
@@ -401,4 +423,47 @@ message FaxResponse {
     common.String from=5;
     common.String  status =6;
     common.StringMap annotations=10;
+}
+
+message Config {
+    common.String client_id=1;
+    common.String client_secret=2;
+    common.String token_url =3;
+    common.String auth_url =4;
+    common.StringArray scopes =5;
+    common.String redirect =6;
+    common.StringMap endpoint_params=7;
+}
+
+message Query {
+    common.String query=4;
+    common.String fields=5;
+}
+
+message Event {
+    common.String date=1;
+    common.String type=2;
+    common.String client_id=3;
+    common.String client_name=4;
+    common.String ip=5;
+    common.String location_info=6;
+    common.String details=7;
+    common.String user_id=8;
+}
+
+message ConfigSet {
+    map<string, Config> configs =1;
+}
+
+message JSONWebKeys {
+    common.String kty =1;
+    common.Identifier kid =2;
+    common.String use =3;
+    common.String n =4;
+    common.String e =5;
+    common.StringArray x5c =6;
+}
+
+message Jwks {
+    repeated JSONWebKeys keys=1;
 }

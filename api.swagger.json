@@ -375,18 +375,18 @@
           }
         ],
         "tags": [
-          "UserService"
+          "ManagementService"
         ]
       }
     },
     "/resource/user/query": {
       "post": {
-        "operationId": "QueryUserLogs",
+        "operationId": "QueryUserEvents",
         "responses": {
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/commonEvent"
+              "$ref": "#/definitions/apiEvent"
             }
           }
         },
@@ -396,18 +396,18 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/commonQuery"
+              "$ref": "#/definitions/apiQuery"
             }
           }
         ],
         "tags": [
-          "UserService"
+          "ManagementService"
         ]
       }
     },
     "/resource/user/roles": {
       "post": {
-        "operationId": "UserRoles",
+        "operationId": "AddUserRoles",
         "responses": {
           "200": {
             "description": "A successful response.(streaming responses)",
@@ -427,7 +427,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "ManagementService"
         ]
       }
     },
@@ -453,7 +453,7 @@
           }
         ],
         "tags": [
-          "UserService"
+          "ManagementService"
         ]
       }
     },
@@ -754,6 +754,35 @@
         }
       }
     },
+    "apiEvent": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/commonString"
+        },
+        "type": {
+          "$ref": "#/definitions/commonString"
+        },
+        "client_id": {
+          "$ref": "#/definitions/commonString"
+        },
+        "client_name": {
+          "$ref": "#/definitions/commonString"
+        },
+        "ip": {
+          "$ref": "#/definitions/commonString"
+        },
+        "location_info": {
+          "$ref": "#/definitions/commonString"
+        },
+        "details": {
+          "$ref": "#/definitions/commonString"
+        },
+        "user_id": {
+          "$ref": "#/definitions/commonString"
+        }
+      }
+    },
     "apiFax": {
       "type": "object",
       "properties": {
@@ -899,6 +928,17 @@
         "PREMIUM"
       ],
       "default": "FREE"
+    },
+    "apiQuery": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "$ref": "#/definitions/commonString"
+        },
+        "fields": {
+          "$ref": "#/definitions/commonString"
+        }
+      }
     },
     "apiRole": {
       "type": "object",
@@ -1125,35 +1165,6 @@
         }
       }
     },
-    "commonEvent": {
-      "type": "object",
-      "properties": {
-        "date": {
-          "$ref": "#/definitions/commonString"
-        },
-        "type": {
-          "$ref": "#/definitions/commonString"
-        },
-        "client_id": {
-          "$ref": "#/definitions/commonString"
-        },
-        "client_name": {
-          "$ref": "#/definitions/commonString"
-        },
-        "ip": {
-          "$ref": "#/definitions/commonString"
-        },
-        "location_info": {
-          "$ref": "#/definitions/commonString"
-        },
-        "details": {
-          "$ref": "#/definitions/commonString"
-        },
-        "user_id": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
     "commonIdentifier": {
       "type": "object",
       "properties": {
@@ -1168,17 +1179,6 @@
         "num": {
           "type": "string",
           "format": "int64"
-        }
-      }
-    },
-    "commonQuery": {
-      "type": "object",
-      "properties": {
-        "query": {
-          "$ref": "#/definitions/commonString"
-        },
-        "fields": {
-          "$ref": "#/definitions/commonString"
         }
       }
     },

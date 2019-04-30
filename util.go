@@ -3,27 +3,47 @@
 package api
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"github.com/autom8ter/api/common"
+	"github.com/autom8ter/objectify"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/golang/protobuf/proto"
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/clientcredentials"
 	"google.golang.org/grpc"
+	"net/http"
+	"net/url"
+	"reflect"
 )
 
+func init() {
+	EnvContext = common.StringArrayFromEnv().ToContext(context.TODO(), "env")
+	util = objectify.Default()
+}
+
+var (
+	util *objectify.Handler
+)
+
+var EnvContext context.Context
+
 type ClientSet struct {
-	Utility UtilityServiceClient
-	Contact ContactServiceClient
-	Payment PaymentServiceClient
-	User    UserServiceClient
+	Utility    UtilityServiceClient
+	Contact    ContactServiceClient
+	Payment    PaymentServiceClient
+	Management ManagementServiceClient
+	Auth       AuthenticationServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	return &ClientSet{
-		Utility: NewUtilityServiceClient(conn),
-		Contact: NewContactServiceClient(conn),
-		Payment: NewPaymentServiceClient(conn),
-		User:    NewUserServiceClient(conn),
+		Utility:    NewUtilityServiceClient(conn),
+		Contact:    NewContactServiceClient(conn),
+		Payment:    NewPaymentServiceClient(conn),
+		Auth:       NewAuthenticationServiceClient(conn),
+		Management: NewManagementServiceClient(conn),
 	}
 }
 
@@ -55,13 +75,7 @@ func (p *JSONWebKeys) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *TokenQuery) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
 func (p *Identity) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-func (p *Auth) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
@@ -115,22 +129,6 @@ func (p *PhoneNumber) UnmarshalJSONFrom(bits []byte) error {
 
 func (p *JSONWebKeys) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
-}
-
-func (p *TokenQuery) UnmarshalJSONFrom(bits []byte) error {
-	return json.Unmarshal(bits, p)
-}
-
-func (p *Auth) UnmarshalJSONFrom(bits []byte) error {
-	return json.Unmarshal(bits, p)
-}
-
-func (p *TokenQuery) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *Auth) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
 }
 
 func (p *JSONWebKeys) UnmarshalProtoFrom(bits []byte) error {
@@ -220,4 +218,126 @@ func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 		return cert, err
 	}
 	return cert, nil
+}
+
+func (s *ConfigSet) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Config) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *ConfigSet) UnmarshalJSONFrom(b []byte) error {
+	return util.UnmarshalJSON(b, s)
+}
+func (s *ConfigSet) UnmarshalProtoFrom(b []byte) error {
+	return util.UnmarshalProto(b, s)
+}
+
+func (s *Event) JSONString() *common.String {
+	return common.MessageToJSONString(s)
+}
+
+func (s *Event) UnmarshalProtofrom(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+}
+
+func (s *Event) UnmarshalJSONfrom(bits []byte) error {
+	return util.UnmarshalJSON(bits, s)
+}
+
+func (s *ConfigSet) JSONString() *common.String {
+	return common.MessageToJSONString(s)
+}
+
+func (s *Config) JSONString() *common.String {
+	return common.MessageToJSONString(s)
+}
+
+func (s *Config) UnmarshalProtoFrom(b []byte) error {
+	return util.UnmarshalProto(b, s)
+}
+
+func (s *Config) UnmarshalJSONFrom(b []byte) error {
+	return util.UnmarshalJSON(b, s)
+}
+
+func (s *ConfigSet) Get(key string) *Config {
+	return s.Configs[key]
+}
+
+func (s *ConfigSet) Put(key string, c *Config) {
+	s.Configs[key] = c
+}
+
+func (s *ConfigSet) Exists(key string) bool {
+	t := s.Configs[key]
+	if t == nil {
+		return false
+	}
+	return true
+}
+
+func (s *ConfigSet) Length() int {
+	return len(s.Configs)
+}
+
+func (s *Config) DeepEqual(y interface{}) bool {
+	return reflect.DeepEqual(s, y)
+}
+
+func (s *ConfigSet) DeepEqual(y interface{}) bool {
+	return util.DeepEqual(s, y)
+}
+
+func (s *ConfigSet) Validate(fn func(set *ConfigSet) error) error {
+	return fn(s)
+}
+
+func (s *ConfigSet) Debugf(format string) {
+	str := common.MessageToJSONString(s)
+	str.Debugf(format)
+}
+
+func (s *Config) Debugf(format string) {
+	str := common.MessageToJSONString(s)
+	str.Debugf(format)
+}
+
+func (c *Config) Oauth2Client(ctx context.Context, code *common.String) (*http.Client, error) {
+	a := &oauth2.Config{
+		ClientID:     c.ClientId.Text,
+		ClientSecret: c.ClientSecret.Text,
+		Endpoint: oauth2.Endpoint{
+			AuthURL:  c.AuthUrl.Text,
+			TokenURL: c.TokenUrl.Text,
+		},
+		RedirectURL: c.Redirect.Text,
+		Scopes:      c.Scopes.Array(),
+	}
+	tok, err := a.Exchange(ctx, code.Text)
+	if err != nil {
+		return nil, err
+	}
+	return a.Client(ctx, tok), nil
+}
+
+func (c *Config) ClientCredentials() *clientcredentials.Config {
+	rl := url.Values{}
+	for k, v := range c.EndpointParams.StringMap {
+		rl.Set(k, v.Text)
+	}
+
+	return &clientcredentials.Config{
+		ClientID:       c.ClientId.Text,
+		ClientSecret:   c.ClientSecret.Text,
+		TokenURL:       c.TokenUrl.Text,
+		Scopes:         c.Scopes.Array(),
+		EndpointParams: rl,
+	}
+}
+
+func (c *Config) ClientCredentialsClient(ctx context.Context) *http.Client {
+	return c.ClientCredentials().Client(ctx)
 }

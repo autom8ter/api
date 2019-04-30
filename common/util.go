@@ -14,8 +14,6 @@ import (
 	human "github.com/dustin/go-humanize"
 	"github.com/golang/protobuf/proto"
 	"github.com/pkg/errors"
-	"golang.org/x/oauth2"
-	"golang.org/x/oauth2/clientcredentials"
 	"golang.org/x/text/language"
 	"html/template"
 	"io"
@@ -32,13 +30,11 @@ import (
 )
 
 func init() {
-	EnvContext = StringArrayFromEnv().ToContext(context.TODO(), "env")
 	util = objectify.Default()
 }
 
 var (
-	util       *objectify.Handler
-	EnvContext context.Context
+	util *objectify.Handler
 )
 
 func ENVFromContext(ctx context.Context) *StringArray {
@@ -228,11 +224,6 @@ func (s *Int64) Debugf(format string) {
 	str.Debugf(format)
 }
 
-func (s *Token) Debugf(format string) {
-	str := MessageToJSONString(s)
-	str.Debugf(format)
-}
-
 func (s *StringMap) Debugf(format string) {
 	str := MessageToJSONString(s)
 	str.Debugf(format)
@@ -241,69 +232,6 @@ func (s *StringMap) Debugf(format string) {
 func (s *StringArray) Debugf(format string) {
 	str := MessageToJSONString(s)
 	str.Debugf(format)
-}
-
-func (s *TokenSet) Debugf(format string) {
-	str := MessageToJSONString(s)
-	str.Debugf(format)
-}
-
-func (s *Config) Debugf(format string) {
-	str := MessageToJSONString(s)
-	str.Debugf(format)
-}
-
-func TokenFromOAuthToken(tok *oauth2.Token) *Token {
-	return &Token{
-		AccessToken:  ToString(tok.AccessToken),
-		TokenType:    ToString(tok.TokenType),
-		RefreshToken: ToString(tok.RefreshToken),
-		Expiry:       ToString(tok.Expiry.String()),
-		IdToken:      ToString(tok.Extra("id_token").(string)),
-	}
-}
-
-func (c *Config) Token(code string) (*Token, error) {
-	a := &oauth2.Config{
-		ClientID:     c.ClientId.Text,
-		ClientSecret: c.ClientSecret.Text,
-		Endpoint: oauth2.Endpoint{
-			AuthURL:  c.AuthUrl.Text,
-			TokenURL: c.TokenUrl.Text,
-		},
-		RedirectURL: c.Redirect.Text,
-		Scopes:      c.Scopes.Array(),
-	}
-	tok, err := a.Exchange(context.TODO(), code)
-	if err != nil {
-		return nil, err
-	}
-	return TokenFromOAuthToken(tok), nil
-}
-
-func (c *Config) ClientCredentials() *clientcredentials.Config {
-	rl := url.Values{}
-	for k, v := range c.EndpointParams.StringMap {
-		rl.Set(k, v.Text)
-	}
-
-	return &clientcredentials.Config{
-		ClientID:       c.ClientId.Text,
-		ClientSecret:   c.ClientSecret.Text,
-		TokenURL:       c.TokenUrl.Text,
-		Scopes:         c.Scopes.Array(),
-		EndpointParams: rl,
-	}
-}
-
-func (c *Config) GetToken(tok *oauth2.Token) *Token {
-	return &Token{
-		AccessToken:  ToString(tok.AccessToken),
-		TokenType:    ToString(tok.TokenType),
-		RefreshToken: ToString(tok.RefreshToken),
-		Expiry:       ToString(tok.Expiry.String()),
-		IdToken:      ToString(tok.Extra("id_token").(string)),
-	}
 }
 
 func (m *String) IsTemplate() bool {
@@ -782,10 +710,6 @@ func (s *StringArray) Validate(fn func(s *StringArray) error) error {
 	return fn(s)
 }
 
-func (s *Token) Validate(fn func(s *Token) error) error {
-	return fn(s)
-}
-
 func (s *Float64) Validate(fn func(s *Float64) error) error {
 	return fn(s)
 }
@@ -794,23 +718,12 @@ func (s *Int64) Validate(fn func(s *Int64) error) error {
 	return fn(s)
 }
 
-func (s *TokenSet) Validate(fn func(set *TokenSet) error) error {
-	return fn(s)
-}
 func (s *Int64) DeepEqual(y interface{}) bool {
 	return reflect.DeepEqual(s, y)
 }
 
 func (s *Float64) DeepEqual(y interface{}) bool {
 	return reflect.DeepEqual(s, y)
-}
-
-func (s *Token) DeepEqual(y interface{}) bool {
-	return util.DeepEqual(s, y)
-}
-
-func (s *TokenSet) DeepEqual(y interface{}) bool {
-	return util.DeepEqual(s, y)
 }
 
 func (s *StringArray) DeepEqual(y interface{}) bool {
@@ -840,10 +753,6 @@ func (s *Float64) TypeMatches(src interface{}) bool {
 	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
 }
 
-func (s *Token) TypeMatches(src interface{}) bool {
-	return fmt.Sprintf("%T", s) == fmt.Sprintf("%T", src)
-}
-
 func (s *String) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
@@ -861,18 +770,6 @@ func (s *Float64) ToContext(ctx context.Context, key string) context.Context {
 }
 
 func (s *StringMap) ToContext(ctx context.Context, key string) context.Context {
-	return context.WithValue(ctx, key, s)
-}
-
-func (s *Token) ToContext(ctx context.Context, key string) context.Context {
-	return context.WithValue(ctx, key, s)
-}
-
-func (s *TokenSet) ToContext(ctx context.Context, key string) context.Context {
-	return context.WithValue(ctx, key, s)
-}
-
-func (s *Config) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
@@ -899,14 +796,6 @@ func (s *Int64) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 }
 
-func (s *Token) UnmarshalJSONFrom(bits []byte) error {
-	return util.UnmarshalJSON(bits, s)
-}
-
-func (s *TokenSet) UnmarshalJSONFrom(b []byte) error {
-	return util.UnmarshalJSON(b, s)
-}
-
 func (s *StringMap) UnmarshalProtoFrom(bits []byte) error {
 	return util.UnmarshalProto(bits, s)
 
@@ -925,13 +814,6 @@ func (s *Int64) UnmarshalProtoFrom(bits []byte) error {
 	return util.UnmarshalProto(bits, s)
 }
 
-func (s *Token) UnmarshalProtoFrom(bits []byte) error {
-	return util.UnmarshalProto(bits, s)
-}
-
-func (s *TokenSet) UnmarshalProtoFrom(b []byte) error {
-	return util.UnmarshalProto(b, s)
-}
 func (s *String) JSONString() *String {
 	return MessageToJSONString(s)
 }
@@ -950,54 +832,6 @@ func (s *Float64) JSONString() *String {
 
 func (s *Int64) JSONString() *String {
 	return MessageToJSONString(s)
-}
-
-func (s *Event) JSONString() *String {
-	return MessageToJSONString(s)
-}
-
-func (s *Event) UnmarshalProtofrom(bits []byte) error {
-	return util.UnmarshalProto(bits, s)
-}
-
-func (s *Event) UnmarshalJSONfrom(bits []byte) error {
-	return util.UnmarshalJSON(bits, s)
-}
-
-func (s *TokenSet) JSONString() *String {
-	return MessageToJSONString(s)
-}
-
-func (s *Config) JSONString() *String {
-	return MessageToJSONString(s)
-}
-
-func (s *Config) UnmarshalProtoFrom(b []byte) error {
-	return util.UnmarshalProto(b, s)
-}
-
-func (s *Config) UnmarshalJSONFrom(b []byte) error {
-	return util.UnmarshalJSON(b, s)
-}
-
-func (s *TokenSet) Get(key string) *Token {
-	return s.Tokens[key]
-}
-
-func (s *TokenSet) Put(key string, tok *Token) {
-	s.Tokens[key] = tok
-}
-
-func (s *TokenSet) Exists(key string) bool {
-	t := s.Tokens[key]
-	if t == nil {
-		return false
-	}
-	return true
-}
-
-func (s *TokenSet) Length() int {
-	return len(s.Tokens)
 }
 
 func EmailIdentifier(email string) *Identifier {

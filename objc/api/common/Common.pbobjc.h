@@ -28,9 +28,6 @@
 CF_EXTERN_C_BEGIN
 
 @class String;
-@class StringArray;
-@class StringMap;
-@class Token;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -109,6 +106,20 @@ typedef GPB_ENUM(Identifier_FieldNumber) {
 
 @end
 
+#pragma mark - AuthToken
+
+typedef GPB_ENUM(AuthToken_FieldNumber) {
+  AuthToken_FieldNumber_Token = 1,
+};
+
+@interface AuthToken : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *token;
+/** Test to see if @c token has been set. */
+@property(nonatomic, readwrite) BOOL hasToken;
+
+@end
+
 #pragma mark - Int64
 
 typedef GPB_ENUM(Int64_FieldNumber) {
@@ -130,166 +141,6 @@ typedef GPB_ENUM(Float64_FieldNumber) {
 @interface Float64 : GPBMessage
 
 @property(nonatomic, readwrite) double num;
-
-@end
-
-#pragma mark - Token
-
-typedef GPB_ENUM(Token_FieldNumber) {
-  Token_FieldNumber_AccessToken = 1,
-  Token_FieldNumber_TokenType = 2,
-  Token_FieldNumber_RefreshToken = 3,
-  Token_FieldNumber_Expiry = 4,
-  Token_FieldNumber_IdToken = 5,
-};
-
-@interface Token : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *accessToken;
-/** Test to see if @c accessToken has been set. */
-@property(nonatomic, readwrite) BOOL hasAccessToken;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *tokenType;
-/** Test to see if @c tokenType has been set. */
-@property(nonatomic, readwrite) BOOL hasTokenType;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *refreshToken;
-/** Test to see if @c refreshToken has been set. */
-@property(nonatomic, readwrite) BOOL hasRefreshToken;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *expiry;
-/** Test to see if @c expiry has been set. */
-@property(nonatomic, readwrite) BOOL hasExpiry;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *idToken;
-/** Test to see if @c idToken has been set. */
-@property(nonatomic, readwrite) BOOL hasIdToken;
-
-@end
-
-#pragma mark - Config
-
-typedef GPB_ENUM(Config_FieldNumber) {
-  Config_FieldNumber_ClientId = 1,
-  Config_FieldNumber_ClientSecret = 2,
-  Config_FieldNumber_TokenURL = 3,
-  Config_FieldNumber_AuthURL = 4,
-  Config_FieldNumber_Scopes = 5,
-  Config_FieldNumber_Redirect = 6,
-  Config_FieldNumber_EndpointParams = 7,
-};
-
-@interface Config : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
-/** Test to see if @c clientId has been set. */
-@property(nonatomic, readwrite) BOOL hasClientId;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
-/** Test to see if @c clientSecret has been set. */
-@property(nonatomic, readwrite) BOOL hasClientSecret;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
-/** Test to see if @c tokenURL has been set. */
-@property(nonatomic, readwrite) BOOL hasTokenURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *authURL;
-/** Test to see if @c authURL has been set. */
-@property(nonatomic, readwrite) BOOL hasAuthURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
-/** Test to see if @c scopes has been set. */
-@property(nonatomic, readwrite) BOOL hasScopes;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *redirect;
-/** Test to see if @c redirect has been set. */
-@property(nonatomic, readwrite) BOOL hasRedirect;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *endpointParams;
-/** Test to see if @c endpointParams has been set. */
-@property(nonatomic, readwrite) BOOL hasEndpointParams;
-
-@end
-
-#pragma mark - Query
-
-typedef GPB_ENUM(Query_FieldNumber) {
-  Query_FieldNumber_Query = 4,
-  Query_FieldNumber_Fields = 5,
-};
-
-@interface Query : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *query;
-/** Test to see if @c query has been set. */
-@property(nonatomic, readwrite) BOOL hasQuery;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *fields;
-/** Test to see if @c fields has been set. */
-@property(nonatomic, readwrite) BOOL hasFields;
-
-@end
-
-#pragma mark - Event
-
-typedef GPB_ENUM(Event_FieldNumber) {
-  Event_FieldNumber_Date = 1,
-  Event_FieldNumber_Type = 2,
-  Event_FieldNumber_ClientId = 3,
-  Event_FieldNumber_ClientName = 4,
-  Event_FieldNumber_Ip = 5,
-  Event_FieldNumber_LocationInfo = 6,
-  Event_FieldNumber_Details = 7,
-  Event_FieldNumber_UserId = 8,
-};
-
-@interface Event : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *date;
-/** Test to see if @c date has been set. */
-@property(nonatomic, readwrite) BOOL hasDate;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *type;
-/** Test to see if @c type has been set. */
-@property(nonatomic, readwrite) BOOL hasType;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
-/** Test to see if @c clientId has been set. */
-@property(nonatomic, readwrite) BOOL hasClientId;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientName;
-/** Test to see if @c clientName has been set. */
-@property(nonatomic, readwrite) BOOL hasClientName;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *ip;
-/** Test to see if @c ip has been set. */
-@property(nonatomic, readwrite) BOOL hasIp;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *locationInfo;
-/** Test to see if @c locationInfo has been set. */
-@property(nonatomic, readwrite) BOOL hasLocationInfo;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *details;
-/** Test to see if @c details has been set. */
-@property(nonatomic, readwrite) BOOL hasDetails;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *userId;
-/** Test to see if @c userId has been set. */
-@property(nonatomic, readwrite) BOOL hasUserId;
-
-@end
-
-#pragma mark - TokenSet
-
-typedef GPB_ENUM(TokenSet_FieldNumber) {
-  TokenSet_FieldNumber_Tokens = 1,
-};
-
-@interface TokenSet : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, Token*> *tokens;
-/** The number of items in @c tokens without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger tokens_Count;
 
 @end
 

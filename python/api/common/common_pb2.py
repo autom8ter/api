@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='common',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\"\xba\x01\n\x05Token\x12$\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\ntoken_type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12%\n\rrefresh_token\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x65xpiry\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08id_token\x18\x05 \x01(\x0b\x32\x0e.common.String\"\x8a\x02\n\x06\x43onfig\x12!\n\tclient_id\x18\x01 \x01(\x0b\x32\x0e.common.String\x12%\n\rclient_secret\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\ttoken_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x61uth_url\x18\x04 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x05 \x01(\x0b\x32\x13.common.StringArray\x12 \n\x08redirect\x18\x06 \x01(\x0b\x32\x0e.common.String\x12*\n\x0f\x65ndpoint_params\x18\x07 \x01(\x0b\x32\x11.common.StringMap\"F\n\x05Query\x12\x1d\n\x05query\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x66ields\x18\x05 \x01(\x0b\x32\x0e.common.String\"\x90\x02\n\x05\x45vent\x12\x1c\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tclient_id\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x63lient_name\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02ip\x18\x05 \x01(\x0b\x32\x0e.common.String\x12%\n\rlocation_info\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x64\x65tails\x18\x07 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07user_id\x18\x08 \x01(\x0b\x32\x0e.common.String\"v\n\x08TokenSet\x12,\n\x06tokens\x18\x01 \x03(\x0b\x32\x1c.common.TokenSet.TokensEntry\x1a<\n\x0bTokensEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1c\n\x05value\x18\x02 \x01(\x0b\x32\r.common.Token:\x02\x38\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"*\n\tAuthToken\x12\x1d\n\x05token\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\x62\x06proto3')
 )
 
 
@@ -210,6 +210,37 @@ _IDENTIFIER = _descriptor.Descriptor(
 )
 
 
+_AUTHTOKEN = _descriptor.Descriptor(
+  name='AuthToken',
+  full_name='common.AuthToken',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='token', full_name='common.AuthToken.token', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=288,
+  serialized_end=330,
+)
+
+
 _INT64 = _descriptor.Descriptor(
   name='Int64',
   full_name='common.Int64',
@@ -236,8 +267,8 @@ _INT64 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=308,
+  serialized_start=332,
+  serialized_end=352,
 )
 
 
@@ -267,326 +298,8 @@ _FLOAT64 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=310,
-  serialized_end=332,
-)
-
-
-_TOKEN = _descriptor.Descriptor(
-  name='Token',
-  full_name='common.Token',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_token', full_name='common.Token.access_token', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='token_type', full_name='common.Token.token_type', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='refresh_token', full_name='common.Token.refresh_token', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='expiry', full_name='common.Token.expiry', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='id_token', full_name='common.Token.id_token', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=335,
-  serialized_end=521,
-)
-
-
-_CONFIG = _descriptor.Descriptor(
-  name='Config',
-  full_name='common.Config',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='client_id', full_name='common.Config.client_id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client_secret', full_name='common.Config.client_secret', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='token_url', full_name='common.Config.token_url', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='auth_url', full_name='common.Config.auth_url', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='scopes', full_name='common.Config.scopes', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='redirect', full_name='common.Config.redirect', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='endpoint_params', full_name='common.Config.endpoint_params', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=524,
-  serialized_end=790,
-)
-
-
-_QUERY = _descriptor.Descriptor(
-  name='Query',
-  full_name='common.Query',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='query', full_name='common.Query.query', index=0,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='common.Query.fields', index=1,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=792,
-  serialized_end=862,
-)
-
-
-_EVENT = _descriptor.Descriptor(
-  name='Event',
-  full_name='common.Event',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='date', full_name='common.Event.date', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='common.Event.type', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client_id', full_name='common.Event.client_id', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client_name', full_name='common.Event.client_name', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='ip', full_name='common.Event.ip', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='location_info', full_name='common.Event.location_info', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='details', full_name='common.Event.details', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='user_id', full_name='common.Event.user_id', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=865,
-  serialized_end=1137,
-)
-
-
-_TOKENSET_TOKENSENTRY = _descriptor.Descriptor(
-  name='TokensEntry',
-  full_name='common.TokenSet.TokensEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='common.TokenSet.TokensEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='common.TokenSet.TokensEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('8\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1197,
-  serialized_end=1257,
-)
-
-_TOKENSET = _descriptor.Descriptor(
-  name='TokenSet',
-  full_name='common.TokenSet',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='tokens', full_name='common.TokenSet.tokens', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_TOKENSET_TOKENSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1139,
-  serialized_end=1257,
+  serialized_start=354,
+  serialized_end=376,
 )
 
 _STRINGARRAY.fields_by_name['strings'].message_type = _STRING
@@ -594,43 +307,15 @@ _STRINGMAP_STRINGMAPENTRY.fields_by_name['value'].message_type = _STRING
 _STRINGMAP_STRINGMAPENTRY.containing_type = _STRINGMAP
 _STRINGMAP.fields_by_name['string_map'].message_type = _STRINGMAP_STRINGMAPENTRY
 _IDENTIFIER.fields_by_name['id'].message_type = _STRING
-_TOKEN.fields_by_name['access_token'].message_type = _STRING
-_TOKEN.fields_by_name['token_type'].message_type = _STRING
-_TOKEN.fields_by_name['refresh_token'].message_type = _STRING
-_TOKEN.fields_by_name['expiry'].message_type = _STRING
-_TOKEN.fields_by_name['id_token'].message_type = _STRING
-_CONFIG.fields_by_name['client_id'].message_type = _STRING
-_CONFIG.fields_by_name['client_secret'].message_type = _STRING
-_CONFIG.fields_by_name['token_url'].message_type = _STRING
-_CONFIG.fields_by_name['auth_url'].message_type = _STRING
-_CONFIG.fields_by_name['scopes'].message_type = _STRINGARRAY
-_CONFIG.fields_by_name['redirect'].message_type = _STRING
-_CONFIG.fields_by_name['endpoint_params'].message_type = _STRINGMAP
-_QUERY.fields_by_name['query'].message_type = _STRING
-_QUERY.fields_by_name['fields'].message_type = _STRING
-_EVENT.fields_by_name['date'].message_type = _STRING
-_EVENT.fields_by_name['type'].message_type = _STRING
-_EVENT.fields_by_name['client_id'].message_type = _STRING
-_EVENT.fields_by_name['client_name'].message_type = _STRING
-_EVENT.fields_by_name['ip'].message_type = _STRING
-_EVENT.fields_by_name['location_info'].message_type = _STRING
-_EVENT.fields_by_name['details'].message_type = _STRING
-_EVENT.fields_by_name['user_id'].message_type = _STRING
-_TOKENSET_TOKENSENTRY.fields_by_name['value'].message_type = _TOKEN
-_TOKENSET_TOKENSENTRY.containing_type = _TOKENSET
-_TOKENSET.fields_by_name['tokens'].message_type = _TOKENSET_TOKENSENTRY
+_AUTHTOKEN.fields_by_name['token'].message_type = _STRING
 DESCRIPTOR.message_types_by_name['String'] = _STRING
 DESCRIPTOR.message_types_by_name['StringArray'] = _STRINGARRAY
 DESCRIPTOR.message_types_by_name['StringMap'] = _STRINGMAP
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
+DESCRIPTOR.message_types_by_name['AuthToken'] = _AUTHTOKEN
 DESCRIPTOR.message_types_by_name['Int64'] = _INT64
 DESCRIPTOR.message_types_by_name['Float64'] = _FLOAT64
-DESCRIPTOR.message_types_by_name['Token'] = _TOKEN
-DESCRIPTOR.message_types_by_name['Config'] = _CONFIG
-DESCRIPTOR.message_types_by_name['Query'] = _QUERY
-DESCRIPTOR.message_types_by_name['Event'] = _EVENT
-DESCRIPTOR.message_types_by_name['TokenSet'] = _TOKENSET
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 String = _reflection.GeneratedProtocolMessageType('String', (_message.Message,), dict(
@@ -676,6 +361,13 @@ Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Me
   ))
 _sym_db.RegisterMessage(Identifier)
 
+AuthToken = _reflection.GeneratedProtocolMessageType('AuthToken', (_message.Message,), dict(
+  DESCRIPTOR = _AUTHTOKEN,
+  __module__ = 'common.common_pb2'
+  # @@protoc_insertion_point(class_scope:common.AuthToken)
+  ))
+_sym_db.RegisterMessage(AuthToken)
+
 Int64 = _reflection.GeneratedProtocolMessageType('Int64', (_message.Message,), dict(
   DESCRIPTOR = _INT64,
   __module__ = 'common.common_pb2'
@@ -690,50 +382,6 @@ Float64 = _reflection.GeneratedProtocolMessageType('Float64', (_message.Message,
   ))
 _sym_db.RegisterMessage(Float64)
 
-Token = _reflection.GeneratedProtocolMessageType('Token', (_message.Message,), dict(
-  DESCRIPTOR = _TOKEN,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Token)
-  ))
-_sym_db.RegisterMessage(Token)
-
-Config = _reflection.GeneratedProtocolMessageType('Config', (_message.Message,), dict(
-  DESCRIPTOR = _CONFIG,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Config)
-  ))
-_sym_db.RegisterMessage(Config)
-
-Query = _reflection.GeneratedProtocolMessageType('Query', (_message.Message,), dict(
-  DESCRIPTOR = _QUERY,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Query)
-  ))
-_sym_db.RegisterMessage(Query)
-
-Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), dict(
-  DESCRIPTOR = _EVENT,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Event)
-  ))
-_sym_db.RegisterMessage(Event)
-
-TokenSet = _reflection.GeneratedProtocolMessageType('TokenSet', (_message.Message,), dict(
-
-  TokensEntry = _reflection.GeneratedProtocolMessageType('TokensEntry', (_message.Message,), dict(
-    DESCRIPTOR = _TOKENSET_TOKENSENTRY,
-    __module__ = 'common.common_pb2'
-    # @@protoc_insertion_point(class_scope:common.TokenSet.TokensEntry)
-    ))
-  ,
-  DESCRIPTOR = _TOKENSET,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.TokenSet)
-  ))
-_sym_db.RegisterMessage(TokenSet)
-_sym_db.RegisterMessage(TokenSet.TokensEntry)
-
 
 _STRINGMAP_STRINGMAPENTRY._options = None
-_TOKENSET_TOKENSENTRY._options = None
 # @@protoc_insertion_point(module_scope)

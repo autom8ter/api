@@ -18,44 +18,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "common.Identifier" do
     optional :id, :message, 1, "common.String"
   end
+  add_message "common.AuthToken" do
+    optional :token, :message, 1, "common.String"
+  end
   add_message "common.Int64" do
     optional :num, :int64, 1
   end
   add_message "common.Float64" do
     optional :num, :double, 1
-  end
-  add_message "common.Token" do
-    optional :access_token, :message, 1, "common.String"
-    optional :token_type, :message, 2, "common.String"
-    optional :refresh_token, :message, 3, "common.String"
-    optional :expiry, :message, 4, "common.String"
-    optional :id_token, :message, 5, "common.String"
-  end
-  add_message "common.Config" do
-    optional :client_id, :message, 1, "common.String"
-    optional :client_secret, :message, 2, "common.String"
-    optional :token_url, :message, 3, "common.String"
-    optional :auth_url, :message, 4, "common.String"
-    optional :scopes, :message, 5, "common.StringArray"
-    optional :redirect, :message, 6, "common.String"
-    optional :endpoint_params, :message, 7, "common.StringMap"
-  end
-  add_message "common.Query" do
-    optional :query, :message, 4, "common.String"
-    optional :fields, :message, 5, "common.String"
-  end
-  add_message "common.Event" do
-    optional :date, :message, 1, "common.String"
-    optional :type, :message, 2, "common.String"
-    optional :client_id, :message, 3, "common.String"
-    optional :client_name, :message, 4, "common.String"
-    optional :ip, :message, 5, "common.String"
-    optional :location_info, :message, 6, "common.String"
-    optional :details, :message, 7, "common.String"
-    optional :user_id, :message, 8, "common.String"
-  end
-  add_message "common.TokenSet" do
-    map :tokens, :string, :message, 1, "common.Token"
   end
 end
 
@@ -65,11 +35,7 @@ module Common
   StringMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringMap").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Empty").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Identifier").msgclass
+  AuthToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.AuthToken").msgclass
   Int64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int64").msgclass
   Float64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Float64").msgclass
-  Token = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Token").msgclass
-  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Config").msgclass
-  Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Query").msgclass
-  Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Event").msgclass
-  TokenSet = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.TokenSet").msgclass
 end
