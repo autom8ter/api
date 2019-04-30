@@ -319,7 +319,16 @@ func (s *OAuth2) Debugf(format string) {
 }
 
 func (c *OAuth2) Token() (*oauth2.Token, error) {
-	a := &oauth2.Config{
+	a := c.Config()
+	tok, err := a.Exchange(context.TODO(), c.Code.Text)
+	if err != nil {
+		return nil, err
+	}
+	return tok, nil
+}
+
+func (c *OAuth2) Config() *oauth2.Config {
+	return &oauth2.Config{
 		ClientID:     c.ClientId.Text,
 		ClientSecret: c.ClientSecret.Text,
 		Endpoint: oauth2.Endpoint{
@@ -329,15 +338,10 @@ func (c *OAuth2) Token() (*oauth2.Token, error) {
 		RedirectURL: c.Redirect.Text,
 		Scopes:      c.Scopes.Array(),
 	}
-	tok, err := a.Exchange(context.TODO(), c.Code.Text)
-	if err != nil {
-		return nil, err
-	}
-	return tok, nil
 }
 
-func (c *JWT) Token() (*oauth2.Token, error) {
-	a := &ojwt.Config{
+func (c *JWT) Config() *ojwt.Config {
+	return &ojwt.Config{
 		Email:        "",
 		PrivateKey:   nil,
 		PrivateKeyID: "",
@@ -346,6 +350,10 @@ func (c *JWT) Token() (*oauth2.Token, error) {
 		TokenURL:     "",
 		Expires:      0,
 	}
+}
+
+func (c *JWT) Token() (*oauth2.Token, error) {
+	a := c.Config()
 
 	src := a.TokenSource(context.TODO())
 	tok, err := src.Token()
@@ -355,18 +363,22 @@ func (c *JWT) Token() (*oauth2.Token, error) {
 	return tok, nil
 }
 
-func (c *ClientCredentials) Token() (*oauth2.Token, error) {
+func (c *ClientCredentials) Config() *clientcredentials.Config {
 	rl := url.Values{}
 	for k, v := range c.EndpointParams.StringMap {
 		rl.Set(k, v.Text)
 	}
-	a := &clientcredentials.Config{
+	return &clientcredentials.Config{
 		ClientID:       c.ClientId.Text,
 		ClientSecret:   c.ClientSecret.Text,
 		TokenURL:       c.TokenUrl.Text,
 		Scopes:         c.Scopes.Array(),
 		EndpointParams: rl,
 	}
+}
+
+func (c *ClientCredentials) Token() (*oauth2.Token, error) {
+	a := c.Config()
 	src := a.TokenSource(context.TODO())
 	tok, err := src.Token()
 	if err != nil {
@@ -384,5 +396,9 @@ func (c *OAuth2) Client(ctx context.Context) *http.Client {
 }
 
 func (c *JWT) Client(ctx context.Context) *http.Client {
+	return oauth2.NewClient(ctx, c)
+}
+
+func (c *OAuth2) AuthCodeURL(ctx context.Context) *http.Client {
 	return oauth2.NewClient(ctx, c)
 }
