@@ -41,7 +41,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[31];
+  static const ::google::protobuf::internal::ParseTable schema[30];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -133,9 +133,6 @@ extern SubscribeRequestDefaultTypeInternal _SubscribeRequest_default_instance_;
 class SubscriptionResponse;
 class SubscriptionResponseDefaultTypeInternal;
 extern SubscriptionResponseDefaultTypeInternal _SubscriptionResponse_default_instance_;
-class TokenQuery;
-class TokenQueryDefaultTypeInternal;
-extern TokenQueryDefaultTypeInternal _TokenQuery_default_instance_;
 class UnSubscribeRequest;
 class UnSubscribeRequestDefaultTypeInternal;
 extern UnSubscribeRequestDefaultTypeInternal _UnSubscribeRequest_default_instance_;
@@ -173,7 +170,6 @@ template<> ::api::SMSResponse* Arena::CreateMaybeMessage<::api::SMSResponse>(Are
 template<> ::api::SearchPhoneNumberRequest* Arena::CreateMaybeMessage<::api::SearchPhoneNumberRequest>(Arena*);
 template<> ::api::SubscribeRequest* Arena::CreateMaybeMessage<::api::SubscribeRequest>(Arena*);
 template<> ::api::SubscriptionResponse* Arena::CreateMaybeMessage<::api::SubscriptionResponse>(Arena*);
-template<> ::api::TokenQuery* Arena::CreateMaybeMessage<::api::TokenQuery>(Arena*);
 template<> ::api::UnSubscribeRequest* Arena::CreateMaybeMessage<::api::UnSubscribeRequest>(Arena*);
 template<> ::api::User* Arena::CreateMaybeMessage<::api::User>(Arena*);
 }  // namespace protobuf
@@ -3698,128 +3694,6 @@ class PhoneNumberResource : public ::google::protobuf::Message /* @@protoc_inser
 };
 // -------------------------------------------------------------------
 
-class TokenQuery : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.TokenQuery) */ {
- public:
-  TokenQuery();
-  virtual ~TokenQuery();
-
-  TokenQuery(const TokenQuery& from);
-
-  inline TokenQuery& operator=(const TokenQuery& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  TokenQuery(TokenQuery&& from) noexcept
-    : TokenQuery() {
-    *this = ::std::move(from);
-  }
-
-  inline TokenQuery& operator=(TokenQuery&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const TokenQuery& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const TokenQuery* internal_default_instance() {
-    return reinterpret_cast<const TokenQuery*>(
-               &_TokenQuery_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    23;
-
-  void Swap(TokenQuery* other);
-  friend void swap(TokenQuery& a, TokenQuery& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline TokenQuery* New() const final {
-    return CreateMaybeMessage<TokenQuery>(NULL);
-  }
-
-  TokenQuery* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<TokenQuery>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const TokenQuery& from);
-  void MergeFrom(const TokenQuery& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(TokenQuery* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.Token token = 1;
-  bool has_token() const;
-  void clear_token();
-  static const int kTokenFieldNumber = 1;
-  private:
-  const ::common::Token& _internal_token() const;
-  public:
-  const ::common::Token& token() const;
-  ::common::Token* release_token();
-  ::common::Token* mutable_token();
-  void set_allocated_token(::common::Token* token);
-
-  // .common.String query = 2;
-  bool has_query() const;
-  void clear_query();
-  static const int kQueryFieldNumber = 2;
-  private:
-  const ::common::String& _internal_query() const;
-  public:
-  const ::common::String& query() const;
-  ::common::String* release_query();
-  ::common::String* mutable_query();
-  void set_allocated_query(::common::String* query);
-
-  // @@protoc_insertion_point(class_scope:api.TokenQuery)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::Token* token_;
-  ::common::String* query_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class IDBody : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.IDBody) */ {
  public:
   IDBody();
@@ -3855,7 +3729,7 @@ class IDBody : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_IDBody_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   void Swap(IDBody* other);
   friend void swap(IDBody& a, IDBody& b) {
@@ -3977,7 +3851,7 @@ class IDStrings : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_IDStrings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   void Swap(IDStrings* other);
   friend void swap(IDStrings& a, IDStrings& b) {
@@ -4099,7 +3973,7 @@ class Role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Role_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   void Swap(Role* other);
   friend void swap(Role& a, Role& b) {
@@ -4234,7 +4108,7 @@ class CallResponse : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_CallResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    26;
 
   void Swap(CallResponse* other);
   friend void swap(CallResponse& a, CallResponse& b) {
@@ -4434,7 +4308,7 @@ class SMSResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_SMSResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    27;
 
   void Swap(SMSResponse* other);
   friend void swap(SMSResponse& a, SMSResponse& b) {
@@ -4621,7 +4495,7 @@ class SubscriptionResponse : public ::google::protobuf::Message /* @@protoc_inse
                &_SubscriptionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    28;
 
   void Swap(SubscriptionResponse* other);
   friend void swap(SubscriptionResponse& a, SubscriptionResponse& b) {
@@ -4802,7 +4676,7 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_FaxResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    29;
 
   void Swap(FaxResponse* other);
   friend void swap(FaxResponse& a, FaxResponse& b) {
@@ -9658,106 +9532,6 @@ inline void PhoneNumberResource::set_allocated_uri(::common::String* uri) {
 
 // -------------------------------------------------------------------
 
-// TokenQuery
-
-// .common.Token token = 1;
-inline bool TokenQuery::has_token() const {
-  return this != internal_default_instance() && token_ != NULL;
-}
-inline const ::common::Token& TokenQuery::_internal_token() const {
-  return *token_;
-}
-inline const ::common::Token& TokenQuery::token() const {
-  const ::common::Token* p = token_;
-  // @@protoc_insertion_point(field_get:api.TokenQuery.token)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Token*>(
-      &::common::_Token_default_instance_);
-}
-inline ::common::Token* TokenQuery::release_token() {
-  // @@protoc_insertion_point(field_release:api.TokenQuery.token)
-  
-  ::common::Token* temp = token_;
-  token_ = NULL;
-  return temp;
-}
-inline ::common::Token* TokenQuery::mutable_token() {
-  
-  if (token_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Token>(GetArenaNoVirtual());
-    token_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.TokenQuery.token)
-  return token_;
-}
-inline void TokenQuery::set_allocated_token(::common::Token* token) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(token_);
-  }
-  if (token) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      token = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, token, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  token_ = token;
-  // @@protoc_insertion_point(field_set_allocated:api.TokenQuery.token)
-}
-
-// .common.String query = 2;
-inline bool TokenQuery::has_query() const {
-  return this != internal_default_instance() && query_ != NULL;
-}
-inline const ::common::String& TokenQuery::_internal_query() const {
-  return *query_;
-}
-inline const ::common::String& TokenQuery::query() const {
-  const ::common::String* p = query_;
-  // @@protoc_insertion_point(field_get:api.TokenQuery.query)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* TokenQuery::release_query() {
-  // @@protoc_insertion_point(field_release:api.TokenQuery.query)
-  
-  ::common::String* temp = query_;
-  query_ = NULL;
-  return temp;
-}
-inline ::common::String* TokenQuery::mutable_query() {
-  
-  if (query_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    query_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:api.TokenQuery.query)
-  return query_;
-}
-inline void TokenQuery::set_allocated_query(::common::String* query) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(query_);
-  }
-  if (query) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      query = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, query, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  query_ = query;
-  // @@protoc_insertion_point(field_set_allocated:api.TokenQuery.query)
-}
-
-// -------------------------------------------------------------------
-
 // IDBody
 
 // .common.Identifier id = 1;
@@ -11439,8 +11213,6 @@ inline void FaxResponse::set_allocated_annotations(::common::StringMap* annotati
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

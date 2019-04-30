@@ -130,7 +130,7 @@ service PaymentService {
 }
 
 service UserService {
-    rpc QueryUsers(TokenQuery) returns (stream User) {
+    rpc QueryUsers(common.Query) returns (stream User) {
         option (google.api.http) = {
       post: "/resource/user/query"
       body: "*"
@@ -153,6 +153,12 @@ service UserService {
     rpc UserRoles(common.Identifier) returns (stream Role) {
         option (google.api.http) = {
       post: "/resource/user/roles"
+      body: "*"
+    };
+    }
+    rpc QueryUserLogs(common.Query) returns (stream common.Event) {
+        option (google.api.http) = {
+      post: "/resource/user/query"
       body: "*"
     };
     }
@@ -338,11 +344,6 @@ message PhoneNumberResource {
    PhoneNumber number=1;
    common.Identifier id =2;
    common.String uri=3;
-}
-
-message TokenQuery {
-    common.Token token =1;
-    common.String  query =2;
 }
 
 message IDBody {

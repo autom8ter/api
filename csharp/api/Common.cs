@@ -43,9 +43,16 @@ namespace Common {
             "cmVjdBgGIAEoCzIOLmNvbW1vbi5TdHJpbmcSKgoPZW5kcG9pbnRfcGFyYW1z",
             "GAcgASgLMhEuY29tbW9uLlN0cmluZ01hcCJGCgVRdWVyeRIdCgVxdWVyeRgE",
             "IAEoCzIOLmNvbW1vbi5TdHJpbmcSHgoGZmllbGRzGAUgASgLMg4uY29tbW9u",
-            "LlN0cmluZyJ2CghUb2tlblNldBIsCgZ0b2tlbnMYASADKAsyHC5jb21tb24u",
-            "VG9rZW5TZXQuVG9rZW5zRW50cnkaPAoLVG9rZW5zRW50cnkSCwoDa2V5GAEg",
-            "ASgJEhwKBXZhbHVlGAIgASgLMg0uY29tbW9uLlRva2VuOgI4AWIGcHJvdG8z"));
+            "LlN0cmluZyKQAgoFRXZlbnQSHAoEZGF0ZRgBIAEoCzIOLmNvbW1vbi5TdHJp",
+            "bmcSHAoEdHlwZRgCIAEoCzIOLmNvbW1vbi5TdHJpbmcSIQoJY2xpZW50X2lk",
+            "GAMgASgLMg4uY29tbW9uLlN0cmluZxIjCgtjbGllbnRfbmFtZRgEIAEoCzIO",
+            "LmNvbW1vbi5TdHJpbmcSGgoCaXAYBSABKAsyDi5jb21tb24uU3RyaW5nEiUK",
+            "DWxvY2F0aW9uX2luZm8YBiABKAsyDi5jb21tb24uU3RyaW5nEh8KB2RldGFp",
+            "bHMYByABKAsyDi5jb21tb24uU3RyaW5nEh8KB3VzZXJfaWQYCCABKAsyDi5j",
+            "b21tb24uU3RyaW5nInYKCFRva2VuU2V0EiwKBnRva2VucxgBIAMoCzIcLmNv",
+            "bW1vbi5Ub2tlblNldC5Ub2tlbnNFbnRyeRo8CgtUb2tlbnNFbnRyeRILCgNr",
+            "ZXkYASABKAkSHAoFdmFsdWUYAiABKAsyDS5jb21tb24uVG9rZW46AjgBYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -59,6 +66,7 @@ namespace Common {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Token), global::Common.Token.Parser, new[]{ "AccessToken", "TokenType", "RefreshToken", "Expiry", "IdToken" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Config), global::Common.Config.Parser, new[]{ "ClientId", "ClientSecret", "TokenUrl", "AuthUrl", "Scopes", "Redirect", "EndpointParams" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Query), global::Common.Query.Parser, new[]{ "Query_", "Fields" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Event), global::Common.Event.Parser, new[]{ "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.TokenSet), global::Common.TokenSet.Parser, new[]{ "Tokens" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
@@ -1710,6 +1718,379 @@ namespace Common {
 
   }
 
+  public sealed partial class Event : pb::IMessage<Event> {
+    private static readonly pb::MessageParser<Event> _parser = new pb::MessageParser<Event>(() => new Event());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Event> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Event() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Event(Event other) : this() {
+      date_ = other.date_ != null ? other.date_.Clone() : null;
+      type_ = other.type_ != null ? other.type_.Clone() : null;
+      clientId_ = other.clientId_ != null ? other.clientId_.Clone() : null;
+      clientName_ = other.clientName_ != null ? other.clientName_.Clone() : null;
+      ip_ = other.ip_ != null ? other.ip_.Clone() : null;
+      locationInfo_ = other.locationInfo_ != null ? other.locationInfo_.Clone() : null;
+      details_ = other.details_ != null ? other.details_.Clone() : null;
+      userId_ = other.userId_ != null ? other.userId_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Event Clone() {
+      return new Event(this);
+    }
+
+    /// <summary>Field number for the "date" field.</summary>
+    public const int DateFieldNumber = 1;
+    private global::Common.String date_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String Date {
+      get { return date_; }
+      set {
+        date_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private global::Common.String type_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_id" field.</summary>
+    public const int ClientIdFieldNumber = 3;
+    private global::Common.String clientId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String ClientId {
+      get { return clientId_; }
+      set {
+        clientId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_name" field.</summary>
+    public const int ClientNameFieldNumber = 4;
+    private global::Common.String clientName_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String ClientName {
+      get { return clientName_; }
+      set {
+        clientName_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ip" field.</summary>
+    public const int IpFieldNumber = 5;
+    private global::Common.String ip_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String Ip {
+      get { return ip_; }
+      set {
+        ip_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "location_info" field.</summary>
+    public const int LocationInfoFieldNumber = 6;
+    private global::Common.String locationInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String LocationInfo {
+      get { return locationInfo_; }
+      set {
+        locationInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "details" field.</summary>
+    public const int DetailsFieldNumber = 7;
+    private global::Common.String details_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String Details {
+      get { return details_; }
+      set {
+        details_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "user_id" field.</summary>
+    public const int UserIdFieldNumber = 8;
+    private global::Common.String userId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String UserId {
+      get { return userId_; }
+      set {
+        userId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Event);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Event other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Date, other.Date)) return false;
+      if (!object.Equals(Type, other.Type)) return false;
+      if (!object.Equals(ClientId, other.ClientId)) return false;
+      if (!object.Equals(ClientName, other.ClientName)) return false;
+      if (!object.Equals(Ip, other.Ip)) return false;
+      if (!object.Equals(LocationInfo, other.LocationInfo)) return false;
+      if (!object.Equals(Details, other.Details)) return false;
+      if (!object.Equals(UserId, other.UserId)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (date_ != null) hash ^= Date.GetHashCode();
+      if (type_ != null) hash ^= Type.GetHashCode();
+      if (clientId_ != null) hash ^= ClientId.GetHashCode();
+      if (clientName_ != null) hash ^= ClientName.GetHashCode();
+      if (ip_ != null) hash ^= Ip.GetHashCode();
+      if (locationInfo_ != null) hash ^= LocationInfo.GetHashCode();
+      if (details_ != null) hash ^= Details.GetHashCode();
+      if (userId_ != null) hash ^= UserId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (date_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Date);
+      }
+      if (type_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Type);
+      }
+      if (clientId_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ClientId);
+      }
+      if (clientName_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ClientName);
+      }
+      if (ip_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Ip);
+      }
+      if (locationInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(LocationInfo);
+      }
+      if (details_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Details);
+      }
+      if (userId_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(UserId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (date_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Date);
+      }
+      if (type_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Type);
+      }
+      if (clientId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientId);
+      }
+      if (clientName_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientName);
+      }
+      if (ip_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Ip);
+      }
+      if (locationInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LocationInfo);
+      }
+      if (details_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Details);
+      }
+      if (userId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Event other) {
+      if (other == null) {
+        return;
+      }
+      if (other.date_ != null) {
+        if (date_ == null) {
+          date_ = new global::Common.String();
+        }
+        Date.MergeFrom(other.Date);
+      }
+      if (other.type_ != null) {
+        if (type_ == null) {
+          type_ = new global::Common.String();
+        }
+        Type.MergeFrom(other.Type);
+      }
+      if (other.clientId_ != null) {
+        if (clientId_ == null) {
+          clientId_ = new global::Common.String();
+        }
+        ClientId.MergeFrom(other.ClientId);
+      }
+      if (other.clientName_ != null) {
+        if (clientName_ == null) {
+          clientName_ = new global::Common.String();
+        }
+        ClientName.MergeFrom(other.ClientName);
+      }
+      if (other.ip_ != null) {
+        if (ip_ == null) {
+          ip_ = new global::Common.String();
+        }
+        Ip.MergeFrom(other.Ip);
+      }
+      if (other.locationInfo_ != null) {
+        if (locationInfo_ == null) {
+          locationInfo_ = new global::Common.String();
+        }
+        LocationInfo.MergeFrom(other.LocationInfo);
+      }
+      if (other.details_ != null) {
+        if (details_ == null) {
+          details_ = new global::Common.String();
+        }
+        Details.MergeFrom(other.Details);
+      }
+      if (other.userId_ != null) {
+        if (userId_ == null) {
+          userId_ = new global::Common.String();
+        }
+        UserId.MergeFrom(other.UserId);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (date_ == null) {
+              date_ = new global::Common.String();
+            }
+            input.ReadMessage(date_);
+            break;
+          }
+          case 18: {
+            if (type_ == null) {
+              type_ = new global::Common.String();
+            }
+            input.ReadMessage(type_);
+            break;
+          }
+          case 26: {
+            if (clientId_ == null) {
+              clientId_ = new global::Common.String();
+            }
+            input.ReadMessage(clientId_);
+            break;
+          }
+          case 34: {
+            if (clientName_ == null) {
+              clientName_ = new global::Common.String();
+            }
+            input.ReadMessage(clientName_);
+            break;
+          }
+          case 42: {
+            if (ip_ == null) {
+              ip_ = new global::Common.String();
+            }
+            input.ReadMessage(ip_);
+            break;
+          }
+          case 50: {
+            if (locationInfo_ == null) {
+              locationInfo_ = new global::Common.String();
+            }
+            input.ReadMessage(locationInfo_);
+            break;
+          }
+          case 58: {
+            if (details_ == null) {
+              details_ = new global::Common.String();
+            }
+            input.ReadMessage(details_);
+            break;
+          }
+          case 66: {
+            if (userId_ == null) {
+              userId_ = new global::Common.String();
+            }
+            input.ReadMessage(userId_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class TokenSet : pb::IMessage<TokenSet> {
     private static readonly pb::MessageParser<TokenSet> _parser = new pb::MessageParser<TokenSet>(() => new TokenSet());
     private pb::UnknownFieldSet _unknownFields;
@@ -1718,7 +2099,7 @@ namespace Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Common.CommonReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Common.CommonReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

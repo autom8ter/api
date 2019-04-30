@@ -7998,6 +7998,1971 @@ public final class Common {
 
   }
 
+  public interface EventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.Event)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.String date = 1;</code>
+     */
+    boolean hasDate();
+    /**
+     * <code>.common.String date = 1;</code>
+     */
+    common.Common.String getDate();
+    /**
+     * <code>.common.String date = 1;</code>
+     */
+    common.Common.StringOrBuilder getDateOrBuilder();
+
+    /**
+     * <code>.common.String type = 2;</code>
+     */
+    boolean hasType();
+    /**
+     * <code>.common.String type = 2;</code>
+     */
+    common.Common.String getType();
+    /**
+     * <code>.common.String type = 2;</code>
+     */
+    common.Common.StringOrBuilder getTypeOrBuilder();
+
+    /**
+     * <code>.common.String client_id = 3;</code>
+     */
+    boolean hasClientId();
+    /**
+     * <code>.common.String client_id = 3;</code>
+     */
+    common.Common.String getClientId();
+    /**
+     * <code>.common.String client_id = 3;</code>
+     */
+    common.Common.StringOrBuilder getClientIdOrBuilder();
+
+    /**
+     * <code>.common.String client_name = 4;</code>
+     */
+    boolean hasClientName();
+    /**
+     * <code>.common.String client_name = 4;</code>
+     */
+    common.Common.String getClientName();
+    /**
+     * <code>.common.String client_name = 4;</code>
+     */
+    common.Common.StringOrBuilder getClientNameOrBuilder();
+
+    /**
+     * <code>.common.String ip = 5;</code>
+     */
+    boolean hasIp();
+    /**
+     * <code>.common.String ip = 5;</code>
+     */
+    common.Common.String getIp();
+    /**
+     * <code>.common.String ip = 5;</code>
+     */
+    common.Common.StringOrBuilder getIpOrBuilder();
+
+    /**
+     * <code>.common.String location_info = 6;</code>
+     */
+    boolean hasLocationInfo();
+    /**
+     * <code>.common.String location_info = 6;</code>
+     */
+    common.Common.String getLocationInfo();
+    /**
+     * <code>.common.String location_info = 6;</code>
+     */
+    common.Common.StringOrBuilder getLocationInfoOrBuilder();
+
+    /**
+     * <code>.common.String details = 7;</code>
+     */
+    boolean hasDetails();
+    /**
+     * <code>.common.String details = 7;</code>
+     */
+    common.Common.String getDetails();
+    /**
+     * <code>.common.String details = 7;</code>
+     */
+    common.Common.StringOrBuilder getDetailsOrBuilder();
+
+    /**
+     * <code>.common.String user_id = 8;</code>
+     */
+    boolean hasUserId();
+    /**
+     * <code>.common.String user_id = 8;</code>
+     */
+    common.Common.String getUserId();
+    /**
+     * <code>.common.String user_id = 8;</code>
+     */
+    common.Common.StringOrBuilder getUserIdOrBuilder();
+  }
+  /**
+   * Protobuf type {@code common.Event}
+   */
+  public  static final class Event extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.Event)
+      EventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Event.newBuilder() to construct.
+    private Event(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Event() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Event(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.String.Builder subBuilder = null;
+              if (date_ != null) {
+                subBuilder = date_.toBuilder();
+              }
+              date_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(date_);
+                date_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              common.Common.String.Builder subBuilder = null;
+              if (type_ != null) {
+                subBuilder = type_.toBuilder();
+              }
+              type_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(type_);
+                type_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              common.Common.String.Builder subBuilder = null;
+              if (clientId_ != null) {
+                subBuilder = clientId_.toBuilder();
+              }
+              clientId_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientId_);
+                clientId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              common.Common.String.Builder subBuilder = null;
+              if (clientName_ != null) {
+                subBuilder = clientName_.toBuilder();
+              }
+              clientName_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientName_);
+                clientName_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              common.Common.String.Builder subBuilder = null;
+              if (ip_ != null) {
+                subBuilder = ip_.toBuilder();
+              }
+              ip_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ip_);
+                ip_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              common.Common.String.Builder subBuilder = null;
+              if (locationInfo_ != null) {
+                subBuilder = locationInfo_.toBuilder();
+              }
+              locationInfo_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(locationInfo_);
+                locationInfo_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
+              common.Common.String.Builder subBuilder = null;
+              if (details_ != null) {
+                subBuilder = details_.toBuilder();
+              }
+              details_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(details_);
+                details_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              common.Common.String.Builder subBuilder = null;
+              if (userId_ != null) {
+                subBuilder = userId_.toBuilder();
+              }
+              userId_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(userId_);
+                userId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return common.Common.internal_static_common_Event_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return common.Common.internal_static_common_Event_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              common.Common.Event.class, common.Common.Event.Builder.class);
+    }
+
+    public static final int DATE_FIELD_NUMBER = 1;
+    private common.Common.String date_;
+    /**
+     * <code>.common.String date = 1;</code>
+     */
+    public boolean hasDate() {
+      return date_ != null;
+    }
+    /**
+     * <code>.common.String date = 1;</code>
+     */
+    public common.Common.String getDate() {
+      return date_ == null ? common.Common.String.getDefaultInstance() : date_;
+    }
+    /**
+     * <code>.common.String date = 1;</code>
+     */
+    public common.Common.StringOrBuilder getDateOrBuilder() {
+      return getDate();
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private common.Common.String type_;
+    /**
+     * <code>.common.String type = 2;</code>
+     */
+    public boolean hasType() {
+      return type_ != null;
+    }
+    /**
+     * <code>.common.String type = 2;</code>
+     */
+    public common.Common.String getType() {
+      return type_ == null ? common.Common.String.getDefaultInstance() : type_;
+    }
+    /**
+     * <code>.common.String type = 2;</code>
+     */
+    public common.Common.StringOrBuilder getTypeOrBuilder() {
+      return getType();
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 3;
+    private common.Common.String clientId_;
+    /**
+     * <code>.common.String client_id = 3;</code>
+     */
+    public boolean hasClientId() {
+      return clientId_ != null;
+    }
+    /**
+     * <code>.common.String client_id = 3;</code>
+     */
+    public common.Common.String getClientId() {
+      return clientId_ == null ? common.Common.String.getDefaultInstance() : clientId_;
+    }
+    /**
+     * <code>.common.String client_id = 3;</code>
+     */
+    public common.Common.StringOrBuilder getClientIdOrBuilder() {
+      return getClientId();
+    }
+
+    public static final int CLIENT_NAME_FIELD_NUMBER = 4;
+    private common.Common.String clientName_;
+    /**
+     * <code>.common.String client_name = 4;</code>
+     */
+    public boolean hasClientName() {
+      return clientName_ != null;
+    }
+    /**
+     * <code>.common.String client_name = 4;</code>
+     */
+    public common.Common.String getClientName() {
+      return clientName_ == null ? common.Common.String.getDefaultInstance() : clientName_;
+    }
+    /**
+     * <code>.common.String client_name = 4;</code>
+     */
+    public common.Common.StringOrBuilder getClientNameOrBuilder() {
+      return getClientName();
+    }
+
+    public static final int IP_FIELD_NUMBER = 5;
+    private common.Common.String ip_;
+    /**
+     * <code>.common.String ip = 5;</code>
+     */
+    public boolean hasIp() {
+      return ip_ != null;
+    }
+    /**
+     * <code>.common.String ip = 5;</code>
+     */
+    public common.Common.String getIp() {
+      return ip_ == null ? common.Common.String.getDefaultInstance() : ip_;
+    }
+    /**
+     * <code>.common.String ip = 5;</code>
+     */
+    public common.Common.StringOrBuilder getIpOrBuilder() {
+      return getIp();
+    }
+
+    public static final int LOCATION_INFO_FIELD_NUMBER = 6;
+    private common.Common.String locationInfo_;
+    /**
+     * <code>.common.String location_info = 6;</code>
+     */
+    public boolean hasLocationInfo() {
+      return locationInfo_ != null;
+    }
+    /**
+     * <code>.common.String location_info = 6;</code>
+     */
+    public common.Common.String getLocationInfo() {
+      return locationInfo_ == null ? common.Common.String.getDefaultInstance() : locationInfo_;
+    }
+    /**
+     * <code>.common.String location_info = 6;</code>
+     */
+    public common.Common.StringOrBuilder getLocationInfoOrBuilder() {
+      return getLocationInfo();
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 7;
+    private common.Common.String details_;
+    /**
+     * <code>.common.String details = 7;</code>
+     */
+    public boolean hasDetails() {
+      return details_ != null;
+    }
+    /**
+     * <code>.common.String details = 7;</code>
+     */
+    public common.Common.String getDetails() {
+      return details_ == null ? common.Common.String.getDefaultInstance() : details_;
+    }
+    /**
+     * <code>.common.String details = 7;</code>
+     */
+    public common.Common.StringOrBuilder getDetailsOrBuilder() {
+      return getDetails();
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 8;
+    private common.Common.String userId_;
+    /**
+     * <code>.common.String user_id = 8;</code>
+     */
+    public boolean hasUserId() {
+      return userId_ != null;
+    }
+    /**
+     * <code>.common.String user_id = 8;</code>
+     */
+    public common.Common.String getUserId() {
+      return userId_ == null ? common.Common.String.getDefaultInstance() : userId_;
+    }
+    /**
+     * <code>.common.String user_id = 8;</code>
+     */
+    public common.Common.StringOrBuilder getUserIdOrBuilder() {
+      return getUserId();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (date_ != null) {
+        output.writeMessage(1, getDate());
+      }
+      if (type_ != null) {
+        output.writeMessage(2, getType());
+      }
+      if (clientId_ != null) {
+        output.writeMessage(3, getClientId());
+      }
+      if (clientName_ != null) {
+        output.writeMessage(4, getClientName());
+      }
+      if (ip_ != null) {
+        output.writeMessage(5, getIp());
+      }
+      if (locationInfo_ != null) {
+        output.writeMessage(6, getLocationInfo());
+      }
+      if (details_ != null) {
+        output.writeMessage(7, getDetails());
+      }
+      if (userId_ != null) {
+        output.writeMessage(8, getUserId());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (date_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getDate());
+      }
+      if (type_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getType());
+      }
+      if (clientId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getClientId());
+      }
+      if (clientName_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getClientName());
+      }
+      if (ip_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getIp());
+      }
+      if (locationInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getLocationInfo());
+      }
+      if (details_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getDetails());
+      }
+      if (userId_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getUserId());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof common.Common.Event)) {
+        return super.equals(obj);
+      }
+      common.Common.Event other = (common.Common.Event) obj;
+
+      boolean result = true;
+      result = result && (hasDate() == other.hasDate());
+      if (hasDate()) {
+        result = result && getDate()
+            .equals(other.getDate());
+      }
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && getType()
+            .equals(other.getType());
+      }
+      result = result && (hasClientId() == other.hasClientId());
+      if (hasClientId()) {
+        result = result && getClientId()
+            .equals(other.getClientId());
+      }
+      result = result && (hasClientName() == other.hasClientName());
+      if (hasClientName()) {
+        result = result && getClientName()
+            .equals(other.getClientName());
+      }
+      result = result && (hasIp() == other.hasIp());
+      if (hasIp()) {
+        result = result && getIp()
+            .equals(other.getIp());
+      }
+      result = result && (hasLocationInfo() == other.hasLocationInfo());
+      if (hasLocationInfo()) {
+        result = result && getLocationInfo()
+            .equals(other.getLocationInfo());
+      }
+      result = result && (hasDetails() == other.hasDetails());
+      if (hasDetails()) {
+        result = result && getDetails()
+            .equals(other.getDetails());
+      }
+      result = result && (hasUserId() == other.hasUserId());
+      if (hasUserId()) {
+        result = result && getUserId()
+            .equals(other.getUserId());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDate()) {
+        hash = (37 * hash) + DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getDate().hashCode();
+      }
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getType().hashCode();
+      }
+      if (hasClientId()) {
+        hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getClientId().hashCode();
+      }
+      if (hasClientName()) {
+        hash = (37 * hash) + CLIENT_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getClientName().hashCode();
+      }
+      if (hasIp()) {
+        hash = (37 * hash) + IP_FIELD_NUMBER;
+        hash = (53 * hash) + getIp().hashCode();
+      }
+      if (hasLocationInfo()) {
+        hash = (37 * hash) + LOCATION_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getLocationInfo().hashCode();
+      }
+      if (hasDetails()) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDetails().hashCode();
+      }
+      if (hasUserId()) {
+        hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static common.Common.Event parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Event parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Event parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Event parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Event parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static common.Common.Event parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static common.Common.Event parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.Event parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.Event parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static common.Common.Event parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static common.Common.Event parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static common.Common.Event parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(common.Common.Event prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.Event}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.Event)
+        common.Common.EventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return common.Common.internal_static_common_Event_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return common.Common.internal_static_common_Event_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                common.Common.Event.class, common.Common.Event.Builder.class);
+      }
+
+      // Construct using common.Common.Event.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dateBuilder_ == null) {
+          date_ = null;
+        } else {
+          date_ = null;
+          dateBuilder_ = null;
+        }
+        if (typeBuilder_ == null) {
+          type_ = null;
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
+        if (clientIdBuilder_ == null) {
+          clientId_ = null;
+        } else {
+          clientId_ = null;
+          clientIdBuilder_ = null;
+        }
+        if (clientNameBuilder_ == null) {
+          clientName_ = null;
+        } else {
+          clientName_ = null;
+          clientNameBuilder_ = null;
+        }
+        if (ipBuilder_ == null) {
+          ip_ = null;
+        } else {
+          ip_ = null;
+          ipBuilder_ = null;
+        }
+        if (locationInfoBuilder_ == null) {
+          locationInfo_ = null;
+        } else {
+          locationInfo_ = null;
+          locationInfoBuilder_ = null;
+        }
+        if (detailsBuilder_ == null) {
+          details_ = null;
+        } else {
+          details_ = null;
+          detailsBuilder_ = null;
+        }
+        if (userIdBuilder_ == null) {
+          userId_ = null;
+        } else {
+          userId_ = null;
+          userIdBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return common.Common.internal_static_common_Event_descriptor;
+      }
+
+      @java.lang.Override
+      public common.Common.Event getDefaultInstanceForType() {
+        return common.Common.Event.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public common.Common.Event build() {
+        common.Common.Event result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public common.Common.Event buildPartial() {
+        common.Common.Event result = new common.Common.Event(this);
+        if (dateBuilder_ == null) {
+          result.date_ = date_;
+        } else {
+          result.date_ = dateBuilder_.build();
+        }
+        if (typeBuilder_ == null) {
+          result.type_ = type_;
+        } else {
+          result.type_ = typeBuilder_.build();
+        }
+        if (clientIdBuilder_ == null) {
+          result.clientId_ = clientId_;
+        } else {
+          result.clientId_ = clientIdBuilder_.build();
+        }
+        if (clientNameBuilder_ == null) {
+          result.clientName_ = clientName_;
+        } else {
+          result.clientName_ = clientNameBuilder_.build();
+        }
+        if (ipBuilder_ == null) {
+          result.ip_ = ip_;
+        } else {
+          result.ip_ = ipBuilder_.build();
+        }
+        if (locationInfoBuilder_ == null) {
+          result.locationInfo_ = locationInfo_;
+        } else {
+          result.locationInfo_ = locationInfoBuilder_.build();
+        }
+        if (detailsBuilder_ == null) {
+          result.details_ = details_;
+        } else {
+          result.details_ = detailsBuilder_.build();
+        }
+        if (userIdBuilder_ == null) {
+          result.userId_ = userId_;
+        } else {
+          result.userId_ = userIdBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof common.Common.Event) {
+          return mergeFrom((common.Common.Event)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(common.Common.Event other) {
+        if (other == common.Common.Event.getDefaultInstance()) return this;
+        if (other.hasDate()) {
+          mergeDate(other.getDate());
+        }
+        if (other.hasType()) {
+          mergeType(other.getType());
+        }
+        if (other.hasClientId()) {
+          mergeClientId(other.getClientId());
+        }
+        if (other.hasClientName()) {
+          mergeClientName(other.getClientName());
+        }
+        if (other.hasIp()) {
+          mergeIp(other.getIp());
+        }
+        if (other.hasLocationInfo()) {
+          mergeLocationInfo(other.getLocationInfo());
+        }
+        if (other.hasDetails()) {
+          mergeDetails(other.getDetails());
+        }
+        if (other.hasUserId()) {
+          mergeUserId(other.getUserId());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        common.Common.Event parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (common.Common.Event) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.String date_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> dateBuilder_;
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public boolean hasDate() {
+        return dateBuilder_ != null || date_ != null;
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public common.Common.String getDate() {
+        if (dateBuilder_ == null) {
+          return date_ == null ? common.Common.String.getDefaultInstance() : date_;
+        } else {
+          return dateBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public Builder setDate(common.Common.String value) {
+        if (dateBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          date_ = value;
+          onChanged();
+        } else {
+          dateBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public Builder setDate(
+          common.Common.String.Builder builderForValue) {
+        if (dateBuilder_ == null) {
+          date_ = builderForValue.build();
+          onChanged();
+        } else {
+          dateBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public Builder mergeDate(common.Common.String value) {
+        if (dateBuilder_ == null) {
+          if (date_ != null) {
+            date_ =
+              common.Common.String.newBuilder(date_).mergeFrom(value).buildPartial();
+          } else {
+            date_ = value;
+          }
+          onChanged();
+        } else {
+          dateBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public Builder clearDate() {
+        if (dateBuilder_ == null) {
+          date_ = null;
+          onChanged();
+        } else {
+          date_ = null;
+          dateBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public common.Common.String.Builder getDateBuilder() {
+        
+        onChanged();
+        return getDateFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      public common.Common.StringOrBuilder getDateOrBuilder() {
+        if (dateBuilder_ != null) {
+          return dateBuilder_.getMessageOrBuilder();
+        } else {
+          return date_ == null ?
+              common.Common.String.getDefaultInstance() : date_;
+        }
+      }
+      /**
+       * <code>.common.String date = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getDateFieldBuilder() {
+        if (dateBuilder_ == null) {
+          dateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getDate(),
+                  getParentForChildren(),
+                  isClean());
+          date_ = null;
+        }
+        return dateBuilder_;
+      }
+
+      private common.Common.String type_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> typeBuilder_;
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public boolean hasType() {
+        return typeBuilder_ != null || type_ != null;
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public common.Common.String getType() {
+        if (typeBuilder_ == null) {
+          return type_ == null ? common.Common.String.getDefaultInstance() : type_;
+        } else {
+          return typeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public Builder setType(common.Common.String value) {
+        if (typeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public Builder setType(
+          common.Common.String.Builder builderForValue) {
+        if (typeBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          typeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public Builder mergeType(common.Common.String value) {
+        if (typeBuilder_ == null) {
+          if (type_ != null) {
+            type_ =
+              common.Common.String.newBuilder(type_).mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          typeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public Builder clearType() {
+        if (typeBuilder_ == null) {
+          type_ = null;
+          onChanged();
+        } else {
+          type_ = null;
+          typeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public common.Common.String.Builder getTypeBuilder() {
+        
+        onChanged();
+        return getTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      public common.Common.StringOrBuilder getTypeOrBuilder() {
+        if (typeBuilder_ != null) {
+          return typeBuilder_.getMessageOrBuilder();
+        } else {
+          return type_ == null ?
+              common.Common.String.getDefaultInstance() : type_;
+        }
+      }
+      /**
+       * <code>.common.String type = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getTypeFieldBuilder() {
+        if (typeBuilder_ == null) {
+          typeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getType(),
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        return typeBuilder_;
+      }
+
+      private common.Common.String clientId_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> clientIdBuilder_;
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public boolean hasClientId() {
+        return clientIdBuilder_ != null || clientId_ != null;
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public common.Common.String getClientId() {
+        if (clientIdBuilder_ == null) {
+          return clientId_ == null ? common.Common.String.getDefaultInstance() : clientId_;
+        } else {
+          return clientIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public Builder setClientId(common.Common.String value) {
+        if (clientIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientId_ = value;
+          onChanged();
+        } else {
+          clientIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public Builder setClientId(
+          common.Common.String.Builder builderForValue) {
+        if (clientIdBuilder_ == null) {
+          clientId_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public Builder mergeClientId(common.Common.String value) {
+        if (clientIdBuilder_ == null) {
+          if (clientId_ != null) {
+            clientId_ =
+              common.Common.String.newBuilder(clientId_).mergeFrom(value).buildPartial();
+          } else {
+            clientId_ = value;
+          }
+          onChanged();
+        } else {
+          clientIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public Builder clearClientId() {
+        if (clientIdBuilder_ == null) {
+          clientId_ = null;
+          onChanged();
+        } else {
+          clientId_ = null;
+          clientIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public common.Common.String.Builder getClientIdBuilder() {
+        
+        onChanged();
+        return getClientIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      public common.Common.StringOrBuilder getClientIdOrBuilder() {
+        if (clientIdBuilder_ != null) {
+          return clientIdBuilder_.getMessageOrBuilder();
+        } else {
+          return clientId_ == null ?
+              common.Common.String.getDefaultInstance() : clientId_;
+        }
+      }
+      /**
+       * <code>.common.String client_id = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getClientIdFieldBuilder() {
+        if (clientIdBuilder_ == null) {
+          clientIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getClientId(),
+                  getParentForChildren(),
+                  isClean());
+          clientId_ = null;
+        }
+        return clientIdBuilder_;
+      }
+
+      private common.Common.String clientName_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> clientNameBuilder_;
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public boolean hasClientName() {
+        return clientNameBuilder_ != null || clientName_ != null;
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public common.Common.String getClientName() {
+        if (clientNameBuilder_ == null) {
+          return clientName_ == null ? common.Common.String.getDefaultInstance() : clientName_;
+        } else {
+          return clientNameBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public Builder setClientName(common.Common.String value) {
+        if (clientNameBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientName_ = value;
+          onChanged();
+        } else {
+          clientNameBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public Builder setClientName(
+          common.Common.String.Builder builderForValue) {
+        if (clientNameBuilder_ == null) {
+          clientName_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientNameBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public Builder mergeClientName(common.Common.String value) {
+        if (clientNameBuilder_ == null) {
+          if (clientName_ != null) {
+            clientName_ =
+              common.Common.String.newBuilder(clientName_).mergeFrom(value).buildPartial();
+          } else {
+            clientName_ = value;
+          }
+          onChanged();
+        } else {
+          clientNameBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public Builder clearClientName() {
+        if (clientNameBuilder_ == null) {
+          clientName_ = null;
+          onChanged();
+        } else {
+          clientName_ = null;
+          clientNameBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public common.Common.String.Builder getClientNameBuilder() {
+        
+        onChanged();
+        return getClientNameFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      public common.Common.StringOrBuilder getClientNameOrBuilder() {
+        if (clientNameBuilder_ != null) {
+          return clientNameBuilder_.getMessageOrBuilder();
+        } else {
+          return clientName_ == null ?
+              common.Common.String.getDefaultInstance() : clientName_;
+        }
+      }
+      /**
+       * <code>.common.String client_name = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getClientNameFieldBuilder() {
+        if (clientNameBuilder_ == null) {
+          clientNameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getClientName(),
+                  getParentForChildren(),
+                  isClean());
+          clientName_ = null;
+        }
+        return clientNameBuilder_;
+      }
+
+      private common.Common.String ip_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> ipBuilder_;
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public boolean hasIp() {
+        return ipBuilder_ != null || ip_ != null;
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public common.Common.String getIp() {
+        if (ipBuilder_ == null) {
+          return ip_ == null ? common.Common.String.getDefaultInstance() : ip_;
+        } else {
+          return ipBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public Builder setIp(common.Common.String value) {
+        if (ipBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ip_ = value;
+          onChanged();
+        } else {
+          ipBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public Builder setIp(
+          common.Common.String.Builder builderForValue) {
+        if (ipBuilder_ == null) {
+          ip_ = builderForValue.build();
+          onChanged();
+        } else {
+          ipBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public Builder mergeIp(common.Common.String value) {
+        if (ipBuilder_ == null) {
+          if (ip_ != null) {
+            ip_ =
+              common.Common.String.newBuilder(ip_).mergeFrom(value).buildPartial();
+          } else {
+            ip_ = value;
+          }
+          onChanged();
+        } else {
+          ipBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public Builder clearIp() {
+        if (ipBuilder_ == null) {
+          ip_ = null;
+          onChanged();
+        } else {
+          ip_ = null;
+          ipBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public common.Common.String.Builder getIpBuilder() {
+        
+        onChanged();
+        return getIpFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      public common.Common.StringOrBuilder getIpOrBuilder() {
+        if (ipBuilder_ != null) {
+          return ipBuilder_.getMessageOrBuilder();
+        } else {
+          return ip_ == null ?
+              common.Common.String.getDefaultInstance() : ip_;
+        }
+      }
+      /**
+       * <code>.common.String ip = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getIpFieldBuilder() {
+        if (ipBuilder_ == null) {
+          ipBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getIp(),
+                  getParentForChildren(),
+                  isClean());
+          ip_ = null;
+        }
+        return ipBuilder_;
+      }
+
+      private common.Common.String locationInfo_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> locationInfoBuilder_;
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public boolean hasLocationInfo() {
+        return locationInfoBuilder_ != null || locationInfo_ != null;
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public common.Common.String getLocationInfo() {
+        if (locationInfoBuilder_ == null) {
+          return locationInfo_ == null ? common.Common.String.getDefaultInstance() : locationInfo_;
+        } else {
+          return locationInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public Builder setLocationInfo(common.Common.String value) {
+        if (locationInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          locationInfo_ = value;
+          onChanged();
+        } else {
+          locationInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public Builder setLocationInfo(
+          common.Common.String.Builder builderForValue) {
+        if (locationInfoBuilder_ == null) {
+          locationInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public Builder mergeLocationInfo(common.Common.String value) {
+        if (locationInfoBuilder_ == null) {
+          if (locationInfo_ != null) {
+            locationInfo_ =
+              common.Common.String.newBuilder(locationInfo_).mergeFrom(value).buildPartial();
+          } else {
+            locationInfo_ = value;
+          }
+          onChanged();
+        } else {
+          locationInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public Builder clearLocationInfo() {
+        if (locationInfoBuilder_ == null) {
+          locationInfo_ = null;
+          onChanged();
+        } else {
+          locationInfo_ = null;
+          locationInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public common.Common.String.Builder getLocationInfoBuilder() {
+        
+        onChanged();
+        return getLocationInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      public common.Common.StringOrBuilder getLocationInfoOrBuilder() {
+        if (locationInfoBuilder_ != null) {
+          return locationInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return locationInfo_ == null ?
+              common.Common.String.getDefaultInstance() : locationInfo_;
+        }
+      }
+      /**
+       * <code>.common.String location_info = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getLocationInfoFieldBuilder() {
+        if (locationInfoBuilder_ == null) {
+          locationInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getLocationInfo(),
+                  getParentForChildren(),
+                  isClean());
+          locationInfo_ = null;
+        }
+        return locationInfoBuilder_;
+      }
+
+      private common.Common.String details_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> detailsBuilder_;
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public boolean hasDetails() {
+        return detailsBuilder_ != null || details_ != null;
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public common.Common.String getDetails() {
+        if (detailsBuilder_ == null) {
+          return details_ == null ? common.Common.String.getDefaultInstance() : details_;
+        } else {
+          return detailsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public Builder setDetails(common.Common.String value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          details_ = value;
+          onChanged();
+        } else {
+          detailsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public Builder setDetails(
+          common.Common.String.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          details_ = builderForValue.build();
+          onChanged();
+        } else {
+          detailsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public Builder mergeDetails(common.Common.String value) {
+        if (detailsBuilder_ == null) {
+          if (details_ != null) {
+            details_ =
+              common.Common.String.newBuilder(details_).mergeFrom(value).buildPartial();
+          } else {
+            details_ = value;
+          }
+          onChanged();
+        } else {
+          detailsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public Builder clearDetails() {
+        if (detailsBuilder_ == null) {
+          details_ = null;
+          onChanged();
+        } else {
+          details_ = null;
+          detailsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public common.Common.String.Builder getDetailsBuilder() {
+        
+        onChanged();
+        return getDetailsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      public common.Common.StringOrBuilder getDetailsOrBuilder() {
+        if (detailsBuilder_ != null) {
+          return detailsBuilder_.getMessageOrBuilder();
+        } else {
+          return details_ == null ?
+              common.Common.String.getDefaultInstance() : details_;
+        }
+      }
+      /**
+       * <code>.common.String details = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getDetailsFieldBuilder() {
+        if (detailsBuilder_ == null) {
+          detailsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getDetails(),
+                  getParentForChildren(),
+                  isClean());
+          details_ = null;
+        }
+        return detailsBuilder_;
+      }
+
+      private common.Common.String userId_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> userIdBuilder_;
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public boolean hasUserId() {
+        return userIdBuilder_ != null || userId_ != null;
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public common.Common.String getUserId() {
+        if (userIdBuilder_ == null) {
+          return userId_ == null ? common.Common.String.getDefaultInstance() : userId_;
+        } else {
+          return userIdBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public Builder setUserId(common.Common.String value) {
+        if (userIdBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          userId_ = value;
+          onChanged();
+        } else {
+          userIdBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public Builder setUserId(
+          common.Common.String.Builder builderForValue) {
+        if (userIdBuilder_ == null) {
+          userId_ = builderForValue.build();
+          onChanged();
+        } else {
+          userIdBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public Builder mergeUserId(common.Common.String value) {
+        if (userIdBuilder_ == null) {
+          if (userId_ != null) {
+            userId_ =
+              common.Common.String.newBuilder(userId_).mergeFrom(value).buildPartial();
+          } else {
+            userId_ = value;
+          }
+          onChanged();
+        } else {
+          userIdBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public Builder clearUserId() {
+        if (userIdBuilder_ == null) {
+          userId_ = null;
+          onChanged();
+        } else {
+          userId_ = null;
+          userIdBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public common.Common.String.Builder getUserIdBuilder() {
+        
+        onChanged();
+        return getUserIdFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      public common.Common.StringOrBuilder getUserIdOrBuilder() {
+        if (userIdBuilder_ != null) {
+          return userIdBuilder_.getMessageOrBuilder();
+        } else {
+          return userId_ == null ?
+              common.Common.String.getDefaultInstance() : userId_;
+        }
+      }
+      /**
+       * <code>.common.String user_id = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getUserIdFieldBuilder() {
+        if (userIdBuilder_ == null) {
+          userIdBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getUserId(),
+                  getParentForChildren(),
+                  isClean());
+          userId_ = null;
+        }
+        return userIdBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.Event)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.Event)
+    private static final common.Common.Event DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new common.Common.Event();
+    }
+
+    public static common.Common.Event getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Event>
+        PARSER = new com.google.protobuf.AbstractParser<Event>() {
+      @java.lang.Override
+      public Event parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Event(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Event> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Event> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public common.Common.Event getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TokenSetOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.TokenSet)
       com.google.protobuf.MessageOrBuilder {
@@ -8776,6 +10741,11 @@ public final class Common {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_Query_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_Event_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_Event_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_TokenSet_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -8815,10 +10785,17 @@ public final class Common {
       "rect\030\006 \001(\0132\016.common.String\022*\n\017endpoint_p" +
       "arams\030\007 \001(\0132\021.common.StringMap\"F\n\005Query\022" +
       "\035\n\005query\030\004 \001(\0132\016.common.String\022\036\n\006fields" +
-      "\030\005 \001(\0132\016.common.String\"v\n\010TokenSet\022,\n\006to" +
-      "kens\030\001 \003(\0132\034.common.TokenSet.TokensEntry" +
-      "\032<\n\013TokensEntry\022\013\n\003key\030\001 \001(\t\022\034\n\005value\030\002 " +
-      "\001(\0132\r.common.Token:\0028\001b\006proto3"
+      "\030\005 \001(\0132\016.common.String\"\220\002\n\005Event\022\034\n\004date" +
+      "\030\001 \001(\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.c" +
+      "ommon.String\022!\n\tclient_id\030\003 \001(\0132\016.common" +
+      ".String\022#\n\013client_name\030\004 \001(\0132\016.common.St" +
+      "ring\022\032\n\002ip\030\005 \001(\0132\016.common.String\022%\n\rloca" +
+      "tion_info\030\006 \001(\0132\016.common.String\022\037\n\007detai" +
+      "ls\030\007 \001(\0132\016.common.String\022\037\n\007user_id\030\010 \001(" +
+      "\0132\016.common.String\"v\n\010TokenSet\022,\n\006tokens\030" +
+      "\001 \003(\0132\034.common.TokenSet.TokensEntry\032<\n\013T" +
+      "okensEntry\022\013\n\003key\030\001 \001(\t\022\034\n\005value\030\002 \001(\0132\r" +
+      ".common.Token:\0028\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8898,8 +10875,14 @@ public final class Common {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_Query_descriptor,
         new java.lang.String[] { "Query", "Fields", });
-    internal_static_common_TokenSet_descriptor =
+    internal_static_common_Event_descriptor =
       getDescriptor().getMessageTypes().get(10);
+    internal_static_common_Event_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_Event_descriptor,
+        new java.lang.String[] { "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId", });
+    internal_static_common_TokenSet_descriptor =
+      getDescriptor().getMessageTypes().get(11);
     internal_static_common_TokenSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_TokenSet_descriptor,

@@ -381,12 +381,12 @@
     },
     "/resource/user/query": {
       "post": {
-        "operationId": "QueryUsers",
+        "operationId": "QueryUserLogs",
         "responses": {
           "200": {
             "description": "A successful response.(streaming responses)",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/commonEvent"
             }
           }
         },
@@ -396,7 +396,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiTokenQuery"
+              "$ref": "#/definitions/commonQuery"
             }
           }
         ],
@@ -1040,17 +1040,6 @@
         }
       }
     },
-    "apiTokenQuery": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "$ref": "#/definitions/commonToken"
-        },
-        "query": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
     "apiUnSubscribeRequest": {
       "type": "object",
       "properties": {
@@ -1136,6 +1125,35 @@
         }
       }
     },
+    "commonEvent": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "$ref": "#/definitions/commonString"
+        },
+        "type": {
+          "$ref": "#/definitions/commonString"
+        },
+        "client_id": {
+          "$ref": "#/definitions/commonString"
+        },
+        "client_name": {
+          "$ref": "#/definitions/commonString"
+        },
+        "ip": {
+          "$ref": "#/definitions/commonString"
+        },
+        "location_info": {
+          "$ref": "#/definitions/commonString"
+        },
+        "details": {
+          "$ref": "#/definitions/commonString"
+        },
+        "user_id": {
+          "$ref": "#/definitions/commonString"
+        }
+      }
+    },
     "commonIdentifier": {
       "type": "object",
       "properties": {
@@ -1150,6 +1168,17 @@
         "num": {
           "type": "string",
           "format": "int64"
+        }
+      }
+    },
+    "commonQuery": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "$ref": "#/definitions/commonString"
+        },
+        "fields": {
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -1180,26 +1209,6 @@
           "additionalProperties": {
             "$ref": "#/definitions/commonString"
           }
-        }
-      }
-    },
-    "commonToken": {
-      "type": "object",
-      "properties": {
-        "access_token": {
-          "$ref": "#/definitions/commonString"
-        },
-        "token_type": {
-          "$ref": "#/definitions/commonString"
-        },
-        "refresh_token": {
-          "$ref": "#/definitions/commonString"
-        },
-        "expiry": {
-          "$ref": "#/definitions/commonString"
-        },
-        "id_token": {
-          "$ref": "#/definitions/commonString"
         }
       }
     }

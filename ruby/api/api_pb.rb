@@ -156,10 +156,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :id, :message, 2, "common.Identifier"
     optional :uri, :message, 3, "common.String"
   end
-  add_message "api.TokenQuery" do
-    optional :token, :message, 1, "common.Token"
-    optional :query, :message, 2, "common.String"
-  end
   add_message "api.IDBody" do
     optional :id, :message, 1, "common.Identifier"
     optional :body, :message, 2, "common.String"
@@ -240,7 +236,6 @@ module Api
   PhoneNumber = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumber").msgclass
   NumberCapabilities = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.NumberCapabilities").msgclass
   PhoneNumberResource = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.PhoneNumberResource").msgclass
-  TokenQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.TokenQuery").msgclass
   IDBody = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDBody").msgclass
   IDStrings = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.IDStrings").msgclass
   Role = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Role").msgclass

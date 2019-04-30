@@ -2018,60 +2018,6 @@ typedef struct PhoneNumberResource__storage_ {
 
 @end
 
-#pragma mark - TokenQuery
-
-@implementation TokenQuery
-
-@dynamic hasToken, token;
-@dynamic hasQuery, query;
-
-typedef struct TokenQuery__storage_ {
-  uint32_t _has_storage_[1];
-  Token *token;
-  String *query;
-} TokenQuery__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "token",
-        .dataTypeSpecific.className = GPBStringifySymbol(Token),
-        .number = TokenQuery_FieldNumber_Token,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(TokenQuery__storage_, token),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "query",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = TokenQuery_FieldNumber_Query,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(TokenQuery__storage_, query),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[TokenQuery class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(TokenQuery__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
 #pragma mark - IDBody
 
 @implementation IDBody

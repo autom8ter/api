@@ -3280,103 +3280,6 @@ func (m *SubscriptionResponse) XXX_Size() int
 func (m *SubscriptionResponse) XXX_Unmarshal(b []byte) error
 ```
 
-#### type TokenQuery
-
-```go
-type TokenQuery struct {
-	Token                *common.Token  `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	Query                *common.String `protobuf:"bytes,2,opt,name=query,proto3" json:"query,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-```
-
-
-#### func (*TokenQuery) Descriptor
-
-```go
-func (*TokenQuery) Descriptor() ([]byte, []int)
-```
-
-#### func (*TokenQuery) GetQuery
-
-```go
-func (m *TokenQuery) GetQuery() *common.String
-```
-
-#### func (*TokenQuery) GetToken
-
-```go
-func (m *TokenQuery) GetToken() *common.Token
-```
-
-#### func (*TokenQuery) JSONString
-
-```go
-func (p *TokenQuery) JSONString() *common.String
-```
-
-#### func (*TokenQuery) ProtoMessage
-
-```go
-func (*TokenQuery) ProtoMessage()
-```
-
-#### func (*TokenQuery) Reset
-
-```go
-func (m *TokenQuery) Reset()
-```
-
-#### func (*TokenQuery) String
-
-```go
-func (m *TokenQuery) String() string
-```
-
-#### func (*TokenQuery) UnmarshalJSONFrom
-
-```go
-func (p *TokenQuery) UnmarshalJSONFrom(bits []byte) error
-```
-
-#### func (*TokenQuery) UnmarshalProtoFrom
-
-```go
-func (p *TokenQuery) UnmarshalProtoFrom(bits []byte) error
-```
-
-#### func (*TokenQuery) XXX_DiscardUnknown
-
-```go
-func (m *TokenQuery) XXX_DiscardUnknown()
-```
-
-#### func (*TokenQuery) XXX_Marshal
-
-```go
-func (m *TokenQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*TokenQuery) XXX_Merge
-
-```go
-func (m *TokenQuery) XXX_Merge(src proto.Message)
-```
-
-#### func (*TokenQuery) XXX_Size
-
-```go
-func (m *TokenQuery) XXX_Size() int
-```
-
-#### func (*TokenQuery) XXX_Unmarshal
-
-```go
-func (m *TokenQuery) XXX_Unmarshal(b []byte) error
-```
-
 #### type UnSubscribeRequest
 
 ```go
@@ -3684,10 +3587,11 @@ func (m *User) XXX_Unmarshal(b []byte) error
 
 ```go
 type UserServiceClient interface {
-	QueryUsers(ctx context.Context, in *TokenQuery, opts ...grpc.CallOption) (UserService_QueryUsersClient, error)
+	QueryUsers(ctx context.Context, in *common.Query, opts ...grpc.CallOption) (UserService_QueryUsersClient, error)
 	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
 	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error)
+	QueryUserLogs(ctx context.Context, in *common.Query, opts ...grpc.CallOption) (UserService_QueryUserLogsClient, error)
 }
 ```
 
@@ -3706,14 +3610,35 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 
 ```go
 type UserServiceServer interface {
-	QueryUsers(*TokenQuery, UserService_QueryUsersServer) error
+	QueryUsers(*common.Query, UserService_QueryUsersServer) error
 	GetUser(context.Context, *common.Identifier) (*User, error)
 	UpdateUser(context.Context, *User) (*User, error)
 	UserRoles(*common.Identifier, UserService_UserRolesServer) error
+	QueryUserLogs(*common.Query, UserService_QueryUserLogsServer) error
 }
 ```
 
 UserServiceServer is the server API for UserService service.
+
+#### type UserService_QueryUserLogsClient
+
+```go
+type UserService_QueryUserLogsClient interface {
+	Recv() (*common.Event, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type UserService_QueryUserLogsServer
+
+```go
+type UserService_QueryUserLogsServer interface {
+	Send(*common.Event) error
+	grpc.ServerStream
+}
+```
+
 
 #### type UserService_QueryUsersClient
 

@@ -250,6 +250,145 @@ func (m *Empty) XXX_Size() int
 func (m *Empty) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Event
+
+```go
+type Event struct {
+	Date                 *String  `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
+	Type                 *String  `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	ClientId             *String  `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientName           *String  `protobuf:"bytes,4,opt,name=client_name,json=clientName,proto3" json:"client_name,omitempty"`
+	Ip                   *String  `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`
+	LocationInfo         *String  `protobuf:"bytes,6,opt,name=location_info,json=locationInfo,proto3" json:"location_info,omitempty"`
+	Details              *String  `protobuf:"bytes,7,opt,name=details,proto3" json:"details,omitempty"`
+	UserId               *String  `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Event) Descriptor
+
+```go
+func (*Event) Descriptor() ([]byte, []int)
+```
+
+#### func (*Event) GetClientId
+
+```go
+func (m *Event) GetClientId() *String
+```
+
+#### func (*Event) GetClientName
+
+```go
+func (m *Event) GetClientName() *String
+```
+
+#### func (*Event) GetDate
+
+```go
+func (m *Event) GetDate() *String
+```
+
+#### func (*Event) GetDetails
+
+```go
+func (m *Event) GetDetails() *String
+```
+
+#### func (*Event) GetIp
+
+```go
+func (m *Event) GetIp() *String
+```
+
+#### func (*Event) GetLocationInfo
+
+```go
+func (m *Event) GetLocationInfo() *String
+```
+
+#### func (*Event) GetType
+
+```go
+func (m *Event) GetType() *String
+```
+
+#### func (*Event) GetUserId
+
+```go
+func (m *Event) GetUserId() *String
+```
+
+#### func (*Event) JSONString
+
+```go
+func (s *Event) JSONString() *String
+```
+
+#### func (*Event) ProtoMessage
+
+```go
+func (*Event) ProtoMessage()
+```
+
+#### func (*Event) Reset
+
+```go
+func (m *Event) Reset()
+```
+
+#### func (*Event) String
+
+```go
+func (m *Event) String() string
+```
+
+#### func (*Event) UnmarshalJSONfrom
+
+```go
+func (s *Event) UnmarshalJSONfrom(bits []byte) error
+```
+
+#### func (*Event) UnmarshalProtofrom
+
+```go
+func (s *Event) UnmarshalProtofrom(bits []byte) error
+```
+
+#### func (*Event) XXX_DiscardUnknown
+
+```go
+func (m *Event) XXX_DiscardUnknown()
+```
+
+#### func (*Event) XXX_Marshal
+
+```go
+func (m *Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Event) XXX_Merge
+
+```go
+func (m *Event) XXX_Merge(src proto.Message)
+```
+
+#### func (*Event) XXX_Size
+
+```go
+func (m *Event) XXX_Size() int
+```
+
+#### func (*Event) XXX_Unmarshal
+
+```go
+func (m *Event) XXX_Unmarshal(b []byte) error
+```
+
 #### type Float64
 
 ```go

@@ -585,6 +585,126 @@ typedef struct Query__storage_ {
 
 @end
 
+#pragma mark - Event
+
+@implementation Event
+
+@dynamic hasDate, date;
+@dynamic hasType, type;
+@dynamic hasClientId, clientId;
+@dynamic hasClientName, clientName;
+@dynamic hasIp, ip;
+@dynamic hasLocationInfo, locationInfo;
+@dynamic hasDetails, details;
+@dynamic hasUserId, userId;
+
+typedef struct Event__storage_ {
+  uint32_t _has_storage_[1];
+  String *date;
+  String *type;
+  String *clientId;
+  String *clientName;
+  String *ip;
+  String *locationInfo;
+  String *details;
+  String *userId;
+} Event__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "date",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_Date,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Event__storage_, date),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_Type,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Event__storage_, type),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "clientId",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_ClientId,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Event__storage_, clientId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "clientName",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_ClientName,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Event__storage_, clientName),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "ip",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_Ip,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Event__storage_, ip),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "locationInfo",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_LocationInfo,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(Event__storage_, locationInfo),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "details",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_Details,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(Event__storage_, details),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "userId",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Event_FieldNumber_UserId,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(Event__storage_, userId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Event class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Event__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - TokenSet
 
 @implementation TokenSet

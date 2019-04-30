@@ -51,6 +51,17 @@ message Query {
     common.String fields=5;
 }
 
+message Event {
+    common.String date=1;
+    common.String type=2;
+    common.String client_id=3;
+    common.String client_name=4;
+    common.String ip=5;
+    common.String location_info=6;
+    common.String details=7;
+    common.String user_id=8;
+}
+
 message TokenSet {
     map<string, common.Token> tokens =1;
 }

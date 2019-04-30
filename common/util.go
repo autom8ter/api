@@ -952,6 +952,18 @@ func (s *Int64) JSONString() *String {
 	return MessageToJSONString(s)
 }
 
+func (s *Event) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *Event) UnmarshalProtofrom(bits []byte) error {
+	return util.UnmarshalProto(bits, s)
+}
+
+func (s *Event) UnmarshalJSONfrom(bits []byte) error {
+	return util.UnmarshalJSON(bits, s)
+}
+
 func (s *TokenSet) JSONString() *String {
 	return MessageToJSONString(s)
 }

@@ -40,7 +40,6 @@ CF_EXTERN_C_BEGIN
 @class String;
 @class StringArray;
 @class StringMap;
-@class Token;
 @class TokenSet;
 @class User;
 
@@ -809,25 +808,6 @@ typedef GPB_ENUM(PhoneNumberResource_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *uri;
 /** Test to see if @c uri has been set. */
 @property(nonatomic, readwrite) BOOL hasUri;
-
-@end
-
-#pragma mark - TokenQuery
-
-typedef GPB_ENUM(TokenQuery_FieldNumber) {
-  TokenQuery_FieldNumber_Token = 1,
-  TokenQuery_FieldNumber_Query = 2,
-};
-
-@interface TokenQuery : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Token *token;
-/** Test to see if @c token has been set. */
-@property(nonatomic, readwrite) BOOL hasToken;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *query;
-/** Test to see if @c query has been set. */
-@property(nonatomic, readwrite) BOOL hasQuery;
 
 @end
 
