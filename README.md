@@ -79,6 +79,12 @@ done.
 func RegisterDebugServiceServer(s *grpc.Server, srv DebugServiceServer)
 ```
 
+#### func  Serve
+
+```go
+func Serve(addr string, plugins ...driver.Plugin) error
+```
+
 #### type Address
 
 ```go
@@ -602,6 +608,13 @@ type ClientSet struct {
 func NewClientSet(conn *grpc.ClientConn) *ClientSet
 ```
 
+#### type CreateUserFunc
+
+```go
+type CreateUserFunc func(ctx context.Context, u *User) (*User, error)
+```
+
+
 #### type DBServiceClient
 
 ```go
@@ -659,6 +672,57 @@ type DBService_ListUsersServer interface {
 ```
 
 
+#### type Database
+
+```go
+type Database struct {
+	GetUserFunc    GetUserFunc
+	DeleteUserFunc DeleteUserFunc
+	UpdateUserFunc UpdateUserFunc
+	CreateUserFunc CreateUserFunc
+	ListUsersFunc  ListUsersFunc
+	driver.PluginFunc
+}
+```
+
+
+#### func (*Database) CreateUser
+
+```go
+func (d *Database) CreateUser(ctx context.Context, u *User) (*User, error)
+```
+
+#### func (*Database) DeleteUser
+
+```go
+func (d *Database) DeleteUser(ctx context.Context, email *common.Identifier) (*common.Empty, error)
+```
+
+#### func (*Database) GetUser
+
+```go
+func (d *Database) GetUser(ctx context.Context, email *common.Identifier) (*User, error)
+```
+
+#### func (*Database) ListUsers
+
+```go
+func (d *Database) ListUsers(e *common.Empty, stream DBService_ListUsersServer) error
+```
+
+#### func (*Database) UpdateUser
+
+```go
+func (d *Database) UpdateUser(ctx context.Context, u *UpdateUserRequest) (*User, error)
+```
+
+#### type DebugFunc
+
+```go
+type DebugFunc func(ctx context.Context, s *common.String) (*common.String, error)
+```
+
+
 #### type DebugServiceClient
 
 ```go
@@ -687,6 +751,22 @@ type DebugServiceServer interface {
 ```
 
 DebugServiceServer is the server API for DebugService service.
+
+#### type Debugger
+
+```go
+type Debugger struct {
+	DebugFunc DebugFunc
+	driver.PluginFunc
+}
+```
+
+
+#### func (*Debugger) Echo
+
+```go
+func (d *Debugger) Echo(ctx context.Context, s *common.String) (*common.String, error)
+```
 
 #### type DefaultGCPCredentials
 
@@ -813,6 +893,20 @@ func (m *DefaultGCPCredentials) XXX_Size() int
 ```go
 func (m *DefaultGCPCredentials) XXX_Unmarshal(b []byte) error
 ```
+
+#### type DeleteUserFunc
+
+```go
+type DeleteUserFunc func(ctx context.Context, email *common.Identifier) (*common.Empty, error)
+```
+
+
+#### type GetUserFunc
+
+```go
+type GetUserFunc func(ctx context.Context, email *common.Identifier) (*User, error)
+```
+
 
 #### type Identity
 
@@ -1338,6 +1432,13 @@ func (m *Jwks) XXX_Size() int
 ```go
 func (m *Jwks) XXX_Unmarshal(b []byte) error
 ```
+
+#### type ListUsersFunc
+
+```go
+type ListUsersFunc func(e *common.Empty, stream DBService_ListUsersServer) error
+```
+
 
 #### type OAuth2
 
@@ -1865,6 +1966,13 @@ func (m *Role) XXX_Size() int
 func (m *Role) XXX_Unmarshal(b []byte) error
 ```
 
+#### type UpdateUserFunc
+
+```go
+type UpdateUserFunc func(ctx context.Context, u *UpdateUserRequest) (*User, error)
+```
+
+
 #### type UpdateUserRequest
 
 ```go
@@ -2174,6 +2282,12 @@ func (m *User) String() string
 
 ```go
 func (p *User) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*User) Update
+
+```go
+func (s *User) Update(data map[string]interface{}) (*User, error)
 ```
 
 #### func (*User) Validate
