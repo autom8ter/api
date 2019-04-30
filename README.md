@@ -765,6 +765,12 @@ type ClientCredentials struct {
 ```
 
 
+#### func (*ClientCredentials) AuthCodeURL
+
+```go
+func (c *ClientCredentials) AuthCodeURL(state string) string
+```
+
 #### func (*ClientCredentials) Client
 
 ```go
@@ -2229,6 +2235,12 @@ type JWT struct {
 ```
 
 
+#### func (*JWT) AuthCodeURL
+
+```go
+func (c *JWT) AuthCodeURL(state string) string
+```
+
 #### func (*JWT) Client
 
 ```go
@@ -2717,7 +2729,7 @@ type OAuth2 struct {
 #### func (*OAuth2) AuthCodeURL
 
 ```go
-func (c *OAuth2) AuthCodeURL(ctx context.Context) *http.Client
+func (c *OAuth2) AuthCodeURL(state string) string
 ```
 
 #### func (*OAuth2) Client

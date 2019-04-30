@@ -470,8 +470,16 @@ func (c *JWT) Client(ctx context.Context) *http.Client {
 	return oauth2.NewClient(ctx, c)
 }
 
-func (c *OAuth2) AuthCodeURL(ctx context.Context) *http.Client {
-	return oauth2.NewClient(ctx, c)
+func (c *OAuth2) AuthCodeURL(state string) string {
+	return c.Config().AuthCodeURL(state)
+}
+
+func (c *JWT) AuthCodeURL(state string) string {
+	return c.Config().AuthCodeURL(state)
+}
+
+func (c *ClientCredentials) AuthCodeURL(state string) string {
+	return c.Config().AuthCodeURL(state)
 }
 
 func (c *JWT) NewAPIClientSet(addr string) (*ClientSet, error) {
