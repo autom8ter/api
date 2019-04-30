@@ -120,12 +120,12 @@ message User {
     common.StringMap user_metadata=10;
     common.StringMap app_metadata=11;
     common.String last_ip =12;
-    bool blocked =13;
+    common.Bool blocked =13;
     common.StringArray multifactor=15;
     common.String created_at=17;
     common.String updated_at=18;
-    bool phone_verified=19;
-    bool email_verified=20;
+    common.Bool phone_verified=19;
+    common.Bool email_verified=20;
     common.String password=21;
     repeated Identity identities =22;
 }
@@ -138,11 +138,11 @@ message UserMetadata {
 }
 
 message Address {
-    string city =1;
-    string state=2;
-    string line1 =3;
-    string line2=4;
-    string zip =5;
+    common.String city =1;
+    common.String state=2;
+    common.String line1 =3;
+    common.String line2=4;
+    common.String zip =5;
 }
 
 message AppMetadata {
@@ -154,9 +154,9 @@ message AppMetadata {
 
 message Plan {
     common.Identifier id =1;
-    bool active =2;
+    common.Bool active =2;
     common.Int64 amount =3;
-    BillingInterval interval=4;
+    common.String interval=4;
     common.String nickname =5;
     Product product=6;
 }
@@ -167,18 +167,11 @@ message Product {
     common.String url =3;
 }
 
-enum BillingInterval {
-    DAILY =0;
-    WEEKLY=1;
-    MONTHLY=2;
-    YEARLY=3;
-}
-
 message Identity{
     common.String connection =1;
     common.Identifier user_id=2;
     common.String provider=3;
-    bool isSocial=4;
+    common.Bool isSocial=4;
 }
 
 message Role {
@@ -238,10 +231,10 @@ message Event {
 }
 
 message EventQuery {
-    string date=1;
-    string type=2;
-    string client_id=3;
-    string user_id=4;
+    common.String date=1;
+    common.String type=2;
+    common.String client_id=3;
+    common.String user_id=4;
 }
 
 message JSONWebKeys {
@@ -257,14 +250,8 @@ message Jwks {
     repeated JSONWebKeys keys=1;
 }
 
-enum EventType {
-    LOGIN_CODE_SENT =0;
-    DELETED_USER=1;
-    FAILED_LOGIN =2;
-    FAILED_API_OPERATION=3;
-    CON=4;
-    FAILED_CORS=5;
-    SUCCESS_EMAIL_VERIFICATION=6;
-
-
+message Document {
+    common.String category=1;
+    common.String name=2;
+    common.StringMap data=3;
 }

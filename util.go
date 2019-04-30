@@ -17,6 +17,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/oauth"
+	"io"
 	"net/http"
 	"net/url"
 )
@@ -87,6 +88,18 @@ func (p *Jwks) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
+func (p *Document) JSONString() *common.String {
+	return common.MessageToJSONString(p)
+}
+
+func NewDocument(category, name string, data map[string]interface{}) *Document {
+	return &Document{
+		Category: common.ToString(category),
+		Name:     common.ToString(name),
+		Data:     common.StringMapFromData(data),
+	}
+}
+
 func (p *Jwks) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
@@ -116,6 +129,10 @@ func (p *UserMetadata) UnmarshalJSONFrom(bits []byte) error {
 }
 
 func (p *AppMetadata) UnmarshalJSONFrom(bits []byte) error {
+	return json.Unmarshal(bits, p)
+}
+
+func (p *Document) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
@@ -488,4 +505,8 @@ func (s *DefaultGCPCredentials) Debugf(format string) {
 
 func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error) error {
 	return fn(s)
+}
+
+func (d *Document) Render(s *common.String, w io.Writer) error {
+	return s.Render(d.Name.Text, w, d.Data)
 }

@@ -39,12 +39,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :user_metadata, :message, 10, "common.StringMap"
     optional :app_metadata, :message, 11, "common.StringMap"
     optional :last_ip, :message, 12, "common.String"
-    optional :blocked, :bool, 13
+    optional :blocked, :message, 13, "common.Bool"
     optional :multifactor, :message, 15, "common.StringArray"
     optional :created_at, :message, 17, "common.String"
     optional :updated_at, :message, 18, "common.String"
-    optional :phone_verified, :bool, 19
-    optional :email_verified, :bool, 20
+    optional :phone_verified, :message, 19, "common.Bool"
+    optional :email_verified, :message, 20, "common.Bool"
     optional :password, :message, 21, "common.String"
     repeated :identities, :message, 22, "api.Identity"
   end
@@ -55,11 +55,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :tags, :message, 4, "common.StringMap"
   end
   add_message "api.Address" do
-    optional :city, :string, 1
-    optional :state, :string, 2
-    optional :line1, :string, 3
-    optional :line2, :string, 4
-    optional :zip, :string, 5
+    optional :city, :message, 1, "common.String"
+    optional :state, :message, 2, "common.String"
+    optional :line1, :message, 3, "common.String"
+    optional :line2, :message, 4, "common.String"
+    optional :zip, :message, 5, "common.String"
   end
   add_message "api.AppMetadata" do
     optional :description, :message, 1, "common.String"
@@ -69,9 +69,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.Plan" do
     optional :id, :message, 1, "common.Identifier"
-    optional :active, :bool, 2
+    optional :active, :message, 2, "common.Bool"
     optional :amount, :message, 3, "common.Int64"
-    optional :interval, :enum, 4, "api.BillingInterval"
+    optional :interval, :message, 4, "common.String"
     optional :nickname, :message, 5, "common.String"
     optional :product, :message, 6, "api.Product"
   end
@@ -84,7 +84,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :connection, :message, 1, "common.String"
     optional :user_id, :message, 2, "common.Identifier"
     optional :provider, :message, 3, "common.String"
-    optional :isSocial, :bool, 4
+    optional :isSocial, :message, 4, "common.Bool"
   end
   add_message "api.Role" do
     optional :id, :message, 1, "common.Identifier"
@@ -136,10 +136,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :annotations, :message, 9, "common.StringMap"
   end
   add_message "api.EventQuery" do
-    optional :date, :string, 1
-    optional :type, :string, 2
-    optional :client_id, :string, 3
-    optional :user_id, :string, 4
+    optional :date, :message, 1, "common.String"
+    optional :type, :message, 2, "common.String"
+    optional :client_id, :message, 3, "common.String"
+    optional :user_id, :message, 4, "common.String"
   end
   add_message "api.JSONWebKeys" do
     optional :kty, :message, 1, "common.String"
@@ -152,20 +152,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Jwks" do
     repeated :keys, :message, 1, "api.JSONWebKeys"
   end
-  add_enum "api.BillingInterval" do
-    value :DAILY, 0
-    value :WEEKLY, 1
-    value :MONTHLY, 2
-    value :YEARLY, 3
-  end
-  add_enum "api.EventType" do
-    value :LOGIN_CODE_SENT, 0
-    value :DELETED_USER, 1
-    value :FAILED_LOGIN, 2
-    value :FAILED_API_OPERATION, 3
-    value :CON, 4
-    value :FAILED_CORS, 5
-    value :SUCCESS_EMAIL_VERIFICATION, 6
+  add_message "api.Document" do
+    optional :category, :message, 1, "common.String"
+    optional :name, :message, 2, "common.String"
+    optional :data, :message, 3, "common.StringMap"
   end
 end
 
@@ -191,6 +181,5 @@ module Api
   EventQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EventQuery").msgclass
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
-  BillingInterval = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BillingInterval").enummodule
-  EventType = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EventType").enummodule
+  Document = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Document").msgclass
 end

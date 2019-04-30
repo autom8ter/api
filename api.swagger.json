@@ -318,16 +318,16 @@
       "type": "object",
       "properties": {
         "date": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "type": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "client_id": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         },
         "user_id": {
-          "type": "string"
+          "$ref": "#/definitions/commonString"
         }
       }
     },
@@ -344,8 +344,7 @@
           "$ref": "#/definitions/commonString"
         },
         "isSocial": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         }
       }
     },
@@ -442,8 +441,7 @@
           "$ref": "#/definitions/commonString"
         },
         "blocked": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "multifactor": {
           "$ref": "#/definitions/commonStringArray"
@@ -455,12 +453,10 @@
           "$ref": "#/definitions/commonString"
         },
         "phone_verified": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "email_verified": {
-          "type": "boolean",
-          "format": "boolean"
+          "$ref": "#/definitions/commonBool"
         },
         "password": {
           "$ref": "#/definitions/commonString"
@@ -478,6 +474,15 @@
       "properties": {
         "token": {
           "$ref": "#/definitions/commonString"
+        }
+      }
+    },
+    "commonBool": {
+      "type": "object",
+      "properties": {
+        "answer": {
+          "type": "boolean",
+          "format": "boolean"
         }
       }
     },

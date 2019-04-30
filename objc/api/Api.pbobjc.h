@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class Address;
+@class Bool;
 @class Card;
 @class Identifier;
 @class Identity;
@@ -41,55 +42,6 @@ CF_EXTERN_C_BEGIN
 @class StringMap;
 
 NS_ASSUME_NONNULL_BEGIN
-
-#pragma mark - Enum BillingInterval
-
-typedef GPB_ENUM(BillingInterval) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  BillingInterval_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  BillingInterval_Daily = 0,
-  BillingInterval_Weekly = 1,
-  BillingInterval_Monthly = 2,
-  BillingInterval_Yearly = 3,
-};
-
-GPBEnumDescriptor *BillingInterval_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL BillingInterval_IsValidValue(int32_t value);
-
-#pragma mark - Enum EventType
-
-typedef GPB_ENUM(EventType) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  EventType_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  EventType_LoginCodeSent = 0,
-  EventType_DeletedUser = 1,
-  EventType_FailedLogin = 2,
-  EventType_FailedApiOperation = 3,
-  EventType_Con = 4,
-  EventType_FailedCors = 5,
-  EventType_SuccessEmailVerification = 6,
-};
-
-GPBEnumDescriptor *EventType_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL EventType_IsValidValue(int32_t value);
 
 #pragma mark - ApiRoot
 
@@ -277,7 +229,9 @@ typedef GPB_ENUM(User_FieldNumber) {
 /** Test to see if @c lastIp has been set. */
 @property(nonatomic, readwrite) BOOL hasLastIp;
 
-@property(nonatomic, readwrite) BOOL blocked;
+@property(nonatomic, readwrite, strong, null_resettable) Bool *blocked;
+/** Test to see if @c blocked has been set. */
+@property(nonatomic, readwrite) BOOL hasBlocked;
 
 @property(nonatomic, readwrite, strong, null_resettable) StringArray *multifactor;
 /** Test to see if @c multifactor has been set. */
@@ -291,9 +245,13 @@ typedef GPB_ENUM(User_FieldNumber) {
 /** Test to see if @c updatedAt has been set. */
 @property(nonatomic, readwrite) BOOL hasUpdatedAt;
 
-@property(nonatomic, readwrite) BOOL phoneVerified;
+@property(nonatomic, readwrite, strong, null_resettable) Bool *phoneVerified;
+/** Test to see if @c phoneVerified has been set. */
+@property(nonatomic, readwrite) BOOL hasPhoneVerified;
 
-@property(nonatomic, readwrite) BOOL emailVerified;
+@property(nonatomic, readwrite, strong, null_resettable) Bool *emailVerified;
+/** Test to see if @c emailVerified has been set. */
+@property(nonatomic, readwrite) BOOL hasEmailVerified;
 
 @property(nonatomic, readwrite, strong, null_resettable) String *password;
 /** Test to see if @c password has been set. */
@@ -346,15 +304,25 @@ typedef GPB_ENUM(Address_FieldNumber) {
 
 @interface Address : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *city;
+@property(nonatomic, readwrite, strong, null_resettable) String *city;
+/** Test to see if @c city has been set. */
+@property(nonatomic, readwrite) BOOL hasCity;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *state;
+@property(nonatomic, readwrite, strong, null_resettable) String *state;
+/** Test to see if @c state has been set. */
+@property(nonatomic, readwrite) BOOL hasState;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *line1;
+@property(nonatomic, readwrite, strong, null_resettable) String *line1;
+/** Test to see if @c line1 has been set. */
+@property(nonatomic, readwrite) BOOL hasLine1;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *line2;
+@property(nonatomic, readwrite, strong, null_resettable) String *line2;
+/** Test to see if @c line2 has been set. */
+@property(nonatomic, readwrite) BOOL hasLine2;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *zip;
+@property(nonatomic, readwrite, strong, null_resettable) String *zip;
+/** Test to see if @c zip has been set. */
+@property(nonatomic, readwrite) BOOL hasZip;
 
 @end
 
@@ -404,13 +372,17 @@ typedef GPB_ENUM(Plan_FieldNumber) {
 /** Test to see if @c id_p has been set. */
 @property(nonatomic, readwrite) BOOL hasId_p;
 
-@property(nonatomic, readwrite) BOOL active;
+@property(nonatomic, readwrite, strong, null_resettable) Bool *active;
+/** Test to see if @c active has been set. */
+@property(nonatomic, readwrite) BOOL hasActive;
 
 @property(nonatomic, readwrite, strong, null_resettable) Int64 *amount;
 /** Test to see if @c amount has been set. */
 @property(nonatomic, readwrite) BOOL hasAmount;
 
-@property(nonatomic, readwrite) BillingInterval interval;
+@property(nonatomic, readwrite, strong, null_resettable) String *interval;
+/** Test to see if @c interval has been set. */
+@property(nonatomic, readwrite) BOOL hasInterval;
 
 @property(nonatomic, readwrite, strong, null_resettable) String *nickname;
 /** Test to see if @c nickname has been set. */
@@ -421,18 +393,6 @@ typedef GPB_ENUM(Plan_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasProduct;
 
 @end
-
-/**
- * Fetches the raw value of a @c Plan's @c interval property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t Plan_Interval_RawValue(Plan *message);
-/**
- * Sets the raw value of an @c Plan's @c interval property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetPlan_Interval_RawValue(Plan *message, int32_t value);
 
 #pragma mark - Product
 
@@ -481,7 +441,9 @@ typedef GPB_ENUM(Identity_FieldNumber) {
 /** Test to see if @c provider has been set. */
 @property(nonatomic, readwrite) BOOL hasProvider;
 
-@property(nonatomic, readwrite) BOOL isSocial;
+@property(nonatomic, readwrite, strong, null_resettable) Bool *isSocial;
+/** Test to see if @c isSocial has been set. */
+@property(nonatomic, readwrite) BOOL hasIsSocial;
 
 @end
 
@@ -732,13 +694,21 @@ typedef GPB_ENUM(EventQuery_FieldNumber) {
 
 @interface EventQuery : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *date;
+@property(nonatomic, readwrite, strong, null_resettable) String *date;
+/** Test to see if @c date has been set. */
+@property(nonatomic, readwrite) BOOL hasDate;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *type;
+@property(nonatomic, readwrite, strong, null_resettable) String *type;
+/** Test to see if @c type has been set. */
+@property(nonatomic, readwrite) BOOL hasType;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *clientId;
+@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
+/** Test to see if @c clientId has been set. */
+@property(nonatomic, readwrite) BOOL hasClientId;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+@property(nonatomic, readwrite, strong, null_resettable) String *userId;
+/** Test to see if @c userId has been set. */
+@property(nonatomic, readwrite) BOOL hasUserId;
 
 @end
 
@@ -792,6 +762,30 @@ typedef GPB_ENUM(Jwks_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<JSONWebKeys*> *keysArray;
 /** The number of items in @c keysArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger keysArray_Count;
+
+@end
+
+#pragma mark - Document
+
+typedef GPB_ENUM(Document_FieldNumber) {
+  Document_FieldNumber_Category = 1,
+  Document_FieldNumber_Name = 2,
+  Document_FieldNumber_Data_p = 3,
+};
+
+@interface Document : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *category;
+/** Test to see if @c category has been set. */
+@property(nonatomic, readwrite) BOOL hasCategory;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *name;
+/** Test to see if @c name has been set. */
+@property(nonatomic, readwrite) BOOL hasName;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *data_p;
+/** Test to see if @c data_p has been set. */
+@property(nonatomic, readwrite) BOOL hasData_p;
 
 @end
 

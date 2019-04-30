@@ -838,6 +838,18 @@ func (a *AuthToken) Bearer(req *http.Request) {
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", a.Token))
 }
 
+func StringMapFromData(data map[string]interface{}) *StringMap {
+	newMap := make(map[string]string)
+	for k, v := range data {
+		if msg, ok := v.(proto.Message); ok {
+			newMap[k] = msg.String()
+		} else {
+			newMap[k] = string(util.MarshalJSON(v))
+		}
+	}
+	return ToStringMap(newMap)
+}
+
 func EmailIdentifier(email string) *Identifier {
 	return &Identifier{Id: ToString(email)}
 }
