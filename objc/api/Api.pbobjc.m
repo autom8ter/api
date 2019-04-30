@@ -56,151 +56,6 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
-#pragma mark - Enum Scope
-
-GPBEnumDescriptor *Scope_EnumDescriptor(void) {
-  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
-  if (!descriptor) {
-    static const char *valueNames =
-        "Openid\000Profile\000Email\000ReadUsers\000ReadUserI"
-        "dpTokens\000CreateUsers\000ReadStats\000ReadEmail"
-        "Templates\000UpdateEmailTemplates\000CreateEma"
-        "ilTemplates\000ReadRules\000UpdateRules\000Create"
-        "Rules\000DeleteRules\000ReadRoles\000UpdateRoles\000"
-        "CreateRoles\000DeleteRoles\000ReadLogs\000";
-    static const int32_t values[] = {
-        Scope_Openid,
-        Scope_Profile,
-        Scope_Email,
-        Scope_ReadUsers,
-        Scope_ReadUserIdpTokens,
-        Scope_CreateUsers,
-        Scope_ReadStats,
-        Scope_ReadEmailTemplates,
-        Scope_UpdateEmailTemplates,
-        Scope_CreateEmailTemplates,
-        Scope_ReadRules,
-        Scope_UpdateRules,
-        Scope_CreateRules,
-        Scope_DeleteRules,
-        Scope_ReadRoles,
-        Scope_UpdateRoles,
-        Scope_CreateRoles,
-        Scope_DeleteRoles,
-        Scope_ReadLogs,
-    };
-    GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(Scope)
-                                       valueNames:valueNames
-                                           values:values
-                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:Scope_IsValidValue];
-    GPBEnumDescriptor *expected = nil;
-    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
-    }
-  }
-  return descriptor;
-}
-
-BOOL Scope_IsValidValue(int32_t value__) {
-  switch (value__) {
-    case Scope_Openid:
-    case Scope_Profile:
-    case Scope_Email:
-    case Scope_ReadUsers:
-    case Scope_ReadUserIdpTokens:
-    case Scope_CreateUsers:
-    case Scope_ReadStats:
-    case Scope_ReadEmailTemplates:
-    case Scope_UpdateEmailTemplates:
-    case Scope_CreateEmailTemplates:
-    case Scope_ReadRules:
-    case Scope_UpdateRules:
-    case Scope_CreateRules:
-    case Scope_DeleteRules:
-    case Scope_ReadRoles:
-    case Scope_UpdateRoles:
-    case Scope_CreateRoles:
-    case Scope_DeleteRoles:
-    case Scope_ReadLogs:
-      return YES;
-    default:
-      return NO;
-  }
-}
-
-#pragma mark - Enum URL
-
-GPBEnumDescriptor *URL_EnumDescriptor(void) {
-  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
-  if (!descriptor) {
-    static const char *valueNames =
-        "UserInfourl\000Tokenurl\000Authorizeurl\000Usersu"
-        "rl\000Clientsurl\000Grantsurl\000Rulesurl\000Rolesur"
-        "l\000Logsurl\000Statsurl\000Connectionsurl\000Tenant"
-        "surl\000EmailTemplateurl\000Emailurl\000SearchUse"
-        "rsurl\000Deviceurl\000Jwksurl\000ClientGrantsurl\000";
-    static const int32_t values[] = {
-        URL_UserInfourl,
-        URL_Tokenurl,
-        URL_Authorizeurl,
-        URL_Usersurl,
-        URL_Clientsurl,
-        URL_Grantsurl,
-        URL_Rulesurl,
-        URL_Rolesurl,
-        URL_Logsurl,
-        URL_Statsurl,
-        URL_Connectionsurl,
-        URL_Tenantsurl,
-        URL_EmailTemplateurl,
-        URL_Emailurl,
-        URL_SearchUsersurl,
-        URL_Deviceurl,
-        URL_Jwksurl,
-        URL_ClientGrantsurl,
-    };
-    GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(URL)
-                                       valueNames:valueNames
-                                           values:values
-                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:URL_IsValidValue];
-    GPBEnumDescriptor *expected = nil;
-    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
-    }
-  }
-  return descriptor;
-}
-
-BOOL URL_IsValidValue(int32_t value__) {
-  switch (value__) {
-    case URL_UserInfourl:
-    case URL_Tokenurl:
-    case URL_Authorizeurl:
-    case URL_Usersurl:
-    case URL_Clientsurl:
-    case URL_Grantsurl:
-    case URL_Rulesurl:
-    case URL_Rolesurl:
-    case URL_Logsurl:
-    case URL_Statsurl:
-    case URL_Connectionsurl:
-    case URL_Tenantsurl:
-    case URL_EmailTemplateurl:
-    case URL_Emailurl:
-    case URL_SearchUsersurl:
-    case URL_Deviceurl:
-    case URL_Jwksurl:
-    case URL_ClientGrantsurl:
-      return YES;
-    default:
-      return NO;
-  }
-}
-
 #pragma mark - Enum Plan
 
 GPBEnumDescriptor *Plan_EnumDescriptor(void) {
@@ -1532,19 +1387,13 @@ typedef struct Identity__storage_ {
 
 @implementation Auth
 
-@dynamic hasDomain, domain;
-@dynamic hasClientId, clientId;
-@dynamic hasClientSecret, clientSecret;
-@dynamic hasRedirect, redirect;
-@dynamic scopesArray, scopesArray_Count;
+@dynamic hasConfig, config;
+@dynamic hasTokenSet, tokenSet;
 
 typedef struct Auth__storage_ {
   uint32_t _has_storage_[1];
-  String *domain;
-  String *clientId;
-  String *clientSecret;
-  String *redirect;
-  GPBEnumArray *scopesArray;
+  Config *config;
+  TokenSet *tokenSet;
 } Auth__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1554,49 +1403,22 @@ typedef struct Auth__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "domain",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Auth_FieldNumber_Domain,
+        .name = "config",
+        .dataTypeSpecific.className = GPBStringifySymbol(Config),
+        .number = Auth_FieldNumber_Config,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Auth__storage_, domain),
+        .offset = (uint32_t)offsetof(Auth__storage_, config),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "clientId",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Auth_FieldNumber_ClientId,
+        .name = "tokenSet",
+        .dataTypeSpecific.className = GPBStringifySymbol(TokenSet),
+        .number = Auth_FieldNumber_TokenSet,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Auth__storage_, clientId),
+        .offset = (uint32_t)offsetof(Auth__storage_, tokenSet),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "clientSecret",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Auth_FieldNumber_ClientSecret,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Auth__storage_, clientSecret),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "redirect",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Auth_FieldNumber_Redirect,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Auth__storage_, redirect),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "scopesArray",
-        .dataTypeSpecific.enumDescFunc = Scope_EnumDescriptor,
-        .number = Auth_FieldNumber_ScopesArray,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(Auth__storage_, scopesArray),
-        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldPacked | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -1773,7 +1595,7 @@ typedef struct RenderRequest__storage_ {
   uint32_t _has_storage_[1];
   String *name;
   String *text;
-  Bytes *data_p;
+  String *data_p;
 } RenderRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1802,7 +1624,7 @@ typedef struct RenderRequest__storage_ {
       },
       {
         .name = "data_p",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = RenderRequest_FieldNumber_Data_p,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(RenderRequest__storage_, data_p),
@@ -2158,7 +1980,7 @@ typedef struct TokenQuery__storage_ {
 typedef struct IDBody__storage_ {
   uint32_t _has_storage_[1];
   Identifier *id_p;
-  Bytes *body;
+  String *body;
 } IDBody__storage_;
 
 // This method is threadsafe because it is initially called
@@ -2178,7 +2000,7 @@ typedef struct IDBody__storage_ {
       },
       {
         .name = "body",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
         .number = IDBody_FieldNumber_Body,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(IDBody__storage_, body),
@@ -2771,49 +2593,6 @@ typedef struct FaxResponse__storage_ {
         "\001\003\005\241!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - StartCacheRequest
-
-@implementation StartCacheRequest
-
-@dynamic hasFrequency, frequency;
-
-typedef struct StartCacheRequest__storage_ {
-  uint32_t _has_storage_[1];
-  String *frequency;
-} StartCacheRequest__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "frequency",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = StartCacheRequest_FieldNumber_Frequency,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(StartCacheRequest__storage_, frequency),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[StartCacheRequest class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(StartCacheRequest__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }

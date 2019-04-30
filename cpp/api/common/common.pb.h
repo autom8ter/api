@@ -32,7 +32,6 @@
 #include <google/protobuf/map.h>  // IWYU pragma: export
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_common_2fcommon_2eproto 
@@ -42,7 +41,7 @@ namespace protobuf_common_2fcommon_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[12];
+  static const ::google::protobuf::internal::ParseTable schema[14];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -50,27 +49,27 @@ struct TableStruct {
 void AddDescriptors();
 }  // namespace protobuf_common_2fcommon_2eproto
 namespace common {
-class Bytes;
-class BytesDefaultTypeInternal;
-extern BytesDefaultTypeInternal _Bytes_default_instance_;
+class Config;
+class ConfigDefaultTypeInternal;
+extern ConfigDefaultTypeInternal _Config_default_instance_;
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
+class Event;
+class EventDefaultTypeInternal;
+extern EventDefaultTypeInternal _Event_default_instance_;
 class Float64;
 class Float64DefaultTypeInternal;
 extern Float64DefaultTypeInternal _Float64_default_instance_;
-class HTTPRequest;
-class HTTPRequestDefaultTypeInternal;
-extern HTTPRequestDefaultTypeInternal _HTTPRequest_default_instance_;
 class Identifier;
 class IdentifierDefaultTypeInternal;
 extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
 class Int64;
 class Int64DefaultTypeInternal;
 extern Int64DefaultTypeInternal _Int64_default_instance_;
-class RGBA;
-class RGBADefaultTypeInternal;
-extern RGBADefaultTypeInternal _RGBA_default_instance_;
+class Query;
+class QueryDefaultTypeInternal;
+extern QueryDefaultTypeInternal _Query_default_instance_;
 class String;
 class StringDefaultTypeInternal;
 extern StringDefaultTypeInternal _String_default_instance_;
@@ -86,47 +85,33 @@ extern StringMap_StringMapEntry_DoNotUseDefaultTypeInternal _StringMap_StringMap
 class Token;
 class TokenDefaultTypeInternal;
 extern TokenDefaultTypeInternal _Token_default_instance_;
+class TokenSet;
+class TokenSetDefaultTypeInternal;
+extern TokenSetDefaultTypeInternal _TokenSet_default_instance_;
+class TokenSet_TokensEntry_DoNotUse;
+class TokenSet_TokensEntry_DoNotUseDefaultTypeInternal;
+extern TokenSet_TokensEntry_DoNotUseDefaultTypeInternal _TokenSet_TokensEntry_DoNotUse_default_instance_;
 }  // namespace common
 namespace google {
 namespace protobuf {
-template<> ::common::Bytes* Arena::CreateMaybeMessage<::common::Bytes>(Arena*);
+template<> ::common::Config* Arena::CreateMaybeMessage<::common::Config>(Arena*);
 template<> ::common::Empty* Arena::CreateMaybeMessage<::common::Empty>(Arena*);
+template<> ::common::Event* Arena::CreateMaybeMessage<::common::Event>(Arena*);
 template<> ::common::Float64* Arena::CreateMaybeMessage<::common::Float64>(Arena*);
-template<> ::common::HTTPRequest* Arena::CreateMaybeMessage<::common::HTTPRequest>(Arena*);
 template<> ::common::Identifier* Arena::CreateMaybeMessage<::common::Identifier>(Arena*);
 template<> ::common::Int64* Arena::CreateMaybeMessage<::common::Int64>(Arena*);
-template<> ::common::RGBA* Arena::CreateMaybeMessage<::common::RGBA>(Arena*);
+template<> ::common::Query* Arena::CreateMaybeMessage<::common::Query>(Arena*);
 template<> ::common::String* Arena::CreateMaybeMessage<::common::String>(Arena*);
 template<> ::common::StringArray* Arena::CreateMaybeMessage<::common::StringArray>(Arena*);
 template<> ::common::StringMap* Arena::CreateMaybeMessage<::common::StringMap>(Arena*);
 template<> ::common::StringMap_StringMapEntry_DoNotUse* Arena::CreateMaybeMessage<::common::StringMap_StringMapEntry_DoNotUse>(Arena*);
 template<> ::common::Token* Arena::CreateMaybeMessage<::common::Token>(Arena*);
+template<> ::common::TokenSet* Arena::CreateMaybeMessage<::common::TokenSet>(Arena*);
+template<> ::common::TokenSet_TokensEntry_DoNotUse* Arena::CreateMaybeMessage<::common::TokenSet_TokensEntry_DoNotUse>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace common {
 
-enum HTTPMethod {
-  GET = 0,
-  POST = 1,
-  PATCH = 2,
-  HTTPMethod_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  HTTPMethod_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
-};
-bool HTTPMethod_IsValid(int value);
-const HTTPMethod HTTPMethod_MIN = GET;
-const HTTPMethod HTTPMethod_MAX = PATCH;
-const int HTTPMethod_ARRAYSIZE = HTTPMethod_MAX + 1;
-
-const ::google::protobuf::EnumDescriptor* HTTPMethod_descriptor();
-inline const ::std::string& HTTPMethod_Name(HTTPMethod value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    HTTPMethod_descriptor(), value);
-}
-inline bool HTTPMethod_Parse(
-    const ::std::string& name, HTTPMethod* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<HTTPMethod>(
-    HTTPMethod_descriptor(), name, value);
-}
 // ===================================================================
 
 class String : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.String) */ {
@@ -240,117 +225,6 @@ class String : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 };
 // -------------------------------------------------------------------
 
-class Bytes : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Bytes) */ {
- public:
-  Bytes();
-  virtual ~Bytes();
-
-  Bytes(const Bytes& from);
-
-  inline Bytes& operator=(const Bytes& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Bytes(Bytes&& from) noexcept
-    : Bytes() {
-    *this = ::std::move(from);
-  }
-
-  inline Bytes& operator=(Bytes&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Bytes& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Bytes* internal_default_instance() {
-    return reinterpret_cast<const Bytes*>(
-               &_Bytes_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  void Swap(Bytes* other);
-  friend void swap(Bytes& a, Bytes& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Bytes* New() const final {
-    return CreateMaybeMessage<Bytes>(NULL);
-  }
-
-  Bytes* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Bytes>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Bytes& from);
-  void MergeFrom(const Bytes& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Bytes* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // bytes bits = 1;
-  void clear_bits();
-  static const int kBitsFieldNumber = 1;
-  const ::std::string& bits() const;
-  void set_bits(const ::std::string& value);
-  #if LANG_CXX11
-  void set_bits(::std::string&& value);
-  #endif
-  void set_bits(const char* value);
-  void set_bits(const void* value, size_t size);
-  ::std::string* mutable_bits();
-  ::std::string* release_bits();
-  void set_allocated_bits(::std::string* bits);
-
-  // @@protoc_insertion_point(class_scope:common.Bytes)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr bits_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class StringArray : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.StringArray) */ {
  public:
   StringArray();
@@ -386,7 +260,7 @@ class StringArray : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_StringArray_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(StringArray* other);
   friend void swap(StringArray& a, StringArray& b) {
@@ -516,7 +390,7 @@ class StringMap : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_StringMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(StringMap* other);
   friend void swap(StringMap& a, StringMap& b) {
@@ -628,7 +502,7 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Empty_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(Empty* other);
   friend void swap(Empty& a, Empty& b) {
@@ -724,7 +598,7 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Identifier_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(Identifier* other);
   friend void swap(Identifier& a, Identifier& b) {
@@ -833,7 +707,7 @@ class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Int64_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(Int64* other);
   friend void swap(Int64& a, Int64& b) {
@@ -936,7 +810,7 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Float64_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(Float64* other);
   friend void swap(Float64& a, Float64& b) {
@@ -1004,296 +878,6 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 };
 // -------------------------------------------------------------------
 
-class RGBA : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.RGBA) */ {
- public:
-  RGBA();
-  virtual ~RGBA();
-
-  RGBA(const RGBA& from);
-
-  inline RGBA& operator=(const RGBA& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  RGBA(RGBA&& from) noexcept
-    : RGBA() {
-    *this = ::std::move(from);
-  }
-
-  inline RGBA& operator=(RGBA&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const RGBA& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const RGBA* internal_default_instance() {
-    return reinterpret_cast<const RGBA*>(
-               &_RGBA_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    9;
-
-  void Swap(RGBA* other);
-  friend void swap(RGBA& a, RGBA& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline RGBA* New() const final {
-    return CreateMaybeMessage<RGBA>(NULL);
-  }
-
-  RGBA* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<RGBA>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const RGBA& from);
-  void MergeFrom(const RGBA& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(RGBA* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.Int64 r = 1;
-  bool has_r() const;
-  void clear_r();
-  static const int kRFieldNumber = 1;
-  private:
-  const ::common::Int64& _internal_r() const;
-  public:
-  const ::common::Int64& r() const;
-  ::common::Int64* release_r();
-  ::common::Int64* mutable_r();
-  void set_allocated_r(::common::Int64* r);
-
-  // .common.Int64 g = 2;
-  bool has_g() const;
-  void clear_g();
-  static const int kGFieldNumber = 2;
-  private:
-  const ::common::Int64& _internal_g() const;
-  public:
-  const ::common::Int64& g() const;
-  ::common::Int64* release_g();
-  ::common::Int64* mutable_g();
-  void set_allocated_g(::common::Int64* g);
-
-  // .common.Int64 b = 3;
-  bool has_b() const;
-  void clear_b();
-  static const int kBFieldNumber = 3;
-  private:
-  const ::common::Int64& _internal_b() const;
-  public:
-  const ::common::Int64& b() const;
-  ::common::Int64* release_b();
-  ::common::Int64* mutable_b();
-  void set_allocated_b(::common::Int64* b);
-
-  // .common.Int64 a = 4;
-  bool has_a() const;
-  void clear_a();
-  static const int kAFieldNumber = 4;
-  private:
-  const ::common::Int64& _internal_a() const;
-  public:
-  const ::common::Int64& a() const;
-  ::common::Int64* release_a();
-  ::common::Int64* mutable_a();
-  void set_allocated_a(::common::Int64* a);
-
-  // @@protoc_insertion_point(class_scope:common.RGBA)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::Int64* r_;
-  ::common::Int64* g_;
-  ::common::Int64* b_;
-  ::common::Int64* a_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class HTTPRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.HTTPRequest) */ {
- public:
-  HTTPRequest();
-  virtual ~HTTPRequest();
-
-  HTTPRequest(const HTTPRequest& from);
-
-  inline HTTPRequest& operator=(const HTTPRequest& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  HTTPRequest(HTTPRequest&& from) noexcept
-    : HTTPRequest() {
-    *this = ::std::move(from);
-  }
-
-  inline HTTPRequest& operator=(HTTPRequest&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const HTTPRequest& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const HTTPRequest* internal_default_instance() {
-    return reinterpret_cast<const HTTPRequest*>(
-               &_HTTPRequest_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    10;
-
-  void Swap(HTTPRequest* other);
-  friend void swap(HTTPRequest& a, HTTPRequest& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline HTTPRequest* New() const final {
-    return CreateMaybeMessage<HTTPRequest>(NULL);
-  }
-
-  HTTPRequest* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<HTTPRequest>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const HTTPRequest& from);
-  void MergeFrom(const HTTPRequest& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(HTTPRequest* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // .common.String url = 2;
-  bool has_url() const;
-  void clear_url();
-  static const int kUrlFieldNumber = 2;
-  private:
-  const ::common::String& _internal_url() const;
-  public:
-  const ::common::String& url() const;
-  ::common::String* release_url();
-  ::common::String* mutable_url();
-  void set_allocated_url(::common::String* url);
-
-  // .common.StringMap form = 3;
-  bool has_form() const;
-  void clear_form();
-  static const int kFormFieldNumber = 3;
-  private:
-  const ::common::StringMap& _internal_form() const;
-  public:
-  const ::common::StringMap& form() const;
-  ::common::StringMap* release_form();
-  ::common::StringMap* mutable_form();
-  void set_allocated_form(::common::StringMap* form);
-
-  // .common.Bytes body = 4;
-  bool has_body() const;
-  void clear_body();
-  static const int kBodyFieldNumber = 4;
-  private:
-  const ::common::Bytes& _internal_body() const;
-  public:
-  const ::common::Bytes& body() const;
-  ::common::Bytes* release_body();
-  ::common::Bytes* mutable_body();
-  void set_allocated_body(::common::Bytes* body);
-
-  // .common.HTTPMethod method = 1;
-  void clear_method();
-  static const int kMethodFieldNumber = 1;
-  ::common::HTTPMethod method() const;
-  void set_method(::common::HTTPMethod value);
-
-  // @@protoc_insertion_point(class_scope:common.HTTPRequest)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* url_;
-  ::common::StringMap* form_;
-  ::common::Bytes* body_;
-  int method_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Token) */ {
  public:
   Token();
@@ -1329,7 +913,7 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Token_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    8;
 
   void Swap(Token* other);
   friend void swap(Token& a, Token& b) {
@@ -1453,6 +1037,531 @@ class Token : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Config) */ {
+ public:
+  Config();
+  virtual ~Config();
+
+  Config(const Config& from);
+
+  inline Config& operator=(const Config& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Config(Config&& from) noexcept
+    : Config() {
+    *this = ::std::move(from);
+  }
+
+  inline Config& operator=(Config&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Config& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Config* internal_default_instance() {
+    return reinterpret_cast<const Config*>(
+               &_Config_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  void Swap(Config* other);
+  friend void swap(Config& a, Config& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Config* New() const final {
+    return CreateMaybeMessage<Config>(NULL);
+  }
+
+  Config* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Config>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Config& from);
+  void MergeFrom(const Config& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Config* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String client_id = 1;
+  bool has_client_id() const;
+  void clear_client_id();
+  static const int kClientIdFieldNumber = 1;
+  private:
+  const ::common::String& _internal_client_id() const;
+  public:
+  const ::common::String& client_id() const;
+  ::common::String* release_client_id();
+  ::common::String* mutable_client_id();
+  void set_allocated_client_id(::common::String* client_id);
+
+  // .common.String client_secret = 2;
+  bool has_client_secret() const;
+  void clear_client_secret();
+  static const int kClientSecretFieldNumber = 2;
+  private:
+  const ::common::String& _internal_client_secret() const;
+  public:
+  const ::common::String& client_secret() const;
+  ::common::String* release_client_secret();
+  ::common::String* mutable_client_secret();
+  void set_allocated_client_secret(::common::String* client_secret);
+
+  // .common.String token_url = 3;
+  bool has_token_url() const;
+  void clear_token_url();
+  static const int kTokenUrlFieldNumber = 3;
+  private:
+  const ::common::String& _internal_token_url() const;
+  public:
+  const ::common::String& token_url() const;
+  ::common::String* release_token_url();
+  ::common::String* mutable_token_url();
+  void set_allocated_token_url(::common::String* token_url);
+
+  // .common.StringArray scopes = 4;
+  bool has_scopes() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 4;
+  private:
+  const ::common::StringArray& _internal_scopes() const;
+  public:
+  const ::common::StringArray& scopes() const;
+  ::common::StringArray* release_scopes();
+  ::common::StringArray* mutable_scopes();
+  void set_allocated_scopes(::common::StringArray* scopes);
+
+  // .common.StringMap endpoint_params = 5;
+  bool has_endpoint_params() const;
+  void clear_endpoint_params();
+  static const int kEndpointParamsFieldNumber = 5;
+  private:
+  const ::common::StringMap& _internal_endpoint_params() const;
+  public:
+  const ::common::StringMap& endpoint_params() const;
+  ::common::StringMap* release_endpoint_params();
+  ::common::StringMap* mutable_endpoint_params();
+  void set_allocated_endpoint_params(::common::StringMap* endpoint_params);
+
+  // @@protoc_insertion_point(class_scope:common.Config)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* client_id_;
+  ::common::String* client_secret_;
+  ::common::String* token_url_;
+  ::common::StringArray* scopes_;
+  ::common::StringMap* endpoint_params_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Event) */ {
+ public:
+  Event();
+  virtual ~Event();
+
+  Event(const Event& from);
+
+  inline Event& operator=(const Event& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Event(Event&& from) noexcept
+    : Event() {
+    *this = ::std::move(from);
+  }
+
+  inline Event& operator=(Event&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Event& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Event* internal_default_instance() {
+    return reinterpret_cast<const Event*>(
+               &_Event_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(Event* other);
+  friend void swap(Event& a, Event& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Event* New() const final {
+    return CreateMaybeMessage<Event>(NULL);
+  }
+
+  Event* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Event>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Event& from);
+  void MergeFrom(const Event& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Event* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.StringMap annotations = 10;
+  bool has_annotations() const;
+  void clear_annotations();
+  static const int kAnnotationsFieldNumber = 10;
+  private:
+  const ::common::StringMap& _internal_annotations() const;
+  public:
+  const ::common::StringMap& annotations() const;
+  ::common::StringMap* release_annotations();
+  ::common::StringMap* mutable_annotations();
+  void set_allocated_annotations(::common::StringMap* annotations);
+
+  // @@protoc_insertion_point(class_scope:common.Event)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::StringMap* annotations_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Query) */ {
+ public:
+  Query();
+  virtual ~Query();
+
+  Query(const Query& from);
+
+  inline Query& operator=(const Query& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Query(Query&& from) noexcept
+    : Query() {
+    *this = ::std::move(from);
+  }
+
+  inline Query& operator=(Query&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Query& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Query* internal_default_instance() {
+    return reinterpret_cast<const Query*>(
+               &_Query_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(Query* other);
+  friend void swap(Query& a, Query& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Query* New() const final {
+    return CreateMaybeMessage<Query>(NULL);
+  }
+
+  Query* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Query>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Query& from);
+  void MergeFrom(const Query& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Query* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String query = 4;
+  bool has_query() const;
+  void clear_query();
+  static const int kQueryFieldNumber = 4;
+  private:
+  const ::common::String& _internal_query() const;
+  public:
+  const ::common::String& query() const;
+  ::common::String* release_query();
+  ::common::String* mutable_query();
+  void set_allocated_query(::common::String* query);
+
+  // .common.String fields = 5;
+  bool has_fields() const;
+  void clear_fields();
+  static const int kFieldsFieldNumber = 5;
+  private:
+  const ::common::String& _internal_fields() const;
+  public:
+  const ::common::String& fields() const;
+  ::common::String* release_fields();
+  ::common::String* mutable_fields();
+  void set_allocated_fields(::common::String* fields);
+
+  // @@protoc_insertion_point(class_scope:common.Query)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* query_;
+  ::common::String* fields_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class TokenSet_TokensEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<TokenSet_TokensEntry_DoNotUse, 
+    ::std::string, ::common::Token,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<TokenSet_TokensEntry_DoNotUse, 
+    ::std::string, ::common::Token,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    0 > SuperType;
+  TokenSet_TokensEntry_DoNotUse();
+  TokenSet_TokensEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const TokenSet_TokensEntry_DoNotUse& other);
+  static const TokenSet_TokensEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const TokenSet_TokensEntry_DoNotUse*>(&_TokenSet_TokensEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class TokenSet : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.TokenSet) */ {
+ public:
+  TokenSet();
+  virtual ~TokenSet();
+
+  TokenSet(const TokenSet& from);
+
+  inline TokenSet& operator=(const TokenSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  TokenSet(TokenSet&& from) noexcept
+    : TokenSet() {
+    *this = ::std::move(from);
+  }
+
+  inline TokenSet& operator=(TokenSet&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TokenSet& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const TokenSet* internal_default_instance() {
+    return reinterpret_cast<const TokenSet*>(
+               &_TokenSet_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  void Swap(TokenSet* other);
+  friend void swap(TokenSet& a, TokenSet& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline TokenSet* New() const final {
+    return CreateMaybeMessage<TokenSet>(NULL);
+  }
+
+  TokenSet* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<TokenSet>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const TokenSet& from);
+  void MergeFrom(const TokenSet& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TokenSet* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, .common.Token> tokens = 1;
+  int tokens_size() const;
+  void clear_tokens();
+  static const int kTokensFieldNumber = 1;
+  const ::google::protobuf::Map< ::std::string, ::common::Token >&
+      tokens() const;
+  ::google::protobuf::Map< ::std::string, ::common::Token >*
+      mutable_tokens();
+
+  // @@protoc_insertion_point(class_scope:common.TokenSet)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      TokenSet_TokensEntry_DoNotUse,
+      ::std::string, ::common::Token,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+      0 > tokens_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -1515,63 +1624,6 @@ inline void String::set_allocated_text(::std::string* text) {
   }
   text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
   // @@protoc_insertion_point(field_set_allocated:common.String.text)
-}
-
-// -------------------------------------------------------------------
-
-// Bytes
-
-// bytes bits = 1;
-inline void Bytes::clear_bits() {
-  bits_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline const ::std::string& Bytes::bits() const {
-  // @@protoc_insertion_point(field_get:common.Bytes.bits)
-  return bits_.GetNoArena();
-}
-inline void Bytes::set_bits(const ::std::string& value) {
-  
-  bits_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:common.Bytes.bits)
-}
-#if LANG_CXX11
-inline void Bytes::set_bits(::std::string&& value) {
-  
-  bits_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:common.Bytes.bits)
-}
-#endif
-inline void Bytes::set_bits(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  
-  bits_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:common.Bytes.bits)
-}
-inline void Bytes::set_bits(const void* value, size_t size) {
-  
-  bits_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:common.Bytes.bits)
-}
-inline ::std::string* Bytes::mutable_bits() {
-  
-  // @@protoc_insertion_point(field_mutable:common.Bytes.bits)
-  return bits_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* Bytes::release_bits() {
-  // @@protoc_insertion_point(field_release:common.Bytes.bits)
-  
-  return bits_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void Bytes::set_allocated_bits(::std::string* bits) {
-  if (bits != NULL) {
-    
-  } else {
-    
-  }
-  bits_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), bits);
-  // @@protoc_insertion_point(field_set_allocated:common.Bytes.bits)
 }
 
 // -------------------------------------------------------------------
@@ -1728,406 +1780,6 @@ inline void Float64::set_num(double value) {
   
   num_ = value;
   // @@protoc_insertion_point(field_set:common.Float64.num)
-}
-
-// -------------------------------------------------------------------
-
-// RGBA
-
-// .common.Int64 r = 1;
-inline bool RGBA::has_r() const {
-  return this != internal_default_instance() && r_ != NULL;
-}
-inline void RGBA::clear_r() {
-  if (GetArenaNoVirtual() == NULL && r_ != NULL) {
-    delete r_;
-  }
-  r_ = NULL;
-}
-inline const ::common::Int64& RGBA::_internal_r() const {
-  return *r_;
-}
-inline const ::common::Int64& RGBA::r() const {
-  const ::common::Int64* p = r_;
-  // @@protoc_insertion_point(field_get:common.RGBA.r)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
-      &::common::_Int64_default_instance_);
-}
-inline ::common::Int64* RGBA::release_r() {
-  // @@protoc_insertion_point(field_release:common.RGBA.r)
-  
-  ::common::Int64* temp = r_;
-  r_ = NULL;
-  return temp;
-}
-inline ::common::Int64* RGBA::mutable_r() {
-  
-  if (r_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    r_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.RGBA.r)
-  return r_;
-}
-inline void RGBA::set_allocated_r(::common::Int64* r) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete r_;
-  }
-  if (r) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      r = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, r, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  r_ = r;
-  // @@protoc_insertion_point(field_set_allocated:common.RGBA.r)
-}
-
-// .common.Int64 g = 2;
-inline bool RGBA::has_g() const {
-  return this != internal_default_instance() && g_ != NULL;
-}
-inline void RGBA::clear_g() {
-  if (GetArenaNoVirtual() == NULL && g_ != NULL) {
-    delete g_;
-  }
-  g_ = NULL;
-}
-inline const ::common::Int64& RGBA::_internal_g() const {
-  return *g_;
-}
-inline const ::common::Int64& RGBA::g() const {
-  const ::common::Int64* p = g_;
-  // @@protoc_insertion_point(field_get:common.RGBA.g)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
-      &::common::_Int64_default_instance_);
-}
-inline ::common::Int64* RGBA::release_g() {
-  // @@protoc_insertion_point(field_release:common.RGBA.g)
-  
-  ::common::Int64* temp = g_;
-  g_ = NULL;
-  return temp;
-}
-inline ::common::Int64* RGBA::mutable_g() {
-  
-  if (g_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    g_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.RGBA.g)
-  return g_;
-}
-inline void RGBA::set_allocated_g(::common::Int64* g) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete g_;
-  }
-  if (g) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      g = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, g, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  g_ = g;
-  // @@protoc_insertion_point(field_set_allocated:common.RGBA.g)
-}
-
-// .common.Int64 b = 3;
-inline bool RGBA::has_b() const {
-  return this != internal_default_instance() && b_ != NULL;
-}
-inline void RGBA::clear_b() {
-  if (GetArenaNoVirtual() == NULL && b_ != NULL) {
-    delete b_;
-  }
-  b_ = NULL;
-}
-inline const ::common::Int64& RGBA::_internal_b() const {
-  return *b_;
-}
-inline const ::common::Int64& RGBA::b() const {
-  const ::common::Int64* p = b_;
-  // @@protoc_insertion_point(field_get:common.RGBA.b)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
-      &::common::_Int64_default_instance_);
-}
-inline ::common::Int64* RGBA::release_b() {
-  // @@protoc_insertion_point(field_release:common.RGBA.b)
-  
-  ::common::Int64* temp = b_;
-  b_ = NULL;
-  return temp;
-}
-inline ::common::Int64* RGBA::mutable_b() {
-  
-  if (b_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    b_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.RGBA.b)
-  return b_;
-}
-inline void RGBA::set_allocated_b(::common::Int64* b) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete b_;
-  }
-  if (b) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      b = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, b, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  b_ = b;
-  // @@protoc_insertion_point(field_set_allocated:common.RGBA.b)
-}
-
-// .common.Int64 a = 4;
-inline bool RGBA::has_a() const {
-  return this != internal_default_instance() && a_ != NULL;
-}
-inline void RGBA::clear_a() {
-  if (GetArenaNoVirtual() == NULL && a_ != NULL) {
-    delete a_;
-  }
-  a_ = NULL;
-}
-inline const ::common::Int64& RGBA::_internal_a() const {
-  return *a_;
-}
-inline const ::common::Int64& RGBA::a() const {
-  const ::common::Int64* p = a_;
-  // @@protoc_insertion_point(field_get:common.RGBA.a)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Int64*>(
-      &::common::_Int64_default_instance_);
-}
-inline ::common::Int64* RGBA::release_a() {
-  // @@protoc_insertion_point(field_release:common.RGBA.a)
-  
-  ::common::Int64* temp = a_;
-  a_ = NULL;
-  return temp;
-}
-inline ::common::Int64* RGBA::mutable_a() {
-  
-  if (a_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Int64>(GetArenaNoVirtual());
-    a_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.RGBA.a)
-  return a_;
-}
-inline void RGBA::set_allocated_a(::common::Int64* a) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete a_;
-  }
-  if (a) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      a = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, a, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  a_ = a;
-  // @@protoc_insertion_point(field_set_allocated:common.RGBA.a)
-}
-
-// -------------------------------------------------------------------
-
-// HTTPRequest
-
-// .common.HTTPMethod method = 1;
-inline void HTTPRequest::clear_method() {
-  method_ = 0;
-}
-inline ::common::HTTPMethod HTTPRequest::method() const {
-  // @@protoc_insertion_point(field_get:common.HTTPRequest.method)
-  return static_cast< ::common::HTTPMethod >(method_);
-}
-inline void HTTPRequest::set_method(::common::HTTPMethod value) {
-  
-  method_ = value;
-  // @@protoc_insertion_point(field_set:common.HTTPRequest.method)
-}
-
-// .common.String url = 2;
-inline bool HTTPRequest::has_url() const {
-  return this != internal_default_instance() && url_ != NULL;
-}
-inline void HTTPRequest::clear_url() {
-  if (GetArenaNoVirtual() == NULL && url_ != NULL) {
-    delete url_;
-  }
-  url_ = NULL;
-}
-inline const ::common::String& HTTPRequest::_internal_url() const {
-  return *url_;
-}
-inline const ::common::String& HTTPRequest::url() const {
-  const ::common::String* p = url_;
-  // @@protoc_insertion_point(field_get:common.HTTPRequest.url)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
-}
-inline ::common::String* HTTPRequest::release_url() {
-  // @@protoc_insertion_point(field_release:common.HTTPRequest.url)
-  
-  ::common::String* temp = url_;
-  url_ = NULL;
-  return temp;
-}
-inline ::common::String* HTTPRequest::mutable_url() {
-  
-  if (url_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    url_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.HTTPRequest.url)
-  return url_;
-}
-inline void HTTPRequest::set_allocated_url(::common::String* url) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete url_;
-  }
-  if (url) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      url = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, url, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  url_ = url;
-  // @@protoc_insertion_point(field_set_allocated:common.HTTPRequest.url)
-}
-
-// .common.StringMap form = 3;
-inline bool HTTPRequest::has_form() const {
-  return this != internal_default_instance() && form_ != NULL;
-}
-inline void HTTPRequest::clear_form() {
-  if (GetArenaNoVirtual() == NULL && form_ != NULL) {
-    delete form_;
-  }
-  form_ = NULL;
-}
-inline const ::common::StringMap& HTTPRequest::_internal_form() const {
-  return *form_;
-}
-inline const ::common::StringMap& HTTPRequest::form() const {
-  const ::common::StringMap* p = form_;
-  // @@protoc_insertion_point(field_get:common.HTTPRequest.form)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
-      &::common::_StringMap_default_instance_);
-}
-inline ::common::StringMap* HTTPRequest::release_form() {
-  // @@protoc_insertion_point(field_release:common.HTTPRequest.form)
-  
-  ::common::StringMap* temp = form_;
-  form_ = NULL;
-  return temp;
-}
-inline ::common::StringMap* HTTPRequest::mutable_form() {
-  
-  if (form_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
-    form_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.HTTPRequest.form)
-  return form_;
-}
-inline void HTTPRequest::set_allocated_form(::common::StringMap* form) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete form_;
-  }
-  if (form) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      form = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, form, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  form_ = form;
-  // @@protoc_insertion_point(field_set_allocated:common.HTTPRequest.form)
-}
-
-// .common.Bytes body = 4;
-inline bool HTTPRequest::has_body() const {
-  return this != internal_default_instance() && body_ != NULL;
-}
-inline void HTTPRequest::clear_body() {
-  if (GetArenaNoVirtual() == NULL && body_ != NULL) {
-    delete body_;
-  }
-  body_ = NULL;
-}
-inline const ::common::Bytes& HTTPRequest::_internal_body() const {
-  return *body_;
-}
-inline const ::common::Bytes& HTTPRequest::body() const {
-  const ::common::Bytes* p = body_;
-  // @@protoc_insertion_point(field_get:common.HTTPRequest.body)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::Bytes*>(
-      &::common::_Bytes_default_instance_);
-}
-inline ::common::Bytes* HTTPRequest::release_body() {
-  // @@protoc_insertion_point(field_release:common.HTTPRequest.body)
-  
-  ::common::Bytes* temp = body_;
-  body_ = NULL;
-  return temp;
-}
-inline ::common::Bytes* HTTPRequest::mutable_body() {
-  
-  if (body_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::Bytes>(GetArenaNoVirtual());
-    body_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.HTTPRequest.body)
-  return body_;
-}
-inline void HTTPRequest::set_allocated_body(::common::Bytes* body) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete body_;
-  }
-  if (body) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
-    if (message_arena != submessage_arena) {
-      body = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, body, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  body_ = body;
-  // @@protoc_insertion_point(field_set_allocated:common.HTTPRequest.body)
 }
 
 // -------------------------------------------------------------------
@@ -2404,9 +2056,481 @@ inline void Token::set_allocated_id_token(::common::String* id_token) {
   // @@protoc_insertion_point(field_set_allocated:common.Token.id_token)
 }
 
+// -------------------------------------------------------------------
+
+// Config
+
+// .common.String client_id = 1;
+inline bool Config::has_client_id() const {
+  return this != internal_default_instance() && client_id_ != NULL;
+}
+inline void Config::clear_client_id() {
+  if (GetArenaNoVirtual() == NULL && client_id_ != NULL) {
+    delete client_id_;
+  }
+  client_id_ = NULL;
+}
+inline const ::common::String& Config::_internal_client_id() const {
+  return *client_id_;
+}
+inline const ::common::String& Config::client_id() const {
+  const ::common::String* p = client_id_;
+  // @@protoc_insertion_point(field_get:common.Config.client_id)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Config::release_client_id() {
+  // @@protoc_insertion_point(field_release:common.Config.client_id)
+  
+  ::common::String* temp = client_id_;
+  client_id_ = NULL;
+  return temp;
+}
+inline ::common::String* Config::mutable_client_id() {
+  
+  if (client_id_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    client_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.client_id)
+  return client_id_;
+}
+inline void Config::set_allocated_client_id(::common::String* client_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete client_id_;
+  }
+  if (client_id) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      client_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, client_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  client_id_ = client_id;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.client_id)
+}
+
+// .common.String client_secret = 2;
+inline bool Config::has_client_secret() const {
+  return this != internal_default_instance() && client_secret_ != NULL;
+}
+inline void Config::clear_client_secret() {
+  if (GetArenaNoVirtual() == NULL && client_secret_ != NULL) {
+    delete client_secret_;
+  }
+  client_secret_ = NULL;
+}
+inline const ::common::String& Config::_internal_client_secret() const {
+  return *client_secret_;
+}
+inline const ::common::String& Config::client_secret() const {
+  const ::common::String* p = client_secret_;
+  // @@protoc_insertion_point(field_get:common.Config.client_secret)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Config::release_client_secret() {
+  // @@protoc_insertion_point(field_release:common.Config.client_secret)
+  
+  ::common::String* temp = client_secret_;
+  client_secret_ = NULL;
+  return temp;
+}
+inline ::common::String* Config::mutable_client_secret() {
+  
+  if (client_secret_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    client_secret_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.client_secret)
+  return client_secret_;
+}
+inline void Config::set_allocated_client_secret(::common::String* client_secret) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete client_secret_;
+  }
+  if (client_secret) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      client_secret = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, client_secret, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  client_secret_ = client_secret;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.client_secret)
+}
+
+// .common.String token_url = 3;
+inline bool Config::has_token_url() const {
+  return this != internal_default_instance() && token_url_ != NULL;
+}
+inline void Config::clear_token_url() {
+  if (GetArenaNoVirtual() == NULL && token_url_ != NULL) {
+    delete token_url_;
+  }
+  token_url_ = NULL;
+}
+inline const ::common::String& Config::_internal_token_url() const {
+  return *token_url_;
+}
+inline const ::common::String& Config::token_url() const {
+  const ::common::String* p = token_url_;
+  // @@protoc_insertion_point(field_get:common.Config.token_url)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Config::release_token_url() {
+  // @@protoc_insertion_point(field_release:common.Config.token_url)
+  
+  ::common::String* temp = token_url_;
+  token_url_ = NULL;
+  return temp;
+}
+inline ::common::String* Config::mutable_token_url() {
+  
+  if (token_url_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    token_url_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.token_url)
+  return token_url_;
+}
+inline void Config::set_allocated_token_url(::common::String* token_url) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete token_url_;
+  }
+  if (token_url) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      token_url = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, token_url, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  token_url_ = token_url;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.token_url)
+}
+
+// .common.StringArray scopes = 4;
+inline bool Config::has_scopes() const {
+  return this != internal_default_instance() && scopes_ != NULL;
+}
+inline void Config::clear_scopes() {
+  if (GetArenaNoVirtual() == NULL && scopes_ != NULL) {
+    delete scopes_;
+  }
+  scopes_ = NULL;
+}
+inline const ::common::StringArray& Config::_internal_scopes() const {
+  return *scopes_;
+}
+inline const ::common::StringArray& Config::scopes() const {
+  const ::common::StringArray* p = scopes_;
+  // @@protoc_insertion_point(field_get:common.Config.scopes)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
+      &::common::_StringArray_default_instance_);
+}
+inline ::common::StringArray* Config::release_scopes() {
+  // @@protoc_insertion_point(field_release:common.Config.scopes)
+  
+  ::common::StringArray* temp = scopes_;
+  scopes_ = NULL;
+  return temp;
+}
+inline ::common::StringArray* Config::mutable_scopes() {
+  
+  if (scopes_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
+    scopes_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.scopes)
+  return scopes_;
+}
+inline void Config::set_allocated_scopes(::common::StringArray* scopes) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete scopes_;
+  }
+  if (scopes) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      scopes = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, scopes, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scopes_ = scopes;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.scopes)
+}
+
+// .common.StringMap endpoint_params = 5;
+inline bool Config::has_endpoint_params() const {
+  return this != internal_default_instance() && endpoint_params_ != NULL;
+}
+inline void Config::clear_endpoint_params() {
+  if (GetArenaNoVirtual() == NULL && endpoint_params_ != NULL) {
+    delete endpoint_params_;
+  }
+  endpoint_params_ = NULL;
+}
+inline const ::common::StringMap& Config::_internal_endpoint_params() const {
+  return *endpoint_params_;
+}
+inline const ::common::StringMap& Config::endpoint_params() const {
+  const ::common::StringMap* p = endpoint_params_;
+  // @@protoc_insertion_point(field_get:common.Config.endpoint_params)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
+      &::common::_StringMap_default_instance_);
+}
+inline ::common::StringMap* Config::release_endpoint_params() {
+  // @@protoc_insertion_point(field_release:common.Config.endpoint_params)
+  
+  ::common::StringMap* temp = endpoint_params_;
+  endpoint_params_ = NULL;
+  return temp;
+}
+inline ::common::StringMap* Config::mutable_endpoint_params() {
+  
+  if (endpoint_params_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
+    endpoint_params_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.endpoint_params)
+  return endpoint_params_;
+}
+inline void Config::set_allocated_endpoint_params(::common::StringMap* endpoint_params) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete endpoint_params_;
+  }
+  if (endpoint_params) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      endpoint_params = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, endpoint_params, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  endpoint_params_ = endpoint_params;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.endpoint_params)
+}
+
+// -------------------------------------------------------------------
+
+// Event
+
+// .common.StringMap annotations = 10;
+inline bool Event::has_annotations() const {
+  return this != internal_default_instance() && annotations_ != NULL;
+}
+inline void Event::clear_annotations() {
+  if (GetArenaNoVirtual() == NULL && annotations_ != NULL) {
+    delete annotations_;
+  }
+  annotations_ = NULL;
+}
+inline const ::common::StringMap& Event::_internal_annotations() const {
+  return *annotations_;
+}
+inline const ::common::StringMap& Event::annotations() const {
+  const ::common::StringMap* p = annotations_;
+  // @@protoc_insertion_point(field_get:common.Event.annotations)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
+      &::common::_StringMap_default_instance_);
+}
+inline ::common::StringMap* Event::release_annotations() {
+  // @@protoc_insertion_point(field_release:common.Event.annotations)
+  
+  ::common::StringMap* temp = annotations_;
+  annotations_ = NULL;
+  return temp;
+}
+inline ::common::StringMap* Event::mutable_annotations() {
+  
+  if (annotations_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
+    annotations_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Event.annotations)
+  return annotations_;
+}
+inline void Event::set_allocated_annotations(::common::StringMap* annotations) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete annotations_;
+  }
+  if (annotations) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      annotations = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, annotations, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  annotations_ = annotations;
+  // @@protoc_insertion_point(field_set_allocated:common.Event.annotations)
+}
+
+// -------------------------------------------------------------------
+
+// Query
+
+// .common.String query = 4;
+inline bool Query::has_query() const {
+  return this != internal_default_instance() && query_ != NULL;
+}
+inline void Query::clear_query() {
+  if (GetArenaNoVirtual() == NULL && query_ != NULL) {
+    delete query_;
+  }
+  query_ = NULL;
+}
+inline const ::common::String& Query::_internal_query() const {
+  return *query_;
+}
+inline const ::common::String& Query::query() const {
+  const ::common::String* p = query_;
+  // @@protoc_insertion_point(field_get:common.Query.query)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Query::release_query() {
+  // @@protoc_insertion_point(field_release:common.Query.query)
+  
+  ::common::String* temp = query_;
+  query_ = NULL;
+  return temp;
+}
+inline ::common::String* Query::mutable_query() {
+  
+  if (query_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    query_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Query.query)
+  return query_;
+}
+inline void Query::set_allocated_query(::common::String* query) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete query_;
+  }
+  if (query) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      query = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, query, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  query_ = query;
+  // @@protoc_insertion_point(field_set_allocated:common.Query.query)
+}
+
+// .common.String fields = 5;
+inline bool Query::has_fields() const {
+  return this != internal_default_instance() && fields_ != NULL;
+}
+inline void Query::clear_fields() {
+  if (GetArenaNoVirtual() == NULL && fields_ != NULL) {
+    delete fields_;
+  }
+  fields_ = NULL;
+}
+inline const ::common::String& Query::_internal_fields() const {
+  return *fields_;
+}
+inline const ::common::String& Query::fields() const {
+  const ::common::String* p = fields_;
+  // @@protoc_insertion_point(field_get:common.Query.fields)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Query::release_fields() {
+  // @@protoc_insertion_point(field_release:common.Query.fields)
+  
+  ::common::String* temp = fields_;
+  fields_ = NULL;
+  return temp;
+}
+inline ::common::String* Query::mutable_fields() {
+  
+  if (fields_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    fields_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Query.fields)
+  return fields_;
+}
+inline void Query::set_allocated_fields(::common::String* fields) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete fields_;
+  }
+  if (fields) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      fields = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, fields, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  fields_ = fields;
+  // @@protoc_insertion_point(field_set_allocated:common.Query.fields)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// TokenSet
+
+// map<string, .common.Token> tokens = 1;
+inline int TokenSet::tokens_size() const {
+  return tokens_.size();
+}
+inline void TokenSet::clear_tokens() {
+  tokens_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::common::Token >&
+TokenSet::tokens() const {
+  // @@protoc_insertion_point(field_map:common.TokenSet.tokens)
+  return tokens_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::common::Token >*
+TokenSet::mutable_tokens() {
+  // @@protoc_insertion_point(field_mutable_map:common.TokenSet.tokens)
+  return tokens_.MutableMap();
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -2433,18 +2557,6 @@ inline void Token::set_allocated_id_token(::common::String* id_token) {
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace common
-
-namespace google {
-namespace protobuf {
-
-template <> struct is_proto_enum< ::common::HTTPMethod> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::common::HTTPMethod>() {
-  return ::common::HTTPMethod_descriptor();
-}
-
-}  // namespace protobuf
-}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 

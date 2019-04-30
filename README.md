@@ -31,154 +31,6 @@ var Plan_value = map[string]int32{
 }
 ```
 
-```go
-var Scope_name = map[int32]string{
-	0:  "OPENID",
-	1:  "PROFILE",
-	2:  "EMAIL",
-	3:  "READ_USERS",
-	4:  "READ_USER_IDP_TOKENS",
-	5:  "CREATE_USERS",
-	6:  "READ_STATS",
-	7:  "READ_EMAIL_TEMPLATES",
-	8:  "UPDATE_EMAIL_TEMPLATES",
-	9:  "CREATE_EMAIL_TEMPLATES",
-	10: "READ_RULES",
-	11: "UPDATE_RULES",
-	12: "CREATE_RULES",
-	13: "DELETE_RULES",
-	14: "READ_ROLES",
-	15: "UPDATE_ROLES",
-	16: "CREATE_ROLES",
-	17: "DELETE_ROLES",
-	18: "READ_LOGS",
-}
-```
-
-```go
-var Scope_value = map[string]int32{
-	"OPENID":                 0,
-	"PROFILE":                1,
-	"EMAIL":                  2,
-	"READ_USERS":             3,
-	"READ_USER_IDP_TOKENS":   4,
-	"CREATE_USERS":           5,
-	"READ_STATS":             6,
-	"READ_EMAIL_TEMPLATES":   7,
-	"UPDATE_EMAIL_TEMPLATES": 8,
-	"CREATE_EMAIL_TEMPLATES": 9,
-	"READ_RULES":             10,
-	"UPDATE_RULES":           11,
-	"CREATE_RULES":           12,
-	"DELETE_RULES":           13,
-	"READ_ROLES":             14,
-	"UPDATE_ROLES":           15,
-	"CREATE_ROLES":           16,
-	"DELETE_ROLES":           17,
-	"READ_LOGS":              18,
-}
-```
-
-```go
-var URL_name = map[int32]string{
-	0:  "USER_INFOURL",
-	1:  "TOKENURL",
-	2:  "AUTHORIZEURL",
-	3:  "USERSURL",
-	4:  "CLIENTSURL",
-	5:  "GRANTSURL",
-	6:  "RULESURL",
-	7:  "ROLESURL",
-	8:  "LOGSURL",
-	9:  "STATSURL",
-	10: "CONNECTIONSURL",
-	11: "TENANTSURL",
-	12: "EMAIL_TEMPLATEURL",
-	13: "EMAILURL",
-	14: "SEARCH_USERSURL",
-	18: "DEVICEURL",
-	19: "JWKSURL",
-	20: "CLIENT_GRANTSURL",
-}
-```
-
-```go
-var URL_value = map[string]int32{
-	"USER_INFOURL":      0,
-	"TOKENURL":          1,
-	"AUTHORIZEURL":      2,
-	"USERSURL":          3,
-	"CLIENTSURL":        4,
-	"GRANTSURL":         5,
-	"RULESURL":          6,
-	"ROLESURL":          7,
-	"LOGSURL":           8,
-	"STATSURL":          9,
-	"CONNECTIONSURL":    10,
-	"TENANTSURL":        11,
-	"EMAIL_TEMPLATEURL": 12,
-	"EMAILURL":          13,
-	"SEARCH_USERSURL":   14,
-	"DEVICEURL":         18,
-	"JWKSURL":           19,
-	"CLIENT_GRANTSURL":  20,
-}
-```
-
-#### func  ChatServiceURL
-
-```go
-func ChatServiceURL() *common.String
-```
-
-#### func  IncomingPhoneNumbersURL
-
-```go
-func IncomingPhoneNumbersURL(account *common.String) *common.String
-```
-
-#### func  NormalizeScopes
-
-```go
-func NormalizeScopes(scopes ...Scope) *common.StringArray
-```
-
-#### func  RegisterAdminServiceHandler
-
-```go
-func RegisterAdminServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterAdminServiceHandler registers the http handlers for service AdminService
-to "mux". The handlers forward requests to the grpc endpoint over "conn".
-
-#### func  RegisterAdminServiceHandlerClient
-
-```go
-func RegisterAdminServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AdminServiceClient) error
-```
-RegisterAdminServiceHandlerClient registers the http handlers for service
-AdminService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "AdminServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"AdminServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "AdminServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterAdminServiceHandlerFromEndpoint
-
-```go
-func RegisterAdminServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterAdminServiceHandlerFromEndpoint is same as RegisterAdminServiceHandler
-but automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
-
-#### func  RegisterAdminServiceServer
-
-```go
-func RegisterAdminServiceServer(s *grpc.Server, srv AdminServiceServer)
-```
-
 #### func  RegisterContactServiceHandler
 
 ```go
@@ -326,76 +178,18 @@ the connection when "ctx" gets done.
 func RegisterUtilityServiceServer(s *grpc.Server, srv UtilityServiceServer)
 ```
 
-#### func  RenderUserFunc
-
-```go
-func RenderUserFunc(t *common.String) http.HandlerFunc
-```
-
-#### func  SearchUSPhoneNumbersURL
-
-```go
-func SearchUSPhoneNumbersURL(account *common.String) *common.String
-```
-
-#### type AdminServiceClient
-
-```go
-type AdminServiceClient interface {
-	StartCache(ctx context.Context, in *StartCacheRequest, opts ...grpc.CallOption) (*common.Empty, error)
-	StopCache(ctx context.Context, in *common.Empty, opts ...grpc.CallOption) (*common.Empty, error)
-}
-```
-
-AdminServiceClient is the client API for AdminService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewAdminServiceClient
-
-```go
-func NewAdminServiceClient(cc *grpc.ClientConn) AdminServiceClient
-```
-
-#### type AdminServiceServer
-
-```go
-type AdminServiceServer interface {
-	StartCache(context.Context, *StartCacheRequest) (*common.Empty, error)
-	StopCache(context.Context, *common.Empty) (*common.Empty, error)
-}
-```
-
-AdminServiceServer is the server API for AdminService service.
-
 #### type Auth
 
 ```go
 type Auth struct {
-	Domain               *common.String `protobuf:"bytes,1,opt,name=domain,proto3" json:"domain,omitempty"`
-	ClientId             *common.String `protobuf:"bytes,2,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientSecret         *common.String `protobuf:"bytes,3,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
-	Redirect             *common.String `protobuf:"bytes,4,opt,name=redirect,proto3" json:"redirect,omitempty"`
-	Scopes               []Scope        `protobuf:"varint,5,rep,packed,name=scopes,proto3,enum=api.Scope" json:"scopes,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
+	Config               *common.Config   `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
+	TokenSet             *common.TokenSet `protobuf:"bytes,3,opt,name=token_set,json=tokenSet,proto3" json:"token_set,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
+	XXX_unrecognized     []byte           `json:"-"`
+	XXX_sizecache        int32            `json:"-"`
 }
 ```
 
-
-#### func (*Auth) AuthCodeURL
-
-```go
-func (a *Auth) AuthCodeURL(state string, u URL) string
-```
-
-#### func (*Auth) DefaultIfEmpty
-
-```go
-func (a *Auth) DefaultIfEmpty()
-```
 
 #### func (*Auth) Descriptor
 
@@ -403,34 +197,16 @@ func (a *Auth) DefaultIfEmpty()
 func (*Auth) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Auth) GetClientId
+#### func (*Auth) GetConfig
 
 ```go
-func (m *Auth) GetClientId() *common.String
+func (m *Auth) GetConfig() *common.Config
 ```
 
-#### func (*Auth) GetClientSecret
+#### func (*Auth) GetTokenSet
 
 ```go
-func (m *Auth) GetClientSecret() *common.String
-```
-
-#### func (*Auth) GetDomain
-
-```go
-func (m *Auth) GetDomain() *common.String
-```
-
-#### func (*Auth) GetRedirect
-
-```go
-func (m *Auth) GetRedirect() *common.String
-```
-
-#### func (*Auth) GetScopes
-
-```go
-func (m *Auth) GetScopes() []Scope
+func (m *Auth) GetTokenSet() *common.TokenSet
 ```
 
 #### func (*Auth) JSONString
@@ -455,18 +231,6 @@ func (m *Auth) Reset()
 
 ```go
 func (m *Auth) String() string
-```
-
-#### func (*Auth) Token
-
-```go
-func (a *Auth) Token(ctx context.Context, code string) (*common.Token, error)
-```
-
-#### func (*Auth) Validate
-
-```go
-func (a *Auth) Validate() error
 ```
 
 #### func (*Auth) XXX_DiscardUnknown
@@ -905,7 +669,6 @@ type ClientSet struct {
 	Contact ContactServiceClient
 	Payment PaymentServiceClient
 	User    UserServiceClient
-	Admin   AdminServiceClient
 }
 ```
 
@@ -1603,7 +1366,7 @@ func (m *FaxResponse) XXX_Unmarshal(b []byte) error
 ```go
 type IDBody struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Body                 *common.Bytes      `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
+	Body                 *common.String     `protobuf:"bytes,2,opt,name=body,proto3" json:"body,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -1620,7 +1383,7 @@ func (*IDBody) Descriptor() ([]byte, []int)
 #### func (*IDBody) GetBody
 
 ```go
-func (m *IDBody) GetBody() *common.Bytes
+func (m *IDBody) GetBody() *common.String
 ```
 
 #### func (*IDBody) GetId
@@ -2016,12 +1779,6 @@ func (m *Jwks) Reset()
 func (m *Jwks) String() string
 ```
 
-#### func (*Jwks) TokenCert
-
-```go
-func (c *Jwks) TokenCert(token *jwt.Token) (string, error)
-```
-
 #### func (*Jwks) XXX_DiscardUnknown
 
 ```go
@@ -2405,12 +2162,6 @@ const (
 func (Plan) EnumDescriptor() ([]byte, []int)
 ```
 
-#### func (Plan) Normalize
-
-```go
-func (p Plan) Normalize() *common.String
-```
-
 #### func (Plan) String
 
 ```go
@@ -2423,7 +2174,7 @@ func (x Plan) String() string
 type RenderRequest struct {
 	Name                 *common.String `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Text                 *common.String `protobuf:"bytes,2,opt,name=text,proto3" json:"text,omitempty"`
-	Data                 *common.Bytes  `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Data                 *common.String `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
 	XXX_unrecognized     []byte         `json:"-"`
 	XXX_sizecache        int32          `json:"-"`
@@ -2440,7 +2191,7 @@ func (*RenderRequest) Descriptor() ([]byte, []int)
 #### func (*RenderRequest) GetData
 
 ```go
-func (m *RenderRequest) GetData() *common.Bytes
+func (m *RenderRequest) GetData() *common.String
 ```
 
 #### func (*RenderRequest) GetName
@@ -2923,55 +2674,6 @@ func (m *SMSResponse) XXX_Size() int
 func (m *SMSResponse) XXX_Unmarshal(b []byte) error
 ```
 
-#### type Scope
-
-```go
-type Scope int32
-```
-
-
-```go
-const (
-	Scope_OPENID                 Scope = 0
-	Scope_PROFILE                Scope = 1
-	Scope_EMAIL                  Scope = 2
-	Scope_READ_USERS             Scope = 3
-	Scope_READ_USER_IDP_TOKENS   Scope = 4
-	Scope_CREATE_USERS           Scope = 5
-	Scope_READ_STATS             Scope = 6
-	Scope_READ_EMAIL_TEMPLATES   Scope = 7
-	Scope_UPDATE_EMAIL_TEMPLATES Scope = 8
-	Scope_CREATE_EMAIL_TEMPLATES Scope = 9
-	Scope_READ_RULES             Scope = 10
-	Scope_UPDATE_RULES           Scope = 11
-	Scope_CREATE_RULES           Scope = 12
-	Scope_DELETE_RULES           Scope = 13
-	Scope_READ_ROLES             Scope = 14
-	Scope_UPDATE_ROLES           Scope = 15
-	Scope_CREATE_ROLES           Scope = 16
-	Scope_DELETE_ROLES           Scope = 17
-	Scope_READ_LOGS              Scope = 18
-)
-```
-
-#### func (Scope) EnumDescriptor
-
-```go
-func (Scope) EnumDescriptor() ([]byte, []int)
-```
-
-#### func (Scope) Normalize
-
-```go
-func (s Scope) Normalize() *common.String
-```
-
-#### func (Scope) String
-
-```go
-func (x Scope) String() string
-```
-
 #### type SearchPhoneNumberRequest
 
 ```go
@@ -3056,78 +2758,6 @@ func (m *SearchPhoneNumberRequest) XXX_Size() int
 
 ```go
 func (m *SearchPhoneNumberRequest) XXX_Unmarshal(b []byte) error
-```
-
-#### type StartCacheRequest
-
-```go
-type StartCacheRequest struct {
-	Frequency            *common.String `protobuf:"bytes,1,opt,name=frequency,proto3" json:"frequency,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-```
-
-
-#### func (*StartCacheRequest) Descriptor
-
-```go
-func (*StartCacheRequest) Descriptor() ([]byte, []int)
-```
-
-#### func (*StartCacheRequest) GetFrequency
-
-```go
-func (m *StartCacheRequest) GetFrequency() *common.String
-```
-
-#### func (*StartCacheRequest) ProtoMessage
-
-```go
-func (*StartCacheRequest) ProtoMessage()
-```
-
-#### func (*StartCacheRequest) Reset
-
-```go
-func (m *StartCacheRequest) Reset()
-```
-
-#### func (*StartCacheRequest) String
-
-```go
-func (m *StartCacheRequest) String() string
-```
-
-#### func (*StartCacheRequest) XXX_DiscardUnknown
-
-```go
-func (m *StartCacheRequest) XXX_DiscardUnknown()
-```
-
-#### func (*StartCacheRequest) XXX_Marshal
-
-```go
-func (m *StartCacheRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*StartCacheRequest) XXX_Merge
-
-```go
-func (m *StartCacheRequest) XXX_Merge(src proto.Message)
-```
-
-#### func (*StartCacheRequest) XXX_Size
-
-```go
-func (m *StartCacheRequest) XXX_Size() int
-```
-
-#### func (*StartCacheRequest) XXX_Unmarshal
-
-```go
-func (m *StartCacheRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type SubscribeRequest
@@ -3421,54 +3051,6 @@ func (m *TokenQuery) XXX_Size() int
 func (m *TokenQuery) XXX_Unmarshal(b []byte) error
 ```
 
-#### type URL
-
-```go
-type URL int32
-```
-
-
-```go
-const (
-	URL_USER_INFOURL      URL = 0
-	URL_TOKENURL          URL = 1
-	URL_AUTHORIZEURL      URL = 2
-	URL_USERSURL          URL = 3
-	URL_CLIENTSURL        URL = 4
-	URL_GRANTSURL         URL = 5
-	URL_RULESURL          URL = 6
-	URL_ROLESURL          URL = 7
-	URL_LOGSURL           URL = 8
-	URL_STATSURL          URL = 9
-	URL_CONNECTIONSURL    URL = 10
-	URL_TENANTSURL        URL = 11
-	URL_EMAIL_TEMPLATEURL URL = 12
-	URL_EMAILURL          URL = 13
-	URL_SEARCH_USERSURL   URL = 14
-	URL_DEVICEURL         URL = 18
-	URL_JWKSURL           URL = 19
-	URL_CLIENT_GRANTSURL  URL = 20
-)
-```
-
-#### func (URL) EnumDescriptor
-
-```go
-func (URL) EnumDescriptor() ([]byte, []int)
-```
-
-#### func (URL) Normalize
-
-```go
-func (u URL) Normalize(domain *common.String) *common.String
-```
-
-#### func (URL) String
-
-```go
-func (x URL) String() string
-```
-
 #### type UnSubscribeRequest
 
 ```go
@@ -3579,12 +3161,6 @@ type User struct {
 }
 ```
 
-
-#### func  UserFromSession
-
-```go
-func UserFromSession(session *sessions.Session) (*User, error)
-```
 
 #### func (*User) Descriptor
 
@@ -3777,10 +3353,10 @@ func (m *User) XXX_Unmarshal(b []byte) error
 ```go
 type UserServiceClient interface {
 	QueryUsers(ctx context.Context, in *TokenQuery, opts ...grpc.CallOption) (UserService_QueryUsersClient, error)
-	CreateUser(ctx context.Context, in *common.Bytes, opts ...grpc.CallOption) (*User, error)
+	CreateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
-	DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
-	UpdateUser(ctx context.Context, in *IDBody, opts ...grpc.CallOption) (*User, error)
+	DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Empty, error)
+	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
 	UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error)
 }
 ```
@@ -3801,10 +3377,10 @@ func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
 ```go
 type UserServiceServer interface {
 	QueryUsers(*TokenQuery, UserService_QueryUsersServer) error
-	CreateUser(context.Context, *common.Bytes) (*User, error)
+	CreateUser(context.Context, *User) (*User, error)
 	GetUser(context.Context, *common.Identifier) (*User, error)
-	DeleteUser(context.Context, *common.Identifier) (*User, error)
-	UpdateUser(context.Context, *IDBody) (*User, error)
+	DeleteUser(context.Context, *common.Identifier) (*common.Empty, error)
+	UpdateUser(context.Context, *User) (*User, error)
 	UserRoles(*common.Identifier, UserService_UserRolesServer) error
 }
 ```

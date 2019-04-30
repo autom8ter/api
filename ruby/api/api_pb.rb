@@ -108,11 +108,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :isSocial, :bool, 4
   end
   add_message "api.Auth" do
-    optional :domain, :message, 1, "common.String"
-    optional :client_id, :message, 2, "common.String"
-    optional :client_secret, :message, 3, "common.String"
-    optional :redirect, :message, 4, "common.String"
-    repeated :scopes, :enum, 5, "api.Scope"
+    optional :config, :message, 1, "common.Config"
+    optional :token_set, :message, 3, "common.TokenSet"
   end
   add_message "api.JSONWebKeys" do
     optional :kty, :message, 1, "common.String"
@@ -128,7 +125,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.RenderRequest" do
     optional :name, :message, 1, "common.String"
     optional :text, :message, 2, "common.String"
-    optional :data, :message, 3, "common.Bytes"
+    optional :data, :message, 3, "common.String"
   end
   add_message "api.SearchPhoneNumberRequest" do
     optional :state, :message, 1, "common.String"
@@ -157,7 +154,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "api.IDBody" do
     optional :id, :message, 1, "common.Identifier"
-    optional :body, :message, 2, "common.Bytes"
+    optional :body, :message, 2, "common.String"
   end
   add_message "api.IDStrings" do
     optional :id, :message, 1, "common.Identifier"
@@ -204,50 +201,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :status, :message, 6, "common.String"
     optional :annotations, :message, 10, "common.StringMap"
   end
-  add_message "api.StartCacheRequest" do
-    optional :frequency, :message, 1, "common.String"
-  end
-  add_enum "api.Scope" do
-    value :OPENID, 0
-    value :PROFILE, 1
-    value :EMAIL, 2
-    value :READ_USERS, 3
-    value :READ_USER_IDP_TOKENS, 4
-    value :CREATE_USERS, 5
-    value :READ_STATS, 6
-    value :READ_EMAIL_TEMPLATES, 7
-    value :UPDATE_EMAIL_TEMPLATES, 8
-    value :CREATE_EMAIL_TEMPLATES, 9
-    value :READ_RULES, 10
-    value :UPDATE_RULES, 11
-    value :CREATE_RULES, 12
-    value :DELETE_RULES, 13
-    value :READ_ROLES, 14
-    value :UPDATE_ROLES, 15
-    value :CREATE_ROLES, 16
-    value :DELETE_ROLES, 17
-    value :READ_LOGS, 18
-  end
-  add_enum "api.URL" do
-    value :USER_INFOURL, 0
-    value :TOKENURL, 1
-    value :AUTHORIZEURL, 2
-    value :USERSURL, 3
-    value :CLIENTSURL, 4
-    value :GRANTSURL, 5
-    value :RULESURL, 6
-    value :ROLESURL, 7
-    value :LOGSURL, 8
-    value :STATSURL, 9
-    value :CONNECTIONSURL, 10
-    value :TENANTSURL, 11
-    value :EMAIL_TEMPLATEURL, 12
-    value :EMAILURL, 13
-    value :SEARCH_USERSURL, 14
-    value :DEVICEURL, 18
-    value :JWKSURL, 19
-    value :CLIENT_GRANTSURL, 20
-  end
   add_enum "api.Plan" do
     value :FREE, 0
     value :BASIC, 1
@@ -286,8 +239,5 @@ module Api
   SMSResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSResponse").msgclass
   SubscriptionResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionResponse").msgclass
   FaxResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxResponse").msgclass
-  StartCacheRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.StartCacheRequest").msgclass
-  Scope = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Scope").enummodule
-  URL = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.URL").enummodule
   Plan = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Plan").enummodule
 end

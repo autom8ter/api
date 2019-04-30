@@ -279,10 +279,6 @@
                 </li>
               
                 <li>
-                  <a href="#api.StartCacheRequest"><span class="badge">M</span>StartCacheRequest</a>
-                </li>
-              
-                <li>
                   <a href="#api.SubscribeRequest"><span class="badge">M</span>SubscribeRequest</a>
                 </li>
               
@@ -307,19 +303,7 @@
                   <a href="#api.Plan"><span class="badge">E</span>Plan</a>
                 </li>
               
-                <li>
-                  <a href="#api.Scope"><span class="badge">E</span>Scope</a>
-                </li>
               
-                <li>
-                  <a href="#api.URL"><span class="badge">E</span>URL</a>
-                </li>
-              
-              
-              
-                <li>
-                  <a href="#api.AdminService"><span class="badge">S</span>AdminService</a>
-                </li>
               
                 <li>
                   <a href="#api.ContactService"><span class="badge">S</span>ContactService</a>
@@ -363,37 +347,16 @@
             <tbody>
               
                 <tr>
-                  <td>domain</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td>config</td>
+                  <td><a href="#common.Config">common.Config</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>client_id</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td>token_set</td>
+                  <td><a href="#common.TokenSet">common.TokenSet</a></td>
                   <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>client_secret</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>redirect</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>scopes</td>
-                  <td><a href="#api.Scope">Scope</a></td>
-                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
@@ -897,7 +860,7 @@
               
                 <tr>
                   <td>body</td>
-                  <td><a href="#common.Bytes">common.Bytes</a></td>
+                  <td><a href="#common.String">common.String</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1207,7 +1170,7 @@
               
                 <tr>
                   <td>data</td>
-                  <td><a href="#common.Bytes">common.Bytes</a></td>
+                  <td><a href="#common.String">common.String</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1463,29 +1426,6 @@
                 <tr>
                   <td>total_results</td>
                   <td><a href="#common.Int64">common.Int64</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.StartCacheRequest">StartCacheRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>frequency</td>
-                  <td><a href="#common.String">common.String</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1852,278 +1792,9 @@
           </tbody>
         </table>
       
-        <h3 id="api.Scope">Scope</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>OPENID</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>PROFILE</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>EMAIL</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_USERS</td>
-                <td>3</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_USER_IDP_TOKENS</td>
-                <td>4</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CREATE_USERS</td>
-                <td>5</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_STATS</td>
-                <td>6</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_EMAIL_TEMPLATES</td>
-                <td>7</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UPDATE_EMAIL_TEMPLATES</td>
-                <td>8</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CREATE_EMAIL_TEMPLATES</td>
-                <td>9</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_RULES</td>
-                <td>10</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UPDATE_RULES</td>
-                <td>11</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CREATE_RULES</td>
-                <td>12</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DELETE_RULES</td>
-                <td>13</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_ROLES</td>
-                <td>14</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UPDATE_ROLES</td>
-                <td>15</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CREATE_ROLES</td>
-                <td>16</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DELETE_ROLES</td>
-                <td>17</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>READ_LOGS</td>
-                <td>18</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.URL">URL</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>USER_INFOURL</td>
-                <td>0</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>TOKENURL</td>
-                <td>1</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AUTHORIZEURL</td>
-                <td>2</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>USERSURL</td>
-                <td>3</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CLIENTSURL</td>
-                <td>4</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>GRANTSURL</td>
-                <td>5</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>RULESURL</td>
-                <td>6</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ROLESURL</td>
-                <td>7</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>LOGSURL</td>
-                <td>8</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>STATSURL</td>
-                <td>9</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CONNECTIONSURL</td>
-                <td>10</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>TENANTSURL</td>
-                <td>11</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>EMAIL_TEMPLATEURL</td>
-                <td>12</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>EMAILURL</td>
-                <td>13</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>SEARCH_USERSURL</td>
-                <td>14</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DEVICEURL</td>
-                <td>18</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>JWKSURL</td>
-                <td>19</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CLIENT_GRANTSURL</td>
-                <td>20</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
 
       
 
-      
-        <h3 id="api.AdminService">AdminService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>StartCache</td>
-                <td><a href="#api.StartCacheRequest">StartCacheRequest</a></td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>StopCache</td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
       
         <h3 id="api.ContactService">ContactService</h3>
         <p></p>
@@ -2248,7 +1919,7 @@
             
               <tr>
                 <td>CreateUser</td>
-                <td><a href="#common.Bytes">.common.Bytes</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><a href="#api.User">User</a></td>
                 <td><p></p></td>
               </tr>
@@ -2263,13 +1934,13 @@
               <tr>
                 <td>DeleteUser</td>
                 <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.User">User</a></td>
+                <td><a href="#common.Empty">.common.Empty</a></td>
                 <td><p></p></td>
               </tr>
             
               <tr>
                 <td>UpdateUser</td>
-                <td><a href="#api.IDBody">IDBody</a></td>
+                <td><a href="#api.User">User</a></td>
                 <td><a href="#api.User">User</a></td>
                 <td><p></p></td>
               </tr>

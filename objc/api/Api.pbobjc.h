@@ -27,8 +27,8 @@
 
 CF_EXTERN_C_BEGIN
 
-@class Bytes;
 @class Card;
+@class Config;
 @class Email;
 @class EmailBlast;
 @class Identifier;
@@ -41,84 +41,10 @@ CF_EXTERN_C_BEGIN
 @class StringArray;
 @class StringMap;
 @class Token;
+@class TokenSet;
 @class User;
 
 NS_ASSUME_NONNULL_BEGIN
-
-#pragma mark - Enum Scope
-
-typedef GPB_ENUM(Scope) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  Scope_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  Scope_Openid = 0,
-  Scope_Profile = 1,
-  Scope_Email = 2,
-  Scope_ReadUsers = 3,
-  Scope_ReadUserIdpTokens = 4,
-  Scope_CreateUsers = 5,
-  Scope_ReadStats = 6,
-  Scope_ReadEmailTemplates = 7,
-  Scope_UpdateEmailTemplates = 8,
-  Scope_CreateEmailTemplates = 9,
-  Scope_ReadRules = 10,
-  Scope_UpdateRules = 11,
-  Scope_CreateRules = 12,
-  Scope_DeleteRules = 13,
-  Scope_ReadRoles = 14,
-  Scope_UpdateRoles = 15,
-  Scope_CreateRoles = 16,
-  Scope_DeleteRoles = 17,
-  Scope_ReadLogs = 18,
-};
-
-GPBEnumDescriptor *Scope_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL Scope_IsValidValue(int32_t value);
-
-#pragma mark - Enum URL
-
-typedef GPB_ENUM(URL) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  URL_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  URL_UserInfourl = 0,
-  URL_Tokenurl = 1,
-  URL_Authorizeurl = 2,
-  URL_Usersurl = 3,
-  URL_Clientsurl = 4,
-  URL_Grantsurl = 5,
-  URL_Rulesurl = 6,
-  URL_Rolesurl = 7,
-  URL_Logsurl = 8,
-  URL_Statsurl = 9,
-  URL_Connectionsurl = 10,
-  URL_Tenantsurl = 11,
-  URL_EmailTemplateurl = 12,
-  URL_Emailurl = 13,
-  URL_SearchUsersurl = 14,
-  URL_Deviceurl = 18,
-  URL_Jwksurl = 19,
-  URL_ClientGrantsurl = 20,
-};
-
-GPBEnumDescriptor *URL_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL URL_IsValidValue(int32_t value);
 
 #pragma mark - Enum Plan
 
@@ -661,35 +587,19 @@ typedef GPB_ENUM(Identity_FieldNumber) {
 #pragma mark - Auth
 
 typedef GPB_ENUM(Auth_FieldNumber) {
-  Auth_FieldNumber_Domain = 1,
-  Auth_FieldNumber_ClientId = 2,
-  Auth_FieldNumber_ClientSecret = 3,
-  Auth_FieldNumber_Redirect = 4,
-  Auth_FieldNumber_ScopesArray = 5,
+  Auth_FieldNumber_Config = 1,
+  Auth_FieldNumber_TokenSet = 3,
 };
 
 @interface Auth : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *domain;
-/** Test to see if @c domain has been set. */
-@property(nonatomic, readwrite) BOOL hasDomain;
+@property(nonatomic, readwrite, strong, null_resettable) Config *config;
+/** Test to see if @c config has been set. */
+@property(nonatomic, readwrite) BOOL hasConfig;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
-/** Test to see if @c clientId has been set. */
-@property(nonatomic, readwrite) BOOL hasClientId;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
-/** Test to see if @c clientSecret has been set. */
-@property(nonatomic, readwrite) BOOL hasClientSecret;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *redirect;
-/** Test to see if @c redirect has been set. */
-@property(nonatomic, readwrite) BOOL hasRedirect;
-
-// |scopesArray| contains |Scope|
-@property(nonatomic, readwrite, strong, null_resettable) GPBEnumArray *scopesArray;
-/** The number of items in @c scopesArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger scopesArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) TokenSet *tokenSet;
+/** Test to see if @c tokenSet has been set. */
+@property(nonatomic, readwrite) BOOL hasTokenSet;
 
 @end
 
@@ -764,7 +674,7 @@ typedef GPB_ENUM(RenderRequest_FieldNumber) {
 /** Test to see if @c text has been set. */
 @property(nonatomic, readwrite) BOOL hasText;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bytes *data_p;
+@property(nonatomic, readwrite, strong, null_resettable) String *data_p;
 /** Test to see if @c data_p has been set. */
 @property(nonatomic, readwrite) BOOL hasData_p;
 
@@ -897,7 +807,7 @@ typedef GPB_ENUM(IDBody_FieldNumber) {
 /** Test to see if @c id_p has been set. */
 @property(nonatomic, readwrite) BOOL hasId_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
+@property(nonatomic, readwrite, strong, null_resettable) String *body;
 /** Test to see if @c body has been set. */
 @property(nonatomic, readwrite) BOOL hasBody;
 
@@ -1129,20 +1039,6 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
 /** Test to see if @c annotations has been set. */
 @property(nonatomic, readwrite) BOOL hasAnnotations;
-
-@end
-
-#pragma mark - StartCacheRequest
-
-typedef GPB_ENUM(StartCacheRequest_FieldNumber) {
-  StartCacheRequest_FieldNumber_Frequency = 1,
-};
-
-@interface StartCacheRequest : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *frequency;
-/** Test to see if @c frequency has been set. */
-@property(nonatomic, readwrite) BOOL hasFrequency;
 
 @end
 

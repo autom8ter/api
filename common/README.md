@@ -7,52 +7,8 @@
 
 ```go
 var (
-	Util          *objectify.Handler
-	ClientContext context.Context
-
-	AUTH_SESSION           = "auth-session"
-	SESSION_SECRET_ENV_KEY = "SECRET"
-	JSONMarshaler          = &jsonpb.Marshaler{
-		Indent: "  ",
-	}
-	JSONUnmarshaler = &jsonpb.Unmarshaler{
-		AllowUnknownFields: false,
-	}
+	EnvContext context.Context
 )
-```
-
-```go
-var HTTPMethod_name = map[int32]string{
-	0: "GET",
-	1: "POST",
-	2: "PATCH",
-}
-```
-
-```go
-var HTTPMethod_value = map[string]int32{
-	"GET":   0,
-	"POST":  1,
-	"PATCH": 2,
-}
-```
-
-#### func  AuthSessionValues
-
-```go
-func AuthSessionValues(session *sessions.Session, key string, data map[string]interface{})
-```
-
-#### func  Fatalln
-
-```go
-func Fatalln(err error)
-```
-
-#### func  FromSession
-
-```go
-func FromSession(key string, session *sessions.Session) interface{}
 ```
 
 #### func  FuncMap
@@ -61,250 +17,110 @@ func FromSession(key string, session *sessions.Session) interface{}
 func FuncMap() template.FuncMap
 ```
 
-#### func  GetAuthSession
-
-```go
-func GetAuthSession(r *http.Request) (*sessions.Session, error)
-```
-
-#### func  GetStateSession
-
-```go
-func GetStateSession(r *http.Request) (*sessions.Session, error)
-```
-
-#### func  SaveSession
-
-```go
-func SaveSession(w http.ResponseWriter, r *http.Request)
-```
-
 #### func  ToError
 
 ```go
 func ToError(err error, msg string) error
 ```
 
-#### func  Warnln
+#### type Config
 
 ```go
-func Warnln(err error)
-```
-
-#### type Bytes
-
-```go
-type Bytes struct {
-	Bits                 []byte   `protobuf:"bytes,1,opt,name=bits,proto3" json:"bits,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+type Config struct {
+	ClientId             *String      `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientSecret         *String      `protobuf:"bytes,2,opt,name=client_secret,json=clientSecret,proto3" json:"client_secret,omitempty"`
+	TokenUrl             *String      `protobuf:"bytes,3,opt,name=token_url,json=tokenUrl,proto3" json:"token_url,omitempty"`
+	Scopes               *StringArray `protobuf:"bytes,4,opt,name=scopes,proto3" json:"scopes,omitempty"`
+	EndpointParams       *StringMap   `protobuf:"bytes,5,opt,name=endpoint_params,json=endpointParams,proto3" json:"endpoint_params,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 ```
 
 
-#### func  AsBytes
+#### func (*Config) Descriptor
 
 ```go
-func AsBytes(obj interface{}) *Bytes
+func (*Config) Descriptor() ([]byte, []int)
 ```
 
-#### func  BytesFromFile
+#### func (*Config) GetClientId
 
 ```go
-func BytesFromFile(fileName string) (*Bytes, error)
+func (m *Config) GetClientId() *String
 ```
 
-#### func  BytesFromReader
+#### func (*Config) GetClientSecret
 
 ```go
-func BytesFromReader(r io.Reader) (*Bytes, error)
+func (m *Config) GetClientSecret() *String
 ```
 
-#### func  BytesFromString
+#### func (*Config) GetEndpointParams
 
 ```go
-func BytesFromString(str string) *Bytes
+func (m *Config) GetEndpointParams() *StringMap
 ```
 
-#### func  JSONObjToBytes
+#### func (*Config) GetScopes
 
 ```go
-func JSONObjToBytes(b interface{}) *Bytes
+func (m *Config) GetScopes() *StringArray
 ```
 
-#### func  MessageToJSONBytes
+#### func (*Config) GetTokenUrl
 
 ```go
-func MessageToJSONBytes(msg proto.Message) (*Bytes, error)
+func (m *Config) GetTokenUrl() *String
 ```
 
-#### func  NewBytes
+#### func (*Config) ProtoMessage
 
 ```go
-func NewBytes() *Bytes
+func (*Config) ProtoMessage()
 ```
 
-#### func  ToBytes
+#### func (*Config) Reset
 
 ```go
-func ToBytes(b []byte) *Bytes
+func (m *Config) Reset()
 ```
 
-#### func (*Bytes) BitString
+#### func (*Config) String
 
 ```go
-func (m *Bytes) BitString() string
+func (m *Config) String() string
 ```
 
-#### func (*Bytes) Clear
+#### func (*Config) XXX_DiscardUnknown
 
 ```go
-func (m *Bytes) Clear()
+func (m *Config) XXX_DiscardUnknown()
 ```
 
-#### func (*Bytes) Compile
+#### func (*Config) XXX_Marshal
 
 ```go
-func (m *Bytes) Compile(name string, w io.Writer, t *String) error
+func (m *Config) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*Bytes) CompileHTTP
+#### func (*Config) XXX_Merge
 
 ```go
-func (m *Bytes) CompileHTTP(name string, t *String) http.HandlerFunc
+func (m *Config) XXX_Merge(src proto.Message)
 ```
 
-#### func (*Bytes) Contains
+#### func (*Config) XXX_Size
 
 ```go
-func (m *Bytes) Contains(str string) bool
+func (m *Config) XXX_Size() int
 ```
 
-#### func (*Bytes) Debugln
+#### func (*Config) XXX_Unmarshal
 
 ```go
-func (s *Bytes) Debugln()
-```
-
-#### func (*Bytes) DecodeJSON
-
-```go
-func (s *Bytes) DecodeJSON(decoder *json.Decoder) error
-```
-
-#### func (*Bytes) Descriptor
-
-```go
-func (*Bytes) Descriptor() ([]byte, []int)
-```
-
-#### func (*Bytes) Equals
-
-```go
-func (s *Bytes) Equals(y interface{}) bool
-```
-
-#### func (*Bytes) GetBits
-
-```go
-func (m *Bytes) GetBits() []byte
-```
-
-#### func (*Bytes) Length
-
-```go
-func (m *Bytes) Length() int
-```
-
-#### func (*Bytes) MarshalJSON
-
-```go
-func (s *Bytes) MarshalJSON(w io.Writer) error
-```
-
-#### func (*Bytes) ProtoMessage
-
-```go
-func (*Bytes) ProtoMessage()
-```
-
-#### func (*Bytes) Read
-
-```go
-func (m *Bytes) Read(p []byte) (n int, err error)
-```
-
-#### func (*Bytes) Reset
-
-```go
-func (m *Bytes) Reset()
-```
-
-#### func (*Bytes) String
-
-```go
-func (m *Bytes) String() string
-```
-
-#### func (*Bytes) ToString
-
-```go
-func (b *Bytes) ToString() *String
-```
-
-#### func (*Bytes) UnmarshalJSON
-
-```go
-func (s *Bytes) UnmarshalJSON(r io.Reader) error
-```
-
-#### func (*Bytes) Validate
-
-```go
-func (s *Bytes) Validate(fn func(s *Bytes) error) error
-```
-
-#### func (*Bytes) Write
-
-```go
-func (m *Bytes) Write(p []byte) (n int, err error)
-```
-
-#### func (*Bytes) WriteString
-
-```go
-func (m *Bytes) WriteString() http.HandlerFunc
-```
-
-#### func (*Bytes) XXX_DiscardUnknown
-
-```go
-func (m *Bytes) XXX_DiscardUnknown()
-```
-
-#### func (*Bytes) XXX_Marshal
-
-```go
-func (m *Bytes) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Bytes) XXX_Merge
-
-```go
-func (m *Bytes) XXX_Merge(src proto.Message)
-```
-
-#### func (*Bytes) XXX_Size
-
-```go
-func (m *Bytes) XXX_Size() int
-```
-
-#### func (*Bytes) XXX_Unmarshal
-
-```go
-func (m *Bytes) XXX_Unmarshal(b []byte) error
+func (m *Config) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Empty
@@ -372,6 +188,78 @@ func (m *Empty) XXX_Size() int
 func (m *Empty) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Event
+
+```go
+type Event struct {
+	Annotations          *StringMap `protobuf:"bytes,10,opt,name=annotations,proto3" json:"annotations,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_unrecognized     []byte     `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+```
+
+
+#### func (*Event) Descriptor
+
+```go
+func (*Event) Descriptor() ([]byte, []int)
+```
+
+#### func (*Event) GetAnnotations
+
+```go
+func (m *Event) GetAnnotations() *StringMap
+```
+
+#### func (*Event) ProtoMessage
+
+```go
+func (*Event) ProtoMessage()
+```
+
+#### func (*Event) Reset
+
+```go
+func (m *Event) Reset()
+```
+
+#### func (*Event) String
+
+```go
+func (m *Event) String() string
+```
+
+#### func (*Event) XXX_DiscardUnknown
+
+```go
+func (m *Event) XXX_DiscardUnknown()
+```
+
+#### func (*Event) XXX_Marshal
+
+```go
+func (m *Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Event) XXX_Merge
+
+```go
+func (m *Event) XXX_Merge(src proto.Message)
+```
+
+#### func (*Event) XXX_Size
+
+```go
+func (m *Event) XXX_Size() int
+```
+
+#### func (*Event) XXX_Unmarshal
+
+```go
+func (m *Event) XXX_Unmarshal(b []byte) error
+```
+
 #### type Float64
 
 ```go
@@ -435,10 +323,16 @@ CubeRoot returns the cube root of x.
 func (s *Float64) Cubed() *Float64
 ```
 
-#### func (*Float64) Debugln
+#### func (*Float64) Debugf
 
 ```go
-func (s *Float64) Debugln()
+func (s *Float64) Debugf(format string)
+```
+
+#### func (*Float64) DeepEqual
+
+```go
+func (s *Float64) DeepEqual(y interface{}) bool
 ```
 
 #### func (*Float64) Descriptor
@@ -451,12 +345,6 @@ func (*Float64) Descriptor() ([]byte, []int)
 
 ```go
 func (m *Float64) DividedBy(n *Float64) *Float64
-```
-
-#### func (*Float64) Equals
-
-```go
-func (s *Float64) Equals(y interface{}) bool
 ```
 
 #### func (*Float64) Exp
@@ -528,7 +416,7 @@ func (m *Float64) Logb() *Float64
 #### func (*Float64) MarshalJSON
 
 ```go
-func (s *Float64) MarshalJSON(w io.Writer) error
+func (s *Float64) MarshalJSON() []byte
 ```
 
 #### func (*Float64) Max
@@ -678,7 +566,7 @@ func (s *Float64) TypeMatches(src interface{}) bool
 #### func (*Float64) UnmarshalJSON
 
 ```go
-func (s *Float64) UnmarshalJSON(r io.Reader) error
+func (s *Float64) UnmarshalJSON(bits []byte) error
 ```
 
 #### func (*Float64) Validate
@@ -721,162 +609,6 @@ func (m *Float64) XXX_Unmarshal(b []byte) error
 
 ```go
 func (m *Float64) Zero()
-```
-
-#### type HTTPMethod
-
-```go
-type HTTPMethod int32
-```
-
-
-```go
-const (
-	HTTPMethod_GET   HTTPMethod = 0
-	HTTPMethod_POST  HTTPMethod = 1
-	HTTPMethod_PATCH HTTPMethod = 2
-)
-```
-
-#### func (HTTPMethod) EnumDescriptor
-
-```go
-func (HTTPMethod) EnumDescriptor() ([]byte, []int)
-```
-
-#### func (HTTPMethod) Normalize
-
-```go
-func (h HTTPMethod) Normalize() *String
-```
-
-#### func (HTTPMethod) String
-
-```go
-func (x HTTPMethod) String() string
-```
-
-#### type HTTPRequest
-
-```go
-type HTTPRequest struct {
-	Method               HTTPMethod `protobuf:"varint,1,opt,name=method,proto3,enum=common.HTTPMethod" json:"method,omitempty"`
-	Url                  *String    `protobuf:"bytes,2,opt,name=url,proto3" json:"url,omitempty"`
-	Form                 *StringMap `protobuf:"bytes,3,opt,name=form,proto3" json:"form,omitempty"`
-	Body                 *Bytes     `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
-	XXX_unrecognized     []byte     `json:"-"`
-	XXX_sizecache        int32      `json:"-"`
-}
-```
-
-
-#### func (*HTTPRequest) Descriptor
-
-```go
-func (*HTTPRequest) Descriptor() ([]byte, []int)
-```
-
-#### func (*HTTPRequest) Do
-
-```go
-func (h *HTTPRequest) Do(token *Token) (*Bytes, error)
-```
-
-#### func (*HTTPRequest) Equals
-
-```go
-func (s *HTTPRequest) Equals(y interface{}) bool
-```
-
-#### func (*HTTPRequest) GetBody
-
-```go
-func (m *HTTPRequest) GetBody() *Bytes
-```
-
-#### func (*HTTPRequest) GetForm
-
-```go
-func (m *HTTPRequest) GetForm() *StringMap
-```
-
-#### func (*HTTPRequest) GetMethod
-
-```go
-func (m *HTTPRequest) GetMethod() HTTPMethod
-```
-
-#### func (*HTTPRequest) GetUrl
-
-```go
-func (m *HTTPRequest) GetUrl() *String
-```
-
-#### func (*HTTPRequest) MarshalJSON
-
-```go
-func (s *HTTPRequest) MarshalJSON(w io.Writer) error
-```
-
-#### func (*HTTPRequest) ProtoMessage
-
-```go
-func (*HTTPRequest) ProtoMessage()
-```
-
-#### func (*HTTPRequest) Reset
-
-```go
-func (m *HTTPRequest) Reset()
-```
-
-#### func (*HTTPRequest) String
-
-```go
-func (m *HTTPRequest) String() string
-```
-
-#### func (*HTTPRequest) UnmarshalJSON
-
-```go
-func (s *HTTPRequest) UnmarshalJSON(r io.Reader) error
-```
-
-#### func (*HTTPRequest) Validate
-
-```go
-func (s *HTTPRequest) Validate(fn func(s *HTTPRequest) error) error
-```
-
-#### func (*HTTPRequest) XXX_DiscardUnknown
-
-```go
-func (m *HTTPRequest) XXX_DiscardUnknown()
-```
-
-#### func (*HTTPRequest) XXX_Marshal
-
-```go
-func (m *HTTPRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*HTTPRequest) XXX_Merge
-
-```go
-func (m *HTTPRequest) XXX_Merge(src proto.Message)
-```
-
-#### func (*HTTPRequest) XXX_Size
-
-```go
-func (m *HTTPRequest) XXX_Size() int
-```
-
-#### func (*HTTPRequest) XXX_Unmarshal
-
-```go
-func (m *HTTPRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Identifier
@@ -969,10 +701,16 @@ type Int64 struct {
 func ToInt64(i int) *Int64
 ```
 
-#### func (*Int64) Debugln
+#### func (*Int64) Debugf
 
 ```go
-func (s *Int64) Debugln()
+func (s *Int64) Debugf(format string)
+```
+
+#### func (*Int64) DeepEqual
+
+```go
+func (s *Int64) DeepEqual(y interface{}) bool
 ```
 
 #### func (*Int64) Descriptor
@@ -985,12 +723,6 @@ func (*Int64) Descriptor() ([]byte, []int)
 
 ```go
 func (m *Int64) DividedBy(n *Int64) *Int64
-```
-
-#### func (*Int64) Equals
-
-```go
-func (s *Int64) Equals(y interface{}) bool
 ```
 
 #### func (*Int64) GetNum
@@ -1014,7 +746,7 @@ func (i *Int64) Int() int
 #### func (*Int64) MarshalJSON
 
 ```go
-func (s *Int64) MarshalJSON(w io.Writer) error
+func (s *Int64) MarshalJSON() []byte
 ```
 
 #### func (*Int64) Minus
@@ -1077,12 +809,6 @@ func (s *Int64) ToContext(ctx context.Context, key string) context.Context
 func (s *Int64) ToString() *String
 ```
 
-#### func (*Int64) Token
-
-```go
-func (s *Int64) Token(w io.Writer) error
-```
-
 #### func (*Int64) TypeMatches
 
 ```go
@@ -1092,7 +818,7 @@ func (s *Int64) TypeMatches(src interface{}) bool
 #### func (*Int64) UnmarshalJSON
 
 ```go
-func (s *Int64) UnmarshalJSON(r io.Reader) error
+func (s *Int64) UnmarshalJSON(bits []byte) error
 ```
 
 #### func (*Int64) Validate
@@ -1131,14 +857,12 @@ func (m *Int64) XXX_Size() int
 func (m *Int64) XXX_Unmarshal(b []byte) error
 ```
 
-#### type RGBA
+#### type Query
 
 ```go
-type RGBA struct {
-	R                    *Int64   `protobuf:"bytes,1,opt,name=r,proto3" json:"r,omitempty"`
-	G                    *Int64   `protobuf:"bytes,2,opt,name=g,proto3" json:"g,omitempty"`
-	B                    *Int64   `protobuf:"bytes,3,opt,name=b,proto3" json:"b,omitempty"`
-	A                    *Int64   `protobuf:"bytes,4,opt,name=a,proto3" json:"a,omitempty"`
+type Query struct {
+	Query                *String  `protobuf:"bytes,4,opt,name=query,proto3" json:"query,omitempty"`
+	Fields               *String  `protobuf:"bytes,5,opt,name=fields,proto3" json:"fields,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
@@ -1146,88 +870,70 @@ type RGBA struct {
 ```
 
 
-#### func (*RGBA) Descriptor
+#### func (*Query) Descriptor
 
 ```go
-func (*RGBA) Descriptor() ([]byte, []int)
+func (*Query) Descriptor() ([]byte, []int)
 ```
 
-#### func (*RGBA) GetA
+#### func (*Query) GetFields
 
 ```go
-func (m *RGBA) GetA() *Int64
+func (m *Query) GetFields() *String
 ```
 
-#### func (*RGBA) GetB
+#### func (*Query) GetQuery
 
 ```go
-func (m *RGBA) GetB() *Int64
+func (m *Query) GetQuery() *String
 ```
 
-#### func (*RGBA) GetG
+#### func (*Query) ProtoMessage
 
 ```go
-func (m *RGBA) GetG() *Int64
+func (*Query) ProtoMessage()
 ```
 
-#### func (*RGBA) GetR
+#### func (*Query) Reset
 
 ```go
-func (m *RGBA) GetR() *Int64
+func (m *Query) Reset()
 ```
 
-#### func (*RGBA) MarshalJSON
+#### func (*Query) String
 
 ```go
-func (s *RGBA) MarshalJSON(w io.Writer) error
+func (m *Query) String() string
 ```
 
-#### func (*RGBA) ProtoMessage
+#### func (*Query) XXX_DiscardUnknown
 
 ```go
-func (*RGBA) ProtoMessage()
+func (m *Query) XXX_DiscardUnknown()
 ```
 
-#### func (*RGBA) Reset
+#### func (*Query) XXX_Marshal
 
 ```go
-func (m *RGBA) Reset()
+func (m *Query) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*RGBA) String
+#### func (*Query) XXX_Merge
 
 ```go
-func (m *RGBA) String() string
+func (m *Query) XXX_Merge(src proto.Message)
 ```
 
-#### func (*RGBA) XXX_DiscardUnknown
+#### func (*Query) XXX_Size
 
 ```go
-func (m *RGBA) XXX_DiscardUnknown()
+func (m *Query) XXX_Size() int
 ```
 
-#### func (*RGBA) XXX_Marshal
+#### func (*Query) XXX_Unmarshal
 
 ```go
-func (m *RGBA) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*RGBA) XXX_Merge
-
-```go
-func (m *RGBA) XXX_Merge(src proto.Message)
-```
-
-#### func (*RGBA) XXX_Size
-
-```go
-func (m *RGBA) XXX_Size() int
-```
-
-#### func (*RGBA) XXX_Unmarshal
-
-```go
-func (m *RGBA) XXX_Unmarshal(b []byte) error
+func (m *Query) XXX_Unmarshal(b []byte) error
 ```
 
 #### type String
@@ -1251,7 +957,7 @@ func JSONObjToString(b interface{}) *String
 #### func  MessageToJSONString
 
 ```go
-func MessageToJSONString(msg proto.Message) (*String, error)
+func MessageToJSONString(msg proto.Message) *String
 ```
 
 #### func  RandomString
@@ -1350,22 +1056,34 @@ func (m *String) AsTemplate(name string) (*template.Template, error)
 func (m *String) Base64Encode() string
 ```
 
+#### func (*String) Buffer
+
+```go
+func (b *String) Buffer() *bytes.Buffer
+```
+
+#### func (*String) BufferedReader
+
+```go
+func (b *String) BufferedReader() *bufio.Reader
+```
+
+#### func (*String) BufferedWriter
+
+```go
+func (b *String) BufferedWriter() *bufio.Writer
+```
+
 #### func (*String) Contains
 
 ```go
 func (s *String) Contains(sub string) bool
 ```
 
-#### func (*String) Debugln
+#### func (*String) Debugf
 
 ```go
-func (s *String) Debugln()
-```
-
-#### func (*String) DecodeJSON
-
-```go
-func (s *String) DecodeJSON(decoder *json.Decoder) error
+func (s *String) Debugf(format string)
 ```
 
 #### func (*String) Descriptor
@@ -1377,19 +1095,19 @@ func (*String) Descriptor() ([]byte, []int)
 #### func (*String) ExecuteAsBashCMD
 
 ```go
-func (m *String) ExecuteAsBashCMD() *Bytes
+func (m *String) ExecuteAsBashCMD() *String
 ```
 
 #### func (*String) ExecuteAsPython3
 
 ```go
-func (m *String) ExecuteAsPython3() *Bytes
+func (m *String) ExecuteAsPython3() *String
 ```
 
 #### func (*String) ExecuteAsShellCMD
 
 ```go
-func (m *String) ExecuteAsShellCMD() *Bytes
+func (m *String) ExecuteAsShellCMD() *String
 ```
 
 #### func (*String) GetText
@@ -1437,7 +1155,7 @@ func (m *String) IsTemplate() bool
 #### func (*String) MarshalJSON
 
 ```go
-func (s *String) MarshalJSON(w io.Writer) error
+func (s *String) MarshalJSON() []byte
 ```
 
 #### func (*String) Matches
@@ -1554,12 +1272,6 @@ func (s *String) RegexMatches(reg string) bool
 func (m *String) Render(name string, w io.Writer, data interface{}) error
 ```
 
-#### func (*String) RenderBytes
-
-```go
-func (m *String) RenderBytes(name string, w io.Writer, bits *Bytes) error
-```
-
 #### func (*String) Replace
 
 ```go
@@ -1608,10 +1320,10 @@ func (s *String) StartArray() *StringArray
 func (m *String) String() string
 ```
 
-#### func (*String) ToBytes
+#### func (*String) StringReader
 
 ```go
-func (b *String) ToBytes() *Bytes
+func (b *String) StringReader() *strings.Reader
 ```
 
 #### func (*String) ToContext
@@ -1677,7 +1389,7 @@ func (s *String) TypeMatches(src interface{}) bool
 #### func (*String) UnmarshalJSON
 
 ```go
-func (s *String) UnmarshalJSON(r io.Reader) error
+func (s *String) UnmarshalJSON(bits []byte) error
 ```
 
 #### func (*String) Validate
@@ -1764,22 +1476,22 @@ func (m *StringArray) Append(vals ...*String)
 func (s *StringArray) Array() []string
 ```
 
-#### func (*StringArray) Debugln
+#### func (*StringArray) Debugf
 
 ```go
-func (s *StringArray) Debugln()
+func (s *StringArray) Debugf(format string)
+```
+
+#### func (*StringArray) DeepEqual
+
+```go
+func (s *StringArray) DeepEqual(y interface{}) bool
 ```
 
 #### func (*StringArray) Descriptor
 
 ```go
 func (*StringArray) Descriptor() ([]byte, []int)
-```
-
-#### func (*StringArray) Equals
-
-```go
-func (s *StringArray) Equals(y interface{}) bool
 ```
 
 #### func (*StringArray) First
@@ -1821,7 +1533,7 @@ func (m *StringArray) Length() int
 #### func (*StringArray) MarshalJSON
 
 ```go
-func (s *StringArray) MarshalJSON(w io.Writer) error
+func (s *StringArray) MarshalJSON() []byte
 ```
 
 #### func (*StringArray) Pointer
@@ -1866,18 +1578,6 @@ func (s *StringArray) StringMap(y interface{}) bool
 func (s *StringArray) ToContext(ctx context.Context, key string) context.Context
 ```
 
-#### func (*StringArray) ToJSONBytes
-
-```go
-func (s *StringArray) ToJSONBytes() (*Bytes, error)
-```
-
-#### func (*StringArray) ToJSONString
-
-```go
-func (s *StringArray) ToJSONString() (*String, error)
-```
-
 #### func (*StringArray) TypeMatches
 
 ```go
@@ -1887,7 +1587,7 @@ func (s *StringArray) TypeMatches(src interface{}) bool
 #### func (*StringArray) UnmarshalJSON
 
 ```go
-func (s *StringArray) UnmarshalJSON(r io.Reader) error
+func (s *StringArray) UnmarshalJSON(bits []byte) error
 ```
 
 #### func (*StringArray) Validate
@@ -1956,10 +1656,10 @@ func ToStringMap(s map[string]string) *StringMap
 func (s *StringMap) Clear(key string)
 ```
 
-#### func (*StringMap) Debugln
+#### func (*StringMap) Debugf
 
 ```go
-func (s *StringMap) Debugln()
+func (s *StringMap) Debugf(format string)
 ```
 
 #### func (*StringMap) Descriptor
@@ -1995,7 +1695,7 @@ func (s *StringMap) Keys() *StringArray
 #### func (*StringMap) MarshalJSON
 
 ```go
-func (s *StringMap) MarshalJSON(w io.Writer) error
+func (s *StringMap) MarshalJSON() []byte
 ```
 
 #### func (*StringMap) ProtoMessage
@@ -2043,7 +1743,7 @@ func (s *StringMap) TypeMatches(src interface{}) bool
 #### func (*StringMap) UnmarshalJSON
 
 ```go
-func (s *StringMap) UnmarshalJSON(r io.Reader) error
+func (s *StringMap) UnmarshalJSON(bits []byte) error
 ```
 
 #### func (*StringMap) Validate
@@ -2098,34 +1798,28 @@ type Token struct {
 ```
 
 
-#### func  TokenFromAuthSession
-
-```go
-func TokenFromAuthSession(session *sessions.Session) (*Token, error)
-```
-
 #### func  TokenFromOAuthToken
 
 ```go
 func TokenFromOAuthToken(tok *oauth2.Token) *Token
 ```
 
-#### func (*Token) Debugln
+#### func (*Token) Debugf
 
 ```go
-func (s *Token) Debugln()
+func (s *Token) Debugf(format string)
+```
+
+#### func (*Token) DeepEqual
+
+```go
+func (s *Token) DeepEqual(y interface{}) bool
 ```
 
 #### func (*Token) Descriptor
 
 ```go
 func (*Token) Descriptor() ([]byte, []int)
-```
-
-#### func (*Token) Equals
-
-```go
-func (s *Token) Equals(y interface{}) bool
 ```
 
 #### func (*Token) GetAccessToken
@@ -2182,12 +1876,6 @@ func (m *Token) String() string
 func (s *Token) ToContext(ctx context.Context, key string) context.Context
 ```
 
-#### func (*Token) ToSession
-
-```go
-func (t *Token) ToSession(session *sessions.Session)
-```
-
 #### func (*Token) TypeMatches
 
 ```go
@@ -2197,7 +1885,7 @@ func (s *Token) TypeMatches(src interface{}) bool
 #### func (*Token) UnmarshalJSON
 
 ```go
-func (s *Token) UnmarshalJSON(r io.Reader) error
+func (s *Token) UnmarshalJSON(bits []byte) error
 ```
 
 #### func (*Token) Validate
@@ -2234,4 +1922,124 @@ func (m *Token) XXX_Size() int
 
 ```go
 func (m *Token) XXX_Unmarshal(b []byte) error
+```
+
+#### type TokenSet
+
+```go
+type TokenSet struct {
+	Tokens               map[string]*Token `protobuf:"bytes,1,rep,name=tokens,proto3" json:"tokens,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func (*TokenSet) DeepEqual
+
+```go
+func (s *TokenSet) DeepEqual(y interface{}) bool
+```
+
+#### func (*TokenSet) Descriptor
+
+```go
+func (*TokenSet) Descriptor() ([]byte, []int)
+```
+
+#### func (*TokenSet) Exists
+
+```go
+func (s *TokenSet) Exists(key string) bool
+```
+
+#### func (*TokenSet) Get
+
+```go
+func (s *TokenSet) Get(key string) *Token
+```
+
+#### func (*TokenSet) GetTokens
+
+```go
+func (m *TokenSet) GetTokens() map[string]*Token
+```
+
+#### func (*TokenSet) Length
+
+```go
+func (s *TokenSet) Length() int
+```
+
+#### func (*TokenSet) MarshalJSON
+
+```go
+func (s *TokenSet) MarshalJSON() []byte
+```
+
+#### func (*TokenSet) ProtoMessage
+
+```go
+func (*TokenSet) ProtoMessage()
+```
+
+#### func (*TokenSet) Put
+
+```go
+func (s *TokenSet) Put(key string, tok *Token)
+```
+
+#### func (*TokenSet) Reset
+
+```go
+func (m *TokenSet) Reset()
+```
+
+#### func (*TokenSet) String
+
+```go
+func (m *TokenSet) String() string
+```
+
+#### func (*TokenSet) Unmrashal
+
+```go
+func (s *TokenSet) Unmrashal(b []byte) error
+```
+
+#### func (*TokenSet) Validate
+
+```go
+func (s *TokenSet) Validate(fn func(set *TokenSet) error) error
+```
+
+#### func (*TokenSet) XXX_DiscardUnknown
+
+```go
+func (m *TokenSet) XXX_DiscardUnknown()
+```
+
+#### func (*TokenSet) XXX_Marshal
+
+```go
+func (m *TokenSet) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*TokenSet) XXX_Merge
+
+```go
+func (m *TokenSet) XXX_Merge(src proto.Message)
+```
+
+#### func (*TokenSet) XXX_Size
+
+```go
+func (m *TokenSet) XXX_Size() int
+```
+
+#### func (*TokenSet) XXX_Unmarshal
+
+```go
+func (m *TokenSet) XXX_Unmarshal(b []byte) error
 ```

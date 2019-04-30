@@ -6,10 +6,6 @@ message String {
     string text =1;
 }
 
-message Bytes {
-    bytes bits =1;
-}
-
 message StringArray {
     repeated String strings=1;
 }
@@ -32,26 +28,6 @@ message Float64 {
     double num = 1;
 }
 
-message RGBA {
-    Int64 r =1;
-    Int64 g =2;
-    Int64 b =3;
-    Int64 a =4;
-}
-
-enum HTTPMethod {
-    GET =0;
-    POST=1;
-    PATCH=2;
-}
-
-message HTTPRequest {
-    HTTPMethod method=1;
-    common.String url =2;
-    common.StringMap form =3;
-    common.Bytes body =4;
-}
-
 message Token {
     common.String access_token=1;
     common.String token_type=2;
@@ -60,3 +36,23 @@ message Token {
     common.String id_token=5;
 }
 
+message Config {
+    common.String client_id=1;
+    common.String client_secret=2;
+    common.String token_url =3;
+    common.StringArray scopes =4;
+    common.StringMap endpoint_params=5;
+}
+
+message Event {
+    common.StringMap annotations=10;
+}
+
+message Query {
+    common.String query=4;
+    common.String fields=5;
+}
+
+message TokenSet {
+    map<string, common.Token> tokens =1;
+}

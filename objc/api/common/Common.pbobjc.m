@@ -13,8 +13,6 @@
  #import "GPBProtocolBuffers_RuntimeSupport.h"
 #endif
 
-#import <stdatomic.h>
-
 #import "common/Common.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
@@ -42,43 +40,6 @@ static GPBFileDescriptor *CommonRoot_FileDescriptor(void) {
                                                      syntax:GPBFileSyntaxProto3];
   }
   return descriptor;
-}
-
-#pragma mark - Enum HTTPMethod
-
-GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void) {
-  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
-  if (!descriptor) {
-    static const char *valueNames =
-        "Get\000Post\000Patch\000";
-    static const int32_t values[] = {
-        HTTPMethod_Get,
-        HTTPMethod_Post,
-        HTTPMethod_Patch,
-    };
-    GPBEnumDescriptor *worker =
-        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(HTTPMethod)
-                                       valueNames:valueNames
-                                           values:values
-                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
-                                     enumVerifier:HTTPMethod_IsValidValue];
-    GPBEnumDescriptor *expected = nil;
-    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
-      [worker release];
-    }
-  }
-  return descriptor;
-}
-
-BOOL HTTPMethod_IsValidValue(int32_t value__) {
-  switch (value__) {
-    case HTTPMethod_Get:
-    case HTTPMethod_Post:
-    case HTTPMethod_Patch:
-      return YES;
-    default:
-      return NO;
-  }
 }
 
 #pragma mark - String
@@ -115,49 +76,6 @@ typedef struct String__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(String__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - Bytes
-
-@implementation Bytes
-
-@dynamic bits;
-
-typedef struct Bytes__storage_ {
-  uint32_t _has_storage_[1];
-  NSData *bits;
-} Bytes__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "bits",
-        .dataTypeSpecific.className = NULL,
-        .number = Bytes_FieldNumber_Bits,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Bytes__storage_, bits),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeBytes,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Bytes class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Bytes__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
@@ -412,175 +330,6 @@ typedef struct Float64__storage_ {
 
 @end
 
-#pragma mark - RGBA
-
-@implementation RGBA
-
-@dynamic hasR, r;
-@dynamic hasG, g;
-@dynamic hasB, b;
-@dynamic hasA, a;
-
-typedef struct RGBA__storage_ {
-  uint32_t _has_storage_[1];
-  Int64 *r;
-  Int64 *g;
-  Int64 *b;
-  Int64 *a;
-} RGBA__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "r",
-        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
-        .number = RGBA_FieldNumber_R,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(RGBA__storage_, r),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "g",
-        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
-        .number = RGBA_FieldNumber_G,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(RGBA__storage_, g),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "b",
-        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
-        .number = RGBA_FieldNumber_B,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(RGBA__storage_, b),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "a",
-        .dataTypeSpecific.className = GPBStringifySymbol(Int64),
-        .number = RGBA_FieldNumber_A,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(RGBA__storage_, a),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[RGBA class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(RGBA__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - HTTPRequest
-
-@implementation HTTPRequest
-
-@dynamic method;
-@dynamic hasURL, URL;
-@dynamic hasForm, form;
-@dynamic hasBody, body;
-
-typedef struct HTTPRequest__storage_ {
-  uint32_t _has_storage_[1];
-  HTTPMethod method;
-  String *URL;
-  StringMap *form;
-  Bytes *body;
-} HTTPRequest__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "method",
-        .dataTypeSpecific.enumDescFunc = HTTPMethod_EnumDescriptor,
-        .number = HTTPRequest_FieldNumber_Method,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, method),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldHasEnumDescriptor),
-        .dataType = GPBDataTypeEnum,
-      },
-      {
-        .name = "URL",
-        .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = HTTPRequest_FieldNumber_URL,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, URL),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "form",
-        .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
-        .number = HTTPRequest_FieldNumber_Form,
-        .hasIndex = 2,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, form),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-      {
-        .name = "body",
-        .dataTypeSpecific.className = GPBStringifySymbol(Bytes),
-        .number = HTTPRequest_FieldNumber_Body,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(HTTPRequest__storage_, body),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[HTTPRequest class]
-                                     rootClass:[CommonRoot class]
-                                          file:CommonRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(HTTPRequest__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    static const char *extraTextFormatInfo =
-        "\001\002!!!\000";
-    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
-#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-int32_t HTTPRequest_Method_RawValue(HTTPRequest *message) {
-  GPBDescriptor *descriptor = [HTTPRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
-  return GPBGetMessageInt32Field(message, field);
-}
-
-void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value) {
-  GPBDescriptor *descriptor = [HTTPRequest descriptor];
-  GPBFieldDescriptor *field = [descriptor fieldWithNumber:HTTPRequest_FieldNumber_Method];
-  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
-}
-
 #pragma mark - Token
 
 @implementation Token
@@ -659,6 +408,238 @@ typedef struct Token__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Token__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Config
+
+@implementation Config
+
+@dynamic hasClientId, clientId;
+@dynamic hasClientSecret, clientSecret;
+@dynamic hasTokenURL, tokenURL;
+@dynamic hasScopes, scopes;
+@dynamic hasEndpointParams, endpointParams;
+
+typedef struct Config__storage_ {
+  uint32_t _has_storage_[1];
+  String *clientId;
+  String *clientSecret;
+  String *tokenURL;
+  StringArray *scopes;
+  StringMap *endpointParams;
+} Config__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "clientId",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Config_FieldNumber_ClientId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Config__storage_, clientId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "clientSecret",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Config_FieldNumber_ClientSecret,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Config__storage_, clientSecret),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "tokenURL",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Config_FieldNumber_TokenURL,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(Config__storage_, tokenURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "scopes",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
+        .number = Config_FieldNumber_Scopes,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Config__storage_, scopes),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "endpointParams",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
+        .number = Config_FieldNumber_EndpointParams,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Config__storage_, endpointParams),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Config class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Config__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\003\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Event
+
+@implementation Event
+
+@dynamic hasAnnotations, annotations;
+
+typedef struct Event__storage_ {
+  uint32_t _has_storage_[1];
+  StringMap *annotations;
+} Event__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "annotations",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
+        .number = Event_FieldNumber_Annotations,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Event__storage_, annotations),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Event class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Event__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - Query
+
+@implementation Query
+
+@dynamic hasQuery, query;
+@dynamic hasFields, fields;
+
+typedef struct Query__storage_ {
+  uint32_t _has_storage_[1];
+  String *query;
+  String *fields;
+} Query__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "query",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Query_FieldNumber_Query,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(Query__storage_, query),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "fields",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Query_FieldNumber_Fields,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(Query__storage_, fields),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[Query class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(Query__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - TokenSet
+
+@implementation TokenSet
+
+@dynamic tokens, tokens_Count;
+
+typedef struct TokenSet__storage_ {
+  uint32_t _has_storage_[1];
+  NSMutableDictionary *tokens;
+} TokenSet__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "tokens",
+        .dataTypeSpecific.className = GPBStringifySymbol(Token),
+        .number = TokenSet_FieldNumber_Tokens,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(TokenSet__storage_, tokens),
+        .flags = GPBFieldMapKeyString,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[TokenSet class]
+                                     rootClass:[CommonRoot class]
+                                          file:CommonRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(TokenSet__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

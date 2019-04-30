@@ -15,58 +15,6 @@
     "application/json"
   ],
   "paths": {
-    "/admin/cache/start": {
-      "post": {
-        "operationId": "StartCache",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiStartCacheRequest"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
-    "/admin/cache/stop": {
-      "post": {
-        "operationId": "StopCache",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonEmpty"
-            }
-          }
-        ],
-        "tags": [
-          "AdminService"
-        ]
-      }
-    },
     "/contact/call/blast": {
       "post": {
         "operationId": "SendCallBlast",
@@ -396,7 +344,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/commonBytes"
+              "$ref": "#/definitions/apiUser"
             }
           }
         ],
@@ -412,7 +360,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/apiUser"
+              "$ref": "#/definitions/commonEmpty"
             }
           }
         },
@@ -500,7 +448,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/apiIDBody"
+              "$ref": "#/definitions/apiUser"
             }
           }
         ],
@@ -853,17 +801,6 @@
         }
       }
     },
-    "apiIDBody": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "#/definitions/commonIdentifier"
-        },
-        "body": {
-          "$ref": "#/definitions/commonBytes"
-        }
-      }
-    },
     "apiIdentity": {
       "type": "object",
       "properties": {
@@ -1039,14 +976,6 @@
         }
       }
     },
-    "apiStartCacheRequest": {
-      "type": "object",
-      "properties": {
-        "frequency": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
     "apiSubscribeRequest": {
       "type": "object",
       "properties": {
@@ -1180,15 +1109,6 @@
           "items": {
             "$ref": "#/definitions/apiIdentity"
           }
-        }
-      }
-    },
-    "commonBytes": {
-      "type": "object",
-      "properties": {
-        "bits": {
-          "type": "string",
-          "format": "byte"
         }
       }
     },

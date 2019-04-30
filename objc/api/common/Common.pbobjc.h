@@ -27,34 +27,12 @@
 
 CF_EXTERN_C_BEGIN
 
-@class Bytes;
-@class Int64;
 @class String;
+@class StringArray;
 @class StringMap;
+@class Token;
 
 NS_ASSUME_NONNULL_BEGIN
-
-#pragma mark - Enum HTTPMethod
-
-typedef GPB_ENUM(HTTPMethod) {
-  /**
-   * Value used if any message's field encounters a value that is not defined
-   * by this enum. The message will also have C functions to get/set the rawValue
-   * of the field.
-   **/
-  HTTPMethod_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
-  HTTPMethod_Get = 0,
-  HTTPMethod_Post = 1,
-  HTTPMethod_Patch = 2,
-};
-
-GPBEnumDescriptor *HTTPMethod_EnumDescriptor(void);
-
-/**
- * Checks to see if the given value is defined by the enum or was not known at
- * the time this source was generated.
- **/
-BOOL HTTPMethod_IsValidValue(int32_t value);
 
 #pragma mark - CommonRoot
 
@@ -80,18 +58,6 @@ typedef GPB_ENUM(String_FieldNumber) {
 @interface String : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *text;
-
-@end
-
-#pragma mark - Bytes
-
-typedef GPB_ENUM(Bytes_FieldNumber) {
-  Bytes_FieldNumber_Bits = 1,
-};
-
-@interface Bytes : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSData *bits;
 
 @end
 
@@ -167,74 +133,6 @@ typedef GPB_ENUM(Float64_FieldNumber) {
 
 @end
 
-#pragma mark - RGBA
-
-typedef GPB_ENUM(RGBA_FieldNumber) {
-  RGBA_FieldNumber_R = 1,
-  RGBA_FieldNumber_G = 2,
-  RGBA_FieldNumber_B = 3,
-  RGBA_FieldNumber_A = 4,
-};
-
-@interface RGBA : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *r;
-/** Test to see if @c r has been set. */
-@property(nonatomic, readwrite) BOOL hasR;
-
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *g;
-/** Test to see if @c g has been set. */
-@property(nonatomic, readwrite) BOOL hasG;
-
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *b;
-/** Test to see if @c b has been set. */
-@property(nonatomic, readwrite) BOOL hasB;
-
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *a;
-/** Test to see if @c a has been set. */
-@property(nonatomic, readwrite) BOOL hasA;
-
-@end
-
-#pragma mark - HTTPRequest
-
-typedef GPB_ENUM(HTTPRequest_FieldNumber) {
-  HTTPRequest_FieldNumber_Method = 1,
-  HTTPRequest_FieldNumber_URL = 2,
-  HTTPRequest_FieldNumber_Form = 3,
-  HTTPRequest_FieldNumber_Body = 4,
-};
-
-@interface HTTPRequest : GPBMessage
-
-@property(nonatomic, readwrite) HTTPMethod method;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *URL;
-/** Test to see if @c URL has been set. */
-@property(nonatomic, readwrite) BOOL hasURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *form;
-/** Test to see if @c form has been set. */
-@property(nonatomic, readwrite) BOOL hasForm;
-
-@property(nonatomic, readwrite, strong, null_resettable) Bytes *body;
-/** Test to see if @c body has been set. */
-@property(nonatomic, readwrite) BOOL hasBody;
-
-@end
-
-/**
- * Fetches the raw value of a @c HTTPRequest's @c method property, even
- * if the value was not defined by the enum at the time the code was generated.
- **/
-int32_t HTTPRequest_Method_RawValue(HTTPRequest *message);
-/**
- * Sets the raw value of an @c HTTPRequest's @c method property, allowing
- * it to be set to a value that was not defined by the enum at the time the code
- * was generated.
- **/
-void SetHTTPRequest_Method_RawValue(HTTPRequest *message, int32_t value);
-
 #pragma mark - Token
 
 typedef GPB_ENUM(Token_FieldNumber) {
@@ -266,6 +164,87 @@ typedef GPB_ENUM(Token_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *idToken;
 /** Test to see if @c idToken has been set. */
 @property(nonatomic, readwrite) BOOL hasIdToken;
+
+@end
+
+#pragma mark - Config
+
+typedef GPB_ENUM(Config_FieldNumber) {
+  Config_FieldNumber_ClientId = 1,
+  Config_FieldNumber_ClientSecret = 2,
+  Config_FieldNumber_TokenURL = 3,
+  Config_FieldNumber_Scopes = 4,
+  Config_FieldNumber_EndpointParams = 5,
+};
+
+@interface Config : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
+/** Test to see if @c clientId has been set. */
+@property(nonatomic, readwrite) BOOL hasClientId;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
+/** Test to see if @c clientSecret has been set. */
+@property(nonatomic, readwrite) BOOL hasClientSecret;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
+/** Test to see if @c tokenURL has been set. */
+@property(nonatomic, readwrite) BOOL hasTokenURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
+/** Test to see if @c scopes has been set. */
+@property(nonatomic, readwrite) BOOL hasScopes;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *endpointParams;
+/** Test to see if @c endpointParams has been set. */
+@property(nonatomic, readwrite) BOOL hasEndpointParams;
+
+@end
+
+#pragma mark - Event
+
+typedef GPB_ENUM(Event_FieldNumber) {
+  Event_FieldNumber_Annotations = 10,
+};
+
+@interface Event : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
+/** Test to see if @c annotations has been set. */
+@property(nonatomic, readwrite) BOOL hasAnnotations;
+
+@end
+
+#pragma mark - Query
+
+typedef GPB_ENUM(Query_FieldNumber) {
+  Query_FieldNumber_Query = 4,
+  Query_FieldNumber_Fields = 5,
+};
+
+@interface Query : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *query;
+/** Test to see if @c query has been set. */
+@property(nonatomic, readwrite) BOOL hasQuery;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *fields;
+/** Test to see if @c fields has been set. */
+@property(nonatomic, readwrite) BOOL hasFields;
+
+@end
+
+#pragma mark - TokenSet
+
+typedef GPB_ENUM(TokenSet_FieldNumber) {
+  TokenSet_FieldNumber_Tokens = 1,
+};
+
+@interface TokenSet : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, Token*> *tokens;
+/** The number of items in @c tokens without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tokens_Count;
 
 @end
 

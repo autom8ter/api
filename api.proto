@@ -130,7 +130,7 @@ service UserService {
       body: "*"
     };
     }
-    rpc CreateUser(common.Bytes) returns (User) {
+    rpc CreateUser(User) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/create"
       body: "*"
@@ -142,13 +142,13 @@ service UserService {
       body: "*"
     };
     }
-    rpc DeleteUser(common.Identifier) returns (User) {
+    rpc DeleteUser(common.Identifier) returns (common.Empty) {
         option (google.api.http) = {
       post: "/resource/user/get"
       body: "*"
     };
     }
-    rpc UpdateUser(IDBody) returns (User) {
+    rpc UpdateUser(User) returns (User) {
         option (google.api.http) = {
       post: "/resource/user/update"
       body: "*"
@@ -157,21 +157,6 @@ service UserService {
     rpc UserRoles(common.Identifier) returns (stream Role) {
         option (google.api.http) = {
       post: "/resource/user/roles"
-      body: "*"
-    };
-    }
-}
-
-service AdminService {
-    rpc StartCache(StartCacheRequest) returns (common.Empty) {
-    option (google.api.http) = {
-      post: "/admin/cache/start"
-      body: "*"
-    };
-}
-    rpc StopCache(common.Empty) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/admin/cache/stop"
       body: "*"
     };
     }
@@ -295,11 +280,8 @@ message Identity{
 }
 
 message Auth {
-    common.String domain =1;
-    common.String client_id=2;
-    common.String client_secret=3;
-    common.String redirect=4;
-    repeated Scope scopes=5;
+    common.Config config =1;
+    common.TokenSet token_set=3;
 }
 
 
@@ -316,49 +298,6 @@ message Jwks {
     repeated JSONWebKeys keys=1;
 }
 
-enum Scope {
-    OPENID =0;
-    PROFILE =1;
-    EMAIL =2;
-    READ_USERS=3;
-    READ_USER_IDP_TOKENS=4;
-    CREATE_USERS=5;
-    READ_STATS=6;
-    READ_EMAIL_TEMPLATES =7;
-    UPDATE_EMAIL_TEMPLATES=8;
-    CREATE_EMAIL_TEMPLATES=9;
-    READ_RULES =10;
-    UPDATE_RULES=11;
-    CREATE_RULES=12;
-    DELETE_RULES=13;
-    READ_ROLES =14;
-    UPDATE_ROLES=15;
-    CREATE_ROLES=16;
-    DELETE_ROLES=17;
-    READ_LOGS=18;
-}
-
-enum URL {
-    USER_INFOURL =0;
-    TOKENURL =1;
-    AUTHORIZEURL =2;
-    USERSURL=3;
-    CLIENTSURL=4;
-    GRANTSURL=5;
-    RULESURL=6;
-    ROLESURL =7;
-    LOGSURL=8;
-    STATSURL=9;
-    CONNECTIONSURL =10;
-    TENANTSURL=11;
-    EMAIL_TEMPLATEURL=12;
-    EMAILURL =13;
-    SEARCH_USERSURL=14;
-    DEVICEURL =18;
-    JWKSURL =19;
-    CLIENT_GRANTSURL =20;
-}
-
 enum Plan {
     FREE =0;
     BASIC=1;
@@ -368,7 +307,7 @@ enum Plan {
 message RenderRequest {
     common.String name=1;
     common.String text=2;
-    common.Bytes data=3;
+    common.String data=3;
 }
 
 message SearchPhoneNumberRequest {
@@ -403,7 +342,7 @@ message TokenQuery {
 
 message IDBody {
     common.Identifier id =1;
-    common.Bytes  body =2;
+    common.String  body =2;
 }
 
 message IDStrings {
@@ -443,7 +382,6 @@ message SubscriptionResponse {
     common.Int64 amount=2;
     common.Int64 days_until_due=3;
     common.StringMap annotations=10;
-
     Plan plan=4;
     User user=5;
     common.String status=6;
@@ -456,10 +394,5 @@ message FaxResponse {
     common.String to=4;
     common.String from=5;
     common.String  status =6;
-
     common.StringMap annotations=10;
-}
-
-message StartCacheRequest {
-    common.String frequency =1;
 }
