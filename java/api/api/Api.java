@@ -27523,27 +27523,22 @@ public final class Api {
       "be\022\025.api.SubscribeRequest\032\t.api.User\"\025\202\323" +
       "\344\223\002\017\"\n/subscribe:\001*\022J\n\013Unsubscribe\022\027.api" +
       ".UnSubscribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014" +
-      "/unsubscribe:\001*2\315\001\n\014CacheService\022<\n\003Get\022" +
-      "\016.common.String\032\016.common.String\"\025\202\323\344\223\002\017\"" +
-      "\n/cache/get:\001*\022?\n\006Exists\022\016.common.String" +
-      "\032\016.common.String\"\025\202\323\344\223\002\017\"\n/cache/get:\001*\022" +
-      ">\n\003Set\022\021.common.StringMap\032\r.common.Empty" +
-      "\"\025\202\323\344\223\002\017\"\n/cache/set:\001*2\\\n\025Authenticatio" +
-      "nService\022C\n\007GetUser\022\021.common.AuthToken\032\t" +
-      ".api.User\"\032\202\323\344\223\002\024\"\017/authentication:\001*2\230\003" +
-      "\n\013UserService\022H\n\nQueryUsers\022\n.api.Query\032" +
-      "\t.api.User\"!\202\323\344\223\002\033\"\026/management/user/que" +
-      "ry:\001*0\001\022I\n\007GetUser\022\022.common.Identifier\032\t" +
-      ".api.User\"\037\202\323\344\223\002\031\"\024/management/user/get:" +
-      "\001*\022F\n\nUpdateUser\022\t.api.User\032\t.api.User\"\"" +
-      "\202\323\344\223\002\034\"\027/management/user/update:\001*\022O\n\tUs" +
-      "erRoles\022\022.common.Identifier\032\t.api.Role\"!" +
-      "\202\323\344\223\002\033\"\026/management/user/roles:\001*0\001\022[\n\014A" +
-      "ddUserRoles\022\030.api.AddUserRolesRequest\032\016." +
-      "common.String\"!\202\323\344\223\002\033\"\026/management/user/" +
-      "roles:\001*2N\n\014EventService\022>\n\tGetEvents\022\017." +
-      "api.EventQuery\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/eve" +
-      "nts:\001*0\001b\006proto3"
+      "/unsubscribe:\001*2\\\n\025AuthenticationService" +
+      "\022C\n\007GetUser\022\021.common.AuthToken\032\t.api.Use" +
+      "r\"\032\202\323\344\223\002\024\"\017/authentication:\001*2\230\003\n\013UserSe" +
+      "rvice\022H\n\nQueryUsers\022\n.api.Query\032\t.api.Us" +
+      "er\"!\202\323\344\223\002\033\"\026/management/user/query:\001*0\001\022" +
+      "I\n\007GetUser\022\022.common.Identifier\032\t.api.Use" +
+      "r\"\037\202\323\344\223\002\031\"\024/management/user/get:\001*\022F\n\nUp" +
+      "dateUser\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027" +
+      "/management/user/update:\001*\022O\n\tUserRoles\022" +
+      "\022.common.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026" +
+      "/management/user/roles:\001*0\001\022[\n\014AddUserRo" +
+      "les\022\030.api.AddUserRolesRequest\032\016.common.S" +
+      "tring\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*" +
+      "2N\n\014EventService\022>\n\tGetEvents\022\017.api.Even" +
+      "tQuery\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

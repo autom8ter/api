@@ -63,42 +63,6 @@ closes the connection when "ctx" gets done.
 func RegisterAuthenticationServiceServer(s *grpc.Server, srv AuthenticationServiceServer)
 ```
 
-#### func  RegisterCacheServiceHandler
-
-```go
-func RegisterCacheServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterCacheServiceHandler registers the http handlers for service CacheService
-to "mux". The handlers forward requests to the grpc endpoint over "conn".
-
-#### func  RegisterCacheServiceHandlerClient
-
-```go
-func RegisterCacheServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client CacheServiceClient) error
-```
-RegisterCacheServiceHandlerClient registers the http handlers for service
-CacheService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "CacheServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"CacheServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "CacheServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterCacheServiceHandlerFromEndpoint
-
-```go
-func RegisterCacheServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterCacheServiceHandlerFromEndpoint is same as RegisterCacheServiceHandler
-but automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
-
-#### func  RegisterCacheServiceServer
-
-```go
-func RegisterCacheServiceServer(s *grpc.Server, srv CacheServiceServer)
-```
-
 #### func  RegisterDebugServiceHandler
 
 ```go
@@ -492,6 +456,12 @@ func (m *AppMetadata) Reset()
 func (m *AppMetadata) String() string
 ```
 
+#### func (*AppMetadata) UnmarshalJSONFrom
+
+```go
+func (p *AppMetadata) UnmarshalJSONFrom(bits []byte) error
+```
+
 #### func (*AppMetadata) XXX_DiscardUnknown
 
 ```go
@@ -578,39 +548,6 @@ func (BillingInterval) EnumDescriptor() ([]byte, []int)
 ```go
 func (x BillingInterval) String() string
 ```
-
-#### type CacheServiceClient
-
-```go
-type CacheServiceClient interface {
-	Get(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
-	Exists(ctx context.Context, in *common.String, opts ...grpc.CallOption) (*common.String, error)
-	Set(ctx context.Context, in *common.StringMap, opts ...grpc.CallOption) (*common.Empty, error)
-}
-```
-
-CacheServiceClient is the client API for CacheService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewCacheServiceClient
-
-```go
-func NewCacheServiceClient(cc *grpc.ClientConn) CacheServiceClient
-```
-
-#### type CacheServiceServer
-
-```go
-type CacheServiceServer interface {
-	Get(context.Context, *common.String) (*common.String, error)
-	Exists(context.Context, *common.String) (*common.String, error)
-	Set(context.Context, *common.StringMap) (*common.Empty, error)
-}
-```
-
-CacheServiceServer is the server API for CacheService service.
 
 #### type Card
 
@@ -2036,6 +1973,12 @@ func (m *Plan) Reset()
 func (m *Plan) String() string
 ```
 
+#### func (*Plan) UnmarshalJSONFrom
+
+```go
+func (p *Plan) UnmarshalJSONFrom(bits []byte) error
+```
+
 #### func (*Plan) XXX_DiscardUnknown
 
 ```go
@@ -2126,6 +2069,12 @@ func (m *Product) Reset()
 
 ```go
 func (m *Product) String() string
+```
+
+#### func (*Product) UnmarshalJSONFrom
+
+```go
+func (p *Product) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*Product) XXX_DiscardUnknown
@@ -2297,6 +2246,12 @@ func (m *Role) Reset()
 
 ```go
 func (m *Role) String() string
+```
+
+#### func (*Role) UnmarshalJSONFrom
+
+```go
+func (p *Role) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*Role) XXX_DiscardUnknown
@@ -2816,6 +2771,12 @@ func (m *UserMetadata) Reset()
 
 ```go
 func (m *UserMetadata) String() string
+```
+
+#### func (*UserMetadata) UnmarshalJSONFrom
+
+```go
+func (p *UserMetadata) UnmarshalJSONFrom(bits []byte) error
 ```
 
 #### func (*UserMetadata) XXX_DiscardUnknown

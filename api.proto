@@ -29,27 +29,6 @@ service SubscriptionService {
     }
 }
 
-service CacheService {
-    rpc Get(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/cache/get"
-      body: "*"
-    };
-    }
-    rpc Exists(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/cache/get"
-      body: "*"
-    };
-    }
-    rpc Set(common.StringMap) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/cache/set"
-      body: "*"
-    };
-    }
-}
-
 service AuthenticationService {
     rpc GetUser(common.AuthToken) returns (User) {
         option (google.api.http) = {

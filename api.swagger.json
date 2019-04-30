@@ -41,58 +41,6 @@
         ]
       }
     },
-    "/cache/get": {
-      "post": {
-        "operationId": "Exists",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonString"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonString"
-            }
-          }
-        ],
-        "tags": [
-          "CacheService"
-        ]
-      }
-    },
-    "/cache/set": {
-      "post": {
-        "operationId": "Set",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonStringMap"
-            }
-          }
-        ],
-        "tags": [
-          "CacheService"
-        ]
-      }
-    },
     "/debug": {
       "post": {
         "operationId": "Echo",
@@ -529,9 +477,6 @@
           "$ref": "#/definitions/commonString"
         }
       }
-    },
-    "commonEmpty": {
-      "type": "object"
     },
     "commonIdentifier": {
       "type": "object",
