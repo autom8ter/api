@@ -67,6 +67,110 @@
         ]
       }
     },
+    "/documents": {
+      "post": {
+        "operationId": "GetDocument",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiDocument"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiDocumentQuery"
+            }
+          }
+        ],
+        "tags": [
+          "DocumentService"
+        ]
+      }
+    },
+    "/documents/create": {
+      "post": {
+        "operationId": "Delete",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiDocumentQuery"
+            }
+          }
+        ],
+        "tags": [
+          "DocumentService"
+        ]
+      }
+    },
+    "/documents/list": {
+      "post": {
+        "operationId": "ListDocuments",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiDocument"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiCategoryQuery"
+            }
+          }
+        ],
+        "tags": [
+          "DocumentService"
+        ]
+      }
+    },
+    "/documents/update": {
+      "post": {
+        "operationId": "Update",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiDocument"
+            }
+          }
+        ],
+        "tags": [
+          "DocumentService"
+        ]
+      }
+    },
     "/events": {
       "post": {
         "operationId": "GetEvents",
@@ -282,6 +386,39 @@
         }
       }
     },
+    "apiCategoryQuery": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/commonString"
+        }
+      }
+    },
+    "apiDocument": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/commonString"
+        },
+        "name": {
+          "$ref": "#/definitions/commonString"
+        },
+        "data": {
+          "$ref": "#/definitions/commonStringMap"
+        }
+      }
+    },
+    "apiDocumentQuery": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/commonString"
+        },
+        "name": {
+          "$ref": "#/definitions/commonIdentifier"
+        }
+      }
+    },
     "apiEvent": {
       "type": "object",
       "properties": {
@@ -485,6 +622,9 @@
           "format": "boolean"
         }
       }
+    },
+    "commonEmpty": {
+      "type": "object"
     },
     "commonIdentifier": {
       "type": "object",

@@ -1573,6 +1573,12 @@ type StringMap struct {
 ```
 
 
+#### func  StringMapFromData
+
+```go
+func StringMapFromData(data map[string]interface{}) *StringMap
+```
+
 #### func  ToMap
 
 ```go

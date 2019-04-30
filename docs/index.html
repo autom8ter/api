@@ -195,6 +195,10 @@
                 </li>
               
                 <li>
+                  <a href="#api.CategoryQuery"><span class="badge">M</span>CategoryQuery</a>
+                </li>
+              
+                <li>
                   <a href="#api.ClientCredentials"><span class="badge">M</span>ClientCredentials</a>
                 </li>
               
@@ -204,6 +208,10 @@
               
                 <li>
                   <a href="#api.Document"><span class="badge">M</span>Document</a>
+                </li>
+              
+                <li>
+                  <a href="#api.DocumentQuery"><span class="badge">M</span>DocumentQuery</a>
                 </li>
               
                 <li>
@@ -275,6 +283,10 @@
               
                 <li>
                   <a href="#api.DebugService"><span class="badge">S</span>DebugService</a>
+                </li>
+              
+                <li>
+                  <a href="#api.DocumentService"><span class="badge">S</span>DocumentService</a>
                 </li>
               
                 <li>
@@ -473,6 +485,29 @@
 
         
       
+        <h3 id="api.CategoryQuery">CategoryQuery</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>category</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.ClientCredentials">ClientCredentials</h3>
         <p></p>
 
@@ -574,6 +609,36 @@
                 <tr>
                   <td>data</td>
                   <td><a href="#common.StringMap">common.StringMap</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.DocumentQuery">DocumentQuery</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>category</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#common.Identifier">common.Identifier</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1441,6 +1506,52 @@
                 <td>Echo</td>
                 <td><a href="#common.String">.common.String</a></td>
                 <td><a href="#common.String">.common.String</a></td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="api.DocumentService">DocumentService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>GetDocument</td>
+                <td><a href="#api.DocumentQuery">DocumentQuery</a></td>
+                <td><a href="#api.Document">Document</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Update</td>
+                <td><a href="#api.Document">Document</a></td>
+                <td><a href="#common.Empty">.common.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Create</td>
+                <td><a href="#api.Document">Document</a></td>
+                <td><a href="#common.Empty">.common.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>Delete</td>
+                <td><a href="#api.DocumentQuery">DocumentQuery</a></td>
+                <td><a href="#common.Empty">.common.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ListDocuments</td>
+                <td><a href="#api.CategoryQuery">CategoryQuery</a></td>
+                <td><a href="#api.Document">Document</a> stream</td>
                 <td><p></p></td>
               </tr>
             

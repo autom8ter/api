@@ -54,6 +54,103 @@ static GPBFileDescriptor *ApiRoot_FileDescriptor(void) {
   return descriptor;
 }
 
+#pragma mark - CategoryQuery
+
+@implementation CategoryQuery
+
+@dynamic hasCategory, category;
+
+typedef struct CategoryQuery__storage_ {
+  uint32_t _has_storage_[1];
+  String *category;
+} CategoryQuery__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "category",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = CategoryQuery_FieldNumber_Category,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(CategoryQuery__storage_, category),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[CategoryQuery class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(CategoryQuery__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - DocumentQuery
+
+@implementation DocumentQuery
+
+@dynamic hasCategory, category;
+@dynamic hasName, name;
+
+typedef struct DocumentQuery__storage_ {
+  uint32_t _has_storage_[1];
+  String *category;
+  Identifier *name;
+} DocumentQuery__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "category",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = DocumentQuery_FieldNumber_Category,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(DocumentQuery__storage_, category),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "name",
+        .dataTypeSpecific.className = GPBStringifySymbol(Identifier),
+        .number = DocumentQuery_FieldNumber_Name,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(DocumentQuery__storage_, name),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[DocumentQuery class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(DocumentQuery__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - AddUserRolesRequest
 
 @implementation AddUserRolesRequest

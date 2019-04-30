@@ -8,48 +8,6 @@ It translates gRPC into RESTful JSON APIs.
 
 ## Usage
 
-```go
-var BillingInterval_name = map[int32]string{
-	0: "DAILY",
-	1: "WEEKLY",
-	2: "MONTHLY",
-	3: "YEARLY",
-}
-```
-
-```go
-var BillingInterval_value = map[string]int32{
-	"DAILY":   0,
-	"WEEKLY":  1,
-	"MONTHLY": 2,
-	"YEARLY":  3,
-}
-```
-
-```go
-var EventType_name = map[int32]string{
-	0: "LOGIN_CODE_SENT",
-	1: "DELETED_USER",
-	2: "FAILED_LOGIN",
-	3: "FAILED_API_OPERATION",
-	4: "CON",
-	5: "FAILED_CORS",
-	6: "SUCCESS_EMAIL_VERIFICATION",
-}
-```
-
-```go
-var EventType_value = map[string]int32{
-	"LOGIN_CODE_SENT":            0,
-	"DELETED_USER":               1,
-	"FAILED_LOGIN":               2,
-	"FAILED_API_OPERATION":       3,
-	"CON":                        4,
-	"FAILED_CORS":                5,
-	"SUCCESS_EMAIL_VERIFICATION": 6,
-}
-```
-
 #### func  RegisterAuthenticationServiceHandler
 
 ```go
@@ -121,6 +79,43 @@ done.
 
 ```go
 func RegisterDebugServiceServer(s *grpc.Server, srv DebugServiceServer)
+```
+
+#### func  RegisterDocumentServiceHandler
+
+```go
+func RegisterDocumentServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+```
+RegisterDocumentServiceHandler registers the http handlers for service
+DocumentService to "mux". The handlers forward requests to the grpc endpoint
+over "conn".
+
+#### func  RegisterDocumentServiceHandlerClient
+
+```go
+func RegisterDocumentServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DocumentServiceClient) error
+```
+RegisterDocumentServiceHandlerClient registers the http handlers for service
+DocumentService to "mux". The handlers forward requests to the grpc endpoint
+over the given implementation of "DocumentServiceClient". Note: the gRPC
+framework executes interceptors within the gRPC handler. If the passed in
+"DocumentServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
+client etc.) then it will be up to the passed in "DocumentServiceClient" to call
+the correct interceptors.
+
+#### func  RegisterDocumentServiceHandlerFromEndpoint
+
+```go
+func RegisterDocumentServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+```
+RegisterDocumentServiceHandlerFromEndpoint is same as
+RegisterDocumentServiceHandler but automatically dials to "endpoint" and closes
+the connection when "ctx" gets done.
+
+#### func  RegisterDocumentServiceServer
+
+```go
+func RegisterDocumentServiceServer(s *grpc.Server, srv DocumentServiceServer)
 ```
 
 #### func  RegisterEventServiceHandler
@@ -315,14 +310,14 @@ func (m *AddUserRolesRequest) XXX_Unmarshal(b []byte) error
 
 ```go
 type Address struct {
-	City                 string   `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
-	State                string   `protobuf:"bytes,2,opt,name=state,proto3" json:"state,omitempty"`
-	Line1                string   `protobuf:"bytes,3,opt,name=line1,proto3" json:"line1,omitempty"`
-	Line2                string   `protobuf:"bytes,4,opt,name=line2,proto3" json:"line2,omitempty"`
-	Zip                  string   `protobuf:"bytes,5,opt,name=zip,proto3" json:"zip,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	City                 *common.String `protobuf:"bytes,1,opt,name=city,proto3" json:"city,omitempty"`
+	State                *common.String `protobuf:"bytes,2,opt,name=state,proto3" json:"state,omitempty"`
+	Line1                *common.String `protobuf:"bytes,3,opt,name=line1,proto3" json:"line1,omitempty"`
+	Line2                *common.String `protobuf:"bytes,4,opt,name=line2,proto3" json:"line2,omitempty"`
+	Zip                  *common.String `protobuf:"bytes,5,opt,name=zip,proto3" json:"zip,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 ```
 
@@ -336,31 +331,31 @@ func (*Address) Descriptor() ([]byte, []int)
 #### func (*Address) GetCity
 
 ```go
-func (m *Address) GetCity() string
+func (m *Address) GetCity() *common.String
 ```
 
 #### func (*Address) GetLine1
 
 ```go
-func (m *Address) GetLine1() string
+func (m *Address) GetLine1() *common.String
 ```
 
 #### func (*Address) GetLine2
 
 ```go
-func (m *Address) GetLine2() string
+func (m *Address) GetLine2() *common.String
 ```
 
 #### func (*Address) GetState
 
 ```go
-func (m *Address) GetState() string
+func (m *Address) GetState() *common.String
 ```
 
 #### func (*Address) GetZip
 
 ```go
-func (m *Address) GetZip() string
+func (m *Address) GetZip() *common.String
 ```
 
 #### func (*Address) ProtoMessage
@@ -545,34 +540,6 @@ type AuthenticationServiceServer interface {
 
 AuthenticationServiceServer is the server API for AuthenticationService service.
 
-#### type BillingInterval
-
-```go
-type BillingInterval int32
-```
-
-
-```go
-const (
-	BillingInterval_DAILY   BillingInterval = 0
-	BillingInterval_WEEKLY  BillingInterval = 1
-	BillingInterval_MONTHLY BillingInterval = 2
-	BillingInterval_YEARLY  BillingInterval = 3
-)
-```
-
-#### func (BillingInterval) EnumDescriptor
-
-```go
-func (BillingInterval) EnumDescriptor() ([]byte, []int)
-```
-
-#### func (BillingInterval) String
-
-```go
-func (x BillingInterval) String() string
-```
-
 #### type Card
 
 ```go
@@ -676,6 +643,78 @@ func (m *Card) XXX_Size() int
 
 ```go
 func (m *Card) XXX_Unmarshal(b []byte) error
+```
+
+#### type CategoryQuery
+
+```go
+type CategoryQuery struct {
+	Category             *common.String `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
+}
+```
+
+
+#### func (*CategoryQuery) Descriptor
+
+```go
+func (*CategoryQuery) Descriptor() ([]byte, []int)
+```
+
+#### func (*CategoryQuery) GetCategory
+
+```go
+func (m *CategoryQuery) GetCategory() *common.String
+```
+
+#### func (*CategoryQuery) ProtoMessage
+
+```go
+func (*CategoryQuery) ProtoMessage()
+```
+
+#### func (*CategoryQuery) Reset
+
+```go
+func (m *CategoryQuery) Reset()
+```
+
+#### func (*CategoryQuery) String
+
+```go
+func (m *CategoryQuery) String() string
+```
+
+#### func (*CategoryQuery) XXX_DiscardUnknown
+
+```go
+func (m *CategoryQuery) XXX_DiscardUnknown()
+```
+
+#### func (*CategoryQuery) XXX_Marshal
+
+```go
+func (m *CategoryQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*CategoryQuery) XXX_Merge
+
+```go
+func (m *CategoryQuery) XXX_Merge(src proto.Message)
+```
+
+#### func (*CategoryQuery) XXX_Size
+
+```go
+func (m *CategoryQuery) XXX_Size() int
+```
+
+#### func (*CategoryQuery) XXX_Unmarshal
+
+```go
+func (m *CategoryQuery) XXX_Unmarshal(b []byte) error
 ```
 
 #### type ClientCredentials
@@ -904,6 +943,378 @@ type DebugServiceServer interface {
 
 DebugServiceServer is the server API for DebugService service.
 
+#### type DefaultGCPCredentials
+
+```go
+type DefaultGCPCredentials struct {
+	Scopes               *common.StringArray `protobuf:"bytes,1,opt,name=scopes,proto3" json:"scopes,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
+}
+```
+
+
+#### func  NewGoogleDefaultCredentials
+
+```go
+func NewGoogleDefaultCredentials(scopes []string) *DefaultGCPCredentials
+```
+
+#### func (*DefaultGCPCredentials) Client
+
+```go
+func (c *DefaultGCPCredentials) Client(ctx context.Context) *http.Client
+```
+
+#### func (*DefaultGCPCredentials) Debugf
+
+```go
+func (s *DefaultGCPCredentials) Debugf(format string)
+```
+
+#### func (*DefaultGCPCredentials) Descriptor
+
+```go
+func (*DefaultGCPCredentials) Descriptor() ([]byte, []int)
+```
+
+#### func (*DefaultGCPCredentials) FindCredentials
+
+```go
+func (d *DefaultGCPCredentials) FindCredentials() (*google.Credentials, error)
+```
+
+#### func (*DefaultGCPCredentials) GetScopes
+
+```go
+func (m *DefaultGCPCredentials) GetScopes() *common.StringArray
+```
+
+#### func (*DefaultGCPCredentials) NewAPIClientSet
+
+```go
+func (c *DefaultGCPCredentials) NewAPIClientSet(ctx context.Context, addr string) (*ClientSet, error)
+```
+
+#### func (*DefaultGCPCredentials) PerRPCCredentials
+
+```go
+func (c *DefaultGCPCredentials) PerRPCCredentials() (credentials.PerRPCCredentials, error)
+```
+
+#### func (*DefaultGCPCredentials) ProtoMessage
+
+```go
+func (*DefaultGCPCredentials) ProtoMessage()
+```
+
+#### func (*DefaultGCPCredentials) Reset
+
+```go
+func (m *DefaultGCPCredentials) Reset()
+```
+
+#### func (*DefaultGCPCredentials) String
+
+```go
+func (m *DefaultGCPCredentials) String() string
+```
+
+#### func (*DefaultGCPCredentials) ToContext
+
+```go
+func (s *DefaultGCPCredentials) ToContext(ctx context.Context, key string) context.Context
+```
+
+#### func (*DefaultGCPCredentials) Token
+
+```go
+func (d *DefaultGCPCredentials) Token() (*oauth2.Token, error)
+```
+
+#### func (*DefaultGCPCredentials) Validate
+
+```go
+func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error) error
+```
+
+#### func (*DefaultGCPCredentials) XXX_DiscardUnknown
+
+```go
+func (m *DefaultGCPCredentials) XXX_DiscardUnknown()
+```
+
+#### func (*DefaultGCPCredentials) XXX_Marshal
+
+```go
+func (m *DefaultGCPCredentials) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*DefaultGCPCredentials) XXX_Merge
+
+```go
+func (m *DefaultGCPCredentials) XXX_Merge(src proto.Message)
+```
+
+#### func (*DefaultGCPCredentials) XXX_Size
+
+```go
+func (m *DefaultGCPCredentials) XXX_Size() int
+```
+
+#### func (*DefaultGCPCredentials) XXX_Unmarshal
+
+```go
+func (m *DefaultGCPCredentials) XXX_Unmarshal(b []byte) error
+```
+
+#### type Document
+
+```go
+type Document struct {
+	Category             *common.String    `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
+	Name                 *common.String    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Data                 *common.StringMap `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
+}
+```
+
+
+#### func  NewDocument
+
+```go
+func NewDocument(category, name string, data map[string]interface{}) *Document
+```
+
+#### func (*Document) Descriptor
+
+```go
+func (*Document) Descriptor() ([]byte, []int)
+```
+
+#### func (*Document) GetCategory
+
+```go
+func (m *Document) GetCategory() *common.String
+```
+
+#### func (*Document) GetData
+
+```go
+func (m *Document) GetData() *common.StringMap
+```
+
+#### func (*Document) GetName
+
+```go
+func (m *Document) GetName() *common.String
+```
+
+#### func (*Document) JSONString
+
+```go
+func (p *Document) JSONString() *common.String
+```
+
+#### func (*Document) ProtoMessage
+
+```go
+func (*Document) ProtoMessage()
+```
+
+#### func (*Document) Render
+
+```go
+func (d *Document) Render(s *common.String, w io.Writer) error
+```
+
+#### func (*Document) Reset
+
+```go
+func (m *Document) Reset()
+```
+
+#### func (*Document) String
+
+```go
+func (m *Document) String() string
+```
+
+#### func (*Document) UnmarshalJSONFrom
+
+```go
+func (p *Document) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*Document) XXX_DiscardUnknown
+
+```go
+func (m *Document) XXX_DiscardUnknown()
+```
+
+#### func (*Document) XXX_Marshal
+
+```go
+func (m *Document) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Document) XXX_Merge
+
+```go
+func (m *Document) XXX_Merge(src proto.Message)
+```
+
+#### func (*Document) XXX_Size
+
+```go
+func (m *Document) XXX_Size() int
+```
+
+#### func (*Document) XXX_Unmarshal
+
+```go
+func (m *Document) XXX_Unmarshal(b []byte) error
+```
+
+#### type DocumentQuery
+
+```go
+type DocumentQuery struct {
+	Category             *common.String     `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
+	Name                 *common.Identifier `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
+}
+```
+
+
+#### func (*DocumentQuery) Descriptor
+
+```go
+func (*DocumentQuery) Descriptor() ([]byte, []int)
+```
+
+#### func (*DocumentQuery) GetCategory
+
+```go
+func (m *DocumentQuery) GetCategory() *common.String
+```
+
+#### func (*DocumentQuery) GetName
+
+```go
+func (m *DocumentQuery) GetName() *common.Identifier
+```
+
+#### func (*DocumentQuery) ProtoMessage
+
+```go
+func (*DocumentQuery) ProtoMessage()
+```
+
+#### func (*DocumentQuery) Reset
+
+```go
+func (m *DocumentQuery) Reset()
+```
+
+#### func (*DocumentQuery) String
+
+```go
+func (m *DocumentQuery) String() string
+```
+
+#### func (*DocumentQuery) XXX_DiscardUnknown
+
+```go
+func (m *DocumentQuery) XXX_DiscardUnknown()
+```
+
+#### func (*DocumentQuery) XXX_Marshal
+
+```go
+func (m *DocumentQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*DocumentQuery) XXX_Merge
+
+```go
+func (m *DocumentQuery) XXX_Merge(src proto.Message)
+```
+
+#### func (*DocumentQuery) XXX_Size
+
+```go
+func (m *DocumentQuery) XXX_Size() int
+```
+
+#### func (*DocumentQuery) XXX_Unmarshal
+
+```go
+func (m *DocumentQuery) XXX_Unmarshal(b []byte) error
+```
+
+#### type DocumentServiceClient
+
+```go
+type DocumentServiceClient interface {
+	GetDocument(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*Document, error)
+	Update(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error)
+	Create(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error)
+	Delete(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*common.Empty, error)
+	ListDocuments(ctx context.Context, in *CategoryQuery, opts ...grpc.CallOption) (DocumentService_ListDocumentsClient, error)
+}
+```
+
+DocumentServiceClient is the client API for DocumentService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewDocumentServiceClient
+
+```go
+func NewDocumentServiceClient(cc *grpc.ClientConn) DocumentServiceClient
+```
+
+#### type DocumentServiceServer
+
+```go
+type DocumentServiceServer interface {
+	GetDocument(context.Context, *DocumentQuery) (*Document, error)
+	Update(context.Context, *Document) (*common.Empty, error)
+	Create(context.Context, *Document) (*common.Empty, error)
+	Delete(context.Context, *DocumentQuery) (*common.Empty, error)
+	ListDocuments(*CategoryQuery, DocumentService_ListDocumentsServer) error
+}
+```
+
+DocumentServiceServer is the server API for DocumentService service.
+
+#### type DocumentService_ListDocumentsClient
+
+```go
+type DocumentService_ListDocumentsClient interface {
+	Recv() (*Document, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type DocumentService_ListDocumentsServer
+
+```go
+type DocumentService_ListDocumentsServer interface {
+	Send(*Document) error
+	grpc.ServerStream
+}
+```
+
+
 #### type Event
 
 ```go
@@ -1054,13 +1465,13 @@ func (m *Event) XXX_Unmarshal(b []byte) error
 
 ```go
 type EventQuery struct {
-	Date                 string   `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 string   `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             string   `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	UserId               string   `protobuf:"bytes,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Date                 *common.String `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
+	Type                 *common.String `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	ClientId             *common.String `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	UserId               *common.String `protobuf:"bytes,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 ```
 
@@ -1074,25 +1485,25 @@ func (*EventQuery) Descriptor() ([]byte, []int)
 #### func (*EventQuery) GetClientId
 
 ```go
-func (m *EventQuery) GetClientId() string
+func (m *EventQuery) GetClientId() *common.String
 ```
 
 #### func (*EventQuery) GetDate
 
 ```go
-func (m *EventQuery) GetDate() string
+func (m *EventQuery) GetDate() *common.String
 ```
 
 #### func (*EventQuery) GetType
 
 ```go
-func (m *EventQuery) GetType() string
+func (m *EventQuery) GetType() *common.String
 ```
 
 #### func (*EventQuery) GetUserId
 
 ```go
-func (m *EventQuery) GetUserId() string
+func (m *EventQuery) GetUserId() *common.String
 ```
 
 #### func (*EventQuery) ProtoMessage
@@ -1192,37 +1603,6 @@ type EventService_GetEventsServer interface {
 ```
 
 
-#### type EventType
-
-```go
-type EventType int32
-```
-
-
-```go
-const (
-	EventType_LOGIN_CODE_SENT            EventType = 0
-	EventType_DELETED_USER               EventType = 1
-	EventType_FAILED_LOGIN               EventType = 2
-	EventType_FAILED_API_OPERATION       EventType = 3
-	EventType_CON                        EventType = 4
-	EventType_FAILED_CORS                EventType = 5
-	EventType_SUCCESS_EMAIL_VERIFICATION EventType = 6
-)
-```
-
-#### func (EventType) EnumDescriptor
-
-```go
-func (EventType) EnumDescriptor() ([]byte, []int)
-```
-
-#### func (EventType) String
-
-```go
-func (x EventType) String() string
-```
-
 #### type Identity
 
 ```go
@@ -1230,7 +1610,7 @@ type Identity struct {
 	Connection           *common.String     `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
 	UserId               *common.Identifier `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Provider             *common.String     `protobuf:"bytes,3,opt,name=provider,proto3" json:"provider,omitempty"`
-	IsSocial             bool               `protobuf:"varint,4,opt,name=isSocial,proto3" json:"isSocial,omitempty"`
+	IsSocial             *common.Bool       `protobuf:"bytes,4,opt,name=isSocial,proto3" json:"isSocial,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -1253,7 +1633,7 @@ func (m *Identity) GetConnection() *common.String
 #### func (*Identity) GetIsSocial
 
 ```go
-func (m *Identity) GetIsSocial() bool
+func (m *Identity) GetIsSocial() *common.Bool
 ```
 
 #### func (*Identity) GetProvider
@@ -1957,9 +2337,9 @@ func (m *OAuth2) XXX_Unmarshal(b []byte) error
 ```go
 type Plan struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Active               bool               `protobuf:"varint,2,opt,name=active,proto3" json:"active,omitempty"`
+	Active               *common.Bool       `protobuf:"bytes,2,opt,name=active,proto3" json:"active,omitempty"`
 	Amount               *common.Int64      `protobuf:"bytes,3,opt,name=amount,proto3" json:"amount,omitempty"`
-	Interval             BillingInterval    `protobuf:"varint,4,opt,name=interval,proto3,enum=api.BillingInterval" json:"interval,omitempty"`
+	Interval             *common.String     `protobuf:"bytes,4,opt,name=interval,proto3" json:"interval,omitempty"`
 	Nickname             *common.String     `protobuf:"bytes,5,opt,name=nickname,proto3" json:"nickname,omitempty"`
 	Product              *Product           `protobuf:"bytes,6,opt,name=product,proto3" json:"product,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
@@ -1978,7 +2358,7 @@ func (*Plan) Descriptor() ([]byte, []int)
 #### func (*Plan) GetActive
 
 ```go
-func (m *Plan) GetActive() bool
+func (m *Plan) GetActive() *common.Bool
 ```
 
 #### func (*Plan) GetAmount
@@ -1996,7 +2376,7 @@ func (m *Plan) GetId() *common.Identifier
 #### func (*Plan) GetInterval
 
 ```go
-func (m *Plan) GetInterval() BillingInterval
+func (m *Plan) GetInterval() *common.String
 ```
 
 #### func (*Plan) GetNickname
@@ -2559,12 +2939,12 @@ type User struct {
 	UserMetadata         *common.StringMap   `protobuf:"bytes,10,opt,name=user_metadata,json=userMetadata,proto3" json:"user_metadata,omitempty"`
 	AppMetadata          *common.StringMap   `protobuf:"bytes,11,opt,name=app_metadata,json=appMetadata,proto3" json:"app_metadata,omitempty"`
 	LastIp               *common.String      `protobuf:"bytes,12,opt,name=last_ip,json=lastIp,proto3" json:"last_ip,omitempty"`
-	Blocked              bool                `protobuf:"varint,13,opt,name=blocked,proto3" json:"blocked,omitempty"`
+	Blocked              *common.Bool        `protobuf:"bytes,13,opt,name=blocked,proto3" json:"blocked,omitempty"`
 	Multifactor          *common.StringArray `protobuf:"bytes,15,opt,name=multifactor,proto3" json:"multifactor,omitempty"`
 	CreatedAt            *common.String      `protobuf:"bytes,17,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt            *common.String      `protobuf:"bytes,18,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
-	PhoneVerified        bool                `protobuf:"varint,19,opt,name=phone_verified,json=phoneVerified,proto3" json:"phone_verified,omitempty"`
-	EmailVerified        bool                `protobuf:"varint,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
+	PhoneVerified        *common.Bool        `protobuf:"bytes,19,opt,name=phone_verified,json=phoneVerified,proto3" json:"phone_verified,omitempty"`
+	EmailVerified        *common.Bool        `protobuf:"bytes,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
 	Password             *common.String      `protobuf:"bytes,21,opt,name=password,proto3" json:"password,omitempty"`
 	Identities           []*Identity         `protobuf:"bytes,22,rep,name=identities,proto3" json:"identities,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
@@ -2595,7 +2975,7 @@ func (m *User) GetBirthdate() *common.String
 #### func (*User) GetBlocked
 
 ```go
-func (m *User) GetBlocked() bool
+func (m *User) GetBlocked() *common.Bool
 ```
 
 #### func (*User) GetCreatedAt
@@ -2613,7 +2993,7 @@ func (m *User) GetEmail() *common.Identifier
 #### func (*User) GetEmailVerified
 
 ```go
-func (m *User) GetEmailVerified() bool
+func (m *User) GetEmailVerified() *common.Bool
 ```
 
 #### func (*User) GetFamilyName
@@ -2679,7 +3059,7 @@ func (m *User) GetPhoneNumber() *common.Identifier
 #### func (*User) GetPhoneVerified
 
 ```go
-func (m *User) GetPhoneVerified() bool
+func (m *User) GetPhoneVerified() *common.Bool
 ```
 
 #### func (*User) GetPicture

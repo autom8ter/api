@@ -40,7 +40,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[22];
+  static const ::google::protobuf::internal::ParseTable schema[24];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -60,6 +60,9 @@ extern AppMetadataDefaultTypeInternal _AppMetadata_default_instance_;
 class Card;
 class CardDefaultTypeInternal;
 extern CardDefaultTypeInternal _Card_default_instance_;
+class CategoryQuery;
+class CategoryQueryDefaultTypeInternal;
+extern CategoryQueryDefaultTypeInternal _CategoryQuery_default_instance_;
 class ClientCredentials;
 class ClientCredentialsDefaultTypeInternal;
 extern ClientCredentialsDefaultTypeInternal _ClientCredentials_default_instance_;
@@ -69,6 +72,9 @@ extern DefaultGCPCredentialsDefaultTypeInternal _DefaultGCPCredentials_default_i
 class Document;
 class DocumentDefaultTypeInternal;
 extern DocumentDefaultTypeInternal _Document_default_instance_;
+class DocumentQuery;
+class DocumentQueryDefaultTypeInternal;
+extern DocumentQueryDefaultTypeInternal _DocumentQuery_default_instance_;
 class Event;
 class EventDefaultTypeInternal;
 extern EventDefaultTypeInternal _Event_default_instance_;
@@ -121,9 +127,11 @@ template<> ::api::AddUserRolesRequest* Arena::CreateMaybeMessage<::api::AddUserR
 template<> ::api::Address* Arena::CreateMaybeMessage<::api::Address>(Arena*);
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::Card* Arena::CreateMaybeMessage<::api::Card>(Arena*);
+template<> ::api::CategoryQuery* Arena::CreateMaybeMessage<::api::CategoryQuery>(Arena*);
 template<> ::api::ClientCredentials* Arena::CreateMaybeMessage<::api::ClientCredentials>(Arena*);
 template<> ::api::DefaultGCPCredentials* Arena::CreateMaybeMessage<::api::DefaultGCPCredentials>(Arena*);
 template<> ::api::Document* Arena::CreateMaybeMessage<::api::Document>(Arena*);
+template<> ::api::DocumentQuery* Arena::CreateMaybeMessage<::api::DocumentQuery>(Arena*);
 template<> ::api::Event* Arena::CreateMaybeMessage<::api::Event>(Arena*);
 template<> ::api::EventQuery* Arena::CreateMaybeMessage<::api::EventQuery>(Arena*);
 template<> ::api::Identity* Arena::CreateMaybeMessage<::api::Identity>(Arena*);
@@ -144,6 +152,237 @@ template<> ::api::UserMetadata* Arena::CreateMaybeMessage<::api::UserMetadata>(A
 namespace api {
 
 // ===================================================================
+
+class CategoryQuery : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.CategoryQuery) */ {
+ public:
+  CategoryQuery();
+  virtual ~CategoryQuery();
+
+  CategoryQuery(const CategoryQuery& from);
+
+  inline CategoryQuery& operator=(const CategoryQuery& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  CategoryQuery(CategoryQuery&& from) noexcept
+    : CategoryQuery() {
+    *this = ::std::move(from);
+  }
+
+  inline CategoryQuery& operator=(CategoryQuery&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CategoryQuery& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const CategoryQuery* internal_default_instance() {
+    return reinterpret_cast<const CategoryQuery*>(
+               &_CategoryQuery_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(CategoryQuery* other);
+  friend void swap(CategoryQuery& a, CategoryQuery& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline CategoryQuery* New() const final {
+    return CreateMaybeMessage<CategoryQuery>(NULL);
+  }
+
+  CategoryQuery* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<CategoryQuery>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const CategoryQuery& from);
+  void MergeFrom(const CategoryQuery& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CategoryQuery* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String category = 1;
+  bool has_category() const;
+  void clear_category();
+  static const int kCategoryFieldNumber = 1;
+  private:
+  const ::common::String& _internal_category() const;
+  public:
+  const ::common::String& category() const;
+  ::common::String* release_category();
+  ::common::String* mutable_category();
+  void set_allocated_category(::common::String* category);
+
+  // @@protoc_insertion_point(class_scope:api.CategoryQuery)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* category_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class DocumentQuery : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.DocumentQuery) */ {
+ public:
+  DocumentQuery();
+  virtual ~DocumentQuery();
+
+  DocumentQuery(const DocumentQuery& from);
+
+  inline DocumentQuery& operator=(const DocumentQuery& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DocumentQuery(DocumentQuery&& from) noexcept
+    : DocumentQuery() {
+    *this = ::std::move(from);
+  }
+
+  inline DocumentQuery& operator=(DocumentQuery&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DocumentQuery& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DocumentQuery* internal_default_instance() {
+    return reinterpret_cast<const DocumentQuery*>(
+               &_DocumentQuery_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(DocumentQuery* other);
+  friend void swap(DocumentQuery& a, DocumentQuery& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DocumentQuery* New() const final {
+    return CreateMaybeMessage<DocumentQuery>(NULL);
+  }
+
+  DocumentQuery* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DocumentQuery>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DocumentQuery& from);
+  void MergeFrom(const DocumentQuery& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DocumentQuery* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String category = 1;
+  bool has_category() const;
+  void clear_category();
+  static const int kCategoryFieldNumber = 1;
+  private:
+  const ::common::String& _internal_category() const;
+  public:
+  const ::common::String& category() const;
+  ::common::String* release_category();
+  ::common::String* mutable_category();
+  void set_allocated_category(::common::String* category);
+
+  // .common.Identifier name = 2;
+  bool has_name() const;
+  void clear_name();
+  static const int kNameFieldNumber = 2;
+  private:
+  const ::common::Identifier& _internal_name() const;
+  public:
+  const ::common::Identifier& name() const;
+  ::common::Identifier* release_name();
+  ::common::Identifier* mutable_name();
+  void set_allocated_name(::common::Identifier* name);
+
+  // @@protoc_insertion_point(class_scope:api.DocumentQuery)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* category_;
+  ::common::Identifier* name_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class AddUserRolesRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AddUserRolesRequest) */ {
  public:
@@ -180,7 +419,7 @@ class AddUserRolesRequest : public ::google::protobuf::Message /* @@protoc_inser
                &_AddUserRolesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   void Swap(AddUserRolesRequest* other);
   friend void swap(AddUserRolesRequest& a, AddUserRolesRequest& b) {
@@ -302,7 +541,7 @@ class SubscribeRequest : public ::google::protobuf::Message /* @@protoc_insertio
                &_SubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(SubscribeRequest* other);
   friend void swap(SubscribeRequest& a, SubscribeRequest& b) {
@@ -437,7 +676,7 @@ class UnSubscribeRequest : public ::google::protobuf::Message /* @@protoc_insert
                &_UnSubscribeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(UnSubscribeRequest* other);
   friend void swap(UnSubscribeRequest& a, UnSubscribeRequest& b) {
@@ -559,7 +798,7 @@ class Card : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(Card* other);
   friend void swap(Card& a, Card& b) {
@@ -707,7 +946,7 @@ class User : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(User* other);
   friend void swap(User& a, User& b) {
@@ -1076,7 +1315,7 @@ class UserMetadata : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_UserMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(UserMetadata* other);
   friend void swap(UserMetadata& a, UserMetadata& b) {
@@ -1224,7 +1463,7 @@ class Address : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Address_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(Address* other);
   friend void swap(Address& a, Address& b) {
@@ -1385,7 +1624,7 @@ class AppMetadata : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_AppMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(AppMetadata* other);
   friend void swap(AppMetadata& a, AppMetadata& b) {
@@ -1533,7 +1772,7 @@ class Plan : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Plan_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(Plan* other);
   friend void swap(Plan& a, Plan& b) {
@@ -1707,7 +1946,7 @@ class Product : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Product_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(Product* other);
   friend void swap(Product& a, Product& b) {
@@ -1842,7 +2081,7 @@ class Identity : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(Identity* other);
   friend void swap(Identity& a, Identity& b) {
@@ -1990,7 +2229,7 @@ class Role : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Role_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(Role* other);
   friend void swap(Role& a, Role& b) {
@@ -2125,7 +2364,7 @@ class OAuth2 : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
                &_OAuth2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(OAuth2* other);
   friend void swap(OAuth2& a, OAuth2& b) {
@@ -2312,7 +2551,7 @@ class ClientCredentials : public ::google::protobuf::Message /* @@protoc_inserti
                &_ClientCredentials_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(ClientCredentials* other);
   friend void swap(ClientCredentials& a, ClientCredentials& b) {
@@ -2473,7 +2712,7 @@ class JWT : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_JWT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(JWT* other);
   friend void swap(JWT& a, JWT& b) {
@@ -2675,7 +2914,7 @@ class DefaultGCPCredentials : public ::google::protobuf::Message /* @@protoc_ins
                &_DefaultGCPCredentials_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(DefaultGCPCredentials* other);
   friend void swap(DefaultGCPCredentials& a, DefaultGCPCredentials& b) {
@@ -2784,7 +3023,7 @@ class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Query_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(Query* other);
   friend void swap(Query& a, Query& b) {
@@ -2906,7 +3145,7 @@ class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(Event* other);
   friend void swap(Event& a, Event& b) {
@@ -3119,7 +3358,7 @@ class EventQuery : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_EventQuery_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   void Swap(EventQuery* other);
   friend void swap(EventQuery& a, EventQuery& b) {
@@ -3267,7 +3506,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -3441,7 +3680,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -3550,7 +3789,7 @@ class Document : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Document_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   void Swap(Document* other);
   friend void swap(Document& a, Document& b) {
@@ -3657,6 +3896,158 @@ class Document : public ::google::protobuf::Message /* @@protoc_insertion_point(
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// CategoryQuery
+
+// .common.String category = 1;
+inline bool CategoryQuery::has_category() const {
+  return this != internal_default_instance() && category_ != NULL;
+}
+inline const ::common::String& CategoryQuery::_internal_category() const {
+  return *category_;
+}
+inline const ::common::String& CategoryQuery::category() const {
+  const ::common::String* p = category_;
+  // @@protoc_insertion_point(field_get:api.CategoryQuery.category)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* CategoryQuery::release_category() {
+  // @@protoc_insertion_point(field_release:api.CategoryQuery.category)
+  
+  ::common::String* temp = category_;
+  category_ = NULL;
+  return temp;
+}
+inline ::common::String* CategoryQuery::mutable_category() {
+  
+  if (category_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    category_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.CategoryQuery.category)
+  return category_;
+}
+inline void CategoryQuery::set_allocated_category(::common::String* category) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(category_);
+  }
+  if (category) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      category = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, category, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  category_ = category;
+  // @@protoc_insertion_point(field_set_allocated:api.CategoryQuery.category)
+}
+
+// -------------------------------------------------------------------
+
+// DocumentQuery
+
+// .common.String category = 1;
+inline bool DocumentQuery::has_category() const {
+  return this != internal_default_instance() && category_ != NULL;
+}
+inline const ::common::String& DocumentQuery::_internal_category() const {
+  return *category_;
+}
+inline const ::common::String& DocumentQuery::category() const {
+  const ::common::String* p = category_;
+  // @@protoc_insertion_point(field_get:api.DocumentQuery.category)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* DocumentQuery::release_category() {
+  // @@protoc_insertion_point(field_release:api.DocumentQuery.category)
+  
+  ::common::String* temp = category_;
+  category_ = NULL;
+  return temp;
+}
+inline ::common::String* DocumentQuery::mutable_category() {
+  
+  if (category_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    category_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.DocumentQuery.category)
+  return category_;
+}
+inline void DocumentQuery::set_allocated_category(::common::String* category) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(category_);
+  }
+  if (category) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      category = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, category, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  category_ = category;
+  // @@protoc_insertion_point(field_set_allocated:api.DocumentQuery.category)
+}
+
+// .common.Identifier name = 2;
+inline bool DocumentQuery::has_name() const {
+  return this != internal_default_instance() && name_ != NULL;
+}
+inline const ::common::Identifier& DocumentQuery::_internal_name() const {
+  return *name_;
+}
+inline const ::common::Identifier& DocumentQuery::name() const {
+  const ::common::Identifier* p = name_;
+  // @@protoc_insertion_point(field_get:api.DocumentQuery.name)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::Identifier*>(
+      &::common::_Identifier_default_instance_);
+}
+inline ::common::Identifier* DocumentQuery::release_name() {
+  // @@protoc_insertion_point(field_release:api.DocumentQuery.name)
+  
+  ::common::Identifier* temp = name_;
+  name_ = NULL;
+  return temp;
+}
+inline ::common::Identifier* DocumentQuery::mutable_name() {
+  
+  if (name_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::Identifier>(GetArenaNoVirtual());
+    name_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.DocumentQuery.name)
+  return name_;
+}
+inline void DocumentQuery::set_allocated_name(::common::Identifier* name) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(name_);
+  }
+  if (name) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      name = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, name, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  name_ = name;
+  // @@protoc_insertion_point(field_set_allocated:api.DocumentQuery.name)
+}
+
+// -------------------------------------------------------------------
+
 // AddUserRolesRequest
 
 // .common.Identifier email = 1;
@@ -8857,6 +9248,10 @@ inline void Document::set_allocated_data(::common::StringMap* data) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

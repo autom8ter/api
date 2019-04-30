@@ -37,6 +37,16 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_common_2fcommon_2eproto ::google::proto
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_common_2fcommon_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_StringMap;
 }  // namespace protobuf_common_2fcommon_2eproto
 namespace api {
+class CategoryQueryDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<CategoryQuery>
+      _instance;
+} _CategoryQuery_default_instance_;
+class DocumentQueryDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<DocumentQuery>
+      _instance;
+} _DocumentQuery_default_instance_;
 class AddUserRolesRequestDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<AddUserRolesRequest>
@@ -149,6 +159,37 @@ class DocumentDefaultTypeInternal {
 } _Document_default_instance_;
 }  // namespace api
 namespace protobuf_api_2eproto {
+static void InitDefaultsCategoryQuery() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_CategoryQuery_default_instance_;
+    new (ptr) ::api::CategoryQuery();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::CategoryQuery::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_CategoryQuery =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCategoryQuery}, {
+      &protobuf_common_2fcommon_2eproto::scc_info_String.base,}};
+
+static void InitDefaultsDocumentQuery() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_DocumentQuery_default_instance_;
+    new (ptr) ::api::DocumentQuery();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::DocumentQuery::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_DocumentQuery =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDocumentQuery}, {
+      &protobuf_common_2fcommon_2eproto::scc_info_String.base,
+      &protobuf_common_2fcommon_2eproto::scc_info_Identifier.base,}};
+
 static void InitDefaultsAddUserRolesRequest() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -509,6 +550,8 @@ static void InitDefaultsDocument() {
       &protobuf_common_2fcommon_2eproto::scc_info_StringMap.base,}};
 
 void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_CategoryQuery.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DocumentQuery.base);
   ::google::protobuf::internal::InitSCC(&scc_info_AddUserRolesRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SubscribeRequest.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UnSubscribeRequest.base);
@@ -533,9 +576,22 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Document.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[22];
+::google::protobuf::Metadata file_level_metadata[24];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::CategoryQuery, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::CategoryQuery, category_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::DocumentQuery, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::DocumentQuery, category_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::DocumentQuery, name_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::AddUserRolesRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -755,31 +811,35 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Document, data_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::api::AddUserRolesRequest)},
-  { 7, -1, sizeof(::api::SubscribeRequest)},
-  { 15, -1, sizeof(::api::UnSubscribeRequest)},
-  { 22, -1, sizeof(::api::Card)},
-  { 31, -1, sizeof(::api::User)},
-  { 57, -1, sizeof(::api::UserMetadata)},
-  { 66, -1, sizeof(::api::Address)},
-  { 76, -1, sizeof(::api::AppMetadata)},
-  { 85, -1, sizeof(::api::Plan)},
-  { 96, -1, sizeof(::api::Product)},
-  { 104, -1, sizeof(::api::Identity)},
-  { 113, -1, sizeof(::api::Role)},
-  { 121, -1, sizeof(::api::OAuth2)},
-  { 133, -1, sizeof(::api::ClientCredentials)},
-  { 143, -1, sizeof(::api::JWT)},
-  { 156, -1, sizeof(::api::DefaultGCPCredentials)},
-  { 162, -1, sizeof(::api::Query)},
-  { 169, -1, sizeof(::api::Event)},
-  { 183, -1, sizeof(::api::EventQuery)},
-  { 192, -1, sizeof(::api::JSONWebKeys)},
-  { 203, -1, sizeof(::api::Jwks)},
-  { 209, -1, sizeof(::api::Document)},
+  { 0, -1, sizeof(::api::CategoryQuery)},
+  { 6, -1, sizeof(::api::DocumentQuery)},
+  { 13, -1, sizeof(::api::AddUserRolesRequest)},
+  { 20, -1, sizeof(::api::SubscribeRequest)},
+  { 28, -1, sizeof(::api::UnSubscribeRequest)},
+  { 35, -1, sizeof(::api::Card)},
+  { 44, -1, sizeof(::api::User)},
+  { 70, -1, sizeof(::api::UserMetadata)},
+  { 79, -1, sizeof(::api::Address)},
+  { 89, -1, sizeof(::api::AppMetadata)},
+  { 98, -1, sizeof(::api::Plan)},
+  { 109, -1, sizeof(::api::Product)},
+  { 117, -1, sizeof(::api::Identity)},
+  { 126, -1, sizeof(::api::Role)},
+  { 134, -1, sizeof(::api::OAuth2)},
+  { 146, -1, sizeof(::api::ClientCredentials)},
+  { 156, -1, sizeof(::api::JWT)},
+  { 169, -1, sizeof(::api::DefaultGCPCredentials)},
+  { 175, -1, sizeof(::api::Query)},
+  { 182, -1, sizeof(::api::Event)},
+  { 196, -1, sizeof(::api::EventQuery)},
+  { 205, -1, sizeof(::api::JSONWebKeys)},
+  { 216, -1, sizeof(::api::Jwks)},
+  { 222, -1, sizeof(::api::Document)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_CategoryQuery_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_DocumentQuery_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_AddUserRolesRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_SubscribeRequest_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_UnSubscribeRequest_default_instance_),
@@ -819,136 +879,149 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 22);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 24);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations"
-      ".proto\032\023common/common.proto\"R\n\023AddUserRo"
-      "lesRequest\022!\n\005email\030\001 \001(\0132\022.common.Ident"
-      "ifier\022\030\n\005roles\030\002 \003(\0132\t.api.Role\"p\n\020Subsc"
-      "ribeRequest\022!\n\005email\030\001 \001(\0132\022.common.Iden"
-      "tifier\022 \n\004plan\030\002 \001(\0132\022.common.Identifier"
-      "\022\027\n\004card\030\003 \001(\0132\t.api.Card\"U\n\022UnSubscribe"
-      "Request\022!\n\005email\030\001 \001(\0132\022.common.Identifi"
-      "er\022\034\n\004plan\030\002 \001(\0132\016.common.String\"\214\001\n\004Car"
-      "d\022\"\n\006number\030\001 \001(\0132\022.common.Identifier\022!\n"
-      "\texp_month\030\002 \001(\0132\016.common.String\022 \n\010exp_"
-      "year\030\003 \001(\0132\016.common.String\022\033\n\003cvc\030\004 \001(\0132"
-      "\016.common.String\"\373\005\n\004User\022#\n\007user_id\030\001 \001("
-      "\0132\022.common.Identifier\022\034\n\004name\030\002 \001(\0132\016.co"
-      "mmon.String\022\"\n\ngiven_name\030\003 \001(\0132\016.common"
-      ".String\022#\n\013family_name\030\004 \001(\0132\016.common.St"
-      "ring\022\036\n\006gender\030\005 \001(\0132\016.common.String\022!\n\t"
-      "birthdate\030\006 \001(\0132\016.common.String\022!\n\005email"
-      "\030\007 \001(\0132\022.common.Identifier\022(\n\014phone_numb"
-      "er\030\010 \001(\0132\022.common.Identifier\022\037\n\007picture\030"
-      "\t \001(\0132\016.common.String\022 \n\010nickname\030\016 \001(\0132"
-      "\016.common.String\022(\n\ruser_metadata\030\n \001(\0132\021"
-      ".common.StringMap\022\'\n\014app_metadata\030\013 \001(\0132"
-      "\021.common.StringMap\022\037\n\007last_ip\030\014 \001(\0132\016.co"
-      "mmon.String\022\035\n\007blocked\030\r \001(\0132\014.common.Bo"
-      "ol\022(\n\013multifactor\030\017 \001(\0132\023.common.StringA"
-      "rray\022\"\n\ncreated_at\030\021 \001(\0132\016.common.String"
-      "\022\"\n\nupdated_at\030\022 \001(\0132\016.common.String\022$\n\016"
-      "phone_verified\030\023 \001(\0132\014.common.Bool\022$\n\016em"
-      "ail_verified\030\024 \001(\0132\014.common.Bool\022 \n\010pass"
-      "word\030\025 \001(\0132\016.common.String\022!\n\nidentities"
-      "\030\026 \003(\0132\r.api.Identity\"\216\001\n\014UserMetadata\022\036"
-      "\n\006status\030\001 \001(\0132\016.common.String\022\036\n\003bio\030\002 "
-      "\001(\0132\021.common.StringMap\022\035\n\007address\030\003 \001(\0132"
-      "\014.api.Address\022\037\n\004tags\030\004 \001(\0132\021.common.Str"
-      "ingMap\"\241\001\n\007Address\022\034\n\004city\030\001 \001(\0132\016.commo"
-      "n.String\022\035\n\005state\030\002 \001(\0132\016.common.String\022"
-      "\035\n\005line1\030\003 \001(\0132\016.common.String\022\035\n\005line2\030"
-      "\004 \001(\0132\016.common.String\022\033\n\003zip\030\005 \001(\0132\016.com"
-      "mon.String\"\225\001\n\013AppMetadata\022#\n\013descriptio"
-      "n\030\001 \001(\0132\016.common.String\022\'\n\017account_balan"
-      "ce\030\002 \001(\0132\016.common.String\022\027\n\004plan\030\003 \001(\0132\t"
-      ".api.Plan\022\037\n\004tags\030\004 \001(\0132\021.common.StringM"
-      "ap\"\306\001\n\004Plan\022\036\n\002id\030\001 \001(\0132\022.common.Identif"
-      "ier\022\034\n\006active\030\002 \001(\0132\014.common.Bool\022\035\n\006amo"
-      "unt\030\003 \001(\0132\r.common.Int64\022 \n\010interval\030\004 \001"
-      "(\0132\016.common.String\022 \n\010nickname\030\005 \001(\0132\016.c"
-      "ommon.String\022\035\n\007product\030\006 \001(\0132\014.api.Prod"
-      "uct\"k\n\007Product\022\036\n\002id\030\001 \001(\0132\022.common.Iden"
-      "tifier\022#\n\013description\030\002 \001(\0132\016.common.Str"
-      "ing\022\033\n\003url\030\003 \001(\0132\016.common.String\"\225\001\n\010Ide"
-      "ntity\022\"\n\nconnection\030\001 \001(\0132\016.common.Strin"
-      "g\022#\n\007user_id\030\002 \001(\0132\022.common.Identifier\022 "
-      "\n\010provider\030\003 \001(\0132\016.common.String\022\036\n\010isSo"
-      "cial\030\004 \001(\0132\014.common.Bool\"i\n\004Role\022\036\n\002id\030\001"
-      " \001(\0132\022.common.Identifier\022\034\n\004name\030\002 \001(\0132\016"
-      ".common.String\022#\n\013description\030\003 \001(\0132\016.co"
-      "mmon.String\"\374\001\n\006OAuth2\022!\n\tclient_id\030\001 \001("
-      "\0132\016.common.String\022%\n\rclient_secret\030\002 \001(\013"
-      "2\016.common.String\022!\n\ttoken_url\030\003 \001(\0132\016.co"
-      "mmon.String\022 \n\010auth_url\030\004 \001(\0132\016.common.S"
-      "tring\022#\n\006scopes\030\005 \001(\0132\023.common.StringArr"
-      "ay\022 \n\010redirect\030\006 \001(\0132\016.common.String\022\034\n\004"
-      "code\030\007 \001(\0132\016.common.String\"\321\001\n\021ClientCre"
-      "dentials\022!\n\tclient_id\030\001 \001(\0132\016.common.Str"
-      "ing\022%\n\rclient_secret\030\002 \001(\0132\016.common.Stri"
-      "ng\022!\n\ttoken_url\030\003 \001(\0132\016.common.String\022#\n"
-      "\006scopes\030\004 \001(\0132\023.common.StringArray\022*\n\017en"
-      "dpoint_params\030\005 \001(\0132\021.common.StringMap\"\213"
-      "\002\n\003JWT\022\035\n\005email\030\001 \001(\0132\016.common.String\022\023\n"
-      "\013private_key\030\002 \001(\014\022$\n\014prive_key_id\030\003 \001(\013"
-      "2\016.common.String\022\037\n\007subject\030\004 \001(\0132\016.comm"
-      "on.String\022#\n\006scopes\030\005 \001(\0132\023.common.Strin"
-      "gArray\022!\n\ttoken_url\030\006 \001(\0132\016.common.Strin"
-      "g\022\037\n\007expires\030\007 \001(\0132\016.common.String\022 \n\010au"
-      "dience\030\010 \001(\0132\016.common.String\"<\n\025DefaultG"
-      "CPCredentials\022#\n\006scopes\030\001 \001(\0132\023.common.S"
-      "tringArray\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.com"
-      "mon.String\022\036\n\006fields\030\005 \001(\0132\016.common.Stri"
-      "ng\"\270\002\n\005Event\022\034\n\004date\030\001 \001(\0132\016.common.Stri"
-      "ng\022\034\n\004type\030\002 \001(\0132\016.common.String\022!\n\tclie"
-      "nt_id\030\003 \001(\0132\016.common.String\022#\n\013client_na"
-      "me\030\004 \001(\0132\016.common.String\022\032\n\002ip\030\005 \001(\0132\016.c"
-      "ommon.String\022%\n\rlocation_info\030\006 \001(\0132\016.co"
-      "mmon.String\022\037\n\007details\030\007 \001(\0132\016.common.St"
-      "ring\022\037\n\007user_id\030\010 \001(\0132\016.common.String\022&\n"
-      "\013annotations\030\t \001(\0132\021.common.StringMap\"\214\001"
-      "\n\nEventQuery\022\034\n\004date\030\001 \001(\0132\016.common.Stri"
-      "ng\022\034\n\004type\030\002 \001(\0132\016.common.String\022!\n\tclie"
-      "nt_id\030\003 \001(\0132\016.common.String\022\037\n\007user_id\030\004"
-      " \001(\0132\016.common.String\"\300\001\n\013JSONWebKeys\022\033\n\003"
-      "kty\030\001 \001(\0132\016.common.String\022\037\n\003kid\030\002 \001(\0132\022"
-      ".common.Identifier\022\033\n\003use\030\003 \001(\0132\016.common"
-      ".String\022\031\n\001n\030\004 \001(\0132\016.common.String\022\031\n\001e\030"
-      "\005 \001(\0132\016.common.String\022 \n\003x5c\030\006 \001(\0132\023.com"
-      "mon.StringArray\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020."
-      "api.JSONWebKeys\"k\n\010Document\022 \n\010category\030"
-      "\001 \001(\0132\016.common.String\022\034\n\004name\030\002 \001(\0132\016.co"
-      "mmon.String\022\037\n\004data\030\003 \001(\0132\021.common.Strin"
-      "gMap2I\n\014DebugService\0229\n\004Echo\022\016.common.St"
-      "ring\032\016.common.String\"\021\202\323\344\223\002\013\"\006/debug:\001*2"
-      "\247\001\n\023SubscriptionService\022D\n\tSubscribe\022\025.a"
-      "pi.SubscribeRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n"
-      "/subscribe:\001*\022J\n\013Unsubscribe\022\027.api.UnSub"
-      "scribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014/unsub"
-      "scribe:\001*2\\\n\025AuthenticationService\022C\n\007Ge"
-      "tUser\022\021.common.AuthToken\032\t.api.User\"\032\202\323\344"
-      "\223\002\024\"\017/authentication:\001*2\230\003\n\013UserService\022"
-      "H\n\nQueryUsers\022\n.api.Query\032\t.api.User\"!\202\323"
-      "\344\223\002\033\"\026/management/user/query:\001*0\001\022I\n\007Get"
-      "User\022\022.common.Identifier\032\t.api.User\"\037\202\323\344"
-      "\223\002\031\"\024/management/user/get:\001*\022F\n\nUpdateUs"
-      "er\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027/manag"
-      "ement/user/update:\001*\022O\n\tUserRoles\022\022.comm"
-      "on.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026/manag"
-      "ement/user/roles:\001*0\001\022[\n\014AddUserRoles\022\030."
-      "api.AddUserRolesRequest\032\016.common.String\""
-      "!\202\323\344\223\002\033\"\026/management/user/roles:\001*2N\n\014Ev"
-      "entService\022>\n\tGetEvents\022\017.api.EventQuery"
-      "\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001b\006prot"
-      "o3"
+      ".proto\032\023common/common.proto\"1\n\rCategoryQ"
+      "uery\022 \n\010category\030\001 \001(\0132\016.common.String\"S"
+      "\n\rDocumentQuery\022 \n\010category\030\001 \001(\0132\016.comm"
+      "on.String\022 \n\004name\030\002 \001(\0132\022.common.Identif"
+      "ier\"R\n\023AddUserRolesRequest\022!\n\005email\030\001 \001("
+      "\0132\022.common.Identifier\022\030\n\005roles\030\002 \003(\0132\t.a"
+      "pi.Role\"p\n\020SubscribeRequest\022!\n\005email\030\001 \001"
+      "(\0132\022.common.Identifier\022 \n\004plan\030\002 \001(\0132\022.c"
+      "ommon.Identifier\022\027\n\004card\030\003 \001(\0132\t.api.Car"
+      "d\"U\n\022UnSubscribeRequest\022!\n\005email\030\001 \001(\0132\022"
+      ".common.Identifier\022\034\n\004plan\030\002 \001(\0132\016.commo"
+      "n.String\"\214\001\n\004Card\022\"\n\006number\030\001 \001(\0132\022.comm"
+      "on.Identifier\022!\n\texp_month\030\002 \001(\0132\016.commo"
+      "n.String\022 \n\010exp_year\030\003 \001(\0132\016.common.Stri"
+      "ng\022\033\n\003cvc\030\004 \001(\0132\016.common.String\"\373\005\n\004User"
+      "\022#\n\007user_id\030\001 \001(\0132\022.common.Identifier\022\034\n"
+      "\004name\030\002 \001(\0132\016.common.String\022\"\n\ngiven_nam"
+      "e\030\003 \001(\0132\016.common.String\022#\n\013family_name\030\004"
+      " \001(\0132\016.common.String\022\036\n\006gender\030\005 \001(\0132\016.c"
+      "ommon.String\022!\n\tbirthdate\030\006 \001(\0132\016.common"
+      ".String\022!\n\005email\030\007 \001(\0132\022.common.Identifi"
+      "er\022(\n\014phone_number\030\010 \001(\0132\022.common.Identi"
+      "fier\022\037\n\007picture\030\t \001(\0132\016.common.String\022 \n"
+      "\010nickname\030\016 \001(\0132\016.common.String\022(\n\ruser_"
+      "metadata\030\n \001(\0132\021.common.StringMap\022\'\n\014app"
+      "_metadata\030\013 \001(\0132\021.common.StringMap\022\037\n\007la"
+      "st_ip\030\014 \001(\0132\016.common.String\022\035\n\007blocked\030\r"
+      " \001(\0132\014.common.Bool\022(\n\013multifactor\030\017 \001(\0132"
+      "\023.common.StringArray\022\"\n\ncreated_at\030\021 \001(\013"
+      "2\016.common.String\022\"\n\nupdated_at\030\022 \001(\0132\016.c"
+      "ommon.String\022$\n\016phone_verified\030\023 \001(\0132\014.c"
+      "ommon.Bool\022$\n\016email_verified\030\024 \001(\0132\014.com"
+      "mon.Bool\022 \n\010password\030\025 \001(\0132\016.common.Stri"
+      "ng\022!\n\nidentities\030\026 \003(\0132\r.api.Identity\"\216\001"
+      "\n\014UserMetadata\022\036\n\006status\030\001 \001(\0132\016.common."
+      "String\022\036\n\003bio\030\002 \001(\0132\021.common.StringMap\022\035"
+      "\n\007address\030\003 \001(\0132\014.api.Address\022\037\n\004tags\030\004 "
+      "\001(\0132\021.common.StringMap\"\241\001\n\007Address\022\034\n\004ci"
+      "ty\030\001 \001(\0132\016.common.String\022\035\n\005state\030\002 \001(\0132"
+      "\016.common.String\022\035\n\005line1\030\003 \001(\0132\016.common."
+      "String\022\035\n\005line2\030\004 \001(\0132\016.common.String\022\033\n"
+      "\003zip\030\005 \001(\0132\016.common.String\"\225\001\n\013AppMetada"
+      "ta\022#\n\013description\030\001 \001(\0132\016.common.String\022"
+      "\'\n\017account_balance\030\002 \001(\0132\016.common.String"
+      "\022\027\n\004plan\030\003 \001(\0132\t.api.Plan\022\037\n\004tags\030\004 \001(\0132"
+      "\021.common.StringMap\"\306\001\n\004Plan\022\036\n\002id\030\001 \001(\0132"
+      "\022.common.Identifier\022\034\n\006active\030\002 \001(\0132\014.co"
+      "mmon.Bool\022\035\n\006amount\030\003 \001(\0132\r.common.Int64"
+      "\022 \n\010interval\030\004 \001(\0132\016.common.String\022 \n\010ni"
+      "ckname\030\005 \001(\0132\016.common.String\022\035\n\007product\030"
+      "\006 \001(\0132\014.api.Product\"k\n\007Product\022\036\n\002id\030\001 \001"
+      "(\0132\022.common.Identifier\022#\n\013description\030\002 "
+      "\001(\0132\016.common.String\022\033\n\003url\030\003 \001(\0132\016.commo"
+      "n.String\"\225\001\n\010Identity\022\"\n\nconnection\030\001 \001("
+      "\0132\016.common.String\022#\n\007user_id\030\002 \001(\0132\022.com"
+      "mon.Identifier\022 \n\010provider\030\003 \001(\0132\016.commo"
+      "n.String\022\036\n\010isSocial\030\004 \001(\0132\014.common.Bool"
+      "\"i\n\004Role\022\036\n\002id\030\001 \001(\0132\022.common.Identifier"
+      "\022\034\n\004name\030\002 \001(\0132\016.common.String\022#\n\013descri"
+      "ption\030\003 \001(\0132\016.common.String\"\374\001\n\006OAuth2\022!"
+      "\n\tclient_id\030\001 \001(\0132\016.common.String\022%\n\rcli"
+      "ent_secret\030\002 \001(\0132\016.common.String\022!\n\ttoke"
+      "n_url\030\003 \001(\0132\016.common.String\022 \n\010auth_url\030"
+      "\004 \001(\0132\016.common.String\022#\n\006scopes\030\005 \001(\0132\023."
+      "common.StringArray\022 \n\010redirect\030\006 \001(\0132\016.c"
+      "ommon.String\022\034\n\004code\030\007 \001(\0132\016.common.Stri"
+      "ng\"\321\001\n\021ClientCredentials\022!\n\tclient_id\030\001 "
+      "\001(\0132\016.common.String\022%\n\rclient_secret\030\002 \001"
+      "(\0132\016.common.String\022!\n\ttoken_url\030\003 \001(\0132\016."
+      "common.String\022#\n\006scopes\030\004 \001(\0132\023.common.S"
+      "tringArray\022*\n\017endpoint_params\030\005 \001(\0132\021.co"
+      "mmon.StringMap\"\213\002\n\003JWT\022\035\n\005email\030\001 \001(\0132\016."
+      "common.String\022\023\n\013private_key\030\002 \001(\014\022$\n\014pr"
+      "ive_key_id\030\003 \001(\0132\016.common.String\022\037\n\007subj"
+      "ect\030\004 \001(\0132\016.common.String\022#\n\006scopes\030\005 \001("
+      "\0132\023.common.StringArray\022!\n\ttoken_url\030\006 \001("
+      "\0132\016.common.String\022\037\n\007expires\030\007 \001(\0132\016.com"
+      "mon.String\022 \n\010audience\030\010 \001(\0132\016.common.St"
+      "ring\"<\n\025DefaultGCPCredentials\022#\n\006scopes\030"
+      "\001 \001(\0132\023.common.StringArray\"F\n\005Query\022\035\n\005q"
+      "uery\030\004 \001(\0132\016.common.String\022\036\n\006fields\030\005 \001"
+      "(\0132\016.common.String\"\270\002\n\005Event\022\034\n\004date\030\001 \001"
+      "(\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.commo"
+      "n.String\022!\n\tclient_id\030\003 \001(\0132\016.common.Str"
+      "ing\022#\n\013client_name\030\004 \001(\0132\016.common.String"
+      "\022\032\n\002ip\030\005 \001(\0132\016.common.String\022%\n\rlocation"
+      "_info\030\006 \001(\0132\016.common.String\022\037\n\007details\030\007"
+      " \001(\0132\016.common.String\022\037\n\007user_id\030\010 \001(\0132\016."
+      "common.String\022&\n\013annotations\030\t \001(\0132\021.com"
+      "mon.StringMap\"\214\001\n\nEventQuery\022\034\n\004date\030\001 \001"
+      "(\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.commo"
+      "n.String\022!\n\tclient_id\030\003 \001(\0132\016.common.Str"
+      "ing\022\037\n\007user_id\030\004 \001(\0132\016.common.String\"\300\001\n"
+      "\013JSONWebKeys\022\033\n\003kty\030\001 \001(\0132\016.common.Strin"
+      "g\022\037\n\003kid\030\002 \001(\0132\022.common.Identifier\022\033\n\003us"
+      "e\030\003 \001(\0132\016.common.String\022\031\n\001n\030\004 \001(\0132\016.com"
+      "mon.String\022\031\n\001e\030\005 \001(\0132\016.common.String\022 \n"
+      "\003x5c\030\006 \001(\0132\023.common.StringArray\"&\n\004Jwks\022"
+      "\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKeys\"k\n\010Docum"
+      "ent\022 \n\010category\030\001 \001(\0132\016.common.String\022\034\n"
+      "\004name\030\002 \001(\0132\016.common.String\022\037\n\004data\030\003 \001("
+      "\0132\021.common.StringMap2I\n\014DebugService\0229\n\004"
+      "Echo\022\016.common.String\032\016.common.String\"\021\202\323"
+      "\344\223\002\013\"\006/debug:\001*2\247\001\n\023SubscriptionService\022"
+      "D\n\tSubscribe\022\025.api.SubscribeRequest\032\t.ap"
+      "i.User\"\025\202\323\344\223\002\017\"\n/subscribe:\001*\022J\n\013Unsubsc"
+      "ribe\022\027.api.UnSubscribeRequest\032\t.api.User"
+      "\"\027\202\323\344\223\002\021\"\014/unsubscribe:\001*2\\\n\025Authenticat"
+      "ionService\022C\n\007GetUser\022\021.common.AuthToken"
+      "\032\t.api.User\"\032\202\323\344\223\002\024\"\017/authentication:\001*2"
+      "\230\003\n\013UserService\022H\n\nQueryUsers\022\n.api.Quer"
+      "y\032\t.api.User\"!\202\323\344\223\002\033\"\026/management/user/q"
+      "uery:\001*0\001\022I\n\007GetUser\022\022.common.Identifier"
+      "\032\t.api.User\"\037\202\323\344\223\002\031\"\024/management/user/ge"
+      "t:\001*\022F\n\nUpdateUser\022\t.api.User\032\t.api.User"
+      "\"\"\202\323\344\223\002\034\"\027/management/user/update:\001*\022O\n\t"
+      "UserRoles\022\022.common.Identifier\032\t.api.Role"
+      "\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*0\001\022[\n"
+      "\014AddUserRoles\022\030.api.AddUserRolesRequest\032"
+      "\016.common.String\"!\202\323\344\223\002\033\"\026/management/use"
+      "r/roles:\001*2N\n\014EventService\022>\n\tGetEvents\022"
+      "\017.api.EventQuery\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/e"
+      "vents:\001*0\0012\203\003\n\017DocumentService\022G\n\013GetDoc"
+      "ument\022\022.api.DocumentQuery\032\r.api.Document"
+      "\"\025\202\323\344\223\002\017\"\n/documents:\001*\022D\n\006Update\022\r.api."
+      "Document\032\r.common.Empty\"\034\202\323\344\223\002\026\"\021/docume"
+      "nts/update:\001*\022D\n\006Create\022\r.api.Document\032\r"
+      ".common.Empty\"\034\202\323\344\223\002\026\"\021/documents/create"
+      ":\001*\022I\n\006Delete\022\022.api.DocumentQuery\032\r.comm"
+      "on.Empty\"\034\202\323\344\223\002\026\"\021/documents/create:\001*\022P"
+      "\n\rListDocuments\022\022.api.CategoryQuery\032\r.ap"
+      "i.Document\"\032\202\323\344\223\002\024\"\017/documents/list:\001*0\001"
+      "b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 4802);
+      descriptor, 5328);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -967,6 +1040,543 @@ struct StaticDescriptorInitializer {
 } static_descriptor_initializer;
 }  // namespace protobuf_api_2eproto
 namespace api {
+
+// ===================================================================
+
+void CategoryQuery::InitAsDefaultInstance() {
+  ::api::_CategoryQuery_default_instance_._instance.get_mutable()->category_ = const_cast< ::common::String*>(
+      ::common::String::internal_default_instance());
+}
+void CategoryQuery::clear_category() {
+  if (GetArenaNoVirtual() == NULL && category_ != NULL) {
+    delete category_;
+  }
+  category_ = NULL;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int CategoryQuery::kCategoryFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+CategoryQuery::CategoryQuery()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_CategoryQuery.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.CategoryQuery)
+}
+CategoryQuery::CategoryQuery(const CategoryQuery& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_category()) {
+    category_ = new ::common::String(*from.category_);
+  } else {
+    category_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.CategoryQuery)
+}
+
+void CategoryQuery::SharedCtor() {
+  category_ = NULL;
+}
+
+CategoryQuery::~CategoryQuery() {
+  // @@protoc_insertion_point(destructor:api.CategoryQuery)
+  SharedDtor();
+}
+
+void CategoryQuery::SharedDtor() {
+  if (this != internal_default_instance()) delete category_;
+}
+
+void CategoryQuery::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* CategoryQuery::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const CategoryQuery& CategoryQuery::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_CategoryQuery.base);
+  return *internal_default_instance();
+}
+
+
+void CategoryQuery::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.CategoryQuery)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == NULL && category_ != NULL) {
+    delete category_;
+  }
+  category_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool CategoryQuery::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.CategoryQuery)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .common.String category = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_category()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.CategoryQuery)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.CategoryQuery)
+  return false;
+#undef DO_
+}
+
+void CategoryQuery::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.CategoryQuery)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.String category = 1;
+  if (this->has_category()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_category(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.CategoryQuery)
+}
+
+::google::protobuf::uint8* CategoryQuery::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.CategoryQuery)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.String category = 1;
+  if (this->has_category()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_category(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.CategoryQuery)
+  return target;
+}
+
+size_t CategoryQuery::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.CategoryQuery)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // .common.String category = 1;
+  if (this->has_category()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *category_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void CategoryQuery::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.CategoryQuery)
+  GOOGLE_DCHECK_NE(&from, this);
+  const CategoryQuery* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const CategoryQuery>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.CategoryQuery)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.CategoryQuery)
+    MergeFrom(*source);
+  }
+}
+
+void CategoryQuery::MergeFrom(const CategoryQuery& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.CategoryQuery)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_category()) {
+    mutable_category()->::common::String::MergeFrom(from.category());
+  }
+}
+
+void CategoryQuery::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.CategoryQuery)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CategoryQuery::CopyFrom(const CategoryQuery& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.CategoryQuery)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CategoryQuery::IsInitialized() const {
+  return true;
+}
+
+void CategoryQuery::Swap(CategoryQuery* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void CategoryQuery::InternalSwap(CategoryQuery* other) {
+  using std::swap;
+  swap(category_, other->category_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata CategoryQuery::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void DocumentQuery::InitAsDefaultInstance() {
+  ::api::_DocumentQuery_default_instance_._instance.get_mutable()->category_ = const_cast< ::common::String*>(
+      ::common::String::internal_default_instance());
+  ::api::_DocumentQuery_default_instance_._instance.get_mutable()->name_ = const_cast< ::common::Identifier*>(
+      ::common::Identifier::internal_default_instance());
+}
+void DocumentQuery::clear_category() {
+  if (GetArenaNoVirtual() == NULL && category_ != NULL) {
+    delete category_;
+  }
+  category_ = NULL;
+}
+void DocumentQuery::clear_name() {
+  if (GetArenaNoVirtual() == NULL && name_ != NULL) {
+    delete name_;
+  }
+  name_ = NULL;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DocumentQuery::kCategoryFieldNumber;
+const int DocumentQuery::kNameFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DocumentQuery::DocumentQuery()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_DocumentQuery.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.DocumentQuery)
+}
+DocumentQuery::DocumentQuery(const DocumentQuery& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_category()) {
+    category_ = new ::common::String(*from.category_);
+  } else {
+    category_ = NULL;
+  }
+  if (from.has_name()) {
+    name_ = new ::common::Identifier(*from.name_);
+  } else {
+    name_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.DocumentQuery)
+}
+
+void DocumentQuery::SharedCtor() {
+  ::memset(&category_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&name_) -
+      reinterpret_cast<char*>(&category_)) + sizeof(name_));
+}
+
+DocumentQuery::~DocumentQuery() {
+  // @@protoc_insertion_point(destructor:api.DocumentQuery)
+  SharedDtor();
+}
+
+void DocumentQuery::SharedDtor() {
+  if (this != internal_default_instance()) delete category_;
+  if (this != internal_default_instance()) delete name_;
+}
+
+void DocumentQuery::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* DocumentQuery::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const DocumentQuery& DocumentQuery::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_DocumentQuery.base);
+  return *internal_default_instance();
+}
+
+
+void DocumentQuery::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.DocumentQuery)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == NULL && category_ != NULL) {
+    delete category_;
+  }
+  category_ = NULL;
+  if (GetArenaNoVirtual() == NULL && name_ != NULL) {
+    delete name_;
+  }
+  name_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool DocumentQuery::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.DocumentQuery)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .common.String category = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_category()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .common.Identifier name = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_name()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.DocumentQuery)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.DocumentQuery)
+  return false;
+#undef DO_
+}
+
+void DocumentQuery::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.DocumentQuery)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.String category = 1;
+  if (this->has_category()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_category(), output);
+  }
+
+  // .common.Identifier name = 2;
+  if (this->has_name()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->_internal_name(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.DocumentQuery)
+}
+
+::google::protobuf::uint8* DocumentQuery::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.DocumentQuery)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.String category = 1;
+  if (this->has_category()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_category(), deterministic, target);
+  }
+
+  // .common.Identifier name = 2;
+  if (this->has_name()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->_internal_name(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.DocumentQuery)
+  return target;
+}
+
+size_t DocumentQuery::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.DocumentQuery)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // .common.String category = 1;
+  if (this->has_category()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *category_);
+  }
+
+  // .common.Identifier name = 2;
+  if (this->has_name()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *name_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DocumentQuery::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.DocumentQuery)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DocumentQuery* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const DocumentQuery>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.DocumentQuery)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.DocumentQuery)
+    MergeFrom(*source);
+  }
+}
+
+void DocumentQuery::MergeFrom(const DocumentQuery& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.DocumentQuery)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_category()) {
+    mutable_category()->::common::String::MergeFrom(from.category());
+  }
+  if (from.has_name()) {
+    mutable_name()->::common::Identifier::MergeFrom(from.name());
+  }
+}
+
+void DocumentQuery::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.DocumentQuery)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DocumentQuery::CopyFrom(const DocumentQuery& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.DocumentQuery)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DocumentQuery::IsInitialized() const {
+  return true;
+}
+
+void DocumentQuery::Swap(DocumentQuery* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DocumentQuery::InternalSwap(DocumentQuery* other) {
+  using std::swap;
+  swap(category_, other->category_);
+  swap(name_, other->name_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata DocumentQuery::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
 
 // ===================================================================
 
@@ -10901,6 +11511,12 @@ void Document::InternalSwap(Document* other) {
 }  // namespace api
 namespace google {
 namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::CategoryQuery* Arena::CreateMaybeMessage< ::api::CategoryQuery >(Arena* arena) {
+  return Arena::CreateInternal< ::api::CategoryQuery >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::DocumentQuery* Arena::CreateMaybeMessage< ::api::DocumentQuery >(Arena* arena) {
+  return Arena::CreateInternal< ::api::DocumentQuery >(arena);
+}
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::AddUserRolesRequest* Arena::CreateMaybeMessage< ::api::AddUserRolesRequest >(Arena* arena) {
   return Arena::CreateInternal< ::api::AddUserRolesRequest >(arena);
 }

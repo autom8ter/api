@@ -6,6 +6,13 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "api.CategoryQuery" do
+    optional :category, :message, 1, "common.String"
+  end
+  add_message "api.DocumentQuery" do
+    optional :category, :message, 1, "common.String"
+    optional :name, :message, 2, "common.Identifier"
+  end
   add_message "api.AddUserRolesRequest" do
     optional :email, :message, 1, "common.Identifier"
     repeated :roles, :message, 2, "api.Role"
@@ -160,6 +167,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
 end
 
 module Api
+  CategoryQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CategoryQuery").msgclass
+  DocumentQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.DocumentQuery").msgclass
   AddUserRolesRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddUserRolesRequest").msgclass
   SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
   UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass

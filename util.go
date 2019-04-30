@@ -36,6 +36,7 @@ type ClientSet struct {
 	Users         UserServiceClient
 	Auth          AuthenticationServiceClient
 	Events        EventServiceClient
+	Documents  		DocumentServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
@@ -45,6 +46,7 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 		Users:         NewUserServiceClient(conn),
 		Auth:          NewAuthenticationServiceClient(conn),
 		Events:        NewEventServiceClient(conn),
+		Documents: NewDocumentServiceClient(conn),
 	}
 }
 

@@ -83,6 +83,49 @@ service EventService {
     }
 }
 
+service DocumentService {
+    rpc GetDocument(DocumentQuery) returns (Document) {
+        option (google.api.http) = {
+      post: "/documents"
+      body: "*"
+    };
+    }
+    rpc Update(Document) returns (common.Empty) {
+        option (google.api.http) = {
+      post: "/documents/update"
+      body: "*"
+    };
+    }
+    rpc Create(Document) returns (common.Empty) {
+        option (google.api.http) = {
+      post: "/documents/create"
+      body: "*"
+    };
+    }
+
+    rpc Delete(DocumentQuery) returns (common.Empty) {
+        option (google.api.http) = {
+      post: "/documents/create"
+      body: "*"
+    };
+    }
+    rpc ListDocuments(CategoryQuery) returns (stream Document) {
+        option (google.api.http) = {
+      post: "/documents/list"
+      body: "*"
+    };
+    }
+}
+
+message CategoryQuery {
+    common.String category =1;
+}
+
+message DocumentQuery {
+    common.String category =1;
+    common.Identifier name=2;
+}
+
 message AddUserRolesRequest {
     common.Identifier email =1;
     repeated Role roles=2;

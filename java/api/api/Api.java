@@ -14,6 +14,1414 @@ public final class Api {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface CategoryQueryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.CategoryQuery)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    boolean hasCategory();
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    common.Common.String getCategory();
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    common.Common.StringOrBuilder getCategoryOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.CategoryQuery}
+   */
+  public  static final class CategoryQuery extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.CategoryQuery)
+      CategoryQueryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CategoryQuery.newBuilder() to construct.
+    private CategoryQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CategoryQuery() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CategoryQuery(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.String.Builder subBuilder = null;
+              if (category_ != null) {
+                subBuilder = category_.toBuilder();
+              }
+              category_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(category_);
+                category_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_CategoryQuery_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_CategoryQuery_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.CategoryQuery.class, api.Api.CategoryQuery.Builder.class);
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 1;
+    private common.Common.String category_;
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    public boolean hasCategory() {
+      return category_ != null;
+    }
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    public common.Common.String getCategory() {
+      return category_ == null ? common.Common.String.getDefaultInstance() : category_;
+    }
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    public common.Common.StringOrBuilder getCategoryOrBuilder() {
+      return getCategory();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (category_ != null) {
+        output.writeMessage(1, getCategory());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (category_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCategory());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.CategoryQuery)) {
+        return super.equals(obj);
+      }
+      api.Api.CategoryQuery other = (api.Api.CategoryQuery) obj;
+
+      boolean result = true;
+      result = result && (hasCategory() == other.hasCategory());
+      if (hasCategory()) {
+        result = result && getCategory()
+            .equals(other.getCategory());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCategory()) {
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + getCategory().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.CategoryQuery parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.CategoryQuery parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.CategoryQuery parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.CategoryQuery parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.CategoryQuery parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.CategoryQuery parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.CategoryQuery prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.CategoryQuery}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.CategoryQuery)
+        api.Api.CategoryQueryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_CategoryQuery_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_CategoryQuery_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.CategoryQuery.class, api.Api.CategoryQuery.Builder.class);
+      }
+
+      // Construct using api.Api.CategoryQuery.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (categoryBuilder_ == null) {
+          category_ = null;
+        } else {
+          category_ = null;
+          categoryBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_CategoryQuery_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.CategoryQuery getDefaultInstanceForType() {
+        return api.Api.CategoryQuery.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.CategoryQuery build() {
+        api.Api.CategoryQuery result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.CategoryQuery buildPartial() {
+        api.Api.CategoryQuery result = new api.Api.CategoryQuery(this);
+        if (categoryBuilder_ == null) {
+          result.category_ = category_;
+        } else {
+          result.category_ = categoryBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.CategoryQuery) {
+          return mergeFrom((api.Api.CategoryQuery)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.CategoryQuery other) {
+        if (other == api.Api.CategoryQuery.getDefaultInstance()) return this;
+        if (other.hasCategory()) {
+          mergeCategory(other.getCategory());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.CategoryQuery parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.CategoryQuery) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.String category_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> categoryBuilder_;
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public boolean hasCategory() {
+        return categoryBuilder_ != null || category_ != null;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public common.Common.String getCategory() {
+        if (categoryBuilder_ == null) {
+          return category_ == null ? common.Common.String.getDefaultInstance() : category_;
+        } else {
+          return categoryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder setCategory(common.Common.String value) {
+        if (categoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          category_ = value;
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder setCategory(
+          common.Common.String.Builder builderForValue) {
+        if (categoryBuilder_ == null) {
+          category_ = builderForValue.build();
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder mergeCategory(common.Common.String value) {
+        if (categoryBuilder_ == null) {
+          if (category_ != null) {
+            category_ =
+              common.Common.String.newBuilder(category_).mergeFrom(value).buildPartial();
+          } else {
+            category_ = value;
+          }
+          onChanged();
+        } else {
+          categoryBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder clearCategory() {
+        if (categoryBuilder_ == null) {
+          category_ = null;
+          onChanged();
+        } else {
+          category_ = null;
+          categoryBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public common.Common.String.Builder getCategoryBuilder() {
+        
+        onChanged();
+        return getCategoryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public common.Common.StringOrBuilder getCategoryOrBuilder() {
+        if (categoryBuilder_ != null) {
+          return categoryBuilder_.getMessageOrBuilder();
+        } else {
+          return category_ == null ?
+              common.Common.String.getDefaultInstance() : category_;
+        }
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getCategoryFieldBuilder() {
+        if (categoryBuilder_ == null) {
+          categoryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getCategory(),
+                  getParentForChildren(),
+                  isClean());
+          category_ = null;
+        }
+        return categoryBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.CategoryQuery)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.CategoryQuery)
+    private static final api.Api.CategoryQuery DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.CategoryQuery();
+    }
+
+    public static api.Api.CategoryQuery getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CategoryQuery>
+        PARSER = new com.google.protobuf.AbstractParser<CategoryQuery>() {
+      @java.lang.Override
+      public CategoryQuery parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CategoryQuery(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CategoryQuery> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CategoryQuery> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.CategoryQuery getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DocumentQueryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.DocumentQuery)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    boolean hasCategory();
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    common.Common.String getCategory();
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    common.Common.StringOrBuilder getCategoryOrBuilder();
+
+    /**
+     * <code>.common.Identifier name = 2;</code>
+     */
+    boolean hasName();
+    /**
+     * <code>.common.Identifier name = 2;</code>
+     */
+    common.Common.Identifier getName();
+    /**
+     * <code>.common.Identifier name = 2;</code>
+     */
+    common.Common.IdentifierOrBuilder getNameOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.DocumentQuery}
+   */
+  public  static final class DocumentQuery extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.DocumentQuery)
+      DocumentQueryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DocumentQuery.newBuilder() to construct.
+    private DocumentQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DocumentQuery() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DocumentQuery(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.String.Builder subBuilder = null;
+              if (category_ != null) {
+                subBuilder = category_.toBuilder();
+              }
+              category_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(category_);
+                category_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              common.Common.Identifier.Builder subBuilder = null;
+              if (name_ != null) {
+                subBuilder = name_.toBuilder();
+              }
+              name_ = input.readMessage(common.Common.Identifier.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(name_);
+                name_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_DocumentQuery_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_DocumentQuery_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.DocumentQuery.class, api.Api.DocumentQuery.Builder.class);
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 1;
+    private common.Common.String category_;
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    public boolean hasCategory() {
+      return category_ != null;
+    }
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    public common.Common.String getCategory() {
+      return category_ == null ? common.Common.String.getDefaultInstance() : category_;
+    }
+    /**
+     * <code>.common.String category = 1;</code>
+     */
+    public common.Common.StringOrBuilder getCategoryOrBuilder() {
+      return getCategory();
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private common.Common.Identifier name_;
+    /**
+     * <code>.common.Identifier name = 2;</code>
+     */
+    public boolean hasName() {
+      return name_ != null;
+    }
+    /**
+     * <code>.common.Identifier name = 2;</code>
+     */
+    public common.Common.Identifier getName() {
+      return name_ == null ? common.Common.Identifier.getDefaultInstance() : name_;
+    }
+    /**
+     * <code>.common.Identifier name = 2;</code>
+     */
+    public common.Common.IdentifierOrBuilder getNameOrBuilder() {
+      return getName();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (category_ != null) {
+        output.writeMessage(1, getCategory());
+      }
+      if (name_ != null) {
+        output.writeMessage(2, getName());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (category_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getCategory());
+      }
+      if (name_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getName());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.DocumentQuery)) {
+        return super.equals(obj);
+      }
+      api.Api.DocumentQuery other = (api.Api.DocumentQuery) obj;
+
+      boolean result = true;
+      result = result && (hasCategory() == other.hasCategory());
+      if (hasCategory()) {
+        result = result && getCategory()
+            .equals(other.getCategory());
+      }
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasCategory()) {
+        hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+        hash = (53 * hash) + getCategory().hashCode();
+      }
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.DocumentQuery parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.DocumentQuery parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.DocumentQuery parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.DocumentQuery parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.DocumentQuery parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.DocumentQuery parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.DocumentQuery prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.DocumentQuery}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.DocumentQuery)
+        api.Api.DocumentQueryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_DocumentQuery_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_DocumentQuery_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.DocumentQuery.class, api.Api.DocumentQuery.Builder.class);
+      }
+
+      // Construct using api.Api.DocumentQuery.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (categoryBuilder_ == null) {
+          category_ = null;
+        } else {
+          category_ = null;
+          categoryBuilder_ = null;
+        }
+        if (nameBuilder_ == null) {
+          name_ = null;
+        } else {
+          name_ = null;
+          nameBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_DocumentQuery_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.DocumentQuery getDefaultInstanceForType() {
+        return api.Api.DocumentQuery.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.DocumentQuery build() {
+        api.Api.DocumentQuery result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.DocumentQuery buildPartial() {
+        api.Api.DocumentQuery result = new api.Api.DocumentQuery(this);
+        if (categoryBuilder_ == null) {
+          result.category_ = category_;
+        } else {
+          result.category_ = categoryBuilder_.build();
+        }
+        if (nameBuilder_ == null) {
+          result.name_ = name_;
+        } else {
+          result.name_ = nameBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.DocumentQuery) {
+          return mergeFrom((api.Api.DocumentQuery)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.DocumentQuery other) {
+        if (other == api.Api.DocumentQuery.getDefaultInstance()) return this;
+        if (other.hasCategory()) {
+          mergeCategory(other.getCategory());
+        }
+        if (other.hasName()) {
+          mergeName(other.getName());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.DocumentQuery parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.DocumentQuery) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.String category_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> categoryBuilder_;
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public boolean hasCategory() {
+        return categoryBuilder_ != null || category_ != null;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public common.Common.String getCategory() {
+        if (categoryBuilder_ == null) {
+          return category_ == null ? common.Common.String.getDefaultInstance() : category_;
+        } else {
+          return categoryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder setCategory(common.Common.String value) {
+        if (categoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          category_ = value;
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder setCategory(
+          common.Common.String.Builder builderForValue) {
+        if (categoryBuilder_ == null) {
+          category_ = builderForValue.build();
+          onChanged();
+        } else {
+          categoryBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder mergeCategory(common.Common.String value) {
+        if (categoryBuilder_ == null) {
+          if (category_ != null) {
+            category_ =
+              common.Common.String.newBuilder(category_).mergeFrom(value).buildPartial();
+          } else {
+            category_ = value;
+          }
+          onChanged();
+        } else {
+          categoryBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public Builder clearCategory() {
+        if (categoryBuilder_ == null) {
+          category_ = null;
+          onChanged();
+        } else {
+          category_ = null;
+          categoryBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public common.Common.String.Builder getCategoryBuilder() {
+        
+        onChanged();
+        return getCategoryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      public common.Common.StringOrBuilder getCategoryOrBuilder() {
+        if (categoryBuilder_ != null) {
+          return categoryBuilder_.getMessageOrBuilder();
+        } else {
+          return category_ == null ?
+              common.Common.String.getDefaultInstance() : category_;
+        }
+      }
+      /**
+       * <code>.common.String category = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getCategoryFieldBuilder() {
+        if (categoryBuilder_ == null) {
+          categoryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getCategory(),
+                  getParentForChildren(),
+                  isClean());
+          category_ = null;
+        }
+        return categoryBuilder_;
+      }
+
+      private common.Common.Identifier name_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Identifier, common.Common.Identifier.Builder, common.Common.IdentifierOrBuilder> nameBuilder_;
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public boolean hasName() {
+        return nameBuilder_ != null || name_ != null;
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public common.Common.Identifier getName() {
+        if (nameBuilder_ == null) {
+          return name_ == null ? common.Common.Identifier.getDefaultInstance() : name_;
+        } else {
+          return nameBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public Builder setName(common.Common.Identifier value) {
+        if (nameBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          name_ = value;
+          onChanged();
+        } else {
+          nameBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public Builder setName(
+          common.Common.Identifier.Builder builderForValue) {
+        if (nameBuilder_ == null) {
+          name_ = builderForValue.build();
+          onChanged();
+        } else {
+          nameBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public Builder mergeName(common.Common.Identifier value) {
+        if (nameBuilder_ == null) {
+          if (name_ != null) {
+            name_ =
+              common.Common.Identifier.newBuilder(name_).mergeFrom(value).buildPartial();
+          } else {
+            name_ = value;
+          }
+          onChanged();
+        } else {
+          nameBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public Builder clearName() {
+        if (nameBuilder_ == null) {
+          name_ = null;
+          onChanged();
+        } else {
+          name_ = null;
+          nameBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public common.Common.Identifier.Builder getNameBuilder() {
+        
+        onChanged();
+        return getNameFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      public common.Common.IdentifierOrBuilder getNameOrBuilder() {
+        if (nameBuilder_ != null) {
+          return nameBuilder_.getMessageOrBuilder();
+        } else {
+          return name_ == null ?
+              common.Common.Identifier.getDefaultInstance() : name_;
+        }
+      }
+      /**
+       * <code>.common.Identifier name = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.Identifier, common.Common.Identifier.Builder, common.Common.IdentifierOrBuilder> 
+          getNameFieldBuilder() {
+        if (nameBuilder_ == null) {
+          nameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.Identifier, common.Common.Identifier.Builder, common.Common.IdentifierOrBuilder>(
+                  getName(),
+                  getParentForChildren(),
+                  isClean());
+          name_ = null;
+        }
+        return nameBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.DocumentQuery)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.DocumentQuery)
+    private static final api.Api.DocumentQuery DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.DocumentQuery();
+    }
+
+    public static api.Api.DocumentQuery getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DocumentQuery>
+        PARSER = new com.google.protobuf.AbstractParser<DocumentQuery>() {
+      @java.lang.Override
+      public DocumentQuery parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DocumentQuery(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DocumentQuery> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DocumentQuery> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.DocumentQuery getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AddUserRolesRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.AddUserRolesRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -30262,6 +31670,16 @@ public final class Api {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_CategoryQuery_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_CategoryQuery_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_DocumentQuery_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_DocumentQuery_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_AddUserRolesRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -30381,126 +31799,139 @@ public final class Api {
   static {
     java.lang.String[] descriptorData = {
       "\n\tapi.proto\022\003api\032\034google/api/annotations" +
-      ".proto\032\023common/common.proto\"R\n\023AddUserRo" +
-      "lesRequest\022!\n\005email\030\001 \001(\0132\022.common.Ident" +
-      "ifier\022\030\n\005roles\030\002 \003(\0132\t.api.Role\"p\n\020Subsc" +
-      "ribeRequest\022!\n\005email\030\001 \001(\0132\022.common.Iden" +
-      "tifier\022 \n\004plan\030\002 \001(\0132\022.common.Identifier" +
-      "\022\027\n\004card\030\003 \001(\0132\t.api.Card\"U\n\022UnSubscribe" +
-      "Request\022!\n\005email\030\001 \001(\0132\022.common.Identifi" +
-      "er\022\034\n\004plan\030\002 \001(\0132\016.common.String\"\214\001\n\004Car" +
-      "d\022\"\n\006number\030\001 \001(\0132\022.common.Identifier\022!\n" +
-      "\texp_month\030\002 \001(\0132\016.common.String\022 \n\010exp_" +
-      "year\030\003 \001(\0132\016.common.String\022\033\n\003cvc\030\004 \001(\0132" +
-      "\016.common.String\"\373\005\n\004User\022#\n\007user_id\030\001 \001(" +
-      "\0132\022.common.Identifier\022\034\n\004name\030\002 \001(\0132\016.co" +
-      "mmon.String\022\"\n\ngiven_name\030\003 \001(\0132\016.common" +
-      ".String\022#\n\013family_name\030\004 \001(\0132\016.common.St" +
-      "ring\022\036\n\006gender\030\005 \001(\0132\016.common.String\022!\n\t" +
-      "birthdate\030\006 \001(\0132\016.common.String\022!\n\005email" +
-      "\030\007 \001(\0132\022.common.Identifier\022(\n\014phone_numb" +
-      "er\030\010 \001(\0132\022.common.Identifier\022\037\n\007picture\030" +
-      "\t \001(\0132\016.common.String\022 \n\010nickname\030\016 \001(\0132" +
-      "\016.common.String\022(\n\ruser_metadata\030\n \001(\0132\021" +
-      ".common.StringMap\022\'\n\014app_metadata\030\013 \001(\0132" +
-      "\021.common.StringMap\022\037\n\007last_ip\030\014 \001(\0132\016.co" +
-      "mmon.String\022\035\n\007blocked\030\r \001(\0132\014.common.Bo" +
-      "ol\022(\n\013multifactor\030\017 \001(\0132\023.common.StringA" +
-      "rray\022\"\n\ncreated_at\030\021 \001(\0132\016.common.String" +
-      "\022\"\n\nupdated_at\030\022 \001(\0132\016.common.String\022$\n\016" +
-      "phone_verified\030\023 \001(\0132\014.common.Bool\022$\n\016em" +
-      "ail_verified\030\024 \001(\0132\014.common.Bool\022 \n\010pass" +
-      "word\030\025 \001(\0132\016.common.String\022!\n\nidentities" +
-      "\030\026 \003(\0132\r.api.Identity\"\216\001\n\014UserMetadata\022\036" +
-      "\n\006status\030\001 \001(\0132\016.common.String\022\036\n\003bio\030\002 " +
-      "\001(\0132\021.common.StringMap\022\035\n\007address\030\003 \001(\0132" +
-      "\014.api.Address\022\037\n\004tags\030\004 \001(\0132\021.common.Str" +
-      "ingMap\"\241\001\n\007Address\022\034\n\004city\030\001 \001(\0132\016.commo" +
-      "n.String\022\035\n\005state\030\002 \001(\0132\016.common.String\022" +
-      "\035\n\005line1\030\003 \001(\0132\016.common.String\022\035\n\005line2\030" +
-      "\004 \001(\0132\016.common.String\022\033\n\003zip\030\005 \001(\0132\016.com" +
-      "mon.String\"\225\001\n\013AppMetadata\022#\n\013descriptio" +
-      "n\030\001 \001(\0132\016.common.String\022\'\n\017account_balan" +
-      "ce\030\002 \001(\0132\016.common.String\022\027\n\004plan\030\003 \001(\0132\t" +
-      ".api.Plan\022\037\n\004tags\030\004 \001(\0132\021.common.StringM" +
-      "ap\"\306\001\n\004Plan\022\036\n\002id\030\001 \001(\0132\022.common.Identif" +
-      "ier\022\034\n\006active\030\002 \001(\0132\014.common.Bool\022\035\n\006amo" +
-      "unt\030\003 \001(\0132\r.common.Int64\022 \n\010interval\030\004 \001" +
-      "(\0132\016.common.String\022 \n\010nickname\030\005 \001(\0132\016.c" +
-      "ommon.String\022\035\n\007product\030\006 \001(\0132\014.api.Prod" +
-      "uct\"k\n\007Product\022\036\n\002id\030\001 \001(\0132\022.common.Iden" +
-      "tifier\022#\n\013description\030\002 \001(\0132\016.common.Str" +
-      "ing\022\033\n\003url\030\003 \001(\0132\016.common.String\"\225\001\n\010Ide" +
-      "ntity\022\"\n\nconnection\030\001 \001(\0132\016.common.Strin" +
-      "g\022#\n\007user_id\030\002 \001(\0132\022.common.Identifier\022 " +
-      "\n\010provider\030\003 \001(\0132\016.common.String\022\036\n\010isSo" +
-      "cial\030\004 \001(\0132\014.common.Bool\"i\n\004Role\022\036\n\002id\030\001" +
-      " \001(\0132\022.common.Identifier\022\034\n\004name\030\002 \001(\0132\016" +
-      ".common.String\022#\n\013description\030\003 \001(\0132\016.co" +
-      "mmon.String\"\374\001\n\006OAuth2\022!\n\tclient_id\030\001 \001(" +
-      "\0132\016.common.String\022%\n\rclient_secret\030\002 \001(\013" +
-      "2\016.common.String\022!\n\ttoken_url\030\003 \001(\0132\016.co" +
-      "mmon.String\022 \n\010auth_url\030\004 \001(\0132\016.common.S" +
-      "tring\022#\n\006scopes\030\005 \001(\0132\023.common.StringArr" +
-      "ay\022 \n\010redirect\030\006 \001(\0132\016.common.String\022\034\n\004" +
-      "code\030\007 \001(\0132\016.common.String\"\321\001\n\021ClientCre" +
-      "dentials\022!\n\tclient_id\030\001 \001(\0132\016.common.Str" +
-      "ing\022%\n\rclient_secret\030\002 \001(\0132\016.common.Stri" +
-      "ng\022!\n\ttoken_url\030\003 \001(\0132\016.common.String\022#\n" +
-      "\006scopes\030\004 \001(\0132\023.common.StringArray\022*\n\017en" +
-      "dpoint_params\030\005 \001(\0132\021.common.StringMap\"\213" +
-      "\002\n\003JWT\022\035\n\005email\030\001 \001(\0132\016.common.String\022\023\n" +
-      "\013private_key\030\002 \001(\014\022$\n\014prive_key_id\030\003 \001(\013" +
-      "2\016.common.String\022\037\n\007subject\030\004 \001(\0132\016.comm" +
-      "on.String\022#\n\006scopes\030\005 \001(\0132\023.common.Strin" +
-      "gArray\022!\n\ttoken_url\030\006 \001(\0132\016.common.Strin" +
-      "g\022\037\n\007expires\030\007 \001(\0132\016.common.String\022 \n\010au" +
-      "dience\030\010 \001(\0132\016.common.String\"<\n\025DefaultG" +
-      "CPCredentials\022#\n\006scopes\030\001 \001(\0132\023.common.S" +
-      "tringArray\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.com" +
-      "mon.String\022\036\n\006fields\030\005 \001(\0132\016.common.Stri" +
-      "ng\"\270\002\n\005Event\022\034\n\004date\030\001 \001(\0132\016.common.Stri" +
-      "ng\022\034\n\004type\030\002 \001(\0132\016.common.String\022!\n\tclie" +
-      "nt_id\030\003 \001(\0132\016.common.String\022#\n\013client_na" +
-      "me\030\004 \001(\0132\016.common.String\022\032\n\002ip\030\005 \001(\0132\016.c" +
-      "ommon.String\022%\n\rlocation_info\030\006 \001(\0132\016.co" +
-      "mmon.String\022\037\n\007details\030\007 \001(\0132\016.common.St" +
-      "ring\022\037\n\007user_id\030\010 \001(\0132\016.common.String\022&\n" +
-      "\013annotations\030\t \001(\0132\021.common.StringMap\"\214\001" +
-      "\n\nEventQuery\022\034\n\004date\030\001 \001(\0132\016.common.Stri" +
-      "ng\022\034\n\004type\030\002 \001(\0132\016.common.String\022!\n\tclie" +
-      "nt_id\030\003 \001(\0132\016.common.String\022\037\n\007user_id\030\004" +
-      " \001(\0132\016.common.String\"\300\001\n\013JSONWebKeys\022\033\n\003" +
-      "kty\030\001 \001(\0132\016.common.String\022\037\n\003kid\030\002 \001(\0132\022" +
-      ".common.Identifier\022\033\n\003use\030\003 \001(\0132\016.common" +
-      ".String\022\031\n\001n\030\004 \001(\0132\016.common.String\022\031\n\001e\030" +
-      "\005 \001(\0132\016.common.String\022 \n\003x5c\030\006 \001(\0132\023.com" +
-      "mon.StringArray\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020." +
-      "api.JSONWebKeys\"k\n\010Document\022 \n\010category\030" +
-      "\001 \001(\0132\016.common.String\022\034\n\004name\030\002 \001(\0132\016.co" +
-      "mmon.String\022\037\n\004data\030\003 \001(\0132\021.common.Strin" +
-      "gMap2I\n\014DebugService\0229\n\004Echo\022\016.common.St" +
-      "ring\032\016.common.String\"\021\202\323\344\223\002\013\"\006/debug:\001*2" +
-      "\247\001\n\023SubscriptionService\022D\n\tSubscribe\022\025.a" +
-      "pi.SubscribeRequest\032\t.api.User\"\025\202\323\344\223\002\017\"\n" +
-      "/subscribe:\001*\022J\n\013Unsubscribe\022\027.api.UnSub" +
-      "scribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014/unsub" +
-      "scribe:\001*2\\\n\025AuthenticationService\022C\n\007Ge" +
-      "tUser\022\021.common.AuthToken\032\t.api.User\"\032\202\323\344" +
-      "\223\002\024\"\017/authentication:\001*2\230\003\n\013UserService\022" +
-      "H\n\nQueryUsers\022\n.api.Query\032\t.api.User\"!\202\323" +
-      "\344\223\002\033\"\026/management/user/query:\001*0\001\022I\n\007Get" +
-      "User\022\022.common.Identifier\032\t.api.User\"\037\202\323\344" +
-      "\223\002\031\"\024/management/user/get:\001*\022F\n\nUpdateUs" +
-      "er\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027/manag" +
-      "ement/user/update:\001*\022O\n\tUserRoles\022\022.comm" +
-      "on.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026/manag" +
-      "ement/user/roles:\001*0\001\022[\n\014AddUserRoles\022\030." +
-      "api.AddUserRolesRequest\032\016.common.String\"" +
-      "!\202\323\344\223\002\033\"\026/management/user/roles:\001*2N\n\014Ev" +
-      "entService\022>\n\tGetEvents\022\017.api.EventQuery" +
-      "\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001b\006prot" +
-      "o3"
+      ".proto\032\023common/common.proto\"1\n\rCategoryQ" +
+      "uery\022 \n\010category\030\001 \001(\0132\016.common.String\"S" +
+      "\n\rDocumentQuery\022 \n\010category\030\001 \001(\0132\016.comm" +
+      "on.String\022 \n\004name\030\002 \001(\0132\022.common.Identif" +
+      "ier\"R\n\023AddUserRolesRequest\022!\n\005email\030\001 \001(" +
+      "\0132\022.common.Identifier\022\030\n\005roles\030\002 \003(\0132\t.a" +
+      "pi.Role\"p\n\020SubscribeRequest\022!\n\005email\030\001 \001" +
+      "(\0132\022.common.Identifier\022 \n\004plan\030\002 \001(\0132\022.c" +
+      "ommon.Identifier\022\027\n\004card\030\003 \001(\0132\t.api.Car" +
+      "d\"U\n\022UnSubscribeRequest\022!\n\005email\030\001 \001(\0132\022" +
+      ".common.Identifier\022\034\n\004plan\030\002 \001(\0132\016.commo" +
+      "n.String\"\214\001\n\004Card\022\"\n\006number\030\001 \001(\0132\022.comm" +
+      "on.Identifier\022!\n\texp_month\030\002 \001(\0132\016.commo" +
+      "n.String\022 \n\010exp_year\030\003 \001(\0132\016.common.Stri" +
+      "ng\022\033\n\003cvc\030\004 \001(\0132\016.common.String\"\373\005\n\004User" +
+      "\022#\n\007user_id\030\001 \001(\0132\022.common.Identifier\022\034\n" +
+      "\004name\030\002 \001(\0132\016.common.String\022\"\n\ngiven_nam" +
+      "e\030\003 \001(\0132\016.common.String\022#\n\013family_name\030\004" +
+      " \001(\0132\016.common.String\022\036\n\006gender\030\005 \001(\0132\016.c" +
+      "ommon.String\022!\n\tbirthdate\030\006 \001(\0132\016.common" +
+      ".String\022!\n\005email\030\007 \001(\0132\022.common.Identifi" +
+      "er\022(\n\014phone_number\030\010 \001(\0132\022.common.Identi" +
+      "fier\022\037\n\007picture\030\t \001(\0132\016.common.String\022 \n" +
+      "\010nickname\030\016 \001(\0132\016.common.String\022(\n\ruser_" +
+      "metadata\030\n \001(\0132\021.common.StringMap\022\'\n\014app" +
+      "_metadata\030\013 \001(\0132\021.common.StringMap\022\037\n\007la" +
+      "st_ip\030\014 \001(\0132\016.common.String\022\035\n\007blocked\030\r" +
+      " \001(\0132\014.common.Bool\022(\n\013multifactor\030\017 \001(\0132" +
+      "\023.common.StringArray\022\"\n\ncreated_at\030\021 \001(\013" +
+      "2\016.common.String\022\"\n\nupdated_at\030\022 \001(\0132\016.c" +
+      "ommon.String\022$\n\016phone_verified\030\023 \001(\0132\014.c" +
+      "ommon.Bool\022$\n\016email_verified\030\024 \001(\0132\014.com" +
+      "mon.Bool\022 \n\010password\030\025 \001(\0132\016.common.Stri" +
+      "ng\022!\n\nidentities\030\026 \003(\0132\r.api.Identity\"\216\001" +
+      "\n\014UserMetadata\022\036\n\006status\030\001 \001(\0132\016.common." +
+      "String\022\036\n\003bio\030\002 \001(\0132\021.common.StringMap\022\035" +
+      "\n\007address\030\003 \001(\0132\014.api.Address\022\037\n\004tags\030\004 " +
+      "\001(\0132\021.common.StringMap\"\241\001\n\007Address\022\034\n\004ci" +
+      "ty\030\001 \001(\0132\016.common.String\022\035\n\005state\030\002 \001(\0132" +
+      "\016.common.String\022\035\n\005line1\030\003 \001(\0132\016.common." +
+      "String\022\035\n\005line2\030\004 \001(\0132\016.common.String\022\033\n" +
+      "\003zip\030\005 \001(\0132\016.common.String\"\225\001\n\013AppMetada" +
+      "ta\022#\n\013description\030\001 \001(\0132\016.common.String\022" +
+      "\'\n\017account_balance\030\002 \001(\0132\016.common.String" +
+      "\022\027\n\004plan\030\003 \001(\0132\t.api.Plan\022\037\n\004tags\030\004 \001(\0132" +
+      "\021.common.StringMap\"\306\001\n\004Plan\022\036\n\002id\030\001 \001(\0132" +
+      "\022.common.Identifier\022\034\n\006active\030\002 \001(\0132\014.co" +
+      "mmon.Bool\022\035\n\006amount\030\003 \001(\0132\r.common.Int64" +
+      "\022 \n\010interval\030\004 \001(\0132\016.common.String\022 \n\010ni" +
+      "ckname\030\005 \001(\0132\016.common.String\022\035\n\007product\030" +
+      "\006 \001(\0132\014.api.Product\"k\n\007Product\022\036\n\002id\030\001 \001" +
+      "(\0132\022.common.Identifier\022#\n\013description\030\002 " +
+      "\001(\0132\016.common.String\022\033\n\003url\030\003 \001(\0132\016.commo" +
+      "n.String\"\225\001\n\010Identity\022\"\n\nconnection\030\001 \001(" +
+      "\0132\016.common.String\022#\n\007user_id\030\002 \001(\0132\022.com" +
+      "mon.Identifier\022 \n\010provider\030\003 \001(\0132\016.commo" +
+      "n.String\022\036\n\010isSocial\030\004 \001(\0132\014.common.Bool" +
+      "\"i\n\004Role\022\036\n\002id\030\001 \001(\0132\022.common.Identifier" +
+      "\022\034\n\004name\030\002 \001(\0132\016.common.String\022#\n\013descri" +
+      "ption\030\003 \001(\0132\016.common.String\"\374\001\n\006OAuth2\022!" +
+      "\n\tclient_id\030\001 \001(\0132\016.common.String\022%\n\rcli" +
+      "ent_secret\030\002 \001(\0132\016.common.String\022!\n\ttoke" +
+      "n_url\030\003 \001(\0132\016.common.String\022 \n\010auth_url\030" +
+      "\004 \001(\0132\016.common.String\022#\n\006scopes\030\005 \001(\0132\023." +
+      "common.StringArray\022 \n\010redirect\030\006 \001(\0132\016.c" +
+      "ommon.String\022\034\n\004code\030\007 \001(\0132\016.common.Stri" +
+      "ng\"\321\001\n\021ClientCredentials\022!\n\tclient_id\030\001 " +
+      "\001(\0132\016.common.String\022%\n\rclient_secret\030\002 \001" +
+      "(\0132\016.common.String\022!\n\ttoken_url\030\003 \001(\0132\016." +
+      "common.String\022#\n\006scopes\030\004 \001(\0132\023.common.S" +
+      "tringArray\022*\n\017endpoint_params\030\005 \001(\0132\021.co" +
+      "mmon.StringMap\"\213\002\n\003JWT\022\035\n\005email\030\001 \001(\0132\016." +
+      "common.String\022\023\n\013private_key\030\002 \001(\014\022$\n\014pr" +
+      "ive_key_id\030\003 \001(\0132\016.common.String\022\037\n\007subj" +
+      "ect\030\004 \001(\0132\016.common.String\022#\n\006scopes\030\005 \001(" +
+      "\0132\023.common.StringArray\022!\n\ttoken_url\030\006 \001(" +
+      "\0132\016.common.String\022\037\n\007expires\030\007 \001(\0132\016.com" +
+      "mon.String\022 \n\010audience\030\010 \001(\0132\016.common.St" +
+      "ring\"<\n\025DefaultGCPCredentials\022#\n\006scopes\030" +
+      "\001 \001(\0132\023.common.StringArray\"F\n\005Query\022\035\n\005q" +
+      "uery\030\004 \001(\0132\016.common.String\022\036\n\006fields\030\005 \001" +
+      "(\0132\016.common.String\"\270\002\n\005Event\022\034\n\004date\030\001 \001" +
+      "(\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.commo" +
+      "n.String\022!\n\tclient_id\030\003 \001(\0132\016.common.Str" +
+      "ing\022#\n\013client_name\030\004 \001(\0132\016.common.String" +
+      "\022\032\n\002ip\030\005 \001(\0132\016.common.String\022%\n\rlocation" +
+      "_info\030\006 \001(\0132\016.common.String\022\037\n\007details\030\007" +
+      " \001(\0132\016.common.String\022\037\n\007user_id\030\010 \001(\0132\016." +
+      "common.String\022&\n\013annotations\030\t \001(\0132\021.com" +
+      "mon.StringMap\"\214\001\n\nEventQuery\022\034\n\004date\030\001 \001" +
+      "(\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.commo" +
+      "n.String\022!\n\tclient_id\030\003 \001(\0132\016.common.Str" +
+      "ing\022\037\n\007user_id\030\004 \001(\0132\016.common.String\"\300\001\n" +
+      "\013JSONWebKeys\022\033\n\003kty\030\001 \001(\0132\016.common.Strin" +
+      "g\022\037\n\003kid\030\002 \001(\0132\022.common.Identifier\022\033\n\003us" +
+      "e\030\003 \001(\0132\016.common.String\022\031\n\001n\030\004 \001(\0132\016.com" +
+      "mon.String\022\031\n\001e\030\005 \001(\0132\016.common.String\022 \n" +
+      "\003x5c\030\006 \001(\0132\023.common.StringArray\"&\n\004Jwks\022" +
+      "\036\n\004keys\030\001 \003(\0132\020.api.JSONWebKeys\"k\n\010Docum" +
+      "ent\022 \n\010category\030\001 \001(\0132\016.common.String\022\034\n" +
+      "\004name\030\002 \001(\0132\016.common.String\022\037\n\004data\030\003 \001(" +
+      "\0132\021.common.StringMap2I\n\014DebugService\0229\n\004" +
+      "Echo\022\016.common.String\032\016.common.String\"\021\202\323" +
+      "\344\223\002\013\"\006/debug:\001*2\247\001\n\023SubscriptionService\022" +
+      "D\n\tSubscribe\022\025.api.SubscribeRequest\032\t.ap" +
+      "i.User\"\025\202\323\344\223\002\017\"\n/subscribe:\001*\022J\n\013Unsubsc" +
+      "ribe\022\027.api.UnSubscribeRequest\032\t.api.User" +
+      "\"\027\202\323\344\223\002\021\"\014/unsubscribe:\001*2\\\n\025Authenticat" +
+      "ionService\022C\n\007GetUser\022\021.common.AuthToken" +
+      "\032\t.api.User\"\032\202\323\344\223\002\024\"\017/authentication:\001*2" +
+      "\230\003\n\013UserService\022H\n\nQueryUsers\022\n.api.Quer" +
+      "y\032\t.api.User\"!\202\323\344\223\002\033\"\026/management/user/q" +
+      "uery:\001*0\001\022I\n\007GetUser\022\022.common.Identifier" +
+      "\032\t.api.User\"\037\202\323\344\223\002\031\"\024/management/user/ge" +
+      "t:\001*\022F\n\nUpdateUser\022\t.api.User\032\t.api.User" +
+      "\"\"\202\323\344\223\002\034\"\027/management/user/update:\001*\022O\n\t" +
+      "UserRoles\022\022.common.Identifier\032\t.api.Role" +
+      "\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*0\001\022[\n" +
+      "\014AddUserRoles\022\030.api.AddUserRolesRequest\032" +
+      "\016.common.String\"!\202\323\344\223\002\033\"\026/management/use" +
+      "r/roles:\001*2N\n\014EventService\022>\n\tGetEvents\022" +
+      "\017.api.EventQuery\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/e" +
+      "vents:\001*0\0012\203\003\n\017DocumentService\022G\n\013GetDoc" +
+      "ument\022\022.api.DocumentQuery\032\r.api.Document" +
+      "\"\025\202\323\344\223\002\017\"\n/documents:\001*\022D\n\006Update\022\r.api." +
+      "Document\032\r.common.Empty\"\034\202\323\344\223\002\026\"\021/docume" +
+      "nts/update:\001*\022D\n\006Create\022\r.api.Document\032\r" +
+      ".common.Empty\"\034\202\323\344\223\002\026\"\021/documents/create" +
+      ":\001*\022I\n\006Delete\022\022.api.DocumentQuery\032\r.comm" +
+      "on.Empty\"\034\202\323\344\223\002\026\"\021/documents/create:\001*\022P" +
+      "\n\rListDocuments\022\022.api.CategoryQuery\032\r.ap" +
+      "i.Document\"\032\202\323\344\223\002\024\"\017/documents/list:\001*0\001" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -30516,134 +31947,146 @@ public final class Api {
           com.google.api.AnnotationsProto.getDescriptor(),
           common.Common.getDescriptor(),
         }, assigner);
-    internal_static_api_AddUserRolesRequest_descriptor =
+    internal_static_api_CategoryQuery_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_api_CategoryQuery_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_CategoryQuery_descriptor,
+        new java.lang.String[] { "Category", });
+    internal_static_api_DocumentQuery_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_api_DocumentQuery_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_DocumentQuery_descriptor,
+        new java.lang.String[] { "Category", "Name", });
+    internal_static_api_AddUserRolesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_api_AddUserRolesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AddUserRolesRequest_descriptor,
         new java.lang.String[] { "Email", "Roles", });
     internal_static_api_SubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_api_SubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_SubscribeRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", "Card", });
     internal_static_api_UnSubscribeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_api_UnSubscribeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UnSubscribeRequest_descriptor,
         new java.lang.String[] { "Email", "Plan", });
     internal_static_api_Card_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_api_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Card_descriptor,
         new java.lang.String[] { "Number", "ExpMonth", "ExpYear", "Cvc", });
     internal_static_api_User_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_api_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_User_descriptor,
         new java.lang.String[] { "UserId", "Name", "GivenName", "FamilyName", "Gender", "Birthdate", "Email", "PhoneNumber", "Picture", "Nickname", "UserMetadata", "AppMetadata", "LastIp", "Blocked", "Multifactor", "CreatedAt", "UpdatedAt", "PhoneVerified", "EmailVerified", "Password", "Identities", });
     internal_static_api_UserMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_api_UserMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_UserMetadata_descriptor,
         new java.lang.String[] { "Status", "Bio", "Address", "Tags", });
     internal_static_api_Address_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_api_Address_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Address_descriptor,
         new java.lang.String[] { "City", "State", "Line1", "Line2", "Zip", });
     internal_static_api_AppMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_api_AppMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_AppMetadata_descriptor,
         new java.lang.String[] { "Description", "AccountBalance", "Plan", "Tags", });
     internal_static_api_Plan_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_api_Plan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Plan_descriptor,
         new java.lang.String[] { "Id", "Active", "Amount", "Interval", "Nickname", "Product", });
     internal_static_api_Product_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_api_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Product_descriptor,
         new java.lang.String[] { "Id", "Description", "Url", });
     internal_static_api_Identity_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_api_Identity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Identity_descriptor,
         new java.lang.String[] { "Connection", "UserId", "Provider", "IsSocial", });
     internal_static_api_Role_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_api_Role_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Role_descriptor,
         new java.lang.String[] { "Id", "Name", "Description", });
     internal_static_api_OAuth2_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_api_OAuth2_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_OAuth2_descriptor,
         new java.lang.String[] { "ClientId", "ClientSecret", "TokenUrl", "AuthUrl", "Scopes", "Redirect", "Code", });
     internal_static_api_ClientCredentials_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_api_ClientCredentials_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_ClientCredentials_descriptor,
         new java.lang.String[] { "ClientId", "ClientSecret", "TokenUrl", "Scopes", "EndpointParams", });
     internal_static_api_JWT_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_JWT_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JWT_descriptor,
         new java.lang.String[] { "Email", "PrivateKey", "PriveKeyId", "Subject", "Scopes", "TokenUrl", "Expires", "Audience", });
     internal_static_api_DefaultGCPCredentials_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_DefaultGCPCredentials_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_DefaultGCPCredentials_descriptor,
         new java.lang.String[] { "Scopes", });
     internal_static_api_Query_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_Query_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Query_descriptor,
         new java.lang.String[] { "Query", "Fields", });
     internal_static_api_Event_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_Event_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Event_descriptor,
         new java.lang.String[] { "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId", "Annotations", });
     internal_static_api_EventQuery_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_EventQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EventQuery_descriptor,
         new java.lang.String[] { "Date", "Type", "ClientId", "UserId", });
     internal_static_api_JSONWebKeys_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_api_JSONWebKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JSONWebKeys_descriptor,
         new java.lang.String[] { "Kty", "Kid", "Use", "N", "E", "X5C", });
     internal_static_api_Jwks_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_api_Jwks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Jwks_descriptor,
         new java.lang.String[] { "Keys", });
     internal_static_api_Document_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_api_Document_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Document_descriptor,

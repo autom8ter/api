@@ -58,6 +58,39 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
+#pragma mark - CategoryQuery
+
+typedef GPB_ENUM(CategoryQuery_FieldNumber) {
+  CategoryQuery_FieldNumber_Category = 1,
+};
+
+@interface CategoryQuery : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *category;
+/** Test to see if @c category has been set. */
+@property(nonatomic, readwrite) BOOL hasCategory;
+
+@end
+
+#pragma mark - DocumentQuery
+
+typedef GPB_ENUM(DocumentQuery_FieldNumber) {
+  DocumentQuery_FieldNumber_Category = 1,
+  DocumentQuery_FieldNumber_Name = 2,
+};
+
+@interface DocumentQuery : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *category;
+/** Test to see if @c category has been set. */
+@property(nonatomic, readwrite) BOOL hasCategory;
+
+@property(nonatomic, readwrite, strong, null_resettable) Identifier *name;
+/** Test to see if @c name has been set. */
+@property(nonatomic, readwrite) BOOL hasName;
+
+@end
+
 #pragma mark - AddUserRolesRequest
 
 typedef GPB_ENUM(AddUserRolesRequest_FieldNumber) {
