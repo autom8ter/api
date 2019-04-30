@@ -14,132 +14,43 @@ service DebugService {
     }
 }
 
-service SubscriptionService {
-    rpc Subscribe(SubscribeRequest) returns (User) {
-        option (google.api.http) = {
-      post: "/subscribe"
-      body: "*"
-    };
-    }
-    rpc Unsubscribe(UnSubscribeRequest) returns (User) {
-        option (google.api.http) = {
-      post: "/unsubscribe"
-      body: "*"
-    };
-    }
-}
-
-service AuthenticationService {
-    rpc GetUser(common.AuthToken) returns (User) {
-        option (google.api.http) = {
-      post: "/authentication"
-      body: "*"
-    };
-    }
-
-}
-
-service UserService {
-    rpc QueryUsers(Query) returns (stream User) {
-        option (google.api.http) = {
-      post: "/management/user/query"
-      body: "*"
-    };
-    }
-
+service DBService {
     rpc GetUser(common.Identifier) returns (User) {
         option (google.api.http) = {
-      post: "/management/user/get"
+      post: "/db/user"
       body: "*"
     };
     }
-
-    rpc UpdateUser(User) returns (User) {
+    rpc DeleteUser(common.Identifier) returns (common.Empty) {
         option (google.api.http) = {
-      post: "/management/user/update"
+      post: "/db/user/delete"
       body: "*"
     };
     }
-    rpc UserRoles(common.Identifier) returns (stream Role) {
+    rpc UpdateUser(UpdateUserRequest) returns (User) {
         option (google.api.http) = {
-      post: "/management/user/roles"
+      post: "/db/user/delete"
       body: "*"
     };
     }
-    rpc AddUserRoles(AddUserRolesRequest) returns (common.String) {
+    rpc CreateUser(User) returns (User) {
         option (google.api.http) = {
-      post: "/management/user/roles"
+      post: "/db/user/delete"
+      body: "*"
+    };
+    }
+    rpc ListUsers(common.Empty) returns (stream User) {
+        option (google.api.http) = {
+      post: "/db/user/delete"
       body: "*"
     };
     }
 }
 
-service EventService {
-    rpc GetEvents(EventQuery) returns (stream Event) {
-        option (google.api.http) = {
-      post: "/events"
-      body: "*"
-    };
-    }
-}
-
-service DocumentService {
-    rpc GetDocument(DocumentQuery) returns (Document) {
-        option (google.api.http) = {
-      post: "/documents"
-      body: "*"
-    };
-    }
-    rpc Update(Document) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/documents/update"
-      body: "*"
-    };
-    }
-    rpc Create(Document) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/documents/create"
-      body: "*"
-    };
-    }
-
-    rpc Delete(DocumentQuery) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/documents/create"
-      body: "*"
-    };
-    }
-    rpc ListDocuments(CategoryQuery) returns (stream Document) {
-        option (google.api.http) = {
-      post: "/documents/list"
-      body: "*"
-    };
-    }
-}
-
-message CategoryQuery {
-    common.String category =1;
-}
-
-message DocumentQuery {
-    common.String category =1;
-    common.Identifier name=2;
-}
-
-message AddUserRolesRequest {
+message UpdateUserRequest {
     common.Identifier email =1;
-    repeated Role roles=2;
-}
-
-message SubscribeRequest {
-    common.Identifier email=1;
-    common.Identifier plan =2;
-    Card card =3;
-}
-
-message UnSubscribeRequest {
-    common.Identifier email=1;
-    common.String plan =2;
+    common.StringMap fields =2;
+    common.Bool overwrite =3;
 }
 
 message Card {
@@ -171,6 +82,7 @@ message User {
     common.Bool email_verified=20;
     common.String password=21;
     repeated Identity identities =22;
+    repeated Role roles=23;
 }
 
 message UserMetadata {
@@ -193,6 +105,7 @@ message AppMetadata {
     common.String account_balance=2;
     Plan plan=3;
     common.StringMap tags=4;
+    Card card =5;
 }
 
 message Plan {
@@ -208,6 +121,7 @@ message Product {
     common.Identifier id =1;
     common.String description =2;
     common.String url =3;
+    common.StringMap tags =4;
 }
 
 message Identity{
@@ -256,30 +170,6 @@ message DefaultGCPCredentials {
     common.StringArray scopes =1;
  }
 
- message Query {
-    common.String query=4;
-    common.String fields=5;
-}
-
-message Event {
-    common.String date=1;
-    common.String type=2;
-    common.String client_id=3;
-    common.String client_name=4;
-    common.String ip=5;
-    common.String location_info=6;
-    common.String details=7;
-    common.String user_id=8;
-    common.StringMap annotations=9;
-}
-
-message EventQuery {
-    common.String date=1;
-    common.String type=2;
-    common.String client_id=3;
-    common.String user_id=4;
-}
-
 message JSONWebKeys {
     common.String kty =1;
     common.Identifier kid =2;
@@ -291,10 +181,4 @@ message JSONWebKeys {
 
 message Jwks {
     repeated JSONWebKeys keys=1;
-}
-
-message Document {
-    common.String category=1;
-    common.String name=2;
-    common.StringMap data=3;
 }

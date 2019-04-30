@@ -24,237 +24,57 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type CategoryQuery struct {
-	Category             *common.String `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
+type UpdateUserRequest struct {
+	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Fields               *common.StringMap  `protobuf:"bytes,2,opt,name=fields,proto3" json:"fields,omitempty"`
+	Overwrite            *common.Bool       `protobuf:"bytes,3,opt,name=overwrite,proto3" json:"overwrite,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
+	XXX_unrecognized     []byte             `json:"-"`
+	XXX_sizecache        int32              `json:"-"`
 }
 
-func (m *CategoryQuery) Reset()         { *m = CategoryQuery{} }
-func (m *CategoryQuery) String() string { return proto.CompactTextString(m) }
-func (*CategoryQuery) ProtoMessage()    {}
-func (*CategoryQuery) Descriptor() ([]byte, []int) {
+func (m *UpdateUserRequest) Reset()         { *m = UpdateUserRequest{} }
+func (m *UpdateUserRequest) String() string { return proto.CompactTextString(m) }
+func (*UpdateUserRequest) ProtoMessage()    {}
+func (*UpdateUserRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_00212fb1f9d3bf1c, []int{0}
 }
 
-func (m *CategoryQuery) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CategoryQuery.Unmarshal(m, b)
+func (m *UpdateUserRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_UpdateUserRequest.Unmarshal(m, b)
 }
-func (m *CategoryQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CategoryQuery.Marshal(b, m, deterministic)
+func (m *UpdateUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_UpdateUserRequest.Marshal(b, m, deterministic)
 }
-func (m *CategoryQuery) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CategoryQuery.Merge(m, src)
+func (m *UpdateUserRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UpdateUserRequest.Merge(m, src)
 }
-func (m *CategoryQuery) XXX_Size() int {
-	return xxx_messageInfo_CategoryQuery.Size(m)
+func (m *UpdateUserRequest) XXX_Size() int {
+	return xxx_messageInfo_UpdateUserRequest.Size(m)
 }
-func (m *CategoryQuery) XXX_DiscardUnknown() {
-	xxx_messageInfo_CategoryQuery.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CategoryQuery proto.InternalMessageInfo
-
-func (m *CategoryQuery) GetCategory() *common.String {
-	if m != nil {
-		return m.Category
-	}
-	return nil
+func (m *UpdateUserRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_UpdateUserRequest.DiscardUnknown(m)
 }
 
-type DocumentQuery struct {
-	Category             *common.String     `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	Name                 *common.Identifier `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
+var xxx_messageInfo_UpdateUserRequest proto.InternalMessageInfo
 
-func (m *DocumentQuery) Reset()         { *m = DocumentQuery{} }
-func (m *DocumentQuery) String() string { return proto.CompactTextString(m) }
-func (*DocumentQuery) ProtoMessage()    {}
-func (*DocumentQuery) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{1}
-}
-
-func (m *DocumentQuery) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_DocumentQuery.Unmarshal(m, b)
-}
-func (m *DocumentQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_DocumentQuery.Marshal(b, m, deterministic)
-}
-func (m *DocumentQuery) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_DocumentQuery.Merge(m, src)
-}
-func (m *DocumentQuery) XXX_Size() int {
-	return xxx_messageInfo_DocumentQuery.Size(m)
-}
-func (m *DocumentQuery) XXX_DiscardUnknown() {
-	xxx_messageInfo_DocumentQuery.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_DocumentQuery proto.InternalMessageInfo
-
-func (m *DocumentQuery) GetCategory() *common.String {
-	if m != nil {
-		return m.Category
-	}
-	return nil
-}
-
-func (m *DocumentQuery) GetName() *common.Identifier {
-	if m != nil {
-		return m.Name
-	}
-	return nil
-}
-
-type AddUserRolesRequest struct {
-	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Roles                []*Role            `protobuf:"bytes,2,rep,name=roles,proto3" json:"roles,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-
-func (m *AddUserRolesRequest) Reset()         { *m = AddUserRolesRequest{} }
-func (m *AddUserRolesRequest) String() string { return proto.CompactTextString(m) }
-func (*AddUserRolesRequest) ProtoMessage()    {}
-func (*AddUserRolesRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{2}
-}
-
-func (m *AddUserRolesRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_AddUserRolesRequest.Unmarshal(m, b)
-}
-func (m *AddUserRolesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_AddUserRolesRequest.Marshal(b, m, deterministic)
-}
-func (m *AddUserRolesRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AddUserRolesRequest.Merge(m, src)
-}
-func (m *AddUserRolesRequest) XXX_Size() int {
-	return xxx_messageInfo_AddUserRolesRequest.Size(m)
-}
-func (m *AddUserRolesRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_AddUserRolesRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_AddUserRolesRequest proto.InternalMessageInfo
-
-func (m *AddUserRolesRequest) GetEmail() *common.Identifier {
+func (m *UpdateUserRequest) GetEmail() *common.Identifier {
 	if m != nil {
 		return m.Email
 	}
 	return nil
 }
 
-func (m *AddUserRolesRequest) GetRoles() []*Role {
+func (m *UpdateUserRequest) GetFields() *common.StringMap {
 	if m != nil {
-		return m.Roles
+		return m.Fields
 	}
 	return nil
 }
 
-type SubscribeRequest struct {
-	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Plan                 *common.Identifier `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
-	Card                 *Card              `protobuf:"bytes,3,opt,name=card,proto3" json:"card,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-
-func (m *SubscribeRequest) Reset()         { *m = SubscribeRequest{} }
-func (m *SubscribeRequest) String() string { return proto.CompactTextString(m) }
-func (*SubscribeRequest) ProtoMessage()    {}
-func (*SubscribeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{3}
-}
-
-func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_SubscribeRequest.Unmarshal(m, b)
-}
-func (m *SubscribeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_SubscribeRequest.Marshal(b, m, deterministic)
-}
-func (m *SubscribeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_SubscribeRequest.Merge(m, src)
-}
-func (m *SubscribeRequest) XXX_Size() int {
-	return xxx_messageInfo_SubscribeRequest.Size(m)
-}
-func (m *SubscribeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_SubscribeRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_SubscribeRequest proto.InternalMessageInfo
-
-func (m *SubscribeRequest) GetEmail() *common.Identifier {
+func (m *UpdateUserRequest) GetOverwrite() *common.Bool {
 	if m != nil {
-		return m.Email
-	}
-	return nil
-}
-
-func (m *SubscribeRequest) GetPlan() *common.Identifier {
-	if m != nil {
-		return m.Plan
-	}
-	return nil
-}
-
-func (m *SubscribeRequest) GetCard() *Card {
-	if m != nil {
-		return m.Card
-	}
-	return nil
-}
-
-type UnSubscribeRequest struct {
-	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Plan                 *common.String     `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-
-func (m *UnSubscribeRequest) Reset()         { *m = UnSubscribeRequest{} }
-func (m *UnSubscribeRequest) String() string { return proto.CompactTextString(m) }
-func (*UnSubscribeRequest) ProtoMessage()    {}
-func (*UnSubscribeRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{4}
-}
-
-func (m *UnSubscribeRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_UnSubscribeRequest.Unmarshal(m, b)
-}
-func (m *UnSubscribeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_UnSubscribeRequest.Marshal(b, m, deterministic)
-}
-func (m *UnSubscribeRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_UnSubscribeRequest.Merge(m, src)
-}
-func (m *UnSubscribeRequest) XXX_Size() int {
-	return xxx_messageInfo_UnSubscribeRequest.Size(m)
-}
-func (m *UnSubscribeRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_UnSubscribeRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_UnSubscribeRequest proto.InternalMessageInfo
-
-func (m *UnSubscribeRequest) GetEmail() *common.Identifier {
-	if m != nil {
-		return m.Email
-	}
-	return nil
-}
-
-func (m *UnSubscribeRequest) GetPlan() *common.String {
-	if m != nil {
-		return m.Plan
+		return m.Overwrite
 	}
 	return nil
 }
@@ -273,7 +93,7 @@ func (m *Card) Reset()         { *m = Card{} }
 func (m *Card) String() string { return proto.CompactTextString(m) }
 func (*Card) ProtoMessage()    {}
 func (*Card) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{5}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{1}
 }
 
 func (m *Card) XXX_Unmarshal(b []byte) error {
@@ -344,6 +164,7 @@ type User struct {
 	EmailVerified        *common.Bool        `protobuf:"bytes,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
 	Password             *common.String      `protobuf:"bytes,21,opt,name=password,proto3" json:"password,omitempty"`
 	Identities           []*Identity         `protobuf:"bytes,22,rep,name=identities,proto3" json:"identities,omitempty"`
+	Roles                []*Role             `protobuf:"bytes,23,rep,name=roles,proto3" json:"roles,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_unrecognized     []byte              `json:"-"`
 	XXX_sizecache        int32               `json:"-"`
@@ -353,7 +174,7 @@ func (m *User) Reset()         { *m = User{} }
 func (m *User) String() string { return proto.CompactTextString(m) }
 func (*User) ProtoMessage()    {}
 func (*User) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{6}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{2}
 }
 
 func (m *User) XXX_Unmarshal(b []byte) error {
@@ -521,6 +342,13 @@ func (m *User) GetIdentities() []*Identity {
 	return nil
 }
 
+func (m *User) GetRoles() []*Role {
+	if m != nil {
+		return m.Roles
+	}
+	return nil
+}
+
 type UserMetadata struct {
 	Status               *common.String    `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
 	Bio                  *common.StringMap `protobuf:"bytes,2,opt,name=bio,proto3" json:"bio,omitempty"`
@@ -535,7 +363,7 @@ func (m *UserMetadata) Reset()         { *m = UserMetadata{} }
 func (m *UserMetadata) String() string { return proto.CompactTextString(m) }
 func (*UserMetadata) ProtoMessage()    {}
 func (*UserMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{7}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{3}
 }
 
 func (m *UserMetadata) XXX_Unmarshal(b []byte) error {
@@ -599,7 +427,7 @@ func (m *Address) Reset()         { *m = Address{} }
 func (m *Address) String() string { return proto.CompactTextString(m) }
 func (*Address) ProtoMessage()    {}
 func (*Address) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{8}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{4}
 }
 
 func (m *Address) XXX_Unmarshal(b []byte) error {
@@ -660,6 +488,7 @@ type AppMetadata struct {
 	AccountBalance       *common.String    `protobuf:"bytes,2,opt,name=account_balance,json=accountBalance,proto3" json:"account_balance,omitempty"`
 	Plan                 *Plan             `protobuf:"bytes,3,opt,name=plan,proto3" json:"plan,omitempty"`
 	Tags                 *common.StringMap `protobuf:"bytes,4,opt,name=tags,proto3" json:"tags,omitempty"`
+	Card                 *Card             `protobuf:"bytes,5,opt,name=card,proto3" json:"card,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -669,7 +498,7 @@ func (m *AppMetadata) Reset()         { *m = AppMetadata{} }
 func (m *AppMetadata) String() string { return proto.CompactTextString(m) }
 func (*AppMetadata) ProtoMessage()    {}
 func (*AppMetadata) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{9}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{5}
 }
 
 func (m *AppMetadata) XXX_Unmarshal(b []byte) error {
@@ -718,6 +547,13 @@ func (m *AppMetadata) GetTags() *common.StringMap {
 	return nil
 }
 
+func (m *AppMetadata) GetCard() *Card {
+	if m != nil {
+		return m.Card
+	}
+	return nil
+}
+
 type Plan struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Active               *common.Bool       `protobuf:"bytes,2,opt,name=active,proto3" json:"active,omitempty"`
@@ -734,7 +570,7 @@ func (m *Plan) Reset()         { *m = Plan{} }
 func (m *Plan) String() string { return proto.CompactTextString(m) }
 func (*Plan) ProtoMessage()    {}
 func (*Plan) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{10}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{6}
 }
 
 func (m *Plan) XXX_Unmarshal(b []byte) error {
@@ -801,6 +637,7 @@ type Product struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Description          *common.String     `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Url                  *common.String     `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`
+	Tags                 *common.StringMap  `protobuf:"bytes,4,opt,name=tags,proto3" json:"tags,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -810,7 +647,7 @@ func (m *Product) Reset()         { *m = Product{} }
 func (m *Product) String() string { return proto.CompactTextString(m) }
 func (*Product) ProtoMessage()    {}
 func (*Product) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{11}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{7}
 }
 
 func (m *Product) XXX_Unmarshal(b []byte) error {
@@ -852,6 +689,13 @@ func (m *Product) GetUrl() *common.String {
 	return nil
 }
 
+func (m *Product) GetTags() *common.StringMap {
+	if m != nil {
+		return m.Tags
+	}
+	return nil
+}
+
 type Identity struct {
 	Connection           *common.String     `protobuf:"bytes,1,opt,name=connection,proto3" json:"connection,omitempty"`
 	UserId               *common.Identifier `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -866,7 +710,7 @@ func (m *Identity) Reset()         { *m = Identity{} }
 func (m *Identity) String() string { return proto.CompactTextString(m) }
 func (*Identity) ProtoMessage()    {}
 func (*Identity) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{12}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{8}
 }
 
 func (m *Identity) XXX_Unmarshal(b []byte) error {
@@ -928,7 +772,7 @@ func (m *Role) Reset()         { *m = Role{} }
 func (m *Role) String() string { return proto.CompactTextString(m) }
 func (*Role) ProtoMessage()    {}
 func (*Role) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{13}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{9}
 }
 
 func (m *Role) XXX_Unmarshal(b []byte) error {
@@ -987,7 +831,7 @@ func (m *OAuth2) Reset()         { *m = OAuth2{} }
 func (m *OAuth2) String() string { return proto.CompactTextString(m) }
 func (*OAuth2) ProtoMessage()    {}
 func (*OAuth2) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{14}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{10}
 }
 
 func (m *OAuth2) XXX_Unmarshal(b []byte) error {
@@ -1072,7 +916,7 @@ func (m *ClientCredentials) Reset()         { *m = ClientCredentials{} }
 func (m *ClientCredentials) String() string { return proto.CompactTextString(m) }
 func (*ClientCredentials) ProtoMessage()    {}
 func (*ClientCredentials) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{15}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{11}
 }
 
 func (m *ClientCredentials) XXX_Unmarshal(b []byte) error {
@@ -1146,7 +990,7 @@ func (m *JWT) Reset()         { *m = JWT{} }
 func (m *JWT) String() string { return proto.CompactTextString(m) }
 func (*JWT) ProtoMessage()    {}
 func (*JWT) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{16}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{12}
 }
 
 func (m *JWT) XXX_Unmarshal(b []byte) error {
@@ -1234,7 +1078,7 @@ func (m *DefaultGCPCredentials) Reset()         { *m = DefaultGCPCredentials{} }
 func (m *DefaultGCPCredentials) String() string { return proto.CompactTextString(m) }
 func (*DefaultGCPCredentials) ProtoMessage()    {}
 func (*DefaultGCPCredentials) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{17}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{13}
 }
 
 func (m *DefaultGCPCredentials) XXX_Unmarshal(b []byte) error {
@@ -1262,219 +1106,6 @@ func (m *DefaultGCPCredentials) GetScopes() *common.StringArray {
 	return nil
 }
 
-type Query struct {
-	Query                *common.String `protobuf:"bytes,4,opt,name=query,proto3" json:"query,omitempty"`
-	Fields               *common.String `protobuf:"bytes,5,opt,name=fields,proto3" json:"fields,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-
-func (m *Query) Reset()         { *m = Query{} }
-func (m *Query) String() string { return proto.CompactTextString(m) }
-func (*Query) ProtoMessage()    {}
-func (*Query) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{18}
-}
-
-func (m *Query) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Query.Unmarshal(m, b)
-}
-func (m *Query) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Query.Marshal(b, m, deterministic)
-}
-func (m *Query) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Query.Merge(m, src)
-}
-func (m *Query) XXX_Size() int {
-	return xxx_messageInfo_Query.Size(m)
-}
-func (m *Query) XXX_DiscardUnknown() {
-	xxx_messageInfo_Query.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Query proto.InternalMessageInfo
-
-func (m *Query) GetQuery() *common.String {
-	if m != nil {
-		return m.Query
-	}
-	return nil
-}
-
-func (m *Query) GetFields() *common.String {
-	if m != nil {
-		return m.Fields
-	}
-	return nil
-}
-
-type Event struct {
-	Date                 *common.String    `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 *common.String    `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             *common.String    `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientName           *common.String    `protobuf:"bytes,4,opt,name=client_name,json=clientName,proto3" json:"client_name,omitempty"`
-	Ip                   *common.String    `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`
-	LocationInfo         *common.String    `protobuf:"bytes,6,opt,name=location_info,json=locationInfo,proto3" json:"location_info,omitempty"`
-	Details              *common.String    `protobuf:"bytes,7,opt,name=details,proto3" json:"details,omitempty"`
-	UserId               *common.String    `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Annotations          *common.StringMap `protobuf:"bytes,9,opt,name=annotations,proto3" json:"annotations,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-
-func (m *Event) Reset()         { *m = Event{} }
-func (m *Event) String() string { return proto.CompactTextString(m) }
-func (*Event) ProtoMessage()    {}
-func (*Event) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{19}
-}
-
-func (m *Event) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Event.Unmarshal(m, b)
-}
-func (m *Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Event.Marshal(b, m, deterministic)
-}
-func (m *Event) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Event.Merge(m, src)
-}
-func (m *Event) XXX_Size() int {
-	return xxx_messageInfo_Event.Size(m)
-}
-func (m *Event) XXX_DiscardUnknown() {
-	xxx_messageInfo_Event.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Event proto.InternalMessageInfo
-
-func (m *Event) GetDate() *common.String {
-	if m != nil {
-		return m.Date
-	}
-	return nil
-}
-
-func (m *Event) GetType() *common.String {
-	if m != nil {
-		return m.Type
-	}
-	return nil
-}
-
-func (m *Event) GetClientId() *common.String {
-	if m != nil {
-		return m.ClientId
-	}
-	return nil
-}
-
-func (m *Event) GetClientName() *common.String {
-	if m != nil {
-		return m.ClientName
-	}
-	return nil
-}
-
-func (m *Event) GetIp() *common.String {
-	if m != nil {
-		return m.Ip
-	}
-	return nil
-}
-
-func (m *Event) GetLocationInfo() *common.String {
-	if m != nil {
-		return m.LocationInfo
-	}
-	return nil
-}
-
-func (m *Event) GetDetails() *common.String {
-	if m != nil {
-		return m.Details
-	}
-	return nil
-}
-
-func (m *Event) GetUserId() *common.String {
-	if m != nil {
-		return m.UserId
-	}
-	return nil
-}
-
-func (m *Event) GetAnnotations() *common.StringMap {
-	if m != nil {
-		return m.Annotations
-	}
-	return nil
-}
-
-type EventQuery struct {
-	Date                 *common.String `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 *common.String `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             *common.String `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	UserId               *common.String `protobuf:"bytes,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-
-func (m *EventQuery) Reset()         { *m = EventQuery{} }
-func (m *EventQuery) String() string { return proto.CompactTextString(m) }
-func (*EventQuery) ProtoMessage()    {}
-func (*EventQuery) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{20}
-}
-
-func (m *EventQuery) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_EventQuery.Unmarshal(m, b)
-}
-func (m *EventQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_EventQuery.Marshal(b, m, deterministic)
-}
-func (m *EventQuery) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_EventQuery.Merge(m, src)
-}
-func (m *EventQuery) XXX_Size() int {
-	return xxx_messageInfo_EventQuery.Size(m)
-}
-func (m *EventQuery) XXX_DiscardUnknown() {
-	xxx_messageInfo_EventQuery.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_EventQuery proto.InternalMessageInfo
-
-func (m *EventQuery) GetDate() *common.String {
-	if m != nil {
-		return m.Date
-	}
-	return nil
-}
-
-func (m *EventQuery) GetType() *common.String {
-	if m != nil {
-		return m.Type
-	}
-	return nil
-}
-
-func (m *EventQuery) GetClientId() *common.String {
-	if m != nil {
-		return m.ClientId
-	}
-	return nil
-}
-
-func (m *EventQuery) GetUserId() *common.String {
-	if m != nil {
-		return m.UserId
-	}
-	return nil
-}
-
 type JSONWebKeys struct {
 	Kty                  *common.String      `protobuf:"bytes,1,opt,name=kty,proto3" json:"kty,omitempty"`
 	Kid                  *common.Identifier  `protobuf:"bytes,2,opt,name=kid,proto3" json:"kid,omitempty"`
@@ -1491,7 +1122,7 @@ func (m *JSONWebKeys) Reset()         { *m = JSONWebKeys{} }
 func (m *JSONWebKeys) String() string { return proto.CompactTextString(m) }
 func (*JSONWebKeys) ProtoMessage()    {}
 func (*JSONWebKeys) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{21}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{14}
 }
 
 func (m *JSONWebKeys) XXX_Unmarshal(b []byte) error {
@@ -1565,7 +1196,7 @@ func (m *Jwks) Reset()         { *m = Jwks{} }
 func (m *Jwks) String() string { return proto.CompactTextString(m) }
 func (*Jwks) ProtoMessage()    {}
 func (*Jwks) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{22}
+	return fileDescriptor_00212fb1f9d3bf1c, []int{15}
 }
 
 func (m *Jwks) XXX_Unmarshal(b []byte) error {
@@ -1593,67 +1224,8 @@ func (m *Jwks) GetKeys() []*JSONWebKeys {
 	return nil
 }
 
-type Document struct {
-	Category             *common.String    `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	Name                 *common.String    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Data                 *common.StringMap `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-
-func (m *Document) Reset()         { *m = Document{} }
-func (m *Document) String() string { return proto.CompactTextString(m) }
-func (*Document) ProtoMessage()    {}
-func (*Document) Descriptor() ([]byte, []int) {
-	return fileDescriptor_00212fb1f9d3bf1c, []int{23}
-}
-
-func (m *Document) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_Document.Unmarshal(m, b)
-}
-func (m *Document) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_Document.Marshal(b, m, deterministic)
-}
-func (m *Document) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Document.Merge(m, src)
-}
-func (m *Document) XXX_Size() int {
-	return xxx_messageInfo_Document.Size(m)
-}
-func (m *Document) XXX_DiscardUnknown() {
-	xxx_messageInfo_Document.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Document proto.InternalMessageInfo
-
-func (m *Document) GetCategory() *common.String {
-	if m != nil {
-		return m.Category
-	}
-	return nil
-}
-
-func (m *Document) GetName() *common.String {
-	if m != nil {
-		return m.Name
-	}
-	return nil
-}
-
-func (m *Document) GetData() *common.StringMap {
-	if m != nil {
-		return m.Data
-	}
-	return nil
-}
-
 func init() {
-	proto.RegisterType((*CategoryQuery)(nil), "api.CategoryQuery")
-	proto.RegisterType((*DocumentQuery)(nil), "api.DocumentQuery")
-	proto.RegisterType((*AddUserRolesRequest)(nil), "api.AddUserRolesRequest")
-	proto.RegisterType((*SubscribeRequest)(nil), "api.SubscribeRequest")
-	proto.RegisterType((*UnSubscribeRequest)(nil), "api.UnSubscribeRequest")
+	proto.RegisterType((*UpdateUserRequest)(nil), "api.UpdateUserRequest")
 	proto.RegisterType((*Card)(nil), "api.Card")
 	proto.RegisterType((*User)(nil), "api.User")
 	proto.RegisterType((*UserMetadata)(nil), "api.UserMetadata")
@@ -1667,143 +1239,109 @@ func init() {
 	proto.RegisterType((*ClientCredentials)(nil), "api.ClientCredentials")
 	proto.RegisterType((*JWT)(nil), "api.JWT")
 	proto.RegisterType((*DefaultGCPCredentials)(nil), "api.DefaultGCPCredentials")
-	proto.RegisterType((*Query)(nil), "api.Query")
-	proto.RegisterType((*Event)(nil), "api.Event")
-	proto.RegisterType((*EventQuery)(nil), "api.EventQuery")
 	proto.RegisterType((*JSONWebKeys)(nil), "api.JSONWebKeys")
 	proto.RegisterType((*Jwks)(nil), "api.Jwks")
-	proto.RegisterType((*Document)(nil), "api.Document")
 }
 
 func init() { proto.RegisterFile("api.proto", fileDescriptor_00212fb1f9d3bf1c) }
 
 var fileDescriptor_00212fb1f9d3bf1c = []byte{
-	// 1991 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x59, 0x41, 0x6f, 0x23, 0x49,
-	0x15, 0x56, 0xdb, 0x8e, 0x9d, 0x3c, 0xdb, 0xc9, 0xa6, 0xb2, 0x99, 0x31, 0x61, 0x60, 0x87, 0x22,
-	0x13, 0x42, 0x66, 0x19, 0x0f, 0x99, 0x9d, 0x45, 0x0c, 0x12, 0x52, 0x36, 0x19, 0x42, 0x66, 0x99,
-	0x99, 0xe0, 0x6c, 0x58, 0x21, 0x90, 0x4c, 0xb9, 0xfb, 0xc5, 0x29, 0xd2, 0xee, 0xee, 0xed, 0xae,
-	0xf6, 0x8e, 0x39, 0x01, 0x7b, 0x83, 0x23, 0x17, 0xfe, 0x01, 0x12, 0xe2, 0x2f, 0x00, 0xe2, 0x37,
-	0x70, 0x41, 0x48, 0xdc, 0xf8, 0x0f, 0x5c, 0xd1, 0xab, 0xae, 0xb6, 0xdb, 0x4e, 0xb7, 0x9d, 0xc0,
-	0x01, 0x4e, 0x49, 0xea, 0xfb, 0xde, 0xd7, 0x55, 0xef, 0xbd, 0x7a, 0xf5, 0xaa, 0x02, 0x2b, 0x22,
-	0x90, 0x8f, 0x82, 0xd0, 0x57, 0x3e, 0x2b, 0x8b, 0x40, 0x6e, 0xdd, 0xeb, 0xfb, 0x7e, 0xdf, 0xc5,
-	0xb6, 0x08, 0x64, 0x5b, 0x78, 0x9e, 0xaf, 0x84, 0x92, 0xbe, 0x17, 0x25, 0x94, 0xad, 0x0d, 0xdb,
-	0x1f, 0x0c, 0x7c, 0xaf, 0x9d, 0xfc, 0x48, 0x06, 0xf9, 0xb7, 0xa0, 0x79, 0x28, 0x14, 0xf6, 0xfd,
-	0x70, 0xf4, 0xfd, 0x18, 0xc3, 0x11, 0xdb, 0x83, 0x65, 0xdb, 0x0c, 0xb4, 0xac, 0xfb, 0xd6, 0x6e,
-	0x7d, 0x7f, 0xf5, 0x91, 0xb1, 0x38, 0x53, 0xa1, 0xf4, 0xfa, 0x9d, 0x31, 0xce, 0x6d, 0x68, 0x1e,
-	0xf9, 0x76, 0x3c, 0x40, 0x4f, 0xdd, 0xda, 0x98, 0xed, 0x40, 0xc5, 0x13, 0x03, 0x6c, 0x95, 0x34,
-	0x8f, 0xa5, 0xbc, 0x13, 0x07, 0x3d, 0x25, 0x2f, 0x24, 0x86, 0x1d, 0x8d, 0xf3, 0x9f, 0xc0, 0xc6,
-	0x81, 0xe3, 0x9c, 0x47, 0x18, 0x76, 0x7c, 0x17, 0xa3, 0x0e, 0x7e, 0x12, 0x63, 0xa4, 0xd8, 0x2e,
-	0x2c, 0xe1, 0x40, 0x48, 0xd7, 0x7c, 0x27, 0xcf, 0x3e, 0x21, 0xb0, 0x77, 0x60, 0x29, 0x24, 0xcb,
-	0x56, 0xe9, 0x7e, 0x79, 0xb7, 0xbe, 0xbf, 0xf2, 0x88, 0xbc, 0x46, 0x5a, 0x9d, 0x64, 0x9c, 0x7f,
-	0x66, 0xc1, 0x5b, 0x67, 0x71, 0x2f, 0xb2, 0x43, 0xd9, 0xc3, 0xdb, 0xeb, 0xef, 0x40, 0x25, 0x70,
-	0x85, 0x37, 0x6f, 0x21, 0x84, 0xb3, 0x2f, 0x40, 0xc5, 0x16, 0xa1, 0xd3, 0x2a, 0x6b, 0x5e, 0x32,
-	0x8d, 0x43, 0x11, 0x3a, 0x1d, 0x3d, 0xcc, 0x7b, 0xc0, 0xce, 0xbd, 0xff, 0x62, 0x1a, 0x7c, 0x6a,
-	0x1a, 0xb3, 0x7e, 0xd7, 0x18, 0xff, 0x83, 0x05, 0x15, 0xfa, 0x24, 0xdb, 0x83, 0xaa, 0x17, 0x0f,
-	0x7a, 0x18, 0xce, 0xd1, 0x35, 0x0c, 0xf6, 0x10, 0x56, 0xf0, 0x4d, 0xd0, 0x1d, 0xf8, 0x9e, 0xba,
-	0x2c, 0x50, 0x5f, 0xc6, 0x37, 0xc1, 0x4b, 0xc2, 0xd9, 0x57, 0x81, 0x7e, 0xef, 0x8e, 0x50, 0x84,
-	0x66, 0xa1, 0xb3, 0xdc, 0x1a, 0xbe, 0x09, 0x7e, 0x88, 0x22, 0x64, 0xf7, 0xa1, 0x6c, 0x0f, 0xed,
-	0x56, 0x25, 0x97, 0x45, 0x10, 0xff, 0x47, 0x0d, 0x2a, 0x14, 0x78, 0xf6, 0x10, 0x6a, 0x71, 0x84,
-	0x61, 0x57, 0x3a, 0xf3, 0xe6, 0x4b, 0x94, 0x13, 0x87, 0x1c, 0x91, 0x49, 0xac, 0x6b, 0x8e, 0x20,
-	0x8c, 0x7d, 0x0d, 0xa0, 0x2f, 0x87, 0xe8, 0x75, 0x35, 0x33, 0x7f, 0xa2, 0x2b, 0x9a, 0xf1, 0x8a,
-	0xe8, 0x6d, 0xa8, 0x5f, 0x88, 0x81, 0x74, 0x47, 0x09, 0x3f, 0x7f, 0xca, 0x90, 0x50, 0xb4, 0xc1,
-	0x0e, 0x54, 0xfb, 0xe8, 0x39, 0x18, 0xb6, 0x96, 0x72, 0xb9, 0x06, 0x65, 0xef, 0xc2, 0x4a, 0x4f,
-	0x86, 0xea, 0xd2, 0x11, 0x0a, 0x5b, 0xd5, 0xfc, 0x69, 0x8c, 0x09, 0x93, 0x64, 0xa8, 0x2d, 0x4a,
-	0x86, 0xa7, 0xd0, 0x08, 0x2e, 0x7d, 0x0f, 0xbb, 0x26, 0xca, 0xcb, 0x85, 0x06, 0x75, 0xcd, 0x7b,
-	0x95, 0x84, 0x7a, 0x17, 0x6a, 0x81, 0xb4, 0x55, 0x1c, 0x62, 0x6b, 0x25, 0x3f, 0x78, 0x06, 0xa6,
-	0x9d, 0xee, 0x49, 0xfb, 0x4a, 0xbb, 0x63, 0x35, 0x3f, 0x27, 0x52, 0x9c, 0xbd, 0x0f, 0x4d, 0x1d,
-	0xbd, 0x01, 0x2a, 0xe1, 0x08, 0x25, 0x5a, 0xa0, 0x0d, 0xd6, 0xa7, 0x0d, 0x5e, 0x8a, 0xa0, 0xd3,
-	0x20, 0xde, 0x4b, 0x43, 0x63, 0xef, 0x41, 0x43, 0x04, 0xc1, 0xc4, 0xac, 0x5e, 0x64, 0x56, 0x17,
-	0x41, 0x30, 0xb6, 0xfa, 0x0a, 0xd4, 0x5c, 0x11, 0xa9, 0xae, 0x0c, 0x5a, 0x8d, 0x7c, 0xdf, 0x13,
-	0x7c, 0x12, 0xb0, 0x1d, 0xa8, 0xf5, 0x5c, 0xdf, 0xbe, 0x42, 0xa7, 0xd5, 0xd4, 0xc4, 0x46, 0x4a,
-	0xfc, 0xc0, 0xf7, 0xdd, 0x4e, 0x0a, 0xb2, 0xa7, 0x50, 0x1f, 0xc4, 0xae, 0x92, 0x17, 0xc2, 0x56,
-	0x7e, 0xd8, 0x5a, 0xd3, 0xdc, 0x8d, 0x69, 0xd1, 0x83, 0x30, 0x14, 0xa3, 0x4e, 0x96, 0x47, 0x29,
-	0x66, 0x87, 0x28, 0x14, 0x3a, 0x5d, 0xa1, 0x5a, 0xeb, 0xf9, 0xb1, 0x35, 0x8c, 0x03, 0x45, 0xf4,
-	0x38, 0x70, 0x52, 0x3a, 0xcb, 0xa7, 0x1b, 0xc6, 0x81, 0x62, 0x4f, 0x60, 0x35, 0x09, 0xf0, 0x10,
-	0x43, 0x0a, 0xa4, 0xd3, 0xda, 0xc8, 0x59, 0x43, 0x53, 0x73, 0x7e, 0x60, 0x28, 0x64, 0xa4, 0xd3,
-	0x63, 0x62, 0xf4, 0x76, 0x9e, 0x91, 0xe6, 0x8c, 0x8d, 0xf6, 0x60, 0x39, 0x10, 0x51, 0xf4, 0xa9,
-	0x1f, 0x3a, 0xad, 0xcd, 0xfc, 0x48, 0xa7, 0x38, 0x2d, 0x42, 0xea, 0xd4, 0x52, 0x12, 0xa3, 0xd6,
-	0x1d, 0x5d, 0x6f, 0x9b, 0xba, 0xd0, 0x25, 0x19, 0xa7, 0x46, 0x9d, 0x0c, 0x81, 0xff, 0xde, 0x82,
-	0xc6, 0x79, 0x36, 0xe2, 0x3b, 0x50, 0x8d, 0x94, 0x50, 0x71, 0x54, 0x70, 0x7a, 0x18, 0x94, 0x7d,
-	0x19, 0xca, 0x3d, 0xe9, 0x9b, 0x1d, 0x9e, 0x93, 0x10, 0x84, 0x52, 0x7c, 0x85, 0xe3, 0x84, 0x18,
-	0x45, 0x66, 0x83, 0x37, 0xf4, 0x4c, 0x0e, 0x92, 0xb1, 0x4e, 0x0a, 0xb2, 0x07, 0x50, 0x51, 0xa2,
-	0x1f, 0x99, 0x5d, 0x9d, 0xa3, 0xa6, 0x61, 0xfe, 0x17, 0x0b, 0x6a, 0xc6, 0x96, 0x4a, 0x8c, 0x2d,
-	0x55, 0xd1, 0x19, 0xa7, 0x31, 0xb6, 0x0d, 0x4b, 0x34, 0xdb, 0xa2, 0x3a, 0x94, 0x80, 0xc4, 0x72,
-	0xa5, 0x87, 0x5f, 0x2f, 0xa8, 0x41, 0x09, 0x98, 0xb2, 0xf6, 0x0b, 0x2a, 0x4f, 0x02, 0x52, 0x41,
-	0xfd, 0x99, 0x0c, 0x0a, 0x2a, 0x0e, 0x41, 0xfc, 0x4f, 0x16, 0xd4, 0x0f, 0x32, 0x7b, 0xe5, 0x31,
-	0xd4, 0x1d, 0xa4, 0x03, 0x27, 0xa0, 0x46, 0xa1, 0x60, 0x39, 0x59, 0x0a, 0xfb, 0x06, 0xac, 0x09,
-	0xdb, 0xf6, 0x63, 0x4f, 0x75, 0x7b, 0xc2, 0x15, 0x9e, 0x5d, 0xb4, 0xbe, 0x55, 0x43, 0xfb, 0x20,
-	0x61, 0xd1, 0xe9, 0xa7, 0x8f, 0xa7, 0xec, 0xe9, 0x77, 0xea, 0x0a, 0xcf, 0x1c, 0x8e, 0x37, 0x0c,
-	0xc2, 0xbf, 0x2c, 0xa8, 0x90, 0x15, 0xe3, 0x50, 0x9a, 0x7b, 0x18, 0x94, 0xa4, 0xc3, 0xb6, 0xa1,
-	0x2a, 0x6c, 0x25, 0x87, 0xe9, 0x14, 0xa7, 0xd3, 0xdc, 0x60, 0xec, 0x01, 0x54, 0xc5, 0x80, 0x66,
-	0x6a, 0xa6, 0xd6, 0x1c, 0xab, 0x79, 0xea, 0xfd, 0xf7, 0x3a, 0x06, 0xa4, 0x6d, 0x20, 0x3d, 0x85,
-	0xe1, 0x50, 0xb8, 0x05, 0x51, 0x18, 0xe3, 0x53, 0xc5, 0x71, 0x69, 0x41, 0x71, 0xdc, 0x81, 0x5a,
-	0x10, 0xfa, 0x4e, 0x6c, 0x2b, 0x53, 0xff, 0x93, 0x2c, 0x3d, 0x4d, 0xc6, 0x3a, 0x29, 0xc8, 0x7f,
-	0x61, 0x41, 0xcd, 0x0c, 0xde, 0x68, 0xf1, 0x33, 0xa1, 0x2d, 0x2d, 0x0e, 0xed, 0x7d, 0x28, 0xc7,
-	0xa1, 0x5b, 0x90, 0x88, 0x04, 0xf1, 0x3f, 0x5a, 0xb0, 0x9c, 0x6e, 0x64, 0xf6, 0x08, 0xc0, 0xf6,
-	0x3d, 0x0f, 0xed, 0x39, 0xa9, 0x93, 0x61, 0x64, 0xcf, 0xf0, 0xd2, 0xc2, 0x33, 0x9c, 0x8a, 0x4e,
-	0xe8, 0x0f, 0x25, 0x9d, 0xa0, 0xe5, 0x82, 0xa2, 0x63, 0x70, 0xb6, 0x0b, 0xcb, 0x32, 0x3a, 0xf3,
-	0x6d, 0x39, 0x8e, 0xcc, 0x74, 0xa0, 0xc7, 0x28, 0xff, 0xb9, 0x05, 0x15, 0x6a, 0xfc, 0x6e, 0xe4,
-	0xc0, 0x9b, 0xb4, 0x11, 0x33, 0x4e, 0x2e, 0x2f, 0x74, 0x32, 0xff, 0x73, 0x09, 0xaa, 0xaf, 0x0f,
-	0x62, 0x75, 0xb9, 0x4f, 0x7d, 0x95, 0xed, 0x4a, 0xf4, 0xd4, 0xa4, 0xad, 0xb9, 0xde, 0x2d, 0x6b,
-	0xc2, 0x09, 0x95, 0xee, 0xa6, 0x21, 0x47, 0x68, 0x87, 0xa8, 0x0a, 0xa6, 0xd5, 0x48, 0x48, 0x67,
-	0x9a, 0x43, 0x5f, 0x50, 0xfe, 0x15, 0x7a, 0xdd, 0xe2, 0xb8, 0x2e, 0x6b, 0xc2, 0x79, 0xe8, 0x52,
-	0xe7, 0x26, 0x62, 0x75, 0xa9, 0xb9, 0xf9, 0x09, 0x5e, 0x23, 0x9c, 0xa8, 0x0f, 0xa1, 0x1a, 0xd9,
-	0x7e, 0x80, 0x91, 0xc9, 0xee, 0xdc, 0xc3, 0xd0, 0x50, 0x28, 0x94, 0x21, 0x3a, 0x32, 0xc4, 0x71,
-	0x86, 0x5f, 0x9b, 0x43, 0x8a, 0xeb, 0xba, 0xea, 0x3b, 0x68, 0xfa, 0x9b, 0xeb, 0x75, 0xd5, 0x77,
-	0x90, 0xff, 0xba, 0x04, 0xeb, 0x87, 0x7a, 0x95, 0x87, 0x21, 0xea, 0x90, 0x09, 0x37, 0xfa, 0x7f,
-	0x73, 0xe6, 0xc4, 0x43, 0x95, 0xc5, 0x1e, 0x7a, 0x06, 0x6b, 0xe8, 0x39, 0x81, 0x2f, 0x3d, 0xd5,
-	0x0d, 0x44, 0x28, 0x06, 0xa9, 0x5f, 0x73, 0xca, 0xe0, 0x6a, 0xca, 0x3c, 0xd5, 0x44, 0xfe, 0xb7,
-	0x12, 0x94, 0x5f, 0x7c, 0xfc, 0x11, 0x9d, 0x10, 0xd9, 0x7b, 0xc2, 0xb5, 0x13, 0x22, 0xbd, 0x0a,
-	0xd5, 0x83, 0x50, 0x0e, 0x85, 0xc2, 0xee, 0x15, 0x8e, 0xf4, 0xb2, 0x1b, 0x1d, 0x30, 0x43, 0x1f,
-	0xe2, 0x88, 0x3d, 0x86, 0x06, 0xfd, 0xa5, 0x61, 0xf2, 0x64, 0xfe, 0x3a, 0xb5, 0x05, 0xf1, 0x4f,
-	0x1c, 0x6a, 0x19, 0xa3, 0xb8, 0xf7, 0x53, 0x8a, 0x6e, 0x41, 0xd6, 0x18, 0xf8, 0x76, 0x59, 0x33,
-	0xe5, 0xed, 0xea, 0x02, 0x6f, 0xef, 0x02, 0x5d, 0x2a, 0x64, 0x88, 0x51, 0x41, 0xe6, 0xa4, 0x30,
-	0x25, 0xa3, 0x88, 0x1d, 0x89, 0x74, 0x6e, 0x2d, 0xe7, 0xab, 0xa6, 0x38, 0x3f, 0x82, 0xcd, 0x23,
-	0xbc, 0x10, 0xb1, 0xab, 0x8e, 0x0f, 0x4f, 0xa7, 0x73, 0x2d, 0x5d, 0x88, 0xb5, 0x70, 0x21, 0xfc,
-	0x1c, 0x96, 0x92, 0xbb, 0xf1, 0x36, 0x2c, 0x7d, 0x42, 0xbf, 0x14, 0x9d, 0xe1, 0x1a, 0xa4, 0x0e,
-	0xe8, 0x42, 0xa2, 0xeb, 0x44, 0x45, 0x17, 0x87, 0x04, 0xe5, 0xbf, 0x2a, 0xc3, 0xd2, 0xf3, 0x21,
-	0x7a, 0x7a, 0xcf, 0xe8, 0xdb, 0x43, 0x41, 0x2f, 0xa2, 0x2f, 0x0e, 0x1c, 0x2a, 0x6a, 0x14, 0x14,
-	0xd6, 0x32, 0xc2, 0xa6, 0x77, 0x50, 0x79, 0xc1, 0x0e, 0x6a, 0x43, 0xdd, 0x90, 0xe7, 0x5d, 0x88,
-	0x12, 0x8a, 0xbe, 0x10, 0x7d, 0x11, 0x4a, 0x85, 0xad, 0x49, 0x49, 0x06, 0xb4, 0x25, 0x5d, 0xdf,
-	0xd6, 0xef, 0x15, 0x5d, 0xe9, 0x5d, 0xf8, 0x05, 0x31, 0x6f, 0xa4, 0xa4, 0x13, 0xef, 0xc2, 0xa7,
-	0xb8, 0x3b, 0xa8, 0x84, 0x74, 0x0b, 0xe3, 0x6e, 0x60, 0xba, 0x14, 0xa4, 0x87, 0x4f, 0x7e, 0xd8,
-	0xd3, 0x83, 0xe7, 0x09, 0xd4, 0x33, 0x2f, 0x27, 0xe6, 0x16, 0x94, 0x7b, 0xe5, 0x98, 0xb0, 0xa8,
-	0x8f, 0x05, 0x1d, 0x8c, 0x24, 0xd2, 0xff, 0x93, 0x88, 0x64, 0x56, 0x58, 0x99, 0xb7, 0x42, 0xfe,
-	0x77, 0x0b, 0xea, 0x2f, 0xce, 0x5e, 0xbf, 0xfa, 0x18, 0x7b, 0x1f, 0xe2, 0x28, 0xa2, 0x63, 0xff,
-	0xaa, 0xb0, 0x95, 0x25, 0x88, 0x6d, 0x43, 0xf9, 0x6a, 0xee, 0xa9, 0x4d, 0xb0, 0x6e, 0x1f, 0x22,
-	0x2c, 0x6c, 0x1f, 0x22, 0x64, 0xf7, 0xc0, 0xf2, 0x0a, 0x26, 0x67, 0x79, 0x84, 0x16, 0x75, 0x4b,
-	0x16, 0x75, 0x69, 0xe5, 0x37, 0x4f, 0x6d, 0x93, 0x15, 0xb9, 0x1b, 0x8e, 0x70, 0xfe, 0x2e, 0x54,
-	0x5e, 0x7c, 0x7a, 0x15, 0xb1, 0x6d, 0xa8, 0x5c, 0xe1, 0x88, 0x36, 0x28, 0x5d, 0x41, 0xde, 0xd2,
-	0x2d, 0x55, 0x66, 0xd1, 0x1d, 0x8d, 0x52, 0x4f, 0xb5, 0x9c, 0x3e, 0x60, 0xdd, 0xea, 0xed, 0xea,
-	0x26, 0xbd, 0xc1, 0x03, 0x9d, 0x05, 0xc2, 0x38, 0x24, 0xaf, 0xa3, 0x25, 0x78, 0xff, 0x04, 0x1a,
-	0x47, 0xd8, 0x8b, 0xfb, 0x67, 0x18, 0x0e, 0xa5, 0x8d, 0xec, 0x9b, 0x50, 0x79, 0x6e, 0x5f, 0xfa,
-	0x6c, 0x46, 0x74, 0x6b, 0xe6, 0x6f, 0xbe, 0xfe, 0xcb, 0xbf, 0xfe, 0xf3, 0x37, 0xa5, 0x3a, 0xaf,
-	0xb6, 0x1d, 0x32, 0x7f, 0x66, 0xed, 0xed, 0xff, 0xce, 0x82, 0x0d, 0xf3, 0x80, 0xa4, 0x9b, 0x8d,
-	0x54, 0xf2, 0x08, 0x56, 0xc6, 0xef, 0x4a, 0x6c, 0x53, 0xfb, 0x62, 0xf6, 0x9d, 0x69, 0x2b, 0x69,
-	0xc8, 0xe9, 0x32, 0xc6, 0x37, 0xb5, 0xf2, 0x1a, 0x87, 0x76, 0x94, 0xb2, 0x9e, 0x59, 0x7b, 0xec,
-	0x05, 0xd4, 0xcf, 0xbd, 0xf1, 0x08, 0xbb, 0x9b, 0x18, 0x78, 0xf3, 0x94, 0xee, 0x6a, 0xa5, 0x75,
-	0xde, 0x68, 0xc7, 0x5e, 0x56, 0x6b, 0xff, 0xc7, 0xb0, 0x49, 0x3d, 0x10, 0x25, 0x50, 0xb2, 0x9d,
-	0xd3, 0xa9, 0x1e, 0x42, 0xed, 0x18, 0x95, 0x7e, 0xf3, 0x19, 0x7b, 0x8c, 0x98, 0x1f, 0x51, 0xa9,
-	0xcf, 0x4a, 0x6f, 0x69, 0xe9, 0xb7, 0xf9, 0x5a, 0x5b, 0x4c, 0x09, 0x91, 0xfa, 0x6f, 0xcb, 0x50,
-	0x27, 0x52, 0x2a, 0xfa, 0x5d, 0x00, 0xbd, 0x31, 0x69, 0x2c, 0x62, 0xa0, 0x45, 0xf4, 0x40, 0x56,
-	0xf0, 0x4b, 0x5a, 0xf0, 0xf3, 0xfc, 0x4e, 0x7b, 0x20, 0x3c, 0xd1, 0x47, 0xca, 0x89, 0x36, 0x6d,
-	0x99, 0xb6, 0x2e, 0xcc, 0xcf, 0xac, 0xbd, 0xc7, 0x16, 0x3b, 0x99, 0x4c, 0x2f, 0x67, 0x1f, 0x64,
-	0xe5, 0xde, 0xd1, 0x72, 0x9f, 0xe3, 0x6f, 0x5f, 0x93, 0xeb, 0xa3, 0x22, 0x77, 0x7e, 0x07, 0xe0,
-	0x5c, 0xdf, 0xe6, 0xb5, 0xda, 0xc4, 0x32, 0x2b, 0xc2, 0xb5, 0xc8, 0x3d, 0x7e, 0xf7, 0x9a, 0x48,
-	0xf2, 0x10, 0x40, 0x3a, 0xaf, 0x61, 0x65, 0xfc, 0x36, 0x3a, 0x67, 0x52, 0x84, 0xcf, 0x59, 0xa3,
-	0x7e, 0x08, 0x4d, 0xd6, 0xf8, 0x23, 0x68, 0x64, 0xdf, 0x5b, 0x59, 0x2b, 0xbd, 0x35, 0xcf, 0x3e,
-	0xc1, 0x5e, 0x4b, 0xc9, 0xc5, 0xf2, 0xfb, 0xaf, 0xa0, 0xa1, 0x0b, 0x65, 0x1a, 0x9a, 0x6f, 0xc3,
-	0xca, 0x31, 0x2a, 0x3d, 0x14, 0xb1, 0x35, 0xfd, 0xa5, 0x49, 0x21, 0xdd, 0x82, 0xc9, 0x00, 0x67,
-	0x5a, 0xbc, 0xc1, 0x6b, 0x6d, 0xd4, 0x6c, 0x3d, 0xd9, 0xfd, 0xcf, 0xca, 0xb0, 0x96, 0xee, 0xe0,
-	0x54, 0xf3, 0x18, 0xea, 0xc7, 0xa8, 0xc6, 0xfb, 0x9a, 0x69, 0x91, 0xa9, 0x77, 0xea, 0xad, 0xe6,
-	0xd4, 0x58, 0x26, 0xe3, 0x1d, 0x33, 0x44, 0xf2, 0xec, 0x08, 0xaa, 0x49, 0x88, 0xd8, 0x34, 0x7f,
-	0x6b, 0x7c, 0x45, 0x7c, 0x3e, 0x08, 0xd4, 0x88, 0xdf, 0xd3, 0xe6, 0x77, 0xf8, 0xfa, 0xc4, 0x3c,
-	0x13, 0xa0, 0x23, 0xa8, 0x1e, 0xea, 0x57, 0x9e, 0xff, 0x40, 0x25, 0x79, 0x1e, 0x22, 0x95, 0x13,
-	0xa8, 0x1e, 0xa1, 0x8b, 0x0a, 0x0b, 0xd6, 0x73, 0x0b, 0xa9, 0x53, 0x68, 0x7e, 0x4f, 0x46, 0x63,
-	0x07, 0x45, 0x46, 0x71, 0xea, 0xdf, 0x00, 0xb3, 0x1e, 0x9a, 0x6c, 0xb7, 0x89, 0xa2, 0x2b, 0x23,
-	0xa5, 0xa3, 0xd0, 0xab, 0xea, 0xff, 0x25, 0x3c, 0xf9, 0x77, 0x00, 0x00, 0x00, 0xff, 0xff, 0x6e,
-	0x8f, 0xce, 0x9d, 0x90, 0x18, 0x00, 0x00,
+	// 1511 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x58, 0xcd, 0x6e, 0xdc, 0x46,
+	0x12, 0x06, 0x67, 0x46, 0xf3, 0x53, 0x33, 0x92, 0x56, 0x2d, 0xdb, 0x4b, 0x08, 0x5e, 0x58, 0xe0,
+	0xca, 0x5a, 0x59, 0xf6, 0x6a, 0xbc, 0xf2, 0xcf, 0x62, 0x0d, 0xec, 0x02, 0xb2, 0x64, 0x18, 0xb2,
+	0xd7, 0xb6, 0x40, 0x45, 0x31, 0x72, 0x1a, 0xf4, 0x90, 0x25, 0xa9, 0x33, 0x1c, 0x36, 0xd3, 0x6c,
+	0x8e, 0x35, 0x39, 0x05, 0xb9, 0xe6, 0x98, 0x3c, 0x44, 0x10, 0xe4, 0x15, 0x82, 0x20, 0xcf, 0x90,
+	0x4b, 0x10, 0x20, 0xb7, 0x5c, 0xf2, 0x04, 0xb9, 0x05, 0x41, 0x37, 0x9b, 0xf3, 0x23, 0x91, 0x1a,
+	0xe5, 0x96, 0x93, 0x34, 0xfd, 0x7d, 0x55, 0xac, 0xbf, 0xae, 0x2a, 0x12, 0x1a, 0x34, 0x62, 0x5b,
+	0x91, 0xe0, 0x92, 0x93, 0x32, 0x8d, 0xd8, 0xca, 0xcd, 0x13, 0xce, 0x4f, 0x02, 0x6c, 0xd3, 0x88,
+	0xb5, 0x69, 0x18, 0x72, 0x49, 0x25, 0xe3, 0x61, 0x9c, 0x52, 0x56, 0x96, 0x3d, 0xde, 0xef, 0xf3,
+	0xb0, 0x9d, 0xfe, 0x49, 0x0f, 0x9d, 0x2f, 0x2c, 0x58, 0x3a, 0x8a, 0x7c, 0x2a, 0xf1, 0x28, 0x46,
+	0xe1, 0xe2, 0x47, 0x09, 0xc6, 0x92, 0x6c, 0xc0, 0x1c, 0xf6, 0x29, 0x0b, 0x6c, 0x6b, 0xd5, 0xda,
+	0x68, 0x6e, 0x93, 0x2d, 0x23, 0xb3, 0xef, 0x63, 0x28, 0xd9, 0x31, 0x43, 0xe1, 0xa6, 0x04, 0x72,
+	0x07, 0xaa, 0xc7, 0x0c, 0x03, 0x3f, 0xb6, 0x4b, 0x9a, 0xba, 0x94, 0x51, 0x0f, 0xa5, 0x60, 0xe1,
+	0xc9, 0x2b, 0x1a, 0xb9, 0x86, 0x40, 0x36, 0xa1, 0xc1, 0x07, 0x28, 0xde, 0x09, 0x26, 0xd1, 0x2e,
+	0x6b, 0x76, 0x2b, 0x63, 0x3f, 0xe5, 0x3c, 0x70, 0xc7, 0xb0, 0xf3, 0xb5, 0x05, 0x95, 0x5d, 0x2a,
+	0x7c, 0xb2, 0x09, 0xd5, 0x30, 0xe9, 0x77, 0x51, 0x5c, 0x62, 0x8a, 0x61, 0x90, 0xbb, 0xd0, 0xc0,
+	0xb3, 0xa8, 0xd3, 0xe7, 0xa1, 0x3c, 0x35, 0xe6, 0x2c, 0x4c, 0x9b, 0xe3, 0xd6, 0xf1, 0x2c, 0x7a,
+	0xa5, 0x70, 0x72, 0x07, 0xd4, 0xff, 0x9d, 0x21, 0x52, 0x61, 0x8c, 0x39, 0xcf, 0xad, 0xe1, 0x59,
+	0xf4, 0x01, 0x52, 0x41, 0x56, 0xa1, 0xec, 0x0d, 0x3c, 0xbb, 0x92, 0xcb, 0x52, 0x90, 0xf3, 0x5b,
+	0x0d, 0x2a, 0x2a, 0x7e, 0xe4, 0x2e, 0xd4, 0x92, 0x18, 0x45, 0x87, 0xf9, 0x97, 0xd9, 0xab, 0x28,
+	0xfb, 0x3e, 0x71, 0xa0, 0x12, 0xd2, 0x3e, 0x16, 0x98, 0xaa, 0x31, 0xf2, 0x4f, 0x80, 0x13, 0x36,
+	0xc0, 0xb0, 0xa3, 0x99, 0xf9, 0x86, 0x36, 0x34, 0xe3, 0xb5, 0xa2, 0xb7, 0xa1, 0x79, 0x4c, 0xfb,
+	0x2c, 0x18, 0xa6, 0xfc, 0x7c, 0x93, 0x21, 0xa5, 0x68, 0x81, 0x75, 0xa8, 0x9e, 0x60, 0xe8, 0xa3,
+	0xb0, 0xe7, 0x72, 0xb9, 0x06, 0x25, 0xf7, 0xa0, 0xd1, 0x65, 0x42, 0x9e, 0xaa, 0x4a, 0xb1, 0xab,
+	0xf9, 0x66, 0x8c, 0x08, 0xe3, 0xfa, 0xa9, 0xcd, 0xaa, 0x9f, 0x47, 0xd0, 0x8a, 0x4e, 0x79, 0x88,
+	0x1d, 0x93, 0xe5, 0x7a, 0xa1, 0x40, 0x53, 0xf3, 0x5e, 0xa7, 0xa9, 0xde, 0x80, 0x5a, 0xc4, 0x3c,
+	0x99, 0x08, 0xb4, 0x1b, 0xf9, 0xc9, 0x33, 0x30, 0xd9, 0x84, 0x7a, 0xc8, 0xbc, 0x9e, 0x0e, 0xc7,
+	0x42, 0x7e, 0x4d, 0x64, 0x38, 0x79, 0x0c, 0xf3, 0x3a, 0x7b, 0x7d, 0x94, 0xd4, 0xa7, 0x92, 0xda,
+	0x50, 0x54, 0xd3, 0x2d, 0xc5, 0x7b, 0x65, 0x68, 0xe4, 0x21, 0xb4, 0x68, 0x14, 0x8d, 0xc5, 0x9a,
+	0x45, 0x62, 0x4d, 0x1a, 0x45, 0x23, 0xa9, 0x7f, 0x40, 0x2d, 0xa0, 0xb1, 0xec, 0xb0, 0xc8, 0x6e,
+	0xe5, 0xc7, 0x5e, 0xc1, 0xfb, 0x11, 0x59, 0x87, 0x5a, 0x37, 0xe0, 0x5e, 0x0f, 0x7d, 0x7b, 0x3e,
+	0xe7, 0xda, 0x64, 0x20, 0x79, 0x04, 0xcd, 0x7e, 0x12, 0x48, 0x76, 0x4c, 0x3d, 0xc9, 0x85, 0xbd,
+	0xa8, 0xb9, 0xcb, 0xd3, 0x4a, 0x77, 0x84, 0xa0, 0x43, 0x77, 0x92, 0xa7, 0x4a, 0xcc, 0x13, 0x48,
+	0x25, 0xfa, 0x1d, 0x2a, 0xed, 0xa5, 0xfc, 0xdc, 0x1a, 0xc6, 0x8e, 0x54, 0xf4, 0x44, 0x37, 0x0c,
+	0x4d, 0x27, 0xf9, 0x74, 0xc3, 0xd8, 0x91, 0xe4, 0x01, 0x2c, 0xa4, 0x09, 0x1e, 0xa0, 0x50, 0x89,
+	0xf4, 0xed, 0xe5, 0x1c, 0x1f, 0xe6, 0x35, 0xe7, 0x7d, 0x43, 0x51, 0x42, 0xba, 0x3c, 0xc6, 0x42,
+	0xd7, 0xf2, 0x84, 0x34, 0x67, 0x24, 0xb4, 0x09, 0xf5, 0x88, 0xc6, 0xf1, 0x3b, 0x2e, 0x7c, 0xfb,
+	0x7a, 0x7e, 0xa6, 0x33, 0x5c, 0x39, 0xc1, 0x74, 0x69, 0x49, 0x86, 0xb1, 0x7d, 0x63, 0xb5, 0xbc,
+	0xd1, 0xdc, 0x9e, 0xdf, 0x52, 0xed, 0x34, 0xad, 0x38, 0x39, 0x74, 0x27, 0x08, 0xe4, 0x16, 0xcc,
+	0x09, 0x1e, 0x60, 0x6c, 0xff, 0x55, 0x33, 0x1b, 0x9a, 0xe9, 0xf2, 0x00, 0xdd, 0xf4, 0xdc, 0xf9,
+	0xca, 0x82, 0xd6, 0xd1, 0x64, 0x49, 0xac, 0x43, 0x35, 0x96, 0x54, 0x26, 0xb1, 0xe9, 0x03, 0x17,
+	0x72, 0x9b, 0xa2, 0xe4, 0xef, 0x50, 0xee, 0x32, 0x5e, 0xdc, 0x3c, 0x15, 0xaa, 0x0a, 0x80, 0xfa,
+	0xbe, 0xc0, 0x38, 0x1e, 0xf5, 0x4d, 0x65, 0xc0, 0x4e, 0x7a, 0xe6, 0x66, 0x20, 0xb9, 0x0d, 0x15,
+	0x49, 0x4f, 0x62, 0x73, 0xed, 0x73, 0xb4, 0x69, 0xd8, 0xf9, 0xce, 0x82, 0x9a, 0x91, 0x55, 0x3d,
+	0xc8, 0x63, 0x72, 0x58, 0x60, 0xa5, 0xc6, 0xc8, 0x1a, 0xcc, 0x29, 0x6b, 0x8b, 0x1a, 0x55, 0x0a,
+	0x2a, 0x56, 0xc0, 0x42, 0xfc, 0x57, 0x41, 0x93, 0x4a, 0xc1, 0x8c, 0xb5, 0x5d, 0xd0, 0x9a, 0x52,
+	0x50, 0x75, 0xdc, 0x8f, 0x59, 0x54, 0xd0, 0x92, 0x14, 0xe4, 0xfc, 0x64, 0x41, 0x73, 0x67, 0xe2,
+	0x32, 0xdd, 0x87, 0xa6, 0x8f, 0xb1, 0x27, 0x58, 0xa4, 0x46, 0x5e, 0x81, 0x3b, 0x93, 0x14, 0xf2,
+	0x6f, 0x58, 0xa4, 0x9e, 0xc7, 0x93, 0x50, 0x76, 0xba, 0x34, 0xa0, 0xa1, 0x57, 0xe4, 0xdf, 0x82,
+	0xa1, 0x3d, 0x4d, 0x59, 0xe4, 0x6f, 0x50, 0x89, 0x02, 0x1a, 0x1a, 0x3f, 0xd3, 0x5a, 0x38, 0x08,
+	0x68, 0xe8, 0xea, 0xe3, 0x2b, 0x26, 0x41, 0x69, 0xf1, 0xa8, 0xf0, 0x8d, 0x8f, 0xa9, 0x16, 0x35,
+	0xf1, 0x5c, 0x7d, 0xec, 0xfc, 0x6a, 0x41, 0x45, 0x29, 0x25, 0x0e, 0x94, 0x2e, 0x1d, 0x26, 0x25,
+	0xe6, 0x93, 0x35, 0xa8, 0x52, 0x4f, 0xb2, 0x41, 0xe6, 0xc1, 0xf4, 0x35, 0x31, 0x18, 0xb9, 0x0d,
+	0x55, 0xda, 0x57, 0x8e, 0x18, 0xcb, 0xe7, 0x47, 0xda, 0x42, 0xf9, 0xf8, 0xa1, 0x6b, 0x40, 0x75,
+	0x8d, 0x58, 0x28, 0x51, 0x0c, 0x68, 0x50, 0x90, 0xa4, 0x11, 0x3e, 0xd5, 0x5c, 0xe7, 0x66, 0x34,
+	0xd7, 0x75, 0xa8, 0x45, 0x82, 0xfb, 0x89, 0x27, 0xcd, 0xfc, 0x48, 0x8b, 0xf8, 0x20, 0x3d, 0x73,
+	0x33, 0xd0, 0xf9, 0xd2, 0x82, 0x9a, 0x39, 0xbc, 0x92, 0xf3, 0xe7, 0x32, 0x5f, 0x9a, 0x9d, 0xf9,
+	0x55, 0x28, 0x27, 0x22, 0x28, 0xa8, 0x53, 0x05, 0x5d, 0xf5, 0x22, 0x7d, 0x63, 0x41, 0x3d, 0xeb,
+	0x17, 0x64, 0x0b, 0xc0, 0xe3, 0x61, 0x88, 0xde, 0x25, 0x05, 0x38, 0xc1, 0x98, 0x5c, 0x15, 0x4a,
+	0x33, 0x57, 0x05, 0xd5, 0xdb, 0x04, 0x1f, 0x30, 0x35, 0xa8, 0xcb, 0x05, 0xbd, 0xcd, 0xe0, 0x64,
+	0x03, 0xea, 0x2c, 0x3e, 0xe4, 0x1e, 0x1b, 0x25, 0x70, 0xba, 0x1e, 0x46, 0xa8, 0xf3, 0x89, 0x05,
+	0x15, 0xd5, 0xc5, 0xae, 0x14, 0xe7, 0xab, 0x6c, 0x2b, 0xe7, 0x72, 0x51, 0x9e, 0x99, 0x0b, 0xe7,
+	0xdb, 0x12, 0x54, 0xdf, 0xec, 0x24, 0xf2, 0x74, 0x5b, 0xad, 0x6f, 0x5e, 0xc0, 0x30, 0x94, 0xe3,
+	0xed, 0xe9, 0x82, 0x93, 0x29, 0x61, 0x5f, 0x4d, 0x88, 0x79, 0x43, 0x8e, 0xd1, 0x13, 0x28, 0x0b,
+	0xcc, 0x6a, 0xa5, 0xa4, 0x43, 0xcd, 0x51, 0x4f, 0x90, 0xbc, 0x87, 0x61, 0xa7, 0x38, 0xfd, 0x75,
+	0x4d, 0x38, 0x12, 0x6a, 0xb3, 0xad, 0xd3, 0x44, 0x9e, 0x6a, 0x6e, 0xfe, 0x3d, 0xa8, 0x29, 0x5c,
+	0x51, 0xef, 0x42, 0x35, 0xf6, 0x78, 0x84, 0xb1, 0xb9, 0x04, 0xb9, 0x33, 0xd7, 0x50, 0x54, 0x2a,
+	0x05, 0xfa, 0x4c, 0xe0, 0xe8, 0x22, 0x5c, 0xb0, 0x21, 0xc3, 0x75, 0x77, 0xe6, 0x3e, 0x9a, 0x35,
+	0xea, 0x62, 0x77, 0xe6, 0x3e, 0x3a, 0x9f, 0x95, 0x60, 0x69, 0x57, 0x7b, 0xb9, 0x2b, 0x50, 0xa7,
+	0x8c, 0x06, 0xf1, 0x9f, 0x2d, 0x98, 0xe3, 0x08, 0x55, 0x66, 0x47, 0xe8, 0x09, 0x2c, 0x62, 0xe8,
+	0x47, 0x9c, 0x85, 0xb2, 0x13, 0x51, 0x41, 0xfb, 0x59, 0x5c, 0x73, 0x2e, 0xe2, 0x42, 0xc6, 0x3c,
+	0xd0, 0x44, 0xe7, 0x87, 0x12, 0x94, 0x5f, 0xbc, 0x7d, 0x4f, 0xcd, 0x99, 0xc9, 0x37, 0x98, 0x0b,
+	0x73, 0x26, 0xdd, 0x3e, 0x6f, 0x41, 0x33, 0x12, 0x6c, 0x40, 0x25, 0x76, 0x7a, 0x38, 0xd4, 0x6e,
+	0xb7, 0x5c, 0x30, 0x47, 0x2f, 0x71, 0x48, 0xee, 0x43, 0x4b, 0xfd, 0xd2, 0xb0, 0x8a, 0x64, 0xbe,
+	0x9f, 0x5a, 0x42, 0xf1, 0xf7, 0x7d, 0xb5, 0x99, 0xc6, 0x49, 0xf7, 0x43, 0x95, 0xdd, 0x82, 0xaa,
+	0x31, 0xf0, 0x1f, 0xab, 0x9a, 0xa9, 0x68, 0x57, 0x67, 0x44, 0x7b, 0x03, 0xd4, 0xbb, 0x0b, 0x13,
+	0x18, 0x17, 0x54, 0x4e, 0x06, 0xab, 0x62, 0xa4, 0x89, 0xcf, 0x50, 0x4d, 0xbf, 0x7a, 0xbe, 0xd6,
+	0x0c, 0x77, 0xf6, 0xe0, 0xfa, 0x1e, 0x1e, 0xd3, 0x24, 0x90, 0xcf, 0x77, 0x0f, 0xa6, 0x6b, 0x2d,
+	0x73, 0xc4, 0x9a, 0xe9, 0x88, 0xf3, 0xa3, 0x05, 0xcd, 0x17, 0x87, 0x6f, 0x5e, 0xbf, 0xc5, 0xee,
+	0x4b, 0x1c, 0xc6, 0xaa, 0x19, 0xf7, 0x0a, 0xf7, 0x0f, 0x05, 0x91, 0x35, 0x28, 0xf7, 0x2e, 0x6d,
+	0x92, 0x0a, 0xd6, 0x4d, 0x3d, 0xc6, 0xc2, 0xa6, 0x1e, 0x23, 0xb9, 0x09, 0x56, 0x58, 0x90, 0x13,
+	0x2b, 0x54, 0x68, 0xd1, 0x0c, 0xb3, 0xd4, 0xec, 0x2c, 0x9f, 0x3d, 0xf2, 0x4c, 0xe0, 0x73, 0xfd,
+	0x53, 0xb8, 0x73, 0x0f, 0x2a, 0x2f, 0xde, 0xf5, 0x62, 0xb2, 0x06, 0x95, 0x1e, 0x0e, 0x55, 0x3c,
+	0xd4, 0xba, 0xf8, 0x17, 0x3d, 0xe8, 0x26, 0x9c, 0x76, 0x35, 0xba, 0xbd, 0x0f, 0xad, 0x3d, 0xec,
+	0x26, 0x27, 0x87, 0x28, 0x06, 0xcc, 0x43, 0xf2, 0x1f, 0xa8, 0x3c, 0xf3, 0x4e, 0x39, 0x39, 0xf7,
+	0xfc, 0x95, 0x73, 0xbf, 0x9d, 0xa5, 0x4f, 0xbf, 0xff, 0xf9, 0xf3, 0x52, 0xd3, 0xa9, 0xb6, 0x7d,
+	0x25, 0xfe, 0xc4, 0xda, 0xdc, 0xfe, 0xa5, 0x04, 0x8d, 0xbd, 0xa7, 0x99, 0xa2, 0xff, 0x42, 0xed,
+	0x39, 0x4a, 0xfd, 0x42, 0x9a, 0x13, 0xaf, 0x95, 0x74, 0xd9, 0x50, 0xb0, 0xb3, 0xac, 0x55, 0xcd,
+	0x3b, 0xf5, 0xb6, 0xdf, 0x6d, 0xab, 0x59, 0xf3, 0xc4, 0xda, 0x24, 0x2f, 0x01, 0xf6, 0x30, 0xc0,
+	0xf4, 0x93, 0x40, 0xae, 0x86, 0xd1, 0xea, 0xf0, 0xac, 0x1f, 0xc9, 0xa1, 0xb3, 0xa2, 0xb5, 0x5c,
+	0x73, 0x16, 0x33, 0x2d, 0x6d, 0x5f, 0xcb, 0x1b, 0x65, 0xe3, 0xef, 0x0b, 0xe4, 0x46, 0xfa, 0xe8,
+	0xf3, 0x1f, 0x1c, 0x26, 0x4d, 0xba, 0x4c, 0xd9, 0xff, 0x00, 0x76, 0xf5, 0x8b, 0x88, 0x56, 0x36,
+	0x16, 0xba, 0xaa, 0xfc, 0x2e, 0x34, 0xfe, 0xcf, 0x62, 0x1d, 0x99, 0x98, 0x4c, 0x3b, 0x71, 0x45,
+	0x15, 0xf7, 0xad, 0x6e, 0x55, 0x7f, 0x39, 0x79, 0xf0, 0x7b, 0x00, 0x00, 0x00, 0xff, 0xff, 0x59,
+	0x2f, 0xd9, 0x96, 0x7e, 0x11, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1878,192 +1416,67 @@ var _DebugService_serviceDesc = grpc.ServiceDesc{
 	Metadata: "api.proto",
 }
 
-// SubscriptionServiceClient is the client API for SubscriptionService service.
+// DBServiceClient is the client API for DBService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type SubscriptionServiceClient interface {
-	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*User, error)
-	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*User, error)
-}
-
-type subscriptionServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewSubscriptionServiceClient(cc *grpc.ClientConn) SubscriptionServiceClient {
-	return &subscriptionServiceClient{cc}
-}
-
-func (c *subscriptionServiceClient) Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
-	err := c.cc.Invoke(ctx, "/api.SubscriptionService/Subscribe", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *subscriptionServiceClient) Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
-	err := c.cc.Invoke(ctx, "/api.SubscriptionService/Unsubscribe", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// SubscriptionServiceServer is the server API for SubscriptionService service.
-type SubscriptionServiceServer interface {
-	Subscribe(context.Context, *SubscribeRequest) (*User, error)
-	Unsubscribe(context.Context, *UnSubscribeRequest) (*User, error)
-}
-
-func RegisterSubscriptionServiceServer(s *grpc.Server, srv SubscriptionServiceServer) {
-	s.RegisterService(&_SubscriptionService_serviceDesc, srv)
-}
-
-func _SubscriptionService_Subscribe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubscribeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SubscriptionServiceServer).Subscribe(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.SubscriptionService/Subscribe",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SubscriptionServiceServer).Subscribe(ctx, req.(*SubscribeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _SubscriptionService_Unsubscribe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UnSubscribeRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(SubscriptionServiceServer).Unsubscribe(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.SubscriptionService/Unsubscribe",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SubscriptionServiceServer).Unsubscribe(ctx, req.(*UnSubscribeRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _SubscriptionService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.SubscriptionService",
-	HandlerType: (*SubscriptionServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "Subscribe",
-			Handler:    _SubscriptionService_Subscribe_Handler,
-		},
-		{
-			MethodName: "Unsubscribe",
-			Handler:    _SubscriptionService_Unsubscribe_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "api.proto",
-}
-
-// AuthenticationServiceClient is the client API for AuthenticationService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AuthenticationServiceClient interface {
-	GetUser(ctx context.Context, in *common.AuthToken, opts ...grpc.CallOption) (*User, error)
-}
-
-type authenticationServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewAuthenticationServiceClient(cc *grpc.ClientConn) AuthenticationServiceClient {
-	return &authenticationServiceClient{cc}
-}
-
-func (c *authenticationServiceClient) GetUser(ctx context.Context, in *common.AuthToken, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
-	err := c.cc.Invoke(ctx, "/api.AuthenticationService/GetUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// AuthenticationServiceServer is the server API for AuthenticationService service.
-type AuthenticationServiceServer interface {
-	GetUser(context.Context, *common.AuthToken) (*User, error)
-}
-
-func RegisterAuthenticationServiceServer(s *grpc.Server, srv AuthenticationServiceServer) {
-	s.RegisterService(&_AuthenticationService_serviceDesc, srv)
-}
-
-func _AuthenticationService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(common.AuthToken)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AuthenticationServiceServer).GetUser(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.AuthenticationService/GetUser",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AuthenticationServiceServer).GetUser(ctx, req.(*common.AuthToken))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _AuthenticationService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.AuthenticationService",
-	HandlerType: (*AuthenticationServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetUser",
-			Handler:    _AuthenticationService_GetUser_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "api.proto",
-}
-
-// UserServiceClient is the client API for UserService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type UserServiceClient interface {
-	QueryUsers(ctx context.Context, in *Query, opts ...grpc.CallOption) (UserService_QueryUsersClient, error)
+type DBServiceClient interface {
 	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
-	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
-	UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error)
-	AddUserRoles(ctx context.Context, in *AddUserRolesRequest, opts ...grpc.CallOption) (*common.String, error)
+	DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Empty, error)
+	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*User, error)
+	CreateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
+	ListUsers(ctx context.Context, in *common.Empty, opts ...grpc.CallOption) (DBService_ListUsersClient, error)
 }
 
-type userServiceClient struct {
+type dBServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient {
-	return &userServiceClient{cc}
+func NewDBServiceClient(cc *grpc.ClientConn) DBServiceClient {
+	return &dBServiceClient{cc}
 }
 
-func (c *userServiceClient) QueryUsers(ctx context.Context, in *Query, opts ...grpc.CallOption) (UserService_QueryUsersClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_UserService_serviceDesc.Streams[0], "/api.UserService/QueryUsers", opts...)
+func (c *dBServiceClient) GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error) {
+	out := new(User)
+	err := c.cc.Invoke(ctx, "/api.DBService/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &userServiceQueryUsersClient{stream}
+	return out, nil
+}
+
+func (c *dBServiceClient) DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Empty, error) {
+	out := new(common.Empty)
+	err := c.cc.Invoke(ctx, "/api.DBService/DeleteUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dBServiceClient) UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*User, error) {
+	out := new(User)
+	err := c.cc.Invoke(ctx, "/api.DBService/UpdateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dBServiceClient) CreateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
+	out := new(User)
+	err := c.cc.Invoke(ctx, "/api.DBService/CreateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dBServiceClient) ListUsers(ctx context.Context, in *common.Empty, opts ...grpc.CallOption) (DBService_ListUsersClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_DBService_serviceDesc.Streams[0], "/api.DBService/ListUsers", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &dBServiceListUsersClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -2073,16 +1486,16 @@ func (c *userServiceClient) QueryUsers(ctx context.Context, in *Query, opts ...g
 	return x, nil
 }
 
-type UserService_QueryUsersClient interface {
+type DBService_ListUsersClient interface {
 	Recv() (*User, error)
 	grpc.ClientStream
 }
 
-type userServiceQueryUsersClient struct {
+type dBServiceListUsersClient struct {
 	grpc.ClientStream
 }
 
-func (x *userServiceQueryUsersClient) Recv() (*User, error) {
+func (x *dBServiceListUsersClient) Recv() (*User, error) {
 	m := new(User)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -2090,515 +1503,137 @@ func (x *userServiceQueryUsersClient) Recv() (*User, error) {
 	return m, nil
 }
 
-func (c *userServiceClient) GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
-	err := c.cc.Invoke(ctx, "/api.UserService/GetUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error) {
-	out := new(User)
-	err := c.cc.Invoke(ctx, "/api.UserService/UpdateUser", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *userServiceClient) UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_UserService_serviceDesc.Streams[1], "/api.UserService/UserRoles", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &userServiceUserRolesClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
-}
-
-type UserService_UserRolesClient interface {
-	Recv() (*Role, error)
-	grpc.ClientStream
-}
-
-type userServiceUserRolesClient struct {
-	grpc.ClientStream
-}
-
-func (x *userServiceUserRolesClient) Recv() (*Role, error) {
-	m := new(Role)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-func (c *userServiceClient) AddUserRoles(ctx context.Context, in *AddUserRolesRequest, opts ...grpc.CallOption) (*common.String, error) {
-	out := new(common.String)
-	err := c.cc.Invoke(ctx, "/api.UserService/AddUserRoles", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// UserServiceServer is the server API for UserService service.
-type UserServiceServer interface {
-	QueryUsers(*Query, UserService_QueryUsersServer) error
+// DBServiceServer is the server API for DBService service.
+type DBServiceServer interface {
 	GetUser(context.Context, *common.Identifier) (*User, error)
-	UpdateUser(context.Context, *User) (*User, error)
-	UserRoles(*common.Identifier, UserService_UserRolesServer) error
-	AddUserRoles(context.Context, *AddUserRolesRequest) (*common.String, error)
+	DeleteUser(context.Context, *common.Identifier) (*common.Empty, error)
+	UpdateUser(context.Context, *UpdateUserRequest) (*User, error)
+	CreateUser(context.Context, *User) (*User, error)
+	ListUsers(*common.Empty, DBService_ListUsersServer) error
 }
 
-func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer) {
-	s.RegisterService(&_UserService_serviceDesc, srv)
+func RegisterDBServiceServer(s *grpc.Server, srv DBServiceServer) {
+	s.RegisterService(&_DBService_serviceDesc, srv)
 }
 
-func _UserService_QueryUsers_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(Query)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(UserServiceServer).QueryUsers(m, &userServiceQueryUsersServer{stream})
-}
-
-type UserService_QueryUsersServer interface {
-	Send(*User) error
-	grpc.ServerStream
-}
-
-type userServiceQueryUsersServer struct {
-	grpc.ServerStream
-}
-
-func (x *userServiceQueryUsersServer) Send(m *User) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func _UserService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DBService_GetUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(common.Identifier)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).GetUser(ctx, in)
+		return srv.(DBServiceServer).GetUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.UserService/GetUser",
+		FullMethod: "/api.DBService/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetUser(ctx, req.(*common.Identifier))
+		return srv.(DBServiceServer).GetUser(ctx, req.(*common.Identifier))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _DBService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.Identifier)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DBServiceServer).DeleteUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.DBService/DeleteUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DBServiceServer).DeleteUser(ctx, req.(*common.Identifier))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DBService_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateUserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DBServiceServer).UpdateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/api.DBService/UpdateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DBServiceServer).UpdateUser(ctx, req.(*UpdateUserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DBService_CreateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(User)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UserServiceServer).UpdateUser(ctx, in)
+		return srv.(DBServiceServer).CreateUser(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/api.UserService/UpdateUser",
+		FullMethod: "/api.DBService/CreateUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).UpdateUser(ctx, req.(*User))
+		return srv.(DBServiceServer).CreateUser(ctx, req.(*User))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UserService_UserRoles_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(common.Identifier)
+func _DBService_ListUsers_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(common.Empty)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(UserServiceServer).UserRoles(m, &userServiceUserRolesServer{stream})
+	return srv.(DBServiceServer).ListUsers(m, &dBServiceListUsersServer{stream})
 }
 
-type UserService_UserRolesServer interface {
-	Send(*Role) error
+type DBService_ListUsersServer interface {
+	Send(*User) error
 	grpc.ServerStream
 }
 
-type userServiceUserRolesServer struct {
+type dBServiceListUsersServer struct {
 	grpc.ServerStream
 }
 
-func (x *userServiceUserRolesServer) Send(m *Role) error {
+func (x *dBServiceListUsersServer) Send(m *User) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _UserService_AddUserRoles_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddUserRolesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(UserServiceServer).AddUserRoles(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.UserService/AddUserRoles",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).AddUserRoles(ctx, req.(*AddUserRolesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _UserService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.UserService",
-	HandlerType: (*UserServiceServer)(nil),
+var _DBService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "api.DBService",
+	HandlerType: (*DBServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetUser",
-			Handler:    _UserService_GetUser_Handler,
+			Handler:    _DBService_GetUser_Handler,
+		},
+		{
+			MethodName: "DeleteUser",
+			Handler:    _DBService_DeleteUser_Handler,
 		},
 		{
 			MethodName: "UpdateUser",
-			Handler:    _UserService_UpdateUser_Handler,
+			Handler:    _DBService_UpdateUser_Handler,
 		},
 		{
-			MethodName: "AddUserRoles",
-			Handler:    _UserService_AddUserRoles_Handler,
-		},
-	},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "QueryUsers",
-			Handler:       _UserService_QueryUsers_Handler,
-			ServerStreams: true,
-		},
-		{
-			StreamName:    "UserRoles",
-			Handler:       _UserService_UserRoles_Handler,
-			ServerStreams: true,
-		},
-	},
-	Metadata: "api.proto",
-}
-
-// EventServiceClient is the client API for EventService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type EventServiceClient interface {
-	GetEvents(ctx context.Context, in *EventQuery, opts ...grpc.CallOption) (EventService_GetEventsClient, error)
-}
-
-type eventServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewEventServiceClient(cc *grpc.ClientConn) EventServiceClient {
-	return &eventServiceClient{cc}
-}
-
-func (c *eventServiceClient) GetEvents(ctx context.Context, in *EventQuery, opts ...grpc.CallOption) (EventService_GetEventsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_EventService_serviceDesc.Streams[0], "/api.EventService/GetEvents", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &eventServiceGetEventsClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
-}
-
-type EventService_GetEventsClient interface {
-	Recv() (*Event, error)
-	grpc.ClientStream
-}
-
-type eventServiceGetEventsClient struct {
-	grpc.ClientStream
-}
-
-func (x *eventServiceGetEventsClient) Recv() (*Event, error) {
-	m := new(Event)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-// EventServiceServer is the server API for EventService service.
-type EventServiceServer interface {
-	GetEvents(*EventQuery, EventService_GetEventsServer) error
-}
-
-func RegisterEventServiceServer(s *grpc.Server, srv EventServiceServer) {
-	s.RegisterService(&_EventService_serviceDesc, srv)
-}
-
-func _EventService_GetEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(EventQuery)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(EventServiceServer).GetEvents(m, &eventServiceGetEventsServer{stream})
-}
-
-type EventService_GetEventsServer interface {
-	Send(*Event) error
-	grpc.ServerStream
-}
-
-type eventServiceGetEventsServer struct {
-	grpc.ServerStream
-}
-
-func (x *eventServiceGetEventsServer) Send(m *Event) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-var _EventService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.EventService",
-	HandlerType: (*EventServiceServer)(nil),
-	Methods:     []grpc.MethodDesc{},
-	Streams: []grpc.StreamDesc{
-		{
-			StreamName:    "GetEvents",
-			Handler:       _EventService_GetEvents_Handler,
-			ServerStreams: true,
-		},
-	},
-	Metadata: "api.proto",
-}
-
-// DocumentServiceClient is the client API for DocumentService service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type DocumentServiceClient interface {
-	GetDocument(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*Document, error)
-	Update(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error)
-	Create(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error)
-	Delete(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*common.Empty, error)
-	ListDocuments(ctx context.Context, in *CategoryQuery, opts ...grpc.CallOption) (DocumentService_ListDocumentsClient, error)
-}
-
-type documentServiceClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewDocumentServiceClient(cc *grpc.ClientConn) DocumentServiceClient {
-	return &documentServiceClient{cc}
-}
-
-func (c *documentServiceClient) GetDocument(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*Document, error) {
-	out := new(Document)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/GetDocument", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) Update(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error) {
-	out := new(common.Empty)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/Update", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) Create(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error) {
-	out := new(common.Empty)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/Create", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) Delete(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*common.Empty, error) {
-	out := new(common.Empty)
-	err := c.cc.Invoke(ctx, "/api.DocumentService/Delete", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *documentServiceClient) ListDocuments(ctx context.Context, in *CategoryQuery, opts ...grpc.CallOption) (DocumentService_ListDocumentsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &_DocumentService_serviceDesc.Streams[0], "/api.DocumentService/ListDocuments", opts...)
-	if err != nil {
-		return nil, err
-	}
-	x := &documentServiceListDocumentsClient{stream}
-	if err := x.ClientStream.SendMsg(in); err != nil {
-		return nil, err
-	}
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	return x, nil
-}
-
-type DocumentService_ListDocumentsClient interface {
-	Recv() (*Document, error)
-	grpc.ClientStream
-}
-
-type documentServiceListDocumentsClient struct {
-	grpc.ClientStream
-}
-
-func (x *documentServiceListDocumentsClient) Recv() (*Document, error) {
-	m := new(Document)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
-}
-
-// DocumentServiceServer is the server API for DocumentService service.
-type DocumentServiceServer interface {
-	GetDocument(context.Context, *DocumentQuery) (*Document, error)
-	Update(context.Context, *Document) (*common.Empty, error)
-	Create(context.Context, *Document) (*common.Empty, error)
-	Delete(context.Context, *DocumentQuery) (*common.Empty, error)
-	ListDocuments(*CategoryQuery, DocumentService_ListDocumentsServer) error
-}
-
-func RegisterDocumentServiceServer(s *grpc.Server, srv DocumentServiceServer) {
-	s.RegisterService(&_DocumentService_serviceDesc, srv)
-}
-
-func _DocumentService_GetDocument_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DocumentQuery)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).GetDocument(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/GetDocument",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).GetDocument(ctx, req.(*DocumentQuery))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Document)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).Update(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/Update",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).Update(ctx, req.(*Document))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Document)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).Create(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/Create",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).Create(ctx, req.(*Document))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DocumentQuery)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DocumentServiceServer).Delete(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/api.DocumentService/Delete",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DocumentServiceServer).Delete(ctx, req.(*DocumentQuery))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _DocumentService_ListDocuments_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(CategoryQuery)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(DocumentServiceServer).ListDocuments(m, &documentServiceListDocumentsServer{stream})
-}
-
-type DocumentService_ListDocumentsServer interface {
-	Send(*Document) error
-	grpc.ServerStream
-}
-
-type documentServiceListDocumentsServer struct {
-	grpc.ServerStream
-}
-
-func (x *documentServiceListDocumentsServer) Send(m *Document) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-var _DocumentService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "api.DocumentService",
-	HandlerType: (*DocumentServiceServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "GetDocument",
-			Handler:    _DocumentService_GetDocument_Handler,
-		},
-		{
-			MethodName: "Update",
-			Handler:    _DocumentService_Update_Handler,
-		},
-		{
-			MethodName: "Create",
-			Handler:    _DocumentService_Create_Handler,
-		},
-		{
-			MethodName: "Delete",
-			Handler:    _DocumentService_Delete_Handler,
+			MethodName: "CreateUser",
+			Handler:    _DBService_CreateUser_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
-			StreamName:    "ListDocuments",
-			Handler:       _DocumentService_ListDocuments_Handler,
+			StreamName:    "ListUsers",
+			Handler:       _DBService_ListUsers_Handler,
 			ServerStreams: true,
 		},
 	},

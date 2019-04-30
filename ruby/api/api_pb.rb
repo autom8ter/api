@@ -6,25 +6,10 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "api.CategoryQuery" do
-    optional :category, :message, 1, "common.String"
-  end
-  add_message "api.DocumentQuery" do
-    optional :category, :message, 1, "common.String"
-    optional :name, :message, 2, "common.Identifier"
-  end
-  add_message "api.AddUserRolesRequest" do
+  add_message "api.UpdateUserRequest" do
     optional :email, :message, 1, "common.Identifier"
-    repeated :roles, :message, 2, "api.Role"
-  end
-  add_message "api.SubscribeRequest" do
-    optional :email, :message, 1, "common.Identifier"
-    optional :plan, :message, 2, "common.Identifier"
-    optional :card, :message, 3, "api.Card"
-  end
-  add_message "api.UnSubscribeRequest" do
-    optional :email, :message, 1, "common.Identifier"
-    optional :plan, :message, 2, "common.String"
+    optional :fields, :message, 2, "common.StringMap"
+    optional :overwrite, :message, 3, "common.Bool"
   end
   add_message "api.Card" do
     optional :number, :message, 1, "common.Identifier"
@@ -54,6 +39,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :email_verified, :message, 20, "common.Bool"
     optional :password, :message, 21, "common.String"
     repeated :identities, :message, 22, "api.Identity"
+    repeated :roles, :message, 23, "api.Role"
   end
   add_message "api.UserMetadata" do
     optional :status, :message, 1, "common.String"
@@ -73,6 +59,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :account_balance, :message, 2, "common.String"
     optional :plan, :message, 3, "api.Plan"
     optional :tags, :message, 4, "common.StringMap"
+    optional :card, :message, 5, "api.Card"
   end
   add_message "api.Plan" do
     optional :id, :message, 1, "common.Identifier"
@@ -86,6 +73,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :id, :message, 1, "common.Identifier"
     optional :description, :message, 2, "common.String"
     optional :url, :message, 3, "common.String"
+    optional :tags, :message, 4, "common.StringMap"
   end
   add_message "api.Identity" do
     optional :connection, :message, 1, "common.String"
@@ -127,27 +115,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.DefaultGCPCredentials" do
     optional :scopes, :message, 1, "common.StringArray"
   end
-  add_message "api.Query" do
-    optional :query, :message, 4, "common.String"
-    optional :fields, :message, 5, "common.String"
-  end
-  add_message "api.Event" do
-    optional :date, :message, 1, "common.String"
-    optional :type, :message, 2, "common.String"
-    optional :client_id, :message, 3, "common.String"
-    optional :client_name, :message, 4, "common.String"
-    optional :ip, :message, 5, "common.String"
-    optional :location_info, :message, 6, "common.String"
-    optional :details, :message, 7, "common.String"
-    optional :user_id, :message, 8, "common.String"
-    optional :annotations, :message, 9, "common.StringMap"
-  end
-  add_message "api.EventQuery" do
-    optional :date, :message, 1, "common.String"
-    optional :type, :message, 2, "common.String"
-    optional :client_id, :message, 3, "common.String"
-    optional :user_id, :message, 4, "common.String"
-  end
   add_message "api.JSONWebKeys" do
     optional :kty, :message, 1, "common.String"
     optional :kid, :message, 2, "common.Identifier"
@@ -159,19 +126,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "api.Jwks" do
     repeated :keys, :message, 1, "api.JSONWebKeys"
   end
-  add_message "api.Document" do
-    optional :category, :message, 1, "common.String"
-    optional :name, :message, 2, "common.String"
-    optional :data, :message, 3, "common.StringMap"
-  end
 end
 
 module Api
-  CategoryQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.CategoryQuery").msgclass
-  DocumentQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.DocumentQuery").msgclass
-  AddUserRolesRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.AddUserRolesRequest").msgclass
-  SubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscribeRequest").msgclass
-  UnSubscribeRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UnSubscribeRequest").msgclass
+  UpdateUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UpdateUserRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
@@ -185,10 +143,6 @@ module Api
   ClientCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ClientCredentials").msgclass
   JWT = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWT").msgclass
   DefaultGCPCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.DefaultGCPCredentials").msgclass
-  Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Query").msgclass
-  Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Event").msgclass
-  EventQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EventQuery").msgclass
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
-  Document = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Document").msgclass
 end

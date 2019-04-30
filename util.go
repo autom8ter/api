@@ -17,7 +17,6 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/oauth"
-	"io"
 	"net/http"
 	"net/url"
 )
@@ -31,22 +30,14 @@ var (
 )
 
 type ClientSet struct {
-	Debug         DebugServiceClient
-	Subscriptions SubscriptionServiceClient
-	Users         UserServiceClient
-	Auth          AuthenticationServiceClient
-	Events        EventServiceClient
-	Documents  		DocumentServiceClient
+	Debug DebugServiceClient
+	DB    DBServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	return &ClientSet{
-		Debug:         NewDebugServiceClient(conn),
-		Subscriptions: NewSubscriptionServiceClient(conn),
-		Users:         NewUserServiceClient(conn),
-		Auth:          NewAuthenticationServiceClient(conn),
-		Events:        NewEventServiceClient(conn),
-		Documents: NewDocumentServiceClient(conn),
+		Debug: NewDebugServiceClient(conn),
+		DB:    NewDBServiceClient(conn),
 	}
 }
 
@@ -57,6 +48,7 @@ func (p *Plan) JSONString() *common.String {
 func (p *Product) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
+
 
 func (p *AppMetadata) JSONString() *common.String {
 	return common.MessageToJSONString(p)
@@ -90,18 +82,6 @@ func (p *Jwks) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *Document) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func NewDocument(category, name string, data map[string]interface{}) *Document {
-	return &Document{
-		Category: common.ToString(category),
-		Name:     common.ToString(name),
-		Data:     common.StringMapFromData(data),
-	}
-}
-
 func (p *Jwks) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
@@ -131,10 +111,6 @@ func (p *UserMetadata) UnmarshalJSONFrom(bits []byte) error {
 }
 
 func (p *AppMetadata) UnmarshalJSONFrom(bits []byte) error {
-	return json.Unmarshal(bits, p)
-}
-
-func (p *Document) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
@@ -181,18 +157,6 @@ func (s *ClientCredentials) ToContext(ctx context.Context, key string) context.C
 
 func (s *JWT) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
-}
-
-func (s *Event) JSONString() *common.String {
-	return common.MessageToJSONString(s)
-}
-
-func (s *Event) UnmarshalProtofrom(bits []byte) error {
-	return util.UnmarshalProto(bits, s)
-}
-
-func (s *Event) UnmarshalJSONfrom(bits []byte) error {
-	return util.UnmarshalJSON(bits, s)
 }
 
 func (s *JWT) JSONString() *common.String {
@@ -509,6 +473,34 @@ func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error
 	return fn(s)
 }
 
-func (d *Document) Render(s *common.String, w io.Writer) error {
-	return s.Render(d.Name.Text, w, d.Data)
+func (s *User) Validate(fn func(a *User) error) error {
+	return fn(s)
+}
+
+func (s *Card) Validate(fn func(a *Card) error) error {
+	return fn(s)
+}
+
+func (s *Address) Validate(fn func(a *Address) error) error {
+	return fn(s)
+}
+
+
+func (s *User) Debugf(format string) {
+	str := common.MessageToJSONString(s)
+	str.Debugf(format)
+}
+
+
+func (s *User) DocCategory() string {
+	return "users"
+}
+
+func (s *User) DocName() string {
+	return s.Email.Id.Text
+}
+
+
+func (s *User) DocData() map[string]interface{} {
+	return util.ToMap(s)
 }

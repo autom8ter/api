@@ -179,10 +179,6 @@
             <ul>
               
                 <li>
-                  <a href="#api.AddUserRolesRequest"><span class="badge">M</span>AddUserRolesRequest</a>
-                </li>
-              
-                <li>
                   <a href="#api.Address"><span class="badge">M</span>Address</a>
                 </li>
               
@@ -195,31 +191,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.CategoryQuery"><span class="badge">M</span>CategoryQuery</a>
-                </li>
-              
-                <li>
                   <a href="#api.ClientCredentials"><span class="badge">M</span>ClientCredentials</a>
                 </li>
               
                 <li>
                   <a href="#api.DefaultGCPCredentials"><span class="badge">M</span>DefaultGCPCredentials</a>
-                </li>
-              
-                <li>
-                  <a href="#api.Document"><span class="badge">M</span>Document</a>
-                </li>
-              
-                <li>
-                  <a href="#api.DocumentQuery"><span class="badge">M</span>DocumentQuery</a>
-                </li>
-              
-                <li>
-                  <a href="#api.Event"><span class="badge">M</span>Event</a>
-                </li>
-              
-                <li>
-                  <a href="#api.EventQuery"><span class="badge">M</span>EventQuery</a>
                 </li>
               
                 <li>
@@ -251,19 +227,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.Query"><span class="badge">M</span>Query</a>
-                </li>
-              
-                <li>
                   <a href="#api.Role"><span class="badge">M</span>Role</a>
                 </li>
               
                 <li>
-                  <a href="#api.SubscribeRequest"><span class="badge">M</span>SubscribeRequest</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UnSubscribeRequest"><span class="badge">M</span>UnSubscribeRequest</a>
+                  <a href="#api.UpdateUserRequest"><span class="badge">M</span>UpdateUserRequest</a>
                 </li>
               
                 <li>
@@ -278,27 +246,11 @@
               
               
                 <li>
-                  <a href="#api.AuthenticationService"><span class="badge">S</span>AuthenticationService</a>
+                  <a href="#api.DBService"><span class="badge">S</span>DBService</a>
                 </li>
               
                 <li>
                   <a href="#api.DebugService"><span class="badge">S</span>DebugService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.DocumentService"><span class="badge">S</span>DocumentService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.EventService"><span class="badge">S</span>EventService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.SubscriptionService"><span class="badge">S</span>SubscriptionService</a>
-                </li>
-              
-                <li>
-                  <a href="#api.UserService"><span class="badge">S</span>UserService</a>
                 </li>
               
             </ul>
@@ -315,36 +267,6 @@
       </div>
       <p></p>
 
-      
-        <h3 id="api.AddUserRolesRequest">AddUserRolesRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>roles</td>
-                  <td><a href="#api.Role">Role</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
       
         <h3 id="api.Address">Address</h3>
         <p></p>
@@ -435,6 +357,13 @@
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>card</td>
+                  <td><a href="#api.Card">Card</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
@@ -474,29 +403,6 @@
               
                 <tr>
                   <td>cvc</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.CategoryQuery">CategoryQuery</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>category</td>
                   <td><a href="#common.String">common.String</a></td>
                   <td></td>
                   <td><p> </p></td>
@@ -572,196 +478,6 @@
                 <tr>
                   <td>scopes</td>
                   <td><a href="#common.StringArray">common.StringArray</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Document">Document</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>category</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>data</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.DocumentQuery">DocumentQuery</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>category</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>name</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Event">Event</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>date</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>type</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>client_id</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>client_name</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>ip</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>location_info</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>details</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>annotations</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.EventQuery">EventQuery</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>date</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>type</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>client_id</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>user_id</td>
-                  <td><a href="#common.String">common.String</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1123,32 +839,9 @@
                   <td><p> </p></td>
                 </tr>
               
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Query">Query</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
                 <tr>
-                  <td>query</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>fields</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td>tags</td>
+                  <td><a href="#common.StringMap">common.StringMap</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1196,7 +889,7 @@
 
         
       
-        <h3 id="api.SubscribeRequest">SubscribeRequest</h3>
+        <h3 id="api.UpdateUserRequest">UpdateUserRequest</h3>
         <p></p>
 
         
@@ -1214,45 +907,15 @@
                 </tr>
               
                 <tr>
-                  <td>plan</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td>fields</td>
+                  <td><a href="#common.StringMap">common.StringMap</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
-                  <td>card</td>
-                  <td><a href="#api.Card">Card</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UnSubscribeRequest">UnSubscribeRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>plan</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td>overwrite</td>
+                  <td><a href="#common.Bool">common.Bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1420,6 +1083,13 @@
                   <td><p> </p></td>
                 </tr>
               
+                <tr>
+                  <td>roles</td>
+                  <td><a href="#api.Role">Role</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
             </tbody>
           </table>
         
@@ -1476,7 +1146,7 @@
       
 
       
-        <h3 id="api.AuthenticationService">AuthenticationService</h3>
+        <h3 id="api.DBService">DBService</h3>
         <p></p>
         <table class="enum-table">
           <thead>
@@ -1486,8 +1156,36 @@
             
               <tr>
                 <td>GetUser</td>
-                <td><a href="#common.AuthToken">.common.AuthToken</a></td>
+                <td><a href="#common.Identifier">.common.Identifier</a></td>
                 <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>DeleteUser</td>
+                <td><a href="#common.Identifier">.common.Identifier</a></td>
+                <td><a href="#common.Empty">.common.Empty</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>UpdateUser</td>
+                <td><a href="#api.UpdateUserRequest">UpdateUserRequest</a></td>
+                <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>CreateUser</td>
+                <td><a href="#api.User">User</a></td>
+                <td><a href="#api.User">User</a></td>
+                <td><p></p></td>
+              </tr>
+            
+              <tr>
+                <td>ListUsers</td>
+                <td><a href="#common.Empty">.common.Empty</a></td>
+                <td><a href="#api.User">User</a> stream</td>
                 <td><p></p></td>
               </tr>
             
@@ -1505,141 +1203,6 @@
               <tr>
                 <td>Echo</td>
                 <td><a href="#common.String">.common.String</a></td>
-                <td><a href="#common.String">.common.String</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.DocumentService">DocumentService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetDocument</td>
-                <td><a href="#api.DocumentQuery">DocumentQuery</a></td>
-                <td><a href="#api.Document">Document</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>Update</td>
-                <td><a href="#api.Document">Document</a></td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>Create</td>
-                <td><a href="#api.Document">Document</a></td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>Delete</td>
-                <td><a href="#api.DocumentQuery">DocumentQuery</a></td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ListDocuments</td>
-                <td><a href="#api.CategoryQuery">CategoryQuery</a></td>
-                <td><a href="#api.Document">Document</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.EventService">EventService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetEvents</td>
-                <td><a href="#api.EventQuery">EventQuery</a></td>
-                <td><a href="#api.Event">Event</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.SubscriptionService">SubscriptionService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>Subscribe</td>
-                <td><a href="#api.SubscribeRequest">SubscribeRequest</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>Unsubscribe</td>
-                <td><a href="#api.UnSubscribeRequest">UnSubscribeRequest</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.UserService">UserService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>QueryUsers</td>
-                <td><a href="#api.Query">Query</a></td>
-                <td><a href="#api.User">User</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>GetUser</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UpdateUser</td>
-                <td><a href="#api.User">User</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UserRoles</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.Role">Role</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AddUserRoles</td>
-                <td><a href="#api.AddUserRolesRequest">AddUserRolesRequest</a></td>
                 <td><a href="#common.String">.common.String</a></td>
                 <td><p></p></td>
               </tr>

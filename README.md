@@ -8,41 +8,39 @@ It translates gRPC into RESTful JSON APIs.
 
 ## Usage
 
-#### func  RegisterAuthenticationServiceHandler
+#### func  RegisterDBServiceHandler
 
 ```go
-func RegisterAuthenticationServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
+func RegisterDBServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
 ```
-RegisterAuthenticationServiceHandler registers the http handlers for service
-AuthenticationService to "mux". The handlers forward requests to the grpc
-endpoint over "conn".
+RegisterDBServiceHandler registers the http handlers for service DBService to
+"mux". The handlers forward requests to the grpc endpoint over "conn".
 
-#### func  RegisterAuthenticationServiceHandlerClient
+#### func  RegisterDBServiceHandlerClient
 
 ```go
-func RegisterAuthenticationServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client AuthenticationServiceClient) error
+func RegisterDBServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DBServiceClient) error
 ```
-RegisterAuthenticationServiceHandlerClient registers the http handlers for
-service AuthenticationService to "mux". The handlers forward requests to the
-grpc endpoint over the given implementation of "AuthenticationServiceClient".
-Note: the gRPC framework executes interceptors within the gRPC handler. If the
-passed in "AuthenticationServiceClient" doesn't go through the normal gRPC flow
-(creating a gRPC client etc.) then it will be up to the passed in
-"AuthenticationServiceClient" to call the correct interceptors.
+RegisterDBServiceHandlerClient registers the http handlers for service DBService
+to "mux". The handlers forward requests to the grpc endpoint over the given
+implementation of "DBServiceClient". Note: the gRPC framework executes
+interceptors within the gRPC handler. If the passed in "DBServiceClient" doesn't
+go through the normal gRPC flow (creating a gRPC client etc.) then it will be up
+to the passed in "DBServiceClient" to call the correct interceptors.
 
-#### func  RegisterAuthenticationServiceHandlerFromEndpoint
+#### func  RegisterDBServiceHandlerFromEndpoint
 
 ```go
-func RegisterAuthenticationServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
+func RegisterDBServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
 ```
-RegisterAuthenticationServiceHandlerFromEndpoint is same as
-RegisterAuthenticationServiceHandler but automatically dials to "endpoint" and
-closes the connection when "ctx" gets done.
+RegisterDBServiceHandlerFromEndpoint is same as RegisterDBServiceHandler but
+automatically dials to "endpoint" and closes the connection when "ctx" gets
+done.
 
-#### func  RegisterAuthenticationServiceServer
+#### func  RegisterDBServiceServer
 
 ```go
-func RegisterAuthenticationServiceServer(s *grpc.Server, srv AuthenticationServiceServer)
+func RegisterDBServiceServer(s *grpc.Server, srv DBServiceServer)
 ```
 
 #### func  RegisterDebugServiceHandler
@@ -79,231 +77,6 @@ done.
 
 ```go
 func RegisterDebugServiceServer(s *grpc.Server, srv DebugServiceServer)
-```
-
-#### func  RegisterDocumentServiceHandler
-
-```go
-func RegisterDocumentServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterDocumentServiceHandler registers the http handlers for service
-DocumentService to "mux". The handlers forward requests to the grpc endpoint
-over "conn".
-
-#### func  RegisterDocumentServiceHandlerClient
-
-```go
-func RegisterDocumentServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client DocumentServiceClient) error
-```
-RegisterDocumentServiceHandlerClient registers the http handlers for service
-DocumentService to "mux". The handlers forward requests to the grpc endpoint
-over the given implementation of "DocumentServiceClient". Note: the gRPC
-framework executes interceptors within the gRPC handler. If the passed in
-"DocumentServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "DocumentServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterDocumentServiceHandlerFromEndpoint
-
-```go
-func RegisterDocumentServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterDocumentServiceHandlerFromEndpoint is same as
-RegisterDocumentServiceHandler but automatically dials to "endpoint" and closes
-the connection when "ctx" gets done.
-
-#### func  RegisterDocumentServiceServer
-
-```go
-func RegisterDocumentServiceServer(s *grpc.Server, srv DocumentServiceServer)
-```
-
-#### func  RegisterEventServiceHandler
-
-```go
-func RegisterEventServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterEventServiceHandler registers the http handlers for service EventService
-to "mux". The handlers forward requests to the grpc endpoint over "conn".
-
-#### func  RegisterEventServiceHandlerClient
-
-```go
-func RegisterEventServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client EventServiceClient) error
-```
-RegisterEventServiceHandlerClient registers the http handlers for service
-EventService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "EventServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"EventServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "EventServiceClient" to call
-the correct interceptors.
-
-#### func  RegisterEventServiceHandlerFromEndpoint
-
-```go
-func RegisterEventServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterEventServiceHandlerFromEndpoint is same as RegisterEventServiceHandler
-but automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
-
-#### func  RegisterEventServiceServer
-
-```go
-func RegisterEventServiceServer(s *grpc.Server, srv EventServiceServer)
-```
-
-#### func  RegisterSubscriptionServiceHandler
-
-```go
-func RegisterSubscriptionServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterSubscriptionServiceHandler registers the http handlers for service
-SubscriptionService to "mux". The handlers forward requests to the grpc endpoint
-over "conn".
-
-#### func  RegisterSubscriptionServiceHandlerClient
-
-```go
-func RegisterSubscriptionServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client SubscriptionServiceClient) error
-```
-RegisterSubscriptionServiceHandlerClient registers the http handlers for service
-SubscriptionService to "mux". The handlers forward requests to the grpc endpoint
-over the given implementation of "SubscriptionServiceClient". Note: the gRPC
-framework executes interceptors within the gRPC handler. If the passed in
-"SubscriptionServiceClient" doesn't go through the normal gRPC flow (creating a
-gRPC client etc.) then it will be up to the passed in
-"SubscriptionServiceClient" to call the correct interceptors.
-
-#### func  RegisterSubscriptionServiceHandlerFromEndpoint
-
-```go
-func RegisterSubscriptionServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterSubscriptionServiceHandlerFromEndpoint is same as
-RegisterSubscriptionServiceHandler but automatically dials to "endpoint" and
-closes the connection when "ctx" gets done.
-
-#### func  RegisterSubscriptionServiceServer
-
-```go
-func RegisterSubscriptionServiceServer(s *grpc.Server, srv SubscriptionServiceServer)
-```
-
-#### func  RegisterUserServiceHandler
-
-```go
-func RegisterUserServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error
-```
-RegisterUserServiceHandler registers the http handlers for service UserService
-to "mux". The handlers forward requests to the grpc endpoint over "conn".
-
-#### func  RegisterUserServiceHandlerClient
-
-```go
-func RegisterUserServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client UserServiceClient) error
-```
-RegisterUserServiceHandlerClient registers the http handlers for service
-UserService to "mux". The handlers forward requests to the grpc endpoint over
-the given implementation of "UserServiceClient". Note: the gRPC framework
-executes interceptors within the gRPC handler. If the passed in
-"UserServiceClient" doesn't go through the normal gRPC flow (creating a gRPC
-client etc.) then it will be up to the passed in "UserServiceClient" to call the
-correct interceptors.
-
-#### func  RegisterUserServiceHandlerFromEndpoint
-
-```go
-func RegisterUserServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error)
-```
-RegisterUserServiceHandlerFromEndpoint is same as RegisterUserServiceHandler but
-automatically dials to "endpoint" and closes the connection when "ctx" gets
-done.
-
-#### func  RegisterUserServiceServer
-
-```go
-func RegisterUserServiceServer(s *grpc.Server, srv UserServiceServer)
-```
-
-#### type AddUserRolesRequest
-
-```go
-type AddUserRolesRequest struct {
-	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Roles                []*Role            `protobuf:"bytes,2,rep,name=roles,proto3" json:"roles,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-```
-
-
-#### func (*AddUserRolesRequest) Descriptor
-
-```go
-func (*AddUserRolesRequest) Descriptor() ([]byte, []int)
-```
-
-#### func (*AddUserRolesRequest) GetEmail
-
-```go
-func (m *AddUserRolesRequest) GetEmail() *common.Identifier
-```
-
-#### func (*AddUserRolesRequest) GetRoles
-
-```go
-func (m *AddUserRolesRequest) GetRoles() []*Role
-```
-
-#### func (*AddUserRolesRequest) ProtoMessage
-
-```go
-func (*AddUserRolesRequest) ProtoMessage()
-```
-
-#### func (*AddUserRolesRequest) Reset
-
-```go
-func (m *AddUserRolesRequest) Reset()
-```
-
-#### func (*AddUserRolesRequest) String
-
-```go
-func (m *AddUserRolesRequest) String() string
-```
-
-#### func (*AddUserRolesRequest) XXX_DiscardUnknown
-
-```go
-func (m *AddUserRolesRequest) XXX_DiscardUnknown()
-```
-
-#### func (*AddUserRolesRequest) XXX_Marshal
-
-```go
-func (m *AddUserRolesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*AddUserRolesRequest) XXX_Merge
-
-```go
-func (m *AddUserRolesRequest) XXX_Merge(src proto.Message)
-```
-
-#### func (*AddUserRolesRequest) XXX_Size
-
-```go
-func (m *AddUserRolesRequest) XXX_Size() int
-```
-
-#### func (*AddUserRolesRequest) XXX_Unmarshal
-
-```go
-func (m *AddUserRolesRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Address
@@ -376,6 +149,12 @@ func (m *Address) Reset()
 func (m *Address) String() string
 ```
 
+#### func (*Address) Validate
+
+```go
+func (s *Address) Validate(fn func(a *Address) error) error
+```
+
 #### func (*Address) XXX_DiscardUnknown
 
 ```go
@@ -414,6 +193,7 @@ type AppMetadata struct {
 	AccountBalance       *common.String    `protobuf:"bytes,2,opt,name=account_balance,json=accountBalance,proto3" json:"account_balance,omitempty"`
 	Plan                 *Plan             `protobuf:"bytes,3,opt,name=plan,proto3" json:"plan,omitempty"`
 	Tags                 *common.StringMap `protobuf:"bytes,4,opt,name=tags,proto3" json:"tags,omitempty"`
+	Card                 *Card             `protobuf:"bytes,5,opt,name=card,proto3" json:"card,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
 	XXX_unrecognized     []byte            `json:"-"`
 	XXX_sizecache        int32             `json:"-"`
@@ -431,6 +211,12 @@ func (*AppMetadata) Descriptor() ([]byte, []int)
 
 ```go
 func (m *AppMetadata) GetAccountBalance() *common.String
+```
+
+#### func (*AppMetadata) GetCard
+
+```go
+func (m *AppMetadata) GetCard() *Card
 ```
 
 #### func (*AppMetadata) GetDescription
@@ -511,35 +297,6 @@ func (m *AppMetadata) XXX_Size() int
 func (m *AppMetadata) XXX_Unmarshal(b []byte) error
 ```
 
-#### type AuthenticationServiceClient
-
-```go
-type AuthenticationServiceClient interface {
-	GetUser(ctx context.Context, in *common.AuthToken, opts ...grpc.CallOption) (*User, error)
-}
-```
-
-AuthenticationServiceClient is the client API for AuthenticationService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewAuthenticationServiceClient
-
-```go
-func NewAuthenticationServiceClient(cc *grpc.ClientConn) AuthenticationServiceClient
-```
-
-#### type AuthenticationServiceServer
-
-```go
-type AuthenticationServiceServer interface {
-	GetUser(context.Context, *common.AuthToken) (*User, error)
-}
-```
-
-AuthenticationServiceServer is the server API for AuthenticationService service.
-
 #### type Card
 
 ```go
@@ -615,6 +372,12 @@ func (m *Card) String() string
 func (p *Card) UnmarshalJSONFrom(bits []byte) error
 ```
 
+#### func (*Card) Validate
+
+```go
+func (s *Card) Validate(fn func(a *Card) error) error
+```
+
 #### func (*Card) XXX_DiscardUnknown
 
 ```go
@@ -643,78 +406,6 @@ func (m *Card) XXX_Size() int
 
 ```go
 func (m *Card) XXX_Unmarshal(b []byte) error
-```
-
-#### type CategoryQuery
-
-```go
-type CategoryQuery struct {
-	Category             *common.String `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-```
-
-
-#### func (*CategoryQuery) Descriptor
-
-```go
-func (*CategoryQuery) Descriptor() ([]byte, []int)
-```
-
-#### func (*CategoryQuery) GetCategory
-
-```go
-func (m *CategoryQuery) GetCategory() *common.String
-```
-
-#### func (*CategoryQuery) ProtoMessage
-
-```go
-func (*CategoryQuery) ProtoMessage()
-```
-
-#### func (*CategoryQuery) Reset
-
-```go
-func (m *CategoryQuery) Reset()
-```
-
-#### func (*CategoryQuery) String
-
-```go
-func (m *CategoryQuery) String() string
-```
-
-#### func (*CategoryQuery) XXX_DiscardUnknown
-
-```go
-func (m *CategoryQuery) XXX_DiscardUnknown()
-```
-
-#### func (*CategoryQuery) XXX_Marshal
-
-```go
-func (m *CategoryQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*CategoryQuery) XXX_Merge
-
-```go
-func (m *CategoryQuery) XXX_Merge(src proto.Message)
-```
-
-#### func (*CategoryQuery) XXX_Size
-
-```go
-func (m *CategoryQuery) XXX_Size() int
-```
-
-#### func (*CategoryQuery) XXX_Unmarshal
-
-```go
-func (m *CategoryQuery) XXX_Unmarshal(b []byte) error
 ```
 
 #### type ClientCredentials
@@ -899,11 +590,8 @@ func (m *ClientCredentials) XXX_Unmarshal(b []byte) error
 
 ```go
 type ClientSet struct {
-	Debug         DebugServiceClient
-	Subscriptions SubscriptionServiceClient
-	Users         UserServiceClient
-	Auth          AuthenticationServiceClient
-	Events        EventServiceClient
+	Debug DebugServiceClient
+	DB    DBServiceClient
 }
 ```
 
@@ -913,6 +601,63 @@ type ClientSet struct {
 ```go
 func NewClientSet(conn *grpc.ClientConn) *ClientSet
 ```
+
+#### type DBServiceClient
+
+```go
+type DBServiceClient interface {
+	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
+	DeleteUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*common.Empty, error)
+	UpdateUser(ctx context.Context, in *UpdateUserRequest, opts ...grpc.CallOption) (*User, error)
+	CreateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
+	ListUsers(ctx context.Context, in *common.Empty, opts ...grpc.CallOption) (DBService_ListUsersClient, error)
+}
+```
+
+DBServiceClient is the client API for DBService service.
+
+For semantics around ctx use and closing/ending streaming RPCs, please refer to
+https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+
+#### func  NewDBServiceClient
+
+```go
+func NewDBServiceClient(cc *grpc.ClientConn) DBServiceClient
+```
+
+#### type DBServiceServer
+
+```go
+type DBServiceServer interface {
+	GetUser(context.Context, *common.Identifier) (*User, error)
+	DeleteUser(context.Context, *common.Identifier) (*common.Empty, error)
+	UpdateUser(context.Context, *UpdateUserRequest) (*User, error)
+	CreateUser(context.Context, *User) (*User, error)
+	ListUsers(*common.Empty, DBService_ListUsersServer) error
+}
+```
+
+DBServiceServer is the server API for DBService service.
+
+#### type DBService_ListUsersClient
+
+```go
+type DBService_ListUsersClient interface {
+	Recv() (*User, error)
+	grpc.ClientStream
+}
+```
+
+
+#### type DBService_ListUsersServer
+
+```go
+type DBService_ListUsersServer interface {
+	Send(*User) error
+	grpc.ServerStream
+}
+```
+
 
 #### type DebugServiceClient
 
@@ -1068,540 +813,6 @@ func (m *DefaultGCPCredentials) XXX_Size() int
 ```go
 func (m *DefaultGCPCredentials) XXX_Unmarshal(b []byte) error
 ```
-
-#### type Document
-
-```go
-type Document struct {
-	Category             *common.String    `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	Name                 *common.String    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Data                 *common.StringMap `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-```
-
-
-#### func  NewDocument
-
-```go
-func NewDocument(category, name string, data map[string]interface{}) *Document
-```
-
-#### func (*Document) Descriptor
-
-```go
-func (*Document) Descriptor() ([]byte, []int)
-```
-
-#### func (*Document) GetCategory
-
-```go
-func (m *Document) GetCategory() *common.String
-```
-
-#### func (*Document) GetData
-
-```go
-func (m *Document) GetData() *common.StringMap
-```
-
-#### func (*Document) GetName
-
-```go
-func (m *Document) GetName() *common.String
-```
-
-#### func (*Document) JSONString
-
-```go
-func (p *Document) JSONString() *common.String
-```
-
-#### func (*Document) ProtoMessage
-
-```go
-func (*Document) ProtoMessage()
-```
-
-#### func (*Document) Render
-
-```go
-func (d *Document) Render(s *common.String, w io.Writer) error
-```
-
-#### func (*Document) Reset
-
-```go
-func (m *Document) Reset()
-```
-
-#### func (*Document) String
-
-```go
-func (m *Document) String() string
-```
-
-#### func (*Document) UnmarshalJSONFrom
-
-```go
-func (p *Document) UnmarshalJSONFrom(bits []byte) error
-```
-
-#### func (*Document) XXX_DiscardUnknown
-
-```go
-func (m *Document) XXX_DiscardUnknown()
-```
-
-#### func (*Document) XXX_Marshal
-
-```go
-func (m *Document) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Document) XXX_Merge
-
-```go
-func (m *Document) XXX_Merge(src proto.Message)
-```
-
-#### func (*Document) XXX_Size
-
-```go
-func (m *Document) XXX_Size() int
-```
-
-#### func (*Document) XXX_Unmarshal
-
-```go
-func (m *Document) XXX_Unmarshal(b []byte) error
-```
-
-#### type DocumentQuery
-
-```go
-type DocumentQuery struct {
-	Category             *common.String     `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	Name                 *common.Identifier `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-```
-
-
-#### func (*DocumentQuery) Descriptor
-
-```go
-func (*DocumentQuery) Descriptor() ([]byte, []int)
-```
-
-#### func (*DocumentQuery) GetCategory
-
-```go
-func (m *DocumentQuery) GetCategory() *common.String
-```
-
-#### func (*DocumentQuery) GetName
-
-```go
-func (m *DocumentQuery) GetName() *common.Identifier
-```
-
-#### func (*DocumentQuery) ProtoMessage
-
-```go
-func (*DocumentQuery) ProtoMessage()
-```
-
-#### func (*DocumentQuery) Reset
-
-```go
-func (m *DocumentQuery) Reset()
-```
-
-#### func (*DocumentQuery) String
-
-```go
-func (m *DocumentQuery) String() string
-```
-
-#### func (*DocumentQuery) XXX_DiscardUnknown
-
-```go
-func (m *DocumentQuery) XXX_DiscardUnknown()
-```
-
-#### func (*DocumentQuery) XXX_Marshal
-
-```go
-func (m *DocumentQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*DocumentQuery) XXX_Merge
-
-```go
-func (m *DocumentQuery) XXX_Merge(src proto.Message)
-```
-
-#### func (*DocumentQuery) XXX_Size
-
-```go
-func (m *DocumentQuery) XXX_Size() int
-```
-
-#### func (*DocumentQuery) XXX_Unmarshal
-
-```go
-func (m *DocumentQuery) XXX_Unmarshal(b []byte) error
-```
-
-#### type DocumentServiceClient
-
-```go
-type DocumentServiceClient interface {
-	GetDocument(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*Document, error)
-	Update(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error)
-	Create(ctx context.Context, in *Document, opts ...grpc.CallOption) (*common.Empty, error)
-	Delete(ctx context.Context, in *DocumentQuery, opts ...grpc.CallOption) (*common.Empty, error)
-	ListDocuments(ctx context.Context, in *CategoryQuery, opts ...grpc.CallOption) (DocumentService_ListDocumentsClient, error)
-}
-```
-
-DocumentServiceClient is the client API for DocumentService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewDocumentServiceClient
-
-```go
-func NewDocumentServiceClient(cc *grpc.ClientConn) DocumentServiceClient
-```
-
-#### type DocumentServiceServer
-
-```go
-type DocumentServiceServer interface {
-	GetDocument(context.Context, *DocumentQuery) (*Document, error)
-	Update(context.Context, *Document) (*common.Empty, error)
-	Create(context.Context, *Document) (*common.Empty, error)
-	Delete(context.Context, *DocumentQuery) (*common.Empty, error)
-	ListDocuments(*CategoryQuery, DocumentService_ListDocumentsServer) error
-}
-```
-
-DocumentServiceServer is the server API for DocumentService service.
-
-#### type DocumentService_ListDocumentsClient
-
-```go
-type DocumentService_ListDocumentsClient interface {
-	Recv() (*Document, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type DocumentService_ListDocumentsServer
-
-```go
-type DocumentService_ListDocumentsServer interface {
-	Send(*Document) error
-	grpc.ServerStream
-}
-```
-
-
-#### type Event
-
-```go
-type Event struct {
-	Date                 *common.String    `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 *common.String    `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             *common.String    `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientName           *common.String    `protobuf:"bytes,4,opt,name=client_name,json=clientName,proto3" json:"client_name,omitempty"`
-	Ip                   *common.String    `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`
-	LocationInfo         *common.String    `protobuf:"bytes,6,opt,name=location_info,json=locationInfo,proto3" json:"location_info,omitempty"`
-	Details              *common.String    `protobuf:"bytes,7,opt,name=details,proto3" json:"details,omitempty"`
-	UserId               *common.String    `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	Annotations          *common.StringMap `protobuf:"bytes,9,opt,name=annotations,proto3" json:"annotations,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
-	XXX_unrecognized     []byte            `json:"-"`
-	XXX_sizecache        int32             `json:"-"`
-}
-```
-
-
-#### func (*Event) Descriptor
-
-```go
-func (*Event) Descriptor() ([]byte, []int)
-```
-
-#### func (*Event) GetAnnotations
-
-```go
-func (m *Event) GetAnnotations() *common.StringMap
-```
-
-#### func (*Event) GetClientId
-
-```go
-func (m *Event) GetClientId() *common.String
-```
-
-#### func (*Event) GetClientName
-
-```go
-func (m *Event) GetClientName() *common.String
-```
-
-#### func (*Event) GetDate
-
-```go
-func (m *Event) GetDate() *common.String
-```
-
-#### func (*Event) GetDetails
-
-```go
-func (m *Event) GetDetails() *common.String
-```
-
-#### func (*Event) GetIp
-
-```go
-func (m *Event) GetIp() *common.String
-```
-
-#### func (*Event) GetLocationInfo
-
-```go
-func (m *Event) GetLocationInfo() *common.String
-```
-
-#### func (*Event) GetType
-
-```go
-func (m *Event) GetType() *common.String
-```
-
-#### func (*Event) GetUserId
-
-```go
-func (m *Event) GetUserId() *common.String
-```
-
-#### func (*Event) JSONString
-
-```go
-func (s *Event) JSONString() *common.String
-```
-
-#### func (*Event) ProtoMessage
-
-```go
-func (*Event) ProtoMessage()
-```
-
-#### func (*Event) Reset
-
-```go
-func (m *Event) Reset()
-```
-
-#### func (*Event) String
-
-```go
-func (m *Event) String() string
-```
-
-#### func (*Event) UnmarshalJSONfrom
-
-```go
-func (s *Event) UnmarshalJSONfrom(bits []byte) error
-```
-
-#### func (*Event) UnmarshalProtofrom
-
-```go
-func (s *Event) UnmarshalProtofrom(bits []byte) error
-```
-
-#### func (*Event) XXX_DiscardUnknown
-
-```go
-func (m *Event) XXX_DiscardUnknown()
-```
-
-#### func (*Event) XXX_Marshal
-
-```go
-func (m *Event) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Event) XXX_Merge
-
-```go
-func (m *Event) XXX_Merge(src proto.Message)
-```
-
-#### func (*Event) XXX_Size
-
-```go
-func (m *Event) XXX_Size() int
-```
-
-#### func (*Event) XXX_Unmarshal
-
-```go
-func (m *Event) XXX_Unmarshal(b []byte) error
-```
-
-#### type EventQuery
-
-```go
-type EventQuery struct {
-	Date                 *common.String `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 *common.String `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             *common.String `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	UserId               *common.String `protobuf:"bytes,4,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-```
-
-
-#### func (*EventQuery) Descriptor
-
-```go
-func (*EventQuery) Descriptor() ([]byte, []int)
-```
-
-#### func (*EventQuery) GetClientId
-
-```go
-func (m *EventQuery) GetClientId() *common.String
-```
-
-#### func (*EventQuery) GetDate
-
-```go
-func (m *EventQuery) GetDate() *common.String
-```
-
-#### func (*EventQuery) GetType
-
-```go
-func (m *EventQuery) GetType() *common.String
-```
-
-#### func (*EventQuery) GetUserId
-
-```go
-func (m *EventQuery) GetUserId() *common.String
-```
-
-#### func (*EventQuery) ProtoMessage
-
-```go
-func (*EventQuery) ProtoMessage()
-```
-
-#### func (*EventQuery) Reset
-
-```go
-func (m *EventQuery) Reset()
-```
-
-#### func (*EventQuery) String
-
-```go
-func (m *EventQuery) String() string
-```
-
-#### func (*EventQuery) XXX_DiscardUnknown
-
-```go
-func (m *EventQuery) XXX_DiscardUnknown()
-```
-
-#### func (*EventQuery) XXX_Marshal
-
-```go
-func (m *EventQuery) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*EventQuery) XXX_Merge
-
-```go
-func (m *EventQuery) XXX_Merge(src proto.Message)
-```
-
-#### func (*EventQuery) XXX_Size
-
-```go
-func (m *EventQuery) XXX_Size() int
-```
-
-#### func (*EventQuery) XXX_Unmarshal
-
-```go
-func (m *EventQuery) XXX_Unmarshal(b []byte) error
-```
-
-#### type EventServiceClient
-
-```go
-type EventServiceClient interface {
-	GetEvents(ctx context.Context, in *EventQuery, opts ...grpc.CallOption) (EventService_GetEventsClient, error)
-}
-```
-
-EventServiceClient is the client API for EventService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewEventServiceClient
-
-```go
-func NewEventServiceClient(cc *grpc.ClientConn) EventServiceClient
-```
-
-#### type EventServiceServer
-
-```go
-type EventServiceServer interface {
-	GetEvents(*EventQuery, EventService_GetEventsServer) error
-}
-```
-
-EventServiceServer is the server API for EventService service.
-
-#### type EventService_GetEventsClient
-
-```go
-type EventService_GetEventsClient interface {
-	Recv() (*Event, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type EventService_GetEventsServer
-
-```go
-type EventService_GetEventsServer interface {
-	Send(*Event) error
-	grpc.ServerStream
-}
-```
-
 
 #### type Identity
 
@@ -2458,6 +1669,7 @@ type Product struct {
 	Id                   *common.Identifier `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Description          *common.String     `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Url                  *common.String     `protobuf:"bytes,3,opt,name=url,proto3" json:"url,omitempty"`
+	Tags                 *common.StringMap  `protobuf:"bytes,4,opt,name=tags,proto3" json:"tags,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -2481,6 +1693,12 @@ func (m *Product) GetDescription() *common.String
 
 ```go
 func (m *Product) GetId() *common.Identifier
+```
+
+#### func (*Product) GetTags
+
+```go
+func (m *Product) GetTags() *common.StringMap
 ```
 
 #### func (*Product) GetUrl
@@ -2547,85 +1765,6 @@ func (m *Product) XXX_Size() int
 
 ```go
 func (m *Product) XXX_Unmarshal(b []byte) error
-```
-
-#### type Query
-
-```go
-type Query struct {
-	Query                *common.String `protobuf:"bytes,4,opt,name=query,proto3" json:"query,omitempty"`
-	Fields               *common.String `protobuf:"bytes,5,opt,name=fields,proto3" json:"fields,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
-}
-```
-
-
-#### func (*Query) Descriptor
-
-```go
-func (*Query) Descriptor() ([]byte, []int)
-```
-
-#### func (*Query) GetFields
-
-```go
-func (m *Query) GetFields() *common.String
-```
-
-#### func (*Query) GetQuery
-
-```go
-func (m *Query) GetQuery() *common.String
-```
-
-#### func (*Query) ProtoMessage
-
-```go
-func (*Query) ProtoMessage()
-```
-
-#### func (*Query) Reset
-
-```go
-func (m *Query) Reset()
-```
-
-#### func (*Query) String
-
-```go
-func (m *Query) String() string
-```
-
-#### func (*Query) XXX_DiscardUnknown
-
-```go
-func (m *Query) XXX_DiscardUnknown()
-```
-
-#### func (*Query) XXX_Marshal
-
-```go
-func (m *Query) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*Query) XXX_Merge
-
-```go
-func (m *Query) XXX_Merge(src proto.Message)
-```
-
-#### func (*Query) XXX_Size
-
-```go
-func (m *Query) XXX_Size() int
-```
-
-#### func (*Query) XXX_Unmarshal
-
-```go
-func (m *Query) XXX_Unmarshal(b []byte) error
 ```
 
 #### type Role
@@ -2726,13 +1865,13 @@ func (m *Role) XXX_Size() int
 func (m *Role) XXX_Unmarshal(b []byte) error
 ```
 
-#### type SubscribeRequest
+#### type UpdateUserRequest
 
 ```go
-type SubscribeRequest struct {
+type UpdateUserRequest struct {
 	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Plan                 *common.Identifier `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
-	Card                 *Card              `protobuf:"bytes,3,opt,name=card,proto3" json:"card,omitempty"`
+	Fields               *common.StringMap  `protobuf:"bytes,2,opt,name=fields,proto3" json:"fields,omitempty"`
+	Overwrite            *common.Bool       `protobuf:"bytes,3,opt,name=overwrite,proto3" json:"overwrite,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
 	XXX_unrecognized     []byte             `json:"-"`
 	XXX_sizecache        int32              `json:"-"`
@@ -2740,186 +1879,76 @@ type SubscribeRequest struct {
 ```
 
 
-#### func (*SubscribeRequest) Descriptor
+#### func (*UpdateUserRequest) Descriptor
 
 ```go
-func (*SubscribeRequest) Descriptor() ([]byte, []int)
+func (*UpdateUserRequest) Descriptor() ([]byte, []int)
 ```
 
-#### func (*SubscribeRequest) GetCard
+#### func (*UpdateUserRequest) GetEmail
 
 ```go
-func (m *SubscribeRequest) GetCard() *Card
+func (m *UpdateUserRequest) GetEmail() *common.Identifier
 ```
 
-#### func (*SubscribeRequest) GetEmail
+#### func (*UpdateUserRequest) GetFields
 
 ```go
-func (m *SubscribeRequest) GetEmail() *common.Identifier
+func (m *UpdateUserRequest) GetFields() *common.StringMap
 ```
 
-#### func (*SubscribeRequest) GetPlan
+#### func (*UpdateUserRequest) GetOverwrite
 
 ```go
-func (m *SubscribeRequest) GetPlan() *common.Identifier
+func (m *UpdateUserRequest) GetOverwrite() *common.Bool
 ```
 
-#### func (*SubscribeRequest) ProtoMessage
+#### func (*UpdateUserRequest) ProtoMessage
 
 ```go
-func (*SubscribeRequest) ProtoMessage()
+func (*UpdateUserRequest) ProtoMessage()
 ```
 
-#### func (*SubscribeRequest) Reset
+#### func (*UpdateUserRequest) Reset
 
 ```go
-func (m *SubscribeRequest) Reset()
+func (m *UpdateUserRequest) Reset()
 ```
 
-#### func (*SubscribeRequest) String
+#### func (*UpdateUserRequest) String
 
 ```go
-func (m *SubscribeRequest) String() string
+func (m *UpdateUserRequest) String() string
 ```
 
-#### func (*SubscribeRequest) XXX_DiscardUnknown
+#### func (*UpdateUserRequest) XXX_DiscardUnknown
 
 ```go
-func (m *SubscribeRequest) XXX_DiscardUnknown()
+func (m *UpdateUserRequest) XXX_DiscardUnknown()
 ```
 
-#### func (*SubscribeRequest) XXX_Marshal
+#### func (*UpdateUserRequest) XXX_Marshal
 
 ```go
-func (m *SubscribeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+func (m *UpdateUserRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 ```
 
-#### func (*SubscribeRequest) XXX_Merge
+#### func (*UpdateUserRequest) XXX_Merge
 
 ```go
-func (m *SubscribeRequest) XXX_Merge(src proto.Message)
+func (m *UpdateUserRequest) XXX_Merge(src proto.Message)
 ```
 
-#### func (*SubscribeRequest) XXX_Size
+#### func (*UpdateUserRequest) XXX_Size
 
 ```go
-func (m *SubscribeRequest) XXX_Size() int
+func (m *UpdateUserRequest) XXX_Size() int
 ```
 
-#### func (*SubscribeRequest) XXX_Unmarshal
+#### func (*UpdateUserRequest) XXX_Unmarshal
 
 ```go
-func (m *SubscribeRequest) XXX_Unmarshal(b []byte) error
-```
-
-#### type SubscriptionServiceClient
-
-```go
-type SubscriptionServiceClient interface {
-	Subscribe(ctx context.Context, in *SubscribeRequest, opts ...grpc.CallOption) (*User, error)
-	Unsubscribe(ctx context.Context, in *UnSubscribeRequest, opts ...grpc.CallOption) (*User, error)
-}
-```
-
-SubscriptionServiceClient is the client API for SubscriptionService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewSubscriptionServiceClient
-
-```go
-func NewSubscriptionServiceClient(cc *grpc.ClientConn) SubscriptionServiceClient
-```
-
-#### type SubscriptionServiceServer
-
-```go
-type SubscriptionServiceServer interface {
-	Subscribe(context.Context, *SubscribeRequest) (*User, error)
-	Unsubscribe(context.Context, *UnSubscribeRequest) (*User, error)
-}
-```
-
-SubscriptionServiceServer is the server API for SubscriptionService service.
-
-#### type UnSubscribeRequest
-
-```go
-type UnSubscribeRequest struct {
-	Email                *common.Identifier `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Plan                 *common.String     `protobuf:"bytes,2,opt,name=plan,proto3" json:"plan,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}           `json:"-"`
-	XXX_unrecognized     []byte             `json:"-"`
-	XXX_sizecache        int32              `json:"-"`
-}
-```
-
-
-#### func (*UnSubscribeRequest) Descriptor
-
-```go
-func (*UnSubscribeRequest) Descriptor() ([]byte, []int)
-```
-
-#### func (*UnSubscribeRequest) GetEmail
-
-```go
-func (m *UnSubscribeRequest) GetEmail() *common.Identifier
-```
-
-#### func (*UnSubscribeRequest) GetPlan
-
-```go
-func (m *UnSubscribeRequest) GetPlan() *common.String
-```
-
-#### func (*UnSubscribeRequest) ProtoMessage
-
-```go
-func (*UnSubscribeRequest) ProtoMessage()
-```
-
-#### func (*UnSubscribeRequest) Reset
-
-```go
-func (m *UnSubscribeRequest) Reset()
-```
-
-#### func (*UnSubscribeRequest) String
-
-```go
-func (m *UnSubscribeRequest) String() string
-```
-
-#### func (*UnSubscribeRequest) XXX_DiscardUnknown
-
-```go
-func (m *UnSubscribeRequest) XXX_DiscardUnknown()
-```
-
-#### func (*UnSubscribeRequest) XXX_Marshal
-
-```go
-func (m *UnSubscribeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
-```
-
-#### func (*UnSubscribeRequest) XXX_Merge
-
-```go
-func (m *UnSubscribeRequest) XXX_Merge(src proto.Message)
-```
-
-#### func (*UnSubscribeRequest) XXX_Size
-
-```go
-func (m *UnSubscribeRequest) XXX_Size() int
-```
-
-#### func (*UnSubscribeRequest) XXX_Unmarshal
-
-```go
-func (m *UnSubscribeRequest) XXX_Unmarshal(b []byte) error
+func (m *UpdateUserRequest) XXX_Unmarshal(b []byte) error
 ```
 
 #### type User
@@ -2947,6 +1976,7 @@ type User struct {
 	EmailVerified        *common.Bool        `protobuf:"bytes,20,opt,name=email_verified,json=emailVerified,proto3" json:"email_verified,omitempty"`
 	Password             *common.String      `protobuf:"bytes,21,opt,name=password,proto3" json:"password,omitempty"`
 	Identities           []*Identity         `protobuf:"bytes,22,rep,name=identities,proto3" json:"identities,omitempty"`
+	Roles                []*Role             `protobuf:"bytes,23,rep,name=roles,proto3" json:"roles,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
 	XXX_unrecognized     []byte              `json:"-"`
 	XXX_sizecache        int32               `json:"-"`
@@ -2954,10 +1984,34 @@ type User struct {
 ```
 
 
+#### func (*User) Debugf
+
+```go
+func (s *User) Debugf(format string)
+```
+
 #### func (*User) Descriptor
 
 ```go
 func (*User) Descriptor() ([]byte, []int)
+```
+
+#### func (*User) DocCategory
+
+```go
+func (s *User) DocCategory() string
+```
+
+#### func (*User) DocData
+
+```go
+func (s *User) DocData() map[string]interface{}
+```
+
+#### func (*User) DocName
+
+```go
+func (s *User) DocName() string
 ```
 
 #### func (*User) GetAppMetadata
@@ -3068,6 +2122,12 @@ func (m *User) GetPhoneVerified() *common.Bool
 func (m *User) GetPicture() *common.String
 ```
 
+#### func (*User) GetRoles
+
+```go
+func (m *User) GetRoles() []*Role
+```
+
 #### func (*User) GetUpdatedAt
 
 ```go
@@ -3114,6 +2174,12 @@ func (m *User) String() string
 
 ```go
 func (p *User) UnmarshalJSONFrom(bits []byte) error
+```
+
+#### func (*User) Validate
+
+```go
+func (s *User) Validate(fn func(a *User) error) error
 ```
 
 #### func (*User) XXX_DiscardUnknown
@@ -3249,80 +2315,4 @@ func (m *UserMetadata) XXX_Size() int
 
 ```go
 func (m *UserMetadata) XXX_Unmarshal(b []byte) error
-```
-
-#### type UserServiceClient
-
-```go
-type UserServiceClient interface {
-	QueryUsers(ctx context.Context, in *Query, opts ...grpc.CallOption) (UserService_QueryUsersClient, error)
-	GetUser(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (*User, error)
-	UpdateUser(ctx context.Context, in *User, opts ...grpc.CallOption) (*User, error)
-	UserRoles(ctx context.Context, in *common.Identifier, opts ...grpc.CallOption) (UserService_UserRolesClient, error)
-	AddUserRoles(ctx context.Context, in *AddUserRolesRequest, opts ...grpc.CallOption) (*common.String, error)
-}
-```
-
-UserServiceClient is the client API for UserService service.
-
-For semantics around ctx use and closing/ending streaming RPCs, please refer to
-https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-
-#### func  NewUserServiceClient
-
-```go
-func NewUserServiceClient(cc *grpc.ClientConn) UserServiceClient
-```
-
-#### type UserServiceServer
-
-```go
-type UserServiceServer interface {
-	QueryUsers(*Query, UserService_QueryUsersServer) error
-	GetUser(context.Context, *common.Identifier) (*User, error)
-	UpdateUser(context.Context, *User) (*User, error)
-	UserRoles(*common.Identifier, UserService_UserRolesServer) error
-	AddUserRoles(context.Context, *AddUserRolesRequest) (*common.String, error)
-}
-```
-
-UserServiceServer is the server API for UserService service.
-
-#### type UserService_QueryUsersClient
-
-```go
-type UserService_QueryUsersClient interface {
-	Recv() (*User, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type UserService_QueryUsersServer
-
-```go
-type UserService_QueryUsersServer interface {
-	Send(*User) error
-	grpc.ServerStream
-}
-```
-
-
-#### type UserService_UserRolesClient
-
-```go
-type UserService_UserRolesClient interface {
-	Recv() (*Role, error)
-	grpc.ClientStream
-}
-```
-
-
-#### type UserService_UserRolesServer
-
-```go
-type UserService_UserRolesServer interface {
-	Send(*Role) error
-	grpc.ServerStream
-}
 ```

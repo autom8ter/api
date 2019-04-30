@@ -15,7 +15,7 @@
     "application/json"
   ],
   "paths": {
-    "/authentication": {
+    "/db/user": {
       "post": {
         "operationId": "GetUser",
         "responses": {
@@ -32,12 +32,38 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/commonAuthToken"
+              "$ref": "#/definitions/commonIdentifier"
             }
           }
         ],
         "tags": [
-          "AuthenticationService"
+          "DBService"
+        ]
+      }
+    },
+    "/db/user/delete": {
+      "post": {
+        "operationId": "ListUsers",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/commonEmpty"
+            }
+          }
+        ],
+        "tags": [
+          "DBService"
         ]
       }
     },
@@ -66,408 +92,9 @@
           "DebugService"
         ]
       }
-    },
-    "/documents": {
-      "post": {
-        "operationId": "GetDocument",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiDocument"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiDocumentQuery"
-            }
-          }
-        ],
-        "tags": [
-          "DocumentService"
-        ]
-      }
-    },
-    "/documents/create": {
-      "post": {
-        "operationId": "Delete",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiDocumentQuery"
-            }
-          }
-        ],
-        "tags": [
-          "DocumentService"
-        ]
-      }
-    },
-    "/documents/list": {
-      "post": {
-        "operationId": "ListDocuments",
-        "responses": {
-          "200": {
-            "description": "A successful response.(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/apiDocument"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiCategoryQuery"
-            }
-          }
-        ],
-        "tags": [
-          "DocumentService"
-        ]
-      }
-    },
-    "/documents/update": {
-      "post": {
-        "operationId": "Update",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonEmpty"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiDocument"
-            }
-          }
-        ],
-        "tags": [
-          "DocumentService"
-        ]
-      }
-    },
-    "/events": {
-      "post": {
-        "operationId": "GetEvents",
-        "responses": {
-          "200": {
-            "description": "A successful response.(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/apiEvent"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiEventQuery"
-            }
-          }
-        ],
-        "tags": [
-          "EventService"
-        ]
-      }
-    },
-    "/management/user/get": {
-      "post": {
-        "operationId": "GetUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonIdentifier"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/management/user/query": {
-      "post": {
-        "operationId": "QueryUsers",
-        "responses": {
-          "200": {
-            "description": "A successful response.(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiQuery"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/management/user/roles": {
-      "post": {
-        "operationId": "AddUserRoles",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/commonString"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiAddUserRolesRequest"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/management/user/update": {
-      "post": {
-        "operationId": "UpdateUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        ],
-        "tags": [
-          "UserService"
-        ]
-      }
-    },
-    "/subscribe": {
-      "post": {
-        "operationId": "Subscribe",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiSubscribeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "SubscriptionService"
-        ]
-      }
-    },
-    "/unsubscribe": {
-      "post": {
-        "operationId": "Unsubscribe",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiUnSubscribeRequest"
-            }
-          }
-        ],
-        "tags": [
-          "SubscriptionService"
-        ]
-      }
     }
   },
   "definitions": {
-    "apiAddUserRolesRequest": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "$ref": "#/definitions/commonIdentifier"
-        },
-        "roles": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/apiRole"
-          }
-        }
-      }
-    },
-    "apiCard": {
-      "type": "object",
-      "properties": {
-        "number": {
-          "$ref": "#/definitions/commonIdentifier"
-        },
-        "exp_month": {
-          "$ref": "#/definitions/commonString"
-        },
-        "exp_year": {
-          "$ref": "#/definitions/commonString"
-        },
-        "cvc": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
-    "apiCategoryQuery": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
-    "apiDocument": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "$ref": "#/definitions/commonString"
-        },
-        "name": {
-          "$ref": "#/definitions/commonString"
-        },
-        "data": {
-          "$ref": "#/definitions/commonStringMap"
-        }
-      }
-    },
-    "apiDocumentQuery": {
-      "type": "object",
-      "properties": {
-        "category": {
-          "$ref": "#/definitions/commonString"
-        },
-        "name": {
-          "$ref": "#/definitions/commonIdentifier"
-        }
-      }
-    },
-    "apiEvent": {
-      "type": "object",
-      "properties": {
-        "date": {
-          "$ref": "#/definitions/commonString"
-        },
-        "type": {
-          "$ref": "#/definitions/commonString"
-        },
-        "client_id": {
-          "$ref": "#/definitions/commonString"
-        },
-        "client_name": {
-          "$ref": "#/definitions/commonString"
-        },
-        "ip": {
-          "$ref": "#/definitions/commonString"
-        },
-        "location_info": {
-          "$ref": "#/definitions/commonString"
-        },
-        "details": {
-          "$ref": "#/definitions/commonString"
-        },
-        "user_id": {
-          "$ref": "#/definitions/commonString"
-        },
-        "annotations": {
-          "$ref": "#/definitions/commonStringMap"
-        }
-      }
-    },
-    "apiEventQuery": {
-      "type": "object",
-      "properties": {
-        "date": {
-          "$ref": "#/definitions/commonString"
-        },
-        "type": {
-          "$ref": "#/definitions/commonString"
-        },
-        "client_id": {
-          "$ref": "#/definitions/commonString"
-        },
-        "user_id": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
     "apiIdentity": {
       "type": "object",
       "properties": {
@@ -485,17 +112,6 @@
         }
       }
     },
-    "apiQuery": {
-      "type": "object",
-      "properties": {
-        "query": {
-          "$ref": "#/definitions/commonString"
-        },
-        "fields": {
-          "$ref": "#/definitions/commonString"
-        }
-      }
-    },
     "apiRole": {
       "type": "object",
       "properties": {
@@ -510,28 +126,17 @@
         }
       }
     },
-    "apiSubscribeRequest": {
+    "apiUpdateUserRequest": {
       "type": "object",
       "properties": {
         "email": {
           "$ref": "#/definitions/commonIdentifier"
         },
-        "plan": {
-          "$ref": "#/definitions/commonIdentifier"
+        "fields": {
+          "$ref": "#/definitions/commonStringMap"
         },
-        "card": {
-          "$ref": "#/definitions/apiCard"
-        }
-      }
-    },
-    "apiUnSubscribeRequest": {
-      "type": "object",
-      "properties": {
-        "email": {
-          "$ref": "#/definitions/commonIdentifier"
-        },
-        "plan": {
-          "$ref": "#/definitions/commonString"
+        "overwrite": {
+          "$ref": "#/definitions/commonBool"
         }
       }
     },
@@ -603,14 +208,12 @@
           "items": {
             "$ref": "#/definitions/apiIdentity"
           }
-        }
-      }
-    },
-    "commonAuthToken": {
-      "type": "object",
-      "properties": {
-        "token": {
-          "$ref": "#/definitions/commonString"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiRole"
+          }
         }
       }
     },
