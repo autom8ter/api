@@ -24,6 +24,8 @@ github.com/autom8ter/objectify v0.0.0-20190430042524-40d6e08fa605 h1:hR9xYIsvVm5
 github.com/autom8ter/objectify v0.0.0-20190430042524-40d6e08fa605/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
 github.com/autom8ter/objectify v0.0.0-20190430052014-ea17e2f77231 h1:dYxen9eYYbrTNGcKbpTuv51xGgvLW4gSIXF+FCFHGNg=
 github.com/autom8ter/objectify v0.0.0-20190430052014-ea17e2f77231/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
+github.com/autom8ter/objectify v0.0.0-20190430194927-911c01629753 h1:G+1TIZCqYo7TVkoiPAjyuqsPMrBN6oegxR8cTCyc5aY=
+github.com/autom8ter/objectify v0.0.0-20190430194927-911c01629753/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=

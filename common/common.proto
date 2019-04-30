@@ -16,6 +16,10 @@ message StringMap {
 
 message Empty {}
 
+message Bool {
+    bool answer =1;
+}
+
 message Identifier {
     String id=1;
 }

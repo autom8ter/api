@@ -21,7 +21,6 @@ import (
 )
 
 func init() {
-	EnvContext = common.StringArrayFromEnv().ToContext(context.TODO(), "env")
 	util = objectify.Default()
 }
 
@@ -29,47 +28,45 @@ var (
 	util *objectify.Handler
 )
 
-var EnvContext context.Context
-
 type ClientSet struct {
-	Utility    UtilityServiceClient
-	Contact    ContactServiceClient
-	Payment    PaymentServiceClient
-	Management ManagementServiceClient
-	Auth       AuthenticationServiceClient
+	Debug         DebugServiceClient
+	Subscriptions SubscriptionServiceClient
+	Users         UserServiceClient
+	Auth          AuthenticationServiceClient
+	Events        EventServiceClient
 }
 
 func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	return &ClientSet{
-		Utility:    NewUtilityServiceClient(conn),
-		Contact:    NewContactServiceClient(conn),
-		Payment:    NewPaymentServiceClient(conn),
-		Auth:       NewAuthenticationServiceClient(conn),
-		Management: NewManagementServiceClient(conn),
+		Debug:         NewDebugServiceClient(conn),
+		Subscriptions: NewSubscriptionServiceClient(conn),
+		Users:         NewUserServiceClient(conn),
+		Auth:          NewAuthenticationServiceClient(conn),
+		Events:        NewEventServiceClient(conn),
 	}
 }
 
-func (p *SubscriptionResponse) JSONString() *common.String {
+func (p *Plan) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *SMSResponse) JSONString() *common.String {
+func (p *Product) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *CallResponse) JSONString() *common.String {
+func (p *AppMetadata) JSONString() *common.String {
+	return common.MessageToJSONString(p)
+}
+
+func (p *UserMetadata) JSONString() *common.String {
+	return common.MessageToJSONString(p)
+}
+
+func (p *Role) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
 func (p *User) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *PhoneNumberResource) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *PhoneNumber) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
@@ -105,27 +102,23 @@ func (p *User) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
-func (p *SMSResponse) UnmarshalJSONFrom(bits []byte) error {
+func (p *Plan) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
-func (p *CallResponse) UnmarshalJSONFrom(bits []byte) error {
+func (p *Product) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
-func (p *FaxResponse) UnmarshalJSONFrom(bits []byte) error {
+func (p *UserMetadata) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
-func (p *SubscriptionResponse) UnmarshalJSONFrom(bits []byte) error {
+func (p *AppMetadata) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
-func (p *PhoneNumberResource) UnmarshalJSONFrom(bits []byte) error {
-	return json.Unmarshal(bits, p)
-}
-
-func (p *PhoneNumber) UnmarshalJSONFrom(bits []byte) error {
+func (p *Role) UnmarshalJSONFrom(bits []byte) error {
 	return json.Unmarshal(bits, p)
 }
 
@@ -138,73 +131,6 @@ func (p *JSONWebKeys) UnmarshalProtoFrom(bits []byte) error {
 }
 
 func (p *Jwks) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *FaxResponse) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *CallResponse) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *SMS) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *Call) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *Fax) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *FaxBlast) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *SMS) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *Call) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *Fax) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *FaxBlast) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *FaxResponse) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *Email) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *EmailBlastRequest) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-
-func (p *EmailRequest) JSONString() *common.String {
-	return common.MessageToJSONString(p)
-}
-func (p *Email) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *EmailBlastRequest) UnmarshalProtoFrom(bits []byte) error {
-	return proto.Unmarshal(bits, p)
-}
-
-func (p *EmailRequest) UnmarshalProtoFrom(bits []byte) error {
 	return proto.Unmarshal(bits, p)
 }
 
@@ -432,53 +358,74 @@ func (c *OAuth2) AuthCodeURL(state string, audience string) string {
 	return c.Config().AuthCodeURL(state, aud)
 }
 
-func (c *JWT) NewAPIClientSet(addr string) (*ClientSet, error) {
-	creds, err := c.PerRPCCredentials()
-	if err != nil {
-		return nil, err
-	}
-	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(creds))
-	if err != nil {
-		return nil, err
-	}
-	return &ClientSet{
-		Utility:    NewUtilityServiceClient(conn),
-		Contact:    NewContactServiceClient(conn),
-		Payment:    NewPaymentServiceClient(conn),
-		Management: NewManagementServiceClient(conn),
-		Auth:       NewAuthenticationServiceClient(conn),
-	}, nil
+func (c *OAuth2) SetCode(r *http.Request) {
+	c.Code = common.ToString(r.URL.Query().Get("code"))
 }
 
-func (c *OAuth2) NewAPIClientSet(addr string) (*ClientSet, error) {
+func (c *JWT) NewAPIClientSet(ctx context.Context, addr string) (*ClientSet, error) {
 	creds, err := c.PerRPCCredentials()
 	if err != nil {
 		return nil, err
 	}
-	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(creds))
+	conn, err := grpc.DialContext(ctx, addr, grpc.WithPerRPCCredentials(creds))
 	if err != nil {
 		return nil, err
 	}
-	return &ClientSet{
-		Utility:    NewUtilityServiceClient(conn),
-		Contact:    NewContactServiceClient(conn),
-		Payment:    NewPaymentServiceClient(conn),
-		Management: NewManagementServiceClient(conn),
-		Auth:       NewAuthenticationServiceClient(conn),
-	}, nil
+	return NewClientSet(conn), nil
 }
 
-func (c *ClientCredentials) NewAPIClientSet(addr string) (*ClientSet, error) {
+func (c *OAuth2) NewAPIClientSet(ctx context.Context, addr string) (*ClientSet, error) {
 	creds, err := c.PerRPCCredentials()
 	if err != nil {
 		return nil, err
 	}
-	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(creds))
-	return &ClientSet{
-		Utility:    NewUtilityServiceClient(conn),
-		Contact:    NewContactServiceClient(conn),
-		Payment:    NewPaymentServiceClient(conn),
-		Management: NewManagementServiceClient(conn),
-		Auth:       NewAuthenticationServiceClient(conn),
-	}, nil
+	conn, err := grpc.DialContext(ctx, addr, grpc.WithPerRPCCredentials(creds))
+	if err != nil {
+		return nil, err
+	}
+	return NewClientSet(conn), nil
+
+}
+
+func (c *ClientCredentials) NewAPIClientSet(ctx context.Context, addr string) (*ClientSet, error) {
+	creds, err := c.PerRPCCredentials()
+	if err != nil {
+		return nil, err
+	}
+	conn, err := grpc.DialContext(ctx, addr, grpc.WithPerRPCCredentials(creds))
+	return NewClientSet(conn), nil
+}
+
+func NewClientCredentials(tokenURL, clientID, clientSecret string, params map[string]string, scopes []string) *ClientCredentials {
+	return &ClientCredentials{
+		ClientId:       common.ToString(clientID),
+		ClientSecret:   common.ToString(clientSecret),
+		TokenUrl:       common.ToString(tokenURL),
+		Scopes:         common.ToStringArray(scopes),
+		EndpointParams: common.ToStringMap(params),
+	}
+}
+
+func NewJWT(tokenURL, email, privateKey, privKeyID, subject string, expiry, audience string, scopes []string) *JWT {
+	return &JWT{
+		Email:      common.ToString(email),
+		PrivateKey: []byte(privateKey),
+		PriveKeyId: common.ToString(privKeyID),
+		Subject:    common.ToString(subject),
+		Scopes:     common.ToStringArray(scopes),
+		TokenUrl:   common.ToString(tokenURL),
+		Expires:    common.ToString(expiry),
+		Audience:   common.ToString(audience),
+	}
+}
+
+func NewOAuth2(clientID string, clientSecret string, tokenURL string, authURL string, redirect string, scopes []string) *OAuth2 {
+	return &OAuth2{
+		ClientId:     common.ToString(clientID),
+		ClientSecret: common.ToString(clientSecret),
+		TokenUrl:     common.ToString(tokenURL),
+		AuthUrl:      common.ToString(authURL),
+		Scopes:       common.ToStringArray(scopes),
+		Redirect:     common.ToString(redirect),
+	}
 }

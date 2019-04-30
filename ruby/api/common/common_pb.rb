@@ -15,6 +15,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "common.Empty" do
   end
+  add_message "common.Bool" do
+    optional :answer, :bool, 1
+  end
   add_message "common.Identifier" do
     optional :id, :message, 1, "common.String"
   end
@@ -34,6 +37,7 @@ module Common
   StringArray = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringArray").msgclass
   StringMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringMap").msgclass
   Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Empty").msgclass
+  Bool = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Bool").msgclass
   Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Identifier").msgclass
   AuthToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.AuthToken").msgclass
   Int64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int64").msgclass

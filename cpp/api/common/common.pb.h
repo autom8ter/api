@@ -41,7 +41,7 @@ namespace protobuf_common_2fcommon_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[9];
+  static const ::google::protobuf::internal::ParseTable schema[10];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -52,6 +52,9 @@ namespace common {
 class AuthToken;
 class AuthTokenDefaultTypeInternal;
 extern AuthTokenDefaultTypeInternal _AuthToken_default_instance_;
+class Bool;
+class BoolDefaultTypeInternal;
+extern BoolDefaultTypeInternal _Bool_default_instance_;
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
@@ -80,6 +83,7 @@ extern StringMap_StringMapEntry_DoNotUseDefaultTypeInternal _StringMap_StringMap
 namespace google {
 namespace protobuf {
 template<> ::common::AuthToken* Arena::CreateMaybeMessage<::common::AuthToken>(Arena*);
+template<> ::common::Bool* Arena::CreateMaybeMessage<::common::Bool>(Arena*);
 template<> ::common::Empty* Arena::CreateMaybeMessage<::common::Empty>(Arena*);
 template<> ::common::Float64* Arena::CreateMaybeMessage<::common::Float64>(Arena*);
 template<> ::common::Identifier* Arena::CreateMaybeMessage<::common::Identifier>(Arena*);
@@ -543,6 +547,109 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 };
 // -------------------------------------------------------------------
 
+class Bool : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Bool) */ {
+ public:
+  Bool();
+  virtual ~Bool();
+
+  Bool(const Bool& from);
+
+  inline Bool& operator=(const Bool& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Bool(Bool&& from) noexcept
+    : Bool() {
+    *this = ::std::move(from);
+  }
+
+  inline Bool& operator=(Bool&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Bool& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Bool* internal_default_instance() {
+    return reinterpret_cast<const Bool*>(
+               &_Bool_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(Bool* other);
+  friend void swap(Bool& a, Bool& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Bool* New() const final {
+    return CreateMaybeMessage<Bool>(NULL);
+  }
+
+  Bool* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Bool>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Bool& from);
+  void MergeFrom(const Bool& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Bool* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bool answer = 1;
+  void clear_answer();
+  static const int kAnswerFieldNumber = 1;
+  bool answer() const;
+  void set_answer(bool value);
+
+  // @@protoc_insertion_point(class_scope:common.Bool)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  bool answer_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Identifier) */ {
  public:
   Identifier();
@@ -578,7 +685,7 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_Identifier_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(Identifier* other);
   friend void swap(Identifier& a, Identifier& b) {
@@ -687,7 +794,7 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_AuthToken_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   void Swap(AuthToken* other);
   friend void swap(AuthToken& a, AuthToken& b) {
@@ -796,7 +903,7 @@ class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Int64_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   void Swap(Int64* other);
   friend void swap(Int64& a, Int64& b) {
@@ -899,7 +1006,7 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Float64_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   void Swap(Float64* other);
   friend void swap(Float64& a, Float64& b) {
@@ -1093,6 +1200,24 @@ StringMap::mutable_string_map() {
 
 // -------------------------------------------------------------------
 
+// Bool
+
+// bool answer = 1;
+inline void Bool::clear_answer() {
+  answer_ = false;
+}
+inline bool Bool::answer() const {
+  // @@protoc_insertion_point(field_get:common.Bool.answer)
+  return answer_;
+}
+inline void Bool::set_answer(bool value) {
+  
+  answer_ = value;
+  // @@protoc_insertion_point(field_set:common.Bool.answer)
+}
+
+// -------------------------------------------------------------------
+
 // Identifier
 
 // .common.String id = 1;
@@ -1246,6 +1371,8 @@ inline void Float64::set_num(double value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -5,125 +5,46 @@ package api;
 import "google/api/annotations.proto";
 import "common/common.proto";
 
-service UtilityService {
+service DebugService {
     rpc Echo(common.String) returns (common.String) {
         option (google.api.http) = {
-      post: "/utility/echo"
-      body: "*"
-    };
-    }
-    rpc EchoSpanish(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/utility/echo/spanish"
-      body: "*"
-    };
-    }
-    rpc EchoChinese(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/utility/echo/chinese"
-      body: "*"
-    };
-    }
-    rpc EchoEnglish(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/utility/echo/english"
-      body: "*"
-    };
-    }
-    rpc EchoHindi(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/utility/echo/hindi"
-      body: "*"
-    };
-    }
-    rpc EchoArabic(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/utility/echo/arabic"
+      post: "/debug"
       body: "*"
     };
     }
 }
 
-service ContactService {
-    rpc SendSMS(SMS) returns (SMSResponse) {
+service SubscriptionService {
+    rpc Subscribe(SubscribeRequest) returns (User) {
         option (google.api.http) = {
-      post: "/contact/sms/send"
+      post: "/subscribe"
       body: "*"
     };
     }
-    rpc SendSMSBlast(SMSBlast) returns (stream SMSResponse) {
+    rpc Unsubscribe(UnSubscribeRequest) returns (User) {
         option (google.api.http) = {
-      post: "/contact/sms/blast"
-      body: "*"
-    };
-    }
-    rpc GetSMS(common.Identifier) returns (SMSResponse) {
-        option (google.api.http) = {
-      post: "/contact/sms/get"
-      body: "*"
-    };
-    }
-    rpc SendEmail(EmailRequest) returns (common.String) {
-        option (google.api.http) = {
-      post: "/contact/email/send"
-      body: "*"
-    };
-    }
-    rpc SendEmailBlast(EmailBlastRequest) returns (stream common.String) {
-        option (google.api.http) = {
-      post: "/contact/email/blast"
-      body: "*"
-    };
-    }
-    rpc SendCall(Call) returns (CallResponse) {
-        option (google.api.http) = {
-      post: "/contact/call/send"
-      body: "*"
-    };
-    }
-    rpc SendCallBlast(CallBlast) returns (stream CallResponse) {
-        option (google.api.http) = {
-      post: "/contact/call/blast"
-      body: "*"
-    };
-    }
-
-    rpc SendFax(Fax) returns (FaxResponse) {
-         option (google.api.http) = {
-      post: "/contact/fax/send"
-      body: "*"
-    };
-    }
-    rpc SendFaxBlast(FaxBlast) returns (stream FaxResponse) {
-        option (google.api.http) = {
-      post: "/contact/fax/blast"
+      post: "/unsubscribe"
       body: "*"
     };
     }
 }
 
-service PaymentService {
-    rpc Subscribe(SubscribeRequest) returns (SubscriptionResponse) {
+service CacheService {
+    rpc Get(common.String) returns (common.String) {
         option (google.api.http) = {
-      post: "/payment/subscribe"
+      post: "/cache/get"
       body: "*"
     };
     }
-    rpc Unsubscribe(UnSubscribeRequest) returns (SubscriptionResponse) {
+    rpc Exists(common.String) returns (common.String) {
         option (google.api.http) = {
-      post: "/payment/unsubscribe"
+      post: "/cache/get"
       body: "*"
     };
     }
-    rpc PurchasePhoneNumber(PhoneNumber) returns (PhoneNumberResource) {
+    rpc Set(common.StringMap) returns (common.Empty) {
         option (google.api.http) = {
-      post: "/payment/number"
-      body: "*"
-    };
-    }
-    rpc SearchPhoneNumber(SearchPhoneNumberRequest) returns (stream PhoneNumber) {
-        option (google.api.http) = {
-      post: "/payment/numbers/search"
+      post: "/cache/set"
       body: "*"
     };
     }
@@ -132,14 +53,14 @@ service PaymentService {
 service AuthenticationService {
     rpc GetUser(common.AuthToken) returns (User) {
         option (google.api.http) = {
-      post: "/authentication/user/get"
+      post: "/authentication"
       body: "*"
     };
     }
 
 }
 
-service ManagementService {
+service UserService {
     rpc QueryUsers(Query) returns (stream User) {
         option (google.api.http) = {
       post: "/management/user/query"
@@ -172,9 +93,12 @@ service ManagementService {
       body: "*"
     };
     }
-    rpc QueryUserEvents(Query) returns (stream Event) {
+}
+
+service EventService {
+    rpc GetEvents(EventQuery) returns (stream Event) {
         option (google.api.http) = {
-      post: "/management/user/query"
+      post: "/events"
       body: "*"
     };
     }
@@ -185,100 +109,23 @@ message AddUserRolesRequest {
     repeated Role roles=2;
 }
 
-message Fax {
-    common.String to =1;
-    common.String from=2;
-    common.String media_url =3;
-    common.String quality=4;
-    common.String callback=5;
-    bool store_media=6;
-}
-
-message FaxBlast {
-    common.StringArray to =1;
-    common.String from=2;
-    common.String media_url =3;
-    common.String quality=4;
-    common.String callback=5;
-    bool store_media=6;
-}
-
 message SubscribeRequest {
-    common.String email=1;
-    Plan plan =2;
+    common.Identifier email=1;
+    common.Identifier plan =2;
     Card card =3;
 }
 
 message UnSubscribeRequest {
-    common.String email=1;
-    Plan plan =2;
+    common.Identifier email=1;
+    common.String plan =2;
 }
 
 message Card {
-    common.String number=1;
+    common.Identifier number=1;
     common.String exp_month=2;
     common.String exp_year =3;
     common.String cvc=4;
 }
-
-
-message SMS {
-    common.String service =1;
-    common.String to =2;
-    common.String message=3;
-    common.String mediaURL =4;
-    common.String callback=5;
-    common.String app=6;
-}
-
-message SMSBlast {
-    common.String service =1;
-    common.StringArray to =2;
-    common.String message=3;
-    common.String mediaURL =4;
-    common.String callback=5;
-    common.String app=6;
-}
-
-message EmailRequest {
-    common.String from_name =1;
-    common.String from_email =2;
-    Email email =3;
-}
-
-message EmailBlastRequest {
-    common.String from_name =1;
-    common.String from_email =2;
-    EmailBlast blast =3;
-}
-
-message EmailBlast {
-    common.StringMap name_address =1;
-    common.String subject =2;
-    common.String plain=3;
-    common.String html=4;
-}
-
-message Email {
-    common.String name =1;
-    common.String address =2;
-    common.String subject =3;
-    common.String plain=4;
-    common.String html=5;
-}
-
-message Call {
-    common.String from=1;
-    common.String to =2;
-    common.String app=3;
-}
-
-message CallBlast {
-    common.String from=1;
-    common.StringArray to =2;
-    common.String app=3;
-}
-
 
 message User {
     common.Identifier user_id=1;
@@ -290,11 +137,11 @@ message User {
     common.Identifier email=7;
     common.Identifier phone_number=8;
     common.String picture=9;
+    common.String nickname =14;
     common.StringMap user_metadata=10;
     common.StringMap app_metadata=11;
     common.String last_ip =12;
     bool blocked =13;
-    common.String nickname =14;
     common.StringArray multifactor=15;
     common.String created_at=17;
     common.String updated_at=18;
@@ -304,6 +151,50 @@ message User {
     repeated Identity identities =22;
 }
 
+message UserMetadata {
+    common.String status=1;
+    common.StringMap bio=2;
+    Address address=3;
+    common.StringMap tags=4;
+}
+
+message Address {
+    string city =1;
+    string state=2;
+    string line1 =3;
+    string line2=4;
+    string zip =5;
+}
+
+message AppMetadata {
+    common.String description =1;
+    common.String account_balance=2;
+    Plan plan=3;
+    common.StringMap tags=4;
+}
+
+message Plan {
+    common.Identifier id =1;
+    bool active =2;
+    common.Int64 amount =3;
+    BillingInterval interval=4;
+    common.String nickname =5;
+    Product product=6;
+}
+
+message Product {
+    common.Identifier id =1;
+    common.String description =2;
+    common.String url =3;
+}
+
+enum BillingInterval {
+    DAILY =0;
+    WEEKLY=1;
+    MONTHLY=2;
+    YEARLY=3;
+}
+
 message Identity{
     common.String connection =1;
     common.Identifier user_id=2;
@@ -311,88 +202,10 @@ message Identity{
     bool isSocial=4;
 }
 
-enum Plan {
-    FREE =0;
-    BASIC=1;
-    PREMIUM=2;
-}
-
-message RenderRequest {
-    common.String name=1;
-    common.String text=2;
-    common.String data=3;
-}
-
-message SearchPhoneNumberRequest {
-    common.String state =1;
-    NumberCapabilities capabilities =2;
-    common.Int64 total_results=3;
-}
-
-message PhoneNumber {
-    common.String friendly_name=1;
-    common.String phone_number=2;
-    common.String region=3;
-    NumberCapabilities capabilities =4;
-}
-
-message NumberCapabilities {
-    bool voice =1;
-    bool sms=2;
-    bool mms=3;
-}
-
-message PhoneNumberResource {
-   PhoneNumber number=1;
-   common.Identifier id =2;
-   common.String uri=3;
-}
-
 message Role {
     common.Identifier id=1;
     common.String name=2;
     common.String description=3;
-}
-
-message CallResponse {
-    common.Identifier   id=1;
-    common.String  to =5;
-    common.String  from =6;
-    common.String  status =9;
-    common.String  answered_by =10;
-    common.String  forwarded_from =11;
-    common.String  caller_name =12;
-    common.StringMap annotations=13;
-}
-
-message SMSResponse {
-    common.Identifier  id=1;
-    common.String  to =5;
-    common.String  from =6;
-    common.String  media_url = 7;
-    common.String  body =8;
-    common.String  status =9;
-    common.StringMap annotations=10;
-}
-
-message SubscriptionResponse {
-    common.Identifier  id=1;
-    common.Int64 amount=2;
-    common.Int64 days_until_due=3;
-    common.StringMap annotations=10;
-    Plan plan=4;
-    User user=5;
-    common.String status=6;
-
-}
-
-message FaxResponse {
-    common.Identifier id =1;
-    common.String media_url=3;
-    common.String to=4;
-    common.String from=5;
-    common.String  status =6;
-    common.StringMap annotations=10;
 }
 
 message OAuth2 {
@@ -438,6 +251,13 @@ message Event {
     common.String location_info=6;
     common.String details=7;
     common.String user_id=8;
+}
+
+message EventQuery {
+    string date=1;
+    string type=2;
+    string client_id=3;
+    string user_id=4;
 }
 
 message JSONWebKeys {

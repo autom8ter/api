@@ -95,6 +95,78 @@ func (m *AuthToken) XXX_Size() int
 func (m *AuthToken) XXX_Unmarshal(b []byte) error
 ```
 
+#### type Bool
+
+```go
+type Bool struct {
+	Answer               bool     `protobuf:"varint,1,opt,name=answer,proto3" json:"answer,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+```
+
+
+#### func (*Bool) Descriptor
+
+```go
+func (*Bool) Descriptor() ([]byte, []int)
+```
+
+#### func (*Bool) GetAnswer
+
+```go
+func (m *Bool) GetAnswer() bool
+```
+
+#### func (*Bool) ProtoMessage
+
+```go
+func (*Bool) ProtoMessage()
+```
+
+#### func (*Bool) Reset
+
+```go
+func (m *Bool) Reset()
+```
+
+#### func (*Bool) String
+
+```go
+func (m *Bool) String() string
+```
+
+#### func (*Bool) XXX_DiscardUnknown
+
+```go
+func (m *Bool) XXX_DiscardUnknown()
+```
+
+#### func (*Bool) XXX_Marshal
+
+```go
+func (m *Bool) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
+```
+
+#### func (*Bool) XXX_Merge
+
+```go
+func (m *Bool) XXX_Merge(src proto.Message)
+```
+
+#### func (*Bool) XXX_Size
+
+```go
+func (m *Bool) XXX_Size() int
+```
+
+#### func (*Bool) XXX_Unmarshal
+
+```go
+func (m *Bool) XXX_Unmarshal(b []byte) error
+```
+
 #### type Empty
 
 ```go

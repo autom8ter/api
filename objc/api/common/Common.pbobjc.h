@@ -92,6 +92,18 @@ typedef GPB_ENUM(StringMap_FieldNumber) {
 
 @end
 
+#pragma mark - Bool
+
+typedef GPB_ENUM(Bool_FieldNumber) {
+  Bool_FieldNumber_Answer = 1,
+};
+
+@interface Bool : GPBMessage
+
+@property(nonatomic, readwrite) BOOL answer;
+
+@end
+
 #pragma mark - Identifier
 
 typedef GPB_ENUM(Identifier_FieldNumber) {
