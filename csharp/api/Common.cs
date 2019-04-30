@@ -35,16 +35,17 @@ namespace Common {
             "IAEoCzIOLmNvbW1vbi5TdHJpbmcSIgoKdG9rZW5fdHlwZRgCIAEoCzIOLmNv",
             "bW1vbi5TdHJpbmcSJQoNcmVmcmVzaF90b2tlbhgDIAEoCzIOLmNvbW1vbi5T",
             "dHJpbmcSHgoGZXhwaXJ5GAQgASgLMg4uY29tbW9uLlN0cmluZxIgCghpZF90",
-            "b2tlbhgFIAEoCzIOLmNvbW1vbi5TdHJpbmcixgEKBkNvbmZpZxIhCgljbGll",
+            "b2tlbhgFIAEoCzIOLmNvbW1vbi5TdHJpbmciigIKBkNvbmZpZxIhCgljbGll",
             "bnRfaWQYASABKAsyDi5jb21tb24uU3RyaW5nEiUKDWNsaWVudF9zZWNyZXQY",
             "AiABKAsyDi5jb21tb24uU3RyaW5nEiEKCXRva2VuX3VybBgDIAEoCzIOLmNv",
-            "bW1vbi5TdHJpbmcSIwoGc2NvcGVzGAQgASgLMhMuY29tbW9uLlN0cmluZ0Fy",
-            "cmF5EioKD2VuZHBvaW50X3BhcmFtcxgFIAEoCzIRLmNvbW1vbi5TdHJpbmdN",
-            "YXAiRgoFUXVlcnkSHQoFcXVlcnkYBCABKAsyDi5jb21tb24uU3RyaW5nEh4K",
-            "BmZpZWxkcxgFIAEoCzIOLmNvbW1vbi5TdHJpbmcidgoIVG9rZW5TZXQSLAoG",
-            "dG9rZW5zGAEgAygLMhwuY29tbW9uLlRva2VuU2V0LlRva2Vuc0VudHJ5GjwK",
-            "C1Rva2Vuc0VudHJ5EgsKA2tleRgBIAEoCRIcCgV2YWx1ZRgCIAEoCzINLmNv",
-            "bW1vbi5Ub2tlbjoCOAFiBnByb3RvMw=="));
+            "bW1vbi5TdHJpbmcSIAoIYXV0aF91cmwYBCABKAsyDi5jb21tb24uU3RyaW5n",
+            "EiMKBnNjb3BlcxgFIAEoCzITLmNvbW1vbi5TdHJpbmdBcnJheRIgCghyZWRp",
+            "cmVjdBgGIAEoCzIOLmNvbW1vbi5TdHJpbmcSKgoPZW5kcG9pbnRfcGFyYW1z",
+            "GAcgASgLMhEuY29tbW9uLlN0cmluZ01hcCJGCgVRdWVyeRIdCgVxdWVyeRgE",
+            "IAEoCzIOLmNvbW1vbi5TdHJpbmcSHgoGZmllbGRzGAUgASgLMg4uY29tbW9u",
+            "LlN0cmluZyJ2CghUb2tlblNldBIsCgZ0b2tlbnMYASADKAsyHC5jb21tb24u",
+            "VG9rZW5TZXQuVG9rZW5zRW50cnkaPAoLVG9rZW5zRW50cnkSCwoDa2V5GAEg",
+            "ASgJEhwKBXZhbHVlGAIgASgLMg0uY29tbW9uLlRva2VuOgI4AWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -56,7 +57,7 @@ namespace Common {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Int64), global::Common.Int64.Parser, new[]{ "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Float64), global::Common.Float64.Parser, new[]{ "Num" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Token), global::Common.Token.Parser, new[]{ "AccessToken", "TokenType", "RefreshToken", "Expiry", "IdToken" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Config), global::Common.Config.Parser, new[]{ "ClientId", "ClientSecret", "TokenUrl", "Scopes", "EndpointParams" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Config), global::Common.Config.Parser, new[]{ "ClientId", "ClientSecret", "TokenUrl", "AuthUrl", "Scopes", "Redirect", "EndpointParams" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Query), global::Common.Query.Parser, new[]{ "Query_", "Fields" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.TokenSet), global::Common.TokenSet.Parser, new[]{ "Tokens" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
@@ -1229,7 +1230,9 @@ namespace Common {
       clientId_ = other.clientId_ != null ? other.clientId_.Clone() : null;
       clientSecret_ = other.clientSecret_ != null ? other.clientSecret_.Clone() : null;
       tokenUrl_ = other.tokenUrl_ != null ? other.tokenUrl_.Clone() : null;
+      authUrl_ = other.authUrl_ != null ? other.authUrl_.Clone() : null;
       scopes_ = other.scopes_ != null ? other.scopes_.Clone() : null;
+      redirect_ = other.redirect_ != null ? other.redirect_.Clone() : null;
       endpointParams_ = other.endpointParams_ != null ? other.endpointParams_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1272,8 +1275,19 @@ namespace Common {
       }
     }
 
+    /// <summary>Field number for the "auth_url" field.</summary>
+    public const int AuthUrlFieldNumber = 4;
+    private global::Common.String authUrl_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String AuthUrl {
+      get { return authUrl_; }
+      set {
+        authUrl_ = value;
+      }
+    }
+
     /// <summary>Field number for the "scopes" field.</summary>
-    public const int ScopesFieldNumber = 4;
+    public const int ScopesFieldNumber = 5;
     private global::Common.StringArray scopes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Common.StringArray Scopes {
@@ -1283,8 +1297,19 @@ namespace Common {
       }
     }
 
+    /// <summary>Field number for the "redirect" field.</summary>
+    public const int RedirectFieldNumber = 6;
+    private global::Common.String redirect_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.String Redirect {
+      get { return redirect_; }
+      set {
+        redirect_ = value;
+      }
+    }
+
     /// <summary>Field number for the "endpoint_params" field.</summary>
-    public const int EndpointParamsFieldNumber = 5;
+    public const int EndpointParamsFieldNumber = 7;
     private global::Common.StringMap endpointParams_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Common.StringMap EndpointParams {
@@ -1310,7 +1335,9 @@ namespace Common {
       if (!object.Equals(ClientId, other.ClientId)) return false;
       if (!object.Equals(ClientSecret, other.ClientSecret)) return false;
       if (!object.Equals(TokenUrl, other.TokenUrl)) return false;
+      if (!object.Equals(AuthUrl, other.AuthUrl)) return false;
       if (!object.Equals(Scopes, other.Scopes)) return false;
+      if (!object.Equals(Redirect, other.Redirect)) return false;
       if (!object.Equals(EndpointParams, other.EndpointParams)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1321,7 +1348,9 @@ namespace Common {
       if (clientId_ != null) hash ^= ClientId.GetHashCode();
       if (clientSecret_ != null) hash ^= ClientSecret.GetHashCode();
       if (tokenUrl_ != null) hash ^= TokenUrl.GetHashCode();
+      if (authUrl_ != null) hash ^= AuthUrl.GetHashCode();
       if (scopes_ != null) hash ^= Scopes.GetHashCode();
+      if (redirect_ != null) hash ^= Redirect.GetHashCode();
       if (endpointParams_ != null) hash ^= EndpointParams.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1348,12 +1377,20 @@ namespace Common {
         output.WriteRawTag(26);
         output.WriteMessage(TokenUrl);
       }
-      if (scopes_ != null) {
+      if (authUrl_ != null) {
         output.WriteRawTag(34);
+        output.WriteMessage(AuthUrl);
+      }
+      if (scopes_ != null) {
+        output.WriteRawTag(42);
         output.WriteMessage(Scopes);
       }
+      if (redirect_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Redirect);
+      }
       if (endpointParams_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(58);
         output.WriteMessage(EndpointParams);
       }
       if (_unknownFields != null) {
@@ -1373,8 +1410,14 @@ namespace Common {
       if (tokenUrl_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TokenUrl);
       }
+      if (authUrl_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AuthUrl);
+      }
       if (scopes_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Scopes);
+      }
+      if (redirect_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Redirect);
       }
       if (endpointParams_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(EndpointParams);
@@ -1408,11 +1451,23 @@ namespace Common {
         }
         TokenUrl.MergeFrom(other.TokenUrl);
       }
+      if (other.authUrl_ != null) {
+        if (authUrl_ == null) {
+          authUrl_ = new global::Common.String();
+        }
+        AuthUrl.MergeFrom(other.AuthUrl);
+      }
       if (other.scopes_ != null) {
         if (scopes_ == null) {
           scopes_ = new global::Common.StringArray();
         }
         Scopes.MergeFrom(other.Scopes);
+      }
+      if (other.redirect_ != null) {
+        if (redirect_ == null) {
+          redirect_ = new global::Common.String();
+        }
+        Redirect.MergeFrom(other.Redirect);
       }
       if (other.endpointParams_ != null) {
         if (endpointParams_ == null) {
@@ -1453,13 +1508,27 @@ namespace Common {
             break;
           }
           case 34: {
+            if (authUrl_ == null) {
+              authUrl_ = new global::Common.String();
+            }
+            input.ReadMessage(authUrl_);
+            break;
+          }
+          case 42: {
             if (scopes_ == null) {
               scopes_ = new global::Common.StringArray();
             }
             input.ReadMessage(scopes_);
             break;
           }
-          case 42: {
+          case 50: {
+            if (redirect_ == null) {
+              redirect_ = new global::Common.String();
+            }
+            input.ReadMessage(redirect_);
+            break;
+          }
+          case 58: {
             if (endpointParams_ == null) {
               endpointParams_ = new global::Common.StringMap();
             }

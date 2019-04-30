@@ -373,7 +373,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, client_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, client_secret_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, token_url_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, auth_url_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, scopes_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, redirect_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Config, endpoint_params_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Query, _internal_metadata_),
@@ -409,9 +411,9 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 44, -1, sizeof(::common::Float64)},
   { 50, -1, sizeof(::common::Token)},
   { 60, -1, sizeof(::common::Config)},
-  { 70, -1, sizeof(::common::Query)},
-  { 77, 84, sizeof(::common::TokenSet_TokensEntry_DoNotUse)},
-  { 86, -1, sizeof(::common::TokenSet)},
+  { 72, -1, sizeof(::common::Query)},
+  { 79, 86, sizeof(::common::TokenSet_TokensEntry_DoNotUse)},
+  { 88, -1, sizeof(::common::TokenSet)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -464,20 +466,21 @@ void AddDescriptorsImpl() {
       "2\016.common.String\022%\n\rrefresh_token\030\003 \001(\0132"
       "\016.common.String\022\036\n\006expiry\030\004 \001(\0132\016.common"
       ".String\022 \n\010id_token\030\005 \001(\0132\016.common.Strin"
-      "g\"\306\001\n\006Config\022!\n\tclient_id\030\001 \001(\0132\016.common"
+      "g\"\212\002\n\006Config\022!\n\tclient_id\030\001 \001(\0132\016.common"
       ".String\022%\n\rclient_secret\030\002 \001(\0132\016.common."
       "String\022!\n\ttoken_url\030\003 \001(\0132\016.common.Strin"
-      "g\022#\n\006scopes\030\004 \001(\0132\023.common.StringArray\022*"
-      "\n\017endpoint_params\030\005 \001(\0132\021.common.StringM"
-      "ap\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.common.Stri"
-      "ng\022\036\n\006fields\030\005 \001(\0132\016.common.String\"v\n\010To"
-      "kenSet\022,\n\006tokens\030\001 \003(\0132\034.common.TokenSet"
-      ".TokensEntry\032<\n\013TokensEntry\022\013\n\003key\030\001 \001(\t"
-      "\022\034\n\005value\030\002 \001(\0132\r.common.Token:\0028\001b\006prot"
-      "o3"
+      "g\022 \n\010auth_url\030\004 \001(\0132\016.common.String\022#\n\006s"
+      "copes\030\005 \001(\0132\023.common.StringArray\022 \n\010redi"
+      "rect\030\006 \001(\0132\016.common.String\022*\n\017endpoint_p"
+      "arams\030\007 \001(\0132\021.common.StringMap\"F\n\005Query\022"
+      "\035\n\005query\030\004 \001(\0132\016.common.String\022\036\n\006fields"
+      "\030\005 \001(\0132\016.common.String\"v\n\010TokenSet\022,\n\006to"
+      "kens\030\001 \003(\0132\034.common.TokenSet.TokensEntry"
+      "\032<\n\013TokensEntry\022\013\n\003key\030\001 \001(\t\022\034\n\005value\030\002 "
+      "\001(\0132\r.common.Token:\0028\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 922);
+      descriptor, 990);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "common/common.proto", &protobuf_RegisterTypes);
 }
@@ -2609,8 +2612,12 @@ void Config::InitAsDefaultInstance() {
       ::common::String::internal_default_instance());
   ::common::_Config_default_instance_._instance.get_mutable()->token_url_ = const_cast< ::common::String*>(
       ::common::String::internal_default_instance());
+  ::common::_Config_default_instance_._instance.get_mutable()->auth_url_ = const_cast< ::common::String*>(
+      ::common::String::internal_default_instance());
   ::common::_Config_default_instance_._instance.get_mutable()->scopes_ = const_cast< ::common::StringArray*>(
       ::common::StringArray::internal_default_instance());
+  ::common::_Config_default_instance_._instance.get_mutable()->redirect_ = const_cast< ::common::String*>(
+      ::common::String::internal_default_instance());
   ::common::_Config_default_instance_._instance.get_mutable()->endpoint_params_ = const_cast< ::common::StringMap*>(
       ::common::StringMap::internal_default_instance());
 }
@@ -2618,7 +2625,9 @@ void Config::InitAsDefaultInstance() {
 const int Config::kClientIdFieldNumber;
 const int Config::kClientSecretFieldNumber;
 const int Config::kTokenUrlFieldNumber;
+const int Config::kAuthUrlFieldNumber;
 const int Config::kScopesFieldNumber;
+const int Config::kRedirectFieldNumber;
 const int Config::kEndpointParamsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -2648,10 +2657,20 @@ Config::Config(const Config& from)
   } else {
     token_url_ = NULL;
   }
+  if (from.has_auth_url()) {
+    auth_url_ = new ::common::String(*from.auth_url_);
+  } else {
+    auth_url_ = NULL;
+  }
   if (from.has_scopes()) {
     scopes_ = new ::common::StringArray(*from.scopes_);
   } else {
     scopes_ = NULL;
+  }
+  if (from.has_redirect()) {
+    redirect_ = new ::common::String(*from.redirect_);
+  } else {
+    redirect_ = NULL;
   }
   if (from.has_endpoint_params()) {
     endpoint_params_ = new ::common::StringMap(*from.endpoint_params_);
@@ -2676,7 +2695,9 @@ void Config::SharedDtor() {
   if (this != internal_default_instance()) delete client_id_;
   if (this != internal_default_instance()) delete client_secret_;
   if (this != internal_default_instance()) delete token_url_;
+  if (this != internal_default_instance()) delete auth_url_;
   if (this != internal_default_instance()) delete scopes_;
+  if (this != internal_default_instance()) delete redirect_;
   if (this != internal_default_instance()) delete endpoint_params_;
 }
 
@@ -2712,10 +2733,18 @@ void Config::Clear() {
     delete token_url_;
   }
   token_url_ = NULL;
+  if (GetArenaNoVirtual() == NULL && auth_url_ != NULL) {
+    delete auth_url_;
+  }
+  auth_url_ = NULL;
   if (GetArenaNoVirtual() == NULL && scopes_ != NULL) {
     delete scopes_;
   }
   scopes_ = NULL;
+  if (GetArenaNoVirtual() == NULL && redirect_ != NULL) {
+    delete redirect_;
+  }
+  redirect_ = NULL;
   if (GetArenaNoVirtual() == NULL && endpoint_params_ != NULL) {
     delete endpoint_params_;
   }
@@ -2769,10 +2798,22 @@ bool Config::MergePartialFromCodedStream(
         break;
       }
 
-      // .common.StringArray scopes = 4;
+      // .common.String auth_url = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_auth_url()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .common.StringArray scopes = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_scopes()));
         } else {
@@ -2781,10 +2822,22 @@ bool Config::MergePartialFromCodedStream(
         break;
       }
 
-      // .common.StringMap endpoint_params = 5;
-      case 5: {
+      // .common.String redirect = 6;
+      case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_redirect()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .common.StringMap endpoint_params = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_endpoint_params()));
         } else {
@@ -2837,16 +2890,28 @@ void Config::SerializeWithCachedSizes(
       3, this->_internal_token_url(), output);
   }
 
-  // .common.StringArray scopes = 4;
-  if (this->has_scopes()) {
+  // .common.String auth_url = 4;
+  if (this->has_auth_url()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4, this->_internal_scopes(), output);
+      4, this->_internal_auth_url(), output);
   }
 
-  // .common.StringMap endpoint_params = 5;
+  // .common.StringArray scopes = 5;
+  if (this->has_scopes()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->_internal_scopes(), output);
+  }
+
+  // .common.String redirect = 6;
+  if (this->has_redirect()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->_internal_redirect(), output);
+  }
+
+  // .common.StringMap endpoint_params = 7;
   if (this->has_endpoint_params()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5, this->_internal_endpoint_params(), output);
+      7, this->_internal_endpoint_params(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2884,18 +2949,32 @@ void Config::SerializeWithCachedSizes(
         3, this->_internal_token_url(), deterministic, target);
   }
 
-  // .common.StringArray scopes = 4;
+  // .common.String auth_url = 4;
+  if (this->has_auth_url()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->_internal_auth_url(), deterministic, target);
+  }
+
+  // .common.StringArray scopes = 5;
   if (this->has_scopes()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        4, this->_internal_scopes(), deterministic, target);
+        5, this->_internal_scopes(), deterministic, target);
   }
 
-  // .common.StringMap endpoint_params = 5;
+  // .common.String redirect = 6;
+  if (this->has_redirect()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, this->_internal_redirect(), deterministic, target);
+  }
+
+  // .common.StringMap endpoint_params = 7;
   if (this->has_endpoint_params()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        5, this->_internal_endpoint_params(), deterministic, target);
+        7, this->_internal_endpoint_params(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2936,14 +3015,28 @@ size_t Config::ByteSizeLong() const {
         *token_url_);
   }
 
-  // .common.StringArray scopes = 4;
+  // .common.String auth_url = 4;
+  if (this->has_auth_url()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *auth_url_);
+  }
+
+  // .common.StringArray scopes = 5;
   if (this->has_scopes()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *scopes_);
   }
 
-  // .common.StringMap endpoint_params = 5;
+  // .common.String redirect = 6;
+  if (this->has_redirect()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *redirect_);
+  }
+
+  // .common.StringMap endpoint_params = 7;
   if (this->has_endpoint_params()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -2986,8 +3079,14 @@ void Config::MergeFrom(const Config& from) {
   if (from.has_token_url()) {
     mutable_token_url()->::common::String::MergeFrom(from.token_url());
   }
+  if (from.has_auth_url()) {
+    mutable_auth_url()->::common::String::MergeFrom(from.auth_url());
+  }
   if (from.has_scopes()) {
     mutable_scopes()->::common::StringArray::MergeFrom(from.scopes());
+  }
+  if (from.has_redirect()) {
+    mutable_redirect()->::common::String::MergeFrom(from.redirect());
   }
   if (from.has_endpoint_params()) {
     mutable_endpoint_params()->::common::StringMap::MergeFrom(from.endpoint_params());
@@ -3021,7 +3120,9 @@ void Config::InternalSwap(Config* other) {
   swap(client_id_, other->client_id_);
   swap(client_secret_, other->client_secret_);
   swap(token_url_, other->token_url_);
+  swap(auth_url_, other->auth_url_);
   swap(scopes_, other->scopes_);
+  swap(redirect_, other->redirect_);
   swap(endpoint_params_, other->endpoint_params_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }

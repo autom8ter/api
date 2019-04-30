@@ -40,8 +40,10 @@ message Config {
     common.String client_id=1;
     common.String client_secret=2;
     common.String token_url =3;
-    common.StringArray scopes =4;
-    common.StringMap endpoint_params=5;
+    common.String auth_url =4;
+    common.StringArray scopes =5;
+    common.String redirect =6;
+    common.StringMap endpoint_params=7;
 }
 
 message Query {

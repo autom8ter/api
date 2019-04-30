@@ -173,8 +173,10 @@ typedef GPB_ENUM(Config_FieldNumber) {
   Config_FieldNumber_ClientId = 1,
   Config_FieldNumber_ClientSecret = 2,
   Config_FieldNumber_TokenURL = 3,
-  Config_FieldNumber_Scopes = 4,
-  Config_FieldNumber_EndpointParams = 5,
+  Config_FieldNumber_AuthURL = 4,
+  Config_FieldNumber_Scopes = 5,
+  Config_FieldNumber_Redirect = 6,
+  Config_FieldNumber_EndpointParams = 7,
 };
 
 @interface Config : GPBMessage
@@ -191,9 +193,17 @@ typedef GPB_ENUM(Config_FieldNumber) {
 /** Test to see if @c tokenURL has been set. */
 @property(nonatomic, readwrite) BOOL hasTokenURL;
 
+@property(nonatomic, readwrite, strong, null_resettable) String *authURL;
+/** Test to see if @c authURL has been set. */
+@property(nonatomic, readwrite) BOOL hasAuthURL;
+
 @property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
 /** Test to see if @c scopes has been set. */
 @property(nonatomic, readwrite) BOOL hasScopes;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *redirect;
+/** Test to see if @c redirect has been set. */
+@property(nonatomic, readwrite) BOOL hasRedirect;
 
 @property(nonatomic, readwrite, strong, null_resettable) StringMap *endpointParams;
 /** Test to see if @c endpointParams has been set. */

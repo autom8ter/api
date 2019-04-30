@@ -35,8 +35,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :client_id, :message, 1, "common.String"
     optional :client_secret, :message, 2, "common.String"
     optional :token_url, :message, 3, "common.String"
-    optional :scopes, :message, 4, "common.StringArray"
-    optional :endpoint_params, :message, 5, "common.StringMap"
+    optional :auth_url, :message, 4, "common.String"
+    optional :scopes, :message, 5, "common.StringArray"
+    optional :redirect, :message, 6, "common.String"
+    optional :endpoint_params, :message, 7, "common.StringMap"
   end
   add_message "common.Query" do
     optional :query, :message, 4, "common.String"

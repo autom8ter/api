@@ -1420,7 +1420,9 @@ proto.common.Config.toObject = function(includeInstance, msg) {
     clientId: (f = msg.getClientId()) && proto.common.String.toObject(includeInstance, f),
     clientSecret: (f = msg.getClientSecret()) && proto.common.String.toObject(includeInstance, f),
     tokenUrl: (f = msg.getTokenUrl()) && proto.common.String.toObject(includeInstance, f),
+    authUrl: (f = msg.getAuthUrl()) && proto.common.String.toObject(includeInstance, f),
     scopes: (f = msg.getScopes()) && proto.common.StringArray.toObject(includeInstance, f),
+    redirect: (f = msg.getRedirect()) && proto.common.String.toObject(includeInstance, f),
     endpointParams: (f = msg.getEndpointParams()) && proto.common.StringMap.toObject(includeInstance, f)
   };
 
@@ -1474,11 +1476,21 @@ proto.common.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setTokenUrl(value);
       break;
     case 4:
+      var value = new proto.common.String;
+      reader.readMessage(value,proto.common.String.deserializeBinaryFromReader);
+      msg.setAuthUrl(value);
+      break;
+    case 5:
       var value = new proto.common.StringArray;
       reader.readMessage(value,proto.common.StringArray.deserializeBinaryFromReader);
       msg.setScopes(value);
       break;
-    case 5:
+    case 6:
+      var value = new proto.common.String;
+      reader.readMessage(value,proto.common.String.deserializeBinaryFromReader);
+      msg.setRedirect(value);
+      break;
+    case 7:
       var value = new proto.common.StringMap;
       reader.readMessage(value,proto.common.StringMap.deserializeBinaryFromReader);
       msg.setEndpointParams(value);
@@ -1536,18 +1548,34 @@ proto.common.Config.serializeBinaryToWriter = function(message, writer) {
       proto.common.String.serializeBinaryToWriter
     );
   }
-  f = message.getScopes();
+  f = message.getAuthUrl();
   if (f != null) {
     writer.writeMessage(
       4,
       f,
+      proto.common.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getScopes();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
       proto.common.StringArray.serializeBinaryToWriter
+    );
+  }
+  f = message.getRedirect();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.common.String.serializeBinaryToWriter
     );
   }
   f = message.getEndpointParams();
   if (f != null) {
     writer.writeMessage(
-      5,
+      7,
       f,
       proto.common.StringMap.serializeBinaryToWriter
     );
@@ -1646,18 +1674,48 @@ proto.common.Config.prototype.hasTokenUrl = function() {
 
 
 /**
- * optional StringArray scopes = 4;
+ * optional String auth_url = 4;
+ * @return {?proto.common.String}
+ */
+proto.common.Config.prototype.getAuthUrl = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, proto.common.String, 4));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.common.Config.prototype.setAuthUrl = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.common.Config.prototype.clearAuthUrl = function() {
+  this.setAuthUrl(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.common.Config.prototype.hasAuthUrl = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional StringArray scopes = 5;
  * @return {?proto.common.StringArray}
  */
 proto.common.Config.prototype.getScopes = function() {
   return /** @type{?proto.common.StringArray} */ (
-    jspb.Message.getWrapperField(this, proto.common.StringArray, 4));
+    jspb.Message.getWrapperField(this, proto.common.StringArray, 5));
 };
 
 
 /** @param {?proto.common.StringArray|undefined} value */
 proto.common.Config.prototype.setScopes = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -1671,23 +1729,53 @@ proto.common.Config.prototype.clearScopes = function() {
  * @return {!boolean}
  */
 proto.common.Config.prototype.hasScopes = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional StringMap endpoint_params = 5;
+ * optional String redirect = 6;
+ * @return {?proto.common.String}
+ */
+proto.common.Config.prototype.getRedirect = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, proto.common.String, 6));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.common.Config.prototype.setRedirect = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.common.Config.prototype.clearRedirect = function() {
+  this.setRedirect(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.common.Config.prototype.hasRedirect = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional StringMap endpoint_params = 7;
  * @return {?proto.common.StringMap}
  */
 proto.common.Config.prototype.getEndpointParams = function() {
   return /** @type{?proto.common.StringMap} */ (
-    jspb.Message.getWrapperField(this, proto.common.StringMap, 5));
+    jspb.Message.getWrapperField(this, proto.common.StringMap, 7));
 };
 
 
 /** @param {?proto.common.StringMap|undefined} value */
 proto.common.Config.prototype.setEndpointParams = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1701,7 +1789,7 @@ proto.common.Config.prototype.clearEndpointParams = function() {
  * @return {!boolean}
  */
 proto.common.Config.prototype.hasEndpointParams = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

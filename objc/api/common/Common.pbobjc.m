@@ -424,7 +424,9 @@ typedef struct Token__storage_ {
 @dynamic hasClientId, clientId;
 @dynamic hasClientSecret, clientSecret;
 @dynamic hasTokenURL, tokenURL;
+@dynamic hasAuthURL, authURL;
 @dynamic hasScopes, scopes;
+@dynamic hasRedirect, redirect;
 @dynamic hasEndpointParams, endpointParams;
 
 typedef struct Config__storage_ {
@@ -432,7 +434,9 @@ typedef struct Config__storage_ {
   String *clientId;
   String *clientSecret;
   String *tokenURL;
+  String *authURL;
   StringArray *scopes;
+  String *redirect;
   StringMap *endpointParams;
 } Config__storage_;
 
@@ -470,11 +474,29 @@ typedef struct Config__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
+        .name = "authURL",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Config_FieldNumber_AuthURL,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(Config__storage_, authURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
         .name = "scopes",
         .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
         .number = Config_FieldNumber_Scopes,
-        .hasIndex = 3,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(Config__storage_, scopes),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "redirect",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = Config_FieldNumber_Redirect,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(Config__storage_, redirect),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
@@ -482,7 +504,7 @@ typedef struct Config__storage_ {
         .name = "endpointParams",
         .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
         .number = Config_FieldNumber_EndpointParams,
-        .hasIndex = 4,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(Config__storage_, endpointParams),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -498,7 +520,7 @@ typedef struct Config__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\003\005\241!!\000";
+        "\002\003\005\241!!\000\004\004\241!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

@@ -5470,28 +5470,54 @@ public final class Common {
     common.Common.StringOrBuilder getTokenUrlOrBuilder();
 
     /**
-     * <code>.common.StringArray scopes = 4;</code>
+     * <code>.common.String auth_url = 4;</code>
+     */
+    boolean hasAuthUrl();
+    /**
+     * <code>.common.String auth_url = 4;</code>
+     */
+    common.Common.String getAuthUrl();
+    /**
+     * <code>.common.String auth_url = 4;</code>
+     */
+    common.Common.StringOrBuilder getAuthUrlOrBuilder();
+
+    /**
+     * <code>.common.StringArray scopes = 5;</code>
      */
     boolean hasScopes();
     /**
-     * <code>.common.StringArray scopes = 4;</code>
+     * <code>.common.StringArray scopes = 5;</code>
      */
     common.Common.StringArray getScopes();
     /**
-     * <code>.common.StringArray scopes = 4;</code>
+     * <code>.common.StringArray scopes = 5;</code>
      */
     common.Common.StringArrayOrBuilder getScopesOrBuilder();
 
     /**
-     * <code>.common.StringMap endpoint_params = 5;</code>
+     * <code>.common.String redirect = 6;</code>
+     */
+    boolean hasRedirect();
+    /**
+     * <code>.common.String redirect = 6;</code>
+     */
+    common.Common.String getRedirect();
+    /**
+     * <code>.common.String redirect = 6;</code>
+     */
+    common.Common.StringOrBuilder getRedirectOrBuilder();
+
+    /**
+     * <code>.common.StringMap endpoint_params = 7;</code>
      */
     boolean hasEndpointParams();
     /**
-     * <code>.common.StringMap endpoint_params = 5;</code>
+     * <code>.common.StringMap endpoint_params = 7;</code>
      */
     common.Common.StringMap getEndpointParams();
     /**
-     * <code>.common.StringMap endpoint_params = 5;</code>
+     * <code>.common.StringMap endpoint_params = 7;</code>
      */
     common.Common.StringMapOrBuilder getEndpointParamsOrBuilder();
   }
@@ -5574,6 +5600,19 @@ public final class Common {
               break;
             }
             case 34: {
+              common.Common.String.Builder subBuilder = null;
+              if (authUrl_ != null) {
+                subBuilder = authUrl_.toBuilder();
+              }
+              authUrl_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(authUrl_);
+                authUrl_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
               common.Common.StringArray.Builder subBuilder = null;
               if (scopes_ != null) {
                 subBuilder = scopes_.toBuilder();
@@ -5586,7 +5625,20 @@ public final class Common {
 
               break;
             }
-            case 42: {
+            case 50: {
+              common.Common.String.Builder subBuilder = null;
+              if (redirect_ != null) {
+                subBuilder = redirect_.toBuilder();
+              }
+              redirect_ = input.readMessage(common.Common.String.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(redirect_);
+                redirect_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 58: {
               common.Common.StringMap.Builder subBuilder = null;
               if (endpointParams_ != null) {
                 subBuilder = endpointParams_.toBuilder();
@@ -5694,43 +5746,85 @@ public final class Common {
       return getTokenUrl();
     }
 
-    public static final int SCOPES_FIELD_NUMBER = 4;
+    public static final int AUTH_URL_FIELD_NUMBER = 4;
+    private common.Common.String authUrl_;
+    /**
+     * <code>.common.String auth_url = 4;</code>
+     */
+    public boolean hasAuthUrl() {
+      return authUrl_ != null;
+    }
+    /**
+     * <code>.common.String auth_url = 4;</code>
+     */
+    public common.Common.String getAuthUrl() {
+      return authUrl_ == null ? common.Common.String.getDefaultInstance() : authUrl_;
+    }
+    /**
+     * <code>.common.String auth_url = 4;</code>
+     */
+    public common.Common.StringOrBuilder getAuthUrlOrBuilder() {
+      return getAuthUrl();
+    }
+
+    public static final int SCOPES_FIELD_NUMBER = 5;
     private common.Common.StringArray scopes_;
     /**
-     * <code>.common.StringArray scopes = 4;</code>
+     * <code>.common.StringArray scopes = 5;</code>
      */
     public boolean hasScopes() {
       return scopes_ != null;
     }
     /**
-     * <code>.common.StringArray scopes = 4;</code>
+     * <code>.common.StringArray scopes = 5;</code>
      */
     public common.Common.StringArray getScopes() {
       return scopes_ == null ? common.Common.StringArray.getDefaultInstance() : scopes_;
     }
     /**
-     * <code>.common.StringArray scopes = 4;</code>
+     * <code>.common.StringArray scopes = 5;</code>
      */
     public common.Common.StringArrayOrBuilder getScopesOrBuilder() {
       return getScopes();
     }
 
-    public static final int ENDPOINT_PARAMS_FIELD_NUMBER = 5;
+    public static final int REDIRECT_FIELD_NUMBER = 6;
+    private common.Common.String redirect_;
+    /**
+     * <code>.common.String redirect = 6;</code>
+     */
+    public boolean hasRedirect() {
+      return redirect_ != null;
+    }
+    /**
+     * <code>.common.String redirect = 6;</code>
+     */
+    public common.Common.String getRedirect() {
+      return redirect_ == null ? common.Common.String.getDefaultInstance() : redirect_;
+    }
+    /**
+     * <code>.common.String redirect = 6;</code>
+     */
+    public common.Common.StringOrBuilder getRedirectOrBuilder() {
+      return getRedirect();
+    }
+
+    public static final int ENDPOINT_PARAMS_FIELD_NUMBER = 7;
     private common.Common.StringMap endpointParams_;
     /**
-     * <code>.common.StringMap endpoint_params = 5;</code>
+     * <code>.common.StringMap endpoint_params = 7;</code>
      */
     public boolean hasEndpointParams() {
       return endpointParams_ != null;
     }
     /**
-     * <code>.common.StringMap endpoint_params = 5;</code>
+     * <code>.common.StringMap endpoint_params = 7;</code>
      */
     public common.Common.StringMap getEndpointParams() {
       return endpointParams_ == null ? common.Common.StringMap.getDefaultInstance() : endpointParams_;
     }
     /**
-     * <code>.common.StringMap endpoint_params = 5;</code>
+     * <code>.common.StringMap endpoint_params = 7;</code>
      */
     public common.Common.StringMapOrBuilder getEndpointParamsOrBuilder() {
       return getEndpointParams();
@@ -5759,11 +5853,17 @@ public final class Common {
       if (tokenUrl_ != null) {
         output.writeMessage(3, getTokenUrl());
       }
+      if (authUrl_ != null) {
+        output.writeMessage(4, getAuthUrl());
+      }
       if (scopes_ != null) {
-        output.writeMessage(4, getScopes());
+        output.writeMessage(5, getScopes());
+      }
+      if (redirect_ != null) {
+        output.writeMessage(6, getRedirect());
       }
       if (endpointParams_ != null) {
-        output.writeMessage(5, getEndpointParams());
+        output.writeMessage(7, getEndpointParams());
       }
       unknownFields.writeTo(output);
     }
@@ -5786,13 +5886,21 @@ public final class Common {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getTokenUrl());
       }
+      if (authUrl_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getAuthUrl());
+      }
       if (scopes_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getScopes());
+          .computeMessageSize(5, getScopes());
+      }
+      if (redirect_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getRedirect());
       }
       if (endpointParams_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getEndpointParams());
+          .computeMessageSize(7, getEndpointParams());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5825,10 +5933,20 @@ public final class Common {
         result = result && getTokenUrl()
             .equals(other.getTokenUrl());
       }
+      result = result && (hasAuthUrl() == other.hasAuthUrl());
+      if (hasAuthUrl()) {
+        result = result && getAuthUrl()
+            .equals(other.getAuthUrl());
+      }
       result = result && (hasScopes() == other.hasScopes());
       if (hasScopes()) {
         result = result && getScopes()
             .equals(other.getScopes());
+      }
+      result = result && (hasRedirect() == other.hasRedirect());
+      if (hasRedirect()) {
+        result = result && getRedirect()
+            .equals(other.getRedirect());
       }
       result = result && (hasEndpointParams() == other.hasEndpointParams());
       if (hasEndpointParams()) {
@@ -5858,9 +5976,17 @@ public final class Common {
         hash = (37 * hash) + TOKEN_URL_FIELD_NUMBER;
         hash = (53 * hash) + getTokenUrl().hashCode();
       }
+      if (hasAuthUrl()) {
+        hash = (37 * hash) + AUTH_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getAuthUrl().hashCode();
+      }
       if (hasScopes()) {
         hash = (37 * hash) + SCOPES_FIELD_NUMBER;
         hash = (53 * hash) + getScopes().hashCode();
+      }
+      if (hasRedirect()) {
+        hash = (37 * hash) + REDIRECT_FIELD_NUMBER;
+        hash = (53 * hash) + getRedirect().hashCode();
       }
       if (hasEndpointParams()) {
         hash = (37 * hash) + ENDPOINT_PARAMS_FIELD_NUMBER;
@@ -6017,11 +6143,23 @@ public final class Common {
           tokenUrl_ = null;
           tokenUrlBuilder_ = null;
         }
+        if (authUrlBuilder_ == null) {
+          authUrl_ = null;
+        } else {
+          authUrl_ = null;
+          authUrlBuilder_ = null;
+        }
         if (scopesBuilder_ == null) {
           scopes_ = null;
         } else {
           scopes_ = null;
           scopesBuilder_ = null;
+        }
+        if (redirectBuilder_ == null) {
+          redirect_ = null;
+        } else {
+          redirect_ = null;
+          redirectBuilder_ = null;
         }
         if (endpointParamsBuilder_ == null) {
           endpointParams_ = null;
@@ -6070,10 +6208,20 @@ public final class Common {
         } else {
           result.tokenUrl_ = tokenUrlBuilder_.build();
         }
+        if (authUrlBuilder_ == null) {
+          result.authUrl_ = authUrl_;
+        } else {
+          result.authUrl_ = authUrlBuilder_.build();
+        }
         if (scopesBuilder_ == null) {
           result.scopes_ = scopes_;
         } else {
           result.scopes_ = scopesBuilder_.build();
+        }
+        if (redirectBuilder_ == null) {
+          result.redirect_ = redirect_;
+        } else {
+          result.redirect_ = redirectBuilder_.build();
         }
         if (endpointParamsBuilder_ == null) {
           result.endpointParams_ = endpointParams_;
@@ -6137,8 +6285,14 @@ public final class Common {
         if (other.hasTokenUrl()) {
           mergeTokenUrl(other.getTokenUrl());
         }
+        if (other.hasAuthUrl()) {
+          mergeAuthUrl(other.getAuthUrl());
+        }
         if (other.hasScopes()) {
           mergeScopes(other.getScopes());
+        }
+        if (other.hasRedirect()) {
+          mergeRedirect(other.getRedirect());
         }
         if (other.hasEndpointParams()) {
           mergeEndpointParams(other.getEndpointParams());
@@ -6523,17 +6677,134 @@ public final class Common {
         return tokenUrlBuilder_;
       }
 
+      private common.Common.String authUrl_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> authUrlBuilder_;
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public boolean hasAuthUrl() {
+        return authUrlBuilder_ != null || authUrl_ != null;
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public common.Common.String getAuthUrl() {
+        if (authUrlBuilder_ == null) {
+          return authUrl_ == null ? common.Common.String.getDefaultInstance() : authUrl_;
+        } else {
+          return authUrlBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public Builder setAuthUrl(common.Common.String value) {
+        if (authUrlBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          authUrl_ = value;
+          onChanged();
+        } else {
+          authUrlBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public Builder setAuthUrl(
+          common.Common.String.Builder builderForValue) {
+        if (authUrlBuilder_ == null) {
+          authUrl_ = builderForValue.build();
+          onChanged();
+        } else {
+          authUrlBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public Builder mergeAuthUrl(common.Common.String value) {
+        if (authUrlBuilder_ == null) {
+          if (authUrl_ != null) {
+            authUrl_ =
+              common.Common.String.newBuilder(authUrl_).mergeFrom(value).buildPartial();
+          } else {
+            authUrl_ = value;
+          }
+          onChanged();
+        } else {
+          authUrlBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public Builder clearAuthUrl() {
+        if (authUrlBuilder_ == null) {
+          authUrl_ = null;
+          onChanged();
+        } else {
+          authUrl_ = null;
+          authUrlBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public common.Common.String.Builder getAuthUrlBuilder() {
+        
+        onChanged();
+        return getAuthUrlFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      public common.Common.StringOrBuilder getAuthUrlOrBuilder() {
+        if (authUrlBuilder_ != null) {
+          return authUrlBuilder_.getMessageOrBuilder();
+        } else {
+          return authUrl_ == null ?
+              common.Common.String.getDefaultInstance() : authUrl_;
+        }
+      }
+      /**
+       * <code>.common.String auth_url = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getAuthUrlFieldBuilder() {
+        if (authUrlBuilder_ == null) {
+          authUrlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getAuthUrl(),
+                  getParentForChildren(),
+                  isClean());
+          authUrl_ = null;
+        }
+        return authUrlBuilder_;
+      }
+
       private common.Common.StringArray scopes_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           common.Common.StringArray, common.Common.StringArray.Builder, common.Common.StringArrayOrBuilder> scopesBuilder_;
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public boolean hasScopes() {
         return scopesBuilder_ != null || scopes_ != null;
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public common.Common.StringArray getScopes() {
         if (scopesBuilder_ == null) {
@@ -6543,7 +6814,7 @@ public final class Common {
         }
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public Builder setScopes(common.Common.StringArray value) {
         if (scopesBuilder_ == null) {
@@ -6559,7 +6830,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public Builder setScopes(
           common.Common.StringArray.Builder builderForValue) {
@@ -6573,7 +6844,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public Builder mergeScopes(common.Common.StringArray value) {
         if (scopesBuilder_ == null) {
@@ -6591,7 +6862,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public Builder clearScopes() {
         if (scopesBuilder_ == null) {
@@ -6605,7 +6876,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public common.Common.StringArray.Builder getScopesBuilder() {
         
@@ -6613,7 +6884,7 @@ public final class Common {
         return getScopesFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       public common.Common.StringArrayOrBuilder getScopesOrBuilder() {
         if (scopesBuilder_ != null) {
@@ -6624,7 +6895,7 @@ public final class Common {
         }
       }
       /**
-       * <code>.common.StringArray scopes = 4;</code>
+       * <code>.common.StringArray scopes = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           common.Common.StringArray, common.Common.StringArray.Builder, common.Common.StringArrayOrBuilder> 
@@ -6640,17 +6911,134 @@ public final class Common {
         return scopesBuilder_;
       }
 
+      private common.Common.String redirect_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> redirectBuilder_;
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public boolean hasRedirect() {
+        return redirectBuilder_ != null || redirect_ != null;
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public common.Common.String getRedirect() {
+        if (redirectBuilder_ == null) {
+          return redirect_ == null ? common.Common.String.getDefaultInstance() : redirect_;
+        } else {
+          return redirectBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public Builder setRedirect(common.Common.String value) {
+        if (redirectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          redirect_ = value;
+          onChanged();
+        } else {
+          redirectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public Builder setRedirect(
+          common.Common.String.Builder builderForValue) {
+        if (redirectBuilder_ == null) {
+          redirect_ = builderForValue.build();
+          onChanged();
+        } else {
+          redirectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public Builder mergeRedirect(common.Common.String value) {
+        if (redirectBuilder_ == null) {
+          if (redirect_ != null) {
+            redirect_ =
+              common.Common.String.newBuilder(redirect_).mergeFrom(value).buildPartial();
+          } else {
+            redirect_ = value;
+          }
+          onChanged();
+        } else {
+          redirectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public Builder clearRedirect() {
+        if (redirectBuilder_ == null) {
+          redirect_ = null;
+          onChanged();
+        } else {
+          redirect_ = null;
+          redirectBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public common.Common.String.Builder getRedirectBuilder() {
+        
+        onChanged();
+        return getRedirectFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      public common.Common.StringOrBuilder getRedirectOrBuilder() {
+        if (redirectBuilder_ != null) {
+          return redirectBuilder_.getMessageOrBuilder();
+        } else {
+          return redirect_ == null ?
+              common.Common.String.getDefaultInstance() : redirect_;
+        }
+      }
+      /**
+       * <code>.common.String redirect = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder> 
+          getRedirectFieldBuilder() {
+        if (redirectBuilder_ == null) {
+          redirectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.String, common.Common.String.Builder, common.Common.StringOrBuilder>(
+                  getRedirect(),
+                  getParentForChildren(),
+                  isClean());
+          redirect_ = null;
+        }
+        return redirectBuilder_;
+      }
+
       private common.Common.StringMap endpointParams_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           common.Common.StringMap, common.Common.StringMap.Builder, common.Common.StringMapOrBuilder> endpointParamsBuilder_;
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public boolean hasEndpointParams() {
         return endpointParamsBuilder_ != null || endpointParams_ != null;
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public common.Common.StringMap getEndpointParams() {
         if (endpointParamsBuilder_ == null) {
@@ -6660,7 +7048,7 @@ public final class Common {
         }
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public Builder setEndpointParams(common.Common.StringMap value) {
         if (endpointParamsBuilder_ == null) {
@@ -6676,7 +7064,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public Builder setEndpointParams(
           common.Common.StringMap.Builder builderForValue) {
@@ -6690,7 +7078,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public Builder mergeEndpointParams(common.Common.StringMap value) {
         if (endpointParamsBuilder_ == null) {
@@ -6708,7 +7096,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public Builder clearEndpointParams() {
         if (endpointParamsBuilder_ == null) {
@@ -6722,7 +7110,7 @@ public final class Common {
         return this;
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public common.Common.StringMap.Builder getEndpointParamsBuilder() {
         
@@ -6730,7 +7118,7 @@ public final class Common {
         return getEndpointParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       public common.Common.StringMapOrBuilder getEndpointParamsOrBuilder() {
         if (endpointParamsBuilder_ != null) {
@@ -6741,7 +7129,7 @@ public final class Common {
         }
       }
       /**
-       * <code>.common.StringMap endpoint_params = 5;</code>
+       * <code>.common.StringMap endpoint_params = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           common.Common.StringMap, common.Common.StringMap.Builder, common.Common.StringMapOrBuilder> 
@@ -8419,17 +8807,18 @@ public final class Common {
       "2\016.common.String\022%\n\rrefresh_token\030\003 \001(\0132" +
       "\016.common.String\022\036\n\006expiry\030\004 \001(\0132\016.common" +
       ".String\022 \n\010id_token\030\005 \001(\0132\016.common.Strin" +
-      "g\"\306\001\n\006Config\022!\n\tclient_id\030\001 \001(\0132\016.common" +
+      "g\"\212\002\n\006Config\022!\n\tclient_id\030\001 \001(\0132\016.common" +
       ".String\022%\n\rclient_secret\030\002 \001(\0132\016.common." +
       "String\022!\n\ttoken_url\030\003 \001(\0132\016.common.Strin" +
-      "g\022#\n\006scopes\030\004 \001(\0132\023.common.StringArray\022*" +
-      "\n\017endpoint_params\030\005 \001(\0132\021.common.StringM" +
-      "ap\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.common.Stri" +
-      "ng\022\036\n\006fields\030\005 \001(\0132\016.common.String\"v\n\010To" +
-      "kenSet\022,\n\006tokens\030\001 \003(\0132\034.common.TokenSet" +
-      ".TokensEntry\032<\n\013TokensEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\034\n\005value\030\002 \001(\0132\r.common.Token:\0028\001b\006prot" +
-      "o3"
+      "g\022 \n\010auth_url\030\004 \001(\0132\016.common.String\022#\n\006s" +
+      "copes\030\005 \001(\0132\023.common.StringArray\022 \n\010redi" +
+      "rect\030\006 \001(\0132\016.common.String\022*\n\017endpoint_p" +
+      "arams\030\007 \001(\0132\021.common.StringMap\"F\n\005Query\022" +
+      "\035\n\005query\030\004 \001(\0132\016.common.String\022\036\n\006fields" +
+      "\030\005 \001(\0132\016.common.String\"v\n\010TokenSet\022,\n\006to" +
+      "kens\030\001 \003(\0132\034.common.TokenSet.TokensEntry" +
+      "\032<\n\013TokensEntry\022\013\n\003key\030\001 \001(\t\022\034\n\005value\030\002 " +
+      "\001(\0132\r.common.Token:\0028\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8502,7 +8891,7 @@ public final class Common {
     internal_static_common_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_Config_descriptor,
-        new java.lang.String[] { "ClientId", "ClientSecret", "TokenUrl", "Scopes", "EndpointParams", });
+        new java.lang.String[] { "ClientId", "ClientSecret", "TokenUrl", "AuthUrl", "Scopes", "Redirect", "EndpointParams", });
     internal_static_common_Query_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_common_Query_fieldAccessorTable = new

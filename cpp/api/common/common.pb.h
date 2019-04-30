@@ -1158,10 +1158,22 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::common::String* mutable_token_url();
   void set_allocated_token_url(::common::String* token_url);
 
-  // .common.StringArray scopes = 4;
+  // .common.String auth_url = 4;
+  bool has_auth_url() const;
+  void clear_auth_url();
+  static const int kAuthUrlFieldNumber = 4;
+  private:
+  const ::common::String& _internal_auth_url() const;
+  public:
+  const ::common::String& auth_url() const;
+  ::common::String* release_auth_url();
+  ::common::String* mutable_auth_url();
+  void set_allocated_auth_url(::common::String* auth_url);
+
+  // .common.StringArray scopes = 5;
   bool has_scopes() const;
   void clear_scopes();
-  static const int kScopesFieldNumber = 4;
+  static const int kScopesFieldNumber = 5;
   private:
   const ::common::StringArray& _internal_scopes() const;
   public:
@@ -1170,10 +1182,22 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::common::StringArray* mutable_scopes();
   void set_allocated_scopes(::common::StringArray* scopes);
 
-  // .common.StringMap endpoint_params = 5;
+  // .common.String redirect = 6;
+  bool has_redirect() const;
+  void clear_redirect();
+  static const int kRedirectFieldNumber = 6;
+  private:
+  const ::common::String& _internal_redirect() const;
+  public:
+  const ::common::String& redirect() const;
+  ::common::String* release_redirect();
+  ::common::String* mutable_redirect();
+  void set_allocated_redirect(::common::String* redirect);
+
+  // .common.StringMap endpoint_params = 7;
   bool has_endpoint_params() const;
   void clear_endpoint_params();
-  static const int kEndpointParamsFieldNumber = 5;
+  static const int kEndpointParamsFieldNumber = 7;
   private:
   const ::common::StringMap& _internal_endpoint_params() const;
   public:
@@ -1189,7 +1213,9 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::common::String* client_id_;
   ::common::String* client_secret_;
   ::common::String* token_url_;
+  ::common::String* auth_url_;
   ::common::StringArray* scopes_;
+  ::common::String* redirect_;
   ::common::StringMap* endpoint_params_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
@@ -2109,7 +2135,61 @@ inline void Config::set_allocated_token_url(::common::String* token_url) {
   // @@protoc_insertion_point(field_set_allocated:common.Config.token_url)
 }
 
-// .common.StringArray scopes = 4;
+// .common.String auth_url = 4;
+inline bool Config::has_auth_url() const {
+  return this != internal_default_instance() && auth_url_ != NULL;
+}
+inline void Config::clear_auth_url() {
+  if (GetArenaNoVirtual() == NULL && auth_url_ != NULL) {
+    delete auth_url_;
+  }
+  auth_url_ = NULL;
+}
+inline const ::common::String& Config::_internal_auth_url() const {
+  return *auth_url_;
+}
+inline const ::common::String& Config::auth_url() const {
+  const ::common::String* p = auth_url_;
+  // @@protoc_insertion_point(field_get:common.Config.auth_url)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Config::release_auth_url() {
+  // @@protoc_insertion_point(field_release:common.Config.auth_url)
+  
+  ::common::String* temp = auth_url_;
+  auth_url_ = NULL;
+  return temp;
+}
+inline ::common::String* Config::mutable_auth_url() {
+  
+  if (auth_url_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    auth_url_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.auth_url)
+  return auth_url_;
+}
+inline void Config::set_allocated_auth_url(::common::String* auth_url) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete auth_url_;
+  }
+  if (auth_url) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      auth_url = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, auth_url, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  auth_url_ = auth_url;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.auth_url)
+}
+
+// .common.StringArray scopes = 5;
 inline bool Config::has_scopes() const {
   return this != internal_default_instance() && scopes_ != NULL;
 }
@@ -2163,7 +2243,61 @@ inline void Config::set_allocated_scopes(::common::StringArray* scopes) {
   // @@protoc_insertion_point(field_set_allocated:common.Config.scopes)
 }
 
-// .common.StringMap endpoint_params = 5;
+// .common.String redirect = 6;
+inline bool Config::has_redirect() const {
+  return this != internal_default_instance() && redirect_ != NULL;
+}
+inline void Config::clear_redirect() {
+  if (GetArenaNoVirtual() == NULL && redirect_ != NULL) {
+    delete redirect_;
+  }
+  redirect_ = NULL;
+}
+inline const ::common::String& Config::_internal_redirect() const {
+  return *redirect_;
+}
+inline const ::common::String& Config::redirect() const {
+  const ::common::String* p = redirect_;
+  // @@protoc_insertion_point(field_get:common.Config.redirect)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* Config::release_redirect() {
+  // @@protoc_insertion_point(field_release:common.Config.redirect)
+  
+  ::common::String* temp = redirect_;
+  redirect_ = NULL;
+  return temp;
+}
+inline ::common::String* Config::mutable_redirect() {
+  
+  if (redirect_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    redirect_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Config.redirect)
+  return redirect_;
+}
+inline void Config::set_allocated_redirect(::common::String* redirect) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete redirect_;
+  }
+  if (redirect) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      redirect = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, redirect, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  redirect_ = redirect;
+  // @@protoc_insertion_point(field_set_allocated:common.Config.redirect)
+}
+
+// .common.StringMap endpoint_params = 7;
 inline bool Config::has_endpoint_params() const {
   return this != internal_default_instance() && endpoint_params_ != NULL;
 }

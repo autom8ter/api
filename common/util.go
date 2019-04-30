@@ -242,7 +242,40 @@ func (s *StringArray) Debugf(format string) {
 	str.Debugf(format)
 }
 
+func (s *TokenSet) Debugf(format string) {
+	str := MessageToJSONString(s)
+	str.Debugf(format)
+}
+
+func (s *Config) Debugf(format string) {
+	str := MessageToJSONString(s)
+	str.Debugf(format)
+}
+
 func TokenFromOAuthToken(tok *oauth2.Token) *Token {
+	return &Token{
+		AccessToken:  ToString(tok.AccessToken),
+		TokenType:    ToString(tok.TokenType),
+		RefreshToken: ToString(tok.RefreshToken),
+		Expiry:       ToString(tok.Expiry.String()),
+		IdToken:      ToString(tok.Extra("id_token").(string)),
+	}
+}
+
+func (c *Config) oauth(redirect string) *oauth2.Config {
+	return &oauth2.Config{
+		ClientID:     c.ClientId.Text,
+		ClientSecret: c.ClientSecret.Text,
+		Endpoint: oauth2.Endpoint{
+			AuthURL:  c.AuthUrl.Text,
+			TokenURL: c.TokenUrl.Text,
+		},
+		RedirectURL: "",
+		Scopes:      nil,
+	}
+}
+
+func (c *Config) GetToken(tok *oauth2.Token) *Token {
 	return &Token{
 		AccessToken:  ToString(tok.AccessToken),
 		TokenType:    ToString(tok.TokenType),
