@@ -49,7 +49,6 @@ func (p *Product) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-
 func (p *AppMetadata) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
@@ -485,12 +484,10 @@ func (s *Address) Validate(fn func(a *Address) error) error {
 	return fn(s)
 }
 
-
 func (s *User) Debugf(format string) {
 	str := common.MessageToJSONString(s)
 	str.Debugf(format)
 }
-
 
 func (s *User) DocCategory() string {
 	return "users"
@@ -499,7 +496,6 @@ func (s *User) DocCategory() string {
 func (s *User) DocName() string {
 	return s.Email.Id.Text
 }
-
 
 func (s *User) DocData() map[string]interface{} {
 	return util.ToMap(s)
@@ -521,4 +517,44 @@ func (s *User) Update(data map[string]interface{}) (*User, error) {
 	newUser := &User{}
 	err := s.UnmarshalJSONFrom(util.MarshalJSON(newUser))
 	return newUser, err
+}
+
+type GetUserFunc func(ctx context.Context, email *common.Identifier) (*User, error)
+type DeleteUserFunc func(ctx context.Context, email *common.Identifier) (*common.Empty, error)
+type UpdateUserFunc func(ctx context.Context, u *UpdateUserRequest) (*User, error)
+type CreateUserFunc func(ctx context.Context, u *User) (*User, error)
+type ListUsersFunc func(e *common.Empty, stream DBService_ListUsersServer) error
+
+type DebugFunc func(ctx context.Context, s *common.String) (*common.String, error)
+
+func (d DebugFunc) Echo(ctx context.Context, s *common.String) (*common.String, error) {
+	return d.Echo(ctx, s)
+}
+
+type Database struct {
+	GetUserFunc    GetUserFunc
+	DeleteUserFunc DeleteUserFunc
+	UpdateUserFunc UpdateUserFunc
+	CreateUserFunc CreateUserFunc
+	ListUsersFunc  ListUsersFunc
+}
+
+func (d *Database) GetUser(ctx context.Context, email *common.Identifier) (*User, error) {
+	return d.GetUserFunc(ctx, email)
+}
+
+func (d *Database) DeleteUser(ctx context.Context, email *common.Identifier) (*common.Empty, error) {
+	return d.DeleteUserFunc(ctx, email)
+}
+
+func (d *Database) UpdateUser(ctx context.Context, u *UpdateUserRequest) (*User, error) {
+	return d.UpdateUserFunc(ctx, u)
+}
+
+func (d *Database) CreateUser(ctx context.Context, u *User) (*User, error) {
+	return d.CreateUserFunc(ctx, u)
+}
+
+func (d *Database) ListUsers(e *common.Empty, stream DBService_ListUsersServer) error {
+	return d.ListUsersFunc(e, stream)
 }
