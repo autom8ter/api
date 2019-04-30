@@ -814,59 +814,59 @@ func (s *Token) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
-func (s *String) UnmarshalJSON(bits []byte) error {
+func (s *String) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 
 }
 
-func (s *StringMap) UnmarshalJSON(bits []byte) error {
+func (s *StringMap) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 
 }
 
-func (s *StringArray) UnmarshalJSON(bits []byte) error {
+func (s *StringArray) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 
 }
 
-func (s *Float64) UnmarshalJSON(bits []byte) error {
+func (s *Float64) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 }
 
-func (s *Int64) UnmarshalJSON(bits []byte) error {
+func (s *Int64) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 }
 
-func (s *Token) UnmarshalJSON(bits []byte) error {
+func (s *Token) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 }
 
-func (s *String) MarshalJSON() []byte {
-	return util.MarshalJSONPB(s)
-}
-
-func (s *StringArray) MarshalJSON() []byte {
-	return util.MarshalJSONPB(s)
-}
-
-func (s *StringMap) MarshalJSON() []byte {
-	return util.MarshalJSONPB(s)
-}
-
-func (s *Float64) MarshalJSON() []byte {
-	return util.MarshalJSONPB(s)
-}
-
-func (s *Int64) MarshalJSON() []byte {
-	return util.MarshalJSONPB(s)
-}
-
-func (s *TokenSet) MarshalJSON() []byte {
-	return util.MarshalJSONPB(s)
-}
-
-func (s *TokenSet) Unmrashal(b []byte) error {
+func (s *TokenSet) UnmarshalJSONFrom(b []byte) error {
 	return util.UnmarshalJSON(b, s)
+}
+
+func (s *String) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *StringArray) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *StringMap) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *Float64) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *Int64) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *TokenSet) JSONString() *String {
+	return MessageToJSONString(s)
 }
 
 func (s *TokenSet) Get(key string) *Token {

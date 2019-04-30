@@ -7,11 +7,6 @@ import (
 	"google.golang.org/grpc"
 )
 
-var (
-	DEFAULT_OAUTH_REDIRECT = common.ToString("http://localhost:8080/callback")
-	DEFAULT_OAUTH_SCOPES   = []Scope{Scope_OPENID, Scope_PROFILE, Scope_EMAIL}
-)
-
 type ClientSet struct {
 	Utility UtilityServiceClient
 	Contact ContactServiceClient
@@ -28,48 +23,48 @@ func NewClientSet(conn *grpc.ClientConn) *ClientSet {
 	}
 }
 
-func (p *SubscriptionResponse) JSONString() (*common.String, error) {
+func (p *SubscriptionResponse) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *SMSResponse) JSONString() (*common.String, error) {
+func (p *SMSResponse) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *CallResponse) JSONString() (*common.String, error) {
+func (p *CallResponse) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *User) JSONString() (*common.String, error) {
+func (p *User) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *PhoneNumberResource) JSONString() (*common.String, error) {
+func (p *PhoneNumberResource) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *PhoneNumber) JSONString() (*common.String, error) {
+func (p *PhoneNumber) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *JSONWebKeys) JSONString() (*common.String, error) {
+func (p *JSONWebKeys) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *TokenQuery) JSONString() (*common.String, error) {
+func (p *TokenQuery) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
-func (p *Identity) JSONString() (*common.String, error) {
+func (p *Identity) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
-func (p *Auth) JSONString() (*common.String, error) {
-	return common.MessageToJSONString(p)
-}
-
-func (p *Card) JSONString() (*common.String, error) {
+func (p *Auth) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *Jwks) JSONString() (*common.String, error) {
+func (p *Card) JSONString() *common.String {
+	return common.MessageToJSONString(p)
+}
+
+func (p *Jwks) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
