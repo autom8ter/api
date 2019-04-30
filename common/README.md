@@ -75,6 +75,12 @@ func (m *Config) GetScopes() *StringArray
 func (m *Config) GetTokenUrl() *String
 ```
 
+#### func (*Config) JSONString
+
+```go
+func (s *Config) JSONString() *String
+```
+
 #### func (*Config) ProtoMessage
 
 ```go
@@ -91,6 +97,24 @@ func (m *Config) Reset()
 
 ```go
 func (m *Config) String() string
+```
+
+#### func (*Config) ToContext
+
+```go
+func (s *Config) ToContext(ctx context.Context, key string) context.Context
+```
+
+#### func (*Config) UnmarshalJSONFrom
+
+```go
+func (s *Config) UnmarshalJSONFrom(b []byte) error
+```
+
+#### func (*Config) UnmarshalProtoFrom
+
+```go
+func (s *Config) UnmarshalProtoFrom(b []byte) error
 ```
 
 #### func (*Config) XXX_DiscardUnknown
@@ -497,10 +521,10 @@ func (s *Float64) TypeMatches(src interface{}) bool
 func (s *Float64) UnmarshalJSONFrom(bits []byte) error
 ```
 
-#### func (*Float64) UnmarshalProto
+#### func (*Float64) UnmarshalProtoFrom
 
 ```go
-func (s *Float64) UnmarshalProto(bits []byte) error
+func (s *Float64) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Float64) Validate
@@ -779,10 +803,10 @@ func (s *Int64) TypeMatches(src interface{}) bool
 func (s *Int64) UnmarshalJSONFrom(bits []byte) error
 ```
 
-#### func (*Int64) UnmarshalProto
+#### func (*Int64) UnmarshalProtoFrom
 
 ```go
-func (s *Int64) UnmarshalProto(bits []byte) error
+func (s *Int64) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Int64) Validate
@@ -1864,10 +1888,10 @@ func (s *Token) TypeMatches(src interface{}) bool
 func (s *Token) UnmarshalJSONFrom(bits []byte) error
 ```
 
-#### func (*Token) UnmarshalProto
+#### func (*Token) UnmarshalProtoFrom
 
 ```go
-func (s *Token) UnmarshalProto(bits []byte) error
+func (s *Token) UnmarshalProtoFrom(bits []byte) error
 ```
 
 #### func (*Token) Validate
@@ -1984,16 +2008,22 @@ func (m *TokenSet) Reset()
 func (m *TokenSet) String() string
 ```
 
+#### func (*TokenSet) ToContext
+
+```go
+func (s *TokenSet) ToContext(ctx context.Context, key string) context.Context
+```
+
 #### func (*TokenSet) UnmarshalJSONFrom
 
 ```go
 func (s *TokenSet) UnmarshalJSONFrom(b []byte) error
 ```
 
-#### func (*TokenSet) UnmarshalProto
+#### func (*TokenSet) UnmarshalProtoFrom
 
 ```go
-func (s *TokenSet) UnmarshalProto(b []byte) error
+func (s *TokenSet) UnmarshalProtoFrom(b []byte) error
 ```
 
 #### func (*TokenSet) Validate

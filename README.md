@@ -309,7 +309,7 @@ func (m *Call) GetTo() *common.String
 #### func (*Call) JSONString
 
 ```go
-func (p *Call) JSONString(bits []byte) *common.String
+func (p *Call) JSONString() *common.String
 ```
 
 #### func (*Call) ProtoMessage
@@ -894,7 +894,7 @@ func (m *Email) GetSubject() *common.String
 #### func (*Email) JSONString
 
 ```go
-func (p *Email) JSONString(bits []byte) *common.String
+func (p *Email) JSONString() *common.String
 ```
 
 #### func (*Email) ProtoMessage
@@ -1085,7 +1085,7 @@ func (m *EmailBlastRequest) GetFromName() *common.String
 #### func (*EmailBlastRequest) JSONString
 
 ```go
-func (p *EmailBlastRequest) JSONString(bits []byte) *common.String
+func (p *EmailBlastRequest) JSONString() *common.String
 ```
 
 #### func (*EmailBlastRequest) ProtoMessage
@@ -1183,7 +1183,7 @@ func (m *EmailRequest) GetFromName() *common.String
 #### func (*EmailRequest) JSONString
 
 ```go
-func (p *EmailRequest) JSONString(bits []byte) *common.String
+func (p *EmailRequest) JSONString() *common.String
 ```
 
 #### func (*EmailRequest) ProtoMessage
@@ -1302,7 +1302,7 @@ func (m *Fax) GetTo() *common.String
 #### func (*Fax) JSONString
 
 ```go
-func (p *Fax) JSONString(bits []byte) *common.String
+func (p *Fax) JSONString() *common.String
 ```
 
 #### func (*Fax) ProtoMessage
@@ -1421,7 +1421,7 @@ func (m *FaxBlast) GetTo() *common.StringArray
 #### func (*FaxBlast) JSONString
 
 ```go
-func (p *FaxBlast) JSONString(bits []byte) *common.String
+func (p *FaxBlast) JSONString() *common.String
 ```
 
 #### func (*FaxBlast) ProtoMessage
@@ -1540,7 +1540,7 @@ func (m *FaxResponse) GetTo() *common.String
 #### func (*FaxResponse) JSONString
 
 ```go
-func (p *FaxResponse) JSONString(bits []byte) *common.String
+func (p *FaxResponse) JSONString() *common.String
 ```
 
 #### func (*FaxResponse) ProtoMessage
@@ -2686,7 +2686,7 @@ func (m *SMS) GetTo() *common.String
 #### func (*SMS) JSONString
 
 ```go
-func (p *SMS) JSONString(bits []byte) *common.String
+func (p *SMS) JSONString() *common.String
 ```
 
 #### func (*SMS) ProtoMessage

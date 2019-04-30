@@ -814,6 +814,14 @@ func (s *Token) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
+func (s *TokenSet) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
+func (s *Config) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
+
 func (s *String) UnmarshalJSONFrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 
@@ -855,19 +863,19 @@ func (s *StringArray) UnmarshalProtoFrom(bits []byte) error {
 
 }
 
-func (s *Float64) UnmarshalProto(bits []byte) error {
+func (s *Float64) UnmarshalProtoFrom(bits []byte) error {
 	return util.UnmarshalProto(bits, s)
 }
 
-func (s *Int64) UnmarshalProto(bits []byte) error {
+func (s *Int64) UnmarshalProtoFrom(bits []byte) error {
 	return util.UnmarshalProto(bits, s)
 }
 
-func (s *Token) UnmarshalProto(bits []byte) error {
+func (s *Token) UnmarshalProtoFrom(bits []byte) error {
 	return util.UnmarshalProto(bits, s)
 }
 
-func (s *TokenSet) UnmarshalProto(b []byte) error {
+func (s *TokenSet) UnmarshalProtoFrom(b []byte) error {
 	return util.UnmarshalProto(b, s)
 }
 func (s *String) JSONString() *String {
@@ -892,6 +900,18 @@ func (s *Int64) JSONString() *String {
 
 func (s *TokenSet) JSONString() *String {
 	return MessageToJSONString(s)
+}
+
+func (s *Config) JSONString() *String {
+	return MessageToJSONString(s)
+}
+
+func (s *Config) UnmarshalProtoFrom(b []byte) error {
+	return util.UnmarshalProto(b, s)
+}
+
+func (s *Config) UnmarshalJSONFrom(b []byte) error {
+	return util.UnmarshalJSON(b, s)
 }
 
 func (s *TokenSet) Get(key string) *Token {
