@@ -813,12 +813,6 @@ func (m *ClientCredentials) GetClientSecret() *common.String
 func (m *ClientCredentials) GetEndpointParams() *common.StringMap
 ```
 
-#### func (*ClientCredentials) GetRequestMetadata
-
-```go
-func (c *ClientCredentials) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error)
-```
-
 #### func (*ClientCredentials) GetScopes
 
 ```go
@@ -853,12 +847,6 @@ func (c *ClientCredentials) PerRPCCredentials() (credentials.PerRPCCredentials, 
 
 ```go
 func (*ClientCredentials) ProtoMessage()
-```
-
-#### func (*ClientCredentials) RequireTransportSecurity
-
-```go
-func (c *ClientCredentials) RequireTransportSecurity() bool
 ```
 
 #### func (*ClientCredentials) Reset
@@ -2289,12 +2277,6 @@ func (m *JWT) GetPrivateKey() []byte
 func (m *JWT) GetPriveKeyId() *common.String
 ```
 
-#### func (*JWT) GetRequestMetadata
-
-```go
-func (c *JWT) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error)
-```
-
 #### func (*JWT) GetScopes
 
 ```go
@@ -2335,12 +2317,6 @@ func (c *JWT) PerRPCCredentials() (credentials.PerRPCCredentials, error)
 
 ```go
 func (*JWT) ProtoMessage()
-```
-
-#### func (*JWT) RequireTransportSecurity
-
-```go
-func (c *JWT) RequireTransportSecurity() bool
 ```
 
 #### func (*JWT) Reset
@@ -2780,12 +2756,6 @@ func (m *OAuth2) GetCode() *common.String
 func (m *OAuth2) GetRedirect() *common.String
 ```
 
-#### func (*OAuth2) GetRequestMetadata
-
-```go
-func (c *OAuth2) GetRequestMetadata(ctx context.Context, uri ...string) (map[string]string, error)
-```
-
 #### func (*OAuth2) GetScopes
 
 ```go
@@ -2820,12 +2790,6 @@ func (c *OAuth2) PerRPCCredentials() (credentials.PerRPCCredentials, error)
 
 ```go
 func (*OAuth2) ProtoMessage()
-```
-
-#### func (*OAuth2) RequireTransportSecurity
-
-```go
-func (c *OAuth2) RequireTransportSecurity() bool
 ```
 
 #### func (*OAuth2) Reset
