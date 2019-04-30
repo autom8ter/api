@@ -771,6 +771,12 @@ type ClientCredentials struct {
 func (c *ClientCredentials) Client(ctx context.Context) *http.Client
 ```
 
+#### func (*ClientCredentials) Config
+
+```go
+func (c *ClientCredentials) Config() *clientcredentials.Config
+```
+
 #### func (*ClientCredentials) Debugf
 
 ```go
@@ -807,6 +813,12 @@ func (m *ClientCredentials) GetClientSecret() *common.String
 func (m *ClientCredentials) GetEndpointParams() *common.StringMap
 ```
 
+#### func (*ClientCredentials) GetRequestMetadata
+
+```go
+func (c *ClientCredentials) GetRequestMetadata(ctx context.Context, uri ...string) (*common.StringMap, error)
+```
+
 #### func (*ClientCredentials) GetScopes
 
 ```go
@@ -823,6 +835,12 @@ func (m *ClientCredentials) GetTokenUrl() *common.String
 
 ```go
 func (s *ClientCredentials) JSONString() *common.String
+```
+
+#### func (*ClientCredentials) PerRPCCredentials
+
+```go
+func (c *ClientCredentials) PerRPCCredentials() (credentials.PerRPCCredentials, error)
 ```
 
 #### func (*ClientCredentials) ProtoMessage
@@ -2205,6 +2223,12 @@ type JWT struct {
 func (c *JWT) Client(ctx context.Context) *http.Client
 ```
 
+#### func (*JWT) Config
+
+```go
+func (c *JWT) Config() *ojwt.Config
+```
+
 #### func (*JWT) Debugf
 
 ```go
@@ -2253,6 +2277,12 @@ func (m *JWT) GetPrivateKey() []byte
 func (m *JWT) GetPriveKeyId() *common.String
 ```
 
+#### func (*JWT) GetRequestMetadata
+
+```go
+func (c *JWT) GetRequestMetadata(ctx context.Context, uri ...string) (*common.StringMap, error)
+```
+
 #### func (*JWT) GetScopes
 
 ```go
@@ -2275,6 +2305,12 @@ func (m *JWT) GetTokenUrl() *common.String
 
 ```go
 func (s *JWT) JSONString() *common.String
+```
+
+#### func (*JWT) PerRPCCredentials
+
+```go
+func (c *JWT) PerRPCCredentials() (credentials.PerRPCCredentials, error)
 ```
 
 #### func (*JWT) ProtoMessage
@@ -2654,10 +2690,22 @@ type OAuth2 struct {
 ```
 
 
+#### func (*OAuth2) AuthCodeURL
+
+```go
+func (c *OAuth2) AuthCodeURL(ctx context.Context) *http.Client
+```
+
 #### func (*OAuth2) Client
 
 ```go
 func (c *OAuth2) Client(ctx context.Context) *http.Client
+```
+
+#### func (*OAuth2) Config
+
+```go
+func (c *OAuth2) Config() *oauth2.Config
 ```
 
 #### func (*OAuth2) Debugf
@@ -2708,6 +2756,12 @@ func (m *OAuth2) GetCode() *common.String
 func (m *OAuth2) GetRedirect() *common.String
 ```
 
+#### func (*OAuth2) GetRequestMetadata
+
+```go
+func (c *OAuth2) GetRequestMetadata(ctx context.Context, uri ...string) (*common.StringMap, error)
+```
+
 #### func (*OAuth2) GetScopes
 
 ```go
@@ -2724,6 +2778,12 @@ func (m *OAuth2) GetTokenUrl() *common.String
 
 ```go
 func (s *OAuth2) JSONString() *common.String
+```
+
+#### func (*OAuth2) PerRPCCredentials
+
+```go
+func (c *OAuth2) PerRPCCredentials() (credentials.PerRPCCredentials, error)
 ```
 
 #### func (*OAuth2) ProtoMessage
