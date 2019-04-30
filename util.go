@@ -477,13 +477,6 @@ func (c *OAuth2) AuthCodeURL(state string, audience string) string {
 	return c.Config().AuthCodeURL(state, aud)
 }
 
-func (c *JWT) AuthCodeURL(state string, audience string) string {
-
-	aud := oauth2.SetAuthURLParam("audience", audience)
-
-	return c.Config().AuthCodeURL(state, aud)
-}
-
 func (c *JWT) NewAPIClientSet(addr string) (*ClientSet, error) {
 	conn, err := grpc.DialContext(EnvContext, addr, grpc.WithPerRPCCredentials(c))
 	if err != nil {

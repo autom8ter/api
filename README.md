@@ -2229,12 +2229,6 @@ type JWT struct {
 ```
 
 
-#### func (*JWT) AuthCodeURL
-
-```go
-func (c *JWT) AuthCodeURL(state string, audience string) string
-```
-
 #### func (*JWT) Client
 
 ```go
