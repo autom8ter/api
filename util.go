@@ -163,35 +163,35 @@ func (p *FaxBlast) UnmarshalProtoFrom(bits []byte) error {
 	return proto.Unmarshal(bits, p)
 }
 
-func (p *SMS) JSONString(bits []byte) *common.String {
+func (p *SMS) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *Call) JSONString(bits []byte) *common.String {
+func (p *Call) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *Fax) JSONString(bits []byte) *common.String {
+func (p *Fax) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *FaxBlast) JSONString(bits []byte) *common.String {
+func (p *FaxBlast) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *FaxResponse) JSONString(bits []byte) *common.String {
+func (p *FaxResponse) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *Email) JSONString(bits []byte) *common.String {
+func (p *Email) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *EmailBlastRequest) JSONString(bits []byte) *common.String {
+func (p *EmailBlastRequest) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 
-func (p *EmailRequest) JSONString(bits []byte) *common.String {
+func (p *EmailRequest) JSONString() *common.String {
 	return common.MessageToJSONString(p)
 }
 func (p *Email) UnmarshalProtoFrom(bits []byte) error {
