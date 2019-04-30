@@ -89,43 +89,48 @@ namespace Api {
             "X3VybBgGIAEoCzIOLmNvbW1vbi5TdHJpbmcSHwoHZXhwaXJlcxgHIAEoCzIO",
             "LmNvbW1vbi5TdHJpbmcSIAoIYXVkaWVuY2UYCCABKAsyDi5jb21tb24uU3Ry",
             "aW5nIkYKBVF1ZXJ5Eh0KBXF1ZXJ5GAQgASgLMg4uY29tbW9uLlN0cmluZxIe",
-            "CgZmaWVsZHMYBSABKAsyDi5jb21tb24uU3RyaW5nIpACCgVFdmVudBIcCgRk",
+            "CgZmaWVsZHMYBSABKAsyDi5jb21tb24uU3RyaW5nIrgCCgVFdmVudBIcCgRk",
             "YXRlGAEgASgLMg4uY29tbW9uLlN0cmluZxIcCgR0eXBlGAIgASgLMg4uY29t",
             "bW9uLlN0cmluZxIhCgljbGllbnRfaWQYAyABKAsyDi5jb21tb24uU3RyaW5n",
             "EiMKC2NsaWVudF9uYW1lGAQgASgLMg4uY29tbW9uLlN0cmluZxIaCgJpcBgF",
             "IAEoCzIOLmNvbW1vbi5TdHJpbmcSJQoNbG9jYXRpb25faW5mbxgGIAEoCzIO",
             "LmNvbW1vbi5TdHJpbmcSHwoHZGV0YWlscxgHIAEoCzIOLmNvbW1vbi5TdHJp",
-            "bmcSHwoHdXNlcl9pZBgIIAEoCzIOLmNvbW1vbi5TdHJpbmciTAoKRXZlbnRR",
-            "dWVyeRIMCgRkYXRlGAEgASgJEgwKBHR5cGUYAiABKAkSEQoJY2xpZW50X2lk",
-            "GAMgASgJEg8KB3VzZXJfaWQYBCABKAkiwAEKC0pTT05XZWJLZXlzEhsKA2t0",
-            "eRgBIAEoCzIOLmNvbW1vbi5TdHJpbmcSHwoDa2lkGAIgASgLMhIuY29tbW9u",
-            "LklkZW50aWZpZXISGwoDdXNlGAMgASgLMg4uY29tbW9uLlN0cmluZxIZCgFu",
-            "GAQgASgLMg4uY29tbW9uLlN0cmluZxIZCgFlGAUgASgLMg4uY29tbW9uLlN0",
-            "cmluZxIgCgN4NWMYBiABKAsyEy5jb21tb24uU3RyaW5nQXJyYXkiJgoESndr",
-            "cxIeCgRrZXlzGAEgAygLMhAuYXBpLkpTT05XZWJLZXlzKkEKD0JpbGxpbmdJ",
-            "bnRlcnZhbBIJCgVEQUlMWRAAEgoKBldFRUtMWRABEgsKB01PTlRITFkQAhIK",
-            "CgZZRUFSTFkQAzJJCgxEZWJ1Z1NlcnZpY2USOQoERWNobxIOLmNvbW1vbi5T",
-            "dHJpbmcaDi5jb21tb24uU3RyaW5nIhGC0+STAgsiBi9kZWJ1ZzoBKjKnAQoT",
-            "U3Vic2NyaXB0aW9uU2VydmljZRJECglTdWJzY3JpYmUSFS5hcGkuU3Vic2Ny",
-            "aWJlUmVxdWVzdBoJLmFwaS5Vc2VyIhWC0+STAg8iCi9zdWJzY3JpYmU6ASoS",
-            "SgoLVW5zdWJzY3JpYmUSFy5hcGkuVW5TdWJzY3JpYmVSZXF1ZXN0GgkuYXBp",
-            "LlVzZXIiF4LT5JMCESIML3Vuc3Vic2NyaWJlOgEqMlwKFUF1dGhlbnRpY2F0",
-            "aW9uU2VydmljZRJDCgdHZXRVc2VyEhEuY29tbW9uLkF1dGhUb2tlbhoJLmFw",
-            "aS5Vc2VyIhqC0+STAhQiDy9hdXRoZW50aWNhdGlvbjoBKjKYAwoLVXNlclNl",
-            "cnZpY2USSAoKUXVlcnlVc2VycxIKLmFwaS5RdWVyeRoJLmFwaS5Vc2VyIiGC",
-            "0+STAhsiFi9tYW5hZ2VtZW50L3VzZXIvcXVlcnk6ASowARJJCgdHZXRVc2Vy",
-            "EhIuY29tbW9uLklkZW50aWZpZXIaCS5hcGkuVXNlciIfgtPkkwIZIhQvbWFu",
-            "YWdlbWVudC91c2VyL2dldDoBKhJGCgpVcGRhdGVVc2VyEgkuYXBpLlVzZXIa",
-            "CS5hcGkuVXNlciIigtPkkwIcIhcvbWFuYWdlbWVudC91c2VyL3VwZGF0ZToB",
-            "KhJPCglVc2VyUm9sZXMSEi5jb21tb24uSWRlbnRpZmllchoJLmFwaS5Sb2xl",
-            "IiGC0+STAhsiFi9tYW5hZ2VtZW50L3VzZXIvcm9sZXM6ASowARJbCgxBZGRV",
-            "c2VyUm9sZXMSGC5hcGkuQWRkVXNlclJvbGVzUmVxdWVzdBoOLmNvbW1vbi5T",
-            "dHJpbmciIYLT5JMCGyIWL21hbmFnZW1lbnQvdXNlci9yb2xlczoBKjJOCgxF",
-            "dmVudFNlcnZpY2USPgoJR2V0RXZlbnRzEg8uYXBpLkV2ZW50UXVlcnkaCi5h",
-            "cGkuRXZlbnQiEoLT5JMCDCIHL2V2ZW50czoBKjABYgZwcm90bzM="));
+            "bmcSHwoHdXNlcl9pZBgIIAEoCzIOLmNvbW1vbi5TdHJpbmcSJgoLYW5ub3Rh",
+            "dGlvbnMYCSABKAsyES5jb21tb24uU3RyaW5nTWFwIkwKCkV2ZW50UXVlcnkS",
+            "DAoEZGF0ZRgBIAEoCRIMCgR0eXBlGAIgASgJEhEKCWNsaWVudF9pZBgDIAEo",
+            "CRIPCgd1c2VyX2lkGAQgASgJIsABCgtKU09OV2ViS2V5cxIbCgNrdHkYASAB",
+            "KAsyDi5jb21tb24uU3RyaW5nEh8KA2tpZBgCIAEoCzISLmNvbW1vbi5JZGVu",
+            "dGlmaWVyEhsKA3VzZRgDIAEoCzIOLmNvbW1vbi5TdHJpbmcSGQoBbhgEIAEo",
+            "CzIOLmNvbW1vbi5TdHJpbmcSGQoBZRgFIAEoCzIOLmNvbW1vbi5TdHJpbmcS",
+            "IAoDeDVjGAYgASgLMhMuY29tbW9uLlN0cmluZ0FycmF5IiYKBEp3a3MSHgoE",
+            "a2V5cxgBIAMoCzIQLmFwaS5KU09OV2ViS2V5cypBCg9CaWxsaW5nSW50ZXJ2",
+            "YWwSCQoFREFJTFkQABIKCgZXRUVLTFkQARILCgdNT05USExZEAISCgoGWUVB",
+            "UkxZEAMqmAEKCUV2ZW50VHlwZRITCg9MT0dJTl9DT0RFX1NFTlQQABIQCgxE",
+            "RUxFVEVEX1VTRVIQARIQCgxGQUlMRURfTE9HSU4QAhIYChRGQUlMRURfQVBJ",
+            "X09QRVJBVElPThADEgcKA0NPThAEEg8KC0ZBSUxFRF9DT1JTEAUSHgoaU1VD",
+            "Q0VTU19FTUFJTF9WRVJJRklDQVRJT04QBjJJCgxEZWJ1Z1NlcnZpY2USOQoE",
+            "RWNobxIOLmNvbW1vbi5TdHJpbmcaDi5jb21tb24uU3RyaW5nIhGC0+STAgsi",
+            "Bi9kZWJ1ZzoBKjKnAQoTU3Vic2NyaXB0aW9uU2VydmljZRJECglTdWJzY3Jp",
+            "YmUSFS5hcGkuU3Vic2NyaWJlUmVxdWVzdBoJLmFwaS5Vc2VyIhWC0+STAg8i",
+            "Ci9zdWJzY3JpYmU6ASoSSgoLVW5zdWJzY3JpYmUSFy5hcGkuVW5TdWJzY3Jp",
+            "YmVSZXF1ZXN0GgkuYXBpLlVzZXIiF4LT5JMCESIML3Vuc3Vic2NyaWJlOgEq",
+            "MlwKFUF1dGhlbnRpY2F0aW9uU2VydmljZRJDCgdHZXRVc2VyEhEuY29tbW9u",
+            "LkF1dGhUb2tlbhoJLmFwaS5Vc2VyIhqC0+STAhQiDy9hdXRoZW50aWNhdGlv",
+            "bjoBKjKYAwoLVXNlclNlcnZpY2USSAoKUXVlcnlVc2VycxIKLmFwaS5RdWVy",
+            "eRoJLmFwaS5Vc2VyIiGC0+STAhsiFi9tYW5hZ2VtZW50L3VzZXIvcXVlcnk6",
+            "ASowARJJCgdHZXRVc2VyEhIuY29tbW9uLklkZW50aWZpZXIaCS5hcGkuVXNl",
+            "ciIfgtPkkwIZIhQvbWFuYWdlbWVudC91c2VyL2dldDoBKhJGCgpVcGRhdGVV",
+            "c2VyEgkuYXBpLlVzZXIaCS5hcGkuVXNlciIigtPkkwIcIhcvbWFuYWdlbWVu",
+            "dC91c2VyL3VwZGF0ZToBKhJPCglVc2VyUm9sZXMSEi5jb21tb24uSWRlbnRp",
+            "ZmllchoJLmFwaS5Sb2xlIiGC0+STAhsiFi9tYW5hZ2VtZW50L3VzZXIvcm9s",
+            "ZXM6ASowARJbCgxBZGRVc2VyUm9sZXMSGC5hcGkuQWRkVXNlclJvbGVzUmVx",
+            "dWVzdBoOLmNvbW1vbi5TdHJpbmciIYLT5JMCGyIWL21hbmFnZW1lbnQvdXNl",
+            "ci9yb2xlczoBKjJOCgxFdmVudFNlcnZpY2USPgoJR2V0RXZlbnRzEg8uYXBp",
+            "LkV2ZW50UXVlcnkaCi5hcGkuRXZlbnQiEoLT5JMCDCIHL2V2ZW50czoBKjAB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Common.CommonReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.BillingInterval), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Api.BillingInterval), typeof(global::Api.EventType), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.AddUserRolesRequest), global::Api.AddUserRolesRequest.Parser, new[]{ "Email", "Roles" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.SubscribeRequest), global::Api.SubscribeRequest.Parser, new[]{ "Email", "Plan", "Card" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.UnSubscribeRequest), global::Api.UnSubscribeRequest.Parser, new[]{ "Email", "Plan" }, null, null, null),
@@ -142,7 +147,7 @@ namespace Api {
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.ClientCredentials), global::Api.ClientCredentials.Parser, new[]{ "ClientId", "ClientSecret", "TokenUrl", "Scopes", "EndpointParams" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.JWT), global::Api.JWT.Parser, new[]{ "Email", "PrivateKey", "PriveKeyId", "Subject", "Scopes", "TokenUrl", "Expires", "Audience" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Query), global::Api.Query.Parser, new[]{ "Query_", "Fields" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Event), global::Api.Event.Parser, new[]{ "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Api.Event), global::Api.Event.Parser, new[]{ "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId", "Annotations" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.EventQuery), global::Api.EventQuery.Parser, new[]{ "Date", "Type", "ClientId", "UserId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.JSONWebKeys), global::Api.JSONWebKeys.Parser, new[]{ "Kty", "Kid", "Use", "N", "E", "X5C" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Api.Jwks), global::Api.Jwks.Parser, new[]{ "Keys" }, null, null, null)
@@ -157,6 +162,16 @@ namespace Api {
     [pbr::OriginalName("WEEKLY")] Weekly = 1,
     [pbr::OriginalName("MONTHLY")] Monthly = 2,
     [pbr::OriginalName("YEARLY")] Yearly = 3,
+  }
+
+  public enum EventType {
+    [pbr::OriginalName("LOGIN_CODE_SENT")] LoginCodeSent = 0,
+    [pbr::OriginalName("DELETED_USER")] DeletedUser = 1,
+    [pbr::OriginalName("FAILED_LOGIN")] FailedLogin = 2,
+    [pbr::OriginalName("FAILED_API_OPERATION")] FailedApiOperation = 3,
+    [pbr::OriginalName("CON")] Con = 4,
+    [pbr::OriginalName("FAILED_CORS")] FailedCors = 5,
+    [pbr::OriginalName("SUCCESS_EMAIL_VERIFICATION")] SuccessEmailVerification = 6,
   }
 
   #endregion
@@ -4533,6 +4548,7 @@ namespace Api {
       locationInfo_ = other.locationInfo_ != null ? other.locationInfo_.Clone() : null;
       details_ = other.details_ != null ? other.details_.Clone() : null;
       userId_ = other.userId_ != null ? other.userId_.Clone() : null;
+      annotations_ = other.annotations_ != null ? other.annotations_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4629,6 +4645,17 @@ namespace Api {
       }
     }
 
+    /// <summary>Field number for the "annotations" field.</summary>
+    public const int AnnotationsFieldNumber = 9;
+    private global::Common.StringMap annotations_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Common.StringMap Annotations {
+      get { return annotations_; }
+      set {
+        annotations_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Event);
@@ -4650,6 +4677,7 @@ namespace Api {
       if (!object.Equals(LocationInfo, other.LocationInfo)) return false;
       if (!object.Equals(Details, other.Details)) return false;
       if (!object.Equals(UserId, other.UserId)) return false;
+      if (!object.Equals(Annotations, other.Annotations)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4664,6 +4692,7 @@ namespace Api {
       if (locationInfo_ != null) hash ^= LocationInfo.GetHashCode();
       if (details_ != null) hash ^= Details.GetHashCode();
       if (userId_ != null) hash ^= UserId.GetHashCode();
+      if (annotations_ != null) hash ^= Annotations.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4709,6 +4738,10 @@ namespace Api {
         output.WriteRawTag(66);
         output.WriteMessage(UserId);
       }
+      if (annotations_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Annotations);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4740,6 +4773,9 @@ namespace Api {
       }
       if (userId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(UserId);
+      }
+      if (annotations_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Annotations);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4799,6 +4835,12 @@ namespace Api {
           userId_ = new global::Common.String();
         }
         UserId.MergeFrom(other.UserId);
+      }
+      if (other.annotations_ != null) {
+        if (annotations_ == null) {
+          annotations_ = new global::Common.StringMap();
+        }
+        Annotations.MergeFrom(other.Annotations);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4865,6 +4907,13 @@ namespace Api {
               userId_ = new global::Common.String();
             }
             input.ReadMessage(userId_);
+            break;
+          }
+          case 74: {
+            if (annotations_ == null) {
+              annotations_ = new global::Common.StringMap();
+            }
+            input.ReadMessage(annotations_);
             break;
           }
         }

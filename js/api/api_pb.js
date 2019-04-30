@@ -21,6 +21,7 @@ goog.exportSymbol('proto.api.Card', null, global);
 goog.exportSymbol('proto.api.ClientCredentials', null, global);
 goog.exportSymbol('proto.api.Event', null, global);
 goog.exportSymbol('proto.api.EventQuery', null, global);
+goog.exportSymbol('proto.api.EventType', null, global);
 goog.exportSymbol('proto.api.Identity', null, global);
 goog.exportSymbol('proto.api.JSONWebKeys', null, global);
 goog.exportSymbol('proto.api.JWT', null, global);
@@ -5428,7 +5429,8 @@ proto.api.Event.toObject = function(includeInstance, msg) {
     ip: (f = msg.getIp()) && common_common_pb.String.toObject(includeInstance, f),
     locationInfo: (f = msg.getLocationInfo()) && common_common_pb.String.toObject(includeInstance, f),
     details: (f = msg.getDetails()) && common_common_pb.String.toObject(includeInstance, f),
-    userId: (f = msg.getUserId()) && common_common_pb.String.toObject(includeInstance, f)
+    userId: (f = msg.getUserId()) && common_common_pb.String.toObject(includeInstance, f),
+    annotations: (f = msg.getAnnotations()) && common_common_pb.StringMap.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5504,6 +5506,11 @@ proto.api.Event.deserializeBinaryFromReader = function(msg, reader) {
       var value = new common_common_pb.String;
       reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
       msg.setUserId(value);
+      break;
+    case 9:
+      var value = new common_common_pb.StringMap;
+      reader.readMessage(value,common_common_pb.StringMap.deserializeBinaryFromReader);
+      msg.setAnnotations(value);
       break;
     default:
       reader.skipField();
@@ -5596,6 +5603,14 @@ proto.api.Event.serializeBinaryToWriter = function(message, writer) {
       8,
       f,
       common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getAnnotations();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      common_common_pb.StringMap.serializeBinaryToWriter
     );
   }
 };
@@ -5838,6 +5853,36 @@ proto.api.Event.prototype.clearUserId = function() {
  */
 proto.api.Event.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional common.StringMap annotations = 9;
+ * @return {?proto.common.StringMap}
+ */
+proto.api.Event.prototype.getAnnotations = function() {
+  return /** @type{?proto.common.StringMap} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.StringMap, 9));
+};
+
+
+/** @param {?proto.common.StringMap|undefined} value */
+proto.api.Event.prototype.setAnnotations = function(value) {
+  jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+proto.api.Event.prototype.clearAnnotations = function() {
+  this.setAnnotations(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.Event.prototype.hasAnnotations = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -6619,6 +6664,19 @@ proto.api.BillingInterval = {
   WEEKLY: 1,
   MONTHLY: 2,
   YEARLY: 3
+};
+
+/**
+ * @enum {number}
+ */
+proto.api.EventType = {
+  LOGIN_CODE_SENT: 0,
+  DELETED_USER: 1,
+  FAILED_LOGIN: 2,
+  FAILED_API_OPERATION: 3,
+  CON: 4,
+  FAILED_CORS: 5,
+  SUCCESS_EMAIL_VERIFICATION: 6
 };
 
 goog.object.extend(exports, proto.api);

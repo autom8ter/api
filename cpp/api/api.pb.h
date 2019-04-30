@@ -159,6 +159,32 @@ inline bool BillingInterval_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<BillingInterval>(
     BillingInterval_descriptor(), name, value);
 }
+enum EventType {
+  LOGIN_CODE_SENT = 0,
+  DELETED_USER = 1,
+  FAILED_LOGIN = 2,
+  FAILED_API_OPERATION = 3,
+  CON = 4,
+  FAILED_CORS = 5,
+  SUCCESS_EMAIL_VERIFICATION = 6,
+  EventType_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  EventType_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool EventType_IsValid(int value);
+const EventType EventType_MIN = LOGIN_CODE_SENT;
+const EventType EventType_MAX = SUCCESS_EMAIL_VERIFICATION;
+const int EventType_ARRAYSIZE = EventType_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* EventType_descriptor();
+inline const ::std::string& EventType_Name(EventType value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    EventType_descriptor(), value);
+}
+inline bool EventType_Parse(
+    const ::std::string& name, EventType* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<EventType>(
+    EventType_descriptor(), name, value);
+}
 // ===================================================================
 
 class AddUserRolesRequest : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.AddUserRolesRequest) */ {
@@ -2935,6 +2961,18 @@ class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::common::String* mutable_user_id();
   void set_allocated_user_id(::common::String* user_id);
 
+  // .common.StringMap annotations = 9;
+  bool has_annotations() const;
+  void clear_annotations();
+  static const int kAnnotationsFieldNumber = 9;
+  private:
+  const ::common::StringMap& _internal_annotations() const;
+  public:
+  const ::common::StringMap& annotations() const;
+  ::common::StringMap* release_annotations();
+  ::common::StringMap* mutable_annotations();
+  void set_allocated_annotations(::common::StringMap* annotations);
+
   // @@protoc_insertion_point(class_scope:api.Event)
  private:
 
@@ -2947,6 +2985,7 @@ class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::common::String* location_info_;
   ::common::String* details_;
   ::common::String* user_id_;
+  ::common::StringMap* annotations_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -7646,6 +7685,54 @@ inline void Event::set_allocated_user_id(::common::String* user_id) {
   // @@protoc_insertion_point(field_set_allocated:api.Event.user_id)
 }
 
+// .common.StringMap annotations = 9;
+inline bool Event::has_annotations() const {
+  return this != internal_default_instance() && annotations_ != NULL;
+}
+inline const ::common::StringMap& Event::_internal_annotations() const {
+  return *annotations_;
+}
+inline const ::common::StringMap& Event::annotations() const {
+  const ::common::StringMap* p = annotations_;
+  // @@protoc_insertion_point(field_get:api.Event.annotations)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
+      &::common::_StringMap_default_instance_);
+}
+inline ::common::StringMap* Event::release_annotations() {
+  // @@protoc_insertion_point(field_release:api.Event.annotations)
+  
+  ::common::StringMap* temp = annotations_;
+  annotations_ = NULL;
+  return temp;
+}
+inline ::common::StringMap* Event::mutable_annotations() {
+  
+  if (annotations_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
+    annotations_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.Event.annotations)
+  return annotations_;
+}
+inline void Event::set_allocated_annotations(::common::StringMap* annotations) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(annotations_);
+  }
+  if (annotations) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      annotations = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, annotations, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  annotations_ = annotations;
+  // @@protoc_insertion_point(field_set_allocated:api.Event.annotations)
+}
+
 // -------------------------------------------------------------------
 
 // EventQuery
@@ -8241,6 +8328,11 @@ template <> struct is_proto_enum< ::api::BillingInterval> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::api::BillingInterval>() {
   return ::api::BillingInterval_descriptor();
+}
+template <> struct is_proto_enum< ::api::EventType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::api::EventType>() {
+  return ::api::EventType_descriptor();
 }
 
 }  // namespace protobuf

@@ -308,6 +308,9 @@
         },
         "user_id": {
           "$ref": "#/definitions/commonString"
+        },
+        "annotations": {
+          "$ref": "#/definitions/commonStringMap"
         }
       }
     },

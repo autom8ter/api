@@ -230,6 +230,7 @@ message Event {
     common.String location_info=6;
     common.String details=7;
     common.String user_id=8;
+    common.StringMap annotations=9;
 }
 
 message EventQuery {
@@ -250,4 +251,16 @@ message JSONWebKeys {
 
 message Jwks {
     repeated JSONWebKeys keys=1;
+}
+
+enum EventType {
+    LOGIN_CODE_SENT =0;
+    DELETED_USER=1;
+    FAILED_LOGIN =2;
+    FAILED_API_OPERATION=3;
+    CON=4;
+    FAILED_CORS=5;
+    SUCCESS_EMAIL_VERIFICATION=6;
+
+
 }

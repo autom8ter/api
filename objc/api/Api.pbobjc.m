@@ -95,6 +95,53 @@ BOOL BillingInterval_IsValidValue(int32_t value__) {
   }
 }
 
+#pragma mark - Enum EventType
+
+GPBEnumDescriptor *EventType_EnumDescriptor(void) {
+  static _Atomic(GPBEnumDescriptor*) descriptor = nil;
+  if (!descriptor) {
+    static const char *valueNames =
+        "LoginCodeSent\000DeletedUser\000FailedLogin\000Fa"
+        "iledApiOperation\000Con\000FailedCors\000SuccessE"
+        "mailVerification\000";
+    static const int32_t values[] = {
+        EventType_LoginCodeSent,
+        EventType_DeletedUser,
+        EventType_FailedLogin,
+        EventType_FailedApiOperation,
+        EventType_Con,
+        EventType_FailedCors,
+        EventType_SuccessEmailVerification,
+    };
+    GPBEnumDescriptor *worker =
+        [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(EventType)
+                                       valueNames:valueNames
+                                           values:values
+                                            count:(uint32_t)(sizeof(values) / sizeof(int32_t))
+                                     enumVerifier:EventType_IsValidValue];
+    GPBEnumDescriptor *expected = nil;
+    if (!atomic_compare_exchange_strong(&descriptor, &expected, worker)) {
+      [worker release];
+    }
+  }
+  return descriptor;
+}
+
+BOOL EventType_IsValidValue(int32_t value__) {
+  switch (value__) {
+    case EventType_LoginCodeSent:
+    case EventType_DeletedUser:
+    case EventType_FailedLogin:
+    case EventType_FailedApiOperation:
+    case EventType_Con:
+    case EventType_FailedCors:
+    case EventType_SuccessEmailVerification:
+      return YES;
+    default:
+      return NO;
+  }
+}
+
 #pragma mark - AddUserRolesRequest
 
 @implementation AddUserRolesRequest
@@ -1564,6 +1611,7 @@ typedef struct Query__storage_ {
 @dynamic hasLocationInfo, locationInfo;
 @dynamic hasDetails, details;
 @dynamic hasUserId, userId;
+@dynamic hasAnnotations, annotations;
 
 typedef struct Event__storage_ {
   uint32_t _has_storage_[1];
@@ -1575,6 +1623,7 @@ typedef struct Event__storage_ {
   String *locationInfo;
   String *details;
   String *userId;
+  StringMap *annotations;
 } Event__storage_;
 
 // This method is threadsafe because it is initially called
@@ -1652,6 +1701,15 @@ typedef struct Event__storage_ {
         .number = Event_FieldNumber_UserId,
         .hasIndex = 7,
         .offset = (uint32_t)offsetof(Event__storage_, userId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "annotations",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
+        .number = Event_FieldNumber_Annotations,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(Event__storage_, annotations),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },

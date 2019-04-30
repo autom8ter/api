@@ -65,6 +65,32 @@ GPBEnumDescriptor *BillingInterval_EnumDescriptor(void);
  **/
 BOOL BillingInterval_IsValidValue(int32_t value);
 
+#pragma mark - Enum EventType
+
+typedef GPB_ENUM(EventType) {
+  /**
+   * Value used if any message's field encounters a value that is not defined
+   * by this enum. The message will also have C functions to get/set the rawValue
+   * of the field.
+   **/
+  EventType_GPBUnrecognizedEnumeratorValue = kGPBUnrecognizedEnumeratorValue,
+  EventType_LoginCodeSent = 0,
+  EventType_DeletedUser = 1,
+  EventType_FailedLogin = 2,
+  EventType_FailedApiOperation = 3,
+  EventType_Con = 4,
+  EventType_FailedCors = 5,
+  EventType_SuccessEmailVerification = 6,
+};
+
+GPBEnumDescriptor *EventType_EnumDescriptor(void);
+
+/**
+ * Checks to see if the given value is defined by the enum or was not known at
+ * the time this source was generated.
+ **/
+BOOL EventType_IsValidValue(int32_t value);
+
 #pragma mark - ApiRoot
 
 /**
@@ -638,6 +664,7 @@ typedef GPB_ENUM(Event_FieldNumber) {
   Event_FieldNumber_LocationInfo = 6,
   Event_FieldNumber_Details = 7,
   Event_FieldNumber_UserId = 8,
+  Event_FieldNumber_Annotations = 9,
 };
 
 @interface Event : GPBMessage
@@ -673,6 +700,10 @@ typedef GPB_ENUM(Event_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *userId;
 /** Test to see if @c userId has been set. */
 @property(nonatomic, readwrite) BOOL hasUserId;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringMap *annotations;
+/** Test to see if @c annotations has been set. */
+@property(nonatomic, readwrite) BOOL hasAnnotations;
 
 @end
 

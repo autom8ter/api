@@ -130,6 +130,149 @@ public final class Api {
     // @@protoc_insertion_point(enum_scope:api.BillingInterval)
   }
 
+  /**
+   * Protobuf enum {@code api.EventType}
+   */
+  public enum EventType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>LOGIN_CODE_SENT = 0;</code>
+     */
+    LOGIN_CODE_SENT(0),
+    /**
+     * <code>DELETED_USER = 1;</code>
+     */
+    DELETED_USER(1),
+    /**
+     * <code>FAILED_LOGIN = 2;</code>
+     */
+    FAILED_LOGIN(2),
+    /**
+     * <code>FAILED_API_OPERATION = 3;</code>
+     */
+    FAILED_API_OPERATION(3),
+    /**
+     * <code>CON = 4;</code>
+     */
+    CON(4),
+    /**
+     * <code>FAILED_CORS = 5;</code>
+     */
+    FAILED_CORS(5),
+    /**
+     * <code>SUCCESS_EMAIL_VERIFICATION = 6;</code>
+     */
+    SUCCESS_EMAIL_VERIFICATION(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>LOGIN_CODE_SENT = 0;</code>
+     */
+    public static final int LOGIN_CODE_SENT_VALUE = 0;
+    /**
+     * <code>DELETED_USER = 1;</code>
+     */
+    public static final int DELETED_USER_VALUE = 1;
+    /**
+     * <code>FAILED_LOGIN = 2;</code>
+     */
+    public static final int FAILED_LOGIN_VALUE = 2;
+    /**
+     * <code>FAILED_API_OPERATION = 3;</code>
+     */
+    public static final int FAILED_API_OPERATION_VALUE = 3;
+    /**
+     * <code>CON = 4;</code>
+     */
+    public static final int CON_VALUE = 4;
+    /**
+     * <code>FAILED_CORS = 5;</code>
+     */
+    public static final int FAILED_CORS_VALUE = 5;
+    /**
+     * <code>SUCCESS_EMAIL_VERIFICATION = 6;</code>
+     */
+    public static final int SUCCESS_EMAIL_VERIFICATION_VALUE = 6;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static EventType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static EventType forNumber(int value) {
+      switch (value) {
+        case 0: return LOGIN_CODE_SENT;
+        case 1: return DELETED_USER;
+        case 2: return FAILED_LOGIN;
+        case 3: return FAILED_API_OPERATION;
+        case 4: return CON;
+        case 5: return FAILED_CORS;
+        case 6: return SUCCESS_EMAIL_VERIFICATION;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<EventType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        EventType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<EventType>() {
+            public EventType findValueByNumber(int number) {
+              return EventType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return api.Api.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final EventType[] VALUES = values();
+
+    public static EventType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private EventType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:api.EventType)
+  }
+
   public interface AddUserRolesRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.AddUserRolesRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -22140,6 +22283,19 @@ public final class Api {
      * <code>.common.String user_id = 8;</code>
      */
     common.Common.StringOrBuilder getUserIdOrBuilder();
+
+    /**
+     * <code>.common.StringMap annotations = 9;</code>
+     */
+    boolean hasAnnotations();
+    /**
+     * <code>.common.StringMap annotations = 9;</code>
+     */
+    common.Common.StringMap getAnnotations();
+    /**
+     * <code>.common.StringMap annotations = 9;</code>
+     */
+    common.Common.StringMapOrBuilder getAnnotationsOrBuilder();
   }
   /**
    * Protobuf type {@code api.Event}
@@ -22280,6 +22436,19 @@ public final class Api {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(userId_);
                 userId_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              common.Common.StringMap.Builder subBuilder = null;
+              if (annotations_ != null) {
+                subBuilder = annotations_.toBuilder();
+              }
+              annotations_ = input.readMessage(common.Common.StringMap.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(annotations_);
+                annotations_ = subBuilder.buildPartial();
               }
 
               break;
@@ -22484,6 +22653,27 @@ public final class Api {
       return getUserId();
     }
 
+    public static final int ANNOTATIONS_FIELD_NUMBER = 9;
+    private common.Common.StringMap annotations_;
+    /**
+     * <code>.common.StringMap annotations = 9;</code>
+     */
+    public boolean hasAnnotations() {
+      return annotations_ != null;
+    }
+    /**
+     * <code>.common.StringMap annotations = 9;</code>
+     */
+    public common.Common.StringMap getAnnotations() {
+      return annotations_ == null ? common.Common.StringMap.getDefaultInstance() : annotations_;
+    }
+    /**
+     * <code>.common.StringMap annotations = 9;</code>
+     */
+    public common.Common.StringMapOrBuilder getAnnotationsOrBuilder() {
+      return getAnnotations();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -22521,6 +22711,9 @@ public final class Api {
       }
       if (userId_ != null) {
         output.writeMessage(8, getUserId());
+      }
+      if (annotations_ != null) {
+        output.writeMessage(9, getAnnotations());
       }
       unknownFields.writeTo(output);
     }
@@ -22562,6 +22755,10 @@ public final class Api {
       if (userId_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getUserId());
+      }
+      if (annotations_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getAnnotations());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -22619,6 +22816,11 @@ public final class Api {
         result = result && getUserId()
             .equals(other.getUserId());
       }
+      result = result && (hasAnnotations() == other.hasAnnotations());
+      if (hasAnnotations()) {
+        result = result && getAnnotations()
+            .equals(other.getAnnotations());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -22661,6 +22863,10 @@ public final class Api {
       if (hasUserId()) {
         hash = (37 * hash) + USER_ID_FIELD_NUMBER;
         hash = (53 * hash) + getUserId().hashCode();
+      }
+      if (hasAnnotations()) {
+        hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAnnotations().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -22843,6 +23049,12 @@ public final class Api {
           userId_ = null;
           userIdBuilder_ = null;
         }
+        if (annotationsBuilder_ == null) {
+          annotations_ = null;
+        } else {
+          annotations_ = null;
+          annotationsBuilder_ = null;
+        }
         return this;
       }
 
@@ -22908,6 +23120,11 @@ public final class Api {
           result.userId_ = userId_;
         } else {
           result.userId_ = userIdBuilder_.build();
+        }
+        if (annotationsBuilder_ == null) {
+          result.annotations_ = annotations_;
+        } else {
+          result.annotations_ = annotationsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -22980,6 +23197,9 @@ public final class Api {
         }
         if (other.hasUserId()) {
           mergeUserId(other.getUserId());
+        }
+        if (other.hasAnnotations()) {
+          mergeAnnotations(other.getAnnotations());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -23944,6 +24164,123 @@ public final class Api {
           userId_ = null;
         }
         return userIdBuilder_;
+      }
+
+      private common.Common.StringMap annotations_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.StringMap, common.Common.StringMap.Builder, common.Common.StringMapOrBuilder> annotationsBuilder_;
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public boolean hasAnnotations() {
+        return annotationsBuilder_ != null || annotations_ != null;
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public common.Common.StringMap getAnnotations() {
+        if (annotationsBuilder_ == null) {
+          return annotations_ == null ? common.Common.StringMap.getDefaultInstance() : annotations_;
+        } else {
+          return annotationsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public Builder setAnnotations(common.Common.StringMap value) {
+        if (annotationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          annotations_ = value;
+          onChanged();
+        } else {
+          annotationsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public Builder setAnnotations(
+          common.Common.StringMap.Builder builderForValue) {
+        if (annotationsBuilder_ == null) {
+          annotations_ = builderForValue.build();
+          onChanged();
+        } else {
+          annotationsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public Builder mergeAnnotations(common.Common.StringMap value) {
+        if (annotationsBuilder_ == null) {
+          if (annotations_ != null) {
+            annotations_ =
+              common.Common.StringMap.newBuilder(annotations_).mergeFrom(value).buildPartial();
+          } else {
+            annotations_ = value;
+          }
+          onChanged();
+        } else {
+          annotationsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public Builder clearAnnotations() {
+        if (annotationsBuilder_ == null) {
+          annotations_ = null;
+          onChanged();
+        } else {
+          annotations_ = null;
+          annotationsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public common.Common.StringMap.Builder getAnnotationsBuilder() {
+        
+        onChanged();
+        return getAnnotationsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      public common.Common.StringMapOrBuilder getAnnotationsOrBuilder() {
+        if (annotationsBuilder_ != null) {
+          return annotationsBuilder_.getMessageOrBuilder();
+        } else {
+          return annotations_ == null ?
+              common.Common.StringMap.getDefaultInstance() : annotations_;
+        }
+      }
+      /**
+       * <code>.common.StringMap annotations = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.StringMap, common.Common.StringMap.Builder, common.Common.StringMapOrBuilder> 
+          getAnnotationsFieldBuilder() {
+        if (annotationsBuilder_ == null) {
+          annotationsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.StringMap, common.Common.StringMap.Builder, common.Common.StringMapOrBuilder>(
+                  getAnnotations(),
+                  getParentForChildren(),
+                  isClean());
+          annotations_ = null;
+        }
+        return annotationsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -27500,14 +27837,15 @@ public final class Api {
       "2\016.common.String\022\037\n\007expires\030\007 \001(\0132\016.comm" +
       "on.String\022 \n\010audience\030\010 \001(\0132\016.common.Str" +
       "ing\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.common.Str" +
-      "ing\022\036\n\006fields\030\005 \001(\0132\016.common.String\"\220\002\n\005" +
+      "ing\022\036\n\006fields\030\005 \001(\0132\016.common.String\"\270\002\n\005" +
       "Event\022\034\n\004date\030\001 \001(\0132\016.common.String\022\034\n\004t" +
       "ype\030\002 \001(\0132\016.common.String\022!\n\tclient_id\030\003" +
       " \001(\0132\016.common.String\022#\n\013client_name\030\004 \001(" +
       "\0132\016.common.String\022\032\n\002ip\030\005 \001(\0132\016.common.S" +
       "tring\022%\n\rlocation_info\030\006 \001(\0132\016.common.St" +
       "ring\022\037\n\007details\030\007 \001(\0132\016.common.String\022\037\n" +
-      "\007user_id\030\010 \001(\0132\016.common.String\"L\n\nEventQ" +
+      "\007user_id\030\010 \001(\0132\016.common.String\022&\n\013annota" +
+      "tions\030\t \001(\0132\021.common.StringMap\"L\n\nEventQ" +
       "uery\022\014\n\004date\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\021\n\tclie" +
       "nt_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\"\300\001\n\013JSONWeb" +
       "Keys\022\033\n\003kty\030\001 \001(\0132\016.common.String\022\037\n\003kid" +
@@ -27517,28 +27855,32 @@ public final class Api {
       "(\0132\023.common.StringArray\"&\n\004Jwks\022\036\n\004keys\030" +
       "\001 \003(\0132\020.api.JSONWebKeys*A\n\017BillingInterv" +
       "al\022\t\n\005DAILY\020\000\022\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002\022\n" +
-      "\n\006YEARLY\020\0032I\n\014DebugService\0229\n\004Echo\022\016.com" +
-      "mon.String\032\016.common.String\"\021\202\323\344\223\002\013\"\006/deb" +
-      "ug:\001*2\247\001\n\023SubscriptionService\022D\n\tSubscri" +
-      "be\022\025.api.SubscribeRequest\032\t.api.User\"\025\202\323" +
-      "\344\223\002\017\"\n/subscribe:\001*\022J\n\013Unsubscribe\022\027.api" +
-      ".UnSubscribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014" +
-      "/unsubscribe:\001*2\\\n\025AuthenticationService" +
-      "\022C\n\007GetUser\022\021.common.AuthToken\032\t.api.Use" +
-      "r\"\032\202\323\344\223\002\024\"\017/authentication:\001*2\230\003\n\013UserSe" +
-      "rvice\022H\n\nQueryUsers\022\n.api.Query\032\t.api.Us" +
-      "er\"!\202\323\344\223\002\033\"\026/management/user/query:\001*0\001\022" +
-      "I\n\007GetUser\022\022.common.Identifier\032\t.api.Use" +
-      "r\"\037\202\323\344\223\002\031\"\024/management/user/get:\001*\022F\n\nUp" +
-      "dateUser\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027" +
-      "/management/user/update:\001*\022O\n\tUserRoles\022" +
-      "\022.common.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026" +
-      "/management/user/roles:\001*0\001\022[\n\014AddUserRo" +
-      "les\022\030.api.AddUserRolesRequest\032\016.common.S" +
-      "tring\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*" +
-      "2N\n\014EventService\022>\n\tGetEvents\022\017.api.Even" +
-      "tQuery\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001" +
-      "b\006proto3"
+      "\n\006YEARLY\020\003*\230\001\n\tEventType\022\023\n\017LOGIN_CODE_S" +
+      "ENT\020\000\022\020\n\014DELETED_USER\020\001\022\020\n\014FAILED_LOGIN\020" +
+      "\002\022\030\n\024FAILED_API_OPERATION\020\003\022\007\n\003CON\020\004\022\017\n\013" +
+      "FAILED_CORS\020\005\022\036\n\032SUCCESS_EMAIL_VERIFICAT" +
+      "ION\020\0062I\n\014DebugService\0229\n\004Echo\022\016.common.S" +
+      "tring\032\016.common.String\"\021\202\323\344\223\002\013\"\006/debug:\001*" +
+      "2\247\001\n\023SubscriptionService\022D\n\tSubscribe\022\025." +
+      "api.SubscribeRequest\032\t.api.User\"\025\202\323\344\223\002\017\"" +
+      "\n/subscribe:\001*\022J\n\013Unsubscribe\022\027.api.UnSu" +
+      "bscribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014/unsu" +
+      "bscribe:\001*2\\\n\025AuthenticationService\022C\n\007G" +
+      "etUser\022\021.common.AuthToken\032\t.api.User\"\032\202\323" +
+      "\344\223\002\024\"\017/authentication:\001*2\230\003\n\013UserService" +
+      "\022H\n\nQueryUsers\022\n.api.Query\032\t.api.User\"!\202" +
+      "\323\344\223\002\033\"\026/management/user/query:\001*0\001\022I\n\007Ge" +
+      "tUser\022\022.common.Identifier\032\t.api.User\"\037\202\323" +
+      "\344\223\002\031\"\024/management/user/get:\001*\022F\n\nUpdateU" +
+      "ser\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027/mana" +
+      "gement/user/update:\001*\022O\n\tUserRoles\022\022.com" +
+      "mon.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026/mana" +
+      "gement/user/roles:\001*0\001\022[\n\014AddUserRoles\022\030" +
+      ".api.AddUserRolesRequest\032\016.common.String" +
+      "\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*2N\n\014E" +
+      "ventService\022>\n\tGetEvents\022\017.api.EventQuer" +
+      "y\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27655,7 +27997,7 @@ public final class Api {
     internal_static_api_Event_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Event_descriptor,
-        new java.lang.String[] { "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId", });
+        new java.lang.String[] { "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId", "Annotations", });
     internal_static_api_EventQuery_descriptor =
       getDescriptor().getMessageTypes().get(17);
     internal_static_api_EventQuery_fieldAccessorTable = new

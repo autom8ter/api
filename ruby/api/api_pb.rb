@@ -130,6 +130,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :location_info, :message, 6, "common.String"
     optional :details, :message, 7, "common.String"
     optional :user_id, :message, 8, "common.String"
+    optional :annotations, :message, 9, "common.StringMap"
   end
   add_message "api.EventQuery" do
     optional :date, :string, 1
@@ -153,6 +154,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     value :WEEKLY, 1
     value :MONTHLY, 2
     value :YEARLY, 3
+  end
+  add_enum "api.EventType" do
+    value :LOGIN_CODE_SENT, 0
+    value :DELETED_USER, 1
+    value :FAILED_LOGIN, 2
+    value :FAILED_API_OPERATION, 3
+    value :CON, 4
+    value :FAILED_CORS, 5
+    value :SUCCESS_EMAIL_VERIFICATION, 6
   end
 end
 
@@ -178,4 +188,5 @@ module Api
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
   BillingInterval = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.BillingInterval").enummodule
+  EventType = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EventType").enummodule
 end

@@ -26,6 +26,30 @@ var BillingInterval_value = map[string]int32{
 }
 ```
 
+```go
+var EventType_name = map[int32]string{
+	0: "LOGIN_CODE_SENT",
+	1: "DELETED_USER",
+	2: "FAILED_LOGIN",
+	3: "FAILED_API_OPERATION",
+	4: "CON",
+	5: "FAILED_CORS",
+	6: "SUCCESS_EMAIL_VERIFICATION",
+}
+```
+
+```go
+var EventType_value = map[string]int32{
+	"LOGIN_CODE_SENT":            0,
+	"DELETED_USER":               1,
+	"FAILED_LOGIN":               2,
+	"FAILED_API_OPERATION":       3,
+	"CON":                        4,
+	"FAILED_CORS":                5,
+	"SUCCESS_EMAIL_VERIFICATION": 6,
+}
+```
+
 #### func  RegisterAuthenticationServiceHandler
 
 ```go
@@ -884,17 +908,18 @@ DebugServiceServer is the server API for DebugService service.
 
 ```go
 type Event struct {
-	Date                 *common.String `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	Type                 *common.String `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	ClientId             *common.String `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-	ClientName           *common.String `protobuf:"bytes,4,opt,name=client_name,json=clientName,proto3" json:"client_name,omitempty"`
-	Ip                   *common.String `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`
-	LocationInfo         *common.String `protobuf:"bytes,6,opt,name=location_info,json=locationInfo,proto3" json:"location_info,omitempty"`
-	Details              *common.String `protobuf:"bytes,7,opt,name=details,proto3" json:"details,omitempty"`
-	UserId               *common.String `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
-	XXX_unrecognized     []byte         `json:"-"`
-	XXX_sizecache        int32          `json:"-"`
+	Date                 *common.String    `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
+	Type                 *common.String    `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	ClientId             *common.String    `protobuf:"bytes,3,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	ClientName           *common.String    `protobuf:"bytes,4,opt,name=client_name,json=clientName,proto3" json:"client_name,omitempty"`
+	Ip                   *common.String    `protobuf:"bytes,5,opt,name=ip,proto3" json:"ip,omitempty"`
+	LocationInfo         *common.String    `protobuf:"bytes,6,opt,name=location_info,json=locationInfo,proto3" json:"location_info,omitempty"`
+	Details              *common.String    `protobuf:"bytes,7,opt,name=details,proto3" json:"details,omitempty"`
+	UserId               *common.String    `protobuf:"bytes,8,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Annotations          *common.StringMap `protobuf:"bytes,9,opt,name=annotations,proto3" json:"annotations,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 ```
 
@@ -903,6 +928,12 @@ type Event struct {
 
 ```go
 func (*Event) Descriptor() ([]byte, []int)
+```
+
+#### func (*Event) GetAnnotations
+
+```go
+func (m *Event) GetAnnotations() *common.StringMap
 ```
 
 #### func (*Event) GetClientId
@@ -1160,6 +1191,37 @@ type EventService_GetEventsServer interface {
 }
 ```
 
+
+#### type EventType
+
+```go
+type EventType int32
+```
+
+
+```go
+const (
+	EventType_LOGIN_CODE_SENT            EventType = 0
+	EventType_DELETED_USER               EventType = 1
+	EventType_FAILED_LOGIN               EventType = 2
+	EventType_FAILED_API_OPERATION       EventType = 3
+	EventType_CON                        EventType = 4
+	EventType_FAILED_CORS                EventType = 5
+	EventType_SUCCESS_EMAIL_VERIFICATION EventType = 6
+)
+```
+
+#### func (EventType) EnumDescriptor
+
+```go
+func (EventType) EnumDescriptor() ([]byte, []int)
+```
+
+#### func (EventType) String
+
+```go
+func (x EventType) String() string
+```
 
 #### type Identity
 
