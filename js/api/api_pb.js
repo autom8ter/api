@@ -18,8 +18,7 @@ goog.exportSymbol('proto.api.Call', null, global);
 goog.exportSymbol('proto.api.CallBlast', null, global);
 goog.exportSymbol('proto.api.CallResponse', null, global);
 goog.exportSymbol('proto.api.Card', null, global);
-goog.exportSymbol('proto.api.Config', null, global);
-goog.exportSymbol('proto.api.ConfigSet', null, global);
+goog.exportSymbol('proto.api.ClientCredentials', null, global);
 goog.exportSymbol('proto.api.Email', null, global);
 goog.exportSymbol('proto.api.EmailBlast', null, global);
 goog.exportSymbol('proto.api.EmailBlastRequest', null, global);
@@ -30,8 +29,10 @@ goog.exportSymbol('proto.api.FaxBlast', null, global);
 goog.exportSymbol('proto.api.FaxResponse', null, global);
 goog.exportSymbol('proto.api.Identity', null, global);
 goog.exportSymbol('proto.api.JSONWebKeys', null, global);
+goog.exportSymbol('proto.api.JWT', null, global);
 goog.exportSymbol('proto.api.Jwks', null, global);
 goog.exportSymbol('proto.api.NumberCapabilities', null, global);
+goog.exportSymbol('proto.api.OAuth2', null, global);
 goog.exportSymbol('proto.api.PhoneNumber', null, global);
 goog.exportSymbol('proto.api.PhoneNumberResource', null, global);
 goog.exportSymbol('proto.api.Plan', null, global);
@@ -8511,12 +8512,12 @@ proto.api.FaxResponse.prototype.hasAnnotations = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.api.Config = function(opt_data) {
+proto.api.OAuth2 = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.api.Config, jspb.Message);
+goog.inherits(proto.api.OAuth2, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.api.Config.displayName = 'proto.api.Config';
+  proto.api.OAuth2.displayName = 'proto.api.OAuth2';
 }
 
 
@@ -8531,8 +8532,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.api.Config.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.Config.toObject(opt_includeInstance, this);
+proto.api.OAuth2.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.OAuth2.toObject(opt_includeInstance, this);
 };
 
 
@@ -8541,11 +8542,11 @@ proto.api.Config.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.api.Config} msg The msg instance to transform.
+ * @param {!proto.api.OAuth2} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Config.toObject = function(includeInstance, msg) {
+proto.api.OAuth2.toObject = function(includeInstance, msg) {
   var f, obj = {
     clientId: (f = msg.getClientId()) && common_common_pb.String.toObject(includeInstance, f),
     clientSecret: (f = msg.getClientSecret()) && common_common_pb.String.toObject(includeInstance, f),
@@ -8553,7 +8554,7 @@ proto.api.Config.toObject = function(includeInstance, msg) {
     authUrl: (f = msg.getAuthUrl()) && common_common_pb.String.toObject(includeInstance, f),
     scopes: (f = msg.getScopes()) && common_common_pb.StringArray.toObject(includeInstance, f),
     redirect: (f = msg.getRedirect()) && common_common_pb.String.toObject(includeInstance, f),
-    endpointParams: (f = msg.getEndpointParams()) && common_common_pb.StringMap.toObject(includeInstance, f)
+    code: (f = msg.getCode()) && common_common_pb.String.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8567,23 +8568,23 @@ proto.api.Config.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.Config}
+ * @return {!proto.api.OAuth2}
  */
-proto.api.Config.deserializeBinary = function(bytes) {
+proto.api.OAuth2.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.Config;
-  return proto.api.Config.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.api.OAuth2;
+  return proto.api.OAuth2.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.api.Config} msg The message object to deserialize into.
+ * @param {!proto.api.OAuth2} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.Config}
+ * @return {!proto.api.OAuth2}
  */
-proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
+proto.api.OAuth2.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -8621,9 +8622,9 @@ proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setRedirect(value);
       break;
     case 7:
-      var value = new common_common_pb.StringMap;
-      reader.readMessage(value,common_common_pb.StringMap.deserializeBinaryFromReader);
-      msg.setEndpointParams(value);
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setCode(value);
       break;
     default:
       reader.skipField();
@@ -8638,9 +8639,9 @@ proto.api.Config.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.api.Config.prototype.serializeBinary = function() {
+proto.api.OAuth2.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.api.Config.serializeBinaryToWriter(this, writer);
+  proto.api.OAuth2.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -8648,11 +8649,11 @@ proto.api.Config.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.api.Config} message
+ * @param {!proto.api.OAuth2} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.api.Config.serializeBinaryToWriter = function(message, writer) {
+proto.api.OAuth2.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getClientId();
   if (f != null) {
@@ -8702,10 +8703,405 @@ proto.api.Config.serializeBinaryToWriter = function(message, writer) {
       common_common_pb.String.serializeBinaryToWriter
     );
   }
-  f = message.getEndpointParams();
+  f = message.getCode();
   if (f != null) {
     writer.writeMessage(
       7,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional common.String client_id = 1;
+ * @return {?proto.common.String}
+ */
+proto.api.OAuth2.prototype.getClientId = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 1));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.OAuth2.prototype.setClientId = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.api.OAuth2.prototype.clearClientId = function() {
+  this.setClientId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasClientId = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional common.String client_secret = 2;
+ * @return {?proto.common.String}
+ */
+proto.api.OAuth2.prototype.getClientSecret = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 2));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.OAuth2.prototype.setClientSecret = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.api.OAuth2.prototype.clearClientSecret = function() {
+  this.setClientSecret(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasClientSecret = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional common.String token_url = 3;
+ * @return {?proto.common.String}
+ */
+proto.api.OAuth2.prototype.getTokenUrl = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 3));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.OAuth2.prototype.setTokenUrl = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.api.OAuth2.prototype.clearTokenUrl = function() {
+  this.setTokenUrl(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasTokenUrl = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional common.String auth_url = 4;
+ * @return {?proto.common.String}
+ */
+proto.api.OAuth2.prototype.getAuthUrl = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 4));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.OAuth2.prototype.setAuthUrl = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.api.OAuth2.prototype.clearAuthUrl = function() {
+  this.setAuthUrl(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasAuthUrl = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional common.StringArray scopes = 5;
+ * @return {?proto.common.StringArray}
+ */
+proto.api.OAuth2.prototype.getScopes = function() {
+  return /** @type{?proto.common.StringArray} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.StringArray, 5));
+};
+
+
+/** @param {?proto.common.StringArray|undefined} value */
+proto.api.OAuth2.prototype.setScopes = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.api.OAuth2.prototype.clearScopes = function() {
+  this.setScopes(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasScopes = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional common.String redirect = 6;
+ * @return {?proto.common.String}
+ */
+proto.api.OAuth2.prototype.getRedirect = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 6));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.OAuth2.prototype.setRedirect = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.api.OAuth2.prototype.clearRedirect = function() {
+  this.setRedirect(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasRedirect = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional common.String code = 7;
+ * @return {?proto.common.String}
+ */
+proto.api.OAuth2.prototype.getCode = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 7));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.OAuth2.prototype.setCode = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+proto.api.OAuth2.prototype.clearCode = function() {
+  this.setCode(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.OAuth2.prototype.hasCode = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.ClientCredentials = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.ClientCredentials, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.api.ClientCredentials.displayName = 'proto.api.ClientCredentials';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.ClientCredentials.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.ClientCredentials.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.ClientCredentials} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.ClientCredentials.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    clientId: (f = msg.getClientId()) && common_common_pb.String.toObject(includeInstance, f),
+    clientSecret: (f = msg.getClientSecret()) && common_common_pb.String.toObject(includeInstance, f),
+    tokenUrl: (f = msg.getTokenUrl()) && common_common_pb.String.toObject(includeInstance, f),
+    scopes: (f = msg.getScopes()) && common_common_pb.StringArray.toObject(includeInstance, f),
+    endpointParams: (f = msg.getEndpointParams()) && common_common_pb.StringMap.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.ClientCredentials}
+ */
+proto.api.ClientCredentials.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.ClientCredentials;
+  return proto.api.ClientCredentials.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.ClientCredentials} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.ClientCredentials}
+ */
+proto.api.ClientCredentials.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setClientId(value);
+      break;
+    case 2:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setClientSecret(value);
+      break;
+    case 3:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setTokenUrl(value);
+      break;
+    case 4:
+      var value = new common_common_pb.StringArray;
+      reader.readMessage(value,common_common_pb.StringArray.deserializeBinaryFromReader);
+      msg.setScopes(value);
+      break;
+    case 5:
+      var value = new common_common_pb.StringMap;
+      reader.readMessage(value,common_common_pb.StringMap.deserializeBinaryFromReader);
+      msg.setEndpointParams(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.ClientCredentials.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.ClientCredentials.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.ClientCredentials} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.ClientCredentials.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getClientId();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getClientSecret();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getTokenUrl();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getScopes();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_common_pb.StringArray.serializeBinaryToWriter
+    );
+  }
+  f = message.getEndpointParams();
+  if (f != null) {
+    writer.writeMessage(
+      5,
       f,
       common_common_pb.StringMap.serializeBinaryToWriter
     );
@@ -8717,19 +9113,19 @@ proto.api.Config.serializeBinaryToWriter = function(message, writer) {
  * optional common.String client_id = 1;
  * @return {?proto.common.String}
  */
-proto.api.Config.prototype.getClientId = function() {
+proto.api.ClientCredentials.prototype.getClientId = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 1));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.Config.prototype.setClientId = function(value) {
+proto.api.ClientCredentials.prototype.setClientId = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-proto.api.Config.prototype.clearClientId = function() {
+proto.api.ClientCredentials.prototype.clearClientId = function() {
   this.setClientId(undefined);
 };
 
@@ -8738,7 +9134,7 @@ proto.api.Config.prototype.clearClientId = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasClientId = function() {
+proto.api.ClientCredentials.prototype.hasClientId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -8747,19 +9143,19 @@ proto.api.Config.prototype.hasClientId = function() {
  * optional common.String client_secret = 2;
  * @return {?proto.common.String}
  */
-proto.api.Config.prototype.getClientSecret = function() {
+proto.api.ClientCredentials.prototype.getClientSecret = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 2));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.Config.prototype.setClientSecret = function(value) {
+proto.api.ClientCredentials.prototype.setClientSecret = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
 
 
-proto.api.Config.prototype.clearClientSecret = function() {
+proto.api.ClientCredentials.prototype.clearClientSecret = function() {
   this.setClientSecret(undefined);
 };
 
@@ -8768,7 +9164,7 @@ proto.api.Config.prototype.clearClientSecret = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasClientSecret = function() {
+proto.api.ClientCredentials.prototype.hasClientSecret = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -8777,19 +9173,19 @@ proto.api.Config.prototype.hasClientSecret = function() {
  * optional common.String token_url = 3;
  * @return {?proto.common.String}
  */
-proto.api.Config.prototype.getTokenUrl = function() {
+proto.api.ClientCredentials.prototype.getTokenUrl = function() {
   return /** @type{?proto.common.String} */ (
     jspb.Message.getWrapperField(this, common_common_pb.String, 3));
 };
 
 
 /** @param {?proto.common.String|undefined} value */
-proto.api.Config.prototype.setTokenUrl = function(value) {
+proto.api.ClientCredentials.prototype.setTokenUrl = function(value) {
   jspb.Message.setWrapperField(this, 3, value);
 };
 
 
-proto.api.Config.prototype.clearTokenUrl = function() {
+proto.api.ClientCredentials.prototype.clearTokenUrl = function() {
   this.setTokenUrl(undefined);
 };
 
@@ -8798,58 +9194,28 @@ proto.api.Config.prototype.clearTokenUrl = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasTokenUrl = function() {
+proto.api.ClientCredentials.prototype.hasTokenUrl = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional common.String auth_url = 4;
- * @return {?proto.common.String}
- */
-proto.api.Config.prototype.getAuthUrl = function() {
-  return /** @type{?proto.common.String} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.String, 4));
-};
-
-
-/** @param {?proto.common.String|undefined} value */
-proto.api.Config.prototype.setAuthUrl = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-proto.api.Config.prototype.clearAuthUrl = function() {
-  this.setAuthUrl(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.Config.prototype.hasAuthUrl = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional common.StringArray scopes = 5;
+ * optional common.StringArray scopes = 4;
  * @return {?proto.common.StringArray}
  */
-proto.api.Config.prototype.getScopes = function() {
+proto.api.ClientCredentials.prototype.getScopes = function() {
   return /** @type{?proto.common.StringArray} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.StringArray, 5));
+    jspb.Message.getWrapperField(this, common_common_pb.StringArray, 4));
 };
 
 
 /** @param {?proto.common.StringArray|undefined} value */
-proto.api.Config.prototype.setScopes = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+proto.api.ClientCredentials.prototype.setScopes = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
-proto.api.Config.prototype.clearScopes = function() {
+proto.api.ClientCredentials.prototype.clearScopes = function() {
   this.setScopes(undefined);
 };
 
@@ -8858,58 +9224,28 @@ proto.api.Config.prototype.clearScopes = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasScopes = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.api.ClientCredentials.prototype.hasScopes = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional common.String redirect = 6;
- * @return {?proto.common.String}
- */
-proto.api.Config.prototype.getRedirect = function() {
-  return /** @type{?proto.common.String} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.String, 6));
-};
-
-
-/** @param {?proto.common.String|undefined} value */
-proto.api.Config.prototype.setRedirect = function(value) {
-  jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-proto.api.Config.prototype.clearRedirect = function() {
-  this.setRedirect(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.api.Config.prototype.hasRedirect = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional common.StringMap endpoint_params = 7;
+ * optional common.StringMap endpoint_params = 5;
  * @return {?proto.common.StringMap}
  */
-proto.api.Config.prototype.getEndpointParams = function() {
+proto.api.ClientCredentials.prototype.getEndpointParams = function() {
   return /** @type{?proto.common.StringMap} */ (
-    jspb.Message.getWrapperField(this, common_common_pb.StringMap, 7));
+    jspb.Message.getWrapperField(this, common_common_pb.StringMap, 5));
 };
 
 
 /** @param {?proto.common.StringMap|undefined} value */
-proto.api.Config.prototype.setEndpointParams = function(value) {
-  jspb.Message.setWrapperField(this, 7, value);
+proto.api.ClientCredentials.prototype.setEndpointParams = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
 };
 
 
-proto.api.Config.prototype.clearEndpointParams = function() {
+proto.api.ClientCredentials.prototype.clearEndpointParams = function() {
   this.setEndpointParams(undefined);
 };
 
@@ -8918,8 +9254,482 @@ proto.api.Config.prototype.clearEndpointParams = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.api.Config.prototype.hasEndpointParams = function() {
+proto.api.ClientCredentials.prototype.hasEndpointParams = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.api.JWT = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.api.JWT, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.api.JWT.displayName = 'proto.api.JWT';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.api.JWT.prototype.toObject = function(opt_includeInstance) {
+  return proto.api.JWT.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.api.JWT} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.JWT.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    email: (f = msg.getEmail()) && common_common_pb.String.toObject(includeInstance, f),
+    privateKey: msg.getPrivateKey_asB64(),
+    priveKeyId: (f = msg.getPriveKeyId()) && common_common_pb.String.toObject(includeInstance, f),
+    subject: (f = msg.getSubject()) && common_common_pb.String.toObject(includeInstance, f),
+    scopes: (f = msg.getScopes()) && common_common_pb.StringArray.toObject(includeInstance, f),
+    tokenUrl: (f = msg.getTokenUrl()) && common_common_pb.String.toObject(includeInstance, f),
+    expires: (f = msg.getExpires()) && common_common_pb.String.toObject(includeInstance, f),
+    audience: (f = msg.getAudience()) && common_common_pb.String.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.api.JWT}
+ */
+proto.api.JWT.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.api.JWT;
+  return proto.api.JWT.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.api.JWT} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.api.JWT}
+ */
+proto.api.JWT.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setEmail(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setPrivateKey(value);
+      break;
+    case 3:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setPriveKeyId(value);
+      break;
+    case 4:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setSubject(value);
+      break;
+    case 5:
+      var value = new common_common_pb.StringArray;
+      reader.readMessage(value,common_common_pb.StringArray.deserializeBinaryFromReader);
+      msg.setScopes(value);
+      break;
+    case 6:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setTokenUrl(value);
+      break;
+    case 7:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setExpires(value);
+      break;
+    case 8:
+      var value = new common_common_pb.String;
+      reader.readMessage(value,common_common_pb.String.deserializeBinaryFromReader);
+      msg.setAudience(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.api.JWT.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.api.JWT.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.api.JWT} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.api.JWT.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getEmail();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getPrivateKey_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      2,
+      f
+    );
+  }
+  f = message.getPriveKeyId();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubject();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getScopes();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_common_pb.StringArray.serializeBinaryToWriter
+    );
+  }
+  f = message.getTokenUrl();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpires();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+  f = message.getAudience();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      common_common_pb.String.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional common.String email = 1;
+ * @return {?proto.common.String}
+ */
+proto.api.JWT.prototype.getEmail = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 1));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.JWT.prototype.setEmail = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.api.JWT.prototype.clearEmail = function() {
+  this.setEmail(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasEmail = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional bytes private_key = 2;
+ * @return {!(string|Uint8Array)}
+ */
+proto.api.JWT.prototype.getPrivateKey = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * optional bytes private_key = 2;
+ * This is a type-conversion wrapper around `getPrivateKey()`
+ * @return {string}
+ */
+proto.api.JWT.prototype.getPrivateKey_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getPrivateKey()));
+};
+
+
+/**
+ * optional bytes private_key = 2;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getPrivateKey()`
+ * @return {!Uint8Array}
+ */
+proto.api.JWT.prototype.getPrivateKey_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getPrivateKey()));
+};
+
+
+/** @param {!(string|Uint8Array)} value */
+proto.api.JWT.prototype.setPrivateKey = function(value) {
+  jspb.Message.setProto3BytesField(this, 2, value);
+};
+
+
+/**
+ * optional common.String prive_key_id = 3;
+ * @return {?proto.common.String}
+ */
+proto.api.JWT.prototype.getPriveKeyId = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 3));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.JWT.prototype.setPriveKeyId = function(value) {
+  jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+proto.api.JWT.prototype.clearPriveKeyId = function() {
+  this.setPriveKeyId(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasPriveKeyId = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional common.String subject = 4;
+ * @return {?proto.common.String}
+ */
+proto.api.JWT.prototype.getSubject = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 4));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.JWT.prototype.setSubject = function(value) {
+  jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+proto.api.JWT.prototype.clearSubject = function() {
+  this.setSubject(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasSubject = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional common.StringArray scopes = 5;
+ * @return {?proto.common.StringArray}
+ */
+proto.api.JWT.prototype.getScopes = function() {
+  return /** @type{?proto.common.StringArray} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.StringArray, 5));
+};
+
+
+/** @param {?proto.common.StringArray|undefined} value */
+proto.api.JWT.prototype.setScopes = function(value) {
+  jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+proto.api.JWT.prototype.clearScopes = function() {
+  this.setScopes(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasScopes = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional common.String token_url = 6;
+ * @return {?proto.common.String}
+ */
+proto.api.JWT.prototype.getTokenUrl = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 6));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.JWT.prototype.setTokenUrl = function(value) {
+  jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+proto.api.JWT.prototype.clearTokenUrl = function() {
+  this.setTokenUrl(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasTokenUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional common.String expires = 7;
+ * @return {?proto.common.String}
+ */
+proto.api.JWT.prototype.getExpires = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 7));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.JWT.prototype.setExpires = function(value) {
+  jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+proto.api.JWT.prototype.clearExpires = function() {
+  this.setExpires(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasExpires = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional common.String audience = 8;
+ * @return {?proto.common.String}
+ */
+proto.api.JWT.prototype.getAudience = function() {
+  return /** @type{?proto.common.String} */ (
+    jspb.Message.getWrapperField(this, common_common_pb.String, 8));
+};
+
+
+/** @param {?proto.common.String|undefined} value */
+proto.api.JWT.prototype.setAudience = function(value) {
+  jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+proto.api.JWT.prototype.clearAudience = function() {
+  this.setAudience(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.api.JWT.prototype.hasAudience = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -9590,150 +10400,6 @@ proto.api.Event.prototype.clearUserId = function() {
  */
 proto.api.Event.prototype.hasUserId = function() {
   return jspb.Message.getField(this, 8) != null;
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.api.ConfigSet = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.api.ConfigSet, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.api.ConfigSet.displayName = 'proto.api.ConfigSet';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.api.ConfigSet.prototype.toObject = function(opt_includeInstance) {
-  return proto.api.ConfigSet.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.api.ConfigSet} msg The msg instance to transform.
- * @return {!Object}
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.ConfigSet.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    configsMap: (f = msg.getConfigsMap()) ? f.toObject(includeInstance, proto.api.Config.toObject) : []
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.api.ConfigSet}
- */
-proto.api.ConfigSet.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.api.ConfigSet;
-  return proto.api.ConfigSet.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.api.ConfigSet} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.api.ConfigSet}
- */
-proto.api.ConfigSet.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = msg.getConfigsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.api.Config.deserializeBinaryFromReader, "");
-         });
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.api.ConfigSet.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  proto.api.ConfigSet.serializeBinaryToWriter(this, writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the given message to binary data (in protobuf wire
- * format), writing to the given BinaryWriter.
- * @param {!proto.api.ConfigSet} message
- * @param {!jspb.BinaryWriter} writer
- * @suppress {unusedLocalVariables} f is only used for nested messages
- */
-proto.api.ConfigSet.serializeBinaryToWriter = function(message, writer) {
-  var f = undefined;
-  f = message.getConfigsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.api.Config.serializeBinaryToWriter);
-  }
-};
-
-
-/**
- * map<string, Config> configs = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.api.Config>}
- */
-proto.api.ConfigSet.prototype.getConfigsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.api.Config>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      proto.api.Config));
-};
-
-
-proto.api.ConfigSet.prototype.clearConfigsMap = function() {
-  this.getConfigsMap().clear();
 };
 
 

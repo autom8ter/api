@@ -28,7 +28,6 @@
 CF_EXTERN_C_BEGIN
 
 @class Card;
-@class Config;
 @class Email;
 @class EmailBlast;
 @class Identifier;
@@ -968,19 +967,19 @@ typedef GPB_ENUM(FaxResponse_FieldNumber) {
 
 @end
 
-#pragma mark - Config
+#pragma mark - OAuth2
 
-typedef GPB_ENUM(Config_FieldNumber) {
-  Config_FieldNumber_ClientId = 1,
-  Config_FieldNumber_ClientSecret = 2,
-  Config_FieldNumber_TokenURL = 3,
-  Config_FieldNumber_AuthURL = 4,
-  Config_FieldNumber_Scopes = 5,
-  Config_FieldNumber_Redirect = 6,
-  Config_FieldNumber_EndpointParams = 7,
+typedef GPB_ENUM(OAuth2_FieldNumber) {
+  OAuth2_FieldNumber_ClientId = 1,
+  OAuth2_FieldNumber_ClientSecret = 2,
+  OAuth2_FieldNumber_TokenURL = 3,
+  OAuth2_FieldNumber_AuthURL = 4,
+  OAuth2_FieldNumber_Scopes = 5,
+  OAuth2_FieldNumber_Redirect = 6,
+  OAuth2_FieldNumber_Code = 7,
 };
 
-@interface Config : GPBMessage
+@interface OAuth2 : GPBMessage
 
 @property(nonatomic, readwrite, strong, null_resettable) String *clientId;
 /** Test to see if @c clientId has been set. */
@@ -1006,9 +1005,90 @@ typedef GPB_ENUM(Config_FieldNumber) {
 /** Test to see if @c redirect has been set. */
 @property(nonatomic, readwrite) BOOL hasRedirect;
 
+@property(nonatomic, readwrite, strong, null_resettable) String *code;
+/** Test to see if @c code has been set. */
+@property(nonatomic, readwrite) BOOL hasCode;
+
+@end
+
+#pragma mark - ClientCredentials
+
+typedef GPB_ENUM(ClientCredentials_FieldNumber) {
+  ClientCredentials_FieldNumber_ClientId = 1,
+  ClientCredentials_FieldNumber_ClientSecret = 2,
+  ClientCredentials_FieldNumber_TokenURL = 3,
+  ClientCredentials_FieldNumber_Scopes = 4,
+  ClientCredentials_FieldNumber_EndpointParams = 5,
+};
+
+@interface ClientCredentials : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
+/** Test to see if @c clientId has been set. */
+@property(nonatomic, readwrite) BOOL hasClientId;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
+/** Test to see if @c clientSecret has been set. */
+@property(nonatomic, readwrite) BOOL hasClientSecret;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
+/** Test to see if @c tokenURL has been set. */
+@property(nonatomic, readwrite) BOOL hasTokenURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
+/** Test to see if @c scopes has been set. */
+@property(nonatomic, readwrite) BOOL hasScopes;
+
 @property(nonatomic, readwrite, strong, null_resettable) StringMap *endpointParams;
 /** Test to see if @c endpointParams has been set. */
 @property(nonatomic, readwrite) BOOL hasEndpointParams;
+
+@end
+
+#pragma mark - JWT
+
+typedef GPB_ENUM(JWT_FieldNumber) {
+  JWT_FieldNumber_Email = 1,
+  JWT_FieldNumber_PrivateKey = 2,
+  JWT_FieldNumber_PriveKeyId = 3,
+  JWT_FieldNumber_Subject = 4,
+  JWT_FieldNumber_Scopes = 5,
+  JWT_FieldNumber_TokenURL = 6,
+  JWT_FieldNumber_Expires = 7,
+  JWT_FieldNumber_Audience = 8,
+};
+
+@interface JWT : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) String *email;
+/** Test to see if @c email has been set. */
+@property(nonatomic, readwrite) BOOL hasEmail;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *privateKey;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *priveKeyId;
+/** Test to see if @c priveKeyId has been set. */
+@property(nonatomic, readwrite) BOOL hasPriveKeyId;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *subject;
+/** Test to see if @c subject has been set. */
+@property(nonatomic, readwrite) BOOL hasSubject;
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
+/** Test to see if @c scopes has been set. */
+@property(nonatomic, readwrite) BOOL hasScopes;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
+/** Test to see if @c tokenURL has been set. */
+@property(nonatomic, readwrite) BOOL hasTokenURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *expires;
+/** Test to see if @c expires has been set. */
+@property(nonatomic, readwrite) BOOL hasExpires;
+
+@property(nonatomic, readwrite, strong, null_resettable) String *audience;
+/** Test to see if @c audience has been set. */
+@property(nonatomic, readwrite) BOOL hasAudience;
 
 @end
 
@@ -1077,20 +1157,6 @@ typedef GPB_ENUM(Event_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) String *userId;
 /** Test to see if @c userId has been set. */
 @property(nonatomic, readwrite) BOOL hasUserId;
-
-@end
-
-#pragma mark - ConfigSet
-
-typedef GPB_ENUM(ConfigSet_FieldNumber) {
-  ConfigSet_FieldNumber_Configs = 1,
-};
-
-@interface ConfigSet : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, Config*> *configs;
-/** The number of items in @c configs without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger configs_Count;
 
 @end
 

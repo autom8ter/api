@@ -15,6 +15,32 @@
     "application/json"
   ],
   "paths": {
+    "/authentication/user/get": {
+      "post": {
+        "operationId": "GetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/commonAuthToken"
+            }
+          }
+        ],
+        "tags": [
+          "AuthenticationService"
+        ]
+      }
+    },
     "/contact/call/blast": {
       "post": {
         "operationId": "SendCallBlast",
@@ -249,6 +275,110 @@
         ]
       }
     },
+    "/management/user/get": {
+      "post": {
+        "operationId": "GetUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/commonIdentifier"
+            }
+          }
+        ],
+        "tags": [
+          "ManagementService"
+        ]
+      }
+    },
+    "/management/user/query": {
+      "post": {
+        "operationId": "QueryUserEvents",
+        "responses": {
+          "200": {
+            "description": "A successful response.(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/apiEvent"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiQuery"
+            }
+          }
+        ],
+        "tags": [
+          "ManagementService"
+        ]
+      }
+    },
+    "/management/user/roles": {
+      "post": {
+        "operationId": "AddUserRoles",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/commonString"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiAddUserRolesRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ManagementService"
+        ]
+      }
+    },
+    "/management/user/update": {
+      "post": {
+        "operationId": "UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apiUser"
+            }
+          }
+        ],
+        "tags": [
+          "ManagementService"
+        ]
+      }
+    },
     "/payment/number": {
       "post": {
         "operationId": "PurchasePhoneNumber",
@@ -350,110 +480,6 @@
         ],
         "tags": [
           "PaymentService"
-        ]
-      }
-    },
-    "/resource/user/get": {
-      "post": {
-        "operationId": "GetUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonIdentifier"
-            }
-          }
-        ],
-        "tags": [
-          "ManagementService"
-        ]
-      }
-    },
-    "/resource/user/query": {
-      "post": {
-        "operationId": "QueryUserEvents",
-        "responses": {
-          "200": {
-            "description": "A successful response.(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/apiEvent"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiQuery"
-            }
-          }
-        ],
-        "tags": [
-          "ManagementService"
-        ]
-      }
-    },
-    "/resource/user/roles": {
-      "post": {
-        "operationId": "AddUserRoles",
-        "responses": {
-          "200": {
-            "description": "A successful response.(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/apiRole"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/commonIdentifier"
-            }
-          }
-        ],
-        "tags": [
-          "ManagementService"
-        ]
-      }
-    },
-    "/resource/user/update": {
-      "post": {
-        "operationId": "UpdateUser",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/apiUser"
-            }
-          }
-        ],
-        "tags": [
-          "ManagementService"
         ]
       }
     },
@@ -615,6 +641,20 @@
     }
   },
   "definitions": {
+    "apiAddUserRolesRequest": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "$ref": "#/definitions/commonIdentifier"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/apiRole"
+          }
+        }
+      }
+    },
     "apiCall": {
       "type": "object",
       "properties": {
@@ -1162,6 +1202,14 @@
           "items": {
             "$ref": "#/definitions/apiIdentity"
           }
+        }
+      }
+    },
+    "commonAuthToken": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "$ref": "#/definitions/commonString"
         }
       }
     },

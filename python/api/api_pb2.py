@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x13\x63ommon/common.proto\"R\n\x13\x41\x64\x64UserRolesRequest\x12!\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x18\n\x05roles\x18\x02 \x03(\x0b\x32\t.api.Role\"\xba\x01\n\x03\x46\x61x\x12\x1a\n\x02to\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tmedia_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07quality\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x13\n\x0bstore_media\x18\x06 \x01(\x08\"\xc4\x01\n\x08\x46\x61xBlast\x12\x1f\n\x02to\x18\x01 \x01(\x0b\x32\x13.common.StringArray\x12\x1c\n\x04\x66rom\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tmedia_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07quality\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x13\n\x0bstore_media\x18\x06 \x01(\x08\"c\n\x10SubscribeRequest\x12\x1d\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x17\n\x04plan\x18\x02 \x01(\x0e\x32\t.api.Plan\x12\x17\n\x04\x63\x61rd\x18\x03 \x01(\x0b\x32\t.api.Card\"L\n\x12UnSubscribeRequest\x12\x1d\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x17\n\x04plan\x18\x02 \x01(\x0e\x32\t.api.Plan\"\x88\x01\n\x04\x43\x61rd\x12\x1e\n\x06number\x18\x01 \x01(\x0b\x32\x0e.common.String\x12!\n\texp_month\x18\x02 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x65xp_year\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x63vc\x18\x04 \x01(\x0b\x32\x0e.common.String\"\xc4\x01\n\x03SMS\x12\x1f\n\x07service\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02to\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07message\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08mediaURL\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x61pp\x18\x06 \x01(\x0b\x32\x0e.common.String\"\xce\x01\n\x08SMSBlast\x12\x1f\n\x07service\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x02to\x18\x02 \x01(\x0b\x32\x13.common.StringArray\x12\x1f\n\x07message\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08mediaURL\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x61pp\x18\x06 \x01(\x0b\x32\x0e.common.String\"p\n\x0c\x45mailRequest\x12!\n\tfrom_name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\nfrom_email\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x05\x65mail\x18\x03 \x01(\x0b\x32\n.api.Email\"z\n\x11\x45mailBlastRequest\x12!\n\tfrom_name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\nfrom_email\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x05\x62last\x18\x03 \x01(\x0b\x32\x0f.api.EmailBlast\"\x93\x01\n\nEmailBlast\x12\'\n\x0cname_address\x18\x01 \x01(\x0b\x32\x11.common.StringMap\x12\x1f\n\x07subject\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05plain\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04html\x18\x04 \x01(\x0b\x32\x0e.common.String\"\xa4\x01\n\x05\x45mail\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x61\x64\x64ress\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07subject\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05plain\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04html\x18\x05 \x01(\x0b\x32\x0e.common.String\"]\n\x04\x43\x61ll\x12\x1c\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02to\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x61pp\x18\x03 \x01(\x0b\x32\x0e.common.String\"g\n\tCallBlast\x12\x1c\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x02to\x18\x02 \x01(\x0b\x32\x13.common.StringArray\x12\x1b\n\x03\x61pp\x18\x03 \x01(\x0b\x32\x0e.common.String\"\xd1\x05\n\x04User\x12#\n\x07user_id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\"\n\ngiven_name\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x66\x61mily_name\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06gender\x18\x05 \x01(\x0b\x32\x0e.common.String\x12!\n\tbirthdate\x18\x06 \x01(\x0b\x32\x0e.common.String\x12!\n\x05\x65mail\x18\x07 \x01(\x0b\x32\x12.common.Identifier\x12(\n\x0cphone_number\x18\x08 \x01(\x0b\x32\x12.common.Identifier\x12\x1f\n\x07picture\x18\t \x01(\x0b\x32\x0e.common.String\x12(\n\ruser_metadata\x18\n \x01(\x0b\x32\x11.common.StringMap\x12\'\n\x0c\x61pp_metadata\x18\x0b \x01(\x0b\x32\x11.common.StringMap\x12\x1f\n\x07last_ip\x18\x0c \x01(\x0b\x32\x0e.common.String\x12\x0f\n\x07\x62locked\x18\r \x01(\x08\x12 \n\x08nickname\x18\x0e \x01(\x0b\x32\x0e.common.String\x12(\n\x0bmultifactor\x18\x0f \x01(\x0b\x32\x13.common.StringArray\x12\"\n\ncreated_at\x18\x11 \x01(\x0b\x32\x0e.common.String\x12\"\n\nupdated_at\x18\x12 \x01(\x0b\x32\x0e.common.String\x12\x16\n\x0ephone_verified\x18\x13 \x01(\x08\x12\x16\n\x0e\x65mail_verified\x18\x14 \x01(\x08\x12 \n\x08password\x18\x15 \x01(\x0b\x32\x0e.common.String\x12!\n\nidentities\x18\x16 \x03(\x0b\x32\r.api.Identity\"\x87\x01\n\x08Identity\x12\"\n\nconnection\x18\x01 \x01(\x0b\x32\x0e.common.String\x12#\n\x07user_id\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12 \n\x08provider\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x10\n\x08isSocial\x18\x04 \x01(\x08\"i\n\rRenderRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04text\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x0e.common.String\"\x8e\x01\n\x18SearchPhoneNumberRequest\x12\x1d\n\x05state\x18\x01 \x01(\x0b\x32\x0e.common.String\x12-\n\x0c\x63\x61pabilities\x18\x02 \x01(\x0b\x32\x17.api.NumberCapabilities\x12$\n\rtotal_results\x18\x03 \x01(\x0b\x32\r.common.Int64\"\xa9\x01\n\x0bPhoneNumber\x12%\n\rfriendly_name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12$\n\x0cphone_number\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06region\x18\x03 \x01(\x0b\x32\x0e.common.String\x12-\n\x0c\x63\x61pabilities\x18\x04 \x01(\x0b\x32\x17.api.NumberCapabilities\"=\n\x12NumberCapabilities\x12\r\n\x05voice\x18\x01 \x01(\x08\x12\x0b\n\x03sms\x18\x02 \x01(\x08\x12\x0b\n\x03mms\x18\x03 \x01(\x08\"t\n\x13PhoneNumberResource\x12 \n\x06number\x18\x01 \x01(\x0b\x32\x10.api.PhoneNumber\x12\x1e\n\x02id\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12\x1b\n\x03uri\x18\x03 \x01(\x0b\x32\x0e.common.String\"i\n\x04Role\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x0e.common.String\"\xa2\x02\n\x0c\x43\x61llResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1a\n\x02to\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06status\x18\t \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x61nswered_by\x18\n \x01(\x0b\x32\x0e.common.String\x12&\n\x0e\x66orwarded_from\x18\x0b \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x63\x61ller_name\x18\x0c \x01(\x0b\x32\x0e.common.String\x12&\n\x0b\x61nnotations\x18\r \x01(\x0b\x32\x11.common.StringMap\"\xf0\x01\n\x0bSMSResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1a\n\x02to\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x06 \x01(\x0b\x32\x0e.common.String\x12!\n\tmedia_url\x18\x07 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x62ody\x18\x08 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06status\x18\t \x01(\x0b\x32\x0e.common.String\x12&\n\x0b\x61nnotations\x18\n \x01(\x0b\x32\x11.common.StringMap\"\xf6\x01\n\x14SubscriptionResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1d\n\x06\x61mount\x18\x02 \x01(\x0b\x32\r.common.Int64\x12%\n\x0e\x64\x61ys_until_due\x18\x03 \x01(\x0b\x32\r.common.Int64\x12&\n\x0b\x61nnotations\x18\n \x01(\x0b\x32\x11.common.StringMap\x12\x17\n\x04plan\x18\x04 \x01(\x0e\x32\t.api.Plan\x12\x17\n\x04user\x18\x05 \x01(\x0b\x32\t.api.User\x12\x1e\n\x06status\x18\x06 \x01(\x0b\x32\x0e.common.String\"\xd2\x01\n\x0b\x46\x61xResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12!\n\tmedia_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02to\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06status\x18\x06 \x01(\x0b\x32\x0e.common.String\x12&\n\x0b\x61nnotations\x18\n \x01(\x0b\x32\x11.common.StringMap\"\x8a\x02\n\x06\x43onfig\x12!\n\tclient_id\x18\x01 \x01(\x0b\x32\x0e.common.String\x12%\n\rclient_secret\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\ttoken_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x61uth_url\x18\x04 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x05 \x01(\x0b\x32\x13.common.StringArray\x12 \n\x08redirect\x18\x06 \x01(\x0b\x32\x0e.common.String\x12*\n\x0f\x65ndpoint_params\x18\x07 \x01(\x0b\x32\x11.common.StringMap\"F\n\x05Query\x12\x1d\n\x05query\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x66ields\x18\x05 \x01(\x0b\x32\x0e.common.String\"\x90\x02\n\x05\x45vent\x12\x1c\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tclient_id\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x63lient_name\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02ip\x18\x05 \x01(\x0b\x32\x0e.common.String\x12%\n\rlocation_info\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x64\x65tails\x18\x07 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07user_id\x18\x08 \x01(\x0b\x32\x0e.common.String\"v\n\tConfigSet\x12,\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32\x1b.api.ConfigSet.ConfigsEntry\x1a;\n\x0c\x43onfigsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1a\n\x05value\x18\x02 \x01(\x0b\x32\x0b.api.Config:\x02\x38\x01\"\xc0\x01\n\x0bJSONWebKeys\x12\x1b\n\x03kty\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x03kid\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12\x1b\n\x03use\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x01n\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x01\x65\x18\x05 \x01(\x0b\x32\x0e.common.String\x12 \n\x03x5c\x18\x06 \x01(\x0b\x32\x13.common.StringArray\"&\n\x04Jwks\x12\x1e\n\x04keys\x18\x01 \x03(\x0b\x32\x10.api.JSONWebKeys*(\n\x04Plan\x12\x08\n\x04\x46REE\x10\x00\x12\t\n\x05\x42\x41SIC\x10\x01\x12\x0b\n\x07PREMIUM\x10\x02\x32\xe1\x03\n\x0eUtilityService\x12@\n\x04\x45\x63ho\x12\x0e.common.String\x1a\x0e.common.String\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/utility/echo:\x01*\x12O\n\x0b\x45\x63hoSpanish\x12\x0e.common.String\x1a\x0e.common.String\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/spanish:\x01*\x12O\n\x0b\x45\x63hoChinese\x12\x0e.common.String\x1a\x0e.common.String\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/chinese:\x01*\x12O\n\x0b\x45\x63hoEnglish\x12\x0e.common.String\x1a\x0e.common.String\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/english:\x01*\x12K\n\tEchoHindi\x12\x0e.common.String\x1a\x0e.common.String\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/utility/echo/hindi:\x01*\x12M\n\nEchoArabic\x12\x0e.common.String\x1a\x0e.common.String\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/echo/arabic:\x01*2\xd7\x05\n\x0e\x43ontactService\x12\x43\n\x07SendSMS\x12\x08.api.SMS\x1a\x10.api.SMSResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/sms/send:\x01*\x12P\n\x0cSendSMSBlast\x12\r.api.SMSBlast\x1a\x10.api.SMSResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/sms/blast:\x01*0\x01\x12K\n\x06GetSMS\x12\x12.common.Identifier\x1a\x10.api.SMSResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/contact/sms/get:\x01*\x12N\n\tSendEmail\x12\x11.api.EmailRequest\x1a\x0e.common.String\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/contact/email/send:\x01*\x12[\n\x0eSendEmailBlast\x12\x16.api.EmailBlastRequest\x1a\x0e.common.String\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/contact/email/blast:\x01*0\x01\x12G\n\x08SendCall\x12\t.api.Call\x1a\x11.api.CallResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/call/send:\x01*\x12T\n\rSendCallBlast\x12\x0e.api.CallBlast\x1a\x11.api.CallResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/contact/call/blast:\x01*0\x01\x12\x43\n\x07SendFax\x12\x08.api.Fax\x1a\x10.api.FaxResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/fax/send:\x01*\x12P\n\x0cSendFaxBlast\x12\r.api.FaxBlast\x1a\x10.api.FaxResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/fax/blast:\x01*0\x01\x32\x9d\x03\n\x0ePaymentService\x12\\\n\tSubscribe\x12\x15.api.SubscribeRequest\x1a\x19.api.SubscriptionResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/payment/subscribe:\x01*\x12\x62\n\x0bUnsubscribe\x12\x17.api.UnSubscribeRequest\x1a\x19.api.SubscriptionResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/payment/unsubscribe:\x01*\x12]\n\x13PurchasePhoneNumber\x12\x10.api.PhoneNumber\x1a\x18.api.PhoneNumberResource\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/payment/number:\x01*\x12j\n\x11SearchPhoneNumber\x12\x1d.api.SearchPhoneNumberRequest\x1a\x10.api.PhoneNumber\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/payment/numbers/search:\x01*0\x01\x32\xdd\x03\n\x15\x41uthenticationService\x12\x46\n\nQueryUsers\x12\n.api.Query\x1a\t.api.User\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/query:\x01*0\x01\x12G\n\x07GetUser\x12\x12.common.Identifier\x1a\t.api.User\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/resource/user/get:\x01*\x12\x44\n\nUpdateUser\x12\t.api.User\x1a\t.api.User\" \x82\xd3\xe4\x93\x02\x1a\"\x15/resource/user/update:\x01*\x12M\n\tUserRoles\x12\x12.common.Identifier\x1a\t.api.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/roles:\x01*0\x01\x12P\n\x0c\x41\x64\x64UserRoles\x12\x12.common.Identifier\x1a\t.api.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/roles:\x01*0\x01\x12L\n\x0fQueryUserEvents\x12\n.api.Query\x1a\n.api.Event\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/query:\x01*0\x01\x32\xd9\x03\n\x11ManagementService\x12\x46\n\nQueryUsers\x12\n.api.Query\x1a\t.api.User\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/query:\x01*0\x01\x12G\n\x07GetUser\x12\x12.common.Identifier\x1a\t.api.User\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/resource/user/get:\x01*\x12\x44\n\nUpdateUser\x12\t.api.User\x1a\t.api.User\" \x82\xd3\xe4\x93\x02\x1a\"\x15/resource/user/update:\x01*\x12M\n\tUserRoles\x12\x12.common.Identifier\x1a\t.api.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/roles:\x01*0\x01\x12P\n\x0c\x41\x64\x64UserRoles\x12\x12.common.Identifier\x1a\t.api.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/roles:\x01*0\x01\x12L\n\x0fQueryUserEvents\x12\n.api.Query\x1a\n.api.Event\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/resource/user/query:\x01*0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x13\x63ommon/common.proto\"R\n\x13\x41\x64\x64UserRolesRequest\x12!\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x18\n\x05roles\x18\x02 \x03(\x0b\x32\t.api.Role\"\xba\x01\n\x03\x46\x61x\x12\x1a\n\x02to\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tmedia_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07quality\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x13\n\x0bstore_media\x18\x06 \x01(\x08\"\xc4\x01\n\x08\x46\x61xBlast\x12\x1f\n\x02to\x18\x01 \x01(\x0b\x32\x13.common.StringArray\x12\x1c\n\x04\x66rom\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tmedia_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07quality\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x13\n\x0bstore_media\x18\x06 \x01(\x08\"c\n\x10SubscribeRequest\x12\x1d\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x17\n\x04plan\x18\x02 \x01(\x0e\x32\t.api.Plan\x12\x17\n\x04\x63\x61rd\x18\x03 \x01(\x0b\x32\t.api.Card\"L\n\x12UnSubscribeRequest\x12\x1d\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x17\n\x04plan\x18\x02 \x01(\x0e\x32\t.api.Plan\"\x88\x01\n\x04\x43\x61rd\x12\x1e\n\x06number\x18\x01 \x01(\x0b\x32\x0e.common.String\x12!\n\texp_month\x18\x02 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x65xp_year\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x63vc\x18\x04 \x01(\x0b\x32\x0e.common.String\"\xc4\x01\n\x03SMS\x12\x1f\n\x07service\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02to\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07message\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08mediaURL\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x61pp\x18\x06 \x01(\x0b\x32\x0e.common.String\"\xce\x01\n\x08SMSBlast\x12\x1f\n\x07service\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x02to\x18\x02 \x01(\x0b\x32\x13.common.StringArray\x12\x1f\n\x07message\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08mediaURL\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x63\x61llback\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x61pp\x18\x06 \x01(\x0b\x32\x0e.common.String\"p\n\x0c\x45mailRequest\x12!\n\tfrom_name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\nfrom_email\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x05\x65mail\x18\x03 \x01(\x0b\x32\n.api.Email\"z\n\x11\x45mailBlastRequest\x12!\n\tfrom_name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\"\n\nfrom_email\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x05\x62last\x18\x03 \x01(\x0b\x32\x0f.api.EmailBlast\"\x93\x01\n\nEmailBlast\x12\'\n\x0cname_address\x18\x01 \x01(\x0b\x32\x11.common.StringMap\x12\x1f\n\x07subject\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05plain\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04html\x18\x04 \x01(\x0b\x32\x0e.common.String\"\xa4\x01\n\x05\x45mail\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x61\x64\x64ress\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07subject\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05plain\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04html\x18\x05 \x01(\x0b\x32\x0e.common.String\"]\n\x04\x43\x61ll\x12\x1c\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02to\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x61pp\x18\x03 \x01(\x0b\x32\x0e.common.String\"g\n\tCallBlast\x12\x1c\n\x04\x66rom\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x02to\x18\x02 \x01(\x0b\x32\x13.common.StringArray\x12\x1b\n\x03\x61pp\x18\x03 \x01(\x0b\x32\x0e.common.String\"\xd1\x05\n\x04User\x12#\n\x07user_id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\"\n\ngiven_name\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x66\x61mily_name\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06gender\x18\x05 \x01(\x0b\x32\x0e.common.String\x12!\n\tbirthdate\x18\x06 \x01(\x0b\x32\x0e.common.String\x12!\n\x05\x65mail\x18\x07 \x01(\x0b\x32\x12.common.Identifier\x12(\n\x0cphone_number\x18\x08 \x01(\x0b\x32\x12.common.Identifier\x12\x1f\n\x07picture\x18\t \x01(\x0b\x32\x0e.common.String\x12(\n\ruser_metadata\x18\n \x01(\x0b\x32\x11.common.StringMap\x12\'\n\x0c\x61pp_metadata\x18\x0b \x01(\x0b\x32\x11.common.StringMap\x12\x1f\n\x07last_ip\x18\x0c \x01(\x0b\x32\x0e.common.String\x12\x0f\n\x07\x62locked\x18\r \x01(\x08\x12 \n\x08nickname\x18\x0e \x01(\x0b\x32\x0e.common.String\x12(\n\x0bmultifactor\x18\x0f \x01(\x0b\x32\x13.common.StringArray\x12\"\n\ncreated_at\x18\x11 \x01(\x0b\x32\x0e.common.String\x12\"\n\nupdated_at\x18\x12 \x01(\x0b\x32\x0e.common.String\x12\x16\n\x0ephone_verified\x18\x13 \x01(\x08\x12\x16\n\x0e\x65mail_verified\x18\x14 \x01(\x08\x12 \n\x08password\x18\x15 \x01(\x0b\x32\x0e.common.String\x12!\n\nidentities\x18\x16 \x03(\x0b\x32\r.api.Identity\"\x87\x01\n\x08Identity\x12\"\n\nconnection\x18\x01 \x01(\x0b\x32\x0e.common.String\x12#\n\x07user_id\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12 \n\x08provider\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x10\n\x08isSocial\x18\x04 \x01(\x08\"i\n\rRenderRequest\x12\x1c\n\x04name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04text\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x0e.common.String\"\x8e\x01\n\x18SearchPhoneNumberRequest\x12\x1d\n\x05state\x18\x01 \x01(\x0b\x32\x0e.common.String\x12-\n\x0c\x63\x61pabilities\x18\x02 \x01(\x0b\x32\x17.api.NumberCapabilities\x12$\n\rtotal_results\x18\x03 \x01(\x0b\x32\r.common.Int64\"\xa9\x01\n\x0bPhoneNumber\x12%\n\rfriendly_name\x18\x01 \x01(\x0b\x32\x0e.common.String\x12$\n\x0cphone_number\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06region\x18\x03 \x01(\x0b\x32\x0e.common.String\x12-\n\x0c\x63\x61pabilities\x18\x04 \x01(\x0b\x32\x17.api.NumberCapabilities\"=\n\x12NumberCapabilities\x12\r\n\x05voice\x18\x01 \x01(\x08\x12\x0b\n\x03sms\x18\x02 \x01(\x08\x12\x0b\n\x03mms\x18\x03 \x01(\x08\"t\n\x13PhoneNumberResource\x12 \n\x06number\x18\x01 \x01(\x0b\x32\x10.api.PhoneNumber\x12\x1e\n\x02id\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12\x1b\n\x03uri\x18\x03 \x01(\x0b\x32\x0e.common.String\"i\n\x04Role\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x0e.common.String\"\xa2\x02\n\x0c\x43\x61llResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1a\n\x02to\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06status\x18\t \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x61nswered_by\x18\n \x01(\x0b\x32\x0e.common.String\x12&\n\x0e\x66orwarded_from\x18\x0b \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x63\x61ller_name\x18\x0c \x01(\x0b\x32\x0e.common.String\x12&\n\x0b\x61nnotations\x18\r \x01(\x0b\x32\x11.common.StringMap\"\xf0\x01\n\x0bSMSResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1a\n\x02to\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x06 \x01(\x0b\x32\x0e.common.String\x12!\n\tmedia_url\x18\x07 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x62ody\x18\x08 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06status\x18\t \x01(\x0b\x32\x0e.common.String\x12&\n\x0b\x61nnotations\x18\n \x01(\x0b\x32\x11.common.StringMap\"\xf6\x01\n\x14SubscriptionResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1d\n\x06\x61mount\x18\x02 \x01(\x0b\x32\r.common.Int64\x12%\n\x0e\x64\x61ys_until_due\x18\x03 \x01(\x0b\x32\r.common.Int64\x12&\n\x0b\x61nnotations\x18\n \x01(\x0b\x32\x11.common.StringMap\x12\x17\n\x04plan\x18\x04 \x01(\x0e\x32\t.api.Plan\x12\x17\n\x04user\x18\x05 \x01(\x0b\x32\t.api.User\x12\x1e\n\x06status\x18\x06 \x01(\x0b\x32\x0e.common.String\"\xd2\x01\n\x0b\x46\x61xResponse\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12!\n\tmedia_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02to\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x66rom\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06status\x18\x06 \x01(\x0b\x32\x0e.common.String\x12&\n\x0b\x61nnotations\x18\n \x01(\x0b\x32\x11.common.StringMap\"\xfc\x01\n\x06OAuth2\x12!\n\tclient_id\x18\x01 \x01(\x0b\x32\x0e.common.String\x12%\n\rclient_secret\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\ttoken_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x61uth_url\x18\x04 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x05 \x01(\x0b\x32\x13.common.StringArray\x12 \n\x08redirect\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x63ode\x18\x07 \x01(\x0b\x32\x0e.common.String\"\xd1\x01\n\x11\x43lientCredentials\x12!\n\tclient_id\x18\x01 \x01(\x0b\x32\x0e.common.String\x12%\n\rclient_secret\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\ttoken_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x04 \x01(\x0b\x32\x13.common.StringArray\x12*\n\x0f\x65ndpoint_params\x18\x05 \x01(\x0b\x32\x11.common.StringMap\"\x8b\x02\n\x03JWT\x12\x1d\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x13\n\x0bprivate_key\x18\x02 \x01(\x0c\x12$\n\x0cprive_key_id\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07subject\x18\x04 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x05 \x01(\x0b\x32\x13.common.StringArray\x12!\n\ttoken_url\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x65xpires\x18\x07 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x61udience\x18\x08 \x01(\x0b\x32\x0e.common.String\"F\n\x05Query\x12\x1d\n\x05query\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06\x66ields\x18\x05 \x01(\x0b\x32\x0e.common.String\"\x90\x02\n\x05\x45vent\x12\x1c\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04type\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\tclient_id\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x63lient_name\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1a\n\x02ip\x18\x05 \x01(\x0b\x32\x0e.common.String\x12%\n\rlocation_info\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x64\x65tails\x18\x07 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07user_id\x18\x08 \x01(\x0b\x32\x0e.common.String\"\xc0\x01\n\x0bJSONWebKeys\x12\x1b\n\x03kty\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x03kid\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12\x1b\n\x03use\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x01n\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x01\x65\x18\x05 \x01(\x0b\x32\x0e.common.String\x12 \n\x03x5c\x18\x06 \x01(\x0b\x32\x13.common.StringArray\"&\n\x04Jwks\x12\x1e\n\x04keys\x18\x01 \x03(\x0b\x32\x10.api.JSONWebKeys*(\n\x04Plan\x12\x08\n\x04\x46REE\x10\x00\x12\t\n\x05\x42\x41SIC\x10\x01\x12\x0b\n\x07PREMIUM\x10\x02\x32\xe1\x03\n\x0eUtilityService\x12@\n\x04\x45\x63ho\x12\x0e.common.String\x1a\x0e.common.String\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/utility/echo:\x01*\x12O\n\x0b\x45\x63hoSpanish\x12\x0e.common.String\x1a\x0e.common.String\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/spanish:\x01*\x12O\n\x0b\x45\x63hoChinese\x12\x0e.common.String\x1a\x0e.common.String\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/chinese:\x01*\x12O\n\x0b\x45\x63hoEnglish\x12\x0e.common.String\x1a\x0e.common.String\" \x82\xd3\xe4\x93\x02\x1a\"\x15/utility/echo/english:\x01*\x12K\n\tEchoHindi\x12\x0e.common.String\x1a\x0e.common.String\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/utility/echo/hindi:\x01*\x12M\n\nEchoArabic\x12\x0e.common.String\x1a\x0e.common.String\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/utility/echo/arabic:\x01*2\xd7\x05\n\x0e\x43ontactService\x12\x43\n\x07SendSMS\x12\x08.api.SMS\x1a\x10.api.SMSResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/sms/send:\x01*\x12P\n\x0cSendSMSBlast\x12\r.api.SMSBlast\x1a\x10.api.SMSResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/sms/blast:\x01*0\x01\x12K\n\x06GetSMS\x12\x12.common.Identifier\x1a\x10.api.SMSResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/contact/sms/get:\x01*\x12N\n\tSendEmail\x12\x11.api.EmailRequest\x1a\x0e.common.String\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/contact/email/send:\x01*\x12[\n\x0eSendEmailBlast\x12\x16.api.EmailBlastRequest\x1a\x0e.common.String\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/contact/email/blast:\x01*0\x01\x12G\n\x08SendCall\x12\t.api.Call\x1a\x11.api.CallResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/call/send:\x01*\x12T\n\rSendCallBlast\x12\x0e.api.CallBlast\x1a\x11.api.CallResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/contact/call/blast:\x01*0\x01\x12\x43\n\x07SendFax\x12\x08.api.Fax\x1a\x10.api.FaxResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/contact/fax/send:\x01*\x12P\n\x0cSendFaxBlast\x12\r.api.FaxBlast\x1a\x10.api.FaxResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/contact/fax/blast:\x01*0\x01\x32\x9d\x03\n\x0ePaymentService\x12\\\n\tSubscribe\x12\x15.api.SubscribeRequest\x1a\x19.api.SubscriptionResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/payment/subscribe:\x01*\x12\x62\n\x0bUnsubscribe\x12\x17.api.UnSubscribeRequest\x1a\x19.api.SubscriptionResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/payment/unsubscribe:\x01*\x12]\n\x13PurchasePhoneNumber\x12\x10.api.PhoneNumber\x1a\x18.api.PhoneNumberResource\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/payment/number:\x01*\x12j\n\x11SearchPhoneNumber\x12\x1d.api.SearchPhoneNumberRequest\x1a\x10.api.PhoneNumber\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/payment/numbers/search:\x01*0\x01\x32\x65\n\x15\x41uthenticationService\x12L\n\x07GetUser\x12\x11.common.AuthToken\x1a\t.api.User\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/authentication/user/get:\x01*2\xee\x03\n\x11ManagementService\x12H\n\nQueryUsers\x12\n.api.Query\x1a\t.api.User\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/management/user/query:\x01*0\x01\x12I\n\x07GetUser\x12\x12.common.Identifier\x1a\t.api.User\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/management/user/get:\x01*\x12\x46\n\nUpdateUser\x12\t.api.User\x1a\t.api.User\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/management/user/update:\x01*\x12O\n\tUserRoles\x12\x12.common.Identifier\x1a\t.api.Role\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/management/user/roles:\x01*0\x01\x12[\n\x0c\x41\x64\x64UserRoles\x12\x18.api.AddUserRolesRequest\x1a\x0e.common.String\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/management/user/roles:\x01*\x12N\n\x0fQueryUserEvents\x12\n.api.Query\x1a\n.api.Event\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/management/user/query:\x01*0\x01\x62\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,common_dot_common__pb2.DESCRIPTOR,])
 
@@ -47,8 +47,8 @@ _PLAN = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5565,
-  serialized_end=5605,
+  serialized_start=5913,
+  serialized_end=5953,
 )
 _sym_db.RegisterEnumDescriptor(_PLAN)
 
@@ -1579,57 +1579,57 @@ _FAXRESPONSE = _descriptor.Descriptor(
 )
 
 
-_CONFIG = _descriptor.Descriptor(
-  name='Config',
-  full_name='api.Config',
+_OAUTH2 = _descriptor.Descriptor(
+  name='OAuth2',
+  full_name='api.OAuth2',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='client_id', full_name='api.Config.client_id', index=0,
+      name='client_id', full_name='api.OAuth2.client_id', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='client_secret', full_name='api.Config.client_secret', index=1,
+      name='client_secret', full_name='api.OAuth2.client_secret', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='token_url', full_name='api.Config.token_url', index=2,
+      name='token_url', full_name='api.OAuth2.token_url', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='auth_url', full_name='api.Config.auth_url', index=3,
+      name='auth_url', full_name='api.OAuth2.auth_url', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='scopes', full_name='api.Config.scopes', index=4,
+      name='scopes', full_name='api.OAuth2.scopes', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='redirect', full_name='api.Config.redirect', index=5,
+      name='redirect', full_name='api.OAuth2.redirect', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='endpoint_params', full_name='api.Config.endpoint_params', index=6,
+      name='code', full_name='api.OAuth2.code', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1648,7 +1648,146 @@ _CONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=4595,
-  serialized_end=4861,
+  serialized_end=4847,
+)
+
+
+_CLIENTCREDENTIALS = _descriptor.Descriptor(
+  name='ClientCredentials',
+  full_name='api.ClientCredentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='client_id', full_name='api.ClientCredentials.client_id', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='client_secret', full_name='api.ClientCredentials.client_secret', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token_url', full_name='api.ClientCredentials.token_url', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='api.ClientCredentials.scopes', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='endpoint_params', full_name='api.ClientCredentials.endpoint_params', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4850,
+  serialized_end=5059,
+)
+
+
+_JWT = _descriptor.Descriptor(
+  name='JWT',
+  full_name='api.JWT',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='email', full_name='api.JWT.email', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='private_key', full_name='api.JWT.private_key', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='prive_key_id', full_name='api.JWT.prive_key_id', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subject', full_name='api.JWT.subject', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='api.JWT.scopes', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token_url', full_name='api.JWT.token_url', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expires', full_name='api.JWT.expires', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='audience', full_name='api.JWT.audience', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5062,
+  serialized_end=5329,
 )
 
 
@@ -1685,8 +1824,8 @@ _QUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4863,
-  serialized_end=4933,
+  serialized_start=5331,
+  serialized_end=5401,
 )
 
 
@@ -1765,76 +1904,8 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4936,
-  serialized_end=5208,
-)
-
-
-_CONFIGSET_CONFIGSENTRY = _descriptor.Descriptor(
-  name='ConfigsEntry',
-  full_name='api.ConfigSet.ConfigsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='api.ConfigSet.ConfigsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='api.ConfigSet.ConfigsEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=_b('8\001'),
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=5269,
-  serialized_end=5328,
-)
-
-_CONFIGSET = _descriptor.Descriptor(
-  name='ConfigSet',
-  full_name='api.ConfigSet',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='configs', full_name='api.ConfigSet.configs', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CONFIGSET_CONFIGSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=5210,
-  serialized_end=5328,
+  serialized_start=5404,
+  serialized_end=5676,
 )
 
 
@@ -1899,8 +1970,8 @@ _JSONWEBKEYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5331,
-  serialized_end=5523,
+  serialized_start=5679,
+  serialized_end=5871,
 )
 
 
@@ -1930,8 +2001,8 @@ _JWKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5525,
-  serialized_end=5563,
+  serialized_start=5873,
+  serialized_end=5911,
 )
 
 _ADDUSERROLESREQUEST.fields_by_name['email'].message_type = common_dot_common__pb2._IDENTIFIER
@@ -2053,13 +2124,25 @@ _FAXRESPONSE.fields_by_name['to'].message_type = common_dot_common__pb2._STRING
 _FAXRESPONSE.fields_by_name['from'].message_type = common_dot_common__pb2._STRING
 _FAXRESPONSE.fields_by_name['status'].message_type = common_dot_common__pb2._STRING
 _FAXRESPONSE.fields_by_name['annotations'].message_type = common_dot_common__pb2._STRINGMAP
-_CONFIG.fields_by_name['client_id'].message_type = common_dot_common__pb2._STRING
-_CONFIG.fields_by_name['client_secret'].message_type = common_dot_common__pb2._STRING
-_CONFIG.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
-_CONFIG.fields_by_name['auth_url'].message_type = common_dot_common__pb2._STRING
-_CONFIG.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
-_CONFIG.fields_by_name['redirect'].message_type = common_dot_common__pb2._STRING
-_CONFIG.fields_by_name['endpoint_params'].message_type = common_dot_common__pb2._STRINGMAP
+_OAUTH2.fields_by_name['client_id'].message_type = common_dot_common__pb2._STRING
+_OAUTH2.fields_by_name['client_secret'].message_type = common_dot_common__pb2._STRING
+_OAUTH2.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
+_OAUTH2.fields_by_name['auth_url'].message_type = common_dot_common__pb2._STRING
+_OAUTH2.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
+_OAUTH2.fields_by_name['redirect'].message_type = common_dot_common__pb2._STRING
+_OAUTH2.fields_by_name['code'].message_type = common_dot_common__pb2._STRING
+_CLIENTCREDENTIALS.fields_by_name['client_id'].message_type = common_dot_common__pb2._STRING
+_CLIENTCREDENTIALS.fields_by_name['client_secret'].message_type = common_dot_common__pb2._STRING
+_CLIENTCREDENTIALS.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
+_CLIENTCREDENTIALS.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
+_CLIENTCREDENTIALS.fields_by_name['endpoint_params'].message_type = common_dot_common__pb2._STRINGMAP
+_JWT.fields_by_name['email'].message_type = common_dot_common__pb2._STRING
+_JWT.fields_by_name['prive_key_id'].message_type = common_dot_common__pb2._STRING
+_JWT.fields_by_name['subject'].message_type = common_dot_common__pb2._STRING
+_JWT.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
+_JWT.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
+_JWT.fields_by_name['expires'].message_type = common_dot_common__pb2._STRING
+_JWT.fields_by_name['audience'].message_type = common_dot_common__pb2._STRING
 _QUERY.fields_by_name['query'].message_type = common_dot_common__pb2._STRING
 _QUERY.fields_by_name['fields'].message_type = common_dot_common__pb2._STRING
 _EVENT.fields_by_name['date'].message_type = common_dot_common__pb2._STRING
@@ -2070,9 +2153,6 @@ _EVENT.fields_by_name['ip'].message_type = common_dot_common__pb2._STRING
 _EVENT.fields_by_name['location_info'].message_type = common_dot_common__pb2._STRING
 _EVENT.fields_by_name['details'].message_type = common_dot_common__pb2._STRING
 _EVENT.fields_by_name['user_id'].message_type = common_dot_common__pb2._STRING
-_CONFIGSET_CONFIGSENTRY.fields_by_name['value'].message_type = _CONFIG
-_CONFIGSET_CONFIGSENTRY.containing_type = _CONFIGSET
-_CONFIGSET.fields_by_name['configs'].message_type = _CONFIGSET_CONFIGSENTRY
 _JSONWEBKEYS.fields_by_name['kty'].message_type = common_dot_common__pb2._STRING
 _JSONWEBKEYS.fields_by_name['kid'].message_type = common_dot_common__pb2._IDENTIFIER
 _JSONWEBKEYS.fields_by_name['use'].message_type = common_dot_common__pb2._STRING
@@ -2106,10 +2186,11 @@ DESCRIPTOR.message_types_by_name['CallResponse'] = _CALLRESPONSE
 DESCRIPTOR.message_types_by_name['SMSResponse'] = _SMSRESPONSE
 DESCRIPTOR.message_types_by_name['SubscriptionResponse'] = _SUBSCRIPTIONRESPONSE
 DESCRIPTOR.message_types_by_name['FaxResponse'] = _FAXRESPONSE
-DESCRIPTOR.message_types_by_name['Config'] = _CONFIG
+DESCRIPTOR.message_types_by_name['OAuth2'] = _OAUTH2
+DESCRIPTOR.message_types_by_name['ClientCredentials'] = _CLIENTCREDENTIALS
+DESCRIPTOR.message_types_by_name['JWT'] = _JWT
 DESCRIPTOR.message_types_by_name['Query'] = _QUERY
 DESCRIPTOR.message_types_by_name['Event'] = _EVENT
-DESCRIPTOR.message_types_by_name['ConfigSet'] = _CONFIGSET
 DESCRIPTOR.message_types_by_name['JSONWebKeys'] = _JSONWEBKEYS
 DESCRIPTOR.message_types_by_name['Jwks'] = _JWKS
 DESCRIPTOR.enum_types_by_name['Plan'] = _PLAN
@@ -2297,12 +2378,26 @@ FaxResponse = _reflection.GeneratedProtocolMessageType('FaxResponse', (_message.
   ))
 _sym_db.RegisterMessage(FaxResponse)
 
-Config = _reflection.GeneratedProtocolMessageType('Config', (_message.Message,), dict(
-  DESCRIPTOR = _CONFIG,
+OAuth2 = _reflection.GeneratedProtocolMessageType('OAuth2', (_message.Message,), dict(
+  DESCRIPTOR = _OAUTH2,
   __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Config)
+  # @@protoc_insertion_point(class_scope:api.OAuth2)
   ))
-_sym_db.RegisterMessage(Config)
+_sym_db.RegisterMessage(OAuth2)
+
+ClientCredentials = _reflection.GeneratedProtocolMessageType('ClientCredentials', (_message.Message,), dict(
+  DESCRIPTOR = _CLIENTCREDENTIALS,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.ClientCredentials)
+  ))
+_sym_db.RegisterMessage(ClientCredentials)
+
+JWT = _reflection.GeneratedProtocolMessageType('JWT', (_message.Message,), dict(
+  DESCRIPTOR = _JWT,
+  __module__ = 'api_pb2'
+  # @@protoc_insertion_point(class_scope:api.JWT)
+  ))
+_sym_db.RegisterMessage(JWT)
 
 Query = _reflection.GeneratedProtocolMessageType('Query', (_message.Message,), dict(
   DESCRIPTOR = _QUERY,
@@ -2317,21 +2412,6 @@ Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), d
   # @@protoc_insertion_point(class_scope:api.Event)
   ))
 _sym_db.RegisterMessage(Event)
-
-ConfigSet = _reflection.GeneratedProtocolMessageType('ConfigSet', (_message.Message,), dict(
-
-  ConfigsEntry = _reflection.GeneratedProtocolMessageType('ConfigsEntry', (_message.Message,), dict(
-    DESCRIPTOR = _CONFIGSET_CONFIGSENTRY,
-    __module__ = 'api_pb2'
-    # @@protoc_insertion_point(class_scope:api.ConfigSet.ConfigsEntry)
-    ))
-  ,
-  DESCRIPTOR = _CONFIGSET,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.ConfigSet)
-  ))
-_sym_db.RegisterMessage(ConfigSet)
-_sym_db.RegisterMessage(ConfigSet.ConfigsEntry)
 
 JSONWebKeys = _reflection.GeneratedProtocolMessageType('JSONWebKeys', (_message.Message,), dict(
   DESCRIPTOR = _JSONWEBKEYS,
@@ -2348,7 +2428,6 @@ Jwks = _reflection.GeneratedProtocolMessageType('Jwks', (_message.Message,), dic
 _sym_db.RegisterMessage(Jwks)
 
 
-_CONFIGSET_CONFIGSENTRY._options = None
 
 _UTILITYSERVICE = _descriptor.ServiceDescriptor(
   name='UtilityService',
@@ -2356,8 +2435,8 @@ _UTILITYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=5608,
-  serialized_end=6089,
+  serialized_start=5956,
+  serialized_end=6437,
   methods=[
   _descriptor.MethodDescriptor(
     name='Echo',
@@ -2425,8 +2504,8 @@ _CONTACTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=6092,
-  serialized_end=6819,
+  serialized_start=6440,
+  serialized_end=7167,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendSMS',
@@ -2521,8 +2600,8 @@ _PAYMENTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=6822,
-  serialized_end=7235,
+  serialized_start=7170,
+  serialized_end=7583,
   methods=[
   _descriptor.MethodDescriptor(
     name='Subscribe',
@@ -2572,62 +2651,17 @@ _AUTHENTICATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=3,
   serialized_options=None,
-  serialized_start=7238,
-  serialized_end=7715,
+  serialized_start=7585,
+  serialized_end=7686,
   methods=[
-  _descriptor.MethodDescriptor(
-    name='QueryUsers',
-    full_name='api.AuthenticationService.QueryUsers',
-    index=0,
-    containing_service=None,
-    input_type=_QUERY,
-    output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/query:\001*'),
-  ),
   _descriptor.MethodDescriptor(
     name='GetUser',
     full_name='api.AuthenticationService.GetUser',
-    index=1,
+    index=0,
     containing_service=None,
-    input_type=common_dot_common__pb2._IDENTIFIER,
+    input_type=common_dot_common__pb2._AUTHTOKEN,
     output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\027\"\022/resource/user/get:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateUser',
-    full_name='api.AuthenticationService.UpdateUser',
-    index=2,
-    containing_service=None,
-    input_type=_USER,
-    output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\032\"\025/resource/user/update:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='UserRoles',
-    full_name='api.AuthenticationService.UserRoles',
-    index=3,
-    containing_service=None,
-    input_type=common_dot_common__pb2._IDENTIFIER,
-    output_type=_ROLE,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/roles:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='AddUserRoles',
-    full_name='api.AuthenticationService.AddUserRoles',
-    index=4,
-    containing_service=None,
-    input_type=common_dot_common__pb2._IDENTIFIER,
-    output_type=_ROLE,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/roles:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='QueryUserEvents',
-    full_name='api.AuthenticationService.QueryUserEvents',
-    index=5,
-    containing_service=None,
-    input_type=_QUERY,
-    output_type=_EVENT,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/query:\001*'),
+    serialized_options=_b('\202\323\344\223\002\035\"\030/authentication/user/get:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_AUTHENTICATIONSERVICE)
@@ -2641,8 +2675,8 @@ _MANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=4,
   serialized_options=None,
-  serialized_start=7718,
-  serialized_end=8191,
+  serialized_start=7689,
+  serialized_end=8183,
   methods=[
   _descriptor.MethodDescriptor(
     name='QueryUsers',
@@ -2651,7 +2685,7 @@ _MANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_QUERY,
     output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/query:\001*'),
+    serialized_options=_b('\202\323\344\223\002\033\"\026/management/user/query:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='GetUser',
@@ -2660,7 +2694,7 @@ _MANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=common_dot_common__pb2._IDENTIFIER,
     output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\027\"\022/resource/user/get:\001*'),
+    serialized_options=_b('\202\323\344\223\002\031\"\024/management/user/get:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='UpdateUser',
@@ -2669,7 +2703,7 @@ _MANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_USER,
     output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\032\"\025/resource/user/update:\001*'),
+    serialized_options=_b('\202\323\344\223\002\034\"\027/management/user/update:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='UserRoles',
@@ -2678,16 +2712,16 @@ _MANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=common_dot_common__pb2._IDENTIFIER,
     output_type=_ROLE,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/roles:\001*'),
+    serialized_options=_b('\202\323\344\223\002\033\"\026/management/user/roles:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='AddUserRoles',
     full_name='api.ManagementService.AddUserRoles',
     index=4,
     containing_service=None,
-    input_type=common_dot_common__pb2._IDENTIFIER,
-    output_type=_ROLE,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/roles:\001*'),
+    input_type=_ADDUSERROLESREQUEST,
+    output_type=common_dot_common__pb2._STRING,
+    serialized_options=_b('\202\323\344\223\002\033\"\026/management/user/roles:\001*'),
   ),
   _descriptor.MethodDescriptor(
     name='QueryUserEvents',
@@ -2696,7 +2730,7 @@ _MANAGEMENTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_QUERY,
     output_type=_EVENT,
-    serialized_options=_b('\202\323\344\223\002\031\"\024/resource/user/query:\001*'),
+    serialized_options=_b('\202\323\344\223\002\033\"\026/management/user/query:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_MANAGEMENTSERVICE)

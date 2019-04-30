@@ -834,6 +834,10 @@ func (s *Int64) JSONString() *String {
 	return MessageToJSONString(s)
 }
 
+func (a *AuthToken) Bearer(req *http.Request) {
+	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", a.Token))
+}
+
 func EmailIdentifier(email string) *Identifier {
 	return &Identifier{Id: ToString(email)}
 }

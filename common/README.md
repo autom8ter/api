@@ -29,6 +29,12 @@ type AuthToken struct {
 ```
 
 
+#### func (*AuthToken) Bearer
+
+```go
+func (a *AuthToken) Bearer(req *http.Request)
+```
+
 #### func (*AuthToken) Descriptor
 
 ```go

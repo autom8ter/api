@@ -130,86 +130,56 @@ service PaymentService {
 }
 
 service AuthenticationService {
-    rpc QueryUsers(Query) returns (stream User) {
+    rpc GetUser(common.AuthToken) returns (User) {
         option (google.api.http) = {
-      post: "/resource/user/query"
+      post: "/authentication/user/get"
       body: "*"
     };
     }
 
-    rpc GetUser(common.Identifier) returns (User) {
-        option (google.api.http) = {
-      post: "/resource/user/get"
-      body: "*"
-    };
-    }
-
-    rpc UpdateUser(User) returns (User) {
-        option (google.api.http) = {
-      post: "/resource/user/update"
-      body: "*"
-    };
-    }
-    rpc UserRoles(common.Identifier) returns (stream Role) {
-        option (google.api.http) = {
-      post: "/resource/user/roles"
-      body: "*"
-    };
-    }
-    rpc AddUserRoles(common.Identifier) returns (stream Role) {
-        option (google.api.http) = {
-      post: "/resource/user/roles"
-      body: "*"
-    };
-    }
-    rpc QueryUserEvents(Query) returns (stream Event) {
-        option (google.api.http) = {
-      post: "/resource/user/query"
-      body: "*"
-    };
-    }
 }
 
 service ManagementService {
     rpc QueryUsers(Query) returns (stream User) {
         option (google.api.http) = {
-      post: "/resource/user/query"
+      post: "/management/user/query"
       body: "*"
     };
     }
 
     rpc GetUser(common.Identifier) returns (User) {
         option (google.api.http) = {
-      post: "/resource/user/get"
+      post: "/management/user/get"
       body: "*"
     };
     }
 
     rpc UpdateUser(User) returns (User) {
         option (google.api.http) = {
-      post: "/resource/user/update"
+      post: "/management/user/update"
       body: "*"
     };
     }
     rpc UserRoles(common.Identifier) returns (stream Role) {
         option (google.api.http) = {
-      post: "/resource/user/roles"
+      post: "/management/user/roles"
       body: "*"
     };
     }
-    rpc AddUserRoles(common.Identifier) returns (stream Role) {
+    rpc AddUserRoles(AddUserRolesRequest) returns (common.String) {
         option (google.api.http) = {
-      post: "/resource/user/roles"
+      post: "/management/user/roles"
       body: "*"
     };
     }
     rpc QueryUserEvents(Query) returns (stream Event) {
         option (google.api.http) = {
-      post: "/resource/user/query"
+      post: "/management/user/query"
       body: "*"
     };
     }
 }
+
 message AddUserRolesRequest {
     common.Identifier email =1;
     repeated Role roles=2;
@@ -425,14 +395,33 @@ message FaxResponse {
     common.StringMap annotations=10;
 }
 
-message Config {
+message OAuth2 {
     common.String client_id=1;
     common.String client_secret=2;
     common.String token_url =3;
     common.String auth_url =4;
     common.StringArray scopes =5;
     common.String redirect =6;
-    common.StringMap endpoint_params=7;
+    common.String code =7;
+}
+
+message ClientCredentials {
+    common.String client_id=1;
+    common.String client_secret=2;
+    common.String token_url =3;
+    common.StringArray scopes =4;
+    common.StringMap endpoint_params=5;
+}
+
+message JWT {
+    common.String email=1;
+    bytes private_key=2;
+    common.String prive_key_id =3;
+    common.String subject =4;
+    common.StringArray scopes=5;
+    common.String token_url =6;
+    common.String expires =7;
+    common.String audience =8;
 }
 
 message Query {
@@ -449,10 +438,6 @@ message Event {
     common.String location_info=6;
     common.String details=7;
     common.String user_id=8;
-}
-
-message ConfigSet {
-    map<string, Config> configs =1;
 }
 
 message JSONWebKeys {

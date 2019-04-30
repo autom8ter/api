@@ -199,15 +199,7 @@
                 </li>
               
                 <li>
-                  <a href="#api.Config"><span class="badge">M</span>Config</a>
-                </li>
-              
-                <li>
-                  <a href="#api.ConfigSet"><span class="badge">M</span>ConfigSet</a>
-                </li>
-              
-                <li>
-                  <a href="#api.ConfigSet.ConfigsEntry"><span class="badge">M</span>ConfigSet.ConfigsEntry</a>
+                  <a href="#api.ClientCredentials"><span class="badge">M</span>ClientCredentials</a>
                 </li>
               
                 <li>
@@ -251,11 +243,19 @@
                 </li>
               
                 <li>
+                  <a href="#api.JWT"><span class="badge">M</span>JWT</a>
+                </li>
+              
+                <li>
                   <a href="#api.Jwks"><span class="badge">M</span>Jwks</a>
                 </li>
               
                 <li>
                   <a href="#api.NumberCapabilities"><span class="badge">M</span>NumberCapabilities</a>
+                </li>
+              
+                <li>
+                  <a href="#api.OAuth2"><span class="badge">M</span>OAuth2</a>
                 </li>
               
                 <li>
@@ -572,7 +572,7 @@
 
         
       
-        <h3 id="api.Config">Config</h3>
+        <h3 id="api.ClientCredentials">ClientCredentials</h3>
         <p></p>
 
         
@@ -604,13 +604,6 @@
                 </tr>
               
                 <tr>
-                  <td>auth_url</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>scopes</td>
                   <td><a href="#common.StringArray">common.StringArray</a></td>
                   <td></td>
@@ -618,68 +611,8 @@
                 </tr>
               
                 <tr>
-                  <td>redirect</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
                   <td>endpoint_params</td>
                   <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.ConfigSet">ConfigSet</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>configs</td>
-                  <td><a href="#api.ConfigSet.ConfigsEntry">ConfigSet.ConfigsEntry</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.ConfigSet.ConfigsEntry">ConfigSet.ConfigsEntry</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>key</td>
-                  <td><a href="#string">string</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>value</td>
-                  <td><a href="#api.Config">Config</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1207,6 +1140,78 @@
 
         
       
+        <h3 id="api.JWT">JWT</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>private_key</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prive_key_id</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>subject</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scopes</td>
+                  <td><a href="#common.StringArray">common.StringArray</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>token_url</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>expires</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>audience</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.Jwks">Jwks</h3>
         <p></p>
 
@@ -1257,6 +1262,71 @@
                 <tr>
                   <td>mms</td>
                   <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.OAuth2">OAuth2</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>client_id</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>client_secret</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>token_url</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>auth_url</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scopes</td>
+                  <td><a href="#common.StringArray">common.StringArray</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>redirect</td>
+                  <td><a href="#common.String">common.String</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>code</td>
+                  <td><a href="#common.String">common.String</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -2009,44 +2079,9 @@
           <tbody>
             
               <tr>
-                <td>QueryUsers</td>
-                <td><a href="#api.Query">Query</a></td>
-                <td><a href="#api.User">User</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
                 <td>GetUser</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
+                <td><a href="#common.AuthToken">.common.AuthToken</a></td>
                 <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UpdateUser</td>
-                <td><a href="#api.User">User</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UserRoles</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.Role">Role</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>AddUserRoles</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.Role">Role</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>QueryUserEvents</td>
-                <td><a href="#api.Query">Query</a></td>
-                <td><a href="#api.Event">Event</a> stream</td>
                 <td><p></p></td>
               </tr>
             
@@ -2165,8 +2200,8 @@
             
               <tr>
                 <td>AddUserRoles</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.Role">Role</a> stream</td>
+                <td><a href="#api.AddUserRolesRequest">AddUserRolesRequest</a></td>
+                <td><a href="#common.String">.common.String</a></td>
                 <td><p></p></td>
               </tr>
             

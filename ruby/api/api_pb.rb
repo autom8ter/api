@@ -186,14 +186,31 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :status, :message, 6, "common.String"
     optional :annotations, :message, 10, "common.StringMap"
   end
-  add_message "api.Config" do
+  add_message "api.OAuth2" do
     optional :client_id, :message, 1, "common.String"
     optional :client_secret, :message, 2, "common.String"
     optional :token_url, :message, 3, "common.String"
     optional :auth_url, :message, 4, "common.String"
     optional :scopes, :message, 5, "common.StringArray"
     optional :redirect, :message, 6, "common.String"
-    optional :endpoint_params, :message, 7, "common.StringMap"
+    optional :code, :message, 7, "common.String"
+  end
+  add_message "api.ClientCredentials" do
+    optional :client_id, :message, 1, "common.String"
+    optional :client_secret, :message, 2, "common.String"
+    optional :token_url, :message, 3, "common.String"
+    optional :scopes, :message, 4, "common.StringArray"
+    optional :endpoint_params, :message, 5, "common.StringMap"
+  end
+  add_message "api.JWT" do
+    optional :email, :message, 1, "common.String"
+    optional :private_key, :bytes, 2
+    optional :prive_key_id, :message, 3, "common.String"
+    optional :subject, :message, 4, "common.String"
+    optional :scopes, :message, 5, "common.StringArray"
+    optional :token_url, :message, 6, "common.String"
+    optional :expires, :message, 7, "common.String"
+    optional :audience, :message, 8, "common.String"
   end
   add_message "api.Query" do
     optional :query, :message, 4, "common.String"
@@ -208,9 +225,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :location_info, :message, 6, "common.String"
     optional :details, :message, 7, "common.String"
     optional :user_id, :message, 8, "common.String"
-  end
-  add_message "api.ConfigSet" do
-    map :configs, :string, :message, 1, "api.Config"
   end
   add_message "api.JSONWebKeys" do
     optional :kty, :message, 1, "common.String"
@@ -257,10 +271,11 @@ module Api
   SMSResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SMSResponse").msgclass
   SubscriptionResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.SubscriptionResponse").msgclass
   FaxResponse = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.FaxResponse").msgclass
-  Config = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Config").msgclass
+  OAuth2 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.OAuth2").msgclass
+  ClientCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ClientCredentials").msgclass
+  JWT = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWT").msgclass
   Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Query").msgclass
   Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Event").msgclass
-  ConfigSet = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ConfigSet").msgclass
   JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
   Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
   Plan = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Plan").enummodule

@@ -12,10 +12,10 @@ import (
 	"github.com/golang/protobuf/proto"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
+	ojwt "golang.org/x/oauth2/jwt"
 	"google.golang.org/grpc"
 	"net/http"
 	"net/url"
-	"reflect"
 )
 
 func init() {
@@ -220,19 +220,16 @@ func (c *Jwks) TokenCert(token *jwt.Token) (string, error) {
 	return cert, nil
 }
 
-func (s *ConfigSet) ToContext(ctx context.Context, key string) context.Context {
+func (s *OAuth2) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
-func (s *Config) ToContext(ctx context.Context, key string) context.Context {
+func (s *ClientCredentials) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
-func (s *ConfigSet) UnmarshalJSONFrom(b []byte) error {
-	return util.UnmarshalJSON(b, s)
-}
-func (s *ConfigSet) UnmarshalProtoFrom(b []byte) error {
-	return util.UnmarshalProto(b, s)
+func (s *JWT) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
 }
 
 func (s *Event) JSONString() *common.String {
@@ -247,65 +244,81 @@ func (s *Event) UnmarshalJSONfrom(bits []byte) error {
 	return util.UnmarshalJSON(bits, s)
 }
 
-func (s *ConfigSet) JSONString() *common.String {
+func (s *JWT) JSONString() *common.String {
 	return common.MessageToJSONString(s)
 }
 
-func (s *Config) JSONString() *common.String {
+func (s *OAuth2) JSONString() *common.String {
+	return common.MessageToJSONString(s)
+}
+func (s *ClientCredentials) JSONString() *common.String {
 	return common.MessageToJSONString(s)
 }
 
-func (s *Config) UnmarshalProtoFrom(b []byte) error {
+func (s *JWT) UnmarshalProtoFrom(b []byte) error {
 	return util.UnmarshalProto(b, s)
 }
 
-func (s *Config) UnmarshalJSONFrom(b []byte) error {
+func (s *JWT) UnmarshalJSONFrom(b []byte) error {
 	return util.UnmarshalJSON(b, s)
 }
 
-func (s *ConfigSet) Get(key string) *Config {
-	return s.Configs[key]
+func (s *OAuth2) UnmarshalProtoFrom(b []byte) error {
+	return util.UnmarshalProto(b, s)
 }
 
-func (s *ConfigSet) Put(key string, c *Config) {
-	s.Configs[key] = c
+func (s *OAuth2) UnmarshalJSONFrom(b []byte) error {
+	return util.UnmarshalJSON(b, s)
 }
 
-func (s *ConfigSet) Exists(key string) bool {
-	t := s.Configs[key]
-	if t == nil {
-		return false
-	}
-	return true
+func (s *ClientCredentials) UnmarshalProtoFrom(b []byte) error {
+	return util.UnmarshalProto(b, s)
 }
 
-func (s *ConfigSet) Length() int {
-	return len(s.Configs)
+func (s *ClientCredentials) UnmarshalJSONFrom(b []byte) error {
+	return util.UnmarshalJSON(b, s)
 }
 
-func (s *Config) DeepEqual(y interface{}) bool {
-	return reflect.DeepEqual(s, y)
-}
-
-func (s *ConfigSet) DeepEqual(y interface{}) bool {
+func (s *JWT) DeepEqual(y interface{}) bool {
 	return util.DeepEqual(s, y)
 }
 
-func (s *ConfigSet) Validate(fn func(set *ConfigSet) error) error {
+func (s *OAuth2) DeepEqual(y interface{}) bool {
+	return util.DeepEqual(s, y)
+}
+
+func (s *ClientCredentials) DeepEqual(y interface{}) bool {
+	return util.DeepEqual(s, y)
+}
+
+func (s *JWT) Validate(fn func(a *JWT) error) error {
 	return fn(s)
 }
 
-func (s *ConfigSet) Debugf(format string) {
+func (s *OAuth2) Validate(fn func(a *OAuth2) error) error {
+	return fn(s)
+}
+
+func (s *ClientCredentials) Validate(fn func(a *ClientCredentials) error) error {
+	return fn(s)
+}
+
+func (s *JWT) Debugf(format string) {
 	str := common.MessageToJSONString(s)
 	str.Debugf(format)
 }
 
-func (s *Config) Debugf(format string) {
+func (s *ClientCredentials) Debugf(format string) {
 	str := common.MessageToJSONString(s)
 	str.Debugf(format)
 }
 
-func (c *Config) Oauth2Client(ctx context.Context, code *common.String) (*http.Client, error) {
+func (s *OAuth2) Debugf(format string) {
+	str := common.MessageToJSONString(s)
+	str.Debugf(format)
+}
+
+func (c *OAuth2) Token() (*oauth2.Token, error) {
 	a := &oauth2.Config{
 		ClientID:     c.ClientId.Text,
 		ClientSecret: c.ClientSecret.Text,
@@ -316,28 +329,60 @@ func (c *Config) Oauth2Client(ctx context.Context, code *common.String) (*http.C
 		RedirectURL: c.Redirect.Text,
 		Scopes:      c.Scopes.Array(),
 	}
-	tok, err := a.Exchange(ctx, code.Text)
+	tok, err := a.Exchange(context.TODO(), c.Code.Text)
 	if err != nil {
 		return nil, err
 	}
-	return a.Client(ctx, tok), nil
+	return tok, nil
 }
 
-func (c *Config) ClientCredentials() *clientcredentials.Config {
+func (c *JWT) Token() (*oauth2.Token, error) {
+	a := &ojwt.Config{
+		Email:        "",
+		PrivateKey:   nil,
+		PrivateKeyID: "",
+		Subject:      "",
+		Scopes:       c.Scopes.Array(),
+		TokenURL:     "",
+		Expires:      0,
+	}
+
+	src := a.TokenSource(context.TODO())
+	tok, err := src.Token()
+	if err != nil {
+		return nil, err
+	}
+	return tok, nil
+}
+
+func (c *ClientCredentials) Token() (*oauth2.Token, error) {
 	rl := url.Values{}
 	for k, v := range c.EndpointParams.StringMap {
 		rl.Set(k, v.Text)
 	}
-
-	return &clientcredentials.Config{
+	a := &clientcredentials.Config{
 		ClientID:       c.ClientId.Text,
 		ClientSecret:   c.ClientSecret.Text,
 		TokenURL:       c.TokenUrl.Text,
 		Scopes:         c.Scopes.Array(),
 		EndpointParams: rl,
 	}
+	src := a.TokenSource(context.TODO())
+	tok, err := src.Token()
+	if err != nil {
+		return nil, err
+	}
+	return tok, nil
 }
 
-func (c *Config) ClientCredentialsClient(ctx context.Context) *http.Client {
-	return c.ClientCredentials().Client(ctx)
+func (c *ClientCredentials) Client(ctx context.Context) *http.Client {
+	return oauth2.NewClient(ctx, c)
+}
+
+func (c *OAuth2) Client(ctx context.Context) *http.Client {
+	return oauth2.NewClient(ctx, c)
+}
+
+func (c *JWT) Client(ctx context.Context) *http.Client {
+	return oauth2.NewClient(ctx, c)
 }

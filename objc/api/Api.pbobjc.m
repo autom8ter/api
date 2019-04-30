@@ -2395,9 +2395,9 @@ typedef struct FaxResponse__storage_ {
 
 @end
 
-#pragma mark - Config
+#pragma mark - OAuth2
 
-@implementation Config
+@implementation OAuth2
 
 @dynamic hasClientId, clientId;
 @dynamic hasClientSecret, clientSecret;
@@ -2405,9 +2405,9 @@ typedef struct FaxResponse__storage_ {
 @dynamic hasAuthURL, authURL;
 @dynamic hasScopes, scopes;
 @dynamic hasRedirect, redirect;
-@dynamic hasEndpointParams, endpointParams;
+@dynamic hasCode, code;
 
-typedef struct Config__storage_ {
+typedef struct OAuth2__storage_ {
   uint32_t _has_storage_[1];
   String *clientId;
   String *clientSecret;
@@ -2415,8 +2415,8 @@ typedef struct Config__storage_ {
   String *authURL;
   StringArray *scopes;
   String *redirect;
-  StringMap *endpointParams;
-} Config__storage_;
+  String *code;
+} OAuth2__storage_;
 
 // This method is threadsafe because it is initially called
 // in +initialize for each subclass.
@@ -2427,78 +2427,295 @@ typedef struct Config__storage_ {
       {
         .name = "clientId",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Config_FieldNumber_ClientId,
+        .number = OAuth2_FieldNumber_ClientId,
         .hasIndex = 0,
-        .offset = (uint32_t)offsetof(Config__storage_, clientId),
+        .offset = (uint32_t)offsetof(OAuth2__storage_, clientId),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "clientSecret",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Config_FieldNumber_ClientSecret,
+        .number = OAuth2_FieldNumber_ClientSecret,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(Config__storage_, clientSecret),
+        .offset = (uint32_t)offsetof(OAuth2__storage_, clientSecret),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "tokenURL",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Config_FieldNumber_TokenURL,
+        .number = OAuth2_FieldNumber_TokenURL,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(Config__storage_, tokenURL),
+        .offset = (uint32_t)offsetof(OAuth2__storage_, tokenURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "authURL",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Config_FieldNumber_AuthURL,
+        .number = OAuth2_FieldNumber_AuthURL,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(Config__storage_, authURL),
+        .offset = (uint32_t)offsetof(OAuth2__storage_, authURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "scopes",
         .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
-        .number = Config_FieldNumber_Scopes,
+        .number = OAuth2_FieldNumber_Scopes,
         .hasIndex = 4,
-        .offset = (uint32_t)offsetof(Config__storage_, scopes),
+        .offset = (uint32_t)offsetof(OAuth2__storage_, scopes),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "redirect",
         .dataTypeSpecific.className = GPBStringifySymbol(String),
-        .number = Config_FieldNumber_Redirect,
+        .number = OAuth2_FieldNumber_Redirect,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(Config__storage_, redirect),
+        .offset = (uint32_t)offsetof(OAuth2__storage_, redirect),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "code",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = OAuth2_FieldNumber_Code,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(OAuth2__storage_, code),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[OAuth2 class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(OAuth2__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\003\005\241!!\000\004\004\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ClientCredentials
+
+@implementation ClientCredentials
+
+@dynamic hasClientId, clientId;
+@dynamic hasClientSecret, clientSecret;
+@dynamic hasTokenURL, tokenURL;
+@dynamic hasScopes, scopes;
+@dynamic hasEndpointParams, endpointParams;
+
+typedef struct ClientCredentials__storage_ {
+  uint32_t _has_storage_[1];
+  String *clientId;
+  String *clientSecret;
+  String *tokenURL;
+  StringArray *scopes;
+  StringMap *endpointParams;
+} ClientCredentials__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "clientId",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = ClientCredentials_FieldNumber_ClientId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ClientCredentials__storage_, clientId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "clientSecret",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = ClientCredentials_FieldNumber_ClientSecret,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ClientCredentials__storage_, clientSecret),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "tokenURL",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = ClientCredentials_FieldNumber_TokenURL,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ClientCredentials__storage_, tokenURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "scopes",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
+        .number = ClientCredentials_FieldNumber_Scopes,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ClientCredentials__storage_, scopes),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
       {
         .name = "endpointParams",
         .dataTypeSpecific.className = GPBStringifySymbol(StringMap),
-        .number = Config_FieldNumber_EndpointParams,
-        .hasIndex = 6,
-        .offset = (uint32_t)offsetof(Config__storage_, endpointParams),
+        .number = ClientCredentials_FieldNumber_EndpointParams,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(ClientCredentials__storage_, endpointParams),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[Config class]
+        [GPBDescriptor allocDescriptorForClass:[ClientCredentials class]
                                      rootClass:[ApiRoot class]
                                           file:ApiRoot_FileDescriptor()
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(Config__storage_)
+                                   storageSize:sizeof(ClientCredentials__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\003\005\241!!\000\004\004\241!!\000";
+        "\001\003\005\241!!\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - JWT
+
+@implementation JWT
+
+@dynamic hasEmail, email;
+@dynamic privateKey;
+@dynamic hasPriveKeyId, priveKeyId;
+@dynamic hasSubject, subject;
+@dynamic hasScopes, scopes;
+@dynamic hasTokenURL, tokenURL;
+@dynamic hasExpires, expires;
+@dynamic hasAudience, audience;
+
+typedef struct JWT__storage_ {
+  uint32_t _has_storage_[1];
+  String *email;
+  NSData *privateKey;
+  String *priveKeyId;
+  String *subject;
+  StringArray *scopes;
+  String *tokenURL;
+  String *expires;
+  String *audience;
+} JWT__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "email",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = JWT_FieldNumber_Email,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(JWT__storage_, email),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "privateKey",
+        .dataTypeSpecific.className = NULL,
+        .number = JWT_FieldNumber_PrivateKey,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(JWT__storage_, privateKey),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "priveKeyId",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = JWT_FieldNumber_PriveKeyId,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(JWT__storage_, priveKeyId),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "subject",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = JWT_FieldNumber_Subject,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(JWT__storage_, subject),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "scopes",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
+        .number = JWT_FieldNumber_Scopes,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(JWT__storage_, scopes),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "tokenURL",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = JWT_FieldNumber_TokenURL,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(JWT__storage_, tokenURL),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "expires",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = JWT_FieldNumber_Expires,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(JWT__storage_, expires),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "audience",
+        .dataTypeSpecific.className = GPBStringifySymbol(String),
+        .number = JWT_FieldNumber_Audience,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(JWT__storage_, audience),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[JWT class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(JWT__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\006\005\241!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -2674,49 +2891,6 @@ typedef struct Event__storage_ {
                                         fields:fields
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(Event__storage_)
-                                         flags:GPBDescriptorInitializationFlag_None];
-    NSAssert(descriptor == nil, @"Startup recursed!");
-    descriptor = localDescriptor;
-  }
-  return descriptor;
-}
-
-@end
-
-#pragma mark - ConfigSet
-
-@implementation ConfigSet
-
-@dynamic configs, configs_Count;
-
-typedef struct ConfigSet__storage_ {
-  uint32_t _has_storage_[1];
-  NSMutableDictionary *configs;
-} ConfigSet__storage_;
-
-// This method is threadsafe because it is initially called
-// in +initialize for each subclass.
-+ (GPBDescriptor *)descriptor {
-  static GPBDescriptor *descriptor = nil;
-  if (!descriptor) {
-    static GPBMessageFieldDescription fields[] = {
-      {
-        .name = "configs",
-        .dataTypeSpecific.className = GPBStringifySymbol(Config),
-        .number = ConfigSet_FieldNumber_Configs,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(ConfigSet__storage_, configs),
-        .flags = GPBFieldMapKeyString,
-        .dataType = GPBDataTypeMessage,
-      },
-    };
-    GPBDescriptor *localDescriptor =
-        [GPBDescriptor allocDescriptorForClass:[ConfigSet class]
-                                     rootClass:[ApiRoot class]
-                                          file:ApiRoot_FileDescriptor()
-                                        fields:fields
-                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
-                                   storageSize:sizeof(ConfigSet__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;

@@ -29,9 +29,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "google/api/annotations.pb.h"
@@ -67,15 +64,9 @@ extern CallResponseDefaultTypeInternal _CallResponse_default_instance_;
 class Card;
 class CardDefaultTypeInternal;
 extern CardDefaultTypeInternal _Card_default_instance_;
-class Config;
-class ConfigDefaultTypeInternal;
-extern ConfigDefaultTypeInternal _Config_default_instance_;
-class ConfigSet;
-class ConfigSetDefaultTypeInternal;
-extern ConfigSetDefaultTypeInternal _ConfigSet_default_instance_;
-class ConfigSet_ConfigsEntry_DoNotUse;
-class ConfigSet_ConfigsEntry_DoNotUseDefaultTypeInternal;
-extern ConfigSet_ConfigsEntry_DoNotUseDefaultTypeInternal _ConfigSet_ConfigsEntry_DoNotUse_default_instance_;
+class ClientCredentials;
+class ClientCredentialsDefaultTypeInternal;
+extern ClientCredentialsDefaultTypeInternal _ClientCredentials_default_instance_;
 class Email;
 class EmailDefaultTypeInternal;
 extern EmailDefaultTypeInternal _Email_default_instance_;
@@ -106,12 +97,18 @@ extern IdentityDefaultTypeInternal _Identity_default_instance_;
 class JSONWebKeys;
 class JSONWebKeysDefaultTypeInternal;
 extern JSONWebKeysDefaultTypeInternal _JSONWebKeys_default_instance_;
+class JWT;
+class JWTDefaultTypeInternal;
+extern JWTDefaultTypeInternal _JWT_default_instance_;
 class Jwks;
 class JwksDefaultTypeInternal;
 extern JwksDefaultTypeInternal _Jwks_default_instance_;
 class NumberCapabilities;
 class NumberCapabilitiesDefaultTypeInternal;
 extern NumberCapabilitiesDefaultTypeInternal _NumberCapabilities_default_instance_;
+class OAuth2;
+class OAuth2DefaultTypeInternal;
+extern OAuth2DefaultTypeInternal _OAuth2_default_instance_;
 class PhoneNumber;
 class PhoneNumberDefaultTypeInternal;
 extern PhoneNumberDefaultTypeInternal _PhoneNumber_default_instance_;
@@ -159,9 +156,7 @@ template<> ::api::Call* Arena::CreateMaybeMessage<::api::Call>(Arena*);
 template<> ::api::CallBlast* Arena::CreateMaybeMessage<::api::CallBlast>(Arena*);
 template<> ::api::CallResponse* Arena::CreateMaybeMessage<::api::CallResponse>(Arena*);
 template<> ::api::Card* Arena::CreateMaybeMessage<::api::Card>(Arena*);
-template<> ::api::Config* Arena::CreateMaybeMessage<::api::Config>(Arena*);
-template<> ::api::ConfigSet* Arena::CreateMaybeMessage<::api::ConfigSet>(Arena*);
-template<> ::api::ConfigSet_ConfigsEntry_DoNotUse* Arena::CreateMaybeMessage<::api::ConfigSet_ConfigsEntry_DoNotUse>(Arena*);
+template<> ::api::ClientCredentials* Arena::CreateMaybeMessage<::api::ClientCredentials>(Arena*);
 template<> ::api::Email* Arena::CreateMaybeMessage<::api::Email>(Arena*);
 template<> ::api::EmailBlast* Arena::CreateMaybeMessage<::api::EmailBlast>(Arena*);
 template<> ::api::EmailBlastRequest* Arena::CreateMaybeMessage<::api::EmailBlastRequest>(Arena*);
@@ -172,8 +167,10 @@ template<> ::api::FaxBlast* Arena::CreateMaybeMessage<::api::FaxBlast>(Arena*);
 template<> ::api::FaxResponse* Arena::CreateMaybeMessage<::api::FaxResponse>(Arena*);
 template<> ::api::Identity* Arena::CreateMaybeMessage<::api::Identity>(Arena*);
 template<> ::api::JSONWebKeys* Arena::CreateMaybeMessage<::api::JSONWebKeys>(Arena*);
+template<> ::api::JWT* Arena::CreateMaybeMessage<::api::JWT>(Arena*);
 template<> ::api::Jwks* Arena::CreateMaybeMessage<::api::Jwks>(Arena*);
 template<> ::api::NumberCapabilities* Arena::CreateMaybeMessage<::api::NumberCapabilities>(Arena*);
+template<> ::api::OAuth2* Arena::CreateMaybeMessage<::api::OAuth2>(Arena*);
 template<> ::api::PhoneNumber* Arena::CreateMaybeMessage<::api::PhoneNumber>(Arena*);
 template<> ::api::PhoneNumberResource* Arena::CreateMaybeMessage<::api::PhoneNumberResource>(Arena*);
 template<> ::api::Query* Arena::CreateMaybeMessage<::api::Query>(Arena*);
@@ -4303,24 +4300,24 @@ class FaxResponse : public ::google::protobuf::Message /* @@protoc_insertion_poi
 };
 // -------------------------------------------------------------------
 
-class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Config) */ {
+class OAuth2 : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.OAuth2) */ {
  public:
-  Config();
-  virtual ~Config();
+  OAuth2();
+  virtual ~OAuth2();
 
-  Config(const Config& from);
+  OAuth2(const OAuth2& from);
 
-  inline Config& operator=(const Config& from) {
+  inline OAuth2& operator=(const OAuth2& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Config(Config&& from) noexcept
-    : Config() {
+  OAuth2(OAuth2&& from) noexcept
+    : OAuth2() {
     *this = ::std::move(from);
   }
 
-  inline Config& operator=(Config&& from) noexcept {
+  inline OAuth2& operator=(OAuth2&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -4330,34 +4327,34 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Config& default_instance();
+  static const OAuth2& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Config* internal_default_instance() {
-    return reinterpret_cast<const Config*>(
-               &_Config_default_instance_);
+  static inline const OAuth2* internal_default_instance() {
+    return reinterpret_cast<const OAuth2*>(
+               &_OAuth2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     26;
 
-  void Swap(Config* other);
-  friend void swap(Config& a, Config& b) {
+  void Swap(OAuth2* other);
+  friend void swap(OAuth2& a, OAuth2& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Config* New() const final {
-    return CreateMaybeMessage<Config>(NULL);
+  inline OAuth2* New() const final {
+    return CreateMaybeMessage<OAuth2>(NULL);
   }
 
-  Config* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Config>(arena);
+  OAuth2* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<OAuth2>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Config& from);
-  void MergeFrom(const Config& from);
+  void CopyFrom(const OAuth2& from);
+  void MergeFrom(const OAuth2& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -4374,7 +4371,7 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Config* other);
+  void InternalSwap(OAuth2* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -4462,19 +4459,19 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::common::String* mutable_redirect();
   void set_allocated_redirect(::common::String* redirect);
 
-  // .common.StringMap endpoint_params = 7;
-  bool has_endpoint_params() const;
-  void clear_endpoint_params();
-  static const int kEndpointParamsFieldNumber = 7;
+  // .common.String code = 7;
+  bool has_code() const;
+  void clear_code();
+  static const int kCodeFieldNumber = 7;
   private:
-  const ::common::StringMap& _internal_endpoint_params() const;
+  const ::common::String& _internal_code() const;
   public:
-  const ::common::StringMap& endpoint_params() const;
-  ::common::StringMap* release_endpoint_params();
-  ::common::StringMap* mutable_endpoint_params();
-  void set_allocated_endpoint_params(::common::StringMap* endpoint_params);
+  const ::common::String& code() const;
+  ::common::String* release_code();
+  ::common::String* mutable_code();
+  void set_allocated_code(::common::String* code);
 
-  // @@protoc_insertion_point(class_scope:api.Config)
+  // @@protoc_insertion_point(class_scope:api.OAuth2)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -4484,7 +4481,370 @@ class Config : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::common::String* auth_url_;
   ::common::StringArray* scopes_;
   ::common::String* redirect_;
+  ::common::String* code_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ClientCredentials : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ClientCredentials) */ {
+ public:
+  ClientCredentials();
+  virtual ~ClientCredentials();
+
+  ClientCredentials(const ClientCredentials& from);
+
+  inline ClientCredentials& operator=(const ClientCredentials& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ClientCredentials(ClientCredentials&& from) noexcept
+    : ClientCredentials() {
+    *this = ::std::move(from);
+  }
+
+  inline ClientCredentials& operator=(ClientCredentials&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ClientCredentials& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ClientCredentials* internal_default_instance() {
+    return reinterpret_cast<const ClientCredentials*>(
+               &_ClientCredentials_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  void Swap(ClientCredentials* other);
+  friend void swap(ClientCredentials& a, ClientCredentials& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ClientCredentials* New() const final {
+    return CreateMaybeMessage<ClientCredentials>(NULL);
+  }
+
+  ClientCredentials* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ClientCredentials>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ClientCredentials& from);
+  void MergeFrom(const ClientCredentials& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ClientCredentials* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.String client_id = 1;
+  bool has_client_id() const;
+  void clear_client_id();
+  static const int kClientIdFieldNumber = 1;
+  private:
+  const ::common::String& _internal_client_id() const;
+  public:
+  const ::common::String& client_id() const;
+  ::common::String* release_client_id();
+  ::common::String* mutable_client_id();
+  void set_allocated_client_id(::common::String* client_id);
+
+  // .common.String client_secret = 2;
+  bool has_client_secret() const;
+  void clear_client_secret();
+  static const int kClientSecretFieldNumber = 2;
+  private:
+  const ::common::String& _internal_client_secret() const;
+  public:
+  const ::common::String& client_secret() const;
+  ::common::String* release_client_secret();
+  ::common::String* mutable_client_secret();
+  void set_allocated_client_secret(::common::String* client_secret);
+
+  // .common.String token_url = 3;
+  bool has_token_url() const;
+  void clear_token_url();
+  static const int kTokenUrlFieldNumber = 3;
+  private:
+  const ::common::String& _internal_token_url() const;
+  public:
+  const ::common::String& token_url() const;
+  ::common::String* release_token_url();
+  ::common::String* mutable_token_url();
+  void set_allocated_token_url(::common::String* token_url);
+
+  // .common.StringArray scopes = 4;
+  bool has_scopes() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 4;
+  private:
+  const ::common::StringArray& _internal_scopes() const;
+  public:
+  const ::common::StringArray& scopes() const;
+  ::common::StringArray* release_scopes();
+  ::common::StringArray* mutable_scopes();
+  void set_allocated_scopes(::common::StringArray* scopes);
+
+  // .common.StringMap endpoint_params = 5;
+  bool has_endpoint_params() const;
+  void clear_endpoint_params();
+  static const int kEndpointParamsFieldNumber = 5;
+  private:
+  const ::common::StringMap& _internal_endpoint_params() const;
+  public:
+  const ::common::StringMap& endpoint_params() const;
+  ::common::StringMap* release_endpoint_params();
+  ::common::StringMap* mutable_endpoint_params();
+  void set_allocated_endpoint_params(::common::StringMap* endpoint_params);
+
+  // @@protoc_insertion_point(class_scope:api.ClientCredentials)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::String* client_id_;
+  ::common::String* client_secret_;
+  ::common::String* token_url_;
+  ::common::StringArray* scopes_;
   ::common::StringMap* endpoint_params_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class JWT : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.JWT) */ {
+ public:
+  JWT();
+  virtual ~JWT();
+
+  JWT(const JWT& from);
+
+  inline JWT& operator=(const JWT& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  JWT(JWT&& from) noexcept
+    : JWT() {
+    *this = ::std::move(from);
+  }
+
+  inline JWT& operator=(JWT&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const JWT& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const JWT* internal_default_instance() {
+    return reinterpret_cast<const JWT*>(
+               &_JWT_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    28;
+
+  void Swap(JWT* other);
+  friend void swap(JWT& a, JWT& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline JWT* New() const final {
+    return CreateMaybeMessage<JWT>(NULL);
+  }
+
+  JWT* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JWT>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const JWT& from);
+  void MergeFrom(const JWT& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(JWT* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bytes private_key = 2;
+  void clear_private_key();
+  static const int kPrivateKeyFieldNumber = 2;
+  const ::std::string& private_key() const;
+  void set_private_key(const ::std::string& value);
+  #if LANG_CXX11
+  void set_private_key(::std::string&& value);
+  #endif
+  void set_private_key(const char* value);
+  void set_private_key(const void* value, size_t size);
+  ::std::string* mutable_private_key();
+  ::std::string* release_private_key();
+  void set_allocated_private_key(::std::string* private_key);
+
+  // .common.String email = 1;
+  bool has_email() const;
+  void clear_email();
+  static const int kEmailFieldNumber = 1;
+  private:
+  const ::common::String& _internal_email() const;
+  public:
+  const ::common::String& email() const;
+  ::common::String* release_email();
+  ::common::String* mutable_email();
+  void set_allocated_email(::common::String* email);
+
+  // .common.String prive_key_id = 3;
+  bool has_prive_key_id() const;
+  void clear_prive_key_id();
+  static const int kPriveKeyIdFieldNumber = 3;
+  private:
+  const ::common::String& _internal_prive_key_id() const;
+  public:
+  const ::common::String& prive_key_id() const;
+  ::common::String* release_prive_key_id();
+  ::common::String* mutable_prive_key_id();
+  void set_allocated_prive_key_id(::common::String* prive_key_id);
+
+  // .common.String subject = 4;
+  bool has_subject() const;
+  void clear_subject();
+  static const int kSubjectFieldNumber = 4;
+  private:
+  const ::common::String& _internal_subject() const;
+  public:
+  const ::common::String& subject() const;
+  ::common::String* release_subject();
+  ::common::String* mutable_subject();
+  void set_allocated_subject(::common::String* subject);
+
+  // .common.StringArray scopes = 5;
+  bool has_scopes() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 5;
+  private:
+  const ::common::StringArray& _internal_scopes() const;
+  public:
+  const ::common::StringArray& scopes() const;
+  ::common::StringArray* release_scopes();
+  ::common::StringArray* mutable_scopes();
+  void set_allocated_scopes(::common::StringArray* scopes);
+
+  // .common.String token_url = 6;
+  bool has_token_url() const;
+  void clear_token_url();
+  static const int kTokenUrlFieldNumber = 6;
+  private:
+  const ::common::String& _internal_token_url() const;
+  public:
+  const ::common::String& token_url() const;
+  ::common::String* release_token_url();
+  ::common::String* mutable_token_url();
+  void set_allocated_token_url(::common::String* token_url);
+
+  // .common.String expires = 7;
+  bool has_expires() const;
+  void clear_expires();
+  static const int kExpiresFieldNumber = 7;
+  private:
+  const ::common::String& _internal_expires() const;
+  public:
+  const ::common::String& expires() const;
+  ::common::String* release_expires();
+  ::common::String* mutable_expires();
+  void set_allocated_expires(::common::String* expires);
+
+  // .common.String audience = 8;
+  bool has_audience() const;
+  void clear_audience();
+  static const int kAudienceFieldNumber = 8;
+  private:
+  const ::common::String& _internal_audience() const;
+  public:
+  const ::common::String& audience() const;
+  ::common::String* release_audience();
+  ::common::String* mutable_audience();
+  void set_allocated_audience(::common::String* audience);
+
+  // @@protoc_insertion_point(class_scope:api.JWT)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr private_key_;
+  ::common::String* email_;
+  ::common::String* prive_key_id_;
+  ::common::String* subject_;
+  ::common::StringArray* scopes_;
+  ::common::String* token_url_;
+  ::common::String* expires_;
+  ::common::String* audience_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -4525,7 +4885,7 @@ class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Query_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   void Swap(Query* other);
   friend void swap(Query& a, Query& b) {
@@ -4647,7 +5007,7 @@ class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   void Swap(Event* other);
   friend void swap(Event& a, Event& b) {
@@ -4807,139 +5167,6 @@ class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   ::common::String* location_info_;
   ::common::String* details_;
   ::common::String* user_id_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_api_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class ConfigSet_ConfigsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ConfigSet_ConfigsEntry_DoNotUse, 
-    ::std::string, ::api::Config,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > {
-public:
-  typedef ::google::protobuf::internal::MapEntry<ConfigSet_ConfigsEntry_DoNotUse, 
-    ::std::string, ::api::Config,
-    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-    0 > SuperType;
-  ConfigSet_ConfigsEntry_DoNotUse();
-  ConfigSet_ConfigsEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const ConfigSet_ConfigsEntry_DoNotUse& other);
-  static const ConfigSet_ConfigsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ConfigSet_ConfigsEntry_DoNotUse*>(&_ConfigSet_ConfigsEntry_DoNotUse_default_instance_); }
-  void MergeFrom(const ::google::protobuf::Message& other) final;
-  ::google::protobuf::Metadata GetMetadata() const;
-};
-
-// -------------------------------------------------------------------
-
-class ConfigSet : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.ConfigSet) */ {
- public:
-  ConfigSet();
-  virtual ~ConfigSet();
-
-  ConfigSet(const ConfigSet& from);
-
-  inline ConfigSet& operator=(const ConfigSet& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  ConfigSet(ConfigSet&& from) noexcept
-    : ConfigSet() {
-    *this = ::std::move(from);
-  }
-
-  inline ConfigSet& operator=(ConfigSet&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const ConfigSet& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const ConfigSet* internal_default_instance() {
-    return reinterpret_cast<const ConfigSet*>(
-               &_ConfigSet_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    30;
-
-  void Swap(ConfigSet* other);
-  friend void swap(ConfigSet& a, ConfigSet& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline ConfigSet* New() const final {
-    return CreateMaybeMessage<ConfigSet>(NULL);
-  }
-
-  ConfigSet* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<ConfigSet>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const ConfigSet& from);
-  void MergeFrom(const ConfigSet& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(ConfigSet* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  // map<string, .api.Config> configs = 1;
-  int configs_size() const;
-  void clear_configs();
-  static const int kConfigsFieldNumber = 1;
-  const ::google::protobuf::Map< ::std::string, ::api::Config >&
-      configs() const;
-  ::google::protobuf::Map< ::std::string, ::api::Config >*
-      mutable_configs();
-
-  // @@protoc_insertion_point(class_scope:api.ConfigSet)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      ConfigSet_ConfigsEntry_DoNotUse,
-      ::std::string, ::api::Config,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > configs_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_api_2eproto::TableStruct;
 };
@@ -11081,38 +11308,38 @@ inline void FaxResponse::set_allocated_annotations(::common::StringMap* annotati
 
 // -------------------------------------------------------------------
 
-// Config
+// OAuth2
 
 // .common.String client_id = 1;
-inline bool Config::has_client_id() const {
+inline bool OAuth2::has_client_id() const {
   return this != internal_default_instance() && client_id_ != NULL;
 }
-inline const ::common::String& Config::_internal_client_id() const {
+inline const ::common::String& OAuth2::_internal_client_id() const {
   return *client_id_;
 }
-inline const ::common::String& Config::client_id() const {
+inline const ::common::String& OAuth2::client_id() const {
   const ::common::String* p = client_id_;
-  // @@protoc_insertion_point(field_get:api.Config.client_id)
+  // @@protoc_insertion_point(field_get:api.OAuth2.client_id)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* Config::release_client_id() {
-  // @@protoc_insertion_point(field_release:api.Config.client_id)
+inline ::common::String* OAuth2::release_client_id() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.client_id)
   
   ::common::String* temp = client_id_;
   client_id_ = NULL;
   return temp;
 }
-inline ::common::String* Config::mutable_client_id() {
+inline ::common::String* OAuth2::mutable_client_id() {
   
   if (client_id_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     client_id_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.client_id)
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.client_id)
   return client_id_;
 }
-inline void Config::set_allocated_client_id(::common::String* client_id) {
+inline void OAuth2::set_allocated_client_id(::common::String* client_id) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(client_id_);
@@ -11128,39 +11355,39 @@ inline void Config::set_allocated_client_id(::common::String* client_id) {
     
   }
   client_id_ = client_id;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.client_id)
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.client_id)
 }
 
 // .common.String client_secret = 2;
-inline bool Config::has_client_secret() const {
+inline bool OAuth2::has_client_secret() const {
   return this != internal_default_instance() && client_secret_ != NULL;
 }
-inline const ::common::String& Config::_internal_client_secret() const {
+inline const ::common::String& OAuth2::_internal_client_secret() const {
   return *client_secret_;
 }
-inline const ::common::String& Config::client_secret() const {
+inline const ::common::String& OAuth2::client_secret() const {
   const ::common::String* p = client_secret_;
-  // @@protoc_insertion_point(field_get:api.Config.client_secret)
+  // @@protoc_insertion_point(field_get:api.OAuth2.client_secret)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* Config::release_client_secret() {
-  // @@protoc_insertion_point(field_release:api.Config.client_secret)
+inline ::common::String* OAuth2::release_client_secret() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.client_secret)
   
   ::common::String* temp = client_secret_;
   client_secret_ = NULL;
   return temp;
 }
-inline ::common::String* Config::mutable_client_secret() {
+inline ::common::String* OAuth2::mutable_client_secret() {
   
   if (client_secret_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     client_secret_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.client_secret)
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.client_secret)
   return client_secret_;
 }
-inline void Config::set_allocated_client_secret(::common::String* client_secret) {
+inline void OAuth2::set_allocated_client_secret(::common::String* client_secret) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(client_secret_);
@@ -11176,39 +11403,39 @@ inline void Config::set_allocated_client_secret(::common::String* client_secret)
     
   }
   client_secret_ = client_secret;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.client_secret)
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.client_secret)
 }
 
 // .common.String token_url = 3;
-inline bool Config::has_token_url() const {
+inline bool OAuth2::has_token_url() const {
   return this != internal_default_instance() && token_url_ != NULL;
 }
-inline const ::common::String& Config::_internal_token_url() const {
+inline const ::common::String& OAuth2::_internal_token_url() const {
   return *token_url_;
 }
-inline const ::common::String& Config::token_url() const {
+inline const ::common::String& OAuth2::token_url() const {
   const ::common::String* p = token_url_;
-  // @@protoc_insertion_point(field_get:api.Config.token_url)
+  // @@protoc_insertion_point(field_get:api.OAuth2.token_url)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* Config::release_token_url() {
-  // @@protoc_insertion_point(field_release:api.Config.token_url)
+inline ::common::String* OAuth2::release_token_url() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.token_url)
   
   ::common::String* temp = token_url_;
   token_url_ = NULL;
   return temp;
 }
-inline ::common::String* Config::mutable_token_url() {
+inline ::common::String* OAuth2::mutable_token_url() {
   
   if (token_url_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     token_url_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.token_url)
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.token_url)
   return token_url_;
 }
-inline void Config::set_allocated_token_url(::common::String* token_url) {
+inline void OAuth2::set_allocated_token_url(::common::String* token_url) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(token_url_);
@@ -11224,39 +11451,39 @@ inline void Config::set_allocated_token_url(::common::String* token_url) {
     
   }
   token_url_ = token_url;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.token_url)
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.token_url)
 }
 
 // .common.String auth_url = 4;
-inline bool Config::has_auth_url() const {
+inline bool OAuth2::has_auth_url() const {
   return this != internal_default_instance() && auth_url_ != NULL;
 }
-inline const ::common::String& Config::_internal_auth_url() const {
+inline const ::common::String& OAuth2::_internal_auth_url() const {
   return *auth_url_;
 }
-inline const ::common::String& Config::auth_url() const {
+inline const ::common::String& OAuth2::auth_url() const {
   const ::common::String* p = auth_url_;
-  // @@protoc_insertion_point(field_get:api.Config.auth_url)
+  // @@protoc_insertion_point(field_get:api.OAuth2.auth_url)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* Config::release_auth_url() {
-  // @@protoc_insertion_point(field_release:api.Config.auth_url)
+inline ::common::String* OAuth2::release_auth_url() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.auth_url)
   
   ::common::String* temp = auth_url_;
   auth_url_ = NULL;
   return temp;
 }
-inline ::common::String* Config::mutable_auth_url() {
+inline ::common::String* OAuth2::mutable_auth_url() {
   
   if (auth_url_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     auth_url_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.auth_url)
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.auth_url)
   return auth_url_;
 }
-inline void Config::set_allocated_auth_url(::common::String* auth_url) {
+inline void OAuth2::set_allocated_auth_url(::common::String* auth_url) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(auth_url_);
@@ -11272,39 +11499,39 @@ inline void Config::set_allocated_auth_url(::common::String* auth_url) {
     
   }
   auth_url_ = auth_url;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.auth_url)
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.auth_url)
 }
 
 // .common.StringArray scopes = 5;
-inline bool Config::has_scopes() const {
+inline bool OAuth2::has_scopes() const {
   return this != internal_default_instance() && scopes_ != NULL;
 }
-inline const ::common::StringArray& Config::_internal_scopes() const {
+inline const ::common::StringArray& OAuth2::_internal_scopes() const {
   return *scopes_;
 }
-inline const ::common::StringArray& Config::scopes() const {
+inline const ::common::StringArray& OAuth2::scopes() const {
   const ::common::StringArray* p = scopes_;
-  // @@protoc_insertion_point(field_get:api.Config.scopes)
+  // @@protoc_insertion_point(field_get:api.OAuth2.scopes)
   return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
       &::common::_StringArray_default_instance_);
 }
-inline ::common::StringArray* Config::release_scopes() {
-  // @@protoc_insertion_point(field_release:api.Config.scopes)
+inline ::common::StringArray* OAuth2::release_scopes() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.scopes)
   
   ::common::StringArray* temp = scopes_;
   scopes_ = NULL;
   return temp;
 }
-inline ::common::StringArray* Config::mutable_scopes() {
+inline ::common::StringArray* OAuth2::mutable_scopes() {
   
   if (scopes_ == NULL) {
     auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
     scopes_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.scopes)
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.scopes)
   return scopes_;
 }
-inline void Config::set_allocated_scopes(::common::StringArray* scopes) {
+inline void OAuth2::set_allocated_scopes(::common::StringArray* scopes) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(scopes_);
@@ -11320,39 +11547,39 @@ inline void Config::set_allocated_scopes(::common::StringArray* scopes) {
     
   }
   scopes_ = scopes;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.scopes)
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.scopes)
 }
 
 // .common.String redirect = 6;
-inline bool Config::has_redirect() const {
+inline bool OAuth2::has_redirect() const {
   return this != internal_default_instance() && redirect_ != NULL;
 }
-inline const ::common::String& Config::_internal_redirect() const {
+inline const ::common::String& OAuth2::_internal_redirect() const {
   return *redirect_;
 }
-inline const ::common::String& Config::redirect() const {
+inline const ::common::String& OAuth2::redirect() const {
   const ::common::String* p = redirect_;
-  // @@protoc_insertion_point(field_get:api.Config.redirect)
+  // @@protoc_insertion_point(field_get:api.OAuth2.redirect)
   return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
       &::common::_String_default_instance_);
 }
-inline ::common::String* Config::release_redirect() {
-  // @@protoc_insertion_point(field_release:api.Config.redirect)
+inline ::common::String* OAuth2::release_redirect() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.redirect)
   
   ::common::String* temp = redirect_;
   redirect_ = NULL;
   return temp;
 }
-inline ::common::String* Config::mutable_redirect() {
+inline ::common::String* OAuth2::mutable_redirect() {
   
   if (redirect_ == NULL) {
     auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
     redirect_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.redirect)
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.redirect)
   return redirect_;
 }
-inline void Config::set_allocated_redirect(::common::String* redirect) {
+inline void OAuth2::set_allocated_redirect(::common::String* redirect) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(redirect_);
@@ -11368,39 +11595,283 @@ inline void Config::set_allocated_redirect(::common::String* redirect) {
     
   }
   redirect_ = redirect;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.redirect)
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.redirect)
 }
 
-// .common.StringMap endpoint_params = 7;
-inline bool Config::has_endpoint_params() const {
+// .common.String code = 7;
+inline bool OAuth2::has_code() const {
+  return this != internal_default_instance() && code_ != NULL;
+}
+inline const ::common::String& OAuth2::_internal_code() const {
+  return *code_;
+}
+inline const ::common::String& OAuth2::code() const {
+  const ::common::String* p = code_;
+  // @@protoc_insertion_point(field_get:api.OAuth2.code)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* OAuth2::release_code() {
+  // @@protoc_insertion_point(field_release:api.OAuth2.code)
+  
+  ::common::String* temp = code_;
+  code_ = NULL;
+  return temp;
+}
+inline ::common::String* OAuth2::mutable_code() {
+  
+  if (code_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    code_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.OAuth2.code)
+  return code_;
+}
+inline void OAuth2::set_allocated_code(::common::String* code) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(code_);
+  }
+  if (code) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      code = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, code, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  code_ = code;
+  // @@protoc_insertion_point(field_set_allocated:api.OAuth2.code)
+}
+
+// -------------------------------------------------------------------
+
+// ClientCredentials
+
+// .common.String client_id = 1;
+inline bool ClientCredentials::has_client_id() const {
+  return this != internal_default_instance() && client_id_ != NULL;
+}
+inline const ::common::String& ClientCredentials::_internal_client_id() const {
+  return *client_id_;
+}
+inline const ::common::String& ClientCredentials::client_id() const {
+  const ::common::String* p = client_id_;
+  // @@protoc_insertion_point(field_get:api.ClientCredentials.client_id)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* ClientCredentials::release_client_id() {
+  // @@protoc_insertion_point(field_release:api.ClientCredentials.client_id)
+  
+  ::common::String* temp = client_id_;
+  client_id_ = NULL;
+  return temp;
+}
+inline ::common::String* ClientCredentials::mutable_client_id() {
+  
+  if (client_id_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    client_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ClientCredentials.client_id)
+  return client_id_;
+}
+inline void ClientCredentials::set_allocated_client_id(::common::String* client_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(client_id_);
+  }
+  if (client_id) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      client_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, client_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  client_id_ = client_id;
+  // @@protoc_insertion_point(field_set_allocated:api.ClientCredentials.client_id)
+}
+
+// .common.String client_secret = 2;
+inline bool ClientCredentials::has_client_secret() const {
+  return this != internal_default_instance() && client_secret_ != NULL;
+}
+inline const ::common::String& ClientCredentials::_internal_client_secret() const {
+  return *client_secret_;
+}
+inline const ::common::String& ClientCredentials::client_secret() const {
+  const ::common::String* p = client_secret_;
+  // @@protoc_insertion_point(field_get:api.ClientCredentials.client_secret)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* ClientCredentials::release_client_secret() {
+  // @@protoc_insertion_point(field_release:api.ClientCredentials.client_secret)
+  
+  ::common::String* temp = client_secret_;
+  client_secret_ = NULL;
+  return temp;
+}
+inline ::common::String* ClientCredentials::mutable_client_secret() {
+  
+  if (client_secret_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    client_secret_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ClientCredentials.client_secret)
+  return client_secret_;
+}
+inline void ClientCredentials::set_allocated_client_secret(::common::String* client_secret) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(client_secret_);
+  }
+  if (client_secret) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      client_secret = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, client_secret, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  client_secret_ = client_secret;
+  // @@protoc_insertion_point(field_set_allocated:api.ClientCredentials.client_secret)
+}
+
+// .common.String token_url = 3;
+inline bool ClientCredentials::has_token_url() const {
+  return this != internal_default_instance() && token_url_ != NULL;
+}
+inline const ::common::String& ClientCredentials::_internal_token_url() const {
+  return *token_url_;
+}
+inline const ::common::String& ClientCredentials::token_url() const {
+  const ::common::String* p = token_url_;
+  // @@protoc_insertion_point(field_get:api.ClientCredentials.token_url)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* ClientCredentials::release_token_url() {
+  // @@protoc_insertion_point(field_release:api.ClientCredentials.token_url)
+  
+  ::common::String* temp = token_url_;
+  token_url_ = NULL;
+  return temp;
+}
+inline ::common::String* ClientCredentials::mutable_token_url() {
+  
+  if (token_url_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    token_url_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ClientCredentials.token_url)
+  return token_url_;
+}
+inline void ClientCredentials::set_allocated_token_url(::common::String* token_url) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(token_url_);
+  }
+  if (token_url) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      token_url = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, token_url, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  token_url_ = token_url;
+  // @@protoc_insertion_point(field_set_allocated:api.ClientCredentials.token_url)
+}
+
+// .common.StringArray scopes = 4;
+inline bool ClientCredentials::has_scopes() const {
+  return this != internal_default_instance() && scopes_ != NULL;
+}
+inline const ::common::StringArray& ClientCredentials::_internal_scopes() const {
+  return *scopes_;
+}
+inline const ::common::StringArray& ClientCredentials::scopes() const {
+  const ::common::StringArray* p = scopes_;
+  // @@protoc_insertion_point(field_get:api.ClientCredentials.scopes)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
+      &::common::_StringArray_default_instance_);
+}
+inline ::common::StringArray* ClientCredentials::release_scopes() {
+  // @@protoc_insertion_point(field_release:api.ClientCredentials.scopes)
+  
+  ::common::StringArray* temp = scopes_;
+  scopes_ = NULL;
+  return temp;
+}
+inline ::common::StringArray* ClientCredentials::mutable_scopes() {
+  
+  if (scopes_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
+    scopes_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.ClientCredentials.scopes)
+  return scopes_;
+}
+inline void ClientCredentials::set_allocated_scopes(::common::StringArray* scopes) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(scopes_);
+  }
+  if (scopes) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      scopes = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, scopes, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scopes_ = scopes;
+  // @@protoc_insertion_point(field_set_allocated:api.ClientCredentials.scopes)
+}
+
+// .common.StringMap endpoint_params = 5;
+inline bool ClientCredentials::has_endpoint_params() const {
   return this != internal_default_instance() && endpoint_params_ != NULL;
 }
-inline const ::common::StringMap& Config::_internal_endpoint_params() const {
+inline const ::common::StringMap& ClientCredentials::_internal_endpoint_params() const {
   return *endpoint_params_;
 }
-inline const ::common::StringMap& Config::endpoint_params() const {
+inline const ::common::StringMap& ClientCredentials::endpoint_params() const {
   const ::common::StringMap* p = endpoint_params_;
-  // @@protoc_insertion_point(field_get:api.Config.endpoint_params)
+  // @@protoc_insertion_point(field_get:api.ClientCredentials.endpoint_params)
   return p != NULL ? *p : *reinterpret_cast<const ::common::StringMap*>(
       &::common::_StringMap_default_instance_);
 }
-inline ::common::StringMap* Config::release_endpoint_params() {
-  // @@protoc_insertion_point(field_release:api.Config.endpoint_params)
+inline ::common::StringMap* ClientCredentials::release_endpoint_params() {
+  // @@protoc_insertion_point(field_release:api.ClientCredentials.endpoint_params)
   
   ::common::StringMap* temp = endpoint_params_;
   endpoint_params_ = NULL;
   return temp;
 }
-inline ::common::StringMap* Config::mutable_endpoint_params() {
+inline ::common::StringMap* ClientCredentials::mutable_endpoint_params() {
   
   if (endpoint_params_ == NULL) {
     auto* p = CreateMaybeMessage<::common::StringMap>(GetArenaNoVirtual());
     endpoint_params_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:api.Config.endpoint_params)
+  // @@protoc_insertion_point(field_mutable:api.ClientCredentials.endpoint_params)
   return endpoint_params_;
 }
-inline void Config::set_allocated_endpoint_params(::common::StringMap* endpoint_params) {
+inline void ClientCredentials::set_allocated_endpoint_params(::common::StringMap* endpoint_params) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(endpoint_params_);
@@ -11416,7 +11887,400 @@ inline void Config::set_allocated_endpoint_params(::common::StringMap* endpoint_
     
   }
   endpoint_params_ = endpoint_params;
-  // @@protoc_insertion_point(field_set_allocated:api.Config.endpoint_params)
+  // @@protoc_insertion_point(field_set_allocated:api.ClientCredentials.endpoint_params)
+}
+
+// -------------------------------------------------------------------
+
+// JWT
+
+// .common.String email = 1;
+inline bool JWT::has_email() const {
+  return this != internal_default_instance() && email_ != NULL;
+}
+inline const ::common::String& JWT::_internal_email() const {
+  return *email_;
+}
+inline const ::common::String& JWT::email() const {
+  const ::common::String* p = email_;
+  // @@protoc_insertion_point(field_get:api.JWT.email)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* JWT::release_email() {
+  // @@protoc_insertion_point(field_release:api.JWT.email)
+  
+  ::common::String* temp = email_;
+  email_ = NULL;
+  return temp;
+}
+inline ::common::String* JWT::mutable_email() {
+  
+  if (email_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    email_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.email)
+  return email_;
+}
+inline void JWT::set_allocated_email(::common::String* email) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(email_);
+  }
+  if (email) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      email = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, email, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  email_ = email;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.email)
+}
+
+// bytes private_key = 2;
+inline void JWT::clear_private_key() {
+  private_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::private_key() const {
+  // @@protoc_insertion_point(field_get:api.JWT.private_key)
+  return private_key_.GetNoArena();
+}
+inline void JWT::set_private_key(const ::std::string& value) {
+  
+  private_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:api.JWT.private_key)
+}
+#if LANG_CXX11
+inline void JWT::set_private_key(::std::string&& value) {
+  
+  private_key_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:api.JWT.private_key)
+}
+#endif
+inline void JWT::set_private_key(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  private_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:api.JWT.private_key)
+}
+inline void JWT::set_private_key(const void* value, size_t size) {
+  
+  private_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:api.JWT.private_key)
+}
+inline ::std::string* JWT::mutable_private_key() {
+  
+  // @@protoc_insertion_point(field_mutable:api.JWT.private_key)
+  return private_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_private_key() {
+  // @@protoc_insertion_point(field_release:api.JWT.private_key)
+  
+  return private_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_private_key(::std::string* private_key) {
+  if (private_key != NULL) {
+    
+  } else {
+    
+  }
+  private_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), private_key);
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.private_key)
+}
+
+// .common.String prive_key_id = 3;
+inline bool JWT::has_prive_key_id() const {
+  return this != internal_default_instance() && prive_key_id_ != NULL;
+}
+inline const ::common::String& JWT::_internal_prive_key_id() const {
+  return *prive_key_id_;
+}
+inline const ::common::String& JWT::prive_key_id() const {
+  const ::common::String* p = prive_key_id_;
+  // @@protoc_insertion_point(field_get:api.JWT.prive_key_id)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* JWT::release_prive_key_id() {
+  // @@protoc_insertion_point(field_release:api.JWT.prive_key_id)
+  
+  ::common::String* temp = prive_key_id_;
+  prive_key_id_ = NULL;
+  return temp;
+}
+inline ::common::String* JWT::mutable_prive_key_id() {
+  
+  if (prive_key_id_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    prive_key_id_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.prive_key_id)
+  return prive_key_id_;
+}
+inline void JWT::set_allocated_prive_key_id(::common::String* prive_key_id) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(prive_key_id_);
+  }
+  if (prive_key_id) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      prive_key_id = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, prive_key_id, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  prive_key_id_ = prive_key_id;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.prive_key_id)
+}
+
+// .common.String subject = 4;
+inline bool JWT::has_subject() const {
+  return this != internal_default_instance() && subject_ != NULL;
+}
+inline const ::common::String& JWT::_internal_subject() const {
+  return *subject_;
+}
+inline const ::common::String& JWT::subject() const {
+  const ::common::String* p = subject_;
+  // @@protoc_insertion_point(field_get:api.JWT.subject)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* JWT::release_subject() {
+  // @@protoc_insertion_point(field_release:api.JWT.subject)
+  
+  ::common::String* temp = subject_;
+  subject_ = NULL;
+  return temp;
+}
+inline ::common::String* JWT::mutable_subject() {
+  
+  if (subject_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    subject_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.subject)
+  return subject_;
+}
+inline void JWT::set_allocated_subject(::common::String* subject) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(subject_);
+  }
+  if (subject) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      subject = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, subject, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  subject_ = subject;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.subject)
+}
+
+// .common.StringArray scopes = 5;
+inline bool JWT::has_scopes() const {
+  return this != internal_default_instance() && scopes_ != NULL;
+}
+inline const ::common::StringArray& JWT::_internal_scopes() const {
+  return *scopes_;
+}
+inline const ::common::StringArray& JWT::scopes() const {
+  const ::common::StringArray* p = scopes_;
+  // @@protoc_insertion_point(field_get:api.JWT.scopes)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
+      &::common::_StringArray_default_instance_);
+}
+inline ::common::StringArray* JWT::release_scopes() {
+  // @@protoc_insertion_point(field_release:api.JWT.scopes)
+  
+  ::common::StringArray* temp = scopes_;
+  scopes_ = NULL;
+  return temp;
+}
+inline ::common::StringArray* JWT::mutable_scopes() {
+  
+  if (scopes_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
+    scopes_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.scopes)
+  return scopes_;
+}
+inline void JWT::set_allocated_scopes(::common::StringArray* scopes) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(scopes_);
+  }
+  if (scopes) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      scopes = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, scopes, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scopes_ = scopes;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.scopes)
+}
+
+// .common.String token_url = 6;
+inline bool JWT::has_token_url() const {
+  return this != internal_default_instance() && token_url_ != NULL;
+}
+inline const ::common::String& JWT::_internal_token_url() const {
+  return *token_url_;
+}
+inline const ::common::String& JWT::token_url() const {
+  const ::common::String* p = token_url_;
+  // @@protoc_insertion_point(field_get:api.JWT.token_url)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* JWT::release_token_url() {
+  // @@protoc_insertion_point(field_release:api.JWT.token_url)
+  
+  ::common::String* temp = token_url_;
+  token_url_ = NULL;
+  return temp;
+}
+inline ::common::String* JWT::mutable_token_url() {
+  
+  if (token_url_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    token_url_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.token_url)
+  return token_url_;
+}
+inline void JWT::set_allocated_token_url(::common::String* token_url) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(token_url_);
+  }
+  if (token_url) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      token_url = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, token_url, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  token_url_ = token_url;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.token_url)
+}
+
+// .common.String expires = 7;
+inline bool JWT::has_expires() const {
+  return this != internal_default_instance() && expires_ != NULL;
+}
+inline const ::common::String& JWT::_internal_expires() const {
+  return *expires_;
+}
+inline const ::common::String& JWT::expires() const {
+  const ::common::String* p = expires_;
+  // @@protoc_insertion_point(field_get:api.JWT.expires)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* JWT::release_expires() {
+  // @@protoc_insertion_point(field_release:api.JWT.expires)
+  
+  ::common::String* temp = expires_;
+  expires_ = NULL;
+  return temp;
+}
+inline ::common::String* JWT::mutable_expires() {
+  
+  if (expires_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    expires_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.expires)
+  return expires_;
+}
+inline void JWT::set_allocated_expires(::common::String* expires) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_);
+  }
+  if (expires) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      expires = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  expires_ = expires;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.expires)
+}
+
+// .common.String audience = 8;
+inline bool JWT::has_audience() const {
+  return this != internal_default_instance() && audience_ != NULL;
+}
+inline const ::common::String& JWT::_internal_audience() const {
+  return *audience_;
+}
+inline const ::common::String& JWT::audience() const {
+  const ::common::String* p = audience_;
+  // @@protoc_insertion_point(field_get:api.JWT.audience)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
+      &::common::_String_default_instance_);
+}
+inline ::common::String* JWT::release_audience() {
+  // @@protoc_insertion_point(field_release:api.JWT.audience)
+  
+  ::common::String* temp = audience_;
+  audience_ = NULL;
+  return temp;
+}
+inline ::common::String* JWT::mutable_audience() {
+  
+  if (audience_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
+    audience_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.JWT.audience)
+  return audience_;
+}
+inline void JWT::set_allocated_audience(::common::String* audience) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(audience_);
+  }
+  if (audience) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      audience = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, audience, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  audience_ = audience;
+  // @@protoc_insertion_point(field_set_allocated:api.JWT.audience)
 }
 
 // -------------------------------------------------------------------
@@ -11905,30 +12769,6 @@ inline void Event::set_allocated_user_id(::common::String* user_id) {
   }
   user_id_ = user_id;
   // @@protoc_insertion_point(field_set_allocated:api.Event.user_id)
-}
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// ConfigSet
-
-// map<string, .api.Config> configs = 1;
-inline int ConfigSet::configs_size() const {
-  return configs_.size();
-}
-inline void ConfigSet::clear_configs() {
-  configs_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::api::Config >&
-ConfigSet::configs() const {
-  // @@protoc_insertion_point(field_map:api.ConfigSet.configs)
-  return configs_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::api::Config >*
-ConfigSet::mutable_configs() {
-  // @@protoc_insertion_point(field_mutable_map:api.ConfigSet.configs)
-  return configs_.MutableMap();
 }
 
 // -------------------------------------------------------------------
