@@ -216,7 +216,11 @@ message JWT {
     common.String audience =8;
 }
 
-message Query {
+message DefaultGCPCredentials {
+    common.StringArray scopes =1;
+ }
+
+ message Query {
     common.String query=4;
     common.String fields=5;
 }

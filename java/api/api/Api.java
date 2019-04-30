@@ -21375,6 +21375,613 @@ public final class Api {
 
   }
 
+  public interface DefaultGCPCredentialsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:api.DefaultGCPCredentials)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.StringArray scopes = 1;</code>
+     */
+    boolean hasScopes();
+    /**
+     * <code>.common.StringArray scopes = 1;</code>
+     */
+    common.Common.StringArray getScopes();
+    /**
+     * <code>.common.StringArray scopes = 1;</code>
+     */
+    common.Common.StringArrayOrBuilder getScopesOrBuilder();
+  }
+  /**
+   * Protobuf type {@code api.DefaultGCPCredentials}
+   */
+  public  static final class DefaultGCPCredentials extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:api.DefaultGCPCredentials)
+      DefaultGCPCredentialsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DefaultGCPCredentials.newBuilder() to construct.
+    private DefaultGCPCredentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DefaultGCPCredentials() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DefaultGCPCredentials(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              common.Common.StringArray.Builder subBuilder = null;
+              if (scopes_ != null) {
+                subBuilder = scopes_.toBuilder();
+              }
+              scopes_ = input.readMessage(common.Common.StringArray.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scopes_);
+                scopes_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return api.Api.internal_static_api_DefaultGCPCredentials_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return api.Api.internal_static_api_DefaultGCPCredentials_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              api.Api.DefaultGCPCredentials.class, api.Api.DefaultGCPCredentials.Builder.class);
+    }
+
+    public static final int SCOPES_FIELD_NUMBER = 1;
+    private common.Common.StringArray scopes_;
+    /**
+     * <code>.common.StringArray scopes = 1;</code>
+     */
+    public boolean hasScopes() {
+      return scopes_ != null;
+    }
+    /**
+     * <code>.common.StringArray scopes = 1;</code>
+     */
+    public common.Common.StringArray getScopes() {
+      return scopes_ == null ? common.Common.StringArray.getDefaultInstance() : scopes_;
+    }
+    /**
+     * <code>.common.StringArray scopes = 1;</code>
+     */
+    public common.Common.StringArrayOrBuilder getScopesOrBuilder() {
+      return getScopes();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (scopes_ != null) {
+        output.writeMessage(1, getScopes());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (scopes_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getScopes());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof api.Api.DefaultGCPCredentials)) {
+        return super.equals(obj);
+      }
+      api.Api.DefaultGCPCredentials other = (api.Api.DefaultGCPCredentials) obj;
+
+      boolean result = true;
+      result = result && (hasScopes() == other.hasScopes());
+      if (hasScopes()) {
+        result = result && getScopes()
+            .equals(other.getScopes());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasScopes()) {
+        hash = (37 * hash) + SCOPES_FIELD_NUMBER;
+        hash = (53 * hash) + getScopes().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.DefaultGCPCredentials parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static api.Api.DefaultGCPCredentials parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static api.Api.DefaultGCPCredentials parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(api.Api.DefaultGCPCredentials prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code api.DefaultGCPCredentials}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:api.DefaultGCPCredentials)
+        api.Api.DefaultGCPCredentialsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return api.Api.internal_static_api_DefaultGCPCredentials_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return api.Api.internal_static_api_DefaultGCPCredentials_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                api.Api.DefaultGCPCredentials.class, api.Api.DefaultGCPCredentials.Builder.class);
+      }
+
+      // Construct using api.Api.DefaultGCPCredentials.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (scopesBuilder_ == null) {
+          scopes_ = null;
+        } else {
+          scopes_ = null;
+          scopesBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return api.Api.internal_static_api_DefaultGCPCredentials_descriptor;
+      }
+
+      @java.lang.Override
+      public api.Api.DefaultGCPCredentials getDefaultInstanceForType() {
+        return api.Api.DefaultGCPCredentials.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public api.Api.DefaultGCPCredentials build() {
+        api.Api.DefaultGCPCredentials result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public api.Api.DefaultGCPCredentials buildPartial() {
+        api.Api.DefaultGCPCredentials result = new api.Api.DefaultGCPCredentials(this);
+        if (scopesBuilder_ == null) {
+          result.scopes_ = scopes_;
+        } else {
+          result.scopes_ = scopesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof api.Api.DefaultGCPCredentials) {
+          return mergeFrom((api.Api.DefaultGCPCredentials)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(api.Api.DefaultGCPCredentials other) {
+        if (other == api.Api.DefaultGCPCredentials.getDefaultInstance()) return this;
+        if (other.hasScopes()) {
+          mergeScopes(other.getScopes());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        api.Api.DefaultGCPCredentials parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (api.Api.DefaultGCPCredentials) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private common.Common.StringArray scopes_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.StringArray, common.Common.StringArray.Builder, common.Common.StringArrayOrBuilder> scopesBuilder_;
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public boolean hasScopes() {
+        return scopesBuilder_ != null || scopes_ != null;
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public common.Common.StringArray getScopes() {
+        if (scopesBuilder_ == null) {
+          return scopes_ == null ? common.Common.StringArray.getDefaultInstance() : scopes_;
+        } else {
+          return scopesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public Builder setScopes(common.Common.StringArray value) {
+        if (scopesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scopes_ = value;
+          onChanged();
+        } else {
+          scopesBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public Builder setScopes(
+          common.Common.StringArray.Builder builderForValue) {
+        if (scopesBuilder_ == null) {
+          scopes_ = builderForValue.build();
+          onChanged();
+        } else {
+          scopesBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public Builder mergeScopes(common.Common.StringArray value) {
+        if (scopesBuilder_ == null) {
+          if (scopes_ != null) {
+            scopes_ =
+              common.Common.StringArray.newBuilder(scopes_).mergeFrom(value).buildPartial();
+          } else {
+            scopes_ = value;
+          }
+          onChanged();
+        } else {
+          scopesBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public Builder clearScopes() {
+        if (scopesBuilder_ == null) {
+          scopes_ = null;
+          onChanged();
+        } else {
+          scopes_ = null;
+          scopesBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public common.Common.StringArray.Builder getScopesBuilder() {
+        
+        onChanged();
+        return getScopesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      public common.Common.StringArrayOrBuilder getScopesOrBuilder() {
+        if (scopesBuilder_ != null) {
+          return scopesBuilder_.getMessageOrBuilder();
+        } else {
+          return scopes_ == null ?
+              common.Common.StringArray.getDefaultInstance() : scopes_;
+        }
+      }
+      /**
+       * <code>.common.StringArray scopes = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          common.Common.StringArray, common.Common.StringArray.Builder, common.Common.StringArrayOrBuilder> 
+          getScopesFieldBuilder() {
+        if (scopesBuilder_ == null) {
+          scopesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              common.Common.StringArray, common.Common.StringArray.Builder, common.Common.StringArrayOrBuilder>(
+                  getScopes(),
+                  getParentForChildren(),
+                  isClean());
+          scopes_ = null;
+        }
+        return scopesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:api.DefaultGCPCredentials)
+    }
+
+    // @@protoc_insertion_point(class_scope:api.DefaultGCPCredentials)
+    private static final api.Api.DefaultGCPCredentials DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new api.Api.DefaultGCPCredentials();
+    }
+
+    public static api.Api.DefaultGCPCredentials getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DefaultGCPCredentials>
+        PARSER = new com.google.protobuf.AbstractParser<DefaultGCPCredentials>() {
+      @java.lang.Override
+      public DefaultGCPCredentials parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DefaultGCPCredentials(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DefaultGCPCredentials> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DefaultGCPCredentials> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public api.Api.DefaultGCPCredentials getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface QueryOrBuilder extends
       // @@protoc_insertion_point(interface_extends:api.Query)
       com.google.protobuf.MessageOrBuilder {
@@ -27731,6 +28338,11 @@ public final class Api {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_api_JWT_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_api_DefaultGCPCredentials_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_api_DefaultGCPCredentials_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_api_Query_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -27836,51 +28448,52 @@ public final class Api {
       "2\023.common.StringArray\022!\n\ttoken_url\030\006 \001(\013" +
       "2\016.common.String\022\037\n\007expires\030\007 \001(\0132\016.comm" +
       "on.String\022 \n\010audience\030\010 \001(\0132\016.common.Str" +
-      "ing\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.common.Str" +
-      "ing\022\036\n\006fields\030\005 \001(\0132\016.common.String\"\270\002\n\005" +
-      "Event\022\034\n\004date\030\001 \001(\0132\016.common.String\022\034\n\004t" +
-      "ype\030\002 \001(\0132\016.common.String\022!\n\tclient_id\030\003" +
-      " \001(\0132\016.common.String\022#\n\013client_name\030\004 \001(" +
-      "\0132\016.common.String\022\032\n\002ip\030\005 \001(\0132\016.common.S" +
-      "tring\022%\n\rlocation_info\030\006 \001(\0132\016.common.St" +
-      "ring\022\037\n\007details\030\007 \001(\0132\016.common.String\022\037\n" +
-      "\007user_id\030\010 \001(\0132\016.common.String\022&\n\013annota" +
-      "tions\030\t \001(\0132\021.common.StringMap\"L\n\nEventQ" +
-      "uery\022\014\n\004date\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\021\n\tclie" +
-      "nt_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\"\300\001\n\013JSONWeb" +
-      "Keys\022\033\n\003kty\030\001 \001(\0132\016.common.String\022\037\n\003kid" +
-      "\030\002 \001(\0132\022.common.Identifier\022\033\n\003use\030\003 \001(\0132" +
-      "\016.common.String\022\031\n\001n\030\004 \001(\0132\016.common.Stri" +
-      "ng\022\031\n\001e\030\005 \001(\0132\016.common.String\022 \n\003x5c\030\006 \001" +
-      "(\0132\023.common.StringArray\"&\n\004Jwks\022\036\n\004keys\030" +
-      "\001 \003(\0132\020.api.JSONWebKeys*A\n\017BillingInterv" +
-      "al\022\t\n\005DAILY\020\000\022\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002\022\n" +
-      "\n\006YEARLY\020\003*\230\001\n\tEventType\022\023\n\017LOGIN_CODE_S" +
-      "ENT\020\000\022\020\n\014DELETED_USER\020\001\022\020\n\014FAILED_LOGIN\020" +
-      "\002\022\030\n\024FAILED_API_OPERATION\020\003\022\007\n\003CON\020\004\022\017\n\013" +
-      "FAILED_CORS\020\005\022\036\n\032SUCCESS_EMAIL_VERIFICAT" +
-      "ION\020\0062I\n\014DebugService\0229\n\004Echo\022\016.common.S" +
-      "tring\032\016.common.String\"\021\202\323\344\223\002\013\"\006/debug:\001*" +
-      "2\247\001\n\023SubscriptionService\022D\n\tSubscribe\022\025." +
-      "api.SubscribeRequest\032\t.api.User\"\025\202\323\344\223\002\017\"" +
-      "\n/subscribe:\001*\022J\n\013Unsubscribe\022\027.api.UnSu" +
-      "bscribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014/unsu" +
-      "bscribe:\001*2\\\n\025AuthenticationService\022C\n\007G" +
-      "etUser\022\021.common.AuthToken\032\t.api.User\"\032\202\323" +
-      "\344\223\002\024\"\017/authentication:\001*2\230\003\n\013UserService" +
-      "\022H\n\nQueryUsers\022\n.api.Query\032\t.api.User\"!\202" +
-      "\323\344\223\002\033\"\026/management/user/query:\001*0\001\022I\n\007Ge" +
-      "tUser\022\022.common.Identifier\032\t.api.User\"\037\202\323" +
-      "\344\223\002\031\"\024/management/user/get:\001*\022F\n\nUpdateU" +
-      "ser\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027/mana" +
-      "gement/user/update:\001*\022O\n\tUserRoles\022\022.com" +
-      "mon.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026/mana" +
-      "gement/user/roles:\001*0\001\022[\n\014AddUserRoles\022\030" +
-      ".api.AddUserRolesRequest\032\016.common.String" +
-      "\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*2N\n\014E" +
-      "ventService\022>\n\tGetEvents\022\017.api.EventQuer" +
-      "y\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001b\006pro" +
-      "to3"
+      "ing\"<\n\025DefaultGCPCredentials\022#\n\006scopes\030\001" +
+      " \001(\0132\023.common.StringArray\"F\n\005Query\022\035\n\005qu" +
+      "ery\030\004 \001(\0132\016.common.String\022\036\n\006fields\030\005 \001(" +
+      "\0132\016.common.String\"\270\002\n\005Event\022\034\n\004date\030\001 \001(" +
+      "\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.common" +
+      ".String\022!\n\tclient_id\030\003 \001(\0132\016.common.Stri" +
+      "ng\022#\n\013client_name\030\004 \001(\0132\016.common.String\022" +
+      "\032\n\002ip\030\005 \001(\0132\016.common.String\022%\n\rlocation_" +
+      "info\030\006 \001(\0132\016.common.String\022\037\n\007details\030\007 " +
+      "\001(\0132\016.common.String\022\037\n\007user_id\030\010 \001(\0132\016.c" +
+      "ommon.String\022&\n\013annotations\030\t \001(\0132\021.comm" +
+      "on.StringMap\"L\n\nEventQuery\022\014\n\004date\030\001 \001(\t" +
+      "\022\014\n\004type\030\002 \001(\t\022\021\n\tclient_id\030\003 \001(\t\022\017\n\007use" +
+      "r_id\030\004 \001(\t\"\300\001\n\013JSONWebKeys\022\033\n\003kty\030\001 \001(\0132" +
+      "\016.common.String\022\037\n\003kid\030\002 \001(\0132\022.common.Id" +
+      "entifier\022\033\n\003use\030\003 \001(\0132\016.common.String\022\031\n" +
+      "\001n\030\004 \001(\0132\016.common.String\022\031\n\001e\030\005 \001(\0132\016.co" +
+      "mmon.String\022 \n\003x5c\030\006 \001(\0132\023.common.String" +
+      "Array\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWe" +
+      "bKeys*A\n\017BillingInterval\022\t\n\005DAILY\020\000\022\n\n\006W" +
+      "EEKLY\020\001\022\013\n\007MONTHLY\020\002\022\n\n\006YEARLY\020\003*\230\001\n\tEve" +
+      "ntType\022\023\n\017LOGIN_CODE_SENT\020\000\022\020\n\014DELETED_U" +
+      "SER\020\001\022\020\n\014FAILED_LOGIN\020\002\022\030\n\024FAILED_API_OP" +
+      "ERATION\020\003\022\007\n\003CON\020\004\022\017\n\013FAILED_CORS\020\005\022\036\n\032S" +
+      "UCCESS_EMAIL_VERIFICATION\020\0062I\n\014DebugServ" +
+      "ice\0229\n\004Echo\022\016.common.String\032\016.common.Str" +
+      "ing\"\021\202\323\344\223\002\013\"\006/debug:\001*2\247\001\n\023SubscriptionS" +
+      "ervice\022D\n\tSubscribe\022\025.api.SubscribeReque" +
+      "st\032\t.api.User\"\025\202\323\344\223\002\017\"\n/subscribe:\001*\022J\n\013" +
+      "Unsubscribe\022\027.api.UnSubscribeRequest\032\t.a" +
+      "pi.User\"\027\202\323\344\223\002\021\"\014/unsubscribe:\001*2\\\n\025Auth" +
+      "enticationService\022C\n\007GetUser\022\021.common.Au" +
+      "thToken\032\t.api.User\"\032\202\323\344\223\002\024\"\017/authenticat" +
+      "ion:\001*2\230\003\n\013UserService\022H\n\nQueryUsers\022\n.a" +
+      "pi.Query\032\t.api.User\"!\202\323\344\223\002\033\"\026/management" +
+      "/user/query:\001*0\001\022I\n\007GetUser\022\022.common.Ide" +
+      "ntifier\032\t.api.User\"\037\202\323\344\223\002\031\"\024/management/" +
+      "user/get:\001*\022F\n\nUpdateUser\022\t.api.User\032\t.a" +
+      "pi.User\"\"\202\323\344\223\002\034\"\027/management/user/update" +
+      ":\001*\022O\n\tUserRoles\022\022.common.Identifier\032\t.a" +
+      "pi.Role\"!\202\323\344\223\002\033\"\026/management/user/roles:" +
+      "\001*0\001\022[\n\014AddUserRoles\022\030.api.AddUserRolesR" +
+      "equest\032\016.common.String\"!\202\323\344\223\002\033\"\026/managem" +
+      "ent/user/roles:\001*2N\n\014EventService\022>\n\tGet" +
+      "Events\022\017.api.EventQuery\032\n.api.Event\"\022\202\323\344" +
+      "\223\002\014\"\007/events:\001*0\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -27986,32 +28599,38 @@ public final class Api {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JWT_descriptor,
         new java.lang.String[] { "Email", "PrivateKey", "PriveKeyId", "Subject", "Scopes", "TokenUrl", "Expires", "Audience", });
-    internal_static_api_Query_descriptor =
+    internal_static_api_DefaultGCPCredentials_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_api_DefaultGCPCredentials_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_api_DefaultGCPCredentials_descriptor,
+        new java.lang.String[] { "Scopes", });
+    internal_static_api_Query_descriptor =
+      getDescriptor().getMessageTypes().get(16);
     internal_static_api_Query_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Query_descriptor,
         new java.lang.String[] { "Query", "Fields", });
     internal_static_api_Event_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_api_Event_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Event_descriptor,
         new java.lang.String[] { "Date", "Type", "ClientId", "ClientName", "Ip", "LocationInfo", "Details", "UserId", "Annotations", });
     internal_static_api_EventQuery_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_api_EventQuery_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_EventQuery_descriptor,
         new java.lang.String[] { "Date", "Type", "ClientId", "UserId", });
     internal_static_api_JSONWebKeys_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_api_JSONWebKeys_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_JSONWebKeys_descriptor,
         new java.lang.String[] { "Kty", "Kid", "Use", "N", "E", "X5C", });
     internal_static_api_Jwks_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_api_Jwks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_api_Jwks_descriptor,

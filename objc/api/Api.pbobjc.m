@@ -1545,6 +1545,49 @@ typedef struct JWT__storage_ {
 
 @end
 
+#pragma mark - DefaultGCPCredentials
+
+@implementation DefaultGCPCredentials
+
+@dynamic hasScopes, scopes;
+
+typedef struct DefaultGCPCredentials__storage_ {
+  uint32_t _has_storage_[1];
+  StringArray *scopes;
+} DefaultGCPCredentials__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "scopes",
+        .dataTypeSpecific.className = GPBStringifySymbol(StringArray),
+        .number = DefaultGCPCredentials_FieldNumber_Scopes,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(DefaultGCPCredentials__storage_, scopes),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeMessage,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[DefaultGCPCredentials class]
+                                     rootClass:[ApiRoot class]
+                                          file:ApiRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(DefaultGCPCredentials__storage_)
+                                         flags:GPBDescriptorInitializationFlag_None];
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
 #pragma mark - Query
 
 @implementation Query

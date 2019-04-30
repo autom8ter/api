@@ -41,7 +41,7 @@ namespace protobuf_api_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[20];
+  static const ::google::protobuf::internal::ParseTable schema[21];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -64,6 +64,9 @@ extern CardDefaultTypeInternal _Card_default_instance_;
 class ClientCredentials;
 class ClientCredentialsDefaultTypeInternal;
 extern ClientCredentialsDefaultTypeInternal _ClientCredentials_default_instance_;
+class DefaultGCPCredentials;
+class DefaultGCPCredentialsDefaultTypeInternal;
+extern DefaultGCPCredentialsDefaultTypeInternal _DefaultGCPCredentials_default_instance_;
 class Event;
 class EventDefaultTypeInternal;
 extern EventDefaultTypeInternal _Event_default_instance_;
@@ -117,6 +120,7 @@ template<> ::api::Address* Arena::CreateMaybeMessage<::api::Address>(Arena*);
 template<> ::api::AppMetadata* Arena::CreateMaybeMessage<::api::AppMetadata>(Arena*);
 template<> ::api::Card* Arena::CreateMaybeMessage<::api::Card>(Arena*);
 template<> ::api::ClientCredentials* Arena::CreateMaybeMessage<::api::ClientCredentials>(Arena*);
+template<> ::api::DefaultGCPCredentials* Arena::CreateMaybeMessage<::api::DefaultGCPCredentials>(Arena*);
 template<> ::api::Event* Arena::CreateMaybeMessage<::api::Event>(Arena*);
 template<> ::api::EventQuery* Arena::CreateMaybeMessage<::api::EventQuery>(Arena*);
 template<> ::api::Identity* Arena::CreateMaybeMessage<::api::Identity>(Arena*);
@@ -2656,6 +2660,115 @@ class JWT : public ::google::protobuf::Message /* @@protoc_insertion_point(class
 };
 // -------------------------------------------------------------------
 
+class DefaultGCPCredentials : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.DefaultGCPCredentials) */ {
+ public:
+  DefaultGCPCredentials();
+  virtual ~DefaultGCPCredentials();
+
+  DefaultGCPCredentials(const DefaultGCPCredentials& from);
+
+  inline DefaultGCPCredentials& operator=(const DefaultGCPCredentials& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DefaultGCPCredentials(DefaultGCPCredentials&& from) noexcept
+    : DefaultGCPCredentials() {
+    *this = ::std::move(from);
+  }
+
+  inline DefaultGCPCredentials& operator=(DefaultGCPCredentials&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DefaultGCPCredentials& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DefaultGCPCredentials* internal_default_instance() {
+    return reinterpret_cast<const DefaultGCPCredentials*>(
+               &_DefaultGCPCredentials_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  void Swap(DefaultGCPCredentials* other);
+  friend void swap(DefaultGCPCredentials& a, DefaultGCPCredentials& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DefaultGCPCredentials* New() const final {
+    return CreateMaybeMessage<DefaultGCPCredentials>(NULL);
+  }
+
+  DefaultGCPCredentials* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DefaultGCPCredentials>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DefaultGCPCredentials& from);
+  void MergeFrom(const DefaultGCPCredentials& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DefaultGCPCredentials* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .common.StringArray scopes = 1;
+  bool has_scopes() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 1;
+  private:
+  const ::common::StringArray& _internal_scopes() const;
+  public:
+  const ::common::StringArray& scopes() const;
+  ::common::StringArray* release_scopes();
+  ::common::StringArray* mutable_scopes();
+  void set_allocated_scopes(::common::StringArray* scopes);
+
+  // @@protoc_insertion_point(class_scope:api.DefaultGCPCredentials)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::common::StringArray* scopes_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_api_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:api.Query) */ {
  public:
   Query();
@@ -2691,7 +2804,7 @@ class Query : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Query_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(Query* other);
   friend void swap(Query& a, Query& b) {
@@ -2813,7 +2926,7 @@ class Event : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(Event* other);
   friend void swap(Event& a, Event& b) {
@@ -3026,7 +3139,7 @@ class EventQuery : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_EventQuery_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(EventQuery* other);
   friend void swap(EventQuery& a, EventQuery& b) {
@@ -3182,7 +3295,7 @@ class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(JSONWebKeys* other);
   friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
@@ -3356,7 +3469,7 @@ class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(Jwks* other);
   friend void swap(Jwks& a, Jwks& b) {
@@ -7199,6 +7312,58 @@ inline void JWT::set_allocated_audience(::common::String* audience) {
 
 // -------------------------------------------------------------------
 
+// DefaultGCPCredentials
+
+// .common.StringArray scopes = 1;
+inline bool DefaultGCPCredentials::has_scopes() const {
+  return this != internal_default_instance() && scopes_ != NULL;
+}
+inline const ::common::StringArray& DefaultGCPCredentials::_internal_scopes() const {
+  return *scopes_;
+}
+inline const ::common::StringArray& DefaultGCPCredentials::scopes() const {
+  const ::common::StringArray* p = scopes_;
+  // @@protoc_insertion_point(field_get:api.DefaultGCPCredentials.scopes)
+  return p != NULL ? *p : *reinterpret_cast<const ::common::StringArray*>(
+      &::common::_StringArray_default_instance_);
+}
+inline ::common::StringArray* DefaultGCPCredentials::release_scopes() {
+  // @@protoc_insertion_point(field_release:api.DefaultGCPCredentials.scopes)
+  
+  ::common::StringArray* temp = scopes_;
+  scopes_ = NULL;
+  return temp;
+}
+inline ::common::StringArray* DefaultGCPCredentials::mutable_scopes() {
+  
+  if (scopes_ == NULL) {
+    auto* p = CreateMaybeMessage<::common::StringArray>(GetArenaNoVirtual());
+    scopes_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:api.DefaultGCPCredentials.scopes)
+  return scopes_;
+}
+inline void DefaultGCPCredentials::set_allocated_scopes(::common::StringArray* scopes) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(scopes_);
+  }
+  if (scopes) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      scopes = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, scopes, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  scopes_ = scopes;
+  // @@protoc_insertion_point(field_set_allocated:api.DefaultGCPCredentials.scopes)
+}
+
+// -------------------------------------------------------------------
+
 // Query
 
 // .common.String query = 4;
@@ -8278,6 +8443,8 @@ Jwks::keys() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

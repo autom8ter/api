@@ -12,6 +12,7 @@ import (
 	"github.com/golang/protobuf/proto"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
+	"golang.org/x/oauth2/google"
 	ojwt "golang.org/x/oauth2/jwt"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
@@ -152,6 +153,9 @@ func (s *OAuth2) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
 
+func (s *DefaultGCPCredentials) ToContext(ctx context.Context, key string) context.Context {
+	return context.WithValue(ctx, key, s)
+}
 func (s *ClientCredentials) ToContext(ctx context.Context, key string) context.Context {
 	return context.WithValue(ctx, key, s)
 }
@@ -428,4 +432,60 @@ func NewOAuth2(clientID string, clientSecret string, tokenURL string, authURL st
 		Scopes:       common.ToStringArray(scopes),
 		Redirect:     common.ToString(redirect),
 	}
+}
+
+func NewGoogleDefaultCredentials(scopes []string) *DefaultGCPCredentials {
+	return &DefaultGCPCredentials{
+		Scopes: common.ToStringArray(scopes),
+	}
+}
+
+func (d *DefaultGCPCredentials) FindCredentials() (*google.Credentials, error) {
+	return google.FindDefaultCredentials(context.TODO(), d.Scopes.Array()...)
+}
+
+func (d *DefaultGCPCredentials) Token() (*oauth2.Token, error) {
+	creds, err := d.FindCredentials()
+	if err != nil {
+		return nil, err
+	}
+	t, err := creds.TokenSource.Token()
+	if err != nil {
+		return nil, err
+	}
+	return t, nil
+}
+
+func (c *DefaultGCPCredentials) NewAPIClientSet(ctx context.Context, addr string) (*ClientSet, error) {
+	creds, err := c.PerRPCCredentials()
+	if err != nil {
+		return nil, err
+	}
+	conn, err := grpc.DialContext(ctx, addr, grpc.WithPerRPCCredentials(creds))
+	if err != nil {
+		return nil, err
+	}
+	return NewClientSet(conn), nil
+
+}
+
+func (c *DefaultGCPCredentials) Client(ctx context.Context) *http.Client {
+	return oauth2.NewClient(ctx, c)
+}
+
+func (c *DefaultGCPCredentials) PerRPCCredentials() (credentials.PerRPCCredentials, error) {
+	tok, err := c.Token()
+	if err != nil {
+		return nil, err
+	}
+	return oauth.NewOauthAccess(tok), nil
+}
+
+func (s *DefaultGCPCredentials) Debugf(format string) {
+	str := common.MessageToJSONString(s)
+	str.Debugf(format)
+}
+
+func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error) error {
+	return fn(s)
 }

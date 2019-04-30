@@ -111,6 +111,11 @@ class JWTDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<JWT>
       _instance;
 } _JWT_default_instance_;
+class DefaultGCPCredentialsDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<DefaultGCPCredentials>
+      _instance;
+} _DefaultGCPCredentials_default_instance_;
 class QueryDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Query>
@@ -384,6 +389,21 @@ static void InitDefaultsJWT() {
       &protobuf_common_2fcommon_2eproto::scc_info_String.base,
       &protobuf_common_2fcommon_2eproto::scc_info_StringArray.base,}};
 
+static void InitDefaultsDefaultGCPCredentials() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::api::_DefaultGCPCredentials_default_instance_;
+    new (ptr) ::api::DefaultGCPCredentials();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::api::DefaultGCPCredentials::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_DefaultGCPCredentials =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsDefaultGCPCredentials}, {
+      &protobuf_common_2fcommon_2eproto::scc_info_StringArray.base,}};
+
 static void InitDefaultsQuery() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -477,6 +497,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_OAuth2.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ClientCredentials.base);
   ::google::protobuf::internal::InitSCC(&scc_info_JWT.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DefaultGCPCredentials.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Query.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Event.base);
   ::google::protobuf::internal::InitSCC(&scc_info_EventQuery.base);
@@ -484,7 +505,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Jwks.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[20];
+::google::protobuf::Metadata file_level_metadata[21];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -645,6 +666,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWT, expires_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::JWT, audience_),
   ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::DefaultGCPCredentials, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::DefaultGCPCredentials, scopes_),
+  ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::api::Query, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -708,11 +735,12 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 121, -1, sizeof(::api::OAuth2)},
   { 133, -1, sizeof(::api::ClientCredentials)},
   { 143, -1, sizeof(::api::JWT)},
-  { 156, -1, sizeof(::api::Query)},
-  { 163, -1, sizeof(::api::Event)},
-  { 177, -1, sizeof(::api::EventQuery)},
-  { 186, -1, sizeof(::api::JSONWebKeys)},
-  { 197, -1, sizeof(::api::Jwks)},
+  { 156, -1, sizeof(::api::DefaultGCPCredentials)},
+  { 162, -1, sizeof(::api::Query)},
+  { 169, -1, sizeof(::api::Event)},
+  { 183, -1, sizeof(::api::EventQuery)},
+  { 192, -1, sizeof(::api::JSONWebKeys)},
+  { 203, -1, sizeof(::api::Jwks)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -731,6 +759,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_OAuth2_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_ClientCredentials_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_JWT_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::api::_DefaultGCPCredentials_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Query_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_Event_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::api::_EventQuery_default_instance_),
@@ -753,7 +782,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 20);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 21);
 }
 
 void AddDescriptorsImpl() {
@@ -831,54 +860,55 @@ void AddDescriptorsImpl() {
       "2\023.common.StringArray\022!\n\ttoken_url\030\006 \001(\013"
       "2\016.common.String\022\037\n\007expires\030\007 \001(\0132\016.comm"
       "on.String\022 \n\010audience\030\010 \001(\0132\016.common.Str"
-      "ing\"F\n\005Query\022\035\n\005query\030\004 \001(\0132\016.common.Str"
-      "ing\022\036\n\006fields\030\005 \001(\0132\016.common.String\"\270\002\n\005"
-      "Event\022\034\n\004date\030\001 \001(\0132\016.common.String\022\034\n\004t"
-      "ype\030\002 \001(\0132\016.common.String\022!\n\tclient_id\030\003"
-      " \001(\0132\016.common.String\022#\n\013client_name\030\004 \001("
-      "\0132\016.common.String\022\032\n\002ip\030\005 \001(\0132\016.common.S"
-      "tring\022%\n\rlocation_info\030\006 \001(\0132\016.common.St"
-      "ring\022\037\n\007details\030\007 \001(\0132\016.common.String\022\037\n"
-      "\007user_id\030\010 \001(\0132\016.common.String\022&\n\013annota"
-      "tions\030\t \001(\0132\021.common.StringMap\"L\n\nEventQ"
-      "uery\022\014\n\004date\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\021\n\tclie"
-      "nt_id\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\"\300\001\n\013JSONWeb"
-      "Keys\022\033\n\003kty\030\001 \001(\0132\016.common.String\022\037\n\003kid"
-      "\030\002 \001(\0132\022.common.Identifier\022\033\n\003use\030\003 \001(\0132"
-      "\016.common.String\022\031\n\001n\030\004 \001(\0132\016.common.Stri"
-      "ng\022\031\n\001e\030\005 \001(\0132\016.common.String\022 \n\003x5c\030\006 \001"
-      "(\0132\023.common.StringArray\"&\n\004Jwks\022\036\n\004keys\030"
-      "\001 \003(\0132\020.api.JSONWebKeys*A\n\017BillingInterv"
-      "al\022\t\n\005DAILY\020\000\022\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002\022\n"
-      "\n\006YEARLY\020\003*\230\001\n\tEventType\022\023\n\017LOGIN_CODE_S"
-      "ENT\020\000\022\020\n\014DELETED_USER\020\001\022\020\n\014FAILED_LOGIN\020"
-      "\002\022\030\n\024FAILED_API_OPERATION\020\003\022\007\n\003CON\020\004\022\017\n\013"
-      "FAILED_CORS\020\005\022\036\n\032SUCCESS_EMAIL_VERIFICAT"
-      "ION\020\0062I\n\014DebugService\0229\n\004Echo\022\016.common.S"
-      "tring\032\016.common.String\"\021\202\323\344\223\002\013\"\006/debug:\001*"
-      "2\247\001\n\023SubscriptionService\022D\n\tSubscribe\022\025."
-      "api.SubscribeRequest\032\t.api.User\"\025\202\323\344\223\002\017\""
-      "\n/subscribe:\001*\022J\n\013Unsubscribe\022\027.api.UnSu"
-      "bscribeRequest\032\t.api.User\"\027\202\323\344\223\002\021\"\014/unsu"
-      "bscribe:\001*2\\\n\025AuthenticationService\022C\n\007G"
-      "etUser\022\021.common.AuthToken\032\t.api.User\"\032\202\323"
-      "\344\223\002\024\"\017/authentication:\001*2\230\003\n\013UserService"
-      "\022H\n\nQueryUsers\022\n.api.Query\032\t.api.User\"!\202"
-      "\323\344\223\002\033\"\026/management/user/query:\001*0\001\022I\n\007Ge"
-      "tUser\022\022.common.Identifier\032\t.api.User\"\037\202\323"
-      "\344\223\002\031\"\024/management/user/get:\001*\022F\n\nUpdateU"
-      "ser\022\t.api.User\032\t.api.User\"\"\202\323\344\223\002\034\"\027/mana"
-      "gement/user/update:\001*\022O\n\tUserRoles\022\022.com"
-      "mon.Identifier\032\t.api.Role\"!\202\323\344\223\002\033\"\026/mana"
-      "gement/user/roles:\001*0\001\022[\n\014AddUserRoles\022\030"
-      ".api.AddUserRolesRequest\032\016.common.String"
-      "\"!\202\323\344\223\002\033\"\026/management/user/roles:\001*2N\n\014E"
-      "ventService\022>\n\tGetEvents\022\017.api.EventQuer"
-      "y\032\n.api.Event\"\022\202\323\344\223\002\014\"\007/events:\001*0\001b\006pro"
-      "to3"
+      "ing\"<\n\025DefaultGCPCredentials\022#\n\006scopes\030\001"
+      " \001(\0132\023.common.StringArray\"F\n\005Query\022\035\n\005qu"
+      "ery\030\004 \001(\0132\016.common.String\022\036\n\006fields\030\005 \001("
+      "\0132\016.common.String\"\270\002\n\005Event\022\034\n\004date\030\001 \001("
+      "\0132\016.common.String\022\034\n\004type\030\002 \001(\0132\016.common"
+      ".String\022!\n\tclient_id\030\003 \001(\0132\016.common.Stri"
+      "ng\022#\n\013client_name\030\004 \001(\0132\016.common.String\022"
+      "\032\n\002ip\030\005 \001(\0132\016.common.String\022%\n\rlocation_"
+      "info\030\006 \001(\0132\016.common.String\022\037\n\007details\030\007 "
+      "\001(\0132\016.common.String\022\037\n\007user_id\030\010 \001(\0132\016.c"
+      "ommon.String\022&\n\013annotations\030\t \001(\0132\021.comm"
+      "on.StringMap\"L\n\nEventQuery\022\014\n\004date\030\001 \001(\t"
+      "\022\014\n\004type\030\002 \001(\t\022\021\n\tclient_id\030\003 \001(\t\022\017\n\007use"
+      "r_id\030\004 \001(\t\"\300\001\n\013JSONWebKeys\022\033\n\003kty\030\001 \001(\0132"
+      "\016.common.String\022\037\n\003kid\030\002 \001(\0132\022.common.Id"
+      "entifier\022\033\n\003use\030\003 \001(\0132\016.common.String\022\031\n"
+      "\001n\030\004 \001(\0132\016.common.String\022\031\n\001e\030\005 \001(\0132\016.co"
+      "mmon.String\022 \n\003x5c\030\006 \001(\0132\023.common.String"
+      "Array\"&\n\004Jwks\022\036\n\004keys\030\001 \003(\0132\020.api.JSONWe"
+      "bKeys*A\n\017BillingInterval\022\t\n\005DAILY\020\000\022\n\n\006W"
+      "EEKLY\020\001\022\013\n\007MONTHLY\020\002\022\n\n\006YEARLY\020\003*\230\001\n\tEve"
+      "ntType\022\023\n\017LOGIN_CODE_SENT\020\000\022\020\n\014DELETED_U"
+      "SER\020\001\022\020\n\014FAILED_LOGIN\020\002\022\030\n\024FAILED_API_OP"
+      "ERATION\020\003\022\007\n\003CON\020\004\022\017\n\013FAILED_CORS\020\005\022\036\n\032S"
+      "UCCESS_EMAIL_VERIFICATION\020\0062I\n\014DebugServ"
+      "ice\0229\n\004Echo\022\016.common.String\032\016.common.Str"
+      "ing\"\021\202\323\344\223\002\013\"\006/debug:\001*2\247\001\n\023SubscriptionS"
+      "ervice\022D\n\tSubscribe\022\025.api.SubscribeReque"
+      "st\032\t.api.User\"\025\202\323\344\223\002\017\"\n/subscribe:\001*\022J\n\013"
+      "Unsubscribe\022\027.api.UnSubscribeRequest\032\t.a"
+      "pi.User\"\027\202\323\344\223\002\021\"\014/unsubscribe:\001*2\\\n\025Auth"
+      "enticationService\022C\n\007GetUser\022\021.common.Au"
+      "thToken\032\t.api.User\"\032\202\323\344\223\002\024\"\017/authenticat"
+      "ion:\001*2\230\003\n\013UserService\022H\n\nQueryUsers\022\n.a"
+      "pi.Query\032\t.api.User\"!\202\323\344\223\002\033\"\026/management"
+      "/user/query:\001*0\001\022I\n\007GetUser\022\022.common.Ide"
+      "ntifier\032\t.api.User\"\037\202\323\344\223\002\031\"\024/management/"
+      "user/get:\001*\022F\n\nUpdateUser\022\t.api.User\032\t.a"
+      "pi.User\"\"\202\323\344\223\002\034\"\027/management/user/update"
+      ":\001*\022O\n\tUserRoles\022\022.common.Identifier\032\t.a"
+      "pi.Role\"!\202\323\344\223\002\033\"\026/management/user/roles:"
+      "\001*0\001\022[\n\014AddUserRoles\022\030.api.AddUserRolesR"
+      "equest\032\016.common.String\"!\202\323\344\223\002\033\"\026/managem"
+      "ent/user/roles:\001*2N\n\014EventService\022>\n\tGet"
+      "Events\022\017.api.EventQuery\032\n.api.Event\"\022\202\323\344"
+      "\223\002\014\"\007/events:\001*0\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 4643);
+      descriptor, 4705);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "api.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fapi_2fannotations_2eproto::AddDescriptors();
@@ -8044,6 +8074,246 @@ void JWT::InternalSwap(JWT* other) {
 
 // ===================================================================
 
+void DefaultGCPCredentials::InitAsDefaultInstance() {
+  ::api::_DefaultGCPCredentials_default_instance_._instance.get_mutable()->scopes_ = const_cast< ::common::StringArray*>(
+      ::common::StringArray::internal_default_instance());
+}
+void DefaultGCPCredentials::clear_scopes() {
+  if (GetArenaNoVirtual() == NULL && scopes_ != NULL) {
+    delete scopes_;
+  }
+  scopes_ = NULL;
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DefaultGCPCredentials::kScopesFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DefaultGCPCredentials::DefaultGCPCredentials()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_api_2eproto::scc_info_DefaultGCPCredentials.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:api.DefaultGCPCredentials)
+}
+DefaultGCPCredentials::DefaultGCPCredentials(const DefaultGCPCredentials& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_scopes()) {
+    scopes_ = new ::common::StringArray(*from.scopes_);
+  } else {
+    scopes_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:api.DefaultGCPCredentials)
+}
+
+void DefaultGCPCredentials::SharedCtor() {
+  scopes_ = NULL;
+}
+
+DefaultGCPCredentials::~DefaultGCPCredentials() {
+  // @@protoc_insertion_point(destructor:api.DefaultGCPCredentials)
+  SharedDtor();
+}
+
+void DefaultGCPCredentials::SharedDtor() {
+  if (this != internal_default_instance()) delete scopes_;
+}
+
+void DefaultGCPCredentials::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* DefaultGCPCredentials::descriptor() {
+  ::protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const DefaultGCPCredentials& DefaultGCPCredentials::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_api_2eproto::scc_info_DefaultGCPCredentials.base);
+  return *internal_default_instance();
+}
+
+
+void DefaultGCPCredentials::Clear() {
+// @@protoc_insertion_point(message_clear_start:api.DefaultGCPCredentials)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaNoVirtual() == NULL && scopes_ != NULL) {
+    delete scopes_;
+  }
+  scopes_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool DefaultGCPCredentials::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:api.DefaultGCPCredentials)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .common.StringArray scopes = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_scopes()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:api.DefaultGCPCredentials)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:api.DefaultGCPCredentials)
+  return false;
+#undef DO_
+}
+
+void DefaultGCPCredentials::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:api.DefaultGCPCredentials)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.StringArray scopes = 1;
+  if (this->has_scopes()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_scopes(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:api.DefaultGCPCredentials)
+}
+
+::google::protobuf::uint8* DefaultGCPCredentials::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:api.DefaultGCPCredentials)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.StringArray scopes = 1;
+  if (this->has_scopes()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_scopes(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:api.DefaultGCPCredentials)
+  return target;
+}
+
+size_t DefaultGCPCredentials::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:api.DefaultGCPCredentials)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // .common.StringArray scopes = 1;
+  if (this->has_scopes()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *scopes_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DefaultGCPCredentials::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:api.DefaultGCPCredentials)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DefaultGCPCredentials* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const DefaultGCPCredentials>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:api.DefaultGCPCredentials)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:api.DefaultGCPCredentials)
+    MergeFrom(*source);
+  }
+}
+
+void DefaultGCPCredentials::MergeFrom(const DefaultGCPCredentials& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:api.DefaultGCPCredentials)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_scopes()) {
+    mutable_scopes()->::common::StringArray::MergeFrom(from.scopes());
+  }
+}
+
+void DefaultGCPCredentials::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:api.DefaultGCPCredentials)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DefaultGCPCredentials::CopyFrom(const DefaultGCPCredentials& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:api.DefaultGCPCredentials)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DefaultGCPCredentials::IsInitialized() const {
+  return true;
+}
+
+void DefaultGCPCredentials::Swap(DefaultGCPCredentials* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DefaultGCPCredentials::InternalSwap(DefaultGCPCredentials* other) {
+  using std::swap;
+  swap(scopes_, other->scopes_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata DefaultGCPCredentials::GetMetadata() const {
+  protobuf_api_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_api_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
 void Query::InitAsDefaultInstance() {
   ::api::_Query_default_instance_._instance.get_mutable()->query_ = const_cast< ::common::String*>(
       ::common::String::internal_default_instance());
@@ -10231,6 +10501,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::ClientCredentials* Arena::C
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::JWT* Arena::CreateMaybeMessage< ::api::JWT >(Arena* arena) {
   return Arena::CreateInternal< ::api::JWT >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::DefaultGCPCredentials* Arena::CreateMaybeMessage< ::api::DefaultGCPCredentials >(Arena* arena) {
+  return Arena::CreateInternal< ::api::DefaultGCPCredentials >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::api::Query* Arena::CreateMaybeMessage< ::api::Query >(Arena* arena) {
   return Arena::CreateInternal< ::api::Query >(arena);

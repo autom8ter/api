@@ -117,6 +117,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :expires, :message, 7, "common.String"
     optional :audience, :message, 8, "common.String"
   end
+  add_message "api.DefaultGCPCredentials" do
+    optional :scopes, :message, 1, "common.StringArray"
+  end
   add_message "api.Query" do
     optional :query, :message, 4, "common.String"
     optional :fields, :message, 5, "common.String"
@@ -182,6 +185,7 @@ module Api
   OAuth2 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.OAuth2").msgclass
   ClientCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ClientCredentials").msgclass
   JWT = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWT").msgclass
+  DefaultGCPCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.DefaultGCPCredentials").msgclass
   Query = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Query").msgclass
   Event = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Event").msgclass
   EventQuery = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.EventQuery").msgclass

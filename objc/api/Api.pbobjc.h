@@ -634,6 +634,20 @@ typedef GPB_ENUM(JWT_FieldNumber) {
 
 @end
 
+#pragma mark - DefaultGCPCredentials
+
+typedef GPB_ENUM(DefaultGCPCredentials_FieldNumber) {
+  DefaultGCPCredentials_FieldNumber_Scopes = 1,
+};
+
+@interface DefaultGCPCredentials : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
+/** Test to see if @c scopes has been set. */
+@property(nonatomic, readwrite) BOOL hasScopes;
+
+@end
+
 #pragma mark - Query
 
 typedef GPB_ENUM(Query_FieldNumber) {
