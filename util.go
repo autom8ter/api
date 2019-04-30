@@ -14,6 +14,8 @@ import (
 	"golang.org/x/oauth2/clientcredentials"
 	ojwt "golang.org/x/oauth2/jwt"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
+	"google.golang.org/grpc/credentials/oauth"
 	"net/http"
 	"net/url"
 )
@@ -385,6 +387,63 @@ func (c *ClientCredentials) Token() (*oauth2.Token, error) {
 		return nil, err
 	}
 	return tok, nil
+}
+
+func (c *ClientCredentials) PerRPCCredentials() (credentials.PerRPCCredentials, error) {
+	tok, err := c.Token()
+	if err != nil {
+		return nil, err
+	}
+	return oauth.NewOauthAccess(tok), nil
+}
+
+func (c *JWT) PerRPCCredentials() (credentials.PerRPCCredentials, error) {
+	tok, err := c.Token()
+	if err != nil {
+		return nil, err
+	}
+	return oauth.NewOauthAccess(tok), nil
+}
+
+func (c *OAuth2) PerRPCCredentials() (credentials.PerRPCCredentials, error) {
+	tok, err := c.Token()
+	if err != nil {
+		return nil, err
+	}
+	return oauth.NewOauthAccess(tok), nil
+}
+
+func (c *OAuth2) GetRequestMetadata(ctx context.Context, uri ...string) (*common.StringMap, error) {
+	src := &oauth.TokenSource{
+		TokenSource: c,
+	}
+	m, err := src.GetRequestMetadata(ctx, uri...)
+	if err != nil {
+		return nil, err
+	}
+	return common.ToStringMap(m), nil
+}
+
+func (c *ClientCredentials) GetRequestMetadata(ctx context.Context, uri ...string) (*common.StringMap, error) {
+	src := &oauth.TokenSource{
+		TokenSource: c,
+	}
+	m, err := src.GetRequestMetadata(ctx, uri...)
+	if err != nil {
+		return nil, err
+	}
+	return common.ToStringMap(m), nil
+}
+
+func (c *JWT) GetRequestMetadata(ctx context.Context, uri ...string) (*common.StringMap, error) {
+	src := &oauth.TokenSource{
+		TokenSource: c,
+	}
+	m, err := src.GetRequestMetadata(ctx, uri...)
+	if err != nil {
+		return nil, err
+	}
+	return common.ToStringMap(m), nil
 }
 
 func (c *ClientCredentials) Client(ctx context.Context) *http.Client {
