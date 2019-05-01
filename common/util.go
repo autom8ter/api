@@ -358,6 +358,10 @@ func (c *Common) AddMeta(key string, val string) {
 	c.Meta[key] = val
 }
 
+func (c *Common) Validate(fn func(c *Common) error) error {
+	return fn(c)
+}
+
 func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, error) {
 	any, err := util.MarshalAnyPB(msg)
 	if err != nil {
