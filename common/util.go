@@ -3,6 +3,7 @@
 package common
 
 import (
+	"bytes"
 	"context"
 	"encoding/json"
 	"github.com/autom8ter/engine"
@@ -18,6 +19,7 @@ import (
 	ojwt "golang.org/x/oauth2/jwt"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/credentials/oauth"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -292,7 +294,7 @@ func (s *HTTPTask) Validate(fn func(a *HTTPTask) error) error {
 	return fn(s)
 }
 
-func (s *HTTPTask) POST() (*http.Request, error) {
+func (s *HTTPTask) request() (*http.Request, error) {
 	u, err := url.Parse(s.Url)
 	if err != nil {
 		return nil, err
@@ -314,6 +316,32 @@ func (s *HTTPTask) POST() (*http.Request, error) {
 	return r, nil
 }
 
+func (s *HTTPTask) Do() error {
+	r, err := s.request()
+	if err != nil {
+		return err
+	}
+
+	resp, err := http.DefaultClient.Do(r)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	bits, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	_, err = http.Post(s.CallbackUrl, "application/json", bytes.NewBuffer(bits))
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func Serve(addr string, plugins ...driver.Plugin) error {
 	return engine.Serve(addr, true, plugins...)
+}
+
+func (c *Common) GetCategory() string {
+	return c.Object.TypeUrl
 }

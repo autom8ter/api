@@ -2,44 +2,26 @@
 
 package driver
 
-import (
-	"github.com/golang/protobuf/proto"
-)
-
 type Grouping interface {
 	Categorizer
 	Identifier
 }
 
 type Identifier interface {
-	Identifier() string
+	GetIdentifier() string
 }
 
 type Categorizer interface {
-	Category() string
-}
-
-type JSON interface {
-	JSONString() string
+	GetCategory() string
 }
 
 type Metadata interface {
-	Meta() map[string]string
-}
-
-type JSONMessage interface {
-	MetaGrouping
-	JSON
+	GetMeta() map[string]string
 }
 
 type Message interface {
 	MetaGrouping
 	String() string
-}
-
-type ProtoMessage interface {
-	MetaGrouping
-	proto.Message
 }
 
 type MetaGrouping interface {

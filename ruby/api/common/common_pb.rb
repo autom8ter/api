@@ -7,7 +7,7 @@ require 'google/protobuf/any_pb'
 require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "common.Common" do
-    optional :identifer, :string, 1
+    optional :identifier, :string, 1
     optional :object, :message, 2, "google.protobuf.Any"
     map :meta, :string, :string, 3
   end
@@ -62,8 +62,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :username, :string, 5
     optional :password, :string, 6
     optional :body, :message, 7, "google.protobuf.Any"
-    optional :schedule, :message, 8, "google.protobuf.Timestamp"
-    optional :callback_url, :string, 9
+    optional :callback_url, :string, 8
   end
 end
 

@@ -280,12 +280,11 @@ static void InitDefaultsHTTPTask() {
   ::common::HTTPTask::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_HTTPTask =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsHTTPTask}, {
+::google::protobuf::internal::SCCInfo<3> scc_info_HTTPTask =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsHTTPTask}, {
       &protobuf_common_2fcommon_2eproto::scc_info_HTTPTask_HeadersEntry_DoNotUse.base,
       &protobuf_common_2fcommon_2eproto::scc_info_HTTPTask_FormEntry_DoNotUse.base,
-      &protobuf_google_2fprotobuf_2fany_2eproto::scc_info_Any.base,
-      &protobuf_google_2fprotobuf_2ftimestamp_2eproto::scc_info_Timestamp.base,}};
+      &protobuf_google_2fprotobuf_2fany_2eproto::scc_info_Any.base,}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_Common_MetaEntry_DoNotUse.base);
@@ -320,7 +319,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Common, identifer_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Common, identifier_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Common, object_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::Common, meta_),
   ~0u,  // no _has_bits_
@@ -426,7 +425,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::HTTPTask, username_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::HTTPTask, password_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::HTTPTask, body_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::HTTPTask, schedule_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::common::HTTPTask, callback_url_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -484,41 +482,40 @@ void AddDescriptorsImpl() {
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\023common/common.proto\022\006common\032\031google/pr"
       "otobuf/any.proto\032\037google/protobuf/timest"
-      "amp.proto\"\226\001\n\006Common\022\021\n\tidentifer\030\001 \001(\t\022"
-      "$\n\006object\030\002 \001(\0132\024.google.protobuf.Any\022&\n"
-      "\004meta\030\003 \003(\0132\030.common.Common.MetaEntry\032+\n"
-      "\tMetaEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
-      "8\001\"\031\n\tPlainText\022\014\n\004text\030\001 \001(\t\"\207\001\n\006OAuth2"
-      "\022\021\n\tclient_id\030\001 \001(\t\022\025\n\rclient_secret\030\002 \001"
-      "(\t\022\021\n\ttoken_url\030\003 \001(\t\022\020\n\010auth_url\030\004 \001(\t\022"
-      "\016\n\006scopes\030\005 \003(\t\022\020\n\010redirect\030\006 \001(\t\022\014\n\004cod"
-      "e\030\007 \001(\t\"\337\001\n\021ClientCredentials\022\021\n\tclient_"
-      "id\030\001 \001(\t\022\025\n\rclient_secret\030\002 \001(\t\022\021\n\ttoken"
-      "_url\030\003 \001(\t\022\016\n\006scopes\030\004 \003(\t\022F\n\017endpoint_p"
-      "arams\030\005 \003(\0132-.common.ClientCredentials.E"
-      "ndpointParamsEntry\0325\n\023EndpointParamsEntr"
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\262\001\n\003JW"
-      "T\022\r\n\005email\030\001 \001(\t\022\023\n\013private_key\030\002 \001(\014\022\024\n"
-      "\014prive_key_id\030\003 \001(\t\022\017\n\007subject\030\004 \001(\t\022\016\n\006"
-      "scopes\030\005 \003(\t\022\021\n\ttoken_url\030\006 \001(\t\022+\n\007expir"
-      "es\030\007 \001(\0132\032.google.protobuf.Timestamp\022\020\n\010"
-      "audience\030\010 \001(\t\"\'\n\025DefaultGCPCredentials\022"
-      "\016\n\006scopes\030\001 \003(\t\"W\n\013JSONWebKeys\022\013\n\003kty\030\001 "
-      "\001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\t\n\001n\030\004 \001(\t"
-      "\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\")\n\004Jwks\022!\n\004keys"
-      "\030\001 \003(\0132\023.common.JSONWebKeys\"\352\002\n\010HTTPTask"
-      "\022\013\n\003url\030\001 \001(\t\022\016\n\006method\030\002 \001(\t\022.\n\007headers"
-      "\030\003 \003(\0132\035.common.HTTPTask.HeadersEntry\022(\n"
-      "\004form\030\004 \003(\0132\032.common.HTTPTask.FormEntry\022"
-      "\020\n\010username\030\005 \001(\t\022\020\n\010password\030\006 \001(\t\022\"\n\004b"
-      "ody\030\007 \001(\0132\024.google.protobuf.Any\022,\n\010sched"
-      "ule\030\010 \001(\0132\032.google.protobuf.Timestamp\022\024\n"
-      "\014callback_url\030\t \001(\t\032.\n\014HeadersEntry\022\013\n\003k"
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry"
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001b\006proto3"
+      "amp.proto\"\227\001\n\006Common\022\022\n\nidentifier\030\001 \001(\t"
+      "\022$\n\006object\030\002 \001(\0132\024.google.protobuf.Any\022&"
+      "\n\004meta\030\003 \003(\0132\030.common.Common.MetaEntry\032+"
+      "\n\tMetaEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:"
+      "\0028\001\"\031\n\tPlainText\022\014\n\004text\030\001 \001(\t\"\207\001\n\006OAuth"
+      "2\022\021\n\tclient_id\030\001 \001(\t\022\025\n\rclient_secret\030\002 "
+      "\001(\t\022\021\n\ttoken_url\030\003 \001(\t\022\020\n\010auth_url\030\004 \001(\t"
+      "\022\016\n\006scopes\030\005 \003(\t\022\020\n\010redirect\030\006 \001(\t\022\014\n\004co"
+      "de\030\007 \001(\t\"\337\001\n\021ClientCredentials\022\021\n\tclient"
+      "_id\030\001 \001(\t\022\025\n\rclient_secret\030\002 \001(\t\022\021\n\ttoke"
+      "n_url\030\003 \001(\t\022\016\n\006scopes\030\004 \003(\t\022F\n\017endpoint_"
+      "params\030\005 \003(\0132-.common.ClientCredentials."
+      "EndpointParamsEntry\0325\n\023EndpointParamsEnt"
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\262\001\n\003J"
+      "WT\022\r\n\005email\030\001 \001(\t\022\023\n\013private_key\030\002 \001(\014\022\024"
+      "\n\014prive_key_id\030\003 \001(\t\022\017\n\007subject\030\004 \001(\t\022\016\n"
+      "\006scopes\030\005 \003(\t\022\021\n\ttoken_url\030\006 \001(\t\022+\n\007expi"
+      "res\030\007 \001(\0132\032.google.protobuf.Timestamp\022\020\n"
+      "\010audience\030\010 \001(\t\"\'\n\025DefaultGCPCredentials"
+      "\022\016\n\006scopes\030\001 \003(\t\"W\n\013JSONWebKeys\022\013\n\003kty\030\001"
+      " \001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\t\n\001n\030\004 \001("
+      "\t\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\")\n\004Jwks\022!\n\004key"
+      "s\030\001 \003(\0132\023.common.JSONWebKeys\"\274\002\n\010HTTPTas"
+      "k\022\013\n\003url\030\001 \001(\t\022\016\n\006method\030\002 \001(\t\022.\n\007header"
+      "s\030\003 \003(\0132\035.common.HTTPTask.HeadersEntry\022("
+      "\n\004form\030\004 \003(\0132\032.common.HTTPTask.FormEntry"
+      "\022\020\n\010username\030\005 \001(\t\022\020\n\010password\030\006 \001(\t\022\"\n\004"
+      "body\030\007 \001(\0132\024.google.protobuf.Any\022\024\n\014call"
+      "back_url\030\010 \001(\t\032.\n\014HeadersEntry\022\013\n\003key\030\001 "
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003k"
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1360);
+      descriptor, 1315);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "common/common.proto", &protobuf_RegisterTypes);
   ::protobuf_google_2fprotobuf_2fany_2eproto::AddDescriptors();
@@ -568,7 +565,7 @@ void Common::clear_object() {
   object_ = NULL;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Common::kIdentiferFieldNumber;
+const int Common::kIdentifierFieldNumber;
 const int Common::kObjectFieldNumber;
 const int Common::kMetaFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -585,9 +582,9 @@ Common::Common(const Common& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   meta_.MergeFrom(from.meta_);
-  identifer_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.identifer().size() > 0) {
-    identifer_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifer_);
+  identifier_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.identifier().size() > 0) {
+    identifier_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifier_);
   }
   if (from.has_object()) {
     object_ = new ::google::protobuf::Any(*from.object_);
@@ -598,7 +595,7 @@ Common::Common(const Common& from)
 }
 
 void Common::SharedCtor() {
-  identifer_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifier_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   object_ = NULL;
 }
 
@@ -608,7 +605,7 @@ Common::~Common() {
 }
 
 void Common::SharedDtor() {
-  identifer_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifier_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete object_;
 }
 
@@ -633,7 +630,7 @@ void Common::Clear() {
   (void) cached_has_bits;
 
   meta_.Clear();
-  identifer_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifier_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == NULL && object_ != NULL) {
     delete object_;
   }
@@ -651,16 +648,16 @@ bool Common::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string identifer = 1;
+      // string identifier = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_identifer()));
+                input, this->mutable_identifier()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->identifer().data(), static_cast<int>(this->identifer().length()),
+            this->identifier().data(), static_cast<int>(this->identifier().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "common.Common.identifer"));
+            "common.Common.identifier"));
         } else {
           goto handle_unusual;
         }
@@ -732,14 +729,14 @@ void Common::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string identifer = 1;
-  if (this->identifer().size() > 0) {
+  // string identifier = 1;
+  if (this->identifier().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->identifer().data(), static_cast<int>(this->identifer().length()),
+      this->identifier().data(), static_cast<int>(this->identifier().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "common.Common.identifer");
+      "common.Common.identifier");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->identifer(), output);
+      1, this->identifier(), output);
   }
 
   // .google.protobuf.Any object = 2;
@@ -815,15 +812,15 @@ void Common::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string identifer = 1;
-  if (this->identifer().size() > 0) {
+  // string identifier = 1;
+  if (this->identifier().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->identifer().data(), static_cast<int>(this->identifer().length()),
+      this->identifier().data(), static_cast<int>(this->identifier().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "common.Common.identifer");
+      "common.Common.identifier");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->identifer(), target);
+        1, this->identifier(), target);
   }
 
   // .google.protobuf.Any object = 2;
@@ -921,11 +918,11 @@ size_t Common::ByteSizeLong() const {
     }
   }
 
-  // string identifer = 1;
-  if (this->identifer().size() > 0) {
+  // string identifier = 1;
+  if (this->identifier().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->identifer());
+        this->identifier());
   }
 
   // .google.protobuf.Any object = 2;
@@ -963,9 +960,9 @@ void Common::MergeFrom(const Common& from) {
   (void) cached_has_bits;
 
   meta_.MergeFrom(from.meta_);
-  if (from.identifer().size() > 0) {
+  if (from.identifier().size() > 0) {
 
-    identifer_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifer_);
+    identifier_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifier_);
   }
   if (from.has_object()) {
     mutable_object()->::google::protobuf::Any::MergeFrom(from.object());
@@ -997,7 +994,7 @@ void Common::Swap(Common* other) {
 void Common::InternalSwap(Common* other) {
   using std::swap;
   meta_.Swap(&other->meta_);
-  identifer_.Swap(&other->identifer_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  identifier_.Swap(&other->identifier_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(object_, other->object_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -4066,20 +4063,12 @@ void HTTPTask_FormEntry_DoNotUse::MergeFrom(
 void HTTPTask::InitAsDefaultInstance() {
   ::common::_HTTPTask_default_instance_._instance.get_mutable()->body_ = const_cast< ::google::protobuf::Any*>(
       ::google::protobuf::Any::internal_default_instance());
-  ::common::_HTTPTask_default_instance_._instance.get_mutable()->schedule_ = const_cast< ::google::protobuf::Timestamp*>(
-      ::google::protobuf::Timestamp::internal_default_instance());
 }
 void HTTPTask::clear_body() {
   if (GetArenaNoVirtual() == NULL && body_ != NULL) {
     delete body_;
   }
   body_ = NULL;
-}
-void HTTPTask::clear_schedule() {
-  if (GetArenaNoVirtual() == NULL && schedule_ != NULL) {
-    delete schedule_;
-  }
-  schedule_ = NULL;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int HTTPTask::kUrlFieldNumber;
@@ -4089,7 +4078,6 @@ const int HTTPTask::kFormFieldNumber;
 const int HTTPTask::kUsernameFieldNumber;
 const int HTTPTask::kPasswordFieldNumber;
 const int HTTPTask::kBodyFieldNumber;
-const int HTTPTask::kScheduleFieldNumber;
 const int HTTPTask::kCallbackUrlFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -4131,11 +4119,6 @@ HTTPTask::HTTPTask(const HTTPTask& from)
   } else {
     body_ = NULL;
   }
-  if (from.has_schedule()) {
-    schedule_ = new ::google::protobuf::Timestamp(*from.schedule_);
-  } else {
-    schedule_ = NULL;
-  }
   // @@protoc_insertion_point(copy_constructor:common.HTTPTask)
 }
 
@@ -4145,9 +4128,7 @@ void HTTPTask::SharedCtor() {
   username_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   password_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_url_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&body_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&schedule_) -
-      reinterpret_cast<char*>(&body_)) + sizeof(schedule_));
+  body_ = NULL;
 }
 
 HTTPTask::~HTTPTask() {
@@ -4162,7 +4143,6 @@ void HTTPTask::SharedDtor() {
   password_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   callback_url_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete body_;
-  if (this != internal_default_instance()) delete schedule_;
 }
 
 void HTTPTask::SetCachedSize(int size) const {
@@ -4196,10 +4176,6 @@ void HTTPTask::Clear() {
     delete body_;
   }
   body_ = NULL;
-  if (GetArenaNoVirtual() == NULL && schedule_ != NULL) {
-    delete schedule_;
-  }
-  schedule_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -4343,22 +4319,10 @@ bool HTTPTask::MergePartialFromCodedStream(
         break;
       }
 
-      // .google.protobuf.Timestamp schedule = 8;
+      // string callback_url = 8;
       case 8: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_schedule()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // string callback_url = 9;
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_callback_url()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -4549,20 +4513,14 @@ void HTTPTask::SerializeWithCachedSizes(
       7, this->_internal_body(), output);
   }
 
-  // .google.protobuf.Timestamp schedule = 8;
-  if (this->has_schedule()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8, this->_internal_schedule(), output);
-  }
-
-  // string callback_url = 9;
+  // string callback_url = 8;
   if (this->callback_url().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->callback_url().data(), static_cast<int>(this->callback_url().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "common.HTTPTask.callback_url");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      9, this->callback_url(), output);
+      8, this->callback_url(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4744,14 +4702,7 @@ void HTTPTask::SerializeWithCachedSizes(
         7, this->_internal_body(), deterministic, target);
   }
 
-  // .google.protobuf.Timestamp schedule = 8;
-  if (this->has_schedule()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        8, this->_internal_schedule(), deterministic, target);
-  }
-
-  // string callback_url = 9;
+  // string callback_url = 8;
   if (this->callback_url().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->callback_url().data(), static_cast<int>(this->callback_url().length()),
@@ -4759,7 +4710,7 @@ void HTTPTask::SerializeWithCachedSizes(
       "common.HTTPTask.callback_url");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        9, this->callback_url(), target);
+        8, this->callback_url(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4835,7 +4786,7 @@ size_t HTTPTask::ByteSizeLong() const {
         this->password());
   }
 
-  // string callback_url = 9;
+  // string callback_url = 8;
   if (this->callback_url().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -4847,13 +4798,6 @@ size_t HTTPTask::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *body_);
-  }
-
-  // .google.protobuf.Timestamp schedule = 8;
-  if (this->has_schedule()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *schedule_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4908,9 +4852,6 @@ void HTTPTask::MergeFrom(const HTTPTask& from) {
   if (from.has_body()) {
     mutable_body()->::google::protobuf::Any::MergeFrom(from.body());
   }
-  if (from.has_schedule()) {
-    mutable_schedule()->::google::protobuf::Timestamp::MergeFrom(from.schedule());
-  }
 }
 
 void HTTPTask::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4950,7 +4891,6 @@ void HTTPTask::InternalSwap(HTTPTask* other) {
   callback_url_.Swap(&other->callback_url_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(body_, other->body_);
-  swap(schedule_, other->schedule_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 

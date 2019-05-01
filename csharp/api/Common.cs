@@ -26,39 +26,38 @@ namespace Common {
           string.Concat(
             "ChNjb21tb24vY29tbW9uLnByb3RvEgZjb21tb24aGWdvb2dsZS9wcm90b2J1",
             "Zi9hbnkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8i",
-            "lgEKBkNvbW1vbhIRCglpZGVudGlmZXIYASABKAkSJAoGb2JqZWN0GAIgASgL",
-            "MhQuZ29vZ2xlLnByb3RvYnVmLkFueRImCgRtZXRhGAMgAygLMhguY29tbW9u",
-            "LkNvbW1vbi5NZXRhRW50cnkaKwoJTWV0YUVudHJ5EgsKA2tleRgBIAEoCRIN",
-            "CgV2YWx1ZRgCIAEoCToCOAEiGQoJUGxhaW5UZXh0EgwKBHRleHQYASABKAki",
-            "hwEKBk9BdXRoMhIRCgljbGllbnRfaWQYASABKAkSFQoNY2xpZW50X3NlY3Jl",
-            "dBgCIAEoCRIRCgl0b2tlbl91cmwYAyABKAkSEAoIYXV0aF91cmwYBCABKAkS",
-            "DgoGc2NvcGVzGAUgAygJEhAKCHJlZGlyZWN0GAYgASgJEgwKBGNvZGUYByAB",
-            "KAki3wEKEUNsaWVudENyZWRlbnRpYWxzEhEKCWNsaWVudF9pZBgBIAEoCRIV",
-            "Cg1jbGllbnRfc2VjcmV0GAIgASgJEhEKCXRva2VuX3VybBgDIAEoCRIOCgZz",
-            "Y29wZXMYBCADKAkSRgoPZW5kcG9pbnRfcGFyYW1zGAUgAygLMi0uY29tbW9u",
-            "LkNsaWVudENyZWRlbnRpYWxzLkVuZHBvaW50UGFyYW1zRW50cnkaNQoTRW5k",
-            "cG9pbnRQYXJhbXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6",
-            "AjgBIrIBCgNKV1QSDQoFZW1haWwYASABKAkSEwoLcHJpdmF0ZV9rZXkYAiAB",
-            "KAwSFAoMcHJpdmVfa2V5X2lkGAMgASgJEg8KB3N1YmplY3QYBCABKAkSDgoG",
-            "c2NvcGVzGAUgAygJEhEKCXRva2VuX3VybBgGIAEoCRIrCgdleHBpcmVzGAcg",
-            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIQCghhdWRpZW5jZRgI",
-            "IAEoCSInChVEZWZhdWx0R0NQQ3JlZGVudGlhbHMSDgoGc2NvcGVzGAEgAygJ",
-            "IlcKC0pTT05XZWJLZXlzEgsKA2t0eRgBIAEoCRILCgNraWQYAiABKAkSCwoD",
-            "dXNlGAMgASgJEgkKAW4YBCABKAkSCQoBZRgFIAEoCRILCgN4NWMYBiADKAki",
-            "KQoESndrcxIhCgRrZXlzGAEgAygLMhMuY29tbW9uLkpTT05XZWJLZXlzIuoC",
-            "CghIVFRQVGFzaxILCgN1cmwYASABKAkSDgoGbWV0aG9kGAIgASgJEi4KB2hl",
-            "YWRlcnMYAyADKAsyHS5jb21tb24uSFRUUFRhc2suSGVhZGVyc0VudHJ5EigK",
-            "BGZvcm0YBCADKAsyGi5jb21tb24uSFRUUFRhc2suRm9ybUVudHJ5EhAKCHVz",
-            "ZXJuYW1lGAUgASgJEhAKCHBhc3N3b3JkGAYgASgJEiIKBGJvZHkYByABKAsy",
-            "FC5nb29nbGUucHJvdG9idWYuQW55EiwKCHNjaGVkdWxlGAggASgLMhouZ29v",
-            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcBIUCgxjYWxsYmFja191cmwYCSABKAka",
+            "lwEKBkNvbW1vbhISCgppZGVudGlmaWVyGAEgASgJEiQKBm9iamVjdBgCIAEo",
+            "CzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSJgoEbWV0YRgDIAMoCzIYLmNvbW1v",
+            "bi5Db21tb24uTWV0YUVudHJ5GisKCU1ldGFFbnRyeRILCgNrZXkYASABKAkS",
+            "DQoFdmFsdWUYAiABKAk6AjgBIhkKCVBsYWluVGV4dBIMCgR0ZXh0GAEgASgJ",
+            "IocBCgZPQXV0aDISEQoJY2xpZW50X2lkGAEgASgJEhUKDWNsaWVudF9zZWNy",
+            "ZXQYAiABKAkSEQoJdG9rZW5fdXJsGAMgASgJEhAKCGF1dGhfdXJsGAQgASgJ",
+            "Eg4KBnNjb3BlcxgFIAMoCRIQCghyZWRpcmVjdBgGIAEoCRIMCgRjb2RlGAcg",
+            "ASgJIt8BChFDbGllbnRDcmVkZW50aWFscxIRCgljbGllbnRfaWQYASABKAkS",
+            "FQoNY2xpZW50X3NlY3JldBgCIAEoCRIRCgl0b2tlbl91cmwYAyABKAkSDgoG",
+            "c2NvcGVzGAQgAygJEkYKD2VuZHBvaW50X3BhcmFtcxgFIAMoCzItLmNvbW1v",
+            "bi5DbGllbnRDcmVkZW50aWFscy5FbmRwb2ludFBhcmFtc0VudHJ5GjUKE0Vu",
+            "ZHBvaW50UGFyYW1zRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJ",
+            "OgI4ASKyAQoDSldUEg0KBWVtYWlsGAEgASgJEhMKC3ByaXZhdGVfa2V5GAIg",
+            "ASgMEhQKDHByaXZlX2tleV9pZBgDIAEoCRIPCgdzdWJqZWN0GAQgASgJEg4K",
+            "BnNjb3BlcxgFIAMoCRIRCgl0b2tlbl91cmwYBiABKAkSKwoHZXhwaXJlcxgH",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEAoIYXVkaWVuY2UY",
+            "CCABKAkiJwoVRGVmYXVsdEdDUENyZWRlbnRpYWxzEg4KBnNjb3BlcxgBIAMo",
+            "CSJXCgtKU09OV2ViS2V5cxILCgNrdHkYASABKAkSCwoDa2lkGAIgASgJEgsK",
+            "A3VzZRgDIAEoCRIJCgFuGAQgASgJEgkKAWUYBSABKAkSCwoDeDVjGAYgAygJ",
+            "IikKBEp3a3MSIQoEa2V5cxgBIAMoCzITLmNvbW1vbi5KU09OV2ViS2V5cyK8",
+            "AgoISFRUUFRhc2sSCwoDdXJsGAEgASgJEg4KBm1ldGhvZBgCIAEoCRIuCgdo",
+            "ZWFkZXJzGAMgAygLMh0uY29tbW9uLkhUVFBUYXNrLkhlYWRlcnNFbnRyeRIo",
+            "CgRmb3JtGAQgAygLMhouY29tbW9uLkhUVFBUYXNrLkZvcm1FbnRyeRIQCgh1",
+            "c2VybmFtZRgFIAEoCRIQCghwYXNzd29yZBgGIAEoCRIiCgRib2R5GAcgASgL",
+            "MhQuZ29vZ2xlLnByb3RvYnVmLkFueRIUCgxjYWxsYmFja191cmwYCCABKAka",
             "LgoMSGVhZGVyc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
             "OAEaKwoJRm9ybUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
             "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Common), global::Common.Common.Parser, new[]{ "Identifer", "Object", "Meta" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.Common), global::Common.Common.Parser, new[]{ "Identifier", "Object", "Meta" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.PlainText), global::Common.PlainText.Parser, new[]{ "Text" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.OAuth2), global::Common.OAuth2.Parser, new[]{ "ClientId", "ClientSecret", "TokenUrl", "AuthUrl", "Scopes", "Redirect", "Code" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.ClientCredentials), global::Common.ClientCredentials.Parser, new[]{ "ClientId", "ClientSecret", "TokenUrl", "Scopes", "EndpointParams" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -66,7 +65,7 @@ namespace Common {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.DefaultGCPCredentials), global::Common.DefaultGCPCredentials.Parser, new[]{ "Scopes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.JSONWebKeys), global::Common.JSONWebKeys.Parser, new[]{ "Kty", "Kid", "Use", "N", "E", "X5C" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Jwks), global::Common.Jwks.Parser, new[]{ "Keys" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Common.HTTPTask), global::Common.HTTPTask.Parser, new[]{ "Url", "Method", "Headers", "Form", "Username", "Password", "Body", "Schedule", "CallbackUrl" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.HTTPTask), global::Common.HTTPTask.Parser, new[]{ "Url", "Method", "Headers", "Form", "Username", "Password", "Body", "CallbackUrl" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -98,7 +97,7 @@ namespace Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Common(Common other) : this() {
-      identifer_ = other.identifer_;
+      identifier_ = other.identifier_;
       object_ = other.object_ != null ? other.object_.Clone() : null;
       meta_ = other.meta_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -109,14 +108,14 @@ namespace Common {
       return new Common(this);
     }
 
-    /// <summary>Field number for the "identifer" field.</summary>
-    public const int IdentiferFieldNumber = 1;
-    private string identifer_ = "";
+    /// <summary>Field number for the "identifier" field.</summary>
+    public const int IdentifierFieldNumber = 1;
+    private string identifier_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Identifer {
-      get { return identifer_; }
+    public string Identifier {
+      get { return identifier_; }
       set {
-        identifer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        identifier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -154,7 +153,7 @@ namespace Common {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Identifer != other.Identifer) return false;
+      if (Identifier != other.Identifier) return false;
       if (!object.Equals(Object, other.Object)) return false;
       if (!Meta.Equals(other.Meta)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -163,7 +162,7 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Identifer.Length != 0) hash ^= Identifer.GetHashCode();
+      if (Identifier.Length != 0) hash ^= Identifier.GetHashCode();
       if (object_ != null) hash ^= Object.GetHashCode();
       hash ^= Meta.GetHashCode();
       if (_unknownFields != null) {
@@ -179,9 +178,9 @@ namespace Common {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Identifer.Length != 0) {
+      if (Identifier.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Identifer);
+        output.WriteString(Identifier);
       }
       if (object_ != null) {
         output.WriteRawTag(18);
@@ -196,8 +195,8 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Identifer.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Identifer);
+      if (Identifier.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Identifier);
       }
       if (object_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Object);
@@ -214,8 +213,8 @@ namespace Common {
       if (other == null) {
         return;
       }
-      if (other.Identifer.Length != 0) {
-        Identifer = other.Identifer;
+      if (other.Identifier.Length != 0) {
+        Identifier = other.Identifier;
       }
       if (other.object_ != null) {
         if (object_ == null) {
@@ -236,7 +235,7 @@ namespace Common {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Identifer = input.ReadString();
+            Identifier = input.ReadString();
             break;
           }
           case 18: {
@@ -1757,7 +1756,6 @@ namespace Common {
       username_ = other.username_;
       password_ = other.password_;
       body_ = other.body_ != null ? other.body_.Clone() : null;
-      schedule_ = other.schedule_ != null ? other.schedule_.Clone() : null;
       callbackUrl_ = other.callbackUrl_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1842,19 +1840,8 @@ namespace Common {
       }
     }
 
-    /// <summary>Field number for the "schedule" field.</summary>
-    public const int ScheduleFieldNumber = 8;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp schedule_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Schedule {
-      get { return schedule_; }
-      set {
-        schedule_ = value;
-      }
-    }
-
     /// <summary>Field number for the "callback_url" field.</summary>
-    public const int CallbackUrlFieldNumber = 9;
+    public const int CallbackUrlFieldNumber = 8;
     private string callbackUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string CallbackUrl {
@@ -1884,7 +1871,6 @@ namespace Common {
       if (Username != other.Username) return false;
       if (Password != other.Password) return false;
       if (!object.Equals(Body, other.Body)) return false;
-      if (!object.Equals(Schedule, other.Schedule)) return false;
       if (CallbackUrl != other.CallbackUrl) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1899,7 +1885,6 @@ namespace Common {
       if (Username.Length != 0) hash ^= Username.GetHashCode();
       if (Password.Length != 0) hash ^= Password.GetHashCode();
       if (body_ != null) hash ^= Body.GetHashCode();
-      if (schedule_ != null) hash ^= Schedule.GetHashCode();
       if (CallbackUrl.Length != 0) hash ^= CallbackUrl.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1936,12 +1921,8 @@ namespace Common {
         output.WriteRawTag(58);
         output.WriteMessage(Body);
       }
-      if (schedule_ != null) {
-        output.WriteRawTag(66);
-        output.WriteMessage(Schedule);
-      }
       if (CallbackUrl.Length != 0) {
-        output.WriteRawTag(74);
+        output.WriteRawTag(66);
         output.WriteString(CallbackUrl);
       }
       if (_unknownFields != null) {
@@ -1968,9 +1949,6 @@ namespace Common {
       }
       if (body_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Body);
-      }
-      if (schedule_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Schedule);
       }
       if (CallbackUrl.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CallbackUrl);
@@ -2005,12 +1983,6 @@ namespace Common {
           body_ = new global::Google.Protobuf.WellKnownTypes.Any();
         }
         Body.MergeFrom(other.Body);
-      }
-      if (other.schedule_ != null) {
-        if (schedule_ == null) {
-          schedule_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Schedule.MergeFrom(other.Schedule);
       }
       if (other.CallbackUrl.Length != 0) {
         CallbackUrl = other.CallbackUrl;
@@ -2058,13 +2030,6 @@ namespace Common {
             break;
           }
           case 66: {
-            if (schedule_ == null) {
-              schedule_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(schedule_);
-            break;
-          }
-          case 74: {
             CallbackUrl = input.ReadString();
             break;
           }

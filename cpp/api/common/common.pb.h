@@ -230,19 +230,19 @@ class Common : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_meta();
 
-  // string identifer = 1;
-  void clear_identifer();
-  static const int kIdentiferFieldNumber = 1;
-  const ::std::string& identifer() const;
-  void set_identifer(const ::std::string& value);
+  // string identifier = 1;
+  void clear_identifier();
+  static const int kIdentifierFieldNumber = 1;
+  const ::std::string& identifier() const;
+  void set_identifier(const ::std::string& value);
   #if LANG_CXX11
-  void set_identifer(::std::string&& value);
+  void set_identifier(::std::string&& value);
   #endif
-  void set_identifer(const char* value);
-  void set_identifer(const char* value, size_t size);
-  ::std::string* mutable_identifer();
-  ::std::string* release_identifer();
-  void set_allocated_identifer(::std::string* identifer);
+  void set_identifier(const char* value);
+  void set_identifier(const char* value, size_t size);
+  ::std::string* mutable_identifier();
+  ::std::string* release_identifier();
+  void set_allocated_identifier(::std::string* identifier);
 
   // .google.protobuf.Any object = 2;
   bool has_object() const;
@@ -266,7 +266,7 @@ class Common : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > meta_;
-  ::google::protobuf::internal::ArenaStringPtr identifer_;
+  ::google::protobuf::internal::ArenaStringPtr identifier_;
   ::google::protobuf::Any* object_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
@@ -1642,9 +1642,9 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_password();
   void set_allocated_password(::std::string* password);
 
-  // string callback_url = 9;
+  // string callback_url = 8;
   void clear_callback_url();
-  static const int kCallbackUrlFieldNumber = 9;
+  static const int kCallbackUrlFieldNumber = 8;
   const ::std::string& callback_url() const;
   void set_callback_url(const ::std::string& value);
   #if LANG_CXX11
@@ -1668,18 +1668,6 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::Any* mutable_body();
   void set_allocated_body(::google::protobuf::Any* body);
 
-  // .google.protobuf.Timestamp schedule = 8;
-  bool has_schedule() const;
-  void clear_schedule();
-  static const int kScheduleFieldNumber = 8;
-  private:
-  const ::google::protobuf::Timestamp& _internal_schedule() const;
-  public:
-  const ::google::protobuf::Timestamp& schedule() const;
-  ::google::protobuf::Timestamp* release_schedule();
-  ::google::protobuf::Timestamp* mutable_schedule();
-  void set_allocated_schedule(::google::protobuf::Timestamp* schedule);
-
   // @@protoc_insertion_point(class_scope:common.HTTPTask)
  private:
 
@@ -1702,7 +1690,6 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::internal::ArenaStringPtr password_;
   ::google::protobuf::internal::ArenaStringPtr callback_url_;
   ::google::protobuf::Any* body_;
-  ::google::protobuf::Timestamp* schedule_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
@@ -1719,57 +1706,57 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
 // Common
 
-// string identifer = 1;
-inline void Common::clear_identifer() {
-  identifer_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string identifier = 1;
+inline void Common::clear_identifier() {
+  identifier_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Common::identifer() const {
-  // @@protoc_insertion_point(field_get:common.Common.identifer)
-  return identifer_.GetNoArena();
+inline const ::std::string& Common::identifier() const {
+  // @@protoc_insertion_point(field_get:common.Common.identifier)
+  return identifier_.GetNoArena();
 }
-inline void Common::set_identifer(const ::std::string& value) {
+inline void Common::set_identifier(const ::std::string& value) {
   
-  identifer_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:common.Common.identifer)
+  identifier_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.Common.identifier)
 }
 #if LANG_CXX11
-inline void Common::set_identifer(::std::string&& value) {
+inline void Common::set_identifier(::std::string&& value) {
   
-  identifer_.SetNoArena(
+  identifier_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:common.Common.identifer)
+  // @@protoc_insertion_point(field_set_rvalue:common.Common.identifier)
 }
 #endif
-inline void Common::set_identifer(const char* value) {
+inline void Common::set_identifier(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  identifer_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:common.Common.identifer)
+  identifier_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.Common.identifier)
 }
-inline void Common::set_identifer(const char* value, size_t size) {
+inline void Common::set_identifier(const char* value, size_t size) {
   
-  identifer_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  identifier_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:common.Common.identifer)
+  // @@protoc_insertion_point(field_set_pointer:common.Common.identifier)
 }
-inline ::std::string* Common::mutable_identifer() {
+inline ::std::string* Common::mutable_identifier() {
   
-  // @@protoc_insertion_point(field_mutable:common.Common.identifer)
-  return identifer_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:common.Common.identifier)
+  return identifier_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Common::release_identifer() {
-  // @@protoc_insertion_point(field_release:common.Common.identifer)
+inline ::std::string* Common::release_identifier() {
+  // @@protoc_insertion_point(field_release:common.Common.identifier)
   
-  return identifer_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return identifier_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Common::set_allocated_identifer(::std::string* identifer) {
-  if (identifer != NULL) {
+inline void Common::set_allocated_identifier(::std::string* identifier) {
+  if (identifier != NULL) {
     
   } else {
     
   }
-  identifer_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifer);
-  // @@protoc_insertion_point(field_set_allocated:common.Common.identifer)
+  identifier_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifier);
+  // @@protoc_insertion_point(field_set_allocated:common.Common.identifier)
 }
 
 // .google.protobuf.Any object = 2;
@@ -3727,56 +3714,7 @@ inline void HTTPTask::set_allocated_body(::google::protobuf::Any* body) {
   // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.body)
 }
 
-// .google.protobuf.Timestamp schedule = 8;
-inline bool HTTPTask::has_schedule() const {
-  return this != internal_default_instance() && schedule_ != NULL;
-}
-inline const ::google::protobuf::Timestamp& HTTPTask::_internal_schedule() const {
-  return *schedule_;
-}
-inline const ::google::protobuf::Timestamp& HTTPTask::schedule() const {
-  const ::google::protobuf::Timestamp* p = schedule_;
-  // @@protoc_insertion_point(field_get:common.HTTPTask.schedule)
-  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
-      &::google::protobuf::_Timestamp_default_instance_);
-}
-inline ::google::protobuf::Timestamp* HTTPTask::release_schedule() {
-  // @@protoc_insertion_point(field_release:common.HTTPTask.schedule)
-  
-  ::google::protobuf::Timestamp* temp = schedule_;
-  schedule_ = NULL;
-  return temp;
-}
-inline ::google::protobuf::Timestamp* HTTPTask::mutable_schedule() {
-  
-  if (schedule_ == NULL) {
-    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
-    schedule_ = p;
-  }
-  // @@protoc_insertion_point(field_mutable:common.HTTPTask.schedule)
-  return schedule_;
-}
-inline void HTTPTask::set_allocated_schedule(::google::protobuf::Timestamp* schedule) {
-  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
-  if (message_arena == NULL) {
-    delete reinterpret_cast< ::google::protobuf::MessageLite*>(schedule_);
-  }
-  if (schedule) {
-    ::google::protobuf::Arena* submessage_arena =
-      reinterpret_cast<::google::protobuf::MessageLite*>(schedule)->GetArena();
-    if (message_arena != submessage_arena) {
-      schedule = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, schedule, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  schedule_ = schedule;
-  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.schedule)
-}
-
-// string callback_url = 9;
+// string callback_url = 8;
 inline void HTTPTask::clear_callback_url() {
   callback_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

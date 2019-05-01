@@ -163,7 +163,7 @@ func (m *ClientCredentials) XXX_Unmarshal(b []byte) error
 
 ```go
 type Common struct {
-	Identifer            string            `protobuf:"bytes,1,opt,name=identifer,proto3" json:"identifer,omitempty"`
+	Identifier           string            `protobuf:"bytes,1,opt,name=identifier,proto3" json:"identifier,omitempty"`
 	Object               *any.Any          `protobuf:"bytes,2,opt,name=object,proto3" json:"object,omitempty"`
 	Meta                 map[string]string `protobuf:"bytes,3,rep,name=meta,proto3" json:"meta,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
@@ -179,10 +179,16 @@ type Common struct {
 func (*Common) Descriptor() ([]byte, []int)
 ```
 
-#### func (*Common) GetIdentifer
+#### func (*Common) GetCategory
 
 ```go
-func (m *Common) GetIdentifer() string
+func (c *Common) GetCategory() string
+```
+
+#### func (*Common) GetIdentifier
+
+```go
+func (m *Common) GetIdentifier() string
 ```
 
 #### func (*Common) GetMeta
@@ -363,18 +369,17 @@ func (m *DefaultGCPCredentials) XXX_Unmarshal(b []byte) error
 
 ```go
 type HTTPTask struct {
-	Url                  string               `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
-	Method               string               `protobuf:"bytes,2,opt,name=method,proto3" json:"method,omitempty"`
-	Headers              map[string]string    `protobuf:"bytes,3,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Form                 map[string]string    `protobuf:"bytes,4,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Username             string               `protobuf:"bytes,5,opt,name=username,proto3" json:"username,omitempty"`
-	Password             string               `protobuf:"bytes,6,opt,name=password,proto3" json:"password,omitempty"`
-	Body                 *any.Any             `protobuf:"bytes,7,opt,name=body,proto3" json:"body,omitempty"`
-	Schedule             *timestamp.Timestamp `protobuf:"bytes,8,opt,name=schedule,proto3" json:"schedule,omitempty"`
-	CallbackUrl          string               `protobuf:"bytes,9,opt,name=callback_url,json=callbackUrl,proto3" json:"callback_url,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
-	XXX_unrecognized     []byte               `json:"-"`
-	XXX_sizecache        int32                `json:"-"`
+	Url                  string            `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	Method               string            `protobuf:"bytes,2,opt,name=method,proto3" json:"method,omitempty"`
+	Headers              map[string]string `protobuf:"bytes,3,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Form                 map[string]string `protobuf:"bytes,4,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Username             string            `protobuf:"bytes,5,opt,name=username,proto3" json:"username,omitempty"`
+	Password             string            `protobuf:"bytes,6,opt,name=password,proto3" json:"password,omitempty"`
+	Body                 *any.Any          `protobuf:"bytes,7,opt,name=body,proto3" json:"body,omitempty"`
+	CallbackUrl          string            `protobuf:"bytes,8,opt,name=callback_url,json=callbackUrl,proto3" json:"callback_url,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}          `json:"-"`
+	XXX_unrecognized     []byte            `json:"-"`
+	XXX_sizecache        int32             `json:"-"`
 }
 ```
 
@@ -389,6 +394,12 @@ func (s *HTTPTask) Debugf(format string)
 
 ```go
 func (*HTTPTask) Descriptor() ([]byte, []int)
+```
+
+#### func (*HTTPTask) Do
+
+```go
+func (s *HTTPTask) Do() error
 ```
 
 #### func (*HTTPTask) GetBody
@@ -427,12 +438,6 @@ func (m *HTTPTask) GetMethod() string
 func (m *HTTPTask) GetPassword() string
 ```
 
-#### func (*HTTPTask) GetSchedule
-
-```go
-func (m *HTTPTask) GetSchedule() *timestamp.Timestamp
-```
-
 #### func (*HTTPTask) GetUrl
 
 ```go
@@ -443,12 +448,6 @@ func (m *HTTPTask) GetUrl() string
 
 ```go
 func (m *HTTPTask) GetUsername() string
-```
-
-#### func (*HTTPTask) POST
-
-```go
-func (s *HTTPTask) POST() (*http.Request, error)
 ```
 
 #### func (*HTTPTask) ProtoMessage

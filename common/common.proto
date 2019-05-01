@@ -5,7 +5,7 @@ import "google/protobuf/any.proto";
 import "google/protobuf/timestamp.proto";
 
 message Common {
-    string identifer=1;
+    string identifier=1;
     google.protobuf.Any object=2;
     map<string,string> meta=3;
 }
@@ -68,7 +68,6 @@ message HTTPTask {
     string username=5;
     string password=6;
     google.protobuf.Any body=7;
-    google.protobuf.Timestamp schedule=8;
-    string callback_url =9;
+    string callback_url =8;
 }
 

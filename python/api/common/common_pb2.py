@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='common',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x96\x01\n\x06\x43ommon\x12\x11\n\tidentifer\x18\x01 \x01(\t\x12$\n\x06object\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12&\n\x04meta\x18\x03 \x03(\x0b\x32\x18.common.Common.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x19\n\tPlainText\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x87\x01\n\x06OAuth2\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttoken_url\x18\x03 \x01(\t\x12\x10\n\x08\x61uth_url\x18\x04 \x01(\t\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x10\n\x08redirect\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\"\xdf\x01\n\x11\x43lientCredentials\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttoken_url\x18\x03 \x01(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x46\n\x0f\x65ndpoint_params\x18\x05 \x03(\x0b\x32-.common.ClientCredentials.EndpointParamsEntry\x1a\x35\n\x13\x45ndpointParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb2\x01\n\x03JWT\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x13\n\x0bprivate_key\x18\x02 \x01(\x0c\x12\x14\n\x0cprive_key_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x11\n\ttoken_url\x18\x06 \x01(\t\x12+\n\x07\x65xpires\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x61udience\x18\x08 \x01(\t\"\'\n\x15\x44\x65\x66\x61ultGCPCredentials\x12\x0e\n\x06scopes\x18\x01 \x03(\t\"W\n\x0bJSONWebKeys\x12\x0b\n\x03kty\x18\x01 \x01(\t\x12\x0b\n\x03kid\x18\x02 \x01(\t\x12\x0b\n\x03use\x18\x03 \x01(\t\x12\t\n\x01n\x18\x04 \x01(\t\x12\t\n\x01\x65\x18\x05 \x01(\t\x12\x0b\n\x03x5c\x18\x06 \x03(\t\")\n\x04Jwks\x12!\n\x04keys\x18\x01 \x03(\x0b\x32\x13.common.JSONWebKeys\"\xea\x02\n\x08HTTPTask\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06method\x18\x02 \x01(\t\x12.\n\x07headers\x18\x03 \x03(\x0b\x32\x1d.common.HTTPTask.HeadersEntry\x12(\n\x04\x66orm\x18\x04 \x03(\x0b\x32\x1a.common.HTTPTask.FormEntry\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\"\n\x04\x62ody\x18\x07 \x01(\x0b\x32\x14.google.protobuf.Any\x12,\n\x08schedule\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\x0c\x63\x61llback_url\x18\t \x01(\t\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tFormEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x97\x01\n\x06\x43ommon\x12\x12\n\nidentifier\x18\x01 \x01(\t\x12$\n\x06object\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12&\n\x04meta\x18\x03 \x03(\x0b\x32\x18.common.Common.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x19\n\tPlainText\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x87\x01\n\x06OAuth2\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttoken_url\x18\x03 \x01(\t\x12\x10\n\x08\x61uth_url\x18\x04 \x01(\t\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x10\n\x08redirect\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\"\xdf\x01\n\x11\x43lientCredentials\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttoken_url\x18\x03 \x01(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x46\n\x0f\x65ndpoint_params\x18\x05 \x03(\x0b\x32-.common.ClientCredentials.EndpointParamsEntry\x1a\x35\n\x13\x45ndpointParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb2\x01\n\x03JWT\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x13\n\x0bprivate_key\x18\x02 \x01(\x0c\x12\x14\n\x0cprive_key_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x11\n\ttoken_url\x18\x06 \x01(\t\x12+\n\x07\x65xpires\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x61udience\x18\x08 \x01(\t\"\'\n\x15\x44\x65\x66\x61ultGCPCredentials\x12\x0e\n\x06scopes\x18\x01 \x03(\t\"W\n\x0bJSONWebKeys\x12\x0b\n\x03kty\x18\x01 \x01(\t\x12\x0b\n\x03kid\x18\x02 \x01(\t\x12\x0b\n\x03use\x18\x03 \x01(\t\x12\t\n\x01n\x18\x04 \x01(\t\x12\t\n\x01\x65\x18\x05 \x01(\t\x12\x0b\n\x03x5c\x18\x06 \x03(\t\")\n\x04Jwks\x12!\n\x04keys\x18\x01 \x03(\x0b\x32\x13.common.JSONWebKeys\"\xbc\x02\n\x08HTTPTask\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06method\x18\x02 \x01(\t\x12.\n\x07headers\x18\x03 \x03(\x0b\x32\x1d.common.HTTPTask.HeadersEntry\x12(\n\x04\x66orm\x18\x04 \x03(\x0b\x32\x1a.common.HTTPTask.FormEntry\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\"\n\x04\x62ody\x18\x07 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x14\n\x0c\x63\x61llback_url\x18\x08 \x01(\t\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tFormEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x62\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -61,8 +61,8 @@ _COMMON_METAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=199,
-  serialized_end=242,
+  serialized_start=200,
+  serialized_end=243,
 )
 
 _COMMON = _descriptor.Descriptor(
@@ -73,7 +73,7 @@ _COMMON = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='identifer', full_name='common.Common.identifer', index=0,
+      name='identifier', full_name='common.Common.identifier', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -106,7 +106,7 @@ _COMMON = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=92,
-  serialized_end=242,
+  serialized_end=243,
 )
 
 
@@ -136,8 +136,8 @@ _PLAINTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=244,
-  serialized_end=269,
+  serialized_start=245,
+  serialized_end=270,
 )
 
 
@@ -209,8 +209,8 @@ _OAUTH2 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=272,
-  serialized_end=407,
+  serialized_start=273,
+  serialized_end=408,
 )
 
 
@@ -247,8 +247,8 @@ _CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=580,
-  serialized_end=633,
+  serialized_start=581,
+  serialized_end=634,
 )
 
 _CLIENTCREDENTIALS = _descriptor.Descriptor(
@@ -305,8 +305,8 @@ _CLIENTCREDENTIALS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=410,
-  serialized_end=633,
+  serialized_start=411,
+  serialized_end=634,
 )
 
 
@@ -385,8 +385,8 @@ _JWT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=636,
-  serialized_end=814,
+  serialized_start=637,
+  serialized_end=815,
 )
 
 
@@ -416,8 +416,8 @@ _DEFAULTGCPCREDENTIALS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=816,
-  serialized_end=855,
+  serialized_start=817,
+  serialized_end=856,
 )
 
 
@@ -482,8 +482,8 @@ _JSONWEBKEYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=857,
-  serialized_end=944,
+  serialized_start=858,
+  serialized_end=945,
 )
 
 
@@ -513,8 +513,8 @@ _JWKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=946,
-  serialized_end=987,
+  serialized_start=947,
+  serialized_end=988,
 )
 
 
@@ -551,8 +551,8 @@ _HTTPTASK_HEADERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1261,
-  serialized_end=1307,
+  serialized_start=1216,
+  serialized_end=1262,
 )
 
 _HTTPTASK_FORMENTRY = _descriptor.Descriptor(
@@ -588,8 +588,8 @@ _HTTPTASK_FORMENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1309,
-  serialized_end=1352,
+  serialized_start=1264,
+  serialized_end=1307,
 )
 
 _HTTPTASK = _descriptor.Descriptor(
@@ -649,15 +649,8 @@ _HTTPTASK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='schedule', full_name='common.HTTPTask.schedule', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='callback_url', full_name='common.HTTPTask.callback_url', index=8,
-      number=9, type=9, cpp_type=9, label=1,
+      name='callback_url', full_name='common.HTTPTask.callback_url', index=7,
+      number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -674,8 +667,8 @@ _HTTPTASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=990,
-  serialized_end=1352,
+  serialized_start=991,
+  serialized_end=1307,
 )
 
 _COMMON_METAENTRY.containing_type = _COMMON
@@ -690,7 +683,6 @@ _HTTPTASK_FORMENTRY.containing_type = _HTTPTASK
 _HTTPTASK.fields_by_name['headers'].message_type = _HTTPTASK_HEADERSENTRY
 _HTTPTASK.fields_by_name['form'].message_type = _HTTPTASK_FORMENTRY
 _HTTPTASK.fields_by_name['body'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_HTTPTASK.fields_by_name['schedule'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['Common'] = _COMMON
 DESCRIPTOR.message_types_by_name['PlainText'] = _PLAINTEXT
 DESCRIPTOR.message_types_by_name['OAuth2'] = _OAUTH2

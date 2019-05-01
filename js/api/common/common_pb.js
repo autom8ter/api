@@ -69,7 +69,7 @@ proto.common.Common.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.Common.toObject = function(includeInstance, msg) {
   var f, obj = {
-    identifer: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    identifier: jspb.Message.getFieldWithDefault(msg, 1, ""),
     object: (f = msg.getObject()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
     metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, undefined) : []
   };
@@ -110,7 +110,7 @@ proto.common.Common.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setIdentifer(value);
+      msg.setIdentifier(value);
       break;
     case 2:
       var value = new google_protobuf_any_pb.Any;
@@ -152,7 +152,7 @@ proto.common.Common.prototype.serializeBinary = function() {
  */
 proto.common.Common.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getIdentifer();
+  f = message.getIdentifier();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -175,16 +175,16 @@ proto.common.Common.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string identifer = 1;
+ * optional string identifier = 1;
  * @return {string}
  */
-proto.common.Common.prototype.getIdentifer = function() {
+proto.common.Common.prototype.getIdentifier = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.common.Common.prototype.setIdentifer = function(value) {
+proto.common.Common.prototype.setIdentifier = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2053,8 +2053,7 @@ proto.common.HTTPTask.toObject = function(includeInstance, msg) {
     username: jspb.Message.getFieldWithDefault(msg, 5, ""),
     password: jspb.Message.getFieldWithDefault(msg, 6, ""),
     body: (f = msg.getBody()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
-    schedule: (f = msg.getSchedule()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    callbackUrl: jspb.Message.getFieldWithDefault(msg, 9, "")
+    callbackUrl: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -2125,11 +2124,6 @@ proto.common.HTTPTask.deserializeBinaryFromReader = function(msg, reader) {
       msg.setBody(value);
       break;
     case 8:
-      var value = new google_protobuf_timestamp_pb.Timestamp;
-      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setSchedule(value);
-      break;
-    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setCallbackUrl(value);
       break;
@@ -2206,18 +2200,10 @@ proto.common.HTTPTask.serializeBinaryToWriter = function(message, writer) {
       google_protobuf_any_pb.Any.serializeBinaryToWriter
     );
   }
-  f = message.getSchedule();
-  if (f != null) {
-    writer.writeMessage(
-      8,
-      f,
-      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
   f = message.getCallbackUrl();
   if (f.length > 0) {
     writer.writeString(
-      9,
+      8,
       f
     );
   }
@@ -2351,47 +2337,17 @@ proto.common.HTTPTask.prototype.hasBody = function() {
 
 
 /**
- * optional google.protobuf.Timestamp schedule = 8;
- * @return {?proto.google.protobuf.Timestamp}
- */
-proto.common.HTTPTask.prototype.getSchedule = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
-};
-
-
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
-proto.common.HTTPTask.prototype.setSchedule = function(value) {
-  jspb.Message.setWrapperField(this, 8, value);
-};
-
-
-proto.common.HTTPTask.prototype.clearSchedule = function() {
-  this.setSchedule(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.common.HTTPTask.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional string callback_url = 9;
+ * optional string callback_url = 8;
  * @return {string}
  */
 proto.common.HTTPTask.prototype.getCallbackUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
 /** @param {string} value */
 proto.common.HTTPTask.prototype.setCallbackUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 9, value);
+  jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

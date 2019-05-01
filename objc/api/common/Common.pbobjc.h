@@ -51,14 +51,14 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Common
 
 typedef GPB_ENUM(Common_FieldNumber) {
-  Common_FieldNumber_Identifer = 1,
+  Common_FieldNumber_Identifier = 1,
   Common_FieldNumber_Object = 2,
   Common_FieldNumber_Meta = 3,
 };
 
 @interface Common : GPBMessage
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *identifer;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *identifier;
 
 @property(nonatomic, readwrite, strong, null_resettable) GPBAny *object;
 /** Test to see if @c object has been set. */
@@ -246,8 +246,7 @@ typedef GPB_ENUM(HTTPTask_FieldNumber) {
   HTTPTask_FieldNumber_Username = 5,
   HTTPTask_FieldNumber_Password = 6,
   HTTPTask_FieldNumber_Body = 7,
-  HTTPTask_FieldNumber_Schedule = 8,
-  HTTPTask_FieldNumber_CallbackURL = 9,
+  HTTPTask_FieldNumber_CallbackURL = 8,
 };
 
 @interface HTTPTask : GPBMessage
@@ -271,10 +270,6 @@ typedef GPB_ENUM(HTTPTask_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) GPBAny *body;
 /** Test to see if @c body has been set. */
 @property(nonatomic, readwrite) BOOL hasBody;
-
-@property(nonatomic, readwrite, strong, null_resettable) GPBTimestamp *schedule;
-/** Test to see if @c schedule has been set. */
-@property(nonatomic, readwrite) BOOL hasSchedule;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *callbackURL;
 

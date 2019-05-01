@@ -9,7 +9,7 @@
 
 ```go
 type Categorizer interface {
-	Category() string
+	GetCategory() string
 }
 ```
 
@@ -28,26 +28,7 @@ type Grouping interface {
 
 ```go
 type Identifier interface {
-	Identifier() string
-}
-```
-
-
-#### type JSON
-
-```go
-type JSON interface {
-	JSONString() string
-}
-```
-
-
-#### type JSONMessage
-
-```go
-type JSONMessage interface {
-	MetaGrouping
-	JSON
+	GetIdentifier() string
 }
 ```
 
@@ -76,16 +57,6 @@ type MetaGrouping interface {
 
 ```go
 type Metadata interface {
-	Meta() map[string]string
-}
-```
-
-
-#### type ProtoMessage
-
-```go
-type ProtoMessage interface {
-	MetaGrouping
-	proto.Message
+	GetMeta() map[string]string
 }
 ```
