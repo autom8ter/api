@@ -2,7 +2,9 @@
 
 package driver
 
-import "github.com/golang/protobuf/proto"
+import (
+	"github.com/golang/protobuf/proto"
+)
 
 type Grouping interface {
 	Categorizer
@@ -19,21 +21,6 @@ type Categorizer interface {
 
 type JSON interface {
 	JSONString() string
-}
-
-type Queue interface {
-	GetQueLocation() string
-	GetQueID() string
-	ExecuteAtUnix() int64
-}
-
-type JSONTask interface {
-	JSON
-	Identifier
-	URL() string
-	Method() string
-	Headers() map[string]string
-	Queue
 }
 
 type Metadata interface {

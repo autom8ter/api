@@ -21,7 +21,11 @@ message Bool {
 }
 
 message Identifier {
-    String id=1;
+    string id=1;
+}
+
+message Categorizer {
+    string id=1;
 }
 
 message AuthToken {
