@@ -345,3 +345,27 @@ func Serve(addr string, plugins ...driver.Plugin) error {
 func (c *Common) GetCategory() string {
 	return c.Object.TypeUrl
 }
+
+func (c *Common) MetaKey(key string) string {
+	return c.GetMeta()[key]
+}
+
+func (c *Common) Unmarshal(msg proto.Message) error {
+	return util.UnarshalAnyPB(c.Object, msg)
+}
+
+func (c *Common) AddMeta(key string, val string) {
+	c.Meta[key] = val
+}
+
+func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, error) {
+	any, err := util.MarshalAnyPB(msg)
+	if err != nil {
+		return nil, err
+	}
+	return &Common{
+		Identifier: id,
+		Object:     any,
+		Meta:       meta,
+	}, nil
+}

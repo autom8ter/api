@@ -32,6 +32,8 @@ github.com/autom8ter/objectify v0.0.0-20190430052014-ea17e2f77231 h1:dYxen9eYYbr
 github.com/autom8ter/objectify v0.0.0-20190430052014-ea17e2f77231/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
 github.com/autom8ter/objectify v0.0.0-20190430194927-911c01629753 h1:G+1TIZCqYo7TVkoiPAjyuqsPMrBN6oegxR8cTCyc5aY=
 github.com/autom8ter/objectify v0.0.0-20190430194927-911c01629753/go.mod h1:Hg+n5d+Qj3M0I+vnIo+009AoX2qzOtQJ20UVHYnjF3Q=
+github.com/autom8ter/objectify v0.0.0-20190501140836-9d479f635159 h1:/lMRcDvtpHdVHb3QW+JujrektcuvzmLIxrTEHSRwAIQ=
+github.com/autom8ter/objectify v0.0.0-20190501140836-9d479f635159/go.mod h1:TGH8SYpbe8HNLS40k+Bg8LRBro8rFWVQjqjzkHR5LVE=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b h1:9/xdefJqW1AlO2awvgxCFPnJjg1m8TO5EzdSk/B0oFU=
 github.com/autom8ter/util v0.0.0-20190315143019-1ab48ff7769b/go.mod h1:2h8US+tG3Wg9A68c4Io0aKdc506t3QyphvcRhvp8p1Q=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
