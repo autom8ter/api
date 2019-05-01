@@ -234,13 +234,17 @@ func (s *OAuth2) Debugf(format string) {
 	str.Debugf(format)
 }
 
-func (c *OAuth2) Token() (*oauth2.Token, error) {
+func (c *OAuth2) Exchange() (*oauth2.Token, error) {
 	a := c.Config()
 	tok, err := a.Exchange(context.TODO(), c.Code.Text)
 	if err != nil {
 		return nil, err
 	}
 	return tok, nil
+}
+
+func (c *OAuth2) Token() (*oauth2.Token, error) {
+	return c.Exchange()
 }
 
 func (c *OAuth2) Config() *oauth2.Config {
@@ -258,13 +262,13 @@ func (c *OAuth2) Config() *oauth2.Config {
 
 func (c *JWT) Config() *ojwt.Config {
 	return &ojwt.Config{
-		Email:        "",
-		PrivateKey:   nil,
-		PrivateKeyID: "",
-		Subject:      "",
+		Email:        c.Email.Text,
+		PrivateKey:   c.PrivateKey,
+		PrivateKeyID: c.PriveKeyId.Text,
+		Subject:      c.Subject.Text,
 		Scopes:       c.Scopes.Array(),
-		TokenURL:     "",
-		Expires:      0,
+		TokenURL:     c.TokenUrl.Text,
+		Expires:      c.Expires.ParseDuration(),
 	}
 }
 
@@ -295,12 +299,7 @@ func (c *ClientCredentials) Config() *clientcredentials.Config {
 
 func (c *ClientCredentials) Token() (*oauth2.Token, error) {
 	a := c.Config()
-	src := a.TokenSource(context.TODO())
-	tok, err := src.Token()
-	if err != nil {
-		return nil, err
-	}
-	return tok, nil
+	return a.Token(context.TODO())
 }
 
 func (c *ClientCredentials) PerRPCCredentials() (credentials.PerRPCCredentials, error) {
