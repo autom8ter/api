@@ -20,15 +20,20 @@ import (
 	"google.golang.org/grpc/credentials/oauth"
 	"net/http"
 	"net/url"
+	"os"
 	"time"
 )
 
 func init() {
 	util = objectify.Default()
+	if ENVContext == nil {
+		ENVContext = context.WithValue(context.TODO(), "env", os.Environ())
+	}
 }
 
 var (
-	util *objectify.Handler
+	util       *objectify.Handler
+	ENVContext context.Context
 )
 
 func (p *JSONWebKeys) UnmarshalJSONFrom(bits []byte) error {
@@ -259,8 +264,54 @@ func (s *DefaultGCPCredentials) Debugf(format string) {
 	util.Debugf("%s", util.MarshalJSONPB(s))
 }
 
+func (s *ClientCredentials) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
+func (s *JWT) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
+func (s *JSONWebKeys) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
+func (s *OAuth2) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
 func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error) error {
 	return fn(s)
+}
+
+func (s *HTTPTask) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
+func (s *HTTPTask) Validate(fn func(a *HTTPTask) error) error {
+	return fn(s)
+}
+
+func (s *HTTPTask) POST() (*http.Request, error) {
+	u, err := url.Parse(s.Url)
+	if err != nil {
+		return nil, err
+	}
+	r := &http.Request{
+		Method: s.Method,
+		URL:    u,
+	}
+	for k, v := range s.Headers {
+		r.Header.Set(k, v)
+	}
+	for k, v := range s.Form {
+		r.Form.Set(k, v)
+	}
+	if s.Username != "" && s.Password != "" {
+		r.SetBasicAuth(s.Username, s.Password)
+	}
+	r.WithContext(ENVContext)
+	return r, nil
 }
 
 func Serve(addr string, plugins ...driver.Plugin) error {

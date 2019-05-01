@@ -56,11 +56,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   end
   add_message "common.HTTPTask" do
     optional :url, :string, 1
-    map :headers, :string, :string, 2
-    map :form, :string, :string, 3
-    optional :body, :message, 4, "google.protobuf.Any"
-    optional :schedule, :message, 5, "google.protobuf.Timestamp"
-    optional :callback_url, :string, 6
+    optional :method, :string, 2
+    map :headers, :string, :string, 3
+    map :form, :string, :string, 4
+    optional :username, :string, 5
+    optional :password, :string, 6
+    optional :body, :message, 7, "google.protobuf.Any"
+    optional :schedule, :message, 8, "google.protobuf.Timestamp"
+    optional :callback_url, :string, 9
   end
 end
 

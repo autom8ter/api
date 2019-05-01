@@ -3,11 +3,8 @@
 package driver
 
 import (
-	"github.com/autom8ter/objectify"
 	"github.com/golang/protobuf/proto"
 )
-
-var util = objectify.Default()
 
 type Grouping interface {
 	Categorizer

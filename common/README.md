@@ -5,6 +5,12 @@
 
 ## Usage
 
+```go
+var (
+	ENVContext context.Context
+)
+```
+
 #### func  Serve
 
 ```go
@@ -43,6 +49,12 @@ func (c *ClientCredentials) Client(ctx context.Context) *http.Client
 
 ```go
 func (c *ClientCredentials) Config() *clientcredentials.Config
+```
+
+#### func (*ClientCredentials) Debugf
+
+```go
+func (s *ClientCredentials) Debugf(format string)
 ```
 
 #### func (*ClientCredentials) Descriptor
@@ -352,17 +364,26 @@ func (m *DefaultGCPCredentials) XXX_Unmarshal(b []byte) error
 ```go
 type HTTPTask struct {
 	Url                  string               `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
-	Headers              map[string]string    `protobuf:"bytes,2,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Form                 map[string]string    `protobuf:"bytes,3,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
-	Body                 *any.Any             `protobuf:"bytes,4,opt,name=body,proto3" json:"body,omitempty"`
-	Schedule             *timestamp.Timestamp `protobuf:"bytes,5,opt,name=schedule,proto3" json:"schedule,omitempty"`
-	CallbackUrl          string               `protobuf:"bytes,6,opt,name=callback_url,json=callbackUrl,proto3" json:"callback_url,omitempty"`
+	Method               string               `protobuf:"bytes,2,opt,name=method,proto3" json:"method,omitempty"`
+	Headers              map[string]string    `protobuf:"bytes,3,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Form                 map[string]string    `protobuf:"bytes,4,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Username             string               `protobuf:"bytes,5,opt,name=username,proto3" json:"username,omitempty"`
+	Password             string               `protobuf:"bytes,6,opt,name=password,proto3" json:"password,omitempty"`
+	Body                 *any.Any             `protobuf:"bytes,7,opt,name=body,proto3" json:"body,omitempty"`
+	Schedule             *timestamp.Timestamp `protobuf:"bytes,8,opt,name=schedule,proto3" json:"schedule,omitempty"`
+	CallbackUrl          string               `protobuf:"bytes,9,opt,name=callback_url,json=callbackUrl,proto3" json:"callback_url,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`
 	XXX_sizecache        int32                `json:"-"`
 }
 ```
 
+
+#### func (*HTTPTask) Debugf
+
+```go
+func (s *HTTPTask) Debugf(format string)
+```
 
 #### func (*HTTPTask) Descriptor
 
@@ -394,6 +415,18 @@ func (m *HTTPTask) GetForm() map[string]string
 func (m *HTTPTask) GetHeaders() map[string]string
 ```
 
+#### func (*HTTPTask) GetMethod
+
+```go
+func (m *HTTPTask) GetMethod() string
+```
+
+#### func (*HTTPTask) GetPassword
+
+```go
+func (m *HTTPTask) GetPassword() string
+```
+
 #### func (*HTTPTask) GetSchedule
 
 ```go
@@ -404,6 +437,18 @@ func (m *HTTPTask) GetSchedule() *timestamp.Timestamp
 
 ```go
 func (m *HTTPTask) GetUrl() string
+```
+
+#### func (*HTTPTask) GetUsername
+
+```go
+func (m *HTTPTask) GetUsername() string
+```
+
+#### func (*HTTPTask) POST
+
+```go
+func (s *HTTPTask) POST() (*http.Request, error)
 ```
 
 #### func (*HTTPTask) ProtoMessage
@@ -422,6 +467,12 @@ func (m *HTTPTask) Reset()
 
 ```go
 func (m *HTTPTask) String() string
+```
+
+#### func (*HTTPTask) Validate
+
+```go
+func (s *HTTPTask) Validate(fn func(a *HTTPTask) error) error
 ```
 
 #### func (*HTTPTask) XXX_DiscardUnknown
@@ -470,6 +521,12 @@ type JSONWebKeys struct {
 }
 ```
 
+
+#### func (*JSONWebKeys) Debugf
+
+```go
+func (s *JSONWebKeys) Debugf(format string)
+```
 
 #### func (*JSONWebKeys) Descriptor
 
@@ -608,6 +665,12 @@ func (c *JWT) Client(ctx context.Context) *http.Client
 
 ```go
 func (c *JWT) Config() *ojwt.Config
+```
+
+#### func (*JWT) Debugf
+
+```go
+func (s *JWT) Debugf(format string)
 ```
 
 #### func (*JWT) Descriptor
@@ -854,6 +917,12 @@ func (c *OAuth2) Client(ctx context.Context) *http.Client
 
 ```go
 func (c *OAuth2) Config() *oauth2.Config
+```
+
+#### func (*OAuth2) Debugf
+
+```go
+func (s *OAuth2) Debugf(format string)
 ```
 
 #### func (*OAuth2) Descriptor

@@ -240,16 +240,21 @@ typedef GPB_ENUM(Jwks_FieldNumber) {
 
 typedef GPB_ENUM(HTTPTask_FieldNumber) {
   HTTPTask_FieldNumber_URL = 1,
-  HTTPTask_FieldNumber_Headers = 2,
-  HTTPTask_FieldNumber_Form = 3,
-  HTTPTask_FieldNumber_Body = 4,
-  HTTPTask_FieldNumber_Schedule = 5,
-  HTTPTask_FieldNumber_CallbackURL = 6,
+  HTTPTask_FieldNumber_Method = 2,
+  HTTPTask_FieldNumber_Headers = 3,
+  HTTPTask_FieldNumber_Form = 4,
+  HTTPTask_FieldNumber_Username = 5,
+  HTTPTask_FieldNumber_Password = 6,
+  HTTPTask_FieldNumber_Body = 7,
+  HTTPTask_FieldNumber_Schedule = 8,
+  HTTPTask_FieldNumber_CallbackURL = 9,
 };
 
 @interface HTTPTask : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *method;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *headers;
 /** The number of items in @c headers without causing the array to be created. */
@@ -258,6 +263,10 @@ typedef GPB_ENUM(HTTPTask_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
 /** The number of items in @c form without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger form_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *username;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *password;
 
 @property(nonatomic, readwrite, strong, null_resettable) GPBAny *body;
 /** Test to see if @c body has been set. */

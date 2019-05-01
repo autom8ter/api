@@ -8619,11 +8619,21 @@ public final class CommonOuterClass {
         getUrlBytes();
 
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>string method = 2;</code>
+     */
+    java.lang.String getMethod();
+    /**
+     * <code>string method = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMethodBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
     int getHeadersCount();
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
     boolean containsHeaders(
         java.lang.String key);
@@ -8634,30 +8644,30 @@ public final class CommonOuterClass {
     java.util.Map<java.lang.String, java.lang.String>
     getHeaders();
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getHeadersMap();
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
 
     java.lang.String getHeadersOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
 
     java.lang.String getHeadersOrThrow(
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
     int getFormCount();
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
     boolean containsForm(
         java.lang.String key);
@@ -8668,56 +8678,76 @@ public final class CommonOuterClass {
     java.util.Map<java.lang.String, java.lang.String>
     getForm();
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getFormMap();
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
 
     java.lang.String getFormOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
 
     java.lang.String getFormOrThrow(
         java.lang.String key);
 
     /**
-     * <code>.google.protobuf.Any body = 4;</code>
+     * <code>string username = 5;</code>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>string username = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+
+    /**
+     * <code>string password = 6;</code>
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>.google.protobuf.Any body = 7;</code>
      */
     boolean hasBody();
     /**
-     * <code>.google.protobuf.Any body = 4;</code>
+     * <code>.google.protobuf.Any body = 7;</code>
      */
     com.google.protobuf.Any getBody();
     /**
-     * <code>.google.protobuf.Any body = 4;</code>
+     * <code>.google.protobuf.Any body = 7;</code>
      */
     com.google.protobuf.AnyOrBuilder getBodyOrBuilder();
 
     /**
-     * <code>.google.protobuf.Timestamp schedule = 5;</code>
+     * <code>.google.protobuf.Timestamp schedule = 8;</code>
      */
     boolean hasSchedule();
     /**
-     * <code>.google.protobuf.Timestamp schedule = 5;</code>
+     * <code>.google.protobuf.Timestamp schedule = 8;</code>
      */
     com.google.protobuf.Timestamp getSchedule();
     /**
-     * <code>.google.protobuf.Timestamp schedule = 5;</code>
+     * <code>.google.protobuf.Timestamp schedule = 8;</code>
      */
     com.google.protobuf.TimestampOrBuilder getScheduleOrBuilder();
 
     /**
-     * <code>string callback_url = 6;</code>
+     * <code>string callback_url = 9;</code>
      */
     java.lang.String getCallbackUrl();
     /**
-     * <code>string callback_url = 6;</code>
+     * <code>string callback_url = 9;</code>
      */
     com.google.protobuf.ByteString
         getCallbackUrlBytes();
@@ -8736,6 +8766,9 @@ public final class CommonOuterClass {
     }
     private HTTPTask() {
       url_ = "";
+      method_ = "";
+      username_ = "";
+      password_ = "";
       callbackUrl_ = "";
     }
 
@@ -8770,10 +8803,16 @@ public final class CommonOuterClass {
               break;
             }
             case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              method_ = s;
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 headers_ = com.google.protobuf.MapField.newMapField(
                     HeadersDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               headers__ = input.readMessage(
@@ -8782,11 +8821,11 @@ public final class CommonOuterClass {
                   headers__.getKey(), headers__.getValue());
               break;
             }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 form_ = com.google.protobuf.MapField.newMapField(
                     FormDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               form__ = input.readMessage(
@@ -8795,7 +8834,19 @@ public final class CommonOuterClass {
                   form__.getKey(), form__.getValue());
               break;
             }
-            case 34: {
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              username_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
+              break;
+            }
+            case 58: {
               com.google.protobuf.Any.Builder subBuilder = null;
               if (body_ != null) {
                 subBuilder = body_.toBuilder();
@@ -8808,7 +8859,7 @@ public final class CommonOuterClass {
 
               break;
             }
-            case 42: {
+            case 66: {
               com.google.protobuf.Timestamp.Builder subBuilder = null;
               if (schedule_ != null) {
                 subBuilder = schedule_.toBuilder();
@@ -8821,7 +8872,7 @@ public final class CommonOuterClass {
 
               break;
             }
-            case 50: {
+            case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
               callbackUrl_ = s;
@@ -8856,9 +8907,9 @@ public final class CommonOuterClass {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 2:
-          return internalGetHeaders();
         case 3:
+          return internalGetHeaders();
+        case 4:
           return internalGetForm();
         default:
           throw new RuntimeException(
@@ -8908,7 +8959,41 @@ public final class CommonOuterClass {
       }
     }
 
-    public static final int HEADERS_FIELD_NUMBER = 2;
+    public static final int METHOD_FIELD_NUMBER = 2;
+    private volatile java.lang.Object method_;
+    /**
+     * <code>string method = 2;</code>
+     */
+    public java.lang.String getMethod() {
+      java.lang.Object ref = method_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        method_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string method = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMethodBytes() {
+      java.lang.Object ref = method_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        method_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HEADERS_FIELD_NUMBER = 3;
     private static final class HeadersDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -8935,7 +9020,7 @@ public final class CommonOuterClass {
       return internalGetHeaders().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
 
     public boolean containsHeaders(
@@ -8951,14 +9036,14 @@ public final class CommonOuterClass {
       return getHeadersMap();
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
       return internalGetHeaders().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
 
     public java.lang.String getHeadersOrDefault(
@@ -8970,7 +9055,7 @@ public final class CommonOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; headers = 2;</code>
+     * <code>map&lt;string, string&gt; headers = 3;</code>
      */
 
     public java.lang.String getHeadersOrThrow(
@@ -8984,7 +9069,7 @@ public final class CommonOuterClass {
       return map.get(key);
     }
 
-    public static final int FORM_FIELD_NUMBER = 3;
+    public static final int FORM_FIELD_NUMBER = 4;
     private static final class FormDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -9011,7 +9096,7 @@ public final class CommonOuterClass {
       return internalGetForm().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
 
     public boolean containsForm(
@@ -9027,14 +9112,14 @@ public final class CommonOuterClass {
       return getFormMap();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
       return internalGetForm().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
 
     public java.lang.String getFormOrDefault(
@@ -9046,7 +9131,7 @@ public final class CommonOuterClass {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; form = 3;</code>
+     * <code>map&lt;string, string&gt; form = 4;</code>
      */
 
     public java.lang.String getFormOrThrow(
@@ -9060,52 +9145,120 @@ public final class CommonOuterClass {
       return map.get(key);
     }
 
-    public static final int BODY_FIELD_NUMBER = 4;
+    public static final int USERNAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object username_;
+    /**
+     * <code>string username = 5;</code>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string username = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 6;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 6;</code>
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BODY_FIELD_NUMBER = 7;
     private com.google.protobuf.Any body_;
     /**
-     * <code>.google.protobuf.Any body = 4;</code>
+     * <code>.google.protobuf.Any body = 7;</code>
      */
     public boolean hasBody() {
       return body_ != null;
     }
     /**
-     * <code>.google.protobuf.Any body = 4;</code>
+     * <code>.google.protobuf.Any body = 7;</code>
      */
     public com.google.protobuf.Any getBody() {
       return body_ == null ? com.google.protobuf.Any.getDefaultInstance() : body_;
     }
     /**
-     * <code>.google.protobuf.Any body = 4;</code>
+     * <code>.google.protobuf.Any body = 7;</code>
      */
     public com.google.protobuf.AnyOrBuilder getBodyOrBuilder() {
       return getBody();
     }
 
-    public static final int SCHEDULE_FIELD_NUMBER = 5;
+    public static final int SCHEDULE_FIELD_NUMBER = 8;
     private com.google.protobuf.Timestamp schedule_;
     /**
-     * <code>.google.protobuf.Timestamp schedule = 5;</code>
+     * <code>.google.protobuf.Timestamp schedule = 8;</code>
      */
     public boolean hasSchedule() {
       return schedule_ != null;
     }
     /**
-     * <code>.google.protobuf.Timestamp schedule = 5;</code>
+     * <code>.google.protobuf.Timestamp schedule = 8;</code>
      */
     public com.google.protobuf.Timestamp getSchedule() {
       return schedule_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : schedule_;
     }
     /**
-     * <code>.google.protobuf.Timestamp schedule = 5;</code>
+     * <code>.google.protobuf.Timestamp schedule = 8;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getScheduleOrBuilder() {
       return getSchedule();
     }
 
-    public static final int CALLBACK_URL_FIELD_NUMBER = 6;
+    public static final int CALLBACK_URL_FIELD_NUMBER = 9;
     private volatile java.lang.Object callbackUrl_;
     /**
-     * <code>string callback_url = 6;</code>
+     * <code>string callback_url = 9;</code>
      */
     public java.lang.String getCallbackUrl() {
       java.lang.Object ref = callbackUrl_;
@@ -9120,7 +9273,7 @@ public final class CommonOuterClass {
       }
     }
     /**
-     * <code>string callback_url = 6;</code>
+     * <code>string callback_url = 9;</code>
      */
     public com.google.protobuf.ByteString
         getCallbackUrlBytes() {
@@ -9153,26 +9306,35 @@ public final class CommonOuterClass {
       if (!getUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
+      if (!getMethodBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, method_);
+      }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetHeaders(),
           HeadersDefaultEntryHolder.defaultEntry,
-          2);
+          3);
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetForm(),
           FormDefaultEntryHolder.defaultEntry,
-          3);
+          4);
+      if (!getUsernameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, username_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, password_);
+      }
       if (body_ != null) {
-        output.writeMessage(4, getBody());
+        output.writeMessage(7, getBody());
       }
       if (schedule_ != null) {
-        output.writeMessage(5, getSchedule());
+        output.writeMessage(8, getSchedule());
       }
       if (!getCallbackUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, callbackUrl_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, callbackUrl_);
       }
       unknownFields.writeTo(output);
     }
@@ -9186,6 +9348,9 @@ public final class CommonOuterClass {
       if (!getUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
+      if (!getMethodBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, method_);
+      }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetHeaders().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
@@ -9194,7 +9359,7 @@ public final class CommonOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, headers__);
+            .computeMessageSize(3, headers__);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetForm().getMap().entrySet()) {
@@ -9204,18 +9369,24 @@ public final class CommonOuterClass {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, form__);
+            .computeMessageSize(4, form__);
+      }
+      if (!getUsernameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, username_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, password_);
       }
       if (body_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getBody());
+          .computeMessageSize(7, getBody());
       }
       if (schedule_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getSchedule());
+          .computeMessageSize(8, getSchedule());
       }
       if (!getCallbackUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, callbackUrl_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, callbackUrl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9235,10 +9406,16 @@ public final class CommonOuterClass {
       boolean result = true;
       result = result && getUrl()
           .equals(other.getUrl());
+      result = result && getMethod()
+          .equals(other.getMethod());
       result = result && internalGetHeaders().equals(
           other.internalGetHeaders());
       result = result && internalGetForm().equals(
           other.internalGetForm());
+      result = result && getUsername()
+          .equals(other.getUsername());
+      result = result && getPassword()
+          .equals(other.getPassword());
       result = result && (hasBody() == other.hasBody());
       if (hasBody()) {
         result = result && getBody()
@@ -9264,6 +9441,8 @@ public final class CommonOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + getMethod().hashCode();
       if (!internalGetHeaders().getMap().isEmpty()) {
         hash = (37 * hash) + HEADERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHeaders().hashCode();
@@ -9272,6 +9451,10 @@ public final class CommonOuterClass {
         hash = (37 * hash) + FORM_FIELD_NUMBER;
         hash = (53 * hash) + internalGetForm().hashCode();
       }
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       if (hasBody()) {
         hash = (37 * hash) + BODY_FIELD_NUMBER;
         hash = (53 * hash) + getBody().hashCode();
@@ -9393,9 +9576,9 @@ public final class CommonOuterClass {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 2:
-            return internalGetHeaders();
           case 3:
+            return internalGetHeaders();
+          case 4:
             return internalGetForm();
           default:
             throw new RuntimeException(
@@ -9406,9 +9589,9 @@ public final class CommonOuterClass {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 2:
-            return internalGetMutableHeaders();
           case 3:
+            return internalGetMutableHeaders();
+          case 4:
             return internalGetMutableForm();
           default:
             throw new RuntimeException(
@@ -9443,8 +9626,14 @@ public final class CommonOuterClass {
         super.clear();
         url_ = "";
 
+        method_ = "";
+
         internalGetMutableHeaders().clear();
         internalGetMutableForm().clear();
+        username_ = "";
+
+        password_ = "";
+
         if (bodyBuilder_ == null) {
           body_ = null;
         } else {
@@ -9488,10 +9677,13 @@ public final class CommonOuterClass {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.url_ = url_;
+        result.method_ = method_;
         result.headers_ = internalGetHeaders();
         result.headers_.makeImmutable();
         result.form_ = internalGetForm();
         result.form_.makeImmutable();
+        result.username_ = username_;
+        result.password_ = password_;
         if (bodyBuilder_ == null) {
           result.body_ = body_;
         } else {
@@ -9556,10 +9748,22 @@ public final class CommonOuterClass {
           url_ = other.url_;
           onChanged();
         }
+        if (!other.getMethod().isEmpty()) {
+          method_ = other.method_;
+          onChanged();
+        }
         internalGetMutableHeaders().mergeFrom(
             other.internalGetHeaders());
         internalGetMutableForm().mergeFrom(
             other.internalGetForm());
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          onChanged();
+        }
         if (other.hasBody()) {
           mergeBody(other.getBody());
         }
@@ -9669,6 +9873,75 @@ public final class CommonOuterClass {
         return this;
       }
 
+      private java.lang.Object method_ = "";
+      /**
+       * <code>string method = 2;</code>
+       */
+      public java.lang.String getMethod() {
+        java.lang.Object ref = method_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          method_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string method = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMethodBytes() {
+        java.lang.Object ref = method_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          method_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string method = 2;</code>
+       */
+      public Builder setMethod(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        method_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string method = 2;</code>
+       */
+      public Builder clearMethod() {
+        
+        method_ = getDefaultInstance().getMethod();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string method = 2;</code>
+       */
+      public Builder setMethodBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        method_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.MapField<
           java.lang.String, java.lang.String> headers_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -9696,7 +9969,7 @@ public final class CommonOuterClass {
         return internalGetHeaders().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
 
       public boolean containsHeaders(
@@ -9712,14 +9985,14 @@ public final class CommonOuterClass {
         return getHeadersMap();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getHeadersMap() {
         return internalGetHeaders().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
 
       public java.lang.String getHeadersOrDefault(
@@ -9731,7 +10004,7 @@ public final class CommonOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
 
       public java.lang.String getHeadersOrThrow(
@@ -9751,7 +10024,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
 
       public Builder removeHeaders(
@@ -9770,7 +10043,7 @@ public final class CommonOuterClass {
         return internalGetMutableHeaders().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
       public Builder putHeaders(
           java.lang.String key,
@@ -9782,7 +10055,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; headers = 2;</code>
+       * <code>map&lt;string, string&gt; headers = 3;</code>
        */
 
       public Builder putAllHeaders(
@@ -9819,7 +10092,7 @@ public final class CommonOuterClass {
         return internalGetForm().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
 
       public boolean containsForm(
@@ -9835,14 +10108,14 @@ public final class CommonOuterClass {
         return getFormMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getFormMap() {
         return internalGetForm().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
 
       public java.lang.String getFormOrDefault(
@@ -9854,7 +10127,7 @@ public final class CommonOuterClass {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
 
       public java.lang.String getFormOrThrow(
@@ -9874,7 +10147,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
 
       public Builder removeForm(
@@ -9893,7 +10166,7 @@ public final class CommonOuterClass {
         return internalGetMutableForm().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
       public Builder putForm(
           java.lang.String key,
@@ -9905,7 +10178,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; form = 3;</code>
+       * <code>map&lt;string, string&gt; form = 4;</code>
        */
 
       public Builder putAllForm(
@@ -9915,17 +10188,155 @@ public final class CommonOuterClass {
         return this;
       }
 
+      private java.lang.Object username_ = "";
+      /**
+       * <code>string username = 5;</code>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          username_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string username = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string username = 5;</code>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 5;</code>
+       */
+      public Builder clearUsername() {
+        
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string username = 5;</code>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 6;</code>
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 6;</code>
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 6;</code>
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 6;</code>
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.Any body_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> bodyBuilder_;
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public boolean hasBody() {
         return bodyBuilder_ != null || body_ != null;
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public com.google.protobuf.Any getBody() {
         if (bodyBuilder_ == null) {
@@ -9935,7 +10346,7 @@ public final class CommonOuterClass {
         }
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public Builder setBody(com.google.protobuf.Any value) {
         if (bodyBuilder_ == null) {
@@ -9951,7 +10362,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public Builder setBody(
           com.google.protobuf.Any.Builder builderForValue) {
@@ -9965,7 +10376,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public Builder mergeBody(com.google.protobuf.Any value) {
         if (bodyBuilder_ == null) {
@@ -9983,7 +10394,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public Builder clearBody() {
         if (bodyBuilder_ == null) {
@@ -9997,7 +10408,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public com.google.protobuf.Any.Builder getBodyBuilder() {
         
@@ -10005,7 +10416,7 @@ public final class CommonOuterClass {
         return getBodyFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       public com.google.protobuf.AnyOrBuilder getBodyOrBuilder() {
         if (bodyBuilder_ != null) {
@@ -10016,7 +10427,7 @@ public final class CommonOuterClass {
         }
       }
       /**
-       * <code>.google.protobuf.Any body = 4;</code>
+       * <code>.google.protobuf.Any body = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
@@ -10036,13 +10447,13 @@ public final class CommonOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public boolean hasSchedule() {
         return scheduleBuilder_ != null || schedule_ != null;
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public com.google.protobuf.Timestamp getSchedule() {
         if (scheduleBuilder_ == null) {
@@ -10052,7 +10463,7 @@ public final class CommonOuterClass {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public Builder setSchedule(com.google.protobuf.Timestamp value) {
         if (scheduleBuilder_ == null) {
@@ -10068,7 +10479,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public Builder setSchedule(
           com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -10082,7 +10493,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public Builder mergeSchedule(com.google.protobuf.Timestamp value) {
         if (scheduleBuilder_ == null) {
@@ -10100,7 +10511,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public Builder clearSchedule() {
         if (scheduleBuilder_ == null) {
@@ -10114,7 +10525,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public com.google.protobuf.Timestamp.Builder getScheduleBuilder() {
         
@@ -10122,7 +10533,7 @@ public final class CommonOuterClass {
         return getScheduleFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       public com.google.protobuf.TimestampOrBuilder getScheduleOrBuilder() {
         if (scheduleBuilder_ != null) {
@@ -10133,7 +10544,7 @@ public final class CommonOuterClass {
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp schedule = 5;</code>
+       * <code>.google.protobuf.Timestamp schedule = 8;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -10151,7 +10562,7 @@ public final class CommonOuterClass {
 
       private java.lang.Object callbackUrl_ = "";
       /**
-       * <code>string callback_url = 6;</code>
+       * <code>string callback_url = 9;</code>
        */
       public java.lang.String getCallbackUrl() {
         java.lang.Object ref = callbackUrl_;
@@ -10166,7 +10577,7 @@ public final class CommonOuterClass {
         }
       }
       /**
-       * <code>string callback_url = 6;</code>
+       * <code>string callback_url = 9;</code>
        */
       public com.google.protobuf.ByteString
           getCallbackUrlBytes() {
@@ -10182,7 +10593,7 @@ public final class CommonOuterClass {
         }
       }
       /**
-       * <code>string callback_url = 6;</code>
+       * <code>string callback_url = 9;</code>
        */
       public Builder setCallbackUrl(
           java.lang.String value) {
@@ -10195,7 +10606,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>string callback_url = 6;</code>
+       * <code>string callback_url = 9;</code>
        */
       public Builder clearCallbackUrl() {
         
@@ -10204,7 +10615,7 @@ public final class CommonOuterClass {
         return this;
       }
       /**
-       * <code>string callback_url = 6;</code>
+       * <code>string callback_url = 9;</code>
        */
       public Builder setCallbackUrlBytes(
           com.google.protobuf.ByteString value) {
@@ -10368,15 +10779,16 @@ public final class CommonOuterClass {
       "\016\n\006scopes\030\001 \003(\t\"W\n\013JSONWebKeys\022\013\n\003kty\030\001 " +
       "\001(\t\022\013\n\003kid\030\002 \001(\t\022\013\n\003use\030\003 \001(\t\022\t\n\001n\030\004 \001(\t" +
       "\022\t\n\001e\030\005 \001(\t\022\013\n\003x5c\030\006 \003(\t\")\n\004Jwks\022!\n\004keys" +
-      "\030\001 \003(\0132\023.common.JSONWebKeys\"\266\002\n\010HTTPTask" +
-      "\022\013\n\003url\030\001 \001(\t\022.\n\007headers\030\002 \003(\0132\035.common." +
-      "HTTPTask.HeadersEntry\022(\n\004form\030\003 \003(\0132\032.co" +
-      "mmon.HTTPTask.FormEntry\022\"\n\004body\030\004 \001(\0132\024." +
-      "google.protobuf.Any\022,\n\010schedule\030\005 \001(\0132\032." +
-      "google.protobuf.Timestamp\022\024\n\014callback_ur" +
-      "l\030\006 \001(\t\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\t:\0028\001\032+\n\tFormEntry\022\013\n\003key\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t:\0028\001b\006proto3"
+      "\030\001 \003(\0132\023.common.JSONWebKeys\"\352\002\n\010HTTPTask" +
+      "\022\013\n\003url\030\001 \001(\t\022\016\n\006method\030\002 \001(\t\022.\n\007headers" +
+      "\030\003 \003(\0132\035.common.HTTPTask.HeadersEntry\022(\n" +
+      "\004form\030\004 \003(\0132\032.common.HTTPTask.FormEntry\022" +
+      "\020\n\010username\030\005 \001(\t\022\020\n\010password\030\006 \001(\t\022\"\n\004b" +
+      "ody\030\007 \001(\0132\024.google.protobuf.Any\022,\n\010sched" +
+      "ule\030\010 \001(\0132\032.google.protobuf.Timestamp\022\024\n" +
+      "\014callback_url\030\t \001(\t\032.\n\014HeadersEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\tFormEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10457,7 +10869,7 @@ public final class CommonOuterClass {
     internal_static_common_HTTPTask_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_HTTPTask_descriptor,
-        new java.lang.String[] { "Url", "Headers", "Form", "Body", "Schedule", "CallbackUrl", });
+        new java.lang.String[] { "Url", "Method", "Headers", "Form", "Username", "Password", "Body", "Schedule", "CallbackUrl", });
     internal_static_common_HTTPTask_HeadersEntry_descriptor =
       internal_static_common_HTTPTask_descriptor.getNestedTypes().get(0);
     internal_static_common_HTTPTask_HeadersEntry_fieldAccessorTable = new

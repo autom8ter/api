@@ -45,15 +45,16 @@ namespace Common {
             "IAEoCSInChVEZWZhdWx0R0NQQ3JlZGVudGlhbHMSDgoGc2NvcGVzGAEgAygJ",
             "IlcKC0pTT05XZWJLZXlzEgsKA2t0eRgBIAEoCRILCgNraWQYAiABKAkSCwoD",
             "dXNlGAMgASgJEgkKAW4YBCABKAkSCQoBZRgFIAEoCRILCgN4NWMYBiADKAki",
-            "KQoESndrcxIhCgRrZXlzGAEgAygLMhMuY29tbW9uLkpTT05XZWJLZXlzIrYC",
-            "CghIVFRQVGFzaxILCgN1cmwYASABKAkSLgoHaGVhZGVycxgCIAMoCzIdLmNv",
-            "bW1vbi5IVFRQVGFzay5IZWFkZXJzRW50cnkSKAoEZm9ybRgDIAMoCzIaLmNv",
-            "bW1vbi5IVFRQVGFzay5Gb3JtRW50cnkSIgoEYm9keRgEIAEoCzIULmdvb2ds",
-            "ZS5wcm90b2J1Zi5BbnkSLAoIc2NoZWR1bGUYBSABKAsyGi5nb29nbGUucHJv",
-            "dG9idWYuVGltZXN0YW1wEhQKDGNhbGxiYWNrX3VybBgGIAEoCRouCgxIZWFk",
-            "ZXJzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ARorCglG",
-            "b3JtRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4AWIGcHJv",
-            "dG8z"));
+            "KQoESndrcxIhCgRrZXlzGAEgAygLMhMuY29tbW9uLkpTT05XZWJLZXlzIuoC",
+            "CghIVFRQVGFzaxILCgN1cmwYASABKAkSDgoGbWV0aG9kGAIgASgJEi4KB2hl",
+            "YWRlcnMYAyADKAsyHS5jb21tb24uSFRUUFRhc2suSGVhZGVyc0VudHJ5EigK",
+            "BGZvcm0YBCADKAsyGi5jb21tb24uSFRUUFRhc2suRm9ybUVudHJ5EhAKCHVz",
+            "ZXJuYW1lGAUgASgJEhAKCHBhc3N3b3JkGAYgASgJEiIKBGJvZHkYByABKAsy",
+            "FC5nb29nbGUucHJvdG9idWYuQW55EiwKCHNjaGVkdWxlGAggASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcBIUCgxjYWxsYmFja191cmwYCSABKAka",
+            "LgoMSGVhZGVyc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
+            "OAEaKwoJRm9ybUVudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToC",
+            "OAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -65,7 +66,7 @@ namespace Common {
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.DefaultGCPCredentials), global::Common.DefaultGCPCredentials.Parser, new[]{ "Scopes" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.JSONWebKeys), global::Common.JSONWebKeys.Parser, new[]{ "Kty", "Kid", "Use", "N", "E", "X5C" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Common.Jwks), global::Common.Jwks.Parser, new[]{ "Keys" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Common.HTTPTask), global::Common.HTTPTask.Parser, new[]{ "Url", "Headers", "Form", "Body", "Schedule", "CallbackUrl" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Common.HTTPTask), global::Common.HTTPTask.Parser, new[]{ "Url", "Method", "Headers", "Form", "Username", "Password", "Body", "Schedule", "CallbackUrl" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
           }));
     }
     #endregion
@@ -1750,8 +1751,11 @@ namespace Common {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public HTTPTask(HTTPTask other) : this() {
       url_ = other.url_;
+      method_ = other.method_;
       headers_ = other.headers_.Clone();
       form_ = other.form_.Clone();
+      username_ = other.username_;
+      password_ = other.password_;
       body_ = other.body_ != null ? other.body_.Clone() : null;
       schedule_ = other.schedule_ != null ? other.schedule_.Clone() : null;
       callbackUrl_ = other.callbackUrl_;
@@ -1774,10 +1778,21 @@ namespace Common {
       }
     }
 
+    /// <summary>Field number for the "method" field.</summary>
+    public const int MethodFieldNumber = 2;
+    private string method_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Method {
+      get { return method_; }
+      set {
+        method_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "headers" field.</summary>
-    public const int HeadersFieldNumber = 2;
+    public const int HeadersFieldNumber = 3;
     private static readonly pbc::MapField<string, string>.Codec _map_headers_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 18);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 26);
     private readonly pbc::MapField<string, string> headers_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> Headers {
@@ -1785,17 +1800,39 @@ namespace Common {
     }
 
     /// <summary>Field number for the "form" field.</summary>
-    public const int FormFieldNumber = 3;
+    public const int FormFieldNumber = 4;
     private static readonly pbc::MapField<string, string>.Codec _map_form_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 26);
+        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
     private readonly pbc::MapField<string, string> form_ = new pbc::MapField<string, string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::MapField<string, string> Form {
       get { return form_; }
     }
 
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 5;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 6;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "body" field.</summary>
-    public const int BodyFieldNumber = 4;
+    public const int BodyFieldNumber = 7;
     private global::Google.Protobuf.WellKnownTypes.Any body_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Any Body {
@@ -1806,7 +1843,7 @@ namespace Common {
     }
 
     /// <summary>Field number for the "schedule" field.</summary>
-    public const int ScheduleFieldNumber = 5;
+    public const int ScheduleFieldNumber = 8;
     private global::Google.Protobuf.WellKnownTypes.Timestamp schedule_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Schedule {
@@ -1817,7 +1854,7 @@ namespace Common {
     }
 
     /// <summary>Field number for the "callback_url" field.</summary>
-    public const int CallbackUrlFieldNumber = 6;
+    public const int CallbackUrlFieldNumber = 9;
     private string callbackUrl_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string CallbackUrl {
@@ -1841,8 +1878,11 @@ namespace Common {
         return true;
       }
       if (Url != other.Url) return false;
+      if (Method != other.Method) return false;
       if (!Headers.Equals(other.Headers)) return false;
       if (!Form.Equals(other.Form)) return false;
+      if (Username != other.Username) return false;
+      if (Password != other.Password) return false;
       if (!object.Equals(Body, other.Body)) return false;
       if (!object.Equals(Schedule, other.Schedule)) return false;
       if (CallbackUrl != other.CallbackUrl) return false;
@@ -1853,8 +1893,11 @@ namespace Common {
     public override int GetHashCode() {
       int hash = 1;
       if (Url.Length != 0) hash ^= Url.GetHashCode();
+      if (Method.Length != 0) hash ^= Method.GetHashCode();
       hash ^= Headers.GetHashCode();
       hash ^= Form.GetHashCode();
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
       if (body_ != null) hash ^= Body.GetHashCode();
       if (schedule_ != null) hash ^= Schedule.GetHashCode();
       if (CallbackUrl.Length != 0) hash ^= CallbackUrl.GetHashCode();
@@ -1875,18 +1918,30 @@ namespace Common {
         output.WriteRawTag(10);
         output.WriteString(Url);
       }
+      if (Method.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Method);
+      }
       headers_.WriteTo(output, _map_headers_codec);
       form_.WriteTo(output, _map_form_codec);
+      if (Username.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Password);
+      }
       if (body_ != null) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(58);
         output.WriteMessage(Body);
       }
       if (schedule_ != null) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(66);
         output.WriteMessage(Schedule);
       }
       if (CallbackUrl.Length != 0) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(74);
         output.WriteString(CallbackUrl);
       }
       if (_unknownFields != null) {
@@ -1900,8 +1955,17 @@ namespace Common {
       if (Url.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
       }
+      if (Method.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Method);
+      }
       size += headers_.CalculateSize(_map_headers_codec);
       size += form_.CalculateSize(_map_form_codec);
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
       if (body_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Body);
       }
@@ -1925,8 +1989,17 @@ namespace Common {
       if (other.Url.Length != 0) {
         Url = other.Url;
       }
+      if (other.Method.Length != 0) {
+        Method = other.Method;
+      }
       headers_.Add(other.headers_);
       form_.Add(other.form_);
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
+      }
       if (other.body_ != null) {
         if (body_ == null) {
           body_ = new global::Google.Protobuf.WellKnownTypes.Any();
@@ -1958,28 +2031,40 @@ namespace Common {
             break;
           }
           case 18: {
-            headers_.AddEntriesFrom(input, _map_headers_codec);
+            Method = input.ReadString();
             break;
           }
           case 26: {
-            form_.AddEntriesFrom(input, _map_form_codec);
+            headers_.AddEntriesFrom(input, _map_headers_codec);
             break;
           }
           case 34: {
+            form_.AddEntriesFrom(input, _map_form_codec);
+            break;
+          }
+          case 42: {
+            Username = input.ReadString();
+            break;
+          }
+          case 50: {
+            Password = input.ReadString();
+            break;
+          }
+          case 58: {
             if (body_ == null) {
               body_ = new global::Google.Protobuf.WellKnownTypes.Any();
             }
             input.ReadMessage(body_);
             break;
           }
-          case 42: {
+          case 66: {
             if (schedule_ == null) {
               schedule_ = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(schedule_);
             break;
           }
-          case 50: {
+          case 74: {
             CallbackUrl = input.ReadString();
             break;
           }

@@ -1568,19 +1568,19 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   // accessors -------------------------------------------------------
 
-  // map<string, string> headers = 2;
+  // map<string, string> headers = 3;
   int headers_size() const;
   void clear_headers();
-  static const int kHeadersFieldNumber = 2;
+  static const int kHeadersFieldNumber = 3;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       headers() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
       mutable_headers();
 
-  // map<string, string> form = 3;
+  // map<string, string> form = 4;
   int form_size() const;
   void clear_form();
-  static const int kFormFieldNumber = 3;
+  static const int kFormFieldNumber = 4;
   const ::google::protobuf::Map< ::std::string, ::std::string >&
       form() const;
   ::google::protobuf::Map< ::std::string, ::std::string >*
@@ -1600,9 +1600,51 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_url();
   void set_allocated_url(::std::string* url);
 
-  // string callback_url = 6;
+  // string method = 2;
+  void clear_method();
+  static const int kMethodFieldNumber = 2;
+  const ::std::string& method() const;
+  void set_method(const ::std::string& value);
+  #if LANG_CXX11
+  void set_method(::std::string&& value);
+  #endif
+  void set_method(const char* value);
+  void set_method(const char* value, size_t size);
+  ::std::string* mutable_method();
+  ::std::string* release_method();
+  void set_allocated_method(::std::string* method);
+
+  // string username = 5;
+  void clear_username();
+  static const int kUsernameFieldNumber = 5;
+  const ::std::string& username() const;
+  void set_username(const ::std::string& value);
+  #if LANG_CXX11
+  void set_username(::std::string&& value);
+  #endif
+  void set_username(const char* value);
+  void set_username(const char* value, size_t size);
+  ::std::string* mutable_username();
+  ::std::string* release_username();
+  void set_allocated_username(::std::string* username);
+
+  // string password = 6;
+  void clear_password();
+  static const int kPasswordFieldNumber = 6;
+  const ::std::string& password() const;
+  void set_password(const ::std::string& value);
+  #if LANG_CXX11
+  void set_password(::std::string&& value);
+  #endif
+  void set_password(const char* value);
+  void set_password(const char* value, size_t size);
+  ::std::string* mutable_password();
+  ::std::string* release_password();
+  void set_allocated_password(::std::string* password);
+
+  // string callback_url = 9;
   void clear_callback_url();
-  static const int kCallbackUrlFieldNumber = 6;
+  static const int kCallbackUrlFieldNumber = 9;
   const ::std::string& callback_url() const;
   void set_callback_url(const ::std::string& value);
   #if LANG_CXX11
@@ -1614,10 +1656,10 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_callback_url();
   void set_allocated_callback_url(::std::string* callback_url);
 
-  // .google.protobuf.Any body = 4;
+  // .google.protobuf.Any body = 7;
   bool has_body() const;
   void clear_body();
-  static const int kBodyFieldNumber = 4;
+  static const int kBodyFieldNumber = 7;
   private:
   const ::google::protobuf::Any& _internal_body() const;
   public:
@@ -1626,10 +1668,10 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::Any* mutable_body();
   void set_allocated_body(::google::protobuf::Any* body);
 
-  // .google.protobuf.Timestamp schedule = 5;
+  // .google.protobuf.Timestamp schedule = 8;
   bool has_schedule() const;
   void clear_schedule();
-  static const int kScheduleFieldNumber = 5;
+  static const int kScheduleFieldNumber = 8;
   private:
   const ::google::protobuf::Timestamp& _internal_schedule() const;
   public:
@@ -1655,6 +1697,9 @@ class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(
       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
       0 > form_;
   ::google::protobuf::internal::ArenaStringPtr url_;
+  ::google::protobuf::internal::ArenaStringPtr method_;
+  ::google::protobuf::internal::ArenaStringPtr username_;
+  ::google::protobuf::internal::ArenaStringPtr password_;
   ::google::protobuf::internal::ArenaStringPtr callback_url_;
   ::google::protobuf::Any* body_;
   ::google::protobuf::Timestamp* schedule_;
@@ -3439,7 +3484,60 @@ inline void HTTPTask::set_allocated_url(::std::string* url) {
   // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.url)
 }
 
-// map<string, string> headers = 2;
+// string method = 2;
+inline void HTTPTask::clear_method() {
+  method_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HTTPTask::method() const {
+  // @@protoc_insertion_point(field_get:common.HTTPTask.method)
+  return method_.GetNoArena();
+}
+inline void HTTPTask::set_method(const ::std::string& value) {
+  
+  method_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.HTTPTask.method)
+}
+#if LANG_CXX11
+inline void HTTPTask::set_method(::std::string&& value) {
+  
+  method_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.HTTPTask.method)
+}
+#endif
+inline void HTTPTask::set_method(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  method_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.HTTPTask.method)
+}
+inline void HTTPTask::set_method(const char* value, size_t size) {
+  
+  method_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.HTTPTask.method)
+}
+inline ::std::string* HTTPTask::mutable_method() {
+  
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.method)
+  return method_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HTTPTask::release_method() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.method)
+  
+  return method_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HTTPTask::set_allocated_method(::std::string* method) {
+  if (method != NULL) {
+    
+  } else {
+    
+  }
+  method_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), method);
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.method)
+}
+
+// map<string, string> headers = 3;
 inline int HTTPTask::headers_size() const {
   return headers_.size();
 }
@@ -3457,7 +3555,7 @@ HTTPTask::mutable_headers() {
   return headers_.MutableMap();
 }
 
-// map<string, string> form = 3;
+// map<string, string> form = 4;
 inline int HTTPTask::form_size() const {
   return form_.size();
 }
@@ -3475,7 +3573,113 @@ HTTPTask::mutable_form() {
   return form_.MutableMap();
 }
 
-// .google.protobuf.Any body = 4;
+// string username = 5;
+inline void HTTPTask::clear_username() {
+  username_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HTTPTask::username() const {
+  // @@protoc_insertion_point(field_get:common.HTTPTask.username)
+  return username_.GetNoArena();
+}
+inline void HTTPTask::set_username(const ::std::string& value) {
+  
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.HTTPTask.username)
+}
+#if LANG_CXX11
+inline void HTTPTask::set_username(::std::string&& value) {
+  
+  username_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.HTTPTask.username)
+}
+#endif
+inline void HTTPTask::set_username(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.HTTPTask.username)
+}
+inline void HTTPTask::set_username(const char* value, size_t size) {
+  
+  username_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.HTTPTask.username)
+}
+inline ::std::string* HTTPTask::mutable_username() {
+  
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.username)
+  return username_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HTTPTask::release_username() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.username)
+  
+  return username_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HTTPTask::set_allocated_username(::std::string* username) {
+  if (username != NULL) {
+    
+  } else {
+    
+  }
+  username_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), username);
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.username)
+}
+
+// string password = 6;
+inline void HTTPTask::clear_password() {
+  password_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HTTPTask::password() const {
+  // @@protoc_insertion_point(field_get:common.HTTPTask.password)
+  return password_.GetNoArena();
+}
+inline void HTTPTask::set_password(const ::std::string& value) {
+  
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.HTTPTask.password)
+}
+#if LANG_CXX11
+inline void HTTPTask::set_password(::std::string&& value) {
+  
+  password_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.HTTPTask.password)
+}
+#endif
+inline void HTTPTask::set_password(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.HTTPTask.password)
+}
+inline void HTTPTask::set_password(const char* value, size_t size) {
+  
+  password_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.HTTPTask.password)
+}
+inline ::std::string* HTTPTask::mutable_password() {
+  
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.password)
+  return password_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HTTPTask::release_password() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.password)
+  
+  return password_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HTTPTask::set_allocated_password(::std::string* password) {
+  if (password != NULL) {
+    
+  } else {
+    
+  }
+  password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.password)
+}
+
+// .google.protobuf.Any body = 7;
 inline bool HTTPTask::has_body() const {
   return this != internal_default_instance() && body_ != NULL;
 }
@@ -3523,7 +3727,7 @@ inline void HTTPTask::set_allocated_body(::google::protobuf::Any* body) {
   // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.body)
 }
 
-// .google.protobuf.Timestamp schedule = 5;
+// .google.protobuf.Timestamp schedule = 8;
 inline bool HTTPTask::has_schedule() const {
   return this != internal_default_instance() && schedule_ != NULL;
 }
@@ -3572,7 +3776,7 @@ inline void HTTPTask::set_allocated_schedule(::google::protobuf::Timestamp* sche
   // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.schedule)
 }
 
-// string callback_url = 6;
+// string callback_url = 9;
 inline void HTTPTask::clear_callback_url() {
   callback_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

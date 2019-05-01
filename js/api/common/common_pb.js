@@ -2047,11 +2047,14 @@ proto.common.HTTPTask.prototype.toObject = function(opt_includeInstance) {
 proto.common.HTTPTask.toObject = function(includeInstance, msg) {
   var f, obj = {
     url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    method: jspb.Message.getFieldWithDefault(msg, 2, ""),
     headersMap: (f = msg.getHeadersMap()) ? f.toObject(includeInstance, undefined) : [],
     formMap: (f = msg.getFormMap()) ? f.toObject(includeInstance, undefined) : [],
+    username: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    password: jspb.Message.getFieldWithDefault(msg, 6, ""),
     body: (f = msg.getBody()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-    callbackUrl: jspb.Message.getFieldWithDefault(msg, 6, "")
+    callbackUrl: jspb.Message.getFieldWithDefault(msg, 9, "")
   };
 
   if (includeInstance) {
@@ -2093,28 +2096,40 @@ proto.common.HTTPTask.deserializeBinaryFromReader = function(msg, reader) {
       msg.setUrl(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMethod(value);
+      break;
+    case 3:
       var value = msg.getHeadersMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
-    case 3:
+    case 4:
       var value = msg.getFormMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
-    case 4:
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
+      break;
+    case 7:
       var value = new google_protobuf_any_pb.Any;
       reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
       msg.setBody(value);
       break;
-    case 5:
+    case 8:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
-    case 6:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setCallbackUrl(value);
       break;
@@ -2154,18 +2169,39 @@ proto.common.HTTPTask.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getMethod();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getHeadersMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getFormMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getUsername();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getPassword();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
   }
   f = message.getBody();
   if (f != null) {
     writer.writeMessage(
-      4,
+      7,
       f,
       google_protobuf_any_pb.Any.serializeBinaryToWriter
     );
@@ -2173,7 +2209,7 @@ proto.common.HTTPTask.serializeBinaryToWriter = function(message, writer) {
   f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
-      5,
+      8,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
@@ -2181,7 +2217,7 @@ proto.common.HTTPTask.serializeBinaryToWriter = function(message, writer) {
   f = message.getCallbackUrl();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      9,
       f
     );
   }
@@ -2204,14 +2240,29 @@ proto.common.HTTPTask.prototype.setUrl = function(value) {
 
 
 /**
- * map<string, string> headers = 2;
+ * optional string method = 2;
+ * @return {string}
+ */
+proto.common.HTTPTask.prototype.getMethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.common.HTTPTask.prototype.setMethod = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * map<string, string> headers = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.common.HTTPTask.prototype.getHeadersMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
 };
 
@@ -2222,14 +2273,14 @@ proto.common.HTTPTask.prototype.clearHeadersMap = function() {
 
 
 /**
- * map<string, string> form = 3;
+ * map<string, string> form = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.common.HTTPTask.prototype.getFormMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
       null));
 };
 
@@ -2240,18 +2291,48 @@ proto.common.HTTPTask.prototype.clearFormMap = function() {
 
 
 /**
- * optional google.protobuf.Any body = 4;
+ * optional string username = 5;
+ * @return {string}
+ */
+proto.common.HTTPTask.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/** @param {string} value */
+proto.common.HTTPTask.prototype.setUsername = function(value) {
+  jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string password = 6;
+ * @return {string}
+ */
+proto.common.HTTPTask.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/** @param {string} value */
+proto.common.HTTPTask.prototype.setPassword = function(value) {
+  jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional google.protobuf.Any body = 7;
  * @return {?proto.google.protobuf.Any}
  */
 proto.common.HTTPTask.prototype.getBody = function() {
   return /** @type{?proto.google.protobuf.Any} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 4));
+    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 7));
 };
 
 
 /** @param {?proto.google.protobuf.Any|undefined} value */
 proto.common.HTTPTask.prototype.setBody = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -2265,23 +2346,23 @@ proto.common.HTTPTask.prototype.clearBody = function() {
  * @return {!boolean}
  */
 proto.common.HTTPTask.prototype.hasBody = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional google.protobuf.Timestamp schedule = 5;
+ * optional google.protobuf.Timestamp schedule = 8;
  * @return {?proto.google.protobuf.Timestamp}
  */
 proto.common.HTTPTask.prototype.getSchedule = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 5));
+    jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 8));
 };
 
 
 /** @param {?proto.google.protobuf.Timestamp|undefined} value */
 proto.common.HTTPTask.prototype.setSchedule = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -2295,22 +2376,22 @@ proto.common.HTTPTask.prototype.clearSchedule = function() {
  * @return {!boolean}
  */
 proto.common.HTTPTask.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string callback_url = 6;
+ * optional string callback_url = 9;
  * @return {string}
  */
 proto.common.HTTPTask.prototype.getCallbackUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /** @param {string} value */
 proto.common.HTTPTask.prototype.setCallbackUrl = function(value) {
-  jspb.Message.setProto3StringField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

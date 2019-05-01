@@ -675,8 +675,11 @@ typedef struct Jwks__storage_ {
 @implementation HTTPTask
 
 @dynamic URL;
+@dynamic method;
 @dynamic headers, headers_Count;
 @dynamic form, form_Count;
+@dynamic username;
+@dynamic password;
 @dynamic hasBody, body;
 @dynamic hasSchedule, schedule;
 @dynamic callbackURL;
@@ -684,8 +687,11 @@ typedef struct Jwks__storage_ {
 typedef struct HTTPTask__storage_ {
   uint32_t _has_storage_[1];
   NSString *URL;
+  NSString *method;
   NSMutableDictionary *headers;
   NSMutableDictionary *form;
+  NSString *username;
+  NSString *password;
   GPBAny *body;
   GPBTimestamp *schedule;
   NSString *callbackURL;
@@ -707,6 +713,15 @@ typedef struct HTTPTask__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "method",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPTask_FieldNumber_Method,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(HTTPTask__storage_, method),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "headers",
         .dataTypeSpecific.className = NULL,
         .number = HTTPTask_FieldNumber_Headers,
@@ -725,10 +740,28 @@ typedef struct HTTPTask__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "username",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPTask_FieldNumber_Username,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(HTTPTask__storage_, username),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "password",
+        .dataTypeSpecific.className = NULL,
+        .number = HTTPTask_FieldNumber_Password,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(HTTPTask__storage_, password),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "body",
         .dataTypeSpecific.className = GPBStringifySymbol(GPBAny),
         .number = HTTPTask_FieldNumber_Body,
-        .hasIndex = 1,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(HTTPTask__storage_, body),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -737,7 +770,7 @@ typedef struct HTTPTask__storage_ {
         .name = "schedule",
         .dataTypeSpecific.className = GPBStringifySymbol(GPBTimestamp),
         .number = HTTPTask_FieldNumber_Schedule,
-        .hasIndex = 2,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(HTTPTask__storage_, schedule),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeMessage,
@@ -746,7 +779,7 @@ typedef struct HTTPTask__storage_ {
         .name = "callbackURL",
         .dataTypeSpecific.className = NULL,
         .number = HTTPTask_FieldNumber_CallbackURL,
-        .hasIndex = 3,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(HTTPTask__storage_, callbackURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -762,7 +795,7 @@ typedef struct HTTPTask__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001!!!\000\006\010\241!!\000";
+        "\002\001!!!\000\t\010\241!!\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
