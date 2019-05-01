@@ -1500,6 +1500,12 @@ func (s *OAuth2) DeepEqual(y interface{}) bool
 func (*OAuth2) Descriptor() ([]byte, []int)
 ```
 
+#### func (*OAuth2) Exchange
+
+```go
+func (c *OAuth2) Exchange() (*oauth2.Token, error)
+```
+
 #### func (*OAuth2) GetAuthUrl
 
 ```go
