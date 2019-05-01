@@ -12,6 +12,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,92 +21,31 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='common',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\"\x16\n\x06String\x12\x0c\n\x04text\x18\x01 \x01(\t\".\n\x0bStringArray\x12\x1f\n\x07strings\x18\x01 \x03(\x0b\x32\x0e.common.String\"\x83\x01\n\tStringMap\x12\x34\n\nstring_map\x18\x01 \x03(\x0b\x32 .common.StringMap.StringMapEntry\x1a@\n\x0eStringMapEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x1d\n\x05value\x18\x02 \x01(\x0b\x32\x0e.common.String:\x02\x38\x01\"\x07\n\x05\x45mpty\"\x16\n\x04\x42ool\x12\x0e\n\x06\x61nswer\x18\x01 \x01(\x08\"(\n\nIdentifier\x12\x1a\n\x02id\x18\x01 \x01(\x0b\x32\x0e.common.String\"*\n\tAuthToken\x12\x1d\n\x05token\x18\x01 \x01(\x0b\x32\x0e.common.String\"\x14\n\x05Int64\x12\x0b\n\x03num\x18\x01 \x01(\x03\"\x16\n\x07\x46loat64\x12\x0b\n\x03num\x18\x01 \x01(\x01\x62\x06proto3')
-)
+  serialized_pb=_b('\n\x13\x63ommon/common.proto\x12\x06\x63ommon\x1a\x19google/protobuf/any.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x96\x01\n\x06\x43ommon\x12\x11\n\tidentifer\x18\x01 \x01(\t\x12$\n\x06object\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12&\n\x04meta\x18\x03 \x03(\x0b\x32\x18.common.Common.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x19\n\tPlainText\x12\x0c\n\x04text\x18\x01 \x01(\t\"\x87\x01\n\x06OAuth2\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttoken_url\x18\x03 \x01(\t\x12\x10\n\x08\x61uth_url\x18\x04 \x01(\t\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x10\n\x08redirect\x18\x06 \x01(\t\x12\x0c\n\x04\x63ode\x18\x07 \x01(\t\"\xdf\x01\n\x11\x43lientCredentials\x12\x11\n\tclient_id\x18\x01 \x01(\t\x12\x15\n\rclient_secret\x18\x02 \x01(\t\x12\x11\n\ttoken_url\x18\x03 \x01(\t\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x46\n\x0f\x65ndpoint_params\x18\x05 \x03(\x0b\x32-.common.ClientCredentials.EndpointParamsEntry\x1a\x35\n\x13\x45ndpointParamsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb2\x01\n\x03JWT\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x13\n\x0bprivate_key\x18\x02 \x01(\x0c\x12\x14\n\x0cprive_key_id\x18\x03 \x01(\t\x12\x0f\n\x07subject\x18\x04 \x01(\t\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x11\n\ttoken_url\x18\x06 \x01(\t\x12+\n\x07\x65xpires\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x61udience\x18\x08 \x01(\t\"\'\n\x15\x44\x65\x66\x61ultGCPCredentials\x12\x0e\n\x06scopes\x18\x01 \x03(\t\"W\n\x0bJSONWebKeys\x12\x0b\n\x03kty\x18\x01 \x01(\t\x12\x0b\n\x03kid\x18\x02 \x01(\t\x12\x0b\n\x03use\x18\x03 \x01(\t\x12\t\n\x01n\x18\x04 \x01(\t\x12\t\n\x01\x65\x18\x05 \x01(\t\x12\x0b\n\x03x5c\x18\x06 \x03(\t\")\n\x04Jwks\x12!\n\x04keys\x18\x01 \x03(\x0b\x32\x13.common.JSONWebKeys\"\xb6\x02\n\x08HTTPTask\x12\x0b\n\x03url\x18\x01 \x01(\t\x12.\n\x07headers\x18\x02 \x03(\x0b\x32\x1d.common.HTTPTask.HeadersEntry\x12(\n\x04\x66orm\x18\x03 \x03(\x0b\x32\x1a.common.HTTPTask.FormEntry\x12\"\n\x04\x62ody\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\x12,\n\x08schedule\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x14\n\x0c\x63\x61llback_url\x18\x06 \x01(\t\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tFormEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x62\x06proto3')
+  ,
+  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 
 
 
-_STRING = _descriptor.Descriptor(
-  name='String',
-  full_name='common.String',
+_COMMON_METAENTRY = _descriptor.Descriptor(
+  name='MetaEntry',
+  full_name='common.Common.MetaEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='text', full_name='common.String.text', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=31,
-  serialized_end=53,
-)
-
-
-_STRINGARRAY = _descriptor.Descriptor(
-  name='StringArray',
-  full_name='common.StringArray',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='strings', full_name='common.StringArray.strings', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=55,
-  serialized_end=101,
-)
-
-
-_STRINGMAP_STRINGMAPENTRY = _descriptor.Descriptor(
-  name='StringMapEntry',
-  full_name='common.StringMap.StringMapEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='common.StringMap.StringMapEntry.key', index=0,
+      name='key', full_name='common.Common.MetaEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='value', full_name='common.StringMap.StringMapEntry.value', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='value', full_name='common.Common.MetaEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -120,19 +61,441 @@ _STRINGMAP_STRINGMAPENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=171,
-  serialized_end=235,
+  serialized_start=199,
+  serialized_end=242,
 )
 
-_STRINGMAP = _descriptor.Descriptor(
-  name='StringMap',
-  full_name='common.StringMap',
+_COMMON = _descriptor.Descriptor(
+  name='Common',
+  full_name='common.Common',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='string_map', full_name='common.StringMap.string_map', index=0,
+      name='identifer', full_name='common.Common.identifer', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='object', full_name='common.Common.object', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='meta', full_name='common.Common.meta', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_COMMON_METAENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=92,
+  serialized_end=242,
+)
+
+
+_PLAINTEXT = _descriptor.Descriptor(
+  name='PlainText',
+  full_name='common.PlainText',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='text', full_name='common.PlainText.text', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=244,
+  serialized_end=269,
+)
+
+
+_OAUTH2 = _descriptor.Descriptor(
+  name='OAuth2',
+  full_name='common.OAuth2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='client_id', full_name='common.OAuth2.client_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='client_secret', full_name='common.OAuth2.client_secret', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token_url', full_name='common.OAuth2.token_url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='auth_url', full_name='common.OAuth2.auth_url', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='common.OAuth2.scopes', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='redirect', full_name='common.OAuth2.redirect', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='code', full_name='common.OAuth2.code', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=272,
+  serialized_end=407,
+)
+
+
+_CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY = _descriptor.Descriptor(
+  name='EndpointParamsEntry',
+  full_name='common.ClientCredentials.EndpointParamsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='common.ClientCredentials.EndpointParamsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='common.ClientCredentials.EndpointParamsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=580,
+  serialized_end=633,
+)
+
+_CLIENTCREDENTIALS = _descriptor.Descriptor(
+  name='ClientCredentials',
+  full_name='common.ClientCredentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='client_id', full_name='common.ClientCredentials.client_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='client_secret', full_name='common.ClientCredentials.client_secret', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token_url', full_name='common.ClientCredentials.token_url', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='common.ClientCredentials.scopes', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='endpoint_params', full_name='common.ClientCredentials.endpoint_params', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=410,
+  serialized_end=633,
+)
+
+
+_JWT = _descriptor.Descriptor(
+  name='JWT',
+  full_name='common.JWT',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='email', full_name='common.JWT.email', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='private_key', full_name='common.JWT.private_key', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='prive_key_id', full_name='common.JWT.prive_key_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subject', full_name='common.JWT.subject', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='common.JWT.scopes', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='token_url', full_name='common.JWT.token_url', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expires', full_name='common.JWT.expires', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='audience', full_name='common.JWT.audience', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=636,
+  serialized_end=814,
+)
+
+
+_DEFAULTGCPCREDENTIALS = _descriptor.Descriptor(
+  name='DefaultGCPCredentials',
+  full_name='common.DefaultGCPCredentials',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='scopes', full_name='common.DefaultGCPCredentials.scopes', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=816,
+  serialized_end=855,
+)
+
+
+_JSONWEBKEYS = _descriptor.Descriptor(
+  name='JSONWebKeys',
+  full_name='common.JSONWebKeys',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='kty', full_name='common.JSONWebKeys.kty', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='kid', full_name='common.JSONWebKeys.kid', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='use', full_name='common.JSONWebKeys.use', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='n', full_name='common.JSONWebKeys.n', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='e', full_name='common.JSONWebKeys.e', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='x5c', full_name='common.JSONWebKeys.x5c', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=857,
+  serialized_end=944,
+)
+
+
+_JWKS = _descriptor.Descriptor(
+  name='Jwks',
+  full_name='common.Jwks',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='keys', full_name='common.Jwks.keys', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -141,30 +504,6 @@ _STRINGMAP = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_STRINGMAP_STRINGMAPENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=104,
-  serialized_end=235,
-)
-
-
-_EMPTY = _descriptor.Descriptor(
-  name='Empty',
-  full_name='common.Empty',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-  ],
-  extensions=[
-  ],
   nested_types=[],
   enum_types=[
   ],
@@ -174,22 +513,29 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=237,
-  serialized_end=244,
+  serialized_start=946,
+  serialized_end=987,
 )
 
 
-_BOOL = _descriptor.Descriptor(
-  name='Bool',
-  full_name='common.Bool',
+_HTTPTASK_HEADERSENTRY = _descriptor.Descriptor(
+  name='HeadersEntry',
+  full_name='common.HTTPTask.HeadersEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='answer', full_name='common.Bool.answer', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='key', full_name='common.HTTPTask.HeadersEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='common.HTTPTask.HeadersEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -199,97 +545,106 @@ _BOOL = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=None,
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=246,
-  serialized_end=268,
+  serialized_start=1209,
+  serialized_end=1255,
 )
 
-
-_IDENTIFIER = _descriptor.Descriptor(
-  name='Identifier',
-  full_name='common.Identifier',
+_HTTPTASK_FORMENTRY = _descriptor.Descriptor(
+  name='FormEntry',
+  full_name='common.HTTPTask.FormEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='common.Identifier.id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='key', full_name='common.HTTPTask.FormEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='common.HTTPTask.FormEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1257,
+  serialized_end=1300,
+)
+
+_HTTPTASK = _descriptor.Descriptor(
+  name='HTTPTask',
+  full_name='common.HTTPTask',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='url', full_name='common.HTTPTask.url', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='headers', full_name='common.HTTPTask.headers', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='form', full_name='common.HTTPTask.form', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='body', full_name='common.HTTPTask.body', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=270,
-  serialized_end=310,
-)
-
-
-_AUTHTOKEN = _descriptor.Descriptor(
-  name='AuthToken',
-  full_name='common.AuthToken',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='token', full_name='common.AuthToken.token', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='schedule', full_name='common.HTTPTask.schedule', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=312,
-  serialized_end=354,
-)
-
-
-_INT64 = _descriptor.Descriptor(
-  name='Int64',
-  full_name='common.Int64',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
     _descriptor.FieldDescriptor(
-      name='num', full_name='common.Int64.num', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='callback_url', full_name='common.HTTPTask.callback_url', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_HTTPTASK_HEADERSENTRY, _HTTPTASK_FORMENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -298,129 +653,132 @@ _INT64 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=356,
-  serialized_end=376,
+  serialized_start=990,
+  serialized_end=1300,
 )
 
-
-_FLOAT64 = _descriptor.Descriptor(
-  name='Float64',
-  full_name='common.Float64',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='num', full_name='common.Float64.num', index=0,
-      number=1, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=378,
-  serialized_end=400,
-)
-
-_STRINGARRAY.fields_by_name['strings'].message_type = _STRING
-_STRINGMAP_STRINGMAPENTRY.fields_by_name['value'].message_type = _STRING
-_STRINGMAP_STRINGMAPENTRY.containing_type = _STRINGMAP
-_STRINGMAP.fields_by_name['string_map'].message_type = _STRINGMAP_STRINGMAPENTRY
-_IDENTIFIER.fields_by_name['id'].message_type = _STRING
-_AUTHTOKEN.fields_by_name['token'].message_type = _STRING
-DESCRIPTOR.message_types_by_name['String'] = _STRING
-DESCRIPTOR.message_types_by_name['StringArray'] = _STRINGARRAY
-DESCRIPTOR.message_types_by_name['StringMap'] = _STRINGMAP
-DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
-DESCRIPTOR.message_types_by_name['Bool'] = _BOOL
-DESCRIPTOR.message_types_by_name['Identifier'] = _IDENTIFIER
-DESCRIPTOR.message_types_by_name['AuthToken'] = _AUTHTOKEN
-DESCRIPTOR.message_types_by_name['Int64'] = _INT64
-DESCRIPTOR.message_types_by_name['Float64'] = _FLOAT64
+_COMMON_METAENTRY.containing_type = _COMMON
+_COMMON.fields_by_name['object'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_COMMON.fields_by_name['meta'].message_type = _COMMON_METAENTRY
+_CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY.containing_type = _CLIENTCREDENTIALS
+_CLIENTCREDENTIALS.fields_by_name['endpoint_params'].message_type = _CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY
+_JWT.fields_by_name['expires'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_JWKS.fields_by_name['keys'].message_type = _JSONWEBKEYS
+_HTTPTASK_HEADERSENTRY.containing_type = _HTTPTASK
+_HTTPTASK_FORMENTRY.containing_type = _HTTPTASK
+_HTTPTASK.fields_by_name['headers'].message_type = _HTTPTASK_HEADERSENTRY
+_HTTPTASK.fields_by_name['form'].message_type = _HTTPTASK_FORMENTRY
+_HTTPTASK.fields_by_name['body'].message_type = google_dot_protobuf_dot_any__pb2._ANY
+_HTTPTASK.fields_by_name['schedule'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+DESCRIPTOR.message_types_by_name['Common'] = _COMMON
+DESCRIPTOR.message_types_by_name['PlainText'] = _PLAINTEXT
+DESCRIPTOR.message_types_by_name['OAuth2'] = _OAUTH2
+DESCRIPTOR.message_types_by_name['ClientCredentials'] = _CLIENTCREDENTIALS
+DESCRIPTOR.message_types_by_name['JWT'] = _JWT
+DESCRIPTOR.message_types_by_name['DefaultGCPCredentials'] = _DEFAULTGCPCREDENTIALS
+DESCRIPTOR.message_types_by_name['JSONWebKeys'] = _JSONWEBKEYS
+DESCRIPTOR.message_types_by_name['Jwks'] = _JWKS
+DESCRIPTOR.message_types_by_name['HTTPTask'] = _HTTPTASK
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-String = _reflection.GeneratedProtocolMessageType('String', (_message.Message,), dict(
-  DESCRIPTOR = _STRING,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.String)
-  ))
-_sym_db.RegisterMessage(String)
+Common = _reflection.GeneratedProtocolMessageType('Common', (_message.Message,), dict(
 
-StringArray = _reflection.GeneratedProtocolMessageType('StringArray', (_message.Message,), dict(
-  DESCRIPTOR = _STRINGARRAY,
-  __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.StringArray)
-  ))
-_sym_db.RegisterMessage(StringArray)
-
-StringMap = _reflection.GeneratedProtocolMessageType('StringMap', (_message.Message,), dict(
-
-  StringMapEntry = _reflection.GeneratedProtocolMessageType('StringMapEntry', (_message.Message,), dict(
-    DESCRIPTOR = _STRINGMAP_STRINGMAPENTRY,
+  MetaEntry = _reflection.GeneratedProtocolMessageType('MetaEntry', (_message.Message,), dict(
+    DESCRIPTOR = _COMMON_METAENTRY,
     __module__ = 'common.common_pb2'
-    # @@protoc_insertion_point(class_scope:common.StringMap.StringMapEntry)
+    # @@protoc_insertion_point(class_scope:common.Common.MetaEntry)
     ))
   ,
-  DESCRIPTOR = _STRINGMAP,
+  DESCRIPTOR = _COMMON,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.StringMap)
+  # @@protoc_insertion_point(class_scope:common.Common)
   ))
-_sym_db.RegisterMessage(StringMap)
-_sym_db.RegisterMessage(StringMap.StringMapEntry)
+_sym_db.RegisterMessage(Common)
+_sym_db.RegisterMessage(Common.MetaEntry)
 
-Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
-  DESCRIPTOR = _EMPTY,
+PlainText = _reflection.GeneratedProtocolMessageType('PlainText', (_message.Message,), dict(
+  DESCRIPTOR = _PLAINTEXT,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Empty)
+  # @@protoc_insertion_point(class_scope:common.PlainText)
   ))
-_sym_db.RegisterMessage(Empty)
+_sym_db.RegisterMessage(PlainText)
 
-Bool = _reflection.GeneratedProtocolMessageType('Bool', (_message.Message,), dict(
-  DESCRIPTOR = _BOOL,
+OAuth2 = _reflection.GeneratedProtocolMessageType('OAuth2', (_message.Message,), dict(
+  DESCRIPTOR = _OAUTH2,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Bool)
+  # @@protoc_insertion_point(class_scope:common.OAuth2)
   ))
-_sym_db.RegisterMessage(Bool)
+_sym_db.RegisterMessage(OAuth2)
 
-Identifier = _reflection.GeneratedProtocolMessageType('Identifier', (_message.Message,), dict(
-  DESCRIPTOR = _IDENTIFIER,
+ClientCredentials = _reflection.GeneratedProtocolMessageType('ClientCredentials', (_message.Message,), dict(
+
+  EndpointParamsEntry = _reflection.GeneratedProtocolMessageType('EndpointParamsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY,
+    __module__ = 'common.common_pb2'
+    # @@protoc_insertion_point(class_scope:common.ClientCredentials.EndpointParamsEntry)
+    ))
+  ,
+  DESCRIPTOR = _CLIENTCREDENTIALS,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Identifier)
+  # @@protoc_insertion_point(class_scope:common.ClientCredentials)
   ))
-_sym_db.RegisterMessage(Identifier)
+_sym_db.RegisterMessage(ClientCredentials)
+_sym_db.RegisterMessage(ClientCredentials.EndpointParamsEntry)
 
-AuthToken = _reflection.GeneratedProtocolMessageType('AuthToken', (_message.Message,), dict(
-  DESCRIPTOR = _AUTHTOKEN,
+JWT = _reflection.GeneratedProtocolMessageType('JWT', (_message.Message,), dict(
+  DESCRIPTOR = _JWT,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.AuthToken)
+  # @@protoc_insertion_point(class_scope:common.JWT)
   ))
-_sym_db.RegisterMessage(AuthToken)
+_sym_db.RegisterMessage(JWT)
 
-Int64 = _reflection.GeneratedProtocolMessageType('Int64', (_message.Message,), dict(
-  DESCRIPTOR = _INT64,
+DefaultGCPCredentials = _reflection.GeneratedProtocolMessageType('DefaultGCPCredentials', (_message.Message,), dict(
+  DESCRIPTOR = _DEFAULTGCPCREDENTIALS,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Int64)
+  # @@protoc_insertion_point(class_scope:common.DefaultGCPCredentials)
   ))
-_sym_db.RegisterMessage(Int64)
+_sym_db.RegisterMessage(DefaultGCPCredentials)
 
-Float64 = _reflection.GeneratedProtocolMessageType('Float64', (_message.Message,), dict(
-  DESCRIPTOR = _FLOAT64,
+JSONWebKeys = _reflection.GeneratedProtocolMessageType('JSONWebKeys', (_message.Message,), dict(
+  DESCRIPTOR = _JSONWEBKEYS,
   __module__ = 'common.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.Float64)
+  # @@protoc_insertion_point(class_scope:common.JSONWebKeys)
   ))
-_sym_db.RegisterMessage(Float64)
+_sym_db.RegisterMessage(JSONWebKeys)
+
+Jwks = _reflection.GeneratedProtocolMessageType('Jwks', (_message.Message,), dict(
+  DESCRIPTOR = _JWKS,
+  __module__ = 'common.common_pb2'
+  # @@protoc_insertion_point(class_scope:common.Jwks)
+  ))
+_sym_db.RegisterMessage(Jwks)
+
+HTTPTask = _reflection.GeneratedProtocolMessageType('HTTPTask', (_message.Message,), dict(
+
+  HeadersEntry = _reflection.GeneratedProtocolMessageType('HeadersEntry', (_message.Message,), dict(
+    DESCRIPTOR = _HTTPTASK_HEADERSENTRY,
+    __module__ = 'common.common_pb2'
+    # @@protoc_insertion_point(class_scope:common.HTTPTask.HeadersEntry)
+    ))
+  ,
+
+  FormEntry = _reflection.GeneratedProtocolMessageType('FormEntry', (_message.Message,), dict(
+    DESCRIPTOR = _HTTPTASK_FORMENTRY,
+    __module__ = 'common.common_pb2'
+    # @@protoc_insertion_point(class_scope:common.HTTPTask.FormEntry)
+    ))
+  ,
+  DESCRIPTOR = _HTTPTASK,
+  __module__ = 'common.common_pb2'
+  # @@protoc_insertion_point(class_scope:common.HTTPTask)
+  ))
+_sym_db.RegisterMessage(HTTPTask)
+_sym_db.RegisterMessage(HTTPTask.HeadersEntry)
+_sym_db.RegisterMessage(HTTPTask.FormEntry)
 
 
-_STRINGMAP_STRINGMAPENTRY._options = None
+_COMMON_METAENTRY._options = None
+_CLIENTCREDENTIALS_ENDPOINTPARAMSENTRY._options = None
+_HTTPTASK_HEADERSENTRY._options = None
+_HTTPTASK_FORMENTRY._options = None
 # @@protoc_insertion_point(module_scope)

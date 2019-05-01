@@ -3,43 +3,75 @@
 
 require 'google/protobuf'
 
+require 'google/protobuf/any_pb'
+require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "common.String" do
+  add_message "common.Common" do
+    optional :identifer, :string, 1
+    optional :object, :message, 2, "google.protobuf.Any"
+    map :meta, :string, :string, 3
+  end
+  add_message "common.PlainText" do
     optional :text, :string, 1
   end
-  add_message "common.StringArray" do
-    repeated :strings, :message, 1, "common.String"
+  add_message "common.OAuth2" do
+    optional :client_id, :string, 1
+    optional :client_secret, :string, 2
+    optional :token_url, :string, 3
+    optional :auth_url, :string, 4
+    repeated :scopes, :string, 5
+    optional :redirect, :string, 6
+    optional :code, :string, 7
   end
-  add_message "common.StringMap" do
-    map :string_map, :string, :message, 1, "common.String"
+  add_message "common.ClientCredentials" do
+    optional :client_id, :string, 1
+    optional :client_secret, :string, 2
+    optional :token_url, :string, 3
+    repeated :scopes, :string, 4
+    map :endpoint_params, :string, :string, 5
   end
-  add_message "common.Empty" do
+  add_message "common.JWT" do
+    optional :email, :string, 1
+    optional :private_key, :bytes, 2
+    optional :prive_key_id, :string, 3
+    optional :subject, :string, 4
+    repeated :scopes, :string, 5
+    optional :token_url, :string, 6
+    optional :expires, :message, 7, "google.protobuf.Timestamp"
+    optional :audience, :string, 8
   end
-  add_message "common.Bool" do
-    optional :answer, :bool, 1
+  add_message "common.DefaultGCPCredentials" do
+    repeated :scopes, :string, 1
   end
-  add_message "common.Identifier" do
-    optional :id, :message, 1, "common.String"
+  add_message "common.JSONWebKeys" do
+    optional :kty, :string, 1
+    optional :kid, :string, 2
+    optional :use, :string, 3
+    optional :n, :string, 4
+    optional :e, :string, 5
+    repeated :x5c, :string, 6
   end
-  add_message "common.AuthToken" do
-    optional :token, :message, 1, "common.String"
+  add_message "common.Jwks" do
+    repeated :keys, :message, 1, "common.JSONWebKeys"
   end
-  add_message "common.Int64" do
-    optional :num, :int64, 1
-  end
-  add_message "common.Float64" do
-    optional :num, :double, 1
+  add_message "common.HTTPTask" do
+    optional :url, :string, 1
+    map :headers, :string, :string, 2
+    map :form, :string, :string, 3
+    optional :body, :message, 4, "google.protobuf.Any"
+    optional :schedule, :message, 5, "google.protobuf.Timestamp"
+    optional :callback_url, :string, 6
   end
 end
 
 module Common
-  String = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.String").msgclass
-  StringArray = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringArray").msgclass
-  StringMap = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.StringMap").msgclass
-  Empty = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Empty").msgclass
-  Bool = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Bool").msgclass
-  Identifier = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Identifier").msgclass
-  AuthToken = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.AuthToken").msgclass
-  Int64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Int64").msgclass
-  Float64 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Float64").msgclass
+  Common = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Common").msgclass
+  PlainText = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.PlainText").msgclass
+  OAuth2 = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.OAuth2").msgclass
+  ClientCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.ClientCredentials").msgclass
+  JWT = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.JWT").msgclass
+  DefaultGCPCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.DefaultGCPCredentials").msgclass
+  JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.JSONWebKeys").msgclass
+  Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.Jwks").msgclass
+  HTTPTask = Google::Protobuf::DescriptorPool.generated_pool.lookup("common.HTTPTask").msgclass
 end

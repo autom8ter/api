@@ -3,133 +3,85 @@
 
 require 'google/protobuf'
 
-require 'google/api/annotations_pb'
-require 'common/common_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
-  add_message "api.UpdateUserRequest" do
-    optional :email, :message, 1, "common.Identifier"
-    optional :fields, :message, 2, "common.StringMap"
-    optional :overwrite, :message, 3, "common.Bool"
-  end
   add_message "api.Card" do
-    optional :number, :message, 1, "common.Identifier"
-    optional :exp_month, :message, 2, "common.String"
-    optional :exp_year, :message, 3, "common.String"
-    optional :cvc, :message, 4, "common.String"
+    optional :number, :string, 1
+    optional :exp_month, :string, 2
+    optional :exp_year, :string, 3
+    optional :cvc, :string, 4
   end
   add_message "api.User" do
-    optional :user_id, :message, 1, "common.Identifier"
-    optional :name, :message, 2, "common.String"
-    optional :given_name, :message, 3, "common.String"
-    optional :family_name, :message, 4, "common.String"
-    optional :gender, :message, 5, "common.String"
-    optional :birthdate, :message, 6, "common.String"
-    optional :email, :message, 7, "common.Identifier"
-    optional :phone_number, :message, 8, "common.Identifier"
-    optional :picture, :message, 9, "common.String"
-    optional :nickname, :message, 14, "common.String"
-    optional :user_metadata, :message, 10, "common.StringMap"
-    optional :app_metadata, :message, 11, "common.StringMap"
-    optional :last_ip, :message, 12, "common.String"
-    optional :blocked, :message, 13, "common.Bool"
-    optional :multifactor, :message, 15, "common.StringArray"
-    optional :created_at, :message, 17, "common.String"
-    optional :updated_at, :message, 18, "common.String"
-    optional :phone_verified, :message, 19, "common.Bool"
-    optional :email_verified, :message, 20, "common.Bool"
-    optional :password, :message, 21, "common.String"
+    optional :user_id, :string, 1
+    optional :name, :string, 2
+    optional :given_name, :string, 3
+    optional :family_name, :string, 4
+    optional :gender, :string, 5
+    optional :birthdate, :string, 6
+    optional :email, :string, 7
+    optional :phone_number, :string, 8
+    optional :picture, :string, 9
+    optional :nickname, :string, 14
+    map :user_metadata, :string, :string, 10
+    map :app_metadata, :string, :string, 11
+    optional :last_ip, :string, 12
+    optional :blocked, :bool, 13
+    repeated :multifactor, :string, 15
+    optional :created_at, :string, 17
+    optional :updated_at, :string, 18
+    optional :phone_verified, :bool, 19
+    optional :email_verified, :bool, 20
+    optional :password, :string, 21
     repeated :identities, :message, 22, "api.Identity"
     repeated :roles, :message, 23, "api.Role"
   end
   add_message "api.UserMetadata" do
-    optional :status, :message, 1, "common.String"
-    optional :bio, :message, 2, "common.StringMap"
+    optional :status, :string, 1
+    map :bio, :string, :string, 2
     optional :address, :message, 3, "api.Address"
-    optional :tags, :message, 4, "common.StringMap"
+    map :tags, :string, :string, 4
   end
   add_message "api.Address" do
-    optional :city, :message, 1, "common.String"
-    optional :state, :message, 2, "common.String"
-    optional :line1, :message, 3, "common.String"
-    optional :line2, :message, 4, "common.String"
-    optional :zip, :message, 5, "common.String"
+    optional :city, :string, 1
+    optional :state, :string, 2
+    optional :line1, :string, 3
+    optional :line2, :string, 4
+    optional :zip, :string, 5
   end
   add_message "api.AppMetadata" do
-    optional :description, :message, 1, "common.String"
-    optional :account_balance, :message, 2, "common.String"
+    optional :description, :string, 1
+    optional :account_balance, :string, 2
     optional :plan, :message, 3, "api.Plan"
-    optional :tags, :message, 4, "common.StringMap"
+    map :tags, :string, :string, 4
     optional :card, :message, 5, "api.Card"
   end
   add_message "api.Plan" do
-    optional :id, :message, 1, "common.Identifier"
-    optional :active, :message, 2, "common.Bool"
-    optional :amount, :message, 3, "common.Int64"
-    optional :interval, :message, 4, "common.String"
-    optional :nickname, :message, 5, "common.String"
+    optional :id, :string, 1
+    optional :active, :bool, 2
+    optional :amount, :int64, 3
+    optional :interval, :string, 4
+    optional :nickname, :string, 5
     optional :product, :message, 6, "api.Product"
   end
   add_message "api.Product" do
-    optional :id, :message, 1, "common.Identifier"
-    optional :description, :message, 2, "common.String"
-    optional :url, :message, 3, "common.String"
-    optional :tags, :message, 4, "common.StringMap"
+    optional :id, :string, 1
+    optional :description, :string, 2
+    optional :url, :string, 3
+    map :tags, :string, :string, 4
   end
   add_message "api.Identity" do
-    optional :connection, :message, 1, "common.String"
-    optional :user_id, :message, 2, "common.Identifier"
-    optional :provider, :message, 3, "common.String"
-    optional :isSocial, :message, 4, "common.Bool"
+    optional :connection, :string, 1
+    optional :user_id, :string, 2
+    optional :provider, :string, 3
+    optional :isSocial, :bool, 4
   end
   add_message "api.Role" do
-    optional :id, :message, 1, "common.Identifier"
-    optional :name, :message, 2, "common.String"
-    optional :description, :message, 3, "common.String"
-  end
-  add_message "api.OAuth2" do
-    optional :client_id, :message, 1, "common.String"
-    optional :client_secret, :message, 2, "common.String"
-    optional :token_url, :message, 3, "common.String"
-    optional :auth_url, :message, 4, "common.String"
-    optional :scopes, :message, 5, "common.StringArray"
-    optional :redirect, :message, 6, "common.String"
-    optional :code, :message, 7, "common.String"
-  end
-  add_message "api.ClientCredentials" do
-    optional :client_id, :message, 1, "common.String"
-    optional :client_secret, :message, 2, "common.String"
-    optional :token_url, :message, 3, "common.String"
-    optional :scopes, :message, 4, "common.StringArray"
-    optional :endpoint_params, :message, 5, "common.StringMap"
-  end
-  add_message "api.JWT" do
-    optional :email, :message, 1, "common.String"
-    optional :private_key, :bytes, 2
-    optional :prive_key_id, :message, 3, "common.String"
-    optional :subject, :message, 4, "common.String"
-    optional :scopes, :message, 5, "common.StringArray"
-    optional :token_url, :message, 6, "common.String"
-    optional :expires, :message, 7, "common.String"
-    optional :audience, :message, 8, "common.String"
-  end
-  add_message "api.DefaultGCPCredentials" do
-    optional :scopes, :message, 1, "common.StringArray"
-  end
-  add_message "api.JSONWebKeys" do
-    optional :kty, :message, 1, "common.String"
-    optional :kid, :message, 2, "common.Identifier"
-    optional :use, :message, 3, "common.String"
-    optional :n, :message, 4, "common.String"
-    optional :e, :message, 5, "common.String"
-    optional :x5c, :message, 6, "common.StringArray"
-  end
-  add_message "api.Jwks" do
-    repeated :keys, :message, 1, "api.JSONWebKeys"
+    optional :id, :string, 1
+    optional :name, :string, 2
+    optional :description, :string, 3
   end
 end
 
 module Api
-  UpdateUserRequest = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UpdateUserRequest").msgclass
   Card = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Card").msgclass
   User = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.User").msgclass
   UserMetadata = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.UserMetadata").msgclass
@@ -139,10 +91,4 @@ module Api
   Product = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Product").msgclass
   Identity = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Identity").msgclass
   Role = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Role").msgclass
-  OAuth2 = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.OAuth2").msgclass
-  ClientCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.ClientCredentials").msgclass
-  JWT = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JWT").msgclass
-  DefaultGCPCredentials = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.DefaultGCPCredentials").msgclass
-  JSONWebKeys = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.JSONWebKeys").msgclass
-  Jwks = Google::Protobuf::DescriptorPool.generated_pool.lookup("api.Jwks").msgclass
 end

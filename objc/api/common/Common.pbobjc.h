@@ -27,7 +27,9 @@
 
 CF_EXTERN_C_BEGIN
 
-@class String;
+@class GPBAny;
+@class GPBTimestamp;
+@class JSONWebKeys;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -46,113 +48,226 @@ NS_ASSUME_NONNULL_BEGIN
 @interface CommonRoot : GPBRootObject
 @end
 
-#pragma mark - String
+#pragma mark - Common
 
-typedef GPB_ENUM(String_FieldNumber) {
-  String_FieldNumber_Text = 1,
+typedef GPB_ENUM(Common_FieldNumber) {
+  Common_FieldNumber_Identifer = 1,
+  Common_FieldNumber_Object = 2,
+  Common_FieldNumber_Meta = 3,
 };
 
-@interface String : GPBMessage
+@interface Common : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *identifer;
+
+@property(nonatomic, readwrite, strong, null_resettable) GPBAny *object;
+/** Test to see if @c object has been set. */
+@property(nonatomic, readwrite) BOOL hasObject;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *meta;
+/** The number of items in @c meta without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger meta_Count;
+
+@end
+
+#pragma mark - PlainText
+
+typedef GPB_ENUM(PlainText_FieldNumber) {
+  PlainText_FieldNumber_Text = 1,
+};
+
+@interface PlainText : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *text;
 
 @end
 
-#pragma mark - StringArray
+#pragma mark - OAuth2
 
-typedef GPB_ENUM(StringArray_FieldNumber) {
-  StringArray_FieldNumber_StringsArray = 1,
+typedef GPB_ENUM(OAuth2_FieldNumber) {
+  OAuth2_FieldNumber_ClientId = 1,
+  OAuth2_FieldNumber_ClientSecret = 2,
+  OAuth2_FieldNumber_TokenURL = 3,
+  OAuth2_FieldNumber_AuthURL = 4,
+  OAuth2_FieldNumber_ScopesArray = 5,
+  OAuth2_FieldNumber_Redirect = 6,
+  OAuth2_FieldNumber_Code = 7,
 };
 
-@interface StringArray : GPBMessage
+@interface OAuth2 : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<String*> *stringsArray;
-/** The number of items in @c stringsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger stringsArray_Count;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *clientId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *clientSecret;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *tokenURL;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *authURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+/** The number of items in @c scopesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger scopesArray_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *redirect;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *code;
 
 @end
 
-#pragma mark - StringMap
+#pragma mark - ClientCredentials
 
-typedef GPB_ENUM(StringMap_FieldNumber) {
-  StringMap_FieldNumber_StringMap = 1,
+typedef GPB_ENUM(ClientCredentials_FieldNumber) {
+  ClientCredentials_FieldNumber_ClientId = 1,
+  ClientCredentials_FieldNumber_ClientSecret = 2,
+  ClientCredentials_FieldNumber_TokenURL = 3,
+  ClientCredentials_FieldNumber_ScopesArray = 4,
+  ClientCredentials_FieldNumber_EndpointParams = 5,
 };
 
-@interface StringMap : GPBMessage
+@interface ClientCredentials : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, String*> *stringMap;
-/** The number of items in @c stringMap without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger stringMap_Count;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *clientId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *clientSecret;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *tokenURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+/** The number of items in @c scopesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger scopesArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *endpointParams;
+/** The number of items in @c endpointParams without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger endpointParams_Count;
 
 @end
 
-#pragma mark - Empty
+#pragma mark - JWT
 
-@interface Empty : GPBMessage
+typedef GPB_ENUM(JWT_FieldNumber) {
+  JWT_FieldNumber_Email = 1,
+  JWT_FieldNumber_PrivateKey = 2,
+  JWT_FieldNumber_PriveKeyId = 3,
+  JWT_FieldNumber_Subject = 4,
+  JWT_FieldNumber_ScopesArray = 5,
+  JWT_FieldNumber_TokenURL = 6,
+  JWT_FieldNumber_Expires = 7,
+  JWT_FieldNumber_Audience = 8,
+};
+
+@interface JWT : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *privateKey;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *priveKeyId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *subject;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+/** The number of items in @c scopesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger scopesArray_Count;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *tokenURL;
+
+@property(nonatomic, readwrite, strong, null_resettable) GPBTimestamp *expires;
+/** Test to see if @c expires has been set. */
+@property(nonatomic, readwrite) BOOL hasExpires;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *audience;
 
 @end
 
-#pragma mark - Bool
+#pragma mark - DefaultGCPCredentials
 
-typedef GPB_ENUM(Bool_FieldNumber) {
-  Bool_FieldNumber_Answer = 1,
+typedef GPB_ENUM(DefaultGCPCredentials_FieldNumber) {
+  DefaultGCPCredentials_FieldNumber_ScopesArray = 1,
 };
 
-@interface Bool : GPBMessage
+@interface DefaultGCPCredentials : GPBMessage
 
-@property(nonatomic, readwrite) BOOL answer;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *scopesArray;
+/** The number of items in @c scopesArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger scopesArray_Count;
 
 @end
 
-#pragma mark - Identifier
+#pragma mark - JSONWebKeys
 
-typedef GPB_ENUM(Identifier_FieldNumber) {
-  Identifier_FieldNumber_Id_p = 1,
+typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
+  JSONWebKeys_FieldNumber_Kty = 1,
+  JSONWebKeys_FieldNumber_Kid = 2,
+  JSONWebKeys_FieldNumber_Use = 3,
+  JSONWebKeys_FieldNumber_N = 4,
+  JSONWebKeys_FieldNumber_E = 5,
+  JSONWebKeys_FieldNumber_X5CArray = 6,
 };
 
-@interface Identifier : GPBMessage
+@interface JSONWebKeys : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *kty;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *kid;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *use;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *n;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *e;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *x5CArray;
+/** The number of items in @c x5CArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger x5CArray_Count;
 
 @end
 
-#pragma mark - AuthToken
+#pragma mark - Jwks
 
-typedef GPB_ENUM(AuthToken_FieldNumber) {
-  AuthToken_FieldNumber_Token = 1,
+typedef GPB_ENUM(Jwks_FieldNumber) {
+  Jwks_FieldNumber_KeysArray = 1,
 };
 
-@interface AuthToken : GPBMessage
+@interface Jwks : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *token;
-/** Test to see if @c token has been set. */
-@property(nonatomic, readwrite) BOOL hasToken;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<JSONWebKeys*> *keysArray;
+/** The number of items in @c keysArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger keysArray_Count;
 
 @end
 
-#pragma mark - Int64
+#pragma mark - HTTPTask
 
-typedef GPB_ENUM(Int64_FieldNumber) {
-  Int64_FieldNumber_Num = 1,
+typedef GPB_ENUM(HTTPTask_FieldNumber) {
+  HTTPTask_FieldNumber_URL = 1,
+  HTTPTask_FieldNumber_Headers = 2,
+  HTTPTask_FieldNumber_Form = 3,
+  HTTPTask_FieldNumber_Body = 4,
+  HTTPTask_FieldNumber_Schedule = 5,
+  HTTPTask_FieldNumber_CallbackURL = 6,
 };
 
-@interface Int64 : GPBMessage
+@interface HTTPTask : GPBMessage
 
-@property(nonatomic, readwrite) int64_t num;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
-@end
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *headers;
+/** The number of items in @c headers without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger headers_Count;
 
-#pragma mark - Float64
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *form;
+/** The number of items in @c form without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger form_Count;
 
-typedef GPB_ENUM(Float64_FieldNumber) {
-  Float64_FieldNumber_Num = 1,
-};
+@property(nonatomic, readwrite, strong, null_resettable) GPBAny *body;
+/** Test to see if @c body has been set. */
+@property(nonatomic, readwrite) BOOL hasBody;
 
-@interface Float64 : GPBMessage
+@property(nonatomic, readwrite, strong, null_resettable) GPBTimestamp *schedule;
+/** Test to see if @c schedule has been set. */
+@property(nonatomic, readwrite) BOOL hasSchedule;
 
-@property(nonatomic, readwrite) double num;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *callbackURL;
 
 @end
 

@@ -28,18 +28,11 @@
 CF_EXTERN_C_BEGIN
 
 @class Address;
-@class Bool;
 @class Card;
-@class Identifier;
 @class Identity;
-@class Int64;
-@class JSONWebKeys;
 @class Plan;
 @class Product;
 @class Role;
-@class String;
-@class StringArray;
-@class StringMap;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -58,30 +51,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ApiRoot : GPBRootObject
 @end
 
-#pragma mark - UpdateUserRequest
-
-typedef GPB_ENUM(UpdateUserRequest_FieldNumber) {
-  UpdateUserRequest_FieldNumber_Email = 1,
-  UpdateUserRequest_FieldNumber_Fields = 2,
-  UpdateUserRequest_FieldNumber_Overwrite = 3,
-};
-
-@interface UpdateUserRequest : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *email;
-/** Test to see if @c email has been set. */
-@property(nonatomic, readwrite) BOOL hasEmail;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *fields;
-/** Test to see if @c fields has been set. */
-@property(nonatomic, readwrite) BOOL hasFields;
-
-@property(nonatomic, readwrite, strong, null_resettable) Bool *overwrite;
-/** Test to see if @c overwrite has been set. */
-@property(nonatomic, readwrite) BOOL hasOverwrite;
-
-@end
-
 #pragma mark - Card
 
 typedef GPB_ENUM(Card_FieldNumber) {
@@ -93,21 +62,13 @@ typedef GPB_ENUM(Card_FieldNumber) {
 
 @interface Card : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *number;
-/** Test to see if @c number has been set. */
-@property(nonatomic, readwrite) BOOL hasNumber;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *number;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *expMonth;
-/** Test to see if @c expMonth has been set. */
-@property(nonatomic, readwrite) BOOL hasExpMonth;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expMonth;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *expYear;
-/** Test to see if @c expYear has been set. */
-@property(nonatomic, readwrite) BOOL hasExpYear;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *expYear;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *cvc;
-/** Test to see if @c cvc has been set. */
-@property(nonatomic, readwrite) BOOL hasCvc;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cvc;
 
 @end
 
@@ -128,7 +89,7 @@ typedef GPB_ENUM(User_FieldNumber) {
   User_FieldNumber_LastIp = 12,
   User_FieldNumber_Blocked = 13,
   User_FieldNumber_Nickname = 14,
-  User_FieldNumber_Multifactor = 15,
+  User_FieldNumber_MultifactorArray = 15,
   User_FieldNumber_CreatedAt = 17,
   User_FieldNumber_UpdatedAt = 18,
   User_FieldNumber_PhoneVerified = 19,
@@ -140,85 +101,51 @@ typedef GPB_ENUM(User_FieldNumber) {
 
 @interface User : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *userId;
-/** Test to see if @c userId has been set. */
-@property(nonatomic, readwrite) BOOL hasUserId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *name;
-/** Test to see if @c name has been set. */
-@property(nonatomic, readwrite) BOOL hasName;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *givenName;
-/** Test to see if @c givenName has been set. */
-@property(nonatomic, readwrite) BOOL hasGivenName;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *givenName;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *familyName;
-/** Test to see if @c familyName has been set. */
-@property(nonatomic, readwrite) BOOL hasFamilyName;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *familyName;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *gender;
-/** Test to see if @c gender has been set. */
-@property(nonatomic, readwrite) BOOL hasGender;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *gender;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *birthdate;
-/** Test to see if @c birthdate has been set. */
-@property(nonatomic, readwrite) BOOL hasBirthdate;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *birthdate;
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *email;
-/** Test to see if @c email has been set. */
-@property(nonatomic, readwrite) BOOL hasEmail;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *email;
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *phoneNumber;
-/** Test to see if @c phoneNumber has been set. */
-@property(nonatomic, readwrite) BOOL hasPhoneNumber;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phoneNumber;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *picture;
-/** Test to see if @c picture has been set. */
-@property(nonatomic, readwrite) BOOL hasPicture;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *picture;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *nickname;
-/** Test to see if @c nickname has been set. */
-@property(nonatomic, readwrite) BOOL hasNickname;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *nickname;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *userMetadata;
-/** Test to see if @c userMetadata has been set. */
-@property(nonatomic, readwrite) BOOL hasUserMetadata;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *userMetadata;
+/** The number of items in @c userMetadata without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger userMetadata_Count;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *appMetadata;
-/** Test to see if @c appMetadata has been set. */
-@property(nonatomic, readwrite) BOOL hasAppMetadata;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *appMetadata;
+/** The number of items in @c appMetadata without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger appMetadata_Count;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *lastIp;
-/** Test to see if @c lastIp has been set. */
-@property(nonatomic, readwrite) BOOL hasLastIp;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *lastIp;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *blocked;
-/** Test to see if @c blocked has been set. */
-@property(nonatomic, readwrite) BOOL hasBlocked;
+@property(nonatomic, readwrite) BOOL blocked;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *multifactor;
-/** Test to see if @c multifactor has been set. */
-@property(nonatomic, readwrite) BOOL hasMultifactor;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *multifactorArray;
+/** The number of items in @c multifactorArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger multifactorArray_Count;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *createdAt;
-/** Test to see if @c createdAt has been set. */
-@property(nonatomic, readwrite) BOOL hasCreatedAt;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *createdAt;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *updatedAt;
-/** Test to see if @c updatedAt has been set. */
-@property(nonatomic, readwrite) BOOL hasUpdatedAt;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *updatedAt;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *phoneVerified;
-/** Test to see if @c phoneVerified has been set. */
-@property(nonatomic, readwrite) BOOL hasPhoneVerified;
+@property(nonatomic, readwrite) BOOL phoneVerified;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *emailVerified;
-/** Test to see if @c emailVerified has been set. */
-@property(nonatomic, readwrite) BOOL hasEmailVerified;
+@property(nonatomic, readwrite) BOOL emailVerified;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *password;
-/** Test to see if @c password has been set. */
-@property(nonatomic, readwrite) BOOL hasPassword;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *password;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Identity*> *identitiesArray;
 /** The number of items in @c identitiesArray without causing the array to be created. */
@@ -241,21 +168,19 @@ typedef GPB_ENUM(UserMetadata_FieldNumber) {
 
 @interface UserMetadata : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *status;
-/** Test to see if @c status has been set. */
-@property(nonatomic, readwrite) BOOL hasStatus;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *status;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *bio;
-/** Test to see if @c bio has been set. */
-@property(nonatomic, readwrite) BOOL hasBio;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *bio;
+/** The number of items in @c bio without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger bio_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) Address *address;
 /** Test to see if @c address has been set. */
 @property(nonatomic, readwrite) BOOL hasAddress;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *tags;
-/** Test to see if @c tags has been set. */
-@property(nonatomic, readwrite) BOOL hasTags;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *tags;
+/** The number of items in @c tags without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tags_Count;
 
 @end
 
@@ -271,25 +196,15 @@ typedef GPB_ENUM(Address_FieldNumber) {
 
 @interface Address : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *city;
-/** Test to see if @c city has been set. */
-@property(nonatomic, readwrite) BOOL hasCity;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *city;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *state;
-/** Test to see if @c state has been set. */
-@property(nonatomic, readwrite) BOOL hasState;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *state;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *line1;
-/** Test to see if @c line1 has been set. */
-@property(nonatomic, readwrite) BOOL hasLine1;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *line1;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *line2;
-/** Test to see if @c line2 has been set. */
-@property(nonatomic, readwrite) BOOL hasLine2;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *line2;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *zip;
-/** Test to see if @c zip has been set. */
-@property(nonatomic, readwrite) BOOL hasZip;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *zip;
 
 @end
 
@@ -305,21 +220,17 @@ typedef GPB_ENUM(AppMetadata_FieldNumber) {
 
 @interface AppMetadata : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *description_p;
-/** Test to see if @c description_p has been set. */
-@property(nonatomic, readwrite) BOOL hasDescription_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *accountBalance;
-/** Test to see if @c accountBalance has been set. */
-@property(nonatomic, readwrite) BOOL hasAccountBalance;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *accountBalance;
 
 @property(nonatomic, readwrite, strong, null_resettable) Plan *plan;
 /** Test to see if @c plan has been set. */
 @property(nonatomic, readwrite) BOOL hasPlan;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *tags;
-/** Test to see if @c tags has been set. */
-@property(nonatomic, readwrite) BOOL hasTags;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *tags;
+/** The number of items in @c tags without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tags_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) Card *card;
 /** Test to see if @c card has been set. */
@@ -340,25 +251,15 @@ typedef GPB_ENUM(Plan_FieldNumber) {
 
 @interface Plan : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *active;
-/** Test to see if @c active has been set. */
-@property(nonatomic, readwrite) BOOL hasActive;
+@property(nonatomic, readwrite) BOOL active;
 
-@property(nonatomic, readwrite, strong, null_resettable) Int64 *amount;
-/** Test to see if @c amount has been set. */
-@property(nonatomic, readwrite) BOOL hasAmount;
+@property(nonatomic, readwrite) int64_t amount;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *interval;
-/** Test to see if @c interval has been set. */
-@property(nonatomic, readwrite) BOOL hasInterval;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *interval;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *nickname;
-/** Test to see if @c nickname has been set. */
-@property(nonatomic, readwrite) BOOL hasNickname;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *nickname;
 
 @property(nonatomic, readwrite, strong, null_resettable) Product *product;
 /** Test to see if @c product has been set. */
@@ -377,21 +278,15 @@ typedef GPB_ENUM(Product_FieldNumber) {
 
 @interface Product : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *description_p;
-/** Test to see if @c description_p has been set. */
-@property(nonatomic, readwrite) BOOL hasDescription_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *URL;
-/** Test to see if @c URL has been set. */
-@property(nonatomic, readwrite) BOOL hasURL;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *tags;
-/** Test to see if @c tags has been set. */
-@property(nonatomic, readwrite) BOOL hasTags;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSString*> *tags;
+/** The number of items in @c tags without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger tags_Count;
 
 @end
 
@@ -406,21 +301,13 @@ typedef GPB_ENUM(Identity_FieldNumber) {
 
 @interface Identity : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) String *connection;
-/** Test to see if @c connection has been set. */
-@property(nonatomic, readwrite) BOOL hasConnection;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *connection;
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *userId;
-/** Test to see if @c userId has been set. */
-@property(nonatomic, readwrite) BOOL hasUserId;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *provider;
-/** Test to see if @c provider has been set. */
-@property(nonatomic, readwrite) BOOL hasProvider;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *provider;
 
-@property(nonatomic, readwrite, strong, null_resettable) Bool *isSocial;
-/** Test to see if @c isSocial has been set. */
-@property(nonatomic, readwrite) BOOL hasIsSocial;
+@property(nonatomic, readwrite) BOOL isSocial;
 
 @end
 
@@ -434,209 +321,11 @@ typedef GPB_ENUM(Role_FieldNumber) {
 
 @interface Role : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *id_p;
-/** Test to see if @c id_p has been set. */
-@property(nonatomic, readwrite) BOOL hasId_p;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *id_p;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *name;
-/** Test to see if @c name has been set. */
-@property(nonatomic, readwrite) BOOL hasName;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
-@property(nonatomic, readwrite, strong, null_resettable) String *description_p;
-/** Test to see if @c description_p has been set. */
-@property(nonatomic, readwrite) BOOL hasDescription_p;
-
-@end
-
-#pragma mark - OAuth2
-
-typedef GPB_ENUM(OAuth2_FieldNumber) {
-  OAuth2_FieldNumber_ClientId = 1,
-  OAuth2_FieldNumber_ClientSecret = 2,
-  OAuth2_FieldNumber_TokenURL = 3,
-  OAuth2_FieldNumber_AuthURL = 4,
-  OAuth2_FieldNumber_Scopes = 5,
-  OAuth2_FieldNumber_Redirect = 6,
-  OAuth2_FieldNumber_Code = 7,
-};
-
-@interface OAuth2 : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
-/** Test to see if @c clientId has been set. */
-@property(nonatomic, readwrite) BOOL hasClientId;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
-/** Test to see if @c clientSecret has been set. */
-@property(nonatomic, readwrite) BOOL hasClientSecret;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
-/** Test to see if @c tokenURL has been set. */
-@property(nonatomic, readwrite) BOOL hasTokenURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *authURL;
-/** Test to see if @c authURL has been set. */
-@property(nonatomic, readwrite) BOOL hasAuthURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
-/** Test to see if @c scopes has been set. */
-@property(nonatomic, readwrite) BOOL hasScopes;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *redirect;
-/** Test to see if @c redirect has been set. */
-@property(nonatomic, readwrite) BOOL hasRedirect;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *code;
-/** Test to see if @c code has been set. */
-@property(nonatomic, readwrite) BOOL hasCode;
-
-@end
-
-#pragma mark - ClientCredentials
-
-typedef GPB_ENUM(ClientCredentials_FieldNumber) {
-  ClientCredentials_FieldNumber_ClientId = 1,
-  ClientCredentials_FieldNumber_ClientSecret = 2,
-  ClientCredentials_FieldNumber_TokenURL = 3,
-  ClientCredentials_FieldNumber_Scopes = 4,
-  ClientCredentials_FieldNumber_EndpointParams = 5,
-};
-
-@interface ClientCredentials : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientId;
-/** Test to see if @c clientId has been set. */
-@property(nonatomic, readwrite) BOOL hasClientId;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *clientSecret;
-/** Test to see if @c clientSecret has been set. */
-@property(nonatomic, readwrite) BOOL hasClientSecret;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
-/** Test to see if @c tokenURL has been set. */
-@property(nonatomic, readwrite) BOOL hasTokenURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
-/** Test to see if @c scopes has been set. */
-@property(nonatomic, readwrite) BOOL hasScopes;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringMap *endpointParams;
-/** Test to see if @c endpointParams has been set. */
-@property(nonatomic, readwrite) BOOL hasEndpointParams;
-
-@end
-
-#pragma mark - JWT
-
-typedef GPB_ENUM(JWT_FieldNumber) {
-  JWT_FieldNumber_Email = 1,
-  JWT_FieldNumber_PrivateKey = 2,
-  JWT_FieldNumber_PriveKeyId = 3,
-  JWT_FieldNumber_Subject = 4,
-  JWT_FieldNumber_Scopes = 5,
-  JWT_FieldNumber_TokenURL = 6,
-  JWT_FieldNumber_Expires = 7,
-  JWT_FieldNumber_Audience = 8,
-};
-
-@interface JWT : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *email;
-/** Test to see if @c email has been set. */
-@property(nonatomic, readwrite) BOOL hasEmail;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSData *privateKey;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *priveKeyId;
-/** Test to see if @c priveKeyId has been set. */
-@property(nonatomic, readwrite) BOOL hasPriveKeyId;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *subject;
-/** Test to see if @c subject has been set. */
-@property(nonatomic, readwrite) BOOL hasSubject;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
-/** Test to see if @c scopes has been set. */
-@property(nonatomic, readwrite) BOOL hasScopes;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *tokenURL;
-/** Test to see if @c tokenURL has been set. */
-@property(nonatomic, readwrite) BOOL hasTokenURL;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *expires;
-/** Test to see if @c expires has been set. */
-@property(nonatomic, readwrite) BOOL hasExpires;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *audience;
-/** Test to see if @c audience has been set. */
-@property(nonatomic, readwrite) BOOL hasAudience;
-
-@end
-
-#pragma mark - DefaultGCPCredentials
-
-typedef GPB_ENUM(DefaultGCPCredentials_FieldNumber) {
-  DefaultGCPCredentials_FieldNumber_Scopes = 1,
-};
-
-@interface DefaultGCPCredentials : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *scopes;
-/** Test to see if @c scopes has been set. */
-@property(nonatomic, readwrite) BOOL hasScopes;
-
-@end
-
-#pragma mark - JSONWebKeys
-
-typedef GPB_ENUM(JSONWebKeys_FieldNumber) {
-  JSONWebKeys_FieldNumber_Kty = 1,
-  JSONWebKeys_FieldNumber_Kid = 2,
-  JSONWebKeys_FieldNumber_Use = 3,
-  JSONWebKeys_FieldNumber_N = 4,
-  JSONWebKeys_FieldNumber_E = 5,
-  JSONWebKeys_FieldNumber_X5C = 6,
-};
-
-@interface JSONWebKeys : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) String *kty;
-/** Test to see if @c kty has been set. */
-@property(nonatomic, readwrite) BOOL hasKty;
-
-@property(nonatomic, readwrite, strong, null_resettable) Identifier *kid;
-/** Test to see if @c kid has been set. */
-@property(nonatomic, readwrite) BOOL hasKid;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *use;
-/** Test to see if @c use has been set. */
-@property(nonatomic, readwrite) BOOL hasUse;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *n;
-/** Test to see if @c n has been set. */
-@property(nonatomic, readwrite) BOOL hasN;
-
-@property(nonatomic, readwrite, strong, null_resettable) String *e;
-/** Test to see if @c e has been set. */
-@property(nonatomic, readwrite) BOOL hasE;
-
-@property(nonatomic, readwrite, strong, null_resettable) StringArray *x5C;
-/** Test to see if @c x5C has been set. */
-@property(nonatomic, readwrite) BOOL hasX5C;
-
-@end
-
-#pragma mark - Jwks
-
-typedef GPB_ENUM(Jwks_FieldNumber) {
-  Jwks_FieldNumber_KeysArray = 1,
-};
-
-@interface Jwks : GPBMessage
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<JSONWebKeys*> *keysArray;
-/** The number of items in @c keysArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger keysArray_Count;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
 
 @end
 

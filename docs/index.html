@@ -187,35 +187,15 @@
                 </li>
               
                 <li>
+                  <a href="#api.AppMetadata.TagsEntry"><span class="badge">M</span>AppMetadata.TagsEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.Card"><span class="badge">M</span>Card</a>
                 </li>
               
                 <li>
-                  <a href="#api.ClientCredentials"><span class="badge">M</span>ClientCredentials</a>
-                </li>
-              
-                <li>
-                  <a href="#api.DefaultGCPCredentials"><span class="badge">M</span>DefaultGCPCredentials</a>
-                </li>
-              
-                <li>
                   <a href="#api.Identity"><span class="badge">M</span>Identity</a>
-                </li>
-              
-                <li>
-                  <a href="#api.JSONWebKeys"><span class="badge">M</span>JSONWebKeys</a>
-                </li>
-              
-                <li>
-                  <a href="#api.JWT"><span class="badge">M</span>JWT</a>
-                </li>
-              
-                <li>
-                  <a href="#api.Jwks"><span class="badge">M</span>Jwks</a>
-                </li>
-              
-                <li>
-                  <a href="#api.OAuth2"><span class="badge">M</span>OAuth2</a>
                 </li>
               
                 <li>
@@ -227,11 +207,11 @@
                 </li>
               
                 <li>
-                  <a href="#api.Role"><span class="badge">M</span>Role</a>
+                  <a href="#api.Product.TagsEntry"><span class="badge">M</span>Product.TagsEntry</a>
                 </li>
               
                 <li>
-                  <a href="#api.UpdateUserRequest"><span class="badge">M</span>UpdateUserRequest</a>
+                  <a href="#api.Role"><span class="badge">M</span>Role</a>
                 </li>
               
                 <li>
@@ -239,19 +219,27 @@
                 </li>
               
                 <li>
+                  <a href="#api.User.AppMetadataEntry"><span class="badge">M</span>User.AppMetadataEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#api.User.UserMetadataEntry"><span class="badge">M</span>User.UserMetadataEntry</a>
+                </li>
+              
+                <li>
                   <a href="#api.UserMetadata"><span class="badge">M</span>UserMetadata</a>
                 </li>
               
-              
-              
-              
                 <li>
-                  <a href="#api.DBService"><span class="badge">S</span>DBService</a>
+                  <a href="#api.UserMetadata.BioEntry"><span class="badge">M</span>UserMetadata.BioEntry</a>
                 </li>
               
                 <li>
-                  <a href="#api.DebugService"><span class="badge">S</span>DebugService</a>
+                  <a href="#api.UserMetadata.TagsEntry"><span class="badge">M</span>UserMetadata.TagsEntry</a>
                 </li>
+              
+              
+              
               
             </ul>
           </li>
@@ -280,35 +268,35 @@
               
                 <tr>
                   <td>city</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>state</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>line1</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>line2</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>zip</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -331,14 +319,14 @@
               
                 <tr>
                   <td>description</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>account_balance</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -352,14 +340,44 @@
               
                 <tr>
                   <td>tags</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
+                  <td><a href="#api.AppMetadata.TagsEntry">AppMetadata.TagsEntry</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>card</td>
                   <td><a href="#api.Card">Card</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.AppMetadata.TagsEntry">AppMetadata.TagsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -382,102 +400,28 @@
               
                 <tr>
                   <td>number</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>exp_month</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>exp_year</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>cvc</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.ClientCredentials">ClientCredentials</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>client_id</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>client_secret</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>token_url</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>scopes</td>
-                  <td><a href="#common.StringArray">common.StringArray</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>endpoint_params</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.DefaultGCPCredentials">DefaultGCPCredentials</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>scopes</td>
-                  <td><a href="#common.StringArray">common.StringArray</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -500,246 +444,28 @@
               
                 <tr>
                   <td>connection</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>user_id</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>provider</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>isSocial</td>
-                  <td><a href="#common.Bool">common.Bool</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.JSONWebKeys">JSONWebKeys</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>kty</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>kid</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>use</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>n</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>e</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>x5c</td>
-                  <td><a href="#common.StringArray">common.StringArray</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.JWT">JWT</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>private_key</td>
-                  <td><a href="#bytes">bytes</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>prive_key_id</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>subject</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>scopes</td>
-                  <td><a href="#common.StringArray">common.StringArray</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>token_url</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>expires</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>audience</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.Jwks">Jwks</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>keys</td>
-                  <td><a href="#api.JSONWebKeys">JSONWebKeys</a></td>
-                  <td>repeated</td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.OAuth2">OAuth2</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>client_id</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>client_secret</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>token_url</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>auth_url</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>scopes</td>
-                  <td><a href="#common.StringArray">common.StringArray</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>redirect</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>code</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -762,35 +488,35 @@
               
                 <tr>
                   <td>id</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>active</td>
-                  <td><a href="#common.Bool">common.Bool</a></td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>amount</td>
-                  <td><a href="#common.Int64">common.Int64</a></td>
+                  <td><a href="#int64">int64</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>interval</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>nickname</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -820,28 +546,58 @@
               
                 <tr>
                   <td>id</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>description</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>url</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>tags</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
+                  <td><a href="#api.Product.TagsEntry">Product.TagsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.Product.TagsEntry">Product.TagsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -864,58 +620,21 @@
               
                 <tr>
                   <td>id</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>description</td>
-                  <td><a href="#common.String">common.String</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-            </tbody>
-          </table>
-        
-
-        
-      
-        <h3 id="api.UpdateUserRequest">UpdateUserRequest</h3>
-        <p></p>
-
-        
-          <table class="field-table">
-            <thead>
-              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
-            </thead>
-            <tbody>
-              
-                <tr>
-                  <td>email</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>fields</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
-                  <td><p> </p></td>
-                </tr>
-              
-                <tr>
-                  <td>overwrite</td>
-                  <td><a href="#common.Bool">common.Bool</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -938,140 +657,140 @@
               
                 <tr>
                   <td>user_id</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>name</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>given_name</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>family_name</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>gender</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>birthdate</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>email</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>phone_number</td>
-                  <td><a href="#common.Identifier">common.Identifier</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>picture</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>nickname</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>user_metadata</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
+                  <td><a href="#api.User.UserMetadataEntry">User.UserMetadataEntry</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>app_metadata</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
+                  <td><a href="#api.User.AppMetadataEntry">User.AppMetadataEntry</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>last_ip</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>blocked</td>
-                  <td><a href="#common.Bool">common.Bool</a></td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>multifactor</td>
-                  <td><a href="#common.StringArray">common.StringArray</a></td>
-                  <td></td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>created_at</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>updated_at</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>phone_verified</td>
-                  <td><a href="#common.Bool">common.Bool</a></td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>email_verified</td>
-                  <td><a href="#common.Bool">common.Bool</a></td>
+                  <td><a href="#bool">bool</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>password</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1096,6 +815,66 @@
 
         
       
+        <h3 id="api.User.AppMetadataEntry">User.AppMetadataEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.User.UserMetadataEntry">User.UserMetadataEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
         <h3 id="api.UserMetadata">UserMetadata</h3>
         <p></p>
 
@@ -1108,15 +887,15 @@
               
                 <tr>
                   <td>status</td>
-                  <td><a href="#common.String">common.String</a></td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
               
                 <tr>
                   <td>bio</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
-                  <td></td>
+                  <td><a href="#api.UserMetadata.BioEntry">UserMetadata.BioEntry</a></td>
+                  <td>repeated</td>
                   <td><p> </p></td>
                 </tr>
               
@@ -1129,7 +908,67 @@
               
                 <tr>
                   <td>tags</td>
-                  <td><a href="#common.StringMap">common.StringMap</a></td>
+                  <td><a href="#api.UserMetadata.TagsEntry">UserMetadata.TagsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.UserMetadata.BioEntry">UserMetadata.BioEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+        
+
+        
+      
+        <h3 id="api.UserMetadata.TagsEntry">UserMetadata.TagsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
                   <td></td>
                   <td><p> </p></td>
                 </tr>
@@ -1145,70 +984,6 @@
 
       
 
-      
-        <h3 id="api.DBService">DBService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>GetUser</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>DeleteUser</td>
-                <td><a href="#common.Identifier">.common.Identifier</a></td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>UpdateUser</td>
-                <td><a href="#api.UpdateUserRequest">UpdateUserRequest</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>CreateUser</td>
-                <td><a href="#api.User">User</a></td>
-                <td><a href="#api.User">User</a></td>
-                <td><p></p></td>
-              </tr>
-            
-              <tr>
-                <td>ListUsers</td>
-                <td><a href="#common.Empty">.common.Empty</a></td>
-                <td><a href="#api.User">User</a> stream</td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
-      
-        <h3 id="api.DebugService">DebugService</h3>
-        <p></p>
-        <table class="enum-table">
-          <thead>
-            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td>Echo</td>
-                <td><a href="#common.String">.common.String</a></td>
-                <td><a href="#common.String">.common.String</a></td>
-                <td><p></p></td>
-              </tr>
-            
-          </tbody>
-        </table>
       
     
 

@@ -2,183 +2,86 @@ syntax="proto3";
 
 package api;
 
-import "google/api/annotations.proto";
-import "common/common.proto";
-
-service DebugService {
-    rpc Echo(common.String) returns (common.String) {
-        option (google.api.http) = {
-      post: "/debug"
-      body: "*"
-    };
-    }
-}
-
-service DBService {
-    rpc GetUser(common.Identifier) returns (User) {
-        option (google.api.http) = {
-      post: "/db/user"
-      body: "*"
-    };
-    }
-    rpc DeleteUser(common.Identifier) returns (common.Empty) {
-        option (google.api.http) = {
-      post: "/db/user/delete"
-      body: "*"
-    };
-    }
-    rpc UpdateUser(UpdateUserRequest) returns (User) {
-        option (google.api.http) = {
-      post: "/db/user/delete"
-      body: "*"
-    };
-    }
-    rpc CreateUser(User) returns (User) {
-        option (google.api.http) = {
-      post: "/db/user/delete"
-      body: "*"
-    };
-    }
-    rpc ListUsers(common.Empty) returns (stream User) {
-        option (google.api.http) = {
-      post: "/db/user/delete"
-      body: "*"
-    };
-    }
-}
-
-message UpdateUserRequest {
-    common.Identifier email =1;
-    common.StringMap fields =2;
-    common.Bool overwrite =3;
-}
-
 message Card {
-    common.Identifier number=1;
-    common.String exp_month=2;
-    common.String exp_year =3;
-    common.String cvc=4;
+    string number=1;
+    string exp_month=2;
+    string exp_year =3;
+    string cvc=4;
 }
 
 message User {
-    common.Identifier user_id=1;
-    common.String name=2;
-    common.String given_name=3;
-    common.String family_name=4;
-    common.String gender =5;
-    common.String birthdate=6;
-    common.Identifier email=7;
-    common.Identifier phone_number=8;
-    common.String picture=9;
-    common.String nickname =14;
-    common.StringMap user_metadata=10;
-    common.StringMap app_metadata=11;
-    common.String last_ip =12;
-    common.Bool blocked =13;
-    common.StringArray multifactor=15;
-    common.String created_at=17;
-    common.String updated_at=18;
-    common.Bool phone_verified=19;
-    common.Bool email_verified=20;
-    common.String password=21;
+    string user_id=1;
+    string name=2;
+    string given_name=3;
+    string family_name=4;
+    string gender =5;
+    string birthdate=6;
+    string email=7;
+    string phone_number=8;
+    string picture=9;
+    string nickname =14;
+    map<string,string> user_metadata=10;
+    map<string,string> app_metadata=11;
+    string last_ip =12;
+    bool blocked =13;
+    repeated string multifactor=15;
+    string created_at=17;
+    string updated_at=18;
+    bool phone_verified=19;
+    bool email_verified=20;
+    string password=21;
     repeated Identity identities =22;
     repeated Role roles=23;
 }
 
 message UserMetadata {
-    common.String status=1;
-    common.StringMap bio=2;
+    string status=1;
+    map<string,string> bio=2;
     Address address=3;
-    common.StringMap tags=4;
+    map<string,string> tags=4;
 }
 
 message Address {
-    common.String city =1;
-    common.String state=2;
-    common.String line1 =3;
-    common.String line2=4;
-    common.String zip =5;
+    string city =1;
+    string state=2;
+    string line1 =3;
+    string line2=4;
+    string zip =5;
 }
 
 message AppMetadata {
-    common.String description =1;
-    common.String account_balance=2;
+    string description =1;
+    string account_balance=2;
     Plan plan=3;
-    common.StringMap tags=4;
+    map<string,string> tags=4;
     Card card =5;
 }
 
 message Plan {
-    common.Identifier id =1;
-    common.Bool active =2;
-    common.Int64 amount =3;
-    common.String interval=4;
-    common.String nickname =5;
+    string id =1;
+    bool active =2;
+    int64 amount =3;
+    string interval=4;
+    string nickname =5;
     Product product=6;
 }
 
 message Product {
-    common.Identifier id =1;
-    common.String description =2;
-    common.String url =3;
-    common.StringMap tags =4;
+    string id =1;
+    string description =2;
+    string url =3;
+    map<string,string> tags =4;
 }
 
 message Identity{
-    common.String connection =1;
-    common.Identifier user_id=2;
-    common.String provider=3;
-    common.Bool isSocial=4;
+    string connection =1;
+    string user_id=2;
+    string provider=3;
+    bool isSocial=4;
 }
 
 message Role {
-    common.Identifier id=1;
-    common.String name=2;
-    common.String description=3;
-}
-
-message OAuth2 {
-    common.String client_id=1;
-    common.String client_secret=2;
-    common.String token_url =3;
-    common.String auth_url =4;
-    common.StringArray scopes =5;
-    common.String redirect =6;
-    common.String code =7;
-}
-
-message ClientCredentials {
-    common.String client_id=1;
-    common.String client_secret=2;
-    common.String token_url =3;
-    common.StringArray scopes =4;
-    common.StringMap endpoint_params=5;
-}
-
-message JWT {
-    common.String email=1;
-    bytes private_key=2;
-    common.String prive_key_id =3;
-    common.String subject =4;
-    common.StringArray scopes=5;
-    common.String token_url =6;
-    common.String expires =7;
-    common.String audience =8;
-}
-
-message DefaultGCPCredentials {
-    common.StringArray scopes =1;
- }
-
-message JSONWebKeys {
-    common.String kty =1;
-    common.Identifier kid =2;
-    common.String use =3;
-    common.String n =4;
-    common.String e =5;
-    common.StringArray x5c =6;
-}
-
-message Jwks {
-    repeated JSONWebKeys keys=1;
+    string id=1;
+    string name=2;
+    string description=3;
 }

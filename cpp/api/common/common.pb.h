@@ -33,6 +33,8 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/any.pb.h>
+#include <google/protobuf/timestamp.pb.h>
 // @@protoc_insertion_point(includes)
 #define PROTOBUF_INTERNAL_EXPORT_protobuf_common_2fcommon_2eproto 
 
@@ -41,7 +43,7 @@ namespace protobuf_common_2fcommon_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[10];
+  static const ::google::protobuf::internal::ParseTable schema[13];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -49,73 +51,106 @@ struct TableStruct {
 void AddDescriptors();
 }  // namespace protobuf_common_2fcommon_2eproto
 namespace common {
-class AuthToken;
-class AuthTokenDefaultTypeInternal;
-extern AuthTokenDefaultTypeInternal _AuthToken_default_instance_;
-class Bool;
-class BoolDefaultTypeInternal;
-extern BoolDefaultTypeInternal _Bool_default_instance_;
-class Empty;
-class EmptyDefaultTypeInternal;
-extern EmptyDefaultTypeInternal _Empty_default_instance_;
-class Float64;
-class Float64DefaultTypeInternal;
-extern Float64DefaultTypeInternal _Float64_default_instance_;
-class Identifier;
-class IdentifierDefaultTypeInternal;
-extern IdentifierDefaultTypeInternal _Identifier_default_instance_;
-class Int64;
-class Int64DefaultTypeInternal;
-extern Int64DefaultTypeInternal _Int64_default_instance_;
-class String;
-class StringDefaultTypeInternal;
-extern StringDefaultTypeInternal _String_default_instance_;
-class StringArray;
-class StringArrayDefaultTypeInternal;
-extern StringArrayDefaultTypeInternal _StringArray_default_instance_;
-class StringMap;
-class StringMapDefaultTypeInternal;
-extern StringMapDefaultTypeInternal _StringMap_default_instance_;
-class StringMap_StringMapEntry_DoNotUse;
-class StringMap_StringMapEntry_DoNotUseDefaultTypeInternal;
-extern StringMap_StringMapEntry_DoNotUseDefaultTypeInternal _StringMap_StringMapEntry_DoNotUse_default_instance_;
+class ClientCredentials;
+class ClientCredentialsDefaultTypeInternal;
+extern ClientCredentialsDefaultTypeInternal _ClientCredentials_default_instance_;
+class ClientCredentials_EndpointParamsEntry_DoNotUse;
+class ClientCredentials_EndpointParamsEntry_DoNotUseDefaultTypeInternal;
+extern ClientCredentials_EndpointParamsEntry_DoNotUseDefaultTypeInternal _ClientCredentials_EndpointParamsEntry_DoNotUse_default_instance_;
+class Common;
+class CommonDefaultTypeInternal;
+extern CommonDefaultTypeInternal _Common_default_instance_;
+class Common_MetaEntry_DoNotUse;
+class Common_MetaEntry_DoNotUseDefaultTypeInternal;
+extern Common_MetaEntry_DoNotUseDefaultTypeInternal _Common_MetaEntry_DoNotUse_default_instance_;
+class DefaultGCPCredentials;
+class DefaultGCPCredentialsDefaultTypeInternal;
+extern DefaultGCPCredentialsDefaultTypeInternal _DefaultGCPCredentials_default_instance_;
+class HTTPTask;
+class HTTPTaskDefaultTypeInternal;
+extern HTTPTaskDefaultTypeInternal _HTTPTask_default_instance_;
+class HTTPTask_FormEntry_DoNotUse;
+class HTTPTask_FormEntry_DoNotUseDefaultTypeInternal;
+extern HTTPTask_FormEntry_DoNotUseDefaultTypeInternal _HTTPTask_FormEntry_DoNotUse_default_instance_;
+class HTTPTask_HeadersEntry_DoNotUse;
+class HTTPTask_HeadersEntry_DoNotUseDefaultTypeInternal;
+extern HTTPTask_HeadersEntry_DoNotUseDefaultTypeInternal _HTTPTask_HeadersEntry_DoNotUse_default_instance_;
+class JSONWebKeys;
+class JSONWebKeysDefaultTypeInternal;
+extern JSONWebKeysDefaultTypeInternal _JSONWebKeys_default_instance_;
+class JWT;
+class JWTDefaultTypeInternal;
+extern JWTDefaultTypeInternal _JWT_default_instance_;
+class Jwks;
+class JwksDefaultTypeInternal;
+extern JwksDefaultTypeInternal _Jwks_default_instance_;
+class OAuth2;
+class OAuth2DefaultTypeInternal;
+extern OAuth2DefaultTypeInternal _OAuth2_default_instance_;
+class PlainText;
+class PlainTextDefaultTypeInternal;
+extern PlainTextDefaultTypeInternal _PlainText_default_instance_;
 }  // namespace common
 namespace google {
 namespace protobuf {
-template<> ::common::AuthToken* Arena::CreateMaybeMessage<::common::AuthToken>(Arena*);
-template<> ::common::Bool* Arena::CreateMaybeMessage<::common::Bool>(Arena*);
-template<> ::common::Empty* Arena::CreateMaybeMessage<::common::Empty>(Arena*);
-template<> ::common::Float64* Arena::CreateMaybeMessage<::common::Float64>(Arena*);
-template<> ::common::Identifier* Arena::CreateMaybeMessage<::common::Identifier>(Arena*);
-template<> ::common::Int64* Arena::CreateMaybeMessage<::common::Int64>(Arena*);
-template<> ::common::String* Arena::CreateMaybeMessage<::common::String>(Arena*);
-template<> ::common::StringArray* Arena::CreateMaybeMessage<::common::StringArray>(Arena*);
-template<> ::common::StringMap* Arena::CreateMaybeMessage<::common::StringMap>(Arena*);
-template<> ::common::StringMap_StringMapEntry_DoNotUse* Arena::CreateMaybeMessage<::common::StringMap_StringMapEntry_DoNotUse>(Arena*);
+template<> ::common::ClientCredentials* Arena::CreateMaybeMessage<::common::ClientCredentials>(Arena*);
+template<> ::common::ClientCredentials_EndpointParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::common::ClientCredentials_EndpointParamsEntry_DoNotUse>(Arena*);
+template<> ::common::Common* Arena::CreateMaybeMessage<::common::Common>(Arena*);
+template<> ::common::Common_MetaEntry_DoNotUse* Arena::CreateMaybeMessage<::common::Common_MetaEntry_DoNotUse>(Arena*);
+template<> ::common::DefaultGCPCredentials* Arena::CreateMaybeMessage<::common::DefaultGCPCredentials>(Arena*);
+template<> ::common::HTTPTask* Arena::CreateMaybeMessage<::common::HTTPTask>(Arena*);
+template<> ::common::HTTPTask_FormEntry_DoNotUse* Arena::CreateMaybeMessage<::common::HTTPTask_FormEntry_DoNotUse>(Arena*);
+template<> ::common::HTTPTask_HeadersEntry_DoNotUse* Arena::CreateMaybeMessage<::common::HTTPTask_HeadersEntry_DoNotUse>(Arena*);
+template<> ::common::JSONWebKeys* Arena::CreateMaybeMessage<::common::JSONWebKeys>(Arena*);
+template<> ::common::JWT* Arena::CreateMaybeMessage<::common::JWT>(Arena*);
+template<> ::common::Jwks* Arena::CreateMaybeMessage<::common::Jwks>(Arena*);
+template<> ::common::OAuth2* Arena::CreateMaybeMessage<::common::OAuth2>(Arena*);
+template<> ::common::PlainText* Arena::CreateMaybeMessage<::common::PlainText>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace common {
 
 // ===================================================================
 
-class String : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.String) */ {
+class Common_MetaEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<Common_MetaEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<Common_MetaEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  Common_MetaEntry_DoNotUse();
+  Common_MetaEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const Common_MetaEntry_DoNotUse& other);
+  static const Common_MetaEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const Common_MetaEntry_DoNotUse*>(&_Common_MetaEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class Common : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Common) */ {
  public:
-  String();
-  virtual ~String();
+  Common();
+  virtual ~Common();
 
-  String(const String& from);
+  Common(const Common& from);
 
-  inline String& operator=(const String& from) {
+  inline Common& operator=(const Common& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  String(String&& from) noexcept
-    : String() {
+  Common(Common&& from) noexcept
+    : Common() {
     *this = ::std::move(from);
   }
 
-  inline String& operator=(String&& from) noexcept {
+  inline Common& operator=(Common&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -125,34 +160,34 @@ class String : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const String& default_instance();
+  static const Common& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const String* internal_default_instance() {
-    return reinterpret_cast<const String*>(
-               &_String_default_instance_);
+  static inline const Common* internal_default_instance() {
+    return reinterpret_cast<const Common*>(
+               &_Common_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
-  void Swap(String* other);
-  friend void swap(String& a, String& b) {
+  void Swap(Common* other);
+  friend void swap(Common& a, Common& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline String* New() const final {
-    return CreateMaybeMessage<String>(NULL);
+  inline Common* New() const final {
+    return CreateMaybeMessage<Common>(NULL);
   }
 
-  String* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<String>(arena);
+  Common* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Common>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const String& from);
-  void MergeFrom(const String& from);
+  void CopyFrom(const Common& from);
+  void MergeFrom(const Common& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -169,7 +204,147 @@ class String : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(String* other);
+  void InternalSwap(Common* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> meta = 3;
+  int meta_size() const;
+  void clear_meta();
+  static const int kMetaFieldNumber = 3;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      meta() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_meta();
+
+  // string identifer = 1;
+  void clear_identifer();
+  static const int kIdentiferFieldNumber = 1;
+  const ::std::string& identifer() const;
+  void set_identifer(const ::std::string& value);
+  #if LANG_CXX11
+  void set_identifer(::std::string&& value);
+  #endif
+  void set_identifer(const char* value);
+  void set_identifer(const char* value, size_t size);
+  ::std::string* mutable_identifer();
+  ::std::string* release_identifer();
+  void set_allocated_identifer(::std::string* identifer);
+
+  // .google.protobuf.Any object = 2;
+  bool has_object() const;
+  void clear_object();
+  static const int kObjectFieldNumber = 2;
+  private:
+  const ::google::protobuf::Any& _internal_object() const;
+  public:
+  const ::google::protobuf::Any& object() const;
+  ::google::protobuf::Any* release_object();
+  ::google::protobuf::Any* mutable_object();
+  void set_allocated_object(::google::protobuf::Any* object);
+
+  // @@protoc_insertion_point(class_scope:common.Common)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      Common_MetaEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > meta_;
+  ::google::protobuf::internal::ArenaStringPtr identifer_;
+  ::google::protobuf::Any* object_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class PlainText : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.PlainText) */ {
+ public:
+  PlainText();
+  virtual ~PlainText();
+
+  PlainText(const PlainText& from);
+
+  inline PlainText& operator=(const PlainText& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PlainText(PlainText&& from) noexcept
+    : PlainText() {
+    *this = ::std::move(from);
+  }
+
+  inline PlainText& operator=(PlainText&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PlainText& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PlainText* internal_default_instance() {
+    return reinterpret_cast<const PlainText*>(
+               &_PlainText_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(PlainText* other);
+  friend void swap(PlainText& a, PlainText& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PlainText* New() const final {
+    return CreateMaybeMessage<PlainText>(NULL);
+  }
+
+  PlainText* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PlainText>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PlainText& from);
+  void MergeFrom(const PlainText& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PlainText* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -199,7 +374,7 @@ class String : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
   ::std::string* release_text();
   void set_allocated_text(::std::string* text);
 
-  // @@protoc_insertion_point(class_scope:common.String)
+  // @@protoc_insertion_point(class_scope:common.PlainText)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -209,24 +384,24 @@ class String : public ::google::protobuf::Message /* @@protoc_insertion_point(cl
 };
 // -------------------------------------------------------------------
 
-class StringArray : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.StringArray) */ {
+class OAuth2 : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.OAuth2) */ {
  public:
-  StringArray();
-  virtual ~StringArray();
+  OAuth2();
+  virtual ~OAuth2();
 
-  StringArray(const StringArray& from);
+  OAuth2(const OAuth2& from);
 
-  inline StringArray& operator=(const StringArray& from) {
+  inline OAuth2& operator=(const OAuth2& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  StringArray(StringArray&& from) noexcept
-    : StringArray() {
+  OAuth2(OAuth2&& from) noexcept
+    : OAuth2() {
     *this = ::std::move(from);
   }
 
-  inline StringArray& operator=(StringArray&& from) noexcept {
+  inline OAuth2& operator=(OAuth2&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -236,34 +411,34 @@ class StringArray : public ::google::protobuf::Message /* @@protoc_insertion_poi
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const StringArray& default_instance();
+  static const OAuth2& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const StringArray* internal_default_instance() {
-    return reinterpret_cast<const StringArray*>(
-               &_StringArray_default_instance_);
+  static inline const OAuth2* internal_default_instance() {
+    return reinterpret_cast<const OAuth2*>(
+               &_OAuth2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
-  void Swap(StringArray* other);
-  friend void swap(StringArray& a, StringArray& b) {
+  void Swap(OAuth2* other);
+  friend void swap(OAuth2& a, OAuth2& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline StringArray* New() const final {
-    return CreateMaybeMessage<StringArray>(NULL);
+  inline OAuth2* New() const final {
+    return CreateMaybeMessage<OAuth2>(NULL);
   }
 
-  StringArray* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<StringArray>(arena);
+  OAuth2* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<OAuth2>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const StringArray& from);
-  void MergeFrom(const StringArray& from);
+  void CopyFrom(const OAuth2& from);
+  void MergeFrom(const OAuth2& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -280,7 +455,7 @@ class StringArray : public ::google::protobuf::Message /* @@protoc_insertion_poi
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(StringArray* other);
+  void InternalSwap(OAuth2* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -296,67 +471,167 @@ class StringArray : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // repeated .common.String strings = 1;
-  int strings_size() const;
-  void clear_strings();
-  static const int kStringsFieldNumber = 1;
-  ::common::String* mutable_strings(int index);
-  ::google::protobuf::RepeatedPtrField< ::common::String >*
-      mutable_strings();
-  const ::common::String& strings(int index) const;
-  ::common::String* add_strings();
-  const ::google::protobuf::RepeatedPtrField< ::common::String >&
-      strings() const;
+  // repeated string scopes = 5;
+  int scopes_size() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 5;
+  const ::std::string& scopes(int index) const;
+  ::std::string* mutable_scopes(int index);
+  void set_scopes(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_scopes(int index, ::std::string&& value);
+  #endif
+  void set_scopes(int index, const char* value);
+  void set_scopes(int index, const char* value, size_t size);
+  ::std::string* add_scopes();
+  void add_scopes(const ::std::string& value);
+  #if LANG_CXX11
+  void add_scopes(::std::string&& value);
+  #endif
+  void add_scopes(const char* value);
+  void add_scopes(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& scopes() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_scopes();
 
-  // @@protoc_insertion_point(class_scope:common.StringArray)
+  // string client_id = 1;
+  void clear_client_id();
+  static const int kClientIdFieldNumber = 1;
+  const ::std::string& client_id() const;
+  void set_client_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_id(::std::string&& value);
+  #endif
+  void set_client_id(const char* value);
+  void set_client_id(const char* value, size_t size);
+  ::std::string* mutable_client_id();
+  ::std::string* release_client_id();
+  void set_allocated_client_id(::std::string* client_id);
+
+  // string client_secret = 2;
+  void clear_client_secret();
+  static const int kClientSecretFieldNumber = 2;
+  const ::std::string& client_secret() const;
+  void set_client_secret(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_secret(::std::string&& value);
+  #endif
+  void set_client_secret(const char* value);
+  void set_client_secret(const char* value, size_t size);
+  ::std::string* mutable_client_secret();
+  ::std::string* release_client_secret();
+  void set_allocated_client_secret(::std::string* client_secret);
+
+  // string token_url = 3;
+  void clear_token_url();
+  static const int kTokenUrlFieldNumber = 3;
+  const ::std::string& token_url() const;
+  void set_token_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token_url(::std::string&& value);
+  #endif
+  void set_token_url(const char* value);
+  void set_token_url(const char* value, size_t size);
+  ::std::string* mutable_token_url();
+  ::std::string* release_token_url();
+  void set_allocated_token_url(::std::string* token_url);
+
+  // string auth_url = 4;
+  void clear_auth_url();
+  static const int kAuthUrlFieldNumber = 4;
+  const ::std::string& auth_url() const;
+  void set_auth_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_auth_url(::std::string&& value);
+  #endif
+  void set_auth_url(const char* value);
+  void set_auth_url(const char* value, size_t size);
+  ::std::string* mutable_auth_url();
+  ::std::string* release_auth_url();
+  void set_allocated_auth_url(::std::string* auth_url);
+
+  // string redirect = 6;
+  void clear_redirect();
+  static const int kRedirectFieldNumber = 6;
+  const ::std::string& redirect() const;
+  void set_redirect(const ::std::string& value);
+  #if LANG_CXX11
+  void set_redirect(::std::string&& value);
+  #endif
+  void set_redirect(const char* value);
+  void set_redirect(const char* value, size_t size);
+  ::std::string* mutable_redirect();
+  ::std::string* release_redirect();
+  void set_allocated_redirect(::std::string* redirect);
+
+  // string code = 7;
+  void clear_code();
+  static const int kCodeFieldNumber = 7;
+  const ::std::string& code() const;
+  void set_code(const ::std::string& value);
+  #if LANG_CXX11
+  void set_code(::std::string&& value);
+  #endif
+  void set_code(const char* value);
+  void set_code(const char* value, size_t size);
+  ::std::string* mutable_code();
+  ::std::string* release_code();
+  void set_allocated_code(::std::string* code);
+
+  // @@protoc_insertion_point(class_scope:common.OAuth2)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::common::String > strings_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> scopes_;
+  ::google::protobuf::internal::ArenaStringPtr client_id_;
+  ::google::protobuf::internal::ArenaStringPtr client_secret_;
+  ::google::protobuf::internal::ArenaStringPtr token_url_;
+  ::google::protobuf::internal::ArenaStringPtr auth_url_;
+  ::google::protobuf::internal::ArenaStringPtr redirect_;
+  ::google::protobuf::internal::ArenaStringPtr code_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class StringMap_StringMapEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<StringMap_StringMapEntry_DoNotUse, 
-    ::std::string, ::common::String,
+class ClientCredentials_EndpointParamsEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<ClientCredentials_EndpointParamsEntry_DoNotUse, 
+    ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > {
 public:
-  typedef ::google::protobuf::internal::MapEntry<StringMap_StringMapEntry_DoNotUse, 
-    ::std::string, ::common::String,
+  typedef ::google::protobuf::internal::MapEntry<ClientCredentials_EndpointParamsEntry_DoNotUse, 
+    ::std::string, ::std::string,
     ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-    ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
     0 > SuperType;
-  StringMap_StringMapEntry_DoNotUse();
-  StringMap_StringMapEntry_DoNotUse(::google::protobuf::Arena* arena);
-  void MergeFrom(const StringMap_StringMapEntry_DoNotUse& other);
-  static const StringMap_StringMapEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const StringMap_StringMapEntry_DoNotUse*>(&_StringMap_StringMapEntry_DoNotUse_default_instance_); }
+  ClientCredentials_EndpointParamsEntry_DoNotUse();
+  ClientCredentials_EndpointParamsEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const ClientCredentials_EndpointParamsEntry_DoNotUse& other);
+  static const ClientCredentials_EndpointParamsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ClientCredentials_EndpointParamsEntry_DoNotUse*>(&_ClientCredentials_EndpointParamsEntry_DoNotUse_default_instance_); }
   void MergeFrom(const ::google::protobuf::Message& other) final;
   ::google::protobuf::Metadata GetMetadata() const;
 };
 
 // -------------------------------------------------------------------
 
-class StringMap : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.StringMap) */ {
+class ClientCredentials : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.ClientCredentials) */ {
  public:
-  StringMap();
-  virtual ~StringMap();
+  ClientCredentials();
+  virtual ~ClientCredentials();
 
-  StringMap(const StringMap& from);
+  ClientCredentials(const ClientCredentials& from);
 
-  inline StringMap& operator=(const StringMap& from) {
+  inline ClientCredentials& operator=(const ClientCredentials& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  StringMap(StringMap&& from) noexcept
-    : StringMap() {
+  ClientCredentials(ClientCredentials&& from) noexcept
+    : ClientCredentials() {
     *this = ::std::move(from);
   }
 
-  inline StringMap& operator=(StringMap&& from) noexcept {
+  inline ClientCredentials& operator=(ClientCredentials&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -366,242 +641,34 @@ class StringMap : public ::google::protobuf::Message /* @@protoc_insertion_point
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const StringMap& default_instance();
+  static const ClientCredentials& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const StringMap* internal_default_instance() {
-    return reinterpret_cast<const StringMap*>(
-               &_StringMap_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  void Swap(StringMap* other);
-  friend void swap(StringMap& a, StringMap& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline StringMap* New() const final {
-    return CreateMaybeMessage<StringMap>(NULL);
-  }
-
-  StringMap* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<StringMap>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const StringMap& from);
-  void MergeFrom(const StringMap& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(StringMap* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  // map<string, .common.String> string_map = 1;
-  int string_map_size() const;
-  void clear_string_map();
-  static const int kStringMapFieldNumber = 1;
-  const ::google::protobuf::Map< ::std::string, ::common::String >&
-      string_map() const;
-  ::google::protobuf::Map< ::std::string, ::common::String >*
-      mutable_string_map();
-
-  // @@protoc_insertion_point(class_scope:common.StringMap)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::MapField<
-      StringMap_StringMapEntry_DoNotUse,
-      ::std::string, ::common::String,
-      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE,
-      0 > string_map_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Empty) */ {
- public:
-  Empty();
-  virtual ~Empty();
-
-  Empty(const Empty& from);
-
-  inline Empty& operator=(const Empty& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Empty(Empty&& from) noexcept
-    : Empty() {
-    *this = ::std::move(from);
-  }
-
-  inline Empty& operator=(Empty&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Empty& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Empty* internal_default_instance() {
-    return reinterpret_cast<const Empty*>(
-               &_Empty_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    4;
-
-  void Swap(Empty* other);
-  friend void swap(Empty& a, Empty& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline Empty* New() const final {
-    return CreateMaybeMessage<Empty>(NULL);
-  }
-
-  Empty* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Empty>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Empty& from);
-  void MergeFrom(const Empty& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(Empty* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:common.Empty)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class Bool : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Bool) */ {
- public:
-  Bool();
-  virtual ~Bool();
-
-  Bool(const Bool& from);
-
-  inline Bool& operator=(const Bool& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  Bool(Bool&& from) noexcept
-    : Bool() {
-    *this = ::std::move(from);
-  }
-
-  inline Bool& operator=(Bool&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const Bool& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Bool* internal_default_instance() {
-    return reinterpret_cast<const Bool*>(
-               &_Bool_default_instance_);
+  static inline const ClientCredentials* internal_default_instance() {
+    return reinterpret_cast<const ClientCredentials*>(
+               &_ClientCredentials_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     5;
 
-  void Swap(Bool* other);
-  friend void swap(Bool& a, Bool& b) {
+  void Swap(ClientCredentials* other);
+  friend void swap(ClientCredentials& a, ClientCredentials& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Bool* New() const final {
-    return CreateMaybeMessage<Bool>(NULL);
+  inline ClientCredentials* New() const final {
+    return CreateMaybeMessage<ClientCredentials>(NULL);
   }
 
-  Bool* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Bool>(arena);
+  ClientCredentials* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ClientCredentials>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Bool& from);
-  void MergeFrom(const Bool& from);
+  void CopyFrom(const ClientCredentials& from);
+  void MergeFrom(const ClientCredentials& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -618,7 +685,7 @@ class Bool : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Bool* other);
+  void InternalSwap(ClientCredentials* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -632,42 +699,119 @@ class Bool : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
-  // bool answer = 1;
-  void clear_answer();
-  static const int kAnswerFieldNumber = 1;
-  bool answer() const;
-  void set_answer(bool value);
+  // repeated string scopes = 4;
+  int scopes_size() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 4;
+  const ::std::string& scopes(int index) const;
+  ::std::string* mutable_scopes(int index);
+  void set_scopes(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_scopes(int index, ::std::string&& value);
+  #endif
+  void set_scopes(int index, const char* value);
+  void set_scopes(int index, const char* value, size_t size);
+  ::std::string* add_scopes();
+  void add_scopes(const ::std::string& value);
+  #if LANG_CXX11
+  void add_scopes(::std::string&& value);
+  #endif
+  void add_scopes(const char* value);
+  void add_scopes(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& scopes() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_scopes();
 
-  // @@protoc_insertion_point(class_scope:common.Bool)
+  // map<string, string> endpoint_params = 5;
+  int endpoint_params_size() const;
+  void clear_endpoint_params();
+  static const int kEndpointParamsFieldNumber = 5;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      endpoint_params() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_endpoint_params();
+
+  // string client_id = 1;
+  void clear_client_id();
+  static const int kClientIdFieldNumber = 1;
+  const ::std::string& client_id() const;
+  void set_client_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_id(::std::string&& value);
+  #endif
+  void set_client_id(const char* value);
+  void set_client_id(const char* value, size_t size);
+  ::std::string* mutable_client_id();
+  ::std::string* release_client_id();
+  void set_allocated_client_id(::std::string* client_id);
+
+  // string client_secret = 2;
+  void clear_client_secret();
+  static const int kClientSecretFieldNumber = 2;
+  const ::std::string& client_secret() const;
+  void set_client_secret(const ::std::string& value);
+  #if LANG_CXX11
+  void set_client_secret(::std::string&& value);
+  #endif
+  void set_client_secret(const char* value);
+  void set_client_secret(const char* value, size_t size);
+  ::std::string* mutable_client_secret();
+  ::std::string* release_client_secret();
+  void set_allocated_client_secret(::std::string* client_secret);
+
+  // string token_url = 3;
+  void clear_token_url();
+  static const int kTokenUrlFieldNumber = 3;
+  const ::std::string& token_url() const;
+  void set_token_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token_url(::std::string&& value);
+  #endif
+  void set_token_url(const char* value);
+  void set_token_url(const char* value, size_t size);
+  ::std::string* mutable_token_url();
+  ::std::string* release_token_url();
+  void set_allocated_token_url(::std::string* token_url);
+
+  // @@protoc_insertion_point(class_scope:common.ClientCredentials)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  bool answer_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> scopes_;
+  ::google::protobuf::internal::MapField<
+      ClientCredentials_EndpointParamsEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > endpoint_params_;
+  ::google::protobuf::internal::ArenaStringPtr client_id_;
+  ::google::protobuf::internal::ArenaStringPtr client_secret_;
+  ::google::protobuf::internal::ArenaStringPtr token_url_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Identifier) */ {
+class JWT : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.JWT) */ {
  public:
-  Identifier();
-  virtual ~Identifier();
+  JWT();
+  virtual ~JWT();
 
-  Identifier(const Identifier& from);
+  JWT(const JWT& from);
 
-  inline Identifier& operator=(const Identifier& from) {
+  inline JWT& operator=(const JWT& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Identifier(Identifier&& from) noexcept
-    : Identifier() {
+  JWT(JWT&& from) noexcept
+    : JWT() {
     *this = ::std::move(from);
   }
 
-  inline Identifier& operator=(Identifier&& from) noexcept {
+  inline JWT& operator=(JWT&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -677,34 +821,34 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Identifier& default_instance();
+  static const JWT& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Identifier* internal_default_instance() {
-    return reinterpret_cast<const Identifier*>(
-               &_Identifier_default_instance_);
+  static inline const JWT* internal_default_instance() {
+    return reinterpret_cast<const JWT*>(
+               &_JWT_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     6;
 
-  void Swap(Identifier* other);
-  friend void swap(Identifier& a, Identifier& b) {
+  void Swap(JWT* other);
+  friend void swap(JWT& a, JWT& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Identifier* New() const final {
-    return CreateMaybeMessage<Identifier>(NULL);
+  inline JWT* New() const final {
+    return CreateMaybeMessage<JWT>(NULL);
   }
 
-  Identifier* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Identifier>(arena);
+  JWT* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JWT>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Identifier& from);
-  void MergeFrom(const Identifier& from);
+  void CopyFrom(const JWT& from);
+  void MergeFrom(const JWT& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -721,7 +865,7 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Identifier* other);
+  void InternalSwap(JWT* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -737,46 +881,159 @@ class Identifier : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // .common.String id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  private:
-  const ::common::String& _internal_id() const;
-  public:
-  const ::common::String& id() const;
-  ::common::String* release_id();
-  ::common::String* mutable_id();
-  void set_allocated_id(::common::String* id);
+  // repeated string scopes = 5;
+  int scopes_size() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 5;
+  const ::std::string& scopes(int index) const;
+  ::std::string* mutable_scopes(int index);
+  void set_scopes(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_scopes(int index, ::std::string&& value);
+  #endif
+  void set_scopes(int index, const char* value);
+  void set_scopes(int index, const char* value, size_t size);
+  ::std::string* add_scopes();
+  void add_scopes(const ::std::string& value);
+  #if LANG_CXX11
+  void add_scopes(::std::string&& value);
+  #endif
+  void add_scopes(const char* value);
+  void add_scopes(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& scopes() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_scopes();
 
-  // @@protoc_insertion_point(class_scope:common.Identifier)
+  // string email = 1;
+  void clear_email();
+  static const int kEmailFieldNumber = 1;
+  const ::std::string& email() const;
+  void set_email(const ::std::string& value);
+  #if LANG_CXX11
+  void set_email(::std::string&& value);
+  #endif
+  void set_email(const char* value);
+  void set_email(const char* value, size_t size);
+  ::std::string* mutable_email();
+  ::std::string* release_email();
+  void set_allocated_email(::std::string* email);
+
+  // bytes private_key = 2;
+  void clear_private_key();
+  static const int kPrivateKeyFieldNumber = 2;
+  const ::std::string& private_key() const;
+  void set_private_key(const ::std::string& value);
+  #if LANG_CXX11
+  void set_private_key(::std::string&& value);
+  #endif
+  void set_private_key(const char* value);
+  void set_private_key(const void* value, size_t size);
+  ::std::string* mutable_private_key();
+  ::std::string* release_private_key();
+  void set_allocated_private_key(::std::string* private_key);
+
+  // string prive_key_id = 3;
+  void clear_prive_key_id();
+  static const int kPriveKeyIdFieldNumber = 3;
+  const ::std::string& prive_key_id() const;
+  void set_prive_key_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_prive_key_id(::std::string&& value);
+  #endif
+  void set_prive_key_id(const char* value);
+  void set_prive_key_id(const char* value, size_t size);
+  ::std::string* mutable_prive_key_id();
+  ::std::string* release_prive_key_id();
+  void set_allocated_prive_key_id(::std::string* prive_key_id);
+
+  // string subject = 4;
+  void clear_subject();
+  static const int kSubjectFieldNumber = 4;
+  const ::std::string& subject() const;
+  void set_subject(const ::std::string& value);
+  #if LANG_CXX11
+  void set_subject(::std::string&& value);
+  #endif
+  void set_subject(const char* value);
+  void set_subject(const char* value, size_t size);
+  ::std::string* mutable_subject();
+  ::std::string* release_subject();
+  void set_allocated_subject(::std::string* subject);
+
+  // string token_url = 6;
+  void clear_token_url();
+  static const int kTokenUrlFieldNumber = 6;
+  const ::std::string& token_url() const;
+  void set_token_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_token_url(::std::string&& value);
+  #endif
+  void set_token_url(const char* value);
+  void set_token_url(const char* value, size_t size);
+  ::std::string* mutable_token_url();
+  ::std::string* release_token_url();
+  void set_allocated_token_url(::std::string* token_url);
+
+  // string audience = 8;
+  void clear_audience();
+  static const int kAudienceFieldNumber = 8;
+  const ::std::string& audience() const;
+  void set_audience(const ::std::string& value);
+  #if LANG_CXX11
+  void set_audience(::std::string&& value);
+  #endif
+  void set_audience(const char* value);
+  void set_audience(const char* value, size_t size);
+  ::std::string* mutable_audience();
+  ::std::string* release_audience();
+  void set_allocated_audience(::std::string* audience);
+
+  // .google.protobuf.Timestamp expires = 7;
+  bool has_expires() const;
+  void clear_expires();
+  static const int kExpiresFieldNumber = 7;
+  private:
+  const ::google::protobuf::Timestamp& _internal_expires() const;
+  public:
+  const ::google::protobuf::Timestamp& expires() const;
+  ::google::protobuf::Timestamp* release_expires();
+  ::google::protobuf::Timestamp* mutable_expires();
+  void set_allocated_expires(::google::protobuf::Timestamp* expires);
+
+  // @@protoc_insertion_point(class_scope:common.JWT)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* id_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> scopes_;
+  ::google::protobuf::internal::ArenaStringPtr email_;
+  ::google::protobuf::internal::ArenaStringPtr private_key_;
+  ::google::protobuf::internal::ArenaStringPtr prive_key_id_;
+  ::google::protobuf::internal::ArenaStringPtr subject_;
+  ::google::protobuf::internal::ArenaStringPtr token_url_;
+  ::google::protobuf::internal::ArenaStringPtr audience_;
+  ::google::protobuf::Timestamp* expires_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.AuthToken) */ {
+class DefaultGCPCredentials : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.DefaultGCPCredentials) */ {
  public:
-  AuthToken();
-  virtual ~AuthToken();
+  DefaultGCPCredentials();
+  virtual ~DefaultGCPCredentials();
 
-  AuthToken(const AuthToken& from);
+  DefaultGCPCredentials(const DefaultGCPCredentials& from);
 
-  inline AuthToken& operator=(const AuthToken& from) {
+  inline DefaultGCPCredentials& operator=(const DefaultGCPCredentials& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  AuthToken(AuthToken&& from) noexcept
-    : AuthToken() {
+  DefaultGCPCredentials(DefaultGCPCredentials&& from) noexcept
+    : DefaultGCPCredentials() {
     *this = ::std::move(from);
   }
 
-  inline AuthToken& operator=(AuthToken&& from) noexcept {
+  inline DefaultGCPCredentials& operator=(DefaultGCPCredentials&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -786,34 +1043,34 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const AuthToken& default_instance();
+  static const DefaultGCPCredentials& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const AuthToken* internal_default_instance() {
-    return reinterpret_cast<const AuthToken*>(
-               &_AuthToken_default_instance_);
+  static inline const DefaultGCPCredentials* internal_default_instance() {
+    return reinterpret_cast<const DefaultGCPCredentials*>(
+               &_DefaultGCPCredentials_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     7;
 
-  void Swap(AuthToken* other);
-  friend void swap(AuthToken& a, AuthToken& b) {
+  void Swap(DefaultGCPCredentials* other);
+  friend void swap(DefaultGCPCredentials& a, DefaultGCPCredentials& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline AuthToken* New() const final {
-    return CreateMaybeMessage<AuthToken>(NULL);
+  inline DefaultGCPCredentials* New() const final {
+    return CreateMaybeMessage<DefaultGCPCredentials>(NULL);
   }
 
-  AuthToken* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<AuthToken>(arena);
+  DefaultGCPCredentials* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DefaultGCPCredentials>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const AuthToken& from);
-  void MergeFrom(const AuthToken& from);
+  void CopyFrom(const DefaultGCPCredentials& from);
+  void MergeFrom(const DefaultGCPCredentials& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -830,7 +1087,7 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(AuthToken* other);
+  void InternalSwap(DefaultGCPCredentials* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -846,46 +1103,56 @@ class AuthToken : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   // accessors -------------------------------------------------------
 
-  // .common.String token = 1;
-  bool has_token() const;
-  void clear_token();
-  static const int kTokenFieldNumber = 1;
-  private:
-  const ::common::String& _internal_token() const;
-  public:
-  const ::common::String& token() const;
-  ::common::String* release_token();
-  ::common::String* mutable_token();
-  void set_allocated_token(::common::String* token);
+  // repeated string scopes = 1;
+  int scopes_size() const;
+  void clear_scopes();
+  static const int kScopesFieldNumber = 1;
+  const ::std::string& scopes(int index) const;
+  ::std::string* mutable_scopes(int index);
+  void set_scopes(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_scopes(int index, ::std::string&& value);
+  #endif
+  void set_scopes(int index, const char* value);
+  void set_scopes(int index, const char* value, size_t size);
+  ::std::string* add_scopes();
+  void add_scopes(const ::std::string& value);
+  #if LANG_CXX11
+  void add_scopes(::std::string&& value);
+  #endif
+  void add_scopes(const char* value);
+  void add_scopes(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& scopes() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_scopes();
 
-  // @@protoc_insertion_point(class_scope:common.AuthToken)
+  // @@protoc_insertion_point(class_scope:common.DefaultGCPCredentials)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::common::String* token_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> scopes_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Int64) */ {
+class JSONWebKeys : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.JSONWebKeys) */ {
  public:
-  Int64();
-  virtual ~Int64();
+  JSONWebKeys();
+  virtual ~JSONWebKeys();
 
-  Int64(const Int64& from);
+  JSONWebKeys(const JSONWebKeys& from);
 
-  inline Int64& operator=(const Int64& from) {
+  inline JSONWebKeys& operator=(const JSONWebKeys& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Int64(Int64&& from) noexcept
-    : Int64() {
+  JSONWebKeys(JSONWebKeys&& from) noexcept
+    : JSONWebKeys() {
     *this = ::std::move(from);
   }
 
-  inline Int64& operator=(Int64&& from) noexcept {
+  inline JSONWebKeys& operator=(JSONWebKeys&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -895,34 +1162,34 @@ class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Int64& default_instance();
+  static const JSONWebKeys& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Int64* internal_default_instance() {
-    return reinterpret_cast<const Int64*>(
-               &_Int64_default_instance_);
+  static inline const JSONWebKeys* internal_default_instance() {
+    return reinterpret_cast<const JSONWebKeys*>(
+               &_JSONWebKeys_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     8;
 
-  void Swap(Int64* other);
-  friend void swap(Int64& a, Int64& b) {
+  void Swap(JSONWebKeys* other);
+  friend void swap(JSONWebKeys& a, JSONWebKeys& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Int64* New() const final {
-    return CreateMaybeMessage<Int64>(NULL);
+  inline JSONWebKeys* New() const final {
+    return CreateMaybeMessage<JSONWebKeys>(NULL);
   }
 
-  Int64* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Int64>(arena);
+  JSONWebKeys* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JSONWebKeys>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Int64& from);
-  void MergeFrom(const Int64& from);
+  void CopyFrom(const JSONWebKeys& from);
+  void MergeFrom(const JSONWebKeys& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -939,7 +1206,7 @@ class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Int64* other);
+  void InternalSwap(JSONWebKeys* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -955,40 +1222,131 @@ class Int64 : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // int64 num = 1;
-  void clear_num();
-  static const int kNumFieldNumber = 1;
-  ::google::protobuf::int64 num() const;
-  void set_num(::google::protobuf::int64 value);
+  // repeated string x5c = 6;
+  int x5c_size() const;
+  void clear_x5c();
+  static const int kX5CFieldNumber = 6;
+  const ::std::string& x5c(int index) const;
+  ::std::string* mutable_x5c(int index);
+  void set_x5c(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_x5c(int index, ::std::string&& value);
+  #endif
+  void set_x5c(int index, const char* value);
+  void set_x5c(int index, const char* value, size_t size);
+  ::std::string* add_x5c();
+  void add_x5c(const ::std::string& value);
+  #if LANG_CXX11
+  void add_x5c(::std::string&& value);
+  #endif
+  void add_x5c(const char* value);
+  void add_x5c(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& x5c() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_x5c();
 
-  // @@protoc_insertion_point(class_scope:common.Int64)
+  // string kty = 1;
+  void clear_kty();
+  static const int kKtyFieldNumber = 1;
+  const ::std::string& kty() const;
+  void set_kty(const ::std::string& value);
+  #if LANG_CXX11
+  void set_kty(::std::string&& value);
+  #endif
+  void set_kty(const char* value);
+  void set_kty(const char* value, size_t size);
+  ::std::string* mutable_kty();
+  ::std::string* release_kty();
+  void set_allocated_kty(::std::string* kty);
+
+  // string kid = 2;
+  void clear_kid();
+  static const int kKidFieldNumber = 2;
+  const ::std::string& kid() const;
+  void set_kid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_kid(::std::string&& value);
+  #endif
+  void set_kid(const char* value);
+  void set_kid(const char* value, size_t size);
+  ::std::string* mutable_kid();
+  ::std::string* release_kid();
+  void set_allocated_kid(::std::string* kid);
+
+  // string use = 3;
+  void clear_use();
+  static const int kUseFieldNumber = 3;
+  const ::std::string& use() const;
+  void set_use(const ::std::string& value);
+  #if LANG_CXX11
+  void set_use(::std::string&& value);
+  #endif
+  void set_use(const char* value);
+  void set_use(const char* value, size_t size);
+  ::std::string* mutable_use();
+  ::std::string* release_use();
+  void set_allocated_use(::std::string* use);
+
+  // string n = 4;
+  void clear_n();
+  static const int kNFieldNumber = 4;
+  const ::std::string& n() const;
+  void set_n(const ::std::string& value);
+  #if LANG_CXX11
+  void set_n(::std::string&& value);
+  #endif
+  void set_n(const char* value);
+  void set_n(const char* value, size_t size);
+  ::std::string* mutable_n();
+  ::std::string* release_n();
+  void set_allocated_n(::std::string* n);
+
+  // string e = 5;
+  void clear_e();
+  static const int kEFieldNumber = 5;
+  const ::std::string& e() const;
+  void set_e(const ::std::string& value);
+  #if LANG_CXX11
+  void set_e(::std::string&& value);
+  #endif
+  void set_e(const char* value);
+  void set_e(const char* value, size_t size);
+  ::std::string* mutable_e();
+  ::std::string* release_e();
+  void set_allocated_e(::std::string* e);
+
+  // @@protoc_insertion_point(class_scope:common.JSONWebKeys)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 num_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> x5c_;
+  ::google::protobuf::internal::ArenaStringPtr kty_;
+  ::google::protobuf::internal::ArenaStringPtr kid_;
+  ::google::protobuf::internal::ArenaStringPtr use_;
+  ::google::protobuf::internal::ArenaStringPtr n_;
+  ::google::protobuf::internal::ArenaStringPtr e_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
 
-class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Float64) */ {
+class Jwks : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.Jwks) */ {
  public:
-  Float64();
-  virtual ~Float64();
+  Jwks();
+  virtual ~Jwks();
 
-  Float64(const Float64& from);
+  Jwks(const Jwks& from);
 
-  inline Float64& operator=(const Float64& from) {
+  inline Jwks& operator=(const Jwks& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Float64(Float64&& from) noexcept
-    : Float64() {
+  Jwks(Jwks&& from) noexcept
+    : Jwks() {
     *this = ::std::move(from);
   }
 
-  inline Float64& operator=(Float64&& from) noexcept {
+  inline Jwks& operator=(Jwks&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -998,34 +1356,34 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Float64& default_instance();
+  static const Jwks& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Float64* internal_default_instance() {
-    return reinterpret_cast<const Float64*>(
-               &_Float64_default_instance_);
+  static inline const Jwks* internal_default_instance() {
+    return reinterpret_cast<const Jwks*>(
+               &_Jwks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     9;
 
-  void Swap(Float64* other);
-  friend void swap(Float64& a, Float64& b) {
+  void Swap(Jwks* other);
+  friend void swap(Jwks& a, Jwks& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Float64* New() const final {
-    return CreateMaybeMessage<Float64>(NULL);
+  inline Jwks* New() const final {
+    return CreateMaybeMessage<Jwks>(NULL);
   }
 
-  Float64* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Float64>(arena);
+  Jwks* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Jwks>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Float64& from);
-  void MergeFrom(const Float64& from);
+  void CopyFrom(const Jwks& from);
+  void MergeFrom(const Jwks& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -1042,7 +1400,7 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Float64* other);
+  void InternalSwap(Jwks* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -1058,17 +1416,248 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
 
   // accessors -------------------------------------------------------
 
-  // double num = 1;
-  void clear_num();
-  static const int kNumFieldNumber = 1;
-  double num() const;
-  void set_num(double value);
+  // repeated .common.JSONWebKeys keys = 1;
+  int keys_size() const;
+  void clear_keys();
+  static const int kKeysFieldNumber = 1;
+  ::common::JSONWebKeys* mutable_keys(int index);
+  ::google::protobuf::RepeatedPtrField< ::common::JSONWebKeys >*
+      mutable_keys();
+  const ::common::JSONWebKeys& keys(int index) const;
+  ::common::JSONWebKeys* add_keys();
+  const ::google::protobuf::RepeatedPtrField< ::common::JSONWebKeys >&
+      keys() const;
 
-  // @@protoc_insertion_point(class_scope:common.Float64)
+  // @@protoc_insertion_point(class_scope:common.Jwks)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  double num_;
+  ::google::protobuf::RepeatedPtrField< ::common::JSONWebKeys > keys_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class HTTPTask_HeadersEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<HTTPTask_HeadersEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<HTTPTask_HeadersEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  HTTPTask_HeadersEntry_DoNotUse();
+  HTTPTask_HeadersEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const HTTPTask_HeadersEntry_DoNotUse& other);
+  static const HTTPTask_HeadersEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const HTTPTask_HeadersEntry_DoNotUse*>(&_HTTPTask_HeadersEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class HTTPTask_FormEntry_DoNotUse : public ::google::protobuf::internal::MapEntry<HTTPTask_FormEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::google::protobuf::internal::MapEntry<HTTPTask_FormEntry_DoNotUse, 
+    ::std::string, ::std::string,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  HTTPTask_FormEntry_DoNotUse();
+  HTTPTask_FormEntry_DoNotUse(::google::protobuf::Arena* arena);
+  void MergeFrom(const HTTPTask_FormEntry_DoNotUse& other);
+  static const HTTPTask_FormEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const HTTPTask_FormEntry_DoNotUse*>(&_HTTPTask_FormEntry_DoNotUse_default_instance_); }
+  void MergeFrom(const ::google::protobuf::Message& other) final;
+  ::google::protobuf::Metadata GetMetadata() const;
+};
+
+// -------------------------------------------------------------------
+
+class HTTPTask : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:common.HTTPTask) */ {
+ public:
+  HTTPTask();
+  virtual ~HTTPTask();
+
+  HTTPTask(const HTTPTask& from);
+
+  inline HTTPTask& operator=(const HTTPTask& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  HTTPTask(HTTPTask&& from) noexcept
+    : HTTPTask() {
+    *this = ::std::move(from);
+  }
+
+  inline HTTPTask& operator=(HTTPTask&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const HTTPTask& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const HTTPTask* internal_default_instance() {
+    return reinterpret_cast<const HTTPTask*>(
+               &_HTTPTask_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  void Swap(HTTPTask* other);
+  friend void swap(HTTPTask& a, HTTPTask& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HTTPTask* New() const final {
+    return CreateMaybeMessage<HTTPTask>(NULL);
+  }
+
+  HTTPTask* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<HTTPTask>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const HTTPTask& from);
+  void MergeFrom(const HTTPTask& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HTTPTask* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  // map<string, string> headers = 2;
+  int headers_size() const;
+  void clear_headers();
+  static const int kHeadersFieldNumber = 2;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      headers() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_headers();
+
+  // map<string, string> form = 3;
+  int form_size() const;
+  void clear_form();
+  static const int kFormFieldNumber = 3;
+  const ::google::protobuf::Map< ::std::string, ::std::string >&
+      form() const;
+  ::google::protobuf::Map< ::std::string, ::std::string >*
+      mutable_form();
+
+  // string url = 1;
+  void clear_url();
+  static const int kUrlFieldNumber = 1;
+  const ::std::string& url() const;
+  void set_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_url(::std::string&& value);
+  #endif
+  void set_url(const char* value);
+  void set_url(const char* value, size_t size);
+  ::std::string* mutable_url();
+  ::std::string* release_url();
+  void set_allocated_url(::std::string* url);
+
+  // string callback_url = 6;
+  void clear_callback_url();
+  static const int kCallbackUrlFieldNumber = 6;
+  const ::std::string& callback_url() const;
+  void set_callback_url(const ::std::string& value);
+  #if LANG_CXX11
+  void set_callback_url(::std::string&& value);
+  #endif
+  void set_callback_url(const char* value);
+  void set_callback_url(const char* value, size_t size);
+  ::std::string* mutable_callback_url();
+  ::std::string* release_callback_url();
+  void set_allocated_callback_url(::std::string* callback_url);
+
+  // .google.protobuf.Any body = 4;
+  bool has_body() const;
+  void clear_body();
+  static const int kBodyFieldNumber = 4;
+  private:
+  const ::google::protobuf::Any& _internal_body() const;
+  public:
+  const ::google::protobuf::Any& body() const;
+  ::google::protobuf::Any* release_body();
+  ::google::protobuf::Any* mutable_body();
+  void set_allocated_body(::google::protobuf::Any* body);
+
+  // .google.protobuf.Timestamp schedule = 5;
+  bool has_schedule() const;
+  void clear_schedule();
+  static const int kScheduleFieldNumber = 5;
+  private:
+  const ::google::protobuf::Timestamp& _internal_schedule() const;
+  public:
+  const ::google::protobuf::Timestamp& schedule() const;
+  ::google::protobuf::Timestamp* release_schedule();
+  ::google::protobuf::Timestamp* mutable_schedule();
+  void set_allocated_schedule(::google::protobuf::Timestamp* schedule);
+
+  // @@protoc_insertion_point(class_scope:common.HTTPTask)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::MapField<
+      HTTPTask_HeadersEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > headers_;
+  ::google::protobuf::internal::MapField<
+      HTTPTask_FormEntry_DoNotUse,
+      ::std::string, ::std::string,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+      0 > form_;
+  ::google::protobuf::internal::ArenaStringPtr url_;
+  ::google::protobuf::internal::ArenaStringPtr callback_url_;
+  ::google::protobuf::Any* body_;
+  ::google::protobuf::Timestamp* schedule_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_common_2fcommon_2eproto::TableStruct;
 };
@@ -1081,296 +1670,1970 @@ class Float64 : public ::google::protobuf::Message /* @@protoc_insertion_point(c
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// String
+// -------------------------------------------------------------------
 
-// string text = 1;
-inline void String::clear_text() {
-  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// Common
+
+// string identifer = 1;
+inline void Common::clear_identifer() {
+  identifer_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& String::text() const {
-  // @@protoc_insertion_point(field_get:common.String.text)
-  return text_.GetNoArena();
+inline const ::std::string& Common::identifer() const {
+  // @@protoc_insertion_point(field_get:common.Common.identifer)
+  return identifer_.GetNoArena();
 }
-inline void String::set_text(const ::std::string& value) {
+inline void Common::set_identifer(const ::std::string& value) {
   
-  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:common.String.text)
+  identifer_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.Common.identifer)
 }
 #if LANG_CXX11
-inline void String::set_text(::std::string&& value) {
+inline void Common::set_identifer(::std::string&& value) {
+  
+  identifer_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.Common.identifer)
+}
+#endif
+inline void Common::set_identifer(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  identifer_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.Common.identifer)
+}
+inline void Common::set_identifer(const char* value, size_t size) {
+  
+  identifer_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.Common.identifer)
+}
+inline ::std::string* Common::mutable_identifer() {
+  
+  // @@protoc_insertion_point(field_mutable:common.Common.identifer)
+  return identifer_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Common::release_identifer() {
+  // @@protoc_insertion_point(field_release:common.Common.identifer)
+  
+  return identifer_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Common::set_allocated_identifer(::std::string* identifer) {
+  if (identifer != NULL) {
+    
+  } else {
+    
+  }
+  identifer_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifer);
+  // @@protoc_insertion_point(field_set_allocated:common.Common.identifer)
+}
+
+// .google.protobuf.Any object = 2;
+inline bool Common::has_object() const {
+  return this != internal_default_instance() && object_ != NULL;
+}
+inline const ::google::protobuf::Any& Common::_internal_object() const {
+  return *object_;
+}
+inline const ::google::protobuf::Any& Common::object() const {
+  const ::google::protobuf::Any* p = object_;
+  // @@protoc_insertion_point(field_get:common.Common.object)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Any*>(
+      &::google::protobuf::_Any_default_instance_);
+}
+inline ::google::protobuf::Any* Common::release_object() {
+  // @@protoc_insertion_point(field_release:common.Common.object)
+  
+  ::google::protobuf::Any* temp = object_;
+  object_ = NULL;
+  return temp;
+}
+inline ::google::protobuf::Any* Common::mutable_object() {
+  
+  if (object_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Any>(GetArenaNoVirtual());
+    object_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.Common.object)
+  return object_;
+}
+inline void Common::set_allocated_object(::google::protobuf::Any* object) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(object_);
+  }
+  if (object) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      object = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, object, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  object_ = object;
+  // @@protoc_insertion_point(field_set_allocated:common.Common.object)
+}
+
+// map<string, string> meta = 3;
+inline int Common::meta_size() const {
+  return meta_.size();
+}
+inline void Common::clear_meta() {
+  meta_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+Common::meta() const {
+  // @@protoc_insertion_point(field_map:common.Common.meta)
+  return meta_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+Common::mutable_meta() {
+  // @@protoc_insertion_point(field_mutable_map:common.Common.meta)
+  return meta_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
+// PlainText
+
+// string text = 1;
+inline void PlainText::clear_text() {
+  text_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& PlainText::text() const {
+  // @@protoc_insertion_point(field_get:common.PlainText.text)
+  return text_.GetNoArena();
+}
+inline void PlainText::set_text(const ::std::string& value) {
+  
+  text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.PlainText.text)
+}
+#if LANG_CXX11
+inline void PlainText::set_text(::std::string&& value) {
   
   text_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:common.String.text)
+  // @@protoc_insertion_point(field_set_rvalue:common.PlainText.text)
 }
 #endif
-inline void String::set_text(const char* value) {
+inline void PlainText::set_text(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:common.String.text)
+  // @@protoc_insertion_point(field_set_char:common.PlainText.text)
 }
-inline void String::set_text(const char* value, size_t size) {
+inline void PlainText::set_text(const char* value, size_t size) {
   
   text_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:common.String.text)
+  // @@protoc_insertion_point(field_set_pointer:common.PlainText.text)
 }
-inline ::std::string* String::mutable_text() {
+inline ::std::string* PlainText::mutable_text() {
   
-  // @@protoc_insertion_point(field_mutable:common.String.text)
+  // @@protoc_insertion_point(field_mutable:common.PlainText.text)
   return text_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* String::release_text() {
-  // @@protoc_insertion_point(field_release:common.String.text)
+inline ::std::string* PlainText::release_text() {
+  // @@protoc_insertion_point(field_release:common.PlainText.text)
   
   return text_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void String::set_allocated_text(::std::string* text) {
+inline void PlainText::set_allocated_text(::std::string* text) {
   if (text != NULL) {
     
   } else {
     
   }
   text_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), text);
-  // @@protoc_insertion_point(field_set_allocated:common.String.text)
+  // @@protoc_insertion_point(field_set_allocated:common.PlainText.text)
 }
 
 // -------------------------------------------------------------------
 
-// StringArray
+// OAuth2
 
-// repeated .common.String strings = 1;
-inline int StringArray::strings_size() const {
-  return strings_.size();
+// string client_id = 1;
+inline void OAuth2::clear_client_id() {
+  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void StringArray::clear_strings() {
-  strings_.Clear();
+inline const ::std::string& OAuth2::client_id() const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.client_id)
+  return client_id_.GetNoArena();
 }
-inline ::common::String* StringArray::mutable_strings(int index) {
-  // @@protoc_insertion_point(field_mutable:common.StringArray.strings)
-  return strings_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::common::String >*
-StringArray::mutable_strings() {
-  // @@protoc_insertion_point(field_mutable_list:common.StringArray.strings)
-  return &strings_;
-}
-inline const ::common::String& StringArray::strings(int index) const {
-  // @@protoc_insertion_point(field_get:common.StringArray.strings)
-  return strings_.Get(index);
-}
-inline ::common::String* StringArray::add_strings() {
-  // @@protoc_insertion_point(field_add:common.StringArray.strings)
-  return strings_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::common::String >&
-StringArray::strings() const {
-  // @@protoc_insertion_point(field_list:common.StringArray.strings)
-  return strings_;
-}
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// StringMap
-
-// map<string, .common.String> string_map = 1;
-inline int StringMap::string_map_size() const {
-  return string_map_.size();
-}
-inline void StringMap::clear_string_map() {
-  string_map_.Clear();
-}
-inline const ::google::protobuf::Map< ::std::string, ::common::String >&
-StringMap::string_map() const {
-  // @@protoc_insertion_point(field_map:common.StringMap.string_map)
-  return string_map_.GetMap();
-}
-inline ::google::protobuf::Map< ::std::string, ::common::String >*
-StringMap::mutable_string_map() {
-  // @@protoc_insertion_point(field_mutable_map:common.StringMap.string_map)
-  return string_map_.MutableMap();
-}
-
-// -------------------------------------------------------------------
-
-// Empty
-
-// -------------------------------------------------------------------
-
-// Bool
-
-// bool answer = 1;
-inline void Bool::clear_answer() {
-  answer_ = false;
-}
-inline bool Bool::answer() const {
-  // @@protoc_insertion_point(field_get:common.Bool.answer)
-  return answer_;
-}
-inline void Bool::set_answer(bool value) {
+inline void OAuth2::set_client_id(const ::std::string& value) {
   
-  answer_ = value;
-  // @@protoc_insertion_point(field_set:common.Bool.answer)
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.OAuth2.client_id)
 }
-
-// -------------------------------------------------------------------
-
-// Identifier
-
-// .common.String id = 1;
-inline bool Identifier::has_id() const {
-  return this != internal_default_instance() && id_ != NULL;
+#if LANG_CXX11
+inline void OAuth2::set_client_id(::std::string&& value) {
+  
+  client_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.OAuth2.client_id)
 }
-inline void Identifier::clear_id() {
-  if (GetArenaNoVirtual() == NULL && id_ != NULL) {
-    delete id_;
+#endif
+inline void OAuth2::set_client_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.client_id)
+}
+inline void OAuth2::set_client_id(const char* value, size_t size) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.client_id)
+}
+inline ::std::string* OAuth2::mutable_client_id() {
+  
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.client_id)
+  return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OAuth2::release_client_id() {
+  // @@protoc_insertion_point(field_release:common.OAuth2.client_id)
+  
+  return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OAuth2::set_allocated_client_id(::std::string* client_id) {
+  if (client_id != NULL) {
+    
+  } else {
+    
   }
-  id_ = NULL;
+  client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
+  // @@protoc_insertion_point(field_set_allocated:common.OAuth2.client_id)
 }
-inline const ::common::String& Identifier::_internal_id() const {
-  return *id_;
+
+// string client_secret = 2;
+inline void OAuth2::clear_client_secret() {
+  client_secret_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::common::String& Identifier::id() const {
-  const ::common::String* p = id_;
-  // @@protoc_insertion_point(field_get:common.Identifier.id)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
+inline const ::std::string& OAuth2::client_secret() const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.client_secret)
+  return client_secret_.GetNoArena();
 }
-inline ::common::String* Identifier::release_id() {
-  // @@protoc_insertion_point(field_release:common.Identifier.id)
+inline void OAuth2::set_client_secret(const ::std::string& value) {
   
-  ::common::String* temp = id_;
-  id_ = NULL;
+  client_secret_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.OAuth2.client_secret)
+}
+#if LANG_CXX11
+inline void OAuth2::set_client_secret(::std::string&& value) {
+  
+  client_secret_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.OAuth2.client_secret)
+}
+#endif
+inline void OAuth2::set_client_secret(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  client_secret_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.client_secret)
+}
+inline void OAuth2::set_client_secret(const char* value, size_t size) {
+  
+  client_secret_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.client_secret)
+}
+inline ::std::string* OAuth2::mutable_client_secret() {
+  
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.client_secret)
+  return client_secret_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OAuth2::release_client_secret() {
+  // @@protoc_insertion_point(field_release:common.OAuth2.client_secret)
+  
+  return client_secret_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OAuth2::set_allocated_client_secret(::std::string* client_secret) {
+  if (client_secret != NULL) {
+    
+  } else {
+    
+  }
+  client_secret_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_secret);
+  // @@protoc_insertion_point(field_set_allocated:common.OAuth2.client_secret)
+}
+
+// string token_url = 3;
+inline void OAuth2::clear_token_url() {
+  token_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& OAuth2::token_url() const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.token_url)
+  return token_url_.GetNoArena();
+}
+inline void OAuth2::set_token_url(const ::std::string& value) {
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.OAuth2.token_url)
+}
+#if LANG_CXX11
+inline void OAuth2::set_token_url(::std::string&& value) {
+  
+  token_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.OAuth2.token_url)
+}
+#endif
+inline void OAuth2::set_token_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.token_url)
+}
+inline void OAuth2::set_token_url(const char* value, size_t size) {
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.token_url)
+}
+inline ::std::string* OAuth2::mutable_token_url() {
+  
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.token_url)
+  return token_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OAuth2::release_token_url() {
+  // @@protoc_insertion_point(field_release:common.OAuth2.token_url)
+  
+  return token_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OAuth2::set_allocated_token_url(::std::string* token_url) {
+  if (token_url != NULL) {
+    
+  } else {
+    
+  }
+  token_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token_url);
+  // @@protoc_insertion_point(field_set_allocated:common.OAuth2.token_url)
+}
+
+// string auth_url = 4;
+inline void OAuth2::clear_auth_url() {
+  auth_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& OAuth2::auth_url() const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.auth_url)
+  return auth_url_.GetNoArena();
+}
+inline void OAuth2::set_auth_url(const ::std::string& value) {
+  
+  auth_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.OAuth2.auth_url)
+}
+#if LANG_CXX11
+inline void OAuth2::set_auth_url(::std::string&& value) {
+  
+  auth_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.OAuth2.auth_url)
+}
+#endif
+inline void OAuth2::set_auth_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  auth_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.auth_url)
+}
+inline void OAuth2::set_auth_url(const char* value, size_t size) {
+  
+  auth_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.auth_url)
+}
+inline ::std::string* OAuth2::mutable_auth_url() {
+  
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.auth_url)
+  return auth_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OAuth2::release_auth_url() {
+  // @@protoc_insertion_point(field_release:common.OAuth2.auth_url)
+  
+  return auth_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OAuth2::set_allocated_auth_url(::std::string* auth_url) {
+  if (auth_url != NULL) {
+    
+  } else {
+    
+  }
+  auth_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), auth_url);
+  // @@protoc_insertion_point(field_set_allocated:common.OAuth2.auth_url)
+}
+
+// repeated string scopes = 5;
+inline int OAuth2::scopes_size() const {
+  return scopes_.size();
+}
+inline void OAuth2::clear_scopes() {
+  scopes_.Clear();
+}
+inline const ::std::string& OAuth2::scopes(int index) const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.scopes)
+  return scopes_.Get(index);
+}
+inline ::std::string* OAuth2::mutable_scopes(int index) {
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.scopes)
+  return scopes_.Mutable(index);
+}
+inline void OAuth2::set_scopes(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:common.OAuth2.scopes)
+  scopes_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void OAuth2::set_scopes(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:common.OAuth2.scopes)
+  scopes_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void OAuth2::set_scopes(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.scopes)
+}
+inline void OAuth2::set_scopes(int index, const char* value, size_t size) {
+  scopes_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.scopes)
+}
+inline ::std::string* OAuth2::add_scopes() {
+  // @@protoc_insertion_point(field_add_mutable:common.OAuth2.scopes)
+  return scopes_.Add();
+}
+inline void OAuth2::add_scopes(const ::std::string& value) {
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:common.OAuth2.scopes)
+}
+#if LANG_CXX11
+inline void OAuth2::add_scopes(::std::string&& value) {
+  scopes_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:common.OAuth2.scopes)
+}
+#endif
+inline void OAuth2::add_scopes(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:common.OAuth2.scopes)
+}
+inline void OAuth2::add_scopes(const char* value, size_t size) {
+  scopes_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:common.OAuth2.scopes)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+OAuth2::scopes() const {
+  // @@protoc_insertion_point(field_list:common.OAuth2.scopes)
+  return scopes_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+OAuth2::mutable_scopes() {
+  // @@protoc_insertion_point(field_mutable_list:common.OAuth2.scopes)
+  return &scopes_;
+}
+
+// string redirect = 6;
+inline void OAuth2::clear_redirect() {
+  redirect_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& OAuth2::redirect() const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.redirect)
+  return redirect_.GetNoArena();
+}
+inline void OAuth2::set_redirect(const ::std::string& value) {
+  
+  redirect_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.OAuth2.redirect)
+}
+#if LANG_CXX11
+inline void OAuth2::set_redirect(::std::string&& value) {
+  
+  redirect_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.OAuth2.redirect)
+}
+#endif
+inline void OAuth2::set_redirect(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  redirect_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.redirect)
+}
+inline void OAuth2::set_redirect(const char* value, size_t size) {
+  
+  redirect_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.redirect)
+}
+inline ::std::string* OAuth2::mutable_redirect() {
+  
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.redirect)
+  return redirect_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OAuth2::release_redirect() {
+  // @@protoc_insertion_point(field_release:common.OAuth2.redirect)
+  
+  return redirect_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OAuth2::set_allocated_redirect(::std::string* redirect) {
+  if (redirect != NULL) {
+    
+  } else {
+    
+  }
+  redirect_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), redirect);
+  // @@protoc_insertion_point(field_set_allocated:common.OAuth2.redirect)
+}
+
+// string code = 7;
+inline void OAuth2::clear_code() {
+  code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& OAuth2::code() const {
+  // @@protoc_insertion_point(field_get:common.OAuth2.code)
+  return code_.GetNoArena();
+}
+inline void OAuth2::set_code(const ::std::string& value) {
+  
+  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.OAuth2.code)
+}
+#if LANG_CXX11
+inline void OAuth2::set_code(::std::string&& value) {
+  
+  code_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.OAuth2.code)
+}
+#endif
+inline void OAuth2::set_code(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.OAuth2.code)
+}
+inline void OAuth2::set_code(const char* value, size_t size) {
+  
+  code_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.OAuth2.code)
+}
+inline ::std::string* OAuth2::mutable_code() {
+  
+  // @@protoc_insertion_point(field_mutable:common.OAuth2.code)
+  return code_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* OAuth2::release_code() {
+  // @@protoc_insertion_point(field_release:common.OAuth2.code)
+  
+  return code_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void OAuth2::set_allocated_code(::std::string* code) {
+  if (code != NULL) {
+    
+  } else {
+    
+  }
+  code_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), code);
+  // @@protoc_insertion_point(field_set_allocated:common.OAuth2.code)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// ClientCredentials
+
+// string client_id = 1;
+inline void ClientCredentials::clear_client_id() {
+  client_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ClientCredentials::client_id() const {
+  // @@protoc_insertion_point(field_get:common.ClientCredentials.client_id)
+  return client_id_.GetNoArena();
+}
+inline void ClientCredentials::set_client_id(const ::std::string& value) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.ClientCredentials.client_id)
+}
+#if LANG_CXX11
+inline void ClientCredentials::set_client_id(::std::string&& value) {
+  
+  client_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.ClientCredentials.client_id)
+}
+#endif
+inline void ClientCredentials::set_client_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.ClientCredentials.client_id)
+}
+inline void ClientCredentials::set_client_id(const char* value, size_t size) {
+  
+  client_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.ClientCredentials.client_id)
+}
+inline ::std::string* ClientCredentials::mutable_client_id() {
+  
+  // @@protoc_insertion_point(field_mutable:common.ClientCredentials.client_id)
+  return client_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ClientCredentials::release_client_id() {
+  // @@protoc_insertion_point(field_release:common.ClientCredentials.client_id)
+  
+  return client_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ClientCredentials::set_allocated_client_id(::std::string* client_id) {
+  if (client_id != NULL) {
+    
+  } else {
+    
+  }
+  client_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_id);
+  // @@protoc_insertion_point(field_set_allocated:common.ClientCredentials.client_id)
+}
+
+// string client_secret = 2;
+inline void ClientCredentials::clear_client_secret() {
+  client_secret_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ClientCredentials::client_secret() const {
+  // @@protoc_insertion_point(field_get:common.ClientCredentials.client_secret)
+  return client_secret_.GetNoArena();
+}
+inline void ClientCredentials::set_client_secret(const ::std::string& value) {
+  
+  client_secret_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.ClientCredentials.client_secret)
+}
+#if LANG_CXX11
+inline void ClientCredentials::set_client_secret(::std::string&& value) {
+  
+  client_secret_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.ClientCredentials.client_secret)
+}
+#endif
+inline void ClientCredentials::set_client_secret(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  client_secret_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.ClientCredentials.client_secret)
+}
+inline void ClientCredentials::set_client_secret(const char* value, size_t size) {
+  
+  client_secret_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.ClientCredentials.client_secret)
+}
+inline ::std::string* ClientCredentials::mutable_client_secret() {
+  
+  // @@protoc_insertion_point(field_mutable:common.ClientCredentials.client_secret)
+  return client_secret_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ClientCredentials::release_client_secret() {
+  // @@protoc_insertion_point(field_release:common.ClientCredentials.client_secret)
+  
+  return client_secret_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ClientCredentials::set_allocated_client_secret(::std::string* client_secret) {
+  if (client_secret != NULL) {
+    
+  } else {
+    
+  }
+  client_secret_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), client_secret);
+  // @@protoc_insertion_point(field_set_allocated:common.ClientCredentials.client_secret)
+}
+
+// string token_url = 3;
+inline void ClientCredentials::clear_token_url() {
+  token_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ClientCredentials::token_url() const {
+  // @@protoc_insertion_point(field_get:common.ClientCredentials.token_url)
+  return token_url_.GetNoArena();
+}
+inline void ClientCredentials::set_token_url(const ::std::string& value) {
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.ClientCredentials.token_url)
+}
+#if LANG_CXX11
+inline void ClientCredentials::set_token_url(::std::string&& value) {
+  
+  token_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.ClientCredentials.token_url)
+}
+#endif
+inline void ClientCredentials::set_token_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.ClientCredentials.token_url)
+}
+inline void ClientCredentials::set_token_url(const char* value, size_t size) {
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.ClientCredentials.token_url)
+}
+inline ::std::string* ClientCredentials::mutable_token_url() {
+  
+  // @@protoc_insertion_point(field_mutable:common.ClientCredentials.token_url)
+  return token_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ClientCredentials::release_token_url() {
+  // @@protoc_insertion_point(field_release:common.ClientCredentials.token_url)
+  
+  return token_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ClientCredentials::set_allocated_token_url(::std::string* token_url) {
+  if (token_url != NULL) {
+    
+  } else {
+    
+  }
+  token_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token_url);
+  // @@protoc_insertion_point(field_set_allocated:common.ClientCredentials.token_url)
+}
+
+// repeated string scopes = 4;
+inline int ClientCredentials::scopes_size() const {
+  return scopes_.size();
+}
+inline void ClientCredentials::clear_scopes() {
+  scopes_.Clear();
+}
+inline const ::std::string& ClientCredentials::scopes(int index) const {
+  // @@protoc_insertion_point(field_get:common.ClientCredentials.scopes)
+  return scopes_.Get(index);
+}
+inline ::std::string* ClientCredentials::mutable_scopes(int index) {
+  // @@protoc_insertion_point(field_mutable:common.ClientCredentials.scopes)
+  return scopes_.Mutable(index);
+}
+inline void ClientCredentials::set_scopes(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:common.ClientCredentials.scopes)
+  scopes_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void ClientCredentials::set_scopes(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:common.ClientCredentials.scopes)
+  scopes_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void ClientCredentials::set_scopes(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:common.ClientCredentials.scopes)
+}
+inline void ClientCredentials::set_scopes(int index, const char* value, size_t size) {
+  scopes_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:common.ClientCredentials.scopes)
+}
+inline ::std::string* ClientCredentials::add_scopes() {
+  // @@protoc_insertion_point(field_add_mutable:common.ClientCredentials.scopes)
+  return scopes_.Add();
+}
+inline void ClientCredentials::add_scopes(const ::std::string& value) {
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:common.ClientCredentials.scopes)
+}
+#if LANG_CXX11
+inline void ClientCredentials::add_scopes(::std::string&& value) {
+  scopes_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:common.ClientCredentials.scopes)
+}
+#endif
+inline void ClientCredentials::add_scopes(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:common.ClientCredentials.scopes)
+}
+inline void ClientCredentials::add_scopes(const char* value, size_t size) {
+  scopes_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:common.ClientCredentials.scopes)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+ClientCredentials::scopes() const {
+  // @@protoc_insertion_point(field_list:common.ClientCredentials.scopes)
+  return scopes_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+ClientCredentials::mutable_scopes() {
+  // @@protoc_insertion_point(field_mutable_list:common.ClientCredentials.scopes)
+  return &scopes_;
+}
+
+// map<string, string> endpoint_params = 5;
+inline int ClientCredentials::endpoint_params_size() const {
+  return endpoint_params_.size();
+}
+inline void ClientCredentials::clear_endpoint_params() {
+  endpoint_params_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+ClientCredentials::endpoint_params() const {
+  // @@protoc_insertion_point(field_map:common.ClientCredentials.endpoint_params)
+  return endpoint_params_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+ClientCredentials::mutable_endpoint_params() {
+  // @@protoc_insertion_point(field_mutable_map:common.ClientCredentials.endpoint_params)
+  return endpoint_params_.MutableMap();
+}
+
+// -------------------------------------------------------------------
+
+// JWT
+
+// string email = 1;
+inline void JWT::clear_email() {
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::email() const {
+  // @@protoc_insertion_point(field_get:common.JWT.email)
+  return email_.GetNoArena();
+}
+inline void JWT::set_email(const ::std::string& value) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JWT.email)
+}
+#if LANG_CXX11
+inline void JWT::set_email(::std::string&& value) {
+  
+  email_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JWT.email)
+}
+#endif
+inline void JWT::set_email(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JWT.email)
+}
+inline void JWT::set_email(const char* value, size_t size) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.email)
+}
+inline ::std::string* JWT::mutable_email() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JWT.email)
+  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_email() {
+  // @@protoc_insertion_point(field_release:common.JWT.email)
+  
+  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_email(::std::string* email) {
+  if (email != NULL) {
+    
+  } else {
+    
+  }
+  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.email)
+}
+
+// bytes private_key = 2;
+inline void JWT::clear_private_key() {
+  private_key_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::private_key() const {
+  // @@protoc_insertion_point(field_get:common.JWT.private_key)
+  return private_key_.GetNoArena();
+}
+inline void JWT::set_private_key(const ::std::string& value) {
+  
+  private_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JWT.private_key)
+}
+#if LANG_CXX11
+inline void JWT::set_private_key(::std::string&& value) {
+  
+  private_key_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JWT.private_key)
+}
+#endif
+inline void JWT::set_private_key(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  private_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JWT.private_key)
+}
+inline void JWT::set_private_key(const void* value, size_t size) {
+  
+  private_key_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.private_key)
+}
+inline ::std::string* JWT::mutable_private_key() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JWT.private_key)
+  return private_key_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_private_key() {
+  // @@protoc_insertion_point(field_release:common.JWT.private_key)
+  
+  return private_key_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_private_key(::std::string* private_key) {
+  if (private_key != NULL) {
+    
+  } else {
+    
+  }
+  private_key_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), private_key);
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.private_key)
+}
+
+// string prive_key_id = 3;
+inline void JWT::clear_prive_key_id() {
+  prive_key_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::prive_key_id() const {
+  // @@protoc_insertion_point(field_get:common.JWT.prive_key_id)
+  return prive_key_id_.GetNoArena();
+}
+inline void JWT::set_prive_key_id(const ::std::string& value) {
+  
+  prive_key_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JWT.prive_key_id)
+}
+#if LANG_CXX11
+inline void JWT::set_prive_key_id(::std::string&& value) {
+  
+  prive_key_id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JWT.prive_key_id)
+}
+#endif
+inline void JWT::set_prive_key_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  prive_key_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JWT.prive_key_id)
+}
+inline void JWT::set_prive_key_id(const char* value, size_t size) {
+  
+  prive_key_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.prive_key_id)
+}
+inline ::std::string* JWT::mutable_prive_key_id() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JWT.prive_key_id)
+  return prive_key_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_prive_key_id() {
+  // @@protoc_insertion_point(field_release:common.JWT.prive_key_id)
+  
+  return prive_key_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_prive_key_id(::std::string* prive_key_id) {
+  if (prive_key_id != NULL) {
+    
+  } else {
+    
+  }
+  prive_key_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), prive_key_id);
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.prive_key_id)
+}
+
+// string subject = 4;
+inline void JWT::clear_subject() {
+  subject_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::subject() const {
+  // @@protoc_insertion_point(field_get:common.JWT.subject)
+  return subject_.GetNoArena();
+}
+inline void JWT::set_subject(const ::std::string& value) {
+  
+  subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JWT.subject)
+}
+#if LANG_CXX11
+inline void JWT::set_subject(::std::string&& value) {
+  
+  subject_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JWT.subject)
+}
+#endif
+inline void JWT::set_subject(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JWT.subject)
+}
+inline void JWT::set_subject(const char* value, size_t size) {
+  
+  subject_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.subject)
+}
+inline ::std::string* JWT::mutable_subject() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JWT.subject)
+  return subject_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_subject() {
+  // @@protoc_insertion_point(field_release:common.JWT.subject)
+  
+  return subject_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_subject(::std::string* subject) {
+  if (subject != NULL) {
+    
+  } else {
+    
+  }
+  subject_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), subject);
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.subject)
+}
+
+// repeated string scopes = 5;
+inline int JWT::scopes_size() const {
+  return scopes_.size();
+}
+inline void JWT::clear_scopes() {
+  scopes_.Clear();
+}
+inline const ::std::string& JWT::scopes(int index) const {
+  // @@protoc_insertion_point(field_get:common.JWT.scopes)
+  return scopes_.Get(index);
+}
+inline ::std::string* JWT::mutable_scopes(int index) {
+  // @@protoc_insertion_point(field_mutable:common.JWT.scopes)
+  return scopes_.Mutable(index);
+}
+inline void JWT::set_scopes(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:common.JWT.scopes)
+  scopes_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void JWT::set_scopes(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:common.JWT.scopes)
+  scopes_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void JWT::set_scopes(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:common.JWT.scopes)
+}
+inline void JWT::set_scopes(int index, const char* value, size_t size) {
+  scopes_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.scopes)
+}
+inline ::std::string* JWT::add_scopes() {
+  // @@protoc_insertion_point(field_add_mutable:common.JWT.scopes)
+  return scopes_.Add();
+}
+inline void JWT::add_scopes(const ::std::string& value) {
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:common.JWT.scopes)
+}
+#if LANG_CXX11
+inline void JWT::add_scopes(::std::string&& value) {
+  scopes_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:common.JWT.scopes)
+}
+#endif
+inline void JWT::add_scopes(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:common.JWT.scopes)
+}
+inline void JWT::add_scopes(const char* value, size_t size) {
+  scopes_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:common.JWT.scopes)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+JWT::scopes() const {
+  // @@protoc_insertion_point(field_list:common.JWT.scopes)
+  return scopes_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+JWT::mutable_scopes() {
+  // @@protoc_insertion_point(field_mutable_list:common.JWT.scopes)
+  return &scopes_;
+}
+
+// string token_url = 6;
+inline void JWT::clear_token_url() {
+  token_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::token_url() const {
+  // @@protoc_insertion_point(field_get:common.JWT.token_url)
+  return token_url_.GetNoArena();
+}
+inline void JWT::set_token_url(const ::std::string& value) {
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JWT.token_url)
+}
+#if LANG_CXX11
+inline void JWT::set_token_url(::std::string&& value) {
+  
+  token_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JWT.token_url)
+}
+#endif
+inline void JWT::set_token_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JWT.token_url)
+}
+inline void JWT::set_token_url(const char* value, size_t size) {
+  
+  token_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.token_url)
+}
+inline ::std::string* JWT::mutable_token_url() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JWT.token_url)
+  return token_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_token_url() {
+  // @@protoc_insertion_point(field_release:common.JWT.token_url)
+  
+  return token_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_token_url(::std::string* token_url) {
+  if (token_url != NULL) {
+    
+  } else {
+    
+  }
+  token_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), token_url);
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.token_url)
+}
+
+// .google.protobuf.Timestamp expires = 7;
+inline bool JWT::has_expires() const {
+  return this != internal_default_instance() && expires_ != NULL;
+}
+inline const ::google::protobuf::Timestamp& JWT::_internal_expires() const {
+  return *expires_;
+}
+inline const ::google::protobuf::Timestamp& JWT::expires() const {
+  const ::google::protobuf::Timestamp* p = expires_;
+  // @@protoc_insertion_point(field_get:common.JWT.expires)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* JWT::release_expires() {
+  // @@protoc_insertion_point(field_release:common.JWT.expires)
+  
+  ::google::protobuf::Timestamp* temp = expires_;
+  expires_ = NULL;
   return temp;
 }
-inline ::common::String* Identifier::mutable_id() {
+inline ::google::protobuf::Timestamp* JWT::mutable_expires() {
   
-  if (id_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    id_ = p;
+  if (expires_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    expires_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:common.Identifier.id)
-  return id_;
+  // @@protoc_insertion_point(field_mutable:common.JWT.expires)
+  return expires_;
 }
-inline void Identifier::set_allocated_id(::common::String* id) {
+inline void JWT::set_allocated_expires(::google::protobuf::Timestamp* expires) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete id_;
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(expires_);
   }
-  if (id) {
-    ::google::protobuf::Arena* submessage_arena = NULL;
+  if (expires) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(expires)->GetArena();
     if (message_arena != submessage_arena) {
-      id = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, id, submessage_arena);
+      expires = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, expires, submessage_arena);
     }
     
   } else {
     
   }
-  id_ = id;
-  // @@protoc_insertion_point(field_set_allocated:common.Identifier.id)
+  expires_ = expires;
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.expires)
+}
+
+// string audience = 8;
+inline void JWT::clear_audience() {
+  audience_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JWT::audience() const {
+  // @@protoc_insertion_point(field_get:common.JWT.audience)
+  return audience_.GetNoArena();
+}
+inline void JWT::set_audience(const ::std::string& value) {
+  
+  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JWT.audience)
+}
+#if LANG_CXX11
+inline void JWT::set_audience(::std::string&& value) {
+  
+  audience_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JWT.audience)
+}
+#endif
+inline void JWT::set_audience(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JWT.audience)
+}
+inline void JWT::set_audience(const char* value, size_t size) {
+  
+  audience_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JWT.audience)
+}
+inline ::std::string* JWT::mutable_audience() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JWT.audience)
+  return audience_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JWT::release_audience() {
+  // @@protoc_insertion_point(field_release:common.JWT.audience)
+  
+  return audience_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JWT::set_allocated_audience(::std::string* audience) {
+  if (audience != NULL) {
+    
+  } else {
+    
+  }
+  audience_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), audience);
+  // @@protoc_insertion_point(field_set_allocated:common.JWT.audience)
 }
 
 // -------------------------------------------------------------------
 
-// AuthToken
+// DefaultGCPCredentials
 
-// .common.String token = 1;
-inline bool AuthToken::has_token() const {
-  return this != internal_default_instance() && token_ != NULL;
+// repeated string scopes = 1;
+inline int DefaultGCPCredentials::scopes_size() const {
+  return scopes_.size();
 }
-inline void AuthToken::clear_token() {
-  if (GetArenaNoVirtual() == NULL && token_ != NULL) {
-    delete token_;
-  }
-  token_ = NULL;
+inline void DefaultGCPCredentials::clear_scopes() {
+  scopes_.Clear();
 }
-inline const ::common::String& AuthToken::_internal_token() const {
-  return *token_;
+inline const ::std::string& DefaultGCPCredentials::scopes(int index) const {
+  // @@protoc_insertion_point(field_get:common.DefaultGCPCredentials.scopes)
+  return scopes_.Get(index);
 }
-inline const ::common::String& AuthToken::token() const {
-  const ::common::String* p = token_;
-  // @@protoc_insertion_point(field_get:common.AuthToken.token)
-  return p != NULL ? *p : *reinterpret_cast<const ::common::String*>(
-      &::common::_String_default_instance_);
+inline ::std::string* DefaultGCPCredentials::mutable_scopes(int index) {
+  // @@protoc_insertion_point(field_mutable:common.DefaultGCPCredentials.scopes)
+  return scopes_.Mutable(index);
 }
-inline ::common::String* AuthToken::release_token() {
-  // @@protoc_insertion_point(field_release:common.AuthToken.token)
+inline void DefaultGCPCredentials::set_scopes(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:common.DefaultGCPCredentials.scopes)
+  scopes_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void DefaultGCPCredentials::set_scopes(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:common.DefaultGCPCredentials.scopes)
+  scopes_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void DefaultGCPCredentials::set_scopes(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:common.DefaultGCPCredentials.scopes)
+}
+inline void DefaultGCPCredentials::set_scopes(int index, const char* value, size_t size) {
+  scopes_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:common.DefaultGCPCredentials.scopes)
+}
+inline ::std::string* DefaultGCPCredentials::add_scopes() {
+  // @@protoc_insertion_point(field_add_mutable:common.DefaultGCPCredentials.scopes)
+  return scopes_.Add();
+}
+inline void DefaultGCPCredentials::add_scopes(const ::std::string& value) {
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:common.DefaultGCPCredentials.scopes)
+}
+#if LANG_CXX11
+inline void DefaultGCPCredentials::add_scopes(::std::string&& value) {
+  scopes_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:common.DefaultGCPCredentials.scopes)
+}
+#endif
+inline void DefaultGCPCredentials::add_scopes(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  scopes_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:common.DefaultGCPCredentials.scopes)
+}
+inline void DefaultGCPCredentials::add_scopes(const char* value, size_t size) {
+  scopes_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:common.DefaultGCPCredentials.scopes)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+DefaultGCPCredentials::scopes() const {
+  // @@protoc_insertion_point(field_list:common.DefaultGCPCredentials.scopes)
+  return scopes_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+DefaultGCPCredentials::mutable_scopes() {
+  // @@protoc_insertion_point(field_mutable_list:common.DefaultGCPCredentials.scopes)
+  return &scopes_;
+}
+
+// -------------------------------------------------------------------
+
+// JSONWebKeys
+
+// string kty = 1;
+inline void JSONWebKeys::clear_kty() {
+  kty_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JSONWebKeys::kty() const {
+  // @@protoc_insertion_point(field_get:common.JSONWebKeys.kty)
+  return kty_.GetNoArena();
+}
+inline void JSONWebKeys::set_kty(const ::std::string& value) {
   
-  ::common::String* temp = token_;
-  token_ = NULL;
+  kty_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.kty)
+}
+#if LANG_CXX11
+inline void JSONWebKeys::set_kty(::std::string&& value) {
+  
+  kty_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JSONWebKeys.kty)
+}
+#endif
+inline void JSONWebKeys::set_kty(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  kty_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JSONWebKeys.kty)
+}
+inline void JSONWebKeys::set_kty(const char* value, size_t size) {
+  
+  kty_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JSONWebKeys.kty)
+}
+inline ::std::string* JSONWebKeys::mutable_kty() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JSONWebKeys.kty)
+  return kty_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JSONWebKeys::release_kty() {
+  // @@protoc_insertion_point(field_release:common.JSONWebKeys.kty)
+  
+  return kty_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JSONWebKeys::set_allocated_kty(::std::string* kty) {
+  if (kty != NULL) {
+    
+  } else {
+    
+  }
+  kty_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), kty);
+  // @@protoc_insertion_point(field_set_allocated:common.JSONWebKeys.kty)
+}
+
+// string kid = 2;
+inline void JSONWebKeys::clear_kid() {
+  kid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JSONWebKeys::kid() const {
+  // @@protoc_insertion_point(field_get:common.JSONWebKeys.kid)
+  return kid_.GetNoArena();
+}
+inline void JSONWebKeys::set_kid(const ::std::string& value) {
+  
+  kid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.kid)
+}
+#if LANG_CXX11
+inline void JSONWebKeys::set_kid(::std::string&& value) {
+  
+  kid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JSONWebKeys.kid)
+}
+#endif
+inline void JSONWebKeys::set_kid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  kid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JSONWebKeys.kid)
+}
+inline void JSONWebKeys::set_kid(const char* value, size_t size) {
+  
+  kid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JSONWebKeys.kid)
+}
+inline ::std::string* JSONWebKeys::mutable_kid() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JSONWebKeys.kid)
+  return kid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JSONWebKeys::release_kid() {
+  // @@protoc_insertion_point(field_release:common.JSONWebKeys.kid)
+  
+  return kid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JSONWebKeys::set_allocated_kid(::std::string* kid) {
+  if (kid != NULL) {
+    
+  } else {
+    
+  }
+  kid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), kid);
+  // @@protoc_insertion_point(field_set_allocated:common.JSONWebKeys.kid)
+}
+
+// string use = 3;
+inline void JSONWebKeys::clear_use() {
+  use_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JSONWebKeys::use() const {
+  // @@protoc_insertion_point(field_get:common.JSONWebKeys.use)
+  return use_.GetNoArena();
+}
+inline void JSONWebKeys::set_use(const ::std::string& value) {
+  
+  use_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.use)
+}
+#if LANG_CXX11
+inline void JSONWebKeys::set_use(::std::string&& value) {
+  
+  use_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JSONWebKeys.use)
+}
+#endif
+inline void JSONWebKeys::set_use(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  use_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JSONWebKeys.use)
+}
+inline void JSONWebKeys::set_use(const char* value, size_t size) {
+  
+  use_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JSONWebKeys.use)
+}
+inline ::std::string* JSONWebKeys::mutable_use() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JSONWebKeys.use)
+  return use_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JSONWebKeys::release_use() {
+  // @@protoc_insertion_point(field_release:common.JSONWebKeys.use)
+  
+  return use_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JSONWebKeys::set_allocated_use(::std::string* use) {
+  if (use != NULL) {
+    
+  } else {
+    
+  }
+  use_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), use);
+  // @@protoc_insertion_point(field_set_allocated:common.JSONWebKeys.use)
+}
+
+// string n = 4;
+inline void JSONWebKeys::clear_n() {
+  n_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JSONWebKeys::n() const {
+  // @@protoc_insertion_point(field_get:common.JSONWebKeys.n)
+  return n_.GetNoArena();
+}
+inline void JSONWebKeys::set_n(const ::std::string& value) {
+  
+  n_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.n)
+}
+#if LANG_CXX11
+inline void JSONWebKeys::set_n(::std::string&& value) {
+  
+  n_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JSONWebKeys.n)
+}
+#endif
+inline void JSONWebKeys::set_n(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  n_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JSONWebKeys.n)
+}
+inline void JSONWebKeys::set_n(const char* value, size_t size) {
+  
+  n_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JSONWebKeys.n)
+}
+inline ::std::string* JSONWebKeys::mutable_n() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JSONWebKeys.n)
+  return n_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JSONWebKeys::release_n() {
+  // @@protoc_insertion_point(field_release:common.JSONWebKeys.n)
+  
+  return n_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JSONWebKeys::set_allocated_n(::std::string* n) {
+  if (n != NULL) {
+    
+  } else {
+    
+  }
+  n_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), n);
+  // @@protoc_insertion_point(field_set_allocated:common.JSONWebKeys.n)
+}
+
+// string e = 5;
+inline void JSONWebKeys::clear_e() {
+  e_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& JSONWebKeys::e() const {
+  // @@protoc_insertion_point(field_get:common.JSONWebKeys.e)
+  return e_.GetNoArena();
+}
+inline void JSONWebKeys::set_e(const ::std::string& value) {
+  
+  e_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.e)
+}
+#if LANG_CXX11
+inline void JSONWebKeys::set_e(::std::string&& value) {
+  
+  e_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.JSONWebKeys.e)
+}
+#endif
+inline void JSONWebKeys::set_e(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  e_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.JSONWebKeys.e)
+}
+inline void JSONWebKeys::set_e(const char* value, size_t size) {
+  
+  e_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.JSONWebKeys.e)
+}
+inline ::std::string* JSONWebKeys::mutable_e() {
+  
+  // @@protoc_insertion_point(field_mutable:common.JSONWebKeys.e)
+  return e_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* JSONWebKeys::release_e() {
+  // @@protoc_insertion_point(field_release:common.JSONWebKeys.e)
+  
+  return e_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void JSONWebKeys::set_allocated_e(::std::string* e) {
+  if (e != NULL) {
+    
+  } else {
+    
+  }
+  e_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), e);
+  // @@protoc_insertion_point(field_set_allocated:common.JSONWebKeys.e)
+}
+
+// repeated string x5c = 6;
+inline int JSONWebKeys::x5c_size() const {
+  return x5c_.size();
+}
+inline void JSONWebKeys::clear_x5c() {
+  x5c_.Clear();
+}
+inline const ::std::string& JSONWebKeys::x5c(int index) const {
+  // @@protoc_insertion_point(field_get:common.JSONWebKeys.x5c)
+  return x5c_.Get(index);
+}
+inline ::std::string* JSONWebKeys::mutable_x5c(int index) {
+  // @@protoc_insertion_point(field_mutable:common.JSONWebKeys.x5c)
+  return x5c_.Mutable(index);
+}
+inline void JSONWebKeys::set_x5c(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.x5c)
+  x5c_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void JSONWebKeys::set_x5c(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:common.JSONWebKeys.x5c)
+  x5c_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void JSONWebKeys::set_x5c(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  x5c_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:common.JSONWebKeys.x5c)
+}
+inline void JSONWebKeys::set_x5c(int index, const char* value, size_t size) {
+  x5c_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:common.JSONWebKeys.x5c)
+}
+inline ::std::string* JSONWebKeys::add_x5c() {
+  // @@protoc_insertion_point(field_add_mutable:common.JSONWebKeys.x5c)
+  return x5c_.Add();
+}
+inline void JSONWebKeys::add_x5c(const ::std::string& value) {
+  x5c_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:common.JSONWebKeys.x5c)
+}
+#if LANG_CXX11
+inline void JSONWebKeys::add_x5c(::std::string&& value) {
+  x5c_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:common.JSONWebKeys.x5c)
+}
+#endif
+inline void JSONWebKeys::add_x5c(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  x5c_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:common.JSONWebKeys.x5c)
+}
+inline void JSONWebKeys::add_x5c(const char* value, size_t size) {
+  x5c_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:common.JSONWebKeys.x5c)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+JSONWebKeys::x5c() const {
+  // @@protoc_insertion_point(field_list:common.JSONWebKeys.x5c)
+  return x5c_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+JSONWebKeys::mutable_x5c() {
+  // @@protoc_insertion_point(field_mutable_list:common.JSONWebKeys.x5c)
+  return &x5c_;
+}
+
+// -------------------------------------------------------------------
+
+// Jwks
+
+// repeated .common.JSONWebKeys keys = 1;
+inline int Jwks::keys_size() const {
+  return keys_.size();
+}
+inline void Jwks::clear_keys() {
+  keys_.Clear();
+}
+inline ::common::JSONWebKeys* Jwks::mutable_keys(int index) {
+  // @@protoc_insertion_point(field_mutable:common.Jwks.keys)
+  return keys_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::common::JSONWebKeys >*
+Jwks::mutable_keys() {
+  // @@protoc_insertion_point(field_mutable_list:common.Jwks.keys)
+  return &keys_;
+}
+inline const ::common::JSONWebKeys& Jwks::keys(int index) const {
+  // @@protoc_insertion_point(field_get:common.Jwks.keys)
+  return keys_.Get(index);
+}
+inline ::common::JSONWebKeys* Jwks::add_keys() {
+  // @@protoc_insertion_point(field_add:common.Jwks.keys)
+  return keys_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::common::JSONWebKeys >&
+Jwks::keys() const {
+  // @@protoc_insertion_point(field_list:common.Jwks.keys)
+  return keys_;
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// HTTPTask
+
+// string url = 1;
+inline void HTTPTask::clear_url() {
+  url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HTTPTask::url() const {
+  // @@protoc_insertion_point(field_get:common.HTTPTask.url)
+  return url_.GetNoArena();
+}
+inline void HTTPTask::set_url(const ::std::string& value) {
+  
+  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.HTTPTask.url)
+}
+#if LANG_CXX11
+inline void HTTPTask::set_url(::std::string&& value) {
+  
+  url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.HTTPTask.url)
+}
+#endif
+inline void HTTPTask::set_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.HTTPTask.url)
+}
+inline void HTTPTask::set_url(const char* value, size_t size) {
+  
+  url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.HTTPTask.url)
+}
+inline ::std::string* HTTPTask::mutable_url() {
+  
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.url)
+  return url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HTTPTask::release_url() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.url)
+  
+  return url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HTTPTask::set_allocated_url(::std::string* url) {
+  if (url != NULL) {
+    
+  } else {
+    
+  }
+  url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), url);
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.url)
+}
+
+// map<string, string> headers = 2;
+inline int HTTPTask::headers_size() const {
+  return headers_.size();
+}
+inline void HTTPTask::clear_headers() {
+  headers_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+HTTPTask::headers() const {
+  // @@protoc_insertion_point(field_map:common.HTTPTask.headers)
+  return headers_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+HTTPTask::mutable_headers() {
+  // @@protoc_insertion_point(field_mutable_map:common.HTTPTask.headers)
+  return headers_.MutableMap();
+}
+
+// map<string, string> form = 3;
+inline int HTTPTask::form_size() const {
+  return form_.size();
+}
+inline void HTTPTask::clear_form() {
+  form_.Clear();
+}
+inline const ::google::protobuf::Map< ::std::string, ::std::string >&
+HTTPTask::form() const {
+  // @@protoc_insertion_point(field_map:common.HTTPTask.form)
+  return form_.GetMap();
+}
+inline ::google::protobuf::Map< ::std::string, ::std::string >*
+HTTPTask::mutable_form() {
+  // @@protoc_insertion_point(field_mutable_map:common.HTTPTask.form)
+  return form_.MutableMap();
+}
+
+// .google.protobuf.Any body = 4;
+inline bool HTTPTask::has_body() const {
+  return this != internal_default_instance() && body_ != NULL;
+}
+inline const ::google::protobuf::Any& HTTPTask::_internal_body() const {
+  return *body_;
+}
+inline const ::google::protobuf::Any& HTTPTask::body() const {
+  const ::google::protobuf::Any* p = body_;
+  // @@protoc_insertion_point(field_get:common.HTTPTask.body)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Any*>(
+      &::google::protobuf::_Any_default_instance_);
+}
+inline ::google::protobuf::Any* HTTPTask::release_body() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.body)
+  
+  ::google::protobuf::Any* temp = body_;
+  body_ = NULL;
   return temp;
 }
-inline ::common::String* AuthToken::mutable_token() {
+inline ::google::protobuf::Any* HTTPTask::mutable_body() {
   
-  if (token_ == NULL) {
-    auto* p = CreateMaybeMessage<::common::String>(GetArenaNoVirtual());
-    token_ = p;
+  if (body_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Any>(GetArenaNoVirtual());
+    body_ = p;
   }
-  // @@protoc_insertion_point(field_mutable:common.AuthToken.token)
-  return token_;
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.body)
+  return body_;
 }
-inline void AuthToken::set_allocated_token(::common::String* token) {
+inline void HTTPTask::set_allocated_body(::google::protobuf::Any* body) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
-    delete token_;
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(body_);
   }
-  if (token) {
+  if (body) {
     ::google::protobuf::Arena* submessage_arena = NULL;
     if (message_arena != submessage_arena) {
-      token = ::google::protobuf::internal::GetOwnedMessage(
-          message_arena, token, submessage_arena);
+      body = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, body, submessage_arena);
     }
     
   } else {
     
   }
-  token_ = token;
-  // @@protoc_insertion_point(field_set_allocated:common.AuthToken.token)
+  body_ = body;
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.body)
 }
 
-// -------------------------------------------------------------------
-
-// Int64
-
-// int64 num = 1;
-inline void Int64::clear_num() {
-  num_ = GOOGLE_LONGLONG(0);
+// .google.protobuf.Timestamp schedule = 5;
+inline bool HTTPTask::has_schedule() const {
+  return this != internal_default_instance() && schedule_ != NULL;
 }
-inline ::google::protobuf::int64 Int64::num() const {
-  // @@protoc_insertion_point(field_get:common.Int64.num)
-  return num_;
+inline const ::google::protobuf::Timestamp& HTTPTask::_internal_schedule() const {
+  return *schedule_;
 }
-inline void Int64::set_num(::google::protobuf::int64 value) {
+inline const ::google::protobuf::Timestamp& HTTPTask::schedule() const {
+  const ::google::protobuf::Timestamp* p = schedule_;
+  // @@protoc_insertion_point(field_get:common.HTTPTask.schedule)
+  return p != NULL ? *p : *reinterpret_cast<const ::google::protobuf::Timestamp*>(
+      &::google::protobuf::_Timestamp_default_instance_);
+}
+inline ::google::protobuf::Timestamp* HTTPTask::release_schedule() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.schedule)
   
-  num_ = value;
-  // @@protoc_insertion_point(field_set:common.Int64.num)
+  ::google::protobuf::Timestamp* temp = schedule_;
+  schedule_ = NULL;
+  return temp;
 }
-
-// -------------------------------------------------------------------
-
-// Float64
-
-// double num = 1;
-inline void Float64::clear_num() {
-  num_ = 0;
-}
-inline double Float64::num() const {
-  // @@protoc_insertion_point(field_get:common.Float64.num)
-  return num_;
-}
-inline void Float64::set_num(double value) {
+inline ::google::protobuf::Timestamp* HTTPTask::mutable_schedule() {
   
-  num_ = value;
-  // @@protoc_insertion_point(field_set:common.Float64.num)
+  if (schedule_ == NULL) {
+    auto* p = CreateMaybeMessage<::google::protobuf::Timestamp>(GetArenaNoVirtual());
+    schedule_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.schedule)
+  return schedule_;
+}
+inline void HTTPTask::set_allocated_schedule(::google::protobuf::Timestamp* schedule) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(schedule_);
+  }
+  if (schedule) {
+    ::google::protobuf::Arena* submessage_arena =
+      reinterpret_cast<::google::protobuf::MessageLite*>(schedule)->GetArena();
+    if (message_arena != submessage_arena) {
+      schedule = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, schedule, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  schedule_ = schedule;
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.schedule)
+}
+
+// string callback_url = 6;
+inline void HTTPTask::clear_callback_url() {
+  callback_url_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& HTTPTask::callback_url() const {
+  // @@protoc_insertion_point(field_get:common.HTTPTask.callback_url)
+  return callback_url_.GetNoArena();
+}
+inline void HTTPTask::set_callback_url(const ::std::string& value) {
+  
+  callback_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:common.HTTPTask.callback_url)
+}
+#if LANG_CXX11
+inline void HTTPTask::set_callback_url(::std::string&& value) {
+  
+  callback_url_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:common.HTTPTask.callback_url)
+}
+#endif
+inline void HTTPTask::set_callback_url(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  callback_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:common.HTTPTask.callback_url)
+}
+inline void HTTPTask::set_callback_url(const char* value, size_t size) {
+  
+  callback_url_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:common.HTTPTask.callback_url)
+}
+inline ::std::string* HTTPTask::mutable_callback_url() {
+  
+  // @@protoc_insertion_point(field_mutable:common.HTTPTask.callback_url)
+  return callback_url_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* HTTPTask::release_callback_url() {
+  // @@protoc_insertion_point(field_release:common.HTTPTask.callback_url)
+  
+  return callback_url_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void HTTPTask::set_allocated_callback_url(::std::string* callback_url) {
+  if (callback_url != NULL) {
+    
+  } else {
+    
+  }
+  callback_url_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), callback_url);
+  // @@protoc_insertion_point(field_set_allocated:common.HTTPTask.callback_url)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

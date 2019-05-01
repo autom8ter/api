@@ -5,6 +5,27 @@
 
 ## Usage
 
+#### type Any
+
+```go
+type Any struct {
+	*any.Any
+}
+```
+
+
+#### func (*Any) Category
+
+```go
+func (a *Any) Category() string
+```
+
+#### func (*Any) JSONString
+
+```go
+func (a *Any) JSONString() string
+```
+
 #### type Categorizer
 
 ```go

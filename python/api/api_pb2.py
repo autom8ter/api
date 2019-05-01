@@ -12,8 +12,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from common import common_pb2 as common_dot_common__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,56 +19,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='api',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\x1a\x1cgoogle/api/annotations.proto\x1a\x13\x63ommon/common.proto\"z\n\x11UpdateUserRequest\x12!\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12!\n\x06\x66ields\x18\x02 \x01(\x0b\x32\x11.common.StringMap\x12\x1f\n\toverwrite\x18\x03 \x01(\x0b\x32\x0c.common.Bool\"\x8c\x01\n\x04\x43\x61rd\x12\"\n\x06number\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12!\n\texp_month\x18\x02 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x65xp_year\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03\x63vc\x18\x04 \x01(\x0b\x32\x0e.common.String\"\x95\x06\n\x04User\x12#\n\x07user_id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\"\n\ngiven_name\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x66\x61mily_name\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x06gender\x18\x05 \x01(\x0b\x32\x0e.common.String\x12!\n\tbirthdate\x18\x06 \x01(\x0b\x32\x0e.common.String\x12!\n\x05\x65mail\x18\x07 \x01(\x0b\x32\x12.common.Identifier\x12(\n\x0cphone_number\x18\x08 \x01(\x0b\x32\x12.common.Identifier\x12\x1f\n\x07picture\x18\t \x01(\x0b\x32\x0e.common.String\x12 \n\x08nickname\x18\x0e \x01(\x0b\x32\x0e.common.String\x12(\n\ruser_metadata\x18\n \x01(\x0b\x32\x11.common.StringMap\x12\'\n\x0c\x61pp_metadata\x18\x0b \x01(\x0b\x32\x11.common.StringMap\x12\x1f\n\x07last_ip\x18\x0c \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x07\x62locked\x18\r \x01(\x0b\x32\x0c.common.Bool\x12(\n\x0bmultifactor\x18\x0f \x01(\x0b\x32\x13.common.StringArray\x12\"\n\ncreated_at\x18\x11 \x01(\x0b\x32\x0e.common.String\x12\"\n\nupdated_at\x18\x12 \x01(\x0b\x32\x0e.common.String\x12$\n\x0ephone_verified\x18\x13 \x01(\x0b\x32\x0c.common.Bool\x12$\n\x0e\x65mail_verified\x18\x14 \x01(\x0b\x32\x0c.common.Bool\x12 \n\x08password\x18\x15 \x01(\x0b\x32\x0e.common.String\x12!\n\nidentities\x18\x16 \x03(\x0b\x32\r.api.Identity\x12\x18\n\x05roles\x18\x17 \x03(\x0b\x32\t.api.Role\"\x8e\x01\n\x0cUserMetadata\x12\x1e\n\x06status\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x03\x62io\x18\x02 \x01(\x0b\x32\x11.common.StringMap\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x0c.api.Address\x12\x1f\n\x04tags\x18\x04 \x01(\x0b\x32\x11.common.StringMap\"\xa1\x01\n\x07\x41\x64\x64ress\x12\x1c\n\x04\x63ity\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05state\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05line1\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x05line2\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03zip\x18\x05 \x01(\x0b\x32\x0e.common.String\"\xae\x01\n\x0b\x41ppMetadata\x12#\n\x0b\x64\x65scription\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\'\n\x0f\x61\x63\x63ount_balance\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x17\n\x04plan\x18\x03 \x01(\x0b\x32\t.api.Plan\x12\x1f\n\x04tags\x18\x04 \x01(\x0b\x32\x11.common.StringMap\x12\x17\n\x04\x63\x61rd\x18\x05 \x01(\x0b\x32\t.api.Card\"\xc6\x01\n\x04Plan\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x06\x61\x63tive\x18\x02 \x01(\x0b\x32\x0c.common.Bool\x12\x1d\n\x06\x61mount\x18\x03 \x01(\x0b\x32\r.common.Int64\x12 \n\x08interval\x18\x04 \x01(\x0b\x32\x0e.common.String\x12 \n\x08nickname\x18\x05 \x01(\x0b\x32\x0e.common.String\x12\x1d\n\x07product\x18\x06 \x01(\x0b\x32\x0c.api.Product\"\x8c\x01\n\x07Product\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12#\n\x0b\x64\x65scription\x18\x02 \x01(\x0b\x32\x0e.common.String\x12\x1b\n\x03url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x04tags\x18\x04 \x01(\x0b\x32\x11.common.StringMap\"\x95\x01\n\x08Identity\x12\"\n\nconnection\x18\x01 \x01(\x0b\x32\x0e.common.String\x12#\n\x07user_id\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12 \n\x08provider\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1e\n\x08isSocial\x18\x04 \x01(\x0b\x32\x0c.common.Bool\"i\n\x04Role\x12\x1e\n\x02id\x18\x01 \x01(\x0b\x32\x12.common.Identifier\x12\x1c\n\x04name\x18\x02 \x01(\x0b\x32\x0e.common.String\x12#\n\x0b\x64\x65scription\x18\x03 \x01(\x0b\x32\x0e.common.String\"\xfc\x01\n\x06OAuth2\x12!\n\tclient_id\x18\x01 \x01(\x0b\x32\x0e.common.String\x12%\n\rclient_secret\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\ttoken_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x61uth_url\x18\x04 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x05 \x01(\x0b\x32\x13.common.StringArray\x12 \n\x08redirect\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1c\n\x04\x63ode\x18\x07 \x01(\x0b\x32\x0e.common.String\"\xd1\x01\n\x11\x43lientCredentials\x12!\n\tclient_id\x18\x01 \x01(\x0b\x32\x0e.common.String\x12%\n\rclient_secret\x18\x02 \x01(\x0b\x32\x0e.common.String\x12!\n\ttoken_url\x18\x03 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x04 \x01(\x0b\x32\x13.common.StringArray\x12*\n\x0f\x65ndpoint_params\x18\x05 \x01(\x0b\x32\x11.common.StringMap\"\x8b\x02\n\x03JWT\x12\x1d\n\x05\x65mail\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x13\n\x0bprivate_key\x18\x02 \x01(\x0c\x12$\n\x0cprive_key_id\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07subject\x18\x04 \x01(\x0b\x32\x0e.common.String\x12#\n\x06scopes\x18\x05 \x01(\x0b\x32\x13.common.StringArray\x12!\n\ttoken_url\x18\x06 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x07\x65xpires\x18\x07 \x01(\x0b\x32\x0e.common.String\x12 \n\x08\x61udience\x18\x08 \x01(\x0b\x32\x0e.common.String\"<\n\x15\x44\x65\x66\x61ultGCPCredentials\x12#\n\x06scopes\x18\x01 \x01(\x0b\x32\x13.common.StringArray\"\xc0\x01\n\x0bJSONWebKeys\x12\x1b\n\x03kty\x18\x01 \x01(\x0b\x32\x0e.common.String\x12\x1f\n\x03kid\x18\x02 \x01(\x0b\x32\x12.common.Identifier\x12\x1b\n\x03use\x18\x03 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x01n\x18\x04 \x01(\x0b\x32\x0e.common.String\x12\x19\n\x01\x65\x18\x05 \x01(\x0b\x32\x0e.common.String\x12 \n\x03x5c\x18\x06 \x01(\x0b\x32\x13.common.StringArray\"&\n\x04Jwks\x12\x1e\n\x04keys\x18\x01 \x03(\x0b\x32\x10.api.JSONWebKeys2I\n\x0c\x44\x65\x62ugService\x12\x39\n\x04\x45\x63ho\x12\x0e.common.String\x1a\x0e.common.String\"\x11\x82\xd3\xe4\x93\x02\x0b\"\x06/debug:\x01*2\xe9\x02\n\tDBService\x12=\n\x07GetUser\x12\x12.common.Identifier\x1a\t.api.User\"\x13\x82\xd3\xe4\x93\x02\r\"\x08/db/user:\x01*\x12K\n\nDeleteUser\x12\x12.common.Identifier\x1a\r.common.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/db/user/delete:\x01*\x12K\n\nUpdateUser\x12\x16.api.UpdateUserRequest\x1a\t.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/db/user/delete:\x01*\x12>\n\nCreateUser\x12\t.api.User\x1a\t.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/db/user/delete:\x01*\x12\x43\n\tListUsers\x12\r.common.Empty\x1a\t.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/db/user/delete:\x01*0\x01\x62\x06proto3')
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,common_dot_common__pb2.DESCRIPTOR,])
-
-
-
-
-_UPDATEUSERREQUEST = _descriptor.Descriptor(
-  name='UpdateUserRequest',
-  full_name='api.UpdateUserRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='email', full_name='api.UpdateUserRequest.email', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='fields', full_name='api.UpdateUserRequest.fields', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='overwrite', full_name='api.UpdateUserRequest.overwrite', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=69,
-  serialized_end=191,
+  serialized_pb=_b('\n\tapi.proto\x12\x03\x61pi\"H\n\x04\x43\x61rd\x12\x0e\n\x06number\x18\x01 \x01(\t\x12\x11\n\texp_month\x18\x02 \x01(\t\x12\x10\n\x08\x65xp_year\x18\x03 \x01(\t\x12\x0b\n\x03\x63vc\x18\x04 \x01(\t\"\xe6\x04\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ngiven_name\x18\x03 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x04 \x01(\t\x12\x0e\n\x06gender\x18\x05 \x01(\t\x12\x11\n\tbirthdate\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\x14\n\x0cphone_number\x18\x08 \x01(\t\x12\x0f\n\x07picture\x18\t \x01(\t\x12\x10\n\x08nickname\x18\x0e \x01(\t\x12\x32\n\ruser_metadata\x18\n \x03(\x0b\x32\x1b.api.User.UserMetadataEntry\x12\x30\n\x0c\x61pp_metadata\x18\x0b \x03(\x0b\x32\x1a.api.User.AppMetadataEntry\x12\x0f\n\x07last_ip\x18\x0c \x01(\t\x12\x0f\n\x07\x62locked\x18\r \x01(\x08\x12\x13\n\x0bmultifactor\x18\x0f \x03(\t\x12\x12\n\ncreated_at\x18\x11 \x01(\t\x12\x12\n\nupdated_at\x18\x12 \x01(\t\x12\x16\n\x0ephone_verified\x18\x13 \x01(\x08\x12\x16\n\x0e\x65mail_verified\x18\x14 \x01(\x08\x12\x10\n\x08password\x18\x15 \x01(\t\x12!\n\nidentities\x18\x16 \x03(\x0b\x32\r.api.Identity\x12\x18\n\x05roles\x18\x17 \x03(\x0b\x32\t.api.Role\x1a\x33\n\x11UserMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x32\n\x10\x41ppMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xea\x01\n\x0cUserMetadata\x12\x0e\n\x06status\x18\x01 \x01(\t\x12\'\n\x03\x62io\x18\x02 \x03(\x0b\x32\x1a.api.UserMetadata.BioEntry\x12\x1d\n\x07\x61\x64\x64ress\x18\x03 \x01(\x0b\x32\x0c.api.Address\x12)\n\x04tags\x18\x04 \x03(\x0b\x32\x1b.api.UserMetadata.TagsEntry\x1a*\n\x08\x42ioEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Q\n\x07\x41\x64\x64ress\x12\x0c\n\x04\x63ity\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\x12\r\n\x05line1\x18\x03 \x01(\t\x12\r\n\x05line2\x18\x04 \x01(\t\x12\x0b\n\x03zip\x18\x05 \x01(\t\"\xc4\x01\n\x0b\x41ppMetadata\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x17\n\x0f\x61\x63\x63ount_balance\x18\x02 \x01(\t\x12\x17\n\x04plan\x18\x03 \x01(\x0b\x32\t.api.Plan\x12(\n\x04tags\x18\x04 \x03(\x0b\x32\x1a.api.AppMetadata.TagsEntry\x12\x17\n\x04\x63\x61rd\x18\x05 \x01(\x0b\x32\t.api.Card\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"u\n\x04Plan\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x03\x12\x10\n\x08interval\x18\x04 \x01(\t\x12\x10\n\x08nickname\x18\x05 \x01(\t\x12\x1d\n\x07product\x18\x06 \x01(\x0b\x32\x0c.api.Product\"\x8a\x01\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12$\n\x04tags\x18\x04 \x03(\x0b\x32\x16.api.Product.TagsEntry\x1a+\n\tTagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x08Identity\x12\x12\n\nconnection\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x10\n\x08provider\x18\x03 \x01(\t\x12\x10\n\x08isSocial\x18\x04 \x01(\x08\"5\n\x04Role\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\tb\x06proto3')
 )
+
+
 
 
 _CARD = _descriptor.Descriptor(
@@ -82,29 +34,29 @@ _CARD = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='number', full_name='api.Card.number', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exp_month', full_name='api.Card.exp_month', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exp_year', full_name='api.Card.exp_year', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cvc', full_name='api.Card.cvc', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -120,10 +72,84 @@ _CARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=194,
-  serialized_end=334,
+  serialized_start=18,
+  serialized_end=90,
 )
 
+
+_USER_USERMETADATAENTRY = _descriptor.Descriptor(
+  name='UserMetadataEntry',
+  full_name='api.User.UserMetadataEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.User.UserMetadataEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.User.UserMetadataEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=604,
+  serialized_end=655,
+)
+
+_USER_APPMETADATAENTRY = _descriptor.Descriptor(
+  name='AppMetadataEntry',
+  full_name='api.User.AppMetadataEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.User.AppMetadataEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.User.AppMetadataEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=657,
+  serialized_end=707,
+)
 
 _USER = _descriptor.Descriptor(
   name='User',
@@ -134,141 +160,141 @@ _USER = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='user_id', full_name='api.User.user_id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.User.name', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='given_name', full_name='api.User.given_name', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='family_name', full_name='api.User.family_name', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gender', full_name='api.User.gender', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='birthdate', full_name='api.User.birthdate', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='email', full_name='api.User.email', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='phone_number', full_name='api.User.phone_number', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='picture', full_name='api.User.picture', index=8,
-      number=9, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nickname', full_name='api.User.nickname', index=9,
-      number=14, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_metadata', full_name='api.User.user_metadata', index=10,
-      number=10, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='app_metadata', full_name='api.User.app_metadata', index=11,
-      number=11, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='last_ip', full_name='api.User.last_ip', index=12,
-      number=12, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='blocked', full_name='api.User.blocked', index=13,
-      number=13, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=13, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='multifactor', full_name='api.User.multifactor', index=14,
-      number=15, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=15, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='created_at', full_name='api.User.created_at', index=15,
-      number=17, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='updated_at', full_name='api.User.updated_at', index=16,
-      number=18, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=18, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='phone_verified', full_name='api.User.phone_verified', index=17,
-      number=19, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=19, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='email_verified', full_name='api.User.email_verified', index=18,
-      number=20, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=20, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='api.User.password', index=19,
-      number=21, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=21, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -289,7 +315,7 @@ _USER = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_USER_USERMETADATAENTRY, _USER_APPMETADATAENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -298,10 +324,84 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=337,
-  serialized_end=1126,
+  serialized_start=93,
+  serialized_end=707,
 )
 
+
+_USERMETADATA_BIOENTRY = _descriptor.Descriptor(
+  name='BioEntry',
+  full_name='api.UserMetadata.BioEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.UserMetadata.BioEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.UserMetadata.BioEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=857,
+  serialized_end=899,
+)
+
+_USERMETADATA_TAGSENTRY = _descriptor.Descriptor(
+  name='TagsEntry',
+  full_name='api.UserMetadata.TagsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.UserMetadata.TagsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.UserMetadata.TagsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=901,
+  serialized_end=944,
+)
 
 _USERMETADATA = _descriptor.Descriptor(
   name='UserMetadata',
@@ -312,15 +412,15 @@ _USERMETADATA = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='status', full_name='api.UserMetadata.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bio', full_name='api.UserMetadata.bio', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -333,15 +433,15 @@ _USERMETADATA = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tags', full_name='api.UserMetadata.tags', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_USERMETADATA_BIOENTRY, _USERMETADATA_TAGSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -350,8 +450,8 @@ _USERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1129,
-  serialized_end=1271,
+  serialized_start=710,
+  serialized_end=944,
 )
 
 
@@ -364,36 +464,36 @@ _ADDRESS = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='city', full_name='api.Address.city', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='state', full_name='api.Address.state', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='line1', full_name='api.Address.line1', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='line2', full_name='api.Address.line2', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zip', full_name='api.Address.zip', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -409,10 +509,47 @@ _ADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1274,
-  serialized_end=1435,
+  serialized_start=946,
+  serialized_end=1027,
 )
 
+
+_APPMETADATA_TAGSENTRY = _descriptor.Descriptor(
+  name='TagsEntry',
+  full_name='api.AppMetadata.TagsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.AppMetadata.TagsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.AppMetadata.TagsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=901,
+  serialized_end=944,
+)
 
 _APPMETADATA = _descriptor.Descriptor(
   name='AppMetadata',
@@ -423,15 +560,15 @@ _APPMETADATA = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='description', full_name='api.AppMetadata.description', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='account_balance', full_name='api.AppMetadata.account_balance', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -444,8 +581,8 @@ _APPMETADATA = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tags', full_name='api.AppMetadata.tags', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -459,7 +596,7 @@ _APPMETADATA = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_APPMETADATA_TAGSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -468,8 +605,8 @@ _APPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1438,
-  serialized_end=1612,
+  serialized_start=1030,
+  serialized_end=1226,
 )
 
 
@@ -482,36 +619,36 @@ _PLAN = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.Plan.id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='active', full_name='api.Plan.active', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='amount', full_name='api.Plan.amount', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='interval', full_name='api.Plan.interval', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nickname', full_name='api.Plan.nickname', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -534,10 +671,47 @@ _PLAN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1615,
-  serialized_end=1813,
+  serialized_start=1228,
+  serialized_end=1345,
 )
 
+
+_PRODUCT_TAGSENTRY = _descriptor.Descriptor(
+  name='TagsEntry',
+  full_name='api.Product.TagsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='api.Product.TagsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='api.Product.TagsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=901,
+  serialized_end=944,
+)
 
 _PRODUCT = _descriptor.Descriptor(
   name='Product',
@@ -548,36 +722,36 @@ _PRODUCT = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.Product.id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.Product.description', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='url', full_name='api.Product.url', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='tags', full_name='api.Product.tags', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_PRODUCT_TAGSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -586,8 +760,8 @@ _PRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1816,
-  serialized_end=1956,
+  serialized_start=1348,
+  serialized_end=1486,
 )
 
 
@@ -600,29 +774,29 @@ _IDENTITY = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='connection', full_name='api.Identity.connection', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_id', full_name='api.Identity.user_id', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='provider', full_name='api.Identity.provider', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='isSocial', full_name='api.Identity.isSocial', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -638,8 +812,8 @@ _IDENTITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1959,
-  serialized_end=2108,
+  serialized_start=1488,
+  serialized_end=1571,
 )
 
 
@@ -652,22 +826,22 @@ _ROLE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='api.Role.id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='api.Role.name', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='api.Role.description', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -683,438 +857,28 @@ _ROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2110,
-  serialized_end=2215,
+  serialized_start=1573,
+  serialized_end=1626,
 )
 
-
-_OAUTH2 = _descriptor.Descriptor(
-  name='OAuth2',
-  full_name='api.OAuth2',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='client_id', full_name='api.OAuth2.client_id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client_secret', full_name='api.OAuth2.client_secret', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='token_url', full_name='api.OAuth2.token_url', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='auth_url', full_name='api.OAuth2.auth_url', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='scopes', full_name='api.OAuth2.scopes', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='redirect', full_name='api.OAuth2.redirect', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='code', full_name='api.OAuth2.code', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2218,
-  serialized_end=2470,
-)
-
-
-_CLIENTCREDENTIALS = _descriptor.Descriptor(
-  name='ClientCredentials',
-  full_name='api.ClientCredentials',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='client_id', full_name='api.ClientCredentials.client_id', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='client_secret', full_name='api.ClientCredentials.client_secret', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='token_url', full_name='api.ClientCredentials.token_url', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='scopes', full_name='api.ClientCredentials.scopes', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='endpoint_params', full_name='api.ClientCredentials.endpoint_params', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2473,
-  serialized_end=2682,
-)
-
-
-_JWT = _descriptor.Descriptor(
-  name='JWT',
-  full_name='api.JWT',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='email', full_name='api.JWT.email', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='private_key', full_name='api.JWT.private_key', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='prive_key_id', full_name='api.JWT.prive_key_id', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='subject', full_name='api.JWT.subject', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='scopes', full_name='api.JWT.scopes', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='token_url', full_name='api.JWT.token_url', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='expires', full_name='api.JWT.expires', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='audience', full_name='api.JWT.audience', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2685,
-  serialized_end=2952,
-)
-
-
-_DEFAULTGCPCREDENTIALS = _descriptor.Descriptor(
-  name='DefaultGCPCredentials',
-  full_name='api.DefaultGCPCredentials',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='scopes', full_name='api.DefaultGCPCredentials.scopes', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2954,
-  serialized_end=3014,
-)
-
-
-_JSONWEBKEYS = _descriptor.Descriptor(
-  name='JSONWebKeys',
-  full_name='api.JSONWebKeys',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='kty', full_name='api.JSONWebKeys.kty', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='kid', full_name='api.JSONWebKeys.kid', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='use', full_name='api.JSONWebKeys.use', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='n', full_name='api.JSONWebKeys.n', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='e', full_name='api.JSONWebKeys.e', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='x5c', full_name='api.JSONWebKeys.x5c', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3017,
-  serialized_end=3209,
-)
-
-
-_JWKS = _descriptor.Descriptor(
-  name='Jwks',
-  full_name='api.Jwks',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='keys', full_name='api.Jwks.keys', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3211,
-  serialized_end=3249,
-)
-
-_UPDATEUSERREQUEST.fields_by_name['email'].message_type = common_dot_common__pb2._IDENTIFIER
-_UPDATEUSERREQUEST.fields_by_name['fields'].message_type = common_dot_common__pb2._STRINGMAP
-_UPDATEUSERREQUEST.fields_by_name['overwrite'].message_type = common_dot_common__pb2._BOOL
-_CARD.fields_by_name['number'].message_type = common_dot_common__pb2._IDENTIFIER
-_CARD.fields_by_name['exp_month'].message_type = common_dot_common__pb2._STRING
-_CARD.fields_by_name['exp_year'].message_type = common_dot_common__pb2._STRING
-_CARD.fields_by_name['cvc'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['user_id'].message_type = common_dot_common__pb2._IDENTIFIER
-_USER.fields_by_name['name'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['given_name'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['family_name'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['gender'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['birthdate'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['email'].message_type = common_dot_common__pb2._IDENTIFIER
-_USER.fields_by_name['phone_number'].message_type = common_dot_common__pb2._IDENTIFIER
-_USER.fields_by_name['picture'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['nickname'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['user_metadata'].message_type = common_dot_common__pb2._STRINGMAP
-_USER.fields_by_name['app_metadata'].message_type = common_dot_common__pb2._STRINGMAP
-_USER.fields_by_name['last_ip'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['blocked'].message_type = common_dot_common__pb2._BOOL
-_USER.fields_by_name['multifactor'].message_type = common_dot_common__pb2._STRINGARRAY
-_USER.fields_by_name['created_at'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['updated_at'].message_type = common_dot_common__pb2._STRING
-_USER.fields_by_name['phone_verified'].message_type = common_dot_common__pb2._BOOL
-_USER.fields_by_name['email_verified'].message_type = common_dot_common__pb2._BOOL
-_USER.fields_by_name['password'].message_type = common_dot_common__pb2._STRING
+_USER_USERMETADATAENTRY.containing_type = _USER
+_USER_APPMETADATAENTRY.containing_type = _USER
+_USER.fields_by_name['user_metadata'].message_type = _USER_USERMETADATAENTRY
+_USER.fields_by_name['app_metadata'].message_type = _USER_APPMETADATAENTRY
 _USER.fields_by_name['identities'].message_type = _IDENTITY
 _USER.fields_by_name['roles'].message_type = _ROLE
-_USERMETADATA.fields_by_name['status'].message_type = common_dot_common__pb2._STRING
-_USERMETADATA.fields_by_name['bio'].message_type = common_dot_common__pb2._STRINGMAP
+_USERMETADATA_BIOENTRY.containing_type = _USERMETADATA
+_USERMETADATA_TAGSENTRY.containing_type = _USERMETADATA
+_USERMETADATA.fields_by_name['bio'].message_type = _USERMETADATA_BIOENTRY
 _USERMETADATA.fields_by_name['address'].message_type = _ADDRESS
-_USERMETADATA.fields_by_name['tags'].message_type = common_dot_common__pb2._STRINGMAP
-_ADDRESS.fields_by_name['city'].message_type = common_dot_common__pb2._STRING
-_ADDRESS.fields_by_name['state'].message_type = common_dot_common__pb2._STRING
-_ADDRESS.fields_by_name['line1'].message_type = common_dot_common__pb2._STRING
-_ADDRESS.fields_by_name['line2'].message_type = common_dot_common__pb2._STRING
-_ADDRESS.fields_by_name['zip'].message_type = common_dot_common__pb2._STRING
-_APPMETADATA.fields_by_name['description'].message_type = common_dot_common__pb2._STRING
-_APPMETADATA.fields_by_name['account_balance'].message_type = common_dot_common__pb2._STRING
+_USERMETADATA.fields_by_name['tags'].message_type = _USERMETADATA_TAGSENTRY
+_APPMETADATA_TAGSENTRY.containing_type = _APPMETADATA
 _APPMETADATA.fields_by_name['plan'].message_type = _PLAN
-_APPMETADATA.fields_by_name['tags'].message_type = common_dot_common__pb2._STRINGMAP
+_APPMETADATA.fields_by_name['tags'].message_type = _APPMETADATA_TAGSENTRY
 _APPMETADATA.fields_by_name['card'].message_type = _CARD
-_PLAN.fields_by_name['id'].message_type = common_dot_common__pb2._IDENTIFIER
-_PLAN.fields_by_name['active'].message_type = common_dot_common__pb2._BOOL
-_PLAN.fields_by_name['amount'].message_type = common_dot_common__pb2._INT64
-_PLAN.fields_by_name['interval'].message_type = common_dot_common__pb2._STRING
-_PLAN.fields_by_name['nickname'].message_type = common_dot_common__pb2._STRING
 _PLAN.fields_by_name['product'].message_type = _PRODUCT
-_PRODUCT.fields_by_name['id'].message_type = common_dot_common__pb2._IDENTIFIER
-_PRODUCT.fields_by_name['description'].message_type = common_dot_common__pb2._STRING
-_PRODUCT.fields_by_name['url'].message_type = common_dot_common__pb2._STRING
-_PRODUCT.fields_by_name['tags'].message_type = common_dot_common__pb2._STRINGMAP
-_IDENTITY.fields_by_name['connection'].message_type = common_dot_common__pb2._STRING
-_IDENTITY.fields_by_name['user_id'].message_type = common_dot_common__pb2._IDENTIFIER
-_IDENTITY.fields_by_name['provider'].message_type = common_dot_common__pb2._STRING
-_IDENTITY.fields_by_name['isSocial'].message_type = common_dot_common__pb2._BOOL
-_ROLE.fields_by_name['id'].message_type = common_dot_common__pb2._IDENTIFIER
-_ROLE.fields_by_name['name'].message_type = common_dot_common__pb2._STRING
-_ROLE.fields_by_name['description'].message_type = common_dot_common__pb2._STRING
-_OAUTH2.fields_by_name['client_id'].message_type = common_dot_common__pb2._STRING
-_OAUTH2.fields_by_name['client_secret'].message_type = common_dot_common__pb2._STRING
-_OAUTH2.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
-_OAUTH2.fields_by_name['auth_url'].message_type = common_dot_common__pb2._STRING
-_OAUTH2.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
-_OAUTH2.fields_by_name['redirect'].message_type = common_dot_common__pb2._STRING
-_OAUTH2.fields_by_name['code'].message_type = common_dot_common__pb2._STRING
-_CLIENTCREDENTIALS.fields_by_name['client_id'].message_type = common_dot_common__pb2._STRING
-_CLIENTCREDENTIALS.fields_by_name['client_secret'].message_type = common_dot_common__pb2._STRING
-_CLIENTCREDENTIALS.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
-_CLIENTCREDENTIALS.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
-_CLIENTCREDENTIALS.fields_by_name['endpoint_params'].message_type = common_dot_common__pb2._STRINGMAP
-_JWT.fields_by_name['email'].message_type = common_dot_common__pb2._STRING
-_JWT.fields_by_name['prive_key_id'].message_type = common_dot_common__pb2._STRING
-_JWT.fields_by_name['subject'].message_type = common_dot_common__pb2._STRING
-_JWT.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
-_JWT.fields_by_name['token_url'].message_type = common_dot_common__pb2._STRING
-_JWT.fields_by_name['expires'].message_type = common_dot_common__pb2._STRING
-_JWT.fields_by_name['audience'].message_type = common_dot_common__pb2._STRING
-_DEFAULTGCPCREDENTIALS.fields_by_name['scopes'].message_type = common_dot_common__pb2._STRINGARRAY
-_JSONWEBKEYS.fields_by_name['kty'].message_type = common_dot_common__pb2._STRING
-_JSONWEBKEYS.fields_by_name['kid'].message_type = common_dot_common__pb2._IDENTIFIER
-_JSONWEBKEYS.fields_by_name['use'].message_type = common_dot_common__pb2._STRING
-_JSONWEBKEYS.fields_by_name['n'].message_type = common_dot_common__pb2._STRING
-_JSONWEBKEYS.fields_by_name['e'].message_type = common_dot_common__pb2._STRING
-_JSONWEBKEYS.fields_by_name['x5c'].message_type = common_dot_common__pb2._STRINGARRAY
-_JWKS.fields_by_name['keys'].message_type = _JSONWEBKEYS
-DESCRIPTOR.message_types_by_name['UpdateUserRequest'] = _UPDATEUSERREQUEST
+_PRODUCT_TAGSENTRY.containing_type = _PRODUCT
+_PRODUCT.fields_by_name['tags'].message_type = _PRODUCT_TAGSENTRY
 DESCRIPTOR.message_types_by_name['Card'] = _CARD
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['UserMetadata'] = _USERMETADATA
@@ -1124,20 +888,7 @@ DESCRIPTOR.message_types_by_name['Plan'] = _PLAN
 DESCRIPTOR.message_types_by_name['Product'] = _PRODUCT
 DESCRIPTOR.message_types_by_name['Identity'] = _IDENTITY
 DESCRIPTOR.message_types_by_name['Role'] = _ROLE
-DESCRIPTOR.message_types_by_name['OAuth2'] = _OAUTH2
-DESCRIPTOR.message_types_by_name['ClientCredentials'] = _CLIENTCREDENTIALS
-DESCRIPTOR.message_types_by_name['JWT'] = _JWT
-DESCRIPTOR.message_types_by_name['DefaultGCPCredentials'] = _DEFAULTGCPCREDENTIALS
-DESCRIPTOR.message_types_by_name['JSONWebKeys'] = _JSONWEBKEYS
-DESCRIPTOR.message_types_by_name['Jwks'] = _JWKS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-UpdateUserRequest = _reflection.GeneratedProtocolMessageType('UpdateUserRequest', (_message.Message,), dict(
-  DESCRIPTOR = _UPDATEUSERREQUEST,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.UpdateUserRequest)
-  ))
-_sym_db.RegisterMessage(UpdateUserRequest)
 
 Card = _reflection.GeneratedProtocolMessageType('Card', (_message.Message,), dict(
   DESCRIPTOR = _CARD,
@@ -1147,18 +898,50 @@ Card = _reflection.GeneratedProtocolMessageType('Card', (_message.Message,), dic
 _sym_db.RegisterMessage(Card)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
+
+  UserMetadataEntry = _reflection.GeneratedProtocolMessageType('UserMetadataEntry', (_message.Message,), dict(
+    DESCRIPTOR = _USER_USERMETADATAENTRY,
+    __module__ = 'api_pb2'
+    # @@protoc_insertion_point(class_scope:api.User.UserMetadataEntry)
+    ))
+  ,
+
+  AppMetadataEntry = _reflection.GeneratedProtocolMessageType('AppMetadataEntry', (_message.Message,), dict(
+    DESCRIPTOR = _USER_APPMETADATAENTRY,
+    __module__ = 'api_pb2'
+    # @@protoc_insertion_point(class_scope:api.User.AppMetadataEntry)
+    ))
+  ,
   DESCRIPTOR = _USER,
   __module__ = 'api_pb2'
   # @@protoc_insertion_point(class_scope:api.User)
   ))
 _sym_db.RegisterMessage(User)
+_sym_db.RegisterMessage(User.UserMetadataEntry)
+_sym_db.RegisterMessage(User.AppMetadataEntry)
 
 UserMetadata = _reflection.GeneratedProtocolMessageType('UserMetadata', (_message.Message,), dict(
+
+  BioEntry = _reflection.GeneratedProtocolMessageType('BioEntry', (_message.Message,), dict(
+    DESCRIPTOR = _USERMETADATA_BIOENTRY,
+    __module__ = 'api_pb2'
+    # @@protoc_insertion_point(class_scope:api.UserMetadata.BioEntry)
+    ))
+  ,
+
+  TagsEntry = _reflection.GeneratedProtocolMessageType('TagsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _USERMETADATA_TAGSENTRY,
+    __module__ = 'api_pb2'
+    # @@protoc_insertion_point(class_scope:api.UserMetadata.TagsEntry)
+    ))
+  ,
   DESCRIPTOR = _USERMETADATA,
   __module__ = 'api_pb2'
   # @@protoc_insertion_point(class_scope:api.UserMetadata)
   ))
 _sym_db.RegisterMessage(UserMetadata)
+_sym_db.RegisterMessage(UserMetadata.BioEntry)
+_sym_db.RegisterMessage(UserMetadata.TagsEntry)
 
 Address = _reflection.GeneratedProtocolMessageType('Address', (_message.Message,), dict(
   DESCRIPTOR = _ADDRESS,
@@ -1168,11 +951,19 @@ Address = _reflection.GeneratedProtocolMessageType('Address', (_message.Message,
 _sym_db.RegisterMessage(Address)
 
 AppMetadata = _reflection.GeneratedProtocolMessageType('AppMetadata', (_message.Message,), dict(
+
+  TagsEntry = _reflection.GeneratedProtocolMessageType('TagsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _APPMETADATA_TAGSENTRY,
+    __module__ = 'api_pb2'
+    # @@protoc_insertion_point(class_scope:api.AppMetadata.TagsEntry)
+    ))
+  ,
   DESCRIPTOR = _APPMETADATA,
   __module__ = 'api_pb2'
   # @@protoc_insertion_point(class_scope:api.AppMetadata)
   ))
 _sym_db.RegisterMessage(AppMetadata)
+_sym_db.RegisterMessage(AppMetadata.TagsEntry)
 
 Plan = _reflection.GeneratedProtocolMessageType('Plan', (_message.Message,), dict(
   DESCRIPTOR = _PLAN,
@@ -1182,11 +973,19 @@ Plan = _reflection.GeneratedProtocolMessageType('Plan', (_message.Message,), dic
 _sym_db.RegisterMessage(Plan)
 
 Product = _reflection.GeneratedProtocolMessageType('Product', (_message.Message,), dict(
+
+  TagsEntry = _reflection.GeneratedProtocolMessageType('TagsEntry', (_message.Message,), dict(
+    DESCRIPTOR = _PRODUCT_TAGSENTRY,
+    __module__ = 'api_pb2'
+    # @@protoc_insertion_point(class_scope:api.Product.TagsEntry)
+    ))
+  ,
   DESCRIPTOR = _PRODUCT,
   __module__ = 'api_pb2'
   # @@protoc_insertion_point(class_scope:api.Product)
   ))
 _sym_db.RegisterMessage(Product)
+_sym_db.RegisterMessage(Product.TagsEntry)
 
 Identity = _reflection.GeneratedProtocolMessageType('Identity', (_message.Message,), dict(
   DESCRIPTOR = _IDENTITY,
@@ -1202,131 +1001,11 @@ Role = _reflection.GeneratedProtocolMessageType('Role', (_message.Message,), dic
   ))
 _sym_db.RegisterMessage(Role)
 
-OAuth2 = _reflection.GeneratedProtocolMessageType('OAuth2', (_message.Message,), dict(
-  DESCRIPTOR = _OAUTH2,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.OAuth2)
-  ))
-_sym_db.RegisterMessage(OAuth2)
 
-ClientCredentials = _reflection.GeneratedProtocolMessageType('ClientCredentials', (_message.Message,), dict(
-  DESCRIPTOR = _CLIENTCREDENTIALS,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.ClientCredentials)
-  ))
-_sym_db.RegisterMessage(ClientCredentials)
-
-JWT = _reflection.GeneratedProtocolMessageType('JWT', (_message.Message,), dict(
-  DESCRIPTOR = _JWT,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.JWT)
-  ))
-_sym_db.RegisterMessage(JWT)
-
-DefaultGCPCredentials = _reflection.GeneratedProtocolMessageType('DefaultGCPCredentials', (_message.Message,), dict(
-  DESCRIPTOR = _DEFAULTGCPCREDENTIALS,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.DefaultGCPCredentials)
-  ))
-_sym_db.RegisterMessage(DefaultGCPCredentials)
-
-JSONWebKeys = _reflection.GeneratedProtocolMessageType('JSONWebKeys', (_message.Message,), dict(
-  DESCRIPTOR = _JSONWEBKEYS,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.JSONWebKeys)
-  ))
-_sym_db.RegisterMessage(JSONWebKeys)
-
-Jwks = _reflection.GeneratedProtocolMessageType('Jwks', (_message.Message,), dict(
-  DESCRIPTOR = _JWKS,
-  __module__ = 'api_pb2'
-  # @@protoc_insertion_point(class_scope:api.Jwks)
-  ))
-_sym_db.RegisterMessage(Jwks)
-
-
-
-_DEBUGSERVICE = _descriptor.ServiceDescriptor(
-  name='DebugService',
-  full_name='api.DebugService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  serialized_start=3251,
-  serialized_end=3324,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Echo',
-    full_name='api.DebugService.Echo',
-    index=0,
-    containing_service=None,
-    input_type=common_dot_common__pb2._STRING,
-    output_type=common_dot_common__pb2._STRING,
-    serialized_options=_b('\202\323\344\223\002\013\"\006/debug:\001*'),
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DEBUGSERVICE)
-
-DESCRIPTOR.services_by_name['DebugService'] = _DEBUGSERVICE
-
-
-_DBSERVICE = _descriptor.ServiceDescriptor(
-  name='DBService',
-  full_name='api.DBService',
-  file=DESCRIPTOR,
-  index=1,
-  serialized_options=None,
-  serialized_start=3327,
-  serialized_end=3688,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='GetUser',
-    full_name='api.DBService.GetUser',
-    index=0,
-    containing_service=None,
-    input_type=common_dot_common__pb2._IDENTIFIER,
-    output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\r\"\010/db/user:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteUser',
-    full_name='api.DBService.DeleteUser',
-    index=1,
-    containing_service=None,
-    input_type=common_dot_common__pb2._IDENTIFIER,
-    output_type=common_dot_common__pb2._EMPTY,
-    serialized_options=_b('\202\323\344\223\002\024\"\017/db/user/delete:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateUser',
-    full_name='api.DBService.UpdateUser',
-    index=2,
-    containing_service=None,
-    input_type=_UPDATEUSERREQUEST,
-    output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\024\"\017/db/user/delete:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateUser',
-    full_name='api.DBService.CreateUser',
-    index=3,
-    containing_service=None,
-    input_type=_USER,
-    output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\024\"\017/db/user/delete:\001*'),
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListUsers',
-    full_name='api.DBService.ListUsers',
-    index=4,
-    containing_service=None,
-    input_type=common_dot_common__pb2._EMPTY,
-    output_type=_USER,
-    serialized_options=_b('\202\323\344\223\002\024\"\017/db/user/delete:\001*'),
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DBSERVICE)
-
-DESCRIPTOR.services_by_name['DBService'] = _DBSERVICE
-
+_USER_USERMETADATAENTRY._options = None
+_USER_APPMETADATAENTRY._options = None
+_USERMETADATA_BIOENTRY._options = None
+_USERMETADATA_TAGSENTRY._options = None
+_APPMETADATA_TAGSENTRY._options = None
+_PRODUCT_TAGSENTRY._options = None
 # @@protoc_insertion_point(module_scope)
