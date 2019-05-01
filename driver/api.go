@@ -28,3 +28,15 @@ type MetaGrouping interface {
 	Grouping
 	Metadata
 }
+
+type DataMapper interface {
+	DataMap() map[string]interface{}
+}
+
+type Debugger interface {
+	Debugf(format string)
+}
+
+type Messenger interface {
+	AsMessenger(meta map[string]string) Message
+}

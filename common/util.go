@@ -270,11 +270,19 @@ func (s *ClientCredentials) Debugf(format string) {
 	util.Debugf("%s", util.MarshalJSONPB(s))
 }
 
+func (s *Common) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
 func (s *JWT) Debugf(format string) {
 	util.Debugf("%s", util.MarshalJSONPB(s))
 }
 
 func (s *JSONWebKeys) Debugf(format string) {
+	util.Debugf("%s", util.MarshalJSONPB(s))
+}
+
+func (s *Jwks) Debugf(format string) {
 	util.Debugf("%s", util.MarshalJSONPB(s))
 }
 
@@ -284,6 +292,30 @@ func (s *OAuth2) Debugf(format string) {
 
 func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error) error {
 	return fn(s)
+}
+
+func (c *OAuth2) DataMap() map[string]interface{} {
+	return util.ToMap(c)
+}
+
+func (c *ClientCredentials) DataMap() map[string]interface{} {
+	return util.ToMap(c)
+}
+
+func (c *JWT) DataMap() map[string]interface{} {
+	return util.ToMap(c)
+}
+
+func (c *DefaultGCPCredentials) DataMap() map[string]interface{} {
+	return util.ToMap(c)
+}
+
+func (c *Jwks) DataMap() map[string]interface{} {
+	return util.ToMap(c)
+}
+
+func (c *JSONWebKeys) DataMap() map[string]interface{} {
+	return util.ToMap(c)
 }
 
 func (s *HTTPTask) Debugf(format string) {
@@ -338,6 +370,10 @@ func (s *HTTPTask) Do() error {
 	return nil
 }
 
+func (c *HTTPTask) DataMap() map[string]interface{} {
+	return util.ToMap(c)
+}
+
 func Serve(addr string, plugins ...driver.Plugin) error {
 	return engine.Serve(addr, true, plugins...)
 }
@@ -360,6 +396,10 @@ func (c *Common) AddMeta(key string, val string) {
 
 func (c *Common) Validate(fn func(c *Common) error) error {
 	return fn(c)
+}
+
+func (c *Common) DataMap() map[string]interface{} {
+	return util.ToMap(c)
 }
 
 func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, error) {
