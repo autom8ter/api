@@ -42,13 +42,18 @@ type Debugger interface {
 	Debugf(format string)
 }
 
-type Messenger interface {
-	AsMessenger(meta map[string]string) Message
-}
-
 type WebTasker interface {
 	http.RoundTripper
-	Callback(w io.Writer, r *http.Response) error
+	ErrorHandler
+	Callbacker
+}
+
+type Callbacker interface {
+	Callback(w io.Writer, r io.Reader) error
+}
+
+type ErrorHandler interface {
+	HandleError(w io.Writer, err error)
 }
 
 type RoundTripperFunc func(req *http.Request) (*http.Response, error)
@@ -57,24 +62,14 @@ func (r RoundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error) {
 	return r(req)
 }
 
-func (r RoundTripperFunc) RoundTripWithCallback(w io.Writer, req *http.Request, callback CallbackFunc) error {
-	resp, err := r(req)
-	if err != nil {
-		return err
-	}
-	return callback(w, resp)
-}
+type CallbackFunc func(w io.Writer, r io.Reader) error
 
-type CallbackFunc func(w io.Writer, resp *http.Response) error
-
-func (c CallbackFunc) Callback(w io.Writer, r *http.Response) error {
+func (c CallbackFunc) Callback(w io.Writer, r io.Reader) error {
 	return c(w, r)
 }
 
-func (c CallbackFunc) CallbackWithRoundTrip(w io.Writer, req *http.Request, roundTrip http.RoundTripper) error {
-	resp, err := roundTrip.RoundTrip(req)
-	if err != nil {
-		return err
-	}
-	return c(w, resp)
+type ErrorFunc func(w io.Writer, err error)
+
+func (e ErrorFunc) HandleError(w io.Writer, err error) {
+	e(w, err)
 }

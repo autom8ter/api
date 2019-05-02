@@ -8,21 +8,24 @@
 #### type CallbackFunc
 
 ```go
-type CallbackFunc func(resp *http.Response) error
+type CallbackFunc func(w io.Writer, r io.Reader) error
 ```
 
 
 #### func (CallbackFunc) Callback
 
 ```go
-func (c CallbackFunc) Callback(r *http.Response) error
+func (c CallbackFunc) Callback(w io.Writer, r io.Reader) error
 ```
 
-#### func (CallbackFunc) CallbackWithRoundTrip
+#### type Callbacker
 
 ```go
-func (c CallbackFunc) CallbackWithRoundTrip(req *http.Request, roundTrip http.RoundTripper) error
+type Callbacker interface {
+	Callback(w io.Writer, r io.Reader) error
+}
 ```
+
 
 #### type Categorizer
 
@@ -47,6 +50,28 @@ type DataMapper interface {
 ```go
 type Debugger interface {
 	Debugf(format string)
+}
+```
+
+
+#### type ErrorFunc
+
+```go
+type ErrorFunc func(w io.Writer, err error)
+```
+
+
+#### func (ErrorFunc) HandleError
+
+```go
+func (e ErrorFunc) HandleError(w io.Writer, err error)
+```
+
+#### type ErrorHandler
+
+```go
+type ErrorHandler interface {
+	HandleError(w io.Writer, err error)
 }
 ```
 
@@ -76,15 +101,6 @@ type Identifier interface {
 type Message interface {
 	MetaGrouping
 	String() string
-}
-```
-
-
-#### type Messenger
-
-```go
-type Messenger interface {
-	AsMessenger(meta map[string]string) Message
 }
 ```
 
@@ -121,17 +137,12 @@ type RoundTripperFunc func(req *http.Request) (*http.Response, error)
 func (r RoundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error)
 ```
 
-#### func (RoundTripperFunc) RoundTripWithCallback
-
-```go
-func (r RoundTripperFunc) RoundTripWithCallback(req *http.Request, callback CallbackFunc) error
-```
-
 #### type WebTasker
 
 ```go
 type WebTasker interface {
 	http.RoundTripper
-	Callback(r *http.Response) error
+	ErrorHandler
+	Callbacker
 }
 ```
