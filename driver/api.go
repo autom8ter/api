@@ -3,6 +3,8 @@
 package driver
 
 import (
+	"github.com/autom8ter/api/functions"
+	"github.com/autom8ter/engine/driver"
 	"io"
 	"net/http"
 )
@@ -58,4 +60,18 @@ type ErrorWriter interface {
 
 type ErrorLogger interface {
 	Err(err error)
+}
+
+type Validator interface {
+	Validate() error
+}
+
+type HTTPHandler interface {
+	http.Handler
+	Chain(handlers ...http.Handler) functions.HTTPHandlerFunc
+}
+
+type GRPCPlugin interface {
+	driver.Plugin
+	Chain(handlers ...driver.Plugin) functions.GRPCFunc
 }

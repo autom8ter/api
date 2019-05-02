@@ -59,12 +59,32 @@ type ErrorWriter interface {
 ```
 
 
+#### type GRPCPlugin
+
+```go
+type GRPCPlugin interface {
+	driver.Plugin
+	Chain(handlers ...driver.Plugin) functions.GRPCFunc
+}
+```
+
+
 #### type Grouping
 
 ```go
 type Grouping interface {
 	Categorizer
 	Identifier
+}
+```
+
+
+#### type HTTPHandler
+
+```go
+type HTTPHandler interface {
+	http.Handler
+	Chain(handlers ...http.Handler) functions.HTTPHandlerFunc
 }
 ```
 
@@ -103,6 +123,15 @@ type MetaGrouping interface {
 ```go
 type Metadata interface {
 	GetMeta() map[string]string
+}
+```
+
+
+#### type Validator
+
+```go
+type Validator interface {
+	Validate() error
 }
 ```
 

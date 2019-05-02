@@ -3,6 +3,8 @@
 package functions
 
 import (
+	"github.com/autom8ter/engine/driver"
+	"google.golang.org/grpc"
 	"io"
 	"net/http"
 )
@@ -29,4 +31,34 @@ type ErrorLoggerFunc func(err error)
 
 func (e ErrorLoggerFunc) Err(err error) {
 	e(err)
+}
+
+type HTTPHandlerFunc func(w http.ResponseWriter, r *http.Request)
+
+func (h HTTPHandlerFunc) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	h(w, r)
+}
+
+func (h HTTPHandlerFunc) Chain(handlers ...http.Handler) HTTPHandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		h.ServeHTTP(w, r)
+		for _, this := range handlers {
+			this.ServeHTTP(w, r)
+		}
+	}
+}
+
+type GRPCFunc func(s *grpc.Server)
+
+func (g GRPCFunc) RegisterWithServer(s *grpc.Server) {
+	g(s)
+}
+
+func (g GRPCFunc) Chain(plugs ...driver.Plugin) GRPCFunc {
+	return func(s *grpc.Server) {
+		g.RegisterWithServer(s)
+		for _, p := range plugs {
+			p.RegisterWithServer(s)
+		}
+	}
 }
