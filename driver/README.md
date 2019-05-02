@@ -5,19 +5,6 @@
 
 ## Usage
 
-#### type CallbackFunc
-
-```go
-type CallbackFunc func(w io.Writer, r io.Reader) error
-```
-
-
-#### func (CallbackFunc) Callback
-
-```go
-func (c CallbackFunc) Callback(w io.Writer, r io.Reader) error
-```
-
 #### type Callbacker
 
 ```go
@@ -54,23 +41,19 @@ type Debugger interface {
 ```
 
 
-#### type ErrorFunc
+#### type ErrorLogger
 
 ```go
-type ErrorFunc func(w io.Writer, err error)
+type ErrorLogger interface {
+	Err(err error)
+}
 ```
 
 
-#### func (ErrorFunc) HandleError
+#### type ErrorWriter
 
 ```go
-func (e ErrorFunc) HandleError(w io.Writer, err error)
-```
-
-#### type ErrorHandler
-
-```go
-type ErrorHandler interface {
+type ErrorWriter interface {
 	HandleError(w io.Writer, err error)
 }
 ```
@@ -124,25 +107,12 @@ type Metadata interface {
 ```
 
 
-#### type RoundTripperFunc
-
-```go
-type RoundTripperFunc func(req *http.Request) (*http.Response, error)
-```
-
-
-#### func (RoundTripperFunc) RoundTrip
-
-```go
-func (r RoundTripperFunc) RoundTrip(req *http.Request) (*http.Response, error)
-```
-
 #### type WebTasker
 
 ```go
 type WebTasker interface {
 	http.RoundTripper
-	ErrorHandler
+	ErrorWriter
 	Callbacker
 }
 ```
