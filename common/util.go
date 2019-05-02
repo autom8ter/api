@@ -326,50 +326,6 @@ func (s *HTTPTask) Validate(fn func(a *HTTPTask) error) error {
 	return fn(s)
 }
 
-func (s *HTTPTask) request() (*http.Request, error) {
-	u, err := url.Parse(s.Url)
-	if err != nil {
-		return nil, err
-	}
-	r := &http.Request{
-		Method: s.Method,
-		URL:    u,
-	}
-	for k, v := range s.Headers {
-		r.Header.Set(k, v)
-	}
-	for k, v := range s.Form {
-		r.Form.Set(k, v)
-	}
-	if s.Username != "" && s.Password != "" {
-		r.SetBasicAuth(s.Username, s.Password)
-	}
-	r.WithContext(ENVContext)
-	return r, nil
-}
-
-func (s *HTTPTask) Do() error {
-	r, err := s.request()
-	if err != nil {
-		return err
-	}
-
-	resp, err := http.DefaultClient.Do(r)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-	bits, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
-	_, err = http.Post(s.CallbackUrl, "application/json", bytes.NewBuffer(bits))
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
 func (c *HTTPTask) DataMap() map[string]interface{} {
 	return Util.ToMap(c)
 }
@@ -440,4 +396,48 @@ func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, er
 		Object:     any,
 		Meta:       meta,
 	}, nil
+}
+
+func (s *HTTPTask) request() (*http.Request, error) {
+	u, err := url.Parse(s.Url)
+	if err != nil {
+		return nil, err
+	}
+	r := &http.Request{
+		Method: s.Method,
+		URL:    u,
+	}
+	for k, v := range s.Headers {
+		r.Header.Set(k, v)
+	}
+	for k, v := range s.Form {
+		r.Form.Set(k, v)
+	}
+	if s.Username != "" && s.Password != "" {
+		r.SetBasicAuth(s.Username, s.Password)
+	}
+	r.WithContext(ENVContext)
+	return r, nil
+}
+
+func (s *HTTPTask) Do() error {
+	r, err := s.request()
+	if err != nil {
+		return err
+	}
+
+	resp, err := http.DefaultClient.Do(r)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	bits, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+	_, err = http.Post(s.CallbackUrl, "application/json", bytes.NewBuffer(bits))
+	if err != nil {
+		return err
+	}
+	return nil
 }
