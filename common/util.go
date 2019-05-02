@@ -402,6 +402,34 @@ func (c *Common) DataMap() map[string]interface{} {
 	return util.ToMap(c)
 }
 
+func (c *HTTPTask) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
+func (c *Jwks) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
+func (c *JSONWebKeys) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
+func (c *OAuth2) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
+func (c *JWT) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
+func (c *ClientCredentials) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
+func (c *DefaultGCPCredentials) ToCommon(id string, meta map[string]string) (*Common, error) {
+	return ToCommon(id, meta, c)
+}
+
 func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, error) {
 	any, err := util.MarshalAnyPB(msg)
 	if err != nil {
