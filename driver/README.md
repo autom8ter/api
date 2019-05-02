@@ -14,6 +14,24 @@ type Categorizer interface {
 ```
 
 
+#### type DataMapper
+
+```go
+type DataMapper interface {
+	DataMap() map[string]interface{}
+}
+```
+
+
+#### type Debugger
+
+```go
+type Debugger interface {
+	Debugf(format string)
+}
+```
+
+
 #### type Grouping
 
 ```go
@@ -39,6 +57,15 @@ type Identifier interface {
 type Message interface {
 	MetaGrouping
 	String() string
+}
+```
+
+
+#### type Messenger
+
+```go
+type Messenger interface {
+	AsMessenger(meta map[string]string) Message
 }
 ```
 

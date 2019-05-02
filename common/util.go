@@ -27,14 +27,14 @@ import (
 )
 
 func init() {
-	util = objectify.Default()
+	Util = objectify.Default()
 	if ENVContext == nil {
 		ENVContext = context.WithValue(context.TODO(), "env", os.Environ())
 	}
 }
 
 var (
-	util       *objectify.Handler
+	Util       *objectify.Handler
 	ENVContext context.Context
 )
 
@@ -263,31 +263,31 @@ func (c *DefaultGCPCredentials) PerRPCCredentials() (credentials.PerRPCCredentia
 }
 
 func (s *DefaultGCPCredentials) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *ClientCredentials) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *Common) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *JWT) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *JSONWebKeys) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *Jwks) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *OAuth2) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error) error {
@@ -295,31 +295,31 @@ func (s *DefaultGCPCredentials) Validate(fn func(a *DefaultGCPCredentials) error
 }
 
 func (c *OAuth2) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (c *ClientCredentials) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (c *JWT) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (c *DefaultGCPCredentials) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (c *Jwks) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (c *JSONWebKeys) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (s *HTTPTask) Debugf(format string) {
-	util.Debugf("%s", util.MarshalJSONPB(s))
+	Util.Debugf("%s", Util.MarshalJSONPB(s))
 }
 
 func (s *HTTPTask) Validate(fn func(a *HTTPTask) error) error {
@@ -371,7 +371,7 @@ func (s *HTTPTask) Do() error {
 }
 
 func (c *HTTPTask) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func Serve(addr string, plugins ...driver.Plugin) error {
@@ -387,7 +387,7 @@ func (c *Common) MetaKey(key string) string {
 }
 
 func (c *Common) Unmarshal(msg proto.Message) error {
-	return util.UnarshalAnyPB(c.Object, msg)
+	return Util.UnarshalAnyPB(c.Object, msg)
 }
 
 func (c *Common) AddMeta(key string, val string) {
@@ -399,7 +399,7 @@ func (c *Common) Validate(fn func(c *Common) error) error {
 }
 
 func (c *Common) DataMap() map[string]interface{} {
-	return util.ToMap(c)
+	return Util.ToMap(c)
 }
 
 func (c *HTTPTask) ToCommon(id string, meta map[string]string) (*Common, error) {
@@ -431,7 +431,7 @@ func (c *DefaultGCPCredentials) ToCommon(id string, meta map[string]string) (*Co
 }
 
 func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, error) {
-	any, err := util.MarshalAnyPB(msg)
+	any, err := Util.MarshalAnyPB(msg)
 	if err != nil {
 		return nil, err
 	}

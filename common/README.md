@@ -7,6 +7,7 @@
 
 ```go
 var (
+	Util       *objectify.Handler
 	ENVContext context.Context
 )
 ```
@@ -49,6 +50,12 @@ func (c *ClientCredentials) Client(ctx context.Context) *http.Client
 
 ```go
 func (c *ClientCredentials) Config() *clientcredentials.Config
+```
+
+#### func (*ClientCredentials) DataMap
+
+```go
+func (c *ClientCredentials) DataMap() map[string]interface{}
 ```
 
 #### func (*ClientCredentials) Debugf
@@ -117,6 +124,12 @@ func (m *ClientCredentials) Reset()
 func (m *ClientCredentials) String() string
 ```
 
+#### func (*ClientCredentials) ToCommon
+
+```go
+func (c *ClientCredentials) ToCommon(id string, meta map[string]string) (*Common, error)
+```
+
 #### func (*ClientCredentials) Token
 
 ```go
@@ -173,6 +186,30 @@ type Common struct {
 ```
 
 
+#### func  ToCommon
+
+```go
+func ToCommon(id string, meta map[string]string, msg proto.Message) (*Common, error)
+```
+
+#### func (*Common) AddMeta
+
+```go
+func (c *Common) AddMeta(key string, val string)
+```
+
+#### func (*Common) DataMap
+
+```go
+func (c *Common) DataMap() map[string]interface{}
+```
+
+#### func (*Common) Debugf
+
+```go
+func (s *Common) Debugf(format string)
+```
+
 #### func (*Common) Descriptor
 
 ```go
@@ -203,6 +240,12 @@ func (m *Common) GetMeta() map[string]string
 func (m *Common) GetObject() *any.Any
 ```
 
+#### func (*Common) MetaKey
+
+```go
+func (c *Common) MetaKey(key string) string
+```
+
 #### func (*Common) ProtoMessage
 
 ```go
@@ -219,6 +262,18 @@ func (m *Common) Reset()
 
 ```go
 func (m *Common) String() string
+```
+
+#### func (*Common) Unmarshal
+
+```go
+func (c *Common) Unmarshal(msg proto.Message) error
+```
+
+#### func (*Common) Validate
+
+```go
+func (c *Common) Validate(fn func(c *Common) error) error
 ```
 
 #### func (*Common) XXX_DiscardUnknown
@@ -275,6 +330,12 @@ func NewGoogleDefaultCredentials(scopes []string) *DefaultGCPCredentials
 func (c *DefaultGCPCredentials) Client(ctx context.Context) *http.Client
 ```
 
+#### func (*DefaultGCPCredentials) DataMap
+
+```go
+func (c *DefaultGCPCredentials) DataMap() map[string]interface{}
+```
+
 #### func (*DefaultGCPCredentials) Debugf
 
 ```go
@@ -321,6 +382,12 @@ func (m *DefaultGCPCredentials) Reset()
 
 ```go
 func (m *DefaultGCPCredentials) String() string
+```
+
+#### func (*DefaultGCPCredentials) ToCommon
+
+```go
+func (c *DefaultGCPCredentials) ToCommon(id string, meta map[string]string) (*Common, error)
 ```
 
 #### func (*DefaultGCPCredentials) Token
@@ -383,6 +450,12 @@ type HTTPTask struct {
 }
 ```
 
+
+#### func (*HTTPTask) DataMap
+
+```go
+func (c *HTTPTask) DataMap() map[string]interface{}
+```
 
 #### func (*HTTPTask) Debugf
 
@@ -468,6 +541,12 @@ func (m *HTTPTask) Reset()
 func (m *HTTPTask) String() string
 ```
 
+#### func (*HTTPTask) ToCommon
+
+```go
+func (c *HTTPTask) ToCommon(id string, meta map[string]string) (*Common, error)
+```
+
 #### func (*HTTPTask) Validate
 
 ```go
@@ -520,6 +599,12 @@ type JSONWebKeys struct {
 }
 ```
 
+
+#### func (*JSONWebKeys) DataMap
+
+```go
+func (c *JSONWebKeys) DataMap() map[string]interface{}
+```
 
 #### func (*JSONWebKeys) Debugf
 
@@ -585,6 +670,12 @@ func (m *JSONWebKeys) Reset()
 
 ```go
 func (m *JSONWebKeys) String() string
+```
+
+#### func (*JSONWebKeys) ToCommon
+
+```go
+func (c *JSONWebKeys) ToCommon(id string, meta map[string]string) (*Common, error)
 ```
 
 #### func (*JSONWebKeys) UnmarshalJSONFrom
@@ -664,6 +755,12 @@ func (c *JWT) Client(ctx context.Context) *http.Client
 
 ```go
 func (c *JWT) Config() *ojwt.Config
+```
+
+#### func (*JWT) DataMap
+
+```go
+func (c *JWT) DataMap() map[string]interface{}
 ```
 
 #### func (*JWT) Debugf
@@ -750,6 +847,12 @@ func (m *JWT) Reset()
 func (m *JWT) String() string
 ```
 
+#### func (*JWT) ToCommon
+
+```go
+func (c *JWT) ToCommon(id string, meta map[string]string) (*Common, error)
+```
+
 #### func (*JWT) Token
 
 ```go
@@ -804,6 +907,18 @@ type Jwks struct {
 ```
 
 
+#### func (*Jwks) DataMap
+
+```go
+func (c *Jwks) DataMap() map[string]interface{}
+```
+
+#### func (*Jwks) Debugf
+
+```go
+func (s *Jwks) Debugf(format string)
+```
+
 #### func (*Jwks) Descriptor
 
 ```go
@@ -832,6 +947,12 @@ func (m *Jwks) Reset()
 
 ```go
 func (m *Jwks) String() string
+```
+
+#### func (*Jwks) ToCommon
+
+```go
+func (c *Jwks) ToCommon(id string, meta map[string]string) (*Common, error)
 ```
 
 #### func (*Jwks) TokenCert
@@ -916,6 +1037,12 @@ func (c *OAuth2) Client(ctx context.Context) *http.Client
 
 ```go
 func (c *OAuth2) Config() *oauth2.Config
+```
+
+#### func (*OAuth2) DataMap
+
+```go
+func (c *OAuth2) DataMap() map[string]interface{}
 ```
 
 #### func (*OAuth2) Debugf
@@ -1006,6 +1133,12 @@ func (c *OAuth2) SetCode(r *http.Request)
 
 ```go
 func (m *OAuth2) String() string
+```
+
+#### func (*OAuth2) ToCommon
+
+```go
+func (c *OAuth2) ToCommon(id string, meta map[string]string) (*Common, error)
 ```
 
 #### func (*OAuth2) Token
